@@ -29,6 +29,7 @@ public import Unfoldings.Cone.AngularOverlap
 public import Unfoldings.Topology.ChainPairings
 public import Unfoldings.Cone.IntervalIsometry
 public import Unfoldings.Cone.FlatCharts
+public import Unfoldings.Cone.FlatGeodesics
 public import Unfoldings.Complex.Charts
 public import Unfoldings.Complex.Paths
 public import Unfoldings.Complex.Connectivity
@@ -47,6 +48,10 @@ public import Unfoldings.Path.Length
 public import Unfoldings.Path.Reparameterization
 public import Unfoldings.Path.EMetricShortest
 public import Unfoldings.Path.Geodesic
+public import Unfoldings.Path.Restriction
+public import Unfoldings.Path.Subpath
+public import Unfoldings.Path.Chart
+public import Unfoldings.Path.ConvexChart
 public import Unfoldings.Source.Radial
 public import Unfoldings.Examples.Metric
 public import Unfoldings.Examples.Hinge

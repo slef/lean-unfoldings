@@ -284,7 +284,8 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
   joined by a rectifiable path, using compactness and lower semicontinuity.
 - [x] Clopen compact finite-distance components with their ordinary metric,
   and length-preserving lifts of rectifiable paths to those components.
-- [ ] Surface-path adapters and restriction.
+- [x] Codomain restriction preserves path length and geodesics; affine
+  subpaths preserve constant speed, including reversed and degenerate intervals.
 - [x] Intrinsic path metric, correct topology, compactness and geodesics for
   finite triangle complexes and their cut realizations.
 - [x] Connect the embedded convex-boundary model to that constructed intrinsic metric.
@@ -297,6 +298,12 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
   between the embedded and abstract libraries.
 - [ ] Shortest paths develop straight in flat charts and do not pass through
   positive-curvature vertices in their interiors.
+  - [x] Geodesics contained in an isometric Euclidean chart have the exact
+    affine endpoint coordinates. Apply this to contained subpaths.
+  - [x] Convex charts construct actual ambient geodesics. An explicit endpoint
+    margin confines all competing paths to a ball chart and gives uniqueness.
+  - [x] Apply straightness, construction and ambient uniqueness to the actual
+    whole-ball charts at flat interior vertices.
 - [ ] Local uniqueness and continuation of a geodesic with a given initial germ.
 
 ## Phase 6 Source unfolding

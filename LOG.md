@@ -2,6 +2,21 @@
 
 ## Session Log
 
+### 2026-11-09 — shortest paths in actual flat charts
+
+- Added codomain restriction preserving length and geodesics, and affine
+  constant-speed subpaths for arbitrary endpoint order.
+- Proved exact affine coordinates and uniqueness of contained geodesics in
+  isometric charts. Convex coordinate domains construct ambient geodesics.
+- Proved an endpoint-distance bound confining every competing geodesic to
+  an open ball; Euclidean ball charts therefore give ambient uniqueness.
+- Applied construction, straightness and uniqueness to the actual flat
+  vertex charts. No local straightness or uniqueness is assumed as data.
+- Verification: selected cache fetch and full `lake build` pass; the audit
+  checks 1752 declarations, and `git diff --check` passes.
+- Angular shortcuts and positive-curvature vertex avoidance remain next;
+  source unfolding is still open.
+
 ### 2026-11-09 — Euclidean cyclic fans and actual flat vertex charts
 
 - Constructed the closing identification from every actual cyclic link,

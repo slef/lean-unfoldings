@@ -177,6 +177,7 @@ Vertex charts, self-paired-edge charts, and the full manifold conditions remain 
 | `Unfoldings.Cone.CyclicDevelopment` | Constructed surjective planar map of full-turn actual fans |
 | `Unfoldings.Cone.CyclicIsometry` | Full-turn cyclic tangent fans isometric to the Euclidean plane |
 | `Unfoldings.Cone.FlatCharts` | Whole intrinsic Euclidean charts at actual flat interior vertices |
+| `Unfoldings.Cone.FlatGeodesics` | Constructed shortest paths, straight coordinates and local ambient uniqueness |
 | `Unfoldings.Metric.Excision` | Whole-ball isometries when cutting distant seams |
 | `Unfoldings.Complex.Excision` | Metric excision and preserved triangle-complex point classes |
 | `Unfoldings.Complex.Star` | Actual vertex stars, conserved angles and local metric comparisons |
@@ -195,6 +196,10 @@ Vertex charts, self-paired-edge charts, and the full manifold conditions remain 
 | `Unfoldings.Complex.Geodesics` | Straight face traces and closed interval face visits |
 | `Unfoldings.Polyhedron.Convex` | Geometric convex-boundary adapter and derived geodesics |
 | `Unfoldings.Path.Straight` | Affine straightness of saturated geodesic images |
+| `Unfoldings.Path.Restriction` | Codomain restriction preserving length and geodesics |
+| `Unfoldings.Path.Subpath` | Affine constant-speed subpaths, including reversed intervals |
+| `Unfoldings.Path.Chart` | Straight coordinates and uniqueness in isometric charts |
+| `Unfoldings.Path.ConvexChart` | Geodesic construction in convex charts and ball confinement |
 | `Unfoldings.Complex.Connectivity` | Finite metrics and geodesics for connected face incidence |
 | `Unfoldings.Complex.HingeCharts` | Constructed Euclidean metric balls at retained edge interiors |
 | `Unfoldings.Complex.HingeCoordinates` | Local hinge frames and exact local distances |
