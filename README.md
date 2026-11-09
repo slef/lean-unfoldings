@@ -87,10 +87,12 @@ The initial library has no placeholder propositions or unfinished proofs.
   subdivision corners are allowed; a separate maximal-facet API remains open.
   Every spatial chord contained in the boundary has exact intrinsic length
   and a unique geodesic, across any number of subdivision triangles.
-  At interior triangulation vertices, spatial extremality is equivalent to
+  Every original edge is proved paired and every original vertex link cyclic.
+  At all triangulation vertices, spatial extremality is equivalent to
   total angle below `2π`. Nonconstant geodesics avoid these extreme vertices
   at interior times. The upper bound at nonextreme subdivision vertices and
   the full regular-point classification remain open.
+  Every nonvertex point has a constructed face or hinge Euclidean chart.
   Extreme vertices have constructed compact convex planar vertex figures,
   with finite noncollinear generators and actual interior centers. Their
   boundaries are exactly the slice-plane intersections with the surface,
@@ -283,6 +285,13 @@ manifold conditions remain open.
 | `Unfoldings.Geometry.BoundaryCornerAngle` | Exact splitting of convex boundary corner angles by an interior center |
 | `Unfoldings.Polyhedron.FigureAngleSum` | Actual polygon angle sum and strict angle bound at interior extreme vertices |
 | `Unfoldings.Polyhedron.ExtremeCurvature` | Interior extremality iff positive curvature; extreme-vertex geodesic avoidance |
+| `Unfoldings.Geometry.FrontierProjection` | Continuous gauge projection from an actual body interior point |
+| `Unfoldings.Polyhedron.EdgeExposure` | Other convex-boundary points occur arbitrarily near every triangle edge |
+| `Unfoldings.Polyhedron.Closedness` | Derived seam pairing of every original edge and cyclicity at every vertex |
+| `Unfoldings.Polyhedron.ConvexCurvature` | Extremality iff positive curvature and avoidance, with no interior premise |
+| `Unfoldings.Geometry.TriangleBoundary` | Every noninterior closed triangle point lies on an actual edge |
+| `Unfoldings.Complex.RegularEdges` | Constructed edge charts from either seam bank |
+| `Unfoldings.Polyhedron.RegularPoints` | Every actual nonvertex convex-boundary point is regular |
 | `Unfoldings.Geometry.RadialSliceAngles` | Positive radial slicing preserves affine apex angles |
 | `Unfoldings.Geometry.SliceHull` | The whole transverse section is the finite hull of projected generators |
 | `Unfoldings.Geometry.RaySection` | Exact wedge sections and preservation of their genuine apex angles |

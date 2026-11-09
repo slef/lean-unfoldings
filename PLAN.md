@@ -384,8 +384,12 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
       the actual polygon angle sum; combine with the strict lateral budget.
       Interior extreme vertices have genuine total angle below two pi,
       giving extremality iff positive curvature and geodesic avoidance.
-    - [ ] Derive that the uncut convex boundary has no unpaired banks,
-      prove the upper angle bound also at nonextreme vertices, and obtain
+    - [x] Derive that the uncut convex boundary has no unpaired banks,
+      using continuous radial projection across each triangle edge and exact
+      seam classes. Obtain cyclic links at every vertex, remove the interior
+      premise from extreme-vertex curvature/avoidance, and construct regular
+      charts at every nonvertex surface point.
+    - [ ] Prove the upper angle bound also at nonextreme vertices and obtain
       flatness and regular charts at every nonextreme subdivision vertex.
 
 ## Phase 6 Source unfolding

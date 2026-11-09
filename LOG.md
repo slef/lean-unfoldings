@@ -2,6 +2,26 @@
 
 ## Session Log
 
+### 2026-11-09 — derived closedness and nonvertex regularity
+
+- Constructed continuous gauge projection onto a bounded convex frontier,
+  from any body interior point. It fixes boundary points; a point and its
+  projection on the same strict supporting level must coincide.
+- Moved across each triangle edge in its supporting plane and projected
+  back to the boundary. This gives boundary points outside that triangle
+  arbitrarily near every edge point. Finite closed face coverage forces
+  another incident original face there.
+- Embeddedness and exact nonvertex seam classes then force an actual seam
+  at every original edge. Thus no unpaired bank or boundary vertex remains
+  in the uncut complex, and all its actual vertex links are cyclic.
+- Removed the interior premise from extreme-vertex curvature equivalence
+  and geodesic avoidance. Constructed regular charts at every nonvertex
+  surface point using original face or either-bank hinge charts.
+- Verification: selected cache fetch and full `lake build` pass; the audit
+  checks 2131 declarations with only standard Lean axioms; `git diff --check`
+  passes.
+- Nonextreme subdivision flatness and source unfolding remain open.
+
 ### 2026-11-09 — one-turn figure fans and strict extreme-vertex curvature
 
 - Used Mathlib's gauge to normalize nonzero rays to the actual convex
