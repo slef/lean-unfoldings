@@ -63,6 +63,8 @@ The initial library has no placeholder propositions or unfinished proofs.
   Full-turn cyclic tangent fans are isometric to the Euclidean plane.
   Spatially folded complexes therefore have constructed whole Euclidean ball
   charts at flat interior vertices, agreeing with their incident face coordinates.
+  Strict cyclic shortcuts, including across a chosen slit, prove that nonconstant
+  geodesics avoid positive-curvature interior vertices at all interior times.
 - Slit angular fans have pairwise disjoint genuine piece interiors **iff** their
   total angle is at most a full turn. At equality the developed outer banks
   coincide. Above a full turn, two piece interiors overlap at every positive radius.
@@ -83,9 +85,16 @@ The initial library has no placeholder propositions or unfinished proofs.
   its actual finite corner hull, with nonempty spatial interior. Sphere topology,
   connectedness, finite intrinsic distance and geodesics are derived. Flat
   subdivision corners are allowed; a separate maximal-facet API remains open.
+  Every spatial chord contained in the boundary has exact intrinsic length
+  and a unique geodesic, across any number of subdivision triangles.
+  Positive-curvature interior vertices are spatial extreme points. Convex
+  upper angle bounds and the full regular-point classification remain open.
 - Shortest paths on embedded surfaces cannot leave and re-enter a closed original
   face: each face visit is one closed parameter interval. Saturated nonexpanding
   images of geodesics are proved to be affine straight paths.
+  Constructed face, hinge and flat-vertex ball charts certify regular points.
+  Two geodesics sharing an initial interval have the same continuation through
+  regular points, proved by chart straightness and continuous induction.
 - `Path.eLength` measures continuous paths by total variation, allowing
   infinite length. Reversal, concatenation, Lipschitz bounds and invariance
   under isometries are proved independently of polyhedra. Rectifiable paths
@@ -106,7 +115,8 @@ the generated seam equivalence; a checked example demonstrates this. For finite
 triangle complexes, exactness, compactness, completeness, and agreement with
 the cell-quotient topology are all proved. Face maps are unconditionally
 nonexpanding; a consistent rigid development strengthens them to isometries.
-Vertex charts, self-paired-edge charts, and the full manifold conditions remain open.
+Vertex charts without a spatial folding, self-paired-edge charts, and the full
+manifold conditions remain open.
 
 ## Module map
 
@@ -213,12 +223,18 @@ Vertex charts, self-paired-edge charts, and the full manifold conditions remain 
 | `Unfoldings.Complex.Folding` | Spatial rigid placements and embedded surface topology |
 | `Unfoldings.Complex.Geodesics` | Straight face traces and closed interval face visits |
 | `Unfoldings.Polyhedron.Convex` | Geometric convex-boundary adapter and derived geodesics |
+| `Unfoldings.Polyhedron.Chords` | Exact boundary-chord distances and unique intrinsic geodesics |
+| `Unfoldings.Geometry.BoundaryChord` | A chord through an interior boundary point stays on the convex frontier |
+| `Unfoldings.Polyhedron.ExtremeVertices` | Positive-curvature vertices are actual spatial extreme points |
 | `Unfoldings.Path.Straight` | Affine straightness of saturated geodesic images |
 | `Unfoldings.Path.Restriction` | Codomain restriction preserving length and geodesics |
 | `Unfoldings.Path.Subpath` | Affine constant-speed subpaths, including reversed intervals |
 | `Unfoldings.Path.Chart` | Straight coordinates and uniqueness in isometric charts |
 | `Unfoldings.Path.ConvexChart` | Geodesic construction in convex charts and ball confinement |
 | `Unfoldings.Path.LocalShortcut` | Geodesic injectivity and avoidance of centers with local strict shortcuts |
+| `Unfoldings.Path.Continuation` | Unique geodesic continuation from a common initial interval through charts |
+| `Unfoldings.Metric.BallChart` | Whole metric-ball charts in a named model space |
+| `Unfoldings.Complex.Regular` | Constructed regular points and unique intrinsic geodesic continuation |
 | `Unfoldings.Complex.Connectivity` | Finite metrics and geodesics for connected face incidence |
 | `Unfoldings.Complex.HingeCharts` | Constructed Euclidean metric balls at retained edge interiors |
 | `Unfoldings.Complex.HingeCoordinates` | Local hinge frames and exact local distances |

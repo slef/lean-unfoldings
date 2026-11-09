@@ -45,6 +45,33 @@ theorem intervalParam_mem_Icc {s t : unitInterval} (ordered : s ≤ t) (u : unit
     intervalParam s t u ∈ Set.Icc s t :=
   (convex_Icc (s : ℝ) (t : ℝ)).lineMap_mem ⟨le_rfl, ordered⟩ ⟨ordered, le_rfl⟩ u.property
 
+/-- The inverse affine parameter on a nondegenerate interval. -/
+noncomputable def intervalFraction (s t u : unitInterval) (ordered : s < t)
+    (inside : u ∈ Set.Icc s t) :
+    unitInterval := by
+  have gap : 0 < (t : ℝ) - (s : ℝ) := sub_pos.mpr ordered
+  refine ⟨((u : ℝ) - (s : ℝ)) / ((t : ℝ) - (s : ℝ)),
+    div_nonneg (sub_nonneg.mpr inside.1) gap.le, ?_⟩
+  apply (div_le_iff₀ gap).mpr
+  simpa only [one_mul] using
+    (sub_le_sub_right (show (u : ℝ) ≤ (t : ℝ) from inside.2) (s : ℝ))
+
+theorem intervalParam_fraction (s t u : unitInterval) (ordered : s < t)
+    (inside : u ∈ Set.Icc s t) :
+    intervalParam s t (intervalFraction s t u ordered inside) = u := by
+  apply Subtype.ext
+  change AffineMap.lineMap (s : ℝ) (t : ℝ)
+    (((u : ℝ) - (s : ℝ)) / ((t : ℝ) - (s : ℝ))) = (u : ℝ)
+  have gap : (t : ℝ) - (s : ℝ) ≠ 0 := (sub_pos.mpr (show (s : ℝ) < (t : ℝ) from ordered)).ne'
+  rw [AffineMap.lineMap_apply_ring', div_mul_cancel₀ _ gap]
+  exact sub_add_cancel _ _
+
+theorem intervalFraction_pos (s t u : unitInterval) (ordered : s < t)
+    (inside : u ∈ Set.Icc s t) (after : s < u) :
+    (0 : unitInterval) < intervalFraction s t u ordered inside := by
+  change (0 : ℝ) < ((u : ℝ) - (s : ℝ)) / ((t : ℝ) - (s : ℝ))
+  exact div_pos (sub_pos.mpr after) (sub_pos.mpr ordered)
+
 variable {X : Type*} [TopologicalSpace X] {a b : X}
 
 def subpath (p : Path a b) (s t : unitInterval) : Path (p s) (p t) where

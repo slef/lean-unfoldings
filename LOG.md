@@ -2,6 +2,25 @@
 
 ## Session Log
 
+### 2026-11-09 — regular continuation and spatial boundary chords
+
+- Added inverse affine subpath parameters and proved two-point determination
+  of a chart-straight geodesic subpath. Continuous induction propagates an
+  initial common interval along regular points, without endpoint charts.
+- Defined regularity by genuine Euclidean metric-ball charts and connected
+  the constructed face, hinge and flat-vertex charts to this interface.
+- Proved the embedded inverse is isometric on every convex spatial subset
+  of a convex boundary, using the finite original-triangle closed cover.
+  Boundary chords have exact intrinsic distance and a unique geodesic even
+  when crossing many subdivision edges.
+- Proved a segment through an interior convex-frontier point stays entirely
+  on the frontier. Combined its exact geodesic with vertex avoidance to show
+  positive-curvature interior vertices are spatial extreme points.
+- Verification: selected cache fetch and full `lake build` pass; the audit
+  checks 1875 declarations, and `git diff --check` passes.
+- The convex upper angle bound and full regular/singular classification
+  remain open, followed by source routes, cut locus and source unfolding.
+
 ### 2026-11-09 — cyclic shortcuts and original-surface vertex avoidance
 
 - Appended a repeated first angular sector, proved its exact continued

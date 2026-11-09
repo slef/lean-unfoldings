@@ -41,7 +41,10 @@ public import Unfoldings.Complex.Connectivity
 public import Unfoldings.Complex.Hinge
 public import Unfoldings.Complex.HingeCharts
 public import Unfoldings.Complex.Geodesics
+public import Unfoldings.Complex.Regular
 public import Unfoldings.Polyhedron.Convex
+public import Unfoldings.Polyhedron.Chords
+public import Unfoldings.Polyhedron.ExtremeVertices
 public import Unfoldings.Boundary
 public import Unfoldings.Boundary.Exact
 public import Unfoldings.Boundary.Charts

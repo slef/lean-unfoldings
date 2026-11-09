@@ -294,6 +294,10 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
 - [x] Saturated nonexpanding geodesic images are affine straight paths in strictly
   convex normed spaces; embedded-face visits are single closed time intervals.
 - [ ] Extend chord exactness from individual triangles to maximal planar facets.
+  - [x] The embedded inverse is isometric on every convex spatial subset
+    of a convex boundary. Every straight boundary chord has exact intrinsic
+    length and a unique geodesic, crossing arbitrary subdivision triangles.
+  - [ ] Connect this theorem to the eventual maximal-facet representation.
 - [ ] Prove equivalence with the triangle route metric; this is the bridge
   between the embedded and abstract libraries.
 - [x] Shortest paths develop straight in flat charts and do not pass through
@@ -320,7 +324,20 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
     Nonconstant original intrinsic geodesics avoid every such interior
     vertex at all interior parameter times. No convex angle bound is assumed
     implicitly: deriving those bounds from embedded convex geometry remains.
-- [ ] Local uniqueness and continuation of a geodesic with a given initial germ.
+- [x] Local uniqueness and continuation of a geodesic with a given initial
+  interval through regular points. Prove two-point determination in a chart
+  and propagate agreement by continuous induction; the path endpoints need
+  no chart. Regularity uses genuine Euclidean metric-ball charts, constructed
+  at face interiors, retained nonvertex seams with distinct incident faces,
+  and flat interior vertices.
+- [ ] Derive the full regular/singular point classification for an embedded
+  convex boundary, including all allowable flat subdivision vertices.
+  - [x] A positive-curvature interior vertex is an actual spatial extreme
+    point. Otherwise convexity supplies a boundary chord through it, whose
+    intrinsic geodesic contradicts vertex avoidance. Nonextreme interior
+    vertices therefore have angle at least a full turn.
+  - [ ] Prove the convex upper angle bound, with strictness at extreme
+    vertices, and identify every nonextreme subdivision vertex as flat.
 
 ## Phase 6 Source unfolding
 
