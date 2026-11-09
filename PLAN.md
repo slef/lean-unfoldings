@@ -495,7 +495,15 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
   - [x] Construct a finite global set of source images from bounded actual seam
     programs. Retained endpoint distance equals distance to one of these images.
     Feasibility and minimum/Voronoi assertions are still to be proved.
+  - [x] Extend a finite rigid face-piece cover to the whole completed disk by
+    compact graph closedness and interior density. Bounded actual seam words
+    represent every shortest-path vector in every endpoint face, including ties
+    and singular endpoints. Every endpoint fiber is finite.
+  - [x] Construct actual rigid radial formulas on entire shortest-path face pieces,
+    including terminal endpoints by continuity. In an original endpoint face,
+    equal terminal virtual-source images imply equality of the whole paths.
 - [ ] Cut-locus closedness, finite embedded graph structure, and tree structure.
+  - [x] The actual closed cut locus is a connected image of the boundary circle.
 - [x] Every nonflat vertex belongs to the closed cut locus, including leaves
   with a unique incoming geodesic.
 - [x] The completed slit surface is a flat disk with identified boundary copies.

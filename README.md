@@ -116,6 +116,11 @@ The initial library has no placeholder propositions or unfinished proofs.
   many rigid face motions and virtual source images. Every retained endpoint's
   source distance equals distance to one of these images. Feasibility and
   minimum/Voronoi descriptions remain open.
+  A finite rigid-piece cover extends to all completion points, and bounded seam
+  words represent every shortest-path vector in every endpoint face. Each
+  endpoint fiber is finite. Actual terminal radial formulas show that a terminal
+  virtual-source image determines the whole shortest path. The closed cut locus
+  is connected as the continuous image of the boundary circle.
 - `SpatialFolding` gives compatible rigid placements into three-dimensional
   space. Every original face is isometric for every cut metric. Spatial
   injectivity is separate and gives a homeomorphism onto the triangle union.
@@ -509,6 +514,17 @@ manifold conditions remain open.
 | `Unfoldings.Source.RoutePropagation` | Bounded finite-choice propagation of actual motions along complete retained routes |
 | `Unfoldings.Source.FiniteMotions` | A constructed finite global family contains every actual retained face motion |
 | `Unfoldings.Source.Images` | Construct finite virtual source images realizing all retained endpoint distances |
+| `Unfoldings.Source.CompletedPieces` | Finite compact-graph rigid face cover of the whole completed source disk |
+| `Unfoldings.Source.BoundaryImages` | Finite rigid representations of all shortest-path vectors in every endpoint face |
+| `Unfoldings.Source.FiniteFibers` | Every endpoint has finitely many normalized shortest paths and boundary copies |
+| `Unfoldings.Path.SubpathBounds` | Strict subpath-time bounds and density of proper unit-interval times |
+| `Unfoldings.Source.FacePathMotion` | Actual face motions stay fixed along all retained face paths |
+| `Unfoldings.Source.PieceFormula` | Finite actual rigid radial formulas through every whole shortest-path face piece |
+| `Unfoldings.Complex.FaceRouteEnd` | The final positive-length piece of a strictly ordered face route |
+| `Unfoldings.Complex.InteriorTags` | Original face-interior points have unique tagged representatives |
+| `Unfoldings.Source.TerminalPiece` | Actual finite terminal-face formulas, including tied endpoints |
+| `Unfoldings.Source.TerminalUniqueness` | A terminal virtual-source image determines the whole original shortest path |
+| `Unfoldings.Source.CutConnected` | Exact cut-locus boundary projection and connectedness of the actual closed cut locus |
 | `Unfoldings.Examples.*` | Recovery, disconnectedness, shortcuts, contact, and overlap |
 | `Audit` | Transitive axiom check for all imported library declarations |
 

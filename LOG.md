@@ -2,6 +2,27 @@
 
 ## Session Log
 
+### 2026-11-09 — finite boundary representations and actual terminal source images
+
+- Finite compact graphs of rigid face maps cover the retained endpoint graph.
+  Closedness and interior density extend the cover to the whole completed disk.
+  Bounded actual endpoint seam routes transport these vector representations
+  to every original endpoint face, including ties and singular points.
+- Vector injectivity and the finite rigid family prove that every endpoint has
+  finitely many normalized shortest paths and boundary copies.
+- Constructed the actual rigid radial formula on every whole face piece of
+  every shortest path. Proper prefixes give the retained formula; continuity
+  extends it through the terminal endpoint without assuming uniqueness there.
+- Exact seam classes make face-interior endpoint tags unique. Every shortest
+  path to such an endpoint has a finite actual terminal-face motion. Equal
+  virtual source images give one final straight interval, so actual geodesic
+  continuation proves equality of the whole original paths.
+- The actual closed cut locus is a connected continuous image of the source
+  boundary circle. Distinct-image bisector and polygonal/cut-graph results
+  remain next.
+- Verification: selected Mathlib cache fetch and full `lake build` pass;
+  the audit checks **3,115 declarations**, using only the standard Lean axioms.
+
 ### 2026-11-09 — finite actual source motions and virtual source images
 
 - Propagated whole actual motions through bounded oriented seam words,

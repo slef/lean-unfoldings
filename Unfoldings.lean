@@ -106,5 +106,8 @@ public import Unfoldings.Source.LocalFacePlacement
 public import Unfoldings.Source.FaceAtlas
 public import Unfoldings.Source.SeamEndpointTransition
 public import Unfoldings.Source.Images
+public import Unfoldings.Source.FiniteFibers
+public import Unfoldings.Source.TerminalUniqueness
+public import Unfoldings.Source.CutConnected
 public import Unfoldings.Examples.Metric
 public import Unfoldings.Examples.Hinge
