@@ -87,8 +87,11 @@ The initial library has no placeholder propositions or unfinished proofs.
   Every proper positive-time prefix is proved unique by an actual geodesic
   splice and continuation from its unchanged tail.
   `sourceCutLocus` is the closure of nonunique endpoints and misses a whole
-  source ball. Local metric compatibility of the planar image, its completed
-  slit interpretation, and finite cut-locus tree structure remain open.
+  source ball. Off the closed cut locus, the unique shortest path varies
+  continuously; its actual source coordinates are continuous and injective,
+  and are isometric on the whole source chart ball. Propagation of that metric
+  statement, the completed slit interpretation, and finite cut-locus tree
+  structure remain open.
 - `SpatialFolding` gives compatible rigid placements into three-dimensional
   space. Every original face is isometric for every cut metric. Spatial
   injectivity is separate and gives a homeomorphism onto the triangle union.
@@ -399,6 +402,10 @@ manifold conditions remain open.
 | `Unfoldings.Topology.FiniteIntervalCover` | Bounded subdivisions subordinate to finite closed interval covers |
 | `Unfoldings.Path.Partition` | Exact additive distances along finite monotone geodesic partitions |
 | `Unfoldings.Complex.FaceRoutes` | Bounded finite face partitions with affine pieces and exact chord lengths |
+| `Unfoldings.Source.UniqueProjection` | A homeomorphism selecting the unique shortest path continuously off the cut locus |
+| `Unfoldings.Source.OffCutCoordinates` | Continuous injective source coordinates on the cut-locus complement |
+| `Unfoldings.Source.ConvexOffCutCoordinates` | Constructed coordinates from convex-boundary input and a regular source |
+| `Unfoldings.Source.SourceBall` | The constructed coordinates are isometric on the whole source chart ball |
 | `Unfoldings.Examples.*` | Recovery, disconnectedness, shortcuts, contact, and overlap |
 | `Audit` | Transitive axiom check for all imported library declarations |
 

@@ -443,6 +443,12 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
 - [x] Source distance, the set of nonunique shortest paths, and its closure.
   A source ball chart excludes a whole ball from the closed cut locus.
   Outside the cut locus, shortest paths exist uniquely on actual convex boundaries.
+  - [x] Compactness and closed endpoint evaluation give a homeomorphism that
+    selects the unique shortest path continuously off the cut locus.
+  - [x] Construct actual continuous injective planar source coordinates there;
+    their norms equal source distance. Prove they are isometric on the whole
+    source chart ball.
+  - [ ] Propagate that local metric statement along retained shortest paths.
   Cone vertices can be cut-locus leaves with a unique incoming geodesic, so the
   nonuniqueness set alone is not the complete closed cut locus.
 - [ ] Finite face-sequence descriptions and local Voronoi descriptions.

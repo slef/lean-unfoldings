@@ -85,5 +85,7 @@ public import Unfoldings.Source.ConvexCutLocus
 public import Unfoldings.Source.RadialDomain
 public import Unfoldings.Source.PrefixUniqueness
 public import Unfoldings.Complex.FaceRoutes
+public import Unfoldings.Source.ConvexOffCutCoordinates
+public import Unfoldings.Source.SourceBall
 public import Unfoldings.Examples.Metric
 public import Unfoldings.Examples.Hinge

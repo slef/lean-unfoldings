@@ -2,6 +2,24 @@
 
 ## Session Log
 
+### 2026-11-09 — continuous source coordinates off the cut locus, isometric near the source
+
+- Proved endpoint evaluation from the compact shortest-path space is a closed
+  map. Over the closed cut-locus complement its fibers are singletons, so its
+  restriction is a homeomorphism. The unique path is therefore continuous in
+  the uniform topology; continuity is not assumed for a choice function.
+- Constructed continuous source coordinates on that complement. On actual
+  convex boundaries they are injective, and their norms recover source
+  distance. The existence theorem assumes only the original convex-boundary
+  input and actual regularity of the selected source.
+- Proved every shortest path to a point in the source chart stays there, and
+  its source vector equals the endpoint's actual chart displacement. Thus the
+  constructed coordinates are an isometry on the whole source chart ball.
+- Verification: selected cache fetch and full `lake build` pass; the audit
+  checks **2,519 declarations**, using only the standard Lean axioms.
+- Propagation of local metric compatibility, proper-prefix stability against
+  the closed cut locus, and the completed slit interpretation remain open.
+
 ### 2026-11-09 — bounded finite face partitions of actual geodesics
 
 - Proved a finite closed interval cover has a strictly ordered subdivision
