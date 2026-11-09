@@ -133,9 +133,9 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
 - [x] Capped distance barriers and exactness for finitely many closed isometric
   seams whose equivalence classes are finite in each cell.
 - [x] Exactness for triangle complexes with all seams cut.
-- [ ] Zero route distance identifies exactly the finite gluing equivalence.
-- [x] Exactness implies agreement of quotient and metric topology for finite
-  compact cells; apply after proving exactness for triangle complexes.
+- [x] Zero route distance identifies exactly the finite gluing equivalence,
+  for every retained-seam set, with self-pairings and corner identifications allowed.
+- [x] Agreement of quotient and metric topology for every finite triangle complex.
 - [x] Compactness and completeness of finite closed complexes.
 - [ ] Finite vertex classes, links, and manifold conditions.
 - [ ] Local Euclidean disks at face and paired-edge interiors; half-disks at

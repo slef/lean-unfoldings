@@ -30,6 +30,8 @@ The initial library has no placeholder propositions or unfinished proofs.
   `BoundaryBank` labels the unpaired local edges. Cutting a seam gives two
   distinct bank labels; restoring it identifies their metric images pointwise.
   With every seam cut, exactness and isometric face maps are proved.
+  `TriangleComplex.exact` proves exactness for every retained-seam set, and
+  `realizationHomeomorph` identifies the metric and cell-quotient topologies.
 - `FacewiseDevelopment` places each original triangle exactly once, agrees on
   retained edges, and puts the incident triangles on opposite sides. Retained
   dual cycles are allowed. The map descends to the cut realization and is
@@ -47,11 +49,11 @@ isometry at uncut vertices will be part of the later surface-development layer,
 after vertex links and surface interiors are constructed.
 
 For arbitrary gluing data the separation quotient may identify more points than
-the generated seam equivalence; a checked example demonstrates this. Finite
-triangle complexes already have compact, complete metric realizations.
-Exactness for these complexes remains to be proved; it will also identify their
-metric and cell-quotient topologies. Face maps are unconditionally nonexpanding;
-the existence of a consistent rigid development strengthens them to isometries.
+the generated seam equivalence; a checked example demonstrates this. For finite
+triangle complexes, exactness, compactness, completeness, and agreement with
+the cell-quotient topology are all proved. Face maps are unconditionally
+nonexpanding; a consistent rigid development strengthens them to isometries.
+Local metric charts and manifold conditions remain to be constructed.
 
 ## Module map
 
@@ -64,8 +66,12 @@ the existence of a consistent rigid development strengthens them to isometries.
 | `Unfoldings.Metric.Barrier` | Capped distance separators and local class transport |
 | `Unfoldings.Metric.ClosedSeams` | Exactness for closed isometric seams with finite classes |
 | `Unfoldings.Geometry.Triangle` | Nondegenerate cells and full edge subspaces |
+| `Unfoldings.Geometry.Edge` | Edge intersections and endpoint preservation by isometries |
 | `Unfoldings.Complex` | Finite edge-paired complexes and their cut realizations |
+| `Unfoldings.Complex.Classes` | Finite corner classes and unique nonvertex seam neighbors |
+| `Unfoldings.Complex.Exact` | Exact metric identifications and quotient homeomorphism |
 | `Unfoldings.Boundary` | Boundary-edge labels, bank maps, and restoration of banks |
+| `Unfoldings.Boundary.Exact` | Metric separation of distinct cut-bank interiors |
 | `Unfoldings.Development` | Facewise placements, nonoverlap, multiplicity, and metric descent |
 | `Unfoldings.Geometry.Separation` | Corner certificates for whole-cell separation |
 | `Unfoldings.Geometry.Hinge` | Opposite sides imply adjacent-cell nonoverlap |
@@ -99,6 +105,7 @@ lake exe cache get Mathlib.Analysis.InnerProductSpace.PiL2 \
   Mathlib.Analysis.Normed.Affine.AddTorsorBases \
   Mathlib.Analysis.Normed.Affine.Isometry \
   Mathlib.Analysis.Normed.Operator.Banach \
+  Mathlib.Analysis.Convex.StrictConvexBetween Mathlib.Analysis.InnerProductSpace.Convex \
   Mathlib.Topology.EMetricSpace.Lipschitz \
   Mathlib.Logic.Relation Mathlib.Topology.Separation.Hausdorff \
   Mathlib.Topology.UniformSpace.Cauchy \
@@ -106,7 +113,7 @@ lake exe cache get Mathlib.Analysis.InnerProductSpace.PiL2 \
   Mathlib.Topology.IsLocalHomeomorph \
   Mathlib.Topology.Instances.Real.Lemmas \
   Mathlib.Tactic.FinCases Mathlib.Tactic.FieldSimp Mathlib.Tactic.Ring \
-  Mathlib.Tactic.NormNum Mathlib.Tactic.Linarith
+  Mathlib.Tactic.NormNum Mathlib.Tactic.Linarith Mathlib.Tactic.LinearCombination
 lake build
 ```
 

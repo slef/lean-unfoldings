@@ -2,7 +2,22 @@
 
 ## Session Log
 
-### 2026-11-09 — closed-seam separation theorem
+### 2026-11-08 — triangle-complex exactness
+
+- Proved that closed-edge isometries preserve endpoints, and distinct edges of
+  a nondegenerate triangle intersect only at its corners.
+- Proved finiteness of every retained-seam class: corner classes lie in a finite
+  set, and a nonvertex point has at most one undirected seam neighbor. The
+  relation-theoretic lemma is independent of all metric and triangle geometry.
+- Adapted triangle edge pairings to the general closed-seam theorem. Proved
+  exactness for all retained-seam sets and an unconditional homeomorphism
+  between the original cell quotient and the constructed metric realization.
+- Added separation of unpaired bank interiors, while allowing endpoints to be
+  identified through other retained seams.
+- Verification: selected cache fetch for strict convexity and linear-combination
+  tactics; `lake build` and the transitive axiom audit.
+
+### 2026-11-08 — closed-seam separation theorem
 
 - Continued toward the full source-unfolding construction, starting with metric
   exactness for retained seams.
