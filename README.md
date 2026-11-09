@@ -180,6 +180,9 @@ Vertex charts, self-paired-edge charts, and the full manifold conditions remain 
 | `Unfoldings.Cone.AngularShortcut` | Strict intrinsic shortcuts and apex avoidance in convex angular fans |
 | `Unfoldings.Cone.AngularChord` | Exact intrinsic lengths of covered chords in reentrant fans |
 | `Unfoldings.Cone.HeadingSector` | Convex rotated sectors with closed real heading bounds |
+| `Unfoldings.Cone.HeadingEquality` | Real heading uniqueness across overlapping pointed intervals |
+| `Unfoldings.Cone.HeadingLift` | Isometric lifts of selected heading sectors in arbitrary overlapping fans |
+| `Unfoldings.Cone.HeadingShortcut` | Strict shortcuts on selected sheets, preserved by radial nonexpansion |
 | `Unfoldings.Cone.AngularHeadingShortcut` | Strict shortcuts across multiple angular pieces |
 | `Unfoldings.Cone.LinkShortcut` | Strict angular shortcuts transferred to actual tangent metrics |
 | `Unfoldings.Cone.CyclicDevelopment` | Constructed surjective planar map of full-turn actual fans |

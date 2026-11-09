@@ -310,6 +310,9 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
   - [x] Lift covered chords across finite closed pieces, including in
     reentrant fans. Prove strict shortcuts in any pointed heading interval
     inside a slit fan and transfer them to the actual tangent metric.
+  - [x] Construct isometric lifts of selected pointed heading intervals even
+    in overlapping angular fans, with no total-angle bound. Strict shortcuts
+    survive every nonexpanding comparison preserving radial distances.
   - [ ] Handle the short arc crossing the cyclic slit, then deduce avoidance
     at every interior vertex with total angle less than a full turn.
 - [ ] Local uniqueness and continuation of a geodesic with a given initial germ.

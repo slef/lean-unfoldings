@@ -2,6 +2,23 @@
 
 ## Session Log
 
+### 2026-11-09 — sheet-aware isometric heading lifts
+
+- Constructed a lift of every pointed real heading interval contained in an
+  arbitrary angular fan. The full development may overlap and its total
+  angle is unrestricted.
+- Proved uniqueness of positive-radius headings on bounded intervals and
+  on intersecting pointed intervals. Restricted the finite closed-cover
+  bound to pieces meeting the selected interval, retaining the intended
+  sheet through the construction.
+- Proved the selected lift is isometric, preserves radial distance and has
+  strict apex shortcuts. Such shortcuts survive radial-distance-preserving
+  nonexpanding maps to arbitrary extended metric spaces.
+- Verification: full `lake build` passes; the audit checks 1803 declarations,
+  and `git diff --check` passes.
+- Continuing with a repeated first sector to lift cyclic arcs across the
+  chosen slit. Source unfolding remains open.
+
 ### 2026-11-09 — exact angular chords and strict apex shortcuts
 
 - Proved development injectivity below one full turn, including all banks.
