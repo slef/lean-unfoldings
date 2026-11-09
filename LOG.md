@@ -2,6 +2,24 @@
 
 ## Session Log
 
+### 2026-11-09 — constructed transverse sections and pyramid angle budgets
+
+- Strictly separated each finite-hull extreme point from the compact hull
+  of the other generators. The functional has a uniform positive margin.
+- Constructed actual compact convex level sections and projected generator
+  points along their original vertex segments. At actual spatial extreme
+  vertices, proved the section nonempty and the functional nonzero.
+- Characterized two-ray wedge sections exactly as segments between the
+  normalized endpoints; proved positive normalization preserves apex angles.
+- Proved a direction transverse to a level plane makes angular triangle
+  inequality strict unless its two boundary directions are opposite.
+- Summed lateral triangle angle budgets over any finite successor permutation,
+  with strictness at a nonstraight base corner for a transverse apex.
+- Verification: selected cache fetch and full `lake build` pass; the audit
+  checks 1895 declarations, and `git diff --check` passes.
+- The section's polygon description, actual link order and planar angle sum
+  remain to connect to the convex upper angle bound. Source unfolding is open.
+
 ### 2026-11-09 — regular continuation and spatial boundary chords
 
 - Added inverse affine subpath parameters and proved two-point determination

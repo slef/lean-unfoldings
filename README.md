@@ -226,6 +226,12 @@ manifold conditions remain open.
 | `Unfoldings.Polyhedron.Chords` | Exact boundary-chord distances and unique intrinsic geodesics |
 | `Unfoldings.Geometry.BoundaryChord` | A chord through an interior boundary point stays on the convex frontier |
 | `Unfoldings.Polyhedron.ExtremeVertices` | Positive-curvature vertices are actual spatial extreme points |
+| `Unfoldings.Geometry.ExtremeSeparation` | Strict finite-hull supporting functionals with a uniform margin |
+| `Unfoldings.Geometry.RadialSlice` | Actual compact convex level sections and radial generator projections |
+| `Unfoldings.Polyhedron.VertexSlice` | Constructed nonempty transverse sections at spatial extreme vertices |
+| `Unfoldings.Geometry.RaySection` | Exact wedge sections and preservation of their genuine apex angles |
+| `Unfoldings.Geometry.AngleSeparation` | Strict angular inequality through a direction outside a level plane |
+| `Unfoldings.Geometry.PyramidAngles` | Lateral pyramid angle budgets, including strictness for transverse apices |
 | `Unfoldings.Path.Straight` | Affine straightness of saturated geodesic images |
 | `Unfoldings.Path.Restriction` | Codomain restriction preserving length and geodesics |
 | `Unfoldings.Path.Subpath` | Affine constant-speed subpaths, including reversed intervals |

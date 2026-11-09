@@ -338,6 +338,16 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
     vertices therefore have angle at least a full turn.
   - [ ] Prove the convex upper angle bound, with strictness at extreme
     vertices, and identify every nonextreme subdivision vertex as flat.
+    - [x] Construct a strict supporting functional with a uniform positive
+      margin at every finite-hull extreme point. Construct the actual compact
+      convex transverse section and the radial projections of all other
+      generators; at triangulation vertices the section is nonempty.
+    - [x] A positive functional level cuts a two-ray wedge in the segment
+      between its radially normalized endpoints, preserving the apex angle.
+    - [x] Sum the lateral triangle angle budgets. A transverse apex gives
+      strictness at every nonstraight base corner.
+    - [ ] Construct and order the vertex-figure polygon from the actual
+      link, prove its planar angle sum, and apply the angle budget.
 
 ## Phase 6 Source unfolding
 

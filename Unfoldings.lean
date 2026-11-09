@@ -45,6 +45,9 @@ public import Unfoldings.Complex.Regular
 public import Unfoldings.Polyhedron.Convex
 public import Unfoldings.Polyhedron.Chords
 public import Unfoldings.Polyhedron.ExtremeVertices
+public import Unfoldings.Polyhedron.VertexSlice
+public import Unfoldings.Geometry.RaySection
+public import Unfoldings.Geometry.PyramidAngles
 public import Unfoldings.Boundary
 public import Unfoldings.Boundary.Exact
 public import Unfoldings.Boundary.Charts
