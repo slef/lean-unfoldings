@@ -2,6 +2,23 @@
 
 ## Session Log
 
+### 2026-11-09 — whole tangent hinges and convex spatial inverse isometries
+
+- Proved local equality extends globally for sets invariant under positive
+  homotheties about the same apex. Proved exact radial homogeneity of the
+  actual tangent image and of support levels/half-spaces.
+- Identified the spatial tangent image with the original surface on one
+  small ball, using radial distance and the derived spatial vertex star.
+  Consequently the whole tangent image equals the constructed support hinge.
+- Constructed the actual inverse tangent folding on spatial subsets. Its
+  finite closed isometric wedge cover makes this inverse isometric on every
+  convex spatial subset, including across coplanar subdivisions.
+- Verification: selected cache fetch and full `lake build` pass; the audit
+  checks **2,237 declarations**, using only the standard Lean axioms.
+- Next: use a genuine incident crease and its constructed outward placement
+  to parametrize the two half-planes and obtain the intrinsic hinge chart.
+  Source unfolding remains open.
+
 ### 2026-11-09 — actual local vertex hinges and planar metric charts
 
 - Proved a nonconstant finite cyclic list has no more labels than changes,

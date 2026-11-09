@@ -313,6 +313,11 @@ manifold conditions remain open.
 | `Unfoldings.Metric.BallParametrization` | Whole-ball charts from isometric parametrizations with ball coverage |
 | `Unfoldings.Polyhedron.PlanarPatch` | Whole intrinsic charts from actual planar spatial patches |
 | `Unfoldings.Polyhedron.LocallyPlanar` | Derived regularity when a vertex's incident planes coincide |
+| `Unfoldings.Geometry.RadialLocality` | Local equality of positive radial cones implies global equality |
+| `Unfoldings.Geometry.FunctionalHomothety` | Positive homotheties preserve support levels and half-spaces |
+| `Unfoldings.Cone.SpatialRange` | Exact radial homogeneity of the actual tangent image |
+| `Unfoldings.Polyhedron.TangentHinge` | The whole actual tangent image equals the constructed spatial support hinge |
+| `Unfoldings.Cone.SpatialConvexLift` | Isometric inverse tangent folding on every convex spatial subset |
 | `Unfoldings.Geometry.RadialSliceAngles` | Positive radial slicing preserves affine apex angles |
 | `Unfoldings.Geometry.SliceHull` | The whole transverse section is the finite hull of projected generators |
 | `Unfoldings.Geometry.RaySection` | Exact wedge sections and preservation of their genuine apex angles |

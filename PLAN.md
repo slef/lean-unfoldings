@@ -407,6 +407,13 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
         chart in the coincident-plane case from convex spatial patches.
       - [ ] Transfer the chart in the genuine two-plane hinge case, and
         complete the angle equality at nonextreme vertices as well.
+        - [x] The actual tangent image agrees with the original surface near
+          the vertex; radial homogeneity extends the local support-hinge
+          equality to the whole tangent fan. Prove its spatial inverse is
+          isometric on every convex subset of the actual image.
+        - [ ] Select a genuine incident crease when the planes differ,
+          use its constructed outward hinge placement to parametrize the
+          two half-planes, and transfer the intrinsic chart.
 
 ## Phase 6 Source unfolding
 
