@@ -484,6 +484,9 @@ manifold conditions remain open.
 | `Unfoldings.Complex.PointSeamRoute` | Actual bounded oriented seam routes, including at vertices |
 | `Unfoldings.Complex.SeamFaceRoute` | Constructed entry/exit points and bounded seam resolutions of all face-route junctions |
 | `Unfoldings.Complex.SeamWord` | Finite oriented words construct rigid hinge placements agreeing at actual crossing points |
+| `Unfoldings.Geometry.ConvexRigidity` | Actual isometries on convex sets with interior extend rigidly through the boundary |
+| `Unfoldings.Source.FacePlacement` | Constructed source-face motion agrees with all source vectors in the source ball |
+| `Unfoldings.Source.LocalFacePlacement` | Constructed rigid face patches at all retained points, including edges and flat vertices |
 | `Unfoldings.Examples.*` | Recovery, disconnectedness, shortcuts, contact, and overlap |
 | `Audit` | Transitive axiom check for all imported library declarations |
 

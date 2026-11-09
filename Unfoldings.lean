@@ -102,5 +102,6 @@ public import Unfoldings.Source.CompletedRadials
 public import Unfoldings.Source.ActualCut
 public import Unfoldings.Complex.SeamFaceRoute
 public import Unfoldings.Complex.SeamWord
+public import Unfoldings.Source.LocalFacePlacement
 public import Unfoldings.Examples.Metric
 public import Unfoldings.Examples.Hinge

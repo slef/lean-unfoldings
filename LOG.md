@@ -2,6 +2,24 @@
 
 ## Session Log
 
+### 2026-11-09 — constructed rigid source-face patches, including boundary centers
+
+- Extended actual isometries of convex sets with interior to affine isometries.
+  A whole interior ball constructs the map; segment preservation proves its
+  agreement on the whole set, including the boundary. Finite dimension makes
+  self-embeddings rigid equivalences.
+- For a source in an original face interior, constructed an initial rigid
+  placement agreeing with every shortest-path vector to that face's source-ball
+  patch. Its isometry is derived from the original source chart and face metric.
+- At every retained point of any face, constructed a positive-radius rigid
+  patch agreeing with all actual source vectors and proved that this patch
+  stays off the closed cut locus. Dense face interiors let the patch extend
+  rigidly even when centered on an edge or flat subdivision vertex.
+- Matching these actual local maps across the bounded seam words, and finite
+  polygonality/Voronoi/cut-graph descriptions, remain next.
+- Verification: full `lake build` passes; the audit checks **3,016 declarations**,
+  using only the standard Lean axioms. The selected Mathlib cache was verified.
+
 ### 2026-11-09 — bounded actual seam routes and finite candidate placements
 
 - Isolated graph reachability inside an exact fiber of a relation-preserving
