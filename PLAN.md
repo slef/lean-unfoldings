@@ -130,6 +130,8 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
 - [x] Continuous surjection from seam classes to the metric realization.
 - [x] Exactness criterion using compatible nonexpanding separating coordinates.
 - [x] Counterexample showing additional metric collapse for unrestricted gluing.
+- [x] Capped distance barriers and exactness for finitely many closed isometric
+  seams whose equivalence classes are finite in each cell.
 - [x] Exactness for triangle complexes with all seams cut.
 - [ ] Zero route distance identifies exactly the finite gluing equivalence.
 - [x] Exactness implies agreement of quotient and metric topology for finite

@@ -21,6 +21,9 @@ The initial library has no placeholder propositions or unfinished proofs.
   states that this map is injective; compatible nonexpanding coordinates can
   certify it. For finite compact cells the metric realization is compact and
   complete, and exactness gives a homeomorphism with the seam quotient.
+  `ClosedSeams.exact_of_finite_classes` proves exactness for finitely many
+  closed isometric seams with finite equivalence classes, using capped distance
+  barriers; the cells themselves need not be compact.
 - `TriangleComplex` describes finitely many nondegenerate Euclidean triangles
   and whole-edge isometric equivalences, with each edge in at most one pair.
   Its metric realization depends on an explicit set of retained seams.
@@ -58,6 +61,8 @@ the existence of a consistent rigid development strengthens them to isometries.
 | `Unfoldings.Metric.Gluing` | Metric quotient, descent, and restoration of seams |
 | `Unfoldings.Metric.Quotient` | Declared seam classes, exactness, compactness, and completeness |
 | `Unfoldings.Metric.Unglued` | Exact metric formulas and separation with no seams |
+| `Unfoldings.Metric.Barrier` | Capped distance separators and local class transport |
+| `Unfoldings.Metric.ClosedSeams` | Exactness for closed isometric seams with finite classes |
 | `Unfoldings.Geometry.Triangle` | Nondegenerate cells and full edge subspaces |
 | `Unfoldings.Complex` | Finite edge-paired complexes and their cut realizations |
 | `Unfoldings.Boundary` | Boundary-edge labels, bank maps, and restoration of banks |
@@ -97,6 +102,7 @@ lake exe cache get Mathlib.Analysis.InnerProductSpace.PiL2 \
   Mathlib.Topology.EMetricSpace.Lipschitz \
   Mathlib.Logic.Relation Mathlib.Topology.Separation.Hausdorff \
   Mathlib.Topology.UniformSpace.Cauchy \
+  Mathlib.Topology.MetricSpace.HausdorffDistance Mathlib.Topology.MetricSpace.Lipschitz \
   Mathlib.Topology.IsLocalHomeomorph \
   Mathlib.Topology.Instances.Real.Lemmas \
   Mathlib.Tactic.FinCases Mathlib.Tactic.FieldSimp Mathlib.Tactic.Ring \

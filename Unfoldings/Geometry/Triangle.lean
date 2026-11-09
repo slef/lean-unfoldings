@@ -44,6 +44,10 @@ def next : Fin 3 → Fin 3
   | 1 => 2
   | 2 => 0
 
+theorem corner_cases (edge corner : Fin 3) :
+    corner = edge ∨ corner = next edge ∨ corner = next (next edge) := by
+  fin_cases edge <;> fin_cases corner <;> decide
+
 /-- The closed planar triangular region. -/
 def carrier (T : Triangle) : Set Plane := convexHull ℝ (Set.range T.vertex)
 
@@ -67,6 +71,13 @@ theorem convex_carrier (T : Triangle) : Convex ℝ T.carrier := convex_convexHul
 
 theorem compact_carrier (T : Triangle) : IsCompact T.carrier :=
   (Set.finite_range T.vertex).isCompact_convexHull ℝ
+
+theorem compact_edge (T : Triangle) (e : Fin 3) : IsCompact (T.edge e) := by
+  rw [edge, ← convexHull_pair]
+  exact (Set.toFinite _).isCompact_convexHull ℝ
+
+instance (T : Triangle) (e : Fin 3) : CompactSpace (T.Edge e) :=
+  isCompact_iff_compactSpace.mp (T.compact_edge e)
 
 instance (T : Triangle) : CompactSpace T.Cell :=
   isCompact_iff_compactSpace.mp T.compact_carrier

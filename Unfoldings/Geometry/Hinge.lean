@@ -30,10 +30,6 @@ theorem lineHeight_surjective {a b c : Plane} (noncollinear : orient a b c ≠ 0
 
 namespace Triangle
 
-theorem corner_cases (edge corner : Fin 3) :
-    corner = edge ∨ corner = next edge ∨ corner = next (next edge) := by
-  fin_cases edge <;> fin_cases corner <;> decide
-
 theorem vertices_le_of_edge (T : Triangle) (place : Plane →ᵃ[ℝ] Plane)
     (e : Fin 3) (height : Plane →L[ℝ] ℝ) (level : ℝ)
     (along : ∀ x : T.Edge e, height (place x) = level)

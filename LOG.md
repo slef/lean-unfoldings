@@ -2,6 +2,22 @@
 
 ## Session Log
 
+### 2026-11-09 — closed-seam separation theorem
+
+- Continued toward the full source-unfolding construction, starting with metric
+  exactness for retained seams.
+- Constructed capped distance-to-class barriers, including cells with no class
+  points. Proved nonexpansion and zero-set characterization for closed classes.
+- Proved that finite classes with positive local transport radii give exactness.
+  Finite sets and closed seam images supply uniform positive radii.
+- Bundled finite closed isometric seams and proved exactness whenever their
+  equivalence classes are finite in each original cell. Cells need not be compact.
+- Moved the unchanged corner-case lemma into the triangle foundation and added
+  compactness of closed triangle edges and their metric subspaces.
+- Verification: targeted cache fetch for Hausdorff distance and Lipschitz
+  infrastructure, followed by `lake build` and the transitive axiom audit.
+- Triangle-specific finite seam-class geometry is the next construction step.
+
 ### 2026-11-08 — unglued metric and boundary banks
 
 - Committed seam-quotient and compactness work as `152855f` (320 declarations

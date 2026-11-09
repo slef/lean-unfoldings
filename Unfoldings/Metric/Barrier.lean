@@ -1,0 +1,165 @@
+module
+
+public import Unfoldings.Metric.Quotient
+public import Mathlib.Topology.MetricSpace.HausdorffDistance
+public import Mathlib.Topology.MetricSpace.Lipschitz
+
+/-!
+# Capped distance barriers for metric gluing
+
+Distance to an empty set is assigned the cap, rather than zero. This makes
+barriers on different cells compatible when a seam class misses some cells.
+Finite seam classes and local transport of nearby class points give exactness
+of the route metric quotient.
+-/
+
+@[expose] public section
+
+noncomputable section
+
+namespace Unfoldings.MetricBarrier
+
+open Metric
+
+variable {X : Type*} [MetricSpace X]
+
+/-- Distance to a set, capped at `ε`, with value `ε` for the empty set. -/
+def cappedDist (ε : ℝ) (s : Set X) : X → ℝ := by
+  classical
+  exact if s.Nonempty then (fun x => min ε (infDist x s)) else fun _ => ε
+
+theorem cappedDist_le (ε : ℝ) (s : Set X) (x : X) : cappedDist ε s x ≤ ε := by
+  classical
+  simp only [cappedDist]
+  split
+  · exact min_le_left _ _
+  · exact le_rfl
+
+theorem cappedDist_le_dist (ε : ℝ) {s : Set X} {a : X} (ha : a ∈ s) (x : X) :
+    cappedDist ε s x ≤ dist x a := by
+  classical
+  have bound : cappedDist ε s x ≤ infDist x s := by
+    simp [cappedDist, Set.nonempty_of_mem ha]
+  exact bound.trans (infDist_le_dist_of_mem ha)
+
+theorem cappedDist_lipschitz (ε : ℝ) (s : Set X) : LipschitzWith 1 (cappedDist ε s) := by
+  classical
+  by_cases nonempty : s.Nonempty
+  · simpa [cappedDist, nonempty] using (lipschitz_infDist_pt s).const_min ε
+  · simpa [cappedDist, nonempty] using
+      (LipschitzWith.const ε : LipschitzWith 0 fun _ : X => ε).weaken zero_le_one
+
+theorem cappedDist_eq_zero_iff {ε : ℝ} (positive : 0 < ε) {s : Set X} (closed : IsClosed s)
+    (x : X) : cappedDist ε s x = 0 ↔ x ∈ s := by
+  classical
+  by_cases nonempty : s.Nonempty
+  · simp only [cappedDist, ite_eq_left nonempty]
+    rw [min_eq_iff]
+    constructor
+    · rintro (⟨impossible, _⟩ | ⟨zero, _⟩)
+      · exact (positive.ne' impossible).elim
+      · exact (closed.mem_iff_infDist_zero nonempty).mpr zero
+    · intro hx
+      exact Or.inr ⟨infDist_zero_of_mem hx, by rw [infDist_zero_of_mem hx]; exact positive.le⟩
+  · simp [cappedDist, positive.ne', Set.not_nonempty_iff_eq_empty.mp nonempty]
+
+/-- Transport of nearby class points is enough to compare their distance barriers. -/
+theorem cappedDist_le_of_transport {Y : Type*} [MetricSpace Y] (ε : ℝ)
+    {s : Set X} (finite : s.Finite) {t : Set Y} (x : X) (y : Y)
+    (transport : ∀ a ∈ s, dist x a < ε → ∃ b ∈ t, dist y b ≤ dist x a) :
+    cappedDist ε t y ≤ cappedDist ε s x := by
+  classical
+  by_cases nonempty : s.Nonempty
+  · obtain ⟨a, ha, nearest⟩ := finite.isCompact.exists_infDist_eq_dist nonempty x
+    by_cases near : dist x a < ε
+    · obtain ⟨b, hb, bound⟩ := transport a ha near
+      have value : cappedDist ε s x = dist x a := by
+        simp [cappedDist, nonempty, nearest, min_eq_right near.le]
+      rw [value]
+      exact (cappedDist_le_dist ε hb y).trans bound
+    · simpa [cappedDist, nonempty, nearest, min_eq_left (le_of_not_gt near)] using
+        cappedDist_le ε t y
+  · simpa [cappedDist, nonempty] using cappedDist_le ε t y
+
+/-- A finite set has a uniform positive radius distinguishing membership in a closed set. -/
+theorem exists_radius_near_closed {s t : Set X} (finite : s.Finite) (closed : IsClosed t) :
+    ∃ ε > 0, ∀ x ∈ t, ∀ a ∈ s, dist x a < ε → a ∈ t := by
+  classical
+  induction s, finite using Set.Finite.induction_on with
+  | empty => exact ⟨1, zero_lt_one, by simp⟩
+  | @insert a s ha finite ih =>
+    obtain ⟨ε, positive, bound⟩ := ih
+    by_cases inside : a ∈ t
+    · refine ⟨ε, positive, ?_⟩
+      intro x hx b hb near
+      rcases hb with equal | hb
+      · exact equal ▸ inside
+      · exact bound x hx b hb near
+    · obtain ⟨δ, δpos, ball⟩ := Metric.isOpen_iff.mp closed.isOpen_compl a inside
+      refine ⟨min ε δ, lt_min positive δpos, ?_⟩
+      intro x hx b hb near
+      rcases hb with equal | hb
+      · subst b
+        have near' : dist x a < δ := near.trans_le (min_le_right ε δ)
+        have outside : x ∉ t := ball (by simpa [Metric.mem_ball, dist_comm] using near')
+        exact (outside hx).elim
+      · exact bound x hx b hb (near.trans_le (min_le_left ε δ))
+
+/-- Finitely many positive numbers have a common positive lower bound, even for an empty family. -/
+theorem exists_pos_le_of_finite {ι : Type*} [Finite ι] (r : ι → ℝ)
+    (positive : ∀ i, 0 < r i) : ∃ ε > 0, ∀ i, ε ≤ r i := by
+  classical
+  let := Fintype.ofFinite ι
+  have aux (s : Finset ι) : ∃ ε > 0, ∀ i ∈ s, ε ≤ r i := by
+    induction s using Finset.induction_on with
+    | empty => exact ⟨1, zero_lt_one, by simp⟩
+    | @insert i s hi ih =>
+      obtain ⟨ε, hε, bound⟩ := ih
+      refine ⟨min ε (r i), lt_min hε (positive i), ?_⟩
+      intro j hj
+      rcases Finset.mem_insert.mp hj with rfl | hj
+      · exact min_le_right _ _
+      · exact (min_le_left _ _).trans (bound j hj)
+  obtain ⟨ε, hε, bound⟩ := aux Finset.univ
+  exact ⟨ε, hε, fun i => bound i (Finset.mem_univ i)⟩
+
+end Unfoldings.MetricBarrier
+
+namespace Unfoldings.MetricGluing
+
+universe u v
+
+variable {ι : Type u} (E : ι → Type v) [∀ i, MetricSpace (E i)]
+
+/-- The points of a seam-equivalence class that lie in a specified original cell. -/
+def classIn (glue : Total E → Total E → Prop) (a : Total E) (i : ι) : Set (E i) :=
+  {x | Relation.EqvGen glue a ⟨i, x⟩}
+
+/-- A local transport condition for class points near either side of a seam. -/
+def ClassTransport (glue : Total E → Total E → Prop) (a : Total E) (ε : ℝ) : Prop :=
+  ∀ x y, (glue x y ∨ glue y x) → ∀ z ∈ classIn E glue a x.1,
+    dist x.2 z < ε → ∃ w ∈ classIn E glue a y.1, dist y.2 w ≤ dist x.2 z
+
+/-- Finite classes with a positive local transport radius have no extra metric collapse. -/
+theorem exact_of_finite_classes_of_transport (glue : Total E → Total E → Prop)
+    (finite : ∀ a i, (classIn E glue a i).Finite)
+    (transport : ∀ a, ∃ ε > 0, ClassTransport E glue a ε) : Exact E glue := by
+  intro a b equal
+  obtain ⟨ε, positive, radius⟩ := transport a
+  let f : ∀ i, E i → ℝ := fun i => MetricBarrier.cappedDist ε (classIn E glue a i)
+  have compatible : ∀ x y, glue x y → f x.1 x.2 = f y.1 y.2 := by
+    intro x y h
+    apply le_antisymm
+    · exact MetricBarrier.cappedDist_le_of_transport ε (finite a y.1) y.2 x.2
+        (radius y x (Or.inr h))
+    · exact MetricBarrier.cappedDist_le_of_transport ε (finite a x.1) x.2 y.2
+        (radius x y (Or.inl h))
+  have same : f a.1 a.2 = f b.1 b.2 :=
+    congrArg (lift E glue f (fun i => MetricBarrier.cappedDist_lipschitz ε _) compatible) equal
+  have zero : f a.1 a.2 = 0 :=
+    (MetricBarrier.cappedDist_eq_zero_iff positive (finite a a.1).isClosed a.2).mpr
+      (Relation.EqvGen.refl a)
+  exact (MetricBarrier.cappedDist_eq_zero_iff positive (finite a b.1).isClosed b.2).mp
+    (same.symm.trans zero)
+
+end Unfoldings.MetricGluing
