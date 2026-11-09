@@ -82,7 +82,8 @@ theorem source_coordinates_local_isometry :
     (P.regular_of_not_mem_sourceCutLocus R x.property)
 
 /-- The metric and topological source disk, constructed from the convex boundary alone.
-Finite polygonal descriptions and the cut graph are additional remaining theorems. -/
+Finite polygonal descriptions are supplied in `Source.PolygonalPieces`;
+the graph/tree characterization is separate. -/
 theorem source_disk_properties :
     letI := P.metricSpace
     ∀ {source : C.Realization Set.univ} (R : SourceFrame source),

@@ -424,7 +424,13 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
 
 ## Phase 6 Source unfolding
 
-- [ ] A generic source in a regular face interior and normalized shortest routes.
+The regular-source unfolding target is constructed in `Source/Unfolding.lean`.
+Its hypotheses are geometric convexity and a nonextreme source point; the output
+contains the finite nonoverlapping polygonal net, exact boundary, intrinsic
+completion, disk topology, and all radial shortest-path lifts. The independent
+graph/tree characterization and cone-vertex source frames remain below.
+
+- [x] A generic source in a regular face interior and normalized shortest routes.
   - [x] Construct a source frame at any regular point and full-length planar
     vectors from actual constant-speed shortest paths. Vector norms are source
     distance. Equal vectors force initial agreement and, on convex boundaries,
@@ -563,9 +569,16 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
 - [ ] Apply that criterion to retained source-unfolding interiors.
   Direct source-vector injectivity already proves nonoverlap of the constructed
   interior and completion; applying the abstract criterion is an optional bridge.
-- [ ] Boundary coverage, nonoverlap of every original face piece, and a precise
-  source-unfolding theorem for every convex polyhedron.
-- [ ] Treat nongeneric sources and exceptional route ties as a later extension.
+- [x] Boundary coverage, nonoverlap of every original face piece, and a precise
+  source-unfolding theorem for every convex polyhedron at every nonextreme source.
+  Construct `SourceUnfolding` with a finite `FacePolygonalLayout`, whose pieces
+  map isometrically into the actual completed cut metric and fold by the actual
+  endpoint projection. Record path-distance equality on the cut complement,
+  complete dense inclusion, exact cut boundary, and disk topology. Shortest
+  radial lifts and source-distance preservation follow through all boundary copies.
+- [x] Include nongeneric regular sources on creases and flat subdivision vertices,
+  together with exceptional route ties and all shortest-path boundary copies.
+- [ ] Extend the source frame to genuine cone vertices using sectors.
 
 The radial injectivity criterion is a useful early theorem in its own right.
 It does not assert shortest-path or cut-locus existence and must not hide these

@@ -4,10 +4,33 @@ A Lean library for polyhedral metrics, cuts, and planar developments, with sourc
 unfolding of convex polyhedra as its first major target. Overlapping developments
 are supported; nonoverlap is a separate property and permits boundary contacts.
 
-The design and feature checklist are in [PLAN.md](PLAN.md). The regular source
-development, its intrinsic boundary completion and disk topology are constructed;
-finite cut-graph characterizations remain in progress.
+The design and feature checklist are in [PLAN.md](PLAN.md). Source unfolding is
+constructed at every nonextreme source point: a finite nonoverlapping polygonal
+net, its intrinsic metric completion, disk topology, exact cut boundary, and
+radial shortest-path lifts. The cut locus is an exact finite straight network.
+Its graph/tree characterization and sources at genuine cone vertices remain
+separate extensions.
 The initial library has no placeholder propositions or unfinished proofs.
+
+The main entry point is `P.sourceUnfoldingOfNonextreme source hsource`, where
+`P : F.ConvexBoundary` supplies geometric convexity and `hsource` says the source
+is not an extreme point of the spatial convex hull. `P.sourceUnfolding` accepts
+an intrinsic regularity proof instead. Both return `SourceUnfolding` with the
+constructed data and checked properties. The source may lie on a crease or a
+flat subdivision vertex, and tied shortest paths are included.
+
+Each `U.layout` piece is a compact finite intersection of affine halfplanes,
+with a rigid map into an original triangle. `U.piecePoint_isometry` places it
+isometrically in the actual completed cut metric; `U.piecePoint_projection`
+identifies its folding map with the endpoint projection. `U.intrinsic_distance`
+identifies the retained metric with path distance in the original cut complement.
+`U.radial_shortest_path` and `U.source_distance_preserved` include every boundary
+copy. The general `FacePolygonalLayout` API also supports overlapping layouts;
+`duplicate_overlaps` checks this distinction explicitly.
+
+The source-net theorem uses the radial disk construction and finite affine
+arrangements. It does not depend on a planar-graph Euler formula or a Jordan
+curve theorem; the eventual graph/tree layer is kept separate for upstreaming.
 
 ## Current interfaces
 
@@ -538,6 +561,9 @@ manifold conditions remain open.
 | `Unfoldings.Geometry.CompactCollinear` | Compact convex sets on proper planar affine lines are segments |
 | `Unfoldings.Source.BoundarySegments` | The entire source boundary is exactly a finite union of face-compatible segments |
 | `Unfoldings.Source.CutSegments` | The actual closed source cut locus is exactly a finite straight network in original faces |
+| `Unfoldings.PolygonalLayout` | Finite polygon layouts with separate rigid face maps and optional nonoverlap |
+| `Unfoldings.Source.Net` | A finite nonoverlapping layout with exact source-domain footprint and folding maps |
+| `Unfoldings.Source.Unfolding` | The constructed source-unfolding result at every regular/nonextreme source |
 | `Unfoldings.Examples.*` | Recovery, disconnectedness, shortcuts, contact, and overlap |
 | `Audit` | Transitive axiom check for all imported library declarations |
 

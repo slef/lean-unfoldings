@@ -113,5 +113,6 @@ public import Unfoldings.Source.BoundaryLines
 public import Unfoldings.Source.PolygonalDomain
 public import Unfoldings.Source.PolygonalPieces
 public import Unfoldings.Source.CutSegments
+public import Unfoldings.Source.Unfolding
 public import Unfoldings.Examples.Metric
 public import Unfoldings.Examples.Hinge
