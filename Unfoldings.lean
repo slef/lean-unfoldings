@@ -56,6 +56,7 @@ public import Unfoldings.Polyhedron.FigureCenter
 public import Unfoldings.Polyhedron.ExtremeCurvature
 public import Unfoldings.Polyhedron.ConvexCurvature
 public import Unfoldings.Polyhedron.RegularPoints
+public import Unfoldings.Polyhedron.NonextremeCreases
 public import Unfoldings.Geometry.RaySection
 public import Unfoldings.Geometry.PyramidAngles
 public import Unfoldings.Boundary

@@ -292,6 +292,12 @@ manifold conditions remain open.
 | `Unfoldings.Geometry.TriangleBoundary` | Every noninterior closed triangle point lies on an actual edge |
 | `Unfoldings.Complex.RegularEdges` | Constructed edge charts from either seam bank |
 | `Unfoldings.Polyhedron.RegularPoints` | Every actual nonvertex convex-boundary point is regular |
+| `Unfoldings.Geometry.SpatialPlane` | A rigid spatial plane equals its containing nonzero functional level |
+| `Unfoldings.Geometry.SupportingChord` | Support levels extend from an interior chord point to both endpoints |
+| `Unfoldings.Polyhedron.NonextremeAxis` | All incident planes at a nonextreme vertex share a nonzero direction |
+| `Unfoldings.Geometry.PlaneIntersection` | Distinct spatial planes intersect in their shared nonzero direction line |
+| `Unfoldings.Polyhedron.GermDirections` | Actual radial directions, mate invariance and exact crease intersections |
+| `Unfoldings.Polyhedron.NonextremeCreases` | Every genuine crease at a nonextreme vertex lies along one common axis |
 | `Unfoldings.Geometry.RadialSliceAngles` | Positive radial slicing preserves affine apex angles |
 | `Unfoldings.Geometry.SliceHull` | The whole transverse section is the finite hull of projected generators |
 | `Unfoldings.Geometry.RaySection` | Exact wedge sections and preservation of their genuine apex angles |

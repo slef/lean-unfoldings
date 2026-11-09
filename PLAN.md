@@ -391,6 +391,12 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
       charts at every nonvertex surface point.
     - [ ] Prove the upper angle bound also at nonextreme vertices and obtain
       flatness and regular charts at every nonextreme subdivision vertex.
+      - [x] A body chord through a nonextreme vertex supplies a common nonzero
+        direction in every incident rigid face plane. The intersection of
+        distinct incident planes is the actual seam direction line, so every
+        genuine crease lies along that one common axis.
+      - [ ] Use embeddedness to limit axis-ray repetitions and prove the
+        coplanar link arcs give one full turn, then transfer the flat charts.
 
 ## Phase 6 Source unfolding
 

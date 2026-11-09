@@ -2,6 +2,23 @@
 
 ## Session Log
 
+### 2026-11-09 — common axes at nonextreme subdivision vertices
+
+- Proved a rigid two-dimensional spatial plane equals any nonzero functional
+  level containing it. A supporting functional attaining its bound inside
+  a body chord has that same value at both chord endpoints.
+- Applied a nontrivial body chord through each nonextreme vertex to derive
+  a common nonzero direction in every actual incident face plane.
+- Proved distinct two-dimensional spatial planes intersect in the line of
+  any shared nonzero vector. Actual germ directions are nonzero, lie in
+  their face planes, and are preserved by seam mates.
+- Consequently every genuine crease at a nonextreme vertex lies along the
+  one derived axis. Flatness still requires limiting repeated axis rays and
+  measuring the coplanar link arcs; source unfolding remains open.
+- Verification: selected cache fetch and full `lake build` pass; the audit
+  checks 2143 declarations with only standard Lean axioms; `git diff --check`
+  passes.
+
 ### 2026-11-09 — derived closedness and nonvertex regularity
 
 - Constructed continuous gauge projection onto a bounded convex frontier,
