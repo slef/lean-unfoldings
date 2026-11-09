@@ -509,6 +509,10 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
     finite support to the closed cut locus, including cone leaves.
   - [x] Transport the supports by finite actual face motions to obtain finitely
     many nonzero affine equations containing the entire developed boundary.
+  - [x] Prove the general affine-arrangement theorem: regular closed sets with
+    finite proper hyperplane boundary supports are finite unions of closed
+    chambers. Apply it to obtain a compact convex halfplane polygon cover of
+    the source domain with nonempty, pairwise-disjoint polygon interiors.
 - [x] Every nonflat vertex belongs to the closed cut locus, including leaves
   with a unique incoming geodesic.
 - [x] The completed slit surface is a flat disk with identified boundary copies.

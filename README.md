@@ -529,6 +529,8 @@ manifold conditions remain open.
 | `Unfoldings.Source.Bisectors` | Distinct shortest paths in a face interior determine distinct virtual-source images |
 | `Unfoldings.Source.CutSupport` | Closed finite supports for all cut points, including cone leaves |
 | `Unfoldings.Source.BoundaryLines` | The entire developed boundary lies on finitely many proper affine lines |
+| `Unfoldings.Geometry.AffineArrangement` | General finite affine chamber covers of regular closed sets |
+| `Unfoldings.Source.PolygonalDomain` | A finite cover of the source disk by compact convex polygons with disjoint interiors |
 | `Unfoldings.Examples.*` | Recovery, disconnectedness, shortcuts, contact, and overlap |
 | `Audit` | Transitive axiom check for all imported library declarations |
 
