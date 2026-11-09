@@ -89,6 +89,8 @@ which edges were used.
 - [x] Developments descend to nonexpanding maps on the cut metric.
 - [x] A consistent rigid development makes each face map isometric.
 - [x] The opposite-side condition implies disjoint interiors at retained hinges.
+- [x] Extend any closed-edge isometry to a planar rigid motion; construct an
+  outward hinge placement and a nonoverlapping development for every two-triangle hinge.
 - [x] Separate nonoverlap predicate and finite multiplicity.
 - [x] Nonoverlap equivalent to multiplicity at most one.
 - [x] Halfplane and finite-vertex separation certificates.
@@ -173,8 +175,10 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
 
 - [ ] A minimal convex-polyhedron adapter, keeping maximal facets separate from
   its input triangulation.
-- [ ] Continuous surface paths and length via Mathlib total variation.
-- [ ] Path reversal, joining, restriction and constant-speed reparameterization.
+- [x] Extended length for continuous paths in arbitrary extended pseudometric
+  spaces, via Mathlib total variation; chord bound, reversal, concatenation,
+  Lipschitz bounds and preservation by isometries.
+- [ ] Surface-path adapters, restriction and constant-speed reparameterization.
 - [ ] Shortest-path existence via compactness and lower semicontinuity.
 - [ ] Intrinsic surface metric, correct topology, compactness and geodesics.
 - [ ] Intrinsic distance on an embedded planar facet equals its Euclidean chord.

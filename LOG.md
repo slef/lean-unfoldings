@@ -2,6 +2,23 @@
 
 ## Session Log
 
+### 2026-11-09 — constructed hinges and continuous path length
+
+- Extended arbitrary closed-segment isometric embeddings to planar rigid
+  motions. Constructed edge-line reflection and proved its signed-area reversal.
+- Constructed strict outward hinge placements and nonoverlapping developments
+  for arbitrary nondegenerate triangles with full-edge isometric pairings.
+- Added `Path.eLength` for arbitrary extended pseudometric targets. Proved the
+  chord lower bound, reversal and concatenation formulas, Lipschitz bounds and
+  invariance under isometries.
+- Rechecked the EdgeUnfoldings reference at the same pinned commit. Its generic
+  variation arguments are useful for path length and bounded-speed compactness;
+  its shortest-branch continuation results inspected here impose additional
+  small-polyhedron hypotheses and cannot be used as general convex-surface facts.
+- Verification: selected cache fetches for reflection and bounded variation;
+  `lake build` and `git diff --check` pass. The audit checks 566 declarations.
+- Constant-speed replacement and shortest-path existence are next.
+
 ### 2026-11-09 — face-interior metric charts
 
 - Proved quantitative seam-clearance estimates for general metric-cell gluing.

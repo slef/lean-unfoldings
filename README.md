@@ -41,6 +41,12 @@ The initial library has no placeholder propositions or unfinished proofs.
 - `FacewiseDevelopment.Nonoverlapping` means disjoint face interiors and is
   equivalent to multiplicity at most one. Linear separators checked on corners
   certify whole-cell nonoverlap.
+- `Hinge.development` constructs a nonoverlapping development of any two
+  triangles with a full-edge isometric pairing. The construction extends the
+  edge isometry to a rigid motion and reflects it if needed to open outward.
+- `Path.eLength` measures continuous paths by total variation, allowing
+  infinite length. Reversal, concatenation, Lipschitz bounds and invariance
+  under isometries are proved independently of polyhedra.
 - `injective_of_radial_paths` proves injectivity of a locally injective map
   when paths from one fixed source develop to radial segments. This isolates
   the eventual source-unfolding argument without assuming shortest-path or
@@ -72,6 +78,8 @@ Paired-edge/vertex charts and manifold conditions remain to be constructed.
 | `Unfoldings.Geometry.Edge` | Edge intersections and endpoint preservation by isometries |
 | `Unfoldings.Geometry.Halfplane` | Supporting heights and finite corner bounds |
 | `Unfoldings.Geometry.Interior` | Interior clearance and Euclidean cell balls |
+| `Unfoldings.Geometry.Affine` | Rigid edge extensions and line reflection |
+| `Unfoldings.Geometry.Placement` | Constructed strict outward hinge placements |
 | `Unfoldings.Complex` | Finite edge-paired complexes and their cut realizations |
 | `Unfoldings.Complex.Classes` | Finite corner classes and unique nonvertex seam neighbors |
 | `Unfoldings.Complex.Exact` | Exact metric identifications and quotient homeomorphism |
@@ -79,6 +87,8 @@ Paired-edge/vertex charts and manifold conditions remain to be constructed.
 | `Unfoldings.Boundary` | Boundary-edge labels, bank maps, and restoration of banks |
 | `Unfoldings.Boundary.Exact` | Metric separation of distinct cut-bank interiors |
 | `Unfoldings.Development` | Facewise placements, nonoverlap, multiplicity, and metric descent |
+| `Unfoldings.Development.Hinge` | Nonoverlapping developments of arbitrary two-triangle hinges |
+| `Unfoldings.Path.Length` | Continuous-path length and its composition laws |
 | `Unfoldings.Geometry.Separation` | Corner certificates for whole-cell separation |
 | `Unfoldings.Geometry.Hinge` | Opposite sides imply adjacent-cell nonoverlap |
 | `Unfoldings.Source.Radial` | Injectivity from uniqueness of radial lifts |
@@ -112,10 +122,12 @@ lake exe cache get Mathlib.Analysis.InnerProductSpace.PiL2 \
   Mathlib.Analysis.Normed.Affine.Isometry \
   Mathlib.Analysis.Normed.Operator.Banach \
   Mathlib.Analysis.Convex.StrictConvexBetween Mathlib.Analysis.InnerProductSpace.Convex \
+  Mathlib.Analysis.InnerProductSpace.Projection.Reflection \
   Mathlib.Topology.EMetricSpace.Lipschitz \
   Mathlib.Logic.Relation Mathlib.Topology.Separation.Hausdorff \
   Mathlib.Topology.UniformSpace.Cauchy \
   Mathlib.Topology.MetricSpace.HausdorffDistance Mathlib.Topology.MetricSpace.Lipschitz \
+  Mathlib.Topology.EMetricSpace.BoundedVariation \
   Mathlib.Topology.IsLocalHomeomorph \
   Mathlib.Topology.Instances.Real.Lemmas \
   Mathlib.Tactic.FinCases Mathlib.Tactic.FieldSimp Mathlib.Tactic.Ring \
@@ -134,3 +146,5 @@ The design also uses ideas from
 [slef/EdgeUnfoldings](https://github.com/slef/EdgeUnfoldings/tree/56caca8cdc44dbc2f839e93808088d56ea3f0780/lean_statement),
 particularly whole-face separation certificates and transitive axiom auditing.
 No six-vertex classification theorem is a dependency of this library.
+The generic path-length extension and concatenation proofs adapt its variation
+arguments in `ArcLength`, `SurfacePathJoining`, and `SurfacePathReversal`.

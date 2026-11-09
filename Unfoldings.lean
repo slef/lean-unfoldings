@@ -13,6 +13,9 @@ public import Unfoldings.Boundary
 public import Unfoldings.Boundary.Exact
 public import Unfoldings.Development
 public import Unfoldings.Geometry.Hinge
+public import Unfoldings.Geometry.Placement
+public import Unfoldings.Development.Hinge
+public import Unfoldings.Path.Length
 public import Unfoldings.Source.Radial
 public import Unfoldings.Examples.Metric
 public import Unfoldings.Examples.Hinge
