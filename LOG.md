@@ -2,6 +2,23 @@
 
 ## Session Log
 
+### 2026-11-09 — nondegenerate planar vertex figures
+
+- Proved a positive transverse section below a body point meets the ambient
+  interior of a convex body. Constructed an interior center for each actual
+  extreme-vertex section while retaining its finite-hull description.
+- Constructed Euclidean affine coordinates on every nonzero functional level
+  plane in spatial dimension three, using its two-dimensional kernel and an
+  orthonormal basis.
+- Constructed actual planar vertex figures from convex-boundary data. Proved
+  their carriers compact and convex, exactly the hull of finitely many radial
+  corner generators, with zero in their interior. The generators span the
+  plane and are noncollinear; their boundary is homeomorphic to a circle.
+- Verification: selected cache fetch and full `lake build` pass; the audit
+  checks 1958 declarations, and `git diff --check` passes.
+- The actual link's polygon boundary order and planar angle sum remain to
+  connect these figures to the convex angle bound. Source unfolding is open.
+
 ### 2026-11-09 — complete slice hulls and spatial tangent embeddings
 
 - Proved the full transverse body section equals the convex hull of all

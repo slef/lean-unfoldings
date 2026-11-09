@@ -28,6 +28,17 @@ universe u v
 variable {Face : Type u} [Fintype Face] {C : TriangleComplex.{u, v} Face}
   (F : SpatialFolding C)
 
+theorem exists_corner_ne_vertex (v : C.Vertex Set.univ) :
+    ∃ c : Face × Fin 3, F.place c.1 ((C.triangle c.1).vertex c.2) ≠
+      F.toSpace Set.univ (C.vertexPoint Set.univ v) := by
+  obtain ⟨⟨face, i⟩, representative⟩ := C.vertexOfCorner_surjective Set.univ v
+  refine ⟨(face, Triangle.next i), ?_⟩
+  rw [← representative]
+  change F.place face ((C.triangle face).vertex (Triangle.next i)) ≠
+    F.place face ((C.triangle face).vertex i)
+  intro equal
+  exact (C.triangle face).edge_endpoints_ne i ((F.place face).injective equal).symm
+
 theorem exists_vertexSlice (v : C.Vertex Set.univ)
     (extreme : F.toSpace Set.univ (C.vertexPoint Set.univ v) ∈ F.vertexHull.extremePoints ℝ) :
     ∃ (f : Space →L[ℝ] ℝ) (h : ℝ), f ≠ 0 ∧ 0 < h ∧
@@ -41,19 +52,9 @@ theorem exists_vertexSlice (v : C.Vertex Set.univ)
           (F.place c.1 ((C.triangle c.1).vertex c.2)) ∈
             radialSlice F.vertexHull f (F.toSpace Set.univ (C.vertexPoint Set.univ v)) h := by
   let corners (c : Face × Fin 3) := F.place c.1 ((C.triangle c.1).vertex c.2)
-  let x := F.toSpace Set.univ (C.vertexPoint Set.univ v)
   obtain ⟨f, h, positive, projected⟩ := exists_radialSlice_of_finite_hull_extreme
     (Set.finite_range corners) extreme
-  obtain ⟨⟨face, i⟩, representative⟩ := C.vertexOfCorner_surjective Set.univ v
-  have apex : x = F.place face ((C.triangle face).vertex i) := by
-    dsimp only [x]
-    rw [← representative]
-    rfl
-  let c : Face × Fin 3 := (face, Triangle.next i)
-  have different : corners c ≠ x := by
-    rw [apex]
-    intro equal
-    exact (C.triangle face).edge_endpoints_ne i ((F.place face).injective equal).symm
+  obtain ⟨c, different⟩ := F.exists_corner_ne_vertex v
   have generator := projected (corners c) ⟨c, rfl⟩ different
   have nonzero : f ≠ 0 := by
     intro zero

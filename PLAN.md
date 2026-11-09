@@ -351,6 +351,10 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
     - [x] The whole transverse body section is exactly the convex hull of
       the radial projections of the other generators, via rescaled finite
       barycentric weights. Apply this to every actual spatial extreme vertex.
+    - [x] Construct an ambient interior center in that same section and
+      affine Euclidean coordinates on its level plane. Obtain an actual
+      compact convex planar vertex figure, with zero in its interior,
+      finitely many noncollinear hull generators and a circular boundary.
     - [x] Sum the lateral triangle angle budgets. A transverse apex gives
       strictness at every nonstraight base corner.
     - [ ] Construct and order the vertex-figure polygon from the actual

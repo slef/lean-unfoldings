@@ -231,6 +231,10 @@ manifold conditions remain open.
 | `Unfoldings.Geometry.ExtremeSeparation` | Strict finite-hull supporting functionals with a uniform margin |
 | `Unfoldings.Geometry.RadialSlice` | Actual compact convex level sections and radial generator projections |
 | `Unfoldings.Polyhedron.VertexSlice` | Constructed nonempty transverse sections at spatial extreme vertices |
+| `Unfoldings.Geometry.SliceInterior` | Transverse sections meet the ambient interior of the convex body |
+| `Unfoldings.Polyhedron.VertexSliceInterior` | Actual vertex sections with a spatial interior center |
+| `Unfoldings.Geometry.FunctionalPlane` | Constructed affine Euclidean coordinates on nonzero functional level planes |
+| `Unfoldings.Polyhedron.VertexFigure` | Compact convex planar vertex figures, finite hulls, interior centers and circular boundaries |
 | `Unfoldings.Geometry.SliceHull` | The whole transverse section is the finite hull of projected generators |
 | `Unfoldings.Geometry.RaySection` | Exact wedge sections and preservation of their genuine apex angles |
 | `Unfoldings.Geometry.AngleSeparation` | Strict angular inequality through a direction outside a level plane |
