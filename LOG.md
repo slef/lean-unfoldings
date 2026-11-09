@@ -2,6 +2,25 @@
 
 ## Session Log
 
+### 2026-11-09 — hinge neighborhoods and metric localization
+
+- Proved barycentric reconstruction, exact edge membership, and proportionality
+  of affine supporting functions vanishing along an edge.
+- Proved that outward hinge triangles intersect exactly in their shared edge
+  and cover a planar ball around every nonvertex seam point. Chords crossing
+  the two sides meet the actual seam, giving intrinsic distance upper bounds
+  in a full triangle complex.
+- Added a generic short-route localization theorem: a local nonexpanding step
+  estimate gives a metric lower bound whenever the radius budget is satisfied.
+- Exposed quantitative capped-distance class barriers. Small metric balls at
+  a nonvertex seam class use only its two tagged representatives; for distinct
+  incident faces the coordinate distances are controlled by intrinsic distance.
+- Added retained-face connectivity, ordinary intrinsic metrics for connected
+  complexes, and geodesics between all pairs in those complexes.
+- Verification: `lake build` audits 741 declarations; `git diff --check` passes.
+- The paired-edge chart still needs the local model map and its lower-bound
+  application; no full paired-edge chart is claimed at this milestone.
+
 ### 2026-11-09 — boundary half-ball charts
 
 - Constructed the affine basis and barycentric coordinate functions for every

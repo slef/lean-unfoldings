@@ -148,6 +148,10 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
   at nonvertex triangle-edge points.
 - [x] Constructed isometries from Euclidean half-disks onto intrinsic open balls
   at every nonvertex point of an unpaired boundary bank.
+- [x] Outward hinge triangles intersect exactly in their seam and cover an
+  edge-interior planar neighborhood; local chords give intrinsic upper bounds.
+- [x] Quantitative class barriers and short-route localization for local metric
+  lower bounds without a global development premise.
 - [ ] Local Euclidean disks at paired-edge interiors.
 - [ ] Cone/sector neighborhoods at cyclic/interval vertex links.
 - [ ] Curvature is derived from the incident triangle angles.

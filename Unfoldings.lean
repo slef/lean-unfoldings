@@ -6,10 +6,13 @@ public import Unfoldings.Metric.Gluing
 public import Unfoldings.Metric.Quotient
 public import Unfoldings.Metric.Unglued
 public import Unfoldings.Metric.ClosedSeams
+public import Unfoldings.Metric.LocalMap
 public import Unfoldings.Complex
 public import Unfoldings.Complex.Exact
 public import Unfoldings.Complex.Charts
 public import Unfoldings.Complex.Paths
+public import Unfoldings.Complex.Connectivity
+public import Unfoldings.Complex.Hinge
 public import Unfoldings.Boundary
 public import Unfoldings.Boundary.Exact
 public import Unfoldings.Boundary.Charts

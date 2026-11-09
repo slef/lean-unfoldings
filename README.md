@@ -81,6 +81,7 @@ Paired-edge and vertex charts, and the full manifold conditions, remain to be co
 | `Unfoldings.Metric.Barrier` | Capped distance separators and local class transport |
 | `Unfoldings.Metric.ClosedSeams` | Exactness for closed isometric seams with finite classes |
 | `Unfoldings.Metric.Local` | Seam clearance, metric ball images, and local cell isometries |
+| `Unfoldings.Metric.LocalMap` | Metric lower bounds from estimates on short local routes |
 | `Unfoldings.Metric.FiniteComponent` | Clopen finite-distance components as compact metric spaces |
 | `Unfoldings.Metric.Paths` | Continuous-path/route metric equality and shortest metric paths |
 | `Unfoldings.Geometry.Triangle` | Nondegenerate cells and full edge subspaces |
@@ -88,6 +89,8 @@ Paired-edge and vertex charts, and the full manifold conditions, remain to be co
 | `Unfoldings.Geometry.Halfplane` | Supporting heights and finite corner bounds |
 | `Unfoldings.Geometry.Interior` | Interior clearance and Euclidean cell balls |
 | `Unfoldings.Geometry.Barycentric` | Affine coordinates and local edge half-planes |
+| `Unfoldings.Geometry.EdgeSides` | Edge membership and proportional supporting coordinates |
+| `Unfoldings.Geometry.HingePatch` | Exact hinge intersections and local planar coverage |
 | `Unfoldings.Geometry.Paths` | Straight paths in triangle cells with exact Euclidean length |
 | `Unfoldings.Geometry.Affine` | Rigid edge extensions and line reflection |
 | `Unfoldings.Geometry.Placement` | Constructed strict outward hinge placements |
@@ -96,6 +99,8 @@ Paired-edge and vertex charts, and the full manifold conditions, remain to be co
 | `Unfoldings.Complex.Exact` | Exact metric identifications and quotient homeomorphism |
 | `Unfoldings.Complex.Charts` | Constructed face-interior Euclidean metric charts |
 | `Unfoldings.Complex.Paths` | Intrinsic path metric and geodesic existence for cut complexes |
+| `Unfoldings.Complex.Neighborhood` | Quantitative neighborhoods of two-face seam classes |
+| `Unfoldings.Complex.Hinge` | Intrinsic upper bounds from local unfolded hinge chords |
 | `Unfoldings.Boundary` | Boundary-edge labels, bank maps, and restoration of banks |
 | `Unfoldings.Boundary.Exact` | Metric separation of distinct cut-bank interiors |
 | `Unfoldings.Boundary.Charts` | Constructed half-ball metric charts at boundary edge interiors |

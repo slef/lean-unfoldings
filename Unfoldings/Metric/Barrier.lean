@@ -28,6 +28,24 @@ def cappedDist (ε : ℝ) (s : Set X) : X → ℝ := by
   classical
   exact if s.Nonempty then (fun x => min ε (infDist x s)) else fun _ => ε
 
+@[simp] theorem cappedDist_empty (ε : ℝ) (x : X) : cappedDist ε ∅ x = ε := by
+  simp [cappedDist]
+
+@[simp] theorem cappedDist_singleton (ε : ℝ) (a x : X) :
+    cappedDist ε {a} x = min ε (dist x a) := by simp [cappedDist, infDist_singleton]
+
+theorem cappedDist_nonneg {ε : ℝ} (nonneg : 0 ≤ ε) (s : Set X) (x : X) :
+    0 ≤ cappedDist ε s x := by
+  classical
+  unfold cappedDist
+  split
+  · exact le_min nonneg infDist_nonneg
+  · exact nonneg
+
+theorem cappedDist_of_mem {ε : ℝ} (nonneg : 0 ≤ ε) {s : Set X} {x : X} (inside : x ∈ s) :
+    cappedDist ε s x = 0 := by
+  simp [cappedDist, Set.nonempty_of_mem inside, infDist_zero_of_mem inside, min_eq_right nonneg]
+
 theorem cappedDist_le (ε : ℝ) (s : Set X) (x : X) : cappedDist ε s x ≤ ε := by
   classical
   simp only [cappedDist]
@@ -139,6 +157,39 @@ def classIn (glue : Total E → Total E → Prop) (a : Total E) (i : ι) : Set (
 def ClassTransport (glue : Total E → Total E → Prop) (a : Total E) (ε : ℝ) : Prop :=
   ∀ x y, (glue x y ∨ glue y x) → ∀ z ∈ classIn E glue a x.1,
     dist x.2 z < ε → ∃ w ∈ classIn E glue a y.1, dist y.2 w ≤ dist x.2 z
+
+/-- The capped distance to the copies of one seam class in each original cell. -/
+def classBarrier (glue : Total E → Total E → Prop) (a : Total E) (ε : ℝ) (i : ι) : E i → ℝ :=
+  MetricBarrier.cappedDist ε (classIn E glue a i)
+
+theorem classBarrier_compatible (glue : Total E → Total E → Prop) (a : Total E) (ε : ℝ)
+    (finite : ∀ i, (classIn E glue a i).Finite) (transport : ClassTransport E glue a ε) :
+    ∀ x y, glue x y → classBarrier E glue a ε x.1 x.2 = classBarrier E glue a ε y.1 y.2 := by
+  intro x y h
+  apply le_antisymm
+  · exact MetricBarrier.cappedDist_le_of_transport ε (finite y.1) y.2 x.2
+      (transport y x (Or.inr h))
+  · exact MetricBarrier.cappedDist_le_of_transport ε (finite x.1) x.2 y.2
+      (transport x y (Or.inl h))
+
+theorem classBarrier_center (glue : Total E → Total E → Prop) (a : Total E) {ε : ℝ}
+    (nonneg : 0 ≤ ε) : classBarrier E glue a ε a.1 a.2 = 0 :=
+  MetricBarrier.cappedDist_of_mem nonneg (Relation.EqvGen.refl a)
+
+/-- Compatible class barriers are quantitative lower bounds for distance from the class. -/
+theorem classBarrier_le_edist (glue : Total E → Total E → Prop) (a : Total E) {ε : ℝ}
+    (nonneg : 0 ≤ ε) (finite : ∀ i, (classIn E glue a i).Finite)
+    (transport : ClassTransport E glue a ε) (b : Total E) :
+    ENNReal.ofReal (classBarrier E glue a ε b.1 b.2) ≤ edist (point E glue a) (point E glue b) := by
+  change ENNReal.ofReal (classBarrier E glue a ε b.1 b.2) ≤ Route.distance (stepCost E glue) a b
+  have bound := map_edist_le E glue (classBarrier E glue a ε)
+    (fun i => MetricBarrier.cappedDist_lipschitz ε _)
+    (classBarrier_compatible E glue a ε finite transport) a b
+  rw [classBarrier_center E glue a nonneg] at bound
+  have nonnegative : 0 ≤ classBarrier E glue a ε b.1 b.2 :=
+    MetricBarrier.cappedDist_nonneg nonneg _ _
+  simpa only [edist_dist, Real.dist_eq, zero_sub, abs_neg,
+    abs_of_nonneg nonnegative] using bound
 
 /-- Finite classes with a positive local transport radius have no extra metric collapse. -/
 theorem exact_of_finite_classes_of_transport (glue : Total E → Total E → Prop)
