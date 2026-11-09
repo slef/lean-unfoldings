@@ -434,8 +434,8 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
   - [x] Construct geodesic prefix splices and derive unique continuation from
     a final interval. Prove every proper positive-time prefix is unique, so
     nonunique source endpoints occur only as terminal points of shortest paths.
-  - [ ] Prove local stability and exclusion of the closed cut locus at proper
-    prefix times.
+  - [x] Prove local stability and exclusion of the closed cut locus at every
+    proper prefix time, using terminal affine charts and compact endpoint fibers.
   - [x] Construct bounded finite face-contained partitions of every geodesic
     on an embedded triangle complex, with at most `2 * card Face + 1` pieces,
     exact affine parametrizations, and exact total spatial chord length.
@@ -448,11 +448,16 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
   - [x] Construct actual continuous injective planar source coordinates there;
     their norms equal source distance. Prove they are isometric on the whole
     source chart ball.
-  - [ ] Propagate that local metric statement along retained shortest paths.
+  - [x] Propagate the actual source formula along every wholly regular shortest
+    path, and construct local isometries at every regular retained endpoint.
+  - [ ] Show the retained region contains no extreme cone endpoints.
     - [x] Extend actual isometric open-ball maps to whole affine isometries
       using strict convexity and radial sample compatibility.
     - [x] Recenter open metric charts and construct rigid affine transitions
       on whole ambient neighborhoods of their common points.
+    - [x] Construct uniform path neighborhoods for whole compact chart intervals,
+      continue affine identities through actual overlaps, and perform finite
+      induction over a strictly ordered chart partition.
   Cone vertices can be cut-locus leaves with a unique incoming geodesic, so the
   nonuniqueness set alone is not the complete closed cut locus.
 - [ ] Finite face-sequence descriptions and local Voronoi descriptions.

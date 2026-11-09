@@ -89,9 +89,11 @@ The initial library has no placeholder propositions or unfinished proofs.
   `sourceCutLocus` is the closure of nonunique endpoints and misses a whole
   source ball. Off the closed cut locus, the unique shortest path varies
   continuously; its actual source coordinates are continuous and injective,
-  and are isometric on the whole source chart ball. Propagation of that metric
-  statement, the completed slit interpretation, and finite cut-locus tree
-  structure remain open.
+  and are locally isometric at every regular retained point. Terminal affine
+  charts are constructed along whole regular paths and uniformly for nearby
+  shortest paths. Every proper prefix avoids the closed cut locus. Inclusion
+  of extreme cone endpoints in that cut locus, the completed slit interpretation,
+  and finite cut-locus tree structure remain open.
 - `SpatialFolding` gives compatible rigid placements into three-dimensional
   space. Every original face is isometric for every cut metric. Spatial
   injectivity is separate and gives a homeomorphism onto the triangle union.
@@ -410,6 +412,20 @@ manifold conditions remain open.
 | `Unfoldings.Geometry.BallRigidity` | Actual isometric open-ball maps extend to whole affine isometries |
 | `Unfoldings.Metric.OpenChart` | Recenter open isometric charts on whole ambient balls |
 | `Unfoldings.Metric.RigidChartTransition` | Construct rigid affine transitions between actual overlapping metric charts |
+| `Unfoldings.Metric.RegularLocus` | Metric regularity is open and open charts recenter to whole metric balls |
+| `Unfoldings.Geometry.RealAffine` | Two distinct real samples determine an affine map |
+| `Unfoldings.Path.AffineSamples` | Continue geodesic coordinate identities across a whole chart interval |
+| `Unfoldings.Path.ChartPartition` | Finite strictly ordered chart partitions of actual regular paths |
+| `Unfoldings.Source.PathNeighborhood` | Uniform stability in charts on whole compact time intervals |
+| `Unfoldings.Source.ChartTrace` | Construct the next affine chart trace for every nearby shortest path |
+| `Unfoldings.Source.InitialTrace` | Construct actual affine source traces on a whole path neighborhood |
+| `Unfoldings.Source.TerminalTrace` | Finite continuation constructs a terminal affine chart from regularity |
+| `Unfoldings.Source.EndpointChart` | An actual affine endpoint formula for all nearby shortest paths |
+| `Unfoldings.Source.EndpointStability` | Singleton fibers control every shortest path to nearby endpoints |
+| `Unfoldings.Source.RegularUnique` | Unique paths to regular endpoints avoid the closed source cut locus |
+| `Unfoldings.Source.PrefixCutAvoidance` | Every proper shortest-path prefix avoids the closed cut locus |
+| `Unfoldings.Source.LocalIsometry` | Actual local distance preservation from constructed terminal charts |
+| `Unfoldings.Source.ConvexLocalIsometry` | Local source isometries at every regular retained convex-surface point |
 | `Unfoldings.Examples.*` | Recovery, disconnectedness, shortcuts, contact, and overlap |
 | `Audit` | Transitive axiom check for all imported library declarations |
 

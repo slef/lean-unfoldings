@@ -88,5 +88,7 @@ public import Unfoldings.Complex.FaceRoutes
 public import Unfoldings.Source.ConvexOffCutCoordinates
 public import Unfoldings.Source.SourceBall
 public import Unfoldings.Metric.RigidChartTransition
+public import Unfoldings.Source.PrefixCutAvoidance
+public import Unfoldings.Source.ConvexLocalIsometry
 public import Unfoldings.Examples.Metric
 public import Unfoldings.Examples.Hinge

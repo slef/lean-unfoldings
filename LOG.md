@@ -2,6 +2,31 @@
 
 ## Session Log
 
+### 2026-11-09 — terminal source charts, regular local isometries and closed-cut avoidance
+
+- Proved metric regularity is open and whole compact parameter intervals stay
+  in an open chart under sufficiently small uniform path perturbations.
+- Proved isometric coordinates of a geodesic interval are affine in its original
+  real time. Any two distinct samples identify this affine map on the whole
+  interval, including after a rigid chart placement.
+- Constructed the initial source trace for a whole path-space neighborhood.
+  Constructed each transition using a common ambient ball and two retained
+  samples; finite chart stability proves the formula for all nearby paths.
+- Chose an actual finite strictly ordered chart partition of every regular
+  reference path. Finite induction constructs a terminal affine endpoint chart
+  formula; the reference path's regularity is the sole local geometry premise.
+- Proved compact endpoint-fiber stability at a unique path without assuming
+  that nearby endpoints are unique. Combined it with the terminal formula and
+  source-vector injectivity to exclude ties on a whole endpoint neighborhood.
+- A unique path to a regular convex-boundary endpoint therefore lies off the
+  closed source cut locus. Every proper prefix avoids that closed cut locus,
+  strengthening the earlier exclusion of only the nonunique-endpoint set.
+- Constructed local isometries of the actual source coordinates at every
+  regular retained point.
+- Verification: selected cache fetch and full `lake build` pass; the audit
+  checks **2,641 declarations**, using only the standard Lean axioms. Cone-vertex cut inclusion and the completed boundary
+  interpretation remain open, as do finite Voronoi and cut-tree results.
+
 ### 2026-11-09 — rigid extension of ball maps and actual metric-chart transitions
 
 - Proved isometric maps on convex subsets preserve every affine segment
