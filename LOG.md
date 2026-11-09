@@ -2,6 +2,23 @@
 
 ## Session Log
 
+### 2026-11-09 — directed actual/angular fan comparison
+
+- Constructed angular-bisector reflections exchanging the two sector banks.
+  Directed rigid corner frames follow each actual initial link germ and send
+  the two banks to the expected rays at their exact metric radii.
+- Proved barycentric bank equations for actual radial seam points, including
+  endpoint reversals. Constructed actual glue witnesses at every prescribed
+  nonnegative radius by scaling the opposite original edge endpoint.
+- Used the actual seam and endpoint data at each ordered corner transition
+  to descend a nonexpanding angular-to-tangent comparison through the route
+  metrics. It is surjective for a covering link order, maps apex to apex and
+  preserves all distances from the apex. No spatial folding is assumed.
+- Verification: selected cache fetch and `lake build` pass; the audit checks
+  1584 declarations, and `git diff --check` passes.
+- The inverse comparison for interval links, cyclic closure, flat charts and
+  source unfolding remain open.
+
 ### 2026-11-09 — constructed slit angular fans
 
 - Constructed nonempty finite fans of actual closed Euclidean sectors, with

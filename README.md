@@ -152,6 +152,11 @@ Vertex charts, self-paired-edge charts, and the full manifold conditions remain 
 | `Unfoldings.Cone.AngularFan` | Slit sector fans, cumulative real headings and planar developments |
 | `Unfoldings.Cone.AngularMetric` | Common fan apex, exact radial distances and ordinary metric |
 | `Unfoldings.Cone.LinkAngles` | Genuine angle lists from the constructed retained-link order |
+| `Unfoldings.Cone.SectorReflection` | Isometric bank exchange by angular-bisector reflection |
+| `Unfoldings.Cone.CornerDirection` | Actual corner frames oriented by the chosen initial germ |
+| `Unfoldings.Cone.SeamRadius` | Actual radial seam witnesses at every nonnegative radius |
+| `Unfoldings.Cone.GermFrames` | Exact initial/terminal coordinates on the actual radial banks |
+| `Unfoldings.Cone.LinkComparison` | Surjective nonexpanding angular-to-tangent comparison |
 | `Unfoldings.Metric.Excision` | Whole-ball isometries when cutting distant seams |
 | `Unfoldings.Complex.Excision` | Metric excision and preserved triangle-complex point classes |
 | `Unfoldings.Complex.Star` | Actual vertex stars, conserved angles and local metric comparisons |

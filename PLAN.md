@@ -241,6 +241,14 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
 - [ ] Identify the slit angular fan with the corresponding actual tangent
   wedges, respecting the first/last germ orientation, and close flat cyclic
   fans when their total angle is a full turn.
+  - [x] Rigid sector reflection exchanges the banks; directed actual corner
+    frames follow the initial/terminal germ convention.
+  - [x] Actual radial seam witnesses exist at every prescribed nonnegative
+    radius, with matching radii and exact directed-frame coordinates.
+  - [x] The angular-to-tangent comparison descends from the actual seams,
+    preserves every apex distance, and is surjective for a covering link order.
+    No spatial folding is needed.
+  - [ ] Prove the inverse comparison for interval links and close cyclic links.
 - [ ] A radially slit fan is nonoverlapping **iff** its total angle is at most
   `2 * Real.pi`.
 - [ ] At equality the terminal banks may coincide; above a full turn there is
