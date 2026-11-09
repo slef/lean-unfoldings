@@ -12,6 +12,7 @@ public import Unfoldings.Complex.Charts
 public import Unfoldings.Complex.Paths
 public import Unfoldings.Boundary
 public import Unfoldings.Boundary.Exact
+public import Unfoldings.Boundary.Charts
 public import Unfoldings.Development
 public import Unfoldings.Geometry.Hinge
 public import Unfoldings.Geometry.Placement

@@ -2,6 +2,19 @@
 
 ## Session Log
 
+### 2026-11-09 — boundary half-ball charts
+
+- Constructed the affine basis and barycentric coordinate functions for every
+  triangle. Characterized carrier/interior membership by coordinate signs.
+- Proved that nonvertex edge points have positive endpoint coordinates,
+  zero opposite coordinate, and positive clearance from the other two edges.
+  This gives an actual local supporting-half-plane description.
+- Proved clearance of every nonvertex unpaired-bank point from retained seams.
+  Constructed isometries from Euclidean half-balls onto entire intrinsic open
+  balls in the cut realization, agreeing with the original bank's face map.
+- Verification: `lake build`, the transitive axiom audit, and `git diff --check`.
+- Paired-edge and vertex charts remain open.
+
 ### 2026-11-09 — geodesics for constructed cut metrics
 
 - Constructed straight paths in triangle cells with exactly their Euclidean

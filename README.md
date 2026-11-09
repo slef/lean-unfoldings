@@ -36,6 +36,8 @@ The initial library has no placeholder propositions or unfinished proofs.
   points. Distinct boundary-bank interiors have distinct metric images.
   Route distance equals continuous-path distance, and every finite distance
   is attained by a constant-speed metric geodesic.
+  `BoundaryChart` constructs metric half-ball charts at all nonvertex boundary
+  bank points; vertex neighborhoods remain a separate construction.
 - `FacewiseDevelopment` places each original triangle exactly once, agrees on
   retained edges, and puts the incident triangles on opposite sides. Retained
   dual cycles are allowed. The map descends to the cut realization and is
@@ -66,7 +68,7 @@ the generated seam equivalence; a checked example demonstrates this. For finite
 triangle complexes, exactness, compactness, completeness, and agreement with
 the cell-quotient topology are all proved. Face maps are unconditionally
 nonexpanding; a consistent rigid development strengthens them to isometries.
-Paired-edge/vertex charts and manifold conditions remain to be constructed.
+Paired-edge and vertex charts, and the full manifold conditions, remain to be constructed.
 
 ## Module map
 
@@ -85,6 +87,7 @@ Paired-edge/vertex charts and manifold conditions remain to be constructed.
 | `Unfoldings.Geometry.Edge` | Edge intersections and endpoint preservation by isometries |
 | `Unfoldings.Geometry.Halfplane` | Supporting heights and finite corner bounds |
 | `Unfoldings.Geometry.Interior` | Interior clearance and Euclidean cell balls |
+| `Unfoldings.Geometry.Barycentric` | Affine coordinates and local edge half-planes |
 | `Unfoldings.Geometry.Paths` | Straight paths in triangle cells with exact Euclidean length |
 | `Unfoldings.Geometry.Affine` | Rigid edge extensions and line reflection |
 | `Unfoldings.Geometry.Placement` | Constructed strict outward hinge placements |
@@ -95,6 +98,7 @@ Paired-edge/vertex charts and manifold conditions remain to be constructed.
 | `Unfoldings.Complex.Paths` | Intrinsic path metric and geodesic existence for cut complexes |
 | `Unfoldings.Boundary` | Boundary-edge labels, bank maps, and restoration of banks |
 | `Unfoldings.Boundary.Exact` | Metric separation of distinct cut-bank interiors |
+| `Unfoldings.Boundary.Charts` | Constructed half-ball metric charts at boundary edge interiors |
 | `Unfoldings.Development` | Facewise placements, nonoverlap, multiplicity, and metric descent |
 | `Unfoldings.Development.Hinge` | Nonoverlapping developments of arbitrary two-triangle hinges |
 | `Unfoldings.Path.Length` | Continuous-path length and its composition laws |

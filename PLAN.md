@@ -144,8 +144,11 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
 - [ ] Finite vertex classes, links, and manifold conditions.
 - [x] Constructed isometries between Euclidean disks and intrinsic open balls
   at every face-interior point, without a global development hypothesis.
-- [ ] Local Euclidean disks at paired-edge interiors; half-disks at
-  boundary-edge interiors.
+- [x] Barycentric affine coordinates and local supporting half-plane geometry
+  at nonvertex triangle-edge points.
+- [x] Constructed isometries from Euclidean half-disks onto intrinsic open balls
+  at every nonvertex point of an unpaired boundary bank.
+- [ ] Local Euclidean disks at paired-edge interiors.
 - [ ] Cone/sector neighborhoods at cyclic/interval vertex links.
 - [ ] Curvature is derived from the incident triangle angles.
 - [ ] A nonempty embedded edge cut graph on a sphere, with no isolated points,
