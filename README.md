@@ -5,8 +5,8 @@ unfolding of convex polyhedra as its first major target. Overlapping development
 are supported; nonoverlap is a separate property and permits boundary contacts.
 
 The design and feature checklist are in [PLAN.md](PLAN.md). The regular source
-development and its intrinsic boundary completion are constructed; disk topology
-and finite cut-graph characterizations remain in progress.
+development, its intrinsic boundary completion and disk topology are constructed;
+finite cut-graph characterizations remain in progress.
 The initial library has no placeholder propositions or unfinished proofs.
 
 ## Current interfaces
@@ -104,8 +104,11 @@ The initial library has no placeholder propositions or unfinished proofs.
   retained surface. Its completion is the compact closed source domain with
   its intrinsic metric: the interior includes isometrically and densely.
   The completed development is injective and nonexpanding, and the endpoint
-  projection is continuous, surjective and nonexpanding. Disk topology and
-  finite polygonal boundary descriptions remain open.
+  projection is continuous, surjective and nonexpanding. The completed net is
+  homeomorphic to the closed disk, carrying exactly its boundary to the unit
+  circle. Its radial geodesics project to every original shortest path, with
+  source distances preserved at every boundary copy. Finite polygonal boundary
+  descriptions remain open.
 - `SpatialFolding` gives compatible rigid placements into three-dimensional
   space. Every original face is isometric for every cut metric. Spatial
   injectivity is separate and gives a homeomorphism onto the triangle union.
@@ -464,6 +467,11 @@ manifold conditions remain open.
 | `Unfoldings.Source.CutMetric` | Actual source cut metrics, completion, boundary copies and boundary projection |
 | `Unfoldings.Source.CutIntrinsic` | Cut metric equals path distance in the original retained surface |
 | `Unfoldings.Source.CutProjection` | The whole completed projection does not increase surface distance |
+| `Unfoldings.Topology.CommonFibers` | Compact quotient maps with the same fibers identify their targets |
+| `Unfoldings.Geometry.RadialBody` | Each ray meets the boundary once, and normalization gives a sphere homeomorphism |
+| `Unfoldings.Geometry.RadialCone` | A nonconvex radial body is a closed ball, with exactly matching boundaries |
+| `Unfoldings.Source.Disk` | Constructed disk and boundary-circle homeomorphisms for the actual source completion |
+| `Unfoldings.Source.CompletedRadials` | Completed radial geodesics project to all original shortest paths, preserving source distance |
 | `Unfoldings.Examples.*` | Recovery, disconnectedness, shortcuts, contact, and overlap |
 | `Audit` | Transitive axiom check for all imported library declarations |
 

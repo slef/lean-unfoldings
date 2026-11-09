@@ -2,6 +2,27 @@
 
 ## Session Log
 
+### 2026-11-09 — source disk topology and all completed radial geodesics
+
+- Proved general compact radial bodies have exactly one boundary point on
+  each ray. Normalization is a continuous bijection from the compact boundary
+  to the unit sphere and hence a homeomorphism. Convexity is not assumed.
+- Constructed a closed-ball homeomorphism through two compact quotient maps
+  from boundary times the unit interval. They have exactly the same fibers;
+  this handles the collapsed center continuously. Proved exact agreement of
+  the body boundary with the target sphere.
+- Applied these proved hypotheses to the actual source domain, obtaining a
+  closed-disk homeomorphism of the intrinsic completed cut surface, with an
+  exact characterization of its boundary circle.
+- Constructed radial geodesics to every completed point using the actual
+  allowed straight segments. Their endpoint projection agrees at every time
+  with each original shortest path, including tied routes ending on different
+  boundary copies. All source-to-point distances are preserved.
+- Cone-leaf inclusion in the closure-of-ties cut locus and finite polygonal
+  boundary/cut-tree descriptions remain open.
+- Verification: full `lake build` passes; the audit checks **2,933 declarations**,
+  using only the standard Lean axioms. The Mathlib cache was verified in this session.
+
 ### 2026-11-09 — actual intrinsic source cut metric and its completed development
 
 - Constructed a separate polygonal point type and extended metric generated

@@ -487,13 +487,20 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
       in both directions. Tied paths retain distinct boundary copies.
     - [x] The continuous completed projection covers the original surface,
       does not increase distances and has the proved slit set as boundary image.
-  - [ ] Prove disk topology and the finite polygonal boundary descriptions.
+  - [x] Prove disk topology: every ray has one boundary point; normalization
+    identifies that boundary with a circle. Two compact quotient maps with the
+    same fibers construct a closed-disk homeomorphism carrying exactly the
+    completed net boundary to the unit circle.
+  - [ ] Prove the finite polygonal boundary descriptions.
 - [ ] Existence of the source development and radial developed shortest paths.
   - [x] Construct actual geodesics from the source to every retained point,
     entirely in the closed-cut complement. Their coordinates are exact radial
     segments, and the retained coordinate image is star-shaped.
   - [x] Construct a nonoverlapping locally isometric development of the flat
     retained region and all its actual radial geodesics, onto the planar interior.
+  - [x] Construct straight radial geodesics to every completed point, including
+    distinct tied endpoint copies. They project pointwise to the original
+    shortest paths, and all source-to-point distances are preserved.
 - [x] Abstract injectivity criterion from existence and uniqueness of radial lifts.
 - [ ] Apply that criterion to retained source-unfolding interiors.
 - [ ] Boundary coverage, nonoverlap of every original face piece, and a precise
