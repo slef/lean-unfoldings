@@ -114,6 +114,10 @@ convex polyhedra, or intrinsic metrics.
     disjoint open edges, and vertex avoidance; loops and parallel edges are
     retained in Mathlib's multigraph type. Topological carrier connectedness
     implies graph connectedness. Rotation orders remain separate data.
+- [x] Compatible vertex and interval maps extend continuously to the actual
+  finite embedded graph carrier, including loops and parallel edges.
+- [x] A contractible finite embedded graph has no loops or parallel edges and
+  its adjacency graph is a tree, proved using circle covering lifts.
 - [ ] Distinguish abstract face walks from actual complementary regions.
 - [ ] Combinatorial surface cellulations and their topological realizations.
 - [ ] Planar/spherical embeddings and their compatibility with rotation data.
@@ -129,7 +133,8 @@ convex polyhedra, or intrinsic metrics.
   parallel edges and disconnected graphs.
 
 The first metric and development modules do not depend on this package. The
-cut-graph disk equivalences and later cut-locus graph arguments will use it.
+cut-locus tree theorem uses its embedded graph and contractibility results;
+the general cut-graph disk equivalences remain open.
 
 ### Metric realizations and cuts
 
@@ -432,7 +437,7 @@ The regular-source unfolding target is constructed in `Source/Unfolding.lean`.
 Its hypotheses are geometric convexity and a nonextreme source point; the output
 contains the finite nonoverlapping polygonal net, exact boundary, intrinsic
 completion, disk topology, and all radial shortest-path lifts. The independent
-graph/tree characterization and cone-vertex source frames remain below.
+cut-locus tree theorem is also proved. Cone-vertex source frames remain below.
 
 - [x] A generic source in a regular face interior and normalized shortest routes.
   - [x] Construct a source frame at any regular point and full-length planar
@@ -512,7 +517,7 @@ graph/tree characterization and cone-vertex source frames remain below.
   - [x] Construct actual rigid radial formulas on entire shortest-path face pieces,
     including terminal endpoints by continuity. In an original endpoint face,
     equal terminal virtual-source images imply equality of the whole paths.
-- [ ] Cut-locus closedness, finite embedded graph structure, and tree structure.
+- [x] Cut-locus closedness, finite embedded graph structure, and tree structure.
   - [x] The actual closed cut locus is a connected image of the boundary circle.
   - [x] Nonunique face-interior endpoints lie on genuine bisectors of distinct
     actual terminal virtual-source images. Compact face images extend this
@@ -536,7 +541,17 @@ graph/tree characterization and cone-vertex source frames remain below.
     Construct a finite connected embedded graph whose carrier is exactly the
     spatial cut locus. Retain actual affine edge formulas and original-face
     containment; derive simplicity and graph connectedness. Degenerate input
-    segments survive as vertices. Acyclicity is still to be proved.
+    segments survive as vertices.
+  - [x] Construct a continuous radial retraction from the punctured original
+    surface onto the actual cut locus. Quotient descent handles every tied
+    boundary fiber. Stereographic projection proves the punctured sphere
+    contractible, so the cut locus and its embedded graph carrier are
+    contractible.
+  - [x] Prove any contractible finite embedded graph is simple and its adjacency
+    graph is a tree. Extend compatible vertex/edge maps by compact quotient
+    descent; lift a selected-edge circle map to a real potential. Every edge
+    is a bridge. Apply this to the actual source cut locus, with an explicit
+    theorem for every nonextreme source and original-face containment.
 - [x] Every nonflat vertex belongs to the closed cut locus, including leaves
   with a unique incoming geodesic.
 - [x] The completed slit surface is a flat disk with identified boundary copies.

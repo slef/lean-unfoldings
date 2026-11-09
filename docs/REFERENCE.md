@@ -46,13 +46,16 @@ source, including its module documentation and declarations.
 | [Unfoldings.Source.ConvexOffCutCoordinates](../Unfoldings/Source/ConvexOffCutCoordinates.lean) | Constructed coordinates from convex-boundary input and a regular source |
 | [Unfoldings.Source.Coordinates](../Unfoldings/Source/Coordinates.lean) | Constructed full-length source vectors and exact radial norms |
 | [Unfoldings.Source.CutConnected](../Unfoldings/Source/CutConnected.lean) | Exact cut-locus boundary projection and connectedness of the actual closed cut locus |
+| [Unfoldings.Source.CutContractible](../Unfoldings/Source/CutContractible.lean) | Contractibility of the cut locus and its constructed embedded graph carrier |
 | [Unfoldings.Source.CutGraph](../Unfoldings/Source/CutGraph.lean) | An actual finite connected embedded straight graph with exact cut-locus carrier and original-face containment |
 | [Unfoldings.Source.CutIntrinsic](../Unfoldings/Source/CutIntrinsic.lean) | Cut metric equals path distance in the original retained surface |
 | [Unfoldings.Source.CutLocus](../Unfoldings/Source/CutLocus.lean) | Closed source cut locus and exclusion of a whole source ball |
 | [Unfoldings.Source.CutMetric](../Unfoldings/Source/CutMetric.lean) | Actual source cut metrics, completion, boundary copies and boundary projection |
 | [Unfoldings.Source.CutProjection](../Unfoldings/Source/CutProjection.lean) | The whole completed projection does not increase surface distance |
+| [Unfoldings.Source.CutRetraction](../Unfoldings/Source/CutRetraction.lean) | Continuous retraction of the punctured original surface onto the actual cut locus |
 | [Unfoldings.Source.CutSegments](../Unfoldings/Source/CutSegments.lean) | The actual closed source cut locus is exactly a finite straight network in original faces |
 | [Unfoldings.Source.CutSupport](../Unfoldings/Source/CutSupport.lean) | Closed finite supports for all cut points, including cone leaves |
+| [Unfoldings.Source.CutTree](../Unfoldings/Source/CutTree.lean) | The actual source cut locus is a finite embedded straight tree at every nonextreme source |
 | [Unfoldings.Source.Disk](../Unfoldings/Source/Disk.lean) | Constructed disk and boundary-circle homeomorphisms for the actual source completion |
 | [Unfoldings.Source.Domain](../Unfoldings/Source/Domain.lean) | Compact planar path images and continuous endpoint projection |
 | [Unfoldings.Source.DomainBoundary](../Unfoldings/Source/DomainBoundary.lean) | Exact boundary projection onto the closed cut union singular points |
@@ -83,6 +86,7 @@ source, including its module documentation and declarations.
 | [Unfoldings.Source.PrefixCutAvoidance](../Unfoldings/Source/PrefixCutAvoidance.lean) | Every proper shortest-path prefix avoids the closed cut locus |
 | [Unfoldings.Source.PrefixUniqueness](../Unfoldings/Source/PrefixUniqueness.lean) | Every proper prefix is unique, by continuation from the unchanged tail |
 | [Unfoldings.Source.Prefixes](../Unfoldings/Source/Prefixes.lean) | Actual normalized shortest-path prefixes, including both endpoints |
+| [Unfoldings.Source.ProjectionFibers](../Unfoldings/Source/ProjectionFibers.lean) | Exact source-projection interior, boundary, source fiber, and nontrivial boundary fibers |
 | [Unfoldings.Source.Radial](../Unfoldings/Source/Radial.lean) | Injectivity from uniqueness of radial lifts |
 | [Unfoldings.Source.RadialDomain](../Unfoldings/Source/RadialDomain.lean) | Exact prefix-vector scaling and star-shaped planar source images |
 | [Unfoldings.Source.RegularDevelopment](../Unfoldings/Source/RegularDevelopment.lean) | Constructed nonoverlapping local isometries and radial geodesics on the retained interior |
@@ -414,6 +418,7 @@ source, including its module documentation and declarations.
 | [Unfoldings.Geometry.RadialCone](../Unfoldings/Geometry/RadialCone.lean) | A nonconvex radial body is a closed ball, with exactly matching boundaries |
 | [Unfoldings.Geometry.RadialInterior](../Unfoldings/Geometry/RadialInterior.lean) | Interior points extend slightly outward along their radial lines |
 | [Unfoldings.Geometry.RadialLocality](../Unfoldings/Geometry/RadialLocality.lean) | Local equality of positive radial cones implies global equality |
+| [Unfoldings.Geometry.RadialRetraction](../Unfoldings/Geometry/RadialRetraction.lean) | Continuous radial retraction onto the boundary of a compact strictly radial body |
 | [Unfoldings.Geometry.RadialSlice](../Unfoldings/Geometry/RadialSlice.lean) | Actual compact convex level sections and radial generator projections |
 | [Unfoldings.Geometry.RadialSliceAngles](../Unfoldings/Geometry/RadialSliceAngles.lean) | Positive radial slicing preserves affine apex angles |
 | [Unfoldings.Geometry.RaySection](../Unfoldings/Geometry/RaySection.lean) | Exact wedge sections and preservation of their genuine apex angles |
@@ -442,6 +447,7 @@ source, including its module documentation and declarations.
 | [Unfoldings.Combinatorics.FiniteReach](../Unfoldings/Combinatorics/FiniteReach.lean) | Bounded rounds of finite choices give a finite set of reachable states |
 | [Unfoldings.Topology.ChainPairings](../Unfoldings/Topology/ChainPairings.lean) | Every link pairing is consecutive or closes the outer banks |
 | [Unfoldings.Topology.CommonFibers](../Unfoldings/Topology/CommonFibers.lean) | Compact quotient maps with the same fibers identify their targets |
+| [Unfoldings.Topology.ContractibleLift](../Unfoldings/Topology/ContractibleLift.lean) | Covering-space lifts from contractible domains, without local path-connectedness assumptions |
 | [Unfoldings.Topology.ConvexBoundary](../Unfoldings/Topology/ConvexBoundary.lean) | Sphere topology and connectedness of bounded convex boundaries |
 | [Unfoldings.Topology.CyclicLabels](../Unfoldings/Topology/CyclicLabels.lean) | Nonconstant cyclic lists have no more labels than changes |
 | [Unfoldings.Topology.FiberGraph](../Unfoldings/Topology/FiberGraph.lean) | Equivalence chains in finite fibers yield short simple graph paths |
@@ -449,8 +455,14 @@ source, including its module documentation and declarations.
 | [Unfoldings.Topology.FiniteEmbeddedGraph](../Unfoldings/Topology/FiniteEmbeddedGraph.lean) | Finite embedded multigraphs, compact carriers, and topological-to-graph connectedness |
 | [Unfoldings.Topology.FiniteIntervalCover](../Unfoldings/Topology/FiniteIntervalCover.lean) | Bounded subdivisions subordinate to finite closed interval covers |
 | [Unfoldings.Topology.FiniteSubdivision](../Unfoldings/Topology/FiniteSubdivision.lean) | Existence and uniqueness of consecutive marked real intervals |
+| [Unfoldings.Topology.GraphAcyclic](../Unfoldings/Topology/GraphAcyclic.lean) | Contractible finite embedded graphs are simple and their adjacency graphs are trees |
+| [Unfoldings.Topology.GraphExtension](../Unfoldings/Topology/GraphExtension.lean) | Continuous extension of compatible vertex and edge maps to the actual graph carrier |
+| [Unfoldings.Topology.GraphPoints](../Unfoldings/Topology/GraphPoints.lean) | Vertex points and continuous edge inclusions into the embedded graph carrier |
+| [Unfoldings.Topology.GraphPotential](../Unfoldings/Topology/GraphPotential.lean) | Selected-edge circle winding maps and real vertex potentials from contractibility |
 | [Unfoldings.Topology.PairedInvolutions](../Unfoldings/Topology/PairedInvolutions.lean) | Generic finite interval/cycle order from two involutions |
 | [Unfoldings.Topology.PerfectProjection](../Unfoldings/Topology/PerfectProjection.lean) | A perfect boundary cannot project injectively to finite exceptions outside a closed set |
+| [Unfoldings.Topology.PuncturedSphere](../Unfoldings/Topology/PuncturedSphere.lean) | Contractibility of a unit sphere punctured at any specified point |
+| [Unfoldings.Topology.QuotientRetraction](../Unfoldings/Topology/QuotientRetraction.lean) | Continuous quotient descent and contractibility of retracts |
 
 ## Examples and core imports
 

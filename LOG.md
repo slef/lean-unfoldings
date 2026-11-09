@@ -2,6 +2,30 @@
 
 ## Session Log
 
+### 2026-11-09 — source cut-locus tree theorem
+
+- Proved the source projection has singleton fibers away from the cut locus
+  and all nontrivial fibers lie on the developed boundary. Radial boundary
+  retraction descends through the punctured quotient to an actual continuous
+  retraction of the punctured convex boundary onto its source cut locus.
+- Stereographic projection proves the punctured original surface contractible.
+  Its cut-locus retract and the exact spatial embedded graph carrier are
+  therefore contractible as well.
+- Added topology-only continuous graph extension and covering-lift theorems.
+  Sending one selected edge around the circle and lifting to the real line
+  constructs a vertex potential changing by one along that edge and constant
+  along every other edge. This excludes loops and parallel edges and proves
+  every adjacency edge a bridge, hence a contractible embedded graph is a tree.
+- Applied the generic theorem to the actual source cut locus, including an
+  explicit constructor theorem for every nonextreme source. The tree retains
+  straight edge formulas, the exact carrier, and original-face containment.
+  No Euler formula or Jordan separation theorem is assumed.
+- Updated the short README, feature checklist, topology guide, and module index.
+  General sphere/disk cut equivalences and cone-vertex sources remain open.
+- Verification: selected Mathlib cache fetch and full `lake build` pass;
+  **3,380 declarations** are audited with only standard Lean axioms. All
+  **436 local documentation links** resolve and every module is indexed.
+
 ### 2026-11-09 — finite embedded cut graphs
 
 - Added a topology-only finite embedded multigraph interface with actual

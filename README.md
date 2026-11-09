@@ -75,10 +75,11 @@ For development priorities, use the [feature checklist](PLAN.md); the
 
 ## Scope and next steps
 
-The regular-source theorem and a finite connected embedded graph for its cut
-locus are proved. Remaining work includes:
+The regular-source theorem and the finite embedded tree structure of its cut
+locus are proved; see [Source/CutTree.lean](Unfoldings/Source/CutTree.lean).
+Remaining work includes:
 
-- The tree characterization and general sphere/disk cut criteria.
+- General sphere/disk cut criteria (tree and boundary-rooted forest equivalences).
 - Sources at genuine cone vertices, which need sector-valued source frames.
 - Star unfolding and the downstream tools needed for the Fewest Nets paper.
 

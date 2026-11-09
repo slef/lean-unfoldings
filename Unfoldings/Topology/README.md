@@ -19,6 +19,20 @@ loops and multiplicity is used only for reachability, not to assert acyclicity.
 of consecutive marked intervals. Geometry modules use this to subdivide finite
 straight networks; the graph interface itself has no geometry dependency.
 
+[QuotientRetraction.lean](QuotientRetraction.lean) supplies continuous quotient
+descent and contractibility of retracts. [PuncturedSphere.lean](PuncturedSphere.lean)
+derives contractibility of a punctured unit sphere by stereographic projection.
+The source application retracts the punctured surface onto its actual cut locus.
+
+[GraphExtension.lean](GraphExtension.lean) extends compatible vertex and edge
+maps continuously to the carrier. [ContractibleLift.lean](ContractibleLift.lean)
+lifts maps from contractible spaces through surjective covering maps.
+[GraphPotential.lean](GraphPotential.lean) uses the circle covering to construct
+a real potential changing along one selected edge and constant along all other
+edges. [GraphAcyclic.lean](GraphAcyclic.lean) proves that a contractible finite
+embedded graph is simple and its adjacency graph is a tree. This proves the
+source cut-locus tree theorem without Euler counting or planar separation.
+
 [FiniteClasses.lean](FiniteClasses.lean) proves a generic finite-relation-class
 lemma used to separate triangle seam classes. Rotation systems, spherical
 cellulations, Euler's formula, and the tree/disk criteria remain open. A face
