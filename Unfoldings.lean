@@ -95,5 +95,7 @@ public import Unfoldings.Polyhedron.RegularClassification
 public import Unfoldings.Source.RegularDevelopment
 public import Unfoldings.Source.DomainBoundary
 public import Unfoldings.Source.DomainDensity
+public import Unfoldings.Source.CutIntrinsic
+public import Unfoldings.Source.CutProjection
 public import Unfoldings.Examples.Metric
 public import Unfoldings.Examples.Hinge

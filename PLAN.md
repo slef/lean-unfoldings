@@ -475,7 +475,18 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
   - [x] Identify boundary projection exactly as the closed cut union singular
     points; the explicit closed `sourceSlitSet` is this union. Every true
     extreme vertex belongs to the boundary image.
-  - [ ] Construct and identify the actual intrinsic cut-metric completion.
+  - [x] Construct and identify the actual intrinsic cut-metric completion.
+    - [x] Construct polygonal route metrics with genuine straight-step paths;
+      prove equality with continuous-path distance, local Euclidean charts,
+      and ambient topology on open domains.
+    - [x] Radial contraction proves the closed source domain has its ambient
+      topology, and its interior includes isometrically and densely. Compactness
+      gives completeness and an actual `AbstractCompletion` model.
+    - [x] Identify the interior metric exactly with continuous-path distance
+      in the original flat retained surface, using constructed local isometries
+      in both directions. Tied paths retain distinct boundary copies.
+    - [x] The continuous completed projection covers the original surface,
+      does not increase distances and has the proved slit set as boundary image.
   - [ ] Prove disk topology and the finite polygonal boundary descriptions.
 - [ ] Existence of the source development and radial developed shortest paths.
   - [x] Construct actual geodesics from the source to every retained point,

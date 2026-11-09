@@ -5,8 +5,8 @@ unfolding of convex polyhedra as its first major target. Overlapping development
 are supported; nonoverlap is a separate property and permits boundary contacts.
 
 The design and feature checklist are in [PLAN.md](PLAN.md). The regular source
-development is constructed; intrinsic boundary completion and finite cut-graph
-characterizations remain in progress.
+development and its intrinsic boundary completion are constructed; disk topology
+and finite cut-graph characterizations remain in progress.
 The initial library has no placeholder propositions or unfinished proofs.
 
 ## Current interfaces
@@ -94,12 +94,18 @@ The initial library has no placeholder propositions or unfinished proofs.
   charts are constructed along whole regular paths and uniformly for nearby
   shortest paths. Every proper prefix avoids the closed cut locus; the retained
   shortest paths are constructed and develop to exact radial segments. Inclusion
-  of extreme cone endpoints in that cut locus, the completed slit interpretation,
-  and finite cut-locus tree structure remain open. The compact planar domain is
+  of extreme cone endpoints in that cut locus and finite cut-locus tree structure
+  remain open. The compact planar domain is
   the closure of its star-shaped interior, and the flat retained surface is
   homeomorphic to that interior by its actual locally isometric source coordinates.
   Boundary projection is exactly the closed cut locus union singular points,
   recorded explicitly as `sourceSlitSet`.
+  The polygonal cut metric equals continuous-path distance in the original
+  retained surface. Its completion is the compact closed source domain with
+  its intrinsic metric: the interior includes isometrically and densely.
+  The completed development is injective and nonexpanding, and the endpoint
+  projection is continuous, surjective and nonexpanding. Disk topology and
+  finite polygonal boundary descriptions remain open.
 - `SpatialFolding` gives compatible rigid placements into three-dimensional
   space. Every original face is isometric for every cut metric. Spatial
   injectivity is separate and gives a homeomorphism onto the triangle union.
@@ -445,6 +451,19 @@ manifold conditions remain open.
 | `Unfoldings.Source.RegularRegion` | The flat retained region and explicit closed singular slit set |
 | `Unfoldings.Source.InteriorHomeomorph` | The actual flat retained surface is homeomorphic to the planar domain interior |
 | `Unfoldings.Source.RegularDevelopment` | Constructed nonoverlapping local isometries and radial geodesics on the retained interior |
+| `Unfoldings.Metric.Polygonal` | Constructed intrinsic metrics from allowed straight steps and nonexpanding inclusions |
+| `Unfoldings.Metric.PolygonalStar` | Radial contraction identifies intrinsic and ambient topology through the boundary |
+| `Unfoldings.Metric.PolygonalCompletion` | Isometric dense interior inclusion and complete compact closed-domain model |
+| `Unfoldings.Metric.PolygonalPaths` | Straight-step geodesics and equality of route and continuous-path distance |
+| `Unfoldings.Metric.PolygonalLocal` | Isometric neighborhoods for the development and its inverse on open regions |
+| `Unfoldings.Geometry.ConvexLocalBounds` | Convex subtype center bounds imply global nonexpansion |
+| `Unfoldings.Metric.PolygonalMap` | Local center bounds descend to intrinsic polygonal metrics |
+| `Unfoldings.Metric.LocalInverse` | Constructed isometric inverse neighborhoods |
+| `Unfoldings.Metric.LocalComposition` | Compose local isometries and obtain local center bounds |
+| `Unfoldings.Path.LocalDistance` | Local nonexpansion preserves intrinsic path-distance inequalities |
+| `Unfoldings.Source.CutMetric` | Actual source cut metrics, completion, boundary copies and boundary projection |
+| `Unfoldings.Source.CutIntrinsic` | Cut metric equals path distance in the original retained surface |
+| `Unfoldings.Source.CutProjection` | The whole completed projection does not increase surface distance |
 | `Unfoldings.Examples.*` | Recovery, disconnectedness, shortcuts, contact, and overlap |
 | `Audit` | Transitive axiom check for all imported library declarations |
 

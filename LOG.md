@@ -2,6 +2,31 @@
 
 ## Session Log
 
+### 2026-11-09 — actual intrinsic source cut metric and its completed development
+
+- Constructed a separate polygonal point type and extended metric generated
+  by straight steps whose whole segment stays in the region. Proved separation,
+  nonexpanding ambient projection and inclusions, exact convex-patch distances,
+  local Euclidean charts, and actual straight geodesics. The route metric equals
+  continuous-path distance.
+- On open regions this metric has the ambient topology. For bounded regions
+  whose proper radial contractions land in the interior, uniformly shrinking
+  gives the same conclusion at boundary points. Shrinking all route vertices
+  proves the interior inclusion is isometric, and radial convergence gives
+  density. A compact closed region is a complete model of its interior.
+- Applied these constructions to the actual source domain. The retained
+  surface's proved local source isometries identify its continuous-path distance
+  exactly with the polygonal metric. This verifies intrinsic compatibility
+  instead of relying only on a metric transported through a homeomorphism.
+- The completed domain keeps distinct tied-path vectors, has an injective
+  planar development, and projects continuously and surjectively to the original
+  surface. Local inverse charts and density prove nonexpansion of this whole
+  projection. Its boundary image is exactly the explicit singular slit set.
+- Cone-leaf inclusion in the closure-of-ties cut locus, disk topology, finite
+  polygonal boundary and cut-tree structure remain open.
+- Verification: `lake exe cache get` and full `lake build` pass; the audit
+  checks **2,844 declarations**, using only the standard Lean axioms.
+
 ### 2026-11-09 — exact source-domain interior and actual regular-region development
 
 - Proved finite-dimensional rigid self-embeddings are open and surjective.
