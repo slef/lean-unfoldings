@@ -2,6 +2,21 @@
 
 ## Session Log
 
+### 2026-11-09 — actual rigid motions on connected retained face regions
+
+- Proved that two rigid motions agreeing on a neighborhood within a convex
+  set with interior agree everywhere, even when the neighborhood center is
+  on that set's boundary.
+- Proved that rigid patches representing one coordinate map have locally
+  constant whole-plane motions. This uses genuine overlapping interior
+  patches, without assuming global convexity of the retained region.
+- Constructed the actual source-coordinate atlas on each face's cut complement
+  from the previous local existence theorem. Its chosen motions are locally
+  constant, so one actual rigid map develops every connected retained part
+  of the face. Seam-transition identification remains next.
+- Verification: full `lake build` passes; the audit checks **3,048 declarations**,
+  using only the standard Lean axioms. The selected Mathlib cache was verified.
+
 ### 2026-11-09 — constructed rigid source-face patches, including boundary centers
 
 - Extended actual isometries of convex sets with interior to affine isometries.

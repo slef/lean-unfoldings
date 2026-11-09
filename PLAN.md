@@ -455,6 +455,10 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
       At every retained face point, construct a rigid placement agreeing with
       all nearby actual source vectors, including edge and flat-vertex centers.
       Propagate and identify these local motions along the bounded seam words next.
+    - [x] Overlapping rigid face patches determine the same whole-plane motion.
+      Actual chosen face motions are locally constant; one rigid motion develops
+      every connected retained part of an original face. Identify motions across
+      seam crossings next.
 - [x] Source distance, the set of nonunique shortest paths, and its closure.
   A source ball chart excludes a whole ball from the closed cut locus.
   Outside the cut locus, shortest paths exist uniquely on actual convex boundaries.

@@ -487,6 +487,8 @@ manifold conditions remain open.
 | `Unfoldings.Geometry.ConvexRigidity` | Actual isometries on convex sets with interior extend rigidly through the boundary |
 | `Unfoldings.Source.FacePlacement` | Constructed source-face motion agrees with all source vectors in the source ball |
 | `Unfoldings.Source.LocalFacePlacement` | Constructed rigid face patches at all retained points, including edges and flat vertices |
+| `Unfoldings.Geometry.ConvexPatchRigidity` | Overlapping convex face patches force equality of their whole rigid motions |
+| `Unfoldings.Source.FaceAtlas` | Actual face motions are locally constant and develop every connected retained face region rigidly |
 | `Unfoldings.Examples.*` | Recovery, disconnectedness, shortcuts, contact, and overlap |
 | `Audit` | Transitive axiom check for all imported library declarations |
 
