@@ -2,6 +2,23 @@
 
 ## Session Log
 
+### 2026-11-09 — complete slice hulls and spatial tangent embeddings
+
+- Proved the full transverse body section equals the convex hull of all
+  other generator projections. The proof rescales finite barycentric weights
+  by functional height and discards zero-height copies of the original vertex.
+  Applied this equality to actual spatial extreme vertices.
+- Proved one positive dilation places any two tangent points in a prescribed
+  apex ball. Used exact local tangent neighborhoods and the original spatial
+  embedding to prove injectivity of the whole uncut tangent folding.
+- Proved tangent folding preserves every apex distance and is proper for all
+  retained-seam sets. For embedded original surfaces the uncut tangent map is
+  a closed spatial embedding.
+- Verification: selected cache fetch and full `lake build` pass; the audit
+  checks 1902 declarations, and `git diff --check` passes.
+- The vertex figure's nondegeneracy, cyclic polygon boundary and planar angle
+  sum remain next. The convex upper angle bound and source unfolding are open.
+
 ### 2026-11-09 — constructed transverse sections and pyramid angle budgets
 
 - Strictly separated each finite-hull extreme point from the compact hull

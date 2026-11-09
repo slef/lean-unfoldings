@@ -17,6 +17,7 @@ public import Unfoldings.Geometry.ConvexCover
 public import Unfoldings.Geometry.CornerSpan
 public import Unfoldings.Cone.Paths
 public import Unfoldings.Cone.Spatial
+public import Unfoldings.Cone.SpatialEmbedding
 public import Unfoldings.Cone.Charts
 public import Unfoldings.Cone.Dilation
 public import Unfoldings.Cone.LinkSeams

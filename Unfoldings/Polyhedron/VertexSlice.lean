@@ -3,6 +3,7 @@ module
 public import Unfoldings.Polyhedron.Convex
 public import Unfoldings.Complex.Vertices
 public import Unfoldings.Geometry.RadialSlice
+public import Unfoldings.Geometry.SliceHull
 
 /-!
 # Constructed transverse sections at spatial extreme vertices
@@ -62,5 +63,21 @@ theorem exists_vertexSlice (v : C.Vertex Set.univ)
   refine ⟨f, h, nonzero, positive, ⟨_, generator.2⟩, ?_⟩
   intro d hd
   exact projected (corners d) ⟨d, rfl⟩ hd
+
+/-- The actual transverse section is a finite convex hull of explicit radial
+corner projections. Its cyclic polygon order is not assumed. -/
+theorem exists_vertexSlice_hull (v : C.Vertex Set.univ)
+    (extreme : F.toSpace Set.univ (C.vertexPoint Set.univ v) ∈ F.vertexHull.extremePoints ℝ) :
+    ∃ (f : Space →L[ℝ] ℝ) (h : ℝ), f ≠ 0 ∧ 0 < h ∧
+      (radialSlice F.vertexHull f (F.toSpace Set.univ (C.vertexPoint Set.univ v)) h).Nonempty ∧
+      radialSlice F.vertexHull f (F.toSpace Set.univ (C.vertexPoint Set.univ v)) h =
+        convexHull ℝ (radialSlicePoint f (F.toSpace Set.univ (C.vertexPoint Set.univ v)) h ''
+          (Set.range (fun c : Face × Fin 3 => F.place c.1 ((C.triangle c.1).vertex c.2)) \
+            {F.toSpace Set.univ (C.vertexPoint Set.univ v)})) := by
+  obtain ⟨f, h, nonzero, positive, nonempty, projected⟩ := F.exists_vertexSlice v extreme
+  refine ⟨f, h, nonzero, positive, nonempty, ?_⟩
+  apply radialSlice_convexHull_eq f _ h extreme.1 positive
+  rintro y ⟨c, rfl⟩ different
+  exact (projected c different).1.le
 
 end Unfoldings.SpatialFolding

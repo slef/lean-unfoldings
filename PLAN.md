@@ -173,6 +173,10 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
   explicit radial paths are genuine constant-speed geodesics.
 - [x] Spatial foldings extend to the tangent model and imply cone-cell isometry
   when supplied.
+  - [x] Tangent folding preserves every apex distance and is proper for all
+    retained-seam sets. An embedded original surface gives a closed spatial
+    embedding of every actual uncut tangent fan, proved by positive dilation
+    into the constructed exact local neighborhood and back.
 - [x] For spatial foldings, compare whole small tangent and original vertex
   balls. A uniform wedge/triangle radius, exact radial distances and local
   route bounds in both directions construct an isometry agreeing with every
@@ -344,6 +348,9 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
       generators; at triangulation vertices the section is nonempty.
     - [x] A positive functional level cuts a two-ray wedge in the segment
       between its radially normalized endpoints, preserving the apex angle.
+    - [x] The whole transverse body section is exactly the convex hull of
+      the radial projections of the other generators, via rescaled finite
+      barycentric weights. Apply this to every actual spatial extreme vertex.
     - [x] Sum the lateral triangle angle budgets. A transverse apex gives
       strictness at every nonstraight base corner.
     - [ ] Construct and order the vertex-figure polygon from the actual
