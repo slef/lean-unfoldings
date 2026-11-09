@@ -60,6 +60,17 @@ theorem cappedDist_le_dist (ε : ℝ) {s : Set X} {a : X} (ha : a ∈ s) (x : X)
     simp [cappedDist, Set.nonempty_of_mem ha]
   exact bound.trans (infDist_le_dist_of_mem ha)
 
+/-- Being below the cap gives an actual nearby point of the set, even when it may be empty. -/
+theorem exists_dist_lt_of_cappedDist_lt {ε r : ℝ} {s : Set X} {x : X}
+    (small : r ≤ ε) (near : cappedDist ε s x < r) : ∃ y ∈ s, dist x y < r := by
+  classical
+  by_cases nonempty : s.Nonempty
+  · have less : min ε (infDist x s) < r := by simpa [cappedDist, nonempty] using near
+    exact (infDist_lt_iff nonempty).mp
+      ((min_lt_iff.mp less).resolve_left (not_lt_of_ge small))
+  · simp only [cappedDist, ite_eq_right nonempty] at near
+    exact ((not_lt_of_ge small) near).elim
+
 theorem cappedDist_lipschitz (ε : ℝ) (s : Set X) : LipschitzWith 1 (cappedDist ε s) := by
   classical
   by_cases nonempty : s.Nonempty
@@ -190,6 +201,18 @@ theorem classBarrier_le_edist (glue : Total E → Total E → Prop) (a : Total E
     MetricBarrier.cappedDist_nonneg nonneg _ _
   simpa only [edist_dist, Real.dist_eq, zero_sub, abs_neg,
     abs_of_nonneg nonnegative] using bound
+
+/-- A point close in the quotient has an original coordinate close to an actual class copy. -/
+theorem exists_classPoint_of_edist_lt (glue : Total E → Total E → Prop) (a : Total E)
+    {ε r : ℝ} (positive : 0 < ε) (small : r ≤ ε)
+    (finite : ∀ i, (classIn E glue a i).Finite) (transport : ClassTransport E glue a ε)
+    (b : Total E) (near : edist (point E glue a) (point E glue b) < ENNReal.ofReal r) :
+    ∃ x ∈ classIn E glue a b.1, dist b.2 x < r := by
+  have lower := classBarrier_le_edist E glue a positive.le finite transport b
+  have nonnegative : 0 ≤ classBarrier E glue a ε b.1 b.2 :=
+    MetricBarrier.cappedDist_nonneg positive.le _ _
+  exact MetricBarrier.exists_dist_lt_of_cappedDist_lt small
+    ((ENNReal.ofReal_lt_ofReal_iff_of_nonneg nonnegative).mp (lower.trans_lt near))
 
 /-- Finite classes with a positive local transport radius have no extra metric collapse. -/
 theorem exact_of_finite_classes_of_transport (glue : Total E → Total E → Prop)

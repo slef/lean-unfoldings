@@ -141,6 +141,8 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
 - [x] Compactness and completeness of finite closed complexes.
 - [x] Route distance equals the infimum of lengths of continuous paths on every
   cut triangle realization; every finite distance is attained by a metric geodesic.
+- [x] Retained-face connectivity implies finite distances, an ordinary intrinsic
+  metric preserving edistance/topology, and geodesics between all points.
 - [ ] Finite vertex classes, links, and manifold conditions.
 - [x] Constructed isometries between Euclidean disks and intrinsic open balls
   at every face-interior point, without a global development hypothesis.
@@ -152,7 +154,9 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
   edge-interior planar neighborhood; local chords give intrinsic upper bounds.
 - [x] Quantitative class barriers and short-route localization for local metric
   lower bounds without a global development premise.
-- [ ] Local Euclidean disks at paired-edge interiors.
+- [x] Local Euclidean disks at paired-edge interiors with distinct incident faces,
+  agreeing with both original face maps in outward hinge coordinates.
+- [ ] Paired-edge charts for self-pairings inside one original face.
 - [ ] Cone/sector neighborhoods at cyclic/interval vertex links.
 - [ ] Curvature is derived from the incident triangle angles.
 - [ ] A nonempty embedded edge cut graph on a sphere, with no isolated points,

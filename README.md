@@ -37,7 +37,10 @@ The initial library has no placeholder propositions or unfinished proofs.
   Route distance equals continuous-path distance, and every finite distance
   is attained by a constant-speed metric geodesic.
   `BoundaryChart` constructs metric half-ball charts at all nonvertex boundary
-  bank points; vertex neighborhoods remain a separate construction.
+  bank points. `HingeChart` constructs whole Euclidean ball charts at nonvertex
+  retained-seam points with distinct incident faces, agreeing with both faces
+  in outward hinge coordinates. Connected retained face incidence gives finite
+  distances, an ordinary intrinsic metric, and geodesics between every pair.
 - `FacewiseDevelopment` places each original triangle exactly once, agrees on
   retained edges, and puts the incident triangles on opposite sides. Retained
   dual cycles are allowed. The map descends to the cut realization and is
@@ -68,7 +71,7 @@ the generated seam equivalence; a checked example demonstrates this. For finite
 triangle complexes, exactness, compactness, completeness, and agreement with
 the cell-quotient topology are all proved. Face maps are unconditionally
 nonexpanding; a consistent rigid development strengthens them to isometries.
-Paired-edge and vertex charts, and the full manifold conditions, remain to be constructed.
+Vertex charts, self-paired-edge charts, and the full manifold conditions remain open.
 
 ## Module map
 
@@ -81,6 +84,7 @@ Paired-edge and vertex charts, and the full manifold conditions, remain to be co
 | `Unfoldings.Metric.Barrier` | Capped distance separators and local class transport |
 | `Unfoldings.Metric.ClosedSeams` | Exactness for closed isometric seams with finite classes |
 | `Unfoldings.Metric.Local` | Seam clearance, metric ball images, and local cell isometries |
+| `Unfoldings.Metric.LocalSeams` | Local estimates from compatibility at incident closed seams |
 | `Unfoldings.Metric.LocalMap` | Metric lower bounds from estimates on short local routes |
 | `Unfoldings.Metric.FiniteComponent` | Clopen finite-distance components as compact metric spaces |
 | `Unfoldings.Metric.Paths` | Continuous-path/route metric equality and shortest metric paths |
@@ -100,6 +104,9 @@ Paired-edge and vertex charts, and the full manifold conditions, remain to be co
 | `Unfoldings.Complex.Charts` | Constructed face-interior Euclidean metric charts |
 | `Unfoldings.Complex.Paths` | Intrinsic path metric and geodesic existence for cut complexes |
 | `Unfoldings.Complex.Neighborhood` | Quantitative neighborhoods of two-face seam classes |
+| `Unfoldings.Complex.Connectivity` | Finite metrics and geodesics for connected face incidence |
+| `Unfoldings.Complex.HingeCharts` | Constructed Euclidean metric balls at retained edge interiors |
+| `Unfoldings.Complex.HingeCoordinates` | Local hinge frames and exact local distances |
 | `Unfoldings.Complex.Hinge` | Intrinsic upper bounds from local unfolded hinge chords |
 | `Unfoldings.Boundary` | Boundary-edge labels, bank maps, and restoration of banks |
 | `Unfoldings.Boundary.Exact` | Metric separation of distinct cut-bank interiors |

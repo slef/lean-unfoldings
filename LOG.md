@@ -2,6 +2,21 @@
 
 ## Session Log
 
+### 2026-11-09 — retained-edge Euclidean ball charts
+
+- Proved a generic local development estimate for finite closed seam systems:
+  cell maps need agree only across seams incident to the chosen finite class.
+- Constructed local hinge coordinates and proved exact intrinsic/Euclidean
+  distance equality in a small ball around each nonvertex retained-seam point
+  with distinct incident faces. This uses the actual route metric and does not
+  require a global development.
+- Constructed isometries from whole Euclidean balls onto whole intrinsic balls,
+  agreeing with both original incident face maps in their outward hinge frames.
+- Self-paired edges remain supported by the complex API; their charts need a
+  two-patch argument inside one original cell and are not claimed here.
+- Verification: selected Mathlib cache fetch and `lake build` pass; the audit
+  checks 804 declarations, and `git diff --check` passes.
+
 ### 2026-11-09 — hinge neighborhoods and metric localization
 
 - Proved barycentric reconstruction, exact edge membership, and proportionality
