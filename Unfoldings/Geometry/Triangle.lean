@@ -68,6 +68,9 @@ theorem convex_carrier (T : Triangle) : Convex ℝ T.carrier := convex_convexHul
 theorem compact_carrier (T : Triangle) : IsCompact T.carrier :=
   (Set.finite_range T.vertex).isCompact_convexHull ℝ
 
+instance (T : Triangle) : CompactSpace T.Cell :=
+  isCompact_iff_compactSpace.mp T.compact_carrier
+
 /-- The signed-area condition gives the full affine plane, not a degenerate segment. -/
 theorem affineSpan_vertices (T : Triangle) : affineSpan ℝ (Set.range T.vertex) = ⊤ := by
   apply top_unique

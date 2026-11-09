@@ -1,6 +1,6 @@
 module
 
-public import Unfoldings.Metric.Gluing
+public import Unfoldings.Metric.Quotient
 public import Mathlib.Topology.Instances.Real.Lemmas
 
 /-! Checks on the constructed metric: recovery, disconnectedness, and shortcuts. -/
@@ -56,5 +56,40 @@ theorem endpoint_identification :
       MetricGluing.of (fun _ : Unit => ℝ)
         (fun a b => a.2 = 0 ∧ b.2 = 1) () 1 :=
   MetricGluing.point_eq_of_glue _ ⟨rfl, rfl⟩
+
+/-- Identify all nonzero real points with one another, while leaving zero unpaired. -/
+def puncturedGlue (a b : MetricGluing.Total (fun _ : Unit => ℝ)) : Prop :=
+  a.2 ≠ 0 ∧ b.2 ≠ 0
+
+/-- Declared seam chains in this example still keep zero separate from one. -/
+theorem puncturedGlue_not_related :
+    ¬ Relation.EqvGen puncturedGlue ⟨(), 0⟩ ⟨(), 1⟩ := by
+  have invariant {a b} (h : Relation.EqvGen puncturedGlue a b) :
+      a.2 = 0 ↔ b.2 = 0 := by
+    induction h with
+    | rel a b h => simp [h.1, h.2]
+    | refl => rfl
+    | symm _ _ _ ih => exact ih.symm
+    | trans _ _ _ _ _ hab hbc => exact hab.trans hbc
+  intro h
+  have impossible := (invariant h).mp rfl
+  exact one_ne_zero impossible
+
+/-- Continuity forces zero into the collapsed metric class despite the declared seams. -/
+theorem puncturedGlue_metric_collapse :
+    MetricGluing.of (fun _ : Unit => ℝ) puncturedGlue () 0 =
+      MetricGluing.of (fun _ : Unit => ℝ) puncturedGlue () 1 := by
+  let f := MetricGluing.of (fun _ : Unit => ℝ) puncturedGlue ()
+  have agrees : Set.EqOn f (fun _ => f 1) (Set.Ioi 0) := by
+    intro x hx
+    exact MetricGluing.point_eq_of_glue _ ⟨ne_of_gt hx, one_ne_zero⟩
+  have agrees' := agrees.closure
+    (MetricGluing.of_lipschitz (fun _ : Unit => ℝ) puncturedGlue ()).continuous continuous_const
+  exact agrees' (by simp [closure_Ioi])
+
+/-- Exactness cannot be claimed for unrestricted gluing relations. -/
+theorem puncturedGlue_not_exact : ¬ MetricGluing.Exact (fun _ : Unit => ℝ) puncturedGlue := by
+  intro exact
+  exact puncturedGlue_not_related (exact ⟨(), 0⟩ ⟨(), 1⟩ puncturedGlue_metric_collapse)
 
 end Unfoldings.Examples

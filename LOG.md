@@ -2,6 +2,25 @@
 
 ## Session Log
 
+### 2026-11-08 — seam quotient and compactness
+
+- Committed the verified foundation as `2e73201`.
+- Defined the seam quotient independently of the route topology. Proved that
+  its points agree exactly along finite seam chains, and constructed its
+  continuous surjection to the metric realization.
+- Defined metric exactness, characterized it by injectivity of that surjection,
+  and proved a criterion using compatible nonexpanding separating coordinates.
+- Proved compactness and completeness for finite compact-cell realizations,
+  hence for every finite triangle complex and every retained-seam subset.
+- Proved that exactness supplies a homeomorphism between the seam quotient and
+  the metric realization. Exactness itself for triangle complexes remains open.
+- Added a checked example where gluing all nonzero real points also collapses
+  zero in the metric quotient, although zero is a separate seam class.
+- Verification: selected `lake exe cache get` for `Mathlib.Logic.Relation`,
+  `Mathlib.Topology.Separation.Hausdorff`, and
+  `Mathlib.Topology.UniformSpace.Cauchy`, then `lake build` including the axiom
+  audit; `git diff --check`.
+
 ### 2026-11-08
 
 - Set source unfolding of convex polyhedra as the first major target. Added the

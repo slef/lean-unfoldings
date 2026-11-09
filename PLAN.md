@@ -122,9 +122,14 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
 
 ### Metric realizations and cuts
 
+- [x] Quotient by finite seam chains with the original cell-quotient topology.
+- [x] Continuous surjection from seam classes to the metric realization.
+- [x] Exactness criterion using compatible nonexpanding separating coordinates.
+- [x] Counterexample showing additional metric collapse for unrestricted gluing.
 - [ ] Zero route distance identifies exactly the finite gluing equivalence.
-- [ ] Quotient topology agrees with metric topology.
-- [ ] Compactness and completeness of finite closed complexes.
+- [x] Exactness implies agreement of quotient and metric topology for finite
+  compact cells; apply after proving exactness for triangle complexes.
+- [x] Compactness and completeness of finite closed complexes.
 - [ ] Finite vertex classes, links, and manifold conditions.
 - [ ] Local Euclidean disks at face and paired-edge interiors; half-disks at
   boundary-edge interiors.

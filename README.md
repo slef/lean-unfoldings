@@ -16,6 +16,11 @@ The initial library has no placeholder propositions or unfinished proofs.
 - `MetricGluing.Realization` glues a family of metric cells using that distance.
   Compatible nonexpanding maps descend uniquely. Removing seams cannot shorten
   distance. Disconnected cells can remain infinitely far apart.
+- `MetricGluing.SeamQuotient` identifies exactly finite chains of declared seams.
+  It maps continuously and surjectively to the metric realization. `Exact`
+  states that this map is injective; compatible nonexpanding coordinates can
+  certify it. For finite compact cells the metric realization is compact and
+  complete, and exactness gives a homeomorphism with the seam quotient.
 - `TriangleComplex` describes finitely many nondegenerate Euclidean triangles
   and whole-edge isometric equivalences, with each edge in at most one pair.
   Its metric realization depends on an explicit set of retained seams.
@@ -36,10 +41,11 @@ isometry at uncut vertices will be part of the later surface-development layer,
 after vertex links and surface interiors are constructed.
 
 For arbitrary gluing data the separation quotient may identify more points than
-the generated seam equivalence. Exactness of that quotient for finite triangle
-complexes, its topology, and its compactness are explicit remaining tasks. Face
-maps are unconditionally nonexpanding; the existence of a consistent rigid
-development strengthens them to isometries.
+the generated seam equivalence; a checked example demonstrates this. Finite
+triangle complexes already have compact, complete metric realizations.
+Exactness for these complexes remains to be proved; it will also identify their
+metric and cell-quotient topologies. Face maps are unconditionally nonexpanding;
+the existence of a consistent rigid development strengthens them to isometries.
 
 ## Module map
 
@@ -47,6 +53,7 @@ development strengthens them to isometries.
 | --- | --- |
 | `Unfoldings.Metric.Route` | Finite routes and the generated extended pseudometric |
 | `Unfoldings.Metric.Gluing` | Metric quotient, descent, and restoration of seams |
+| `Unfoldings.Metric.Quotient` | Declared seam classes, exactness, compactness, and completeness |
 | `Unfoldings.Geometry.Triangle` | Nondegenerate cells and full edge subspaces |
 | `Unfoldings.Complex` | Finite edge-paired complexes and their cut realizations |
 | `Unfoldings.Development` | Facewise placements, nonoverlap, multiplicity, and metric descent |
@@ -83,6 +90,8 @@ lake exe cache get Mathlib.Analysis.InnerProductSpace.PiL2 \
   Mathlib.Analysis.Normed.Affine.Isometry \
   Mathlib.Analysis.Normed.Operator.Banach \
   Mathlib.Topology.EMetricSpace.Lipschitz \
+  Mathlib.Logic.Relation Mathlib.Topology.Separation.Hausdorff \
+  Mathlib.Topology.UniformSpace.Cauchy \
   Mathlib.Topology.IsLocalHomeomorph \
   Mathlib.Topology.Instances.Real.Lemmas \
   Mathlib.Tactic.FinCases Mathlib.Tactic.FieldSimp Mathlib.Tactic.Ring \

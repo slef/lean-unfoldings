@@ -1,7 +1,7 @@
 module
 
 public import Unfoldings.Geometry.Triangle
-public import Unfoldings.Metric.Gluing
+public import Unfoldings.Metric.Quotient
 
 /-!
 # Finite triangle complexes and their cut metrics
@@ -58,6 +58,25 @@ def glue (retain : Set C.Seam) (a b : C.Total) : Prop :=
 
 /-- The constructed extended metric on the surface with only these seams retained. -/
 abbrev Realization (retain : Set C.Seam) := MetricGluing.Realization C.Cell (C.glue retain)
+
+/-- Finite seam chains, before any further identifications from zero metric distance. -/
+abbrev SeamQuotient (retain : Set C.Seam) := MetricGluing.SeamQuotient C.Cell (C.glue retain)
+
+/-- The remaining separation obligation for a triangle complex. -/
+abbrev Exact (retain : Set C.Seam) := MetricGluing.Exact C.Cell (C.glue retain)
+
+/-- Every finite cut realization is compact, including disconnected ones. -/
+theorem compactSpace_realization (retain : Set C.Seam) : CompactSpace (C.Realization retain) :=
+  inferInstance
+
+/-- No completion step is needed after the route metric quotient. -/
+theorem completeSpace_realization (retain : Set C.Seam) : CompleteSpace (C.Realization retain) :=
+  inferInstance
+
+/-- Exactness is enough to identify the metric and the cell-quotient topologies. -/
+def seamHomeomorph (retain : Set C.Seam) (exact : C.Exact retain) :
+    C.SeamQuotient retain ≃ₜ C.Realization retain :=
+  MetricGluing.seamHomeomorph C.Cell (C.glue retain) exact
 
 /-- Each local cell maps canonically to the cut realization. -/
 def faceMap (retain : Set C.Seam) (f : Face) : C.Cell f → C.Realization retain :=
