@@ -2,6 +2,20 @@
 
 ## Session Log
 
+### 2026-11-09 — finite closed-piece distance bounds
+
+- Adapted the generic interval center-bound argument from EdgeUnfoldings,
+  with attribution and no source- or face-count hypotheses.
+- Proved that finitely many closed covering pieces give local center bounds
+  from their common Lipschitz constant. Derived continuity from those bounds.
+- Extended the bound along segments by continuous induction, obtaining the
+  common Lipschitz constant on a convex domain. Included subtype domains.
+  Pieces need neither convexity nor maps extending to the whole domain.
+- Verification: selected cache fetch and `lake build` pass; the audit checks
+  1373 declarations, and `git diff --check` passes.
+- These generic lemmas support flat-fan inverse maps, metric refinement and
+  facet chord arguments; they do not themselves construct an angular fan.
+
 ### 2026-11-09 — exact radial dilations
 
 - Added generic descent of compatible cell maps with any positive finite

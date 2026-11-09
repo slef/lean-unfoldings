@@ -139,6 +139,7 @@ Vertex charts, self-paired-edge charts, and the full manifold conditions remain 
 | `Unfoldings.Cone.Spatial` | Extended spatial foldings and tangent-cell isometries |
 | `Unfoldings.Cone.Charts` | Constructed whole-ball cone charts for spatial foldings |
 | `Unfoldings.Cone.Dilation` | Exact radial similarities and reciprocal homeomorphisms |
+| `Unfoldings.Geometry.ConvexCover` | Common Lipschitz bounds across finite closed covers |
 | `Unfoldings.Metric.Excision` | Whole-ball isometries when cutting distant seams |
 | `Unfoldings.Complex.Excision` | Metric excision and preserved triangle-complex point classes |
 | `Unfoldings.Complex.Star` | Actual vertex stars, conserved angles and local metric comparisons |

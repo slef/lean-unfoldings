@@ -213,9 +213,10 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
 
 ## Phase 4 Subdivision and cone fans
 
-- [ ] Piecewise nonexpansion on convex sets from finite closed covers, using
+- [x] Piecewise nonexpansion on convex sets from finite closed covers, using
   local center bounds and continuous induction along segments. This supports
-  metric refinement, facet chords and flat-fan inverse maps.
+  metric refinement, facet chords and flat-fan inverse maps. Continuity is
+  derived; pieces need no global extensions and need not themselves be convex.
 - [ ] Elementary triangle subdivision induces a canonical metric isometry.
 - [ ] Iterated conforming refinement preserves the metric and curvature.
 - [ ] Facewise placements commute with refinement.
