@@ -2,6 +2,28 @@
 
 ## Session Log
 
+### 2026-11-09 — constructed vertex-link orders
+
+- Constructed the endpoint permutation of every full-edge isometry, including
+  reversal. Defined the two actual edge germs at every tagged triangle corner.
+- Proved uniqueness and symmetry of retained seam germ pairings. Seam transport
+  is an involution with fixed points precisely at unpaired boundary banks;
+  turning within a corner is a fixed-point-free involution.
+- Proved that germ connectivity is exactly retained metric-vertex equivalence.
+  Thus a vertex link has no hidden disconnected components. Boundary incidence
+  is equivalent to existence of an unpaired link germ.
+- Proved a geometry-independent finite two-involution classification by maximal
+  nonrepeating interval chains. Closed systems give cycles, and boundary systems
+  give intervals with exactly two unpaired endpoints. One-interval cycles are
+  allowed, so loops/self-pairings are preserved.
+- Applied that classification to every cut vertex link, constructing its cyclic
+  or interval corner order. Each incident corner occurs exactly once and its
+  ordered Euclidean angles sum to the actual vertex total angle.
+- Verification: selected Fin-tuple/endpoint-geometry cache fetch and `lake build`
+  pass; the audit checks 1083 declarations, and `git diff --check` passes.
+- Metric fan/cone neighborhoods and geometric convex-vertex angle bounds remain
+  unproved; no such conclusion was made a link-order input.
+
 ### 2026-11-09 — vertex copies and actual angle sums
 
 - Defined vertices as quotients of tagged original corners by retained-seam

@@ -44,6 +44,9 @@ The initial library has no placeholder propositions or unfinished proofs.
   `Vertex` is the finite quotient of tagged corners by retained seam chains,
   with injective metric images and explicit maps between cut copies. Its total
   angles use the actual Euclidean corner angles and are conserved under cuts.
+  Vertex-link orders are constructed from endpoint transport: interior links
+  are cyclic and boundary links are intervals with exactly two unpaired germs.
+  Each incident corner is listed once, including self-pairings and loop links.
 - `FacewiseDevelopment` places each original triangle exactly once, agrees on
   retained edges, and puts the incident triangles on opposite sides. Retained
   dual cycles are allowed. The map descends to the cut realization and is
@@ -118,6 +121,12 @@ Vertex charts, self-paired-edge charts, and the full manifold conditions remain 
 | `Unfoldings.Complex.Paths` | Intrinsic path metric and geodesic existence for cut complexes |
 | `Unfoldings.Complex.Neighborhood` | Quantitative neighborhoods of two-face seam classes |
 | `Unfoldings.Topology.ConvexBoundary` | Sphere topology and connectedness of bounded convex boundaries |
+| `Unfoldings.Topology.PairedInvolutions` | Generic finite interval/cycle order from two involutions |
+| `Unfoldings.Geometry.Endpoints` | Endpoint permutations induced by full-edge isometries |
+| `Unfoldings.Complex.Germs` | The two corner edge germs and their retained seam crossings |
+| `Unfoldings.Complex.Links` | Vertex-link involutions and boundary fixed germs |
+| `Unfoldings.Complex.LinkConnectivity` | Germ components are exactly metric vertex classes |
+| `Unfoldings.Complex.LinkOrdering` | Constructed link orders and their Euclidean angle sums |
 | `Unfoldings.Complex.Vertices` | Actual cut vertex classes, boundary incidence and copy maps |
 | `Unfoldings.Geometry.Angles` | Positive Euclidean corner angles and triangle angle sums |
 | `Unfoldings.Complex.Angles` | Total angles and conservation across cut vertex copies |

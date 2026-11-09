@@ -13,9 +13,10 @@ must not contain `sorry`, `admit`, extra axioms, or predicates defined as `True`
 
 1. **Triangle complex.** Finitely many nondegenerate closed Euclidean triangles
    with specified full-edge isometric identifications. This is initially a
-   complex, not automatically a manifold. Boundary, orientability and vertex-link
-   conditions are additional properties. Self-identifications and flat
-   subdivision vertices must not be silently excluded.
+   complex, with metric manifold neighborhoods to be constructed. Its vertex
+   links now have derived cyclic/interval orders; orientability remains a
+   separate global property. Self-identifications and flat subdivision vertices
+   must not be silently excluded.
 2. **Metric realization.** Construct distance from finite routes within cells
    and across declared seams. Use extended distances for disconnected spaces.
    Face maps are nonexpanding in general. Local or global isometry requires a
@@ -147,7 +148,14 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
   endpoint incidence and surjective vertex-copy maps when restoring seams.
 - [x] Actual positive corner angles, triangle angle sums, total vertex angles,
   and conservation of total angles across cut copies.
-- [ ] Classify vertex links and establish the resulting manifold neighborhoods.
+- [x] Endpoint permutations, corner edge germs, and the within-corner and
+  retained-seam involutions, preserving self-pairings.
+- [x] Germ components equal the actual retained vertex classes.
+- [x] Construct cyclic/interval link orders, listing each corner once; boundary
+  links have exactly two unpaired germs. Generic finite-involution proofs are
+  independent of triangle geometry and metric realizations.
+- [x] Ordered corner angles sum to the actual total vertex angle.
+- [ ] Establish the metric fan/cone/sector neighborhoods from these link orders.
 - [x] Constructed isometries between Euclidean disks and intrinsic open balls
   at every face-interior point, without a global development hypothesis.
 - [x] Barycentric affine coordinates and local supporting half-plane geometry
