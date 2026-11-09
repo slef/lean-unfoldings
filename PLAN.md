@@ -399,9 +399,14 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
         seam mates, by small positive radial lifts to regular original-edge
         points. Initial directions in an embedded cyclic chain are distinct.
         The common axis therefore permits at most two genuine creases.
-      - [ ] Derive at most two incident planes, identify the local boundary
-        as a plane or hinge and transfer regular metric charts. Complete the
-        angle equality at nonextreme vertices as well.
+      - [x] A nonconstant cyclic list has no more labels than changes. Derive
+        at most two incident planes and a small spatial vertex star.
+      - [x] Radial projection identifies the actual nearby boundary with
+        the two supporting half-planes. Construct the local vertex hinge,
+        including coincident planes. Transfer a whole intrinsic Euclidean
+        chart in the coincident-plane case from convex spatial patches.
+      - [ ] Transfer the chart in the genuine two-plane hinge case, and
+        complete the angle equality at nonextreme vertices as well.
 
 ## Phase 6 Source unfolding
 

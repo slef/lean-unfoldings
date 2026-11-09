@@ -304,6 +304,15 @@ manifold conditions remain open.
 | `Unfoldings.Geometry.UnitLine` | A nonzero real line has two opposite unit directions |
 | `Unfoldings.Polyhedron.LinkDirections` | Distinct initial radial directions in an embedded cyclic link |
 | `Unfoldings.Polyhedron.NonextremeCreaseCount` | At most two genuine creases at a nonextreme vertex |
+| `Unfoldings.Topology.CyclicLabels` | Nonconstant cyclic lists have no more labels than changes |
+| `Unfoldings.Polyhedron.NonextremePlanes` | At most two actual incident face planes at a nonextreme vertex |
+| `Unfoldings.Geometry.AffinePlaneRange` | Common-point affine planes agree when their linear directions agree |
+| `Unfoldings.Polyhedron.VertexNeighborhood` | Small spatial vertex stars and two-plane neighborhoods |
+| `Unfoldings.Geometry.LocalHingeBoundary` | A locally two-plane convex frontier equals the actual supporting hinge |
+| `Unfoldings.Polyhedron.VertexHinge` | Constructed local support hinges at nonextreme vertices, allowing coincident planes |
+| `Unfoldings.Metric.BallParametrization` | Whole-ball charts from isometric parametrizations with ball coverage |
+| `Unfoldings.Polyhedron.PlanarPatch` | Whole intrinsic charts from actual planar spatial patches |
+| `Unfoldings.Polyhedron.LocallyPlanar` | Derived regularity when a vertex's incident planes coincide |
 | `Unfoldings.Geometry.RadialSliceAngles` | Positive radial slicing preserves affine apex angles |
 | `Unfoldings.Geometry.SliceHull` | The whole transverse section is the finite hull of projected generators |
 | `Unfoldings.Geometry.RaySection` | Exact wedge sections and preservation of their genuine apex angles |

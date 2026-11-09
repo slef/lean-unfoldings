@@ -2,6 +2,27 @@
 
 ## Session Log
 
+### 2026-11-09 — actual local vertex hinges and planar metric charts
+
+- Proved a nonconstant finite cyclic list has no more labels than changes,
+  using an entry for each proper nonempty label class. Applied the two-crease
+  bound to obtain at most two actual incident face planes.
+- Proved every face containing a spatial vertex has an actual corner there,
+  and excluded all nonincident faces from one small spatial ball. The nearby
+  surface at a nonextreme vertex lies in the derived two incident planes.
+- Used radial projection to prove the converse: a convex frontier locally
+  contained in two supporting planes is exactly their supporting half-planes
+  near the point. Constructed actual vertex support hinges, with coincident
+  planes allowed and no metric conclusion stored as an assumption.
+- Constructed whole intrinsic metric-ball charts from actual planar patches
+  via convex spatial inverse isometries and ambient ball coverage. This proves
+  regularity in the coincident-plane case, including subdivision vertices.
+- Verification: selected cache fetch and full `lake build` pass; the audit
+  checks 2219 declarations with only standard Lean axioms; `git diff --check`
+  passes.
+- Next: the metric chart for a genuine two-plane hinge and nonextreme angle
+  equality, followed by source routes and source unfolding.
+
 ### 2026-11-09 — exact radial directions and at most two nonextreme creases
 
 - Constructed original-edge coordinates at each sufficiently small positive
