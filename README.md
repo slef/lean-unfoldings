@@ -87,12 +87,17 @@ The initial library has no placeholder propositions or unfinished proofs.
   subdivision corners are allowed; a separate maximal-facet API remains open.
   Every spatial chord contained in the boundary has exact intrinsic length
   and a unique geodesic, across any number of subdivision triangles.
-  Positive-curvature interior vertices are spatial extreme points. Convex
-  upper angle bounds and the full regular-point classification remain open.
+  At interior triangulation vertices, spatial extremality is equivalent to
+  total angle below `2π`. Nonconstant geodesics avoid these extreme vertices
+  at interior times. The upper bound at nonextreme subdivision vertices and
+  the full regular-point classification remain open.
   Extreme vertices have constructed compact convex planar vertex figures,
   with finite noncollinear generators and actual interior centers. Their
   boundaries are exactly the slice-plane intersections with the surface,
-  covered by radial segments from the incident original triangles.
+  covered by radial segments from the incident original triangles. The actual
+  cyclic link gives a simple Mathlib polygon. Its central fan makes exactly
+  one turn; its polygon angle sum and the strict lateral pyramid budget prove
+  the genuine surface angle bound, including flat facet subdivisions.
 - Shortest paths on embedded surfaces cannot leave and re-enter a closed original
   face: each face visit is one closed parameter interval. Saturated nonexpanding
   images of geodesics are proved to be affine straight paths.
@@ -262,6 +267,22 @@ manifold conditions remain open.
 | `Unfoldings.Geometry.ConvexBoundaryEdges` | Supporting functionals of boundary segments and noncollinear interior centers |
 | `Unfoldings.Geometry.ConvexBoundaryRays` | Unique convex-frontier point on a positive ray from an interior origin |
 | `Unfoldings.Polyhedron.FigureCenter` | Genuine central triangles and their constructed positive-angle fan |
+| `Unfoldings.Geometry.FrontierRays` | Gauge-normalized frontier rays and disjoint positive radial hulls |
+| `Unfoldings.Polyhedron.FigureRadialCover` | Actual central cones cover the punctured plane and have separated open sectors |
+| `Unfoldings.Geometry.PlanarCollinearity` | Signed-area zero is equivalent to affine collinearity |
+| `Unfoldings.Geometry.BoundaryHalfplanes` | Every convex boundary edge supports its whole planar body |
+| `Unfoldings.Geometry.AdjacentBoundaryEdges` | Simple convex boundary edges keep the same radial orientation |
+| `Unfoldings.Geometry.AffineOrientation` | Affine signed-area scaling and rigid preservation of relative signs |
+| `Unfoldings.Polyhedron.FigureOrientation` | Global consistency of the actual central triangle orientations |
+| `Unfoldings.Polyhedron.FigureFrames` | Constructed normalized rigid frames of the actual central triangles |
+| `Unfoldings.Geometry.ComplexArea` | Signed area in standard complex orthonormal coordinates |
+| `Unfoldings.Polyhedron.FigureGlobalFrame` | Positive successive turns in one global normalized complex frame |
+| `Unfoldings.Geometry.ComplexTurn` | Exact positive angular successor formula with unreduced headings |
+| `Unfoldings.Polyhedron.FigureHeadings` | Actual cumulative headings and exact outer-ray closure |
+| `Unfoldings.Polyhedron.FigureFullTurn` | Proved nonoverlap and exactly one turn of the actual central fan |
+| `Unfoldings.Geometry.BoundaryCornerAngle` | Exact splitting of convex boundary corner angles by an interior center |
+| `Unfoldings.Polyhedron.FigureAngleSum` | Actual polygon angle sum and strict angle bound at interior extreme vertices |
+| `Unfoldings.Polyhedron.ExtremeCurvature` | Interior extremality iff positive curvature; extreme-vertex geodesic avoidance |
 | `Unfoldings.Geometry.RadialSliceAngles` | Positive radial slicing preserves affine apex angles |
 | `Unfoldings.Geometry.SliceHull` | The whole transverse section is the finite hull of projected generators |
 | `Unfoldings.Geometry.RaySection` | Exact wedge sections and preservation of their genuine apex angles |

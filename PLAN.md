@@ -375,8 +375,18 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
     - [x] Supply the nonstraight corner automatically for every nonempty
       finite pyramid. Prove the figure's central triangles noncollinear,
       with positive angles below pi and unique boundary points on rays.
-    - [ ] Prove the central fan makes exactly one turn, derive the planar
-      polygon angle sum, and conclude the convex upper angle bound.
+    - [x] Use gauge normalization and frontier ray uniqueness to prove
+      coverage and open-cone separation. Derive globally consistent radial
+      orientation, exact cumulative headings, and one full turn of the actual
+      central fan from nonoverlap and its closing ray.
+    - [x] Prove exact center splitting of each boundary corner angle,
+      including straight subdivisions. Sum the central triangles to derive
+      the actual polygon angle sum; combine with the strict lateral budget.
+      Interior extreme vertices have genuine total angle below two pi,
+      giving extremality iff positive curvature and geodesic avoidance.
+    - [ ] Derive that the uncut convex boundary has no unpaired banks,
+      prove the upper angle bound also at nonextreme vertices, and obtain
+      flatness and regular charts at every nonextreme subdivision vertex.
 
 ## Phase 6 Source unfolding
 

@@ -2,6 +2,30 @@
 
 ## Session Log
 
+### 2026-11-09 — one-turn figure fans and strict extreme-vertex curvature
+
+- Used Mathlib's gauge to normalize nonzero rays to the actual convex
+  frontier. Proved radial cones over the actual figure edges cover the
+  punctured plane and their open sectors are separated.
+- Derived supporting half-planes and consistent radial orientation for
+  adjacent boundary edges, including straight subdivisions. Proved affine
+  signed-area scaling and transported these signs to one normalized frame.
+- Constructed exact cumulative real headings from genuine central angles.
+  Transferred open-cone separation to angular nonoverlap. Its total angle
+  is positive and at most one turn; the closing ray forces exactly one turn.
+- Proved an interior center splits every simple convex boundary corner angle
+  exactly. Summing central triangle angles yields the actual figure polygon
+  angle sum, including flat subdivisions.
+- Combined this with the strict lateral pyramid budget to prove total angle
+  below two pi at interior spatial extreme vertices. Together with the prior
+  converse this gives extremality iff positive curvature. Intrinsic geodesics
+  avoid these extreme vertices at all interior times.
+- Verification: selected cache fetch and full `lake build` pass; the audit
+  checks 2106 declarations with only standard Lean axioms; `git diff --check`
+  passes.
+- Remaining: derive closedness of the uncut triangulation and flatness of
+  nonextreme subdivision vertices, then source routes and source unfolding.
+
 ### 2026-11-09 — actual simple figure polygons and strict angle budgets
 
 - Proved chords joining nonvertex points of different triangle edges enter

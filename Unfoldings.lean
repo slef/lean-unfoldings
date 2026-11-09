@@ -53,6 +53,7 @@ public import Unfoldings.Polyhedron.FigureGermAngles
 public import Unfoldings.Polyhedron.FigureChain
 public import Unfoldings.Polyhedron.FigureSimpleChain
 public import Unfoldings.Polyhedron.FigureCenter
+public import Unfoldings.Polyhedron.ExtremeCurvature
 public import Unfoldings.Geometry.RaySection
 public import Unfoldings.Geometry.PyramidAngles
 public import Unfoldings.Boundary
