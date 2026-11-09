@@ -138,7 +138,9 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
 - [x] Agreement of quotient and metric topology for every finite triangle complex.
 - [x] Compactness and completeness of finite closed complexes.
 - [ ] Finite vertex classes, links, and manifold conditions.
-- [ ] Local Euclidean disks at face and paired-edge interiors; half-disks at
+- [x] Constructed isometries between Euclidean disks and intrinsic open balls
+  at every face-interior point, without a global development hypothesis.
+- [ ] Local Euclidean disks at paired-edge interiors; half-disks at
   boundary-edge interiors.
 - [ ] Cone/sector neighborhoods at cyclic/interval vertex links.
 - [ ] Curvature is derived from the incident triangle angles.

@@ -32,6 +32,8 @@ The initial library has no placeholder propositions or unfinished proofs.
   With every seam cut, exactness and isometric face maps are proved.
   `TriangleComplex.exact` proves exactness for every retained-seam set, and
   `realizationHomeomorph` identifies the metric and cell-quotient topologies.
+  `FaceChart` constructs Euclidean metric-ball charts at all face-interior
+  points. Distinct boundary-bank interiors have distinct metric images.
 - `FacewiseDevelopment` places each original triangle exactly once, agrees on
   retained edges, and puts the incident triangles on opposite sides. Retained
   dual cycles are allowed. The map descends to the cut realization and is
@@ -53,7 +55,7 @@ the generated seam equivalence; a checked example demonstrates this. For finite
 triangle complexes, exactness, compactness, completeness, and agreement with
 the cell-quotient topology are all proved. Face maps are unconditionally
 nonexpanding; a consistent rigid development strengthens them to isometries.
-Local metric charts and manifold conditions remain to be constructed.
+Paired-edge/vertex charts and manifold conditions remain to be constructed.
 
 ## Module map
 
@@ -65,11 +67,15 @@ Local metric charts and manifold conditions remain to be constructed.
 | `Unfoldings.Metric.Unglued` | Exact metric formulas and separation with no seams |
 | `Unfoldings.Metric.Barrier` | Capped distance separators and local class transport |
 | `Unfoldings.Metric.ClosedSeams` | Exactness for closed isometric seams with finite classes |
+| `Unfoldings.Metric.Local` | Seam clearance, metric ball images, and local cell isometries |
 | `Unfoldings.Geometry.Triangle` | Nondegenerate cells and full edge subspaces |
 | `Unfoldings.Geometry.Edge` | Edge intersections and endpoint preservation by isometries |
+| `Unfoldings.Geometry.Halfplane` | Supporting heights and finite corner bounds |
+| `Unfoldings.Geometry.Interior` | Interior clearance and Euclidean cell balls |
 | `Unfoldings.Complex` | Finite edge-paired complexes and their cut realizations |
 | `Unfoldings.Complex.Classes` | Finite corner classes and unique nonvertex seam neighbors |
 | `Unfoldings.Complex.Exact` | Exact metric identifications and quotient homeomorphism |
+| `Unfoldings.Complex.Charts` | Constructed face-interior Euclidean metric charts |
 | `Unfoldings.Boundary` | Boundary-edge labels, bank maps, and restoration of banks |
 | `Unfoldings.Boundary.Exact` | Metric separation of distinct cut-bank interiors |
 | `Unfoldings.Development` | Facewise placements, nonoverlap, multiplicity, and metric descent |

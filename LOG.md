@@ -2,6 +2,23 @@
 
 ## Session Log
 
+### 2026-11-09 — face-interior metric charts
+
+- Proved quantitative seam-clearance estimates for general metric-cell gluing.
+  Compatible single-cell functions extend by constants to other cells; capped
+  distances bound intrinsic distance from below.
+- Proved that a sufficiently small intrinsic ball consists exactly of the
+  corresponding original cell ball and constructed an isometry between them.
+- Separated supporting-height lemmas from the development-dependent hinge
+  module without changing their statements. Proved all triangle edges lie
+  outside the carrier interior and constructed positive clearance radii.
+- Constructed Euclidean ball charts at every face-interior point of every cut
+  triangle complex, agreeing with its original face map. No global placement or
+  manifold conclusion was assumed.
+- Verification: `lake build` passes without warnings; 512 declarations pass the
+  transitive axiom audit; `git diff --check` passes.
+- Paired-edge and vertex charts remain under construction.
+
 ### 2026-11-08 — triangle-complex exactness
 
 - Proved that closed-edge isometries preserve endpoints, and distinct edges of
