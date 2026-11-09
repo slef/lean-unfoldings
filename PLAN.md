@@ -395,8 +395,13 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
         direction in every incident rigid face plane. The intersection of
         distinct incident planes is the actual seam direction line, so every
         genuine crease lies along that one common axis.
-      - [ ] Use embeddedness to limit axis-ray repetitions and prove the
-        coplanar link arcs give one full turn, then transfer the flat charts.
+      - [x] Equal spatial unit directions classify exactly equal germs or
+        seam mates, by small positive radial lifts to regular original-edge
+        points. Initial directions in an embedded cyclic chain are distinct.
+        The common axis therefore permits at most two genuine creases.
+      - [ ] Derive at most two incident planes, identify the local boundary
+        as a plane or hinge and transfer regular metric charts. Complete the
+        angle equality at nonextreme vertices as well.
 
 ## Phase 6 Source unfolding
 

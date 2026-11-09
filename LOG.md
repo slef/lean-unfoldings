@@ -2,6 +2,23 @@
 
 ## Session Log
 
+### 2026-11-09 — exact radial directions and at most two nonextreme creases
+
+- Constructed original-edge coordinates at each sufficiently small positive
+  radius, proved them nonvertex, and computed their exact spatial images.
+- Equal normalized spatial germ directions give equal spatial lifts.
+  Embeddedness and exact seam classes classify these precisely as equal
+  germs or seam mates. Cyclic chain initial directions are therefore distinct.
+- A nonzero real line has only two opposite unit directions. Combined this
+  with the derived common crease axis to prove at most two genuine creases
+  in every nonextreme cyclic vertex link, retaining all coplanar subdivisions.
+- Verification: selected cache fetch and full `lake build` pass; the audit
+  checks 2162 declarations with only standard Lean axioms; `git diff --check`
+  passes.
+- Next: reduce incident planes to at most two and construct the actual local
+  plane/hinge metric chart. Nonextreme angle equality and source unfolding
+  remain open.
+
 ### 2026-11-09 — common axes at nonextreme subdivision vertices
 
 - Proved a rigid two-dimensional spatial plane equals any nonzero functional

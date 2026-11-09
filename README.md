@@ -298,6 +298,12 @@ manifold conditions remain open.
 | `Unfoldings.Geometry.PlaneIntersection` | Distinct spatial planes intersect in their shared nonzero direction line |
 | `Unfoldings.Polyhedron.GermDirections` | Actual radial directions, mate invariance and exact crease intersections |
 | `Unfoldings.Polyhedron.NonextremeCreases` | Every genuine crease at a nonextreme vertex lies along one common axis |
+| `Unfoldings.Geometry.EdgeParameters` | Strict edge interpolation avoids all original triangle vertices |
+| `Unfoldings.Complex.GermSegments` | Local edge endpoints in the actual orientation of each germ |
+| `Unfoldings.Polyhedron.GermRays` | Equal spatial unit directions classify equal germs and seam mates |
+| `Unfoldings.Geometry.UnitLine` | A nonzero real line has two opposite unit directions |
+| `Unfoldings.Polyhedron.LinkDirections` | Distinct initial radial directions in an embedded cyclic link |
+| `Unfoldings.Polyhedron.NonextremeCreaseCount` | At most two genuine creases at a nonextreme vertex |
 | `Unfoldings.Geometry.RadialSliceAngles` | Positive radial slicing preserves affine apex angles |
 | `Unfoldings.Geometry.SliceHull` | The whole transverse section is the finite hull of projected generators |
 | `Unfoldings.Geometry.RaySection` | Exact wedge sections and preservation of their genuine apex angles |
