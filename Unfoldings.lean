@@ -90,5 +90,7 @@ public import Unfoldings.Source.SourceBall
 public import Unfoldings.Metric.RigidChartTransition
 public import Unfoldings.Source.PrefixCutAvoidance
 public import Unfoldings.Source.ConvexLocalIsometry
+public import Unfoldings.Source.RetainedRadials
+public import Unfoldings.Polyhedron.RegularClassification
 public import Unfoldings.Examples.Metric
 public import Unfoldings.Examples.Hinge

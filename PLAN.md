@@ -415,6 +415,9 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
           use its constructed outward hinge placement to parametrize the
           two half-planes, and transfer the intrinsic chart.
 
+- [x] Classify actual regular points as exactly the complement of true extreme
+  vertex points. A regular chart constructs a nonconstant geodesic through its
+  center, contradicting the derived extreme-vertex avoidance if it were extreme.
 - [x] Every nonextreme vertex has an intrinsic Euclidean ball chart. Every
   interior point of a nonconstant convex-boundary geodesic is regular;
   agreement on an initial interval forces equality along the whole geodesic.
@@ -465,6 +468,9 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
 - [ ] Every nonflat vertex belongs to the cut locus.
 - [ ] The completed slit surface is a flat disk with identified boundary copies.
 - [ ] Existence of the source development and radial developed shortest paths.
+  - [x] Construct actual geodesics from the source to every retained point,
+    entirely in the closed-cut complement. Their coordinates are exact radial
+    segments, and the retained coordinate image is star-shaped.
 - [x] Abstract injectivity criterion from existence and uniqueness of radial lifts.
 - [ ] Apply that criterion to retained source-unfolding interiors.
 - [ ] Boundary coverage, nonoverlap of every original face piece, and a precise

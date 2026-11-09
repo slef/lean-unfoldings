@@ -2,6 +2,23 @@
 
 ## Session Log
 
+### 2026-11-09 — retained radial paths and complete metric regularity classification
+
+- Restricted every selected actual shortest path to the closed-cut complement,
+  using the proved avoidance at proper prefix times. The restricted path is
+  still geodesic; its constructed coordinates are exactly scalar multiples of
+  the endpoint vector. The retained coordinate image is star-shaped.
+- Proved a whole Euclidean ball chart contains a nonconstant actual geodesic
+  through its center at an interior time. Extreme-vertex geodesic avoidance
+  therefore rules out regularity at every true extreme vertex.
+- Combined this with constructed nonextreme and nonvertex charts: actual
+  regularity is equivalent to avoiding all true extreme vertex points.
+- Verification: selected cache fetch and full `lake build` pass; the audit
+  checks **2,649 declarations**, using only the standard Lean axioms.
+- Cone-vertex inclusion in the closure-of-ties cut locus and the completed
+  boundary/cut-graph descriptions remain open; they are not assumed by the
+  regularity or retained-radial results.
+
 ### 2026-11-09 — terminal source charts, regular local isometries and closed-cut avoidance
 
 - Proved metric regularity is open and whole compact parameter intervals stay

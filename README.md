@@ -91,7 +91,8 @@ The initial library has no placeholder propositions or unfinished proofs.
   continuously; its actual source coordinates are continuous and injective,
   and are locally isometric at every regular retained point. Terminal affine
   charts are constructed along whole regular paths and uniformly for nearby
-  shortest paths. Every proper prefix avoids the closed cut locus. Inclusion
+  shortest paths. Every proper prefix avoids the closed cut locus; the retained
+  shortest paths are constructed and develop to exact radial segments. Inclusion
   of extreme cone endpoints in that cut locus, the completed slit interpretation,
   and finite cut-locus tree structure remain open.
 - `SpatialFolding` gives compatible rigid placements into three-dimensional
@@ -113,7 +114,8 @@ The initial library has no placeholder propositions or unfinished proofs.
   Euclidean metric-ball chart, including genuine creases. Consequently every
   interior point of a nonconstant geodesic is regular and initial agreement
   forces unique continuation. Numerical angle equality at nonextreme vertices
-  remains open.
+  remains open. Actual regular points are exactly the complement of true
+  extreme vertex points, by a constructed geodesic through every regular center.
   Every nonvertex point has a constructed face or hinge Euclidean chart.
   Extreme vertices have constructed compact convex planar vertex figures,
   with finite noncollinear generators and actual interior centers. Their
@@ -426,6 +428,9 @@ manifold conditions remain open.
 | `Unfoldings.Source.PrefixCutAvoidance` | Every proper shortest-path prefix avoids the closed cut locus |
 | `Unfoldings.Source.LocalIsometry` | Actual local distance preservation from constructed terminal charts |
 | `Unfoldings.Source.ConvexLocalIsometry` | Local source isometries at every regular retained convex-surface point |
+| `Unfoldings.Source.RetainedRadials` | Construct all retained radial geodesics and prove exact developed straightness |
+| `Unfoldings.Metric.RegularGeodesic` | A whole regular chart supplies a nonconstant geodesic through its center |
+| `Unfoldings.Polyhedron.RegularClassification` | Regular points are exactly the complement of true extreme vertex points |
 | `Unfoldings.Examples.*` | Recovery, disconnectedness, shortcuts, contact, and overlap |
 | `Audit` | Transitive axiom check for all imported library declarations |
 
