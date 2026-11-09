@@ -25,6 +25,8 @@ public import Unfoldings.Cone.CornerSector
 public import Unfoldings.Cone.AngularMetric
 public import Unfoldings.Cone.LinkAngles
 public import Unfoldings.Cone.LinkComparison
+public import Unfoldings.Cone.AngularOverlap
+public import Unfoldings.Topology.ChainPairings
 public import Unfoldings.Complex.Charts
 public import Unfoldings.Complex.Paths
 public import Unfoldings.Complex.Connectivity

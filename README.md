@@ -60,6 +60,9 @@ The initial library has no placeholder propositions or unfinished proofs.
   isometry at its genuine corner angle. Slit angular fans have constructed
   metrics and developments at every total angle. Identifying these with actual
   tangent fans and constructing flat-vertex charts remain open.
+- Slit angular fans have pairwise disjoint genuine piece interiors **iff** their
+  total angle is at most a full turn. At equality the developed outer banks
+  coincide. Above a full turn, two piece interiors overlap at every positive radius.
 - `FacewiseDevelopment` places each original triangle exactly once, agrees on
   retained edges, and puts the incident triangles on opposite sides. Retained
   dual cycles are allowed. The map descends to the cut realization and is
@@ -157,6 +160,10 @@ Vertex charts, self-paired-edge charts, and the full manifold conditions remain 
 | `Unfoldings.Cone.SeamRadius` | Actual radial seam witnesses at every nonnegative radius |
 | `Unfoldings.Cone.GermFrames` | Exact initial/terminal coordinates on the actual radial banks |
 | `Unfoldings.Cone.LinkComparison` | Surjective nonexpanding angular-to-tangent comparison |
+| `Unfoldings.Cone.SectorInterior` | Positive-radius open-heading coordinates for actual sector interiors |
+| `Unfoldings.Cone.AngularImages` | Genuine rigid piece images and their open heading intervals |
+| `Unfoldings.Cone.AngularOverlap` | Exact nonoverlap criterion and arbitrary-radius interior overlaps |
+| `Unfoldings.Topology.ChainPairings` | Every link pairing is consecutive or closes the outer banks |
 | `Unfoldings.Metric.Excision` | Whole-ball isometries when cutting distant seams |
 | `Unfoldings.Complex.Excision` | Metric excision and preserved triangle-complex point classes |
 | `Unfoldings.Complex.Star` | Actual vertex stars, conserved angles and local metric comparisons |

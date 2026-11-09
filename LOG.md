@@ -2,6 +2,24 @@
 
 ## Session Log
 
+### 2026-11-09 — exact nonoverlap criterion for angular fans
+
+- Characterized genuine sector interiors by positive radii and strictly
+  intermediate real headings. Characterized rigid fan piece interiors by
+  the corresponding open cumulative-heading intervals.
+- Defined angular fan nonoverlap using pairwise disjoint actual planar
+  interiors. Proved it iff total angle is at most a full turn.
+- At equality, proved that the two outer banks have coincident developed
+  coordinates. Above a full turn, constructed two distinct piece interiors
+  overlapping at every prescribed positive radius, away from all banks.
+- Added geometry-independent chain pairing classification: every nonfixed
+  pairing is consecutive or closes the two outer ends. Interval chains have
+  only the consecutive cases, supporting the inverse metric comparison next.
+- Verification: selected cache fetch and `lake build` pass; the audit checks
+  1599 declarations, and `git diff --check` passes.
+- This completes the slit angular-fan benchmark. Flat cyclic charts, convex
+  vertex avoidance and source unfolding remain open.
+
 ### 2026-11-09 — directed actual/angular fan comparison
 
 - Constructed angular-bisector reflections exchanging the two sector banks.

@@ -249,10 +249,10 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
     preserves every apex distance, and is surjective for a covering link order.
     No spatial folding is needed.
   - [ ] Prove the inverse comparison for interval links and close cyclic links.
-- [ ] A radially slit fan is nonoverlapping **iff** its total angle is at most
+- [x] A radially slit angular fan is nonoverlapping **iff** its total angle is at most
   `2 * Real.pi`.
-- [ ] At equality the terminal banks may coincide; above a full turn there is
-  interior overlap near the apex.
+- [x] At equality the terminal banks coincide in the development; above a full
+  turn there is genuine two-piece interior overlap at every positive radius.
 - [ ] Lateral pyramid unfolding and a complete convex-pyramid net as benchmarks.
 
 ## Phase 5 Embedded convex surfaces and shortest paths
