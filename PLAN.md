@@ -504,6 +504,11 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
     equal terminal virtual-source images imply equality of the whole paths.
 - [ ] Cut-locus closedness, finite embedded graph structure, and tree structure.
   - [x] The actual closed cut locus is a connected image of the boundary circle.
+  - [x] Nonunique face-interior endpoints lie on genuine bisectors of distinct
+    actual terminal virtual-source images. Compact face images extend this
+    finite support to the closed cut locus, including cone leaves.
+  - [x] Transport the supports by finite actual face motions to obtain finitely
+    many nonzero affine equations containing the entire developed boundary.
 - [x] Every nonflat vertex belongs to the closed cut locus, including leaves
   with a unique incoming geodesic.
 - [x] The completed slit surface is a flat disk with identified boundary copies.

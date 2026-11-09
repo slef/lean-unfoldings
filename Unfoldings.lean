@@ -109,5 +109,6 @@ public import Unfoldings.Source.Images
 public import Unfoldings.Source.FiniteFibers
 public import Unfoldings.Source.TerminalUniqueness
 public import Unfoldings.Source.CutConnected
+public import Unfoldings.Source.BoundaryLines
 public import Unfoldings.Examples.Metric
 public import Unfoldings.Examples.Hinge

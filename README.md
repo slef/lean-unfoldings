@@ -525,6 +525,10 @@ manifold conditions remain open.
 | `Unfoldings.Source.TerminalPiece` | Actual finite terminal-face formulas, including tied endpoints |
 | `Unfoldings.Source.TerminalUniqueness` | A terminal virtual-source image determines the whole original shortest path |
 | `Unfoldings.Source.CutConnected` | Exact cut-locus boundary projection and connectedness of the actual closed cut locus |
+| `Unfoldings.Geometry.AffineSupport` | Nonzero affine equations for genuine bisectors and triangle edge lines |
+| `Unfoldings.Source.Bisectors` | Distinct shortest paths in a face interior determine distinct virtual-source images |
+| `Unfoldings.Source.CutSupport` | Closed finite supports for all cut points, including cone leaves |
+| `Unfoldings.Source.BoundaryLines` | The entire developed boundary lies on finitely many proper affine lines |
 | `Unfoldings.Examples.*` | Recovery, disconnectedness, shortcuts, contact, and overlap |
 | `Audit` | Transitive axiom check for all imported library declarations |
 
