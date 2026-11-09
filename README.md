@@ -75,10 +75,10 @@ For development priorities, use the [feature checklist](PLAN.md); the
 
 ## Scope and next steps
 
-The regular-source theorem and exact finite segment descriptions of the net
-boundary and cut locus are proved. Remaining work includes:
+The regular-source theorem and a finite connected embedded graph for its cut
+locus are proved. Remaining work includes:
 
-- The cut-graph/tree characterization and general sphere/disk cut criteria.
+- The tree characterization and general sphere/disk cut criteria.
 - Sources at genuine cone vertices, which need sector-valued source frames.
 - Star unfolding and the downstream tools needed for the Fewest Nets paper.
 

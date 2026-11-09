@@ -110,6 +110,10 @@ convex polyhedra, or intrinsic metrics.
 
 - [ ] Finite graphs with cyclic incidence orders (rotation systems), including
   loops and parallel edges where boundary contraction requires them.
+  - [x] A finite embedded-graph interface with actual continuous edge maps,
+    disjoint open edges, and vertex avoidance; loops and parallel edges are
+    retained in Mathlib's multigraph type. Topological carrier connectedness
+    implies graph connectedness. Rotation orders remain separate data.
 - [ ] Distinguish abstract face walks from actual complementary regions.
 - [ ] Combinatorial surface cellulations and their topological realizations.
 - [ ] Planar/spherical embeddings and their compatibility with rotation data.
@@ -528,6 +532,11 @@ graph/tree characterization and cone-vertex source frames remain below.
     proper line, hence a closed segment with one whole-face rigid projection.
     The actual closed source cut locus is exactly a finite union of spatial
     segments, each contained in an original triangle.
+  - [x] Subdivide all crossings and collinear overlaps at finite marked points.
+    Construct a finite connected embedded graph whose carrier is exactly the
+    spatial cut locus. Retain actual affine edge formulas and original-face
+    containment; derive simplicity and graph connectedness. Degenerate input
+    segments survive as vertices. Acyclicity is still to be proved.
 - [x] Every nonflat vertex belongs to the closed cut locus, including leaves
   with a unique incoming geodesic.
 - [x] The completed slit surface is a flat disk with identified boundary copies.

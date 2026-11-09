@@ -2,6 +2,24 @@
 
 ## Session Log
 
+### 2026-11-09 — finite embedded cut graphs
+
+- Added a topology-only finite embedded multigraph interface with actual
+  continuous edge maps, disjoint open edges, and vertex avoidance. Loops and
+  parallel edges are allowed. Connectedness of the carrier implies graph
+  connectedness.
+- Marked original segment endpoints and both endpoints of every nonempty
+  pairwise intersection. Proved consecutive marked subsegments cover the
+  network and distinct open cells cannot overlap, including collinear overlap
+  and coincident input segments. Degenerate input segments remain as vertices.
+- Constructed a finite embedded straight graph with exactly the original
+  network as its carrier. Affine edge formulas imply that its multigraph is
+  simple. Applied this construction to the actual source cut locus, preserving
+  original-face containment and deriving graph connectedness.
+- Verification: selected Mathlib cache fetches and full `lake build` pass;
+  **3,345 declarations** are audited with only standard Lean axioms.
+- Acyclicity, the tree/disk criteria, and Euler's formula remain open.
+
 ### 2026-11-09 — finite boundary representations and actual terminal source images
 
 - Finite compact graphs of rigid face maps cover the retained endpoint graph.

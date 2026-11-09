@@ -46,6 +46,7 @@ source, including its module documentation and declarations.
 | [Unfoldings.Source.ConvexOffCutCoordinates](../Unfoldings/Source/ConvexOffCutCoordinates.lean) | Constructed coordinates from convex-boundary input and a regular source |
 | [Unfoldings.Source.Coordinates](../Unfoldings/Source/Coordinates.lean) | Constructed full-length source vectors and exact radial norms |
 | [Unfoldings.Source.CutConnected](../Unfoldings/Source/CutConnected.lean) | Exact cut-locus boundary projection and connectedness of the actual closed cut locus |
+| [Unfoldings.Source.CutGraph](../Unfoldings/Source/CutGraph.lean) | An actual finite connected embedded straight graph with exact cut-locus carrier and original-face containment |
 | [Unfoldings.Source.CutIntrinsic](../Unfoldings/Source/CutIntrinsic.lean) | Cut metric equals path distance in the original retained surface |
 | [Unfoldings.Source.CutLocus](../Unfoldings/Source/CutLocus.lean) | Closed source cut locus and exclusion of a whole source ball |
 | [Unfoldings.Source.CutMetric](../Unfoldings/Source/CutMetric.lean) | Actual source cut metrics, completion, boundary copies and boundary projection |
@@ -399,6 +400,7 @@ source, including its module documentation and declarations.
 | [Unfoldings.Geometry.HingePatch](../Unfoldings/Geometry/HingePatch.lean) | Exact hinge intersections and local planar coverage |
 | [Unfoldings.Geometry.Interior](../Unfoldings/Geometry/Interior.lean) | Interior clearance and Euclidean cell balls |
 | [Unfoldings.Geometry.IsometryOnConvex](../Unfoldings/Geometry/IsometryOnConvex.lean) | Isometric maps to strictly convex spaces preserve affine segment parameters |
+| [Unfoldings.Geometry.LineCoordinate](../Unfoldings/Geometry/LineCoordinate.lean) | Real affine coordinates and exact segment membership on a genuine line |
 | [Unfoldings.Geometry.LocalHingeBoundary](../Unfoldings/Geometry/LocalHingeBoundary.lean) | A locally two-plane convex frontier equals the actual supporting hinge |
 | [Unfoldings.Geometry.Paths](../Unfoldings/Geometry/Paths.lean) | Straight paths in triangle cells with exact Euclidean length |
 | [Unfoldings.Geometry.Placement](../Unfoldings/Geometry/Placement.lean) | Constructed strict outward hinge placements |
@@ -416,11 +418,16 @@ source, including its module documentation and declarations.
 | [Unfoldings.Geometry.RadialSliceAngles](../Unfoldings/Geometry/RadialSliceAngles.lean) | Positive radial slicing preserves affine apex angles |
 | [Unfoldings.Geometry.RaySection](../Unfoldings/Geometry/RaySection.lean) | Exact wedge sections and preservation of their genuine apex angles |
 | [Unfoldings.Geometry.RealAffine](../Unfoldings/Geometry/RealAffine.lean) | Two distinct real samples determine an affine map |
+| [Unfoldings.Geometry.SegmentCells](../Unfoldings/Geometry/SegmentCells.lean) | Intersecting unmarked open subsegments have equal closed carriers |
+| [Unfoldings.Geometry.SegmentGraph](../Unfoldings/Geometry/SegmentGraph.lean) | Construct a finite embedded straight graph from any finite segment network |
+| [Unfoldings.Geometry.SegmentSubdivision](../Unfoldings/Geometry/SegmentSubdivision.lean) | Exact segment coverage by consecutive marked subsegments |
+| [Unfoldings.Geometry.SegmentVertices](../Unfoldings/Geometry/SegmentVertices.lean) | Finite marked endpoints of all original segments and their pairwise intersections |
 | [Unfoldings.Geometry.Separation](../Unfoldings/Geometry/Separation.lean) | Corner certificates for whole-cell separation |
 | [Unfoldings.Geometry.SliceHull](../Unfoldings/Geometry/SliceHull.lean) | The whole transverse section is the finite hull of projected generators |
 | [Unfoldings.Geometry.SliceInterior](../Unfoldings/Geometry/SliceInterior.lean) | Transverse sections meet the ambient interior of the convex body |
 | [Unfoldings.Geometry.SpatialHinge](../Unfoldings/Geometry/SpatialHinge.lean) | Injective piecewise rigid parametrizations of entire support hinges |
 | [Unfoldings.Geometry.SpatialPlane](../Unfoldings/Geometry/SpatialPlane.lean) | A rigid spatial plane equals its containing nonzero functional level |
+| [Unfoldings.Geometry.StraightGraph](../Unfoldings/Geometry/StraightGraph.lean) | Affine edge formulas imply an embedded graph has no loops or parallel edges |
 | [Unfoldings.Geometry.StrictHingeSupport](../Unfoldings/Geometry/StrictHingeSupport.lean) | Distinct support planes strictly separate their opposite corners |
 | [Unfoldings.Geometry.SupportingChord](../Unfoldings/Geometry/SupportingChord.lean) | Support levels extend from an interior chord point to both endpoints |
 | [Unfoldings.Geometry.TransversePyramid](../Unfoldings/Geometry/TransversePyramid.lean) | Strict transverse pyramid budget without an extra corner assumption |
@@ -439,7 +446,9 @@ source, including its module documentation and declarations.
 | [Unfoldings.Topology.CyclicLabels](../Unfoldings/Topology/CyclicLabels.lean) | Nonconstant cyclic lists have no more labels than changes |
 | [Unfoldings.Topology.FiberGraph](../Unfoldings/Topology/FiberGraph.lean) | Equivalence chains in finite fibers yield short simple graph paths |
 | [Unfoldings.Topology.FiniteClasses](../Unfoldings/Topology/FiniteClasses.lean) | Finite equivalence classes from finitely many branching points |
+| [Unfoldings.Topology.FiniteEmbeddedGraph](../Unfoldings/Topology/FiniteEmbeddedGraph.lean) | Finite embedded multigraphs, compact carriers, and topological-to-graph connectedness |
 | [Unfoldings.Topology.FiniteIntervalCover](../Unfoldings/Topology/FiniteIntervalCover.lean) | Bounded subdivisions subordinate to finite closed interval covers |
+| [Unfoldings.Topology.FiniteSubdivision](../Unfoldings/Topology/FiniteSubdivision.lean) | Existence and uniqueness of consecutive marked real intervals |
 | [Unfoldings.Topology.PairedInvolutions](../Unfoldings/Topology/PairedInvolutions.lean) | Generic finite interval/cycle order from two involutions |
 | [Unfoldings.Topology.PerfectProjection](../Unfoldings/Topology/PerfectProjection.lean) | A perfect boundary cannot project injectively to finite exceptions outside a closed set |
 
