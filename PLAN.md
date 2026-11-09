@@ -463,6 +463,10 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
       the deterministic outward hinge transition. Derive this first on whole
       nonvertex hinge charts, then extend to retained seam endpoints by local
       constancy and nonvertex points in every genuine edge neighborhood.
+    - [x] Propagate the actual motions through complete retained face routes,
+      including initial and final face-copy choices. At most `2 * card Face + 2`
+      finite-choice rounds cover every actual motion. Thus only finitely many
+      actual face motions and virtual source images occur on the cut complement.
 - [x] Source distance, the set of nonunique shortest paths, and its closure.
   A source ball chart excludes a whole ball from the closed cut locus.
   Outside the cut locus, shortest paths exist uniquely on actual convex boundaries.
@@ -488,6 +492,9 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
   Cone vertices can be cut-locus leaves with a unique incoming geodesic, so the
   nonuniqueness set alone is not the complete closed cut locus.
 - [ ] Finite face-sequence descriptions and local Voronoi descriptions.
+  - [x] Construct a finite global set of source images from bounded actual seam
+    programs. Retained endpoint distance equals distance to one of these images.
+    Feasibility and minimum/Voronoi assertions are still to be proved.
 - [ ] Cut-locus closedness, finite embedded graph structure, and tree structure.
 - [x] Every nonflat vertex belongs to the closed cut locus, including leaves
   with a unique incoming geodesic.

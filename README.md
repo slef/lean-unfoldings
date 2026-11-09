@@ -112,6 +112,10 @@ The initial library has no placeholder propositions or unfinished proofs.
   circle. Its radial geodesics project to every original shortest path, with
   source distances preserved at every boundary copy. Finite polygonal boundary
   descriptions remain open.
+  Bounded actual face routes and outward seam transitions construct finitely
+  many rigid face motions and virtual source images. Every retained endpoint's
+  source distance equals distance to one of these images. Feasibility and
+  minimum/Voronoi descriptions remain open.
 - `SpatialFolding` gives compatible rigid placements into three-dimensional
   space. Every original face is isometric for every cut metric. Spatial
   injectivity is separate and gives a homeomorphism onto the triangle union.
@@ -496,6 +500,15 @@ manifold conditions remain open.
 | `Unfoldings.Source.SeamTransition` | Actual face motions use the outward hinge transition at nonvertex seam points |
 | `Unfoldings.Geometry.EdgePerfect` | Every neighborhood in a genuine closed edge contains a nonvertex point |
 | `Unfoldings.Source.SeamEndpointTransition` | Actual hinge transitions extend to retained seam endpoints, including flat vertices |
+| `Unfoldings.Combinatorics.FiniteReach` | Bounded rounds of finite choices give a finite set of reachable states |
+| `Unfoldings.Complex.SeamWordMotion` | Exact whole-motion propagation through finite oriented seam words |
+| `Unfoldings.Complex.FaceRouteLift` | Continuously lift actual route pieces into their original closed faces |
+| `Unfoldings.Source.TaggedMotion` | Actual source motions for tagged face copies and both seam orientations |
+| `Unfoldings.Source.FiberWordMotion` | Bounded seam words determine the actual motions of all copies of a retained point |
+| `Unfoldings.Source.FaceRouteMotion` | Actual source motions stay fixed along retained face-contained route pieces |
+| `Unfoldings.Source.RoutePropagation` | Bounded finite-choice propagation of actual motions along complete retained routes |
+| `Unfoldings.Source.FiniteMotions` | A constructed finite global family contains every actual retained face motion |
+| `Unfoldings.Source.Images` | Construct finite virtual source images realizing all retained endpoint distances |
 | `Unfoldings.Examples.*` | Recovery, disconnectedness, shortcuts, contact, and overlap |
 | `Audit` | Transitive axiom check for all imported library declarations |
 

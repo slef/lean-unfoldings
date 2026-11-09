@@ -2,6 +2,26 @@
 
 ## Session Log
 
+### 2026-11-09 — finite actual source motions and virtual source images
+
+- Propagated whole actual motions through bounded oriented seam words,
+  including both seam orientations and retained vertex crossings.
+- Lifted every face-contained route piece continuously into its original
+  closed face. Local constancy proves that its actual source motion is fixed.
+- Proved an abstract finite-choice reachability lemma. Propagation through
+  a complete retained face route takes its piece count plus one rounds,
+  including initial and final face-copy choices.
+- Actual shortest paths have at most `2 * card Face + 1` pieces. Thus a fixed
+  source copy and `2 * card Face + 2` finite-choice rounds construct a finite
+  global family containing every actual retained face motion.
+- Inverting these motions at the developed source constructs finitely many
+  virtual source images. Every retained endpoint distance equals distance to
+  one of them. No minimum over infeasible candidate images is asserted.
+- Extension to boundary path data and polygonal/Voronoi/cut-graph descriptions
+  remain next.
+- Verification: full `lake build` passes; the audit checks **3,095 declarations**,
+  using only the standard Lean axioms. The selected Mathlib cache was verified.
+
 ### 2026-11-09 — actual source motions match outward seam transitions, including vertices
 
 - Constructed a rigid expression of any actual local isometry in an open
