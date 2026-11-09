@@ -2,6 +2,55 @@
 
 ## Session Log
 
+### 2026-11-08
+
+- Set source unfolding of convex polyhedra as the first major target. Added the
+  full feature checklist in `PLAN.md`, including the fan nonoverlap equivalence,
+  sphere/disk cut criteria, and a separate embedded-graph/Euler development for
+  possible Mathlib upstreaming.
+- Upgraded to stable Lean/Mathlib 4.35.0; Mathlib is pinned by the manifest to
+  `56a005855ea17e0b0958f73ec801ae140b0a1679`. Checked the newer metric gluing,
+  extended metric, path-length, and polygon infrastructure before choosing it.
+- Replaced the placeholder classification and supplied-metric scaffold with
+  proved finite-route distance, constructed family gluing, descent of compatible
+  maps, and nonexpansion when restoring cut seams.
+- Added nondegenerate triangular cells, full-edge isometric pairings, explicit
+  retained seams, and facewise developments with strict opposite-side opening.
+  Nonoverlap remains a separate predicate, equivalent to multiplicity at most
+  one; it permits boundary contacts.
+- Proved that placements descend to the cut metric, that a consistent rigid
+  development makes its cell maps isometric, and that opposite-side opening
+  gives disjoint interiors at every retained hinge.
+- Proved the source-facing radial injectivity criterion. It assumes actual
+  radial paths and local injectivity; shortest-path and cut-locus construction
+  remain explicit future tasks.
+- Added checked examples for single-cell metric recovery, infinite distance
+  between disconnected cells, endpoint identifications, a nonoverlapping hinge
+  with boundary contact, and coincident developed triangles with multiplicity
+  two.
+- Added the default `Audit` target. It uses Lean 4.35's public `collectAxioms`
+  interface and inspects declarations in every imported unfolding module,
+  including dependencies behind opaque exported theorem signatures.
+- Verification: the following selected cache fetch succeeded, followed by
+  `lake build`. The full build checks the library and its examples; the audit
+  checks 287 declarations and permits only `propext`, `Classical.choice`, and
+  `Quot.sound`. No `sorry` or `admit` remains in the source.
+
+  ```sh
+  lake exe cache get Mathlib.Topology.EMetricSpace.Basic \
+    Mathlib.Analysis.InnerProductSpace.PiL2 \
+    Mathlib.Analysis.Normed.Operator.Banach \
+    Mathlib.Topology.IsLocalHomeomorph \
+    Mathlib.Tactic.FinCases Mathlib.Tactic.NormNum \
+    Mathlib.Tactic.Ring Mathlib.Tactic.Linarith
+  lake build
+  ```
+
+- Remaining metric boundary: exactness of the zero-distance quotient for finite
+  triangle complexes, quotient topology, compactness, vertex links, and local
+  charts. `FacewiseDevelopment` does not yet assert unbranchedness at interior
+  vertices. The old scaffold remains available in Git history.
+
 ### 2026-06-19
 
 - Verified that the current uncommitted workspace changes are the consolidated
@@ -25,6 +74,9 @@
   `Unfoldings.convex_metric_bounded_unfolding_thickness_iff`.
 
 ## Definition Choices
+
+The entries below describe the historical scaffold. Current interfaces and
+choices are documented in `README.md` and `PLAN.md`.
 
 - `TriangulatedSurface` is the primary surface model.  It records finite
   vertex, edge, and triangular-face types explicitly rather than using
