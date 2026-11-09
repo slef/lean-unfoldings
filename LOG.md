@@ -2,6 +2,26 @@
 
 ## Session Log
 
+### 2026-11-09 — cone leaves belong to the closure of actual shortest-path ties
+
+- Proved a general topological lemma: a continuous projection of a perfect
+  space cannot have singleton fibers outside a closed set while taking only
+  finitely many values there. Such values would give a finite open neighborhood.
+- The actual source boundary is a circle, hence perfect. Its images outside
+  the closed cut locus can only be original singular vertices, a finite set;
+  uniqueness off the cut locus gives singleton fibers. Therefore every boundary
+  image lies in the closure of actual nonunique shortest-path endpoints.
+- All true extreme vertices, including unique incoming cone leaves, are in
+  that closed cut locus. The explicitly defined singular slit set equals it,
+  and the regular retained region is exactly its complement.
+- Recorded the actual cut-complement homeomorphism, local source isometries
+  everywhere off the cut, and exact closed-cut boundary projection. Collected
+  compactness, completeness, disk topology, injective development and the
+  nonexpanding surjective surface projection in `source_disk_properties`.
+- Finite polygonality, finite cut-graph and tree descriptions remain open.
+- Verification: selected Mathlib cache fetch and full `lake build` pass;
+  the audit checks **2,949 declarations**, using only the standard Lean axioms.
+
 ### 2026-11-09 — source disk topology and all completed radial geodesics
 
 - Proved general compact radial bodies have exactly one boundary point on

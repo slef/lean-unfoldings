@@ -10,8 +10,8 @@ public import Unfoldings.Polyhedron.RegularClassification
 
 The planar boundary projects exactly onto the union of the closed source cut
 locus and the singular points. The regular-point classification identifies
-the latter as true extreme vertex points. Equality of this union with the
-closure-of-ties locus alone is a separate remaining cone-leaf theorem.
+the latter as true extreme vertex points. `Source.ConeLeaves` subsequently
+proves this union equals the closure-of-ties locus itself.
 -/
 
 @[expose] public section

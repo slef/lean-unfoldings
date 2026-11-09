@@ -94,12 +94,15 @@ The initial library has no placeholder propositions or unfinished proofs.
   charts are constructed along whole regular paths and uniformly for nearby
   shortest paths. Every proper prefix avoids the closed cut locus; the retained
   shortest paths are constructed and develop to exact radial segments. Inclusion
-  of extreme cone endpoints in that cut locus and finite cut-locus tree structure
-  remain open. The compact planar domain is
+  of extreme cone endpoints follows from the boundary-circle theorem and
+  finiteness of singular vertices, including unique incoming cone leaves.
+  Finite cut-locus tree structure remains open. The compact planar domain is
   the closure of its star-shaped interior, and the flat retained surface is
   homeomorphic to that interior by its actual locally isometric source coordinates.
   Boundary projection is exactly the closed cut locus union singular points,
   recorded explicitly as `sourceSlitSet`.
+  The cone-leaf theorem proves this slit set equals `sourceCutLocus` itself;
+  the retained surface is exactly its complement.
   The polygonal cut metric equals continuous-path distance in the original
   retained surface. Its completion is the compact closed source domain with
   its intrinsic metric: the interior includes isometrically and densely.
@@ -472,6 +475,10 @@ manifold conditions remain open.
 | `Unfoldings.Geometry.RadialCone` | A nonconvex radial body is a closed ball, with exactly matching boundaries |
 | `Unfoldings.Source.Disk` | Constructed disk and boundary-circle homeomorphisms for the actual source completion |
 | `Unfoldings.Source.CompletedRadials` | Completed radial geodesics project to all original shortest paths, preserving source distance |
+| `Unfoldings.Geometry.PlaneSphere` | The planar circle is connected, nontrivial and perfect |
+| `Unfoldings.Topology.PerfectProjection` | A perfect boundary cannot project injectively to finite exceptions outside a closed set |
+| `Unfoldings.Source.ConeLeaves` | All singular endpoints belong to the closure of actual ties; the slit set equals the cut locus |
+| `Unfoldings.Source.ActualCut` | The actual cut complement, exact cut-locus boundary projection and constructed source-disk properties |
 | `Unfoldings.Examples.*` | Recovery, disconnectedness, shortcuts, contact, and overlap |
 | `Audit` | Transitive axiom check for all imported library declarations |
 

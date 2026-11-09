@@ -453,7 +453,7 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
     source chart ball.
   - [x] Propagate the actual source formula along every wholly regular shortest
     path, and construct local isometries at every regular retained endpoint.
-  - [ ] Show the retained region contains no extreme cone endpoints.
+  - [x] Show the retained region contains no extreme cone endpoints.
     - [x] Extend actual isometric open-ball maps to whole affine isometries
       using strict convexity and radial sample compatibility.
     - [x] Recenter open metric charts and construct rigid affine transitions
@@ -461,12 +461,17 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
     - [x] Construct uniform path neighborhoods for whole compact chart intervals,
       continue affine identities through actual overlaps, and perform finite
       induction over a strictly ordered chart partition.
+    - [x] The boundary-circle theorem and finiteness of the singular vertices
+      force every singular boundary image into the closure of actual ties.
+      Otherwise singleton endpoint fibers give a finite open neighborhood of
+      a perfect boundary. Thus `sourceSlitSet` equals `sourceCutLocus`.
   Cone vertices can be cut-locus leaves with a unique incoming geodesic, so the
   nonuniqueness set alone is not the complete closed cut locus.
 - [ ] Finite face-sequence descriptions and local Voronoi descriptions.
 - [ ] Cut-locus closedness, finite embedded graph structure, and tree structure.
-- [ ] Every nonflat vertex belongs to the cut locus.
-- [ ] The completed slit surface is a flat disk with identified boundary copies.
+- [x] Every nonflat vertex belongs to the closed cut locus, including leaves
+  with a unique incoming geodesic.
+- [x] The completed slit surface is a flat disk with identified boundary copies.
   - [x] Identify the actual planar domain interior exactly: its path endpoints
     are regular and off the closed cut locus. Every proper radial prefix is
     interior, and the compact domain is the closure of that interior.
@@ -492,7 +497,7 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
     same fibers construct a closed-disk homeomorphism carrying exactly the
     completed net boundary to the unit circle.
   - [ ] Prove the finite polygonal boundary descriptions.
-- [ ] Existence of the source development and radial developed shortest paths.
+- [x] Existence of the source development and radial developed shortest paths.
   - [x] Construct actual geodesics from the source to every retained point,
     entirely in the closed-cut complement. Their coordinates are exact radial
     segments, and the retained coordinate image is star-shaped.
@@ -503,6 +508,8 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
     shortest paths, and all source-to-point distances are preserved.
 - [x] Abstract injectivity criterion from existence and uniqueness of radial lifts.
 - [ ] Apply that criterion to retained source-unfolding interiors.
+  Direct source-vector injectivity already proves nonoverlap of the constructed
+  interior and completion; applying the abstract criterion is an optional bridge.
 - [ ] Boundary coverage, nonoverlap of every original face piece, and a precise
   source-unfolding theorem for every convex polyhedron.
 - [ ] Treat nongeneric sources and exceptional route ties as a later extension.
