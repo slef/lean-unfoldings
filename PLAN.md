@@ -180,8 +180,11 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
   have incident face labels, giving whole-ball surjectivity.
 - [ ] Extend the local tangent comparison to abstract complexes without a
   supplied spatial folding, including possible same-face corner copies.
-- [ ] Establish radial dilations, flat-vertex charts and metric cone/sector
-  neighborhoods, including self-pairings.
+- [x] Construct radial dilations for every nonnegative scale, prove exact
+  intrinsic distance scaling, and reciprocal homeomorphisms at positive scales.
+  This construction does not require a spatial folding.
+- [ ] Establish flat-vertex charts and angular metric cone/sector neighborhoods,
+  including self-pairings.
 - [x] Constructed isometries between Euclidean disks and intrinsic open balls
   at every face-interior point, without a global development hypothesis.
 - [x] Barycentric affine coordinates and local supporting half-plane geometry

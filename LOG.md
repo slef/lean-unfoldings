@@ -2,6 +2,20 @@
 
 ## Session Log
 
+### 2026-11-09 — exact radial dilations
+
+- Added generic descent of compatible cell maps with any positive finite
+  Lipschitz bound, including the route-distance estimate. Positivity is
+  necessary for arbitrary disconnected realizations because zero times
+  infinite distance is zero.
+- Constructed tangent-fan dilations at every nonnegative scale from actual
+  wedge coordinates. Proved seam compatibility, zero/identity/composition
+  laws, exact scaling of all intrinsic distances and reciprocal
+  homeomorphisms at positive scales. No spatial folding is required.
+- Verification: selected cache fetch and `lake build` pass; the audit checks
+  1367 declarations, and `git diff --check` passes.
+- Angular developments and flat fan charts remain the next geometric work.
+
 ### 2026-11-09 — whole-ball tangent charts
 
 - Selected a uniform positive radius where every tangent wedge lies inside its

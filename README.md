@@ -54,8 +54,9 @@ The initial library has no placeholder propositions or unfinished proofs.
   Its continuous-path metric agrees, explicit radial paths are geodesics, and
   spatial foldings extend to it. `TangentChart` constructs an isometry between
   whole small tangent and original vertex balls whenever a spatial folding is
-  supplied, agreeing with every incident face coordinate. Angular developments
-  and flat-vertex charts remain open.
+  supplied, agreeing with every incident face coordinate. Radial dilations
+  multiply all intrinsic distances by their scale; positive scales have
+  reciprocal homeomorphisms. Angular developments and flat-vertex charts remain open.
 - `FacewiseDevelopment` places each original triangle exactly once, agrees on
   retained edges, and puts the incident triangles on opposite sides. Retained
   dual cycles are allowed. The map descends to the cut realization and is
@@ -137,6 +138,7 @@ Vertex charts, self-paired-edge charts, and the full manifold conditions remain 
 | `Unfoldings.Cone.Paths` | Intrinsic path metric and explicit radial geodesics |
 | `Unfoldings.Cone.Spatial` | Extended spatial foldings and tangent-cell isometries |
 | `Unfoldings.Cone.Charts` | Constructed whole-ball cone charts for spatial foldings |
+| `Unfoldings.Cone.Dilation` | Exact radial similarities and reciprocal homeomorphisms |
 | `Unfoldings.Metric.Excision` | Whole-ball isometries when cutting distant seams |
 | `Unfoldings.Complex.Excision` | Metric excision and preserved triangle-complex point classes |
 | `Unfoldings.Complex.Star` | Actual vertex stars, conserved angles and local metric comparisons |
