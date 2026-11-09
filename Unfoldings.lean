@@ -49,6 +49,9 @@ public import Unfoldings.Polyhedron.ExtremeVertices
 public import Unfoldings.Polyhedron.VertexSlice
 public import Unfoldings.Polyhedron.VertexFigure
 public import Unfoldings.Polyhedron.FigureEdges
+public import Unfoldings.Polyhedron.FigureGermAngles
+public import Unfoldings.Polyhedron.FigureChain
+public import Unfoldings.Polyhedron.FigureSimpleChain
 public import Unfoldings.Geometry.RaySection
 public import Unfoldings.Geometry.PyramidAngles
 public import Unfoldings.Boundary

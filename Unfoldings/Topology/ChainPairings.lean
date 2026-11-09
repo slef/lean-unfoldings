@@ -18,6 +18,18 @@ universe u
 
 variable {X : Type u} {P : System X} {n : ℕ} (c : P.Chain n)
 
+/-- In a cyclic chain, an initial endpoint is paired only with a terminal endpoint. -/
+theorem mate_point_ne_point (closes : P.mate (P.turn c.last) = c.first)
+    (i j : Fin (n + 1)) : P.mate (c.point i) ≠ c.point j := by
+  have start : P.mate c.first = P.turn c.last := by
+    rw [← closes, P.mate_involutive]
+  revert i
+  refine Fin.cases ?_ (fun k => ?_)
+  · intro equal
+    exact c.disjoint j (Fin.last n) (equal.symm.trans start)
+  · intro equal
+    exact c.disjoint j k.castSucc (equal.symm.trans (c.mate_succ k))
+
 theorem pairing_cases
     (start : P.mate c.first = P.turn c.last ∨ P.mate c.first = c.first)
     (finish : P.mate (P.turn c.last) = c.first ∨ P.mate (P.turn c.last) = P.turn c.last)

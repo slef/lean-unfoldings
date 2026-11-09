@@ -2,6 +2,26 @@
 
 ## Session Log
 
+### 2026-11-09 — actual link germs and ordered figure sections
+
+- Constructed each planar figure endpoint by projecting the actual far
+  endpoint of its link germ. Proved seam crossings and mates preserve this
+  point, including seams that reverse endpoint labels.
+- Identified each corner section with the planar segment between its two
+  germ points. These segments lie on the actual figure boundary; their
+  spatial apex angles equal the original positive triangle corner angles,
+  so every segment is nondegenerate.
+- Derived consecutive and closing endpoint agreement from the actual link
+  chain. Proved any covering link chain covers exactly the figure boundary.
+- Proved the section misses every original corner. Its endpoints lift to
+  nonvertex original-edge points; embeddedness classifies equal endpoints
+  precisely as equal germs or seam mates. The cyclic chain consequently
+  has no repeated initial endpoints.
+- Verification: cache refresh and full `lake build` pass; the audit checks
+  2013 declarations with only standard Lean axioms; `git diff --check` passes.
+- The simple cyclic polygon and its planar angle sum remain next, followed
+  by the convex upper angle bound. Source unfolding remains open.
+
 ### 2026-11-09 — actual supporting face planes and figure boundary segments
 
 - Proved an affine real functional with a local maximum is constant, and a

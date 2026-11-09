@@ -362,8 +362,14 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
       figure boundary with the sliced spatial surface; exclude nonincident
       faces by the strict support margin. Prove each incident face section
       is its actual radial segment and these segments cover the boundary.
-    - [ ] Construct and order the vertex-figure polygon from the actual
-      link, prove its planar angle sum, and apply the angle budget.
+    - [x] Construct planar endpoints from actual link germs; prove mate
+      invariance, nondegenerate sections with the genuine apex angles,
+      consecutive and closing endpoint agreement, and exact chain coverage.
+    - [x] Prove the section misses all original corners; characterize
+      equal endpoints exactly as equal germs or seam mates. Deduce that the
+      cyclic chain has no repeated initial endpoints using embeddedness.
+    - [ ] Prove the resulting cyclic boundary chain is simple, derive its
+      planar angle sum, and apply the angle budget.
 
 ## Phase 6 Source unfolding
 

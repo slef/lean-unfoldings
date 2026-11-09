@@ -220,6 +220,7 @@ manifold conditions remain open.
 | `Unfoldings.Topology.PairedInvolutions` | Generic finite interval/cycle order from two involutions |
 | `Unfoldings.Geometry.Endpoints` | Endpoint permutations induced by full-edge isometries |
 | `Unfoldings.Complex.Germs` | The two corner edge germs and their retained seam crossings |
+| `Unfoldings.Complex.GermEndpoints` | Actual far corners and complementary endpoint transport |
 | `Unfoldings.Complex.Links` | Vertex-link involutions and boundary fixed germs |
 | `Unfoldings.Complex.LinkConnectivity` | Germ components are exactly metric vertex classes |
 | `Unfoldings.Complex.LinkOrdering` | Constructed link orders and their Euclidean angle sums |
@@ -244,6 +245,14 @@ manifold conditions remain open.
 | `Unfoldings.Polyhedron.FigureBoundary` | The figure boundary is exactly the sliced spatial surface |
 | `Unfoldings.Polyhedron.FigureIncidence` | Every figure-intersecting original face has a corner at the chosen vertex |
 | `Unfoldings.Polyhedron.FigureEdges` | Exact radial section segments of incident faces cover the figure boundary |
+| `Unfoldings.Polyhedron.GermSpatial` | Spatial far endpoints preserved by actual seam crossings |
+| `Unfoldings.Polyhedron.FigureGerms` | Constructed planar germ points and their boundary segments |
+| `Unfoldings.Polyhedron.FigureGermAngles` | Actual apex angles and nondegenerate figure edges |
+| `Unfoldings.Polyhedron.FigureChain` | Consecutive and closing endpoint agreement; exact boundary coverage |
+| `Unfoldings.Polyhedron.GermEdges` | Actual edge incidence determines equal or seam-mate link germs |
+| `Unfoldings.Polyhedron.FigureGermIncidence` | Figure endpoints agree exactly for equal germs or seam mates |
+| `Unfoldings.Polyhedron.FigureSimpleChain` | Distinct initial endpoints in the actual cyclic figure chain |
+| `Unfoldings.Geometry.RadialSliceAngles` | Positive radial slicing preserves affine apex angles |
 | `Unfoldings.Geometry.SliceHull` | The whole transverse section is the finite hull of projected generators |
 | `Unfoldings.Geometry.RaySection` | Exact wedge sections and preservation of their genuine apex angles |
 | `Unfoldings.Geometry.AngleSeparation` | Strict angular inequality through a direction outside a level plane |
