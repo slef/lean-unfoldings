@@ -90,8 +90,11 @@ The initial library has no placeholder propositions or unfinished proofs.
   Every original edge is proved paired and every original vertex link cyclic.
   At all triangulation vertices, spatial extremality is equivalent to
   total angle below `2π`. Nonconstant geodesics avoid these extreme vertices
-  at interior times. The upper bound at nonextreme subdivision vertices and
-  the full regular-point classification remain open.
+  at interior times. Every nonextreme subdivision vertex has a constructed
+  Euclidean metric-ball chart, including genuine creases. Consequently every
+  interior point of a nonconstant geodesic is regular and initial agreement
+  forces unique continuation. Numerical angle equality at nonextreme vertices
+  remains open.
   Every nonvertex point has a constructed face or hinge Euclidean chart.
   Extreme vertices have constructed compact convex planar vertex figures,
   with finite noncollinear generators and actual interior centers. Their
@@ -318,6 +321,16 @@ manifold conditions remain open.
 | `Unfoldings.Cone.SpatialRange` | Exact radial homogeneity of the actual tangent image |
 | `Unfoldings.Polyhedron.TangentHinge` | The whole actual tangent image equals the constructed spatial support hinge |
 | `Unfoldings.Cone.SpatialConvexLift` | Isometric inverse tangent folding on every convex spatial subset |
+| `Unfoldings.Cone.SpatialParametrization` | Finite piecewise rigid spatial parametrizations give intrinsic tangent isometries |
+| `Unfoldings.Cone.ParametrizedChart` | Whole vertex charts from constructed planar tangent parametrizations |
+| `Unfoldings.Geometry.EdgeLine` | Affine edge agreement extends to the entire supporting line |
+| `Unfoldings.Geometry.SpatialHinge` | Injective piecewise rigid parametrizations of entire support hinges |
+| `Unfoldings.Geometry.StrictHingeSupport` | Distinct support planes strictly separate their opposite corners |
+| `Unfoldings.Cone.SpatialHinge` | Transfer entire spatial hinge parametrizations to intrinsic metric charts |
+| `Unfoldings.Polyhedron.IncidentCrease` | Distinct incident planes force an actual crease in the cyclic link |
+| `Unfoldings.Polyhedron.PrescribedHinge` | Construct support hinges with prescribed actual incident planes |
+| `Unfoldings.Polyhedron.NonextremeRegular` | Euclidean ball charts at every nonextreme subdivision vertex |
+| `Unfoldings.Polyhedron.GeodesicRegularity` | Every interior geodesic point is regular, giving unique continuation |
 | `Unfoldings.Geometry.RadialSliceAngles` | Positive radial slicing preserves affine apex angles |
 | `Unfoldings.Geometry.SliceHull` | The whole transverse section is the finite hull of projected generators |
 | `Unfoldings.Geometry.RaySection` | Exact wedge sections and preservation of their genuine apex angles |

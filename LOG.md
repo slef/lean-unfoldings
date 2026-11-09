@@ -2,6 +2,28 @@
 
 ## Session Log
 
+### 2026-11-09 — genuine hinge charts and regular geodesic interiors
+
+- Proved finite piecewise rigid planar parametrizations of the actual spatial
+  tangent image are intrinsic isometries. Both metric bounds come from the
+  route metric and finite closed covers, including seams within either piece.
+- Extended actual outward edge placements to the entire supporting half-planes.
+  Supporting functionals give the precise side tests and injectivity, including
+  agreement along the whole seam line.
+- Selected a genuine crease from distinct cyclic incident planes and constructed
+  support hinges with those prescribed incident faces. Distinct supports put
+  opposite corners strictly on their own sides, as required by the parametrization.
+- Constructed whole intrinsic Euclidean ball charts at every nonextreme vertex,
+  including subdivision vertices on genuine polyhedron edges. No angle equality
+  or intrinsic isometry is assumed by the geometric construction.
+- Combined these charts with extreme-vertex avoidance: every interior point of
+  a nonconstant geodesic is regular. Two geodesics agreeing on an initial interval
+  agree everywhere, with no remaining regularity premise.
+- Verification: selected cache fetch and full `lake build` pass; the audit
+  checks **2,337 declarations**, using only the standard Lean axioms.
+- Numerical angle equality at nonextreme vertices and source unfolding remain
+  open. Next: source geodesic coordinates and normalized finite routes.
+
 ### 2026-11-09 — whole tangent hinges and convex spatial inverse isometries
 
 - Proved local equality extends globally for sets invariant under positive

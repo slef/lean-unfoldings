@@ -61,6 +61,7 @@ public import Unfoldings.Polyhedron.NonextremeCreaseCount
 public import Unfoldings.Polyhedron.LocallyPlanar
 public import Unfoldings.Polyhedron.TangentHinge
 public import Unfoldings.Cone.SpatialConvexLift
+public import Unfoldings.Polyhedron.GeodesicRegularity
 public import Unfoldings.Geometry.RaySection
 public import Unfoldings.Geometry.PyramidAngles
 public import Unfoldings.Boundary

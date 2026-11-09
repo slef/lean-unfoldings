@@ -405,15 +405,19 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
         the two supporting half-planes. Construct the local vertex hinge,
         including coincident planes. Transfer a whole intrinsic Euclidean
         chart in the coincident-plane case from convex spatial patches.
-      - [ ] Transfer the chart in the genuine two-plane hinge case, and
-        complete the angle equality at nonextreme vertices as well.
+      - [x] Transfer the chart in the genuine two-plane hinge case.
+      - [ ] Complete the numerical angle equality at nonextreme vertices.
         - [x] The actual tangent image agrees with the original surface near
           the vertex; radial homogeneity extends the local support-hinge
           equality to the whole tangent fan. Prove its spatial inverse is
           isometric on every convex subset of the actual image.
-        - [ ] Select a genuine incident crease when the planes differ,
+        - [x] Select a genuine incident crease when the planes differ,
           use its constructed outward hinge placement to parametrize the
           two half-planes, and transfer the intrinsic chart.
+
+- [x] Every nonextreme vertex has an intrinsic Euclidean ball chart. Every
+  interior point of a nonconstant convex-boundary geodesic is regular;
+  agreement on an initial interval forces equality along the whole geodesic.
 
 ## Phase 6 Source unfolding
 
