@@ -49,8 +49,11 @@ The initial library has no placeholder propositions or unfinished proofs.
   Each incident corner is listed once, including self-pairings and loop links.
   Cutting all seams away from a chosen vertex preserves its corner class,
   total angle and a whole small intrinsic ball. Original corner neighborhoods
-  are proved to be convex supporting wedges; the metric tangent fan remains
-  to be constructed.
+  are convex supporting wedges. `TangentFan` glues their radial seam extensions
+  with a constructed proper, complete metric and exact radial distance.
+  Its continuous-path metric agrees, explicit radial paths are geodesics, and
+  spatial foldings extend to it. The local comparison with the original
+  surface balls and angular cone charts remain open.
 - `FacewiseDevelopment` places each original triangle exactly once, agrees on
   retained edges, and puts the incident triangles on opposite sides. Retained
   dual cycles are allowed. The map descends to the cut realization and is
@@ -125,6 +128,12 @@ Vertex charts, self-paired-edge charts, and the full manifold conditions remain 
 | `Unfoldings.Complex.Paths` | Intrinsic path metric and geodesic existence for cut complexes |
 | `Unfoldings.Complex.Neighborhood` | Quantitative neighborhoods of two-face seam classes |
 | `Unfoldings.Topology.ConvexBoundary` | Sphere topology and connectedness of bounded convex boundaries |
+| `Unfoldings.Cone.Tangent` | Actual wedge cells and radially extended seam gluings |
+| `Unfoldings.Cone.Apex` | Common tangent apex derived from vertex-link connectivity |
+| `Unfoldings.Cone.Radial` | Exact radial distance and finite ordinary tangent metric |
+| `Unfoldings.Cone.Proper` | Compact closed tangent balls, properness and completeness |
+| `Unfoldings.Cone.Paths` | Intrinsic path metric and explicit radial geodesics |
+| `Unfoldings.Cone.Spatial` | Extended spatial foldings and tangent-cell isometries |
 | `Unfoldings.Metric.Excision` | Whole-ball isometries when cutting distant seams |
 | `Unfoldings.Complex.Excision` | Metric excision and preserved triangle-complex point classes |
 | `Unfoldings.Complex.Star` | Actual vertex stars, conserved angles and local metric comparisons |

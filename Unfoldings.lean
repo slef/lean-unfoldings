@@ -13,6 +13,8 @@ public import Unfoldings.Complex.Angles
 public import Unfoldings.Complex.LinkOrdering
 public import Unfoldings.Complex.EmbeddedStars
 public import Unfoldings.Geometry.Corner
+public import Unfoldings.Cone.Paths
+public import Unfoldings.Cone.Spatial
 public import Unfoldings.Complex.Charts
 public import Unfoldings.Complex.Paths
 public import Unfoldings.Complex.Connectivity

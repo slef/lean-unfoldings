@@ -163,15 +163,23 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
   invariance and wedge-ball/cell-ball isometries.
 - [x] Spatial foldings give one class representative per original cell and
   injective face labels among the incident corner copies.
-- [ ] Construct tangent metric fans from the ordered corner wedges. Index cells
+- [x] Construct tangent metric fans from the actual corner wedges. Index cells
   by `CornerAt`; index radial seams by retained seam, direction and endpoint.
   Glue nonnegative radial extensions of the original paired edge points.
-- [ ] Identify all tangent apices using link connectivity. Lift the compatible
-  distances to their apices and prove exact radial distance; derive ordinary
-  metric structure and compact closed balls. Spatial foldings should extend to
-  the tangent model and imply cone-cell isometry when supplied.
+- [x] Identify all tangent apices using link connectivity. Lift compatible
+  distances to the apices and prove exact radial distance; derive an ordinary
+  metric and compact closed balls, hence properness and completeness.
+- [x] Tangent route distance equals continuous-path intrinsic distance;
+  explicit radial paths are genuine constant-speed geodesics.
+- [x] Spatial foldings extend to the tangent model and imply cone-cell isometry
+  when supplied.
 - [ ] Compare the tangent fan's whole small balls with the constructed vertex
-  star balls using wedge/cell equality and local route estimates.
+  star balls using wedge/cell equality and local route estimates. First select a
+  uniform radius where all corner wedges lie in their original triangles.
+  The inverse tagged map then uses the original face maps inside those pieces.
+  For spatial foldings, unique incident corners per face define the forward
+  tagged maps; prove their local metric bounds before descending whole-ball
+  isometries.
 - [ ] Establish radial dilations, flat-vertex charts and metric cone/sector
   neighborhoods, including self-pairings.
 - [x] Constructed isometries between Euclidean disks and intrinsic open balls
@@ -202,6 +210,9 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
 
 ## Phase 4 Subdivision and cone fans
 
+- [ ] Piecewise nonexpansion on convex sets from finite closed covers, using
+  local center bounds and continuous induction along segments. This supports
+  metric refinement, facet chords and flat-fan inverse maps.
 - [ ] Elementary triangle subdivision induces a canonical metric isometry.
 - [ ] Iterated conforming refinement preserves the metric and curvature.
 - [ ] Facewise placements commute with refinement.

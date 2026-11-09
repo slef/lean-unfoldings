@@ -2,6 +2,26 @@
 
 ## Session Log
 
+### 2026-11-09 — constructed tangent metric fans
+
+- Constructed tangent cells from the actual corner wedges and glued all
+  nonnegative radial extensions of the retained original edge isometries.
+  Endpoint reversals, boundary vertices and self-pairings remain represented.
+- Proved that all wedge apices coincide using the actual connected vertex link.
+  The origin is chosen only after this identification theorem.
+- Descended the compatible cell-radius functions and proved exact distance
+  from the origin. Derived finite distances and a canonical ordinary metric.
+- Proved that closed origin balls are finite unions of compact wedge balls;
+  the tangent fan is proper and complete.
+- Proved equality of route distance and continuous-path distance, and
+  constructed explicit constant-speed radial geodesics with exact length.
+- Extended spatial face foldings to the tangent fan. These give nonexpanding
+  spatial maps and isometric tangent-cell maps when a spatial folding exists.
+- Verification: selected cache fetch and `lake build` pass; the audit checks
+  1263 declarations, and `git diff --check` passes.
+- Comparison with the original vertex-star balls, angular fan developments,
+  flat-vertex charts and convex-vertex avoidance remain open.
+
 ### 2026-11-09 — metric excision and vertex-star neighborhoods
 
 - Strengthened generic finite closed-seam localization: compatibility only at
