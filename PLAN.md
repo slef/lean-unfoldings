@@ -517,6 +517,11 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
     coincidence equations. Construct one actual rigid inverse placement on
     every whole closed polygon into an original triangle, with exact endpoint
     projection compatibility and pairwise-disjoint developed polygon interiors.
+  - [x] Intersect inside and outside chamber closures to obtain an exact finite
+    boundary cover. Every nonempty piece is a compact convex subset of a
+    proper line, hence a closed segment with one whole-face rigid projection.
+    The actual closed source cut locus is exactly a finite union of spatial
+    segments, each contained in an original triangle.
 - [x] Every nonflat vertex belongs to the closed cut locus, including leaves
   with a unique incoming geodesic.
 - [x] The completed slit surface is a flat disk with identified boundary copies.
@@ -544,7 +549,7 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
     identifies that boundary with a circle. Two compact quotient maps with the
     same fibers construct a closed-disk homeomorphism carrying exactly the
     completed net boundary to the unit circle.
-  - [ ] Prove the finite polygonal boundary descriptions.
+  - [x] Prove the finite polygonal boundary descriptions.
 - [x] Existence of the source development and radial developed shortest paths.
   - [x] Construct actual geodesics from the source to every retained point,
     entirely in the closed-cut complement. Their coordinates are exact radial

@@ -534,6 +534,10 @@ manifold conditions remain open.
 | `Unfoldings.Geometry.FiniteAffineSelection` | Proper affine supports for coincidences and constancy of finite continuous affine selections |
 | `Unfoldings.Geometry.PolyhedralSelection` | Finite polygonal partitions with one compatible affine map on each whole closed piece |
 | `Unfoldings.Source.PolygonalPieces` | Every source polygon folds rigidly into one original triangle, including its boundary |
+| `Unfoldings.Geometry.ArrangementBoundary` | Exact finite inside/outside chamber boundary decompositions |
+| `Unfoldings.Geometry.CompactCollinear` | Compact convex sets on proper planar affine lines are segments |
+| `Unfoldings.Source.BoundarySegments` | The entire source boundary is exactly a finite union of face-compatible segments |
+| `Unfoldings.Source.CutSegments` | The actual closed source cut locus is exactly a finite straight network in original faces |
 | `Unfoldings.Examples.*` | Recovery, disconnectedness, shortcuts, contact, and overlap |
 | `Audit` | Transitive axiom check for all imported library declarations |
 
