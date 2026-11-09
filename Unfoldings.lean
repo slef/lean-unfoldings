@@ -28,6 +28,7 @@ public import Unfoldings.Cone.LinkComparison
 public import Unfoldings.Cone.AngularOverlap
 public import Unfoldings.Topology.ChainPairings
 public import Unfoldings.Cone.IntervalIsometry
+public import Unfoldings.Cone.FlatCharts
 public import Unfoldings.Complex.Charts
 public import Unfoldings.Complex.Paths
 public import Unfoldings.Complex.Connectivity

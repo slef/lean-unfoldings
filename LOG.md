@@ -2,6 +2,28 @@
 
 ## Session Log
 
+### 2026-11-09 — Euclidean cyclic fans and actual flat vertex charts
+
+- Constructed the closing identification from every actual cyclic link,
+  including one-corner cycles. Refactored the consecutive-seam proof for
+  reuse without changing its public theorem statements.
+- Added closed polar sector coordinates and full-turn coverage of the whole
+  plane. Classified all full-turn development fibers, including the apex,
+  consecutive banks and the two outer banks.
+- Descended full-turn planar coordinates through every actual tangent seam.
+  The actual closing seam removes exactly the extra outer-bank fibers,
+  proving bijectivity. Proved the inverse nonexpanding on each closed sector
+  and then on the whole convex plane by the finite closed-cover theorem.
+- Constructed the Euclidean isometry for every actual full-turn cyclic
+  tangent fan, without a spatial folding. Normalized it at the origin.
+- Composed the isometry with the proved whole-ball tangent comparison to
+  construct actual Euclidean ball charts at flat interior vertices of
+  spatially folded complexes, agreeing with every incident face coordinate.
+- Verification: selected cache fetch and `lake build` pass; the audit checks
+  1718 declarations, and `git diff --check` passes.
+- Local geodesic straightness, convex angle bounds and vertex avoidance remain
+  next. Source routes, cut locus and source unfolding are still open.
+
 ### 2026-11-09 — inverse interval metric comparison
 
 - Constructed nonexpanding angular maps on every actual tangent cell using

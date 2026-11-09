@@ -60,7 +60,9 @@ The initial library has no placeholder propositions or unfinished proofs.
   isometry at its genuine corner angle. Slit angular fans have constructed
   metrics and developments at every total angle. Every actual boundary tangent
   fan is isometric to its angular model, without a spatial-folding hypothesis.
-  Cyclic closure and flat-vertex charts remain open.
+  Full-turn cyclic tangent fans are isometric to the Euclidean plane.
+  Spatially folded complexes therefore have constructed whole Euclidean ball
+  charts at flat interior vertices, agreeing with their incident face coordinates.
 - Slit angular fans have pairwise disjoint genuine piece interiors **iff** their
   total angle is at most a full turn. At equality the developed outer banks
   coincide. Above a full turn, two piece interiors overlap at every positive radius.
@@ -169,6 +171,12 @@ Vertex charts, self-paired-edge charts, and the full manifold conditions remain 
 | `Unfoldings.Cone.IntervalSeams` | Every interval-link radial seam is consecutive |
 | `Unfoldings.Cone.IntervalCompatibility` | Actual seams respect the inverse interval comparison |
 | `Unfoldings.Cone.IntervalIsometry` | Boundary tangent fans isometric to their actual angular models |
+| `Unfoldings.Cone.CyclicSeams` | Actual closing seams and identification of the outer radial banks |
+| `Unfoldings.Cone.AngularCoordinates` | Closed headings, bank coordinates and full-plane coverage |
+| `Unfoldings.Cone.AngularFibers` | All closed-bank fibers at one full turn |
+| `Unfoldings.Cone.CyclicDevelopment` | Constructed surjective planar map of full-turn actual fans |
+| `Unfoldings.Cone.CyclicIsometry` | Full-turn cyclic tangent fans isometric to the Euclidean plane |
+| `Unfoldings.Cone.FlatCharts` | Whole intrinsic Euclidean charts at actual flat interior vertices |
 | `Unfoldings.Metric.Excision` | Whole-ball isometries when cutting distant seams |
 | `Unfoldings.Complex.Excision` | Metric excision and preserved triangle-complex point classes |
 | `Unfoldings.Complex.Star` | Actual vertex stars, conserved angles and local metric comparisons |

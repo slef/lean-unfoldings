@@ -185,6 +185,11 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
   This construction does not require a spatial folding.
 - [ ] Establish flat-vertex charts and angular metric cone/sector neighborhoods,
   including self-pairings.
+  - [x] A cyclic actual tangent fan at total angle two pi is isometric to the
+    whole Euclidean plane, without a spatial-folding hypothesis.
+  - [x] Flat interior vertices of spatially folded complexes have constructed
+    whole Euclidean ball charts in the original intrinsic metric, agreeing
+    with every incident face coordinate.
 - [x] Constructed isometries between Euclidean disks and intrinsic open balls
   at every face-interior point, without a global development hypothesis.
 - [x] Barycentric affine coordinates and local supporting half-plane geometry
@@ -251,7 +256,10 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
   - [x] Prove the inverse comparison for interval links, with both round trips
     checked on the original cells; obtain an actual angular-fan isometry at
     every boundary vertex, without a spatial-folding hypothesis.
-  - [ ] Close cyclic links and construct the full-turn Euclidean cone chart.
+  - [x] Close cyclic links using their actual radial seam. At a full turn,
+    classify all closed-bank fibers, construct the planar bijection, and
+    prove the inverse nonexpanding on the whole plane from its finite closed
+    sector cover. Obtain the Euclidean cone isometry and original flat chart.
 - [x] A radially slit angular fan is nonoverlapping **iff** its total angle is at most
   `2 * Real.pi`.
 - [x] At equality the terminal banks coincide in the development; above a full
