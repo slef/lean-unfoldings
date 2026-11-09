@@ -84,6 +84,8 @@ The initial library has no placeholder propositions or unfinished proofs.
   at cut-locus endpoints. Uniform convergence makes the whole shortest-path
   space compact; its coordinates identify it homeomorphically with a compact,
   star-shaped planar image. Endpoint projection is continuous and surjective.
+  Every proper positive-time prefix is proved unique by an actual geodesic
+  splice and continuation from its unchanged tail.
   `sourceCutLocus` is the closure of nonunique endpoints and misses a whole
   source ball. Local metric compatibility of the planar image, its completed
   slit interpretation, and finite cut-locus tree structure remain open.
@@ -389,6 +391,8 @@ manifold conditions remain open.
 | `Unfoldings.Source.ConvexCutLocus` | Unique shortest paths off the closed source cut locus |
 | `Unfoldings.Source.Prefixes` | Actual normalized shortest-path prefixes, including both endpoints |
 | `Unfoldings.Source.RadialDomain` | Exact prefix-vector scaling and star-shaped planar source images |
+| `Unfoldings.Path.Splice` | Actual constant-speed geodesics after alternative shortest-prefix replacement |
+| `Unfoldings.Source.PrefixUniqueness` | Every proper prefix is unique, by continuation from the unchanged tail |
 | `Unfoldings.Examples.*` | Recovery, disconnectedness, shortcuts, contact, and overlap |
 | `Audit` | Transitive axiom check for all imported library declarations |
 

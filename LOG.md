@@ -2,6 +2,21 @@
 
 ## Session Log
 
+### 2026-11-09 — spliced geodesics and proper-prefix uniqueness
+
+- Constructed an actual constant-speed geodesic by replacing a prefix with any
+  other shortest path to the joining point. Constant extension, normalization,
+  and a finite closed cover prove the common speed bound across the join.
+- Derived unique continuation from a final interval by reversing the actual
+  path parameters. Applied it to the spliced geodesic and unchanged tail.
+- Every proper positive-time prefix of a nonconstant convex-boundary geodesic
+  is the unique shortest path to its endpoint. Consequently nonunique source
+  endpoints cannot occur at interior times of another shortest path.
+- Verification: selected cache fetch and full `lake build` pass; the audit
+  checks **2,469 declarations**, using only the standard Lean axioms.
+- Exclusion from the closure of nonunique endpoints still needs local stability;
+  no cut-locus tree or completed source-unfolding claim is made here.
+
 ### 2026-11-09 — actual shortest-path source vectors and compact planar ray domains
 
 - Constructed a source frame from any actual regular ball chart. A positive

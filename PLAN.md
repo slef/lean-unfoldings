@@ -431,7 +431,11 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
   - [x] Identify this space homeomorphically with its compact planar image;
     endpoint projection is continuous and surjective. Prove the image is
     star-shaped, with exact radial scaling under shortest-path prefixes.
-  - [ ] Obtain bounded finite face-route descriptions.
+  - [x] Construct geodesic prefix splices and derive unique continuation from
+    a final interval. Prove every proper positive-time prefix is unique, so
+    nonunique source endpoints occur only as terminal points of shortest paths.
+  - [ ] Prove local stability and exclusion of the closed cut locus at proper
+    prefix times; obtain bounded finite face-route descriptions.
 - [x] Source distance, the set of nonunique shortest paths, and its closure.
   A source ball chart excludes a whole ball from the closed cut locus.
   Outside the cut locus, shortest paths exist uniquely on actual convex boundaries.
