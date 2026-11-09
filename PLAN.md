@@ -449,6 +449,10 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
     their norms equal source distance. Prove they are isometric on the whole
     source chart ball.
   - [ ] Propagate that local metric statement along retained shortest paths.
+    - [x] Extend actual isometric open-ball maps to whole affine isometries
+      using strict convexity and radial sample compatibility.
+    - [x] Recenter open metric charts and construct rigid affine transitions
+      on whole ambient neighborhoods of their common points.
   Cone vertices can be cut-locus leaves with a unique incoming geodesic, so the
   nonuniqueness set alone is not the complete closed cut locus.
 - [ ] Finite face-sequence descriptions and local Voronoi descriptions.

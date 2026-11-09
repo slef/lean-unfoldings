@@ -406,6 +406,10 @@ manifold conditions remain open.
 | `Unfoldings.Source.OffCutCoordinates` | Continuous injective source coordinates on the cut-locus complement |
 | `Unfoldings.Source.ConvexOffCutCoordinates` | Constructed coordinates from convex-boundary input and a regular source |
 | `Unfoldings.Source.SourceBall` | The constructed coordinates are isometric on the whole source chart ball |
+| `Unfoldings.Geometry.IsometryOnConvex` | Isometric maps to strictly convex spaces preserve affine segment parameters |
+| `Unfoldings.Geometry.BallRigidity` | Actual isometric open-ball maps extend to whole affine isometries |
+| `Unfoldings.Metric.OpenChart` | Recenter open isometric charts on whole ambient balls |
+| `Unfoldings.Metric.RigidChartTransition` | Construct rigid affine transitions between actual overlapping metric charts |
 | `Unfoldings.Examples.*` | Recovery, disconnectedness, shortcuts, contact, and overlap |
 | `Audit` | Transitive axiom check for all imported library declarations |
 

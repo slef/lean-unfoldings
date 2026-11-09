@@ -2,6 +2,22 @@
 
 ## Session Log
 
+### 2026-11-09 — rigid extension of ball maps and actual metric-chart transitions
+
+- Proved isometric maps on convex subsets preserve every affine segment
+  parameter when the target norm is strictly convex.
+- Extended an actual isometric open-ball map to an affine isometry of the
+  whole ambient normed space. Positive radial sample slopes agree; shrinking
+  any pair of points to a common scale proves the global distance equality.
+  Neither surjectivity nor a global extension is assumed in the input.
+- Recentered open isometric charts on whole ambient metric balls. Two charts
+  at a common point now have a constructed rigid affine coordinate transition
+  on one whole ambient neighborhood, by applying the ball extension theorem.
+- Verification: selected cache fetch and full `lake build` pass; the audit
+  checks **2,566 declarations**, using only the standard Lean axioms.
+- These general metric/convex lemmas provide the transition step for propagating
+  source coordinates along regular shortest paths. That propagation remains open.
+
 ### 2026-11-09 — continuous source coordinates off the cut locus, isometric near the source
 
 - Proved endpoint evaluation from the compact shortest-path space is a closed
