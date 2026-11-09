@@ -2,6 +2,27 @@
 
 ## Session Log
 
+### 2026-11-09 — cyclic shortcuts and original-surface vertex avoidance
+
+- Appended a repeated first angular sector, proved its exact continued
+  headings and constructed nonexpanding cyclic maps through the closing
+  bank. Radial distances remain exact in this extension.
+- Proved cell shortcuts on the selected sheet for all heading gaps below
+  pi, including coincident headings. The repeated sector handles short
+  arcs crossing the cyclic slit even if the extended development overlaps.
+- Started actual cyclic links at arbitrary prescribed germs. Combined the
+  cyclic shortcut with actual closing seam equality to prove strict apex
+  shortcuts for every pair of nonapex actual tangent points at an interior
+  vertex whose total angle is less than a full turn.
+- Proved the whole-ball chart sends apex to the original vertex. Transferred
+  the strict shortcuts to the original intrinsic metric and proved every
+  nonconstant geodesic avoids such vertices at all interior times.
+- Added generic geodesic injectivity and local strict-shortcut avoidance.
+- Verification: selected cache fetch and full `lake build` pass; the audit
+  checks 1849 declarations, and `git diff --check` passes.
+- Convex geometric angle bounds, continuation, finite source routes, cut
+  locus and source unfolding remain open.
+
 ### 2026-11-09 — sheet-aware isometric heading lifts
 
 - Constructed a lift of every pointed real heading interval contained in an

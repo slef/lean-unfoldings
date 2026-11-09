@@ -183,6 +183,13 @@ Vertex charts, self-paired-edge charts, and the full manifold conditions remain 
 | `Unfoldings.Cone.HeadingEquality` | Real heading uniqueness across overlapping pointed intervals |
 | `Unfoldings.Cone.HeadingLift` | Isometric lifts of selected heading sectors in arbitrary overlapping fans |
 | `Unfoldings.Cone.HeadingShortcut` | Strict shortcuts on selected sheets, preserved by radial nonexpansion |
+| `Unfoldings.Cone.AppendFirst` | A repeated first sector with exact continued real headings |
+| `Unfoldings.Cone.AppendMap` | Nonexpanding cyclic maps continued across their closing bank |
+| `Unfoldings.Cone.HeadingInterval` | Positive pointed intervals enclosing nearby headings, including equality |
+| `Unfoldings.Cone.CellShortcut` | Strict shortcuts between specified cell representatives on the selected sheet |
+| `Unfoldings.Cone.CyclicShortcut` | Shortcuts on either side of a cyclic fan, including across its slit |
+| `Unfoldings.Cone.TangentShortcut` | Strict apex shortcuts for all actual positive-curvature tangent pairs |
+| `Unfoldings.Cone.VertexAvoidance` | Original intrinsic geodesics avoid positive-curvature interior vertices |
 | `Unfoldings.Cone.AngularHeadingShortcut` | Strict shortcuts across multiple angular pieces |
 | `Unfoldings.Cone.LinkShortcut` | Strict angular shortcuts transferred to actual tangent metrics |
 | `Unfoldings.Cone.CyclicDevelopment` | Constructed surjective planar map of full-turn actual fans |
@@ -211,6 +218,7 @@ Vertex charts, self-paired-edge charts, and the full manifold conditions remain 
 | `Unfoldings.Path.Subpath` | Affine constant-speed subpaths, including reversed intervals |
 | `Unfoldings.Path.Chart` | Straight coordinates and uniqueness in isometric charts |
 | `Unfoldings.Path.ConvexChart` | Geodesic construction in convex charts and ball confinement |
+| `Unfoldings.Path.LocalShortcut` | Geodesic injectivity and avoidance of centers with local strict shortcuts |
 | `Unfoldings.Complex.Connectivity` | Finite metrics and geodesics for connected face incidence |
 | `Unfoldings.Complex.HingeCharts` | Constructed Euclidean metric balls at retained edge interiors |
 | `Unfoldings.Complex.HingeCoordinates` | Local hinge frames and exact local distances |

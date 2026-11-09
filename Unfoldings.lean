@@ -30,6 +30,7 @@ public import Unfoldings.Cone.AngularSector
 public import Unfoldings.Cone.AngularShortcut
 public import Unfoldings.Cone.LinkShortcut
 public import Unfoldings.Cone.HeadingShortcut
+public import Unfoldings.Cone.VertexAvoidance
 public import Unfoldings.Topology.ChainPairings
 public import Unfoldings.Cone.IntervalIsometry
 public import Unfoldings.Cone.FlatCharts

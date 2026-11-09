@@ -296,7 +296,7 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
 - [ ] Extend chord exactness from individual triangles to maximal planar facets.
 - [ ] Prove equivalence with the triangle route metric; this is the bridge
   between the embedded and abstract libraries.
-- [ ] Shortest paths develop straight in flat charts and do not pass through
+- [x] Shortest paths develop straight in flat charts and do not pass through
   positive-curvature vertices in their interiors.
   - [x] Geodesics contained in an isometric Euclidean chart have the exact
     affine endpoint coordinates. Apply this to contained subpaths.
@@ -313,8 +313,13 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
   - [x] Construct isometric lifts of selected pointed heading intervals even
     in overlapping angular fans, with no total-angle bound. Strict shortcuts
     survive every nonexpanding comparison preserving radial distances.
-  - [ ] Handle the short arc crossing the cyclic slit, then deduce avoidance
-    at every interior vertex with total angle less than a full turn.
+  - [x] Append a repeated first sector and continue the actual cyclic map
+    through its closing bank. Obtain strict tangent shortcuts for every
+    pair of nonapex points when the total angle is less than a full turn.
+  - [x] Transfer strict shortcuts through the constructed whole-ball chart.
+    Nonconstant original intrinsic geodesics avoid every such interior
+    vertex at all interior parameter times. No convex angle bound is assumed
+    implicitly: deriving those bounds from embedded convex geometry remains.
 - [ ] Local uniqueness and continuation of a geodesic with a given initial germ.
 
 ## Phase 6 Source unfolding
