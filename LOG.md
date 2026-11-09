@@ -2,6 +2,24 @@
 
 ## Session Log
 
+### 2026-11-09 — compact shortest-path existence
+
+- Generalized the speed-bound length estimate to arbitrary extended
+  pseudometric targets. Added metric geodesics and proved their length and
+  minimizing properties; an endpoint-distance speed bound forces a geodesic.
+- Adapted the reference's natural-parameterization argument to arbitrary metric
+  spaces. The newer Mathlib continuity theorem shortens the accumulated-length
+  proof. Pauses and zero-length paths are handled.
+- Proved compactness of bounded-speed families and lower semicontinuity of
+  length. Constructed shortest paths between any rectifiably joined points of
+  a compact metric space, with a speed bound by the minimizing length.
+- Constructed clopen finite-distance components of extended metric spaces and
+  their ordinary metrics. Rectifiable paths lift without changing length.
+  This extends shortest-path existence to compact extended metric spaces.
+- Verification: targeted constant-speed and Arzela-Ascoli cache fetches;
+  `lake build` and `git diff --check` pass. The audit checks 612 declarations.
+- The continuous-path/route-distance bridge is the next cut-metric step.
+
 ### 2026-11-09 — constructed hinges and continuous path length
 
 - Extended arbitrary closed-segment isometric embeddings to planar rigid

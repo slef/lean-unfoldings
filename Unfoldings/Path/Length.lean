@@ -3,6 +3,7 @@ module
 public import Mathlib.Topology.Path
 public import Mathlib.Topology.EMetricSpace.BoundedVariation
 public import Mathlib.Topology.MetricSpace.Isometry
+public import Mathlib.Topology.MetricSpace.Lipschitz
 public import Mathlib.Tactic.Linarith
 public import Mathlib.Tactic.Ring
 public import Mathlib.Tactic.NormNum
@@ -30,10 +31,16 @@ variable {X Y : Type*} [PseudoEMetricSpace X] [PseudoEMetricSpace Y] {a b c : X}
 /-- Arc length, possibly infinite, measured by total variation on the unit interval. -/
 noncomputable def eLength (p : Path a b) : ℝ≥0∞ := eVariationOn p Set.univ
 
+/-- No continuous path with the same endpoints has smaller arc length. -/
+def IsLengthMinimizing (p : Path a b) : Prop := ∀ q : Path a b, p.eLength ≤ q.eLength
+
 theorem edist_le_eLength (p : Path a b) : edist a b ≤ p.eLength := by
   change edist a b ≤ eVariationOn p Set.univ
   simpa only [Path.source, Path.target] using
     eVariationOn.edist_le p (Set.mem_univ (0 : unitInterval)) (Set.mem_univ (1 : unitInterval))
+
+theorem edist_apply_le_eLength (p : Path a b) (s t : unitInterval) :
+    edist (p s) (p t) ≤ p.eLength := eVariationOn.edist_le p (mem_univ s) (mem_univ t)
 
 /-- The clamped real-parameter extension has the same variation as the original path. -/
 theorem eLength_eq_extend (p : Path a b) : p.eLength = eVariationOn p.extend (Set.Icc 0 1) := by
@@ -54,6 +61,11 @@ theorem eLength_eq_extend (p : Path a b) : p.eLength = eVariationOn p.extend (Se
   rw [eVariationOn.comp_eq_of_antitoneOn _ _
     (unitInterval.strictAnti_symm.antitone.antitoneOn Set.univ),
     image_univ, unitInterval.symm_bijective.surjective.range_eq]
+
+theorem IsLengthMinimizing.symm {p : Path a b} (minimal : p.IsLengthMinimizing) :
+    p.symm.IsLengthMinimizing := by
+  intro q
+  simpa only [eLength_symm] using minimal q.symm
 
 /-- Concatenation adds lengths even when a path has infinite length. -/
 @[simp] theorem eLength_trans (p : Path a b) (q : Path b c) :
@@ -99,5 +111,23 @@ theorem eLength_map_isometry (p : Path a b) {f : X → Y} (isometry : Isometry f
   have same (x y : unitInterval) : edist (f (p x)) (f (p y)) = edist (p x) (p y) :=
     isometry _ _
   simp only [eVariationOn, Function.comp_apply, same]
+
+/-- A uniform speed bound on the unit interval bounds total length. -/
+theorem eLength_le_of_lipschitz (p : Path a b) {K : ℝ≥0} (speed : LipschitzWith K p) :
+    p.eLength ≤ K := by
+  have unit : eVariationOn (id : unitInterval → unitInterval) Set.univ ≤ 1 := by
+    have same := eVariationOn.comp_eq_of_monotoneOn (id : ℝ → ℝ)
+      ((↑) : unitInterval → ℝ) (show MonotoneOn ((↑) : unitInterval → ℝ) Set.univ
+        from fun _ _ _ _ h => h)
+    have distance : eVariationOn (id : unitInterval → unitInterval) Set.univ =
+        eVariationOn ((↑) : unitInterval → ℝ) Set.univ := rfl
+    rw [distance]
+    have image : ((↑) : unitInterval → ℝ) '' Set.univ = Set.Icc 0 1 := by ext t; simp
+    change eVariationOn ((id : ℝ → ℝ) ∘ ((↑) : unitInterval → ℝ)) Set.univ ≤ 1
+    rw [same, image]
+    simp
+  have bound := speed.lipschitzOnWith.comp_eVariationOn_le
+    (show MapsTo (id : unitInterval → unitInterval) Set.univ Set.univ from fun _ _ => mem_univ _)
+  exact bound.trans (by simpa using mul_le_mul_right unit (K : ℝ≥0∞))
 
 end Path

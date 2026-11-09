@@ -46,7 +46,10 @@ The initial library has no placeholder propositions or unfinished proofs.
   edge isometry to a rigid motion and reflects it if needed to open outward.
 - `Path.eLength` measures continuous paths by total variation, allowing
   infinite length. Reversal, concatenation, Lipschitz bounds and invariance
-  under isometries are proved independently of polyhedra.
+  under isometries are proved independently of polyhedra. Rectifiable paths
+  have bounded-speed replacements with the same image. In compact extended
+  metric spaces they admit shortest replacements, comparing against every
+  continuous competitor.
 - `injective_of_radial_paths` proves injectivity of a locally injective map
   when paths from one fixed source develop to radial segments. This isolates
   the eventual source-unfolding argument without assuming shortest-path or
@@ -74,6 +77,7 @@ Paired-edge/vertex charts and manifold conditions remain to be constructed.
 | `Unfoldings.Metric.Barrier` | Capped distance separators and local class transport |
 | `Unfoldings.Metric.ClosedSeams` | Exactness for closed isometric seams with finite classes |
 | `Unfoldings.Metric.Local` | Seam clearance, metric ball images, and local cell isometries |
+| `Unfoldings.Metric.FiniteComponent` | Clopen finite-distance components as compact metric spaces |
 | `Unfoldings.Geometry.Triangle` | Nondegenerate cells and full edge subspaces |
 | `Unfoldings.Geometry.Edge` | Edge intersections and endpoint preservation by isometries |
 | `Unfoldings.Geometry.Halfplane` | Supporting heights and finite corner bounds |
@@ -89,6 +93,11 @@ Paired-edge/vertex charts and manifold conditions remain to be constructed.
 | `Unfoldings.Development` | Facewise placements, nonoverlap, multiplicity, and metric descent |
 | `Unfoldings.Development.Hinge` | Nonoverlapping developments of arbitrary two-triangle hinges |
 | `Unfoldings.Path.Length` | Continuous-path length and its composition laws |
+| `Unfoldings.Path.Reparameterization` | Bounded-speed replacements preserving the curve image |
+| `Unfoldings.Path.Shortest` | Compact families, lower semicontinuity, and shortest paths |
+| `Unfoldings.Path.FiniteComponent` | Length-preserving lifts to finite-distance components |
+| `Unfoldings.Path.EMetricShortest` | Shortest paths in compact extended metric spaces |
+| `Unfoldings.Path.Geodesic` | Metric geodesics and endpoint-saturating speed bounds |
 | `Unfoldings.Geometry.Separation` | Corner certificates for whole-cell separation |
 | `Unfoldings.Geometry.Hinge` | Opposite sides imply adjacent-cell nonoverlap |
 | `Unfoldings.Source.Radial` | Injectivity from uniqueness of radial lifts |
@@ -128,6 +137,8 @@ lake exe cache get Mathlib.Analysis.InnerProductSpace.PiL2 \
   Mathlib.Topology.UniformSpace.Cauchy \
   Mathlib.Topology.MetricSpace.HausdorffDistance Mathlib.Topology.MetricSpace.Lipschitz \
   Mathlib.Topology.EMetricSpace.BoundedVariation \
+  Mathlib.Analysis.ConstantSpeed Mathlib.Topology.ContinuousMap.Bounded.ArzelaAscoli \
+  Mathlib.Topology.MetricSpace.Equicontinuity Mathlib.Topology.Semicontinuity.Basic \
   Mathlib.Topology.IsLocalHomeomorph \
   Mathlib.Topology.Instances.Real.Lemmas \
   Mathlib.Tactic.FinCases Mathlib.Tactic.FieldSimp Mathlib.Tactic.Ring \

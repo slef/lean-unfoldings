@@ -178,8 +178,12 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
 - [x] Extended length for continuous paths in arbitrary extended pseudometric
   spaces, via Mathlib total variation; chord bound, reversal, concatenation,
   Lipschitz bounds and preservation by isometries.
-- [ ] Surface-path adapters, restriction and constant-speed reparameterization.
-- [ ] Shortest-path existence via compactness and lower semicontinuity.
+- [x] Bounded-speed reparameterization of rectifiable paths, preserving their image.
+- [x] Shortest-path existence in compact extended metric spaces for endpoints
+  joined by a rectifiable path, using compactness and lower semicontinuity.
+- [x] Clopen compact finite-distance components with their ordinary metric,
+  and length-preserving lifts of rectifiable paths to those components.
+- [ ] Surface-path adapters and restriction.
 - [ ] Intrinsic surface metric, correct topology, compactness and geodesics.
 - [ ] Intrinsic distance on an embedded planar facet equals its Euclidean chord.
 - [ ] Prove equivalence with the triangle route metric; this is the bridge

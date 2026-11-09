@@ -16,6 +16,9 @@ public import Unfoldings.Geometry.Hinge
 public import Unfoldings.Geometry.Placement
 public import Unfoldings.Development.Hinge
 public import Unfoldings.Path.Length
+public import Unfoldings.Path.Reparameterization
+public import Unfoldings.Path.EMetricShortest
+public import Unfoldings.Path.Geodesic
 public import Unfoldings.Source.Radial
 public import Unfoldings.Examples.Metric
 public import Unfoldings.Examples.Hinge
