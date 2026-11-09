@@ -47,6 +47,10 @@ The initial library has no placeholder propositions or unfinished proofs.
   Vertex-link orders are constructed from endpoint transport: interior links
   are cyclic and boundary links are intervals with exactly two unpaired germs.
   Each incident corner is listed once, including self-pairings and loop links.
+  Cutting all seams away from a chosen vertex preserves its corner class,
+  total angle and a whole small intrinsic ball. Original corner neighborhoods
+  are proved to be convex supporting wedges; the metric tangent fan remains
+  to be constructed.
 - `FacewiseDevelopment` places each original triangle exactly once, agrees on
   retained edges, and puts the incident triangles on opposite sides. Retained
   dual cycles are allowed. The map descends to the cut realization and is
@@ -121,6 +125,11 @@ Vertex charts, self-paired-edge charts, and the full manifold conditions remain 
 | `Unfoldings.Complex.Paths` | Intrinsic path metric and geodesic existence for cut complexes |
 | `Unfoldings.Complex.Neighborhood` | Quantitative neighborhoods of two-face seam classes |
 | `Unfoldings.Topology.ConvexBoundary` | Sphere topology and connectedness of bounded convex boundaries |
+| `Unfoldings.Metric.Excision` | Whole-ball isometries when cutting distant seams |
+| `Unfoldings.Complex.Excision` | Metric excision and preserved triangle-complex point classes |
+| `Unfoldings.Complex.Star` | Actual vertex stars, conserved angles and local metric comparisons |
+| `Unfoldings.Complex.EmbeddedStars` | Unique per-cell centers supplied by spatial foldings |
+| `Unfoldings.Geometry.Corner` | Supporting wedges and actual corner wedge-ball geometry |
 | `Unfoldings.Topology.PairedInvolutions` | Generic finite interval/cycle order from two involutions |
 | `Unfoldings.Geometry.Endpoints` | Endpoint permutations induced by full-edge isometries |
 | `Unfoldings.Complex.Germs` | The two corner edge germs and their retained seam crossings |

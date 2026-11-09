@@ -155,7 +155,25 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
   links have exactly two unpaired germs. Generic finite-involution proofs are
   independent of triangle geometry and metric realizations.
 - [x] Ordered corner angles sum to the actual total vertex angle.
-- [ ] Establish the metric fan/cone/sector neighborhoods from these link orders.
+- [x] Local metric excision: keeping the incident seams preserves a whole small
+  intrinsic ball, via the canonical map restoring distant cuts.
+- [x] Vertex-star seam systems preserve the central class, unique central vertex
+  copy and total angle, and have the same small intrinsic ball.
+- [x] Supporting corner wedges, positive opposite-edge clearance, radial
+  invariance and wedge-ball/cell-ball isometries.
+- [x] Spatial foldings give one class representative per original cell and
+  injective face labels among the incident corner copies.
+- [ ] Construct tangent metric fans from the ordered corner wedges. Index cells
+  by `CornerAt`; index radial seams by retained seam, direction and endpoint.
+  Glue nonnegative radial extensions of the original paired edge points.
+- [ ] Identify all tangent apices using link connectivity. Lift the compatible
+  distances to their apices and prove exact radial distance; derive ordinary
+  metric structure and compact closed balls. Spatial foldings should extend to
+  the tangent model and imply cone-cell isometry when supplied.
+- [ ] Compare the tangent fan's whole small balls with the constructed vertex
+  star balls using wedge/cell equality and local route estimates.
+- [ ] Establish radial dilations, flat-vertex charts and metric cone/sector
+  neighborhoods, including self-pairings.
 - [x] Constructed isometries between Euclidean disks and intrinsic open balls
   at every face-interior point, without a global development hypothesis.
 - [x] Barycentric affine coordinates and local supporting half-plane geometry
@@ -232,7 +250,9 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
 ## Phase 6 Source unfolding
 
 - [ ] A generic source in a regular face interior and normalized shortest routes.
-- [ ] Source distance and the locus of nonunique shortest paths.
+- [ ] Source distance, the set of nonunique shortest paths, and its closure.
+  Cone vertices can be cut-locus leaves with a unique incoming geodesic, so the
+  nonuniqueness set alone is not the complete closed cut locus.
 - [ ] Finite face-sequence descriptions and local Voronoi descriptions.
 - [ ] Cut-locus closedness, finite embedded graph structure, and tree structure.
 - [ ] Every nonflat vertex belongs to the cut locus.

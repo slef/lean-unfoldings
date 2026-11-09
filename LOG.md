@@ -2,6 +2,28 @@
 
 ## Session Log
 
+### 2026-11-09 — metric excision and vertex-star neighborhoods
+
+- Strengthened generic finite closed-seam localization: compatibility only at
+  incident seams makes a map constant on the chosen class and nonexpanding on
+  a whole sufficiently small intrinsic neighborhood.
+- Constructed whole-ball isometries for seam excision, using the canonical map
+  that restores cuts. Applied this to triangle complexes without a development
+  or manifold assumption.
+- Isolated each vertex's incident seams. Proved that its complete corner class,
+  unique central vertex copy, total angle, and a whole small metric ball remain
+  unchanged after cutting all distant seams.
+- Constructed actual convex closed supporting wedges at triangle corners and
+  wedge-ball/cell-ball isometries. Proved positive clearance to the opposite
+  edge and invariance of the wedge under nonnegative radial scaling.
+- Proved that spatially foldable complexes have at most one representative of
+  a point class in any original cell; incident corner classes therefore use
+  distinct original faces.
+- Verification: selected cache fetch and `lake build` pass; the audit checks
+  1151 declarations, and `git diff --check` passes.
+- The metric tangent fan/cone and its comparison with these star neighborhoods
+  remain to be constructed; no source-unfolding conclusion is assumed here.
+
 ### 2026-11-09 — constructed vertex-link orders
 
 - Constructed the endpoint permutation of every full-edge isometry, including
