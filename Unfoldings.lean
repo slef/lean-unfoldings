@@ -100,5 +100,7 @@ public import Unfoldings.Source.CutProjection
 public import Unfoldings.Source.Disk
 public import Unfoldings.Source.CompletedRadials
 public import Unfoldings.Source.ActualCut
+public import Unfoldings.Complex.SeamFaceRoute
+public import Unfoldings.Complex.SeamWord
 public import Unfoldings.Examples.Metric
 public import Unfoldings.Examples.Hinge

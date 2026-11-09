@@ -443,6 +443,14 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
     on an embedded triangle complex, with at most `2 * card Face + 1` pieces,
     exact affine parametrizations, and exact total spatial chord length.
   - [ ] Normalize the finite partitions into seam-adjacent unfolding words.
+    - [x] Exact surface-point fibers have at most one tagged copy in each face.
+      Graph loop erasure connects any two copies by fewer seams than the face count.
+    - [x] Construct actual tagged entry/exit points for face-route pieces and
+      resolve every consecutive junction by such a bounded oriented seam route,
+      including junctions at flat subdivision vertices.
+    - [x] Bounded seam words form a finite type and construct deterministic
+      outward hinge placements. Their composed motion agrees at each actual
+      crossing point. Identify these placements with actual source coordinates next.
 - [x] Source distance, the set of nonunique shortest paths, and its closure.
   A source ball chart excludes a whole ball from the closed cut locus.
   Outside the cut locus, shortest paths exist uniquely on actual convex boundaries.

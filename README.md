@@ -479,6 +479,11 @@ manifold conditions remain open.
 | `Unfoldings.Topology.PerfectProjection` | A perfect boundary cannot project injectively to finite exceptions outside a closed set |
 | `Unfoldings.Source.ConeLeaves` | All singular endpoints belong to the closure of actual ties; the slit set equals the cut locus |
 | `Unfoldings.Source.ActualCut` | The actual cut complement, exact cut-locus boundary projection and constructed source-disk properties |
+| `Unfoldings.Topology.FiberGraph` | Equivalence chains in finite fibers yield short simple graph paths |
+| `Unfoldings.Complex.PointFiber` | Exact point fibers have at most one copy per original face and bounded seam paths |
+| `Unfoldings.Complex.PointSeamRoute` | Actual bounded oriented seam routes, including at vertices |
+| `Unfoldings.Complex.SeamFaceRoute` | Constructed entry/exit points and bounded seam resolutions of all face-route junctions |
+| `Unfoldings.Complex.SeamWord` | Finite oriented words construct rigid hinge placements agreeing at actual crossing points |
 | `Unfoldings.Examples.*` | Recovery, disconnectedness, shortcuts, contact, and overlap |
 | `Audit` | Transitive axiom check for all imported library declarations |
 

@@ -2,6 +2,25 @@
 
 ## Session Log
 
+### 2026-11-09 — bounded actual seam routes and finite candidate placements
+
+- Isolated graph reachability inside an exact fiber of a relation-preserving
+  map. In a finite fiber, loop erasure gives a simple path shorter than the
+  fiber cardinality. This combinatorial lemma has no unfolding dependencies.
+- A spatial folding proves at most one tagged copy per original face. Exact
+  seam gluing identifies all copies of a surface point, so any two are joined
+  by fewer seams than the original face count, including at vertices.
+- Constructed actual oriented seam routes with pointwise crossing witnesses,
+  and tagged entry/exit points of every geodesic face-route piece. Every
+  consecutive junction receives a bounded seam resolution without perturbing
+  the path or assuming generic edge crossings.
+- Bounded seam words form a finite type. Oriented outward hinge motions
+  construct their rigid placements; their composition agrees at the actual
+  crossing point. Matching these motions to the full source-coordinate map,
+  and deriving finite polygonality/Voronoi data, remain next.
+- Verification: selected Mathlib cache fetch and full `lake build` pass;
+  the audit checks **3,011 declarations**, using only the standard Lean axioms.
+
 ### 2026-11-09 — cone leaves belong to the closure of actual shortest-path ties
 
 - Proved a general topological lemma: a continuous projection of a perfect
