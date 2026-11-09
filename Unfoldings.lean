@@ -22,6 +22,8 @@ public import Unfoldings.Cone.Dilation
 public import Unfoldings.Cone.LinkSeams
 public import Unfoldings.Cone.SectorCoordinates
 public import Unfoldings.Cone.CornerSector
+public import Unfoldings.Cone.AngularMetric
+public import Unfoldings.Cone.LinkAngles
 public import Unfoldings.Complex.Charts
 public import Unfoldings.Complex.Paths
 public import Unfoldings.Complex.Connectivity

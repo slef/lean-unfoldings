@@ -57,8 +57,9 @@ The initial library has no placeholder propositions or unfinished proofs.
   supplied, agreeing with every incident face coordinate. Radial dilations
   multiply all intrinsic distances by their scale; positive scales have
   reciprocal homeomorphisms. Every actual wedge now has a rigid angular sector
-  isometry at its genuine corner angle. Assembling these sectors into fan
-  developments and flat-vertex charts remains open.
+  isometry at its genuine corner angle. Slit angular fans have constructed
+  metrics and developments at every total angle. Identifying these with actual
+  tangent fans and constructing flat-vertex charts remain open.
 - `FacewiseDevelopment` places each original triangle exactly once, agrees on
   retained edges, and puts the incident triangles on opposite sides. Retained
   dual cycles are allowed. The map descends to the cut realization and is
@@ -148,6 +149,9 @@ Vertex charts, self-paired-edge charts, and the full manifold conditions remain 
 | `Unfoldings.Cone.SectorCoordinates` | Positive-span sectors, ambient coordinates and interiors |
 | `Unfoldings.Geometry.CornerFrame` | Constructed rigid apex/first-ray/upper-side normalization |
 | `Unfoldings.Cone.CornerSector` | Actual triangle wedges isometric to their angular sectors |
+| `Unfoldings.Cone.AngularFan` | Slit sector fans, cumulative real headings and planar developments |
+| `Unfoldings.Cone.AngularMetric` | Common fan apex, exact radial distances and ordinary metric |
+| `Unfoldings.Cone.LinkAngles` | Genuine angle lists from the constructed retained-link order |
 | `Unfoldings.Metric.Excision` | Whole-ball isometries when cutting distant seams |
 | `Unfoldings.Complex.Excision` | Metric excision and preserved triangle-complex point classes |
 | `Unfoldings.Complex.Star` | Actual vertex stars, conserved angles and local metric comparisons |

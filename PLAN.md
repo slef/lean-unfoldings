@@ -233,8 +233,14 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
   the whole wedge maps isometrically onto the corresponding closed sector.
 - [x] Consecutive corners in every constructed link chain cross an actual
   retained radial seam, with direction and endpoint transport recorded.
-- [ ] Finite fan developments with positive sector angles and real cumulative
-  headings, not just angles modulo a full turn.
+- [x] Construct finite slit angular fans from closed Euclidean sectors, with
+  positive angles below pi and real cumulative headings. Consecutive matched
+  rays define the route metric; rigid placements descend to a development at
+  every total angle. Cells are isometric, apices coincide, and radial distances
+  are exact. Ordered actual links supply angle lists with the correct total.
+- [ ] Identify the slit angular fan with the corresponding actual tangent
+  wedges, respecting the first/last germ orientation, and close flat cyclic
+  fans when their total angle is a full turn.
 - [ ] A radially slit fan is nonoverlapping **iff** its total angle is at most
   `2 * Real.pi`.
 - [ ] At equality the terminal banks may coincide; above a full turn there is

@@ -2,6 +2,25 @@
 
 ## Session Log
 
+### 2026-11-09 — constructed slit angular fans
+
+- Constructed nonempty finite fans of actual closed Euclidean sectors, with
+  angles strictly between zero and pi. Partial sums retain real cumulative
+  headings, which are strictly increasing and end at the total angle.
+- Glued each terminal ray to the next initial ray at equal nonnegative radius.
+  The existing route construction supplies the metric and separation quotient.
+- Rigid sector placements agree across these seams and descend to an actual
+  nonexpanding planar development for every total angle, including overlap.
+  Derived exact within-cell metric distances from that constructed map.
+- Identified all apices, proved exact radial distances and finite distances
+  between every pair, and registered the canonical ordinary metric.
+- Actual retained-link orders supply genuine angle lists with exactly the
+  previously defined metric vertex total angle.
+- Verification: selected cache fetch and `lake build` pass; the audit checks
+  1520 declarations, and `git diff --check` passes.
+- The oriented comparison with actual tangent fans, flat cyclic closure,
+  complete fan nonoverlap criterion and source unfolding remain open.
+
 ### 2026-11-09 — actual wedges and angular sectors
 
 - Proved unique boundary-ray coordinates on every original triangle wedge,
