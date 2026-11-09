@@ -513,6 +513,10 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
     finite proper hyperplane boundary supports are finite unions of closed
     chambers. Apply it to obtain a compact convex halfplane polygon cover of
     the source domain with nonempty, pairwise-disjoint polygon interiors.
+  - [x] Refine the arrangement by candidate face inequalities and proper affine
+    coincidence equations. Construct one actual rigid inverse placement on
+    every whole closed polygon into an original triangle, with exact endpoint
+    projection compatibility and pairwise-disjoint developed polygon interiors.
 - [x] Every nonflat vertex belongs to the closed cut locus, including leaves
   with a unique incoming geodesic.
 - [x] The completed slit surface is a flat disk with identified boundary copies.

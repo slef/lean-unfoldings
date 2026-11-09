@@ -161,6 +161,17 @@ theorem chamber_signs_unique (f : ι → E →ᵃ[ℝ] ℝ) {a b : ι → Bool} 
       at positive_a positive_b
     linarith
 
+omit [FiniteDimensional ℝ E] [Finite ι] in
+theorem chamber_positive_of_nonnegative (f : ι → E →ᵃ[ℝ] ℝ) (signs : ι → Bool)
+    {x y : E} (hx : x ∈ chamber f signs) (hy : y ∈ chamber f signs) (i : ι)
+    (nonnegative : 0 ≤ f i x) : 0 < f i y := by
+  have positive_x := hx i
+  have positive_y := hy i
+  cases h : signs i
+  · have negative : 0 < -f i x := by simpa [h] using positive_x
+    linarith
+  · simpa [h] using positive_y
+
 theorem exists_finite_closed_chamber_cover (f : ι → E →ᵃ[ℝ] ℝ)
     (nonzero : ∀ i, f i ≠ 0) {s : Set E} (compact : IsCompact s)
     (regular_closed : closure (interior s) = s)

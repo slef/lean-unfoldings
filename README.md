@@ -531,6 +531,9 @@ manifold conditions remain open.
 | `Unfoldings.Source.BoundaryLines` | The entire developed boundary lies on finitely many proper affine lines |
 | `Unfoldings.Geometry.AffineArrangement` | General finite affine chamber covers of regular closed sets |
 | `Unfoldings.Source.PolygonalDomain` | A finite cover of the source disk by compact convex polygons with disjoint interiors |
+| `Unfoldings.Geometry.FiniteAffineSelection` | Proper affine supports for coincidences and constancy of finite continuous affine selections |
+| `Unfoldings.Geometry.PolyhedralSelection` | Finite polygonal partitions with one compatible affine map on each whole closed piece |
+| `Unfoldings.Source.PolygonalPieces` | Every source polygon folds rigidly into one original triangle, including its boundary |
 | `Unfoldings.Examples.*` | Recovery, disconnectedness, shortcuts, contact, and overlap |
 | `Audit` | Transitive axiom check for all imported library declarations |
 
