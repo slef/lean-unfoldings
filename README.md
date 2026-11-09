@@ -98,6 +98,9 @@ The initial library has no placeholder propositions or unfinished proofs.
   subdivision corners are allowed; a separate maximal-facet API remains open.
   Every spatial chord contained in the boundary has exact intrinsic length
   and a unique geodesic, across any number of subdivision triangles.
+  Every geodesic has a constructed finite face partition with at most
+  `2 * card Face + 1` pieces, exact spatial affine coordinates, and exact total
+  chord length.
   Every original edge is proved paired and every original vertex link cyclic.
   At all triangulation vertices, spatial extremality is equivalent to
   total angle below `2π`. Nonconstant geodesics avoid these extreme vertices
@@ -393,6 +396,9 @@ manifold conditions remain open.
 | `Unfoldings.Source.RadialDomain` | Exact prefix-vector scaling and star-shaped planar source images |
 | `Unfoldings.Path.Splice` | Actual constant-speed geodesics after alternative shortest-prefix replacement |
 | `Unfoldings.Source.PrefixUniqueness` | Every proper prefix is unique, by continuation from the unchanged tail |
+| `Unfoldings.Topology.FiniteIntervalCover` | Bounded subdivisions subordinate to finite closed interval covers |
+| `Unfoldings.Path.Partition` | Exact additive distances along finite monotone geodesic partitions |
+| `Unfoldings.Complex.FaceRoutes` | Bounded finite face partitions with affine pieces and exact chord lengths |
 | `Unfoldings.Examples.*` | Recovery, disconnectedness, shortcuts, contact, and overlap |
 | `Audit` | Transitive axiom check for all imported library declarations |
 

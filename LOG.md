@@ -2,6 +2,23 @@
 
 ## Session Log
 
+### 2026-11-09 — bounded finite face partitions of actual geodesics
+
+- Proved a finite closed interval cover has a strictly ordered subdivision
+  with at most twice the cover size plus one pieces, each contained in one
+  covering interval. The proof sorts actual endpoints and uses no open-cover
+  or general-position hypothesis.
+- Applied the derived closed interval face-visit theorem to every actual
+  embedded-surface geodesic. Constructed explicit times and face labels with
+  at most `2 * card Face + 1` pieces, allowing flat-vertex crossings.
+- Proved each piece's exact spatial affine parametrization and exact additive
+  chord length. A generic monotone geodesic partition theorem telescopes its
+  distances even in extended metric spaces.
+- Verification: selected cache fetch and full `lake build` pass; the audit
+  checks **2,498 declarations**, using only the standard Lean axioms.
+- Seam-adjacent unfolding words and finite Voronoi descriptions remain open;
+  the finite face partition does not assume any of those conclusions.
+
 ### 2026-11-09 — spliced geodesics and proper-prefix uniqueness
 
 - Constructed an actual constant-speed geodesic by replacing a prefix with any

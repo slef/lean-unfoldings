@@ -435,7 +435,11 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
     a final interval. Prove every proper positive-time prefix is unique, so
     nonunique source endpoints occur only as terminal points of shortest paths.
   - [ ] Prove local stability and exclusion of the closed cut locus at proper
-    prefix times; obtain bounded finite face-route descriptions.
+    prefix times.
+  - [x] Construct bounded finite face-contained partitions of every geodesic
+    on an embedded triangle complex, with at most `2 * card Face + 1` pieces,
+    exact affine parametrizations, and exact total spatial chord length.
+  - [ ] Normalize the finite partitions into seam-adjacent unfolding words.
 - [x] Source distance, the set of nonunique shortest paths, and its closure.
   A source ball chart excludes a whole ball from the closed cut locus.
   Outside the cut locus, shortest paths exist uniquely on actual convex boundaries.
