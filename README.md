@@ -52,8 +52,10 @@ The initial library has no placeholder propositions or unfinished proofs.
   are convex supporting wedges. `TangentFan` glues their radial seam extensions
   with a constructed proper, complete metric and exact radial distance.
   Its continuous-path metric agrees, explicit radial paths are geodesics, and
-  spatial foldings extend to it. The local comparison with the original
-  surface balls and angular cone charts remain open.
+  spatial foldings extend to it. `TangentChart` constructs an isometry between
+  whole small tangent and original vertex balls whenever a spatial folding is
+  supplied, agreeing with every incident face coordinate. Angular developments
+  and flat-vertex charts remain open.
 - `FacewiseDevelopment` places each original triangle exactly once, agrees on
   retained edges, and puts the incident triangles on opposite sides. Retained
   dual cycles are allowed. The map descends to the cut realization and is
@@ -134,6 +136,7 @@ Vertex charts, self-paired-edge charts, and the full manifold conditions remain 
 | `Unfoldings.Cone.Proper` | Compact closed tangent balls, properness and completeness |
 | `Unfoldings.Cone.Paths` | Intrinsic path metric and explicit radial geodesics |
 | `Unfoldings.Cone.Spatial` | Extended spatial foldings and tangent-cell isometries |
+| `Unfoldings.Cone.Charts` | Constructed whole-ball cone charts for spatial foldings |
 | `Unfoldings.Metric.Excision` | Whole-ball isometries when cutting distant seams |
 | `Unfoldings.Complex.Excision` | Metric excision and preserved triangle-complex point classes |
 | `Unfoldings.Complex.Star` | Actual vertex stars, conserved angles and local metric comparisons |

@@ -173,13 +173,13 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
   explicit radial paths are genuine constant-speed geodesics.
 - [x] Spatial foldings extend to the tangent model and imply cone-cell isometry
   when supplied.
-- [ ] Compare the tangent fan's whole small balls with the constructed vertex
-  star balls using wedge/cell equality and local route estimates. First select a
-  uniform radius where all corner wedges lie in their original triangles.
-  The inverse tagged map then uses the original face maps inside those pieces.
-  For spatial foldings, unique incident corners per face define the forward
-  tagged maps; prove their local metric bounds before descending whole-ball
-  isometries.
+- [x] For spatial foldings, compare whole small tangent and original vertex
+  balls. A uniform wedge/triangle radius, exact radial distances and local
+  route bounds in both directions construct an isometry agreeing with every
+  incident face coordinate. All sufficiently near original representatives
+  have incident face labels, giving whole-ball surjectivity.
+- [ ] Extend the local tangent comparison to abstract complexes without a
+  supplied spatial folding, including possible same-face corner copies.
 - [ ] Establish radial dilations, flat-vertex charts and metric cone/sector
   neighborhoods, including self-pairings.
 - [x] Constructed isometries between Euclidean disks and intrinsic open balls

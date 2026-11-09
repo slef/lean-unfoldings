@@ -15,6 +15,7 @@ public import Unfoldings.Complex.EmbeddedStars
 public import Unfoldings.Geometry.Corner
 public import Unfoldings.Cone.Paths
 public import Unfoldings.Cone.Spatial
+public import Unfoldings.Cone.Charts
 public import Unfoldings.Complex.Charts
 public import Unfoldings.Complex.Paths
 public import Unfoldings.Complex.Connectivity

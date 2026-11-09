@@ -2,6 +2,24 @@
 
 ## Session Log
 
+### 2026-11-09 — whole-ball tangent charts
+
+- Selected a uniform positive radius where every tangent wedge lies inside its
+  original triangle, and proved exact original/tangent vertex distances there.
+- Proved that tangent seam identifications within the triangles are original
+  retained seam identifications. Local route budgets give the first distance
+  comparison without assuming a global map outside the neighborhood.
+- Constructed the reverse tagged maps using uniqueness of incident corners per
+  spatially folded face. They agree across every incident original seam;
+  closed-seam localization gives the reverse metric bound.
+- Proved that all sufficiently near original representatives have incident
+  face labels. Combined both bounds into whole-ball isometries agreeing with
+  every original incident face coordinate, for arbitrary retained seam sets.
+- Verification: selected cache fetch and `lake build` pass; the audit checks
+  1338 declarations, and `git diff --check` passes.
+- Angular developments, flat-vertex charts, geometric convex angle bounds and
+  the source-unfolding construction remain open.
+
 ### 2026-11-09 — constructed tangent metric fans
 
 - Constructed tangent cells from the actual corner wedges and glued all
