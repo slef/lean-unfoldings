@@ -248,7 +248,10 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
   - [x] The angular-to-tangent comparison descends from the actual seams,
     preserves every apex distance, and is surjective for a covering link order.
     No spatial folding is needed.
-  - [ ] Prove the inverse comparison for interval links and close cyclic links.
+  - [x] Prove the inverse comparison for interval links, with both round trips
+    checked on the original cells; obtain an actual angular-fan isometry at
+    every boundary vertex, without a spatial-folding hypothesis.
+  - [ ] Close cyclic links and construct the full-turn Euclidean cone chart.
 - [x] A radially slit angular fan is nonoverlapping **iff** its total angle is at most
   `2 * Real.pi`.
 - [x] At equality the terminal banks coincide in the development; above a full

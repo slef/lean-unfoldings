@@ -58,8 +58,9 @@ The initial library has no placeholder propositions or unfinished proofs.
   multiply all intrinsic distances by their scale; positive scales have
   reciprocal homeomorphisms. Every actual wedge now has a rigid angular sector
   isometry at its genuine corner angle. Slit angular fans have constructed
-  metrics and developments at every total angle. Identifying these with actual
-  tangent fans and constructing flat-vertex charts remain open.
+  metrics and developments at every total angle. Every actual boundary tangent
+  fan is isometric to its angular model, without a spatial-folding hypothesis.
+  Cyclic closure and flat-vertex charts remain open.
 - Slit angular fans have pairwise disjoint genuine piece interiors **iff** their
   total angle is at most a full turn. At equality the developed outer banks
   coincide. Above a full turn, two piece interiors overlap at every positive radius.
@@ -164,6 +165,10 @@ Vertex charts, self-paired-edge charts, and the full manifold conditions remain 
 | `Unfoldings.Cone.AngularImages` | Genuine rigid piece images and their open heading intervals |
 | `Unfoldings.Cone.AngularOverlap` | Exact nonoverlap criterion and arbitrary-radius interior overlaps |
 | `Unfoldings.Topology.ChainPairings` | Every link pairing is consecutive or closes the outer banks |
+| `Unfoldings.Cone.TangentAngularCells` | Directed angular coordinates on every actual tangent cell |
+| `Unfoldings.Cone.IntervalSeams` | Every interval-link radial seam is consecutive |
+| `Unfoldings.Cone.IntervalCompatibility` | Actual seams respect the inverse interval comparison |
+| `Unfoldings.Cone.IntervalIsometry` | Boundary tangent fans isometric to their actual angular models |
 | `Unfoldings.Metric.Excision` | Whole-ball isometries when cutting distant seams |
 | `Unfoldings.Complex.Excision` | Metric excision and preserved triangle-complex point classes |
 | `Unfoldings.Complex.Star` | Actual vertex stars, conserved angles and local metric comparisons |

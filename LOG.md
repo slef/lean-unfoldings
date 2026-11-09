@@ -2,6 +2,23 @@
 
 ## Session Log
 
+### 2026-11-09 — inverse interval metric comparison
+
+- Constructed nonexpanding angular maps on every actual tangent cell using
+  the unique ordinal selected by its covering link order.
+- Classified all actual retained seams of an interval link as consecutive
+  in one direction or the other. Extended the bank-coordinate formulas to
+  every radial extension, not only the prescribed-radius witnesses.
+- Proved compatibility of the inverse cell maps with every actual seam,
+  descended the inverse and checked both round trips on original cells.
+- Obtained an explicit isometry from the ordered angular fan to the actual
+  tangent fan at every boundary vertex, with its genuine total angle. No
+  spatial folding is assumed.
+- Verification: selected cache fetch and `lake build` pass; the audit checks
+  1628 declarations, and `git diff --check` passes.
+- Cyclic closure and full-turn Euclidean cone charts are next; source
+  unfolding remains open.
+
 ### 2026-11-09 — exact nonoverlap criterion for angular fans
 
 - Characterized genuine sector interiors by positive radii and strictly
