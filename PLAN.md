@@ -118,6 +118,10 @@ convex polyhedra, or intrinsic metrics.
   finite embedded graph carrier, including loops and parallel edges.
 - [x] A contractible finite embedded graph has no loops or parallel edges and
   its adjacency graph is a tree, proved using circle covering lifts.
+- [x] Boundary-only quotient maps identify boundary complements homeomorphically
+  and descend boundary retractions. A standard disk presentation has an actual
+  open-disk complement, and a spherical target forces its boundary graph to be
+  a tree. These statements do not assume an Euler formula.
 - [ ] Distinguish abstract face walks from actual complementary regions.
 - [ ] Combinatorial surface cellulations and their topological realizations.
 - [ ] Planar/spherical embeddings and their compatibility with rotation data.
@@ -149,6 +153,9 @@ the general cut-graph disk equivalences remain open.
   for every retained-seam set, with self-pairings and corner identifications allowed.
 - [x] Agreement of quotient and metric topology for every finite triangle complex.
 - [x] Compactness and completeness of finite closed complexes.
+- [x] The union of actual unpaired closed bank images is compact. Restoring
+  seams is a boundary-only quotient, with every nontrivial fiber on those
+  banks. Its restriction away from the banks and their image is a homeomorphism.
 - [x] Route distance equals the infimum of lengths of continuous paths on every
   cut triangle realization; every finite distance is attained by a metric geodesic.
 - [x] Retained-face connectivity implies finite distances, an ordinary intrinsic
@@ -220,6 +227,14 @@ the general cut-graph disk equivalences remain open.
 - [ ] Curvature is derived from the incident triangle angles.
 - [ ] A nonempty embedded edge cut graph on a sphere, with no isolated points,
   produces one disk iff it is a tree.
+  - [x] Given a disk homeomorphism identifying its boundary with the actual
+    unpaired banks, prove the bank-image complement is an open disk and any
+    finite embedded bank-image graph is a tree on a spherical target.
+  - [x] On a convex boundary, construct the exact finite spatial bank graph
+    from original edge segments and derive its tree property from such a disk
+    presentation. The graph itself is not an input hypothesis.
+  - [ ] Derive bank-boundary preservation from the intrinsic manifold boundary.
+  - [ ] Construct the completed cut disk from an embedded cut tree.
 - [ ] Interior edge cuts on a disk, ignoring existing boundary edges, produce
   one disk iff they form a forest with exactly one original-boundary point per
   tree. The empty forest is allowed.

@@ -1,5 +1,6 @@
 module
 
+public import Unfoldings.Source.BoundaryQuotient
 public import Unfoldings.Source.CutRetraction
 public import Unfoldings.Source.CutGraph
 public import Unfoldings.Topology.PuncturedSphere
@@ -46,19 +47,9 @@ theorem sourceCutLocus_contractible :
       ContractibleSpace (sourceCutLocus source) := by
   let := P.metricSpace
   intro source R
-  let := P.sourcePunctured_contractible source
-  obtain ⟨retract, identity⟩ := P.exists_sourceCutLocus_retraction R
-  have off_source (x : sourceCutLocus source) :
-      x.val ∈ ({source} : Set (C.Realization Set.univ))ᶜ := by
-    change x.val ≠ source
-    intro equal
-    have cut : x.val ∈ sourceCutLocus source := x.property
-    rw [equal] at cut
-    exact R.source_not_mem_cutLocus cut
-  let inclusion : C(sourceCutLocus source,
-      ↥(({source} : Set (C.Realization Set.univ))ᶜ)) :=
-    ⟨fun x => ⟨x.val, off_source x⟩, continuous_subtype_val.subtype_mk off_source⟩
-  exact contractible_of_retraction inclusion retract (fun x => identity x (inclusion x).property)
+  have contractible := (P.sourceDiskBoundaryQuotient R).ball_boundaryImage_contractible_of_sphere
+    P.sphereHomeomorph (P.sourceDiskBoundaryQuotient_boundary R)
+  rwa [P.sourceDiskBoundaryQuotient_boundaryImage R] at contractible
 
 theorem sourceCutLocus_spatial_contractible :
     letI := P.metricSpace

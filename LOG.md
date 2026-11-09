@@ -2,6 +2,36 @@
 
 ## Session Log
 
+### 2026-11-09 — boundary quotients and the disk-to-tree direction for edge cuts
+
+- Added a topology-only boundary quotient API: distinct points in one fiber
+  lie on a distinguished boundary. Proved exact boundary preimages, closedness
+  of the boundary image, complement homeomorphisms, transport through domain
+  homeomorphisms, and descent of punctured boundary retractions.
+- Constructed the radial retraction for a standard closed ball. Its boundary
+  quotient has an actual open-ball complement. When the target is a sphere,
+  the boundary image is contractible and every exact embedded boundary graph
+  is simple and a tree.
+- Proved the actual union of unpaired triangle bank images is compact. Exact
+  seam chains imply every nontrivial fiber of canonical seam restoration lies
+  on those banks. The canonical map is a homeomorphism on bank complements.
+  All boundary endpoints, original unpaired edges, and self-pairings are kept.
+- A boundary-preserving disk presentation of an actual cut realization gives
+  an open-disk complement and the disk-to-tree direction on a spherical target.
+  On convex boundaries, constructed the exact finite straight spatial bank
+  graph from original edge segments and proved it a tree. This graph is an
+  output, not an additional hypothesis.
+- Constructed standard source-disk boundary quotient data with exact cut-locus
+  image. The existing source cut-locus contractibility proof now uses the
+  generic theorem, with its statement unchanged. Added computation lemmas for
+  complement homeomorphisms in terms of actual seam restoration.
+- Updated README, topology guide, checklist, and complete module index. The
+  tree-to-disk converse, intrinsic manifold boundary identification, disk
+  forest equivalence, and cone-vertex sources remain open.
+- Verification: selected Mathlib cache fetch and full `lake build` pass;
+  **3,489 declarations** are audited with only standard Lean axioms. All
+  **446 local documentation links** resolve and every module is indexed.
+
 ### 2026-11-09 — source cut-locus tree theorem
 
 - Proved the source projection has singleton fibers away from the cut locus

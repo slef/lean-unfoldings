@@ -33,6 +33,16 @@ edges. [GraphAcyclic.lean](GraphAcyclic.lean) proves that a contractible finite
 embedded graph is simple and its adjacency graph is a tree. This proves the
 source cut-locus tree theorem without Euler counting or planar separation.
 
+[BoundaryQuotient.lean](BoundaryQuotient.lean) treats quotient maps whose
+nontrivial fibers lie on a distinguished boundary. It proves boundary-complement
+homeomorphisms and descent of punctured boundary retractions.
+[BallBoundaryQuotient.lean](BallBoundaryQuotient.lean) constructs the retraction
+for a closed ball and identifies the complement of its boundary image with an
+open ball. A spherical target forces a finite embedded boundary graph to be a
+tree. The triangle seam-restoration and source-disk constructions both use this
+API. The tree-to-disk converse and identification of cut banks with the intrinsic
+manifold boundary remain separate tasks.
+
 [FiniteClasses.lean](FiniteClasses.lean) proves a generic finite-relation-class
 lemma used to separate triangle seam classes. Rotation systems, spherical
 cellulations, Euler's formula, and the tree/disk criteria remain open. A face
