@@ -14,10 +14,14 @@ public import Unfoldings.Complex.LinkOrdering
 public import Unfoldings.Complex.EmbeddedStars
 public import Unfoldings.Geometry.Corner
 public import Unfoldings.Geometry.ConvexCover
+public import Unfoldings.Geometry.CornerSpan
 public import Unfoldings.Cone.Paths
 public import Unfoldings.Cone.Spatial
 public import Unfoldings.Cone.Charts
 public import Unfoldings.Cone.Dilation
+public import Unfoldings.Cone.LinkSeams
+public import Unfoldings.Cone.SectorCoordinates
+public import Unfoldings.Cone.CornerSector
 public import Unfoldings.Complex.Charts
 public import Unfoldings.Complex.Paths
 public import Unfoldings.Complex.Connectivity

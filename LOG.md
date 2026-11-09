@@ -2,6 +2,27 @@
 
 ## Session Log
 
+### 2026-11-09 — actual wedges and angular sectors
+
+- Proved unique boundary-ray coordinates on every original triangle wedge,
+  including its genuine topological interior. Constructed normalized rigid
+  complex frames from two-point isometries and the upper-side convention.
+- Proved that the second ray's argument equals the actual Euclidean corner
+  angle. Restricted the frame to an isometry from the whole original wedge
+  onto the closed positive-span sector at that angle.
+- Constructed sector coordinates, closedness, convexity, actual interiors,
+  supporting half-plane descriptions and real angular representations.
+- Proved that the real-heading polar map on an open positive-radius strip is
+  injective iff its width is at most a full turn. Wider strips have explicit
+  collisions at every positive radius, so overlap remains representable.
+- Extracted actual retained radial seams along every consecutive pair in the
+  previously constructed corner orders, including endpoint transport.
+- Verification: selected cache fetch and `lake build` pass; the audit checks
+  1456 declarations, and `git diff --check` passes.
+- Fan assembly with cumulative headings, its metric comparison and the flat
+  vertex chart remain next. This is not yet the complete fan nonoverlap or
+  source-unfolding theorem.
+
 ### 2026-11-09 — finite closed-piece distance bounds
 
 - Adapted the generic interval center-bound argument from EdgeUnfoldings,

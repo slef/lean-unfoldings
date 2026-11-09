@@ -221,6 +221,18 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
 - [ ] Iterated conforming refinement preserves the metric and curvature.
 - [ ] Facewise placements commute with refinement.
 - [ ] Nonoverlap is unchanged by conforming subdivision.
+- [x] Polar developments keep real headings. The open positive-radius strip
+  is injective iff its angular width is at most a full turn; above a full turn,
+  collisions occur at every positive radius.
+- [x] Supporting triangle wedges have unique positive boundary-ray coefficients
+  and genuine interiors given by strictly positive coefficients.
+- [x] Positive-span sectors have genuine closed convex carriers and interiors,
+  supporting half-plane descriptions, and closed-interval polar coordinates.
+- [x] Construct normalized rigid coordinates on every actual triangle wedge.
+  The other edge ray has argument equal to its actual Euclidean corner angle;
+  the whole wedge maps isometrically onto the corresponding closed sector.
+- [x] Consecutive corners in every constructed link chain cross an actual
+  retained radial seam, with direction and endpoint transport recorded.
 - [ ] Finite fan developments with positive sector angles and real cumulative
   headings, not just angles modulo a full turn.
 - [ ] A radially slit fan is nonoverlapping **iff** its total angle is at most

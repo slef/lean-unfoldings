@@ -56,7 +56,9 @@ The initial library has no placeholder propositions or unfinished proofs.
   whole small tangent and original vertex balls whenever a spatial folding is
   supplied, agreeing with every incident face coordinate. Radial dilations
   multiply all intrinsic distances by their scale; positive scales have
-  reciprocal homeomorphisms. Angular developments and flat-vertex charts remain open.
+  reciprocal homeomorphisms. Every actual wedge now has a rigid angular sector
+  isometry at its genuine corner angle. Assembling these sectors into fan
+  developments and flat-vertex charts remains open.
 - `FacewiseDevelopment` places each original triangle exactly once, agrees on
   retained edges, and puts the incident triangles on opposite sides. Retained
   dual cycles are allowed. The map descends to the cut realization and is
@@ -140,6 +142,12 @@ Vertex charts, self-paired-edge charts, and the full manifold conditions remain 
 | `Unfoldings.Cone.Charts` | Constructed whole-ball cone charts for spatial foldings |
 | `Unfoldings.Cone.Dilation` | Exact radial similarities and reciprocal homeomorphisms |
 | `Unfoldings.Geometry.ConvexCover` | Common Lipschitz bounds across finite closed covers |
+| `Unfoldings.Geometry.CornerSpan` | Unique boundary-ray coordinates and actual wedge interiors |
+| `Unfoldings.Cone.LinkSeams` | Actual retained radial seams along ordered corner chains |
+| `Unfoldings.Cone.Polar` | Real-heading polar maps, exact injectivity criterion and overlap witnesses |
+| `Unfoldings.Cone.SectorCoordinates` | Positive-span sectors, ambient coordinates and interiors |
+| `Unfoldings.Geometry.CornerFrame` | Constructed rigid apex/first-ray/upper-side normalization |
+| `Unfoldings.Cone.CornerSector` | Actual triangle wedges isometric to their angular sectors |
 | `Unfoldings.Metric.Excision` | Whole-ball isometries when cutting distant seams |
 | `Unfoldings.Complex.Excision` | Metric excision and preserved triangle-complex point classes |
 | `Unfoldings.Complex.Star` | Actual vertex stars, conserved angles and local metric comparisons |
@@ -237,3 +245,5 @@ particularly whole-face separation certificates and transitive axiom auditing.
 No six-vertex classification theorem is a dependency of this library.
 The generic path-length extension and concatenation proofs adapt its variation
 arguments in `ArcLength`, `SurfacePathJoining`, and `SurfacePathReversal`.
+The generic interval center-bound proof adapts `Geometry/IntervalCenterBound`;
+the finite closed-cover theorem extends that approach to actual piece domains.
