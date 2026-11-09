@@ -41,6 +41,9 @@ The initial library has no placeholder propositions or unfinished proofs.
   retained-seam points with distinct incident faces, agreeing with both faces
   in outward hinge coordinates. Connected retained face incidence gives finite
   distances, an ordinary intrinsic metric, and geodesics between every pair.
+  `Vertex` is the finite quotient of tagged corners by retained seam chains,
+  with injective metric images and explicit maps between cut copies. Its total
+  angles use the actual Euclidean corner angles and are conserved under cuts.
 - `FacewiseDevelopment` places each original triangle exactly once, agrees on
   retained edges, and puts the incident triangles on opposite sides. Retained
   dual cycles are allowed. The map descends to the cut realization and is
@@ -115,6 +118,9 @@ Vertex charts, self-paired-edge charts, and the full manifold conditions remain 
 | `Unfoldings.Complex.Paths` | Intrinsic path metric and geodesic existence for cut complexes |
 | `Unfoldings.Complex.Neighborhood` | Quantitative neighborhoods of two-face seam classes |
 | `Unfoldings.Topology.ConvexBoundary` | Sphere topology and connectedness of bounded convex boundaries |
+| `Unfoldings.Complex.Vertices` | Actual cut vertex classes, boundary incidence and copy maps |
+| `Unfoldings.Geometry.Angles` | Positive Euclidean corner angles and triangle angle sums |
+| `Unfoldings.Complex.Angles` | Total angles and conservation across cut vertex copies |
 | `Unfoldings.Complex.Folding` | Spatial rigid placements and embedded surface topology |
 | `Unfoldings.Complex.Geodesics` | Straight face traces and closed interval face visits |
 | `Unfoldings.Polyhedron.Convex` | Geometric convex-boundary adapter and derived geodesics |

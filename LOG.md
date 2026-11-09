@@ -2,6 +2,24 @@
 
 ## Session Log
 
+### 2026-11-09 — vertex copies and actual angle sums
+
+- Defined vertices as quotients of tagged original corners by retained-seam
+  chains. Proved their images inject into the actual metric realization and
+  characterize exactly its original corner points.
+- Constructed surjective maps between vertex copies when restoring cuts,
+  commuting with the metric maps. Defined boundary incidence using endpoints
+  of the actual unpaired banks.
+- Defined corner angles from Euclidean geometry, proved each is strictly
+  between zero and pi, and proved each triangle's sum is pi.
+- Defined total angles of retained vertex classes. Proved positivity, the
+  global sum `number of triangles * pi`, and conservation of angle when a
+  vertex splits into cut copies. No cone-chart or curvature-bound conclusion
+  has been assumed.
+- Verification: selected triangle-geometry cache fetch and `lake build` pass;
+  the audit checks 929 declarations, and `git diff --check` passes.
+- Vertex-link classification and metric cone/sector charts are next.
+
 ### 2026-11-09 — spatial convex boundaries and face visits
 
 - Added compatible rigid spatial face placements. They descend through every

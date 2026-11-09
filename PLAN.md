@@ -82,7 +82,7 @@ which edges were used.
 - [x] Finite triangle complexes with one pairing per edge.
 - [x] Boundary edges, distinct bank labels, nonexpanding bank maps, and
   pointwise bank identification when restoring a seam.
-- [ ] Boundary-vertex classes and their incidence with boundary banks.
+- [x] Boundary-vertex classes and their incidence with boundary banks.
 - [x] Route-metric realization with an explicit set of retained seams.
 - [x] Canonical map forgetting cuts and its nonexpansion property.
 - [x] Facewise developments, seam agreement, and strict opposite-side condition.
@@ -143,7 +143,11 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
   cut triangle realization; every finite distance is attained by a metric geodesic.
 - [x] Retained-face connectivity implies finite distances, an ordinary intrinsic
   metric preserving edistance/topology, and geodesics between all points.
-- [ ] Finite vertex classes, links, and manifold conditions.
+- [x] Finite corner-quotient vertex types, injective metric images, boundary-bank
+  endpoint incidence and surjective vertex-copy maps when restoring seams.
+- [x] Actual positive corner angles, triangle angle sums, total vertex angles,
+  and conservation of total angles across cut copies.
+- [ ] Classify vertex links and establish the resulting manifold neighborhoods.
 - [x] Constructed isometries between Euclidean disks and intrinsic open balls
   at every face-interior point, without a global development hypothesis.
 - [x] Barycentric affine coordinates and local supporting half-plane geometry

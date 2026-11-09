@@ -9,6 +9,7 @@ public import Unfoldings.Metric.ClosedSeams
 public import Unfoldings.Metric.LocalMap
 public import Unfoldings.Complex
 public import Unfoldings.Complex.Exact
+public import Unfoldings.Complex.Angles
 public import Unfoldings.Complex.Charts
 public import Unfoldings.Complex.Paths
 public import Unfoldings.Complex.Connectivity
