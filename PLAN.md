@@ -357,6 +357,11 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
       finitely many noncollinear hull generators and a circular boundary.
     - [x] Sum the lateral triangle angle budgets. A transverse apex gives
       strictness at every nonstraight base corner.
+    - [x] Derive supporting planes for every original input triangle from
+      convexity, including subdivisions of maximal facets. Identify the
+      figure boundary with the sliced spatial surface; exclude nonincident
+      faces by the strict support margin. Prove each incident face section
+      is its actual radial segment and these segments cover the boundary.
     - [ ] Construct and order the vertex-figure polygon from the actual
       link, prove its planar angle sum, and apply the angle budget.
 

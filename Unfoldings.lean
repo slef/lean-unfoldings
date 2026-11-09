@@ -48,6 +48,7 @@ public import Unfoldings.Polyhedron.Chords
 public import Unfoldings.Polyhedron.ExtremeVertices
 public import Unfoldings.Polyhedron.VertexSlice
 public import Unfoldings.Polyhedron.VertexFigure
+public import Unfoldings.Polyhedron.FigureEdges
 public import Unfoldings.Geometry.RaySection
 public import Unfoldings.Geometry.PyramidAngles
 public import Unfoldings.Boundary

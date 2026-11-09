@@ -89,6 +89,10 @@ The initial library has no placeholder propositions or unfinished proofs.
   and a unique geodesic, across any number of subdivision triangles.
   Positive-curvature interior vertices are spatial extreme points. Convex
   upper angle bounds and the full regular-point classification remain open.
+  Extreme vertices have constructed compact convex planar vertex figures,
+  with finite noncollinear generators and actual interior centers. Their
+  boundaries are exactly the slice-plane intersections with the surface,
+  covered by radial segments from the incident original triangles.
 - Shortest paths on embedded surfaces cannot leave and re-enter a closed original
   face: each face visit is one closed parameter interval. Saturated nonexpanding
   images of geodesics are proved to be affine straight paths.
@@ -235,6 +239,11 @@ manifold conditions remain open.
 | `Unfoldings.Polyhedron.VertexSliceInterior` | Actual vertex sections with a spatial interior center |
 | `Unfoldings.Geometry.FunctionalPlane` | Constructed affine Euclidean coordinates on nonzero functional level planes |
 | `Unfoldings.Polyhedron.VertexFigure` | Compact convex planar vertex figures, finite hulls, interior centers and circular boundaries |
+| `Unfoldings.Geometry.AffineMaximum` | Local maxima force affine functionals to be constant |
+| `Unfoldings.Polyhedron.FaceSupport` | Actual original face planes support the convex body |
+| `Unfoldings.Polyhedron.FigureBoundary` | The figure boundary is exactly the sliced spatial surface |
+| `Unfoldings.Polyhedron.FigureIncidence` | Every figure-intersecting original face has a corner at the chosen vertex |
+| `Unfoldings.Polyhedron.FigureEdges` | Exact radial section segments of incident faces cover the figure boundary |
 | `Unfoldings.Geometry.SliceHull` | The whole transverse section is the finite hull of projected generators |
 | `Unfoldings.Geometry.RaySection` | Exact wedge sections and preservation of their genuine apex angles |
 | `Unfoldings.Geometry.AngleSeparation` | Strict angular inequality through a direction outside a level plane |

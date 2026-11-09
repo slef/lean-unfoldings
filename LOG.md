@@ -2,6 +2,25 @@
 
 ## Session Log
 
+### 2026-11-09 — actual supporting face planes and figure boundary segments
+
+- Proved an affine real functional with a local maximum is constant, and a
+  nonzero support functional is strictly below its level in the ambient
+  interior. Used separation at an input face interior to prove its entire
+  affine plane supports the convex body, including subdivided maximal facets.
+- Identified the planar figure boundary exactly with the original spatial
+  surface intersected with the transverse level plane.
+- Proved nonincident faces cannot meet the section: their corner heights,
+  hence all triangle heights, are strictly above the level. Every boundary
+  point therefore lies in a face with an actual corner at the chosen vertex.
+- Applied the full slice-hull formula to each incident triangle, obtaining
+  exactly the segment between its two radial corner projections. Proved
+  these actual segments lie on and cover the complete figure boundary.
+- Verification: full `lake build` passes; the audit checks 1971 declarations,
+  only standard Lean axioms occur, and `git diff --check` passes.
+- Next: the actual cyclic order of these boundary segments and its planar
+  angle sum, then the convex upper angle bound. Source unfolding is open.
+
 ### 2026-11-09 — nondegenerate planar vertex figures
 
 - Proved a positive transverse section below a body point meets the ambient
