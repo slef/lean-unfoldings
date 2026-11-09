@@ -2,6 +2,23 @@
 
 ## Session Log
 
+### 2026-11-09 — exact angular chords and strict apex shortcuts
+
+- Proved development injectivity below one full turn, including all banks.
+  Constructed the Euclidean sector isometry when the total angle is less
+  than pi, with inverse bounds obtained from its finite closed sector cover.
+- Proved strict chord shortcuts between nonzero points of pointed sectors
+  and apex avoidance for geodesics in convex angular fans.
+- Extended the inverse bound to every covered convex set in a reentrant
+  slit fan. In particular, every covered chord realizes intrinsic distance.
+- Added rotated sectors retaining real heading bounds. Shortcuts across
+  multiple pieces transfer to the actual tangent metric by the constructed
+  nonexpanding comparison and exact radial distances, without a folding.
+- Verification: selected cache fetch and full `lake build` pass; the audit
+  checks 1787 declarations, and `git diff --check` passes.
+- Cyclic shortcuts crossing the chosen slit remain open, as do general
+  positive-curvature vertex avoidance, convex angle bounds and source unfolding.
+
 ### 2026-11-09 — shortest paths in actual flat charts
 
 - Added codomain restriction preserving length and geodesics, and affine

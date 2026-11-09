@@ -304,6 +304,14 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
     margin confines all competing paths to a ball chart and gives uniqueness.
   - [x] Apply straightness, construction and ambient uniqueness to the actual
     whole-ball charts at flat interior vertices.
+  - [x] Below a full turn the slit development is injective, including its
+    boundary. Convex fans of angle less than pi have the exact Euclidean
+    sector metric and geodesics between nonapex endpoints avoid the apex.
+  - [x] Lift covered chords across finite closed pieces, including in
+    reentrant fans. Prove strict shortcuts in any pointed heading interval
+    inside a slit fan and transfer them to the actual tangent metric.
+  - [ ] Handle the short arc crossing the cyclic slit, then deduce avoidance
+    at every interior vertex with total angle less than a full turn.
 - [ ] Local uniqueness and continuation of a geodesic with a given initial germ.
 
 ## Phase 6 Source unfolding

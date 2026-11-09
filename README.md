@@ -174,6 +174,14 @@ Vertex charts, self-paired-edge charts, and the full manifold conditions remain 
 | `Unfoldings.Cone.CyclicSeams` | Actual closing seams and identification of the outer radial banks |
 | `Unfoldings.Cone.AngularCoordinates` | Closed headings, bank coordinates and full-plane coverage |
 | `Unfoldings.Cone.AngularFibers` | All closed-bank fibers at one full turn |
+| `Unfoldings.Cone.AngularInjective` | Boundary-inclusive development injectivity below a full turn |
+| `Unfoldings.Cone.AngularSector` | Exact Euclidean sector metric when total angle is less than pi |
+| `Unfoldings.Cone.SectorShortcut` | Strict chord shortcuts for nonzero points of pointed sectors |
+| `Unfoldings.Cone.AngularShortcut` | Strict intrinsic shortcuts and apex avoidance in convex angular fans |
+| `Unfoldings.Cone.AngularChord` | Exact intrinsic lengths of covered chords in reentrant fans |
+| `Unfoldings.Cone.HeadingSector` | Convex rotated sectors with closed real heading bounds |
+| `Unfoldings.Cone.AngularHeadingShortcut` | Strict shortcuts across multiple angular pieces |
+| `Unfoldings.Cone.LinkShortcut` | Strict angular shortcuts transferred to actual tangent metrics |
 | `Unfoldings.Cone.CyclicDevelopment` | Constructed surjective planar map of full-turn actual fans |
 | `Unfoldings.Cone.CyclicIsometry` | Full-turn cyclic tangent fans isometric to the Euclidean plane |
 | `Unfoldings.Cone.FlatCharts` | Whole intrinsic Euclidean charts at actual flat interior vertices |
