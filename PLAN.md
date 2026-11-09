@@ -422,7 +422,19 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
 ## Phase 6 Source unfolding
 
 - [ ] A generic source in a regular face interior and normalized shortest routes.
-- [ ] Source distance, the set of nonunique shortest paths, and its closure.
+  - [x] Construct a source frame at any regular point and full-length planar
+    vectors from actual constant-speed shortest paths. Vector norms are source
+    distance. Equal vectors force initial agreement and, on convex boundaries,
+    equality of the whole paths, including all tied endpoint routes.
+  - [x] Retain all normalized shortest paths in a compact metric space using
+    uniform convergence and Arzela--Ascoli. Coordinates are continuous.
+  - [x] Identify this space homeomorphically with its compact planar image;
+    endpoint projection is continuous and surjective. Prove the image is
+    star-shaped, with exact radial scaling under shortest-path prefixes.
+  - [ ] Obtain bounded finite face-route descriptions.
+- [x] Source distance, the set of nonunique shortest paths, and its closure.
+  A source ball chart excludes a whole ball from the closed cut locus.
+  Outside the cut locus, shortest paths exist uniquely on actual convex boundaries.
   Cone vertices can be cut-locus leaves with a unique incoming geodesic, so the
   nonuniqueness set alone is not the complete closed cut locus.
 - [ ] Finite face-sequence descriptions and local Voronoi descriptions.

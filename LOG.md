@@ -2,6 +2,33 @@
 
 ## Session Log
 
+### 2026-11-09 — actual shortest-path source vectors and compact planar ray domains
+
+- Constructed a source frame from any actual regular ball chart. A positive
+  sample time depends only on endpoint distance and stays in the source chart.
+  Extending the initial straight displacement gives a full-length planar vector
+  with norm exactly equal to intrinsic source distance.
+- Equal vectors force initial agreement. The proved convex-boundary continuation
+  theorem then distinguishes all normalized shortest paths, including distinct
+  tied paths to the same cut-locus endpoint and the constant source path.
+- Equipped the whole shortest-path space with uniform distance. The source
+  condition and geodesic equations are closed; the compact surface diameter
+  bounds all speeds. Arzela--Ascoli gives actual compactness of this path space.
+- Proved continuity of the constructed vectors and identified the path space
+  homeomorphically with its compact planar image. Endpoint evaluation gives
+  a continuous surjection back to the actual surface, preserving endpoint ties.
+- Proved exact initial chart coordinates and prefix-vector scaling. Every
+  actual shortest-path prefix is represented, so the whole planar image is
+  star-shaped, including zero and full time.
+- Defined the closed source cut locus as the closure of nonunique endpoints.
+  Proved a whole source ball misses it and convex-boundary shortest paths
+  exist uniquely outside it. This does not yet prove the cone-leaf or tree
+  characterization, nor local metric compatibility of the planar image.
+- Verification: selected cache fetch and full `lake build` pass; the audit
+  checks **2,463 declarations**, using only the standard Lean axioms.
+- Next: uniqueness and stability of proper prefixes, local unfolding isometries,
+  finite route descriptions and cut-locus structure. Source unfolding remains open.
+
 ### 2026-11-09 — genuine hinge charts and regular geodesic interiors
 
 - Proved finite piecewise rigid planar parametrizations of the actual spatial

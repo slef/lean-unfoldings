@@ -78,6 +78,15 @@ The initial library has no placeholder propositions or unfinished proofs.
 - `Hinge.development` constructs a nonoverlapping development of any two
   triangles with a full-edge isometric pairing. The construction extends the
   edge isometry to a rigid motion and reflects it if needed to open outward.
+- `SourceFrame` constructs full-length planar vectors from actual shortest paths
+  starting at any regular source. Vector norms equal source distance. On convex
+  boundaries the vectors distinguish all shortest paths, retaining tied paths
+  at cut-locus endpoints. Uniform convergence makes the whole shortest-path
+  space compact; its coordinates identify it homeomorphically with a compact,
+  star-shaped planar image. Endpoint projection is continuous and surjective.
+  `sourceCutLocus` is the closure of nonunique endpoints and misses a whole
+  source ball. Local metric compatibility of the planar image, its completed
+  slit interpretation, and finite cut-locus tree structure remain open.
 - `SpatialFolding` gives compatible rigid placements into three-dimensional
   space. Every original face is isometric for every cut metric. Spatial
   injectivity is separate and gives a homeomorphism onto the triangle union.
@@ -366,6 +375,20 @@ manifold conditions remain open.
 | `Unfoldings.Geometry.Separation` | Corner certificates for whole-cell separation |
 | `Unfoldings.Geometry.Hinge` | Opposite sides imply adjacent-cell nonoverlap |
 | `Unfoldings.Source.Radial` | Injectivity from uniqueness of radial lifts |
+| `Unfoldings.Path.MetricGeodesic` | Real distance formulas for actual constant-speed geodesics |
+| `Unfoldings.Path.InitialChart` | A positive chart sample determines the whole initial interval |
+| `Unfoldings.Source.Coordinates` | Constructed full-length source vectors and exact radial norms |
+| `Unfoldings.Source.ShortestPath` | All actual shortest paths, retaining endpoint ties |
+| `Unfoldings.Source.ConvexCoordinates` | Planar vectors distinguish all convex-boundary shortest paths |
+| `Unfoldings.Source.CompactPaths` | Compactness of the complete shortest-path space by Arzela--Ascoli |
+| `Unfoldings.Source.ContinuousCoordinates` | Continuous source vectors in the uniform path topology |
+| `Unfoldings.Source.Domain` | Compact planar path images and continuous endpoint projection |
+| `Unfoldings.Source.ConvexDomain` | Actual convex-boundary path-space homeomorphisms and surjective projection |
+| `Unfoldings.Source.SampleLine` | Exact initial chart straightness of the full-length source vector |
+| `Unfoldings.Source.CutLocus` | Closed source cut locus and exclusion of a whole source ball |
+| `Unfoldings.Source.ConvexCutLocus` | Unique shortest paths off the closed source cut locus |
+| `Unfoldings.Source.Prefixes` | Actual normalized shortest-path prefixes, including both endpoints |
+| `Unfoldings.Source.RadialDomain` | Exact prefix-vector scaling and star-shaped planar source images |
 | `Unfoldings.Examples.*` | Recovery, disconnectedness, shortcuts, contact, and overlap |
 | `Audit` | Transitive axiom check for all imported library declarations |
 
