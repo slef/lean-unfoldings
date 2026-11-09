@@ -2,6 +2,20 @@
 
 ## Session Log
 
+### 2026-11-09 — geodesics for constructed cut metrics
+
+- Constructed straight paths in triangle cells with exactly their Euclidean
+  length. Constructed continuous realization paths from every finite-cost route.
+- Defined continuous-path intrinsic distance and proved that it equals the
+  constructed route metric when cell distances are realized by cell paths.
+- Applied compact shortest-path existence and the endpoint-saturation geodesic
+  criterion. Every finite-distance pair in every cut triangle realization is
+  joined by an actual constant-speed metric geodesic. No manifold, embedding,
+  convexity or global development premise was used.
+- Added a chosen-geodesic API after proving existence. It makes no uniqueness
+  or cut-locus assertion.
+- Verification: `lake build`, the transitive axiom audit, and `git diff --check`.
+
 ### 2026-11-09 — compact shortest-path existence
 
 - Generalized the speed-bound length estimate to arbitrary extended

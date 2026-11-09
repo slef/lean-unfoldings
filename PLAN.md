@@ -139,6 +139,8 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
   for every retained-seam set, with self-pairings and corner identifications allowed.
 - [x] Agreement of quotient and metric topology for every finite triangle complex.
 - [x] Compactness and completeness of finite closed complexes.
+- [x] Route distance equals the infimum of lengths of continuous paths on every
+  cut triangle realization; every finite distance is attained by a metric geodesic.
 - [ ] Finite vertex classes, links, and manifold conditions.
 - [x] Constructed isometries between Euclidean disks and intrinsic open balls
   at every face-interior point, without a global development hypothesis.
@@ -184,7 +186,9 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
 - [x] Clopen compact finite-distance components with their ordinary metric,
   and length-preserving lifts of rectifiable paths to those components.
 - [ ] Surface-path adapters and restriction.
-- [ ] Intrinsic surface metric, correct topology, compactness and geodesics.
+- [x] Intrinsic path metric, correct topology, compactness and geodesics for
+  finite triangle complexes and their cut realizations.
+- [ ] Connect the embedded convex-boundary model to that constructed intrinsic metric.
 - [ ] Intrinsic distance on an embedded planar facet equals its Euclidean chord.
 - [ ] Prove equivalence with the triangle route metric; this is the bridge
   between the embedded and abstract libraries.
