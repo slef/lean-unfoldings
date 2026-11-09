@@ -252,6 +252,16 @@ manifold conditions remain open.
 | `Unfoldings.Polyhedron.GermEdges` | Actual edge incidence determines equal or seam-mate link germs |
 | `Unfoldings.Polyhedron.FigureGermIncidence` | Figure endpoints agree exactly for equal germs or seam mates |
 | `Unfoldings.Polyhedron.FigureSimpleChain` | Distinct initial endpoints in the actual cyclic figure chain |
+| `Unfoldings.Geometry.EdgeChordInterior` | Chords between different edge interiors enter a triangle interior |
+| `Unfoldings.Polyhedron.FaceIncidence` | Embedded original face interiors meet no other original face |
+| `Unfoldings.Polyhedron.FigureEdgeInteriors` | Open sections lie in original face interiors and miss other sections |
+| `Unfoldings.Geometry.PolygonEdges` | Open-edge separation allowing collinear subdivisions; at least three vertices |
+| `Unfoldings.Polyhedron.FigurePolygon` | Actual simple Mathlib polygon, exact boundary and genuine strict angle budget |
+| `Unfoldings.Geometry.FiniteAngles` | Every nonempty finite point list has a nonstraight chosen corner |
+| `Unfoldings.Geometry.TransversePyramid` | Strict transverse pyramid budget without an extra corner assumption |
+| `Unfoldings.Geometry.ConvexBoundaryEdges` | Supporting functionals of boundary segments and noncollinear interior centers |
+| `Unfoldings.Geometry.ConvexBoundaryRays` | Unique convex-frontier point on a positive ray from an interior origin |
+| `Unfoldings.Polyhedron.FigureCenter` | Genuine central triangles and their constructed positive-angle fan |
 | `Unfoldings.Geometry.RadialSliceAngles` | Positive radial slicing preserves affine apex angles |
 | `Unfoldings.Geometry.SliceHull` | The whole transverse section is the finite hull of projected generators |
 | `Unfoldings.Geometry.RaySection` | Exact wedge sections and preservation of their genuine apex angles |

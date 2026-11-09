@@ -368,8 +368,15 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
     - [x] Prove the section misses all original corners; characterize
       equal endpoints exactly as equal germs or seam mates. Deduce that the
       cyclic chain has no repeated initial endpoints using embeddedness.
-    - [ ] Prove the resulting cyclic boundary chain is simple, derive its
-      planar angle sum, and apply the angle budget.
+    - [x] Prove open sections lie in original face interiors and cannot meet
+      other sections. Construct the actual simple Mathlib polygon with at
+      least three vertices and exact boundary; its spatial apex-angle sum
+      is the genuine surface total angle. Apply the strict pyramid budget.
+    - [x] Supply the nonstraight corner automatically for every nonempty
+      finite pyramid. Prove the figure's central triangles noncollinear,
+      with positive angles below pi and unique boundary points on rays.
+    - [ ] Prove the central fan makes exactly one turn, derive the planar
+      polygon angle sum, and conclude the convex upper angle bound.
 
 ## Phase 6 Source unfolding
 

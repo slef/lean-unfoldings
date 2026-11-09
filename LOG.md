@@ -2,6 +2,28 @@
 
 ## Session Log
 
+### 2026-11-09 — actual simple figure polygons and strict angle budgets
+
+- Proved chords joining nonvertex points of different triangle edges enter
+  the face interior. Embedded original face interiors meet no other face;
+  hence every open figure section misses every other closed section.
+- Converted the derived cyclic chain into a Mathlib polygon. Proved its
+  edges nondegenerate, open edges separated, at least three vertices, and
+  boundary exactly the planar figure frontier, allowing flat subdivisions.
+- Identified its spatial apex-angle sum with the genuine surface total
+  angle and applied the lateral pyramid angle budget.
+- Proved any nonempty finite point list has a nonstraight chosen corner
+  by taking a farthest point and using strict convexity. This makes the
+  transverse pyramid budget strict without any extra corner hypothesis.
+- Proved supporting functionals for convex boundary segments, noncollinear
+  central triangles, and unique boundary points on positive rays. Constructed
+  the figure's actual positive-angle central fan.
+- Verification: selected cache fetch and full `lake build` pass; the audit
+  checks 2042 declarations with only standard Lean axioms; `git diff --check`
+  passes.
+- Next: prove this central fan makes exactly one turn and obtain the planar
+  polygon angle sum. The convex angle bound and source unfolding remain open.
+
 ### 2026-11-09 — actual link germs and ordered figure sections
 
 - Constructed each planar figure endpoint by projecting the actual far
