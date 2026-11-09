@@ -14,6 +14,8 @@ public import Unfoldings.Complex.Paths
 public import Unfoldings.Complex.Connectivity
 public import Unfoldings.Complex.Hinge
 public import Unfoldings.Complex.HingeCharts
+public import Unfoldings.Complex.Geodesics
+public import Unfoldings.Polyhedron.Convex
 public import Unfoldings.Boundary
 public import Unfoldings.Boundary.Exact
 public import Unfoldings.Boundary.Charts

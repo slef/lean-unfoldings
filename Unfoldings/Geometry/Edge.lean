@@ -87,6 +87,15 @@ theorem edge_vertex_iff (T : Triangle) (e : Fin 3) (x : T.Edge e) :
     · exact ⟨e, equal.symm⟩
     · exact ⟨next e, equal.symm⟩
 
+/-- Every nondegenerate edge has an interior point distinct from all triangle corners. -/
+theorem exists_edge_nonvertex (T : Triangle) (e : Fin 3) : ∃ x : T.Edge e, ¬ T.IsVertex x := by
+  let x : T.Edge e := ⟨midpoint ℝ (T.vertex e) (T.vertex (next e)), midpoint_mem_segment _ _⟩
+  refine ⟨x, ?_⟩
+  intro vertex
+  rcases (T.edge_vertex_iff e x).mp vertex with left | right
+  · exact T.edge_endpoints_ne e ((midpoint_eq_left_iff (R := ℝ)).mp left)
+  · exact T.edge_endpoints_ne e ((midpoint_eq_right_iff (R := ℝ)).mp right)
+
 theorem eq_vertex_of_mem_edge_of_mem_next (T : Triangle) (e : Fin 3) {x : Plane}
     (he : x ∈ T.edge e) (hn : x ∈ T.edge (next e)) : x = T.vertex (next e) :=
   eq_middle_of_orient_eq_zero (T.orient_edge_ne_zero e)

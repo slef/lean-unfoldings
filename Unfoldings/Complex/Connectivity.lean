@@ -1,6 +1,7 @@
 module
 
 public import Unfoldings.Complex.Paths
+public import Unfoldings.Metric.Connected
 
 /-!
 # Connectivity and finite distances
@@ -30,6 +31,42 @@ def FaceGlue (retain : Set C.Seam) (f g : Face) : Prop :=
 /-- Retained face incidence is connected. Cycles and self-pairings are allowed. -/
 def DuallyConnected (retain : Set C.Seam) : Prop :=
   ∀ f g, Relation.EqvGen (C.FaceGlue retain) f g
+
+theorem faceRelated_of_glue {retain : Set C.Seam} {a b : C.Total}
+    (joined : C.glue retain a b) : Relation.EqvGen (C.FaceGlue retain) a.1 b.1 := by
+  obtain ⟨s, kept, x, rfl, rfl⟩ := joined
+  exact Relation.EqvGen.rel _ _ ⟨s, kept, rfl, rfl⟩
+
+theorem faceRelated_of_step_ne_top (retain : Set C.Seam) (a b : C.Total)
+    (finite : MetricGluing.stepCost C.Cell (C.glue retain) a b ≠ ⊤) :
+    Relation.EqvGen (C.FaceGlue retain) a.1 b.1 := by
+  classical
+  by_cases joined : C.glue retain a b ∨ C.glue retain b a
+  · exact joined.elim (C.faceRelated_of_glue)
+      (fun h => Relation.EqvGen.symm _ _ (C.faceRelated_of_glue h))
+  · by_cases same : a.1 = b.1
+    · rw [same]
+      exact Relation.EqvGen.refl _
+    · exact (finite (by simp [MetricGluing.stepCost, joined, MetricGluing.faceCost, same])).elim
+
+theorem faceRelated_of_route_ne_top (retain : Set C.Seam) {a b : C.Total}
+    (route : Route C.Total a b) (finite : route.length (MetricGluing.stepCost C.Cell
+      (C.glue retain)) ≠ ⊤) : Relation.EqvGen (C.FaceGlue retain) a.1 b.1 := by
+  induction route with
+  | nil a => exact Relation.EqvGen.refl _
+  | cons a b tail ih =>
+    obtain ⟨first, rest⟩ := ENNReal.add_ne_top.mp finite
+    exact Relation.EqvGen.trans _ _ _ (C.faceRelated_of_step_ne_top retain a b first) (ih rest)
+
+/-- Finite metric distance cannot connect different retained face-incidence components. -/
+theorem faceRelated_of_edist_ne_top (retain : Set C.Seam) (a b : C.Total)
+    (finite : edist (MetricGluing.point C.Cell (C.glue retain) a)
+      (MetricGluing.point C.Cell (C.glue retain) b) ≠ ⊤) :
+    Relation.EqvGen (C.FaceGlue retain) a.1 b.1 := by
+  have less : Route.distance (MetricGluing.stepCost C.Cell (C.glue retain)) a b < ⊤ :=
+    lt_top_iff_ne_top.mpr finite
+  obtain ⟨route, short⟩ := iInf_lt_iff.mp less
+  exact C.faceRelated_of_route_ne_top retain route (ne_of_lt short)
 
 theorem faceMap_edist_ne_top (retain : Set C.Seam) (f : Face) (x y : C.Cell f) :
     edist (C.faceMap retain f x) (C.faceMap retain f y) ≠ ⊤ := by
@@ -82,5 +119,18 @@ theorem exists_geodesic_of_duallyConnected (retain : Set C.Seam)
     (connected : C.DuallyConnected retain)
     (x y : C.Realization retain) : ∃ p : Path x y, p.IsGeodesic :=
   C.exists_geodesic retain x y (C.edist_ne_top_of_duallyConnected retain connected x y)
+
+theorem duallyConnected_iff_edist_ne_top (retain : Set C.Seam) : C.DuallyConnected retain ↔
+    ∀ x y : C.Realization retain, edist x y ≠ ⊤ := by
+  constructor
+  · exact C.edist_ne_top_of_duallyConnected retain
+  · intro finite f g
+    let x : C.Cell f := ⟨(C.triangle f).vertex 0, (C.triangle f).vertex_mem 0⟩
+    let y : C.Cell g := ⟨(C.triangle g).vertex 0, (C.triangle g).vertex_mem 0⟩
+    exact C.faceRelated_of_edist_ne_top retain ⟨f, x⟩ ⟨g, y⟩ (finite _ _)
+
+theorem duallyConnected_of_preconnected (retain : Set C.Seam)
+    [PreconnectedSpace (C.Realization retain)] : C.DuallyConnected retain :=
+  (C.duallyConnected_iff_edist_ne_top retain).mpr edist_ne_top_of_preconnected
 
 end Unfoldings.TriangleComplex

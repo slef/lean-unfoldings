@@ -2,6 +2,29 @@
 
 ## Session Log
 
+### 2026-11-09 — spatial convex boundaries and face visits
+
+- Added compatible rigid spatial face placements. They descend through every
+  cut metric and make every original cell isometric. Spatial injectivity stays
+  separate; for embedded uncut surfaces, proved equality of intrinsic and
+  spatial subspace topology. Rigid foldings rule out same-face edge pairings.
+- Added a geometric convex-boundary adapter: the actual finite corner hull has
+  nonempty spatial interior, and the embedded triangle union is exactly its
+  frontier. Flat/subdivision corners are allowed. Maximal facets are not yet
+  represented by a separate API.
+- Used Mathlib's gauge-rescaling homeomorphism to derive sphere topology,
+  connectedness, finite intrinsic distances and shortest paths. The generic
+  bounded-convex-boundary theorem lives separately in `Topology/`.
+- Proved strict-convexity straightness of saturated nonexpanding geodesic images,
+  including their affine parameterization. Proved face no-re-entry on embedded
+  surfaces and that each visited closed face occupies one closed time interval.
+- Proved that finite metric distances are equivalent to retained face-incidence
+  connectivity; geometric convex boundaries therefore have connected dual incidence.
+- Verification: selected Mathlib cache fetch and `lake build` pass; the audit
+  checks 892 declarations, and `git diff --check` passes.
+- Cone geometry, vertex avoidance, cut-locus construction and source unfolding
+  remain open; this adapter assumes no geodesic or unfolding conclusion.
+
 ### 2026-11-09 — retained-edge Euclidean ball charts
 
 - Proved a generic local development estimate for finite closed seam systems:

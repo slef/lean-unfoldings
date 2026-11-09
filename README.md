@@ -51,6 +51,16 @@ The initial library has no placeholder propositions or unfinished proofs.
 - `Hinge.development` constructs a nonoverlapping development of any two
   triangles with a full-edge isometric pairing. The construction extends the
   edge isometry to a rigid motion and reflects it if needed to open outward.
+- `SpatialFolding` gives compatible rigid placements into three-dimensional
+  space. Every original face is isometric for every cut metric. Spatial
+  injectivity is separate and gives a homeomorphism onto the triangle union.
+  `SpatialFolding.ConvexBoundary` requires that this union be the frontier of
+  its actual finite corner hull, with nonempty spatial interior. Sphere topology,
+  connectedness, finite intrinsic distance and geodesics are derived. Flat
+  subdivision corners are allowed; a separate maximal-facet API remains open.
+- Shortest paths on embedded surfaces cannot leave and re-enter a closed original
+  face: each face visit is one closed parameter interval. Saturated nonexpanding
+  images of geodesics are proved to be affine straight paths.
 - `Path.eLength` measures continuous paths by total variation, allowing
   infinite length. Reversal, concatenation, Lipschitz bounds and invariance
   under isometries are proved independently of polyhedra. Rectifiable paths
@@ -104,6 +114,11 @@ Vertex charts, self-paired-edge charts, and the full manifold conditions remain 
 | `Unfoldings.Complex.Charts` | Constructed face-interior Euclidean metric charts |
 | `Unfoldings.Complex.Paths` | Intrinsic path metric and geodesic existence for cut complexes |
 | `Unfoldings.Complex.Neighborhood` | Quantitative neighborhoods of two-face seam classes |
+| `Unfoldings.Topology.ConvexBoundary` | Sphere topology and connectedness of bounded convex boundaries |
+| `Unfoldings.Complex.Folding` | Spatial rigid placements and embedded surface topology |
+| `Unfoldings.Complex.Geodesics` | Straight face traces and closed interval face visits |
+| `Unfoldings.Polyhedron.Convex` | Geometric convex-boundary adapter and derived geodesics |
+| `Unfoldings.Path.Straight` | Affine straightness of saturated geodesic images |
 | `Unfoldings.Complex.Connectivity` | Finite metrics and geodesics for connected face incidence |
 | `Unfoldings.Complex.HingeCharts` | Constructed Euclidean metric balls at retained edge interiors |
 | `Unfoldings.Complex.HingeCoordinates` | Local hinge frames and exact local distances |

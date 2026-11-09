@@ -186,8 +186,14 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
 
 ## Phase 5 Embedded convex surfaces and shortest paths
 
-- [ ] A minimal convex-polyhedron adapter, keeping maximal facets separate from
-  its input triangulation.
+- [x] Spatial rigid face placements, their cut-metric maps, exact within-cell
+  distances and spatial/intrinsic topology for embedded surfaces.
+- [x] A geometric convex-boundary adapter using the actual finite corner hull,
+  nonempty spatial interior, and embedded triangle coverage of its frontier.
+- [x] Derive sphere topology and connectedness from convexity, then ordinary
+  intrinsic metrics and geodesics; allow flat subdivision corners.
+- [ ] Separate maximal facets from input triangulation cells and connect to an
+  arbitrary finite-hull/polytope input, including existence of a triangulation.
 - [x] Extended length for continuous paths in arbitrary extended pseudometric
   spaces, via Mathlib total variation; chord bound, reversal, concatenation,
   Lipschitz bounds and preservation by isometries.
@@ -199,8 +205,12 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
 - [ ] Surface-path adapters and restriction.
 - [x] Intrinsic path metric, correct topology, compactness and geodesics for
   finite triangle complexes and their cut realizations.
-- [ ] Connect the embedded convex-boundary model to that constructed intrinsic metric.
-- [ ] Intrinsic distance on an embedded planar facet equals its Euclidean chord.
+- [x] Connect the embedded convex-boundary model to that constructed intrinsic metric.
+- [x] Intrinsic distance within each original embedded triangle equals its
+  Euclidean chord, for all retained-seam sets.
+- [x] Saturated nonexpanding geodesic images are affine straight paths in strictly
+  convex normed spaces; embedded-face visits are single closed time intervals.
+- [ ] Extend chord exactness from individual triangles to maximal planar facets.
 - [ ] Prove equivalence with the triangle route metric; this is the bridge
   between the embedded and abstract libraries.
 - [ ] Shortest paths develop straight in flat charts and do not pass through
