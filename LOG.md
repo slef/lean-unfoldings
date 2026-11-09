@@ -2,6 +2,26 @@
 
 ## Session Log
 
+### 2026-11-08 — unglued metric and boundary banks
+
+- Committed seam-quotient and compactness work as `152855f` (320 declarations
+  passed the transitive axiom audit).
+- Proved the exact no-seam metric formula for arbitrary families: original
+  distance within cells, infinity between cells. Proved isometric cell maps and
+  exactness for separated cells, including completely cut triangle complexes.
+- Added boundary-edge predicates and monotonicity under cutting. The unique
+  pairing condition proves that either side of a seam is a boundary edge iff
+  that seam is cut.
+- Added the two distinct local bank labels, nonexpanding maps of their closed
+  edges, and pointwise bank identification when the seam is restored. Bank
+  labels do not imply that all their endpoints have distinct metric images.
+- Added hinge examples checking bank creation, infinite distance between cut
+  cells, and restoration of the original bank pairing.
+- Boundary-vertex classes, local manifold charts, and exactness with retained
+  seams remain open.
+- Verification: `lake build` including examples and the transitive axiom audit;
+  `git diff --check`. No additional Mathlib imports needed a cache download.
+
 ### 2026-11-08 — seam quotient and compactness
 
 - Committed the verified foundation as `2e73201`.

@@ -1,6 +1,7 @@
 module
 
 public import Unfoldings.Geometry.Hinge
+public import Unfoldings.Boundary
 public import Mathlib.Tactic.NormNum
 
 /-! A genuine joined hinge, boundary contact, and a development with interior overlap. -/
@@ -61,6 +62,27 @@ theorem hinge_boundary_contact :
 /-- The actual metric gluing of the hinge keeps each original triangular cell isometric. -/
 theorem hinge_face_isometry (f : Bool) : Isometry (hinge.faceMap Set.univ f) :=
   hingeDevelopment.faceMap_isometry f
+
+/-- The common edge becomes two boundary banks exactly when its seam is cut. -/
+theorem hinge_cut_banks :
+    hinge.IsBoundaryEdge ∅ (hinge.left ()) ∧ hinge.IsBoundaryEdge ∅ (hinge.right ()) ∧
+      ¬ hinge.IsBoundaryEdge Set.univ (hinge.left ()) := by
+  refine ⟨hinge.isBoundaryEdge_empty _, hinge.isBoundaryEdge_empty _, ?_⟩
+  intro boundary
+  exact (hinge.isBoundaryEdge_left_iff Set.univ ()).mp boundary (Set.mem_univ _)
+
+/-- The two hinge cells remain metrically separate after cutting, even at their bank endpoints. -/
+theorem hinge_cut_cells_edist (x : hinge.Cell false) (y : hinge.Cell true) :
+    edist (hinge.faceMap ∅ false x) (hinge.faceMap ∅ true y) = ⊤ :=
+  hinge.edist_faceMap_empty_of_ne Bool.false_ne_true x y
+
+/-- Restoring the hinge identifies its entire pair of banks. -/
+theorem hinge_restore_banks (x : (hinge.triangle (hinge.left ()).face).Edge (hinge.left ()).edge) :
+    hinge.forgetCuts (Set.empty_subset Set.univ)
+        (hinge.bankMap ∅ (hinge.leftBank ∅ () (Set.notMem_empty _)) x) =
+      hinge.forgetCuts (Set.empty_subset Set.univ)
+        (hinge.bankMap ∅ (hinge.rightBank ∅ () (Set.notMem_empty _)) (hinge.identify () x)) :=
+  hinge.forgetCuts_banks (Set.empty_subset Set.univ) () (Set.notMem_empty _) (Set.mem_univ _) x
 
 /-- Two unjoined cells provide a simple example that overlap is representable. -/
 def coincidentComplex (T : Triangle) : TriangleComplex Bool where

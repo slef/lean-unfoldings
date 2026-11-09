@@ -24,6 +24,9 @@ The initial library has no placeholder propositions or unfinished proofs.
 - `TriangleComplex` describes finitely many nondegenerate Euclidean triangles
   and whole-edge isometric equivalences, with each edge in at most one pair.
   Its metric realization depends on an explicit set of retained seams.
+  `BoundaryBank` labels the unpaired local edges. Cutting a seam gives two
+  distinct bank labels; restoring it identifies their metric images pointwise.
+  With every seam cut, exactness and isometric face maps are proved.
 - `FacewiseDevelopment` places each original triangle exactly once, agrees on
   retained edges, and puts the incident triangles on opposite sides. Retained
   dual cycles are allowed. The map descends to the cut realization and is
@@ -54,8 +57,10 @@ the existence of a consistent rigid development strengthens them to isometries.
 | `Unfoldings.Metric.Route` | Finite routes and the generated extended pseudometric |
 | `Unfoldings.Metric.Gluing` | Metric quotient, descent, and restoration of seams |
 | `Unfoldings.Metric.Quotient` | Declared seam classes, exactness, compactness, and completeness |
+| `Unfoldings.Metric.Unglued` | Exact metric formulas and separation with no seams |
 | `Unfoldings.Geometry.Triangle` | Nondegenerate cells and full edge subspaces |
 | `Unfoldings.Complex` | Finite edge-paired complexes and their cut realizations |
+| `Unfoldings.Boundary` | Boundary-edge labels, bank maps, and restoration of banks |
 | `Unfoldings.Development` | Facewise placements, nonoverlap, multiplicity, and metric descent |
 | `Unfoldings.Geometry.Separation` | Corner certificates for whole-cell separation |
 | `Unfoldings.Geometry.Hinge` | Opposite sides imply adjacent-cell nonoverlap |

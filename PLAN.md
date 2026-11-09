@@ -72,13 +72,17 @@ which edges were used.
 - [x] Removing seams cannot decrease intrinsic distance.
 - [x] Single-cell realization recovers its original metric.
 - [x] Distinct disconnected cells have infinite distance.
+- [x] With no seams, the full family metric is exactly within-cell distance or
+  infinity across distinct cells; separated cells give an exact quotient.
 
 ## Phase 2 Triangles and the first development
 
 - [x] Nondegenerate Euclidean triangles, closed carriers and planar interiors.
 - [x] Full edge subspaces and isometric edge equivalences.
 - [x] Finite triangle complexes with one pairing per edge.
-- [ ] Boundary-edge and boundary-vertex API.
+- [x] Boundary edges, distinct bank labels, nonexpanding bank maps, and
+  pointwise bank identification when restoring a seam.
+- [ ] Boundary-vertex classes and their incidence with boundary banks.
 - [x] Route-metric realization with an explicit set of retained seams.
 - [x] Canonical map forgetting cuts and its nonexpansion property.
 - [x] Facewise developments, seam agreement, and strict opposite-side condition.
@@ -126,6 +130,7 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
 - [x] Continuous surjection from seam classes to the metric realization.
 - [x] Exactness criterion using compatible nonexpanding separating coordinates.
 - [x] Counterexample showing additional metric collapse for unrestricted gluing.
+- [x] Exactness for triangle complexes with all seams cut.
 - [ ] Zero route distance identifies exactly the finite gluing equivalence.
 - [x] Exactness implies agreement of quotient and metric topology for finite
   compact cells; apply after proving exactness for triangle complexes.

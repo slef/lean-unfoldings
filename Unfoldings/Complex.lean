@@ -1,7 +1,7 @@
 module
 
 public import Unfoldings.Geometry.Triangle
-public import Unfoldings.Metric.Quotient
+public import Unfoldings.Metric.Unglued
 
 /-!
 # Finite triangle complexes and their cut metrics
@@ -73,6 +73,19 @@ theorem compactSpace_realization (retain : Set C.Seam) : CompactSpace (C.Realiza
 theorem completeSpace_realization (retain : Set C.Seam) : CompleteSpace (C.Realization retain) :=
   inferInstance
 
+@[simp] theorem glue_empty (a b : C.Total) : ¬ C.glue ∅ a b := by
+  simp [glue]
+
+@[simp] theorem glue_empty_eq : C.glue ∅ = fun _ _ => False := by
+  funext a b
+  exact propext ⟨fun h => (C.glue_empty a b h).elim, False.elim⟩
+
+/-- Cutting every seam preserves all the original tagged points. -/
+theorem exact_empty : C.Exact ∅ := by
+  change MetricGluing.Exact C.Cell (C.glue ∅)
+  rw [C.glue_empty_eq]
+  exact MetricGluing.exact_empty C.Cell
+
 /-- Exactness is enough to identify the metric and the cell-quotient topologies. -/
 def seamHomeomorph (retain : Set C.Seam) (exact : C.Exact retain) :
     C.SeamQuotient retain ≃ₜ C.Realization retain :=
@@ -85,6 +98,21 @@ def faceMap (retain : Set C.Seam) (f : Face) : C.Cell f → C.Realization retain
 theorem faceMap_lipschitz (retain : Set C.Seam) (f : Face) :
     LipschitzWith 1 (C.faceMap retain f) :=
   MetricGluing.of_lipschitz C.Cell (C.glue retain) f
+
+/-- With all seams cut, every original triangle retains its Euclidean metric. -/
+theorem faceMap_empty_isometry (f : Face) : Isometry (C.faceMap ∅ f) := by
+  intro x y
+  change Route.distance (MetricGluing.stepCost C.Cell (C.glue ∅)) ⟨f, x⟩ ⟨f, y⟩ = edist x y
+  rw [C.glue_empty_eq, MetricGluing.distance_empty]
+  simp [MetricGluing.faceCost]
+
+/-- Completely separated faces have infinite intrinsic distance. -/
+theorem edist_faceMap_empty_of_ne {f g : Face} (different : f ≠ g)
+    (x : C.Cell f) (y : C.Cell g) :
+    edist (C.faceMap ∅ f x) (C.faceMap ∅ g y) = ⊤ := by
+  change Route.distance (MetricGluing.stepCost C.Cell (C.glue ∅)) ⟨f, x⟩ ⟨g, y⟩ = ⊤
+  rw [C.glue_empty_eq, MetricGluing.distance_empty]
+  simp [MetricGluing.faceCost, different]
 
 theorem seam_identified (retain : Set C.Seam) (s : C.Seam) (hs : s ∈ retain)
     (x : (C.triangle (C.left s).face).Edge (C.left s).edge) :
