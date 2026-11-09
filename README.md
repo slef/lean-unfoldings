@@ -489,6 +489,13 @@ manifold conditions remain open.
 | `Unfoldings.Source.LocalFacePlacement` | Constructed rigid face patches at all retained points, including edges and flat vertices |
 | `Unfoldings.Geometry.ConvexPatchRigidity` | Overlapping convex face patches force equality of their whole rigid motions |
 | `Unfoldings.Source.FaceAtlas` | Actual face motions are locally constant and develop every connected retained face region rigidly |
+| `Unfoldings.Metric.LocalRigidMap` | A constructed local isometry has an actual rigid expression in any open Euclidean chart |
+| `Unfoldings.Source.AmbientCoordinates` | Extend retained coordinates for local arguments, with proved agreement on the cut complement |
+| `Unfoldings.Source.HingePlacement` | One actual rigid motion expresses source coordinates on both sides of an outward hinge |
+| `Unfoldings.Source.FaceMotionUniqueness` | Any local source-coordinate expression determines the actual selected face motion |
+| `Unfoldings.Source.SeamTransition` | Actual face motions use the outward hinge transition at nonvertex seam points |
+| `Unfoldings.Geometry.EdgePerfect` | Every neighborhood in a genuine closed edge contains a nonvertex point |
+| `Unfoldings.Source.SeamEndpointTransition` | Actual hinge transitions extend to retained seam endpoints, including flat vertices |
 | `Unfoldings.Examples.*` | Recovery, disconnectedness, shortcuts, contact, and overlap |
 | `Audit` | Transitive axiom check for all imported library declarations |
 

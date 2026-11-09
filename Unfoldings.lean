@@ -104,5 +104,6 @@ public import Unfoldings.Complex.SeamFaceRoute
 public import Unfoldings.Complex.SeamWord
 public import Unfoldings.Source.LocalFacePlacement
 public import Unfoldings.Source.FaceAtlas
+public import Unfoldings.Source.SeamEndpointTransition
 public import Unfoldings.Examples.Metric
 public import Unfoldings.Examples.Hinge

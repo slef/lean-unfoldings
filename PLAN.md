@@ -459,6 +459,10 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
       Actual chosen face motions are locally constant; one rigid motion develops
       every connected retained part of an original face. Identify motions across
       seam crossings next.
+    - [x] The actual motions on both faces of every retained seam use exactly
+      the deterministic outward hinge transition. Derive this first on whole
+      nonvertex hinge charts, then extend to retained seam endpoints by local
+      constancy and nonvertex points in every genuine edge neighborhood.
 - [x] Source distance, the set of nonunique shortest paths, and its closure.
   A source ball chart excludes a whole ball from the closed cut locus.
   Outside the cut locus, shortest paths exist uniquely on actual convex boundaries.

@@ -2,6 +2,22 @@
 
 ## Session Log
 
+### 2026-11-09 — actual source motions match outward seam transitions, including vertices
+
+- Constructed a rigid expression of any actual local isometry in an open
+  Euclidean chart, using a whole smaller metric ball; no image openness is assumed.
+- Applied this to the actual source-coordinate map in the explicit outward
+  hinge chart. One rigid motion expresses both incident face maps, so their
+  actual motions differ by the constructed outward hinge placement.
+- Proved every neighborhood in a genuine closed triangle edge contains a
+  nonvertex point. Both source-face motions are locally constant along the
+  retained edge, extending the exact transition identity to retained endpoints,
+  including flat subdivision vertices.
+- Bounded seam words can now propagate these actual motions. Finite global
+  source-image and polygonal boundary/cut-graph descriptions remain next.
+- Verification: full `lake build` passes; the audit checks **3,059 declarations**,
+  using only the standard Lean axioms. The selected Mathlib cache was verified.
+
 ### 2026-11-09 — actual rigid motions on connected retained face regions
 
 - Proved that two rigid motions agreeing on a neighborhood within a convex
