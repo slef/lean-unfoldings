@@ -467,10 +467,22 @@ cut-graph disk equivalences and later cut-locus graph arguments will use it.
 - [ ] Cut-locus closedness, finite embedded graph structure, and tree structure.
 - [ ] Every nonflat vertex belongs to the cut locus.
 - [ ] The completed slit surface is a flat disk with identified boundary copies.
+  - [x] Identify the actual planar domain interior exactly: its path endpoints
+    are regular and off the closed cut locus. Every proper radial prefix is
+    interior, and the compact domain is the closure of that interior.
+  - [x] Construct a homeomorphism from the flat retained region to this planar
+    interior. Its coordinates are locally isometric everywhere and injective.
+  - [x] Identify boundary projection exactly as the closed cut union singular
+    points; the explicit closed `sourceSlitSet` is this union. Every true
+    extreme vertex belongs to the boundary image.
+  - [ ] Construct and identify the actual intrinsic cut-metric completion.
+  - [ ] Prove disk topology and the finite polygonal boundary descriptions.
 - [ ] Existence of the source development and radial developed shortest paths.
   - [x] Construct actual geodesics from the source to every retained point,
     entirely in the closed-cut complement. Their coordinates are exact radial
     segments, and the retained coordinate image is star-shaped.
+  - [x] Construct a nonoverlapping locally isometric development of the flat
+    retained region and all its actual radial geodesics, onto the planar interior.
 - [x] Abstract injectivity criterion from existence and uniqueness of radial lifts.
 - [ ] Apply that criterion to retained source-unfolding interiors.
 - [ ] Boundary coverage, nonoverlap of every original face piece, and a precise

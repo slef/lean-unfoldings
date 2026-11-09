@@ -2,6 +2,29 @@
 
 ## Session Log
 
+### 2026-11-09 — exact source-domain interior and actual regular-region development
+
+- Proved finite-dimensional rigid self-embeddings are open and surjective.
+  The terminal affine patch and compact singleton-fiber stability therefore
+  put every regular unique endpoint vector in the planar domain interior.
+- Conversely, extend an interior vector slightly outward. Injectivity identifies
+  it with a proper prefix of the longer actual shortest path. Thus an actual
+  source vector is interior iff its endpoint is regular and off the closed cut.
+- Every proper radial prefix is interior. Proved that the whole compact source
+  domain is the closure of its interior and that its interior is star-shaped.
+- Constructed a homeomorphism from the actual flat retained region onto that
+  planar interior. Its coordinates are continuous, injective, locally isometric
+  everywhere and carry actual retained geodesics to exact radial segments.
+- Identified boundary projection exactly as the closed cut locus union singular
+  points. Added the explicit closed `sourceSlitSet` for this union, and proved
+  its complement is the regular retained region. All true extreme vertices
+  are in the boundary image by the proved regularity classification.
+- Equality of the slit set with the closure-of-ties locus alone remains the
+  cone-leaf theorem. Intrinsic metric completion, finite polygon/Voronoi data,
+  disk and cut-tree characterizations also remain open.
+- Verification: selected cache fetch and full `lake build` pass; the audit
+  checks **2,700 declarations**, using only the standard Lean axioms.
+
 ### 2026-11-09 — retained radial paths and complete metric regularity classification
 
 - Restricted every selected actual shortest path to the closed-cut complement,

@@ -4,8 +4,9 @@ A Lean library for polyhedral metrics, cuts, and planar developments, with sourc
 unfolding of convex polyhedra as its first major target. Overlapping developments
 are supported; nonoverlap is a separate property and permits boundary contacts.
 
-The design and feature checklist are in [PLAN.md](PLAN.md). The source-unfolding
-construction and the sphere/disk cut-graph characterizations remain future work.
+The design and feature checklist are in [PLAN.md](PLAN.md). The regular source
+development is constructed; intrinsic boundary completion and finite cut-graph
+characterizations remain in progress.
 The initial library has no placeholder propositions or unfinished proofs.
 
 ## Current interfaces
@@ -94,7 +95,11 @@ The initial library has no placeholder propositions or unfinished proofs.
   shortest paths. Every proper prefix avoids the closed cut locus; the retained
   shortest paths are constructed and develop to exact radial segments. Inclusion
   of extreme cone endpoints in that cut locus, the completed slit interpretation,
-  and finite cut-locus tree structure remain open.
+  and finite cut-locus tree structure remain open. The compact planar domain is
+  the closure of its star-shaped interior, and the flat retained surface is
+  homeomorphic to that interior by its actual locally isometric source coordinates.
+  Boundary projection is exactly the closed cut locus union singular points,
+  recorded explicitly as `sourceSlitSet`.
 - `SpatialFolding` gives compatible rigid placements into three-dimensional
   space. Every original face is isometric for every cut metric. Spatial
   injectivity is separate and gives a homeomorphism onto the triangle union.
@@ -431,6 +436,15 @@ manifold conditions remain open.
 | `Unfoldings.Source.RetainedRadials` | Construct all retained radial geodesics and prove exact developed straightness |
 | `Unfoldings.Metric.RegularGeodesic` | A whole regular chart supplies a nonconstant geodesic through its center |
 | `Unfoldings.Polyhedron.RegularClassification` | Regular points are exactly the complement of true extreme vertex points |
+| `Unfoldings.Geometry.AffineEnd` | Finite-dimensional rigid self-embeddings are surjective and open |
+| `Unfoldings.Geometry.RadialInterior` | Interior points extend slightly outward along their radial lines |
+| `Unfoldings.Source.DomainInterior` | Regular unique endpoints give actual interior source vectors |
+| `Unfoldings.Source.ConvexDomainInterior` | Exact characterization of source-domain interior by regular retained endpoints |
+| `Unfoldings.Source.DomainDensity` | Every proper radial prefix is interior; its closure is the whole compact domain |
+| `Unfoldings.Source.DomainBoundary` | Exact boundary projection onto the closed cut union singular points |
+| `Unfoldings.Source.RegularRegion` | The flat retained region and explicit closed singular slit set |
+| `Unfoldings.Source.InteriorHomeomorph` | The actual flat retained surface is homeomorphic to the planar domain interior |
+| `Unfoldings.Source.RegularDevelopment` | Constructed nonoverlapping local isometries and radial geodesics on the retained interior |
 | `Unfoldings.Examples.*` | Recovery, disconnectedness, shortcuts, contact, and overlap |
 | `Audit` | Transitive axiom check for all imported library declarations |
 
