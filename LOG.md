@@ -2,6 +2,30 @@
 
 ## Session Log
 
+### 2026-11-10 — actual rigid openings around branching descendant subtrees
+
+- Enumerated the actual banks and vertex copies along a complete boundary
+  contour. Weighted cut-copy angles regroup exactly to original vertex angles.
+- Proved that a nonroot descendant subtree has one selected original-edge exit
+  and exactly two actual bank exits. Membership conservation orients them as
+  one entrance and one exit of the actual contour.
+- Counted actual cut-copy incidence and derived aggregate boundary turn
+  pi minus descendant curvature, including arbitrary branches and flat vertices.
+  No Euler identity or planar separation certificate is assumed.
+- Propagated developed orientation through the actual hinge and endpoint
+  pairings. Generalized link headings to a prescribed common orthogonal frame;
+  existing link-heading theorems reuse these proofs with unchanged statements.
+- Proved actual boundary-step rotations. Multiplying rotations over the subtree
+  cancels every internal direction, leaving the actual two original parent
+  banks. Their equal lengths upgrade the normalized identity to a rigid rotation
+  by all descendant curvatures. In a convex cap this is between zero and total
+  curvature, and at most pi gives the exact genuine bank aperture.
+- Prefix-turn bounds, branching-bank noncrossing, and global strip separation
+  remain open. The full cap theorem is still incomplete.
+- Verification: scoped cache check and full `lake build` pass; **5,919 project**
+  and **7,243 pinned topology declarations** use only standard Lean axioms.
+  Checked **760 local documentation links**; no project warnings or temporary worktrees.
+
 ### 2026-11-10 — actual developed headings and rigid bank openings at forest leaves
 
 - Defined actual planar developed germ rays and their genuine corner angles.

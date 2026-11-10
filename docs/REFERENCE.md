@@ -114,6 +114,8 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Cap.SubtreeAngles](../Unfoldings/Cap/SubtreeAngles.lean) | Actual boundary contours, subtree copy counts, exact aggregate turns, and subtree curvature bounds |
+| [Unfoldings.Cap.SubtreeOpening](../Unfoldings/Cap/SubtreeOpening.lean) | Actual matched parent banks rotate by all descendant curvatures, with exact small-curvature aperture |
 | [Unfoldings.Cap.LeafOpening](../Unfoldings/Cap/LeafOpening.lean) | Actual equal-length developed leaf banks rotate by the actual vertex curvature |
 | [Unfoldings.Cap.SingleCutStar](../Unfoldings/Cap/SingleCutStar.lean) | A unique incident cut seam opens exactly one original cyclic-link pair |
 | [Unfoldings.Cap.Reframe](../Unfoldings/Cap/Reframe.lean) | Actual cap geometry is preserved under horizontal orthogonal frame changes |
@@ -176,6 +178,16 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Complex.AngleCutSums](../Unfoldings/Complex/AngleCutSums.lean) | Weighted and regional angle conservation over actual cut copies |
+| [Unfoldings.Complex.BoundaryContour](../Unfoldings/Complex/BoundaryContour.lean) | Construct a complete actual boundary contour from connected bank topology |
+| [Unfoldings.Complex.BoundaryCycleEnumeration](../Unfoldings/Complex/BoundaryCycleEnumeration.lean) | A covering boundary cycle enumerates each actual bank and vertex copy once |
+| [Unfoldings.Complex.BoundaryIncidence](../Unfoldings/Complex/BoundaryIncidence.lean) | Weighted endpoint incidence counts actual boundary copies twice |
+| [Unfoldings.Complex.BoundaryLink](../Unfoldings/Complex/BoundaryLink.lean) | The actual corner interval between a specified bank and its boundary mate |
+| [Unfoldings.Complex.RelativeBankEnumeration](../Unfoldings/Complex/RelativeBankEnumeration.lean) | Further cuts retain all old banks and add exactly two banks per opened seam |
+| [Unfoldings.Complex.SelectedIncidence](../Unfoldings/Complex/SelectedIncidence.lean) | Actual cut-copy multiplicity equals selected original-edge endpoint multiplicity off the rim |
+| [Unfoldings.Complex.SelectedSubtreeAngles](../Unfoldings/Complex/SelectedSubtreeAngles.lean) | Exact boundary-turn sum for arbitrary branching descendant subtrees without Euler assumptions |
+| [Unfoldings.Complex.SelectedSubtreeBoundary](../Unfoldings/Complex/SelectedSubtreeBoundary.lean) | Exactly two actual parent-seam banks cross each descendant separator |
+| [Unfoldings.Complex.SubtreeContour](../Unfoldings/Complex/SubtreeContour.lean) | The actual boundary contour has one entering and one leaving parent bank per subtree |
 | [Unfoldings.Complex.LinkSteps](../Unfoldings/Complex/LinkSteps.lean) | Consecutive ordered link corners cross actual retained original seams |
 | [Unfoldings.Complex.RetainedCornerChain](../Unfoldings/Complex/RetainedCornerChain.lean) | A retained spanning corner chain has one actual cut vertex copy and preserves its angle |
 | [Unfoldings.Complex.SingleLinkCut](../Unfoldings/Complex/SingleLinkCut.lean) | Opening one original cyclic-link pair preserves the complete star and intrinsic angle |
@@ -263,6 +275,13 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Development.BankLengths](../Unfoldings/Development/BankLengths.lean) | Actual developed lengths agree for both banks and either endpoint of any original seam |
+| [Unfoldings.Development.BoundaryFrame](../Unfoldings/Development/BoundaryFrame.lean) | One orthogonal frame orients every actual boundary corner star |
+| [Unfoldings.Development.BoundaryOrientation](../Unfoldings/Development/BoundaryOrientation.lean) | Propagate orientation through actual bank and vertex pairings, allowing overlap |
+| [Unfoldings.Development.BoundaryRays](../Unfoldings/Development/BoundaryRays.lean) | Actual directed bank vectors and exact reversal at their far endpoints |
+| [Unfoldings.Development.BoundaryRotations](../Unfoldings/Development/BoundaryRotations.lean) | Actual boundary corner and exterior-step rotations in one shared frame |
+| [Unfoldings.Development.FramedLinkHeadings](../Unfoldings/Development/FramedLinkHeadings.lean) | Exact unreduced link headings and terminal rotation in an explicit prescribed frame |
+| [Unfoldings.Development.SubtreeRotation](../Unfoldings/Development/SubtreeRotation.lean) | Cancel internal boundary rotations to obtain the actual rigid whole-subtree bank opening |
 | [Unfoldings.Development.BankOpening](../Unfoldings/Development/BankOpening.lean) | Actual terminal bank aperture and rigid equal-length rotation, allowing zero-defect contact |
 | [Unfoldings.Development.GermCones](../Unfoldings/Development/GermCones.lean) | Actual developed corner cones separate at every retained hinge |
 | [Unfoldings.Development.GermRays](../Unfoldings/Development/GermRays.lean) | Actual developed edge rays, genuine lengths, corner angles, and retained mate agreement |
@@ -498,6 +517,7 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Geometry.CyclicRotations](../Unfoldings/Geometry/CyclicRotations.lean) | Cancel rotations across a finite region with one entrance and one exit |
 | [Unfoldings.Geometry.IntervalConeOrientation](../Unfoldings/Geometry/IntervalConeOrientation.lean) | Adjacent hinge separation gives a common orientation while allowing distant overlap |
 | [Unfoldings.Geometry.MeshLinearProgress](../Unfoldings/Geometry/MeshLinearProgress.lean) | Original outgoing quadrant edges after invertible planar coordinate changes |
 | [Unfoldings.Geometry.ThreeSectorAcute](../Unfoldings/Geometry/ThreeSectorAcute.lean) | One positive numerical parameter preserves every supplied acute angle margin |
@@ -648,6 +668,8 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Topology.CyclicRegion](../Unfoldings/Topology/CyclicRegion.lean) | Conservation of membership orients exactly two exits of a finite permutation region |
+| [Unfoldings.Topology.SelectedSubtree](../Unfoldings/Topology/SelectedSubtree.lean) | Descendants have one selected original-edge exit and exact endpoint incidence count |
 | [Unfoldings.Topology.SelectedLeaves](../Unfoldings/Topology/SelectedLeaves.lean) | Minimum-potential nonroot leaves and their unique selected incident original edge |
 | [Unfoldings.Topology.ParentPaths](../Unfoldings/Topology/ParentPaths.lean) | Finite parent orbits stop at the first root and have strictly increasing potentials |
 | [Unfoldings.Topology.AscendingForest](../Unfoldings/Topology/AscendingForest.lean) | Strictly increasing parent choices construct an acyclic graph with unique component roots |

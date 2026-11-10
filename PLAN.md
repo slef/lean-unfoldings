@@ -750,7 +750,10 @@ remaining forest, uniform-turn, and global nonoverlap arguments.
   every finite rim portion, including straight boundary subdivisions.
 - [x] Derive actual developed link headings and exact rigid bank openings at
   original cut-forest leaves, including zero-curvature contact.
-- [ ] Uniform prefix-turn bounds, including branching.
+- [x] Construct an actual complete boundary contour and a common developed frame.
+- [x] Derive actual rigid parent-bank rotations and small-curvature apertures for
+  every branching descendant subtree, with curvature bounded by the total budget.
+- [ ] Uniform prefix-turn bounds and branching-bank noncrossing.
 - [ ] Global strip assembly and the full nearly flat cap theorem.
 
 ## Later targets and Fewest Nets

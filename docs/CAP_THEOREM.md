@@ -96,6 +96,14 @@ The remaining nonoverlap argument must be proved independently.
   corner angle. The actual equal-length terminal bank vectors differ by a
   rigid rotation of the vertex curvature, with exact aperture for curvature
   at most pi and contact allowed at zero.
+- [x] Construct one covering actual boundary contour and one consistent developed
+  orientation frame, even when the planar boundary crosses itself.
+- [x] For every nonroot descendant subtree, derive the two actual parent-seam
+  bank exits and exact aggregate boundary-turn sum from cut-copy incidence.
+- [x] Prove that the actual equal-length parent banks rotate in that shared
+  frame by the sum of all descendant curvatures. This sum lies between zero
+  and total cap curvature; when it is at most pi it is the genuine aperture.
+  Zero curvature allows contact. See [SubtreeOpening](../Unfoldings/Cap/SubtreeOpening.lean).
 - [ ] Represent matched edge lengths and signed opening angles by actual rigid
   planar motions, retaining unwrapped real heading information.
 - [ ] Define the left-of relation at equal radii without conflating touching
@@ -104,8 +112,9 @@ The remaining nonoverlap argument must be proved independently.
   banks, nonnegative openings with total below pi, and cone measures below pi.
 - [ ] Check the backward-induction argument against the 2021 clarification,
   including finite endpoints and every intermediate suffix.
-- [ ] Extend to branching trees, including the altered opposite bank and
-  curvature contributed by attached branches (Corollary 10).
+- [ ] Prove branching-bank noncrossing, including the altered opposite bank
+  (Corollary 10). The actual whole-subtree opening identity is checked; safe
+  headings and separation remain to be proved.
 
 A stronger special-case route is also checked: matched banks whose unreduced
 headings are ordered in a common open quadrant are ordered at every equal
