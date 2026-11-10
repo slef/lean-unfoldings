@@ -2,6 +2,23 @@
 
 ## Session Log
 
+### 2026-11-09 — exact graph criterion for boundary-rooted forests
+
+- Defined the outside-vertex extension of a simple graph with marked roots.
+  Proved connectedness iff every component meets the root set, and acyclicity
+  iff the original graph is acyclic and distinct roots are never connected.
+  Every added root edge is handled explicitly, preserving cycle obstructions.
+- Proved the extension is a tree iff the original graph is a forest with
+  exactly one root per connected component. Constructed a bijection between
+  marked roots and connected components. No nonempty-vertex hypothesis is used.
+- Added examples for the empty forest and one rooted edge, plus both failure
+  modes: no root and two boundary roots in one component. The topological
+  sphere-capping/slit-disk bridge remains in progress; the combinatorial
+  equivalence is complete.
+- Verification: full `lake build` passes. The audit checks **3,579 unfolding
+  declarations** and **7,243 pinned planar-topology declarations**, with only
+  standard Lean axioms. All **459 local documentation links** resolve.
+
 ### 2026-11-09 — intrinsic cut boundaries and planar openness
 
 - Proved the circle is not contractible by real covering-lift uniqueness, and

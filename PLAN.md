@@ -242,6 +242,13 @@ the general cut-graph disk equivalences remain open.
 - [ ] Interior edge cuts on a disk, ignoring existing boundary edges, produce
   one disk iff they form a forest with exactly one original-boundary point per
   tree. The empty forest is allowed.
+  - [x] Prove the combinatorial equivalence: adjoining an outside vertex joined
+    to every boundary root gives a tree iff the original graph is acyclic and
+    has exactly one root per connected component. Construct the root/component
+    bijection, with no nonempty-vertex assumption.
+  - [x] Check the empty forest, one rooted edge, two boundary roots in one
+    component, and a component with no root.
+  - [ ] Connect capping and slit-surface constructions to the graph equivalence.
 - [ ] Include all nonflat interior vertices in the cuts iff the resulting disk
   has flat interior. Boundary corners need not be flat.
 - [ ] A flat metric disk admits a development, allowing overlap; uniqueness up

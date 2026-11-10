@@ -123,3 +123,4 @@ public import Unfoldings.Source.CutContractible
 public import Unfoldings.Source.CutTree
 public import Unfoldings.Examples.Metric
 public import Unfoldings.Examples.Hinge
+public import Unfoldings.Examples.CutForests

@@ -54,3 +54,10 @@ lemma used to separate triangle seam classes. Rotation systems, spherical
 cellulations, Euler's formula, and the tree/disk criteria remain open. A face
 walk must not be treated as a proved complementary region of an embedding, and
 Euler's formula must not be an axiom or a definition of spherical topology.
+
+[RootedForest.lean](RootedForest.lean) proves that adjoining one outside vertex
+joined to every marked root gives a tree exactly for a forest with one root per
+component. It also constructs the root/component bijection. Empty vertex types
+are allowed; examples check both missing roots and multiple roots in a component.
+The topological capping and slit-disk bridge for this combinatorial criterion
+remains separate.

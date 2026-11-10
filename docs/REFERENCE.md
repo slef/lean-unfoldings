@@ -475,6 +475,7 @@ source, including its module documentation and declarations.
 | [Unfoldings.Topology.PlanarOpenMapping](../Unfoldings/Topology/PlanarOpenMapping.lean) | Planar invariance of domain from the pinned Jordan–Schönflies theorem and circle obstruction |
 | [Unfoldings.Topology.PuncturedSphere](../Unfoldings/Topology/PuncturedSphere.lean) | Contractibility of a unit sphere punctured at any specified point |
 | [Unfoldings.Topology.QuotientRetraction](../Unfoldings/Topology/QuotientRetraction.lean) | Continuous quotient descent and contractibility of retracts |
+| [Unfoldings.Topology.RootedForest](../Unfoldings/Topology/RootedForest.lean) | Outside-vertex tree equivalence for forests with exactly one root per connected component |
 
 ## Examples and core imports
 
@@ -483,6 +484,7 @@ source, including its module documentation and declarations.
 | [Audit](../Audit.lean) | Transitive axiom check for all imported library declarations |
 | [Unfoldings](../Unfoldings.lean) | Public umbrella import for the library |
 | [Unfoldings.Basic](../Unfoldings/Basic.lean) | Common Euclidean plane and spatial coordinate types |
+| [Unfoldings.Examples.CutForests](../Unfoldings/Examples/CutForests.lean) | Empty forest, one rooted edge, and counterexamples with missing or multiple roots |
 | [Unfoldings.Examples.Hinge](../Unfoldings/Examples/Hinge.lean) | Joined hinges, boundary contact, and a layout with interior overlap |
 | [Unfoldings.Examples.Metric](../Unfoldings/Examples/Metric.lean) | Metric recovery, disconnectedness, and shortcuts |
 
