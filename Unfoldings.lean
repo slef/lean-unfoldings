@@ -167,3 +167,4 @@ public import Unfoldings.Cap.ProjectedFlatness
 public import Unfoldings.Cap.SolidNormalArea
 public import Unfoldings.Geometry.LuneMeasure
 public import Unfoldings.Cap.UniformCurvature
+public import Unfoldings.Cap.RimAngles

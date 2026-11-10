@@ -174,6 +174,10 @@ global strip hypotheses are constructed. It is not a proof of Theorem 9.
   disjoint original-face direction cones, and the one-full-turn theorem.
   Consequently the actual cap curvature/boundary-angle balance needs no
   assumed projected flatness or Euler identity.
+- [x] Prove that each original rim vertex has intrinsic angle at least its
+  projected angle, including straight boundary subdivisions. The sum of these
+  nonnegative rim excesses is total curvature, so every rim portion is bounded
+  by the same mesh-independent budget.
 - [ ] Prove the geometric subregion identities used in the prefix-turn argument,
   including the truncation and artificial connecting segments.
 - [ ] Bound turn distortion for every prefix independently of mesh size.

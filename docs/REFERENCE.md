@@ -114,6 +114,9 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Cap.BoundaryGerms](../Unfoldings/Cap/BoundaryGerms.lean) | Actual unpaired germ directions lie on the horizontal convex rim |
+| [Unfoldings.Cap.ProjectedInterval](../Unfoldings/Cap/ProjectedInterval.lean) | Actual projected interval rays have genuine disjoint cones and consistent orientation |
+| [Unfoldings.Cap.RimAngles](../Unfoldings/Cap/RimAngles.lean) | Nonnegative rim angle excess, exact total-curvature balance, and bounds for every rim portion |
 | [Unfoldings.Cap.AngularCurvature](../Unfoldings/Cap/AngularCurvature.lean) | Intrinsic interior angular defect equals the actual outward normal solid angle |
 | [Unfoldings.Cap.CurvatureBudget](../Unfoldings/Cap/CurvatureBudget.lean) | Nonnegative intrinsic defects and total-curvature bounds from actual normal-cone packing |
 | [Unfoldings.Cap.GermCrossing](../Unfoldings/Cap/GermCrossing.lean) | Sign changes in an actual face meet the supported planar cone boundary |
@@ -333,6 +336,7 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Polyhedron.IntervalLink](../Unfoldings/Polyhedron/IntervalLink.lean) | Actual spatial interval links and their endpoint angular-length bound |
 | [Unfoldings.Polyhedron.AngularLink](../Unfoldings/Polyhedron/AngularLink.lean) | Actual spatial cyclic link directions, corner angles, and crossing integrals |
 | [Unfoldings.Polyhedron.Chords](../Unfoldings/Polyhedron/Chords.lean) | Exact boundary-chord distances and unique intrinsic geodesics |
 | [Unfoldings.Polyhedron.Closedness](../Unfoldings/Polyhedron/Closedness.lean) | Derived seam pairing of every original edge and cyclicity at every vertex |
@@ -471,6 +475,10 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Geometry.HalfplaneFan](../Unfoldings/Geometry/HalfplaneFan.lean) | A consistently oriented halfplane fan has exact endpoint angle without wraparound |
+| [Unfoldings.Geometry.PlanarAngleAddition](../Unfoldings/Geometry/PlanarAngleAddition.lean) | Exact angular addition inside an oriented planar halfplane |
+| [Unfoldings.Geometry.PlanarConeOrientation](../Unfoldings/Geometry/PlanarConeOrientation.lean) | Disjoint genuine planar cones force consistent interval orientation |
+| [Unfoldings.Geometry.PlanarConjugation](../Unfoldings/Geometry/PlanarConjugation.lean) | A planar reflection reverses signed orientation and preserves actual angles |
 | [Unfoldings.Geometry.AngularCrofton](../Unfoldings/Geometry/AngularCrofton.lean) | Discrete spherical crossing integrals and the measure-theoretic Gauss reduction |
 | [Unfoldings.Geometry.ConeBoundaryRays](../Unfoldings/Geometry/ConeBoundaryRays.lean) | A planar supported convex cone has at most two boundary ray directions |
 | [Unfoldings.Geometry.CyclicSignChanges](../Unfoldings/Geometry/CyclicSignChanges.lean) | Even strict sign-change counts and exact counts for nonconstant bounded cyclic sequences |

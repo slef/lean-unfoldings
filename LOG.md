@@ -2,6 +2,25 @@
 
 ## Session Log
 
+### 2026-11-10 — nonnegative rim excess and uniform bounds for rim portions
+
+- Constructed genuine spatial and projected interval-link ray sequences.
+  Disjoint actual corner cones force consistent orientation. A ray chain in
+  the supporting closed halfplane has exact endpoint angle, including straight
+  outer boundary rays; spherical angular length bounds the spatial endpoint angle.
+- Identified terminal unpaired germs with actual horizontal rim banks. Derived
+  that every original rim vertex's intrinsic angle is at least its projected
+  angle, without strict corners or an assumed planar polygon certificate.
+- The nonnegative rim angle excesses sum exactly to total interior curvature.
+  Every finite rim portion, and every selected finite set of interior curvature
+  contributions, is therefore bounded by the complete curvature budget.
+- A single positive tilt threshold controls every rim portion across all meshes.
+  Truncated subregions, uniform prefix turns, source-centered forests, developed
+  branching banks, and global nonoverlap remain open.
+- Verification: scoped cache check and full `lake build` pass; **5,578 project**
+  and **7,243 pinned topology declarations** use only standard Lean axioms.
+  Checked **707 local documentation links**; no project warnings or temporary worktrees.
+
 ### 2026-11-10 — actual spherical Gauss identity and uniform total curvature
 
 - Extended the exact lune calculation to every nonzero spatial vector pair,

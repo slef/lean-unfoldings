@@ -744,6 +744,8 @@ remaining forest, uniform-turn, and global nonoverlap arguments.
 - [ ] Construct the source-centered near-quadrant forest needed for nonoverlap.
 - [x] Identify actual angular curvature with outward normal solid angle, and
   derive a positive uniform total-curvature threshold before the entire mesh.
+- [x] Prove nonnegative rim angle excess and a uniform curvature bound for
+  every finite rim portion, including straight boundary subdivisions.
 - [ ] Uniform prefix-turn bounds, including branching.
 - [ ] Global strip assembly and the full nearly flat cap theorem.
 
