@@ -113,6 +113,8 @@ source, including its module documentation and declarations.
 | --- | --- |
 | [Unfoldings.Complex](../Unfoldings/Complex.lean) | Finite edge-paired complexes and their cut realizations |
 | [Unfoldings.Complex.Angles](../Unfoldings/Complex/Angles.lean) | Total angles and conservation across cut vertex copies |
+| [Unfoldings.Complex.BoundaryAtlas](../Unfoldings/Complex/BoundaryAtlas.lean) | Actual bank half-plane atlases and inward embeddings of arbitrary cut surfaces |
+| [Unfoldings.Complex.BoundaryObstruction](../Unfoldings/Complex/BoundaryObstruction.lean) | Open planar injections cannot hit nonvertex banks; bank points are metrically nonregular |
 | [Unfoldings.Complex.BoundaryQuotient](../Unfoldings/Complex/BoundaryQuotient.lean) | Compact actual bank boundaries and exact boundary-only fibers of seam restoration |
 | [Unfoldings.Complex.BoundaryRegular](../Unfoldings/Complex/BoundaryRegular.lean) | Euclidean ball charts at every nonvertex point off the actual cut banks |
 | [Unfoldings.Complex.Charts](../Unfoldings/Complex/Charts.lean) | Constructed face-interior Euclidean metric charts |
@@ -131,6 +133,7 @@ source, including its module documentation and declarations.
 | [Unfoldings.Complex.GermEndpoints](../Unfoldings/Complex/GermEndpoints.lean) | Actual far corners and complementary endpoint transport |
 | [Unfoldings.Complex.GermSegments](../Unfoldings/Complex/GermSegments.lean) | Local edge endpoints in the actual orientation of each germ |
 | [Unfoldings.Complex.Germs](../Unfoldings/Complex/Germs.lean) | The two corner edge germs and their retained seam crossings |
+| [Unfoldings.Complex.HalfPlaneBoundary](../Unfoldings/Complex/HalfPlaneBoundary.lean) | Intrinsic bank identification under every open local half-plane homeomorphism |
 | [Unfoldings.Complex.Hinge](../Unfoldings/Complex/Hinge.lean) | Intrinsic upper bounds from local unfolded hinge chords |
 | [Unfoldings.Complex.HingeCharts](../Unfoldings/Complex/HingeCharts.lean) | Constructed Euclidean metric balls at retained edge interiors |
 | [Unfoldings.Complex.HingeCoordinates](../Unfoldings/Complex/HingeCoordinates.lean) | Local hinge frames and exact local distances |
@@ -288,6 +291,7 @@ source, including its module documentation and declarations.
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Cone.AngularBoundary](../Unfoldings/Cone/AngularBoundary.lean) | Outer fan banks correspond exactly to the boundary line with preserved radii |
 | [Unfoldings.Cone.AngularChord](../Unfoldings/Cone/AngularChord.lean) | Exact intrinsic lengths of covered chords in reentrant fans |
 | [Unfoldings.Cone.AngularCoordinates](../Unfoldings/Cone/AngularCoordinates.lean) | Closed headings, bank coordinates and full-plane coverage |
 | [Unfoldings.Cone.AngularFan](../Unfoldings/Cone/AngularFan.lean) | Slit sector fans, cumulative real headings and planar developments |
@@ -397,6 +401,7 @@ source, including its module documentation and declarations.
 | [Unfoldings.Geometry.CornerSpan](../Unfoldings/Geometry/CornerSpan.lean) | Unique boundary-ray coordinates and actual wedge interiors |
 | [Unfoldings.Geometry.Edge](../Unfoldings/Geometry/Edge.lean) | Edge intersections and endpoint preservation by isometries |
 | [Unfoldings.Geometry.EdgeChordInterior](../Unfoldings/Geometry/EdgeChordInterior.lean) | Chords between different edge interiors enter a triangle interior |
+| [Unfoldings.Geometry.EdgeCoordinates](../Unfoldings/Geometry/EdgeCoordinates.lean) | Centered affine half-plane coordinates on actual triangle edge neighborhoods |
 | [Unfoldings.Geometry.EdgeLine](../Unfoldings/Geometry/EdgeLine.lean) | Affine edge agreement extends to the entire supporting line |
 | [Unfoldings.Geometry.EdgeParameters](../Unfoldings/Geometry/EdgeParameters.lean) | Strict edge interpolation avoids all original triangle vertices |
 | [Unfoldings.Geometry.EdgePerfect](../Unfoldings/Geometry/EdgePerfect.lean) | Every neighborhood in a genuine closed edge contains a nonvertex point |
@@ -456,6 +461,9 @@ source, including its module documentation and declarations.
 | --- | --- |
 | [Unfoldings.Combinatorics.FiniteReach](../Unfoldings/Combinatorics/FiniteReach.lean) | Bounded rounds of finite choices give a finite set of reachable states |
 | [Unfoldings.Topology.BallBoundaryQuotient](../Unfoldings/Topology/BallBoundaryQuotient.lean) | Disk quotients have open-disk complements; spherical targets force boundary graphs to be trees |
+| [Unfoldings.Topology.BallExtension](../Unfoldings/Topology/BallExtension.lean) | Radius-preserving closed-ball extensions of arbitrary sphere homeomorphisms |
+| [Unfoldings.Topology.BoundaryAtlas](../Unfoldings/Topology/BoundaryAtlas.lean) | Compact boundary atlases yield inward embeddings and separate boundary-quotient fibers |
+| [Unfoldings.Topology.BoundaryPush](../Unfoldings/Topology/BoundaryPush.lean) | Finite compositions of local pushes move a compact boundary into its complement |
 | [Unfoldings.Topology.BoundaryQuotient](../Unfoldings/Topology/BoundaryQuotient.lean) | Boundary-only quotient maps, complement homeomorphisms, and descended boundary retractions |
 | [Unfoldings.Topology.ChainPairings](../Unfoldings/Topology/ChainPairings.lean) | Every link pairing is consecutive or closes the outer banks |
 | [Unfoldings.Topology.CircleObstruction](../Unfoldings/Topology/CircleObstruction.lean) | Covering-space proof that a circle is not contractible and a disk cannot retract onto it |
@@ -473,13 +481,17 @@ source, including its module documentation and declarations.
 | [Unfoldings.Topology.GraphExtension](../Unfoldings/Topology/GraphExtension.lean) | Continuous extension of compatible vertex and edge maps to the actual graph carrier |
 | [Unfoldings.Topology.GraphPoints](../Unfoldings/Topology/GraphPoints.lean) | Vertex points and continuous edge inclusions into the embedded graph carrier |
 | [Unfoldings.Topology.GraphPotential](../Unfoldings/Topology/GraphPotential.lean) | Selected-edge circle winding maps and real vertex potentials from contractibility |
+| [Unfoldings.Topology.HalfPlanePush](../Unfoldings/Topology/HalfPlanePush.lean) | Explicit injective inward pushes with compact rectangular support |
+| [Unfoldings.Topology.LocalPush](../Unfoldings/Topology/LocalPush.lean) | Extend local injective chart maps and boundary pushes by the identity |
 | [Unfoldings.Topology.PairedInvolutions](../Unfoldings/Topology/PairedInvolutions.lean) | Generic finite interval/cycle order from two involutions |
 | [Unfoldings.Topology.PerfectProjection](../Unfoldings/Topology/PerfectProjection.lean) | A perfect boundary cannot project injectively to finite exceptions outside a closed set |
+| [Unfoldings.Topology.PlanarHalfPlane](../Unfoldings/Topology/PlanarHalfPlane.lean) | Planar openness in product coordinates and the half-plane boundary obstruction |
 | [Unfoldings.Topology.PlanarOpenMapping](../Unfoldings/Topology/PlanarOpenMapping.lean) | Planar invariance of domain from the pinned Jordan–Schönflies theorem and circle obstruction |
 | [Unfoldings.Topology.PuncturedSphere](../Unfoldings/Topology/PuncturedSphere.lean) | Contractibility of a unit sphere punctured at any specified point |
 | [Unfoldings.Topology.Quadrant](../Unfoldings/Topology/Quadrant.lean) | Explicit piecewise linear quadrant-to-half-plane homeomorphism |
 | [Unfoldings.Topology.QuotientRetraction](../Unfoldings/Topology/QuotientRetraction.lean) | Continuous quotient descent and contractibility of retracts |
 | [Unfoldings.Topology.RootedForest](../Unfoldings/Topology/RootedForest.lean) | Outside-vertex tree equivalence for forests with exactly one root per connected component |
+| [Unfoldings.Topology.SmallHalfPlanePush](../Unfoldings/Topology/SmallHalfPlanePush.lean) | Construct inward pushes in arbitrarily small half-plane neighborhoods |
 
 ## Examples and core imports
 

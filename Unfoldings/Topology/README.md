@@ -67,3 +67,17 @@ closed quadrant to a closed half-plane, preserving the apex and identifying
 the two rays with the boundary line. Actual interval-link tangent fans use
 this in the geometry layer; total angle and overlap impose no topological
 restriction on their half-plane models.
+
+[BoundaryPush.lean](BoundaryPush.lean), [HalfPlanePush.lean](HalfPlanePush.lean),
+[SmallHalfPlanePush.lean](SmallHalfPlanePush.lean), and [LocalPush.lean](LocalPush.lean)
+construct and combine local inward pushes. [BoundaryAtlas.lean](BoundaryAtlas.lean)
+proves that a compact Hausdorff space with actual half-plane boundary charts
+embeds into its boundary complement. Composing with a boundary quotient gives
+an embedding into the target off the boundary image. The triangle application
+constructs these charts for the actual cut banks, including all vertex copies.
+This separates the banks but does not yet prove the tree-to-disk converse.
+
+[PlanarHalfPlane.lean](PlanarHalfPlane.lean) transfers planar openness to product
+coordinates and rules out planar injections hitting the half-plane boundary.
+[BallExtension.lean](BallExtension.lean) radially extends sphere homeomorphisms
+to closed balls with exact boundary agreement and preserved radius.

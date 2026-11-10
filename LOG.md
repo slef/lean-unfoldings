@@ -2,6 +2,34 @@
 
 ## Session Log
 
+### 2026-11-09 — actual boundary atlases and global inward embeddings
+
+- Identified both outer fan banks exactly with the boundary line, preserving
+  the original ray radii even when the planar development overlaps.
+- Proved that no continuous injective open planar patch can hit a nonvertex
+  bank. Transferred planar openness to product coordinates and identified
+  the actual bank set under every local half-plane homeomorphism. Perfect
+  edges and open line subsets remove all finite vertex exceptions.
+- Constructed centered affine edge coordinates and combined nonvertex edge
+  charts with the actual vertex fan charts into a genuine bank-boundary atlas.
+- Constructed compactly supported injective inward pushes, their arbitrary
+  rescalings, and extension through an open chart by the identity. Finite
+  composition moves an entire compact boundary inward, without collisions.
+- Applied this to every spatially folded finite triangle complex, for every
+  retained seam set. The whole cut surface embeds into its bank complement
+  and into the original surface off the cut graph. These are constructed
+  embeddings; neither disk topology nor nonoverlap is a premise.
+- Extended arbitrary sphere homeomorphisms radially to closed balls, with
+  exact boundary agreement and radius preservation, for disk-boundary matching.
+- The single-boundary-cycle argument for tree cuts, the sphere tree-to-disk
+  converse, and the full disk forest equivalence remain open. The inward
+  embedding alone does not prove a cut disk.
+- Verification: full `lake build` passes and audits **3,912 unfolding** and
+  **7,243 pinned planar-topology declarations**, with only standard axioms.
+  All **484 local documentation links** resolve. Removed temporary research
+  clones after preserving their refs, commits, and proof patches as ignored
+  bundles and review evidence; no temporary worktrees remain.
+
 ### 2026-11-09 — half-plane neighborhoods at boundary vertices
 
 - Constructed bounded linear changes between convex sectors that preserve the

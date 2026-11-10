@@ -136,6 +136,15 @@ convex polyhedra, or intrinsic metrics.
     intrinsic boundary-vertex neighborhoods using the actual metric cone charts.
     Angle changes preserve both ray coordinates and descend with finite
     Lipschitz bounds; overlapping developments are included.
+  - [x] Identify the actual bank set with the boundary line under every local
+    half-plane chart. Planar injections cannot hit nonvertex banks; continuity
+    and perfect edges/lines remove finite vertex exceptions.
+  - [x] Construct compactly supported local inward pushes and prove that a
+    finite composition moves the whole compact boundary inward. Transfer
+    these through the actual bank atlas. Every cut surface embeds into its
+    bank complement and back into the original surface off the cut graph.
+  - [x] Extend arbitrary sphere homeomorphisms to radius-preserving closed-ball
+    homeomorphisms, with exact boundary agreement, for boundary matching.
   - [ ] Assemble the local models into a boundary collar and tree regular
     neighborhood; prove the actual cut-disk converse and relative disk result.
 - [ ] Separate any needed polygonal Jordan/separation theorem from graph

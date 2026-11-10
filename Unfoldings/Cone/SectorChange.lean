@@ -130,4 +130,12 @@ def sectorHalfPlaneHomeomorph (α : ℝ) (nonzero : Real.sin α ≠ 0) :
       (quadrantSectorHomeomorph α nonzero _)) = _
   rw [Homeomorph.symm_apply_apply, PlanarTopology.quadrantHalfPlaneHomeomorph_zero]
 
+@[simp] theorem sectorHalfPlaneHomeomorph_quadrant (α : ℝ) (nonzero : Real.sin α ≠ 0)
+    (p : PlanarTopology.closedQuadrant) :
+    sectorHalfPlaneHomeomorph α nonzero (quadrantSectorHomeomorph α nonzero p) =
+      PlanarTopology.quadrantHalfPlaneHomeomorph p := by
+  change PlanarTopology.quadrantHalfPlaneHomeomorph
+    ((quadrantSectorHomeomorph α nonzero).symm (quadrantSectorHomeomorph α nonzero p)) = _
+  rw [Homeomorph.symm_apply_apply]
+
 end Unfoldings

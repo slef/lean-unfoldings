@@ -11,6 +11,7 @@ public import Unfoldings.Complex
 public import Unfoldings.Complex.Exact
 public import Unfoldings.Complex.CutDisk
 public import Unfoldings.Complex.IntrinsicBoundary
+public import Unfoldings.Complex.BoundaryAtlas
 public import Unfoldings.Complex.CutGraph
 public import Unfoldings.Polyhedron.CutTree
 public import Unfoldings.Complex.Angles
@@ -31,12 +32,14 @@ public import Unfoldings.Cone.AngularMetric
 public import Unfoldings.Cone.LinkAngles
 public import Unfoldings.Cone.LinkComparison
 public import Unfoldings.Cone.AngularOverlap
+public import Unfoldings.Cone.AngularBoundary
 public import Unfoldings.Cone.AngularSector
 public import Unfoldings.Cone.AngularShortcut
 public import Unfoldings.Cone.LinkShortcut
 public import Unfoldings.Cone.HeadingShortcut
 public import Unfoldings.Cone.VertexAvoidance
 public import Unfoldings.Topology.ChainPairings
+public import Unfoldings.Topology.BallExtension
 public import Unfoldings.Cone.IntervalIsometry
 public import Unfoldings.Cone.BoundaryTopology
 public import Unfoldings.Cone.FlatCharts
