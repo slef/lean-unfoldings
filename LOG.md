@@ -2,6 +2,27 @@
 
 ## Session Log
 
+### 2026-11-10 — original-edge cap forests and normal-image packing
+
+- Constructed an actual boundary-rooted forest of original seams with canonical
+  acute-wedge paths to the rim. Each whole path is radially monotone from every
+  earlier point. The construction uses a fixed wedge; the source-centered sector
+  construction needed for nonoverlap remains open.
+- Proved that these selected cuts give an intrinsic disk and put every vertex
+  copy on its boundary. Constructed its locally isometric development, unique
+  after fixing one original face, with overlap permitted.
+- Handled caps with no interior vertices by proving they are flat and have an
+  injective, nonoverlapping uncut development.
+- Constructed supporting-slope normal polygons from the actual incident faces.
+  Proved disjoint interiors and a common tilt-controlled disk, hence a total
+  planar area bound independent of vertex count. Any positive area budget has
+  a positive uniform tilt threshold. Gnomonic coordinates recover face normals.
+- The intrinsic-curvature identity, uniform prefix-turn bounds, and global
+  nonoverlap proof remain unproved; this is not the full cap theorem.
+- Verification: scoped Mathlib cache check and full `lake build` pass;
+  **5,311 project** and **7,243 pinned topology declarations** use only standard
+  Lean axioms. No project warnings or temporary worktrees.
+
 ### 2026-11-10 — acute-wedge progress and intrinsic cap bounds
 
 - Constructed the actual projected triangle cover, preserving corner incidence

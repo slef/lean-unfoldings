@@ -3,6 +3,17 @@
 Target: Joseph O'Rourke, *Edge-Unfolding Nearly Flat Convex Caps*,
 [2021 extended version](https://arxiv.org/abs/1707.01006v4), Theorem 1.
 This is a proof-development checklist; unchecked claims are not Lean declarations.
+**The full nonoverlap theorem is not yet proved.**
+
+Current entry points:
+
+- [ForestExistence](../Unfoldings/Cap/ForestExistence.lean) constructs an actual
+  original-edge rooted forest for uniformly small positive tilt.
+- [ForestDevelopment](../Unfoldings/Cap/ForestDevelopment.lean) constructs its
+  intrinsic cut disk and a locally isometric development, allowing overlap.
+- [NormalAreaThreshold](../Unfoldings/Cap/NormalAreaThreshold.lean) proves a
+  mesh-independent positive tilt threshold for arbitrarily small total planar
+  normal-image area. This is not yet a curvature bound.
 
 The intended statement takes the cap's acute input triangulation as given.
 For every fixed positive acuteness margin, there is a positive normal-tilt
@@ -46,6 +57,8 @@ The remaining nonoverlap argument must be proved independently.
 
 - [x] Geometric cap inputs without cuts or nonoverlap assumptions.
 - [x] Derive actual disk topology from the convex injective projection.
+- [x] Identify the projected footprint frontier with intrinsic boundary banks
+  and original boundary vertex classes, including every boundary copy.
 - [x] Derive the actual concave roof from supporting inequalities.
 - [x] Prove uniform intrinsic projection bounds, with inverse constant `1/c`
   for minimum normal height `c`, independent of the number of triangles.
@@ -104,14 +117,32 @@ global strip hypotheses are constructed. It is not a proof of Theorem 9.
 - [ ] Orient the near-quadrants about the gap origin, assign every interior
   vertex to one, and prove choices stay in the same quadrant. Apply the local
   progress and selected-forest results to construct the cap's cut seams.
-- [ ] Handle the cap with no interior vertices separately.
+- [x] Construct a boundary-rooted original-edge forest whose paths all lie in
+  one fixed acute wedge. Choose tilt and shear parameters before the cap.
+  Stop each path at its first rim vertex; prove actual seam incidence,
+  angle-monotonicity, and whole-edge radial monotonicity.
+- [x] Transport selected edge names to the canonical relative cut graph. Prove
+  that it is rooted, construct the intrinsic cut disk, and prove every cut
+  vertex copy is a boundary vertex.
+- [x] Handle the cap with no interior vertices: all face heights vanish,
+  normals are vertical, and uncut projection is an injective nonoverlapping
+  development, without any angle restriction.
 
 ### Uniform geometric estimates (Sections 4 and 6)
 
 - [x] Bound orthogonal projection angle distortion using the maximum normal tilt.
   The checked existential threshold is uniform over all unit tangent directions.
   It uses compact-annulus angle continuity rather than the paper’s explicit formula.
-- [ ] Relate total cap curvature to the area of its spherical normal region.
+- [x] Define actual planar normal polygons from incident supporting slopes.
+  Prove they support the concave roof, have disjoint interiors, and lie in
+  the disk of radius `sqrt(1-c²)/c` for minimum normal height `c > 0`.
+- [x] Bound the sum of their actual Lebesgue areas by that disk's area.
+  Derive a positive tilt threshold for any requested positive area budget,
+  independent of vertex count. Inverse gnomonic coordinates recover the
+  actual unit upward face normals.
+- [ ] Relate intrinsic angular curvature to spherical normal-image area and
+  bound it by planar normal-polygon area. The checked area budget alone
+  does not establish a curvature bound.
 - [x] Prove relative angle-defect balance by summing original and projected
   face angles over the actual corner classes. A curvature corollary explicitly
   requires flat projected interior links.
@@ -122,6 +153,12 @@ global strip hypotheses are constructed. It is not a proof of Theorem 9.
 - [ ] Choose a positive tilt threshold depending only on the acute margin that
   leaves all developed path headings in the required wedges.
 
+A sufficient conservative curvature target is to bound each interior angular
+defect by the area of its planar normal polygon. The checked packing bound
+would then give total curvature at most `pi * tan(tilt)^2`. Proving the
+spherical Gauss-image curvature identity and the area comparison is still
+required; the planar area theorem does not supply those conclusions.
+
 ### Global assembly (Sections 9--10, Appendices A.5--A.6)
 
 - [ ] Construct the cap-specific extension needed to control cut endpoints.
@@ -129,8 +166,12 @@ global strip hypotheses are constructed. It is not a proof of Theorem 9.
   and that its artificial boundaries are compatible with the development.
 - [ ] Prove side-by-side separation of all developed strips and hence all
   distinct original face interiors.
-- [ ] Apply the cut-disk and flat-development infrastructure to the constructed
-  forest, proving flatness at every remaining interior vertex.
+- [x] Apply the cut-disk and flat-development infrastructure to the fixed-wedge
+  forest. All vertex copies are on the boundary, so the actual open cut disk
+  is flat. Construct a locally isometric development, unique after fixing
+  one original face, with overlap permitted.
+- [ ] Apply the geometric nonoverlap argument to a constructed source-centered
+  forest and its developed banks.
 - [ ] State the full cap theorem using only cap and acute-margin assumptions.
 - [ ] Address redundant flat cuts and the precise simple-polygon conclusion.
 

@@ -730,7 +730,12 @@ remaining forest, uniform-turn, and global nonoverlap arguments.
 - [x] Actual projected face cover, concave roof, and uniform intrinsic metric bounds.
 - [x] Uniform acute-wedge outgoing input edges and original-edge forest selection
   from local progress hypotheses; global near-quadrant assignment remains open.
-- [ ] Construct the original-edge near-quadrant spanning forest.
+- [x] Construct a boundary-rooted original-edge forest in one common acute wedge,
+  its actual cut disk, and its unique normalized locally isometric development.
+- [x] Handle caps without interior vertices by an injective uncut development.
+- [x] Construct actual planar normal polygons, prove their disjoint interiors,
+  and bound their total area uniformly; recover actual spherical normals.
+- [ ] Construct the source-centered near-quadrant forest needed for nonoverlap.
 - [ ] Uniform curvature and prefix-turn bounds, including branching.
 - [ ] Global strip assembly and the full nearly flat cap theorem.
 

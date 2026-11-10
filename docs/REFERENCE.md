@@ -114,6 +114,16 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Cap.Boundary](../Unfoldings/Cap/Boundary.lean) | Exact identification of the projected rim with actual bank boundaries and boundary vertices |
+| [Unfoldings.Cap.ForestDevelopment](../Unfoldings/Cap/ForestDevelopment.lean) | A constructed locally isometric original-edge cap development, with overlap permitted |
+| [Unfoldings.Cap.ForestExistence](../Unfoldings/Cap/ForestExistence.lean) | Uniform positive tilt and shear parameters construct actual original-edge rooted forests and cut disks |
+| [Unfoldings.Cap.ForestPaths](../Unfoldings/Cap/ForestPaths.lean) | Canonical original-seam paths to the first boundary root are angle-monotone and radially monotone |
+| [Unfoldings.Cap.Gnomonic](../Unfoldings/Cap/Gnomonic.lean) | Mutually inverse planar slope and spherical upward-normal coordinates |
+| [Unfoldings.Cap.MonotoneForest](../Unfoldings/Cap/MonotoneForest.lean) | Construct actual original-seam parent selections from acute-wedge progress |
+| [Unfoldings.Cap.NoInterior](../Unfoldings/Cap/NoInterior.lean) | Caps without interior vertices are flat and have an injective uncut development |
+| [Unfoldings.Cap.NormalArea](../Unfoldings/Cap/NormalArea.lean) | A vertex-count-independent Lebesgue area budget for all actual planar normal polygons |
+| [Unfoldings.Cap.NormalAreaThreshold](../Unfoldings/Cap/NormalAreaThreshold.lean) | A positive tilt threshold gives arbitrarily small total planar normal-image area |
+| [Unfoldings.Cap.NormalImage](../Unfoldings/Cap/NormalImage.lean) | Incident supporting slopes give convex normal polygons with disjoint interiors in one bounded disk |
 | [Unfoldings.Cap.AcuteProjection](../Unfoldings/Cap/AcuteProjection.lean) | A uniform positive tilt preserves half an input acute angle margin |
 | [Unfoldings.Cap.AngleBalance](../Unfoldings/Cap/AngleBalance.lean) | Relative angle-defect balance from actual original and projected triangle angles |
 | [Unfoldings.Cap.Metric](../Unfoldings/Cap/Metric.lean) | Uniform Lipschitz and inverse Lipschitz bounds for actual intrinsic cap distances |
@@ -134,6 +144,8 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Complex.SeamGraph](../Unfoldings/Complex/SeamGraph.lean) | The original internal-seam graph with all original vertices and exact face-edge incidence |
+| [Unfoldings.Complex.SelectedCuts](../Unfoldings/Complex/SelectedCuts.lean) | Selected parent edges induce the actual rooted relative cut graph, all-boundary vertex copies, and a cut disk |
 | [Unfoldings.Complex.Angles](../Unfoldings/Complex/Angles.lean) | Total angles and conservation across cut vertex copies |
 | [Unfoldings.Complex.BoundaryAtlas](../Unfoldings/Complex/BoundaryAtlas.lean) | Actual bank half-plane atlases and inward embeddings of arbitrary cut surfaces |
 | [Unfoldings.Complex.BoundaryComponentDescent](../Unfoldings/Complex/BoundaryComponentDescent.lean) | Boundary-component labels descend through actual restored vertex classes |
@@ -440,6 +452,8 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Geometry.ConvexPacking](../Unfoldings/Geometry/ConvexPacking.lean) | Haar measure bounds for finite convex packings with disjoint interiors and boundary contacts |
+| [Unfoldings.Geometry.SupportingSlopes](../Unfoldings/Geometry/SupportingSlopes.lean) | Concave-function supporting slopes have disjoint interior regions at distinct contact points |
 | [Unfoldings.Geometry.AcuteProgress](../Unfoldings/Geometry/AcuteProgress.lean) | An acute corner containing a forward point has an original forward incident edge |
 | [Unfoldings.Geometry.BankRadialOrder](../Unfoldings/Geometry/BankRadialOrder.lean) | Matched coordinate increments imply equal-radius order in a quadrant |
 | [Unfoldings.Geometry.ChainConstruction](../Unfoldings/Geometry/ChainConstruction.lean) | Construct chains from vectors or headings and bound nonnegative prefix sums |
@@ -558,6 +572,7 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Topology.ParentPaths](../Unfoldings/Topology/ParentPaths.lean) | Finite parent orbits stop at the first root and have strictly increasing potentials |
 | [Unfoldings.Topology.AscendingForest](../Unfoldings/Topology/AscendingForest.lean) | Strictly increasing parent choices construct an acyclic graph with unique component roots |
 | [Unfoldings.Topology.SelectedForest](../Unfoldings/Topology/SelectedForest.lean) | Selected original edges keep their names and form an actual rooted forest |
 | [Unfoldings.Topology.ProgressForest](../Unfoldings/Topology/ProgressForest.lean) | Construct original-edge forest selections from local labeled progress |

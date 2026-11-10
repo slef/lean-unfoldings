@@ -63,6 +63,21 @@ def graph : Graph V E where
       fun ⟨_, _, v, equal, _⟩ => ⟨v, equal⟩⟩
   left_mem_of_isLink := fun _ _ _ _ => Set.mem_univ _
 
+/-- Selection restricts the edge names without changing any of their original links. -/
+theorem graph_isLink_iff {e : E} {a b : V} :
+    S.graph.IsLink e a b ↔ e ∈ Set.range S.edge ∧ G.IsLink e a b := by
+  constructor
+  · rintro ⟨v, named, endpoints⟩
+    refine ⟨⟨v, named⟩, ?_⟩
+    rw [← named]
+    rcases endpoints with ⟨rfl, rfl⟩ | ⟨rfl, rfl⟩
+    · exact S.link v
+    · exact (S.link v).symm
+  · rintro ⟨⟨v, named⟩, link⟩
+    have chosen := S.link v
+    rw [named] at chosen
+    exact ⟨v, named, link.eq_and_eq_or_eq_and_eq chosen⟩
+
 theorem parent_link (v : {v : V // v ∉ P.roots}) :
     S.graph.IsLink (S.edge v) v.val (P.parent v.val) :=
   ⟨v, rfl, Or.inl ⟨rfl, rfl⟩⟩

@@ -70,7 +70,8 @@ strictly increasing parent potential. [SelectedForest.lean](SelectedForest.lean)
 retains original edge names and proves edge selection injective.
 [ProgressForest.lean](ProgressForest.lean) constructs these choices from a local
 outgoing-edge existence lemma preserving a sector label. These results are
-independent of cap geometry.
+independent of cap geometry. [ParentPaths.lean](ParentPaths.lean) stops each
+finite parent orbit at its first root and proves strict ascent before it.
 
 [BoundaryCollapse.lean](BoundaryCollapse.lean) collapses a closed boundary to
 infinity in its complement. [DiskSphereQuotient.lean](DiskSphereQuotient.lean)
