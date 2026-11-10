@@ -70,6 +70,8 @@ data and theorems for use in further proofs.
 | Characterize disk cuts of a convex sphere | [Polyhedron/CutDiskIff.lean](Unfoldings/Polyhedron/CutDiskIff.lean) |
 | Cut a disk along a rooted forest | [Complex/RelativeCutForest.lean](Unfoldings/Complex/RelativeCutForest.lean) |
 | Instantiate a complete convex polyhedron | [Examples/Tetrahedron.lean](Unfoldings/Examples/Tetrahedron.lean) |
+| Develop a flat metric disk, with overlap allowed | [Development/FlatDisk.lean](Unfoldings/Development/FlatDisk.lean) |
+| Cut polygonal forests carried by a refinement | [Complex/PolygonalCuts.lean](Unfoldings/Complex/PolygonalCuts.lean), [Complex/PolygonalCutGraph.lean](Unfoldings/Complex/PolygonalCutGraph.lean) |
 | Refine triangles without changing intrinsic geometry | [Complex/SubdivisionMetric.lean](Unfoldings/Complex/SubdivisionMetric.lean), [Examples/Subdivision.lean](Unfoldings/Examples/Subdivision.lean) |
 | Try small examples | [Examples/Metric.lean](Unfoldings/Examples/Metric.lean), [Examples/Hinge.lean](Unfoldings/Examples/Hinge.lean) |
 
@@ -86,9 +88,16 @@ canonical primal cut multigraph is a tree exactly when the cut is a disk.
 The [disk criterion](Unfoldings/Complex/RelativeCutForest.lean) proves the
 corresponding rooted-forest equivalence, including empty cuts. Both construct
 actual disk homeomorphisms and allow overlapping developments.
+Conforming refinements preserve intrinsic distances, spatial foldings,
+developments, and nonoverlap. A triangulated disk with a spatial folding and
+total angle `2π` at every interior vertex has a locally isometric development,
+unique after fixing one face.
+Polygonal cuts use supplied conforming refinement certificates.
+
 Remaining work includes:
 
 - Sources at genuine cone vertices, which need sector-valued source frames.
+- Automatic refinement construction for supplied polygonal arcs.
 - Star unfolding and the downstream tools needed for the Fewest Nets paper.
 
 The [graph and cellulation layer](Unfoldings/Topology/README.md) is intended for

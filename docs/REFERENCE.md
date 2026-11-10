@@ -161,6 +161,8 @@ source, including its module documentation and declarations.
 | [Unfoldings.Complex.Paths](../Unfoldings/Complex/Paths.lean) | Intrinsic path metric and geodesic existence for cut complexes |
 | [Unfoldings.Complex.PointFiber](../Unfoldings/Complex/PointFiber.lean) | Exact point fibers have at most one copy per original face and bounded seam paths |
 | [Unfoldings.Complex.PointSeamRoute](../Unfoldings/Complex/PointSeamRoute.lean) | Actual bounded oriented seam routes, including at vertices |
+| [Unfoldings.Complex.PolygonalCutGraph](../Unfoldings/Complex/PolygonalCutGraph.lean) | Embed each new polygonal forest arc in the original metric surface with rigid parent coordinates |
+| [Unfoldings.Complex.PolygonalCuts](../Unfoldings/Complex/PolygonalCuts.lean) | Certified refined cut presentations, rooted forests, actual disks, and unique flat developments |
 | [Unfoldings.Complex.RefinedCuts](../Unfoldings/Complex/RefinedCuts.lean) | Actual refined cut metrics, projections, polygonal boundary support, and the sphere tree criterion |
 | [Unfoldings.Complex.RegularEdges](../Unfoldings/Complex/RegularEdges.lean) | Constructed edge charts from either seam bank |
 | [Unfoldings.Complex.Regular](../Unfoldings/Complex/Regular.lean) | Constructed regular points and unique intrinsic geodesic continuation |
@@ -190,7 +192,10 @@ source, including its module documentation and declarations.
 | [Unfoldings.Boundary.Charts](../Unfoldings/Boundary/Charts.lean) | Constructed half-ball metric charts at boundary edge interiors |
 | [Unfoldings.Boundary.Exact](../Unfoldings/Boundary/Exact.lean) | Metric separation of distinct cut-bank interiors |
 | [Unfoldings.Boundary](../Unfoldings/Boundary.lean) | Boundary-edge labels, bank maps, and restoration of banks |
+| [Unfoldings.Development.FlatDiskInterior](../Unfoldings/Development/FlatDiskInterior.lean) | The open interior of a flat metric disk has a global developing map |
+| [Unfoldings.Development.FlatDisk](../Unfoldings/Development/FlatDisk.lean) | Flat interior angles imply a unique normalized outward development with actual local isometry |
 | [Unfoldings.Development.Hinge](../Unfoldings/Development/Hinge.lean) | Nonoverlapping developments of arbitrary two-triangle hinges |
+| [Unfoldings.Development.Normalization](../Unfoldings/Development/Normalization.lean) | Global rigid postcomposition and arbitrary root-face normalization |
 | [Unfoldings.Development.SubdivisionNonoverlap](../Unfoldings/Development/SubdivisionNonoverlap.lean) | Nonoverlap is invariant under subdivision, in both directions |
 | [Unfoldings.Development.Subdivision](../Unfoldings/Development/Subdivision.lean) | Restrict arbitrary developments while deriving strict opposite-side opening |
 | [Unfoldings.Development.Uniqueness](../Unfoldings/Development/Uniqueness.lean) | An outward development of a connected complex is uniquely determined by one face |
@@ -210,6 +215,9 @@ source, including its module documentation and declarations.
 | [Unfoldings.Metric.ClosedSeams](../Unfoldings/Metric/ClosedSeams.lean) | Exactness for closed isometric seams with finite classes |
 | [Unfoldings.Metric.Connected](../Unfoldings/Metric/Connected.lean) | Preconnected extended metric spaces have finite distances |
 | [Unfoldings.Metric.ConvexCover](../Unfoldings/Metric/ConvexCover.lean) | Finite closed-cover nonexpansion with extended-metric targets |
+| [Unfoldings.Metric.EuclideanAtlas](../Unfoldings/Metric/EuclideanAtlas.lean) | Open Euclidean metric charts and unique locally constant rigid transition germs |
+| [Unfoldings.Metric.EuclideanCocycle](../Unfoldings/Metric/EuclideanCocycle.lean) | Exact identity, composition, and inverse laws for rigid chart transitions |
+| [Unfoldings.Metric.EuclideanDevelopment](../Unfoldings/Metric/EuclideanDevelopment.lean) | Continue one frame to a global planar local isometry on a simply connected space |
 | [Unfoldings.Metric.Excision](../Unfoldings/Metric/Excision.lean) | Whole-ball isometries when cutting distant seams |
 | [Unfoldings.Metric.FiniteComponent](../Unfoldings/Metric/FiniteComponent.lean) | Clopen finite-distance components as compact metric spaces |
 | [Unfoldings.Metric.Gluing](../Unfoldings/Metric/Gluing.lean) | Metric quotient, descent, and restoration of seams |
@@ -222,6 +230,7 @@ source, including its module documentation and declarations.
 | [Unfoldings.Metric.LocalSeams](../Unfoldings/Metric/LocalSeams.lean) | Local estimates from compatibility at incident closed seams |
 | [Unfoldings.Metric.Local](../Unfoldings/Metric/Local.lean) | Seam clearance, metric ball images, and local cell isometries |
 | [Unfoldings.Metric.OpenChart](../Unfoldings/Metric/OpenChart.lean) | Recenter open isometric charts on whole ambient balls |
+| [Unfoldings.Metric.OpenEuclideanAtlas](../Unfoldings/Metric/OpenEuclideanAtlas.lean) | Restrict ambient Euclidean regularity to an open metric subspace |
 | [Unfoldings.Metric.Paths](../Unfoldings/Metric/Paths.lean) | Continuous-path/route metric equality and shortest metric paths |
 | [Unfoldings.Metric.PolygonalCompletion](../Unfoldings/Metric/PolygonalCompletion.lean) | Isometric dense interior inclusion and complete compact closed-domain model |
 | [Unfoldings.Metric.PolygonalLocal](../Unfoldings/Metric/PolygonalLocal.lean) | Isometric neighborhoods for the development and its inverse on open regions |
@@ -233,8 +242,11 @@ source, including its module documentation and declarations.
 | [Unfoldings.Metric.RegularGeodesic](../Unfoldings/Metric/RegularGeodesic.lean) | A whole regular chart supplies a nonconstant geodesic through its center |
 | [Unfoldings.Metric.RegularLocus](../Unfoldings/Metric/RegularLocus.lean) | Metric regularity is open and open charts recenter to whole metric balls |
 | [Unfoldings.Metric.RigidChartTransition](../Unfoldings/Metric/RigidChartTransition.lean) | Construct rigid affine transitions between actual overlapping metric charts |
+| [Unfoldings.Metric.RigidChartUniqueness](../Unfoldings/Metric/RigidChartUniqueness.lean) | Rigid motions agreeing in an open metric chart agree globally |
+| [Unfoldings.Metric.RigidFrameBundle](../Unfoldings/Metric/RigidFrameBundle.lean) | The discrete rigid-frame bundle is a genuine covering space |
 | [Unfoldings.Metric.Route](../Unfoldings/Metric/Route.lean) | Finite routes and the generated extended pseudometric |
 | [Unfoldings.Metric.Unglued](../Unfoldings/Metric/Unglued.lean) | Exact metric formulas and separation with no seams |
+
 ## Paths and geodesics
 
 | Module | Purpose |
@@ -427,6 +439,7 @@ source, including its module documentation and declarations.
 | [Unfoldings.Geometry.ConvexBoundaryRays](../Unfoldings/Geometry/ConvexBoundaryRays.lean) | Unique convex-frontier point on a positive ray from an interior origin |
 | [Unfoldings.Geometry.ConvexCover](../Unfoldings/Geometry/ConvexCover.lean) | Common Lipschitz bounds across finite closed covers |
 | [Unfoldings.Geometry.ConvexLocalBounds](../Unfoldings/Geometry/ConvexLocalBounds.lean) | Convex subtype center bounds imply global nonexpansion |
+| [Unfoldings.Geometry.ConvexLocalRigidity](../Unfoldings/Geometry/ConvexLocalRigidity.lean) | Local isometries determine one rigid motion on a full-dimensional convex cell |
 | [Unfoldings.Geometry.ConvexPatchRigidity](../Unfoldings/Geometry/ConvexPatchRigidity.lean) | Overlapping convex face patches force equality of their whole rigid motions |
 | [Unfoldings.Geometry.ConvexRigidity](../Unfoldings/Geometry/ConvexRigidity.lean) | Actual isometries on convex sets with interior extend rigidly through the boundary |
 | [Unfoldings.Geometry.CornerEdges](../Unfoldings/Geometry/CornerEdges.lean) | Radial edge lines inside a triangle remain on the actual edge |
@@ -435,6 +448,7 @@ source, including its module documentation and declarations.
 | [Unfoldings.Geometry.Corner](../Unfoldings/Geometry/Corner.lean) | Supporting wedges and actual corner wedge-ball geometry |
 | [Unfoldings.Geometry.EdgeChordInterior](../Unfoldings/Geometry/EdgeChordInterior.lean) | Chords between different edge interiors enter a triangle interior |
 | [Unfoldings.Geometry.EdgeCoordinates](../Unfoldings/Geometry/EdgeCoordinates.lean) | Centered affine half-plane coordinates on actual triangle edge neighborhoods |
+| [Unfoldings.Geometry.EdgeExt](../Unfoldings/Geometry/EdgeExt.lean) | Continuous full-edge maps agree if they agree away from their corner points |
 | [Unfoldings.Geometry.EdgeIdentification](../Unfoldings/Geometry/EdgeIdentification.lean) | Construct full-edge isometries from matching endpoint lengths and orientation labels |
 | [Unfoldings.Geometry.EdgeLine](../Unfoldings/Geometry/EdgeLine.lean) | Affine edge agreement extends to the entire supporting line |
 | [Unfoldings.Geometry.EdgeParameters](../Unfoldings/Geometry/EdgeParameters.lean) | Strict edge interpolation avoids all original triangle vertices |

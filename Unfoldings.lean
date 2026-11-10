@@ -143,3 +143,4 @@ public import Unfoldings.Development.SubdivisionNonoverlap
 public import Unfoldings.Examples.Subdivision
 public import Unfoldings.Complex.RefinedCuts
 public import Unfoldings.Development.Uniqueness
+public import Unfoldings.Complex.PolygonalCutGraph

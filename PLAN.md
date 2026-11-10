@@ -302,11 +302,17 @@ Comparison with arbitrary subdivided graph presentations remains separate.
     missing-root obstructions, and the no-new-cuts case.
 - [ ] Include all nonflat interior vertices in the cuts iff the resulting disk
   has flat interior. Boundary corners need not be flat.
-- [ ] A flat metric disk admits a development, allowing overlap.
+- [x] A flat metric disk admits an outward development, allowing overlap.
+  Total angle `2π` is required only at interior vertices. The constructed map
+  is locally isometric throughout the actual open disk, including flat vertices.
 - [x] Fixing one face makes outward developments unique on every dually
   connected complex, independently of nonoverlap or disk topology.
-- [ ] Construct the global developing map from a simply connected Euclidean
-  metric atlas and extend its rigid face motions to the disk boundary.
+- [x] Construct the global developing map from a simply connected Euclidean
+  metric atlas. Unique rigid transition germs form a discrete frame covering;
+  Mathlib covering-space lifting continues one frame globally. Convex patch
+  rigidity gives whole-face motions, and continuity supplies all seam endpoints.
+- [x] Normalize a flat disk development at any face to any prescribed planar
+  rigid motion, preserving the local-isometry certificate and proving uniqueness.
 - [ ] Do not generalize the disk/tree statement to layouts with holes.
 
 ## Phase 4 Subdivision and cone fans
@@ -331,7 +337,13 @@ Comparison with arbitrary subdivided graph presentations remains separate.
 - [x] Cuts supported on refined seams have actual cut metrics and nonexpanding
   projections to the original surface. Compatible further refinement preserves
   the cut metric and projection; the convex-sphere tree criterion applies.
-- [ ] Construct conforming refinements that insert arbitrary polygonal cuts;
+- [x] Represent polygonal cut forests by conforming refinement presentations.
+  Construct their actual embedded new-cut graph in the original cut metric,
+  with one arc per new refined seam and its rigid original-face coordinates.
+  Transport the rooted-forest iff disk criterion and normalized flat-disk
+  development theorem through these presentations.
+- [ ] Automatically construct conforming refinements for arbitrary supplied
+  polygonal arcs;
   transport their actual cut metrics independently of the chosen refinement.
 - [x] Polar developments keep real headings. The open positive-radius strip
   is injective iff its angular width is at most a full turn; above a full turn,

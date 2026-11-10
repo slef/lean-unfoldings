@@ -2,6 +2,32 @@
 
 ## Session Log
 
+### 2026-11-10 — polygonal cut forests and flat-disk development
+
+- Constructed unique rigid transition germs for arbitrary open Euclidean metric
+  charts. Proved local constancy and the exact cocycle laws. Their discrete
+  frame bundle is a covering; Mathlib's simply connected lifting theorem
+  continues a chosen frame to a global planar local isometry.
+- Applied continuation to the open interior of a metric disk. Convex patch
+  rigidity gives one whole-face motion; retained edge agreement extends across
+  all endpoints. Local injectivity forces strict opposite-side opening.
+- Proved that a spatially folded triangular disk with total angle `2π` at each
+  interior vertex admits a development, allowing overlap and arbitrary boundary
+  angles. Prescribing any one face motion gives exactly one development. The
+  public theorem retains actual local isometry at every interior point, including
+  flat vertices, so no interior branching is hidden by the facewise interface.
+- Added refined polygonal cut presentations, their nonexpanding original-surface
+  projection, and an actual finite embedded graph of new cut arcs with rigid
+  parent-face coordinates. Derived its acyclicity from the rooted-forest test.
+  The disk criterion and unique normalized flat development apply directly.
+- A presentation supplies a conforming refinement certificate. Automatically
+  constructing such a refinement from arbitrary polygonal input arcs remains a
+  separate construction problem; no such existence conclusion is assumed here.
+- Verification: Mathlib covering-space cache check and full `lake build` pass;
+  **4,748 project** and **7,243 pinned topology declarations** use only standard
+  Lean axioms. All **595 local documentation links** resolve, there are no new
+  project warnings, and no temporary worktrees remain.
+
 ### 2026-11-10 — normalized uniqueness and refined cut presentations
 
 - Proved that two endpoint distances and a strict side determine a planar
