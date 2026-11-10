@@ -46,6 +46,9 @@ The remaining nonoverlap argument must be proved independently.
 
 - [x] Geometric cap inputs without cuts or nonoverlap assumptions.
 - [x] Derive actual disk topology from the convex injective projection.
+- [x] Derive the actual concave roof from supporting inequalities.
+- [x] Prove uniform intrinsic projection bounds, with inverse constant `1/c`
+  for minimum normal height `c`, independent of the number of triangles.
 - [x] Prove the flat case: an injective nonoverlapping development with no cuts.
 
 ### Polygonal chains
@@ -60,6 +63,12 @@ The remaining nonoverlap argument must be proved independently.
 
 ### Two-bank developments and trees (Sections 7--8, Appendix A.4)
 
+- [x] Construct actual paired chains from edge lengths and cumulative
+  nonnegative opening angles; bound every prefix by the total budget.
+- [x] Prove equal-horizontal-coordinate and equal-radius bank order when both
+  unwrapped heading families lie in a common open quadrant. Finite endpoints
+  require no extension in this conditional comparison.
+
 - [ ] Represent matched edge lengths and signed opening angles by actual rigid
   planar motions, retaining unwrapped real heading information.
 - [ ] Define the left-of relation at equal radii without conflating touching
@@ -73,18 +82,28 @@ The remaining nonoverlap argument must be proved independently.
 
 A stronger special-case route is also checked: matched banks whose unreduced
 headings are ordered in a common open quadrant are ordered at every equal
-horizontal coordinate. This follows from scalar coordinate increments and
+horizontal coordinate and at equal radii from their common start. This follows from scalar coordinate increments and
 includes whole edges. It may replace the full Theorem 9 for a conservatively
 smaller acute-cap threshold, provided the geometric heading, branching, and
 global strip hypotheses are constructed. It is not a proof of Theorem 9.
 
 ### Planar forest construction (Section 5)
 
-- [ ] Model the actual projected triangulation and its boundary.
-- [ ] Obtain an empty angular gap at a suitable internal vertex and choose
-  near-quadrants avoiding degeneracies. Use a conservatively reduced margin.
-- [ ] Grow angle-monotone paths until they hit an existing tree or the rim.
-  Prove termination, coverage, no cycles, and exactly one root per component.
+- [x] Construct the actual projected triangles, prove their nondegeneracy,
+  disjoint interiors, seam agreement, and exact footprint coverage.
+- [x] Obtain an empty forward halfplane, hence an empty positive cone gap,
+  at a maximizer of a linear functional on a nonempty finite vertex set.
+- [x] Choose a positive shear uniformly from an acute margin. Pulling back a
+  quadrant gives a direction wedge of width strictly less than pi/2.
+- [x] Prove local outgoing-edge existence in an acute triangle and finite
+  mesh, then apply it to the actual projected cap vertex classes. The same
+  argument gives outgoing original edges in a sheared acute wedge.
+- [x] Prove that local outgoing-edge choices preserving a sector label and
+  increasing its potential construct an actual original-edge rooted forest.
+  Edge names are retained and distinct choices cannot select the same edge.
+- [ ] Orient the near-quadrants about the gap origin, assign every interior
+  vertex to one, and prove choices stay in the same quadrant. Apply the local
+  progress and selected-forest results to construct the cap's cut seams.
 - [ ] Handle the cap with no interior vertices separately.
 
 ### Uniform geometric estimates (Sections 4 and 6)
@@ -93,7 +112,11 @@ global strip hypotheses are constructed. It is not a proof of Theorem 9.
   The checked existential threshold is uniform over all unit tangent directions.
   It uses compact-annulus angle continuity rather than the paper’s explicit formula.
 - [ ] Relate total cap curvature to the area of its spherical normal region.
-- [ ] Prove the polygonal Gauss--Bonnet identity on the required subregions.
+- [x] Prove relative angle-defect balance by summing original and projected
+  face angles over the actual corner classes. A curvature corollary explicitly
+  requires flat projected interior links.
+- [ ] Derive the required projected-link flatness and polygonal Gauss--Bonnet
+  identity on the geometric subregions used in the prefix-turn argument.
 - [ ] Bound turn distortion for every prefix independently of mesh size.
   Summing an error per vertex is insufficient.
 - [ ] Choose a positive tilt threshold depending only on the acute margin that

@@ -151,3 +151,10 @@ public import Unfoldings.Cap.AngleProjection
 public import Unfoldings.Cap.Flat
 public import Unfoldings.Cap.HeadingBanks
 public import Unfoldings.Examples.Chains
+public import Unfoldings.Cap.AngleBalance
+public import Unfoldings.Cap.Metric
+public import Unfoldings.Cap.Roof
+public import Unfoldings.Cap.VertexWedge
+public import Unfoldings.Cap.RadialBanks
+public import Unfoldings.Topology.ProgressForest
+public import Unfoldings.Geometry.EmptyWedge

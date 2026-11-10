@@ -65,6 +65,13 @@ multigraph equivalence, preserving loops and parallel edges.
 tree quotients identifying exactly the roots. The actual disk-cut bridge is
 proved in [RelativeCutForest.lean](../Complex/RelativeCutForest.lean).
 
+[AscendingForest.lean](AscendingForest.lean) constructs rooted forests by a
+strictly increasing parent potential. [SelectedForest.lean](SelectedForest.lean)
+retains original edge names and proves edge selection injective.
+[ProgressForest.lean](ProgressForest.lean) constructs these choices from a local
+outgoing-edge existence lemma preserving a sector label. These results are
+independent of cap geometry.
+
 [BoundaryCollapse.lean](BoundaryCollapse.lean) collapses a closed boundary to
 infinity in its complement. [DiskSphereQuotient.lean](DiskSphereQuotient.lean)
 constructs the disk-boundary-to-sphere quotient using Mathlib's one-point sphere

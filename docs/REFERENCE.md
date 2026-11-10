@@ -114,6 +114,15 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Cap.AcuteProjection](../Unfoldings/Cap/AcuteProjection.lean) | A uniform positive tilt preserves half an input acute angle margin |
+| [Unfoldings.Cap.AngleBalance](../Unfoldings/Cap/AngleBalance.lean) | Relative angle-defect balance from actual original and projected triangle angles |
+| [Unfoldings.Cap.Metric](../Unfoldings/Cap/Metric.lean) | Uniform Lipschitz and inverse Lipschitz bounds for actual intrinsic cap distances |
+| [Unfoldings.Cap.OpenedBanks](../Unfoldings/Cap/OpenedBanks.lean) | Construct matched banks using cumulative nonnegative opening budgets |
+| [Unfoldings.Cap.ProjectedFaces](../Unfoldings/Cap/ProjectedFaces.lean) | The actual affine projected triangles, disjoint interiors, and exact footprint cover |
+| [Unfoldings.Cap.RadialBanks](../Unfoldings/Cap/RadialBanks.lean) | Equal-radius bank order in the common-quadrant case, including finite endpoints |
+| [Unfoldings.Cap.Roof](../Unfoldings/Cap/Roof.lean) | Concave supporting-plane lower envelope agreeing with every actual cap face |
+| [Unfoldings.Cap.VertexProgress](../Unfoldings/Cap/VertexProgress.lean) | Actual original cap edges enter a strict quadrant at interior projected vertices |
+| [Unfoldings.Cap.VertexWedge](../Unfoldings/Cap/VertexWedge.lean) | Actual original cap edges enter a sheared acute wedge |
 | [Unfoldings.Cap.AngleProjection](../Unfoldings/Cap/AngleProjection.lean) | A positive projection-angle threshold uniform over all tangent directions |
 | [Unfoldings.Cap.Basic](../Unfoldings/Cap/Basic.lean) | Geometric convex caps with supporting normals, convex injective projection, and a horizontal rim |
 | [Unfoldings.Cap.Flat](../Unfoldings/Cap/Flat.lean) | An actual injective nonoverlapping development of every flat cap without cuts |
@@ -431,6 +440,15 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Geometry.AcuteProgress](../Unfoldings/Geometry/AcuteProgress.lean) | An acute corner containing a forward point has an original forward incident edge |
+| [Unfoldings.Geometry.BankRadialOrder](../Unfoldings/Geometry/BankRadialOrder.lean) | Matched coordinate increments imply equal-radius order in a quadrant |
+| [Unfoldings.Geometry.ChainConstruction](../Unfoldings/Geometry/ChainConstruction.lean) | Construct chains from vectors or headings and bound nonnegative prefix sums |
+| [Unfoldings.Geometry.EmptyWedge](../Unfoldings/Geometry/EmptyWedge.lean) | Empty positive cone gaps at finite-set linear-functional maxima |
+| [Unfoldings.Geometry.MeshProgress](../Unfoldings/Geometry/MeshProgress.lean) | Original outgoing quadrant edges from finite closed triangle covers |
+| [Unfoldings.Geometry.MeshWedge](../Unfoldings/Geometry/MeshWedge.lean) | Uniform small shears turn mesh quadrant progress into acute-wedge progress |
+| [Unfoldings.Geometry.Shear](../Unfoldings/Geometry/Shear.lean) | Uniform acuteness preservation under small invertible shears |
+| [Unfoldings.Geometry.ShearWedge](../Unfoldings/Geometry/ShearWedge.lean) | Sheared quadrants are acute direction wedges and give radial monotonicity |
+| [Unfoldings.Geometry.TriangleAffine](../Unfoldings/Geometry/TriangleAffine.lean) | Actual nondegenerate triangles and full carriers under injective affine maps |
 | [Unfoldings.Geometry.AngleMonotone](../Unfoldings/Geometry/AngleMonotone.lean) | Direction wedges of width at most pi/2 imply whole-edge radial monotonicity |
 | [Unfoldings.Geometry.ChainLinear](../Unfoldings/Geometry/ChainLinear.lean) | Linear coordinate order and strict-coordinate uniqueness on polygonal chains |
 | [Unfoldings.Geometry.ChainOrder](../Unfoldings/Geometry/ChainOrder.lean) | Radial distance inequalities across different chain edges |
@@ -540,6 +558,9 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Topology.AscendingForest](../Unfoldings/Topology/AscendingForest.lean) | Strictly increasing parent choices construct an acyclic graph with unique component roots |
+| [Unfoldings.Topology.SelectedForest](../Unfoldings/Topology/SelectedForest.lean) | Selected original edges keep their names and form an actual rooted forest |
+| [Unfoldings.Topology.ProgressForest](../Unfoldings/Topology/ProgressForest.lean) | Construct original-edge forest selections from local labeled progress |
 | [Unfoldings.Combinatorics.FiniteReach](../Unfoldings/Combinatorics/FiniteReach.lean) | Bounded rounds of finite choices give a finite set of reachable states |
 | [Unfoldings.Topology.BallBoundaryQuotient](../Unfoldings/Topology/BallBoundaryQuotient.lean) | Disk quotients have open-disk complements; spherical targets force boundary graphs to be trees |
 | [Unfoldings.Topology.BallExtension](../Unfoldings/Topology/BallExtension.lean) | Radius-preserving closed-ball extensions of arbitrary sphere homeomorphisms |

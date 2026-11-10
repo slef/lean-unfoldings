@@ -2,6 +2,34 @@
 
 ## Session Log
 
+### 2026-11-10 — acute-wedge progress and intrinsic cap bounds
+
+- Constructed the actual projected triangle cover, preserving corner incidence
+  and proving seam agreement and disjoint interiors. A uniform positive tilt
+  threshold preserves half the input acute margin.
+- Proved uniform intrinsic projection bounds by passing local face estimates
+  across the convex projected cover. The inverse bound is `1/c` for minimum
+  normal height `c`; this concerns the route metric, not only ambient chords.
+- Derived a concave lower-envelope roof from the actual supporting planes,
+  with exact agreement on every cap face. Its global extension is not asserted
+  to be vertex-free. Proved relative original/projected angle-defect balance;
+  projected-link flatness remains an explicit hypothesis of its curvature corollary.
+- Proved outgoing original-edge progress in acute triangles and finite planar
+  meshes, then for actual projected cap vertex classes. A small shear chosen
+  uniformly from the acute margin supplies a wedge strictly narrower than pi/2.
+  Chains in this wedge are angle-monotone and radially monotone.
+- Constructed rooted forests from increasing parents and from local progress
+  preserving a sector label. Selected edges retain their original names;
+  proved that distinct nonroots cannot select the same edge. The cap's global
+  near-quadrant assignment and cut-seam construction remain open.
+- Constructed opened banks from matched lengths and nonnegative cumulative
+  opening angles. Proved both equal-abscissa and equal-radius order in a common
+  quadrant, with contacts and finite endpoints included. The general Theorem 9
+  and the geometric branching-curvature identification are not claimed.
+- Verification: scoped Mathlib cache check and full `lake build` pass;
+  **5,171 project** and **7,243 pinned topology declarations** use only standard
+  Lean axioms. No project warnings or temporary worktrees.
+
 ### 2026-11-10 — first convex-cap proof foundations
 
 - Specified O’Rourke’s cap theorem and its remaining obligations in

@@ -727,6 +727,9 @@ remaining forest, uniform-turn, and global nonoverlap arguments.
 - [x] Whole-edge and arbitrary-anchor radial monotonicity of polygonal chains.
 - [x] Paired-bank order under common-quadrant heading hypotheses.
 - [x] Uniform projection-angle bounds with a positive tilt threshold.
+- [x] Actual projected face cover, concave roof, and uniform intrinsic metric bounds.
+- [x] Uniform acute-wedge outgoing input edges and original-edge forest selection
+  from local progress hypotheses; global near-quadrant assignment remains open.
 - [ ] Construct the original-edge near-quadrant spanning forest.
 - [ ] Uniform curvature and prefix-turn bounds, including branching.
 - [ ] Global strip assembly and the full nearly flat cap theorem.
