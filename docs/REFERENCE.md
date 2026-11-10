@@ -114,7 +114,11 @@ source, including its module documentation and declarations.
 | [Unfoldings.Complex](../Unfoldings/Complex.lean) | Finite edge-paired complexes and their cut realizations |
 | [Unfoldings.Complex.Angles](../Unfoldings/Complex/Angles.lean) | Total angles and conservation across cut vertex copies |
 | [Unfoldings.Complex.BoundaryAtlas](../Unfoldings/Complex/BoundaryAtlas.lean) | Actual bank half-plane atlases and inward embeddings of arbitrary cut surfaces |
+| [Unfoldings.Complex.BoundaryCycles](../Unfoldings/Complex/BoundaryCycles.lean) | Every actual boundary bank lies on a multigraph cycle and is not a bridge |
+| [Unfoldings.Complex.BoundaryGraph](../Unfoldings/Complex/BoundaryGraph.lean) | Actual banks form a finite embedded multigraph with their exact carrier |
+| [Unfoldings.Complex.BoundaryJordan](../Unfoldings/Complex/BoundaryJordan.lean) | Actual bank cycles are Jordan curves in planar embeddings |
 | [Unfoldings.Complex.BoundaryObstruction](../Unfoldings/Complex/BoundaryObstruction.lean) | Open planar injections cannot hit nonvertex banks; bank points are metrically nonregular |
+| [Unfoldings.Complex.BoundaryOrdering](../Unfoldings/Complex/BoundaryOrdering.lean) | Exactly two ends per boundary vertex and finite simple closed bank orders |
 | [Unfoldings.Complex.BoundaryQuotient](../Unfoldings/Complex/BoundaryQuotient.lean) | Compact actual bank boundaries and exact boundary-only fibers of seam restoration |
 | [Unfoldings.Complex.BoundaryRegular](../Unfoldings/Complex/BoundaryRegular.lean) | Euclidean ball charts at every nonvertex point off the actual cut banks |
 | [Unfoldings.Complex.Charts](../Unfoldings/Complex/Charts.lean) | Constructed face-interior Euclidean metric charts |
@@ -239,6 +243,7 @@ source, including its module documentation and declarations.
 | [Unfoldings.Polyhedron.Closedness](../Unfoldings/Polyhedron/Closedness.lean) | Derived seam pairing of every original edge and cyclicity at every vertex |
 | [Unfoldings.Polyhedron.Convex](../Unfoldings/Polyhedron/Convex.lean) | Geometric convex-boundary adapter and derived geodesics |
 | [Unfoldings.Polyhedron.ConvexCurvature](../Unfoldings/Polyhedron/ConvexCurvature.lean) | Extremality iff positive curvature and avoidance, with no interior premise |
+| [Unfoldings.Polyhedron.CutPlanar](../Unfoldings/Polyhedron/CutPlanar.lean) | Construct whole-cut planar embeddings and actual boundary Jordan cycles |
 | [Unfoldings.Polyhedron.CutTree](../Unfoldings/Polyhedron/CutTree.lean) | Construct the actual edge-cut tree from a boundary-preserving disk on a convex polyhedron |
 | [Unfoldings.Polyhedron.EdgeExposure](../Unfoldings/Polyhedron/EdgeExposure.lean) | Other convex-boundary points occur arbitrarily near every triangle edge |
 | [Unfoldings.Polyhedron.ExtremeCurvature](../Unfoldings/Polyhedron/ExtremeCurvature.lean) | Interior extremality iff positive curvature; extreme-vertex geodesic avoidance |
@@ -478,9 +483,14 @@ source, including its module documentation and declarations.
 | [Unfoldings.Topology.FiniteIntervalCover](../Unfoldings/Topology/FiniteIntervalCover.lean) | Bounded subdivisions subordinate to finite closed interval covers |
 | [Unfoldings.Topology.FiniteSubdivision](../Unfoldings/Topology/FiniteSubdivision.lean) | Existence and uniqueness of consecutive marked real intervals |
 | [Unfoldings.Topology.GraphAcyclic](../Unfoldings/Topology/GraphAcyclic.lean) | Contractible finite embedded graphs are simple and their adjacency graphs are trees |
+| [Unfoldings.Topology.GraphDrawing](../Unfoldings/Topology/GraphDrawing.lean) | Bridge actual embedded graphs to the pinned plane-drawing and Jordan-cycle APIs |
+| [Unfoldings.Topology.GraphEmbedding](../Unfoldings/Topology/GraphEmbedding.lean) | Transport actual embedded graphs through continuous injective maps |
 | [Unfoldings.Topology.GraphExtension](../Unfoldings/Topology/GraphExtension.lean) | Continuous extension of compatible vertex and edge maps to the actual graph carrier |
+| [Unfoldings.Topology.GraphFinitePath](../Unfoldings/Topology/GraphFinitePath.lean) | Construct multigraph paths and cycles from finite injective sequences |
+| [Unfoldings.Topology.GraphForestMap](../Unfoldings/Topology/GraphForestMap.lean) | A cycle mapped to a forest repeats the image of each distinguished edge |
 | [Unfoldings.Topology.GraphPoints](../Unfoldings/Topology/GraphPoints.lean) | Vertex points and continuous edge inclusions into the embedded graph carrier |
 | [Unfoldings.Topology.GraphPotential](../Unfoldings/Topology/GraphPotential.lean) | Selected-edge circle winding maps and real vertex potentials from contractibility |
+| [Unfoldings.Topology.GraphVertexMap](../Unfoldings/Topology/GraphVertexMap.lean) | Injective vertex relabeling preserves multigraph walks, paths, and cycles |
 | [Unfoldings.Topology.HalfPlanePush](../Unfoldings/Topology/HalfPlanePush.lean) | Explicit injective inward pushes with compact rectangular support |
 | [Unfoldings.Topology.LocalPush](../Unfoldings/Topology/LocalPush.lean) | Extend local injective chart maps and boundary pushes by the identity |
 | [Unfoldings.Topology.PairedInvolutions](../Unfoldings/Topology/PairedInvolutions.lean) | Generic finite interval/cycle order from two involutions |
@@ -492,6 +502,7 @@ source, including its module documentation and declarations.
 | [Unfoldings.Topology.QuotientRetraction](../Unfoldings/Topology/QuotientRetraction.lean) | Continuous quotient descent and contractibility of retracts |
 | [Unfoldings.Topology.RootedForest](../Unfoldings/Topology/RootedForest.lean) | Outside-vertex tree equivalence for forests with exactly one root per connected component |
 | [Unfoldings.Topology.SmallHalfPlanePush](../Unfoldings/Topology/SmallHalfPlanePush.lean) | Construct inward pushes in arbitrarily small half-plane neighborhoods |
+| [Unfoldings.Topology.SphereChart](../Unfoldings/Topology/SphereChart.lean) | Explicit Euclidean homeomorphisms for punctured unit spheres |
 
 ## Examples and core imports
 

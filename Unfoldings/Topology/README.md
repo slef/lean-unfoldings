@@ -81,3 +81,15 @@ This separates the banks but does not yet prove the tree-to-disk converse.
 coordinates and rules out planar injections hitting the half-plane boundary.
 [BallExtension.lean](BallExtension.lean) radially extends sphere homeomorphisms
 to closed balls with exact boundary agreement and preserved radius.
+
+[GraphEmbedding.lean](GraphEmbedding.lean) transports actual graph carriers
+through continuous injections. [GraphVertexMap.lean](GraphVertexMap.lean) and
+[GraphFinitePath.lean](GraphFinitePath.lean) preserve or construct multigraph
+walks, paths, and cycles. [GraphDrawing.lean](GraphDrawing.lean) bridges the
+actual edge parametrizations to the pinned cycle-to-Jordan theorem.
+[GraphForestMap.lean](GraphForestMap.lean) proves that a cycle mapped to a
+forest must repeat the image of its distinguished edge on the alternate path.
+[SphereChart.lean](SphereChart.lean) supplies Euclidean homeomorphisms from
+punctured spheres. The triangle application now constructs whole-cut planar
+embeddings and Jordan cycles through every bank; proving a single boundary
+cycle for tree cuts remains open.

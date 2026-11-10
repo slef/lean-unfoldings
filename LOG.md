@@ -2,6 +2,30 @@
 
 ## Session Log
 
+### 2026-11-09 — actual bank cycles and planar cut embeddings
+
+- Constructed bank-end and boundary-vertex types from actual unpaired germs.
+  Exactly two ends occur at each boundary vertex. The other-end pairing and
+  exchange of a bank's ends are fixed-point-free involutions.
+- Derived closed bank orders and proved that no bank or boundary vertex
+  repeats within a cycle. Constructed the actual finite embedded boundary
+  multigraph, with original affine edge maps and exact bank-set carrier.
+- Constructed a multigraph cycle through every bank; no bank is a bridge.
+  Loops and parallel edges remain supported for abstract triangle complexes.
+- Added generic vertex/edge-map and embedded-graph transport bridges. Actual
+  nonloop embedded cycles satisfy the pinned plane-drawing API and are Jordan
+  curves. A cycle mapped to a forest must repeat the image of its distinguished
+  edge on its alternate path; this supplies the coming cut-tree bridge step.
+- Constructed a closed planar embedding of every nontrivial cut of a convex
+  sphere: push its banks inward, omit a cut-graph point, and stereographically
+  project. Every bank lies on an actual Jordan cycle in that embedding.
+- The connected/single-boundary-cycle step for tree cuts, sphere tree-to-disk
+  converse, and full disk forest criterion remain open. Multiple boundary
+  cycles are allowed in the current results.
+- Verification: full `lake build` passes and audits **3,994 unfolding** and
+  **7,243 pinned planar-topology declarations**, with only standard axioms.
+  All **501 local documentation links** resolve.
+
 ### 2026-11-09 — actual boundary atlases and global inward embeddings
 
 - Identified both outer fan banks exactly with the boundary line, preserving

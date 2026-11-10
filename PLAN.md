@@ -145,6 +145,15 @@ convex polyhedra, or intrinsic metrics.
     bank complement and back into the original surface off the cut graph.
   - [x] Extend arbitrary sphere homeomorphisms to radius-preserving closed-ball
     homeomorphisms, with exact boundary agreement, for boundary matching.
+  - [x] Assemble the actual banks into a finite embedded multigraph, with no
+    unused vertices. Exactly two bank ends occur at each boundary vertex.
+    Every bank belongs to a closed order with distinct banks and vertices;
+    the resulting multigraph cycle proves that no bank is a bridge.
+  - [x] Construct a planar embedding of every nontrivial cut of a convex
+    sphere by pushing its banks inward and stereographically projecting from
+    an omitted cut-graph point. Every bank belongs to a genuine Jordan cycle.
+    The generic forest-map lemma forces the distinguished edge image to
+    repeat along the alternate path of a cycle.
   - [ ] Assemble the local models into a boundary collar and tree regular
     neighborhood; prove the actual cut-disk converse and relative disk result.
 - [ ] Separate any needed polygonal Jordan/separation theorem from graph
