@@ -38,6 +38,7 @@ public import Unfoldings.Cone.HeadingShortcut
 public import Unfoldings.Cone.VertexAvoidance
 public import Unfoldings.Topology.ChainPairings
 public import Unfoldings.Cone.IntervalIsometry
+public import Unfoldings.Cone.BoundaryTopology
 public import Unfoldings.Cone.FlatCharts
 public import Unfoldings.Cone.FlatGeodesics
 public import Unfoldings.Complex.Charts
@@ -124,3 +125,4 @@ public import Unfoldings.Source.CutTree
 public import Unfoldings.Examples.Metric
 public import Unfoldings.Examples.Hinge
 public import Unfoldings.Examples.CutForests
+public import Unfoldings.Examples.BoundaryFans

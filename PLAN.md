@@ -131,6 +131,13 @@ convex polyhedra, or intrinsic metrics.
   the formula itself as the definition of a topologically spherical surface.
 - [ ] Primal/dual incidence, connectedness and complementary spanning trees.
 - [ ] Tree complements, regular neighborhoods, and relative boundary versions.
+  - [x] Construct explicit half-plane models for interval-link tangent fans,
+    with the correct apex, at arbitrary total angles. Transfer them to whole
+    intrinsic boundary-vertex neighborhoods using the actual metric cone charts.
+    Angle changes preserve both ray coordinates and descend with finite
+    Lipschitz bounds; overlapping developments are included.
+  - [ ] Assemble the local models into a boundary collar and tree regular
+    neighborhood; prove the actual cut-disk converse and relative disk result.
 - [ ] Separate any needed polygonal Jordan/separation theorem from graph
   counting; a rotation system alone is not a proved embedding in the sphere.
 - [ ] Small examples covering isolated vertices, bridges, cycles, loops,

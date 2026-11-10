@@ -2,6 +2,26 @@
 
 ## Session Log
 
+### 2026-11-09 — half-plane neighborhoods at boundary vertices
+
+- Constructed bounded linear changes between convex sectors that preserve the
+  parameters on both boundary rays. A finite uniform Lipschitz bound descends
+  these maps to actual glued angular fans, with explicit continuous inverses.
+- Compressed arbitrary interval fans to a convex quarter-sector and opened
+  the quadrant by a piecewise linear homeomorphism. Every such fan is a
+  half-plane, regardless of total angle or overlapping developed interiors.
+- Transferred the model to actual interval-link tangent fans and, for spatial
+  foldings, whole intrinsic boundary-vertex balls. Proved the charts send the
+  actual vertex to the boundary-line origin.
+- Added a five-right-angle example checking both actual planar overlap and
+  applicability of the half-plane topology theorem. Boundary collars, the
+  sphere tree-to-disk converse, and the full relative forest theorem remain
+  open; these local charts do not assert their global constructions.
+- Verification: `lake exe cache get` and full `lake build` pass. The audit
+  checks **3,689 unfolding declarations** and **7,243 pinned planar-topology
+  declarations**, with only standard axioms. All **465 local documentation
+  links** resolve.
+
 ### 2026-11-09 — exact graph criterion for boundary-rooted forests
 
 - Defined the outside-vertex extension of a simple graph with marked roots.

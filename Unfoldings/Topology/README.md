@@ -61,3 +61,9 @@ component. It also constructs the root/component bijection. Empty vertex types
 are allowed; examples check both missing roots and multiple roots in a component.
 The topological capping and slit-disk bridge for this combinatorial criterion
 remains separate.
+
+[Quadrant.lean](Quadrant.lean) gives a piecewise linear homeomorphism from a
+closed quadrant to a closed half-plane, preserving the apex and identifying
+the two rays with the boundary line. Actual interval-link tangent fans use
+this in the geometry layer; total angle and overlap impose no topological
+restriction on their half-plane models.

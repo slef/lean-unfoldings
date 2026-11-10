@@ -293,6 +293,7 @@ source, including its module documentation and declarations.
 | [Unfoldings.Cone.AngularFan](../Unfoldings/Cone/AngularFan.lean) | Slit sector fans, cumulative real headings and planar developments |
 | [Unfoldings.Cone.AngularFibers](../Unfoldings/Cone/AngularFibers.lean) | All closed-bank fibers at one full turn |
 | [Unfoldings.Cone.AngularHeadingShortcut](../Unfoldings/Cone/AngularHeadingShortcut.lean) | Strict shortcuts across multiple angular pieces |
+| [Unfoldings.Cone.AngularHomeomorph](../Unfoldings/Cone/AngularHomeomorph.lean) | Seam-compatible angle changes and half-plane topology at arbitrary total angles |
 | [Unfoldings.Cone.AngularImages](../Unfoldings/Cone/AngularImages.lean) | Genuine rigid piece images and their open heading intervals |
 | [Unfoldings.Cone.AngularInjective](../Unfoldings/Cone/AngularInjective.lean) | Boundary-inclusive development injectivity below a full turn |
 | [Unfoldings.Cone.AngularMetric](../Unfoldings/Cone/AngularMetric.lean) | Common fan apex, exact radial distances and ordinary metric |
@@ -302,6 +303,7 @@ source, including its module documentation and declarations.
 | [Unfoldings.Cone.Apex](../Unfoldings/Cone/Apex.lean) | Common tangent apex derived from vertex-link connectivity |
 | [Unfoldings.Cone.AppendFirst](../Unfoldings/Cone/AppendFirst.lean) | A repeated first sector with exact continued real headings |
 | [Unfoldings.Cone.AppendMap](../Unfoldings/Cone/AppendMap.lean) | Nonexpanding cyclic maps continued across their closing bank |
+| [Unfoldings.Cone.BoundaryTopology](../Unfoldings/Cone/BoundaryTopology.lean) | Actual boundary tangent half-planes and whole intrinsic boundary-vertex charts |
 | [Unfoldings.Cone.CellShortcut](../Unfoldings/Cone/CellShortcut.lean) | Strict shortcuts between specified cell representatives on the selected sheet |
 | [Unfoldings.Cone.Charts](../Unfoldings/Cone/Charts.lean) | Constructed whole-ball cone charts for spatial foldings |
 | [Unfoldings.Cone.ConsecutiveCompatibility](../Unfoldings/Cone/ConsecutiveCompatibility.lean) | Consecutive actual seams agree in angular coordinates |
@@ -338,6 +340,7 @@ source, including its module documentation and declarations.
 | [Unfoldings.Cone.SeamCoordinates](../Unfoldings/Cone/SeamCoordinates.lean) | Directed angular coordinates of every actual radial seam point |
 | [Unfoldings.Cone.SeamRadius](../Unfoldings/Cone/SeamRadius.lean) | Actual radial seam witnesses at every nonnegative radius |
 | [Unfoldings.Cone.Sector](../Unfoldings/Cone/Sector.lean) | Real-angle sectors as positive spans of their boundary rays |
+| [Unfoldings.Cone.SectorChange](../Unfoldings/Cone/SectorChange.lean) | Bounded linear sector changes preserving both boundary-ray coordinates |
 | [Unfoldings.Cone.SectorClosed](../Unfoldings/Cone/SectorClosed.lean) | Closed polar coordinates for sectors and the whole plane |
 | [Unfoldings.Cone.SectorCoordinates](../Unfoldings/Cone/SectorCoordinates.lean) | Positive-span sectors, ambient coordinates and interiors |
 | [Unfoldings.Cone.SectorInterior](../Unfoldings/Cone/SectorInterior.lean) | Positive-radius open-heading coordinates for actual sector interiors |
@@ -474,6 +477,7 @@ source, including its module documentation and declarations.
 | [Unfoldings.Topology.PerfectProjection](../Unfoldings/Topology/PerfectProjection.lean) | A perfect boundary cannot project injectively to finite exceptions outside a closed set |
 | [Unfoldings.Topology.PlanarOpenMapping](../Unfoldings/Topology/PlanarOpenMapping.lean) | Planar invariance of domain from the pinned Jordan–Schönflies theorem and circle obstruction |
 | [Unfoldings.Topology.PuncturedSphere](../Unfoldings/Topology/PuncturedSphere.lean) | Contractibility of a unit sphere punctured at any specified point |
+| [Unfoldings.Topology.Quadrant](../Unfoldings/Topology/Quadrant.lean) | Explicit piecewise linear quadrant-to-half-plane homeomorphism |
 | [Unfoldings.Topology.QuotientRetraction](../Unfoldings/Topology/QuotientRetraction.lean) | Continuous quotient descent and contractibility of retracts |
 | [Unfoldings.Topology.RootedForest](../Unfoldings/Topology/RootedForest.lean) | Outside-vertex tree equivalence for forests with exactly one root per connected component |
 
@@ -484,6 +488,7 @@ source, including its module documentation and declarations.
 | [Audit](../Audit.lean) | Transitive axiom check for all imported library declarations |
 | [Unfoldings](../Unfoldings.lean) | Public umbrella import for the library |
 | [Unfoldings.Basic](../Unfoldings/Basic.lean) | Common Euclidean plane and spatial coordinate types |
+| [Unfoldings.Examples.BoundaryFans](../Unfoldings/Examples/BoundaryFans.lean) | A fan with overlapping developed interiors still has half-plane topology |
 | [Unfoldings.Examples.CutForests](../Unfoldings/Examples/CutForests.lean) | Empty forest, one rooted edge, and counterexamples with missing or multiple roots |
 | [Unfoldings.Examples.Hinge](../Unfoldings/Examples/Hinge.lean) | Joined hinges, boundary contact, and a layout with interior overlap |
 | [Unfoldings.Examples.Metric](../Unfoldings/Examples/Metric.lean) | Metric recovery, disconnectedness, and shortcuts |
