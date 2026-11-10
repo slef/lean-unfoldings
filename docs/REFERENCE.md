@@ -114,6 +114,15 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Cap.AngularCurvature](../Unfoldings/Cap/AngularCurvature.lean) | Intrinsic interior angular defect equals the actual outward normal solid angle |
+| [Unfoldings.Cap.CurvatureBudget](../Unfoldings/Cap/CurvatureBudget.lean) | Nonnegative intrinsic defects and total-curvature bounds from actual normal-cone packing |
+| [Unfoldings.Cap.GermCrossing](../Unfoldings/Cap/GermCrossing.lean) | Sign changes in an actual face meet the supported planar cone boundary |
+| [Unfoldings.Cap.GermNormalCone](../Unfoldings/Cap/GermNormalCone.lean) | Incident edge signs detect the complete actual outward normal cone |
+| [Unfoldings.Cap.GermSupports](../Unfoldings/Cap/GermSupports.lean) | Actual spatial edge directions obey every incident supporting plane |
+| [Unfoldings.Cap.IncidentDirections](../Unfoldings/Cap/IncidentDirections.lean) | Actual projected corner cones cover every direction at an interior cap vertex |
+| [Unfoldings.Cap.LinkCrossingBound](../Unfoldings/Cap/LinkCrossingBound.lean) | Supporting planes and disjoint projected faces bound actual cyclic link crossings by two |
+| [Unfoldings.Cap.LinkCrossings](../Unfoldings/Cap/LinkCrossings.lean) | Actual convex vertex links have zero or two crossings according to normal-cone membership |
+| [Unfoldings.Cap.UniformCurvature](../Unfoldings/Cap/UniformCurvature.lean) | Explicit normal-height curvature budget and a threshold quantified before every input mesh |
 | [Unfoldings.Cap.Boundary](../Unfoldings/Cap/Boundary.lean) | Exact identification of the projected rim with actual bank boundaries and boundary vertices |
 | [Unfoldings.Cap.ForestDevelopment](../Unfoldings/Cap/ForestDevelopment.lean) | A constructed locally isometric original-edge cap development, with overlap permitted |
 | [Unfoldings.Cap.ForestExistence](../Unfoldings/Cap/ForestExistence.lean) | Uniform positive tilt and shear parameters construct actual original-edge rooted forests and cut disks |
@@ -152,6 +161,7 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Complex.Curvature](../Unfoldings/Complex/Curvature.lean) | Interior angular defects grouped by actual retained vertex classes |
 | [Unfoldings.Complex.SeamGraph](../Unfoldings/Complex/SeamGraph.lean) | The original internal-seam graph with all original vertices and exact face-edge incidence |
 | [Unfoldings.Complex.SelectedCuts](../Unfoldings/Complex/SelectedCuts.lean) | Selected parent edges induce the actual rooted relative cut graph, all-boundary vertex copies, and a cut disk |
 | [Unfoldings.Complex.Angles](../Unfoldings/Complex/Angles.lean) | Total angles and conservation across cut vertex copies |
@@ -323,6 +333,7 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Polyhedron.AngularLink](../Unfoldings/Polyhedron/AngularLink.lean) | Actual spatial cyclic link directions, corner angles, and crossing integrals |
 | [Unfoldings.Polyhedron.Chords](../Unfoldings/Polyhedron/Chords.lean) | Exact boundary-chord distances and unique intrinsic geodesics |
 | [Unfoldings.Polyhedron.Closedness](../Unfoldings/Polyhedron/Closedness.lean) | Derived seam pairing of every original edge and cyclicity at every vertex |
 | [Unfoldings.Polyhedron.ConvexCurvature](../Unfoldings/Polyhedron/ConvexCurvature.lean) | Extremality iff positive curvature and avoidance, with no interior premise |
@@ -460,6 +471,13 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Geometry.AngularCrofton](../Unfoldings/Geometry/AngularCrofton.lean) | Discrete spherical crossing integrals and the measure-theoretic Gauss reduction |
+| [Unfoldings.Geometry.ConeBoundaryRays](../Unfoldings/Geometry/ConeBoundaryRays.lean) | A planar supported convex cone has at most two boundary ray directions |
+| [Unfoldings.Geometry.CyclicSignChanges](../Unfoldings/Geometry/CyclicSignChanges.lean) | Even strict sign-change counts and exact counts for nonconstant bounded cyclic sequences |
+| [Unfoldings.Geometry.SolidAngleHemisphere](../Unfoldings/Geometry/SolidAngleHemisphere.lean) | Antipodal symmetry halves sign-change measures within every genuine hemisphere |
+| [Unfoldings.Geometry.SpatialLune](../Unfoldings/Geometry/SpatialLune.lean) | Exact solid-angle measures for arbitrary spatial lunes and scalar-product sign changes |
+| [Unfoldings.Geometry.SpatialPairFrame](../Unfoldings/Geometry/SpatialPairFrame.lean) | Orthogonal frames put any nonzero spatial pair into its actual angular normal form |
+| [Unfoldings.Geometry.TwoVectorFrame](../Unfoldings/Geometry/TwoVectorFrame.lean) | Complete a spatial orthonormal pair and decompose arbitrary vector pairs |
 | [Unfoldings.Geometry.ConvexPacking](../Unfoldings/Geometry/ConvexPacking.lean) | Haar measure bounds for finite convex packings with disjoint interiors and boundary contacts |
 | [Unfoldings.Geometry.ConeOrientation](../Unfoldings/Geometry/ConeOrientation.lean) | Disjoint consecutive ray cones have consistent orientation; cyclic fans make one full turn in either orientation |
 | [Unfoldings.Geometry.CornerDirections](../Unfoldings/Geometry/CornerDirections.lean) | Disjoint triangle interiors force disjoint direction cones at a common corner |

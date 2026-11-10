@@ -742,7 +742,9 @@ remaining forest, uniform-turn, and global nonoverlap arguments.
 - [x] Prove the volume-induced solid-angle budget, uniform azimuth law, and
   exact spherical lune measure, preparing a direct angular-curvature identity.
 - [ ] Construct the source-centered near-quadrant forest needed for nonoverlap.
-- [ ] Uniform curvature and prefix-turn bounds, including branching.
+- [x] Identify actual angular curvature with outward normal solid angle, and
+  derive a positive uniform total-curvature threshold before the entire mesh.
+- [ ] Uniform prefix-turn bounds, including branching.
 - [ ] Global strip assembly and the full nearly flat cap theorem.
 
 ## Later targets and Fewest Nets

@@ -2,6 +2,30 @@
 
 ## Session Log
 
+### 2026-11-10 — actual spherical Gauss identity and uniform total curvature
+
+- Extended the exact lune calculation to every nonzero spatial vector pair,
+  including parallel and opposite directions. Antipodal symmetry halves each
+  sign-change measure within any hemisphere.
+- Proved the discrete spherical Crofton integral and connected it to actual
+  cyclic spatial germ directions and original triangle corner angles.
+- Derived the geometric zero-or-two crossing count from actual supporting
+  planes, closed local face coverage, and disjoint projected face cones.
+  A supported planar convex cone has at most two boundary ray directions;
+  this handles repeated normals and flat vertices without strict convexity.
+- Proved that intrinsic angular defect at every interior cap vertex equals
+  the solid angle of its complete actual outward normal cone. Derived
+  nonnegative defects and the conservative bound
+  `81 * (sqrt (1 - c²) / c)² * pi` for normal heights at least `c ≥ 3/4`.
+- Chose a positive total-curvature threshold before even the face type and
+  triangle complex. The same numerical threshold works across all input meshes.
+- Uniform prefix turns, source-centered forest placement, actual developed
+  branching banks, and global nonoverlap remain open. This is not the full
+  cap theorem. No existing theorem statements changed; no external code copied.
+- Verification: scoped cache check and full `lake build` pass; **5,534 project**
+  and **7,243 pinned topology declarations** use only standard Lean axioms.
+  Checked **654 local documentation links**; no project warnings or temporary worktrees.
+
 ### 2026-11-10 — volume-induced solid angle and exact spherical lunes
 
 - Defined solid angle from Mathlib's `volume.toSphere`, transported to ambient

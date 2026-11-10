@@ -16,7 +16,11 @@ Current entry points:
   area, bounded by the actual planar normal-polygon areas.
 - [NormalCone](../Unfoldings/Cap/NormalCone.lean) identifies these spherical
   polygons with all upward supporting unit normals at interior cap vertices.
-  The identity with intrinsic angular curvature remains open.
+
+- [AngularCurvature](../Unfoldings/Cap/AngularCurvature.lean) proves the actual
+  intrinsic angular-defect/solid-angle identity, including flat vertices.
+- [UniformCurvature](../Unfoldings/Cap/UniformCurvature.lean) gives a positive
+  total-curvature threshold quantified before the entire input mesh.
 
 The intended statement takes the cap's acute input triangulation as given.
 For every fixed positive acuteness margin, there is a positive normal-tilt
@@ -157,10 +161,13 @@ global strip hypotheses are constructed. It is not a proof of Theorem 9.
 - [x] Bound each solid normal angle by `81` times its planar slope-polygon area
   when slopes lie in the unit disk. Derive an arbitrarily small total solid-angle
   budget from a positive tilt threshold uniform in vertex count.
-- [ ] Identify intrinsic angular curvature with the solid angle of its normal
-  cone. The checked normal-cone identity and area bounds do not yet prove this.
-  This volume-based route suffices for the cap theorem without first equating
-  solid angle with normalized two-dimensional Hausdorff measure.
+- [x] Identify intrinsic angular curvature with the solid angle of its normal
+  cone. Actual supporting planes and disjoint projected faces give zero or two
+  link crossings; exact hemisphere lune measures give the crossing integral.
+  This includes repeated normals, coplanar faces, and zero curvature.
+- [x] Derive nonnegative intrinsic curvature and an arbitrarily small total
+  curvature budget from a positive tilt threshold quantified before the face
+  type, triangle complex, and cap. The bound is independent of mesh size.
 - [x] Prove relative angle-defect balance by summing original and projected
   face angles over the actual corner classes.
 - [x] Derive projected interior-link flatness from the actual cyclic germ order,
@@ -174,25 +181,17 @@ global strip hypotheses are constructed. It is not a proof of Theorem 9.
 - [ ] Choose a positive tilt threshold depending only on the acute margin that
   leaves all developed path headings in the required wedges.
 
-A sufficient conservative curvature target is to bound each interior angular
-defect by the area of its planar normal polygon. The checked packing bound
-would then give total curvature at most `pi * tan(tilt)^2`. Proving the
-spherical Gauss-image curvature identity is still required. The spherical-to-planar
-area comparison is checked; it does not supply the curvature identity.
-
-The next missing local identity, for an original interior vertex `v`, can use
-`solidAngleMeasure` in place of normalized Hausdorff measure:
+The checked numerical estimate, for `3/4 ≤ c` and all normal heights at least
+`c`, is
 
 ```text
-ENNReal.ofReal (2 * pi - C.totalAngle Set.univ v)
-  = solidAngleMeasure (K.sphericalNormalPolygon v).
+totalInteriorAngularDefect ≤ 81 * (sqrt (1 - c²) / c)² * pi.
 ```
 
-`sphericalNormalPolygon_eq_outwardNormalCone` now identifies the
-right-hand region from actual supporting geometry. The missing equality must
-also handle repeated normals, coplanar incident triangles, and zero curvature.
-Once proved, the checked area budget bounds the sum of all interior defects;
-no accumulation of per-vertex projection errors is needed.
+The constant is conservative. Continuity at tilt zero gives an arbitrarily
+small total-curvature budget uniformly across all meshes. The proof uses
+volume-induced solid angle; it does not need an equality with normalized
+Hausdorff area. Uniform prefix-turn control and global nonoverlap remain open.
 
 ### Global assembly (Sections 9--10, Appendices A.5--A.6)
 
