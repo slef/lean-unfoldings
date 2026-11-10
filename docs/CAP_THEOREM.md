@@ -152,10 +152,13 @@ global strip hypotheses are constructed. It is not a proof of Theorem 9.
 - [ ] Identify intrinsic angular curvature with spherical normal-image area.
   The checked normal-cone identity and area bound do not yet prove this equality.
 - [x] Prove relative angle-defect balance by summing original and projected
-  face angles over the actual corner classes. A curvature corollary explicitly
-  requires flat projected interior links.
-- [ ] Derive the required projected-link flatness and polygonal Gauss--Bonnet
-  identity on the geometric subregions used in the prefix-turn argument.
+  face angles over the actual corner classes.
+- [x] Derive projected interior-link flatness from the actual cyclic germ order,
+  disjoint original-face direction cones, and the one-full-turn theorem.
+  Consequently the actual cap curvature/boundary-angle balance needs no
+  assumed projected flatness or Euler identity.
+- [ ] Prove the geometric subregion identities used in the prefix-turn argument,
+  including the truncation and artificial connecting segments.
 - [ ] Bound turn distortion for every prefix independently of mesh size.
   Summing an error per vertex is insufficient.
 - [ ] Choose a positive tilt threshold depending only on the acute margin that

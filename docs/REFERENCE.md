@@ -131,6 +131,8 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 | [Unfoldings.Cap.Metric](../Unfoldings/Cap/Metric.lean) | Uniform Lipschitz and inverse Lipschitz bounds for actual intrinsic cap distances |
 | [Unfoldings.Cap.OpenedBanks](../Unfoldings/Cap/OpenedBanks.lean) | Construct matched banks using cumulative nonnegative opening budgets |
 | [Unfoldings.Cap.ProjectedFaces](../Unfoldings/Cap/ProjectedFaces.lean) | The actual affine projected triangles, disjoint interiors, and exact footprint cover |
+| [Unfoldings.Cap.ProjectedFlatness](../Unfoldings/Cap/ProjectedFlatness.lean) | Actual projected interior links make one full turn, yielding cap curvature/boundary-excess balance |
+| [Unfoldings.Cap.ProjectedLink](../Unfoldings/Cap/ProjectedLink.lean) | Actual cyclic projected germ rays, corner angles, and disjoint incident direction cones |
 | [Unfoldings.Cap.RadialBanks](../Unfoldings/Cap/RadialBanks.lean) | Equal-radius bank order in the common-quadrant case, including finite endpoints |
 | [Unfoldings.Cap.Roof](../Unfoldings/Cap/Roof.lean) | Concave supporting-plane lower envelope agreeing with every actual cap face |
 | [Unfoldings.Cap.VertexProgress](../Unfoldings/Cap/VertexProgress.lean) | Actual original cap edges enter a strict quadrant at interior projected vertices |
@@ -455,6 +457,9 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 | Module | Purpose |
 | --- | --- |
 | [Unfoldings.Geometry.ConvexPacking](../Unfoldings/Geometry/ConvexPacking.lean) | Haar measure bounds for finite convex packings with disjoint interiors and boundary contacts |
+| [Unfoldings.Geometry.ConeOrientation](../Unfoldings/Geometry/ConeOrientation.lean) | Disjoint consecutive ray cones have consistent orientation; cyclic fans make one full turn in either orientation |
+| [Unfoldings.Geometry.CornerDirections](../Unfoldings/Geometry/CornerDirections.lean) | Disjoint triangle interiors force disjoint direction cones at a common corner |
+| [Unfoldings.Geometry.CyclicRays](../Unfoldings/Geometry/CyclicRays.lean) | Genuine disjoint cyclic ray fans make exactly one full turn, with exact cumulative headings |
 | [Unfoldings.Geometry.EuclideanArea](../Unfoldings/Geometry/EuclideanArea.lean) | Nonexpansive maps decrease normalized Euclidean Hausdorff measure |
 | [Unfoldings.Geometry.Normalize](../Unfoldings/Geometry/Normalize.lean) | Exact radial-angular distance decomposition and contraction outside the unit ball |
 | [Unfoldings.Geometry.SupportingSlopes](../Unfoldings/Geometry/SupportingSlopes.lean) | Concave-function supporting slopes have disjoint interior regions at distinct contact points |

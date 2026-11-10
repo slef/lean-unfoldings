@@ -737,6 +737,8 @@ remaining forest, uniform-turn, and global nonoverlap arguments.
   and bound their total area uniformly; recover actual spherical normals.
 - [x] Bound spherical normal-image area by planar polygon area and identify the
   complete upward supporting normal cone at every interior vertex.
+- [x] Derive one-full-turn projected interior links and the actual cap
+  curvature/boundary-angle balance from geometric incidence, without Euler counting.
 - [ ] Construct the source-centered near-quadrant forest needed for nonoverlap.
 - [ ] Uniform curvature and prefix-turn bounds, including branching.
 - [ ] Global strip assembly and the full nearly flat cap theorem.

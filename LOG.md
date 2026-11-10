@@ -2,6 +2,24 @@
 
 ## Session Log
 
+### 2026-11-10 — actual projected links and cap angle-defect balance
+
+- Proved that a cyclic fan of genuine disjoint direction cones makes exactly
+  one full turn. Derived consistent orientation from actual cone separation;
+  reflection handles either orientation. No convex polygon or winding-number
+  certificate is supplied as input.
+- Proved that disjoint triangle interiors give disjoint open corner direction
+  cones. Identified these cones and their genuine angles in the cap's actual
+  cyclic germ order, including seam endpoint reversals.
+- Derived projected interior total angle `2π` from this geometry. The cap's
+  total interior intrinsic defect therefore equals its actual boundary angle
+  excess, removing the previously explicit projected-flatness hypothesis.
+- The spherical Gauss-image curvature identity, uniform prefix-turn bound,
+  source-centered forest, and global developed-face nonoverlap remain open.
+- Verification: full `lake build` and standard-axiom audit pass for
+  **5,368 project** and **7,243 pinned topology declarations**; no project
+  warnings. Checked **667 local documentation links**. No temporary worktrees.
+
 ### 2026-11-10 — spherical normal-cone geometry and area comparison
 
 - Proved exact radial/angular distance decomposition and nonexpansiveness of
