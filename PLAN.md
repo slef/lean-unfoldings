@@ -302,8 +302,11 @@ Comparison with arbitrary subdivided graph presentations remains separate.
     missing-root obstructions, and the no-new-cuts case.
 - [ ] Include all nonflat interior vertices in the cuts iff the resulting disk
   has flat interior. Boundary corners need not be flat.
-- [ ] A flat metric disk admits a development, allowing overlap; uniqueness up
-  to planar rigid motion after fixing the orientation convention.
+- [ ] A flat metric disk admits a development, allowing overlap.
+- [x] Fixing one face makes outward developments unique on every dually
+  connected complex, independently of nonoverlap or disk topology.
+- [ ] Construct the global developing map from a simply connected Euclidean
+  metric atlas and extend its rigid face motions to the disk boundary.
 - [ ] Do not generalize the disk/tree statement to layouts with holes.
 
 ## Phase 4 Subdivision and cone fans
@@ -325,6 +328,9 @@ Comparison with arbitrary subdivided graph presentations remains separate.
   geometric subdivision and declared seam-chain compatibility.
 - [x] Nonoverlap is unchanged by conforming subdivision, in both directions.
   A finite union of new edges cannot hide an open overlap.
+- [x] Cuts supported on refined seams have actual cut metrics and nonexpanding
+  projections to the original surface. Compatible further refinement preserves
+  the cut metric and projection; the convex-sphere tree criterion applies.
 - [ ] Construct conforming refinements that insert arbitrary polygonal cuts;
   transport their actual cut metrics independently of the chosen refinement.
 - [x] Polar developments keep real headings. The open positive-radius strip

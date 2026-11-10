@@ -161,6 +161,7 @@ source, including its module documentation and declarations.
 | [Unfoldings.Complex.Paths](../Unfoldings/Complex/Paths.lean) | Intrinsic path metric and geodesic existence for cut complexes |
 | [Unfoldings.Complex.PointFiber](../Unfoldings/Complex/PointFiber.lean) | Exact point fibers have at most one copy per original face and bounded seam paths |
 | [Unfoldings.Complex.PointSeamRoute](../Unfoldings/Complex/PointSeamRoute.lean) | Actual bounded oriented seam routes, including at vertices |
+| [Unfoldings.Complex.RefinedCuts](../Unfoldings/Complex/RefinedCuts.lean) | Actual refined cut metrics, projections, polygonal boundary support, and the sphere tree criterion |
 | [Unfoldings.Complex.RegularEdges](../Unfoldings/Complex/RegularEdges.lean) | Constructed edge charts from either seam bank |
 | [Unfoldings.Complex.Regular](../Unfoldings/Complex/Regular.lean) | Constructed regular points and unique intrinsic geodesic continuation |
 | [Unfoldings.Complex.RelativeBoundaryConnectivity](../Unfoldings/Complex/RelativeBoundaryConnectivity.lean) | Descend boundary-component labels and prove rooted forest cuts have connected actual banks |
@@ -181,6 +182,7 @@ source, including its module documentation and declarations.
 | [Unfoldings.Complex.Subdivision](../Unfoldings/Complex/Subdivision.lean) | Geometric parent placements and exact seam-chain conformity |
 | [Unfoldings.Complex.Vertices](../Unfoldings/Complex/Vertices.lean) | Actual cut vertex classes, boundary incidence and copy maps |
 | [Unfoldings.Complex](../Unfoldings/Complex.lean) | Finite edge-paired complexes and their cut realizations |
+
 ## Cuts and layouts
 
 | Module | Purpose |
@@ -191,8 +193,10 @@ source, including its module documentation and declarations.
 | [Unfoldings.Development.Hinge](../Unfoldings/Development/Hinge.lean) | Nonoverlapping developments of arbitrary two-triangle hinges |
 | [Unfoldings.Development.SubdivisionNonoverlap](../Unfoldings/Development/SubdivisionNonoverlap.lean) | Nonoverlap is invariant under subdivision, in both directions |
 | [Unfoldings.Development.Subdivision](../Unfoldings/Development/Subdivision.lean) | Restrict arbitrary developments while deriving strict opposite-side opening |
+| [Unfoldings.Development.Uniqueness](../Unfoldings/Development/Uniqueness.lean) | An outward development of a connected complex is uniquely determined by one face |
 | [Unfoldings.Development](../Unfoldings/Development.lean) | Facewise placements, nonoverlap, multiplicity, and metric descent |
 | [Unfoldings.PolygonalLayout](../Unfoldings/PolygonalLayout.lean) | Finite polygon layouts with separate rigid face maps and optional nonoverlap |
+
 ## Metrics and gluing
 
 | Module | Purpose |
@@ -448,6 +452,7 @@ source, including its module documentation and declarations.
 | [Unfoldings.Geometry.Halfplane](../Unfoldings/Geometry/Halfplane.lean) | Supporting heights and finite corner bounds |
 | [Unfoldings.Geometry.HingeConverse](../Unfoldings/Geometry/HingeConverse.lean) | Recover strict opposite-side opening from joined disjoint interiors |
 | [Unfoldings.Geometry.HingePatch](../Unfoldings/Geometry/HingePatch.lean) | Exact hinge intersections and local planar coverage |
+| [Unfoldings.Geometry.HingeRigidity](../Unfoldings/Geometry/HingeRigidity.lean) | Two-circle side rigidity and uniqueness of joined outward face motions |
 | [Unfoldings.Geometry.Hinge](../Unfoldings/Geometry/Hinge.lean) | Opposite sides imply adjacent-cell nonoverlap |
 | [Unfoldings.Geometry.Interior](../Unfoldings/Geometry/Interior.lean) | Interior clearance and Euclidean cell balls |
 | [Unfoldings.Geometry.IsometryOnConvex](../Unfoldings/Geometry/IsometryOnConvex.lean) | Isometric maps to strictly convex spaces preserve affine segment parameters |
@@ -489,6 +494,7 @@ source, including its module documentation and declarations.
 | [Unfoldings.Geometry.TriangleSplit](../Unfoldings/Geometry/TriangleSplit.lean) | Construct nondegenerate edge splits and prove their exact cover |
 | [Unfoldings.Geometry.Triangle](../Unfoldings/Geometry/Triangle.lean) | Nondegenerate cells and full edge subspaces |
 | [Unfoldings.Geometry.UnitLine](../Unfoldings/Geometry/UnitLine.lean) | A nonzero real line has two opposite unit directions |
+
 ## Topology and combinatorics
 
 | Module | Purpose |
@@ -623,4 +629,3 @@ The [vendored source record](../vendor/schoenflies/UPSTREAM.md) documents the
 Lean 4.35 module-system and proof-script compatibility changes; theorem
 statements are unchanged. The separate [license](../vendor/schoenflies/LICENSE)
 is retained. Comparator challenge files and upstream build caches are excluded.
-

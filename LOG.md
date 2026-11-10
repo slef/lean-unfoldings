@@ -2,6 +2,24 @@
 
 ## Session Log
 
+### 2026-11-10 — normalized uniqueness and refined cut presentations
+
+- Proved that two endpoint distances and a strict side determine a planar
+  point. A joined edge and outward opening therefore determine the next face
+  motion uniquely. Equality propagates across either seam direction and every
+  retained dual path: fixing one face determines the entire development.
+  No disk or nonoverlap hypothesis is required.
+- Defined the actual nonexpanding projection of a refined cut surface to the
+  original uncut realization. Compatible further refinements preserve the cut
+  metric and commute with this projection. Projected boundary banks are a
+  finite union of actual straight spatial segments.
+- Transported the convex-sphere cut-tree iff disk theorem to refined cuts,
+  including cuts through original face interiors. Automatic insertion of an
+  arbitrary polygonal cut and general flat-disk existence remain unchecked.
+- Verification: full `lake build` and standard-axiom audit pass; no new project
+  warnings. The README remains a short entry point; detailed APIs are indexed
+  in `docs/REFERENCE.md`.
+
 ### 2026-11-10 — conforming metric refinements
 
 - Defined finite geometric subdivisions by actual child placements and covers,

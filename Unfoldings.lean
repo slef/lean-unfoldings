@@ -141,3 +141,5 @@ public import Unfoldings.Complex.SubdivisionFolding
 public import Unfoldings.Complex.SubdivisionRegular
 public import Unfoldings.Development.SubdivisionNonoverlap
 public import Unfoldings.Examples.Subdivision
+public import Unfoldings.Complex.RefinedCuts
+public import Unfoldings.Development.Uniqueness
