@@ -11,9 +11,12 @@ Current entry points:
   original-edge rooted forest for uniformly small positive tilt.
 - [ForestDevelopment](../Unfoldings/Cap/ForestDevelopment.lean) constructs its
   intrinsic cut disk and a locally isometric development, allowing overlap.
-- [NormalAreaThreshold](../Unfoldings/Cap/NormalAreaThreshold.lean) proves a
-  mesh-independent positive tilt threshold for arbitrarily small total planar
-  normal-image area. This is not yet a curvature bound.
+- [GnomonicArea](../Unfoldings/Cap/GnomonicArea.lean) proves a mesh-independent
+  positive tilt threshold for arbitrarily small total spherical normal-image
+  area, bounded by the actual planar normal-polygon areas.
+- [NormalCone](../Unfoldings/Cap/NormalCone.lean) identifies these spherical
+  polygons with all upward supporting unit normals at interior cap vertices.
+  The identity with intrinsic angular curvature remains open.
 
 The intended statement takes the cap's acute input triangulation as given.
 For every fixed positive acuteness margin, there is a positive normal-tilt
@@ -140,9 +143,14 @@ global strip hypotheses are constructed. It is not a proof of Theorem 9.
   Derive a positive tilt threshold for any requested positive area budget,
   independent of vertex count. Inverse gnomonic coordinates recover the
   actual unit upward face normals.
-- [ ] Relate intrinsic angular curvature to spherical normal-image area and
-  bound it by planar normal-polygon area. The checked area budget alone
-  does not establish a curvature bound.
+- [x] Prove inverse gnomonic projection is nonexpansive for chord distance.
+  Normalized Euclidean Hausdorff measure gives actual spherical surface area
+  at most planar normal-polygon area, including degenerate polygons.
+- [x] Identify each interior vertex's spherical polygon with the complete set
+  of upward unit normals supporting the actual cap at that vertex. This uses
+  separation and local face incidence, without assuming strict curvature.
+- [ ] Identify intrinsic angular curvature with spherical normal-image area.
+  The checked normal-cone identity and area bound do not yet prove this equality.
 - [x] Prove relative angle-defect balance by summing original and projected
   face angles over the actual corner classes. A curvature corollary explicitly
   requires flat projected interior links.
@@ -156,8 +164,21 @@ global strip hypotheses are constructed. It is not a proof of Theorem 9.
 A sufficient conservative curvature target is to bound each interior angular
 defect by the area of its planar normal polygon. The checked packing bound
 would then give total curvature at most `pi * tan(tilt)^2`. Proving the
-spherical Gauss-image curvature identity and the area comparison is still
-required; the planar area theorem does not supply those conclusions.
+spherical Gauss-image curvature identity is still required. The spherical-to-planar
+area comparison is checked; it does not supply the curvature identity.
+
+The next missing local identity, for an original interior vertex `v`, is
+
+```text
+ENNReal.ofReal (2 * pi - C.totalAngle Set.univ v)
+  = (euclideanHausdorffMeasure 2) (K.sphericalNormalPolygon v).
+```
+
+`sphericalNormalPolygon_eq_outwardNormalCone` now identifies the
+right-hand region from actual supporting geometry. The missing equality must
+also handle repeated normals, coplanar incident triangles, and zero curvature.
+Once proved, the checked area budget bounds the sum of all interior defects;
+no accumulation of per-vertex projection errors is needed.
 
 ### Global assembly (Sections 9--10, Appendices A.5--A.6)
 

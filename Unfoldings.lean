@@ -162,3 +162,4 @@ public import Unfoldings.Cap.ForestDevelopment
 public import Unfoldings.Cap.NoInterior
 public import Unfoldings.Cap.Gnomonic
 public import Unfoldings.Cap.NormalAreaThreshold
+public import Unfoldings.Cap.NormalCone

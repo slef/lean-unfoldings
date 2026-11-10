@@ -735,6 +735,8 @@ remaining forest, uniform-turn, and global nonoverlap arguments.
 - [x] Handle caps without interior vertices by an injective uncut development.
 - [x] Construct actual planar normal polygons, prove their disjoint interiors,
   and bound their total area uniformly; recover actual spherical normals.
+- [x] Bound spherical normal-image area by planar polygon area and identify the
+  complete upward supporting normal cone at every interior vertex.
 - [ ] Construct the source-centered near-quadrant forest needed for nonoverlap.
 - [ ] Uniform curvature and prefix-turn bounds, including branching.
 - [ ] Global strip assembly and the full nearly flat cap theorem.

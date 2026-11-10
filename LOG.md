@@ -2,6 +2,27 @@
 
 ## Session Log
 
+### 2026-11-10 — spherical normal-cone geometry and area comparison
+
+- Proved exact radial/angular distance decomposition and nonexpansiveness of
+  normalization outside the unit ball. The inverse gnomonic map is therefore
+  nonexpansive for chord distance.
+- Used Mathlib's normalized Euclidean Hausdorff measure to prove that each
+  actual spherical normal polygon has area at most its planar slope polygon.
+  The full spherical normal-image area has a positive uniform tilt threshold
+  for every requested positive budget, independent of vertex count.
+- Proved that every spherical image normal supports the entire actual cap.
+  Conversely, at an interior vertex, separation and local face incidence show
+  that every upward supporting unit normal lies in this image. Repeated normals
+  and degenerate normal polygons are allowed.
+- Specified the next missing local equality: intrinsic angular defect equals
+  spherical normal-image area. This curvature identity, uniform prefix-turn
+  control, and global cap nonoverlap remain unproved.
+- Verification: scoped Mathlib cache check and full `lake build` pass;
+  **5,334 project** and **7,243 pinned topology declarations** use only standard
+  Lean axioms. Checked **662 local documentation links**; no project warnings
+  or temporary worktrees.
+
 ### 2026-11-10 — original-edge cap forests and normal-image packing
 
 - Constructed an actual boundary-rooted forest of original seams with canonical

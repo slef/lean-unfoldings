@@ -119,6 +119,8 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 | [Unfoldings.Cap.ForestExistence](../Unfoldings/Cap/ForestExistence.lean) | Uniform positive tilt and shear parameters construct actual original-edge rooted forests and cut disks |
 | [Unfoldings.Cap.ForestPaths](../Unfoldings/Cap/ForestPaths.lean) | Canonical original-seam paths to the first boundary root are angle-monotone and radially monotone |
 | [Unfoldings.Cap.Gnomonic](../Unfoldings/Cap/Gnomonic.lean) | Mutually inverse planar slope and spherical upward-normal coordinates |
+| [Unfoldings.Cap.GnomonicArea](../Unfoldings/Cap/GnomonicArea.lean) | Nonexpansive inverse gnomonic projection bounds actual spherical normal area by planar area |
+| [Unfoldings.Cap.NormalCone](../Unfoldings/Cap/NormalCone.lean) | Interior vertex normal polygons are exactly the actual upward supporting normal cones |
 | [Unfoldings.Cap.MonotoneForest](../Unfoldings/Cap/MonotoneForest.lean) | Construct actual original-seam parent selections from acute-wedge progress |
 | [Unfoldings.Cap.NoInterior](../Unfoldings/Cap/NoInterior.lean) | Caps without interior vertices are flat and have an injective uncut development |
 | [Unfoldings.Cap.NormalArea](../Unfoldings/Cap/NormalArea.lean) | A vertex-count-independent Lebesgue area budget for all actual planar normal polygons |
@@ -453,6 +455,8 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 | Module | Purpose |
 | --- | --- |
 | [Unfoldings.Geometry.ConvexPacking](../Unfoldings/Geometry/ConvexPacking.lean) | Haar measure bounds for finite convex packings with disjoint interiors and boundary contacts |
+| [Unfoldings.Geometry.EuclideanArea](../Unfoldings/Geometry/EuclideanArea.lean) | Nonexpansive maps decrease normalized Euclidean Hausdorff measure |
+| [Unfoldings.Geometry.Normalize](../Unfoldings/Geometry/Normalize.lean) | Exact radial-angular distance decomposition and contraction outside the unit ball |
 | [Unfoldings.Geometry.SupportingSlopes](../Unfoldings/Geometry/SupportingSlopes.lean) | Concave-function supporting slopes have disjoint interior regions at distinct contact points |
 | [Unfoldings.Geometry.AcuteProgress](../Unfoldings/Geometry/AcuteProgress.lean) | An acute corner containing a forward point has an original forward incident edge |
 | [Unfoldings.Geometry.BankRadialOrder](../Unfoldings/Geometry/BankRadialOrder.lean) | Matched coordinate increments imply equal-radius order in a quadrant |
