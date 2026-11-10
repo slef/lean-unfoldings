@@ -45,4 +45,13 @@ theorem IsCycleThrough.exists_other_edge_of_map_to_forest (forest : H.IsAcyclic)
   have closed := LiesOnCycle.of_deleteEdges_reaches (links cycle.isLink) reaches
   exact forest.not_liesOnCycle (edges e) closed
 
+include vertices members links in
+theorem IsAcyclic.of_mapAlong (forest : H.IsAcyclic) (injective : Function.Injective edges) :
+    G.IsAcyclic := by
+  intro e _member cycle
+  obtain ⟨u, v, detour, actual⟩ := cycle
+  obtain ⟨_f, _member, different, equal⟩ :=
+    actual.exists_other_edge_of_map_to_forest vertices edges members @links forest
+  exact different (injective equal)
+
 end Graph

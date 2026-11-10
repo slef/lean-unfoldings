@@ -284,7 +284,13 @@ comparison and relative disk forest criterion remain open.
     bijection, with no nonempty-vertex assumption.
   - [x] Check the empty forest, one rooted edge, two boundary roots in one
     component, and a component with no root.
-  - [ ] Connect capping and slit-surface constructions to the graph equivalence.
+  - [x] Construct the quotient collapsing the original disk boundary to one
+    sphere point, with exact fibers. If the further cut is a disk, the collapsed
+    bank image is contractible.
+  - [x] Prove that further cuts of an actual disk produce one disk exactly when
+    their actual bank graph is connected. Construct the planar embedding and
+    disk homeomorphism, including when the cut set is empty.
+  - [ ] Connect the actual bank criterion to the rooted cut-forest equivalence.
 - [ ] Include all nonflat interior vertices in the cuts iff the resulting disk
   has flat interior. Boundary corners need not be flat.
 - [ ] A flat metric disk admits a development, allowing overlap; uniqueness up

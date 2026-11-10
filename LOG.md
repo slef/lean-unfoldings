@@ -2,6 +2,24 @@
 
 ## Session Log
 
+### 2026-11-09 — disk cuts and collapse of the original boundary
+
+- Constructed the continuous quotient sending a closed boundary to infinity
+  in its complement's one-point compactification. Its fibers are exactly equal
+  points or pairs of boundary points. For the standard disk, Mathlib's open-ball
+  and one-point-sphere homeomorphisms identify the target with a sphere.
+- Proved that old banks persist under further cuts. Restoring cuts and collapsing
+  the original disk boundary therefore gives an actual boundary quotient onto
+  a sphere; a further disk cut has contractible collapsed bank image.
+- Constructed planar embeddings and open planar boundary-complement models for
+  arbitrary further cuts of a disk. Proved `cutDisk_iff_boundaryGraph_connected`:
+  connectedness of the actual bank graph is necessary and sufficient, and the
+  sufficient direction constructs the disk homeomorphism. Empty cuts are covered.
+- Verification: full `lake build` passes and audits **4,110 unfolding** and
+  **7,243 pinned planar-topology declarations**, using only standard axioms.
+- The remaining forest step is to identify this actual bank criterion with
+  one original-boundary root in each component of the new cut graph.
+
 ### 2026-11-09 — constructed cut disks from primal cut trees
 
 - Defined the canonical primal cut multigraph with one edge per actual cut

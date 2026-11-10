@@ -132,6 +132,8 @@ source, including its module documentation and declarations.
 | [Unfoldings.Complex.CutDisk](../Unfoldings/Complex/CutDisk.lean) | Boundary-preserving cut disks imply open-disk complements and tree bank-image graphs |
 | [Unfoldings.Complex.CutGraph](../Unfoldings/Complex/CutGraph.lean) | Construct exact finite spatial embedded straight graphs of all unpaired bank images |
 | [Unfoldings.Complex.CutSeamGraph](../Unfoldings/Complex/CutSeamGraph.lean) | Canonical primal cut multigraph with actual original endpoints and no unused vertices |
+| [Unfoldings.Complex.DiskBoundaryQuotient](../Unfoldings/Complex/DiskBoundaryQuotient.lean) | Restore cuts and collapse the original disk boundary to obtain a sphere; disk cuts have contractible collapsed bank images |
+| [Unfoldings.Complex.DiskCuts](../Unfoldings/Complex/DiskCuts.lean) | Further cuts of a disk are disks exactly when the actual bank graph is connected; constructed planar embeddings and disk homeomorphisms |
 | [Unfoldings.Complex.EmbeddedStars](../Unfoldings/Complex/EmbeddedStars.lean) | Unique per-cell centers supplied by spatial foldings |
 | [Unfoldings.Complex.Exact](../Unfoldings/Complex/Exact.lean) | Exact metric identifications and quotient homeomorphism |
 | [Unfoldings.Complex.Excision](../Unfoldings/Complex/Excision.lean) | Metric excision and preserved triangle-complex point classes |
@@ -477,9 +479,11 @@ source, including its module documentation and declarations.
 | [Unfoldings.Topology.BallBoundaryQuotient](../Unfoldings/Topology/BallBoundaryQuotient.lean) | Disk quotients have open-disk complements; spherical targets force boundary graphs to be trees |
 | [Unfoldings.Topology.BallExtension](../Unfoldings/Topology/BallExtension.lean) | Radius-preserving closed-ball extensions of arbitrary sphere homeomorphisms |
 | [Unfoldings.Topology.BoundaryAtlas](../Unfoldings/Topology/BoundaryAtlas.lean) | Compact boundary atlases yield inward embeddings and separate boundary-quotient fibers |
+| [Unfoldings.Topology.BoundaryCollapse](../Unfoldings/Topology/BoundaryCollapse.lean) | Collapse a closed boundary to infinity in its complement, with continuity, surjectivity, and exact fibers |
 | [Unfoldings.Topology.BoundaryInvariance](../Unfoldings/Topology/BoundaryInvariance.lean) | Actual half-plane atlases identify the frontier of any planar embedding |
 | [Unfoldings.Topology.BoundaryPush](../Unfoldings/Topology/BoundaryPush.lean) | Finite compositions of local pushes move a compact boundary into its complement |
 | [Unfoldings.Topology.BoundaryQuotient](../Unfoldings/Topology/BoundaryQuotient.lean) | Boundary-only quotient maps, complement homeomorphisms, and descended boundary retractions |
+| [Unfoldings.Topology.BoundaryQuotientTransport](../Unfoldings/Topology/BoundaryQuotientTransport.lean) | Postcompose boundary quotients and compose them when the new collapsed locus is absorbed |
 | [Unfoldings.Topology.ChainPairings](../Unfoldings/Topology/ChainPairings.lean) | Every link pairing is consecutive or closes the outer banks |
 | [Unfoldings.Topology.CircleObstruction](../Unfoldings/Topology/CircleObstruction.lean) | Covering-space proof that a circle is not contractible and a disk cannot retract onto it |
 | [Unfoldings.Topology.CommonFibers](../Unfoldings/Topology/CommonFibers.lean) | Compact quotient maps with the same fibers identify their targets |
@@ -489,6 +493,8 @@ source, including its module documentation and declarations.
 | [Unfoldings.Topology.CyclicLabels](../Unfoldings/Topology/CyclicLabels.lean) | Nonconstant cyclic lists have no more labels than changes |
 | [Unfoldings.Topology.DiskDegree](../Unfoldings/Topology/DiskDegree.lean) | Boundary-fixing injective disk maps cover exactly the open disk on their interiors |
 | [Unfoldings.Topology.DiskFromBoundary](../Unfoldings/Topology/DiskFromBoundary.lean) | Construct disk topology from a boundary atlas and one actual Jordan boundary |
+| [Unfoldings.Topology.DiskSphereQuotient](../Unfoldings/Topology/DiskSphereQuotient.lean) | Construct the sphere quotient of a closed disk by collapsing its exact boundary circle |
+| [Unfoldings.Topology.DiskSubsetChart](../Unfoldings/Topology/DiskSubsetChart.lean) | Open Euclidean embeddings for complements of closed sets containing the original disk boundary |
 | [Unfoldings.Topology.FiberGraph](../Unfoldings/Topology/FiberGraph.lean) | Equivalence chains in finite fibers yield short simple graph paths |
 | [Unfoldings.Topology.FiniteClasses](../Unfoldings/Topology/FiniteClasses.lean) | Finite equivalence classes from finitely many branching points |
 | [Unfoldings.Topology.FiniteEmbeddedGraph](../Unfoldings/Topology/FiniteEmbeddedGraph.lean) | Finite embedded multigraphs, compact carriers, and topological-to-graph connectedness |
