@@ -149,8 +149,18 @@ global strip hypotheses are constructed. It is not a proof of Theorem 9.
 - [x] Identify each interior vertex's spherical polygon with the complete set
   of upward unit normals supporting the actual cap at that vertex. This uses
   separation and local face incidence, without assuming strict curvature.
-- [ ] Identify intrinsic angular curvature with spherical normal-image area.
-  The checked normal-cone identity and area bound do not yet prove this equality.
+- [x] Define solid angle by Mathlib's angular measure induced from spatial
+  volume. Prove its conical-volume formula, full-sphere measure `4π`, orthogonal
+  invariance, and nullity of great circles.
+- [x] Prove the azimuth law by Haar uniqueness and the exact spherical lune
+  formula `2 * aperture`, including degenerate endpoint apertures.
+- [x] Bound each solid normal angle by `81` times its planar slope-polygon area
+  when slopes lie in the unit disk. Derive an arbitrarily small total solid-angle
+  budget from a positive tilt threshold uniform in vertex count.
+- [ ] Identify intrinsic angular curvature with the solid angle of its normal
+  cone. The checked normal-cone identity and area bounds do not yet prove this.
+  This volume-based route suffices for the cap theorem without first equating
+  solid angle with normalized two-dimensional Hausdorff measure.
 - [x] Prove relative angle-defect balance by summing original and projected
   face angles over the actual corner classes.
 - [x] Derive projected interior-link flatness from the actual cyclic germ order,
@@ -170,11 +180,12 @@ would then give total curvature at most `pi * tan(tilt)^2`. Proving the
 spherical Gauss-image curvature identity is still required. The spherical-to-planar
 area comparison is checked; it does not supply the curvature identity.
 
-The next missing local identity, for an original interior vertex `v`, is
+The next missing local identity, for an original interior vertex `v`, can use
+`solidAngleMeasure` in place of normalized Hausdorff measure:
 
 ```text
 ENNReal.ofReal (2 * pi - C.totalAngle Set.univ v)
-  = (euclideanHausdorffMeasure 2) (K.sphericalNormalPolygon v).
+  = solidAngleMeasure (K.sphericalNormalPolygon v).
 ```
 
 `sphericalNormalPolygon_eq_outwardNormalCone` now identifies the

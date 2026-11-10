@@ -739,6 +739,8 @@ remaining forest, uniform-turn, and global nonoverlap arguments.
   complete upward supporting normal cone at every interior vertex.
 - [x] Derive one-full-turn projected interior links and the actual cap
   curvature/boundary-angle balance from geometric incidence, without Euler counting.
+- [x] Prove the volume-induced solid-angle budget, uniform azimuth law, and
+  exact spherical lune measure, preparing a direct angular-curvature identity.
 - [ ] Construct the source-centered near-quadrant forest needed for nonoverlap.
 - [ ] Uniform curvature and prefix-turn bounds, including branching.
 - [ ] Global strip assembly and the full nearly flat cap theorem.

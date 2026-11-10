@@ -164,3 +164,5 @@ public import Unfoldings.Cap.Gnomonic
 public import Unfoldings.Cap.NormalAreaThreshold
 public import Unfoldings.Cap.NormalCone
 public import Unfoldings.Cap.ProjectedFlatness
+public import Unfoldings.Cap.SolidNormalArea
+public import Unfoldings.Geometry.LuneMeasure

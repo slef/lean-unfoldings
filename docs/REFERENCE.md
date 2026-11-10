@@ -120,6 +120,10 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 | [Unfoldings.Cap.ForestPaths](../Unfoldings/Cap/ForestPaths.lean) | Canonical original-seam paths to the first boundary root are angle-monotone and radially monotone |
 | [Unfoldings.Cap.Gnomonic](../Unfoldings/Cap/Gnomonic.lean) | Mutually inverse planar slope and spherical upward-normal coordinates |
 | [Unfoldings.Cap.GnomonicArea](../Unfoldings/Cap/GnomonicArea.lean) | Nonexpansive inverse gnomonic projection bounds actual spherical normal area by planar area |
+| [Unfoldings.Cap.ConicalArea](../Unfoldings/Cap/ConicalArea.lean) | A conservative Lipschitz cone parametrization bounds solid angle by planar slope area |
+| [Unfoldings.Cap.SolidNormalArea](../Unfoldings/Cap/SolidNormalArea.lean) | Arbitrarily small uniform total solid-angle budgets for actual normal cones |
+| [Unfoldings.Cap.Tilt](../Unfoldings/Cap/Tilt.lean) | Monotonicity of geometric normal-tilt bounds |
+| [Unfoldings.Cap.VerticalProduct](../Unfoldings/Cap/VerticalProduct.lean) | Isometric horizontal/vertical splitting and actual prism volumes |
 | [Unfoldings.Cap.NormalCone](../Unfoldings/Cap/NormalCone.lean) | Interior vertex normal polygons are exactly the actual upward supporting normal cones |
 | [Unfoldings.Cap.MonotoneForest](../Unfoldings/Cap/MonotoneForest.lean) | Construct actual original-seam parent selections from acute-wedge progress |
 | [Unfoldings.Cap.NoInterior](../Unfoldings/Cap/NoInterior.lean) | Caps without interior vertices are flat and have an injective uncut development |
@@ -461,6 +465,14 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 | [Unfoldings.Geometry.CornerDirections](../Unfoldings/Geometry/CornerDirections.lean) | Disjoint triangle interiors force disjoint direction cones at a common corner |
 | [Unfoldings.Geometry.CyclicRays](../Unfoldings/Geometry/CyclicRays.lean) | Genuine disjoint cyclic ray fans make exactly one full turn, with exact cumulative headings |
 | [Unfoldings.Geometry.EuclideanArea](../Unfoldings/Geometry/EuclideanArea.lean) | Nonexpansive maps decrease normalized Euclidean Hausdorff measure |
+| [Unfoldings.Geometry.AngleMeasure](../Unfoldings/Geometry/AngleMeasure.lean) | Canonical angular length on Real.Angle and exact angular ball measures |
+| [Unfoldings.Geometry.AngularLune](../Unfoldings/Geometry/AngularLune.lean) | Angular balls identify the actual strict half-plane signs of a lune |
+| [Unfoldings.Geometry.Azimuth](../Unfoldings/Geometry/Azimuth.lean) | Orthogonal equivariance and Haar uniqueness give the uniform spatial azimuth law |
+| [Unfoldings.Geometry.EquivariantMeasure](../Unfoldings/Geometry/EquivariantMeasure.lean) | Almost-equivariant observables of measure-preserving shifts have invariant laws |
+| [Unfoldings.Geometry.EuclideanMeasure](../Unfoldings/Geometry/EuclideanMeasure.lean) | Quantitative Lipschitz estimates for normalized Euclidean Hausdorff measure |
+| [Unfoldings.Geometry.LuneMeasure](../Unfoldings/Geometry/LuneMeasure.lean) | A spherical lune of aperture theta has solid angle twice theta |
+| [Unfoldings.Geometry.SolidAngle](../Unfoldings/Geometry/SolidAngle.lean) | Solid angle induced by spatial volume, with conical formula and full-sphere normalization |
+| [Unfoldings.Geometry.SolidAngleSymmetry](../Unfoldings/Geometry/SolidAngleSymmetry.lean) | Orthogonal invariance and zero solid angle of great circles and linear hyperplanes |
 | [Unfoldings.Geometry.Normalize](../Unfoldings/Geometry/Normalize.lean) | Exact radial-angular distance decomposition and contraction outside the unit ball |
 | [Unfoldings.Geometry.SupportingSlopes](../Unfoldings/Geometry/SupportingSlopes.lean) | Concave-function supporting slopes have disjoint interior regions at distinct contact points |
 | [Unfoldings.Geometry.AcuteProgress](../Unfoldings/Geometry/AcuteProgress.lean) | An acute corner containing a forward point has an original forward incident edge |

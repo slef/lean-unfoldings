@@ -2,6 +2,26 @@
 
 ## Session Log
 
+### 2026-11-10 — volume-induced solid angle and exact spherical lunes
+
+- Defined solid angle from Mathlib's `volume.toSphere`, transported to ambient
+  space. Proved the conical-volume formula, full-sphere measure `4π`, orthogonal
+  invariance, and nullity of great circles and linear hyperplanes.
+- Proved the exact uniform azimuth law by almost-equivariance under vertical
+  rotations and Haar uniqueness. Added canonical angular length on `Real.Angle`.
+  A spherical lune of aperture `θ ∈ [0, π]` has solid angle exactly `2θ`.
+- Constructed a 3-Lipschitz conical parametrization over bounded slope polygons.
+  It bounds solid normal angle by 81 times planar area; the constant is a
+  conservative bound, not an asserted equality of surface-area formulas.
+- Derived an arbitrarily small summed solid-angle budget from a positive tilt
+  threshold chosen before the cap, independent of its vertex count.
+- This provides a direct volume-based route to the missing intrinsic-curvature
+  identity. That identity, uniform prefix-turn control, and global nonoverlap
+  remain unproved. No external proof code was copied.
+- Verification: scoped cache check and full `lake build` pass; **5,454 project**
+  and **7,243 pinned topology declarations** use only standard Lean axioms.
+  Checked **679 local documentation links**; no project warnings or temporary worktrees.
+
 ### 2026-11-10 — actual projected links and cap angle-defect balance
 
 - Proved that a cyclic fan of genuine disjoint direction cones makes exactly
