@@ -121,9 +121,14 @@ global strip hypotheses are constructed. It is not a proof of Theorem 9.
 - [x] Prove that local outgoing-edge choices preserving a sector label and
   increasing its potential construct an actual original-edge rooted forest.
   Edge names are retained and distinct choices cannot select the same edge.
-- [ ] Orient the near-quadrants about the gap origin, assign every interior
-  vertex to one, and prove choices stay in the same quadrant. Apply the local
-  progress and selected-forest results to construct the cap's cut seams.
+- [x] Choose the source at an internal horizontal extremum. Three acute
+  near-quadrants cover the backward halfplane, have disjoint interiors, and
+  assign every interior vertex a sector label. Actual outgoing original-seam
+  choices preserve these labels, including positions on sector banks.
+- [x] Construct this source-centered forest, its original-edge radially monotone
+  paths and boundary roots, an empty forward gap, the actual cut disk, and a
+  locally isometric development. Choose tilt and sector parameters before the
+  entire mesh, and combine them with any requested total-curvature budget.
 - [x] Construct a boundary-rooted original-edge forest whose paths all lie in
   one fixed acute wedge. Choose tilt and shear parameters before the cap.
   Stop each path at its first rim vertex; prove actual seam incidence,
@@ -178,6 +183,9 @@ global strip hypotheses are constructed. It is not a proof of Theorem 9.
   projected angle, including straight boundary subdivisions. The sum of these
   nonnegative rim excesses is total curvature, so every rim portion is bounded
   by the same mesh-independent budget.
+- [x] Prove relative angle balance for every actual union of original faces.
+  The aggregate excess on partially included corner stars is bounded by total
+  curvature, without a disk-region or Euler-count input.
 - [ ] Prove the geometric subregion identities used in the prefix-turn argument,
   including the truncation and artificial connecting segments.
 - [ ] Bound turn distortion for every prefix independently of mesh size.

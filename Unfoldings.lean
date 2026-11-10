@@ -168,3 +168,6 @@ public import Unfoldings.Cap.SolidNormalArea
 public import Unfoldings.Geometry.LuneMeasure
 public import Unfoldings.Cap.UniformCurvature
 public import Unfoldings.Cap.RimAngles
+public import Unfoldings.Cap.RegionalAngles
+public import Unfoldings.Cap.Reframe
+public import Unfoldings.Cap.SectorThreshold

@@ -2,6 +2,34 @@
 
 ## Session Log
 
+### 2026-11-10 — constructed source-centered forest and regional angle balance
+
+- Proved relative angle balance for every actual union of original faces.
+  Complete stars contribute interior curvature or nonnegative rim excess;
+  the aggregate excess on partial stars is bounded in absolute value by total
+  curvature. Relating these stars to arbitrary path-prefix closures remains open.
+- Constructed three algebraic near-quadrants covering the backward halfplane,
+  with disjoint interiors, stable closed cones, and acute actual boundary rays.
+  A direct inner-product perturbation bound gives one positive parameter for
+  all triangles with the requested acute margin, before any mesh is supplied.
+- Chose the source at an internal horizontal extremum. Constructed actual
+  original-seam parent choices preserving the source-centered sector label,
+  and hence an actual boundary-rooted forest. Closed-sector banks and flat
+  vertices are allowed. The forward gap contains no internal vertices.
+- Proved that root paths stay in their sectors and are globally radially
+  monotone, including whole edges. Constructed their actual cut disk and a
+  locally isometric development, with overlap still allowed.
+- Combined the forest construction and any requested total-curvature budget
+  under a single positive tilt threshold quantified before the complete mesh.
+- Added horizontal orthogonal reframing of actual cap data, preserving intrinsic
+  triangles, seams, height, supporting geometry, and normal-tilt bounds.
+- Uniform prefix-turn estimates, actual developed-bank opening identities,
+  branching-bank separation, and global strip assembly remain unproved.
+  The full cap theorem is still incomplete.
+- Verification: scoped cache check and full `lake build` pass; **5,730 project**
+  and **7,243 pinned topology declarations** use only standard Lean axioms.
+  Checked **723 local documentation links**; no project warnings or temporary worktrees.
+
 ### 2026-11-10 — nonnegative rim excess and uniform bounds for rim portions
 
 - Constructed genuine spatial and projected interval-link ray sequences.

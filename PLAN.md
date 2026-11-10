@@ -729,7 +729,7 @@ remaining forest, uniform-turn, and global nonoverlap arguments.
 - [x] Uniform projection-angle bounds with a positive tilt threshold.
 - [x] Actual projected face cover, concave roof, and uniform intrinsic metric bounds.
 - [x] Uniform acute-wedge outgoing input edges and original-edge forest selection
-  from local progress hypotheses; global near-quadrant assignment remains open.
+  from local progress hypotheses.
 - [x] Construct a boundary-rooted original-edge forest in one common acute wedge,
   its actual cut disk, and its unique normalized locally isometric development.
 - [x] Handle caps without interior vertices by an injective uncut development.
@@ -741,7 +741,9 @@ remaining forest, uniform-turn, and global nonoverlap arguments.
   curvature/boundary-angle balance from geometric incidence, without Euler counting.
 - [x] Prove the volume-induced solid-angle budget, uniform azimuth law, and
   exact spherical lune measure, preparing a direct angular-curvature identity.
-- [ ] Construct the source-centered near-quadrant forest needed for nonoverlap.
+- [x] Construct a source-centered near-quadrant forest, label-preserving original
+  edge paths, an empty forward gap, and its locally isometric cut-disk development.
+- [x] Bound aggregate partial-star angle excess for every original-face union.
 - [x] Identify actual angular curvature with outward normal solid angle, and
   derive a positive uniform total-curvature threshold before the entire mesh.
 - [x] Prove nonnegative rim angle excess and a uniform curvature bound for

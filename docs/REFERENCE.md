@@ -114,6 +114,16 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Cap.Reframe](../Unfoldings/Cap/Reframe.lean) | Actual cap geometry is preserved under horizontal orthogonal frame changes |
+| [Unfoldings.Cap.RegionalAngles](../Unfoldings/Cap/RegionalAngles.lean) | Every original-face union has partial-star excess bounded by total curvature |
+| [Unfoldings.Cap.SectorDevelopment](../Unfoldings/Cap/SectorDevelopment.lean) | Source-centered forest cuts give actual flat cut disks and locally isometric developments |
+| [Unfoldings.Cap.SectorForest](../Unfoldings/Cap/SectorForest.lean) | Construct source-centered original-edge forests from sector-preserving local progress |
+| [Unfoldings.Cap.SectorForestExistence](../Unfoldings/Cap/SectorForestExistence.lean) | Choose an internal source and forest with thresholds before the entire mesh |
+| [Unfoldings.Cap.SectorForestGeometry](../Unfoldings/Cap/SectorForestGeometry.lean) | Paths stay in source-centered sectors, reach the rim, and avoid the empty forward gap |
+| [Unfoldings.Cap.SectorForestPaths](../Unfoldings/Cap/SectorForestPaths.lean) | Sector labels persist along original-edge root paths, proving radial monotonicity |
+| [Unfoldings.Cap.SectorThreshold](../Unfoldings/Cap/SectorThreshold.lean) | Choose source-centered forests and arbitrarily small curvature budgets with one uniform tilt |
+| [Unfoldings.Cap.ThreeSectorProgress](../Unfoldings/Cap/ThreeSectorProgress.lean) | Original seams enter each prescribed acute sector, with mesh-uniform projection thresholds |
+| [Unfoldings.Cap.VerticalFrame](../Unfoldings/Cap/VerticalFrame.lean) | Lift a planar orthogonal frame to space while preserving height |
 | [Unfoldings.Cap.BoundaryGerms](../Unfoldings/Cap/BoundaryGerms.lean) | Actual unpaired germ directions lie on the horizontal convex rim |
 | [Unfoldings.Cap.ProjectedInterval](../Unfoldings/Cap/ProjectedInterval.lean) | Actual projected interval rays have genuine disjoint cones and consistent orientation |
 | [Unfoldings.Cap.RimAngles](../Unfoldings/Cap/RimAngles.lean) | Nonnegative rim angle excess, exact total-curvature balance, and bounds for every rim portion |
@@ -164,6 +174,7 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Complex.RegionalCorners](../Unfoldings/Complex/RegionalCorners.lean) | Actual corner sums and complete stars for arbitrary original-face selections |
 | [Unfoldings.Complex.Curvature](../Unfoldings/Complex/Curvature.lean) | Interior angular defects grouped by actual retained vertex classes |
 | [Unfoldings.Complex.SeamGraph](../Unfoldings/Complex/SeamGraph.lean) | The original internal-seam graph with all original vertices and exact face-edge incidence |
 | [Unfoldings.Complex.SelectedCuts](../Unfoldings/Complex/SelectedCuts.lean) | Selected parent edges induce the actual rooted relative cut graph, all-boundary vertex copies, and a cut disk |
@@ -475,6 +486,11 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Geometry.MeshLinearProgress](../Unfoldings/Geometry/MeshLinearProgress.lean) | Original outgoing quadrant edges after invertible planar coordinate changes |
+| [Unfoldings.Geometry.ThreeSectorAcute](../Unfoldings/Geometry/ThreeSectorAcute.lean) | One positive numerical parameter preserves every supplied acute angle margin |
+| [Unfoldings.Geometry.ThreeSectorMesh](../Unfoldings/Geometry/ThreeSectorMesh.lean) | Mesh-independent acuteness preservation and original-edge progress in all three sectors |
+| [Unfoldings.Geometry.ThreeSectorRays](../Unfoldings/Geometry/ThreeSectorRays.lean) | Actual sector banks, inverse coordinates, and strict acute width bounds |
+| [Unfoldings.Geometry.ThreeSectors](../Unfoldings/Geometry/ThreeSectors.lean) | Three disjoint near-quadrants cover a backward halfplane and preserve position labels |
 | [Unfoldings.Geometry.HalfplaneFan](../Unfoldings/Geometry/HalfplaneFan.lean) | A consistently oriented halfplane fan has exact endpoint angle without wraparound |
 | [Unfoldings.Geometry.PlanarAngleAddition](../Unfoldings/Geometry/PlanarAngleAddition.lean) | Exact angular addition inside an oriented planar halfplane |
 | [Unfoldings.Geometry.PlanarConeOrientation](../Unfoldings/Geometry/PlanarConeOrientation.lean) | Disjoint genuine planar cones force consistent interval orientation |
