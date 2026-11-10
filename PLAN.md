@@ -753,7 +753,11 @@ remaining forest, uniform-turn, and global nonoverlap arguments.
 - [x] Construct an actual complete boundary contour and a common developed frame.
 - [x] Derive actual rigid parent-bank rotations and small-curvature apertures for
   every branching descendant subtree, with curvature bounded by the total budget.
-- [ ] Uniform prefix-turn bounds and branching-bank noncrossing.
+- [x] Bound actual spatial turning of roof sections by twice the tilt.
+- [x] Bound signed section-crossing subtree corrections by total curvature on
+  the actual constructed forest, independently of mesh size and tree depth.
+- [ ] Connect section transitions and rim calibration to uniform prefix turns;
+  then prove branching-bank noncrossing.
 - [ ] Global strip assembly and the full nearly flat cap theorem.
 
 ## Later targets and Fewest Nets

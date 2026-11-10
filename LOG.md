@@ -2,6 +2,31 @@
 
 ## Session Log
 
+### 2026-11-10 — actual roof-section turning and signed forest-crossing budgets
+
+- Bounded the entire supporting-plane roof's height variation by the actual
+  normal slopes. Every vertical section is concave; ordered secant slopes
+  and their real arctangent inclinations are antitone.
+- Identified those inclinations with genuine spatial secant angles. Total
+  actual spatial turning along every finite section partition is at most twice
+  the normal tilt. Positive thresholds are quantified before the whole mesh.
+- Proved exact affine level-intersection parameters and signed horizontal-ray
+  crossing bounds for chains monotone in either ambient coordinate. A half-open
+  endpoint convention handles degeneracies without identifying counts with
+  proper crossings or asserting geometric noncrossing.
+- Derived the required coordinate monotonicity for all three actual sector
+  root-path labels. Each path's signed crossing count has magnitude at most one.
+- Enumerated each original nonroot ancestor exactly once along its first-root
+  path. Regrouped nested subtree weights over those paths before taking absolute
+  values. The actual curvature-weighted parent-edge crossing sum is at most
+  total cap curvature, independent of mesh size and tree depth.
+- Actual developed section transitions and rim calibration remain open, as do
+  uniform prefix turns, bank noncrossing, and global nonoverlap. These estimates
+  do not complete the cap theorem.
+- Verification: scoped cache check and full `lake build` pass; **5,989 project**
+  and **7,243 pinned topology declarations** use only standard Lean axioms.
+  Checked **770 local documentation links**; no project warnings or temporary worktrees.
+
 ### 2026-11-10 — actual rigid openings around branching descendant subtrees
 
 - Enumerated the actual banks and vertex copies along a complete boundary

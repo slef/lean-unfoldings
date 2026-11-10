@@ -202,6 +202,16 @@ global strip hypotheses are constructed. It is not a proof of Theorem 9.
 - [x] Prove relative angle balance for every actual union of original faces.
   The aggregate excess on partially included corner stars is bounded by total
   curvature, without a disk-region or Euler-count input.
+- [x] Bound actual spatial turning along every finite vertical roof-section
+  partition by twice the tilt. Concavity makes secant inclinations telescope;
+  this bound is uniform before the complete mesh is supplied.
+- [x] Prove signed horizontal-ray crossing counts of magnitude at most one for
+  the actual constructed sector root paths, with a half-open endpoint convention.
+  Regrouping nested subtree curvatures bounds the weighted signed correction
+  by total curvature, independently of mesh size and tree depth.
+- [ ] Connect those signed counts to actual developed face transitions along
+  sections and calibrate the rim headings. These bounds alone do not establish
+  prefix turns or nonoverlap.
 - [ ] Prove the geometric subregion identities used in the prefix-turn argument,
   including the truncation and artificial connecting segments.
 - [ ] Bound turn distortion for every prefix independently of mesh size.

@@ -114,6 +114,9 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Cap.RoofSections](../Unfoldings/Cap/RoofSections.lean) | Actual concave roof sections, uniform slope bounds, and telescoping real secant inclinations |
+| [Unfoldings.Cap.SectionAngles](../Unfoldings/Cap/SectionAngles.lean) | Actual spatial section turning is at most twice the tilt, uniformly before the entire mesh |
+| [Unfoldings.Cap.SectorCrossings](../Unfoldings/Cap/SectorCrossings.lean) | Actual sector root paths have bounded signed ray crossings; weighted subtree corrections are bounded by total curvature |
 | [Unfoldings.Cap.SubtreeAngles](../Unfoldings/Cap/SubtreeAngles.lean) | Actual boundary contours, subtree copy counts, exact aggregate turns, and subtree curvature bounds |
 | [Unfoldings.Cap.SubtreeOpening](../Unfoldings/Cap/SubtreeOpening.lean) | Actual matched parent banks rotate by all descendant curvatures, with exact small-curvature aperture |
 | [Unfoldings.Cap.LeafOpening](../Unfoldings/Cap/LeafOpening.lean) | Actual equal-length developed leaf banks rotate by the actual vertex curvature |
@@ -517,6 +520,10 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Geometry.ConcaveSecants](../Unfoldings/Geometry/ConcaveSecants.lean) | Concave secant inclinations telescope independently of partition size |
+| [Unfoldings.Geometry.LevelCrossings](../Unfoldings/Geometry/LevelCrossings.lean) | Actual affine level intersections and signed horizontal-ray counts for coordinate-monotone chains |
+| [Unfoldings.Geometry.SlopeAngles](../Unfoldings/Geometry/SlopeAngles.lean) | Genuine angles of slope vectors equal absolute real arctangent differences |
+| [Unfoldings.Geometry.ThreeSectorCoordinates](../Unfoldings/Geometry/ThreeSectorCoordinates.lean) | Each near-quadrant supplies an upward, leftward, or downward monotone ambient coordinate |
 | [Unfoldings.Geometry.CyclicRotations](../Unfoldings/Geometry/CyclicRotations.lean) | Cancel rotations across a finite region with one entrance and one exit |
 | [Unfoldings.Geometry.IntervalConeOrientation](../Unfoldings/Geometry/IntervalConeOrientation.lean) | Adjacent hinge separation gives a common orientation while allowing distant overlap |
 | [Unfoldings.Geometry.MeshLinearProgress](../Unfoldings/Geometry/MeshLinearProgress.lean) | Original outgoing quadrant edges after invertible planar coordinate changes |
@@ -668,6 +675,9 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Topology.OrderedChanges](../Unfoldings/Topology/OrderedChanges.lean) | An ordered tail or head of bounded signal changes telescopes, ignoring zero increments |
+| [Unfoldings.Topology.ParentOrbitEnumeration](../Unfoldings/Topology/ParentOrbitEnumeration.lean) | The first-root orbit enumerates every original nonroot ancestor exactly once |
+| [Unfoldings.Topology.SubtreeWeights](../Unfoldings/Topology/SubtreeWeights.lean) | Regroup nested subtree weights over root paths before applying signed-cancellation bounds |
 | [Unfoldings.Topology.CyclicRegion](../Unfoldings/Topology/CyclicRegion.lean) | Conservation of membership orients exactly two exits of a finite permutation region |
 | [Unfoldings.Topology.SelectedSubtree](../Unfoldings/Topology/SelectedSubtree.lean) | Descendants have one selected original-edge exit and exact endpoint incidence count |
 | [Unfoldings.Topology.SelectedLeaves](../Unfoldings/Topology/SelectedLeaves.lean) | Minimum-potential nonroot leaves and their unique selected incident original edge |

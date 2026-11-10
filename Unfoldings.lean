@@ -173,3 +173,5 @@ public import Unfoldings.Cap.Reframe
 public import Unfoldings.Cap.SectorThreshold
 public import Unfoldings.Cap.LeafOpening
 public import Unfoldings.Cap.SubtreeOpening
+public import Unfoldings.Cap.SectionAngles
+public import Unfoldings.Cap.SectorCrossings
