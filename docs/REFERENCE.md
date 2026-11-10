@@ -10,6 +10,7 @@ Modules are grouped by topic and sorted by name. Each link opens the Lean
 source, including its module documentation and declarations.
 
 - [Source unfoldings](#source-unfoldings)
+- [Convex caps](#convex-caps)
 - [Triangle complexes](#triangle-complexes)
 - [Cuts and layouts](#cuts-and-layouts)
 - [Metrics and gluing](#metrics-and-gluing)
@@ -106,6 +107,20 @@ source, including its module documentation and declarations.
 | [Unfoldings.Source.TerminalUniqueness](../Unfoldings/Source/TerminalUniqueness.lean) | A terminal virtual-source image determines the whole original shortest path |
 | [Unfoldings.Source.Unfolding](../Unfoldings/Source/Unfolding.lean) | The constructed source-unfolding result at every regular/nonextreme source |
 | [Unfoldings.Source.UniqueProjection](../Unfoldings/Source/UniqueProjection.lean) | A homeomorphism selecting the unique shortest path continuously off the cut locus |
+## Convex caps
+
+The full nearly flat edge-unfolding theorem remains in progress; see the
+[cap proof checklist](CAP_THEOREM.md). These are checked supporting modules.
+
+| Module | Purpose |
+| --- | --- |
+| [Unfoldings.Cap.AngleProjection](../Unfoldings/Cap/AngleProjection.lean) | A positive projection-angle threshold uniform over all tangent directions |
+| [Unfoldings.Cap.Basic](../Unfoldings/Cap/Basic.lean) | Geometric convex caps with supporting normals, convex injective projection, and a horizontal rim |
+| [Unfoldings.Cap.Flat](../Unfoldings/Cap/Flat.lean) | An actual injective nonoverlapping development of every flat cap without cuts |
+| [Unfoldings.Cap.HeadingBanks](../Unfoldings/Cap/HeadingBanks.lean) | Whole-chain bank order from matched lengths and ordered quadrant headings |
+| [Unfoldings.Cap.Projection](../Unfoldings/Cap/Projection.lean) | Horizontal projection, tangent-plane metric and vertical-motion estimates |
+| [Unfoldings.Cap.Topology](../Unfoldings/Cap/Topology.lean) | Disk topology derived from the actual convex footprint |
+
 ## Triangle complexes
 
 | Module | Purpose |
@@ -416,6 +431,18 @@ source, including its module documentation and declarations.
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Geometry.AngleMonotone](../Unfoldings/Geometry/AngleMonotone.lean) | Direction wedges of width at most pi/2 imply whole-edge radial monotonicity |
+| [Unfoldings.Geometry.ChainLinear](../Unfoldings/Geometry/ChainLinear.lean) | Linear coordinate order and strict-coordinate uniqueness on polygonal chains |
+| [Unfoldings.Geometry.ChainOrder](../Unfoldings/Geometry/ChainOrder.lean) | Radial distance inequalities across different chain edges |
+| [Unfoldings.Geometry.PairedChains](../Unfoldings/Geometry/PairedChains.lean) | Matched coordinate-increment inequalities imply whole-chain vertical order |
+| [Unfoldings.Geometry.PolygonalChain](../Unfoldings/Geometry/PolygonalChain.lean) | Finite polygonal chains, edge positions, and outward scalar-product criteria |
+| [Unfoldings.Geometry.RadialChain](../Unfoldings/Geometry/RadialChain.lean) | Strict radial distances and uniqueness of actual circle intersections |
+| [Unfoldings.Geometry.RadialChainPoints](../Unfoldings/Geometry/RadialChainPoints.lean) | Radial monotonicity from arbitrary points inside edges |
+| [Unfoldings.Geometry.RadialSegment](../Unfoldings/Geometry/RadialSegment.lean) | Whole-segment radial monotonicity iff an outward scalar product |
+| [Unfoldings.Geometry.UniformAngles](../Unfoldings/Geometry/UniformAngles.lean) | Uniform angle continuity on a compact annulus |
+
+| Module | Purpose |
+| --- | --- |
 | [Unfoldings.Geometry.AdjacentBoundaryEdges](../Unfoldings/Geometry/AdjacentBoundaryEdges.lean) | Simple convex boundary edges keep the same radial orientation |
 | [Unfoldings.Geometry.AffineArrangement](../Unfoldings/Geometry/AffineArrangement.lean) | General finite affine chamber covers of regular closed sets |
 | [Unfoldings.Geometry.AffineEnd](../Unfoldings/Geometry/AffineEnd.lean) | Finite-dimensional rigid self-embeddings are surjective and open |
@@ -564,6 +591,9 @@ source, including its module documentation and declarations.
 | [Unfoldings.Topology.SphereChart](../Unfoldings/Topology/SphereChart.lean) | Explicit Euclidean homeomorphisms for punctured unit spheres |
 | [Unfoldings.Topology.SphereSubsetChart](../Unfoldings/Topology/SphereSubsetChart.lean) | Closed-set complements in spheres have open Euclidean embeddings |
 ## Examples and core imports
+
+[Examples.Chains](../Unfoldings/Examples/Chains.lean) checks a monotone staircase
+and a counterexample to testing radial monotonicity only at endpoints.
 
 | Module | Purpose |
 | --- | --- |

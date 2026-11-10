@@ -717,6 +717,20 @@ The radial injectivity criterion is a useful early theorem in its own right.
 It does not assert shortest-path or cut-locus existence and must not hide these
 construction obligations in a structure field named `isSourceUnfolding`.
 
+## Nearly flat convex caps
+
+O’Rourke’s original-edge cap theorem is the next major target. The detailed
+[proof checklist](docs/CAP_THEOREM.md) distinguishes completed lemmas from
+remaining forest, uniform-turn, and global nonoverlap arguments.
+
+- [x] Geometric cap inputs, derived disk topology, and the uncut flat case.
+- [x] Whole-edge and arbitrary-anchor radial monotonicity of polygonal chains.
+- [x] Paired-bank order under common-quadrant heading hypotheses.
+- [x] Uniform projection-angle bounds with a positive tilt threshold.
+- [ ] Construct the original-edge near-quadrant spanning forest.
+- [ ] Uniform curvature and prefix-turn bounds, including branching.
+- [ ] Global strip assembly and the full nearly flat cap theorem.
+
 ## Later targets and Fewest Nets
 
 - [ ] Star unfolding after the source-unfolding theorem.

@@ -144,3 +144,10 @@ public import Unfoldings.Examples.Subdivision
 public import Unfoldings.Complex.RefinedCuts
 public import Unfoldings.Development.Uniqueness
 public import Unfoldings.Complex.PolygonalCutGraph
+public import Unfoldings.Geometry.AngleMonotone
+public import Unfoldings.Geometry.RadialChainPoints
+public import Unfoldings.Geometry.UniformAngles
+public import Unfoldings.Cap.AngleProjection
+public import Unfoldings.Cap.Flat
+public import Unfoldings.Cap.HeadingBanks
+public import Unfoldings.Examples.Chains

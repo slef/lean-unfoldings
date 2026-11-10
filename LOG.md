@@ -2,6 +2,28 @@
 
 ## Session Log
 
+### 2026-11-10 — first convex-cap proof foundations
+
+- Specified O’Rourke’s cap theorem and its remaining obligations in
+  `docs/CAP_THEOREM.md`; the full near-flat edge theorem remains unproved.
+- Defined geometric convex caps without assumed cuts, forest, disk topology,
+  development, or nonoverlap. Derived disk topology from convex injective
+  projection. Constructed the uncut injective development of every flat cap.
+- Proved exact horizontal projection and tangent-plane contraction estimates,
+  small vertical motion, and a projection-angle tolerance uniform over all
+  unit tangent directions. Compact-annulus continuity gives a rigorous positive
+  tilt threshold without relying on an approximate numerical constant.
+- Added finite chains with actual positions inside closed edges. Proved the
+  outward scalar-product criterion, acute-wedge radial monotonicity, extension
+  to arbitrary interior anchors, and uniqueness of actual circle intersections.
+  Examples include a staircase and a counterexample to endpoint-only tests.
+- Proved whole-chain paired-bank order from matched edge lengths and ordered
+  headings in a common open quadrant. This is a stronger conditional hypothesis
+  suitable for acute slack, not a claimed proof of the paper’s general Theorem 9.
+- Verification: scoped Mathlib cache check and full `lake build` pass;
+  **4,942 project** and **7,243 pinned topology declarations** use only standard
+  Lean axioms. No project warnings or temporary worktrees.
+
 ### 2026-11-10 — polygonal cut forests and flat-disk development
 
 - Constructed unique rigid transition germs for arbitrary open Euclidean metric

@@ -94,6 +94,10 @@ total angle `2π` at every interior vertex has a locally isometric development,
 unique after fixing one face.
 Polygonal cuts use supplied conforming refinement certificates.
 
+The next major target is O’Rourke’s nearly flat convex-cap theorem. Checked
+cap, projection, and chain lemmas and the remaining proof obligations are tracked
+in the [cap checklist](docs/CAP_THEOREM.md). The full cap theorem is not yet proved.
+
 Remaining work includes:
 
 - Sources at genuine cone vertices, which need sector-valued source frames.
