@@ -128,12 +128,15 @@ source, including its module documentation and declarations.
 | [Unfoldings.Complex.Charts](../Unfoldings/Complex/Charts.lean) | Constructed face-interior Euclidean metric charts |
 | [Unfoldings.Complex.Classes](../Unfoldings/Complex/Classes.lean) | Finite corner classes and unique nonvertex seam neighbors |
 | [Unfoldings.Complex.ClosedBanks](../Unfoldings/Complex/ClosedBanks.lean) | Closed complexes identify each boundary bank with one side of an actual cut seam |
+| [Unfoldings.Complex.CollapsedCutCarrier](../Unfoldings/Complex/CollapsedCutCarrier.lean) | Exact carrier and native graph of the actual new cut arcs after collapsing the old boundary |
+| [Unfoldings.Complex.CollapsedCutGraph](../Unfoldings/Complex/CollapsedCutGraph.lean) | Construct the finite embedded collapsed cut multigraph, preserving loops and parallel edges |
 | [Unfoldings.Complex.Connectivity](../Unfoldings/Complex/Connectivity.lean) | Finite metrics and geodesics for connected face incidence |
 | [Unfoldings.Complex.CutDisk](../Unfoldings/Complex/CutDisk.lean) | Boundary-preserving cut disks imply open-disk complements and tree bank-image graphs |
 | [Unfoldings.Complex.CutGraph](../Unfoldings/Complex/CutGraph.lean) | Construct exact finite spatial embedded straight graphs of all unpaired bank images |
 | [Unfoldings.Complex.CutSeamGraph](../Unfoldings/Complex/CutSeamGraph.lean) | Canonical primal cut multigraph with actual original endpoints and no unused vertices |
 | [Unfoldings.Complex.DiskBoundaryQuotient](../Unfoldings/Complex/DiskBoundaryQuotient.lean) | Restore cuts and collapse the original disk boundary to obtain a sphere; disk cuts have contractible collapsed bank images |
 | [Unfoldings.Complex.DiskCuts](../Unfoldings/Complex/DiskCuts.lean) | Further cuts of a disk are disks exactly when the actual bank graph is connected; constructed planar embeddings and disk homeomorphisms |
+| [Unfoldings.Complex.DiskSphereFibers](../Unfoldings/Complex/DiskSphereFibers.lean) | Exact original disk-to-sphere projection fibers, including every boundary vertex |
 | [Unfoldings.Complex.EmbeddedStars](../Unfoldings/Complex/EmbeddedStars.lean) | Unique per-cell centers supplied by spatial foldings |
 | [Unfoldings.Complex.Exact](../Unfoldings/Complex/Exact.lean) | Exact metric identifications and quotient homeomorphism |
 | [Unfoldings.Complex.Excision](../Unfoldings/Complex/Excision.lean) | Metric excision and preserved triangle-complex point classes |
@@ -161,6 +164,12 @@ source, including its module documentation and declarations.
 | [Unfoldings.Complex.PointSeamRoute](../Unfoldings/Complex/PointSeamRoute.lean) | Actual bounded oriented seam routes, including at vertices |
 | [Unfoldings.Complex.Regular](../Unfoldings/Complex/Regular.lean) | Constructed regular points and unique intrinsic geodesic continuation |
 | [Unfoldings.Complex.RegularEdges](../Unfoldings/Complex/RegularEdges.lean) | Constructed edge charts from either seam bank |
+| [Unfoldings.Complex.RelativeBoundaryConnectivity](../Unfoldings/Complex/RelativeBoundaryConnectivity.lean) | Descend boundary-component labels and prove rooted forest cuts have connected actual banks |
+| [Unfoldings.Complex.RelativeCutDisk](../Unfoldings/Complex/RelativeCutDisk.lean) | Construct actual disk homeomorphisms from relative rooted cut forests, with exact bank boundary |
+| [Unfoldings.Complex.RelativeCutForest](../Unfoldings/Complex/RelativeCutForest.lean) | Full disk-cut iff rooted-forest criterion; empty cuts and cycle, multiple-root, and missing-root obstructions |
+| [Unfoldings.Complex.RelativeCutGraph](../Unfoldings/Complex/RelativeCutGraph.lean) | Canonical new cut seam multigraph and original boundary roots, excluding old bank edges |
+| [Unfoldings.Complex.RelativePairedBanks](../Unfoldings/Complex/RelativePairedBanks.lean) | Opposite banks of relative forest cuts share an actual boundary component |
+| [Unfoldings.Complex.RelativeSeamGeometry](../Unfoldings/Complex/RelativeSeamGeometry.lean) | Original new cut arcs avoid old banks and vertices; distinct open seam arcs are disjoint |
 | [Unfoldings.Complex.SeamFaceRoute](../Unfoldings/Complex/SeamFaceRoute.lean) | Constructed entry/exit points and bounded seam resolutions of all face-route junctions |
 | [Unfoldings.Complex.SeamWord](../Unfoldings/Complex/SeamWord.lean) | Finite oriented words construct rigid hinge placements agreeing at actual crossing points |
 | [Unfoldings.Complex.SeamWordMotion](../Unfoldings/Complex/SeamWordMotion.lean) | Exact whole-motion propagation through finite oriented seam words |
@@ -253,6 +262,7 @@ source, including its module documentation and declarations.
 | [Unfoldings.Polyhedron.Convex](../Unfoldings/Polyhedron/Convex.lean) | Geometric convex-boundary adapter and derived geodesics |
 | [Unfoldings.Polyhedron.ConvexCurvature](../Unfoldings/Polyhedron/ConvexCurvature.lean) | Extremality iff positive curvature and avoidance, with no interior premise |
 | [Unfoldings.Polyhedron.CutDiskConverse](../Unfoldings/Polyhedron/CutDiskConverse.lean) | Construct actual disk homeomorphisms from primal cut trees on convex spheres |
+| [Unfoldings.Polyhedron.CutDiskIff](../Unfoldings/Polyhedron/CutDiskIff.lean) | Canonical primal cut multigraph tree iff actual cut disk on a convex sphere |
 | [Unfoldings.Polyhedron.CutJordan](../Unfoldings/Polyhedron/CutJordan.lean) | The entire actual cut boundary is a Jordan curve for a primal cut tree |
 | [Unfoldings.Polyhedron.CutPlanar](../Unfoldings/Polyhedron/CutPlanar.lean) | Construct whole-cut planar embeddings and actual boundary Jordan cycles |
 | [Unfoldings.Polyhedron.CutTree](../Unfoldings/Polyhedron/CutTree.lean) | Construct the actual edge-cut tree from a boundary-preserving disk on a convex polyhedron |
@@ -509,6 +519,8 @@ source, including its module documentation and declarations.
 | [Unfoldings.Topology.GraphPoints](../Unfoldings/Topology/GraphPoints.lean) | Vertex points and continuous edge inclusions into the embedded graph carrier |
 | [Unfoldings.Topology.GraphPotential](../Unfoldings/Topology/GraphPotential.lean) | Selected-edge circle winding maps and real vertex potentials from contractibility |
 | [Unfoldings.Topology.GraphReachability](../Unfoldings/Topology/GraphReachability.lean) | Multigraph walk reachability, invariant labels, and propagation through links |
+| [Unfoldings.Topology.GraphRootExtension](../Unfoldings/Topology/GraphRootExtension.lean) | Multigraph rooted forest iff outside extension tree; all loops and parallel edges remain named |
+| [Unfoldings.Topology.GraphRootQuotient](../Unfoldings/Topology/GraphRootQuotient.lean) | A tree quotient identifying exactly the marked roots forces a rooted forest |
 | [Unfoldings.Topology.GraphVertexMap](../Unfoldings/Topology/GraphVertexMap.lean) | Injective vertex relabeling preserves multigraph walks, paths, and cycles |
 | [Unfoldings.Topology.HalfPlanePush](../Unfoldings/Topology/HalfPlanePush.lean) | Explicit injective inward pushes with compact rectangular support |
 | [Unfoldings.Topology.LocalPush](../Unfoldings/Topology/LocalPush.lean) | Extend local injective chart maps and boundary pushes by the identity |

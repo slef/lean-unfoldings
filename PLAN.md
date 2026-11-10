@@ -157,8 +157,9 @@ convex polyhedra, or intrinsic metrics.
   - [x] Prove the canonical cut-tree disk converse by a single boundary cycle,
     exact embedded frontier, and compact Jordan classification. No Euler
     formula, surface classification, or supplied disk presentation is used.
-  - [ ] Complete the relative disk forest theorem. General collars and tree
-    regular neighborhoods remain independent later topology tools.
+  - [x] Complete the relative disk forest theorem, with exact collapsed-bank
+    carrier, named multigraph edges, and both directions for actual disk cuts.
+    General collars and tree regular neighborhoods remain later topology tools.
 - [ ] Separate any needed polygonal Jordan/separation theorem from graph
   counting; a rotation system alone is not a proved embedding in the sphere.
 - [ ] Small examples covering isolated vertices, bridges, cycles, loops,
@@ -166,8 +167,8 @@ convex polyhedra, or intrinsic metrics.
 
 The first metric and development modules do not depend on this package. The
 cut-locus tree theorem uses its embedded graph and contractibility results;
-the convex-sphere cut-tree converse is proved; the uniform graph-presentation
-comparison and relative disk forest criterion remain open.
+the canonical convex-sphere tree iff and relative disk forest iff are proved.
+Comparison with arbitrary subdivided graph presentations remains separate.
 
 ### Metric realizations and cuts
 
@@ -273,9 +274,12 @@ comparison and relative disk forest criterion remain open.
     component, descend those labels through original vertex classes, obtain
     one bank cycle, and apply compact Jordan classification. The constructed
     homeomorphism identifies exactly the banks with the disk circle.
+  - [x] Prove necessity for the same canonical primal multigraph used by the
+    converse. Its actual embedded carrier is contractible for a disk cut, so
+    the multigraph itself is a tree, including loop and parallel-edge checks.
   - [ ] Identify this canonical graph criterion with arbitrary subdivided
     spatial cut-tree presentations for one uniform iff statement.
-- [ ] Interior edge cuts on a disk, ignoring existing boundary edges, produce
+- [x] Interior edge cuts on a disk, ignoring existing boundary edges, produce
   one disk iff they form a forest with exactly one original-boundary point per
   tree. The empty forest is allowed.
   - [x] Prove the combinatorial equivalence: adjoining an outside vertex joined
@@ -290,7 +294,12 @@ comparison and relative disk forest criterion remain open.
   - [x] Prove that further cuts of an actual disk produce one disk exactly when
     their actual bank graph is connected. Construct the planar embedding and
     disk homeomorphism, including when the cut set is empty.
-  - [ ] Connect the actual bank criterion to the rooted cut-forest equivalence.
+  - [x] Connect the actual bank criterion to the rooted cut-forest equivalence.
+    Relative forest cuts put opposite banks in the same component; old banks
+    keep root labels equal. Conversely collapse the original disk boundary,
+    construct the exact embedded cut multigraph, and derive the rooted forest
+    from its contractible carrier. Prove explicit cycle, multiple-root, and
+    missing-root obstructions, and the no-new-cuts case.
 - [ ] Include all nonflat interior vertices in the cuts iff the resulting disk
   has flat interior. Boundary corners need not be flat.
 - [ ] A flat metric disk admits a development, allowing overlap; uniqueness up

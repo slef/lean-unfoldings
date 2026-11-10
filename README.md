@@ -67,6 +67,8 @@ data and theorems for use in further proofs.
 | Supply an embedded convex-boundary model | [Complex/Folding.lean](Unfoldings/Complex/Folding.lean), [Polyhedron/Convex.lean](Unfoldings/Polyhedron/Convex.lean) |
 | Work with overlapping or nonoverlapping layouts | [Development.lean](Unfoldings/Development.lean), [PolygonalLayout.lean](Unfoldings/PolygonalLayout.lean) |
 | Understand the metric construction | [Metric/Route.lean](Unfoldings/Metric/Route.lean), [Metric/Gluing.lean](Unfoldings/Metric/Gluing.lean) |
+| Characterize disk cuts of a convex sphere | [Polyhedron/CutDiskIff.lean](Unfoldings/Polyhedron/CutDiskIff.lean) |
+| Cut a disk along a rooted forest | [Complex/RelativeCutForest.lean](Unfoldings/Complex/RelativeCutForest.lean) |
 | Try small examples | [Examples/Metric.lean](Unfoldings/Examples/Metric.lean), [Examples/Hinge.lean](Unfoldings/Examples/Hinge.lean) |
 
 For a specific lemma, use the [module index](docs/REFERENCE.md#module-index).
@@ -77,12 +79,13 @@ For development priorities, use the [feature checklist](PLAN.md); the
 
 The regular-source theorem and the finite embedded tree structure of its cut
 locus are proved; see [Source/CutTree.lean](Unfoldings/Source/CutTree.lean).
-The [disk-to-tree theorem](Unfoldings/Polyhedron/CutTree.lean) derives boundary
-preservation; the [converse](Unfoldings/Polyhedron/CutDiskConverse.lean) constructs
-an actual disk from a connected acyclic primal cut multigraph on a convex sphere.
+The [sphere criterion](Unfoldings/Polyhedron/CutDiskIff.lean) proves that the
+canonical primal cut multigraph is a tree exactly when the cut is a disk.
+The [disk criterion](Unfoldings/Complex/RelativeCutForest.lean) proves the
+corresponding rooted-forest equivalence, including empty cuts. Both construct
+actual disk homeomorphisms and allow overlapping developments.
 Remaining work includes:
 
-- Complete the relative disk criterion: one boundary root per cut-forest tree.
 - Sources at genuine cone vertices, which need sector-valued source frames.
 - Star unfolding and the downstream tools needed for the Fewest Nets paper.
 

@@ -54,4 +54,32 @@ theorem IsAcyclic.of_mapAlong (forest : H.IsAcyclic) (injective : Function.Injec
     actual.exists_other_edge_of_map_to_forest vertices edges members @links forest
   exact different (injective equal)
 
+include vertices members links in
+/-- A map into a forest with distinct edge names cannot identify the ends of
+any nontrivial path. Vertex injectivity is a conclusion on each component. -/
+theorem IsPath.eq_of_map_eq (forest : H.IsAcyclic) (injective : Function.Injective edges)
+    {u v : V} {walk : List E} (path : G.IsPath u walk v)
+    (equal : vertices u = vertices v) : u = v := by
+  cases path with
+  | nil _ => rfl
+  | @cons u w v e tail link rest fresh =>
+    have omitted : edges e ∉ tail.map edges := by
+      rintro member
+      obtain ⟨f, member, same⟩ := List.mem_map.mp member
+      have e_member : e ∈ tail := injective same ▸ member
+      exact fresh (mem_walkVertices_of_mem_covered ⟨e, e_member, link.inc_left⟩)
+    have alt : (H.deleteEdges {edges e}).Reaches (vertices w) (vertices u) := by
+      rw [equal]
+      apply (rest.isWalk.mapAlong vertices edges members @links).reaches_deleteEdges
+      intro f member same
+      have equal : f = edges e := same
+      exact omitted (equal ▸ member)
+    exact ((forest.isBridge (links link).edge_mem).not_reaches (links link).symm alt).elim
+
+include vertices members links in
+theorem Reaches.eq_of_map_eq (forest : H.IsAcyclic) (injective : Function.Injective edges)
+    {u v : V} (reach : G.Reaches u v) (equal : vertices u = vertices v) : u = v := by
+  obtain ⟨walk, path⟩ := reach.exists_isPath
+  exact path.eq_of_map_eq vertices edges members @links forest injective equal
+
 end Graph

@@ -11,12 +11,14 @@ public import Unfoldings.Complex
 public import Unfoldings.Complex.Exact
 public import Unfoldings.Complex.CutDisk
 public import Unfoldings.Complex.DiskCuts
+public import Unfoldings.Complex.RelativeCutForest
 public import Unfoldings.Complex.IntrinsicBoundary
 public import Unfoldings.Complex.BoundaryAtlas
 public import Unfoldings.Complex.CutGraph
 public import Unfoldings.Polyhedron.CutTree
 public import Unfoldings.Polyhedron.CutPlanar
 public import Unfoldings.Polyhedron.CutDiskConverse
+public import Unfoldings.Polyhedron.CutDiskIff
 public import Unfoldings.Complex.Angles
 public import Unfoldings.Complex.LinkOrdering
 public import Unfoldings.Complex.EmbeddedStars

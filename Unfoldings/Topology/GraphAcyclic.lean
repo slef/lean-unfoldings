@@ -4,6 +4,8 @@ public import Unfoldings.Topology.GraphPotential
 public import Mathlib.Combinatorics.Graph.Simple
 public import Mathlib.Combinatorics.SimpleGraph.Acyclic
 public import Mathlib.Tactic.Linarith
+public import Unfoldings.Topology.GraphReachability
+public import Schoenflies.Graph.Cycle
 
 /-!
 # Contractible finite embedded graphs are trees
@@ -70,6 +72,24 @@ theorem adjacencyGraph_acyclic_of_contractible : G.adjacencyGraph.IsAcyclic := b
     | nil => rfl
     | cons adj tail ih => exact (preserves adj).trans ih
   have same := walk_preserves walk
+  rcases link with ⟨rfl, rfl⟩ | ⟨rfl, rfl⟩
+  all_goals linarith
+
+/-- Acyclicity in the multigraph itself, retaining loops and parallel edges. -/
+theorem graph_acyclic_of_contractible : G.graph.IsAcyclic := by
+  intro e _member cycle
+  obtain ⟨u, v, detour, link, path, omitted⟩ := cycle
+  obtain ⟨value, difference, others⟩ := G.exists_edge_potential e
+  have step {f : Edge} {a b : Vertex}
+      (actual : (G.graph.deleteEdges {e}).IsLink f a b) : value a = value b := by
+    obtain ⟨link, different⟩ := actual
+    have same := others f (fun equal => different equal)
+    rcases link with ⟨rfl, rfl⟩ | ⟨rfl, rfl⟩
+    · exact same
+    · exact same.symm
+  have avoiding := path.isWalk.deleteEdges (F := {e}) (fun f member equal =>
+    omitted ((show f = e from equal) ▸ member))
+  have same := avoiding.eq_of_link_invariant value @step
   rcases link with ⟨rfl, rfl⟩ | ⟨rfl, rfl⟩
   all_goals linarith
 

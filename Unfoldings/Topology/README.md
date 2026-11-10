@@ -52,17 +52,24 @@ spatially folded triangle complex, including at its vertices.
 
 [FiniteClasses.lean](FiniteClasses.lean) proves a generic finite-relation-class
 lemma used to separate triangle seam classes. Rotation systems, spherical
-cellulations, Euler's formula, and the relative disk forest criterion remain
-open. A face
-walk must not be treated as a proved complementary region of an embedding, and
+cellulations, and Euler's formula remain open. A face walk must not be treated as a proved complementary region of an embedding, and
 Euler's formula must not be an axiom or a definition of spherical topology.
 
 [RootedForest.lean](RootedForest.lean) proves that adjoining one outside vertex
 joined to every marked root gives a tree exactly for a forest with one root per
 component. It also constructs the root/component bijection. Empty vertex types
 are allowed; examples check both missing roots and multiple roots in a component.
-The topological capping and slit-disk bridge for this combinatorial criterion
-remains separate.
+[GraphRootExtension.lean](GraphRootExtension.lean) proves the corresponding
+multigraph equivalence, preserving loops and parallel edges.
+[GraphRootQuotient.lean](GraphRootQuotient.lean) recovers rooted forests from
+tree quotients identifying exactly the roots. The actual disk-cut bridge is
+proved in [RelativeCutForest.lean](../Complex/RelativeCutForest.lean).
+
+[BoundaryCollapse.lean](BoundaryCollapse.lean) collapses a closed boundary to
+infinity in its complement. [DiskSphereQuotient.lean](DiskSphereQuotient.lean)
+constructs the disk-boundary-to-sphere quotient using Mathlib's one-point sphere
+homeomorphism. [DiskSubsetChart.lean](DiskSubsetChart.lean) gives the open planar
+model for disk complements avoiding the original boundary.
 
 [Quadrant.lean](Quadrant.lean) gives a piecewise linear homeomorphism from a
 closed quadrant to a closed half-plane, preserving the apex and identifying

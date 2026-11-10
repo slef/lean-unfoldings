@@ -37,6 +37,18 @@ theorem IsWalk.propagate (P : V → Prop)
   | nil _ => exact id
   | cons link _ ih => exact fun initial => ih (step link initial)
 
+/-- Replace every edge of a walk by a reachable path, allowing collapsed edges. -/
+theorem IsWalk.mapReachability {W F : Type*} {H : Graph W F} (vertices : V → W)
+    (members : ∀ v ∈ G.vertexSet, vertices v ∈ H.vertexSet)
+    {u v : V} {edges : List E} (walk : G.IsWalk u edges v)
+    (links : ∀ e ∈ edges, ∀ a b, G.IsLink e a b → H.Reaches (vertices a) (vertices b)) :
+    H.Reaches (vertices u) (vertices v) := by
+  induction walk with
+  | nil member => exact Reaches.refl (members _ member)
+  | cons link _ ih =>
+    exact (links _ (List.mem_cons_self) _ _ link).trans
+      (ih (fun e member => links e (List.mem_cons_of_mem _ member)))
+
 end Graph
 
 namespace Unfoldings.FiniteEmbeddedGraph

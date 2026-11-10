@@ -2,6 +2,32 @@
 
 ## Session Log
 
+### 2026-11-09 — full relative disk forest criterion and canonical sphere iff
+
+- Extended the outside-root tree equivalence to named multigraphs. Loops and
+  parallel edges are retained. A tree quotient identifying exactly the roots
+  forces acyclicity, one root per component, and no rootless components.
+- Defined the actual relative cut graph with one edge per newly removed seam.
+  Old boundary edges are excluded; unused original boundary vertices form
+  harmless rooted singleton components, including when no seams are removed.
+- Proved opposite-bank reachability for relative forest cuts. Boundary-component
+  labels descend through restored vertex classes; old banks keep every root
+  label equal. Constructed the further cut's actual disk homeomorphism and
+  proved exact bank-to-circle correspondence.
+- Constructed the actual embedded cut graph after collapsing the old disk
+  boundary. Proved separation of all open seam arcs, exact carrier equality,
+  and exact vertex fibers. Contractibility of that carrier gives the necessity
+  direction. `cutDisk_iff_rootedForest` is the full relative disk criterion.
+  Added explicit cycle, multiple-root, missing-root, and empty-cut consequences.
+- Applied the same graph construction without a boundary collapse to convex
+  spheres. `cutDisk_iff_cutSeamGraph_tree` now uses the same canonical primal
+  multigraph in both directions. Arbitrary graph-subdivision comparisons and
+  general regular neighborhoods remain independent later tasks.
+- Verification: `lake exe cache get` finds no missing files; full `lake build`
+  passes and audits **4,208 unfolding** and **7,243 pinned planar-topology
+  declarations**, with only standard Lean axioms. All **547 local documentation
+  links** resolve; no new project warnings occur.
+
 ### 2026-11-09 — disk cuts and collapse of the original boundary
 
 - Constructed the continuous quotient sending a closed boundary to infinity
