@@ -114,6 +114,8 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Cap.LeafOpening](../Unfoldings/Cap/LeafOpening.lean) | Actual equal-length developed leaf banks rotate by the actual vertex curvature |
+| [Unfoldings.Cap.SingleCutStar](../Unfoldings/Cap/SingleCutStar.lean) | A unique incident cut seam opens exactly one original cyclic-link pair |
 | [Unfoldings.Cap.Reframe](../Unfoldings/Cap/Reframe.lean) | Actual cap geometry is preserved under horizontal orthogonal frame changes |
 | [Unfoldings.Cap.RegionalAngles](../Unfoldings/Cap/RegionalAngles.lean) | Every original-face union has partial-star excess bounded by total curvature |
 | [Unfoldings.Cap.SectorDevelopment](../Unfoldings/Cap/SectorDevelopment.lean) | Source-centered forest cuts give actual flat cut disks and locally isometric developments |
@@ -174,6 +176,10 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Complex.LinkSteps](../Unfoldings/Complex/LinkSteps.lean) | Consecutive ordered link corners cross actual retained original seams |
+| [Unfoldings.Complex.RetainedCornerChain](../Unfoldings/Complex/RetainedCornerChain.lean) | A retained spanning corner chain has one actual cut vertex copy and preserves its angle |
+| [Unfoldings.Complex.SingleLinkCut](../Unfoldings/Complex/SingleLinkCut.lean) | Opening one original cyclic-link pair preserves the complete star and intrinsic angle |
+| [Unfoldings.Complex.SingleLinkCutEndpoints](../Unfoldings/Complex/SingleLinkCutEndpoints.lean) | The two terminal cut germs are exactly the original opened seam pair |
 | [Unfoldings.Complex.RegionalCorners](../Unfoldings/Complex/RegionalCorners.lean) | Actual corner sums and complete stars for arbitrary original-face selections |
 | [Unfoldings.Complex.Curvature](../Unfoldings/Complex/Curvature.lean) | Interior angular defects grouped by actual retained vertex classes |
 | [Unfoldings.Complex.SeamGraph](../Unfoldings/Complex/SeamGraph.lean) | The original internal-seam graph with all original vertices and exact face-edge incidence |
@@ -257,6 +263,12 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Development.BankOpening](../Unfoldings/Development/BankOpening.lean) | Actual terminal bank aperture and rigid equal-length rotation, allowing zero-defect contact |
+| [Unfoldings.Development.GermCones](../Unfoldings/Development/GermCones.lean) | Actual developed corner cones separate at every retained hinge |
+| [Unfoldings.Development.GermRays](../Unfoldings/Development/GermRays.lean) | Actual developed edge rays, genuine lengths, corner angles, and retained mate agreement |
+| [Unfoldings.Development.IntervalRays](../Unfoldings/Development/IntervalRays.lean) | Developed link ray sequences and common orientation from adjacent hinges alone |
+| [Unfoldings.Development.LinkHeadings](../Unfoldings/Development/LinkHeadings.lean) | Exact unreduced real headings and terminal bank rotations in actual developments |
+| [Unfoldings.Development.SpatialLengths](../Unfoldings/Development/SpatialLengths.lean) | Developed bank lengths match original spatial edges across distinct cut vertex copies |
 | [Unfoldings.Boundary.Charts](../Unfoldings/Boundary/Charts.lean) | Constructed half-ball metric charts at boundary edge interiors |
 | [Unfoldings.Boundary.Exact](../Unfoldings/Boundary/Exact.lean) | Metric separation of distinct cut-bank interiors |
 | [Unfoldings.Boundary](../Unfoldings/Boundary.lean) | Boundary-edge labels, bank maps, and restoration of banks |
@@ -486,6 +498,7 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Geometry.IntervalConeOrientation](../Unfoldings/Geometry/IntervalConeOrientation.lean) | Adjacent hinge separation gives a common orientation while allowing distant overlap |
 | [Unfoldings.Geometry.MeshLinearProgress](../Unfoldings/Geometry/MeshLinearProgress.lean) | Original outgoing quadrant edges after invertible planar coordinate changes |
 | [Unfoldings.Geometry.ThreeSectorAcute](../Unfoldings/Geometry/ThreeSectorAcute.lean) | One positive numerical parameter preserves every supplied acute angle margin |
 | [Unfoldings.Geometry.ThreeSectorMesh](../Unfoldings/Geometry/ThreeSectorMesh.lean) | Mesh-independent acuteness preservation and original-edge progress in all three sectors |
@@ -635,6 +648,7 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Topology.SelectedLeaves](../Unfoldings/Topology/SelectedLeaves.lean) | Minimum-potential nonroot leaves and their unique selected incident original edge |
 | [Unfoldings.Topology.ParentPaths](../Unfoldings/Topology/ParentPaths.lean) | Finite parent orbits stop at the first root and have strictly increasing potentials |
 | [Unfoldings.Topology.AscendingForest](../Unfoldings/Topology/AscendingForest.lean) | Strictly increasing parent choices construct an acyclic graph with unique component roots |
 | [Unfoldings.Topology.SelectedForest](../Unfoldings/Topology/SelectedForest.lean) | Selected original edges keep their names and form an actual rooted forest |

@@ -171,3 +171,4 @@ public import Unfoldings.Cap.RimAngles
 public import Unfoldings.Cap.RegionalAngles
 public import Unfoldings.Cap.Reframe
 public import Unfoldings.Cap.SectorThreshold
+public import Unfoldings.Cap.LeafOpening

@@ -2,6 +2,30 @@
 
 ## Session Log
 
+### 2026-11-10 — actual developed headings and rigid bank openings at forest leaves
+
+- Defined actual planar developed germ rays and their genuine corner angles.
+  The opposite-side hinge condition separates adjacent corner cones, giving a
+  common orientation and exact unreduced real link headings even when distant
+  faces of the development overlap.
+- Derived terminal bank rotations from complete retained corner angles.
+  Nonnegative defects at most pi give exact genuine bank aperture; zero defect
+  gives coincident unit directions and allows boundary contact.
+- Proved that opening one original cyclic-link pair preserves the complete
+  corner star in one actual cut vertex copy. Its terminal germs are exactly
+  the original opened pair. Developed edge lengths match original spatial
+  lengths, including banks belonging to different cut copies.
+- At a childless internal vertex of the constructed source-centered forest,
+  derived unique cut-seam incidence from the actual selected graph. Its two
+  actual equal-length bank vectors therefore differ by a rigid rotation of
+  precisely its actual vertex curvature. No opening angle certificate is input.
+- Minimum potential supplies a childless nonroot whenever nonroots exist.
+  Branching-bank openings, uniform prefix turns, and global nonoverlap remain
+  unproved; this milestone does not complete the cap theorem.
+- Verification: scoped cache check and full `lake build` pass; **5,789 project**
+  and **7,243 pinned topology declarations** use only standard Lean axioms.
+  Checked **737 local documentation links**; no project warnings or temporary worktrees.
+
 ### 2026-11-10 — constructed source-centered forest and regional angle balance
 
 - Proved relative angle balance for every actual union of original faces.

@@ -89,6 +89,13 @@ The remaining nonoverlap argument must be proved independently.
   unwrapped heading families lie in a common open quadrant. Finite endpoints
   require no extension in this conditional comparison.
 
+- [x] Derive actual developed interval-link headings from original corner
+  angles and opposite-side hinge separation. No global nonoverlap is needed.
+- [x] At every childless internal forest vertex, prove that its one selected
+  cut seam opens one original cyclic-link pair and preserves the complete
+  corner angle. The actual equal-length terminal bank vectors differ by a
+  rigid rotation of the vertex curvature, with exact aperture for curvature
+  at most pi and contact allowed at zero.
 - [ ] Represent matched edge lengths and signed opening angles by actual rigid
   planar motions, retaining unwrapped real heading information.
 - [ ] Define the left-of relation at equal radii without conflating touching

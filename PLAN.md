@@ -748,6 +748,8 @@ remaining forest, uniform-turn, and global nonoverlap arguments.
   derive a positive uniform total-curvature threshold before the entire mesh.
 - [x] Prove nonnegative rim angle excess and a uniform curvature bound for
   every finite rim portion, including straight boundary subdivisions.
+- [x] Derive actual developed link headings and exact rigid bank openings at
+  original cut-forest leaves, including zero-curvature contact.
 - [ ] Uniform prefix-turn bounds, including branching.
 - [ ] Global strip assembly and the full nearly flat cap theorem.
 
