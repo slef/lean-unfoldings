@@ -2,6 +2,25 @@
 
 ## Session Log
 
+### 2026-11-10 — conforming metric refinements
+
+- Defined finite geometric subdivisions by actual child placements and covers,
+  with conformity expressed entirely as declared seam chains. Derived the
+  intrinsic isometry, including infinite distances across disconnected cuts.
+- Constructed identity and composite refinements, and the two-triangle split
+  at any strict interior point of an edge. Its glued realization is isometric
+  to the original Euclidean triangle and has an outward nonoverlapping development.
+- Transported spatial foldings, surface images, convex hulls, embedding, and
+  convex-boundary certificates. Whole-ball Euclidean regularity is invariant.
+- Restricted arbitrary developments to refinements. Derived strict edge opening
+  from seam conformity and geometric disjointness. Proved nonoverlap is preserved
+  in both directions, with overlap allowed throughout the development API.
+- Verification: scoped Mathlib cache check and full `lake build` pass;
+  **4,534 project** and **7,243 pinned topology declarations** use only standard
+  Lean axioms. No new project warnings; local documentation links resolve.
+- Numerical curvature transport, automatic polygonal-cut insertion, and general
+  flat-disk development existence remain separate unchecked goals.
+
 ### 2026-11-10 — concrete tetrahedron benchmark
 
 - Constructed all four planar triangles, rigid spatial face placements, and

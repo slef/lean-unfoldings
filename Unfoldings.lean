@@ -136,3 +136,8 @@ public import Unfoldings.Examples.Hinge
 public import Unfoldings.Examples.CutForests
 public import Unfoldings.Examples.BoundaryFans
 public import Unfoldings.Examples.Tetrahedron
+public import Unfoldings.Complex.SubdivisionComposition
+public import Unfoldings.Complex.SubdivisionFolding
+public import Unfoldings.Complex.SubdivisionRegular
+public import Unfoldings.Development.SubdivisionNonoverlap
+public import Unfoldings.Examples.Subdivision

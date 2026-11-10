@@ -41,8 +41,8 @@ source, including its module documentation and declarations.
 | [Unfoldings.Source.ContinuousCoordinates](../Unfoldings/Source/ContinuousCoordinates.lean) | Continuous source vectors in the uniform path topology |
 | [Unfoldings.Source.ConvexCoordinates](../Unfoldings/Source/ConvexCoordinates.lean) | Planar vectors distinguish all convex-boundary shortest paths |
 | [Unfoldings.Source.ConvexCutLocus](../Unfoldings/Source/ConvexCutLocus.lean) | Unique shortest paths off the closed source cut locus |
-| [Unfoldings.Source.ConvexDomain](../Unfoldings/Source/ConvexDomain.lean) | Actual convex-boundary path-space homeomorphisms and surjective projection |
 | [Unfoldings.Source.ConvexDomainInterior](../Unfoldings/Source/ConvexDomainInterior.lean) | Exact characterization of source-domain interior by regular retained endpoints |
+| [Unfoldings.Source.ConvexDomain](../Unfoldings/Source/ConvexDomain.lean) | Actual convex-boundary path-space homeomorphisms and surjective projection |
 | [Unfoldings.Source.ConvexLocalIsometry](../Unfoldings/Source/ConvexLocalIsometry.lean) | Local source isometries at every regular retained convex-surface point |
 | [Unfoldings.Source.ConvexOffCutCoordinates](../Unfoldings/Source/ConvexOffCutCoordinates.lean) | Constructed coordinates from convex-boundary input and a regular source |
 | [Unfoldings.Source.Coordinates](../Unfoldings/Source/Coordinates.lean) | Constructed full-length source vectors and exact radial norms |
@@ -58,10 +58,10 @@ source, including its module documentation and declarations.
 | [Unfoldings.Source.CutSupport](../Unfoldings/Source/CutSupport.lean) | Closed finite supports for all cut points, including cone leaves |
 | [Unfoldings.Source.CutTree](../Unfoldings/Source/CutTree.lean) | The actual source cut locus is a finite embedded straight tree at every nonextreme source |
 | [Unfoldings.Source.Disk](../Unfoldings/Source/Disk.lean) | Constructed disk and boundary-circle homeomorphisms for the actual source completion |
-| [Unfoldings.Source.Domain](../Unfoldings/Source/Domain.lean) | Compact planar path images and continuous endpoint projection |
 | [Unfoldings.Source.DomainBoundary](../Unfoldings/Source/DomainBoundary.lean) | Exact boundary projection onto the closed cut union singular points |
 | [Unfoldings.Source.DomainDensity](../Unfoldings/Source/DomainDensity.lean) | Every proper radial prefix is interior; its closure is the whole compact domain |
 | [Unfoldings.Source.DomainInterior](../Unfoldings/Source/DomainInterior.lean) | Regular unique endpoints give actual interior source vectors |
+| [Unfoldings.Source.Domain](../Unfoldings/Source/Domain.lean) | Compact planar path images and continuous endpoint projection |
 | [Unfoldings.Source.EndpointChart](../Unfoldings/Source/EndpointChart.lean) | An actual affine endpoint formula for all nearby shortest paths |
 | [Unfoldings.Source.EndpointStability](../Unfoldings/Source/EndpointStability.lean) | Singleton fibers control every shortest path to nearby endpoints |
 | [Unfoldings.Source.FaceAtlas](../Unfoldings/Source/FaceAtlas.lean) | Actual face motions are locally constant and develop every connected retained face region rigidly |
@@ -88,8 +88,8 @@ source, including its module documentation and declarations.
 | [Unfoldings.Source.PrefixUniqueness](../Unfoldings/Source/PrefixUniqueness.lean) | Every proper prefix is unique, by continuation from the unchanged tail |
 | [Unfoldings.Source.Prefixes](../Unfoldings/Source/Prefixes.lean) | Actual normalized shortest-path prefixes, including both endpoints |
 | [Unfoldings.Source.ProjectionFibers](../Unfoldings/Source/ProjectionFibers.lean) | Exact source-projection interior, boundary, source fiber, and nontrivial boundary fibers |
-| [Unfoldings.Source.Radial](../Unfoldings/Source/Radial.lean) | Injectivity from uniqueness of radial lifts |
 | [Unfoldings.Source.RadialDomain](../Unfoldings/Source/RadialDomain.lean) | Exact prefix-vector scaling and star-shaped planar source images |
+| [Unfoldings.Source.Radial](../Unfoldings/Source/Radial.lean) | Injectivity from uniqueness of radial lifts |
 | [Unfoldings.Source.RegularDevelopment](../Unfoldings/Source/RegularDevelopment.lean) | Constructed nonoverlapping local isometries and radial geodesics on the retained interior |
 | [Unfoldings.Source.RegularRegion](../Unfoldings/Source/RegularRegion.lean) | The flat retained region and explicit closed singular slit set |
 | [Unfoldings.Source.RegularUnique](../Unfoldings/Source/RegularUnique.lean) | Unique paths to regular endpoints avoid the closed source cut locus |
@@ -106,12 +106,10 @@ source, including its module documentation and declarations.
 | [Unfoldings.Source.TerminalUniqueness](../Unfoldings/Source/TerminalUniqueness.lean) | A terminal virtual-source image determines the whole original shortest path |
 | [Unfoldings.Source.Unfolding](../Unfoldings/Source/Unfolding.lean) | The constructed source-unfolding result at every regular/nonextreme source |
 | [Unfoldings.Source.UniqueProjection](../Unfoldings/Source/UniqueProjection.lean) | A homeomorphism selecting the unique shortest path continuously off the cut locus |
-
 ## Triangle complexes
 
 | Module | Purpose |
 | --- | --- |
-| [Unfoldings.Complex](../Unfoldings/Complex.lean) | Finite edge-paired complexes and their cut realizations |
 | [Unfoldings.Complex.Angles](../Unfoldings/Complex/Angles.lean) | Total angles and conservation across cut vertex copies |
 | [Unfoldings.Complex.BoundaryAtlas](../Unfoldings/Complex/BoundaryAtlas.lean) | Actual bank half-plane atlases and inward embeddings of arbitrary cut surfaces |
 | [Unfoldings.Complex.BoundaryComponentDescent](../Unfoldings/Complex/BoundaryComponentDescent.lean) | Boundary-component labels descend through actual restored vertex classes |
@@ -137,6 +135,7 @@ source, including its module documentation and declarations.
 | [Unfoldings.Complex.DiskBoundaryQuotient](../Unfoldings/Complex/DiskBoundaryQuotient.lean) | Restore cuts and collapse the original disk boundary to obtain a sphere; disk cuts have contractible collapsed bank images |
 | [Unfoldings.Complex.DiskCuts](../Unfoldings/Complex/DiskCuts.lean) | Further cuts of a disk are disks exactly when the actual bank graph is connected; constructed planar embeddings and disk homeomorphisms |
 | [Unfoldings.Complex.DiskSphereFibers](../Unfoldings/Complex/DiskSphereFibers.lean) | Exact original disk-to-sphere projection fibers, including every boundary vertex |
+| [Unfoldings.Complex.ElementarySubdivision](../Unfoldings/Complex/ElementarySubdivision.lean) | Construct a two-triangle split and prove its actual seam conformity |
 | [Unfoldings.Complex.EmbeddedStars](../Unfoldings/Complex/EmbeddedStars.lean) | Unique per-cell centers supplied by spatial foldings |
 | [Unfoldings.Complex.Exact](../Unfoldings/Complex/Exact.lean) | Exact metric identifications and quotient homeomorphism |
 | [Unfoldings.Complex.Excision](../Unfoldings/Complex/Excision.lean) | Metric excision and preserved triangle-complex point classes |
@@ -149,9 +148,9 @@ source, including its module documentation and declarations.
 | [Unfoldings.Complex.GermSegments](../Unfoldings/Complex/GermSegments.lean) | Local edge endpoints in the actual orientation of each germ |
 | [Unfoldings.Complex.Germs](../Unfoldings/Complex/Germs.lean) | The two corner edge germs and their retained seam crossings |
 | [Unfoldings.Complex.HalfPlaneBoundary](../Unfoldings/Complex/HalfPlaneBoundary.lean) | Intrinsic bank identification under every open local half-plane homeomorphism |
-| [Unfoldings.Complex.Hinge](../Unfoldings/Complex/Hinge.lean) | Intrinsic upper bounds from local unfolded hinge chords |
 | [Unfoldings.Complex.HingeCharts](../Unfoldings/Complex/HingeCharts.lean) | Constructed Euclidean metric balls at retained edge interiors |
 | [Unfoldings.Complex.HingeCoordinates](../Unfoldings/Complex/HingeCoordinates.lean) | Local hinge frames and exact local distances |
+| [Unfoldings.Complex.Hinge](../Unfoldings/Complex/Hinge.lean) | Intrinsic upper bounds from local unfolded hinge chords |
 | [Unfoldings.Complex.InteriorTags](../Unfoldings/Complex/InteriorTags.lean) | Original face-interior points have unique tagged representatives |
 | [Unfoldings.Complex.IntrinsicBoundary](../Unfoldings/Complex/IntrinsicBoundary.lean) | Every disk homeomorphism preserves the actual bank boundary, including all vertices |
 | [Unfoldings.Complex.LinkConnectivity](../Unfoldings/Complex/LinkConnectivity.lean) | Germ components are exactly metric vertex classes |
@@ -162,8 +161,8 @@ source, including its module documentation and declarations.
 | [Unfoldings.Complex.Paths](../Unfoldings/Complex/Paths.lean) | Intrinsic path metric and geodesic existence for cut complexes |
 | [Unfoldings.Complex.PointFiber](../Unfoldings/Complex/PointFiber.lean) | Exact point fibers have at most one copy per original face and bounded seam paths |
 | [Unfoldings.Complex.PointSeamRoute](../Unfoldings/Complex/PointSeamRoute.lean) | Actual bounded oriented seam routes, including at vertices |
-| [Unfoldings.Complex.Regular](../Unfoldings/Complex/Regular.lean) | Constructed regular points and unique intrinsic geodesic continuation |
 | [Unfoldings.Complex.RegularEdges](../Unfoldings/Complex/RegularEdges.lean) | Constructed edge charts from either seam bank |
+| [Unfoldings.Complex.Regular](../Unfoldings/Complex/Regular.lean) | Constructed regular points and unique intrinsic geodesic continuation |
 | [Unfoldings.Complex.RelativeBoundaryConnectivity](../Unfoldings/Complex/RelativeBoundaryConnectivity.lean) | Descend boundary-component labels and prove rooted forest cuts have connected actual banks |
 | [Unfoldings.Complex.RelativeCutDisk](../Unfoldings/Complex/RelativeCutDisk.lean) | Construct actual disk homeomorphisms from relative rooted cut forests, with exact bank boundary |
 | [Unfoldings.Complex.RelativeCutForest](../Unfoldings/Complex/RelativeCutForest.lean) | Full disk-cut iff rooted-forest criterion; empty cuts and cycle, multiple-root, and missing-root obstructions |
@@ -171,26 +170,34 @@ source, including its module documentation and declarations.
 | [Unfoldings.Complex.RelativePairedBanks](../Unfoldings/Complex/RelativePairedBanks.lean) | Opposite banks of relative forest cuts share an actual boundary component |
 | [Unfoldings.Complex.RelativeSeamGeometry](../Unfoldings/Complex/RelativeSeamGeometry.lean) | Original new cut arcs avoid old banks and vertices; distinct open seam arcs are disjoint |
 | [Unfoldings.Complex.SeamFaceRoute](../Unfoldings/Complex/SeamFaceRoute.lean) | Constructed entry/exit points and bounded seam resolutions of all face-route junctions |
-| [Unfoldings.Complex.SeamWord](../Unfoldings/Complex/SeamWord.lean) | Finite oriented words construct rigid hinge placements agreeing at actual crossing points |
 | [Unfoldings.Complex.SeamWordMotion](../Unfoldings/Complex/SeamWordMotion.lean) | Exact whole-motion propagation through finite oriented seam words |
+| [Unfoldings.Complex.SeamWord](../Unfoldings/Complex/SeamWord.lean) | Finite oriented words construct rigid hinge placements agreeing at actual crossing points |
 | [Unfoldings.Complex.Star](../Unfoldings/Complex/Star.lean) | Actual vertex stars, conserved angles and local metric comparisons |
+| [Unfoldings.Complex.SubdivisionComposition](../Unfoldings/Complex/SubdivisionComposition.lean) | Identity and iterated conforming refinements with compatible metric equivalences |
+| [Unfoldings.Complex.SubdivisionFolding](../Unfoldings/Complex/SubdivisionFolding.lean) | Transport spatial foldings, embedding, surface, convex hull, and convex boundaries |
+| [Unfoldings.Complex.SubdivisionInteriors](../Unfoldings/Complex/SubdivisionInteriors.lean) | Child interior disjointness and parent adjacency derived from seam conformity |
+| [Unfoldings.Complex.SubdivisionMetric](../Unfoldings/Complex/SubdivisionMetric.lean) | Intrinsic isometry for every conforming finite subdivision, including disconnected surfaces |
+| [Unfoldings.Complex.SubdivisionRegular](../Unfoldings/Complex/SubdivisionRegular.lean) | Preserve intrinsic Euclidean ball charts through refinement |
+| [Unfoldings.Complex.Subdivision](../Unfoldings/Complex/Subdivision.lean) | Geometric parent placements and exact seam-chain conformity |
 | [Unfoldings.Complex.Vertices](../Unfoldings/Complex/Vertices.lean) | Actual cut vertex classes, boundary incidence and copy maps |
-
+| [Unfoldings.Complex](../Unfoldings/Complex.lean) | Finite edge-paired complexes and their cut realizations |
 ## Cuts and layouts
 
 | Module | Purpose |
 | --- | --- |
-| [Unfoldings.Boundary](../Unfoldings/Boundary.lean) | Boundary-edge labels, bank maps, and restoration of banks |
 | [Unfoldings.Boundary.Charts](../Unfoldings/Boundary/Charts.lean) | Constructed half-ball metric charts at boundary edge interiors |
 | [Unfoldings.Boundary.Exact](../Unfoldings/Boundary/Exact.lean) | Metric separation of distinct cut-bank interiors |
-| [Unfoldings.Development](../Unfoldings/Development.lean) | Facewise placements, nonoverlap, multiplicity, and metric descent |
+| [Unfoldings.Boundary](../Unfoldings/Boundary.lean) | Boundary-edge labels, bank maps, and restoration of banks |
 | [Unfoldings.Development.Hinge](../Unfoldings/Development/Hinge.lean) | Nonoverlapping developments of arbitrary two-triangle hinges |
+| [Unfoldings.Development.SubdivisionNonoverlap](../Unfoldings/Development/SubdivisionNonoverlap.lean) | Nonoverlap is invariant under subdivision, in both directions |
+| [Unfoldings.Development.Subdivision](../Unfoldings/Development/Subdivision.lean) | Restrict arbitrary developments while deriving strict opposite-side opening |
+| [Unfoldings.Development](../Unfoldings/Development.lean) | Facewise placements, nonoverlap, multiplicity, and metric descent |
 | [Unfoldings.PolygonalLayout](../Unfoldings/PolygonalLayout.lean) | Finite polygon layouts with separate rigid face maps and optional nonoverlap |
-
 ## Metrics and gluing
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Metric.BallChartTransport](../Unfoldings/Metric/BallChartTransport.lean) | Transport whole open-ball metric charts along intrinsic isometries |
 | [Unfoldings.Metric.BallChart](../Unfoldings/Metric/BallChart.lean) | Whole metric-ball charts in a named model space |
 | [Unfoldings.Metric.BallIsometry](../Unfoldings/Metric/BallIsometry.lean) | Restrict isometries to balls with specified centers |
 | [Unfoldings.Metric.BallParametrization](../Unfoldings/Metric/BallParametrization.lean) | Whole-ball charts from isometric parametrizations with ball coverage |
@@ -198,39 +205,39 @@ source, including its module documentation and declarations.
 | [Unfoldings.Metric.CenterBounds](../Unfoldings/Metric/CenterBounds.lean) | Local center bounds imply global distance bounds on real intervals |
 | [Unfoldings.Metric.ClosedSeams](../Unfoldings/Metric/ClosedSeams.lean) | Exactness for closed isometric seams with finite classes |
 | [Unfoldings.Metric.Connected](../Unfoldings/Metric/Connected.lean) | Preconnected extended metric spaces have finite distances |
+| [Unfoldings.Metric.ConvexCover](../Unfoldings/Metric/ConvexCover.lean) | Finite closed-cover nonexpansion with extended-metric targets |
 | [Unfoldings.Metric.Excision](../Unfoldings/Metric/Excision.lean) | Whole-ball isometries when cutting distant seams |
 | [Unfoldings.Metric.FiniteComponent](../Unfoldings/Metric/FiniteComponent.lean) | Clopen finite-distance components as compact metric spaces |
 | [Unfoldings.Metric.Gluing](../Unfoldings/Metric/Gluing.lean) | Metric quotient, descent, and restoration of seams |
 | [Unfoldings.Metric.IsometricCells](../Unfoldings/Metric/IsometricCells.lean) | Compatible isometric cell maps exclude intrinsic cell shortcuts |
 | [Unfoldings.Metric.Lipschitz](../Unfoldings/Metric/Lipschitz.lean) | Compatible Lipschitz cell maps descend through metric gluing |
-| [Unfoldings.Metric.Local](../Unfoldings/Metric/Local.lean) | Seam clearance, metric ball images, and local cell isometries |
 | [Unfoldings.Metric.LocalComposition](../Unfoldings/Metric/LocalComposition.lean) | Compose local isometries and obtain local center bounds |
 | [Unfoldings.Metric.LocalInverse](../Unfoldings/Metric/LocalInverse.lean) | Constructed isometric inverse neighborhoods |
 | [Unfoldings.Metric.LocalMap](../Unfoldings/Metric/LocalMap.lean) | Metric lower bounds from estimates on short local routes |
 | [Unfoldings.Metric.LocalRigidMap](../Unfoldings/Metric/LocalRigidMap.lean) | A constructed local isometry has an actual rigid expression in any open Euclidean chart |
 | [Unfoldings.Metric.LocalSeams](../Unfoldings/Metric/LocalSeams.lean) | Local estimates from compatibility at incident closed seams |
+| [Unfoldings.Metric.Local](../Unfoldings/Metric/Local.lean) | Seam clearance, metric ball images, and local cell isometries |
 | [Unfoldings.Metric.OpenChart](../Unfoldings/Metric/OpenChart.lean) | Recenter open isometric charts on whole ambient balls |
 | [Unfoldings.Metric.Paths](../Unfoldings/Metric/Paths.lean) | Continuous-path/route metric equality and shortest metric paths |
-| [Unfoldings.Metric.Polygonal](../Unfoldings/Metric/Polygonal.lean) | Constructed intrinsic metrics from allowed straight steps and nonexpanding inclusions |
 | [Unfoldings.Metric.PolygonalCompletion](../Unfoldings/Metric/PolygonalCompletion.lean) | Isometric dense interior inclusion and complete compact closed-domain model |
 | [Unfoldings.Metric.PolygonalLocal](../Unfoldings/Metric/PolygonalLocal.lean) | Isometric neighborhoods for the development and its inverse on open regions |
 | [Unfoldings.Metric.PolygonalMap](../Unfoldings/Metric/PolygonalMap.lean) | Local center bounds descend to intrinsic polygonal metrics |
 | [Unfoldings.Metric.PolygonalPaths](../Unfoldings/Metric/PolygonalPaths.lean) | Straight-step geodesics and equality of route and continuous-path distance |
 | [Unfoldings.Metric.PolygonalStar](../Unfoldings/Metric/PolygonalStar.lean) | Radial contraction identifies intrinsic and ambient topology through the boundary |
+| [Unfoldings.Metric.Polygonal](../Unfoldings/Metric/Polygonal.lean) | Constructed intrinsic metrics from allowed straight steps and nonexpanding inclusions |
 | [Unfoldings.Metric.Quotient](../Unfoldings/Metric/Quotient.lean) | Declared seam classes, exactness, compactness, and completeness |
 | [Unfoldings.Metric.RegularGeodesic](../Unfoldings/Metric/RegularGeodesic.lean) | A whole regular chart supplies a nonconstant geodesic through its center |
 | [Unfoldings.Metric.RegularLocus](../Unfoldings/Metric/RegularLocus.lean) | Metric regularity is open and open charts recenter to whole metric balls |
 | [Unfoldings.Metric.RigidChartTransition](../Unfoldings/Metric/RigidChartTransition.lean) | Construct rigid affine transitions between actual overlapping metric charts |
 | [Unfoldings.Metric.Route](../Unfoldings/Metric/Route.lean) | Finite routes and the generated extended pseudometric |
 | [Unfoldings.Metric.Unglued](../Unfoldings/Metric/Unglued.lean) | Exact metric formulas and separation with no seams |
-
 ## Paths and geodesics
 
 | Module | Purpose |
 | --- | --- |
 | [Unfoldings.Path.AffineSamples](../Unfoldings/Path/AffineSamples.lean) | Continue geodesic coordinate identities across a whole chart interval |
-| [Unfoldings.Path.Chart](../Unfoldings/Path/Chart.lean) | Straight coordinates and uniqueness in isometric charts |
 | [Unfoldings.Path.ChartPartition](../Unfoldings/Path/ChartPartition.lean) | Finite strictly ordered chart partitions of actual regular paths |
+| [Unfoldings.Path.Chart](../Unfoldings/Path/Chart.lean) | Straight coordinates and uniqueness in isometric charts |
 | [Unfoldings.Path.Continuation](../Unfoldings/Path/Continuation.lean) | Unique geodesic continuation from a common initial interval through charts |
 | [Unfoldings.Path.ConvexChart](../Unfoldings/Path/ConvexChart.lean) | Geodesic construction in convex charts and ball confinement |
 | [Unfoldings.Path.Distance](../Unfoldings/Path/Distance.lean) | Intrinsic distance as an infimum of continuous-path lengths |
@@ -250,17 +257,16 @@ source, including its module documentation and declarations.
 | [Unfoldings.Path.Shortest](../Unfoldings/Path/Shortest.lean) | Compact families, lower semicontinuity, and shortest paths |
 | [Unfoldings.Path.Splice](../Unfoldings/Path/Splice.lean) | Actual constant-speed geodesics after alternative shortest-prefix replacement |
 | [Unfoldings.Path.Straight](../Unfoldings/Path/Straight.lean) | Affine straightness of saturated geodesic images |
-| [Unfoldings.Path.Subpath](../Unfoldings/Path/Subpath.lean) | Affine constant-speed subpaths, including reversed intervals |
 | [Unfoldings.Path.SubpathBounds](../Unfoldings/Path/SubpathBounds.lean) | Strict subpath-time bounds and density of proper unit-interval times |
-
+| [Unfoldings.Path.Subpath](../Unfoldings/Path/Subpath.lean) | Affine constant-speed subpaths, including reversed intervals |
 ## Convex polyhedra
 
 | Module | Purpose |
 | --- | --- |
 | [Unfoldings.Polyhedron.Chords](../Unfoldings/Polyhedron/Chords.lean) | Exact boundary-chord distances and unique intrinsic geodesics |
 | [Unfoldings.Polyhedron.Closedness](../Unfoldings/Polyhedron/Closedness.lean) | Derived seam pairing of every original edge and cyclicity at every vertex |
-| [Unfoldings.Polyhedron.Convex](../Unfoldings/Polyhedron/Convex.lean) | Geometric convex-boundary adapter and derived geodesics |
 | [Unfoldings.Polyhedron.ConvexCurvature](../Unfoldings/Polyhedron/ConvexCurvature.lean) | Extremality iff positive curvature and avoidance, with no interior premise |
+| [Unfoldings.Polyhedron.Convex](../Unfoldings/Polyhedron/Convex.lean) | Geometric convex-boundary adapter and derived geodesics |
 | [Unfoldings.Polyhedron.CutDiskConverse](../Unfoldings/Polyhedron/CutDiskConverse.lean) | Construct actual disk homeomorphisms from primal cut trees on convex spheres |
 | [Unfoldings.Polyhedron.CutDiskIff](../Unfoldings/Polyhedron/CutDiskIff.lean) | Canonical primal cut multigraph tree iff actual cut disk on a convex sphere |
 | [Unfoldings.Polyhedron.CutJordan](../Unfoldings/Polyhedron/CutJordan.lean) | The entire actual cut boundary is a Jordan curve for a primal cut tree |
@@ -310,9 +316,8 @@ source, including its module documentation and declarations.
 | [Unfoldings.Polyhedron.VertexFigure](../Unfoldings/Polyhedron/VertexFigure.lean) | Compact convex planar vertex figures, finite hulls, interior centers and circular boundaries |
 | [Unfoldings.Polyhedron.VertexHinge](../Unfoldings/Polyhedron/VertexHinge.lean) | Constructed local support hinges at nonextreme vertices, allowing coincident planes |
 | [Unfoldings.Polyhedron.VertexNeighborhood](../Unfoldings/Polyhedron/VertexNeighborhood.lean) | Small spatial vertex stars and two-plane neighborhoods |
-| [Unfoldings.Polyhedron.VertexSlice](../Unfoldings/Polyhedron/VertexSlice.lean) | Constructed nonempty transverse sections at spatial extreme vertices |
 | [Unfoldings.Polyhedron.VertexSliceInterior](../Unfoldings/Polyhedron/VertexSliceInterior.lean) | Actual vertex sections with a spatial interior center |
-
+| [Unfoldings.Polyhedron.VertexSlice](../Unfoldings/Polyhedron/VertexSlice.lean) | Constructed nonempty transverse sections at spatial extreme vertices |
 ## Cone geometry
 
 | Module | Purpose |
@@ -362,48 +367,47 @@ source, including its module documentation and declarations.
 | [Unfoldings.Cone.Neighborhood](../Unfoldings/Cone/Neighborhood.lean) | Exact local cone metrics and whole-neighborhood coverage |
 | [Unfoldings.Cone.ParametrizedChart](../Unfoldings/Cone/ParametrizedChart.lean) | Whole vertex charts from constructed planar tangent parametrizations |
 | [Unfoldings.Cone.Paths](../Unfoldings/Cone/Paths.lean) | Intrinsic path metric and explicit radial geodesics |
-| [Unfoldings.Cone.Polar](../Unfoldings/Cone/Polar.lean) | Real-heading polar maps, exact injectivity criterion and overlap witnesses |
 | [Unfoldings.Cone.PolarEquality](../Unfoldings/Cone/PolarEquality.lean) | Equality of closed full-turn polar coordinates, including outer banks |
+| [Unfoldings.Cone.Polar](../Unfoldings/Cone/Polar.lean) | Real-heading polar maps, exact injectivity criterion and overlap witnesses |
 | [Unfoldings.Cone.Proper](../Unfoldings/Cone/Proper.lean) | Compact closed tangent balls, properness and completeness |
 | [Unfoldings.Cone.Radial](../Unfoldings/Cone/Radial.lean) | Exact radial distance and finite ordinary tangent metric |
 | [Unfoldings.Cone.SeamBoundary](../Unfoldings/Cone/SeamBoundary.lean) | Actual radial banks of retained seams |
 | [Unfoldings.Cone.SeamCoordinates](../Unfoldings/Cone/SeamCoordinates.lean) | Directed angular coordinates of every actual radial seam point |
 | [Unfoldings.Cone.SeamRadius](../Unfoldings/Cone/SeamRadius.lean) | Actual radial seam witnesses at every nonnegative radius |
-| [Unfoldings.Cone.Sector](../Unfoldings/Cone/Sector.lean) | Real-angle sectors as positive spans of their boundary rays |
 | [Unfoldings.Cone.SectorChange](../Unfoldings/Cone/SectorChange.lean) | Bounded linear sector changes preserving both boundary-ray coordinates |
 | [Unfoldings.Cone.SectorClosed](../Unfoldings/Cone/SectorClosed.lean) | Closed polar coordinates for sectors and the whole plane |
 | [Unfoldings.Cone.SectorCoordinates](../Unfoldings/Cone/SectorCoordinates.lean) | Positive-span sectors, ambient coordinates and interiors |
 | [Unfoldings.Cone.SectorInterior](../Unfoldings/Cone/SectorInterior.lean) | Positive-radius open-heading coordinates for actual sector interiors |
 | [Unfoldings.Cone.SectorReflection](../Unfoldings/Cone/SectorReflection.lean) | Isometric bank exchange by angular-bisector reflection |
 | [Unfoldings.Cone.SectorShortcut](../Unfoldings/Cone/SectorShortcut.lean) | Strict chord shortcuts for nonzero points of pointed sectors |
+| [Unfoldings.Cone.Sector](../Unfoldings/Cone/Sector.lean) | Real-angle sectors as positive spans of their boundary rays |
 | [Unfoldings.Cone.SmallDilation](../Unfoldings/Cone/SmallDilation.lean) | One positive scale places any two tangent points in an apex ball |
-| [Unfoldings.Cone.Spatial](../Unfoldings/Cone/Spatial.lean) | Extended spatial foldings and tangent-cell isometries |
 | [Unfoldings.Cone.SpatialConvexLift](../Unfoldings/Cone/SpatialConvexLift.lean) | Isometric inverse tangent folding on every convex spatial subset |
 | [Unfoldings.Cone.SpatialEmbedding](../Unfoldings/Cone/SpatialEmbedding.lean) | Proper tangent folding and closed spatial embeddings of actual uncut fans |
 | [Unfoldings.Cone.SpatialHinge](../Unfoldings/Cone/SpatialHinge.lean) | Transfer entire spatial hinge parametrizations to intrinsic metric charts |
 | [Unfoldings.Cone.SpatialParametrization](../Unfoldings/Cone/SpatialParametrization.lean) | Finite piecewise rigid spatial parametrizations give intrinsic tangent isometries |
 | [Unfoldings.Cone.SpatialRange](../Unfoldings/Cone/SpatialRange.lean) | Exact radial homogeneity of the actual tangent image |
+| [Unfoldings.Cone.Spatial](../Unfoldings/Cone/Spatial.lean) | Extended spatial foldings and tangent-cell isometries |
 | [Unfoldings.Cone.SurfaceComparison](../Unfoldings/Cone/SurfaceComparison.lean) | Local metric comparison from tangent fans to original surfaces |
 | [Unfoldings.Cone.SurfaceTags](../Unfoldings/Cone/SurfaceTags.lean) | Local maps from tangent wedges into original triangle cells |
-| [Unfoldings.Cone.Tangent](../Unfoldings/Cone/Tangent.lean) | Actual wedge cells and radially extended seam gluings |
 | [Unfoldings.Cone.TangentAngularCells](../Unfoldings/Cone/TangentAngularCells.lean) | Directed angular coordinates on every actual tangent cell |
 | [Unfoldings.Cone.TangentComparison](../Unfoldings/Cone/TangentComparison.lean) | Local metric comparison from original surfaces to tangent fans |
 | [Unfoldings.Cone.TangentShortcut](../Unfoldings/Cone/TangentShortcut.lean) | Strict apex shortcuts for all actual positive-curvature tangent pairs |
+| [Unfoldings.Cone.Tangent](../Unfoldings/Cone/Tangent.lean) | Actual wedge cells and radially extended seam gluings |
 | [Unfoldings.Cone.TriangleInclusion](../Unfoldings/Cone/TriangleInclusion.lean) | Original triangles included in their actual tangent wedges |
 | [Unfoldings.Cone.VertexAvoidance](../Unfoldings/Cone/VertexAvoidance.lean) | Original intrinsic geodesics avoid positive-curvature interior vertices |
-
 ## Euclidean geometry
 
 | Module | Purpose |
 | --- | --- |
 | [Unfoldings.Geometry.AdjacentBoundaryEdges](../Unfoldings/Geometry/AdjacentBoundaryEdges.lean) | Simple convex boundary edges keep the same radial orientation |
-| [Unfoldings.Geometry.Affine](../Unfoldings/Geometry/Affine.lean) | Rigid edge extensions and line reflection |
 | [Unfoldings.Geometry.AffineArrangement](../Unfoldings/Geometry/AffineArrangement.lean) | General finite affine chamber covers of regular closed sets |
 | [Unfoldings.Geometry.AffineEnd](../Unfoldings/Geometry/AffineEnd.lean) | Finite-dimensional rigid self-embeddings are surjective and open |
 | [Unfoldings.Geometry.AffineMaximum](../Unfoldings/Geometry/AffineMaximum.lean) | Local maxima force affine functionals to be constant |
 | [Unfoldings.Geometry.AffineOrientation](../Unfoldings/Geometry/AffineOrientation.lean) | Affine signed-area scaling and rigid preservation of relative signs |
 | [Unfoldings.Geometry.AffinePlaneRange](../Unfoldings/Geometry/AffinePlaneRange.lean) | Common-point affine planes agree when their linear directions agree |
 | [Unfoldings.Geometry.AffineSupport](../Unfoldings/Geometry/AffineSupport.lean) | Nonzero affine equations for genuine bisectors and triangle edge lines |
+| [Unfoldings.Geometry.Affine](../Unfoldings/Geometry/Affine.lean) | Rigid edge extensions and line reflection |
 | [Unfoldings.Geometry.AngleSeparation](../Unfoldings/Geometry/AngleSeparation.lean) | Strict angular inequality through a direction outside a level plane |
 | [Unfoldings.Geometry.Angles](../Unfoldings/Geometry/Angles.lean) | Positive Euclidean corner angles and triangle angle sums |
 | [Unfoldings.Geometry.ArrangementBoundary](../Unfoldings/Geometry/ArrangementBoundary.lean) | Exact finite inside/outside chamber boundary decompositions |
@@ -421,11 +425,10 @@ source, including its module documentation and declarations.
 | [Unfoldings.Geometry.ConvexLocalBounds](../Unfoldings/Geometry/ConvexLocalBounds.lean) | Convex subtype center bounds imply global nonexpansion |
 | [Unfoldings.Geometry.ConvexPatchRigidity](../Unfoldings/Geometry/ConvexPatchRigidity.lean) | Overlapping convex face patches force equality of their whole rigid motions |
 | [Unfoldings.Geometry.ConvexRigidity](../Unfoldings/Geometry/ConvexRigidity.lean) | Actual isometries on convex sets with interior extend rigidly through the boundary |
-| [Unfoldings.Geometry.Corner](../Unfoldings/Geometry/Corner.lean) | Supporting wedges and actual corner wedge-ball geometry |
 | [Unfoldings.Geometry.CornerEdges](../Unfoldings/Geometry/CornerEdges.lean) | Radial edge lines inside a triangle remain on the actual edge |
 | [Unfoldings.Geometry.CornerFrame](../Unfoldings/Geometry/CornerFrame.lean) | Constructed rigid apex/first-ray/upper-side normalization |
 | [Unfoldings.Geometry.CornerSpan](../Unfoldings/Geometry/CornerSpan.lean) | Unique boundary-ray coordinates and actual wedge interiors |
-| [Unfoldings.Geometry.Edge](../Unfoldings/Geometry/Edge.lean) | Edge intersections and endpoint preservation by isometries |
+| [Unfoldings.Geometry.Corner](../Unfoldings/Geometry/Corner.lean) | Supporting wedges and actual corner wedge-ball geometry |
 | [Unfoldings.Geometry.EdgeChordInterior](../Unfoldings/Geometry/EdgeChordInterior.lean) | Chords between different edge interiors enter a triangle interior |
 | [Unfoldings.Geometry.EdgeCoordinates](../Unfoldings/Geometry/EdgeCoordinates.lean) | Centered affine half-plane coordinates on actual triangle edge neighborhoods |
 | [Unfoldings.Geometry.EdgeIdentification](../Unfoldings/Geometry/EdgeIdentification.lean) | Construct full-edge isometries from matching endpoint lengths and orientation labels |
@@ -433,6 +436,7 @@ source, including its module documentation and declarations.
 | [Unfoldings.Geometry.EdgeParameters](../Unfoldings/Geometry/EdgeParameters.lean) | Strict edge interpolation avoids all original triangle vertices |
 | [Unfoldings.Geometry.EdgePerfect](../Unfoldings/Geometry/EdgePerfect.lean) | Every neighborhood in a genuine closed edge contains a nonvertex point |
 | [Unfoldings.Geometry.EdgeSides](../Unfoldings/Geometry/EdgeSides.lean) | Edge membership and proportional supporting coordinates |
+| [Unfoldings.Geometry.Edge](../Unfoldings/Geometry/Edge.lean) | Edge intersections and endpoint preservation by isometries |
 | [Unfoldings.Geometry.Endpoints](../Unfoldings/Geometry/Endpoints.lean) | Endpoint permutations induced by full-edge isometries |
 | [Unfoldings.Geometry.ExtremeSeparation](../Unfoldings/Geometry/ExtremeSeparation.lean) | Strict finite-hull supporting functionals with a uniform margin |
 | [Unfoldings.Geometry.FiniteAffineSelection](../Unfoldings/Geometry/FiniteAffineSelection.lean) | Proper affine supports for coincidences and constancy of finite continuous affine selections |
@@ -442,8 +446,9 @@ source, including its module documentation and declarations.
 | [Unfoldings.Geometry.FunctionalHomothety](../Unfoldings/Geometry/FunctionalHomothety.lean) | Positive homotheties preserve support levels and half-spaces |
 | [Unfoldings.Geometry.FunctionalPlane](../Unfoldings/Geometry/FunctionalPlane.lean) | Constructed affine Euclidean coordinates on nonzero functional level planes |
 | [Unfoldings.Geometry.Halfplane](../Unfoldings/Geometry/Halfplane.lean) | Supporting heights and finite corner bounds |
-| [Unfoldings.Geometry.Hinge](../Unfoldings/Geometry/Hinge.lean) | Opposite sides imply adjacent-cell nonoverlap |
+| [Unfoldings.Geometry.HingeConverse](../Unfoldings/Geometry/HingeConverse.lean) | Recover strict opposite-side opening from joined disjoint interiors |
 | [Unfoldings.Geometry.HingePatch](../Unfoldings/Geometry/HingePatch.lean) | Exact hinge intersections and local planar coverage |
+| [Unfoldings.Geometry.Hinge](../Unfoldings/Geometry/Hinge.lean) | Opposite sides imply adjacent-cell nonoverlap |
 | [Unfoldings.Geometry.Interior](../Unfoldings/Geometry/Interior.lean) | Interior clearance and Euclidean cell balls |
 | [Unfoldings.Geometry.IsometryOnConvex](../Unfoldings/Geometry/IsometryOnConvex.lean) | Isometric maps to strictly convex spaces preserve affine segment parameters |
 | [Unfoldings.Geometry.LineCoordinate](../Unfoldings/Geometry/LineCoordinate.lean) | Real affine coordinates and exact segment membership on a genuine line |
@@ -461,8 +466,8 @@ source, including its module documentation and declarations.
 | [Unfoldings.Geometry.RadialInterior](../Unfoldings/Geometry/RadialInterior.lean) | Interior points extend slightly outward along their radial lines |
 | [Unfoldings.Geometry.RadialLocality](../Unfoldings/Geometry/RadialLocality.lean) | Local equality of positive radial cones implies global equality |
 | [Unfoldings.Geometry.RadialRetraction](../Unfoldings/Geometry/RadialRetraction.lean) | Continuous radial retraction onto the boundary of a compact strictly radial body |
-| [Unfoldings.Geometry.RadialSlice](../Unfoldings/Geometry/RadialSlice.lean) | Actual compact convex level sections and radial generator projections |
 | [Unfoldings.Geometry.RadialSliceAngles](../Unfoldings/Geometry/RadialSliceAngles.lean) | Positive radial slicing preserves affine apex angles |
+| [Unfoldings.Geometry.RadialSlice](../Unfoldings/Geometry/RadialSlice.lean) | Actual compact convex level sections and radial generator projections |
 | [Unfoldings.Geometry.RaySection](../Unfoldings/Geometry/RaySection.lean) | Exact wedge sections and preservation of their genuine apex angles |
 | [Unfoldings.Geometry.RealAffine](../Unfoldings/Geometry/RealAffine.lean) | Two distinct real samples determine an affine map |
 | [Unfoldings.Geometry.SegmentCells](../Unfoldings/Geometry/SegmentCells.lean) | Intersecting unmarked open subsegments have equal closed carriers |
@@ -478,10 +483,12 @@ source, including its module documentation and declarations.
 | [Unfoldings.Geometry.StrictHingeSupport](../Unfoldings/Geometry/StrictHingeSupport.lean) | Distinct support planes strictly separate their opposite corners |
 | [Unfoldings.Geometry.SupportingChord](../Unfoldings/Geometry/SupportingChord.lean) | Support levels extend from an interior chord point to both endpoints |
 | [Unfoldings.Geometry.TransversePyramid](../Unfoldings/Geometry/TransversePyramid.lean) | Strict transverse pyramid budget without an extra corner assumption |
-| [Unfoldings.Geometry.Triangle](../Unfoldings/Geometry/Triangle.lean) | Nondegenerate cells and full edge subspaces |
 | [Unfoldings.Geometry.TriangleBoundary](../Unfoldings/Geometry/TriangleBoundary.lean) | Every noninterior closed triangle point lies on an actual edge |
+| [Unfoldings.Geometry.TriangleMotion](../Unfoldings/Geometry/TriangleMotion.lean) | Rigidly move triangles, edges, and barycentric coordinates |
+| [Unfoldings.Geometry.TriangleSplitSides](../Unfoldings/Geometry/TriangleSplitSides.lean) | Exact common edge and disjoint interiors of the two split children |
+| [Unfoldings.Geometry.TriangleSplit](../Unfoldings/Geometry/TriangleSplit.lean) | Construct nondegenerate edge splits and prove their exact cover |
+| [Unfoldings.Geometry.Triangle](../Unfoldings/Geometry/Triangle.lean) | Nondegenerate cells and full edge subspaces |
 | [Unfoldings.Geometry.UnitLine](../Unfoldings/Geometry/UnitLine.lean) | A nonzero real line has two opposite unit directions |
-
 ## Topology and combinatorics
 
 | Module | Purpose |
@@ -493,8 +500,8 @@ source, including its module documentation and declarations.
 | [Unfoldings.Topology.BoundaryCollapse](../Unfoldings/Topology/BoundaryCollapse.lean) | Collapse a closed boundary to infinity in its complement, with continuity, surjectivity, and exact fibers |
 | [Unfoldings.Topology.BoundaryInvariance](../Unfoldings/Topology/BoundaryInvariance.lean) | Actual half-plane atlases identify the frontier of any planar embedding |
 | [Unfoldings.Topology.BoundaryPush](../Unfoldings/Topology/BoundaryPush.lean) | Finite compositions of local pushes move a compact boundary into its complement |
-| [Unfoldings.Topology.BoundaryQuotient](../Unfoldings/Topology/BoundaryQuotient.lean) | Boundary-only quotient maps, complement homeomorphisms, and descended boundary retractions |
 | [Unfoldings.Topology.BoundaryQuotientTransport](../Unfoldings/Topology/BoundaryQuotientTransport.lean) | Postcompose boundary quotients and compose them when the new collapsed locus is absorbed |
+| [Unfoldings.Topology.BoundaryQuotient](../Unfoldings/Topology/BoundaryQuotient.lean) | Boundary-only quotient maps, complement homeomorphisms, and descended boundary retractions |
 | [Unfoldings.Topology.ChainPairings](../Unfoldings/Topology/ChainPairings.lean) | Every link pairing is consecutive or closes the outer banks |
 | [Unfoldings.Topology.CircleObstruction](../Unfoldings/Topology/CircleObstruction.lean) | Covering-space proof that a circle is not contractible and a disk cannot retract onto it |
 | [Unfoldings.Topology.CommonFibers](../Unfoldings/Topology/CommonFibers.lean) | Compact quotient maps with the same fibers identify their targets |
@@ -536,7 +543,6 @@ source, including its module documentation and declarations.
 | [Unfoldings.Topology.SmallHalfPlanePush](../Unfoldings/Topology/SmallHalfPlanePush.lean) | Construct inward pushes in arbitrarily small half-plane neighborhoods |
 | [Unfoldings.Topology.SphereChart](../Unfoldings/Topology/SphereChart.lean) | Explicit Euclidean homeomorphisms for punctured unit spheres |
 | [Unfoldings.Topology.SphereSubsetChart](../Unfoldings/Topology/SphereSubsetChart.lean) | Closed-set complements in spheres have open Euclidean embeddings |
-
 ## Examples and core imports
 
 | Module | Purpose |
@@ -548,7 +554,7 @@ source, including its module documentation and declarations.
 | [Unfoldings.Examples.CutForests](../Unfoldings/Examples/CutForests.lean) | Empty forest, one rooted edge, and counterexamples with missing or multiple roots |
 | [Unfoldings.Examples.Hinge](../Unfoldings/Examples/Hinge.lean) | Joined hinges, boundary contact, and a layout with interior overlap |
 | [Unfoldings.Examples.Metric](../Unfoldings/Examples/Metric.lean) | Metric recovery, disconnectedness, and shortcuts |
-| [Unfoldings.Examples.Tetrahedron](../Unfoldings/Examples/Tetrahedron.lean) | Complete concrete convex tetrahedron, source unfolding, and valid and invalid cut patterns |
+| [Unfoldings.Examples.Subdivision](../Unfoldings/Examples/Subdivision.lean) | Canonical cell isometry and outward nonoverlapping development for every elementary split |
 | [Unfoldings.Examples.Tetrahedron.Body](../Unfoldings/Examples/Tetrahedron/Body.lean) | The actual tetrahedral convex hull, its supporting coordinates and four exact facets |
 | [Unfoldings.Examples.Tetrahedron.Boundary](../Unfoldings/Examples/Tetrahedron/Boundary.lean) | Prove spatial injectivity and certify a full-dimensional convex boundary |
 | [Unfoldings.Examples.Tetrahedron.Complex](../Unfoldings/Examples/Tetrahedron/Complex.lean) | Six checked paired edges and compatible rigid spatial face maps |
@@ -557,7 +563,7 @@ source, including its module documentation and declarations.
 | [Unfoldings.Examples.Tetrahedron.Faces](../Unfoldings/Examples/Tetrahedron/Faces.lean) | Relate spatial supporting coordinates to intrinsic face barycentric coordinates |
 | [Unfoldings.Examples.Tetrahedron.Source](../Unfoldings/Examples/Tetrahedron/Source.lean) | Instantiate the complete source unfolding at an actual crease midpoint |
 | [Unfoldings.Examples.Tetrahedron.Vertices](../Unfoldings/Examples/Tetrahedron/Vertices.lean) | Identify the actual metric vertex quotient with the four declared tetrahedron vertices |
-
+| [Unfoldings.Examples.Tetrahedron](../Unfoldings/Examples/Tetrahedron.lean) | Complete concrete convex tetrahedron, source unfolding, and valid and invalid cut patterns |
 ## Build and proof audit
 
 Lean and Mathlib are pinned to **4.35.0** in
@@ -617,3 +623,4 @@ The [vendored source record](../vendor/schoenflies/UPSTREAM.md) documents the
 Lean 4.35 module-system and proof-script compatibility changes; theorem
 statements are unchanged. The separate [license](../vendor/schoenflies/LICENSE)
 is retained. Comparator challenge files and upstream build caches are excluded.
+

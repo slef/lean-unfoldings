@@ -312,10 +312,21 @@ Comparison with arbitrary subdivided graph presentations remains separate.
   local center bounds and continuous induction along segments. This supports
   metric refinement, facet chords and flat-fan inverse maps. Continuity is
   derived; pieces need no global extensions and need not themselves be convex.
-- [ ] Elementary triangle subdivision induces a canonical metric isometry.
-- [ ] Iterated conforming refinement preserves the metric and curvature.
-- [ ] Facewise placements commute with refinement.
-- [ ] Nonoverlap is unchanged by conforming subdivision.
+- [x] Elementary triangle subdivision induces a canonical metric isometry.
+  Construct the split at every strict interior point of an edge, its full-edge
+  identification, seam conformity, and equivalence with the original cell.
+- [x] Iterated conforming refinement preserves the full intrinsic extended
+  metric, including disconnected cut surfaces. Composition commutes with the
+  canonical isometries; whole-ball Euclidean regularity is invariant.
+- [ ] Transport numerical total angles and curvature through refinement.
+- [x] Facewise placements commute with refinement. Spatial foldings preserve
+  their surface, convex hull, embedding, and convex-boundary certificate.
+  Developments preserve the strict opposite-side convention, derived from
+  geometric subdivision and declared seam-chain compatibility.
+- [x] Nonoverlap is unchanged by conforming subdivision, in both directions.
+  A finite union of new edges cannot hide an open overlap.
+- [ ] Construct conforming refinements that insert arbitrary polygonal cuts;
+  transport their actual cut metrics independently of the chosen refinement.
 - [x] Polar developments keep real headings. The open positive-radius strip
   is injective iff its angular width is at most a full turn; above a full turn,
   collisions occur at every positive radius.

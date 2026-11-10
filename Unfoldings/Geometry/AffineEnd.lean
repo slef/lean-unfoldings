@@ -19,4 +19,9 @@ theorem affineIsometryEnd_isOpenMap (A : E →ᵃⁱ[ℝ] E) : IsOpenMap A := by
   let e : E ≃ᵢ E := ⟨Equiv.ofBijective A ⟨A.injective, affineIsometryEnd_surjective A⟩, A.isometry⟩
   exact e.toHomeomorph.isOpenMap
 
+omit [FiniteDimensional ℝ E] in
+theorem rigid_image_interior (A : E ≃ᵃⁱ[ℝ] E) (s : Set E) :
+    A '' interior s = interior (A '' s) := by
+  simpa only [AffineIsometryEquiv.coe_toHomeomorph] using A.toHomeomorph.image_interior s
+
 end Unfoldings
