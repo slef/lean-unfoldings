@@ -15,6 +15,7 @@ public import Unfoldings.Complex.BoundaryAtlas
 public import Unfoldings.Complex.CutGraph
 public import Unfoldings.Polyhedron.CutTree
 public import Unfoldings.Polyhedron.CutPlanar
+public import Unfoldings.Polyhedron.CutDiskConverse
 public import Unfoldings.Complex.Angles
 public import Unfoldings.Complex.LinkOrdering
 public import Unfoldings.Complex.EmbeddedStars

@@ -154,8 +154,11 @@ convex polyhedra, or intrinsic metrics.
     an omitted cut-graph point. Every bank belongs to a genuine Jordan cycle.
     The generic forest-map lemma forces the distinguished edge image to
     repeat along the alternate path of a cycle.
-  - [ ] Assemble the local models into a boundary collar and tree regular
-    neighborhood; prove the actual cut-disk converse and relative disk result.
+  - [x] Prove the canonical cut-tree disk converse by a single boundary cycle,
+    exact embedded frontier, and compact Jordan classification. No Euler
+    formula, surface classification, or supplied disk presentation is used.
+  - [ ] Complete the relative disk forest theorem. General collars and tree
+    regular neighborhoods remain independent later topology tools.
 - [ ] Separate any needed polygonal Jordan/separation theorem from graph
   counting; a rotation system alone is not a proved embedding in the sphere.
 - [ ] Small examples covering isolated vertices, bridges, cycles, loops,
@@ -163,7 +166,8 @@ convex polyhedra, or intrinsic metrics.
 
 The first metric and development modules do not depend on this package. The
 cut-locus tree theorem uses its embedded graph and contractibility results;
-the general cut-graph disk equivalences remain open.
+the convex-sphere cut-tree converse is proved; the uniform graph-presentation
+comparison and relative disk forest criterion remain open.
 
 ### Metric realizations and cuts
 
@@ -263,7 +267,14 @@ the general cut-graph disk equivalences remain open.
     one-sided charts at nonvertex points; perfectness and closedness extend
     the result across the finite vertex set. The disk-to-tree theorem now
     needs no boundary-preservation hypothesis.
-  - [ ] Construct the completed cut disk from an embedded cut tree.
+  - [x] Construct the actual cut disk on a convex sphere when the canonical
+    primal cut multigraph (one edge per cut seam, only incident original
+    vertices) is connected and acyclic. Prove paired banks lie in one boundary
+    component, descend those labels through original vertex classes, obtain
+    one bank cycle, and apply compact Jordan classification. The constructed
+    homeomorphism identifies exactly the banks with the disk circle.
+  - [ ] Identify this canonical graph criterion with arbitrary subdivided
+    spatial cut-tree presentations for one uniform iff statement.
 - [ ] Interior edge cuts on a disk, ignoring existing boundary edges, produce
   one disk iff they form a forest with exactly one original-boundary point per
   tree. The empty forest is allowed.

@@ -77,11 +77,12 @@ For development priorities, use the [feature checklist](PLAN.md); the
 
 The regular-source theorem and the finite embedded tree structure of its cut
 locus are proved; see [Source/CutTree.lean](Unfoldings/Source/CutTree.lean).
+The [disk-to-tree theorem](Unfoldings/Polyhedron/CutTree.lean) derives boundary
+preservation; the [converse](Unfoldings/Polyhedron/CutDiskConverse.lean) constructs
+an actual disk from a connected acyclic primal cut multigraph on a convex sphere.
 Remaining work includes:
 
-- Complete the sphere/disk cut criteria: the tree-to-disk converse and the
-  boundary-rooted forest equivalence. The [disk-to-tree theorem](Unfoldings/Polyhedron/CutTree.lean)
-  now applies to every disk homeomorphism; boundary preservation is derived.
+- Complete the relative disk criterion: one boundary root per cut-forest tree.
 - Sources at genuine cone vertices, which need sector-valued source frames.
 - Star unfolding and the downstream tools needed for the Fewest Nets paper.
 

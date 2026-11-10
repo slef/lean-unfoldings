@@ -2,6 +2,32 @@
 
 ## Session Log
 
+### 2026-11-09 — constructed cut disks from primal cut trees
+
+- Defined the canonical primal cut multigraph with one edge per actual cut
+  seam and exactly its incident original vertex classes. On closed complexes
+  its banks are in bijection with cut seams and side labels.
+- Proved that forest cuts put opposite banks in the same actual boundary
+  component. Descended boundary-component labels through the original germ
+  chains and vertex quotient. A connected primal forest has connected bank
+  boundary, and one closed bank order visits every end.
+- Identified that order's exact carrier with the whole bank boundary. In the
+  constructed planar embedding of a convex-sphere cut, it is one Jordan curve.
+- Proved the generic compact planar classification: nonempty interior and
+  Jordan frontier imply a closed-disk homeomorphism. Half-plane charts and an
+  open planar model of the boundary complement identify the exact frontier.
+- Constructed that complement model from the original sphere by stereographic
+  projection. `exists_cutDisk_of_tree` and `cutDiskHomeomorphOfTree` now build
+  the actual cut disk from connectedness and acyclicity of the primal graph.
+  Exact correspondence of banks with the disk circle is proved. No disk
+  presentation, development, nonoverlap, Euler formula, or surface classification
+  is assumed in this converse.
+- The relative disk forest equivalence and comparison with arbitrary spatial
+  graph subdivisions remain open. The canonical converse itself is complete.
+- Verification: full `lake build` passes and audits **4,068 unfolding** and
+  **7,243 pinned planar-topology declarations**, with only standard axioms.
+  All **521 local documentation links** resolve, with no new project warnings.
+
 ### 2026-11-09 — actual bank cycles and planar cut embeddings
 
 - Constructed bank-end and boundary-vertex types from actual unpaired germs.

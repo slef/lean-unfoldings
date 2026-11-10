@@ -40,7 +40,8 @@ homeomorphisms and descent of punctured boundary retractions.
 for a closed ball and identifies the complement of its boundary image with an
 open ball. A spherical target forces a finite embedded boundary graph to be a
 tree. The triangle seam-restoration and source-disk constructions both use this
-API. The tree-to-disk converse remains separate.
+API. The convex-sphere primal cut-tree converse is now constructed in the
+[application layer](../Polyhedron/CutDiskConverse.lean).
 
 [CircleObstruction.lean](CircleObstruction.lean) and [DiskDegree.lean](DiskDegree.lean)
 prove the circle obstruction and the interior coverage of boundary-fixing disk
@@ -51,7 +52,8 @@ spatially folded triangle complex, including at its vertices.
 
 [FiniteClasses.lean](FiniteClasses.lean) proves a generic finite-relation-class
 lemma used to separate triangle seam classes. Rotation systems, spherical
-cellulations, Euler's formula, and the tree/disk criteria remain open. A face
+cellulations, Euler's formula, and the relative disk forest criterion remain
+open. A face
 walk must not be treated as a proved complementary region of an embedding, and
 Euler's formula must not be an axiom or a definition of spherical topology.
 
@@ -75,7 +77,8 @@ proves that a compact Hausdorff space with actual half-plane boundary charts
 embeds into its boundary complement. Composing with a boundary quotient gives
 an embedding into the target off the boundary image. The triangle application
 constructs these charts for the actual cut banks, including all vertex copies.
-This separates the banks but does not yet prove the tree-to-disk converse.
+This separates the banks and supplies the embedding used by the cut-tree
+disk construction.
 
 [PlanarHalfPlane.lean](PlanarHalfPlane.lean) transfers planar openness to product
 coordinates and rules out planar injections hitting the half-plane boundary.
@@ -91,5 +94,14 @@ actual edge parametrizations to the pinned cycle-to-Jordan theorem.
 forest must repeat the image of its distinguished edge on the alternate path.
 [SphereChart.lean](SphereChart.lean) supplies Euclidean homeomorphisms from
 punctured spheres. The triangle application now constructs whole-cut planar
-embeddings and Jordan cycles through every bank; proving a single boundary
-cycle for tree cuts remains open.
+embeddings and Jordan cycles through every bank. A connected primal cut forest
+now gives one boundary cycle covering every bank end.
+
+[CompactJordanDisk.lean](CompactJordanDisk.lean) proves that a compact planar set
+with nonempty interior and Jordan frontier is a disk. [BoundaryInvariance.lean](BoundaryInvariance.lean)
+identifies that frontier from actual half-plane charts and an open planar model
+of the boundary complement. [DiskFromBoundary.lean](DiskFromBoundary.lean)
+combines these constructions. [SphereSubsetChart.lean](SphereSubsetChart.lean)
+supplies the open Euclidean model for closed-set complements in a sphere.
+The convex-sphere application now constructs the actual disk homeomorphism
+from a connected acyclic primal cut multigraph, with exact bank boundary.

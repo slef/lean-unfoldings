@@ -159,4 +159,15 @@ theorem boundaryGraph_bank_link (p : C.BoundaryEnd retain) :
   · right
     constructor <;> apply Subtype.ext <;> rfl
 
+theorem boundaryGraph_vertex_incident (v : C.BoundaryVertex retain) :
+    ∃ (bank : C.BoundaryBank retain) (w : C.BoundaryVertex retain),
+      (C.boundaryGraph retain).graph.IsLink bank v w := by
+  obtain ⟨edge, boundary, first | last⟩ := v.property
+  · let bank : C.BoundaryBank retain := ⟨edge, boundary⟩
+    refine ⟨bank, (C.boundaryGraph retain).right bank, Or.inl ⟨?_, rfl⟩⟩
+    exact Subtype.ext first
+  · let bank : C.BoundaryBank retain := ⟨edge, boundary⟩
+    refine ⟨bank, (C.boundaryGraph retain).left bank, Or.inr ⟨?_, rfl⟩⟩
+    exact Subtype.ext last
+
 end Unfoldings.TriangleComplex
