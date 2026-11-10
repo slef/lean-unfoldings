@@ -1,6 +1,7 @@
 module
 
 public import Unfoldings.Complex.CutDisk
+public import Unfoldings.Complex.IntrinsicBoundary
 public import Unfoldings.Complex.CutGraph
 public import Unfoldings.Polyhedron.Convex
 
@@ -11,8 +12,8 @@ For a convex boundary, construct the actual finite embedded straight graph of
 all cut-bank images. A disk presentation identifying its boundary with the
 unpaired banks forces this graph to be a tree. The graph is constructed from
 the actual spatial bank segments, rather than supplied as an extra hypothesis.
-The tree-to-disk converse and intrinsic manifold boundary identification are
-separate construction tasks.
+Intrinsic boundary preservation is derived for every disk homeomorphism.
+The tree-to-disk converse is a separate construction task.
 -/
 
 @[expose] public section
@@ -56,5 +57,15 @@ theorem exists_cut_tree_of_disk (retain : Set C.Seam)
     rwa [carrier]
   let := graph_contractible
   exact ⟨Vertex, Edge, G, straight, simple, G.adjacencyGraph_tree_of_contractible, carrier, parents⟩
+
+include P in
+theorem exists_cut_tree_of_homeomorph (retain : Set C.Seam)
+    (disk : C.Realization retain ≃ₜ Metric.closedBall (0 : Plane) 1) :
+    ∃ (Vertex Edge : Type) (G : FiniteEmbeddedGraph Vertex Edge Space),
+      G.IsStraight ∧ G.graph.Simple ∧ G.adjacencyGraph.IsTree ∧
+        G.carrier = F.toSpace retain '' C.bankBoundary retain ∧
+        ∀ e : Edge, ∃ bank : C.BoundaryBank retain,
+          Set.range (G.edge e) ⊆ F.toSpace retain '' Set.range (C.bankMap retain bank) :=
+  P.exists_cut_tree_of_disk retain disk (fun x => F.bankBoundary_iff_disk_norm_eq_one retain disk x)
 
 end Unfoldings.SpatialFolding.ConvexBoundary

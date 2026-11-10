@@ -114,6 +114,7 @@ source, including its module documentation and declarations.
 | [Unfoldings.Complex](../Unfoldings/Complex.lean) | Finite edge-paired complexes and their cut realizations |
 | [Unfoldings.Complex.Angles](../Unfoldings/Complex/Angles.lean) | Total angles and conservation across cut vertex copies |
 | [Unfoldings.Complex.BoundaryQuotient](../Unfoldings/Complex/BoundaryQuotient.lean) | Compact actual bank boundaries and exact boundary-only fibers of seam restoration |
+| [Unfoldings.Complex.BoundaryRegular](../Unfoldings/Complex/BoundaryRegular.lean) | Euclidean ball charts at every nonvertex point off the actual cut banks |
 | [Unfoldings.Complex.Charts](../Unfoldings/Complex/Charts.lean) | Constructed face-interior Euclidean metric charts |
 | [Unfoldings.Complex.Classes](../Unfoldings/Complex/Classes.lean) | Finite corner classes and unique nonvertex seam neighbors |
 | [Unfoldings.Complex.Connectivity](../Unfoldings/Complex/Connectivity.lean) | Finite metrics and geodesics for connected face incidence |
@@ -134,6 +135,7 @@ source, including its module documentation and declarations.
 | [Unfoldings.Complex.HingeCharts](../Unfoldings/Complex/HingeCharts.lean) | Constructed Euclidean metric balls at retained edge interiors |
 | [Unfoldings.Complex.HingeCoordinates](../Unfoldings/Complex/HingeCoordinates.lean) | Local hinge frames and exact local distances |
 | [Unfoldings.Complex.InteriorTags](../Unfoldings/Complex/InteriorTags.lean) | Original face-interior points have unique tagged representatives |
+| [Unfoldings.Complex.IntrinsicBoundary](../Unfoldings/Complex/IntrinsicBoundary.lean) | Every disk homeomorphism preserves the actual bank boundary, including all vertices |
 | [Unfoldings.Complex.LinkConnectivity](../Unfoldings/Complex/LinkConnectivity.lean) | Germ components are exactly metric vertex classes |
 | [Unfoldings.Complex.LinkOrdering](../Unfoldings/Complex/LinkOrdering.lean) | Constructed link orders and their Euclidean angle sums |
 | [Unfoldings.Complex.Links](../Unfoldings/Complex/Links.lean) | Vertex-link involutions and boundary fixed germs |
@@ -453,10 +455,12 @@ source, including its module documentation and declarations.
 | [Unfoldings.Topology.BallBoundaryQuotient](../Unfoldings/Topology/BallBoundaryQuotient.lean) | Disk quotients have open-disk complements; spherical targets force boundary graphs to be trees |
 | [Unfoldings.Topology.BoundaryQuotient](../Unfoldings/Topology/BoundaryQuotient.lean) | Boundary-only quotient maps, complement homeomorphisms, and descended boundary retractions |
 | [Unfoldings.Topology.ChainPairings](../Unfoldings/Topology/ChainPairings.lean) | Every link pairing is consecutive or closes the outer banks |
+| [Unfoldings.Topology.CircleObstruction](../Unfoldings/Topology/CircleObstruction.lean) | Covering-space proof that a circle is not contractible and a disk cannot retract onto it |
 | [Unfoldings.Topology.CommonFibers](../Unfoldings/Topology/CommonFibers.lean) | Compact quotient maps with the same fibers identify their targets |
 | [Unfoldings.Topology.ContractibleLift](../Unfoldings/Topology/ContractibleLift.lean) | Covering-space lifts from contractible domains, without local path-connectedness assumptions |
 | [Unfoldings.Topology.ConvexBoundary](../Unfoldings/Topology/ConvexBoundary.lean) | Sphere topology and connectedness of bounded convex boundaries |
 | [Unfoldings.Topology.CyclicLabels](../Unfoldings/Topology/CyclicLabels.lean) | Nonconstant cyclic lists have no more labels than changes |
+| [Unfoldings.Topology.DiskDegree](../Unfoldings/Topology/DiskDegree.lean) | Boundary-fixing injective disk maps cover exactly the open disk on their interiors |
 | [Unfoldings.Topology.FiberGraph](../Unfoldings/Topology/FiberGraph.lean) | Equivalence chains in finite fibers yield short simple graph paths |
 | [Unfoldings.Topology.FiniteClasses](../Unfoldings/Topology/FiniteClasses.lean) | Finite equivalence classes from finitely many branching points |
 | [Unfoldings.Topology.FiniteEmbeddedGraph](../Unfoldings/Topology/FiniteEmbeddedGraph.lean) | Finite embedded multigraphs, compact carriers, and topological-to-graph connectedness |
@@ -468,6 +472,7 @@ source, including its module documentation and declarations.
 | [Unfoldings.Topology.GraphPotential](../Unfoldings/Topology/GraphPotential.lean) | Selected-edge circle winding maps and real vertex potentials from contractibility |
 | [Unfoldings.Topology.PairedInvolutions](../Unfoldings/Topology/PairedInvolutions.lean) | Generic finite interval/cycle order from two involutions |
 | [Unfoldings.Topology.PerfectProjection](../Unfoldings/Topology/PerfectProjection.lean) | A perfect boundary cannot project injectively to finite exceptions outside a closed set |
+| [Unfoldings.Topology.PlanarOpenMapping](../Unfoldings/Topology/PlanarOpenMapping.lean) | Planar invariance of domain from the pinned Jordan–Schönflies theorem and circle obstruction |
 | [Unfoldings.Topology.PuncturedSphere](../Unfoldings/Topology/PuncturedSphere.lean) | Contractibility of a unit sphere punctured at any specified point |
 | [Unfoldings.Topology.QuotientRetraction](../Unfoldings/Topology/QuotientRetraction.lean) | Continuous quotient descent and contractibility of retracts |
 
@@ -495,7 +500,9 @@ lake build
 The default build checks the library, its examples, and [Audit](../Audit.lean).
 The audit follows transitive proof dependencies and permits only
 `propext`, `Classical.choice`, and `Quot.sound`.
-It rejects unfinished proofs and native-decision axioms.
+It rejects unfinished proofs and native-decision axioms. Imported modules of
+the pinned Jordan–Schönflies library are audited in full as well, with separate
+counts for unfolding and planar-topology declarations.
 
 ### Cache options
 
@@ -530,3 +537,11 @@ The generic path-length extension and concatenation proofs adapt its variation
 arguments in `ArcLength`, `SurfacePathJoining`, and `SurfacePathReversal`.
 The generic interval center-bound proof adapts `Geometry/IntervalCenterBound`;
 the finite closed-cover theorem extends that approach to actual piece domains.
+
+The planar openness and intrinsic boundary proofs use Álvaro Begué's
+[Jordan–Schönflies formalization](https://github.com/alonamaloh/schoenflies-lean)
+at revision `05a43d29cde026618777db3d4e4316204ccca237`, under Apache 2.0.
+The [vendored source record](../vendor/schoenflies/UPSTREAM.md) documents the
+Lean 4.35 module-system and proof-script compatibility changes; theorem
+statements are unchanged. The separate [license](../vendor/schoenflies/LICENSE)
+is retained. Comparator challenge files and upstream build caches are excluded.

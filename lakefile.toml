@@ -20,3 +20,9 @@ name = "Unfoldings"
 
 [[lean_lib]]
 name = "Audit"
+
+# Pinned, licensed upstream sources; see vendor/schoenflies/UPSTREAM.md.
+[[lean_lib]]
+name = "Schoenflies"
+srcDir = "vendor/schoenflies"
+moreLeanArgs = ["-Dbackward.isDefEq.respectTransparency.types=false"]

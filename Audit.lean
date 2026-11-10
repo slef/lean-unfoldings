@@ -11,17 +11,24 @@ run_cmd do
   let environment ← getEnv
   let allowed := #[``propext, ``Classical.choice, ``Quot.sound]
   let mut declarations : Nat := 0
+  let mut planarDeclarations : Nat := 0
   -- Inspect module data as well as exported signatures: the module system can
   -- expose a proved theorem as an opaque signature in the public environment.
   for i in [:environment.header.moduleNames.size] do
     let moduleName := environment.header.moduleNames[i]!
-    if moduleName == `Unfoldings || moduleName.toString.startsWith "Unfoldings." then
+    let project := moduleName == `Unfoldings || moduleName.toString.startsWith "Unfoldings."
+    let planar := moduleName == `Schoenflies || moduleName.toString.startsWith "Schoenflies."
+    if project || planar then
       for info in environment.header.moduleData[i]!.constants do
         let name := info.name
         for dependency in (← collectAxioms name) do
           unless allowed.contains dependency do
             throwError "{name} depends on an unapproved axiom: {dependency}"
-        declarations := declarations + 1
+        if project then
+          declarations := declarations + 1
+        else
+          planarDeclarations := planarDeclarations + 1
   if declarations == 0 then
     throwError "The unfolding library contains no audited declarations."
-  logInfo m!"Audited {declarations} unfolding declarations; only standard Lean axioms occur."
+  logInfo (m!"Audited {declarations} unfolding and {planarDeclarations} pinned " ++
+    m!"planar-topology declarations; only standard Lean axioms occur.")

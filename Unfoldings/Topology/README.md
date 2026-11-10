@@ -40,8 +40,14 @@ homeomorphisms and descent of punctured boundary retractions.
 for a closed ball and identifies the complement of its boundary image with an
 open ball. A spherical target forces a finite embedded boundary graph to be a
 tree. The triangle seam-restoration and source-disk constructions both use this
-API. The tree-to-disk converse and identification of cut banks with the intrinsic
-manifold boundary remain separate tasks.
+API. The tree-to-disk converse remains separate.
+
+[CircleObstruction.lean](CircleObstruction.lean) and [DiskDegree.lean](DiskDegree.lean)
+prove the circle obstruction and the interior coverage of boundary-fixing disk
+maps. [PlanarOpenMapping.lean](PlanarOpenMapping.lean) derives planar invariance
+of domain using the pinned, licensed Jordan–Schönflies library. The actual bank
+boundary is now proved to be preserved by every disk homeomorphism of a
+spatially folded triangle complex, including at its vertices.
 
 [FiniteClasses.lean](FiniteClasses.lean) proves a generic finite-relation-class
 lemma used to separate triangle seam classes. Rotation systems, spherical

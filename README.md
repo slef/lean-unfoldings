@@ -81,7 +81,7 @@ Remaining work includes:
 
 - Complete the sphere/disk cut criteria: the tree-to-disk converse and the
   boundary-rooted forest equivalence. The [disk-to-tree theorem](Unfoldings/Polyhedron/CutTree.lean)
-  is proved for disk presentations that identify cut banks with the boundary.
+  now applies to every disk homeomorphism; boundary preservation is derived.
 - Sources at genuine cone vertices, which need sector-valued source frames.
 - Star unfolding and the downstream tools needed for the Fewest Nets paper.
 

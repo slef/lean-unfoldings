@@ -233,7 +233,11 @@ the general cut-graph disk equivalences remain open.
   - [x] On a convex boundary, construct the exact finite spatial bank graph
     from original edge segments and derive its tree property from such a disk
     presentation. The graph itself is not an input hypothesis.
-  - [ ] Derive bank-boundary preservation from the intrinsic manifold boundary.
+  - [x] Derive bank-boundary preservation for every disk homeomorphism of a
+    spatially folded complex. Planar openness separates the Euclidean and
+    one-sided charts at nonvertex points; perfectness and closedness extend
+    the result across the finite vertex set. The disk-to-tree theorem now
+    needs no boundary-preservation hypothesis.
   - [ ] Construct the completed cut disk from an embedded cut tree.
 - [ ] Interior edge cuts on a disk, ignoring existing boundary edges, produce
   one disk iff they form a forest with exactly one original-boundary point per

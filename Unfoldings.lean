@@ -10,6 +10,7 @@ public import Unfoldings.Metric.LocalMap
 public import Unfoldings.Complex
 public import Unfoldings.Complex.Exact
 public import Unfoldings.Complex.CutDisk
+public import Unfoldings.Complex.IntrinsicBoundary
 public import Unfoldings.Complex.CutGraph
 public import Unfoldings.Polyhedron.CutTree
 public import Unfoldings.Complex.Angles

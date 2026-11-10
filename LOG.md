@@ -2,6 +2,35 @@
 
 ## Session Log
 
+### 2026-11-09 — intrinsic cut boundaries and planar openness
+
+- Proved the circle is not contractible by real covering-lift uniqueness, and
+  ruled out a disk-to-circle retraction. A continuous disk map fixing its
+  sphere boundary covers its open ball; if injective, its interior image is
+  exactly that open ball.
+- Integrated Álvaro Begué's Apache-2.0 Jordan–Schönflies formalization at
+  revision `05a43d29cde026618777db3d4e4316204ccca237`. Preserved all source
+  notices and license; excluded challenge files and build caches. Documented
+  the Lean 4.35 public-module and graph proof compatibility changes, with no
+  theorem statement changes. Audited every imported vendor declaration.
+- Derived planar invariance of domain from the verified Schönflies theorem
+  and circle obstruction. The generic topology layer stays independent of
+  project geometry and metrics.
+- Proved every nonvertex point off the actual cut banks has a Euclidean metric
+  ball chart on any spatially folded complex. Planar openness separates these
+  charts from the actual one-sided bank charts under any disk homeomorphism.
+  Perfect edges and the perfect boundary circle extend both inclusions across
+  the finite vertex set. Thus every disk homeomorphism preserves exactly the
+  actual unpaired-bank boundary, without a boundary-preservation hypothesis.
+- Added `exists_cut_tree_of_homeomorph`: a disk homeomorphism of a cut convex
+  boundary suffices to construct the actual straight cut tree. The earlier
+  theorem statement remains unchanged. Tree-to-disk and the full disk forest
+  criterion remain in progress.
+- Verification: selected Mathlib cache fetch and full `lake build` pass. The
+  audit checks **3,538 unfolding declarations** and **7,243 pinned planar-topology
+  declarations**, allowing only standard Lean axioms. All **456 local
+  documentation links** resolve and every project module is indexed.
+
 ### 2026-11-09 — boundary quotients and the disk-to-tree direction for edge cuts
 
 - Added a topology-only boundary quotient API: distinct points in one fiber
