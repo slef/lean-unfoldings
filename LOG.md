@@ -2,6 +2,23 @@
 
 ## Session Log
 
+### 2026-11-10 — concrete tetrahedron benchmark
+
+- Constructed all four planar triangles, rigid spatial face placements, and
+  six full-edge pairings for the coordinate tetrahedron. Added a reusable
+  endpoint-and-length edge-identification constructor.
+- Proved the paired-edge realization embeds in space and is exactly the
+  boundary of its full-dimensional convex hull. Supporting affine coordinates
+  identify the four facets and the actual four metric vertex classes.
+- Instantiated the full source-unfolding API at a concrete crease midpoint,
+  with proved nonextremality and nonoverlap of the resulting polygonal layout.
+- Proved that cutting the three edges incident to vertex zero produces an
+  actual disk. The uncut sphere and the four completely separated faces are
+  proved not to be disks. No cut-tree or convex-boundary certificate is assumed.
+- Verification: cache check and full `lake build` pass; **4,352 project** and
+  **7,243 pinned topology declarations** use only standard Lean axioms.
+  All **558 local documentation links** resolve, with no new project warnings.
+
 ### 2026-11-09 — full relative disk forest criterion and canonical sphere iff
 
 - Extended the outside-root tree equivalence to named multigraphs. Loops and

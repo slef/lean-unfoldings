@@ -135,3 +135,4 @@ public import Unfoldings.Examples.Metric
 public import Unfoldings.Examples.Hinge
 public import Unfoldings.Examples.CutForests
 public import Unfoldings.Examples.BoundaryFans
+public import Unfoldings.Examples.Tetrahedron

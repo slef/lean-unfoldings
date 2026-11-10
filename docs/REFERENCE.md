@@ -428,6 +428,7 @@ source, including its module documentation and declarations.
 | [Unfoldings.Geometry.Edge](../Unfoldings/Geometry/Edge.lean) | Edge intersections and endpoint preservation by isometries |
 | [Unfoldings.Geometry.EdgeChordInterior](../Unfoldings/Geometry/EdgeChordInterior.lean) | Chords between different edge interiors enter a triangle interior |
 | [Unfoldings.Geometry.EdgeCoordinates](../Unfoldings/Geometry/EdgeCoordinates.lean) | Centered affine half-plane coordinates on actual triangle edge neighborhoods |
+| [Unfoldings.Geometry.EdgeIdentification](../Unfoldings/Geometry/EdgeIdentification.lean) | Construct full-edge isometries from matching endpoint lengths and orientation labels |
 | [Unfoldings.Geometry.EdgeLine](../Unfoldings/Geometry/EdgeLine.lean) | Affine edge agreement extends to the entire supporting line |
 | [Unfoldings.Geometry.EdgeParameters](../Unfoldings/Geometry/EdgeParameters.lean) | Strict edge interpolation avoids all original triangle vertices |
 | [Unfoldings.Geometry.EdgePerfect](../Unfoldings/Geometry/EdgePerfect.lean) | Every neighborhood in a genuine closed edge contains a nonvertex point |
@@ -547,6 +548,15 @@ source, including its module documentation and declarations.
 | [Unfoldings.Examples.CutForests](../Unfoldings/Examples/CutForests.lean) | Empty forest, one rooted edge, and counterexamples with missing or multiple roots |
 | [Unfoldings.Examples.Hinge](../Unfoldings/Examples/Hinge.lean) | Joined hinges, boundary contact, and a layout with interior overlap |
 | [Unfoldings.Examples.Metric](../Unfoldings/Examples/Metric.lean) | Metric recovery, disconnectedness, and shortcuts |
+| [Unfoldings.Examples.Tetrahedron](../Unfoldings/Examples/Tetrahedron.lean) | Complete concrete convex tetrahedron, source unfolding, and valid and invalid cut patterns |
+| [Unfoldings.Examples.Tetrahedron.Body](../Unfoldings/Examples/Tetrahedron/Body.lean) | The actual tetrahedral convex hull, its supporting coordinates and four exact facets |
+| [Unfoldings.Examples.Tetrahedron.Boundary](../Unfoldings/Examples/Tetrahedron/Boundary.lean) | Prove spatial injectivity and certify a full-dimensional convex boundary |
+| [Unfoldings.Examples.Tetrahedron.Complex](../Unfoldings/Examples/Tetrahedron/Complex.lean) | Six checked paired edges and compatible rigid spatial face maps |
+| [Unfoldings.Examples.Tetrahedron.Coordinates](../Unfoldings/Examples/Tetrahedron/Coordinates.lean) | Four rigid planar face placements of an explicit coordinate tetrahedron |
+| [Unfoldings.Examples.Tetrahedron.Cuts](../Unfoldings/Examples/Tetrahedron/Cuts.lean) | A specific three-spoke cut tree gives a disk; no cuts and all edges cut fail |
+| [Unfoldings.Examples.Tetrahedron.Faces](../Unfoldings/Examples/Tetrahedron/Faces.lean) | Relate spatial supporting coordinates to intrinsic face barycentric coordinates |
+| [Unfoldings.Examples.Tetrahedron.Source](../Unfoldings/Examples/Tetrahedron/Source.lean) | Instantiate the complete source unfolding at an actual crease midpoint |
+| [Unfoldings.Examples.Tetrahedron.Vertices](../Unfoldings/Examples/Tetrahedron/Vertices.lean) | Identify the actual metric vertex quotient with the four declared tetrahedron vertices |
 
 ## Build and proof audit
 

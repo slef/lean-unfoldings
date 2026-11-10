@@ -69,6 +69,7 @@ data and theorems for use in further proofs.
 | Understand the metric construction | [Metric/Route.lean](Unfoldings/Metric/Route.lean), [Metric/Gluing.lean](Unfoldings/Metric/Gluing.lean) |
 | Characterize disk cuts of a convex sphere | [Polyhedron/CutDiskIff.lean](Unfoldings/Polyhedron/CutDiskIff.lean) |
 | Cut a disk along a rooted forest | [Complex/RelativeCutForest.lean](Unfoldings/Complex/RelativeCutForest.lean) |
+| Instantiate a complete convex polyhedron | [Examples/Tetrahedron.lean](Unfoldings/Examples/Tetrahedron.lean) |
 | Try small examples | [Examples/Metric.lean](Unfoldings/Examples/Metric.lean), [Examples/Hinge.lean](Unfoldings/Examples/Hinge.lean) |
 
 For a specific lemma, use the [module index](docs/REFERENCE.md#module-index).

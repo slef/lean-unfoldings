@@ -354,6 +354,9 @@ Comparison with arbitrary subdivided graph presentations remains separate.
   `2 * Real.pi`.
 - [x] At equality the terminal banks coincide in the development; above a full
   turn there is genuine two-piece interior overlap at every positive radius.
+- [x] Concrete tetrahedron: certify all four facets and six seam pairings,
+  spatial embedding, full-dimensional convex boundary, a source unfolding at
+  an edge midpoint, a specific cut-tree disk, and two invalid cut patterns.
 - [ ] Lateral pyramid unfolding and a complete convex-pyramid net as benchmarks.
 
 ## Phase 5 Embedded convex surfaces and shortest paths
