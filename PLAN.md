@@ -756,8 +756,11 @@ remaining forest, uniform-turn, and global nonoverlap arguments.
 - [x] Bound actual spatial turning of roof sections by twice the tilt.
 - [x] Bound signed section-crossing subtree corrections by total curvature on
   the actual constructed forest, independently of mesh size and tree depth.
-- [ ] Connect section transitions and rim calibration to uniform prefix turns;
-  then prove branching-bank noncrossing.
+- [x] Extend crossing budgets to arbitrary rays. Construct vertex-avoiding actual
+  face traces from one common rim anchor to every original face, with spatial
+  turning bounded by twice the tilt.
+- [ ] Prove actual developed transitions along those original-seam traces,
+  derive uniform headings, then prove branching-bank noncrossing.
 - [ ] Global strip assembly and the full nearly flat cap theorem.
 
 ## Later targets and Fewest Nets

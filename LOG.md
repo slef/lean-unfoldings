@@ -2,6 +2,35 @@
 
 ## Session Log
 
+### 2026-11-10 — constructed regular sections from a common rim face
+
+- Proved that an acute positive-span wedge supplies a monotone ambient
+  coordinate in every orthogonal frame. The actual signed forest-crossing
+  curvature budget therefore works for arbitrary ray origins and directions.
+- Constructed strictly increasing finite original-face partitions from the
+  actual convex projected-triangle cover. Each whole closed piece has its
+  original face label; the roof agrees with that face's supporting plane.
+- Defined actual spatial and rigidly developed face vectors over horizontal
+  directions. Identified exact section secants and transferred the twice-tilt
+  spatial turn bound to the constructed sequence of actual face tangents.
+- Constructed a midpoint of an actual original rim bank. Its original face is
+  unique and it is distinct from every original projected corner. All sections
+  from it start in that same original face.
+- Used the checked finite affine-arrangement density theorem to choose an
+  interior target in every original face whose complete anchor line avoids
+  all original vertices. The resulting actual trace has the required first
+  and last face labels; every nontrivial transition crosses an actual original
+  seam, by exact metric classes and injective projection.
+- Proved the local angular reverse triangle inequality and a hinge-turn bound
+  from matching seam angles and the planar same-halfplane condition. Instantiating
+  this condition across the actual face trace remains to be done.
+- Retained-seam and cut-seam developed direction transitions, uniform global
+  headings, bank noncrossing, and global nonoverlap remain open. The full cap
+  theorem is still incomplete.
+- Verification: scoped cache check and full `lake build` pass; **6,102 project**
+  and **7,243 pinned topology declarations** use only standard Lean axioms.
+  Checked **782 local documentation links**; no project warnings or temporary worktrees.
+
 ### 2026-11-10 — actual roof-section turning and signed forest-crossing budgets
 
 - Bounded the entire supporting-plane roof's height variation by the actual

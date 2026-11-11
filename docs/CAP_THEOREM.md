@@ -209,9 +209,18 @@ global strip hypotheses are constructed. It is not a proof of Theorem 9.
   the actual constructed sector root paths, with a half-open endpoint convention.
   Regrouping nested subtree curvatures bounds the weighted signed correction
   by total curvature, independently of mesh size and tree depth.
-- [ ] Connect those signed counts to actual developed face transitions along
-  sections and calibrate the rim headings. These bounds alone do not establish
-  prefix turns or nonoverlap.
+- [x] Extend the signed crossing budget to arbitrary ray origins and directions.
+  Any acute wedge supplies one monotone ambient coordinate in every frame.
+- [x] Construct one nonvertex original rim anchor, with a unique original face.
+  Every original face has an interior target whose complete section line avoids
+  all original vertices. Construct a finite original-face trace with the actual
+  anchor and target face labels and actual original-seam transitions.
+- [x] Identify the trace's actual face tangent vectors and bound their total
+  spatial turning by twice the tilt. Local projection error applies to their
+  genuine rigidly developed vectors.
+- [ ] Prove retained-seam and cut-seam developed direction transitions and
+  assemble the uniform heading bound from the common anchor. The section and
+  crossing estimates alone do not establish prefix turns or nonoverlap.
 - [ ] Prove the geometric subregion identities used in the prefix-turn argument,
   including the truncation and artificial connecting segments.
 - [ ] Bound turn distortion for every prefix independently of mesh size.

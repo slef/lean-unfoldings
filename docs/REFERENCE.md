@@ -114,6 +114,14 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Cap.AnchorTrace](../Unfoldings/Cap/AnchorTrace.lean) | Construct actual section traces from one rim anchor to every original face, avoiding all original vertices |
+| [Unfoldings.Cap.FaceDirections](../Unfoldings/Cap/FaceDirections.lean) | Actual spatial and developed face directions over prescribed horizontal vectors, with genuine local angle control |
+| [Unfoldings.Cap.RimAnchor](../Unfoldings/Cap/RimAnchor.lean) | Construct a nonvertex rim midpoint with one original face and a common initial face for all sections |
+| [Unfoldings.Cap.SectionPartition](../Unfoldings/Cap/SectionPartition.lean) | Construct strictly ordered finite original-face partitions of every projected cap segment |
+| [Unfoldings.Cap.SectionTrace](../Unfoldings/Cap/SectionTrace.lean) | Actual original-face trace labels and exact spatial secants from their tangent vectors |
+| [Unfoldings.Cap.SectionTraceTurns](../Unfoldings/Cap/SectionTraceTurns.lean) | Actual tangent directions along the constructed face sequence turn by at most twice the tilt |
+| [Unfoldings.Cap.SectionTransitions](../Unfoldings/Cap/SectionTransitions.lean) | Away from original vertices, adjacent original faces meet through an actual original seam |
+| [Unfoldings.Cap.SectorFrameCrossings](../Unfoldings/Cap/SectorFrameCrossings.lean) | Bound actual forest crossing corrections in arbitrary translated orthogonal ray frames |
 | [Unfoldings.Cap.RoofSections](../Unfoldings/Cap/RoofSections.lean) | Actual concave roof sections, uniform slope bounds, and telescoping real secant inclinations |
 | [Unfoldings.Cap.SectionAngles](../Unfoldings/Cap/SectionAngles.lean) | Actual spatial section turning is at most twice the tilt, uniformly before the entire mesh |
 | [Unfoldings.Cap.SectorCrossings](../Unfoldings/Cap/SectorCrossings.lean) | Actual sector root paths have bounded signed ray crossings; weighted subtree corrections are bounded by total curvature |
@@ -520,6 +528,10 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Geometry.HingeTurnBound](../Unfoldings/Geometry/HingeTurnBound.lean) | Same-halfplane planar turns are bounded by spatial bend when seam angles match |
+| [Unfoldings.Geometry.AngleMonotoneCoordinates](../Unfoldings/Geometry/AngleMonotoneCoordinates.lean) | An acute direction wedge supplies a monotone coordinate in every orthogonal frame |
+| [Unfoldings.Geometry.AngleMonotoneCrossings](../Unfoldings/Geometry/AngleMonotoneCrossings.lean) | Acute angle-monotone paths have signed ray-crossing counts of magnitude at most one in every frame |
+| [Unfoldings.Geometry.RayAvoidance](../Unfoldings/Geometry/RayAvoidance.lean) | Choose endpoints in any open set so lines from a fixed origin avoid finitely many exceptional points |
 | [Unfoldings.Geometry.ConcaveSecants](../Unfoldings/Geometry/ConcaveSecants.lean) | Concave secant inclinations telescope independently of partition size |
 | [Unfoldings.Geometry.LevelCrossings](../Unfoldings/Geometry/LevelCrossings.lean) | Actual affine level intersections and signed horizontal-ray counts for coordinate-monotone chains |
 | [Unfoldings.Geometry.SlopeAngles](../Unfoldings/Geometry/SlopeAngles.lean) | Genuine angles of slope vectors equal absolute real arctangent differences |
