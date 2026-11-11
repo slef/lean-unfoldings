@@ -114,6 +114,9 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Cap.ExtendedWaterfallTraces](../Unfoldings/Cap/ExtendedWaterfallTraces.lean) | Actual whole-strip maps are uniformly Lipschitz and have containing-face boundary traces |
+| [Unfoldings.Cap.ExtendedWaterfallCoherent](../Unfoldings/Cap/ExtendedWaterfallCoherent.lean) | One constructed waterfall has coherent domains for every minimal development |
+| [Unfoldings.Cap.CenteredMapTrace](../Unfoldings/Cap/CenteredMapTrace.lean) | Construct unique one-sided actual strip traces retaining containing-face placements |
 | [Unfoldings.Cap.SectorPositionMargins](../Unfoldings/Cap/SectorPositionMargins.lean) | Uniform positive coordinate margins for enclosing sector strips |
 | [Unfoldings.Cap.ProjectedLinearError](../Unfoldings/Cap/ProjectedLinearError.lean) | Derive linear chart proximity to identity from angular and normal control |
 | [Unfoldings.Cap.ExtendedWaterfallQuadrants](../Unfoldings/Cap/ExtendedWaterfallQuadrants.lean) | Actual whole-strip images stay in their sector quadrants relative to the common source |
@@ -612,6 +615,9 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Geometry.MonotoneStripLipschitz](../Unfoldings/Geometry/MonotoneStripLipschitz.lean) | Uniform Lipschitz bounds for affine selections on bounded monotone strips |
+| [Unfoldings.Geometry.MonotoneStripCoreLipschitz](../Unfoldings/Geometry/MonotoneStripCoreLipschitz.lean) | Uniform strict-strip Lipschitz bounds across coherent reopening pinches |
+| [Unfoldings.Geometry.FiniteSelectionNormBounds](../Unfoldings/Geometry/FiniteSelectionNormBounds.lean) | Upper norm bounds across arbitrary continuous affine chart switches |
 | [Unfoldings.Geometry.FiniteSelectionRadial](../Unfoldings/Geometry/FiniteSelectionRadial.lean) | Linear tests and radial progress through arbitrary continuous affine chart switches |
 | [Unfoldings.Geometry.NearIdentityMargins](../Unfoldings/Geometry/NearIdentityMargins.lean) | Small linear error supplies the four strict axis tests for strip injectivity |
 | [Unfoldings.Geometry.MonotoneStripSourceError](../Unfoldings/Geometry/MonotoneStripSourceError.lean) | Whole-strip source-position estimates across coherent reopening pinches |
@@ -818,6 +824,8 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Topology.FiniteSelectionClosure](../Unfoldings/Topology/FiniteSelectionClosure.lean) | Finite closed-piece selections retain actual branch values at closure points |
+| [Unfoldings.Topology.ComplexLipschitzExtension](../Unfoldings/Topology/ComplexLipschitzExtension.lean) | Continuous planar extensions and uniqueness of their closure traces |
 | [Unfoldings.Topology.FiniteSelectionBounds](../Unfoldings/Topology/FiniteSelectionBounds.lean) | Two-sided increment bounds for arbitrary continuous finite selections |
 | [Unfoldings.Topology.FiniteStrictPieces](../Unfoldings/Topology/FiniteStrictPieces.lean) | Ordered strict pieces can contact only at a common endpoint of adjacent pieces |
 | [Unfoldings.Topology.ChildSubtrees](../Unfoldings/Topology/ChildSubtrees.lean) | Immediate-child subtrees partition all proper descendants with arbitrary additive weights |

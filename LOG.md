@@ -2,6 +2,24 @@
 
 ## Session Log
 
+### 2026-11-11 — constructed actual one-sided waterfall traces
+
+- Proved uniform Lipschitz bounds for continuous finite affine selections on
+  bounded monotone strips. Inset comparisons extend them through coherent
+  reopening pinches without identifying permanently merged bank values.
+- Constructed continuous planar extensions and proved their values on the
+  closure are unique. A finite closed-piece argument retains an actual
+  containing-face placement at every boundary point.
+- Constructed one actual coherent waterfall before its development or
+  calibration. Derived `cornerExtendedOutward_exists_waterfall_traces`: every
+  strict physical strip has an 8-Lipschitz actual map and a constructed one-sided
+  containing-face trace. The bound is independent of both meshes.
+- Verification: cache retrieval followed by full `lake build` pass; **8,341
+  unfolding / 7,243 pinned topology declarations**, standard axioms only;
+  indexed documentation links (**1,151**) and whitespace pass. Parametrizing
+  complete boundary curves and identifying their facing banks remain the next
+  steps toward global strip separation; the full cap theorem remains open.
+
 ### 2026-11-11 — common-source position control in actual bank frames
 
 - Derived exact developed-vector lengths and the normal-dependent two-sided

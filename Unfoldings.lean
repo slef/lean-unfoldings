@@ -410,3 +410,11 @@ public import Unfoldings.Geometry.MonotoneStripSourceError
 public import Unfoldings.Geometry.NearIdentityMargins
 public import Unfoldings.Topology.FiniteSelectionBounds
 public import Unfoldings.Geometry.FiniteSelectionRadial
+public import Unfoldings.Cap.CenteredMapTrace
+public import Unfoldings.Cap.ExtendedWaterfallCoherent
+public import Unfoldings.Cap.ExtendedWaterfallTraces
+public import Unfoldings.Geometry.FiniteSelectionNormBounds
+public import Unfoldings.Geometry.MonotoneStripCoreLipschitz
+public import Unfoldings.Geometry.MonotoneStripLipschitz
+public import Unfoldings.Topology.ComplexLipschitzExtension
+public import Unfoldings.Topology.FiniteSelectionClosure

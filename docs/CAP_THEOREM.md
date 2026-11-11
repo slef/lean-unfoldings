@@ -497,6 +497,13 @@ Separation of different banks and global nonoverlap remain open.
   source connectors, including coherent pinches. Obtain uniform actual
   whole-strip injectivity and source-position control together. Every such strip
   stays in its open sector quadrant relative to the common developed source.
+- [x] Construct actual one-sided strip boundary traces. Uniform affine norm
+  bounds survive arbitrary continuous face changes and coherent reopening
+  pinches, giving an 8-Lipschitz actual map on every strict bounded strip.
+  A continuous extension gives unique closure values; finite closed-face
+  selection proves each value is an actual containing-face placement. The
+  waterfall is chosen before its development and calibration. Bank matching,
+  full boundary-curve parametrization, and global separation remain open.
 - [ ] Prove side-by-side separation of all developed strips and hence all
   distinct original face interiors.
 - [x] Apply the cut-disk and flat-development infrastructure to the fixed-wedge
