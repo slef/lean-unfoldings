@@ -32,20 +32,24 @@ variable {Face : Type u} [Fintype Face] {C : TriangleComplex.{u, v} Face}
   (covers : ∀ p, cycle.Visited p)
 
 include roots closes covers in
-/-- The rotation uses the actual two banks of the original parent seam, including all branches. -/
-theorem exists_subtree_bank_rotation (e : C.Vertex Set.univ) (nonroot : e ∉ P.roots) :
-    ∃ enter leave : Fin (n + 1), enter ≠ leave ∧
-      (∃ side, (C.boundaryEndEquiv (C.selectedRetain S) (cycle.point enter)).1 =
-        C.relativeCutBank (C.selectedRetain S) Set.univ (C.selectedParentCut S e nonroot) side) ∧
-      (∃ side, (C.boundaryEndEquiv (C.selectedRetain S) (cycle.point leave)).1 =
-        C.relativeCutBank (C.selectedRetain S) Set.univ (C.selectedParentCut S e nonroot) side) ∧
-      NormedSpace.normalize (D.boundaryCycleFrame cycle (-D.boundaryRay (cycle.point leave))) =
-        polarRay (∑ v ∈ P.descendants e, C.interiorAngularDefect Set.univ v) *
-          NormedSpace.normalize
-            (D.boundaryCycleFrame cycle (D.boundaryRay (cycle.point enter))) := by
+/-- Prescribed oriented subtree exits determine the actual normalized parent-bank rotation. -/
+theorem subtree_bank_rotation_of_exits (e : C.Vertex Set.univ) (nonroot : e ∉ P.roots)
+    (enter leave : Fin (n + 1)) (different : enter ≠ leave)
+    (enters : ¬ C.SubtreeBoundaryInside S cycle e enter ∧
+      C.SubtreeBoundaryInside S cycle e (finRotate (n + 1) enter))
+    (leaves : C.SubtreeBoundaryInside S cycle e leave ∧
+      ¬ C.SubtreeBoundaryInside S cycle e (finRotate (n + 1) leave))
+    (stable : ∀ i, i ≠ enter → i ≠ leave →
+      (C.SubtreeBoundaryInside S cycle e (finRotate (n + 1) i) ↔
+        C.SubtreeBoundaryInside S cycle e i)) :
+    (∃ side, (C.boundaryEndEquiv (C.selectedRetain S) (cycle.point enter)).1 =
+      C.relativeCutBank (C.selectedRetain S) Set.univ (C.selectedParentCut S e nonroot) side) ∧
+    (∃ side, (C.boundaryEndEquiv (C.selectedRetain S) (cycle.point leave)).1 =
+      C.relativeCutBank (C.selectedRetain S) Set.univ (C.selectedParentCut S e nonroot) side) ∧
+    NormedSpace.normalize (D.boundaryCycleFrame cycle (-D.boundaryRay (cycle.point leave))) =
+      polarRay (∑ v ∈ P.descendants e, C.interiorAngularDefect Set.univ v) *
+        NormedSpace.normalize (D.boundaryCycleFrame cycle (D.boundaryRay (cycle.point enter))) := by
   classical
-  obtain ⟨enter, leave, different, enters, leaves, stable⟩ :=
-    C.exists_oriented_subtree_exits S roots cycle closes covers e nonroot
   let L := D.boundaryCycleFrame cycle
   let direction (i : Fin (n + 1)) := NormedSpace.normalize (L (D.boundaryRay (cycle.point i)))
   let turn (i : Fin (n + 1)) :=
@@ -83,7 +87,7 @@ theorem exists_subtree_bank_rotation (e : C.Vertex Set.univ) (nonroot : e ∉ P.
     ((C.subtree_boundary_change_iff S cycle closes e enter).mpr (Or.inr ⟨enters.2, enters.1⟩))
   have exit := (C.subtreeCrossingBank_iff S roots e nonroot _).mp
     ((C.subtree_boundary_change_iff S cycle closes e leave).mpr (Or.inl leaves))
-  refine ⟨enter, leave, different, entrance, exit, ?_⟩
+  refine ⟨entrance, exit, ?_⟩
   simp only [map_neg, NormedSpace.normalize_neg]
   change -direction leave = polarRay curvature * direction enter
   have half_turn : polarRay (-Real.pi) = -1 := by
@@ -94,10 +98,37 @@ theorem exists_subtree_bank_rotation (e : C.Vertex Set.univ) (nonroot : e ∉ P.
   ring
 
 include roots closes covers in
-/-- Equal actual edge lengths upgrade the whole-subtree direction identity to a rigid rotation. -/
-theorem exists_subtree_rigid_bank_rotation (F : SpatialFolding C)
-    (e : C.Vertex Set.univ) (nonroot : e ∉ P.roots) :
-    ∃ enter leave : Fin (n + 1), ∃ side : Bool,
+/-- The rotation uses the actual two banks of the original parent seam, including all branches. -/
+theorem exists_subtree_bank_rotation (e : C.Vertex Set.univ) (nonroot : e ∉ P.roots) :
+    ∃ enter leave : Fin (n + 1), enter ≠ leave ∧
+      (∃ side, (C.boundaryEndEquiv (C.selectedRetain S) (cycle.point enter)).1 =
+        C.relativeCutBank (C.selectedRetain S) Set.univ (C.selectedParentCut S e nonroot) side) ∧
+      (∃ side, (C.boundaryEndEquiv (C.selectedRetain S) (cycle.point leave)).1 =
+        C.relativeCutBank (C.selectedRetain S) Set.univ (C.selectedParentCut S e nonroot) side) ∧
+      NormedSpace.normalize (D.boundaryCycleFrame cycle (-D.boundaryRay (cycle.point leave))) =
+        polarRay (∑ v ∈ P.descendants e, C.interiorAngularDefect Set.univ v) *
+          NormedSpace.normalize
+            (D.boundaryCycleFrame cycle (D.boundaryRay (cycle.point enter))) := by
+  obtain ⟨enter, leave, different, enters, leaves, stable⟩ :=
+    C.exists_oriented_subtree_exits S roots cycle closes covers e nonroot
+  obtain ⟨entrance, exit, rotation⟩ :=
+    D.subtree_bank_rotation_of_exits S roots cycle closes covers e nonroot
+      enter leave different enters leaves stable
+  exact ⟨enter, leave, different, entrance, exit, rotation⟩
+
+include roots closes covers in
+/-- Prescribed oriented exits give the actual rigid rotation, including bank lengths. -/
+theorem subtree_rigid_bank_rotation_of_exits (F : SpatialFolding C)
+    (e : C.Vertex Set.univ) (nonroot : e ∉ P.roots)
+    (enter leave : Fin (n + 1)) (different : enter ≠ leave)
+    (enters : ¬ C.SubtreeBoundaryInside S cycle e enter ∧
+      C.SubtreeBoundaryInside S cycle e (finRotate (n + 1) enter))
+    (leaves : C.SubtreeBoundaryInside S cycle e leave ∧
+      ¬ C.SubtreeBoundaryInside S cycle e (finRotate (n + 1) leave))
+    (stable : ∀ i, i ≠ enter → i ≠ leave →
+      (C.SubtreeBoundaryInside S cycle e (finRotate (n + 1) i) ↔
+        C.SubtreeBoundaryInside S cycle e i)) :
+    ∃ side : Bool,
       (C.boundaryEndEquiv (C.selectedRetain S) (cycle.point enter)).1 =
         C.relativeCutBank (C.selectedRetain S) Set.univ (C.selectedParentCut S e nonroot) side ∧
       (C.boundaryEndEquiv (C.selectedRetain S) (cycle.point leave)).1 =
@@ -105,8 +136,9 @@ theorem exists_subtree_rigid_bank_rotation (F : SpatialFolding C)
       D.boundaryCycleFrame cycle (-D.boundaryRay (cycle.point leave)) =
         polarRay (∑ v ∈ P.descendants e, C.interiorAngularDefect Set.univ v) *
           D.boundaryCycleFrame cycle (D.boundaryRay (cycle.point enter)) := by
-  obtain ⟨enter, leave, different, ⟨a, first⟩, ⟨b, last⟩, rotation⟩ :=
-    D.exists_subtree_bank_rotation S roots cycle closes covers e nonroot
+  obtain ⟨⟨a, first⟩, ⟨b, last⟩, rotation⟩ :=
+    D.subtree_bank_rotation_of_exits S roots cycle closes covers e nonroot
+      enter leave different enters leaves stable
   have opposite : b = !a := by
     have distinct : b ≠ a := by
       intro same
@@ -126,7 +158,7 @@ theorem exists_subtree_rigid_bank_rotation (F : SpatialFolding C)
   let κ := ∑ v ∈ P.descendants e, C.interiorAngularDefect Set.univ v
   have same : ‖y‖ = ‖x‖ := by simpa only [y, x, L.norm_map, norm_neg] using lengths.symm
   change NormedSpace.normalize y = polarRay κ * NormedSpace.normalize x at rotation
-  refine ⟨enter, leave, a, first, ?_, ?_⟩
+  refine ⟨a, first, ?_, ?_⟩
   · simpa only [opposite] using last
   · change y = polarRay κ * x
     calc
@@ -136,5 +168,24 @@ theorem exists_subtree_rigid_bank_rotation (F : SpatialFolding C)
         simp only [Complex.real_smul]
         ring
       _ = polarRay κ * x := by rw [NormedSpace.norm_smul_normalize]
+
+include roots closes covers in
+/-- Equal actual edge lengths upgrade the whole-subtree direction identity to a rigid rotation. -/
+theorem exists_subtree_rigid_bank_rotation (F : SpatialFolding C)
+    (e : C.Vertex Set.univ) (nonroot : e ∉ P.roots) :
+    ∃ enter leave : Fin (n + 1), ∃ side : Bool,
+      (C.boundaryEndEquiv (C.selectedRetain S) (cycle.point enter)).1 =
+        C.relativeCutBank (C.selectedRetain S) Set.univ (C.selectedParentCut S e nonroot) side ∧
+      (C.boundaryEndEquiv (C.selectedRetain S) (cycle.point leave)).1 =
+        C.relativeCutBank (C.selectedRetain S) Set.univ (C.selectedParentCut S e nonroot) (!side) ∧
+      D.boundaryCycleFrame cycle (-D.boundaryRay (cycle.point leave)) =
+        polarRay (∑ v ∈ P.descendants e, C.interiorAngularDefect Set.univ v) *
+          D.boundaryCycleFrame cycle (D.boundaryRay (cycle.point enter)) := by
+  obtain ⟨enter, leave, different, enters, leaves, stable⟩ :=
+    C.exists_oriented_subtree_exits S roots cycle closes covers e nonroot
+  obtain ⟨side, first, last, rotation⟩ :=
+    D.subtree_rigid_bank_rotation_of_exits S roots cycle closes covers F e nonroot
+      enter leave different enters leaves stable
+  exact ⟨enter, leave, side, first, last, rotation⟩
 
 end Unfoldings.FacewiseDevelopment

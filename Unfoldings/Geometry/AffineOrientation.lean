@@ -33,6 +33,19 @@ theorem orient_affineMap (f : Plane →ᵃ[ℝ] Plane) (a b c : Plane) :
     PiLp.zero_apply, smul_eq_mul, sub_zero]
   ring
 
+/-- The same signed area scale acts on tangent vectors, without a translation term. -/
+theorem orient_affine_linear (f : Plane →ᵃ[ℝ] Plane) (x y : Plane) :
+    orient 0 (f.linear x) (f.linear y) = orientationScale f * orient 0 x y := by
+  have first := f.linear_apply_vsub x 0
+  have last := f.linear_apply_vsub y 0
+  change f.linear (x - 0) = f x - f 0 at first
+  change f.linear (y - 0) = f y - f 0 at last
+  rw [sub_zero] at first last
+  have equal : orient 0 (f.linear x) (f.linear y) = orient (f 0) (f x) (f y) := by
+    rw [first, last]
+    simp only [orient, PiLp.sub_apply, PiLp.zero_apply, sub_zero]
+  exact equal.trans (orient_affineMap f 0 x y)
+
 theorem orientationScale_ne_zero (f : Plane ≃ᵃⁱ[ℝ] Plane) :
     orientationScale f.toAffineMap ≠ 0 := by
   have nonzero : orient (0 : Plane) (EuclideanSpace.single 0 1)

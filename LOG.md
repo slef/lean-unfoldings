@@ -2,6 +2,30 @@
 
 ## Session Log
 
+### 2026-11-10 — actual retained and signed parent-bank section transitions
+
+- Derived strict opposite-side opening in actual cap projection. The actual
+  projected-to-developed affine charts have the same nonzero determinant sign
+  across the connected retained mesh.
+- Identified actual spatial and developed seam chords. Every nonconstant
+  vertex-avoiding section transition has an actual transverse original seam.
+  Actual retained hinge opening contracts section turns.
+- Chose a complete actual boundary contour positive in cap projection. Its
+  common developed frame preserves projected orientation on all original faces.
+- Exposed the prescribed entrance and exit data in subtree rotation proofs,
+  preserving existing theorem statements. Actual parent-bank entrances run
+  parent to child; exits run child to parent.
+- Identified the actual outward parent-vector rotation, positively by all
+  descendant curvature in that common frame. Removing this actual phase gives
+  a section turn at most the genuine spatial bend, for all transverse directions.
+- Matching these phases to trace crossing counters, composing uniform headings,
+  branching-bank separation, and global nonoverlap remain open. The full cap
+  theorem is still incomplete.
+- Verification: scoped Mathlib cache check and full `lake build` pass;
+  **6,180 project** and **7,243 pinned topology declarations** use only standard
+  Lean axioms. Checked **797 local documentation links**; no project warnings.
+
+
 ### 2026-11-10 — constructed regular sections from a common rim face
 
 - Proved that an acute positive-span wedge supplies a monotone ambient

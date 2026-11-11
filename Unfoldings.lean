@@ -178,3 +178,6 @@ public import Unfoldings.Cap.SectorCrossings
 public import Unfoldings.Cap.SectorFrameCrossings
 public import Unfoldings.Cap.AnchorTrace
 public import Unfoldings.Geometry.HingeTurnBound
+public import Unfoldings.Cap.SectionSeams
+public import Unfoldings.Cap.AlignedSectionTurn
+public import Unfoldings.Cap.PhaseSectionTurn

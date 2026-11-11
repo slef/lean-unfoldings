@@ -55,6 +55,21 @@ theorem spatialDirection_eq_section (f : Face) (direction : Plane) :
   · exact congrArg (fun p : Plane => p 1) horizontal
   · exact K.spatialDirection_height f direction
 
+/-- Inverse face projection sends an actual projected chord back to its original chord. -/
+theorem pullbackDirection_sub (f : Face) (a b : Plane) :
+    K.pullbackDirection f (K.projectFace f b - K.projectFace f a) = b - a := by
+  have linear := (K.projectFaceEquiv f).toAffineMap.linear_apply_vsub b a
+  change (K.projectFaceEquiv f).linear (b - a) = K.projectFace f b - K.projectFace f a at linear
+  change (K.projectFaceEquiv f).linear.symm _ = b - a
+  rw [← linear, LinearEquiv.symm_apply_apply]
+
+/-- Actual spatial tangent vectors agree with actual original face chords. -/
+theorem spatialDirection_chord (f : Face) (a b : Plane) :
+    K.spatialDirection f (K.projectFace f b - K.projectFace f a) =
+      K.folding.place f b - K.folding.place f a := by
+  rw [spatialDirection, K.pullbackDirection_sub]
+  exact (K.folding.place f).toAffineMap.linear_apply_vsub b a
+
 theorem spatialDirection_ne_zero (f : Face) {direction : Plane} (nonzero : direction ≠ 0) :
     K.spatialDirection f direction ≠ 0 := by
   intro zero
@@ -81,6 +96,13 @@ variable {Face : Type u} [Fintype Face] {C : TriangleComplex.{u, v} Face}
 
 def developedDirection (f : Face) (direction : Plane) : Plane :=
   (D.place f).linear (K.pullbackDirection f direction)
+
+/-- Actual developed tangent vectors agree with actual rigid face chords. -/
+theorem developedDirection_chord (f : Face) (a b : Plane) :
+    D.developedDirection K f (K.projectFace f b - K.projectFace f a) =
+      D.place f b - D.place f a := by
+  rw [developedDirection, K.pullbackDirection_sub]
+  exact (D.place f).toAffineEquiv.toAffineMap.linear_apply_vsub b a
 
 theorem developedDirection_ne_zero (f : Face) {direction : Plane} (nonzero : direction ≠ 0) :
     D.developedDirection K f direction ≠ 0 := by

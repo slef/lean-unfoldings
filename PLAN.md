@@ -759,8 +759,11 @@ remaining forest, uniform-turn, and global nonoverlap arguments.
 - [x] Extend crossing budgets to arbitrary rays. Construct vertex-avoiding actual
   face traces from one common rim anchor to every original face, with spatial
   turning bounded by twice the tilt.
-- [ ] Prove actual developed transitions along those original-seam traces,
-  derive uniform headings, then prove branching-bank noncrossing.
+- [x] Prove actual retained-seam turn contraction and construct transverse trace
+  seams. Orient one common boundary frame by projection; identify signed
+  parent-bank rotations and curvature-corrected local section-turn bounds.
+- [ ] Match signed phases to actual trace crossings, compose uniform headings,
+  then prove branching-bank noncrossing.
 - [ ] Global strip assembly and the full nearly flat cap theorem.
 
 ## Later targets and Fewest Nets

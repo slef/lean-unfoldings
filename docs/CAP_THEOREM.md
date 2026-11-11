@@ -218,9 +218,20 @@ global strip hypotheses are constructed. It is not a proof of Theorem 9.
 - [x] Identify the trace's actual face tangent vectors and bound their total
   spatial turning by twice the tilt. Local projection error applies to their
   genuine rigidly developed vectors.
-- [ ] Prove retained-seam and cut-seam developed direction transitions and
-  assemble the uniform heading bound from the common anchor. The section and
-  crossing estimates alone do not establish prefix turns or nonoverlap.
+- [x] Derive opposite-side opening for the actual cap projection and a common
+  projected-to-developed orientation across every connected retained mesh.
+- [x] Derive actual transverse seams for every regular original-face transition.
+  Across retained seams, actual developed section turns are at most spatial turns.
+- [x] Orient the actual complete boundary contour by cap projection. Its common
+  developed frame preserves that projection orientation on every original face.
+- [x] Identify actual parent-child endpoint order at subtree entrances and exits.
+  In the common frame, actual outward parent vectors differ by the positive
+  whole-subtree curvature rotation. Removing that actual phase bounds the
+  transverse section turn by the genuine spatial bend, including flat cuts.
+- [ ] Match each trace crossing's signed phase to the actual geometric crossing
+  counter, compose the transitions, and assemble the uniform heading bound from
+  the common anchor. Local transitions alone do not establish global headings
+  or nonoverlap.
 - [ ] Prove the geometric subregion identities used in the prefix-turn argument,
   including the truncation and artificial connecting segments.
 - [ ] Bound turn distortion for every prefix independently of mesh size.

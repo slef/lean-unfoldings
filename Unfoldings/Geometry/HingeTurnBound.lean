@@ -72,4 +72,23 @@ theorem hinge_section_angle_le {E : Type*} [NormedAddCommGroup E] [InnerProductS
   rw [angle_eq_abs_sub_of_same_halfplane first last, first_angle, last_angle]
   exact abs_angle_sub_angle_le edge a b
 
+/-- Either common strict halfplane suffices; the boundary ray's orientation is immaterial. -/
+theorem hinge_section_angle_le_of_product_pos
+    {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
+    {r x y : Plane} (sides : 0 < orient 0 r x * orient 0 r y)
+    (edge a b : E)
+    (first_angle : InnerProductGeometry.angle r x = InnerProductGeometry.angle edge a)
+    (last_angle : InnerProductGeometry.angle r y = InnerProductGeometry.angle edge b) :
+    InnerProductGeometry.angle x y ≤ InnerProductGeometry.angle a b := by
+  rcases mul_pos_iff.mp sides with positive | negative
+  · exact hinge_section_angle_le positive.1 positive.2 edge a b first_angle last_angle
+  · have reverse (v : Plane) : orient 0 (-r) v = -orient 0 r v := by
+      simp only [orient, PiLp.neg_apply, PiLp.zero_apply, sub_zero]
+      ring
+    apply hinge_section_angle_le (r := -r)
+      (by rw [reverse]; exact neg_pos.mpr negative.1)
+      (by rw [reverse]; exact neg_pos.mpr negative.2) (-edge) a b
+    · rw [InnerProductGeometry.angle_neg_left, InnerProductGeometry.angle_neg_left, first_angle]
+    · rw [InnerProductGeometry.angle_neg_left, InnerProductGeometry.angle_neg_left, last_angle]
+
 end Unfoldings
