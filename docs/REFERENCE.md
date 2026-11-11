@@ -1150,3 +1150,10 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Cap.CompletedBankChains](../Unfoldings/Cap/CompletedBankChains.lean) | Construct full parent bank paths in one common sector |
 | [Unfoldings.Cap.ExtendedBankChains](../Unfoldings/Cap/ExtendedBankChains.lean) | Derive complete fine-path sectors from original geometry |
 | [Unfoldings.Cap.ExtendedBankChainSeparation](../Unfoldings/Cap/ExtendedBankChainSeparation.lean) | Uniform regular noncrossing of complete actual branching banks |
+| [Unfoldings.Cap.ProjectedCoherence](../Unfoldings/Cap/ProjectedCoherence.lean) | Continuity at points with coincident developed bank values |
+| [Unfoldings.Cap.FlatDescendantCopies](../Unfoldings/Cap/FlatDescendantCopies.lean) | Flat proper descendants create no developed endpoint displacement |
+| [Unfoldings.Geometry.SegmentLocalMinimum](../Unfoldings/Geometry/SegmentLocalMinimum.lean) | Local radial minima cannot receive genuine outward segments |
+| [Unfoldings.Cap.GeometricLeafMinimum](../Unfoldings/Cap/GeometricLeafMinimum.lean) | Actual geometric leaves are local radial minima |
+| [Unfoldings.Cap.RadialLeafCoherence](../Unfoldings/Cap/RadialLeafCoherence.lean) | Derive coherent developed values at local radial minima |
+| [Unfoldings.Cap.GeometricLeafInterior](../Unfoldings/Cap/GeometricLeafInterior.lean) | Nonterminal geometric nodes lie strictly inside the roof clip |
+| [Unfoldings.Cap.ExtendedLeafCoherence](../Unfoldings/Cap/ExtendedLeafCoherence.lean) | Preserve and prove coherence at every actual geometric leaf |

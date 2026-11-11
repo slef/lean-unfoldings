@@ -364,3 +364,10 @@ public import Unfoldings.Cap.CompletedBankChainContact
 public import Unfoldings.Cap.CompletedBankChains
 public import Unfoldings.Cap.ExtendedBankChains
 public import Unfoldings.Cap.ExtendedBankChainSeparation
+public import Unfoldings.Cap.ProjectedCoherence
+public import Unfoldings.Cap.FlatDescendantCopies
+public import Unfoldings.Geometry.SegmentLocalMinimum
+public import Unfoldings.Cap.GeometricLeafMinimum
+public import Unfoldings.Cap.RadialLeafCoherence
+public import Unfoldings.Cap.GeometricLeafInterior
+public import Unfoldings.Cap.ExtendedLeafCoherence

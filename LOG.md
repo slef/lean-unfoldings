@@ -2,6 +2,26 @@
 
 ## Session Log
 
+### 2026-11-11 — coherent developed values at actual leaf pinches
+
+- Extended the actual projected map to its proved coherent domain, including
+  slit endpoints where all developed face values agree. Proved continuity by
+  finite closed-face gluing and coherence at the distinguished source.
+- Proved that flat proper completed descendants create no displacement between
+  any actual copies of an endpoint, without identifying those intrinsic copies.
+- Proved geometric leaves are local radial minima of the finite closed cut
+  network. A genuine outward segment cannot end at such a minimum; every proper
+  completed subtree at a geometric leaf is therefore flat.
+- Preserved every nonterminal geometric node in the actual roof mesh and proved
+  it lies strictly inside the clip. Derived coherence at every actual geometric
+  leaf from these facts, including arbitrary redundant flat completion branches.
+- Verification: cache retrieval followed by full `lake build` pass; **8,242
+  project** and **7,243 pinned topology declarations** use only standard Lean
+  axioms. No project warnings; all 1,104 indexed local links resolve.
+- Open: classify all reopening strip pinches and apply their coherent values,
+  prove separation between different developed strips/paths and no-wrap at the
+  source, then transfer nonoverlap. The full cap theorem is not yet complete.
+
 ### 2026-11-11 — complete branching-bank order and regular noncrossing
 
 - Constructed oriented cyclic intervals and internal subtree prefixes/suffixes.

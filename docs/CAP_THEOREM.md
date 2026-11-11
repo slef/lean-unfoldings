@@ -465,6 +465,13 @@ Separation of different banks and global nonoverlap remain open.
   sector. Regular interior contact has the same edge and parameter and zero
   subtree curvature, uniformly before both meshes. Branch vertices and different
   cut paths still require the global separation argument.
+- [x] Prove coherence at every actual geometric leaf, including the source.
+  Geometric leaves are local radial minima; outward fine cuts cannot enter them.
+  Proper completed descendants are flat, so all actual developed copies agree
+  even when extra flat cuts create several intrinsic vertex copies. Every such
+  endpoint survives meshing and lies strictly inside the physical roof clip.
+  The actual map is continuous on its proved coherent domain, including these
+  pinches; no identification of distinct intrinsic copies is made.
 - [ ] Compare different positive-width components across possible strip pinches,
   with the correct actual copies of branch and leaf vertices.
 - [ ] Prove side-by-side separation of all developed strips and hence all
