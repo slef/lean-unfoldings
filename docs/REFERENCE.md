@@ -882,6 +882,14 @@ and a counterexample to testing radial monotonicity only at endpoints.
 | [Unfoldings.Geometry.TriangleFrontier](../Unfoldings/Geometry/TriangleFrontier.lean) | The actual frontier of a triangle is the union of its three whole edges |
 | [Unfoldings.Topology.EmbeddedEdgeIntersections](../Unfoldings/Topology/EmbeddedEdgeIntersections.lean) | Distinct embedded graph edges intersect only at their common named endpoints |
 
+| [Unfoldings.Cap.ClipEmbedding](../Unfoldings/Cap/ClipEmbedding.lean) | Whole-edge compatibility propagates through every vertex and proves actual roof embedding |
+| [Unfoldings.Cap.ClipRealization](../Unfoldings/Cap/ClipRealization.lean) | The intrinsic glued physical roof clip is homeomorphic to the actual spatial disk |
+| [Unfoldings.Cap.ClipMetric](../Unfoldings/Cap/ClipMetric.lean) | Finite actual route distances and uniform intrinsic projection bounds for roof clips |
+| [Unfoldings.Geometry.ConformingStar](../Unfoldings/Geometry/ConformingStar.lean) | Edge-compatible labels agree around every vertex of a conforming convex triangle partition |
+| [Unfoldings.Geometry.PuncturedConvex](../Unfoldings/Geometry/PuncturedConvex.lean) | Full-dimensional convex planar regions remain path connected after removing one point |
+| [Unfoldings.Geometry.TriangleNeighborhood](../Unfoldings/Geometry/TriangleNeighborhood.lean) | Interior points distinct from the center occur arbitrarily close to every triangle point |
+| [Unfoldings.Topology.ClosedCoverValues](../Unfoldings/Topology/ClosedCoverValues.lean) | Compatible constant labels on finite closed covers of preconnected spaces agree |
+
 ## Build and proof audit
 
 Lean and Mathlib are pinned to **4.35.0** in

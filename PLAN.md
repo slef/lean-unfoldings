@@ -783,8 +783,10 @@ remaining forest, uniform-turn, and global nonoverlap arguments.
   lower roof clip as a compact disk with an exact finite segment rim.
 - [x] Construct actual compact support polygons and a finite disjoint-interior
   triangle partition of the entire clip, lifted by actual support-face isometries.
-- [ ] Build compatible seam pairings, preserve the original cuts, and handle all
-  extra extension vertices. The current triangle partition is not yet conforming.
+- [x] Construct a conforming common boundary refinement and actual spatial
+  isometric seams. Its intrinsic realization is the actual clipped roof disk,
+  with finite route distances and uniform intrinsic projection bounds.
+- [ ] Preserve the original cuts and handle all extra extension vertices.
 - [ ] Prove separation between different seams, whole branching paths, and trees.
 - [ ] Global strip assembly and the full nearly flat cap theorem.
 

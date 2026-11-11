@@ -2,6 +2,25 @@
 
 ## Session Log
 
+### 2026-11-10 — actual metric disk realization of the roof clip
+
+- Proved that edge-compatible labels agree around every point of a conforming
+  convex triangle partition. A punctured convex neighborhood is path connected;
+  its finite closed triangle cover propagates the labels. Boundary and flat
+  subdivision vertices are included.
+- Applied this to actual physical intrinsic face copies. The constructed seam
+  system has exactly the spatial roof's fibers, hence its metric realization
+  is homeomorphic to the actual roof clip and the closed disk.
+- Derived finite intrinsic route distances and an ordinary metric with the same
+  topology and edistance. Projection is 1-Lipschitz; inverse projection has a
+  bound depending only on original normal height, uniformly in the clip and mesh.
+- Original-cut preservation, extension cuts through additional roof vertices,
+  global strip separation, and the full cap theorem remain open.
+- Verification: scoped cache check and full `lake build` pass; **6,913 project**
+  and **7,243 pinned topology declarations** use only standard Lean axioms.
+  No project warnings. All 899 local documentation links resolve.
+
+
 ### 2026-11-10 — conforming roof triangles and actual isometric seams
 
 - Subdivided all boundaries of a finite triangle family in one straight

@@ -110,6 +110,17 @@ def pairedFolding : SpatialFolding T.pairedComplex where
   place := T.placement
   joined s := T.edgeTransition_joined (TriangleFamily.seamPair T.projectedTriangle s).carrier_eq
 
+theorem paired_seam_projected_edge (s : T.pairedComplex.Seam) :
+    (T.projectedTriangle (T.pairedComplex.left s).face).edge (T.pairedComplex.left s).edge =
+      (T.projectedTriangle (T.pairedComplex.right s).face).edge (T.pairedComplex.right s).edge :=
+  (TriangleFamily.seamPair T.projectedTriangle s).carrier_eq
+
+theorem paired_seam_projection (s : T.pairedComplex.Seam)
+    (x : (T.triangle (T.pairedComplex.left s).face).Edge (T.pairedComplex.left s).edge) :
+    K.projectFace (T.face (T.pairedComplex.right s).face) (T.pairedComplex.identify s x).val =
+      K.projectFace (T.face (T.pairedComplex.left s).face) x.val :=
+  T.edgeTransition_projection (TriangleFamily.seamPair T.projectedTriangle s).carrier_eq x
+
 theorem pairedFolding_surface : T.pairedFolding.surface = K.clippedRoof Z :=
   T.spatial_cover.symm
 
