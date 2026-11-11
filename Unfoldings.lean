@@ -207,3 +207,14 @@ public import Unfoldings.Cap.ProjectedConformity
 public import Unfoldings.Cap.RoofInteriorHeight
 public import Unfoldings.Cap.ExtendedCutCurvature
 public import Unfoldings.Cap.ExtendedCutFlat
+public import Unfoldings.Complex.SelectedCutRootSupport
+public import Unfoldings.Geometry.LocalRadialGrowth
+public import Unfoldings.Geometry.LocalRadialPieces
+public import Unfoldings.Geometry.OutwardSegmentNeighbor
+public import Unfoldings.Cap.ParentRadialGrowth
+public import Unfoldings.Cap.ExtendedCutGrowth
+public import Unfoldings.Cap.RadialCutNeighbor
+public import Unfoldings.Cap.RadialCutForest
+public import Unfoldings.Cap.RadialForestDevelopment
+public import Unfoldings.Cap.ExtendedCutForest
+public import Unfoldings.Cap.ExtendedCutDevelopment

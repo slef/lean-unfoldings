@@ -2,6 +2,24 @@
 
 ## Session Log
 
+### 2026-11-11 — constructed extended forest, cut disk, and development
+
+- Proved strict source-distance growth along every original selected parent
+  edge and local outward progress throughout the original cuts and radial skirt
+  components, including parent endpoints and original rim junctions.
+- Turned this local progress into actual fine-seam neighbors using a finite
+  incident-star argument. Strict source-distance ascent selects a primal forest.
+- Allowed unused vertices outside the geometric cuts as isolated parent roots;
+  proved that every actual cut component still has exactly one boundary root.
+- Constructed the extended roof's actual cut-disk homeomorphism. Every positive
+  curvature vertex selects an outgoing seam, so the disk has a locally isometric
+  facewise development, with overlap permitted. No cut-disk certificate is assumed.
+- Extended direction control, waterfall strips, global nonoverlap, and transfer
+  to an original-edge unfolding remain open; the full cap theorem is incomplete.
+- Verification: `lake exe cache get` and full `lake build` pass; **7,243 project**
+  and **7,243 pinned topology declarations** use only standard Lean axioms.
+  No project warnings; all 947 indexed local documentation links resolve.
+
 ### 2026-11-11 — actual extended cut seams leave flat interior copies
 
 - Constructed the actual retained-seam set by removing fine whole edges contained

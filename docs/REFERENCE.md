@@ -930,6 +930,17 @@ and a counterexample to testing radial monotonicity only at endpoints.
 | [Unfoldings.Cap.CurvatureCutDevelopment](../Unfoldings/Cap/CurvatureCutDevelopment.lean) | Cutting positive-curvature endpoints suffices for flat interior and local disk development |
 | [Unfoldings.Cap.ExtendedCutFlat](../Unfoldings/Cap/ExtendedCutFlat.lean) | The actual constructed extended retained-seam set has flat interior vertex copies |
 | [Unfoldings.Cap.ExtendedCutMesh](../Unfoldings/Cap/ExtendedCutMesh.lean) | Whole fine edges and actual removed seams realize the extended geometric cuts |
+| [Unfoldings.Cap.ExtendedCutDevelopment](../Unfoldings/Cap/ExtendedCutDevelopment.lean) | Constructed extended forest cuts give a disk and a locally isometric development |
+| [Unfoldings.Cap.ExtendedCutForest](../Unfoldings/Cap/ExtendedCutForest.lean) | Select actual outward fine seams in the original cuts and meshed skirt components |
+| [Unfoldings.Cap.ExtendedCutGrowth](../Unfoldings/Cap/ExtendedCutGrowth.lean) | Local radial progress on the constructed geometric extended cuts, including junctions |
+| [Unfoldings.Cap.ParentRadialGrowth](../Unfoldings/Cap/ParentRadialGrowth.lean) | Strict radial distance increase along every original selected parent edge |
+| [Unfoldings.Cap.RadialCutForest](../Unfoldings/Cap/RadialCutForest.lean) | Source-distance parent choices give actual boundary-rooted cut forests and cut disks |
+| [Unfoldings.Cap.RadialCutNeighbor](../Unfoldings/Cap/RadialCutNeighbor.lean) | Local radial progress chooses actual seams with strictly farther intrinsic endpoints |
+| [Unfoldings.Cap.RadialForestDevelopment](../Unfoldings/Cap/RadialForestDevelopment.lean) | Curvature coverage makes the constructed radial forest disk develop locally isometrically |
+| [Unfoldings.Complex.SelectedCutRootSupport](../Unfoldings/Complex/SelectedCutRootSupport.lean) | Allow unused isolated parent roots outside the actual cut graph |
+| [Unfoldings.Geometry.LocalRadialGrowth](../Unfoldings/Geometry/LocalRadialGrowth.lean) | Arbitrarily near outward progress on whole original and radial continuation segments |
+| [Unfoldings.Geometry.LocalRadialPieces](../Unfoldings/Geometry/LocalRadialPieces.lean) | A fixed piece witnesses local outward progress in a finite cover |
+| [Unfoldings.Geometry.OutwardSegmentNeighbor](../Unfoldings/Geometry/OutwardSegmentNeighbor.lean) | A finite segment cover turns local radial progress into an outward incident segment |
 | [Unfoldings.Cap.ProjectedSeamEndpoints](../Unfoldings/Cap/ProjectedSeamEndpoints.lean) | Projected seam-edge vertices are actual intrinsic endpoints of that seam |
 | [Unfoldings.Complex.CutEndpointBoundary](../Unfoldings/Complex/CutEndpointBoundary.lean) | Every cut copy of a removed seam endpoint lies on the actual bank boundary |
 | [Unfoldings.Complex.InteriorCopyAngles](../Unfoldings/Complex/InteriorCopyAngles.lean) | A vertex copy still in the cut interior retains the entire original corner angle |

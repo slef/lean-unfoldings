@@ -347,9 +347,12 @@ Separation of different banks and global nonoverlap remain open.
   angle two pi, while flat auxiliary vertices may remain uncut.
 - [x] Prove the general development theorem for a disk whose cuts meet every
   positive-curvature vertex; flat subdivision vertices need no cuts.
-- [ ] Prove the constructed extended cut graph is a boundary-rooted primal
-  forest. Obtain its actual cut-disk homeomorphism and development, and prove
-  direction control for its developed strips.
+- [x] Select a boundary-rooted primal subforest of the actual extended cut seams
+  using strictly increasing source distance. Every positive-curvature vertex
+  selects an outgoing edge. Unused flat vertices remain uncut. Construct its
+  actual cut-disk homeomorphism and locally isometric development.
+- [ ] Prove direction control for the constructed extended forest paths and
+  their developed strips, including independent radial skirt components.
 - [ ] Construct the actual waterfall strip partition; prove complete coverage
   and that its artificial boundaries are compatible with the development.
 - [ ] Prove side-by-side separation of all developed strips and hence all
