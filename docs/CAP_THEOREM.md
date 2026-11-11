@@ -246,8 +246,13 @@ global strip hypotheses are constructed. It is not a proof of Theorem 9.
   face has such an aligned section direction from the same original rim face.
 - [x] Choose one positive threshold, before the whole mesh, constructing the
   acute-sector forest and making this actual section-heading budget arbitrarily small.
-- [ ] Calibrate all directions of every actual original face against the common
-  rim face and the original projection; reserve the required bank-wedge margins.
+- [x] Transfer the actual one-direction section alignment to every direction
+  on every original face, using consistent orientation and two local angle errors.
+- [x] Calibrate one global developed frame to original projection. Actual face
+  directions differ by at most `2 * tilt + 2 * totalCurvature + 3 * localError`.
+  A positive threshold before the entire mesh makes this uniformly arbitrarily small.
+- [ ] Apply the calibrated bound to the actual sector paths and reserve strict
+  common-quadrant bank margins, then establish geometric bank separation.
 
 The section-and-crossing-potential route proves the actual whole-section heading
 bound directly. The alternative paper-style prefix-region closures, truncations,
@@ -264,7 +269,7 @@ totalInteriorAngularDefect ≤ 81 * (sqrt (1 - c²) / c)² * pi.
 The constant is conservative. Continuity at tilt zero gives an arbitrarily
 small total-curvature budget uniformly across all meshes. The proof uses
 volume-induced solid angle; it does not need an equality with normalized
-Hausdorff area. Calibration of all face directions and global nonoverlap remain open.
+Hausdorff area. Strict bank-wedge separation and global nonoverlap remain open.
 
 ### Global assembly (Sections 9--10, Appendices A.5--A.6)
 

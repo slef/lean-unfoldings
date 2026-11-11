@@ -2,6 +2,28 @@
 
 ## Session Log
 
+### 2026-11-10 — common-frame control of every actual original-face direction
+
+- Proved a general oriented planar comparison: one reference-ray alignment
+  controls any other direction by the difference of their reference angles.
+  Actual linear maps extend this to collinear directions and two error budgets.
+- Derived a uniform local face-direction angle-error threshold before the entire
+  mesh. Every rigid development has the same actual local angle error.
+- Transferred the checked section alignment from one direction to every direction
+  on each actual original face, compared against the same original rim face.
+- Constructed one global rotation calibrating the actual common developed frame
+  against original projection. Every actual direction has error at most
+  `2 * tilt + 2 * totalCurvature + 3 * localError` in that same global frame.
+- Proved a positive numerical threshold depending only on the acute margin and
+  requested error, before the complete cap mesh. It constructs the actual forest
+  and controls every direction of every actual developed original face.
+- Strict actual bank wedges, branching-bank separation, waterfall strip assembly,
+  and global nonoverlap remain open. The full cap theorem is still incomplete.
+- Verification: scoped cache check and full `lake build` pass; **6,350 project**
+  and **7,243 pinned topology declarations** use only standard Lean axioms.
+  Checked **830 local documentation links**; no project warnings.
+
+
 ### 2026-11-10 — uniform actual section headings via the crossing potential
 
 - Constructed positively oriented horizontal section frames, with every original
