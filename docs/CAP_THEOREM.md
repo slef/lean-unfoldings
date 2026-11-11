@@ -486,6 +486,11 @@ Separation of different banks and global nonoverlap remain open.
   reopening pinch is its source or an actual geometric leaf. Combine their
   proved coherence with regular strict interiors to obtain uniform injectivity
   on each entire physical strip slab, with tilt chosen before either mesh.
+- [x] Classify closed-edge contacts of opposite complete banks, including branch
+  endpoints. Different edges meet only at a common endpoint of adjacent edges,
+  with the earlier subtree flat. Matched contacts have zero subtree curvature
+  except possibly at the child endpoint. Every actual closed bank contact
+  represents the same projected surface point, uniformly before both meshes.
 - [ ] Prove side-by-side separation of all developed strips and hence all
   distinct original face interiors.
 - [x] Apply the cut-disk and flat-development infrastructure to the fixed-wedge

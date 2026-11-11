@@ -114,6 +114,8 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Cap.ExtendedBankChainClosedSeparation](../Unfoldings/Cap/ExtendedBankChainClosedSeparation.lean) | Uniform actual closed bank contacts identify the same projected surface point |
+| [Unfoldings.Cap.CompletedBankClosedContact](../Unfoldings/Cap/CompletedBankClosedContact.lean) | Classify all closed opposite-bank contacts, including flat branch contacts |
 | [Unfoldings.Cap.ExtendedWaterfallFullInjective](../Unfoldings/Cap/ExtendedWaterfallFullInjective.lean) | Uniform actual-map injectivity on each entire strip across all reopening pinches |
 | [Unfoldings.Cap.GeometricWaterfallRegular](../Unfoldings/Cap/GeometricWaterfallRegular.lean) | Derive regular strip interiors from retained actual leaf tails |
 | [Unfoldings.Cap.GeometricTailBankContacts](../Unfoldings/Cap/GeometricTailBankContacts.lean) | Beyond the starting leaf every sector-bank contact is on the radial skirt |
@@ -804,6 +806,7 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Topology.FiniteStrictPieces](../Unfoldings/Topology/FiniteStrictPieces.lean) | Ordered strict pieces can contact only at a common endpoint of adjacent pieces |
 | [Unfoldings.Topology.ChildSubtrees](../Unfoldings/Topology/ChildSubtrees.lean) | Immediate-child subtrees partition all proper descendants with arbitrary additive weights |
 | [Unfoldings.Topology.OrderedChanges](../Unfoldings/Topology/OrderedChanges.lean) | An ordered tail or head of bounded signal changes telescopes, ignoring zero increments |
 | [Unfoldings.Topology.ParentOrbitEnumeration](../Unfoldings/Topology/ParentOrbitEnumeration.lean) | The first-root orbit enumerates every original nonroot ancestor exactly once |

@@ -2,6 +2,21 @@
 
 ## Session Log
 
+### 2026-11-11 — closed opposite-bank contacts at actual branch vertices
+
+- Proved a generic equality criterion for ordered strictly increasing pieces:
+  different pieces meet only at the common endpoint of adjacent pieces.
+- Classified all closed contacts between opposite complete banks. Matched
+  parameters are flat except possibly at their child endpoint; unmatched
+  contacts occur only at a shared branch endpoint with the earlier subtree flat.
+- Proved every such contact represents the same projected surface point and
+  derived the corresponding uniform theorem for actual extended roof forests,
+  with no bank-separation premise and tilt chosen before both meshes.
+- Verification: cache retrieval followed by full `lake build` pass; **8,306
+  unfolding / 7,243 pinned topology declarations**, standard axioms only;
+  documentation links (**1,130**) and whitespace pass. Separation between
+  different developed cut paths and strips remains open.
+
 ### 2026-11-11 — uniform injectivity on every whole actual waterfall strip
 
 - Constructed the finite waterfall while preserving strict coordinate progress

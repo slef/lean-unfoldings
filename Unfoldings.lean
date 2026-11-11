@@ -394,3 +394,6 @@ public import Unfoldings.Geometry.RayStripPinches
 public import Unfoldings.Geometry.RecoverableStripInsertion
 public import Unfoldings.Geometry.RecoverableWaterfall
 public import Unfoldings.Geometry.StripSubdivisionInvariant
+public import Unfoldings.Topology.FiniteStrictPieces
+public import Unfoldings.Cap.CompletedBankClosedContact
+public import Unfoldings.Cap.ExtendedBankChainClosedSeparation
