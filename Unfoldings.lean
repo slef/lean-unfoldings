@@ -397,3 +397,16 @@ public import Unfoldings.Geometry.StripSubdivisionInvariant
 public import Unfoldings.Topology.FiniteStrictPieces
 public import Unfoldings.Cap.CompletedBankClosedContact
 public import Unfoldings.Cap.ExtendedBankChainClosedSeparation
+public import Unfoldings.Cap.CenteredMapSourceError
+public import Unfoldings.Cap.CompletedLinearError
+public import Unfoldings.Cap.DevelopedDirectionNorm
+public import Unfoldings.Cap.ExtendedWaterfallControl
+public import Unfoldings.Cap.ExtendedWaterfallQuadrants
+public import Unfoldings.Cap.ProjectedLinearError
+public import Unfoldings.Cap.SectorPositionMargins
+public import Unfoldings.Geometry.AngleNormError
+public import Unfoldings.Geometry.FiniteSelectionError
+public import Unfoldings.Geometry.MonotoneStripSourceError
+public import Unfoldings.Geometry.NearIdentityMargins
+public import Unfoldings.Topology.FiniteSelectionBounds
+public import Unfoldings.Geometry.FiniteSelectionRadial

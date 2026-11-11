@@ -2,6 +2,28 @@
 
 ## Session Log
 
+### 2026-11-11 — common-source position control in actual bank frames
+
+- Derived exact developed-vector lengths and the normal-dependent two-sided
+  metric bounds. Small angular calibration and small length expansion give
+  arbitrarily small linear chart error, uniformly before both meshes.
+- Constructed the bank-order data and linear-error control in the same actual
+  calibrated frame, retaining its anchor and reference provenance.
+- Passed quantitative errors through arbitrary continuous finite face-chart
+  switches and inset source connectors across coherent reopening pinches.
+  Obtained actual whole-strip injectivity and requested source-position control
+  together in `exists_uniform_extended_waterfall_control`.
+- Proved a positive sector-coordinate margin depending only on its fixed rays.
+  Derived `exists_uniform_extended_waterfall_quadrants`: every actual developed
+  strict strip stays in its sector quadrant relative to the common developed
+  source, in the same calibration as the complete-bank order proofs.
+- Added the finite-selection linear-test criterion for radial progress along a
+  monotone path. Its geometric hypotheses still need to be instantiated for
+  actual one-sided strip boundary traces; global strip separation remains open.
+- Verification: cache retrieval followed by full `lake build` pass; **8,328
+  unfolding / 7,243 pinned topology declarations**, standard axioms only;
+  documentation links (**1,143**) and whitespace pass.
+
 ### 2026-11-11 — closed opposite-bank contacts at actual branch vertices
 
 - Proved a generic equality criterion for ordered strictly increasing pieces:

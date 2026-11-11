@@ -491,6 +491,12 @@ Separation of different banks and global nonoverlap remain open.
   with the earlier subtree flat. Matched contacts have zero subtree curvature
   except possibly at the child endpoint. Every actual closed bank contact
   represents the same projected surface point, uniformly before both meshes.
+- [x] Derive arbitrarily small linear chart error from actual angular and
+  projection-length bounds, in the same calibration as the bank-order data.
+  Pass quantitative error through continuous finite chart selections and inset
+  source connectors, including coherent pinches. Obtain uniform actual
+  whole-strip injectivity and source-position control together. Every such strip
+  stays in its open sector quadrant relative to the common developed source.
 - [ ] Prove side-by-side separation of all developed strips and hence all
   distinct original face interiors.
 - [x] Apply the cut-disk and flat-development infrastructure to the fixed-wedge

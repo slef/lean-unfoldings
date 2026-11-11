@@ -114,6 +114,13 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Cap.SectorPositionMargins](../Unfoldings/Cap/SectorPositionMargins.lean) | Uniform positive coordinate margins for enclosing sector strips |
+| [Unfoldings.Cap.ProjectedLinearError](../Unfoldings/Cap/ProjectedLinearError.lean) | Derive linear chart proximity to identity from angular and normal control |
+| [Unfoldings.Cap.ExtendedWaterfallQuadrants](../Unfoldings/Cap/ExtendedWaterfallQuadrants.lean) | Actual whole-strip images stay in their sector quadrants relative to the common source |
+| [Unfoldings.Cap.ExtendedWaterfallControl](../Unfoldings/Cap/ExtendedWaterfallControl.lean) | Uniform actual strip injectivity and requested common-source position control |
+| [Unfoldings.Cap.DevelopedDirectionNorm](../Unfoldings/Cap/DevelopedDirectionNorm.lean) | Actual developed-vector lengths and exact normal-dependent metric bounds |
+| [Unfoldings.Cap.CompletedLinearError](../Unfoldings/Cap/CompletedLinearError.lean) | Uniform bank quadrants and arbitrarily small linear chart error in one calibration |
+| [Unfoldings.Cap.CenteredMapSourceError](../Unfoldings/Cap/CenteredMapSourceError.lean) | Actual developed source-position error through coherent reopening pinches |
 | [Unfoldings.Cap.ExtendedBankChainClosedSeparation](../Unfoldings/Cap/ExtendedBankChainClosedSeparation.lean) | Uniform actual closed bank contacts identify the same projected surface point |
 | [Unfoldings.Cap.CompletedBankClosedContact](../Unfoldings/Cap/CompletedBankClosedContact.lean) | Classify all closed opposite-bank contacts, including flat branch contacts |
 | [Unfoldings.Cap.ExtendedWaterfallFullInjective](../Unfoldings/Cap/ExtendedWaterfallFullInjective.lean) | Uniform actual-map injectivity on each entire strip across all reopening pinches |
@@ -605,6 +612,11 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Geometry.FiniteSelectionRadial](../Unfoldings/Geometry/FiniteSelectionRadial.lean) | Linear tests and radial progress through arbitrary continuous affine chart switches |
+| [Unfoldings.Geometry.NearIdentityMargins](../Unfoldings/Geometry/NearIdentityMargins.lean) | Small linear error supplies the four strict axis tests for strip injectivity |
+| [Unfoldings.Geometry.MonotoneStripSourceError](../Unfoldings/Geometry/MonotoneStripSourceError.lean) | Whole-strip source-position estimates across coherent reopening pinches |
+| [Unfoldings.Geometry.FiniteSelectionError](../Unfoldings/Geometry/FiniteSelectionError.lean) | Quantitative affine error survives arbitrary continuous face-chart switches |
+| [Unfoldings.Geometry.AngleNormError](../Unfoldings/Geometry/AngleNormError.lean) | Small relative length and angular errors give uniform vector error |
 | [Unfoldings.Geometry.StripSubdivisionInvariant](../Unfoldings/Geometry/StripSubdivisionInvariant.lean) | Preserve cell invariants while constructing and retaining finite separators |
 | [Unfoldings.Geometry.RecoverableWaterfall](../Unfoldings/Geometry/RecoverableWaterfall.lean) | Construct finite waterfalls with strict walls and controlled reopening pinches |
 | [Unfoldings.Geometry.RecoverableStripInsertion](../Unfoldings/Geometry/RecoverableStripInsertion.lean) | Connector-and-tail insertions preserve the reopening-pinch invariant |
@@ -806,6 +818,7 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Topology.FiniteSelectionBounds](../Unfoldings/Topology/FiniteSelectionBounds.lean) | Two-sided increment bounds for arbitrary continuous finite selections |
 | [Unfoldings.Topology.FiniteStrictPieces](../Unfoldings/Topology/FiniteStrictPieces.lean) | Ordered strict pieces can contact only at a common endpoint of adjacent pieces |
 | [Unfoldings.Topology.ChildSubtrees](../Unfoldings/Topology/ChildSubtrees.lean) | Immediate-child subtrees partition all proper descendants with arbitrary additive weights |
 | [Unfoldings.Topology.OrderedChanges](../Unfoldings/Topology/OrderedChanges.lean) | An ordered tail or head of bounded signal changes telescopes, ignoring zero increments |
