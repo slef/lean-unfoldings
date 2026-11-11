@@ -353,6 +353,24 @@ Separation of different banks and global nonoverlap remain open.
   actual cut-disk homeomorphism and locally isometric development.
 - [ ] Prove direction control for the constructed extended forest paths and
   their developed strips, including independent radial skirt components.
+- [x] Strengthen the fine-seam selection to whole-edge radial progress. Every
+  constructed root path meets each source-centered circle in at most one point.
+- [x] Append an entire radial continuation to each original root path without
+  increasing its acute wedge width; the extended paths remain radially monotone
+  with respect to every earlier path point.
+- [x] Complete unused flat vertices using arbitrary actual outward seams, without
+  requiring an acute auxiliary triangulation. Preserve all previous cut edges
+  and nonroot parents. All added branches outside the prescribed cuts have zero
+  descendant curvature and zero bank aperture; the prior development is unchanged.
+- [x] Apply the exact subtree bank rotations to completed forests in one common
+  projection-preserving frame. Generalize signed crossing budgets so only paths
+  starting at positive-curvature vertices need an acute wedge.
+- [ ] Identify the completed fine-seam paths carrying curvature with the original
+  extended paths and independent radial components. Derive their acute wedges
+  and actual developed heading bounds from the constructed geometric input.
+- [x] Prove the finite segment-cover direction lemma: an outward fine edge is a
+  positive multiple of a genuine covering piece's direction. A common wedge is
+  preserved by meshing, without imposing acuteness on auxiliary triangles.
 - [ ] Construct the actual waterfall strip partition; prove complete coverage
   and that its artificial boundaries are compatible with the development.
 - [ ] Prove side-by-side separation of all developed strips and hence all

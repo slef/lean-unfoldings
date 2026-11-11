@@ -1004,3 +1004,19 @@ The [vendored source record](../vendor/schoenflies/UPSTREAM.md) documents the
 Lean 4.35 module-system and proof-script compatibility changes; theorem
 statements are unchanged. The separate [license](../vendor/schoenflies/LICENSE)
 is retained. Comparator challenge files and upstream build caches are excluded.
+| [Unfoldings.Cap.CompletedCrossingPotential](../Unfoldings/Cap/CompletedCrossingPotential.lean) | Mesh-independent signed crossing potentials require acute paths only for positive curvature |
+| [Unfoldings.Cap.CompletedForestBanks](../Unfoldings/Cap/CompletedForestBanks.lean) | Actual subtree bank rotations and zero apertures for added flat branches |
+| [Unfoldings.Cap.CompletedParentDirections](../Unfoldings/Cap/CompletedParentDirections.lean) | Completed forest bank rotations in one projection-preserving frame |
+| [Unfoldings.Cap.ExtendedOutwardForest](../Unfoldings/Cap/ExtendedOutwardForest.lean) | Constructed extended fine-seam forests with whole-edge radial control |
+| [Unfoldings.Cap.ExtendedRootPaths](../Unfoldings/Cap/ExtendedRootPaths.lean) | Original root paths and complete radial continuations retain one acute wedge |
+| [Unfoldings.Cap.OutwardCutNeighbor](../Unfoldings/Cap/OutwardCutNeighbor.lean) | Local radial progress selects whole-edge outward incident seams |
+| [Unfoldings.Cap.OutwardRadialForest](../Unfoldings/Cap/OutwardRadialForest.lean) | Outward forest construction and uniqueness of root-path points at each radius |
+| [Unfoldings.Cap.RadialForestCompletion](../Unfoldings/Cap/RadialForestCompletion.lean) | Connect unused flat vertices without changing existing cuts or curvature-carrying paths |
+| [Unfoldings.Cap.UnrestrictedRadialProgress](../Unfoldings/Cap/UnrestrictedRadialProgress.lean) | Source-distance ascent in arbitrary cap triangulations without acuteness |
+| [Unfoldings.Development.AdditionalCuts](../Unfoldings/Development/AdditionalCuts.lean) | Additional cuts preserve rigid face placements and nonoverlap |
+| [Unfoldings.Geometry.ChainAppend](../Unfoldings/Geometry/ChainAppend.lean) | Append a final chain edge while retaining all wedge directions |
+| [Unfoldings.Geometry.LocalRadialSegment](../Unfoldings/Geometry/LocalRadialSegment.lean) | Local radial progress at a segment start characterizes its outward scalar product |
+| [Unfoldings.Geometry.MeshHalfplaneProgress](../Unfoldings/Geometry/MeshHalfplaneProgress.lean) | Any open halfplane contains an outgoing edge at an interior mesh vertex |
+| [Unfoldings.Topology.SelectedRootCompletion](../Unfoldings/Topology/SelectedRootCompletion.lean) | Connect unused parent roots while preserving selected edges and the potential |
+| [Unfoldings.Topology.SupportedSubtreeWeights](../Unfoldings/Topology/SupportedSubtreeWeights.lean) | Only positive-weight root paths need signed crossing bounds |
+| [Unfoldings.Geometry.SegmentCoverDirections](../Unfoldings/Geometry/SegmentCoverDirections.lean) | Whole outward meshed edges inherit positive directions and common wedges from a finite segment cover |

@@ -2,6 +2,33 @@
 
 ## Session Log
 
+### 2026-11-11 — whole-edge directions and flat-branch completion
+
+- Strengthened the constructed fine-seam forest to whole-edge radial progress.
+  Root paths meet each source-centered circle in at most one geometric point.
+- Proved that original root paths retain their strict acute wedge after an
+  entire outward radial continuation is appended, with no extra angle budget.
+- Constructed a spanning completion at unused vertices, preserving all selected
+  edges and nonroot parents. Halfplane progress needs no acute auxiliary mesh.
+  Old geometric cuts are forward invariant; added outside branches carry zero
+  descendant curvature.
+- Applied exact subtree bank rotations to the completed disk, including zero
+  apertures for added branches, in one projection-preserving frame. Additional
+  cuts preserve rigid placements and nonoverlap; the prior development gives
+  a completed development whose added seam cuts still match pointwise.
+- Generalized signed crossing budgets to require acute root paths only at
+  positive-curvature vertices. The actual fine-seam path wedges and their
+  developed heading bounds still need to be derived; they are not assumptions
+  of a claimed cap theorem.
+- Proved that a whole outward segment meshed into a finite segment network
+  inherits a positive multiple of a covering direction, preserving a common wedge.
+- Verification: cache retrieval and full `lake build` pass; **7,375 project**
+  and **7,243 pinned topology declarations** use only standard Lean axioms.
+  No project warnings; all 963 local documentation links resolve.
+- Still open: direction control for complete fine-seam paths, waterfall strips,
+  global nonoverlap, and transfer to the original-edge unfolding. The full cap
+  theorem remains incomplete.
+
 ### 2026-11-11 — constructed extended forest, cut disk, and development
 
 - Proved strict source-distance growth along every original selected parent
