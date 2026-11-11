@@ -314,6 +314,10 @@ Separation of different banks and global nonoverlap remain open.
   neighborhoods. The resulting spatial folding is embedded; its intrinsic
   realization is homeomorphic to the clip and the closed disk. Its finite route
   metric has projection bounds depending only on original normal height.
+- [x] Identify its actual boundary banks with the horizontal clip rim. Translate
+  the rim to zero to construct a full geometric `ConvexCap`, retaining the original
+  support normals and tilt. A single numerical threshold bounds total intrinsic
+  curvature of every clip and refinement, including all newly introduced vertices.
 - [x] Preserve original cut geometry in the extension triangulation. Insert all
   original face supporting lines in one finite arrangement; triangulate its
   chambers and make the result conforming. Every original projected and spatial
@@ -323,9 +327,13 @@ Separation of different banks and global nonoverlap remain open.
 - [x] Continue arbitrary finite skirt seeds radially to the outer rim, staying
   outside the original footprint's interior. Merge nested tails into disjoint
   whole segment components and mesh their actual spatial lifts exactly.
-- [ ] Select sufficient skirt curvature seeds, prove flatness at the remaining
-  new vertices, and construct the full extended cut forest and retained-seam
-  correspondence. Prove the direction bounds needed for its developed strips.
+- [x] Prove that arbitrary line meshing creates no curvature away from the
+  preceding conforming support partition's corners. At a regular old point there
+  are at most two old faces; the actual new support slopes are collinear, so
+  their intrinsic curvature is zero. Positive curvature stays at old corners.
+- [ ] Select sufficient skirt seeds from the finite old corner set and match the
+  original cap forest. Construct the full extended cut forest and retained-seam
+  correspondence, and prove direction control for its developed strips.
 - [ ] Construct the actual waterfall strip partition; prove complete coverage
   and that its artificial boundaries are compatible with the development.
 - [ ] Prove side-by-side separation of all developed strips and hence all

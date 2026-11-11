@@ -2,6 +2,30 @@
 
 ## Session Log
 
+### 2026-11-11 — genuine geometric clips and finite curvature support under line meshing
+
+- Identified the actual unpaired banks of a conforming physical clip with its
+  horizontal outer rim, using intrinsic boundary preservation for disk maps.
+- Translated the rim to zero and constructed the full geometric `ConvexCap`
+  interface: actual spatial isometries, supporting original normals, injective
+  convex projection, horizontal banks, and nonnegative corner heights.
+- Applied the existing normal-area argument to all actual clip vertices. One
+  numerical threshold controls their total intrinsic curvature before the
+  original mesh, clip height, and any extra triangulation are supplied.
+- Proved collinear incident slopes have zero intrinsic curvature, including
+  one-plane and two-plane crease subdivisions. A regular point of a conforming
+  triangle partition belongs to at most two faces.
+- Exposed actual parents and support labels of line-constrained clip triangles.
+  Applied the flatness criterion: arbitrary actual line meshing creates no
+  positive curvature away from the preceding roof triangulation's corners.
+- Sufficient skirt seed selection and its correspondence with the original cut
+  forest, the extended cut disk and development, global strip separation, and
+  the full cap theorem remain open. No acute auxiliary triangulation is asserted.
+- Verification: scoped cache check and full `lake build` pass; **7,133 project**
+  and **7,243 pinned topology declarations** use only standard Lean axioms.
+  No project warnings. All 921 local documentation links resolve.
+
+
 ### 2026-11-10 — disjoint radial skirt components and exact segment meshing
 
 - Constructed finite conforming physical roof triangulations respecting arbitrary

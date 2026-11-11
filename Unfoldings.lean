@@ -200,3 +200,6 @@ public import Unfoldings.Cap.ClipPairings
 public import Unfoldings.Cap.ClipMetric
 public import Unfoldings.Cap.ClipEdgeLift
 public import Unfoldings.Cap.SkirtRadialCuts
+public import Unfoldings.Cap.ClipCurvature
+public import Unfoldings.Cap.DegenerateNormalCurvature
+public import Unfoldings.Cap.LineRefinementCurvature

@@ -793,6 +793,10 @@ remaining forest, uniform-turn, and global nonoverlap arguments.
 - [x] Continue prescribed skirt seeds to the outer rim in disjoint radial
   components, outside the original footprint's interior, and mesh every whole
   component exactly while preserving the original edges.
+- [x] Package conforming clips as actual geometric convex caps with horizontal
+  banks, original support normals, and uniform all-vertex curvature bounds.
+- [x] Prove that line meshing creates no new curvature away from the preceding
+  conforming roof partition's corners, including planar and crease subdivisions.
 - [ ] Prove separation between different seams, whole branching paths, and trees.
 - [ ] Global strip assembly and the full nearly flat cap theorem.
 

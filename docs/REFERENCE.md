@@ -904,6 +904,18 @@ and a counterexample to testing radial monotonicity only at endpoints.
 | [Unfoldings.Geometry.RadialTailFamily](../Unfoldings/Geometry/RadialTailFamily.lean) | Finite radial tails reduce to disjoint rim-labeled whole segment components with exact coverage |
 | [Unfoldings.Geometry.TriangleWithEdge](../Unfoldings/Geometry/TriangleWithEdge.lean) | Auxiliary genuine triangles containing any supplied nondegenerate segment as a whole edge |
 
+| [Unfoldings.Cap.ClipIntrinsicBoundary](../Unfoldings/Cap/ClipIntrinsicBoundary.lean) | Actual intrinsic boundary banks are precisely the horizontal outer rim of the conforming clip |
+| [Unfoldings.Cap.ClippedCap](../Unfoldings/Cap/ClippedCap.lean) | Translate the constructed clip into a full geometric convex cap with original supporting normals |
+| [Unfoldings.Cap.ClipCurvature](../Unfoldings/Cap/ClipCurvature.lean) | One numerical threshold controls every clip and refinement including all new intrinsic vertices |
+| [Unfoldings.Cap.DegenerateNormalCurvature](../Unfoldings/Cap/DegenerateNormalCurvature.lean) | Collinear incident normal slopes and two-plane crease subdivisions have zero intrinsic curvature |
+| [Unfoldings.Geometry.CollinearNull](../Unfoldings/Geometry/CollinearNull.lean) | Collinear planar convex hulls have zero actual Lebesgue area |
+
+| [Unfoldings.Cap.ClippedCapCoordinates](../Unfoldings/Cap/ClippedCapCoordinates.lean) | Normalized clip projections and normal slopes retain their exact original coordinate formulas |
+| [Unfoldings.Cap.ConstrainedClipParents](../Unfoldings/Cap/ConstrainedClipParents.lean) | Actual whole-face parent containment and support labels survive line meshing |
+| [Unfoldings.Cap.LineRefinementCurvature](../Unfoldings/Cap/LineRefinementCurvature.lean) | Actual line meshing creates no positive curvature away from preceding roof corners |
+| [Unfoldings.Cap.RefinementCurvatureSupport](../Unfoldings/Cap/RefinementCurvatureSupport.lean) | Subordinate support refinements concentrate positive curvature on old corners |
+| [Unfoldings.Geometry.ConformingPointMultiplicity](../Unfoldings/Geometry/ConformingPointMultiplicity.lean) | A regular point of a conforming planar triangle partition belongs to at most two faces |
+
 ## Build and proof audit
 
 Lean and Mathlib are pinned to **4.35.0** in
