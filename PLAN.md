@@ -775,6 +775,11 @@ remaining forest, uniform-turn, and global nonoverlap arguments.
 - [x] Derive actual branching parent-copy gaps as sums of all descendant paired
   vector differences; order all matched bank points, including rim extensions.
 - [x] Separate each actual parent seam's bank interiors up to flat contact.
+- [x] Prove exact positional gap balance over immediate child subtrees and that
+  the internal sector origin is a leaf with one common bank start.
+- [x] Construct the actual unbounded supporting-plane roof and disjoint outward
+  rim-root continuations, with finite polygonal traces and eventual straightness.
+- [ ] Build a compatible triangulated extension and handle all its extra vertices.
 - [ ] Prove separation between different seams, whole branching paths, and trees.
 - [ ] Global strip assembly and the full nearly flat cap theorem.
 

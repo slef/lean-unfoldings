@@ -188,3 +188,7 @@ public import Unfoldings.Geometry.DirectionFrame
 public import Unfoldings.Cap.SectionHeadingThreshold
 public import Unfoldings.Cap.CalibratedThreshold
 public import Unfoldings.Cap.UniformBankSeparation
+public import Unfoldings.Cap.BranchGapBalance
+public import Unfoldings.Cap.RimTails
+public import Unfoldings.Cap.RoofFinalRay
+public import Unfoldings.Cap.RoofSolid

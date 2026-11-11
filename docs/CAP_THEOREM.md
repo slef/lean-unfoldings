@@ -261,6 +261,8 @@ global strip hypotheses are constructed. It is not a proof of Theorem 9.
   straight extensions beyond the parent rim. Positive descendant curvature
   separates the interiors of each seam's two banks; contacts have zero subtree
   curvature and matched parameters.
+- [x] Prove immediate-child subtree gap balance and the distinguished internal
+  origin's leaf property. Its actual two child-bank endpoints coincide.
 - [ ] Compare different original seams and complete branching banks globally.
 
 The section-and-crossing-potential route proves the actual whole-section heading
@@ -283,7 +285,16 @@ Separation of different banks and global nonoverlap remain open.
 
 ### Global assembly (Sections 9--10, Appendices A.5--A.6)
 
-- [ ] Construct the cap-specific extension needed to control cut endpoints.
+- [x] Construct the actual unbounded supporting-plane envelope. Its closed convex
+  active cells cover the plane; the complete roof is homeomorphic to the plane
+  and is precisely the frontier of the original supporting-halfspace solid.
+- [x] Extend each original rim root radially from the internal sector origin.
+  Distinct root tails are disjoint, remain outside the original footprint, and
+  lift continuously to the actual roof. Their directions retain the tree sector.
+- [x] Construct finite whole-piece active-support traces for all roof segments.
+  Each ray eventually stays on one original supporting plane and is exactly straight.
+- [ ] Construct a compatible triangulation and cutting scheme for the extension,
+  handling any additional roof vertices before using its developed strips.
 - [ ] Construct the actual waterfall strip partition; prove complete coverage
   and that its artificial boundaries are compatible with the development.
 - [ ] Prove side-by-side separation of all developed strips and hence all

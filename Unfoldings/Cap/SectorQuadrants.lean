@@ -64,12 +64,13 @@ namespace Unfoldings.ConvexCap
 universe u v
 
 /-- One threshold depending only on the acute margin constructs actual strict quadrant control. -/
-theorem exists_uniform_sectorForest_sectorFrameData {α : ℝ} (margin : 0 < α) :
+theorem exists_uniform_sectorForest_internal_sectorFrameData {α : ℝ} (margin : 0 < α) :
     ∃ φ ∈ Set.Ioo (0 : ℝ) (Real.pi / 2), ∃ t ∈ Set.Ioo (0 : ℝ) (1 / 4),
       ∀ {Face : Type u} [Fintype Face] {C : TriangleComplex.{u, v} Face}
         (K : ConvexCap C), AcuteMargin (C := C) α → K.TiltBound φ →
           (∃ v : C.Vertex Set.univ, ¬ C.IsBoundaryVertex Set.univ v) →
           ∃ origin : C.Vertex Set.univ, ∃ M : K.SectorForest t origin,
+            ¬ C.IsBoundaryVertex Set.univ origin ∧
             C.totalInteriorAngularDefect Set.univ < Real.pi ∧
               ∀ D : FacewiseDevelopment C M.retain,
                 ∃ positive : 0 < t, ∃ small : t < 1,
@@ -92,11 +93,11 @@ theorem exists_uniform_sectorForest_sectorFrameData {α : ℝ} (margin : 0 < α)
   have angle_budget : 2 * φ + 2 * C.totalInteriorAngularDefect Set.univ + 3 * (ε / 12) < ε := by
     have smaller : φ ≤ χ := min_le_right _ _
     linarith
-  obtain ⟨origin, _internal, ⟨M⟩⟩ := forest K acute forest_tilt internal
+  obtain ⟨origin, origin_internal, ⟨M⟩⟩ := forest K acute forest_tilt internal
   have curvature_small : C.totalInteriorAngularDefect Set.univ < Real.pi := by
     have upper : ε ≤ Real.pi / 4 := min_le_right _ _
     linarith [Real.pi_pos]
-  refine ⟨origin, M, curvature_small, fun D => ?_⟩
+  refine ⟨origin, M, origin_internal, curvature_small, fun D => ?_⟩
   let A := K.rimAnchor
   let reference : Plane := EuclideanSpace.single 0 1
   have reference_ne : reference ≠ 0 := by
@@ -109,6 +110,23 @@ theorem exists_uniform_sectorForest_sectorFrameData {α : ℝ} (margin : 0 < α)
   have bound := M.calibrated_face_direction_angle_le D tbounds.1 tsmall A reference reference_ne f
     positive.le ((min_le_left _ _).trans_lt ψbounds.2) tilt error direction nonzero
   exact (bound.trans_lt angle_budget).trans_le (min_le_left _ _)
+
+/-- One threshold depending only on the acute margin constructs actual strict quadrant control. -/
+theorem exists_uniform_sectorForest_sectorFrameData {α : ℝ} (margin : 0 < α) :
+    ∃ φ ∈ Set.Ioo (0 : ℝ) (Real.pi / 2), ∃ t ∈ Set.Ioo (0 : ℝ) (1 / 4),
+      ∀ {Face : Type u} [Fintype Face] {C : TriangleComplex.{u, v} Face}
+        (K : ConvexCap C), AcuteMargin (C := C) α → K.TiltBound φ →
+          (∃ v : C.Vertex Set.univ, ¬ C.IsBoundaryVertex Set.univ v) →
+          ∃ origin : C.Vertex Set.univ, ∃ M : K.SectorForest t origin,
+            C.totalInteriorAngularDefect Set.univ < Real.pi ∧
+              ∀ D : FacewiseDevelopment C M.retain,
+                ∃ positive : 0 < t, ∃ small : t < 1,
+                  Nonempty (M.SectorFrameData positive small D) := by
+  obtain ⟨φ, bounds, t, tbounds, uniform⟩ :=
+    exists_uniform_sectorForest_internal_sectorFrameData margin
+  refine ⟨φ, bounds, t, tbounds, fun K acute tilt internal => ?_⟩
+  obtain ⟨origin, M, _origin_internal, curvature, frames⟩ := uniform K acute tilt internal
+  exact ⟨origin, M, curvature, frames⟩
 
 /-- One threshold depending only on the acute margin constructs actual strict quadrant control. -/
 theorem exists_uniform_sectorForest_quadrants {α : ℝ} (margin : 0 < α) :

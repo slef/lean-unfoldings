@@ -114,6 +114,13 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Cap.BranchGapBalance](../Unfoldings/Cap/BranchGapBalance.lean) | Exact conservation of actual positional gaps across immediate child subtrees |
+| [Unfoldings.Cap.OriginLeaf](../Unfoldings/Cap/OriginLeaf.lean) | The internal sector origin is a leaf with one shared actual bank start |
+| [Unfoldings.Cap.RimTails](../Unfoldings/Cap/RimTails.lean) | Disjoint radial continuations of actual rim roots outside the footprint and onto the roof |
+| [Unfoldings.Cap.RoofCellTrace](../Unfoldings/Cap/RoofCellTrace.lean) | Constructed finite polygonal traces through actual support cells outside the original cap |
+| [Unfoldings.Cap.RoofExtension](../Unfoldings/Cap/RoofExtension.lean) | The actual unbounded roof, closed convex active cells, and its plane homeomorphism |
+| [Unfoldings.Cap.RoofFinalRay](../Unfoldings/Cap/RoofFinalRay.lean) | Every roof ray eventually lies in one original support cell and becomes exactly straight |
+| [Unfoldings.Cap.RoofSolid](../Unfoldings/Cap/RoofSolid.lean) | The extended roof is exactly the frontier of the convex original-support-halfspace solid |
 | [Unfoldings.Cap.BankPositionOrder](../Unfoldings/Cap/BankPositionOrder.lean) | Actual parent-copy position order from all descendant paired-vector differences |
 | [Unfoldings.Cap.BankSegments](../Unfoldings/Cap/BankSegments.lean) | Matched parameters are the actual straight entrance and exit bank segments |
 | [Unfoldings.Cap.BranchDisplacements](../Unfoldings/Cap/BranchDisplacements.lean) | Exact actual parent-copy gap as the sum of all descendant bank-vector differences |
@@ -576,6 +583,9 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Geometry.ConvexRadialTails](../Unfoldings/Geometry/ConvexRadialTails.lean) | Outward frontier rays leave a convex closure and preserve distinct endpoint labels |
+| [Unfoldings.Geometry.FiniteAffineTail](../Unfoldings/Geometry/FiniteAffineTail.lean) | A fixed affine minimizer beyond a threshold for any finite real affine family |
+| [Unfoldings.Geometry.FiniteConvexTrace](../Unfoldings/Geometry/FiniteConvexTrace.lean) | Finite labeled segment partitions for arbitrary finite closed convex covers |
 | [Unfoldings.Geometry.AcuteWedgeFrame](../Unfoldings/Geometry/AcuteWedgeFrame.lean) | Construct an orthogonal complex frame with strict margins around an acute direction wedge |
 | [Unfoldings.Geometry.AngleConeBound](../Unfoldings/Geometry/AngleConeBound.lean) | Convex direction wedges inherit angular caps and robust positive inner products |
 | [Unfoldings.Geometry.ComplexRotationFrame](../Unfoldings/Geometry/ComplexRotationFrame.lean) | Positive complex isometries commute with rigid phase rotations |
@@ -755,6 +765,7 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Topology.ChildSubtrees](../Unfoldings/Topology/ChildSubtrees.lean) | Immediate-child subtrees partition all proper descendants with arbitrary additive weights |
 | [Unfoldings.Topology.OrderedChanges](../Unfoldings/Topology/OrderedChanges.lean) | An ordered tail or head of bounded signal changes telescopes, ignoring zero increments |
 | [Unfoldings.Topology.ParentOrbitEnumeration](../Unfoldings/Topology/ParentOrbitEnumeration.lean) | The first-root orbit enumerates every original nonroot ancestor exactly once |
 | [Unfoldings.Topology.SubtreeWeights](../Unfoldings/Topology/SubtreeWeights.lean) | Regroup nested subtree weights over root paths before applying signed-cancellation bounds |

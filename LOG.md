@@ -2,6 +2,35 @@
 
 ## Session Log
 
+### 2026-11-10 — origin leaf, exact branch balance, and the actual unbounded roof
+
+- Proved that no nonroot parent step ends at the sector origin. An internal
+  origin is a leaf, its descendant set is a singleton, and the actual two
+  child-bank endpoints coincide. The threshold constructor now has a stronger
+  companion retaining its origin's internality; existing statements are unchanged.
+- Proved that immediate-child subtrees partition the proper descendants for
+  arbitrary additive weights. Applied this to actual positions: a parent seam's
+  child-end gap equals the sum of its immediate children's parent-end gaps.
+- Constructed the unbounded roof as a closed graph homeomorphic to the plane,
+  covered by closed convex active-support cells. It agrees pointwise with the
+  supplied cap and is precisely the frontier of the convex intersection of the
+  original supporting halfspaces.
+- Constructed disjoint radial continuations of actual rim roots. They leave the
+  original footprint and surface, lift continuously to the roof, and preserve
+  their tree's sector direction.
+- Generalized finite segment traces to arbitrary finite closed convex covers
+  and reused this lemma for the original cap without changing its trace theorem.
+  Constructed actual support-cell traces on the entire roof, with genuine face
+  tangent secants. Every roof ray eventually stays in one original support cell
+  and becomes exactly straight.
+- Compatible extension triangulation and cuts through additional roof vertices,
+  complete branching-bank separation, waterfall strips, and global nonoverlap
+  remain open. The full cap theorem is still incomplete.
+- Verification: scoped cache check and full `lake build` pass; **6,582 project**
+  and **7,243 pinned topology declarations** use only standard Lean axioms.
+  Checked **861 local documentation links**; no project warnings.
+
+
 ### 2026-11-10 — strict actual sector quadrants and branching paired-seam separation
 
 - Constructed orthogonal acute-wedge frames with a common positive angular
