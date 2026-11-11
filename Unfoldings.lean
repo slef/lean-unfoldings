@@ -303,3 +303,13 @@ public import Unfoldings.Cap.CompletedBoundedStripInjective
 public import Unfoldings.Cap.ExtendedBoundedStripInjective
 public import Unfoldings.Geometry.RadialTailAttachment
 public import Unfoldings.Cap.SkirtAttachments
+public import Unfoldings.Cap.ExtendedCutParents
+public import Unfoldings.Cap.ExtendedCutCarrier
+public import Unfoldings.Cap.ExtendedCutEmbedding
+public import Unfoldings.Cap.GeometricCutLabels
+public import Unfoldings.Cap.GeometricCutPaths
+public import Unfoldings.Cap.GeometricCutIncidence
+public import Unfoldings.Cap.GeometricCutNoncrossing
+public import Unfoldings.Topology.DescendantLeavesWithin
+public import Unfoldings.Cap.GeometricLeafSweep
+public import Unfoldings.Cap.GeometricLeafSupport

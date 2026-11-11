@@ -1089,3 +1089,13 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Cap.ExtendedBoundedStripInjective](../Unfoldings/Cap/ExtendedBoundedStripInjective.lean) | Uniform coherent bounded-strip injectivity on the constructed roof extension |
 | [Unfoldings.Geometry.RadialTailAttachment](../Unfoldings/Geometry/RadialTailAttachment.lean) | An outer radial tail meets the inner convex rim exactly at its seed |
 | [Unfoldings.Cap.SkirtAttachments](../Unfoldings/Cap/SkirtAttachments.lean) | Bijection between original rim vertices and attached skirt components |
+| [Unfoldings.Cap.ExtendedCutParents](../Unfoldings/Cap/ExtendedCutParents.lean) | Explicit finite parent forest for the complete original-and-skirt geometric cuts |
+| [Unfoldings.Cap.ExtendedCutCarrier](../Unfoldings/Cap/ExtendedCutCarrier.lean) | Identify the entire geometric cut set with the explicit forest edges and outer tips |
+| [Unfoldings.Cap.ExtendedCutEmbedding](../Unfoldings/Cap/ExtendedCutEmbedding.lean) | Distinct actual positions for all original vertices, independent leaves, and tips |
+| [Unfoldings.Cap.GeometricCutLabels](../Unfoldings/Cap/GeometricCutLabels.lean) | Preserve component labels and fixed direction sectors along geometric parents |
+| [Unfoldings.Cap.GeometricCutPaths](../Unfoldings/Cap/GeometricCutPaths.lean) | Represent every complete geometric cut path by an exact monotone height graph |
+| [Unfoldings.Cap.GeometricCutIncidence](../Unfoldings/Cap/GeometricCutIncidence.lean) | A geometric vertex on a cut edge is one of its actual endpoints |
+| [Unfoldings.Cap.GeometricCutNoncrossing](../Unfoldings/Cap/GeometricCutNoncrossing.lean) | Distinct complete geometric cut edges meet only at common endpoints |
+| [Unfoldings.Topology.DescendantLeavesWithin](../Unfoldings/Topology/DescendantLeavesWithin.lean) | Choose a descendant leaf using a coordinate ascending only within its subtree |
+| [Unfoldings.Cap.GeometricLeafSweep](../Unfoldings/Cap/GeometricLeafSweep.lean) | Order geometric descendants and leaves in one fixed component sweep frame |
+| [Unfoldings.Cap.GeometricLeafSupport](../Unfoldings/Cap/GeometricLeafSupport.lean) | Every whole geometric cut-edge point lies above a leaf whose path contains its edge |

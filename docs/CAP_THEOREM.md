@@ -420,6 +420,14 @@ Separation of different banks and global nonoverlap remain open.
   beyond the actual clip. Connecting paths remain in the endpoint height slab.
 - [x] Prove that a skirt tail meeting the old rim begins at that meeting point.
   Attached components correspond bijectively to old rim vertices.
+- [x] Model the complete original-and-skirt geometric cut set as an explicit
+  finite parent forest, including independent skirt leaves and degenerate tips.
+  Prove exact carrier coverage, distinct vertex positions, endpoint incidence,
+  and that distinct edges meet only at common endpoints.
+- [x] Give each whole geometric component a fixed sector and represent every
+  complete root path by an exact monotone height graph. Every geometric edge
+  point lies above a childless descendant whose path contains that edge.
+  This supplies the support lemma for processing leaves in height order.
 - [ ] Construct the actual waterfall strip partition; prove complete coverage
   and that its artificial boundaries are compatible with the development.
 - [ ] Prove side-by-side separation of all developed strips and hence all

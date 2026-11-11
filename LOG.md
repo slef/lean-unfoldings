@@ -2,6 +2,27 @@
 
 ## Session Log
 
+### 2026-11-11 — complete geometric forest and leaf sweep
+
+- Constructed the finite parent forest of the complete original-and-skirt
+  geometric cut network, before any auxiliary triangulation. Original rim
+  roots continue to skirt tips; independent nonconstant components add leaves.
+- Proved exact equality with the prescribed geometric cuts, including isolated
+  degenerate tips. All geometric node positions are distinct; any node on an
+  edge is an endpoint, and distinct edges meet only at shared endpoints.
+- Preserved component labels along all parent orbits. Each component has one
+  fixed five-sector direction bound, and each whole root path has an exact
+  monotone height-graph representation preserving every segment.
+- Proved a localized descendant-leaf lemma and applied it to the actual
+  component sweep: every cut-edge point lies above a childless descendant
+  whose path contains that edge. No auxiliary mesh or safe-path input is used.
+- Verification: cache retrieval followed by full `lake build` pass; **7,868
+  project** and **7,243 pinned topology declarations** use only standard Lean
+  axioms. No project warnings; all 1,046 indexed local links resolve.
+- Still open: complete the waterfall insertion over this forest and compatible
+  lifts, prove whole-bank and global strip separation, and transfer nonoverlap
+  to original faces. The full cap theorem is not yet complete.
+
 ### 2026-11-11 — strict strip insertion and bounded domains
 
 - Represented every whole edge of a genuine monotone polygonal path by a
