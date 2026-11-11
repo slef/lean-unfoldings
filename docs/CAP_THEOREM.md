@@ -472,6 +472,13 @@ Separation of different banks and global nonoverlap remain open.
   endpoint survives meshing and lies strictly inside the physical roof clip.
   The actual map is continuous on its proved coherent domain, including these
   pinches; no identification of distinct intrinsic copies is made.
+- [x] Extend the actual map comparison across coherent reopening pinches.
+  Permanently merged banks need no common map value. Prove a local insertion
+  invariant that a separator creates no reopening pinches except at its target,
+  once its pretarget strictness and posttarget wall persistence are established.
+  Derive strict coordinate progress of actual whole cut tails, enclosing rays,
+  connectors, and spliced walls, including targets on an exterior sector bank.
+  Every nonterminal geometric node on a sector bank is a childless leaf.
 - [ ] Compare different positive-width components across possible strip pinches,
   with the correct actual copies of branch and leaf vertices.
 - [ ] Prove side-by-side separation of all developed strips and hence all

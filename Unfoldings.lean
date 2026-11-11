@@ -371,3 +371,12 @@ public import Unfoldings.Cap.GeometricLeafMinimum
 public import Unfoldings.Cap.RadialLeafCoherence
 public import Unfoldings.Cap.GeometricLeafInterior
 public import Unfoldings.Cap.ExtendedLeafCoherence
+public import Unfoldings.Cap.CenteredCoherentMap
+public import Unfoldings.Cap.GeometricSectorBoundaryLeaves
+public import Unfoldings.Cap.StrictGeometricTailGraphs
+public import Unfoldings.Geometry.MonotoneStripCore
+public import Unfoldings.Geometry.StrictHeightGraphs
+public import Unfoldings.Geometry.StrictStripInsertion
+public import Unfoldings.Geometry.ChainStrictHeightGraph
+public import Unfoldings.Geometry.RecoverableStripPinches
+public import Unfoldings.Geometry.RecoverableStripInjective

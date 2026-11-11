@@ -2,6 +2,23 @@
 
 ## Session Log
 
+### 2026-11-11 — compare strips across coherent reopening pinches
+
+- Proved actual source-centered map continuity on the coherent domain and
+  injectivity through coherent zero-width pinches, without positive width
+  throughout the entire comparison slab.
+- Distinguished reopening pinches from permanently merged banks: only the
+  former need coherent developed values. Proved the local separator invariant
+  from strict pretarget placement and permanent posttarget wall contacts.
+- Derived strict coordinate progress of actual whole cut paths, sector walls,
+  averaged connectors, and spliced insertion graphs. The connector result also
+  covers targets on an exterior sector bank.
+- Proved that every nonterminal geometric cut node on a sector bank is childless.
+- Verification: cache retrieval followed by full `lake build` pass; **8,272
+  unfolding / 7,243 pinned topology declarations**, standard axioms only;
+  documentation links (**1,113**) and whitespace pass. Actual finite-waterfall
+  pinch classification and global developed-strip separation remain open.
+
 ### 2026-11-11 — coherent developed values at actual leaf pinches
 
 - Extended the actual projected map to its proved coherent domain, including

@@ -114,6 +114,9 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Cap.StrictGeometricTailGraphs](../Unfoldings/Cap/StrictGeometricTailGraphs.lean) | Derive strict coordinate progress from actual whole cut paths and sector walls |
+| [Unfoldings.Cap.GeometricSectorBoundaryLeaves](../Unfoldings/Cap/GeometricSectorBoundaryLeaves.lean) | A nonterminal geometric node on a sector bank is childless |
+| [Unfoldings.Cap.CenteredCoherentMap](../Unfoldings/Cap/CenteredCoherentMap.lean) | Actual source-centered map continuity and strip injectivity across coherent reopening pinches |
 | [Unfoldings.Cap.ClipSpatialTriangles](../Unfoldings/Cap/ClipSpatialTriangles.lean) | Actual isometric spatial triangles cover each clipped roof and retain original normals and tilt |
 | [Unfoldings.Cap.ClipSupportPolygons](../Unfoldings/Cap/ClipSupportPolygons.lean) | Construct compact active-support polygons, exact segment rims, and actual triangle partitions |
 | [Unfoldings.Cap.ClipTrianglePartition](../Unfoldings/Cap/ClipTrianglePartition.lean) | Assemble one finite disjoint-interior triangle partition of the entire clipped footprint |
@@ -592,6 +595,12 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Geometry.RecoverableStripInjective](../Unfoldings/Geometry/RecoverableStripInjective.lean) | Compare separate positive-width strip components through coherent reopening pinches |
+| [Unfoldings.Geometry.RecoverableStripPinches](../Unfoldings/Geometry/RecoverableStripPinches.lean) | Track and preserve reopening pinches under insertion, excluding permanent mergers |
+| [Unfoldings.Geometry.ChainStrictHeightGraph](../Unfoldings/Geometry/ChainStrictHeightGraph.lean) | Exact whole-edge height representations inherit strict coordinate progress |
+| [Unfoldings.Geometry.StrictStripInsertion](../Unfoldings/Geometry/StrictStripInsertion.lean) | Strict waterfall connectors and insertion walls, including exterior-bank targets |
+| [Unfoldings.Geometry.StrictHeightGraphs](../Unfoldings/Geometry/StrictHeightGraphs.lean) | Strict coordinate progress under envelopes, rays, and splicing |
+| [Unfoldings.Geometry.MonotoneStripCore](../Unfoldings/Geometry/MonotoneStripCore.lean) | Inset comparison through coherent zero-width strip pinches |
 | [Unfoldings.Geometry.CompactHalfplanes](../Unfoldings/Geometry/CompactHalfplanes.lean) | Compact proper finite affine-halfplane intersections have exact finite segment boundaries |
 | [Unfoldings.Geometry.ConvexPolygonCover](../Unfoldings/Geometry/ConvexPolygonCover.lean) | Exact finite center-triangle coverage of compact convex polygons, discarding degenerate rim cells |
 | [Unfoldings.Geometry.ConvexPolygonFan](../Unfoldings/Geometry/ConvexPolygonFan.lean) | Actual center triangles and interior separation from distinct boundary rays |
