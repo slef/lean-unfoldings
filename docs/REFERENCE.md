@@ -919,6 +919,13 @@ and a counterexample to testing radial monotonicity only at endpoints.
 | [Unfoldings.Cap.ProjectedConformity](../Unfoldings/Cap/ProjectedConformity.lean) | The supplied cap triangles are geometrically conforming by injective projection and actual seam classes |
 | [Unfoldings.Cap.RoofInteriorHeight](../Unfoldings/Cap/RoofInteriorHeight.lean) | Every interior source has positive roof height in the nonflat case |
 
+| [Unfoldings.Cap.ActiveNormalSlopes](../Unfoldings/Cap/ActiveNormalSlopes.lean) | All original support slopes active at a regular cap point are collinear |
+| [Unfoldings.Cap.OriginalCurvatureSupport](../Unfoldings/Cap/OriginalCurvatureSupport.lean) | Actual roof curvature inside the original cap occurs only at original cap vertices |
+| [Unfoldings.Cap.SkirtCurvatureSeeds](../Unfoldings/Cap/SkirtCurvatureSeeds.lean) | Finite skirt seeds selected before meshing cover all new positive curvature up to original vertices |
+| [Unfoldings.Cap.ExtendedCutCurvature](../Unfoldings/Cap/ExtendedCutCurvature.lean) | Constructed original forest edges and skirt continuations cover every actual positive-curvature vertex |
+| [Unfoldings.Geometry.AffineSupportingChord](../Unfoldings/Geometry/AffineSupportingChord.lean) | A nonnegative affine function vanishing inside a chord vanishes at both endpoints |
+| [Unfoldings.Geometry.NonvertexChord](../Unfoldings/Geometry/NonvertexChord.lean) | Every nonvertex triangle point lies strictly inside a nondegenerate chord |
+
 ## Build and proof audit
 
 Lean and Mathlib are pinned to **4.35.0** in

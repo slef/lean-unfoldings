@@ -335,9 +335,15 @@ Separation of different banks and global nonoverlap remain open.
   preceding conforming support partition's corners. At a regular old point there
   are at most two old faces; the actual new support slopes are collinear, so
   their intrinsic curvature is zero. Positive curvature stays at old corners.
-- [ ] Select sufficient skirt seeds from the finite old corner set and match the
-  original cap forest. Construct the full extended cut forest and retained-seam
-  correspondence, and prove direction control for its developed strips.
+- [x] Prove that actual clip curvature inside the supplied cap is supported only
+  on original cap vertices. At a regular original face point, all original
+  support planes active there have collinear slopes, even after extension.
+- [x] Select finite skirt seeds from preceding roof corners and original rim
+  corners before meshing. Prove that the selected original forest edges and
+  the constructed skirt components cover every actual positive-curvature vertex.
+- [ ] Construct the actual extended cut-seam set, prove its boundary-rooted
+  primal forest property, and obtain the extended flat cut disk and development.
+  Prove direction control for its developed strips.
 - [ ] Construct the actual waterfall strip partition; prove complete coverage
   and that its artificial boundaries are compatible with the development.
 - [ ] Prove side-by-side separation of all developed strips and hence all

@@ -797,6 +797,8 @@ remaining forest, uniform-turn, and global nonoverlap arguments.
   banks, original support normals, and uniform all-vertex curvature bounds.
 - [x] Prove that line meshing creates no new curvature away from the preceding
   conforming roof partition's corners, including planar and crease subdivisions.
+- [x] Select finite skirt curvature seeds before meshing and prove that original
+  forest edges plus the constructed skirt components cover all positive curvature.
 - [ ] Prove separation between different seams, whole branching paths, and trees.
 - [ ] Global strip assembly and the full nearly flat cap theorem.
 

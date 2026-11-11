@@ -2,6 +2,28 @@
 
 ## Session Log
 
+### 2026-11-11 — selected extended geometric cuts cover all actual positive curvature
+
+- Proved that each regular original cap point lies in a genuine chord and that
+  every original support plane active there agrees along that chord. All active
+  normal slopes are therefore collinear.
+- Applied the checked normal-area identity: actual clip curvature within the
+  original footprint occurs only at original cap vertices, for any conforming
+  physical extension triangulation.
+- Selected a finite skirt seed set before meshing from preceding roof corners
+  and original rim corners outside the original footprint's interior. Combined
+  original-vertex support with stability of curvature under line meshing.
+- Proved that the selected original forest edges and constructed radial skirt
+  components cover every positive-curvature vertex of the actual meshed clip.
+  No post-meshing curvature or safe-cut certificate is assumed.
+- The actual cut-seam selection, its boundary-rooted primal forest property,
+  the extended flat cut disk/development, and global strip separation remain open.
+  This is still not the full cap theorem.
+- Verification: scoped cache check and full `lake build` pass; **7,158 project**
+  and **7,243 pinned topology declarations** use only standard Lean axioms.
+  No project warnings. All 929 local documentation links resolve.
+
+
 ### 2026-11-11 — derived input conformity and positive interior source height
 
 - Proved that the supplied cap's projected input triangles are face-to-face
