@@ -1115,3 +1115,13 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Cap.GeometricLeafAvoidance](../Unfoldings/Cap/GeometricLeafAvoidance.lean) | A geometric leaf cannot lie on another vertex's parent path |
 | [Unfoldings.Cap.GeometricTailLeaves](../Unfoldings/Cap/GeometricTailLeaves.lean) | Separate a distinct leaf from active tail graphs at its insertion height |
 | [Unfoldings.Geometry.CoalescingStripInsertion](../Unfoldings/Geometry/CoalescingStripInsertion.lean) | Preserve actual ordered tails when splicing new strip separators |
+| [Unfoldings.Geometry.DirectionWedgeOperations](../Unfoldings/Geometry/DirectionWedgeOperations.lean) | Convex positive-span wedges and linear images |
+| [Unfoldings.Geometry.RayStrip](../Unfoldings/Geometry/RayStrip.lean) | Monotone ray boundaries enclosing a source sector |
+| [Unfoldings.Topology.HeightEnumeration](../Unfoldings/Topology/HeightEnumeration.lean) | Height-ordered finite enumeration with ties |
+| [Unfoldings.Geometry.MonotoneStripSubdivision](../Unfoldings/Geometry/MonotoneStripSubdivision.lean) | Finite strip subdivisions, coverage, and disjoint interiors |
+| [Unfoldings.Geometry.FiniteWaterfall](../Unfoldings/Geometry/FiniteWaterfall.lean) | Construct height-ordered tail-preserving subdivisions |
+| [Unfoldings.Cap.GeometricSectorPositions](../Unfoldings/Cap/GeometricSectorPositions.lean) | Sector bounds for component positions and directions |
+| [Unfoldings.Cap.GeometricSectorData](../Unfoldings/Cap/GeometricSectorData.lean) | Chosen actual component sectors and enclosing strips |
+| [Unfoldings.Cap.GeometricWaterfall](../Unfoldings/Cap/GeometricWaterfall.lean) | Construct the finite actual sector waterfall |
+| [Unfoldings.Cap.GeometricTailEdgeCover](../Unfoldings/Cap/GeometricTailEdgeCover.lean) | Every ancestor-edge point lies on its represented tail |
+| [Unfoldings.Cap.GeometricWaterfallAvoidance](../Unfoldings/Cap/GeometricWaterfallAvoidance.lean) | Assigned cuts avoid every waterfall strip interior |

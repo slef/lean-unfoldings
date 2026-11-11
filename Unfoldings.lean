@@ -329,3 +329,13 @@ public import Unfoldings.Topology.ChildlessAncestors
 public import Unfoldings.Cap.GeometricLeafAvoidance
 public import Unfoldings.Cap.GeometricTailLeaves
 public import Unfoldings.Geometry.CoalescingStripInsertion
+public import Unfoldings.Geometry.DirectionWedgeOperations
+public import Unfoldings.Geometry.RayStrip
+public import Unfoldings.Topology.HeightEnumeration
+public import Unfoldings.Geometry.MonotoneStripSubdivision
+public import Unfoldings.Geometry.FiniteWaterfall
+public import Unfoldings.Cap.GeometricSectorPositions
+public import Unfoldings.Cap.GeometricSectorData
+public import Unfoldings.Cap.GeometricWaterfall
+public import Unfoldings.Cap.GeometricTailEdgeCover
+public import Unfoldings.Cap.GeometricWaterfallAvoidance

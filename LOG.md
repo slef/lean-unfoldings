@@ -2,6 +2,28 @@
 
 ## Session Log
 
+### 2026-11-11 — constructed finite geometric waterfall
+
+- Constructed finite subdivisions by repeated insertion, proving exact coverage,
+  retained separators, side-specific exterior-wall provenance, and pairwise
+  disjoint strict cell interiors. Every separator avoids every cell interior.
+- Proved the height-ordered finite waterfall construction for coalescing tails,
+  allowing equal starting heights. All inserted graphs begin at the source
+  and preserve their actual tails up to a common cutoff.
+- Chose actual component sectors controlling positions and directions together,
+  including rim-only components and isolated degenerate tips. Constructed their
+  exact enclosing ray strips and enumerated actual leaves by height.
+- Applied insertion to precisely the leaves active below the cutoff. Proved that
+  every assigned cut-edge point there belongs to an actual leaf tail, hence to
+  a separator, and stays out of every strict waterfall strip interior.
+- Verification: cache retrieval followed by full `lake build` pass; **8,093
+  project** and **7,243 pinned topology declarations** use only standard Lean
+  axioms. No project warnings; all 1,072 indexed local links resolve.
+- Open: cutoff geometry, separation from other sectors, coherent developed maps
+  on the nondegenerate strip regions, global developed strip separation, and
+  nonoverlap transfer. Coincident projected tails do not identify bank copies.
+  The full cap theorem is not yet complete.
+
 ### 2026-11-11 — actual tail coalescence and leaf avoidance
 
 - Proved unique forward continuation in the complete geometric cut network.

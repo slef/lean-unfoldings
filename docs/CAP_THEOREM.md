@@ -437,6 +437,14 @@ Separation of different banks and global nonoverlap remain open.
 - [x] Show that inserting a separator between coalescing neighbors preserves
   its entire actual tail up to a common cutoff. Completion below a leaf does
   not affect coalescence on later slabs.
+- [x] Construct a finite subdivision from the actual active sector leaves,
+  in height order with ties allowed. Preserve every actual tail to the common
+  cutoff. Prove exact sector coverage, retained boundaries, and pairwise
+  disjoint strip interiors. Every assigned geometric cut edge below the cutoff
+  lies on a separator and avoids every strict strip interior.
+- [x] Choose component sectors controlling positions as well as directions,
+  including rim-only components and degenerate tips. Represent the exterior
+  sector rays by monotone graphs; no covering strips are assumed as input.
 - [ ] Construct the actual waterfall strip partition; prove complete coverage
   and that its artificial boundaries are compatible with the development.
 - [ ] Prove side-by-side separation of all developed strips and hence all
