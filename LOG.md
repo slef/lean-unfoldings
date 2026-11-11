@@ -2,6 +2,24 @@
 
 ## Session Log
 
+### 2026-11-10 — line-constrained roof triangulation preserves original cut geometry
+
+- Triangulated compact chambers of arbitrary finite proper affine arrangements.
+  Including all old triangle supporting lines gives exact disjoint-interior
+  refinements subordinate to whole old parents, even with extra cut lines.
+- Proved supporting-line contacts occur on actual whole fine edges or vertices.
+  Respecting all three old supporting coordinates makes each old edge exactly a
+  finite union of whole fine edges; finite exceptional vertex sets leave no gaps.
+- Constructed conforming physical roof triangulations aligned to all original
+  input face supporting lines. Exact old-edge coverage holds in projection and
+  after actual spatial lifting, so original cut geometry is preserved.
+- Extended cut-forest and retained-seam correspondence, cuts through extra roof
+  vertices, global strip separation, and the full cap theorem remain open.
+- Verification: scoped cache check and full `lake build` pass; **6,988 project**
+  and **7,243 pinned topology declarations** use only standard Lean axioms.
+  No project warnings. All 906 local documentation links resolve.
+
+
 ### 2026-11-10 — actual metric disk realization of the roof clip
 
 - Proved that edge-compatible labels agree around every point of a conforming

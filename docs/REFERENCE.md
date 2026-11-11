@@ -890,6 +890,14 @@ and a counterexample to testing radial monotonicity only at endpoints.
 | [Unfoldings.Geometry.TriangleNeighborhood](../Unfoldings/Geometry/TriangleNeighborhood.lean) | Interior points distinct from the center occur arbitrarily close to every triangle point |
 | [Unfoldings.Topology.ClosedCoverValues](../Unfoldings/Topology/ClosedCoverValues.lean) | Compatible constant labels on finite closed covers of preconnected spaces agree |
 
+| [Unfoldings.Cap.ClipEdgeLift](../Unfoldings/Cap/ClipEdgeLift.lean) | Every original spatial edge and cut is exactly a union of whole actual roof triangle edges |
+| [Unfoldings.Cap.ConstrainedClipTriangles](../Unfoldings/Cap/ConstrainedClipTriangles.lean) | Conforming physical clip triangulations respect prescribed lines and preserve all original edges |
+| [Unfoldings.Geometry.ChamberTriangulation](../Unfoldings/Geometry/ChamberTriangulation.lean) | Exact finite disjoint-interior triangle partitions aligned to all prescribed affine lines |
+| [Unfoldings.Geometry.ConstrainedEdgeSubdivision](../Unfoldings/Geometry/ConstrainedEdgeSubdivision.lean) | Supporting-line sign constraints force full subedges at regular old-edge contacts |
+| [Unfoldings.Geometry.ConstrainedTriangleRefinement](../Unfoldings/Geometry/ConstrainedTriangleRefinement.lean) | Finite line-constrained triangle refinements subordinate to actual old parents |
+| [Unfoldings.Geometry.TriangleSupportingFace](../Unfoldings/Geometry/TriangleSupportingFace.lean) | Contacts with proper affine supporting lines occur on actual whole edges or vertices |
+| [Unfoldings.Geometry.WholeEdgeSubdivision](../Unfoldings/Geometry/WholeEdgeSubdivision.lean) | Exact coverage of old edges by finite whole fine edges with no exceptional gaps |
+
 ## Build and proof audit
 
 Lean and Mathlib are pinned to **4.35.0** in

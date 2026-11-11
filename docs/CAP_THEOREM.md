@@ -314,8 +314,12 @@ Separation of different banks and global nonoverlap remain open.
   neighborhoods. The resulting spatial folding is embedded; its intrinsic
   realization is homeomorphic to the clip and the closed disk. Its finite route
   metric has projection bounds depending only on original normal height.
-- [ ] Preserve original cut edges and construct the extension's cutting scheme,
-  handling any additional roof vertices before using its developed strips.
+- [x] Preserve original cut geometry in the extension triangulation. Insert all
+  original face supporting lines in one finite arrangement; triangulate its
+  chambers and make the result conforming. Every original projected and spatial
+  edge is exactly a finite union of whole actual extended-triangle edges.
+- [ ] Construct the extension's cutting scheme, including the retained-seam and
+  forest correspondence, and handle additional roof vertices before using strips.
 - [ ] Construct the actual waterfall strip partition; prove complete coverage
   and that its artificial boundaries are compatible with the development.
 - [ ] Prove side-by-side separation of all developed strips and hence all

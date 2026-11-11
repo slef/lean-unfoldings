@@ -786,7 +786,10 @@ remaining forest, uniform-turn, and global nonoverlap arguments.
 - [x] Construct a conforming common boundary refinement and actual spatial
   isometric seams. Its intrinsic realization is the actual clipped roof disk,
   with finite route distances and uniform intrinsic projection bounds.
-- [ ] Preserve the original cuts and handle all extra extension vertices.
+- [x] Preserve original cut geometry: construct line-constrained conforming roof
+  triangulations and exact whole-edge unions for every original spatial edge.
+- [ ] Construct the extended cut forest and retained-seam correspondence, and
+  handle all extra extension vertices.
 - [ ] Prove separation between different seams, whole branching paths, and trees.
 - [ ] Global strip assembly and the full nearly flat cap theorem.
 
