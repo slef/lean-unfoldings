@@ -2,6 +2,23 @@
 
 ## Session Log
 
+### 2026-11-11 — actual tail coalescence and leaf avoidance
+
+- Proved unique forward continuation in the complete geometric cut network.
+  Finite closed-segment activity and increasing heights imply that covered
+  monotone graphs merge permanently after meeting; this is a derived fact.
+- Constructed exact whole-edge tail graphs in one common sector network,
+  including distinct components. Their order is consistent on shared height
+  slabs, and a distinct leaf avoids each already active tail.
+- Proved that the strict strip insertion preserves a tail between coalescing
+  neighbors up to a common cutoff. Completion below the leaf does not change
+  this conclusion.
+- Verification: cache retrieval followed by full `lake build` pass; **7,961
+  project** and **7,243 pinned topology declarations** use only standard Lean
+  axioms. No project warnings; all 1,062 indexed local links resolve.
+- Open: finite waterfall insertion, compatible surface lifts, global developed
+  strip separation, and nonoverlap transfer. The full cap theorem remains open.
+
 ### 2026-11-11 — complete geometric forest and leaf sweep
 
 - Constructed the finite parent forest of the complete original-and-skirt

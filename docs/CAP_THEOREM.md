@@ -428,6 +428,15 @@ Separation of different banks and global nonoverlap remain open.
   complete root path by an exact monotone height graph. Every geometric edge
   point lies above a childless descendant whose path contains that edge.
   This supplies the support lemma for processing leaves in height order.
+- [x] Prove unique forward continuation at every nonterminal geometric cut
+  point using half-open parent edges. Derive permanent merging of covered
+  height graphs from finite closed-segment activity and increasing heights.
+- [x] Construct exact covered tail graphs in a common sector network, including
+  distinct components. Prove their coalescence and consistent sweep order on
+  common height slabs. Distinct leaves avoid every already active tail.
+- [x] Show that inserting a separator between coalescing neighbors preserves
+  its entire actual tail up to a common cutoff. Completion below a leaf does
+  not affect coalescence on later slabs.
 - [ ] Construct the actual waterfall strip partition; prove complete coverage
   and that its artificial boundaries are compatible with the development.
 - [ ] Prove side-by-side separation of all developed strips and hence all

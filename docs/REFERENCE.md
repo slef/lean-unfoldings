@@ -1099,3 +1099,19 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Topology.DescendantLeavesWithin](../Unfoldings/Topology/DescendantLeavesWithin.lean) | Choose a descendant leaf using a coordinate ascending only within its subtree |
 | [Unfoldings.Cap.GeometricLeafSweep](../Unfoldings/Cap/GeometricLeafSweep.lean) | Order geometric descendants and leaves in one fixed component sweep frame |
 | [Unfoldings.Cap.GeometricLeafSupport](../Unfoldings/Cap/GeometricLeafSupport.lean) | Every whole geometric cut-edge point lies above a leaf whose path contains its edge |
+| [Unfoldings.Cap.GeometricCutFlow](../Unfoldings/Cap/GeometricCutFlow.lean) | Unique half-open outgoing parent edge at every nonterminal geometric cut point |
+| [Unfoldings.Geometry.CoalescingHeightGraphs](../Unfoldings/Geometry/CoalescingHeightGraphs.lean) | Coalescing tails preserve a consistent order on their common height interval |
+| [Unfoldings.Topology.FiniteClosedActive](../Unfoldings/Topology/FiniteClosedActive.lean) | Finite closed covers use only locally active pieces near a point |
+| [Unfoldings.Geometry.SegmentHeightUnique](../Unfoldings/Geometry/SegmentHeightUnique.lean) | A strictly increasing linear height determines each point of a segment |
+| [Unfoldings.Geometry.HeightSegmentNetwork](../Unfoldings/Geometry/HeightSegmentNetwork.lean) | Derive permanent tail coalescence from finite forward-deterministic segments |
+| [Unfoldings.Cap.GeometricHeightNetwork](../Unfoldings/Cap/GeometricHeightNetwork.lean) | Construct actual component networks in common geometric height coordinates |
+| [Unfoldings.Geometry.ChainHeightCover](../Unfoldings/Geometry/ChainHeightCover.lean) | Exact height graphs cover actual edge points at every intermediate chain height |
+| [Unfoldings.Cap.GeometricTailGraphs](../Unfoldings/Cap/GeometricTailGraphs.lean) | Construct covered exact height graphs for all complete paths of a component |
+| [Unfoldings.Geometry.AffineHeightNetwork](../Unfoldings/Geometry/AffineHeightNetwork.lean) | Transport forward-deterministic affine segments into height networks |
+| [Unfoldings.Cap.GeometricSectorNetwork](../Unfoldings/Cap/GeometricSectorNetwork.lean) | A common sector network compares branches from distinct geometric components |
+| [Unfoldings.Cap.GeometricSectorTails](../Unfoldings/Cap/GeometricSectorTails.lean) | Cover actual parent tails by their common sector network |
+| [Unfoldings.Cap.GeometricTailCoalescence](../Unfoldings/Cap/GeometricTailCoalescence.lean) | Construct actual tail graph data and prove permanent merging and sweep order |
+| [Unfoldings.Topology.ChildlessAncestors](../Unfoldings/Topology/ChildlessAncestors.lean) | A childless nonroot has no proper descendants |
+| [Unfoldings.Cap.GeometricLeafAvoidance](../Unfoldings/Cap/GeometricLeafAvoidance.lean) | A geometric leaf cannot lie on another vertex's parent path |
+| [Unfoldings.Cap.GeometricTailLeaves](../Unfoldings/Cap/GeometricTailLeaves.lean) | Separate a distinct leaf from active tail graphs at its insertion height |
+| [Unfoldings.Geometry.CoalescingStripInsertion](../Unfoldings/Geometry/CoalescingStripInsertion.lean) | Preserve actual ordered tails when splicing new strip separators |
