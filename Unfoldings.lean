@@ -339,3 +339,15 @@ public import Unfoldings.Cap.GeometricSectorData
 public import Unfoldings.Cap.GeometricWaterfall
 public import Unfoldings.Cap.GeometricTailEdgeCover
 public import Unfoldings.Cap.GeometricWaterfallAvoidance
+public import Unfoldings.Cap.ProjectedDevelopedMap
+public import Unfoldings.Geometry.MonotoneStripOpenInjective
+public import Unfoldings.Cap.CenteredDevelopedMap
+public import Unfoldings.Cap.RegularStripInjective
+public import Unfoldings.Geometry.FiveSectorInteriors
+public import Unfoldings.Geometry.RayStripInterior
+public import Unfoldings.Cap.DeepRoofClips
+public import Unfoldings.Cap.GeometricWaterfallSectors
+public import Unfoldings.Cap.GeometricTailCutoff
+public import Unfoldings.Cap.DeepGeometricWaterfall
+public import Unfoldings.Cap.ExtendedWaterfallDomains
+public import Unfoldings.Cap.ExtendedWaterfallInjective

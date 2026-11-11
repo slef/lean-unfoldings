@@ -1125,3 +1125,15 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Cap.GeometricWaterfall](../Unfoldings/Cap/GeometricWaterfall.lean) | Construct the finite actual sector waterfall |
 | [Unfoldings.Cap.GeometricTailEdgeCover](../Unfoldings/Cap/GeometricTailEdgeCover.lean) | Every ancestor-edge point lies on its represented tail |
 | [Unfoldings.Cap.GeometricWaterfallAvoidance](../Unfoldings/Cap/GeometricWaterfallAvoidance.lean) | Assigned cuts avoid every waterfall strip interior |
+| [Unfoldings.Cap.ProjectedDevelopedMap](../Unfoldings/Cap/ProjectedDevelopedMap.lean) | Construct a continuous actual projected map away from cut seams |
+| [Unfoldings.Geometry.MonotoneStripOpenInjective](../Unfoldings/Geometry/MonotoneStripOpenInjective.lean) | Injectivity in positive-width open strip slabs via inset strips |
+| [Unfoldings.Cap.CenteredDevelopedMap](../Unfoldings/Cap/CenteredDevelopedMap.lean) | Actual maps and compatible charts in source-centered coordinates |
+| [Unfoldings.Cap.RegularStripInjective](../Unfoldings/Cap/RegularStripInjective.lean) | Uniform injectivity for actual regular developed strip maps |
+| [Unfoldings.Geometry.FiveSectorInteriors](../Unfoldings/Geometry/FiveSectorInteriors.lean) | Exact sector tests and strict-versus-closed separation |
+| [Unfoldings.Geometry.RayStripInterior](../Unfoldings/Geometry/RayStripInterior.lean) | Forward strip interiors are genuine strict ray cones |
+| [Unfoldings.Cap.DeepRoofClips](../Unfoldings/Cap/DeepRoofClips.lean) | Choose deep clips containing a whole source sweep slab |
+| [Unfoldings.Cap.GeometricWaterfallSectors](../Unfoldings/Cap/GeometricWaterfallSectors.lean) | Exclude cuts from every sector from strip interiors |
+| [Unfoldings.Cap.GeometricTailCutoff](../Unfoldings/Cap/GeometricTailCutoff.lean) | Actual tail endpoints continue beyond the deep clip slab |
+| [Unfoldings.Cap.DeepGeometricWaterfall](../Unfoldings/Cap/DeepGeometricWaterfall.lean) | Construct waterfall interiors in the regular physical roof |
+| [Unfoldings.Cap.ExtendedWaterfallDomains](../Unfoldings/Cap/ExtendedWaterfallDomains.lean) | Regular strip domains in the actual refined roof mesh |
+| [Unfoldings.Cap.ExtendedWaterfallInjective](../Unfoldings/Cap/ExtendedWaterfallInjective.lean) | Uniform actual waterfall injectivity on positive-width slabs |

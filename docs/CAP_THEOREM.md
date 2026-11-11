@@ -22,10 +22,11 @@ Current entry points:
   uniformly before both meshes. Contacts have matched parameters and zero
   whole-subtree curvature. Flat subtree banks coincide in both position and
   vector; this still does not compare different seams or strips.
-- [ExtendedBoundedStripInjective](../Unfoldings/Cap/ExtendedBoundedStripInjective.lean)
-  proves uniform injectivity of any coherent bounded-height strip on the actual roof
-  development. Its map must continuously select the actual face placements.
-  The strip partition and its compatible lifts are still to be constructed.
+- [ExtendedWaterfallInjective](../Unfoldings/Cap/ExtendedWaterfallInjective.lean)
+  constructs finite waterfall subdivisions of the actual deep roof. Their strict
+  interiors avoid every cut, and the actual developed map is injective on every
+  positive-width height slab. Chart selection and continuity are proved.
+  Separation between different strips or across pinches remains open.
 - [GnomonicArea](../Unfoldings/Cap/GnomonicArea.lean) proves a mesh-independent
   positive tilt threshold for arbitrarily small total spherical normal-image
   area, bounded by the actual planar normal-polygon areas.
@@ -445,8 +446,18 @@ Separation of different banks and global nonoverlap remain open.
 - [x] Choose component sectors controlling positions as well as directions,
   including rim-only components and degenerate tips. Represent the exterior
   sector rays by monotone graphs; no covering strips are assumed as input.
-- [ ] Construct the actual waterfall strip partition; prove complete coverage
-  and that its artificial boundaries are compatible with the development.
+- [x] Exclude cuts from all other sectors using exact strict-versus-closed
+  sector tests. Choose a slab covering the original footprint in every sector
+  frame, then a deeper clip, before auxiliary triangulation. Every actual tail
+  tip lies beyond that slab; isolated degenerate tips cause no interior contact.
+- [x] Construct the actual regular developed map and prove its continuity by
+  finite closed-face gluing. Construct source-centered chart selections. These
+  are derived from the given development, without compatible-lift hypotheses.
+- [x] Prove uniform injectivity of the actual maps on every positive-width
+  height slab of every constructed waterfall strip. Inset strips avoid assuming
+  continuity through bank copies on a coincident projected tail.
+- [ ] Compare different positive-width components across possible strip pinches,
+  with the correct actual copies of branch and leaf vertices.
 - [ ] Prove side-by-side separation of all developed strips and hence all
   distinct original face interiors.
 - [x] Apply the cut-disk and flat-development infrastructure to the fixed-wedge

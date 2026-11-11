@@ -2,6 +2,29 @@
 
 ## Session Log
 
+### 2026-11-11 — actual regular waterfall maps and injectivity
+
+- Proved strict-versus-closed separation for all five sectors and excluded
+  geometric cuts from every sector from each waterfall strip interior.
+- Chose a source sweep slab covering the original cap in every orthogonal frame,
+  then a deeper roof clip, before auxiliary triangulation. Every actual tail tip
+  continues beyond the slab. Constructed regular domains in the actual fine roof,
+  including exclusion of isolated degenerate tips on the clip boundary.
+- Constructed the actual projected developed map and proved continuity away
+  from cut seams by finite closed-face gluing. Derived source-centered chart
+  selection; no coherent strip map or compatible lift is assumed.
+- Proved an inset-strip lemma for open interiors. Applied uniform direction
+  control to obtain actual injectivity on every positive-width height slab of
+  every constructed roof strip, with the tilt chosen before both meshes.
+  This does not identify bank copies on a coincident projected tail.
+- Verification: cache retrieval followed by full `lake build` pass; **8,160
+  project** and **7,243 pinned topology declarations** use only standard Lean
+  axioms. No project warnings; all 1,084 indexed local links resolve.
+- Open: compare components across possible strip pinches, account for sibling
+  displacement along complete branching banks, prove global developed strip
+  separation, and transfer nonoverlap to the original faces. The full cap
+  theorem is not yet complete.
+
 ### 2026-11-11 — constructed finite geometric waterfall
 
 - Constructed finite subdivisions by repeated insertion, proving exact coverage,
