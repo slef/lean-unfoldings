@@ -2,6 +2,29 @@
 
 ## Session Log
 
+### 2026-11-10 — strict actual sector quadrants and branching paired-seam separation
+
+- Constructed orthogonal acute-wedge frames with a common positive angular
+  margin. One tilt threshold, before the entire mesh, puts every actual
+  developed sector direction inside its strict fixed quadrant.
+- Preserved the signed whole-subtree rotation in those frames and derived
+  actual paired-bank vector order, strict for positive descendant curvature.
+- Proved additive cancellation for actual contour positions and an exact gap
+  identity: the parent-copy displacement sums every descendant paired-vector
+  difference. All attached branches are counted by their actual seam labels.
+- Ordered every matched actual bank point, including endpoints and straight
+  extensions beyond the parent rim. Two banks of the same seam can intersect
+  only at matched parameters. Before the child endpoint, contact forces zero
+  whole-subtree curvature; positive curvature separates their interiors.
+- Packaged this individual paired-seam separation under a threshold depending
+  only on the acute margin. No safe-bank certificate is assumed.
+- Different-seam and complete branching-path separation, strip assembly, and
+  global nonoverlap remain open. The full cap theorem is still incomplete.
+- Verification: scoped cache check and full `lake build` pass; **6,478 project**
+  and **7,243 pinned topology declarations** use only standard Lean axioms.
+  Checked **850 local documentation links**; no project warnings.
+
+
 ### 2026-11-10 — common-frame control of every actual original-face direction
 
 - Proved a general oriented planar comparison: one reference-ray alignment

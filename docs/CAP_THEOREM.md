@@ -113,8 +113,9 @@ The remaining nonoverlap argument must be proved independently.
 - [ ] Check the backward-induction argument against the 2021 clarification,
   including finite endpoints and every intermediate suffix.
 - [ ] Prove branching-bank noncrossing, including the altered opposite bank
-  (Corollary 10). The actual whole-subtree opening identity is checked; safe
-  headings and separation remain to be proved.
+  (Corollary 10). The actual whole-subtree rotation, strict quadrant headings,
+  and individual paired-seam separation are checked. Comparing different
+  original edges and complete branching banks remains open.
 
 A stronger special-case route is also checked: matched banks whose unreduced
 headings are ordered in a common open quadrant are ordered at every equal
@@ -251,8 +252,16 @@ global strip hypotheses are constructed. It is not a proof of Theorem 9.
 - [x] Calibrate one global developed frame to original projection. Actual face
   directions differ by at most `2 * tilt + 2 * totalCurvature + 3 * localError`.
   A positive threshold before the entire mesh makes this uniformly arbitrarily small.
-- [ ] Apply the calibrated bound to the actual sector paths and reserve strict
-  common-quadrant bank margins, then establish geometric bank separation.
+- [x] Apply the calibrated bound to all actual sector directions and reserve
+  strict common-quadrant margins under a threshold chosen before the whole mesh.
+- [x] Preserve actual signed subtree rotations in these quadrant frames.
+- [x] Sum actual contour displacements: a parent-copy gap is precisely the sum
+  of all descendant paired-vector differences, including every attached branch.
+- [x] Order all matched actual bank points, including both endpoints and the
+  straight extensions beyond the parent rim. Positive descendant curvature
+  separates the interiors of each seam's two banks; contacts have zero subtree
+  curvature and matched parameters.
+- [ ] Compare different original seams and complete branching banks globally.
 
 The section-and-crossing-potential route proves the actual whole-section heading
 bound directly. The alternative paper-style prefix-region closures, truncations,
@@ -269,7 +278,8 @@ totalInteriorAngularDefect ≤ 81 * (sqrt (1 - c²) / c)² * pi.
 The constant is conservative. Continuity at tilt zero gives an arbitrarily
 small total-curvature budget uniformly across all meshes. The proof uses
 volume-induced solid angle; it does not need an equality with normalized
-Hausdorff area. Strict bank-wedge separation and global nonoverlap remain open.
+Hausdorff area. Strict actual sector margins and individual paired-seam separation are checked.
+Separation of different banks and global nonoverlap remain open.
 
 ### Global assembly (Sections 9--10, Appendices A.5--A.6)
 

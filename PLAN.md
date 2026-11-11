@@ -771,7 +771,11 @@ remaining forest, uniform-turn, and global nonoverlap arguments.
   positive forest-and-heading threshold chosen before the entire mesh.
 - [x] Calibrate all actual original face directions in one global projection
   frame, with a positive threshold before the entire mesh.
-- [ ] Derive strict actual bank wedges and prove branching-bank noncrossing.
+- [x] Construct strict actual sector quadrants under a threshold before the mesh.
+- [x] Derive actual branching parent-copy gaps as sums of all descendant paired
+  vector differences; order all matched bank points, including rim extensions.
+- [x] Separate each actual parent seam's bank interiors up to flat contact.
+- [ ] Prove separation between different seams, whole branching paths, and trees.
 - [ ] Global strip assembly and the full nearly flat cap theorem.
 
 ## Later targets and Fewest Nets

@@ -114,6 +114,15 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Cap.BankPositionOrder](../Unfoldings/Cap/BankPositionOrder.lean) | Actual parent-copy position order from all descendant paired-vector differences |
+| [Unfoldings.Cap.BankSegments](../Unfoldings/Cap/BankSegments.lean) | Matched parameters are the actual straight entrance and exit bank segments |
+| [Unfoldings.Cap.BranchDisplacements](../Unfoldings/Cap/BranchDisplacements.lean) | Exact actual parent-copy gap as the sum of all descendant bank-vector differences |
+| [Unfoldings.Cap.MatchedBankPoints](../Unfoldings/Cap/MatchedBankPoints.lean) | All matched actual parent-bank points are ordered, including extensions past the rim |
+| [Unfoldings.Cap.ParentBankDisplacements](../Unfoldings/Cap/ParentBankDisplacements.lean) | Actual named subtree entrances and exits and additive contour gap identity |
+| [Unfoldings.Cap.ParentBankNoncrossing](../Unfoldings/Cap/ParentBankNoncrossing.lean) | Actual paired parent-bank interiors are disjoint up to zero-subtree-curvature contact |
+| [Unfoldings.Cap.ParentBankVectorOrder](../Unfoldings/Cap/ParentBankVectorOrder.lean) | Signed subtree rotations give actual paired-vector coordinate order |
+| [Unfoldings.Cap.SectorQuadrants](../Unfoldings/Cap/SectorQuadrants.lean) | Mesh-independent threshold constructs strict actual sector quadrants with retained calibration |
+| [Unfoldings.Cap.UniformBankSeparation](../Unfoldings/Cap/UniformBankSeparation.lean) | Threshold before the complete mesh constructs each actual paired-seam separation |
 | [Unfoldings.Cap.AlignedSectionTurn](../Unfoldings/Cap/AlignedSectionTurn.lean) | Actual transverse section turns contract after orientation-preserving rigid bank alignment |
 | [Unfoldings.Cap.AnchorTrace](../Unfoldings/Cap/AnchorTrace.lean) | Construct actual section traces from one rim anchor to every original face, avoiding all original vertices |
 | [Unfoldings.Cap.CalibratedThreshold](../Unfoldings/Cap/CalibratedThreshold.lean) | One threshold before the whole mesh controls every developed face direction in one global projection frame |
@@ -224,6 +233,7 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Complex.SelectedBankSum](../Unfoldings/Complex/SelectedBankSum.lean) | Sum directed actual contour bank weights as one distinctly named pair per parent seam |
 | [Unfoldings.Complex.AngleCutSums](../Unfoldings/Complex/AngleCutSums.lean) | Weighted and regional angle conservation over actual cut copies |
 | [Unfoldings.Complex.BoundaryContour](../Unfoldings/Complex/BoundaryContour.lean) | Construct a complete actual boundary contour from connected bank topology |
 | [Unfoldings.Complex.BoundaryCycleEnumeration](../Unfoldings/Complex/BoundaryCycleEnumeration.lean) | A covering boundary cycle enumerates each actual bank and vertex copy once |
@@ -323,6 +333,7 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Development.BoundaryDisplacements](../Unfoldings/Development/BoundaryDisplacements.lean) | Actual boundary positions, bank displacements, and closed-cycle cancellation |
 | [Unfoldings.Development.BankLengths](../Unfoldings/Development/BankLengths.lean) | Actual developed lengths agree for both banks and either endpoint of any original seam |
 | [Unfoldings.Development.BoundaryFrame](../Unfoldings/Development/BoundaryFrame.lean) | One orthogonal frame orients every actual boundary corner star |
 | [Unfoldings.Development.BoundaryOrientation](../Unfoldings/Development/BoundaryOrientation.lean) | Propagate orientation through actual bank and vertex pairings, allowing overlap |
@@ -565,6 +576,15 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Geometry.AcuteWedgeFrame](../Unfoldings/Geometry/AcuteWedgeFrame.lean) | Construct an orthogonal complex frame with strict margins around an acute direction wedge |
+| [Unfoldings.Geometry.AngleConeBound](../Unfoldings/Geometry/AngleConeBound.lean) | Convex direction wedges inherit angular caps and robust positive inner products |
+| [Unfoldings.Geometry.ComplexRotationFrame](../Unfoldings/Geometry/ComplexRotationFrame.lean) | Positive complex isometries commute with rigid phase rotations |
+| [Unfoldings.Geometry.CyclicDisplacements](../Unfoldings/Geometry/CyclicDisplacements.lean) | Additive displacement cancellation around a region with one entrance and exit |
+| [Unfoldings.Geometry.QuadrantRotationOrder](../Unfoldings/Geometry/QuadrantRotationOrder.lean) | A nonnegative small quadrant rotation orders actual vector coordinates |
+| [Unfoldings.Geometry.RobustQuadrant](../Unfoldings/Geometry/RobustQuadrant.lean) | Small angular perturbations of a closed acute wedge stay inside its open quadrant |
+| [Unfoldings.Geometry.StrictQuadrantRotation](../Unfoldings/Geometry/StrictQuadrantRotation.lean) | Positive small rotations inside an open quadrant strictly order both coordinates |
+| [Unfoldings.Geometry.ThreeSectorFrames](../Unfoldings/Geometry/ThreeSectorFrames.lean) | Numerical positive quadrant margins for all three acute sectors |
+| [Unfoldings.Geometry.WedgeRotationFrame](../Unfoldings/Geometry/WedgeRotationFrame.lean) | Positive acute-wedge frames preserve actual signed complex rotations |
 | [Unfoldings.Geometry.ComplexHeadingTransport](../Unfoldings/Geometry/ComplexHeadingTransport.lean) | Compose genuine complex directions with signed real phase corrections before taking absolute errors |
 | [Unfoldings.Geometry.ComplexHingeTurn](../Unfoldings/Geometry/ComplexHingeTurn.lean) | Halfplane hinge estimates and signed area preservation in a common complex frame |
 | [Unfoldings.Geometry.DirectionFrame](../Unfoldings/Geometry/DirectionFrame.lean) | Orthogonal planar coordinates put any actual section direction on the positive horizontal axis |
