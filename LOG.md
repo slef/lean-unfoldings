@@ -2,6 +2,27 @@
 
 ## Session Log
 
+### 2026-11-10 — conforming roof triangles and actual isometric seams
+
+- Subdivided all boundaries of a finite triangle family in one straight
+  embedded graph. Center fans use common global base labels, preserve exact
+  coverage, and retain disjoint interiors.
+- Proved exact face-to-face intersections: empty, a common vertex, or a whole
+  common edge. This removes partial-edge contacts across support polygons.
+- Constructed the complete canonical whole-edge seam system. Geometric
+  separation proves unique partners, correct opposite-side opening, and
+  nonoverlap of the identity planar development.
+- Constructed physical clip seams separately: both spatial placements equal
+  the actual roof point, so each full-edge identification is an isometry for
+  the physical face metrics. The resulting spatial folding covers exactly
+  the clipped roof; refinement retains the original support normals and tilt.
+- The metric disk realization, preservation of original cuts, extension cuts
+  through new vertices, global strip separation, and full cap theorem remain open.
+- Verification: scoped cache check and full `lake build` pass; **6,876 project**
+  and **7,243 pinned topology declarations** use only standard Lean axioms.
+  No project warnings. All 892 local documentation links resolve.
+
+
 ### 2026-11-10 — actual finite triangle partitions of the roof clips
 
 - Constructed genuine center triangles from convex polygon rims. Proved exact

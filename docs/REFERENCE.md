@@ -866,6 +866,22 @@ and a counterexample to testing radial monotonicity only at endpoints.
 | [Unfoldings.Examples.Tetrahedron.Source](../Unfoldings/Examples/Tetrahedron/Source.lean) | Instantiate the complete source unfolding at an actual crease midpoint |
 | [Unfoldings.Examples.Tetrahedron.Vertices](../Unfoldings/Examples/Tetrahedron/Vertices.lean) | Identify the actual metric vertex quotient with the four declared tetrahedron vertices |
 | [Unfoldings.Examples.Tetrahedron](../Unfoldings/Examples/Tetrahedron.lean) | Complete concrete convex tetrahedron, source unfolding, and valid and invalid cut patterns |
+| [Unfoldings.Cap.RefinedClipTriangles](../Unfoldings/Cap/RefinedClipTriangles.lean) | Common boundary refinement preserves actual clip coverage, supporting planes, and normals |
+| [Unfoldings.Cap.ClipPairings](../Unfoldings/Cap/ClipPairings.lean) | Actual spatial isometric whole-edge pairings and a folding onto the clipped roof |
+| [Unfoldings.Complex.GeometricPairings](../Unfoldings/Complex/GeometricPairings.lean) | Canonical complete whole-edge seams, unique partners, and the identity planar development |
+| [Unfoldings.Geometry.ClosedTriangleRadial](../Unfoldings/Geometry/ClosedTriangleRadial.lean) | Closed triangle radial coordinates with the apex treated separately |
+| [Unfoldings.Geometry.CommonBoundarySubdivision](../Unfoldings/Geometry/CommonBoundarySubdivision.lean) | One embedded straight graph subdivides every boundary of a finite triangle family |
+| [Unfoldings.Geometry.CommonTriangleRefinement](../Unfoldings/Geometry/CommonTriangleRefinement.lean) | Exact disjoint-interior center-fan refinement with global shared base labels |
+| [Unfoldings.Geometry.ConformingTriangles](../Unfoldings/Geometry/ConformingTriangles.lean) | Face-to-face conformity and exact empty, common-vertex, or shared-edge intersections |
+| [Unfoldings.Geometry.RefinedConformity](../Unfoldings/Geometry/RefinedConformity.lean) | The common boundary refinement eliminates all partial-edge triangle contacts |
+| [Unfoldings.Geometry.RefinedFanIntersections](../Unfoldings/Geometry/RefinedFanIntersections.lean) | Triangles in one refined fan meet along shared radial edges or their center |
+| [Unfoldings.Geometry.RefinedParentIntersections](../Unfoldings/Geometry/RefinedParentIntersections.lean) | Different parent fans meet only on globally shared bases or their endpoints |
+| [Unfoldings.Geometry.SharedEdgeMultiplicity](../Unfoldings/Geometry/SharedEdgeMultiplicity.lean) | At most two triangles with disjoint interiors can share one whole geometric edge |
+| [Unfoldings.Geometry.SubdividedBoundaryFan](../Unfoldings/Geometry/SubdividedBoundaryFan.lean) | Exact center-fan partitions using prescribed global boundary edges |
+| [Unfoldings.Geometry.TriangleFanBoundary](../Unfoldings/Geometry/TriangleFanBoundary.lean) | Straight frontier segments lie in one old edge and fan contacts lie on their bases |
+| [Unfoldings.Geometry.TriangleFrontier](../Unfoldings/Geometry/TriangleFrontier.lean) | The actual frontier of a triangle is the union of its three whole edges |
+| [Unfoldings.Topology.EmbeddedEdgeIntersections](../Unfoldings/Topology/EmbeddedEdgeIntersections.lean) | Distinct embedded graph edges intersect only at their common named endpoints |
+
 ## Build and proof audit
 
 Lean and Mathlib are pinned to **4.35.0** in

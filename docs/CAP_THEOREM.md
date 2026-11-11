@@ -304,7 +304,12 @@ Separation of different banks and global nonoverlap remain open.
   after subdividing overlaps. Assemble an exact triangle partition of the entire
   clip and lift each whole triangle by its actual support-face isometry. All
   original normals and the tilt bound are retained.
-- [ ] Make the resulting triangle partition conforming across support polygons.
+- [x] Make the resulting triangle partition conforming across support polygons.
+  Subdivide all old boundaries together and construct center fans using global
+  base labels. Two refined triangles meet in an empty set, a common vertex, or
+  a whole shared edge. Pair matching edges using actual spatial isometries;
+  the resulting physical triangle complex folds onto exactly the clipped roof.
+- [ ] Prove the paired metric realization is the actual roof disk.
   Preserve original cut edges and construct the extension's cutting scheme,
   handling any additional roof vertices before using its developed strips.
 - [ ] Construct the actual waterfall strip partition; prove complete coverage
