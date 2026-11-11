@@ -2,6 +2,30 @@
 
 ## Session Log
 
+### 2026-11-10 — constructed signed-phase transport along actual section traces
+
+- Propagated positive original projection orientation around the actual full
+  bank contour. Each outgoing bank has its actual original face on the left.
+- Identified actual geometric transverse crossing signs at parent-bank
+  entrances and exits. Each removed original seam has its unique selected
+  parent, so its actual signed curvature phase is determined geometrically.
+- Constructed actual local phases at every regular original-face trace
+  transition. Retained seams contribute zero; cut seams contribute the signed
+  whole-subtree curvature, with residual turn bounded by the spatial bend.
+- Constructed real unreduced headings along entire actual traces. Heading
+  change minus the signed phase sum has absolute value at most twice the tilt.
+- Constructed genuine face-interior sample points and proved every whole open
+  regular section piece interior. Every original seam avoids every such piece.
+- Defined the actual weighted forest-ray potential and proved telescoped
+  query changes bounded by twice total curvature, independently of mesh size.
+- The remaining heading obligation is identifying actual trace phases with
+  those potential changes. Full uniform headings, branching-bank separation,
+  and global nonoverlap remain open; the cap theorem is still incomplete.
+- Verification: scoped Mathlib cache check and full `lake build` pass;
+  **6,268 project** and **7,243 pinned topology declarations** use only standard
+  Lean axioms. Checked **811 local documentation links**; no project warnings.
+
+
 ### 2026-11-10 — actual retained and signed parent-bank section transitions
 
 - Derived strict opposite-side opening in actual cap projection. The actual

@@ -181,3 +181,7 @@ public import Unfoldings.Geometry.HingeTurnBound
 public import Unfoldings.Cap.SectionSeams
 public import Unfoldings.Cap.AlignedSectionTurn
 public import Unfoldings.Cap.PhaseSectionTurn
+public import Unfoldings.Cap.TracePhaseTransport
+public import Unfoldings.Cap.SectionInteriors
+public import Unfoldings.Cap.CrossingPotential
+public import Unfoldings.Geometry.DirectionFrame

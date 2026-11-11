@@ -228,10 +228,20 @@ global strip hypotheses are constructed. It is not a proof of Theorem 9.
   In the common frame, actual outward parent vectors differ by the positive
   whole-subtree curvature rotation. Removing that actual phase bounds the
   transverse section turn by the genuine spatial bend, including flat cuts.
-- [ ] Match each trace crossing's signed phase to the actual geometric crossing
-  counter, compose the transitions, and assemble the uniform heading bound from
-  the common anchor. Local transitions alone do not establish global headings
-  or nonoverlap.
+- [x] Determine each actual parent-bank phase sign from its geometric transverse
+  section determinant. Actual original-face containment gives the sign; retained
+  seams have zero phase and each cut seam has its unique selected parent.
+- [x] Construct actual seam phases and real unreduced developed headings along
+  every regular section trace. The real heading difference minus the signed
+  phase sum has absolute value at most twice the tilt.
+- [x] Construct interior sample points in every regular face piece; the whole
+  open piece lies in that original face interior and avoids every original seam.
+- [x] Define the actual weighted ray-crossing curvature potential. Its value is
+  bounded by total curvature and telescoped query changes by twice that budget.
+- [ ] Identify each actual trace phase with the corresponding change of the
+  ray-crossing potential. Then assemble the full heading bound from the common
+  anchor. The local phase signs and transport lemmas do not yet bound the actual
+  trace's total signed phase sum or prove nonoverlap.
 - [ ] Prove the geometric subregion identities used in the prefix-turn argument,
   including the truncation and artificial connecting segments.
 - [ ] Bound turn distortion for every prefix independently of mesh size.

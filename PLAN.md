@@ -762,8 +762,12 @@ remaining forest, uniform-turn, and global nonoverlap arguments.
 - [x] Prove actual retained-seam turn contraction and construct transverse trace
   seams. Orient one common boundary frame by projection; identify signed
   parent-bank rotations and curvature-corrected local section-turn bounds.
-- [ ] Match signed phases to actual trace crossings, compose uniform headings,
-  then prove branching-bank noncrossing.
+- [x] Derive the actual geometric phase sign at every parent-bank crossing and
+  construct real heading transport along whole regular traces, with twice-tilt
+  residual error. Open face pieces avoid every original seam.
+- [x] Bound the actual signed forest-ray potential and telescoped query changes.
+- [ ] Identify actual phase sums with potential changes, obtain full uniform
+  headings, then prove branching-bank noncrossing.
 - [ ] Global strip assembly and the full nearly flat cap theorem.
 
 ## Later targets and Fewest Nets
