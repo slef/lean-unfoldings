@@ -17,11 +17,11 @@ Current entry points:
 - [ExtendedDirectionControl](../Unfoldings/Cap/ExtendedDirectionControl.lean)
   bounds all actual developed roof-face directions in one projection-calibrated
   frame, using a tilt threshold chosen before the original and auxiliary meshes.
-- [ExtendedBankSeparation](../Unfoldings/Cap/ExtendedBankSeparation.lean)
-  separates each actual completed-parent pair before its child endpoint,
-  uniformly before both meshes. Contacts have matched parameters and zero
-  whole-subtree curvature. Flat subtree banks coincide in both position and
-  vector; this still does not compare different seams or strips.
+- [ExtendedBankChainSeparation](../Unfoldings/Cap/ExtendedBankChainSeparation.lean)
+  compares entire opposite banks along every actual outward cut path, including
+  sibling displacements at branches. Regular interior contact is on the same
+  edge and physical parameter, with zero whole-subtree curvature. This does not
+  yet compare different cut paths or developed strips globally.
 - [ExtendedWaterfallInjective](../Unfoldings/Cap/ExtendedWaterfallInjective.lean)
   constructs finite waterfall subdivisions of the actual deep roof. Their strict
   interiors avoid every cut, and the actual developed map is injective on every
@@ -456,6 +456,15 @@ Separation of different banks and global nonoverlap remain open.
 - [x] Prove uniform injectivity of the actual maps on every positive-width
   height slab of every constructed waterfall strip. Inset strips avoid assuming
   continuity through bank copies on a coincident projected tail.
+- [x] Construct internal contour prefixes and suffixes between actual copies
+  of a branch vertex. Every selected edge appears in paired banks; their exact
+  displacement is the sum of whole sibling openings. Derive the right/down
+  jumps of right banks and left/up jumps of left banks.
+- [x] Compare entire opposite banks along every actual outward path. Both the
+  whole-edge directions and all curvature-carrying subtrees share one derived
+  sector. Regular interior contact has the same edge and parameter and zero
+  subtree curvature, uniformly before both meshes. Branch vertices and different
+  cut paths still require the global separation argument.
 - [ ] Compare different positive-width components across possible strip pinches,
   with the correct actual copies of branch and leaf vertices.
 - [ ] Prove side-by-side separation of all developed strips and hence all

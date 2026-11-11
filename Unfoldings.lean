@@ -351,3 +351,16 @@ public import Unfoldings.Cap.GeometricTailCutoff
 public import Unfoldings.Cap.DeepGeometricWaterfall
 public import Unfoldings.Cap.ExtendedWaterfallDomains
 public import Unfoldings.Cap.ExtendedWaterfallInjective
+public import Unfoldings.Topology.CyclicIntervals
+public import Unfoldings.Topology.CyclicRegionPairing
+public import Unfoldings.Topology.CyclicSubintervals
+public import Unfoldings.Geometry.BranchingBankOrder
+public import Unfoldings.Cap.CompletedContourExcursion
+public import Unfoldings.Cap.CompletedVertexExcursions
+public import Unfoldings.Cap.CompletedBranchJumpOrder
+public import Unfoldings.Topology.FiniteMonotonePieces
+public import Unfoldings.Cap.CompletedBankChainOrder
+public import Unfoldings.Cap.CompletedBankChainContact
+public import Unfoldings.Cap.CompletedBankChains
+public import Unfoldings.Cap.ExtendedBankChains
+public import Unfoldings.Cap.ExtendedBankChainSeparation

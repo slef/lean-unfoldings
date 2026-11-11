@@ -1137,3 +1137,16 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Cap.DeepGeometricWaterfall](../Unfoldings/Cap/DeepGeometricWaterfall.lean) | Construct waterfall interiors in the regular physical roof |
 | [Unfoldings.Cap.ExtendedWaterfallDomains](../Unfoldings/Cap/ExtendedWaterfallDomains.lean) | Regular strip domains in the actual refined roof mesh |
 | [Unfoldings.Cap.ExtendedWaterfallInjective](../Unfoldings/Cap/ExtendedWaterfallInjective.lean) | Uniform actual waterfall injectivity on positive-width slabs |
+| [Unfoldings.Topology.CyclicIntervals](../Unfoldings/Topology/CyclicIntervals.lean) | Construct oriented cyclic intervals with internal directed prefixes |
+| [Unfoldings.Topology.CyclicRegionPairing](../Unfoldings/Topology/CyclicRegionPairing.lean) | Pair separator crossings inside a cyclic contour excursion |
+| [Unfoldings.Topology.CyclicSubintervals](../Unfoldings/Topology/CyclicSubintervals.lean) | Construct prefixes and suffixes inside a two-exit cyclic region |
+| [Unfoldings.Geometry.BranchingBankOrder](../Unfoldings/Geometry/BranchingBankOrder.lean) | Whole-bank order allowing opposite branch jumps |
+| [Unfoldings.Cap.CompletedContourExcursion](../Unfoldings/Cap/CompletedContourExcursion.lean) | Exact developed displacement of a partial sibling excursion |
+| [Unfoldings.Cap.CompletedVertexExcursions](../Unfoldings/Cap/CompletedVertexExcursions.lean) | Construct actual contour excursions between branch vertex copies |
+| [Unfoldings.Cap.CompletedBranchJumpOrder](../Unfoldings/Cap/CompletedBranchJumpOrder.lean) | Derive signs of actual right and left branching-bank jumps |
+| [Unfoldings.Topology.FiniteMonotonePieces](../Unfoldings/Topology/FiniteMonotonePieces.lean) | Preserve coordinate order across finite signed jumps |
+| [Unfoldings.Cap.CompletedBankChainOrder](../Unfoldings/Cap/CompletedBankChainOrder.lean) | Whole actual bank chains retain left-or-above order |
+| [Unfoldings.Cap.CompletedBankChainContact](../Unfoldings/Cap/CompletedBankChainContact.lean) | Opposite bank-chain interior contact is matched and flat |
+| [Unfoldings.Cap.CompletedBankChains](../Unfoldings/Cap/CompletedBankChains.lean) | Construct full parent bank paths in one common sector |
+| [Unfoldings.Cap.ExtendedBankChains](../Unfoldings/Cap/ExtendedBankChains.lean) | Derive complete fine-path sectors from original geometry |
+| [Unfoldings.Cap.ExtendedBankChainSeparation](../Unfoldings/Cap/ExtendedBankChainSeparation.lean) | Uniform regular noncrossing of complete actual branching banks |

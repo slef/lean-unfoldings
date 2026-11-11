@@ -2,6 +2,27 @@
 
 ## Session Log
 
+### 2026-11-11 — complete branching-bank order and regular noncrossing
+
+- Constructed oriented cyclic intervals and internal subtree prefixes/suffixes.
+  Discrete integration of vertex-region indicators pairs every selected seam's
+  two banks in a contour excursion between copies of the same original vertex.
+- Proved the exact partial displacement as a sum of whole sibling openings.
+  Derived right/down jumps on the actual right bank and left/up jumps on the
+  actual left bank, including arbitrary redundant flat completion branches.
+- Proved coordinate progress along complete bank chains despite these jumps.
+  Whole edges on different path levels retain left-or-above order; an interior
+  contact is on the same edge, at the same parameter, with zero subtree curvature.
+- Constructed the actual complete parent paths and derived a common sector for
+  all their edges and curvature-carrying subtrees. Applied the uniform cap tilt
+  threshold before both meshes in `ExtendedBankChainSeparation`.
+- Verification: cache retrieval followed by full `lake build` pass; **8,224
+  project** and **7,243 pinned topology declarations** use only standard Lean
+  axioms. No project warnings; all 1,097 indexed local links resolve.
+- Open: branch-vertex contacts, comparisons between different cut paths and
+  developed strips, pinches and the common source, and final original-face
+  nonoverlap transfer. The full cap theorem is not yet complete.
+
 ### 2026-11-11 — actual regular waterfall maps and injectivity
 
 - Proved strict-versus-closed separation for all five sectors and excluded
