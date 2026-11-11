@@ -926,6 +926,14 @@ and a counterexample to testing radial monotonicity only at endpoints.
 | [Unfoldings.Geometry.AffineSupportingChord](../Unfoldings/Geometry/AffineSupportingChord.lean) | A nonnegative affine function vanishing inside a chord vanishes at both endpoints |
 | [Unfoldings.Geometry.NonvertexChord](../Unfoldings/Geometry/NonvertexChord.lean) | Every nonvertex triangle point lies strictly inside a nondegenerate chord |
 
+| [Unfoldings.Cap.ClipInteriorSeams](../Unfoldings/Cap/ClipInteriorSeams.lean) | Interior geometric cut edges have actual physical seam partners and select removed seams |
+| [Unfoldings.Cap.CurvatureCutDevelopment](../Unfoldings/Cap/CurvatureCutDevelopment.lean) | Cutting positive-curvature endpoints suffices for flat interior and local disk development |
+| [Unfoldings.Cap.ExtendedCutFlat](../Unfoldings/Cap/ExtendedCutFlat.lean) | The actual constructed extended retained-seam set has flat interior vertex copies |
+| [Unfoldings.Cap.ExtendedCutMesh](../Unfoldings/Cap/ExtendedCutMesh.lean) | Whole fine edges and actual removed seams realize the extended geometric cuts |
+| [Unfoldings.Cap.ProjectedSeamEndpoints](../Unfoldings/Cap/ProjectedSeamEndpoints.lean) | Projected seam-edge vertices are actual intrinsic endpoints of that seam |
+| [Unfoldings.Complex.CutEndpointBoundary](../Unfoldings/Complex/CutEndpointBoundary.lean) | Every cut copy of a removed seam endpoint lies on the actual bank boundary |
+| [Unfoldings.Complex.InteriorCopyAngles](../Unfoldings/Complex/InteriorCopyAngles.lean) | A vertex copy still in the cut interior retains the entire original corner angle |
+
 ## Build and proof audit
 
 Lean and Mathlib are pinned to **4.35.0** in

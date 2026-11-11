@@ -36,6 +36,13 @@ theorem normalizedCap_projectedTriangle_carrier
   congrArg (fun vertex : Fin 3 → Plane => convexHull ℝ (Set.range vertex))
     (funext (T.normalizedCap_projectedTriangle_vertex conforming lower i))
 
+theorem normalizedCap_projectedTriangle_edge
+    (conforming : TriangleFamily.Conforming T.projectedTriangle) (lower : Z < 0)
+    (i : T.Index) (e : Fin 3) : ((T.normalizedCap conforming lower).projectedTriangle i).edge e =
+      (T.projectedTriangle i).edge e :=
+  congrArg₂ (segment ℝ) (T.normalizedCap_projectedTriangle_vertex conforming lower i e)
+    (T.normalizedCap_projectedTriangle_vertex conforming lower i (Triangle.next e))
+
 theorem normalizedCap_normalSlope (conforming : TriangleFamily.Conforming T.projectedTriangle)
     (lower : Z < 0) (i : T.Index) :
     (T.normalizedCap conforming lower).normalSlope i = K.normalSlope (T.face i) := rfl

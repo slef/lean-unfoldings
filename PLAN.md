@@ -799,6 +799,8 @@ remaining forest, uniform-turn, and global nonoverlap arguments.
   conforming roof partition's corners, including planar and crease subdivisions.
 - [x] Select finite skirt curvature seeds before meshing and prove that original
   forest edges plus the constructed skirt components cover all positive curvature.
+- [x] Select the actual extended retained seams and prove every surviving
+  interior vertex copy flat, allowing auxiliary flat vertices to remain uncut.
 - [ ] Prove separation between different seams, whole branching paths, and trees.
 - [ ] Global strip assembly and the full nearly flat cap theorem.
 

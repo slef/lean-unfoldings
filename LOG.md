@@ -2,6 +2,27 @@
 
 ## Session Log
 
+### 2026-11-11 — actual extended cut seams leave flat interior copies
+
+- Constructed the actual retained-seam set by removing fine whole edges contained
+  in the original forest and selected skirt components. Every interior point of
+  that geometric set belongs to an actual removed seam.
+- Proved that every positive-curvature vertex is an intrinsic endpoint of a
+  removed seam. The proof uses exact original-edge and component meshing and the
+  actual intrinsic bank/rim correspondence.
+- Proved that an interior vertex copy retains its entire original angle, and
+  that every copy of a removed seam endpoint is a boundary copy. Applied this
+  to the constructed cut pattern: all surviving interior copies have angle two pi.
+- Generalized the disk-development route to cutting only positive-curvature
+  vertices, allowing all other flat subdivision vertices to remain uncut.
+- The constructed cut graph's boundary-rooted forest property and cut-disk
+  homeomorphism, extended direction control, and global strip separation remain
+  open. No disk certificate is claimed for this constructed cut pattern yet.
+- Verification: full `lake build` passes; **7,177 project** and **7,243 pinned
+  topology declarations** use only standard Lean axioms. No project warnings.
+  All 936 local documentation links resolve.
+
+
 ### 2026-11-11 — selected extended geometric cuts cover all actual positive curvature
 
 - Proved that each regular original cap point lies in a genuine chord and that

@@ -341,9 +341,15 @@ Separation of different banks and global nonoverlap remain open.
 - [x] Select finite skirt seeds from preceding roof corners and original rim
   corners before meshing. Prove that the selected original forest edges and
   the constructed skirt components cover every actual positive-curvature vertex.
-- [ ] Construct the actual extended cut-seam set, prove its boundary-rooted
-  primal forest property, and obtain the extended flat cut disk and development.
-  Prove direction control for its developed strips.
+- [x] Construct the actual extended retained-seam set by removing whole fine
+  edges in the geometric cuts. Every positive-curvature vertex is an endpoint
+  of an actual removed seam. All surviving interior vertex copies have full
+  angle two pi, while flat auxiliary vertices may remain uncut.
+- [x] Prove the general development theorem for a disk whose cuts meet every
+  positive-curvature vertex; flat subdivision vertices need no cuts.
+- [ ] Prove the constructed extended cut graph is a boundary-rooted primal
+  forest. Obtain its actual cut-disk homeomorphism and development, and prove
+  direction control for its developed strips.
 - [ ] Construct the actual waterfall strip partition; prove complete coverage
   and that its artificial boundaries are compatible with the development.
 - [ ] Prove side-by-side separation of all developed strips and hence all
