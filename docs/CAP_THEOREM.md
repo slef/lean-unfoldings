@@ -295,6 +295,8 @@ Separation of different banks and global nonoverlap remain open.
   Each ray eventually stays on one original supporting plane and is exactly straight.
 - [x] Derive the flat-or-positive-height dichotomy from geometric cap input.
   Nonflat roofs have precisely the original footprint as their zero superlevel.
+- [x] Prove that every interior point has positive roof height in the nonflat
+  case, so the actual internal forest origin can be used for radial continuations.
 - [x] Construct every finite lower horizontal clip as a compact convex footprint
   with a disk homeomorphism. Its actual roof is a compact spatial disk containing
   the supplied cap; its rim is an exact finite union of support-plane segments.
@@ -322,6 +324,8 @@ Separation of different banks and global nonoverlap remain open.
   original face supporting lines in one finite arrangement; triangulate its
   chambers and make the result conforming. Every original projected and spatial
   edge is exactly a finite union of whole actual extended-triangle edges.
+- [x] Derive face-to-face conformity of the supplied cap's projected input
+  triangles directly from injective projection and actual full-edge seam classes.
 - [x] Mesh arbitrary prescribed finite genuine segments into the actual roof,
   including both endpoints, while preserving every original cap edge.
 - [x] Continue arbitrary finite skirt seeds radially to the outer rim, staying

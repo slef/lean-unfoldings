@@ -2,6 +2,21 @@
 
 ## Session Log
 
+### 2026-11-11 — derived input conformity and positive interior source height
+
+- Proved that the supplied cap's projected input triangles are face-to-face
+  conforming. Vertex contact follows from the actual vertex quotient; regular
+  contact is an actual unique seam crossing and supplies its whole shared edge.
+  No new conformity premise is added to geometric cap input.
+- Proved that one positive roof height makes every interior roof height positive.
+  Thus the nonflat case permits the actual internal forest source for compact
+  radial continuations, rather than requiring a different positive-height source.
+- The full extended cutting scheme and global strip-separation proof remain open.
+- Verification: full `lake build` passes; **7,137 project** and **7,243 pinned
+  topology declarations** use only standard Lean axioms. No project warnings.
+  All 923 local documentation links resolve.
+
+
 ### 2026-11-11 — genuine geometric clips and finite curvature support under line meshing
 
 - Identified the actual unpaired banks of a conforming physical clip with its

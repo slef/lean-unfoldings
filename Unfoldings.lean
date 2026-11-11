@@ -203,3 +203,5 @@ public import Unfoldings.Cap.SkirtRadialCuts
 public import Unfoldings.Cap.ClipCurvature
 public import Unfoldings.Cap.DegenerateNormalCurvature
 public import Unfoldings.Cap.LineRefinementCurvature
+public import Unfoldings.Cap.ProjectedConformity
+public import Unfoldings.Cap.RoofInteriorHeight

@@ -916,6 +916,9 @@ and a counterexample to testing radial monotonicity only at endpoints.
 | [Unfoldings.Cap.RefinementCurvatureSupport](../Unfoldings/Cap/RefinementCurvatureSupport.lean) | Subordinate support refinements concentrate positive curvature on old corners |
 | [Unfoldings.Geometry.ConformingPointMultiplicity](../Unfoldings/Geometry/ConformingPointMultiplicity.lean) | A regular point of a conforming planar triangle partition belongs to at most two faces |
 
+| [Unfoldings.Cap.ProjectedConformity](../Unfoldings/Cap/ProjectedConformity.lean) | The supplied cap triangles are geometrically conforming by injective projection and actual seam classes |
+| [Unfoldings.Cap.RoofInteriorHeight](../Unfoldings/Cap/RoofInteriorHeight.lean) | Every interior source has positive roof height in the nonflat case |
+
 ## Build and proof audit
 
 Lean and Mathlib are pinned to **4.35.0** in
