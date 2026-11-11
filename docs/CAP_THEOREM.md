@@ -293,6 +293,11 @@ Separation of different banks and global nonoverlap remain open.
   lift continuously to the actual roof. Their directions retain the tree sector.
 - [x] Construct finite whole-piece active-support traces for all roof segments.
   Each ray eventually stays on one original supporting plane and is exactly straight.
+- [x] Derive the flat-or-positive-height dichotomy from geometric cap input.
+  Nonflat roofs have precisely the original footprint as their zero superlevel.
+- [x] Construct every finite lower horizontal clip as a compact convex footprint
+  with a disk homeomorphism. Its actual roof is a compact spatial disk containing
+  the supplied cap; its rim is an exact finite union of support-plane segments.
 - [ ] Construct a compatible triangulation and cutting scheme for the extension,
   handling any additional roof vertices before using its developed strips.
 - [ ] Construct the actual waterfall strip partition; prove complete coverage

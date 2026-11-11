@@ -779,6 +779,8 @@ remaining forest, uniform-turn, and global nonoverlap arguments.
   the internal sector origin is a leaf with one common bank start.
 - [x] Construct the actual unbounded supporting-plane roof and disjoint outward
   rim-root continuations, with finite polygonal traces and eventual straightness.
+- [x] Derive the flat-or-positive-height dichotomy and construct every finite
+  lower roof clip as a compact disk with an exact finite segment rim.
 - [ ] Build a compatible triangulated extension and handle all its extra vertices.
 - [ ] Prove separation between different seams, whole branching paths, and trees.
 - [ ] Global strip assembly and the full nearly flat cap theorem.

@@ -114,6 +114,11 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Cap.ClipBoundary](../Unfoldings/Cap/ClipBoundary.lean) | Exact finite segment rims of horizontal clips, with no triangulation premise |
+| [Unfoldings.Cap.ClipDisk](../Unfoldings/Cap/ClipDisk.lean) | Actual compact clipped-roof disk homeomorphisms and the flat-or-clips dichotomy |
+| [Unfoldings.Cap.RoofClips](../Unfoldings/Cap/RoofClips.lean) | Compact convex lower clips, an explicit homothety bound, and horizontal rim levels |
+| [Unfoldings.Cap.RoofFlat](../Unfoldings/Cap/RoofFlat.lean) | Geometric cap input is flat or has a positive roof height |
+| [Unfoldings.Cap.RoofLevels](../Unfoldings/Cap/RoofLevels.lean) | The original footprint is exactly the zero superlevel of any nonflat cap roof |
 | [Unfoldings.Cap.BranchGapBalance](../Unfoldings/Cap/BranchGapBalance.lean) | Exact conservation of actual positional gaps across immediate child subtrees |
 | [Unfoldings.Cap.OriginLeaf](../Unfoldings/Cap/OriginLeaf.lean) | The internal sector origin is a leaf with one shared actual bank start |
 | [Unfoldings.Cap.RimTails](../Unfoldings/Cap/RimTails.lean) | Disjoint radial continuations of actual rim roots outside the footprint and onto the roof |
@@ -583,6 +588,9 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Geometry.ConvexRayBoundary](../Unfoldings/Geometry/ConvexRayBoundary.lean) | Actual frontier points on all nonzero rays from arbitrary convex-body interior centers |
+| [Unfoldings.Geometry.ConvexSegmentExit](../Unfoldings/Geometry/ConvexSegmentExit.lean) | Strict frontier crossings and slight endpoint extensions of straight segments |
+| [Unfoldings.Geometry.TriangleRadial](../Unfoldings/Geometry/TriangleRadial.lean) | Interior triangle points lie strictly on rays to the opposite open edge |
 | [Unfoldings.Geometry.ConvexRadialTails](../Unfoldings/Geometry/ConvexRadialTails.lean) | Outward frontier rays leave a convex closure and preserve distinct endpoint labels |
 | [Unfoldings.Geometry.FiniteAffineTail](../Unfoldings/Geometry/FiniteAffineTail.lean) | A fixed affine minimizer beyond a threshold for any finite real affine family |
 | [Unfoldings.Geometry.FiniteConvexTrace](../Unfoldings/Geometry/FiniteConvexTrace.lean) | Finite labeled segment partitions for arbitrary finite closed convex covers |

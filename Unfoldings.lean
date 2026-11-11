@@ -192,3 +192,6 @@ public import Unfoldings.Cap.BranchGapBalance
 public import Unfoldings.Cap.RimTails
 public import Unfoldings.Cap.RoofFinalRay
 public import Unfoldings.Cap.RoofSolid
+public import Unfoldings.Cap.ClipDisk
+public import Unfoldings.Geometry.TriangleRadial
+public import Unfoldings.Geometry.ConvexRayBoundary

@@ -2,6 +2,27 @@
 
 ## Session Log
 
+### 2026-11-10 — compact polygonal roof clips from geometric cap input
+
+- Derived the flat-or-positive-height dichotomy. The flat case has an injective
+  uncut development; no positive-height assumption is added to cap input.
+- For positive-height caps, proved that roof height is zero on the supplied rim,
+  nonnegative on the original footprint, and strictly negative outside it.
+- Constructed every finite lower clip with an explicit compact homothety bound.
+  Its convex footprint contains the original footprint in its interior and has
+  exactly the prescribed horizontal level on its frontier.
+- Derived an exact finite support-plane segment cover of each clip rim, including
+  degenerate cells. Constructed actual spatial clip disk homeomorphisms and
+  packaged the geometric flat-or-compact-polygonal-clips alternative.
+- Added interior triangle radial coordinates and actual convex-body frontier
+  intersections from arbitrary interior centers for the triangulation step.
+- Compatible extension triangulation and cuts through additional roof vertices,
+  global bank and strip separation, and the full cap theorem remain open.
+- Verification: scoped cache check and full `lake build` pass; **6,634 project**
+  and **7,243 pinned topology declarations** use only standard Lean axioms.
+  The committed modules are indexed; no project warnings.
+
+
 ### 2026-11-10 — origin leaf, exact branch balance, and the actual unbounded roof
 
 - Proved that no nonroot parent step ends at the sector origin. An internal
