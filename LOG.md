@@ -2,6 +2,30 @@
 
 ## Session Log
 
+### 2026-11-10 — actual finite triangle partitions of the roof clips
+
+- Constructed genuine center triangles from convex polygon rims. Proved exact
+  coverage even when the supplied rim includes singleton cells, using dense
+  regular rays and finite closedness. Refined overlapping rim segments into a
+  straight embedded graph, giving pairwise disjoint triangle interiors.
+- Constructed exact finite segment rims of compact finite affine halfplane
+  intersections. Applied this to all actual clipped support polygons, which
+  contain their original projected triangle and therefore have interior.
+- Removed duplicate original support planes and proved the remaining active
+  polygon interiors disjoint. Assembled a finite triangle partition covering
+  the whole clipped footprint exactly.
+- Pulled every projected triangle into its actual support-face coordinates.
+  The resulting spatial triangles use the original rigid isometries, cover the
+  clipped roof exactly, and retain the original unit normals and tilt bound.
+- Strengthened straight-network subdivision to retain exact whole-edge coverage
+  of every original segment. Existing theorem statements remain unchanged.
+- Conforming edge pairings, preservation of original cuts, cuts through new
+  roof vertices, global strip separation, and the full cap theorem remain open.
+- Verification: scoped cache check and full `lake build` pass; **6,734 project**
+  and **7,243 pinned topology declarations** use only standard Lean axioms.
+  No project warnings in the full build.
+
+
 ### 2026-11-10 — compact polygonal roof clips from geometric cap input
 
 - Derived the flat-or-positive-height dichotomy. The flat case has an injective

@@ -23,11 +23,14 @@ universe u
 
 variable {E : Type u} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 
-theorem exists_finite_embedded_straight_segment_graph
+theorem exists_finite_embedded_straight_segment_graph_with_parent_cover
     (segments : Set (E × E)) (finite : segments.Finite) :
     ∃ (Vertex Edge : Type u) (G : FiniteEmbeddedGraph Vertex Edge E),
       G.IsStraight ∧ G.carrier = segmentCarrier segments ∧
-        ∀ e : Edge, ∃ p ∈ segments, Set.range (G.edge e) ⊆ segment ℝ p.1 p.2 := by
+        (∀ e : Edge, ∃ p ∈ segments, Set.range (G.edge e) ⊆ segment ℝ p.1 p.2) ∧
+        ∀ p ∈ segments, ∀ x ∈ segment ℝ p.1 p.2,
+          (∃ v, G.vertex v = x) ∨
+            ∃ e, Set.range (G.edge e) ⊆ segment ℝ p.1 p.2 ∧ x ∈ Set.range (G.edge e) := by
   classical
   obtain ⟨V, finite_V, vertices_inside, endpoints, intersections⟩ :=
     exists_finite_segment_vertices segments finite
@@ -97,7 +100,7 @@ theorem exists_finite_embedded_straight_segment_graph
       exact ⟨t.val, t.property, rfl⟩
     · rintro ⟨t, ht, equal⟩
       exact ⟨⟨t, ht⟩, equal⟩
-  refine ⟨V, carriers, G, (fun _ _ => rfl), Set.Subset.antisymm ?_ ?_, ?_⟩
+  refine ⟨V, carriers, G, (fun _ _ => rfl), Set.Subset.antisymm ?_ ?_, ?_, ?_⟩
   · intro x member
     obtain ⟨i, hi⟩ := Set.mem_iUnion.mp member
     cases i with
@@ -128,6 +131,25 @@ theorem exists_finite_embedded_straight_segment_graph
     change Set.range (edge e) ⊆ _
     rw [edge_range e, exact_carrier e]
     exact included
+  · intro p hp x on_parent
+    by_cases marked : x ∈ V
+    · exact Or.inl ⟨⟨x, marked⟩, rfl⟩
+    obtain ⟨a, ha, b, hb, distinct, on_open, included, gap⟩ :=
+      exists_unmarked_subsegment finite_V (endpoints p hp).1 (endpoints p hp).2 on_parent marked
+    let e : carriers := ⟨segment ℝ a b, (⟨(⟨a, ha⟩, ⟨b, hb⟩),
+      ⟨distinct, ⟨p, hp, included⟩, gap⟩, rfl⟩)⟩
+    have actual : Set.range (G.edge e) = segment ℝ a b := edge_range e
+    exact Or.inr ⟨e, actual ▸ included,
+      actual.symm ▸ openSegment_subset_segment ℝ a b on_open⟩
+
+theorem exists_finite_embedded_straight_segment_graph
+    (segments : Set (E × E)) (finite : segments.Finite) :
+    ∃ (Vertex Edge : Type u) (G : FiniteEmbeddedGraph Vertex Edge E),
+      G.IsStraight ∧ G.carrier = segmentCarrier segments ∧
+        ∀ e : Edge, ∃ p ∈ segments, Set.range (G.edge e) ⊆ segment ℝ p.1 p.2 := by
+  obtain ⟨Vertex, Edge, G, straight, cover, refines, _parent_cover⟩ :=
+    exists_finite_embedded_straight_segment_graph_with_parent_cover segments finite
+  exact ⟨Vertex, Edge, G, straight, cover, refines⟩
 
 theorem exists_finite_embedded_segment_graph (segments : Set (E × E)) (finite : segments.Finite) :
     ∃ (Vertex Edge : Type u) (G : FiniteEmbeddedGraph Vertex Edge E),

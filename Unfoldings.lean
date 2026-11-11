@@ -195,3 +195,4 @@ public import Unfoldings.Cap.RoofSolid
 public import Unfoldings.Cap.ClipDisk
 public import Unfoldings.Geometry.TriangleRadial
 public import Unfoldings.Geometry.ConvexRayBoundary
+public import Unfoldings.Cap.ClipSpatialTriangles

@@ -298,7 +298,14 @@ Separation of different banks and global nonoverlap remain open.
 - [x] Construct every finite lower horizontal clip as a compact convex footprint
   with a disk homeomorphism. Its actual roof is a compact spatial disk containing
   the supplied cap; its rim is an exact finite union of support-plane segments.
-- [ ] Construct a compatible triangulation and cutting scheme for the extension,
+- [x] Construct compact active-support polygons with exact finite segment rims.
+  Remove duplicate support planes; the remaining polygon interiors are disjoint.
+- [x] Construct genuine finite triangle partitions from polygon boundary segments,
+  after subdividing overlaps. Assemble an exact triangle partition of the entire
+  clip and lift each whole triangle by its actual support-face isometry. All
+  original normals and the tilt bound are retained.
+- [ ] Make the resulting triangle partition conforming across support polygons.
+  Preserve original cut edges and construct the extension's cutting scheme,
   handling any additional roof vertices before using its developed strips.
 - [ ] Construct the actual waterfall strip partition; prove complete coverage
   and that its artificial boundaries are compatible with the development.

@@ -114,6 +114,10 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Cap.ClipSpatialTriangles](../Unfoldings/Cap/ClipSpatialTriangles.lean) | Actual isometric spatial triangles cover each clipped roof and retain original normals and tilt |
+| [Unfoldings.Cap.ClipSupportPolygons](../Unfoldings/Cap/ClipSupportPolygons.lean) | Construct compact active-support polygons, exact segment rims, and actual triangle partitions |
+| [Unfoldings.Cap.ClipTrianglePartition](../Unfoldings/Cap/ClipTrianglePartition.lean) | Assemble one finite disjoint-interior triangle partition of the entire clipped footprint |
+| [Unfoldings.Cap.DistinctSupportCells](../Unfoldings/Cap/DistinctSupportCells.lean) | Remove duplicate support planes and prove pairwise interior separation and exact coverage |
 | [Unfoldings.Cap.ClipBoundary](../Unfoldings/Cap/ClipBoundary.lean) | Exact finite segment rims of horizontal clips, with no triangulation premise |
 | [Unfoldings.Cap.ClipDisk](../Unfoldings/Cap/ClipDisk.lean) | Actual compact clipped-roof disk homeomorphisms and the flat-or-clips dichotomy |
 | [Unfoldings.Cap.RoofClips](../Unfoldings/Cap/RoofClips.lean) | Compact convex lower clips, an explicit homothety bound, and horizontal rim levels |
@@ -588,6 +592,10 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Geometry.CompactHalfplanes](../Unfoldings/Geometry/CompactHalfplanes.lean) | Compact proper finite affine-halfplane intersections have exact finite segment boundaries |
+| [Unfoldings.Geometry.ConvexPolygonCover](../Unfoldings/Geometry/ConvexPolygonCover.lean) | Exact finite center-triangle coverage of compact convex polygons, discarding degenerate rim cells |
+| [Unfoldings.Geometry.ConvexPolygonFan](../Unfoldings/Geometry/ConvexPolygonFan.lean) | Actual center triangles and interior separation from distinct boundary rays |
+| [Unfoldings.Geometry.ConvexPolygonPartition](../Unfoldings/Geometry/ConvexPolygonPartition.lean) | Subdivide boundary overlaps to construct genuine disjoint-interior finite triangle partitions |
 | [Unfoldings.Geometry.ConvexRayBoundary](../Unfoldings/Geometry/ConvexRayBoundary.lean) | Actual frontier points on all nonzero rays from arbitrary convex-body interior centers |
 | [Unfoldings.Geometry.ConvexSegmentExit](../Unfoldings/Geometry/ConvexSegmentExit.lean) | Strict frontier crossings and slight endpoint extensions of straight segments |
 | [Unfoldings.Geometry.TriangleRadial](../Unfoldings/Geometry/TriangleRadial.lean) | Interior triangle points lie strictly on rays to the opposite open edge |

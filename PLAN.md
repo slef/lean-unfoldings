@@ -781,7 +781,10 @@ remaining forest, uniform-turn, and global nonoverlap arguments.
   rim-root continuations, with finite polygonal traces and eventual straightness.
 - [x] Derive the flat-or-positive-height dichotomy and construct every finite
   lower roof clip as a compact disk with an exact finite segment rim.
-- [ ] Build a compatible triangulated extension and handle all its extra vertices.
+- [x] Construct actual compact support polygons and a finite disjoint-interior
+  triangle partition of the entire clip, lifted by actual support-face isometries.
+- [ ] Build compatible seam pairings, preserve the original cuts, and handle all
+  extra extension vertices. The current triangle partition is not yet conforming.
 - [ ] Prove separation between different seams, whole branching paths, and trees.
 - [ ] Global strip assembly and the full nearly flat cap theorem.
 
