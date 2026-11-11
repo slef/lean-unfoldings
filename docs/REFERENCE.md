@@ -1078,3 +1078,14 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Cap.ProjectedStripMaps](../Unfoldings/Cap/ProjectedStripMaps.lean) | Actual calibrated face maps and axis margins in arbitrary strip coordinates |
 | [Unfoldings.Cap.CompletedStripInjective](../Unfoldings/Cap/CompletedStripInjective.lean) | Uniform injectivity of coherent monotone strips for completed cap developments |
 | [Unfoldings.Cap.ExtendedStripInjective](../Unfoldings/Cap/ExtendedStripInjective.lean) | Uniform coherent-strip injectivity on the actual constructed roof extension |
+| [Unfoldings.Geometry.HeightGraphSplice](../Unfoldings/Geometry/HeightGraphSplice.lean) | Splice monotone height graphs and represent genuine monotone segments exactly |
+| [Unfoldings.Geometry.ChainHeightGraph](../Unfoldings/Geometry/ChainHeightGraph.lean) | Represent every whole edge of a monotone polygonal chain by one height graph |
+| [Unfoldings.Geometry.MonotoneStripInterior](../Unfoldings/Geometry/MonotoneStripInterior.lean) | Construct strictly internal monotone connectors through a target point |
+| [Unfoldings.Geometry.MonotoneStripInsertion](../Unfoldings/Geometry/MonotoneStripInsertion.lean) | Insert a connector and tail; split a strip with exact coverage and intersection |
+| [Unfoldings.Topology.DescendantLeaves](../Unfoldings/Topology/DescendantLeaves.lean) | Every nonroot lies above a childless descendant in any ascending sweep coordinate |
+| [Unfoldings.Geometry.MonotoneStripSlab](../Unfoldings/Geometry/MonotoneStripSlab.lean) | Bounded-height strips preserve the constructed connecting paths |
+| [Unfoldings.Geometry.MonotoneStripBoundedInjective](../Unfoldings/Geometry/MonotoneStripBoundedInjective.lean) | Finite affine selections are injective on bounded-height strips |
+| [Unfoldings.Cap.CompletedBoundedStripInjective](../Unfoldings/Cap/CompletedBoundedStripInjective.lean) | Uniform actual-face strip injectivity using only a bounded domain |
+| [Unfoldings.Cap.ExtendedBoundedStripInjective](../Unfoldings/Cap/ExtendedBoundedStripInjective.lean) | Uniform coherent bounded-strip injectivity on the constructed roof extension |
+| [Unfoldings.Geometry.RadialTailAttachment](../Unfoldings/Geometry/RadialTailAttachment.lean) | An outer radial tail meets the inner convex rim exactly at its seed |
+| [Unfoldings.Cap.SkirtAttachments](../Unfoldings/Cap/SkirtAttachments.lean) | Bijection between original rim vertices and attached skirt components |

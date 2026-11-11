@@ -292,3 +292,14 @@ public import Unfoldings.Geometry.AngleAxisMargins
 public import Unfoldings.Cap.ProjectedStripMaps
 public import Unfoldings.Cap.CompletedStripInjective
 public import Unfoldings.Cap.ExtendedStripInjective
+public import Unfoldings.Geometry.HeightGraphSplice
+public import Unfoldings.Geometry.ChainHeightGraph
+public import Unfoldings.Geometry.MonotoneStripInterior
+public import Unfoldings.Geometry.MonotoneStripInsertion
+public import Unfoldings.Topology.DescendantLeaves
+public import Unfoldings.Geometry.MonotoneStripSlab
+public import Unfoldings.Geometry.MonotoneStripBoundedInjective
+public import Unfoldings.Cap.CompletedBoundedStripInjective
+public import Unfoldings.Cap.ExtendedBoundedStripInjective
+public import Unfoldings.Geometry.RadialTailAttachment
+public import Unfoldings.Cap.SkirtAttachments

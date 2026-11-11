@@ -22,8 +22,8 @@ Current entry points:
   uniformly before both meshes. Contacts have matched parameters and zero
   whole-subtree curvature. Flat subtree banks coincide in both position and
   vector; this still does not compare different seams or strips.
-- [ExtendedStripInjective](../Unfoldings/Cap/ExtendedStripInjective.lean)
-  proves uniform injectivity of any coherent monotone strip on the actual roof
+- [ExtendedBoundedStripInjective](../Unfoldings/Cap/ExtendedBoundedStripInjective.lean)
+  proves uniform injectivity of any coherent bounded-height strip on the actual roof
   development. Its map must continuously select the actual face placements.
   The strip partition and its compatible lifts are still to be constructed.
 - [GnomonicArea](../Unfoldings/Cap/GnomonicArea.lean) proves a mesh-independent
@@ -411,6 +411,15 @@ Separation of different banks and global nonoverlap remain open.
   Continuous finite selections preserve the cone estimates even with infinitely
   many face switches along a connector. This conditional result still needs
   actual covering strips and continuous compatible lifts from the cut surface.
+- [x] Represent complete monotone polygonal paths by exact height graphs.
+  Construct a strictly internal monotone connector to a target, splice it to
+  an existing tail, and split the old strip with proved coverage and boundary
+  intersection. The application must still construct compatible geometric tails
+  and prove that each insertion avoids unprocessed cut segments.
+- [x] Treat bounded-height strips directly, with no continuation of their maps
+  beyond the actual clip. Connecting paths remain in the endpoint height slab.
+- [x] Prove that a skirt tail meeting the old rim begins at that meeting point.
+  Attached components correspond bijectively to old rim vertices.
 - [ ] Construct the actual waterfall strip partition; prove complete coverage
   and that its artificial boundaries are compatible with the development.
 - [ ] Prove side-by-side separation of all developed strips and hence all

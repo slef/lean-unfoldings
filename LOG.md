@@ -2,6 +2,29 @@
 
 ## Session Log
 
+### 2026-11-11 — strict strip insertion and bounded domains
+
+- Represented every whole edge of a genuine monotone polygonal path by a
+  single monotone height graph, using exact affine pieces and splicing.
+- Constructed strict internal connectors by averaging the two extremal feasible
+  monotone connectors. They pass through the target without touching the old
+  boundaries below it wherever the old strip has positive width.
+- Spliced a connector to an existing geometric tail and split the old strip.
+  Proved exact carrier coverage and that the substrip intersection is precisely
+  the new graph, retaining boundary contacts and zero-width tails.
+- Added bounded-height strip APIs and proved that connecting paths stay in the
+  height slab. Derived actual roof-face injectivity on these bounded strips,
+  without assuming any continuation of their maps outside the physical clip.
+- Proved a descendant-leaf lemma for arbitrary ascending sweep coordinates.
+  A radial skirt component meeting the original rim begins at that point;
+  attached components correspond bijectively to original rim vertices.
+- Verification: cache retrieval followed by full `lake build` pass; **7,806
+  project** and **7,243 pinned topology declarations** use only standard Lean
+  axioms. No project warnings; all 1,036 indexed local links resolve.
+- Still open: apply insertion to the complete geometric forest, construct
+  compatible lifts, compare whole branching banks and all strips globally,
+  and transfer nonoverlap to original faces. No full cap theorem is claimed.
+
 ### 2026-11-11 — injectivity inside coherent monotone strips
 
 - Built coordinate-monotone height graphs, their envelopes, and clamped
