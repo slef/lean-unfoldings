@@ -257,3 +257,14 @@ public import Unfoldings.Cap.CompletedFaceDirectionAgreement
 public import Unfoldings.Cap.CompletedProjectionCalibration
 public import Unfoldings.Cap.CompletedCalibratedThreshold
 public import Unfoldings.Cap.ExtendedDirectionControl
+public import Unfoldings.Geometry.SubsegmentEndpoints
+public import Unfoldings.Cap.ClipEndpointVertices
+public import Unfoldings.Cap.RadialSourceLeaf
+public import Unfoldings.Cap.ExtendedSourceLeaf
+public import Unfoldings.Cap.RadialSourceCopy
+public import Unfoldings.Cap.CompletedSourceGap
+public import Unfoldings.Geometry.FiveSectors
+public import Unfoldings.Geometry.FiveSectorFrames
+public import Unfoldings.Cap.CompletedSectorQuadrants
+public import Unfoldings.Cap.CompletedBankVectorOrder
+public import Unfoldings.Cap.ExtendedSectorControl

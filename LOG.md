@@ -2,6 +2,22 @@
 
 ## Session Log
 
+### 2026-11-11 — preserved source slit and five-sector coordinates
+
+- Proved that the actual roof refinement preserves the original source vertex,
+  its leaf property, and its unique cut-surface copy. The two source-side bank
+  endpoints therefore coincide in every actual development.
+- Covered all projected directions by five acute sectors, including the forward
+  gap where auxiliary roof vertices may occur. Constructed one calibrated frame
+  with robust quadrant bounds for all five sectors, uniformly before both meshes.
+- Preserved the signed whole-subtree bank rotation in these frames and derived
+  coordinate order for each actual paired parent vector.
+- Verification: cache retrieval and full `lake build` pass; **7,575 project**
+  and **7,243 pinned topology declarations** use only standard Lean axioms.
+  No project warnings; all 999 indexed local documentation links resolve.
+- The waterfall partition and global separation remain open; the cap theorem
+  is not yet complete.
+
 ### 2026-11-11 — uniform developed directions on the actual roof extension
 
 - Constructed oriented completed-parent bank openings in one actual projection

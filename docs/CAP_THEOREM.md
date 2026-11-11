@@ -386,6 +386,15 @@ Separation of different banks and global nonoverlap remain open.
 - [x] Prove the finite segment-cover direction lemma: an outward fine edge is a
   positive multiple of a genuine covering piece's direction. A common wedge is
   preserved by meshing, without imposing acuteness on auxiliary triangles.
+- [x] Preserve the actual original source vertex in the meshed roof. Source
+  distance proves that it remains a leaf after flat-vertex completion. Its two
+  source-bank ends are the same intrinsic cut vertex and developed point.
+- [x] Cover all extended-roof directions by five acute sectors, adding two in
+  the old forward gap. Construct one positive shared tolerance and five actual
+  calibrated quadrant frames before either cap mesh. Bank rotations preserve
+  their signs in every frame.
+- [ ] Extend positional bank-gap order to entire curvature-carrying completed
+  subtrees, allowing arbitrary zero-curvature completion branches.
 - [ ] Construct the actual waterfall strip partition; prove complete coverage
   and that its artificial boundaries are compatible with the development.
 - [ ] Prove side-by-side separation of all developed strips and hence all

@@ -1043,3 +1043,14 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Cap.CompletedProjectionCalibration](../Unfoldings/Cap/CompletedProjectionCalibration.lean) | One globally projection-calibrated frame for completed-forest developments |
 | [Unfoldings.Cap.CompletedCalibratedThreshold](../Unfoldings/Cap/CompletedCalibratedThreshold.lean) | A tilt threshold before the whole mesh bounds every actual developed direction |
 | [Unfoldings.Cap.ExtendedDirectionControl](../Unfoldings/Cap/ExtendedDirectionControl.lean) | Uniform direction control for the constructed roof extension without auxiliary acuteness or path certificates |
+| [Unfoldings.Geometry.SubsegmentEndpoints](../Unfoldings/Geometry/SubsegmentEndpoints.lean) | A fine subsegment containing an old endpoint has that same endpoint |
+| [Unfoldings.Cap.ClipEndpointVertices](../Unfoldings/Cap/ClipEndpointVertices.lean) | Whole-edge meshing preserves original intrinsic cap vertices |
+| [Unfoldings.Cap.RadialSourceLeaf](../Unfoldings/Cap/RadialSourceLeaf.lean) | The source is an interior leaf even after completing unused flat vertices |
+| [Unfoldings.Cap.ExtendedSourceLeaf](../Unfoldings/Cap/ExtendedSourceLeaf.lean) | Construct the surviving original source vertex and prove it is an actual extended-forest leaf |
+| [Unfoldings.Cap.RadialSourceCopy](../Unfoldings/Cap/RadialSourceCopy.lean) | There is exactly one intrinsic cut copy of the interior source leaf |
+| [Unfoldings.Cap.CompletedSourceGap](../Unfoldings/Cap/CompletedSourceGap.lean) | The two source-bank ends are the same actual intrinsic and developed point |
+| [Unfoldings.Geometry.FiveSectors](../Unfoldings/Geometry/FiveSectors.lean) | Five acute direction sectors cover the whole extended roof, including the old forward gap |
+| [Unfoldings.Geometry.FiveSectorFrames](../Unfoldings/Geometry/FiveSectorFrames.lean) | Five robust numerical quadrant frames with one positive common tolerance |
+| [Unfoldings.Cap.CompletedSectorQuadrants](../Unfoldings/Cap/CompletedSectorQuadrants.lean) | One uniform threshold constructs actual calibrated five-sector quadrant data |
+| [Unfoldings.Cap.CompletedBankVectorOrder](../Unfoldings/Cap/CompletedBankVectorOrder.lean) | Actual parent-bank curvature rotations order vectors in any common sector |
+| [Unfoldings.Cap.ExtendedSectorControl](../Unfoldings/Cap/ExtendedSectorControl.lean) | Construct five common developed quadrant frames on the actual roof extension |
