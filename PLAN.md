@@ -790,6 +790,9 @@ remaining forest, uniform-turn, and global nonoverlap arguments.
   triangulations and exact whole-edge unions for every original spatial edge.
 - [ ] Construct the extended cut forest and retained-seam correspondence, and
   handle all extra extension vertices.
+- [x] Continue prescribed skirt seeds to the outer rim in disjoint radial
+  components, outside the original footprint's interior, and mesh every whole
+  component exactly while preserving the original edges.
 - [ ] Prove separation between different seams, whole branching paths, and trees.
 - [ ] Global strip assembly and the full nearly flat cap theorem.
 

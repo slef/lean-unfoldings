@@ -2,6 +2,25 @@
 
 ## Session Log
 
+### 2026-11-10 — disjoint radial skirt components and exact segment meshing
+
+- Constructed finite conforming physical roof triangulations respecting arbitrary
+  prescribed genuine segments, including both endpoints, while preserving every
+  original cap edge. Each spatially lifted segment is exactly a whole-edge union.
+- Constructed outward continuations from arbitrary supplied skirt seeds to the
+  outer convex rim. Their carriers avoid the original footprint's interior;
+  any two are disjoint or nested.
+- Merged nested tails by their outer rim labels into disjoint whole segment
+  components. These components preserve the entire cut set and cover all seeds.
+  Their actual spatial lifts are disjoint and mesh exactly into physical edges.
+- This is not yet the complete cutting scheme: selection of sufficient curvature
+  seeds, flatness at remaining new vertices, the retained-seam/forest correspondence,
+  direction control of the extended development, and global strip separation remain open.
+- Verification: scoped cache check and full `lake build` pass; **7,095 project**
+  and **7,243 pinned topology declarations** use only standard Lean axioms.
+  No project warnings. All 911 local documentation links resolve.
+
+
 ### 2026-11-10 — line-constrained roof triangulation preserves original cut geometry
 
 - Triangulated compact chambers of arbitrary finite proper affine arrangements.

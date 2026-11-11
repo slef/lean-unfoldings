@@ -318,8 +318,14 @@ Separation of different banks and global nonoverlap remain open.
   original face supporting lines in one finite arrangement; triangulate its
   chambers and make the result conforming. Every original projected and spatial
   edge is exactly a finite union of whole actual extended-triangle edges.
-- [ ] Construct the extension's cutting scheme, including the retained-seam and
-  forest correspondence, and handle additional roof vertices before using strips.
+- [x] Mesh arbitrary prescribed finite genuine segments into the actual roof,
+  including both endpoints, while preserving every original cap edge.
+- [x] Continue arbitrary finite skirt seeds radially to the outer rim, staying
+  outside the original footprint's interior. Merge nested tails into disjoint
+  whole segment components and mesh their actual spatial lifts exactly.
+- [ ] Select sufficient skirt curvature seeds, prove flatness at the remaining
+  new vertices, and construct the full extended cut forest and retained-seam
+  correspondence. Prove the direction bounds needed for its developed strips.
 - [ ] Construct the actual waterfall strip partition; prove complete coverage
   and that its artificial boundaries are compatible with the development.
 - [ ] Prove side-by-side separation of all developed strips and hence all

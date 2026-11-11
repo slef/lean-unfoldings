@@ -898,6 +898,12 @@ and a counterexample to testing radial monotonicity only at endpoints.
 | [Unfoldings.Geometry.TriangleSupportingFace](../Unfoldings/Geometry/TriangleSupportingFace.lean) | Contacts with proper affine supporting lines occur on actual whole edges or vertices |
 | [Unfoldings.Geometry.WholeEdgeSubdivision](../Unfoldings/Geometry/WholeEdgeSubdivision.lean) | Exact coverage of old edges by finite whole fine edges with no exceptional gaps |
 
+| [Unfoldings.Cap.PrescribedClipSegments](../Unfoldings/Cap/PrescribedClipSegments.lean) | Exact whole-edge meshing of arbitrary prescribed segments and all original cap edges |
+| [Unfoldings.Cap.SkirtRadialCuts](../Unfoldings/Cap/SkirtRadialCuts.lean) | Disjoint outward skirt components cover supplied seeds and mesh into actual physical roof edges |
+| [Unfoldings.Geometry.ClippedRadialTails](../Unfoldings/Geometry/ClippedRadialTails.lean) | Outward radial continuations to a convex rim are disjoint or nested and avoid an inner region |
+| [Unfoldings.Geometry.RadialTailFamily](../Unfoldings/Geometry/RadialTailFamily.lean) | Finite radial tails reduce to disjoint rim-labeled whole segment components with exact coverage |
+| [Unfoldings.Geometry.TriangleWithEdge](../Unfoldings/Geometry/TriangleWithEdge.lean) | Auxiliary genuine triangles containing any supplied nondegenerate segment as a whole edge |
+
 ## Build and proof audit
 
 Lean and Mathlib are pinned to **4.35.0** in

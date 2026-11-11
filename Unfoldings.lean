@@ -199,3 +199,4 @@ public import Unfoldings.Cap.ClipSpatialTriangles
 public import Unfoldings.Cap.ClipPairings
 public import Unfoldings.Cap.ClipMetric
 public import Unfoldings.Cap.ClipEdgeLift
+public import Unfoldings.Cap.SkirtRadialCuts
