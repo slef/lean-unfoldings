@@ -280,3 +280,15 @@ public import Unfoldings.Cap.ExtendedSubtreeSectors
 public import Unfoldings.Cap.CompletedParentBankNoncrossing
 public import Unfoldings.Cap.CompletedFlatBanks
 public import Unfoldings.Cap.ExtendedBankSeparation
+public import Unfoldings.Geometry.MonotoneHeightGraph
+public import Unfoldings.Geometry.MonotoneStrip
+public import Unfoldings.Geometry.MonotoneStripPaths
+public import Unfoldings.Topology.IntervalLocalOrder
+public import Unfoldings.Geometry.MonotoneStripInjective
+public import Unfoldings.Topology.FiniteMonotoneSelection
+public import Unfoldings.Geometry.MonotoneStripSelection
+public import Unfoldings.Geometry.AffineConeBounds
+public import Unfoldings.Geometry.AngleAxisMargins
+public import Unfoldings.Cap.ProjectedStripMaps
+public import Unfoldings.Cap.CompletedStripInjective
+public import Unfoldings.Cap.ExtendedStripInjective

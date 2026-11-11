@@ -2,6 +2,28 @@
 
 ## Session Log
 
+### 2026-11-11 — injectivity inside coherent monotone strips
+
+- Built coordinate-monotone height graphs, their envelopes, and clamped
+  connectors. Closed strips admit increasing paths between comparable points;
+  rectangles between mixed-coordinate endpoints lie entirely in the strip.
+- Proved that local quantitative cone bounds imply global strip injectivity.
+  Continuous selections among finitely many monotone coordinate functions
+  preserve endpoint order, even with infinitely many branch switches.
+- Reduced finite affine strip-map injectivity to four positive axis tests.
+  Derived those tests from a positive numerical angular tolerance, independent
+  of cap scale, face count, and orthogonal strip coordinates.
+- Applied this to actual calibrated developed face maps. Proved
+  `exists_uniform_extended_strip_injectivity` with tilt chosen before both
+  meshes. Each candidate strip still needs a continuous map selecting those
+  actual face placements; no covering partition is assumed to exist.
+- Verification: cache retrieval followed by full `lake build` pass; **7,745
+  project** and **7,243 pinned topology declarations** use only standard Lean
+  axioms. No project warnings; all 1,025 indexed local links resolve.
+- Still open: construct the waterfall partition and its compatible cut-surface
+  lifts, compare whole branching banks, prove global strip separation, and
+  transfer nonoverlap to original faces. The full cap theorem is not complete.
+
 ### 2026-11-11 — completed roof banks and redundant flat slits
 
 - Derived five-sector bounds for every curvature-carrying descendant of the

@@ -22,6 +22,10 @@ Current entry points:
   uniformly before both meshes. Contacts have matched parameters and zero
   whole-subtree curvature. Flat subtree banks coincide in both position and
   vector; this still does not compare different seams or strips.
+- [ExtendedStripInjective](../Unfoldings/Cap/ExtendedStripInjective.lean)
+  proves uniform injectivity of any coherent monotone strip on the actual roof
+  development. Its map must continuously select the actual face placements.
+  The strip partition and its compatible lifts are still to be constructed.
 - [GnomonicArea](../Unfoldings/Cap/GnomonicArea.lean) proves a mesh-independent
   positive tilt threshold for arbitrarily small total spherical normal-image
   area, bounded by the actual planar normal-polygon areas.
@@ -398,8 +402,15 @@ Separation of different banks and global nonoverlap remain open.
   the old forward gap. Construct one positive shared tolerance and five actual
   calibrated quadrant frames before either cap mesh. Bank rotations preserve
   their signs in every frame.
-- [ ] Extend positional bank-gap order to entire curvature-carrying completed
-  subtrees, allowing arbitrary zero-curvature completion branches.
+- [x] Extend positional bank-gap order to entire curvature-carrying completed
+  subtrees, allowing arbitrary zero-curvature completion branches. Prove that
+  every flat subtree has coincident bank positions, not merely parallel vectors.
+- [x] Prove injectivity within a coherent monotone strip from actual affine face
+  placements and one mesh-independent tilt threshold. Clamped connectors handle
+  comparable endpoints; mixed-coordinate rectangles handle the other case.
+  Continuous finite selections preserve the cone estimates even with infinitely
+  many face switches along a connector. This conditional result still needs
+  actual covering strips and continuous compatible lifts from the cut surface.
 - [ ] Construct the actual waterfall strip partition; prove complete coverage
   and that its artificial boundaries are compatible with the development.
 - [ ] Prove side-by-side separation of all developed strips and hence all

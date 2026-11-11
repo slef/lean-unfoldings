@@ -1066,3 +1066,15 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Cap.CompletedParentBankNoncrossing](../Unfoldings/Cap/CompletedParentBankNoncrossing.lean) | Strict separation and flat-contact tests for completed paired parent banks |
 | [Unfoldings.Cap.CompletedFlatBanks](../Unfoldings/Cap/CompletedFlatBanks.lean) | Prove coincident positions and vectors for redundant flat subtree slits |
 | [Unfoldings.Cap.ExtendedBankSeparation](../Unfoldings/Cap/ExtendedBankSeparation.lean) | Uniform paired-bank separation for the constructed actual roof forest |
+| [Unfoldings.Geometry.MonotoneHeightGraph](../Unfoldings/Geometry/MonotoneHeightGraph.lean) | Coordinate-monotone height graphs, continuity, envelopes, and clamping |
+| [Unfoldings.Geometry.MonotoneStrip](../Unfoldings/Geometry/MonotoneStrip.lean) | Closed monotone strips, internal connectors, and mixed-coordinate rectangles |
+| [Unfoldings.Geometry.MonotoneStripPaths](../Unfoldings/Geometry/MonotoneStripPaths.lean) | Continuous coordinate-monotone paths within a strip |
+| [Unfoldings.Topology.IntervalLocalOrder](../Unfoldings/Topology/IntervalLocalOrder.lean) | Telescope local forward relations and coordinate bounds along an interval |
+| [Unfoldings.Geometry.MonotoneStripInjective](../Unfoldings/Geometry/MonotoneStripInjective.lean) | Derive global strip injectivity from local quantitative cone bounds |
+| [Unfoldings.Topology.FiniteMonotoneSelection](../Unfoldings/Topology/FiniteMonotoneSelection.lean) | Continuous finite selections preserve monotonicity and coordinate bounds |
+| [Unfoldings.Geometry.MonotoneStripSelection](../Unfoldings/Geometry/MonotoneStripSelection.lean) | Injectivity of continuous finite cone-controlled selections on strips |
+| [Unfoldings.Geometry.AffineConeBounds](../Unfoldings/Geometry/AffineConeBounds.lean) | Four affine axis tests give common cone bounds and strip injectivity |
+| [Unfoldings.Geometry.AngleAxisMargins](../Unfoldings/Geometry/AngleAxisMargins.lean) | One numerical angular tolerance gives all four affine axis tests |
+| [Unfoldings.Cap.ProjectedStripMaps](../Unfoldings/Cap/ProjectedStripMaps.lean) | Actual calibrated face maps and axis margins in arbitrary strip coordinates |
+| [Unfoldings.Cap.CompletedStripInjective](../Unfoldings/Cap/CompletedStripInjective.lean) | Uniform injectivity of coherent monotone strips for completed cap developments |
+| [Unfoldings.Cap.ExtendedStripInjective](../Unfoldings/Cap/ExtendedStripInjective.lean) | Uniform coherent-strip injectivity on the actual constructed roof extension |
