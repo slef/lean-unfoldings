@@ -123,21 +123,30 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 | [Unfoldings.Cap.ParentBankOpening](../Unfoldings/Cap/ParentBankOpening.lean) | Construct actual oriented parent banks with proved rigid phases and forward and reverse section-turn bounds |
 | [Unfoldings.Cap.ParentBankSides](../Unfoldings/Cap/ParentBankSides.lean) | Actual parent-bank entrance and exit faces determine the geometric transverse crossing sign |
 | [Unfoldings.Cap.ParentDirectionRotation](../Unfoldings/Cap/ParentDirectionRotation.lean) | Actual outward parent-bank vectors rotate by descendant curvature in a projection-preserving frame |
+| [Unfoldings.Cap.ParentRayCounter](../Unfoldings/Cap/ParentRayCounter.lean) | Identify physical parent-segment counters with the bounded actual forest-ray potential |
 | [Unfoldings.Cap.ParentSectionPhase](../Unfoldings/Cap/ParentSectionPhase.lean) | Choose actual signed parent-bank curvature phase from the real section determinant |
+| [Unfoldings.Cap.ParentSegments](../Unfoldings/Cap/ParentSegments.lean) | Whole projected parent segments are the actual original selected seam edges |
 | [Unfoldings.Cap.PhaseSectionTurn](../Unfoldings/Cap/PhaseSectionTurn.lean) | Removing the actual signed subtree phase bounds parent-bank section turns by spatial bending |
 | [Unfoldings.Cap.ProjectedContourSides](../Unfoldings/Cap/ProjectedContourSides.lean) | Every positively oriented actual contour bank has its original projected face on the left |
 | [Unfoldings.Cap.ProjectedOpening](../Unfoldings/Cap/ProjectedOpening.lean) | Actual projected incident triangles open to strictly opposite sides of each original seam |
+| [Unfoldings.Cap.ProjectedSeamUnique](../Unfoldings/Cap/ProjectedSeamUnique.lean) | A nonvertex actual projected seam point determines its unique original seam name |
 | [Unfoldings.Cap.ProjectionContour](../Unfoldings/Cap/ProjectionContour.lean) | Choose a complete actual boundary contour oriented by horizontal projection |
 | [Unfoldings.Cap.ProjectionFrame](../Unfoldings/Cap/ProjectionFrame.lean) | One common developed frame preserves the actual projection orientation on all faces |
 | [Unfoldings.Cap.RetainedSectionTurn](../Unfoldings/Cap/RetainedSectionTurn.lean) | Actual retained original-seam opening cannot increase transverse section turning |
 | [Unfoldings.Cap.RimAnchor](../Unfoldings/Cap/RimAnchor.lean) | Construct a nonvertex rim midpoint with one original face and a common initial face for all sections |
 | [Unfoldings.Cap.SeamDirections](../Unfoldings/Cap/SeamDirections.lean) | Actual spatial and retained developed seam vectors agree; regular sections meet transversely |
 | [Unfoldings.Cap.SectionBankSides](../Unfoldings/Cap/SectionBankSides.lean) | Actual original-face containment determines the transverse section exit sign at a bank |
+| [Unfoldings.Cap.SectionCounterGeometry](../Unfoldings/Cap/SectionCounterGeometry.lean) | Only the actual transition counter changes; its curvature contribution is the actual signed bank phase |
+| [Unfoldings.Cap.SectionCrossingIsolation](../Unfoldings/Cap/SectionCrossingIsolation.lean) | Isolate the unique original seam between adjacent actual interior section samples |
+| [Unfoldings.Cap.SectionFrame](../Unfoldings/Cap/SectionFrame.lean) | Positive section coordinates keep all original vertices off-axis and order actual interior samples |
+| [Unfoldings.Cap.SectionHeadingBound](../Unfoldings/Cap/SectionHeadingBound.lean) | Actual real section headings change by at most twice tilt plus twice total curvature from one rim face |
+| [Unfoldings.Cap.SectionHeadingThreshold](../Unfoldings/Cap/SectionHeadingThreshold.lean) | Choose forest and arbitrarily small actual section-heading budget uniformly before the entire mesh |
 | [Unfoldings.Cap.SectionHeadingTransport](../Unfoldings/Cap/SectionHeadingTransport.lean) | Actual section spatial turning bounds real developed heading residuals after prescribed phases |
 | [Unfoldings.Cap.SectionInteriors](../Unfoldings/Cap/SectionInteriors.lean) | Whole open regular section pieces are interior and avoid all original projected seams |
 | [Unfoldings.Cap.SectionMidpoints](../Unfoldings/Cap/SectionMidpoints.lean) | Construct genuine interior sample points in all regular original-face section pieces |
 | [Unfoldings.Cap.SectionPartition](../Unfoldings/Cap/SectionPartition.lean) | Construct strictly ordered finite original-face partitions of every projected cap segment |
 | [Unfoldings.Cap.SectionPhases](../Unfoldings/Cap/SectionPhases.lean) | Derive zero retained phases and actual signed curvature phases across every transverse original seam |
+| [Unfoldings.Cap.SectionPotentialIdentity](../Unfoldings/Cap/SectionPotentialIdentity.lean) | Actual trace phases telescope as differences of the bounded original forest-crossing potential |
 | [Unfoldings.Cap.SectionSeams](../Unfoldings/Cap/SectionSeams.lean) | Construct actual transverse original seams for all nonconstant regular section transitions |
 | [Unfoldings.Cap.SectionTrace](../Unfoldings/Cap/SectionTrace.lean) | Actual original-face trace labels and exact spatial secants from their tangent vectors |
 | [Unfoldings.Cap.SectionTraceTurns](../Unfoldings/Cap/SectionTraceTurns.lean) | Actual tangent directions along the constructed face sequence turn by at most twice the tilt |
@@ -217,6 +226,7 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 | [Unfoldings.Complex.BoundaryIncidence](../Unfoldings/Complex/BoundaryIncidence.lean) | Weighted endpoint incidence counts actual boundary copies twice |
 | [Unfoldings.Complex.BoundaryLink](../Unfoldings/Complex/BoundaryLink.lean) | The actual corner interval between a specified bank and its boundary mate |
 | [Unfoldings.Complex.ParentBankEndpoints](../Unfoldings/Complex/ParentBankEndpoints.lean) | Actual entrance and exit parent banks have the original parent-child endpoint order |
+| [Unfoldings.Complex.RegularSeamUnique](../Unfoldings/Complex/RegularSeamUnique.lean) | Related regular points on original seam banks determine the same original seam name |
 | [Unfoldings.Complex.RelativeBankEnumeration](../Unfoldings/Complex/RelativeBankEnumeration.lean) | Further cuts retain all old banks and add exactly two banks per opened seam |
 | [Unfoldings.Complex.SelectedIncidence](../Unfoldings/Complex/SelectedIncidence.lean) | Actual cut-copy multiplicity equals selected original-edge endpoint multiplicity off the rim |
 | [Unfoldings.Complex.SelectedSubtreeAngles](../Unfoldings/Complex/SelectedSubtreeAngles.lean) | Exact boundary-turn sum for arbitrary branching descendant subtrees without Euler assumptions |
@@ -559,9 +569,13 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 | [Unfoldings.Geometry.AngleMonotoneCrossings](../Unfoldings/Geometry/AngleMonotoneCrossings.lean) | Acute angle-monotone paths have signed ray-crossing counts of magnitude at most one in every frame |
 | [Unfoldings.Geometry.LineCrossingSides](../Unfoldings/Geometry/LineCrossingSides.lean) | Actual determinants determine directed side changes at affine line crossings |
 | [Unfoldings.Geometry.LineTransverse](../Unfoldings/Geometry/LineTransverse.lean) | An endpoint-avoiding line meets an edge only transversely |
+| [Unfoldings.Geometry.PolarAngleBound](../Unfoldings/Geometry/PolarAngleBound.lean) | Genuine angular distance is bounded by any real unreduced heading difference |
+| [Unfoldings.Geometry.PositiveDirectionFrame](../Unfoldings/Geometry/PositiveDirectionFrame.lean) | Positive orthogonal coordinates align a prescribed direction and identify transverse determinant signs |
 | [Unfoldings.Geometry.RayAvoidance](../Unfoldings/Geometry/RayAvoidance.lean) | Choose endpoints in any open set so lines from a fixed origin avoid finitely many exceptional points |
 | [Unfoldings.Geometry.ConcaveSecants](../Unfoldings/Geometry/ConcaveSecants.lean) | Concave secant inclinations telescope independently of partition size |
 | [Unfoldings.Geometry.LevelCrossings](../Unfoldings/Geometry/LevelCrossings.lean) | Actual affine level intersections and signed horizontal-ray counts for coordinate-monotone chains |
+| [Unfoldings.Geometry.RayCounterChanges](../Unfoldings/Geometry/RayCounterChanges.lean) | Nonzero ray-counter changes are actual original-segment level intersections with exact signed jumps |
+| [Unfoldings.Geometry.SectionRayCounter](../Unfoldings/Geometry/SectionRayCounter.lean) | Physical segment counter changes along a section have the actual oriented crossing sign |
 | [Unfoldings.Geometry.SharedEdgeOpening](../Unfoldings/Geometry/SharedEdgeOpening.lean) | A shared geometric edge and disjoint triangle interiors force opposite-side opening |
 | [Unfoldings.Geometry.SlopeAngles](../Unfoldings/Geometry/SlopeAngles.lean) | Genuine angles of slope vectors equal absolute real arctangent differences |
 | [Unfoldings.Geometry.ThreeSectorCoordinates](../Unfoldings/Geometry/ThreeSectorCoordinates.lean) | Each near-quadrant supplies an upward, leftward, or downward monotone ambient coordinate |

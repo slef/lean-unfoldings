@@ -69,6 +69,28 @@ theorem piece_interior (different : p ≠ q)
   · exact add_pos_of_nonneg_of_pos (mul_nonneg (sub_nonneg.mpr small.le) first_nonneg)
       (mul_pos positive last)
 
+/-- Every real section parameter strictly within an actual face interval is interior. -/
+theorem point_interior_of_time_between (different : p ≠ q)
+    (regular : ∀ t : ℝ, ∀ f j, AffineMap.lineMap p q t ≠ (K.projectedTriangle f).vertex j)
+    (i : Fin (T.turns + 1)) {r : ℝ}
+    (lower : (T.time i.castSucc : ℝ) < r) (upper : r < (T.time i.succ : ℝ)) :
+    AffineMap.lineMap p q r ∈ interior (K.projectedTriangle (T.face i)).carrier := by
+  let a := (T.time i.castSucc : ℝ)
+  let b := (T.time i.succ : ℝ)
+  have step : 0 < b - a := T.time_step_pos i
+  have positive : 0 < (r - a) / (b - a) := div_pos (sub_pos.mpr lower) step
+  have small : (r - a) / (b - a) < 1 := (div_lt_one step).mpr (by linarith)
+  have image : AffineMap.lineMap (T.point i.castSucc) (T.point i.succ) ((r - a) / (b - a)) =
+      AffineMap.lineMap p q r := by
+    rw [AffineMap.lineMap_apply_module', T.point_sub, smul_smul]
+    change ((r - a) / (b - a) * (b - a)) • (q - p) + T.point i.castSucc = _
+    rw [div_mul_cancel₀ _ (ne_of_gt step)]
+    simp only [point, AffineMap.lineMap_apply_module']
+    change (r - a) • (q - p) + (a • (q - p) + p) = r • (q - p) + p
+    module
+  rw [← image]
+  exact T.piece_interior different regular i positive small
+
 /-- No original seam enters the actual open portion of any regular original-face piece. -/
 theorem seam_avoids_open_piece (different : p ≠ q)
     (regular : ∀ t : ℝ, ∀ f j, AffineMap.lineMap p q t ≠ (K.projectedTriangle f).vertex j)

@@ -185,3 +185,4 @@ public import Unfoldings.Cap.TracePhaseTransport
 public import Unfoldings.Cap.SectionInteriors
 public import Unfoldings.Cap.CrossingPotential
 public import Unfoldings.Geometry.DirectionFrame
+public import Unfoldings.Cap.SectionHeadingThreshold

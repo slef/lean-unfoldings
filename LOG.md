@@ -2,6 +2,31 @@
 
 ## Session Log
 
+### 2026-11-10 — uniform actual section headings via the crossing potential
+
+- Constructed positively oriented horizontal section frames, with every original
+  vertex strictly off-axis and actual interior samples strictly ordered.
+- Proved that a nonvertex projected seam point has one original seam name.
+  Between adjacent interior samples, only the actual transition seam can meet
+  the section; repeated original face labels contain no original seam.
+- Identified geometric segment-ray counter changes with actual original-segment
+  intersections and their exact oriented signs. Physical parent counters are
+  the previously bounded actual forest-ray counters.
+- Proved that every actual local phase is precisely the weighted potential
+  change. All other parent counters stay constant. The actual whole-trace
+  signed phase sum telescopes and has absolute value at most twice total curvature.
+- Proved real unreduced heading change at most `2 * tilt + 2 * totalCurvature`
+  on every regular trace. Every original face has such an aligned section
+  direction from the same rim face. A positive forest-and-heading threshold
+  is quantified before the complete input mesh.
+- Calibration of all original face directions against projection, bank and
+  branching-strip separation, and global nonoverlap remain open. The full cap
+  theorem is still incomplete.
+- Verification: scoped cache check and full `lake build` pass; **6,329 project**
+  and **7,243 pinned topology declarations** use only standard Lean axioms.
+  Checked **825 local documentation links**; no project warnings.
+
+
 ### 2026-11-10 — constructed signed-phase transport along actual section traces
 
 - Propagated positive original projection orientation around the actual full

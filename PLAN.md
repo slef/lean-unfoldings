@@ -766,8 +766,11 @@ remaining forest, uniform-turn, and global nonoverlap arguments.
   construct real heading transport along whole regular traces, with twice-tilt
   residual error. Open face pieces avoid every original seam.
 - [x] Bound the actual signed forest-ray potential and telescoped query changes.
-- [ ] Identify actual phase sums with potential changes, obtain full uniform
-  headings, then prove branching-bank noncrossing.
+- [x] Identify actual phase sums with potential changes. Prove mesh-independent
+  real section-heading bounds of twice tilt plus twice total curvature, with a
+  positive forest-and-heading threshold chosen before the entire mesh.
+- [ ] Calibrate all original face directions and bank wedges against the common
+  projection frame, then prove branching-bank noncrossing.
 - [ ] Global strip assembly and the full nearly flat cap theorem.
 
 ## Later targets and Fewest Nets

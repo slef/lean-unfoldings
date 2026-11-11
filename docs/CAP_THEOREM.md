@@ -238,16 +238,21 @@ global strip hypotheses are constructed. It is not a proof of Theorem 9.
   open piece lies in that original face interior and avoids every original seam.
 - [x] Define the actual weighted ray-crossing curvature potential. Its value is
   bounded by total curvature and telescoped query changes by twice that budget.
-- [ ] Identify each actual trace phase with the corresponding change of the
-  ray-crossing potential. Then assemble the full heading bound from the common
-  anchor. The local phase signs and transport lemmas do not yet bound the actual
-  trace's total signed phase sum or prove nonoverlap.
-- [ ] Prove the geometric subregion identities used in the prefix-turn argument,
-  including the truncation and artificial connecting segments.
-- [ ] Bound turn distortion for every prefix independently of mesh size.
-  Summing an error per vertex is insufficient.
-- [ ] Choose a positive tilt threshold depending only on the acute margin that
-  leaves all developed path headings in the required wedges.
+- [x] Identify every actual trace phase with its actual weighted ray-potential
+  change. All other parent counters stay constant between adjacent samples;
+  the whole signed phase sum telescopes and is bounded by twice total curvature.
+- [x] Prove a real developed heading bound of `2 * tilt + 2 * totalCurvature`
+  for every actual regular section, independently of mesh size. Every original
+  face has such an aligned section direction from the same original rim face.
+- [x] Choose one positive threshold, before the whole mesh, constructing the
+  acute-sector forest and making this actual section-heading budget arbitrarily small.
+- [ ] Calibrate all directions of every actual original face against the common
+  rim face and the original projection; reserve the required bank-wedge margins.
+
+The section-and-crossing-potential route proves the actual whole-section heading
+bound directly. The alternative paper-style prefix-region closures, truncations,
+and artificial connecting segments remain unformalized and are not used in this
+checked route. Global bank and strip separation still need proofs.
 
 The checked numerical estimate, for `3/4 ≤ c` and all normal heights at least
 `c`, is
@@ -259,7 +264,7 @@ totalInteriorAngularDefect ≤ 81 * (sqrt (1 - c²) / c)² * pi.
 The constant is conservative. Continuity at tilt zero gives an arbitrarily
 small total-curvature budget uniformly across all meshes. The proof uses
 volume-induced solid angle; it does not need an equality with normalized
-Hausdorff area. Uniform prefix-turn control and global nonoverlap remain open.
+Hausdorff area. Calibration of all face directions and global nonoverlap remain open.
 
 ### Global assembly (Sections 9--10, Appendices A.5--A.6)
 
