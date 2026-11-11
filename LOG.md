@@ -2,6 +2,29 @@
 
 ## Session Log
 
+### 2026-11-11 — actual extended fine-seam paths have acute wedges
+
+- Proved that original selected cut segments preserve their tree root at every
+  geometric contact. A parent segment meets the old rim only at its parent.
+  Each radial skirt component meets the convex old rim in at most one point,
+  so distinct old tree roots cannot merge through a continuation.
+- Labeled the complete original-cut and skirt network by its radial components.
+  Contacts preserve these labels. Attached trees retain their original acute
+  sector; independent radial components have wedge width zero.
+- Proved finite-cover transfer: labels stay constant along whole meshed edges
+  and paths, while whole-edge radial orientation preserves their component's
+  direction wedge. Constant edges and flat subdivision vertices are allowed.
+- Applied this to the constructed completed fine-seam forest. All paths
+  starting at positive curvature have derived acute wedges; added zero-curvature
+  branches impose no auxiliary acuteness requirement. The actual crossing
+  potential is bounded by total curvature, uniformly in the extension mesh.
+- Verification: cache retrieval and full `lake build` pass; **7,419 project**
+  and **7,243 pinned topology declarations** use only standard Lean axioms.
+  No project warnings; all 973 indexed local documentation links resolve.
+- Developed heading transport for the completed extension, waterfall strips,
+  global nonoverlap, and original-face transfer remain open. No full cap
+  nonoverlap theorem is claimed.
+
 ### 2026-11-11 — whole-edge directions and flat-branch completion
 
 - Strengthened the constructed fine-seam forest to whole-edge radial progress.

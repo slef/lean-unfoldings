@@ -11,6 +11,9 @@ Current entry points:
   original-edge rooted forest for uniformly small positive tilt.
 - [ForestDevelopment](../Unfoldings/Cap/ForestDevelopment.lean) constructs its
   intrinsic cut disk and a locally isometric development, allowing overlap.
+- [ExtendedPathWedges](../Unfoldings/Cap/ExtendedPathWedges.lean) derives acute
+  fine-seam paths and mesh-independent crossing bounds on the constructed roof
+  extension. Flat auxiliary branches need no acuteness assumption.
 - [GnomonicArea](../Unfoldings/Cap/GnomonicArea.lean) proves a mesh-independent
   positive tilt threshold for arbitrarily small total spherical normal-image
   area, bounded by the actual planar normal-polygon areas.
@@ -365,9 +368,12 @@ Separation of different banks and global nonoverlap remain open.
 - [x] Apply the exact subtree bank rotations to completed forests in one common
   projection-preserving frame. Generalize signed crossing budgets so only paths
   starting at positive-curvature vertices need an acute wedge.
-- [ ] Identify the completed fine-seam paths carrying curvature with the original
-  extended paths and independent radial components. Derive their acute wedges
-  and actual developed heading bounds from the constructed geometric input.
+- [x] Label complete original-cut and radial components consistently at every
+  geometric contact. Show that each component has one acute wedge, and that
+  every curvature-carrying completed fine-seam path inherits it. Derive the
+  actual uniform crossing-potential bound without any path-wedge certificate.
+- [ ] Derive actual developed heading bounds for the completed extension from
+  its geometric signed phases and the proved crossing potential.
 - [x] Prove the finite segment-cover direction lemma: an outward fine edge is a
   positive multiple of a genuine covering piece's direction. A common wedge is
   preserved by meshing, without imposing acuteness on auxiliary triangles.

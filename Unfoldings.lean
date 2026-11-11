@@ -234,3 +234,12 @@ public import Unfoldings.Geometry.MeshHalfplaneProgress
 public import Unfoldings.Topology.SelectedRootCompletion
 public import Unfoldings.Topology.SupportedSubtreeWeights
 public import Unfoldings.Geometry.SegmentCoverDirections
+public import Unfoldings.Geometry.SegmentCoverLabels
+public import Unfoldings.Geometry.ChainCoverWedges
+public import Unfoldings.Geometry.RadialTailLabels
+public import Unfoldings.Cap.SkirtRimComponents
+public import Unfoldings.Cap.OriginalCutLabels
+public import Unfoldings.Cap.ExtendedCutLabels
+public import Unfoldings.Cap.ExtendedComponentWedges
+public import Unfoldings.Cap.CompletedRootPathSupport
+public import Unfoldings.Cap.ExtendedPathWedges

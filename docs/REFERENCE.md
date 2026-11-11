@@ -1020,3 +1020,12 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Topology.SelectedRootCompletion](../Unfoldings/Topology/SelectedRootCompletion.lean) | Connect unused parent roots while preserving selected edges and the potential |
 | [Unfoldings.Topology.SupportedSubtreeWeights](../Unfoldings/Topology/SupportedSubtreeWeights.lean) | Only positive-weight root paths need signed crossing bounds |
 | [Unfoldings.Geometry.SegmentCoverDirections](../Unfoldings/Geometry/SegmentCoverDirections.lean) | Whole outward meshed edges inherit positive directions and common wedges from a finite segment cover |
+| [Unfoldings.Geometry.SegmentCoverLabels](../Unfoldings/Geometry/SegmentCoverLabels.lean) | Consistent component labels are constant on a whole meshed segment |
+| [Unfoldings.Geometry.ChainCoverWedges](../Unfoldings/Geometry/ChainCoverWedges.lean) | Whole meshed paths inherit a common acute wedge from their labeled component |
+| [Unfoldings.Geometry.RadialTailLabels](../Unfoldings/Geometry/RadialTailLabels.lean) | A radial component meets an inner convex rim in at most one point |
+| [Unfoldings.Cap.SkirtRimComponents](../Unfoldings/Cap/SkirtRimComponents.lean) | Original rim roots attach to unique radial components without merging distinct roots |
+| [Unfoldings.Cap.OriginalCutLabels](../Unfoldings/Cap/OriginalCutLabels.lean) | Every geometric contact of original cut segments preserves its selected-tree root |
+| [Unfoldings.Cap.ExtendedCutLabels](../Unfoldings/Cap/ExtendedCutLabels.lean) | Consistent component labels for all original cuts and skirt continuations |
+| [Unfoldings.Cap.ExtendedComponentWedges](../Unfoldings/Cap/ExtendedComponentWedges.lean) | Derive a common acute wedge for each actual extended geometric cut component |
+| [Unfoldings.Cap.CompletedRootPathSupport](../Unfoldings/Cap/CompletedRootPathSupport.lean) | Curvature-carrying completed paths stay on the original geometric cuts and inherit their wedges |
+| [Unfoldings.Cap.ExtendedPathWedges](../Unfoldings/Cap/ExtendedPathWedges.lean) | Constructed extended fine-seam paths have proved acute wedges and uniform curvature crossing bounds |
