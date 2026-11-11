@@ -39,6 +39,48 @@ theorem root_sector_label (nonnegative : 0 ≤ t) (small : t < 1)
   rw [M.parents.iterate_distanceToRoot_eq_root] at label
   exact label
 
+/-- All pieces attached to one original parent use that parent's original sector. -/
+theorem cut_component_directions_of_parent (positive : 0 < t) (small : t < 1)
+    (e : {w : C.Vertex Set.univ // w ∉ M.parents.roots}) (c : F.Component)
+    (at_c : M.cutPieceLabel F covered (Sum.inl e) = c) :
+    ∀ j : M.ExtendedCutPiece F, M.cutPieceLabel F covered j = c →
+      InDirectionWedge (threeSectorRay t (K.sourceSectorLabel t origin e.val).castSucc)
+        (threeSectorRay t (K.sourceSectorLabel t origin e.val).succ)
+        (M.cutPieceLast F j - M.cutPieceFirst F j) := by
+  let i := K.sourceSectorLabel t origin e.val
+  intro j same
+  cases j with
+  | inl f =>
+    have roots := M.parent_roots_eq_of_component_label F covered f e (same.trans at_c.symm)
+    have label : K.sourceSectorLabel t origin f.val = i :=
+      (M.root_sector_label positive.le small f.val).symm.trans
+        ((congrArg (K.sourceSectorLabel t origin) roots).trans
+          (M.root_sector_label positive.le small e.val))
+    have direction := M.direction f.val f.property
+    rw [label] at direction
+    exact inDirectionWedge_of_closedThreeSector positive.le small i
+      (strictThreeSector_subset_closed t i direction)
+  | inr d =>
+    change d = c at same
+    subst d
+    have member : K.projectedVertex (M.parents.root e.val) ∈ (F.componentTail c).carrier :=
+      (congrArg (fun d => (F.componentTail d).carrier) at_c).subset
+        (F.rimComponent_mem covered _ (M.rootPath_end_boundary e.val))
+    obtain ⟨a, nonnegative, direction⟩ :=
+      (F.componentTail c).direction_eq_nonneg_smul_of_mem member
+    change (F.componentTail c).tip - F.componentSeed c =
+      a • (K.projectedVertex (M.parents.root e.val) - K.projectedVertex origin) at direction
+    have internal : ¬ C.IsBoundaryVertex Set.univ e.val := by
+      simpa only [M.roots_eq, Set.mem_ofPred_eq] using e.property
+    have root_direction := (M.root_radial_direction positive.le small
+      ((K.projectedVertex_mem_interior_iff origin).mp F.origin) e.val internal).1
+    have wedge := inDirectionWedge_of_closedThreeSector positive.le small i root_direction
+    obtain ⟨r, s, rnonnegative, snonnegative, representation⟩ := wedge
+    refine ⟨a * r, a * s, mul_nonneg nonnegative rnonnegative,
+      mul_nonneg nonnegative snonnegative, ?_⟩
+    change (F.componentTail c).tip - F.componentSeed c = _
+    rw [direction, representation, smul_add, smul_smul, smul_smul]
+
 /-- Attached original trees use their old three-sector wedge. Independent radial components
 use their single ray, of width zero. Auxiliary cap vertices need no new empty-gap assumption. -/
 theorem exists_cut_component_wedge (positive : 0 < t) (small : t < 1) (c : F.Component) :
@@ -61,38 +103,7 @@ theorem exists_cut_component_wedge (positive : 0 < t) (small : t < 1) (c : F.Com
       exact lt_irrefl _ banks
     refine ⟨threeSectorRay t i.castSucc, threeSectorRay t i.succ, first_ne, last_ne,
       threeSectorWidth_lt_pi_div_two positive small i, ?_⟩
-    intro j same
-    cases j with
-    | inl f =>
-      have roots := M.parent_roots_eq_of_component_label F covered f e (same.trans at_c.symm)
-      have label : K.sourceSectorLabel t origin f.val = i :=
-        (M.root_sector_label positive.le small f.val).symm.trans
-          ((congrArg (K.sourceSectorLabel t origin) roots).trans
-            (M.root_sector_label positive.le small e.val))
-      have direction := M.direction f.val f.property
-      rw [label] at direction
-      exact inDirectionWedge_of_closedThreeSector positive.le small i
-        (strictThreeSector_subset_closed t i direction)
-    | inr d =>
-      change d = c at same
-      subst d
-      have member : K.projectedVertex (M.parents.root e.val) ∈ (F.componentTail c).carrier :=
-        (congrArg (fun d => (F.componentTail d).carrier) at_c).subset
-          (F.rimComponent_mem covered _ (M.rootPath_end_boundary e.val))
-      obtain ⟨a, nonnegative, direction⟩ :=
-        (F.componentTail c).direction_eq_nonneg_smul_of_mem member
-      change (F.componentTail c).tip - F.componentSeed c =
-        a • (K.projectedVertex (M.parents.root e.val) - K.projectedVertex origin) at direction
-      have internal : ¬ C.IsBoundaryVertex Set.univ e.val := by
-        simpa only [M.roots_eq, Set.mem_ofPred_eq] using e.property
-      have root_direction := (M.root_radial_direction positive.le small
-        ((K.projectedVertex_mem_interior_iff origin).mp F.origin) e.val internal).1
-      have wedge := inDirectionWedge_of_closedThreeSector positive.le small i root_direction
-      obtain ⟨r, s, rnonnegative, snonnegative, representation⟩ := wedge
-      refine ⟨a * r, a * s, mul_nonneg nonnegative rnonnegative,
-        mul_nonneg nonnegative snonnegative, ?_⟩
-      change (F.componentTail c).tip - F.componentSeed c = _
-      rw [direction, representation, smul_add, smul_smul, smul_smul]
+    exact M.cut_component_directions_of_parent F covered positive small e c at_c
   · let u := (F.componentTail c).tip - K.projectedVertex origin
     have genuine : u ≠ 0 := by
       intro zero

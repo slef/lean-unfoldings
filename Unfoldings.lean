@@ -268,3 +268,15 @@ public import Unfoldings.Geometry.FiveSectorFrames
 public import Unfoldings.Cap.CompletedSectorQuadrants
 public import Unfoldings.Cap.CompletedBankVectorOrder
 public import Unfoldings.Cap.ExtendedSectorControl
+public import Unfoldings.Cap.CompletedParentBankDisplacements
+public import Unfoldings.Cap.CompletedBranchDisplacements
+public import Unfoldings.Cap.CompletedMatchedBankPoints
+public import Unfoldings.Cap.CompletedBranchGapBalance
+public import Unfoldings.Cap.CompletedSubtreeDirections
+public import Unfoldings.Cap.CompletedBankPositionOrder
+public import Unfoldings.Cap.CompletedSubtreeSectors
+public import Unfoldings.Cap.ExtendedComponentSectors
+public import Unfoldings.Cap.ExtendedSubtreeSectors
+public import Unfoldings.Cap.CompletedParentBankNoncrossing
+public import Unfoldings.Cap.CompletedFlatBanks
+public import Unfoldings.Cap.ExtendedBankSeparation

@@ -17,6 +17,11 @@ Current entry points:
 - [ExtendedDirectionControl](../Unfoldings/Cap/ExtendedDirectionControl.lean)
   bounds all actual developed roof-face directions in one projection-calibrated
   frame, using a tilt threshold chosen before the original and auxiliary meshes.
+- [ExtendedBankSeparation](../Unfoldings/Cap/ExtendedBankSeparation.lean)
+  separates each actual completed-parent pair before its child endpoint,
+  uniformly before both meshes. Contacts have matched parameters and zero
+  whole-subtree curvature. Flat subtree banks coincide in both position and
+  vector; this still does not compare different seams or strips.
 - [GnomonicArea](../Unfoldings/Cap/GnomonicArea.lean) proves a mesh-independent
   positive tilt threshold for arbitrarily small total spherical normal-image
   area, bounded by the actual planar normal-polygon areas.

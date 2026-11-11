@@ -1054,3 +1054,15 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Cap.CompletedSectorQuadrants](../Unfoldings/Cap/CompletedSectorQuadrants.lean) | One uniform threshold constructs actual calibrated five-sector quadrant data |
 | [Unfoldings.Cap.CompletedBankVectorOrder](../Unfoldings/Cap/CompletedBankVectorOrder.lean) | Actual parent-bank curvature rotations order vectors in any common sector |
 | [Unfoldings.Cap.ExtendedSectorControl](../Unfoldings/Cap/ExtendedSectorControl.lean) | Construct five common developed quadrant frames on the actual roof extension |
+| [Unfoldings.Cap.CompletedParentBankDisplacements](../Unfoldings/Cap/CompletedParentBankDisplacements.lean) | Actual completed-parent contour displacements |
+| [Unfoldings.Cap.CompletedBranchDisplacements](../Unfoldings/Cap/CompletedBranchDisplacements.lean) | Sum descendant vector openings into actual completed-parent position gaps |
+| [Unfoldings.Cap.CompletedMatchedBankPoints](../Unfoldings/Cap/CompletedMatchedBankPoints.lean) | Exact matched-parameter bank gaps for the completed forest |
+| [Unfoldings.Cap.CompletedBranchGapBalance](../Unfoldings/Cap/CompletedBranchGapBalance.lean) | Conserve endpoint gaps across immediate completed child branches |
+| [Unfoldings.Cap.CompletedSubtreeDirections](../Unfoldings/Cap/CompletedSubtreeDirections.lean) | Propagate geometric component directions to nonzero descendant openings |
+| [Unfoldings.Cap.CompletedBankPositionOrder](../Unfoldings/Cap/CompletedBankPositionOrder.lean) | Order complete branching position gaps while allowing arbitrary flat branches |
+| [Unfoldings.Cap.CompletedSubtreeSectors](../Unfoldings/Cap/CompletedSubtreeSectors.lean) | Transfer component sectors to curvature-carrying completed subtrees |
+| [Unfoldings.Cap.ExtendedComponentSectors](../Unfoldings/Cap/ExtendedComponentSectors.lean) | Place every actual geometric cut component in one of five fixed sectors |
+| [Unfoldings.Cap.ExtendedSubtreeSectors](../Unfoldings/Cap/ExtendedSubtreeSectors.lean) | Derive common sectors for the actual roof parent subtrees |
+| [Unfoldings.Cap.CompletedParentBankNoncrossing](../Unfoldings/Cap/CompletedParentBankNoncrossing.lean) | Strict separation and flat-contact tests for completed paired parent banks |
+| [Unfoldings.Cap.CompletedFlatBanks](../Unfoldings/Cap/CompletedFlatBanks.lean) | Prove coincident positions and vectors for redundant flat subtree slits |
+| [Unfoldings.Cap.ExtendedBankSeparation](../Unfoldings/Cap/ExtendedBankSeparation.lean) | Uniform paired-bank separation for the constructed actual roof forest |

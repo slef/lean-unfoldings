@@ -2,6 +2,25 @@
 
 ## Session Log
 
+### 2026-11-11 — completed roof banks and redundant flat slits
+
+- Derived five-sector bounds for every curvature-carrying descendant of the
+  actual extended forest. Component labels propagate through complete fine
+  parent edges; no direction condition is imposed on added flat branches.
+- Summed all descendant vector differences to obtain actual parent-copy gaps,
+  matched bank-point order, and immediate child-branch gap conservation.
+- Proved that zero subtree curvature makes both bank positions and vectors
+  coincide at every parameter. A flat contact still has a unique parameter.
+- Proved `exists_uniform_extended_parent_bank_separation`, choosing tilt before
+  both meshes. For every actual completed-parent pair, contact before the child
+  endpoint has equal parameters and zero whole-subtree curvature.
+- Verification: cache retrieval and full `lake build` pass; **7,628 project**
+  and **7,243 pinned topology declarations** use only standard Lean axioms.
+  No project warnings; all 1,012 indexed local documentation links resolve.
+- Open: compare different edges along complete branching banks, construct the
+  waterfall strip partition, prove global separation, and transfer nonoverlap
+  to original faces. The full cap theorem is not yet proved.
+
 ### 2026-11-11 — preserved source slit and five-sector coordinates
 
 - Proved that the actual roof refinement preserves the original source vertex,
