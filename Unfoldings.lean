@@ -243,3 +243,17 @@ public import Unfoldings.Cap.ExtendedCutLabels
 public import Unfoldings.Cap.ExtendedComponentWedges
 public import Unfoldings.Cap.CompletedRootPathSupport
 public import Unfoldings.Cap.ExtendedPathWedges
+public import Unfoldings.Cap.CompletedParentBankOpening
+public import Unfoldings.Cap.CompletedParentBankSides
+public import Unfoldings.Cap.CompletedParentSectionPhase
+public import Unfoldings.Cap.CompletedPhaseSectionTurn
+public import Unfoldings.Cap.CompletedSectionPhases
+public import Unfoldings.Cap.CompletedTracePhaseTransport
+public import Unfoldings.Cap.CompletedParentRayCounter
+public import Unfoldings.Cap.CompletedSectionCounterGeometry
+public import Unfoldings.Cap.CompletedSectionPotentialIdentity
+public import Unfoldings.Cap.CompletedSectionHeadingBound
+public import Unfoldings.Cap.CompletedFaceDirectionAgreement
+public import Unfoldings.Cap.CompletedProjectionCalibration
+public import Unfoldings.Cap.CompletedCalibratedThreshold
+public import Unfoldings.Cap.ExtendedDirectionControl

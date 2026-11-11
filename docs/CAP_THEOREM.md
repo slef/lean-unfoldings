@@ -14,6 +14,9 @@ Current entry points:
 - [ExtendedPathWedges](../Unfoldings/Cap/ExtendedPathWedges.lean) derives acute
   fine-seam paths and mesh-independent crossing bounds on the constructed roof
   extension. Flat auxiliary branches need no acuteness assumption.
+- [ExtendedDirectionControl](../Unfoldings/Cap/ExtendedDirectionControl.lean)
+  bounds all actual developed roof-face directions in one projection-calibrated
+  frame, using a tilt threshold chosen before the original and auxiliary meshes.
 - [GnomonicArea](../Unfoldings/Cap/GnomonicArea.lean) proves a mesh-independent
   positive tilt threshold for arbitrarily small total spherical normal-image
   area, bounded by the actual planar normal-polygon areas.
@@ -354,8 +357,9 @@ Separation of different banks and global nonoverlap remain open.
   using strictly increasing source distance. Every positive-curvature vertex
   selects an outgoing edge. Unused flat vertices remain uncut. Construct its
   actual cut-disk homeomorphism and locally isometric development.
-- [ ] Prove direction control for the constructed extended forest paths and
-  their developed strips, including independent radial skirt components.
+- [x] Prove direction control for the constructed extended forest paths,
+  including independent radial skirt components. Transfer to developed strips
+  will follow the construction of their actual boundaries.
 - [x] Strengthen the fine-seam selection to whole-edge radial progress. Every
   constructed root path meets each source-centered circle in at most one point.
 - [x] Append an entire radial continuation to each original root path without
@@ -372,8 +376,13 @@ Separation of different banks and global nonoverlap remain open.
   geometric contact. Show that each component has one acute wedge, and that
   every curvature-carrying completed fine-seam path inherits it. Derive the
   actual uniform crossing-potential bound without any path-wedge certificate.
-- [ ] Derive actual developed heading bounds for the completed extension from
-  its geometric signed phases and the proved crossing potential.
+- [x] Derive actual developed heading bounds for the completed extension from
+  geometric signed phases. Actual seam transitions are exact counter changes;
+  their signed sum telescopes to the proved crossing potential.
+- [x] Calibrate every actual developed roof-face direction in one common frame.
+  A positive tilt threshold precedes the entire original mesh, source forest,
+  clipping height, and refinement. Derive all path and normal-height conditions;
+  no auxiliary acute-triangulation or safe-path certificate is assumed.
 - [x] Prove the finite segment-cover direction lemma: an outward fine edge is a
   positive multiple of a genuine covering piece's direction. A common wedge is
   preserved by meshing, without imposing acuteness on auxiliary triangles.

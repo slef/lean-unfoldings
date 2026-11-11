@@ -1029,3 +1029,17 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Cap.ExtendedComponentWedges](../Unfoldings/Cap/ExtendedComponentWedges.lean) | Derive a common acute wedge for each actual extended geometric cut component |
 | [Unfoldings.Cap.CompletedRootPathSupport](../Unfoldings/Cap/CompletedRootPathSupport.lean) | Curvature-carrying completed paths stay on the original geometric cuts and inherit their wedges |
 | [Unfoldings.Cap.ExtendedPathWedges](../Unfoldings/Cap/ExtendedPathWedges.lean) | Constructed extended fine-seam paths have proved acute wedges and uniform curvature crossing bounds |
+| [Unfoldings.Cap.CompletedParentBankOpening](../Unfoldings/Cap/CompletedParentBankOpening.lean) | Construct actual parent-bank openings for completed roof cuts |
+| [Unfoldings.Cap.CompletedParentBankSides](../Unfoldings/Cap/CompletedParentBankSides.lean) | Geometric crossing signs for actual completed parent banks |
+| [Unfoldings.Cap.CompletedParentSectionPhase](../Unfoldings/Cap/CompletedParentSectionPhase.lean) | Signed descendant-curvature phases at completed parent-seam crossings |
+| [Unfoldings.Cap.CompletedPhaseSectionTurn](../Unfoldings/Cap/CompletedPhaseSectionTurn.lean) | Curvature-corrected section turns in the common completed-forest frame |
+| [Unfoldings.Cap.CompletedSectionPhases](../Unfoldings/Cap/CompletedSectionPhases.lean) | Local signed phases and spatial residual turns at actual completed seams |
+| [Unfoldings.Cap.CompletedTracePhaseTransport](../Unfoldings/Cap/CompletedTracePhaseTransport.lean) | Construct real unreduced headings from actual completed-bank phases |
+| [Unfoldings.Cap.CompletedParentRayCounter](../Unfoldings/Cap/CompletedParentRayCounter.lean) | Actual section counters equal the bounded completed-forest ray counters |
+| [Unfoldings.Cap.CompletedSectionCounterGeometry](../Unfoldings/Cap/CompletedSectionCounterGeometry.lean) | Identify completed-parent counter changes with the actual transition seam |
+| [Unfoldings.Cap.CompletedSectionPotentialIdentity](../Unfoldings/Cap/CompletedSectionPotentialIdentity.lean) | Actual completed-bank phases telescope to the bounded curvature potential |
+| [Unfoldings.Cap.CompletedSectionHeadingBound](../Unfoldings/Cap/CompletedSectionHeadingBound.lean) | Uniform real section headings and face alignment for completed roof forests |
+| [Unfoldings.Cap.CompletedFaceDirectionAgreement](../Unfoldings/Cap/CompletedFaceDirectionAgreement.lean) | All directions of all actual faces agree with one common rim face |
+| [Unfoldings.Cap.CompletedProjectionCalibration](../Unfoldings/Cap/CompletedProjectionCalibration.lean) | One globally projection-calibrated frame for completed-forest developments |
+| [Unfoldings.Cap.CompletedCalibratedThreshold](../Unfoldings/Cap/CompletedCalibratedThreshold.lean) | A tilt threshold before the whole mesh bounds every actual developed direction |
+| [Unfoldings.Cap.ExtendedDirectionControl](../Unfoldings/Cap/ExtendedDirectionControl.lean) | Uniform direction control for the constructed roof extension without auxiliary acuteness or path certificates |

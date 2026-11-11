@@ -2,6 +2,29 @@
 
 ## Session Log
 
+### 2026-11-11 — uniform developed directions on the actual roof extension
+
+- Constructed oriented completed-parent bank openings in one actual projection
+  frame. Geometric transverse crossings determine the signed descendant-curvature
+  phase; removing it leaves only the genuine spatial section bend.
+- Proved that actual seam transitions are exact parent-counter changes.
+  Constructed real unreduced section headings and telescoped all signed phases
+  to the completed forest's bounded curvature potential. The heading error is
+  at most twice tilt plus twice total curvature, without a mesh-size factor.
+- Transferred one common rim-face alignment to every direction of every actual
+  developed face and calibrated all directions to horizontal projection.
+- Proved `exists_uniform_extended_direction_control`: for any positive error
+  tolerance, one positive tilt threshold precedes the original cap mesh, source
+  forest, clip height, and auxiliary refinement. The actual extended cut paths
+  supply all required wedges; no auxiliary acute mesh or path certificate is
+  assumed. The normal-height lower bound is derived from the same threshold.
+- Verification: cache retrieval and full `lake build` pass; **7,507 project**
+  and **7,243 pinned topology declarations** use only standard Lean axioms.
+  No project warnings; all 988 local documentation links resolve.
+- Still open: construct the waterfall strip partition, prove its developed
+  regions and all gaps separate globally, and transfer nonoverlap to original
+  faces. Direction control alone is not the cap nonoverlap theorem.
+
 ### 2026-11-11 — actual extended fine-seam paths have acute wedges
 
 - Proved that original selected cut segments preserve their tree root at every
