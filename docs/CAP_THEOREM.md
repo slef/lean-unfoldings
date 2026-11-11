@@ -479,8 +479,13 @@ Separation of different banks and global nonoverlap remain open.
   Derive strict coordinate progress of actual whole cut tails, enclosing rays,
   connectors, and spliced walls, including targets on an exterior sector bank.
   Every nonterminal geometric node on a sector bank is a childless leaf.
-- [ ] Compare different positive-width components across possible strip pinches,
-  with the correct actual copies of branch and leaf vertices.
+- [x] Compare different positive-width components of every actual constructed
+  waterfall strip across its possible pinches. Derive permanent exterior-bank
+  contacts from exact radial graphs and forward uniqueness. Construct the finite
+  waterfall preserving strict coordinate progress and proving that every
+  reopening pinch is its source or an actual geometric leaf. Combine their
+  proved coherence with regular strict interiors to obtain uniform injectivity
+  on each entire physical strip slab, with tilt chosen before either mesh.
 - [ ] Prove side-by-side separation of all developed strips and hence all
   distinct original face interiors.
 - [x] Apply the cut-disk and flat-development infrastructure to the fixed-wedge

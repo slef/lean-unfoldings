@@ -114,6 +114,14 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Cap.ExtendedWaterfallFullInjective](../Unfoldings/Cap/ExtendedWaterfallFullInjective.lean) | Uniform actual-map injectivity on each entire strip across all reopening pinches |
+| [Unfoldings.Cap.GeometricWaterfallRegular](../Unfoldings/Cap/GeometricWaterfallRegular.lean) | Derive regular strip interiors from retained actual leaf tails |
+| [Unfoldings.Cap.GeometricTailBankContacts](../Unfoldings/Cap/GeometricTailBankContacts.lean) | Beyond the starting leaf every sector-bank contact is on the radial skirt |
+| [Unfoldings.Cap.GeometricSectorBankPoints](../Unfoldings/Cap/GeometricSectorBankPoints.lean) | Actual enclosing bank rays fail the strict sector-coordinate test |
+| [Unfoldings.Cap.GeometricRecoverableWaterfall](../Unfoldings/Cap/GeometricRecoverableWaterfall.lean) | Construct actual waterfall strips whose reopening pinches are sources or leaves |
+| [Unfoldings.Cap.GeometricRadialGraphs](../Unfoldings/Cap/GeometricRadialGraphs.lean) | Exact radial height graphs covered by the actual sector cut network |
+| [Unfoldings.Cap.GeometricRadialEdges](../Unfoldings/Cap/GeometricRadialEdges.lean) | Construct the genuine seed-to-tip geometric edge in every active component |
+| [Unfoldings.Cap.GeometricBankPersistence](../Unfoldings/Cap/GeometricBankPersistence.lean) | Derive permanent exterior-bank contact after the actual starting leaf |
 | [Unfoldings.Cap.StrictGeometricTailGraphs](../Unfoldings/Cap/StrictGeometricTailGraphs.lean) | Derive strict coordinate progress from actual whole cut paths and sector walls |
 | [Unfoldings.Cap.GeometricSectorBoundaryLeaves](../Unfoldings/Cap/GeometricSectorBoundaryLeaves.lean) | A nonterminal geometric node on a sector bank is childless |
 | [Unfoldings.Cap.CenteredCoherentMap](../Unfoldings/Cap/CenteredCoherentMap.lean) | Actual source-centered map continuity and strip injectivity across coherent reopening pinches |
@@ -595,6 +603,12 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Geometry.StripSubdivisionInvariant](../Unfoldings/Geometry/StripSubdivisionInvariant.lean) | Preserve cell invariants while constructing and retaining finite separators |
+| [Unfoldings.Geometry.RecoverableWaterfall](../Unfoldings/Geometry/RecoverableWaterfall.lean) | Construct finite waterfalls with strict walls and controlled reopening pinches |
+| [Unfoldings.Geometry.RecoverableStripInsertion](../Unfoldings/Geometry/RecoverableStripInsertion.lean) | Connector-and-tail insertions preserve the reopening-pinch invariant |
+| [Unfoldings.Geometry.RayStripPinches](../Unfoldings/Geometry/RayStripPinches.lean) | Source-ray banks are homogeneous and reopen only at their common source |
+| [Unfoldings.Geometry.RayHeightSegments](../Unfoldings/Geometry/RayHeightSegments.lean) | Exact ray graph points cover all intermediate heights of radial network edges |
+| [Unfoldings.Geometry.HeightGraphLatticePoints](../Unfoldings/Geometry/HeightGraphLatticePoints.lean) | An envelope point is on one of its actual defining graphs |
 | [Unfoldings.Geometry.RecoverableStripInjective](../Unfoldings/Geometry/RecoverableStripInjective.lean) | Compare separate positive-width strip components through coherent reopening pinches |
 | [Unfoldings.Geometry.RecoverableStripPinches](../Unfoldings/Geometry/RecoverableStripPinches.lean) | Track and preserve reopening pinches under insertion, excluding permanent mergers |
 | [Unfoldings.Geometry.ChainStrictHeightGraph](../Unfoldings/Geometry/ChainStrictHeightGraph.lean) | Exact whole-edge height representations inherit strict coordinate progress |

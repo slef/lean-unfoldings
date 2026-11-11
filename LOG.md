@@ -2,6 +2,27 @@
 
 ## Session Log
 
+### 2026-11-11 — uniform injectivity on every whole actual waterfall strip
+
+- Constructed the finite waterfall while preserving strict coordinate progress
+  and tracking only pinches that later reopen. A new reopening pinch is inherited
+  or lies at the inserted leaf; a permanently merged tail is left unconstrained.
+- Proved exterior-bank persistence from actual geometry. Beyond its starting
+  leaf a bank contact lies on the radial skirt; exact source-ray graphs are
+  covered by actual geometric edges, and forward uniqueness forces the actual
+  tail to remain there.
+- Classified every reopening pinch of every constructed actual strip as the
+  source or a geometric leaf, with no assumed safe-cut or pinch certificate.
+  Derived regularity for these same constructed strips from their retained tails.
+- Combined the classification with proved coherence at actual leaves to obtain
+  `exists_uniform_extended_waterfall_full_injectivity`. Each actual map is
+  injective across all positive-width components of its strip on the whole
+  physical slab. The tilt is chosen before both meshes. Different strips still
+  require global separation; the full cap theorem remains open.
+- Verification: cache retrieval followed by full `lake build` pass; **8,299
+  unfolding / 7,243 pinned topology declarations**, standard axioms only;
+  documentation links (**1,127**) and whitespace pass.
+
 ### 2026-11-11 — compare strips across coherent reopening pinches
 
 - Proved actual source-centered map continuity on the coherent domain and

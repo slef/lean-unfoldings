@@ -380,3 +380,17 @@ public import Unfoldings.Geometry.StrictStripInsertion
 public import Unfoldings.Geometry.ChainStrictHeightGraph
 public import Unfoldings.Geometry.RecoverableStripPinches
 public import Unfoldings.Geometry.RecoverableStripInjective
+public import Unfoldings.Cap.GeometricBankPersistence
+public import Unfoldings.Cap.GeometricRadialEdges
+public import Unfoldings.Cap.GeometricRadialGraphs
+public import Unfoldings.Cap.GeometricRecoverableWaterfall
+public import Unfoldings.Cap.GeometricSectorBankPoints
+public import Unfoldings.Cap.GeometricTailBankContacts
+public import Unfoldings.Cap.GeometricWaterfallRegular
+public import Unfoldings.Cap.ExtendedWaterfallFullInjective
+public import Unfoldings.Geometry.HeightGraphLatticePoints
+public import Unfoldings.Geometry.RayHeightSegments
+public import Unfoldings.Geometry.RayStripPinches
+public import Unfoldings.Geometry.RecoverableStripInsertion
+public import Unfoldings.Geometry.RecoverableWaterfall
+public import Unfoldings.Geometry.StripSubdivisionInvariant
