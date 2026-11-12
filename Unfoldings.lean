@@ -431,3 +431,6 @@ public import Unfoldings.Cap.WaterfallFaceError
 public import Unfoldings.Cap.ExtendedFacePositionControl
 public import Unfoldings.Cap.FacePositionMargins
 public import Unfoldings.Cap.ExtendedFaceQuadrants
+public import Unfoldings.Cap.CompletedBankFaceValues
+public import Unfoldings.Cap.CompletedBankPositionMargins
+public import Unfoldings.Cap.CompletedBankCircleOrder

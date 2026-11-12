@@ -2,6 +2,20 @@
 
 ## Session Log
 
+### 2026-11-11 — actual bank face values and common-source circle comparison
+
+- Proved each complete entrance/exit bank point equals its own incident-face
+  chart at the physical parent segment, including closed endpoints. The
+  physical point lies in both incident closed faces.
+- Transferred facewise source errors and quadrant margins to these named bank
+  points. Proved equal-radius order for opposite branching banks in a common
+  source quadrant, retaining all intermediate sibling displacements and
+  requiring no radial monotonicity of their jumps.
+- Verification: cache retrieval followed by full `lake build` pass; **8,384
+  unfolding / 7,243 pinned topology declarations**, standard axioms only;
+  indexed documentation links (**1,167**) and whitespace pass. Facing strip
+  banks, complete continuations, and global separation are still open.
+
 ### 2026-11-11 — quadrant margins for every bank and branch copy
 
 - Converted sector coordinate margins to bounds proportional to source

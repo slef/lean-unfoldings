@@ -116,6 +116,9 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 | --- | --- |
 | [Unfoldings.Cap.ExtendedWaterfallBankTraces](../Unfoldings/Cap/ExtendedWaterfallBankTraces.lean) | Construct complete actual bank traces from the common source through active heights |
 | [Unfoldings.Cap.ExtendedFacePositionControl](../Unfoldings/Cap/ExtendedFacePositionControl.lean) | Uniform common-source position bounds for every actual roof face and bank copy |
+| [Unfoldings.Cap.CompletedBankFaceValues](../Unfoldings/Cap/CompletedBankFaceValues.lean) | Complete actual bank points equal their own incident-face placements |
+| [Unfoldings.Cap.CompletedBankPositionMargins](../Unfoldings/Cap/CompletedBankPositionMargins.lean) | Transfer common-source position and quadrant bounds to named complete banks |
+| [Unfoldings.Cap.CompletedBankCircleOrder](../Unfoldings/Cap/CompletedBankCircleOrder.lean) | Opposite branching banks in a common quadrant have the correct equal-radius order |
 | [Unfoldings.Cap.ExtendedFaceQuadrants](../Unfoldings/Cap/ExtendedFaceQuadrants.lean) | Uniform positive sector-quadrant margins for every actual face and branch copy |
 | [Unfoldings.Cap.FacePositionMargins](../Unfoldings/Cap/FacePositionMargins.lean) | Frame-independent actual face error and norm-relative quadrant coordinate margins |
 | [Unfoldings.Cap.WaterfallFaceError](../Unfoldings/Cap/WaterfallFaceError.lean) | Extend strict-strip estimates to all containing-face values without identifying cut copies |

@@ -519,6 +519,10 @@ Separation of different banks and global nonoverlap remain open.
   sector quadrant relative to the common developed source. The positive
   coordinate margin is proportional to source distance and depends only on
   the sector parameter; branch copies need not coincide.
+- [x] Identify every named complete-bank point with its own actual incident-face
+  placement and transfer the common-source error and coordinate bounds to it.
+  Opposite branching banks lying in a common source quadrant have the correct
+  equal-radius order, without radial monotonicity assumptions on branch jumps.
 - [ ] Identify the facing cut banks from one-sided face visibility, then
   control radial order and complete bank continuations.
 - [ ] Prove side-by-side separation of all developed strips and hence all
