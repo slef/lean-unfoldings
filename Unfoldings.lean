@@ -499,3 +499,6 @@ public import Unfoldings.Topology.ClosureLowerBound
 public import Unfoldings.Geometry.RecoverableStripLowerBound
 public import Unfoldings.Cap.CenteredTraceInjectivity
 public import Unfoldings.Cap.CenteredClosedBankTrace
+public import Unfoldings.Cap.RadialBankTraceProperty
+public import Unfoldings.Cap.ExtendedClosedRadialBankTraces
+public import Unfoldings.Topology.CompactImageFrontier

@@ -2,6 +2,22 @@
 
 ## Session Log
 
+### 2026-11-11 — uniform closed radial banks and exact planar frontier transport
+
+- Added the stronger uniform radial-bank factory with whole closed-trace
+  injectivity, radial progress, named-bank matching, position error, strict
+  roof curvature, and normal-height bounds in the same calibration.
+- Derived the existing radial-bank theorem from it; its statement was checked
+  byte-for-byte unchanged. Moved the unchanged radial-trace property into its
+  own dependency module to avoid a circular import.
+- Proved exact frontier transport for bounded open planar sets under a
+  continuous map injective on the compact closure, using planar invariance
+  of domain. This identifies the whole image boundary, not just selected points.
+- Verification: cache retrieval followed by full `lake build` pass; **8,699
+  unfolding / 7,243 pinned topology declarations**, standard axioms only;
+  indexed documentation links (**1,235**) and whitespace pass. Applying the
+  frontier description to strip circles and global strip separation remain open.
+
 ### 2026-11-11 — quantitative separation and full closed-trace injectivity
 
 - Proved a common positive lower distance bound on whole monotone strips,

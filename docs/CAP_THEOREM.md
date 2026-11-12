@@ -608,6 +608,11 @@ Separation of different banks and global nonoverlap remain open.
   pinches and extend them to the actual trace closure. Construct the complete
   visible bank trace injectively on that closure, including terminal pinches;
   permanently collapsed future tails stay excluded.
+- [x] Construct full closed-trace injectivity together with radial matched
+  banks and position errors at one uniform tilt, retaining strict roof curvature
+  and normal-height bounds. Preserve the existing radial-bank theorem statement.
+- [x] Prove exact frontier transport for open planar sets with compact closure
+  under a continuous map injective on that closure.
 - [ ] Prove side-by-side separation of all developed strips and hence all
   distinct original face interiors.
 - [x] Apply the cut-disk and flat-development infrastructure to the fixed-wedge

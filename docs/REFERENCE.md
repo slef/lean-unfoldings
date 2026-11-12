@@ -114,6 +114,8 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Cap.ExtendedClosedRadialBankTraces](../Unfoldings/Cap/ExtendedClosedRadialBankTraces.lean) | One uniform calibration gives full closed-trace injectivity and radial matched banks |
+| [Unfoldings.Cap.RadialBankTraceProperty](../Unfoldings/Cap/RadialBankTraceProperty.lean) | Strict radial progress of each visible bank trace before every active height |
 | [Unfoldings.Cap.CenteredClosedBankTrace](../Unfoldings/Cap/CenteredClosedBankTrace.lean) | Construct visible actual bank traces and full closed-trace injectivity together |
 | [Unfoldings.Cap.CenteredTraceInjectivity](../Unfoldings/Cap/CenteredTraceInjectivity.lean) | Actual continuous strip traces are injective on their whole approached boundary |
 | [Unfoldings.Cap.ExtendedProperComparisonArcs](../Unfoldings/Cap/ExtendedProperComparisonArcs.lean) | Uniform construction of proper comparison arcs in the actual radial matched-bank calibration |
@@ -900,6 +902,7 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Topology.CompactImageFrontier](../Unfoldings/Topology/CompactImageFrontier.lean) | Exact frontier transport for continuous planar maps injective on compact closures |
 | [Unfoldings.Topology.ClosureLowerBound](../Unfoldings/Topology/ClosureLowerBound.lean) | Continuous lower distance bounds and injectivity extend to the whole domain closure |
 | [Unfoldings.Topology.SphereArc](../Unfoldings/Topology/SphereArc.lean) | Simple arcs first reaching a prescribed source sphere only at their final point |
 | [Unfoldings.Topology.IntervalArc](../Unfoldings/Topology/IntervalArc.lean) | Injective continuous paths for sets homeomorphic to nondegenerate real intervals |
