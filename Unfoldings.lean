@@ -654,3 +654,9 @@ public import Unfoldings.Cap.CirclePhysicalBankMatching
 public import Unfoldings.Cap.CrossFrameCircleBankOrder
 public import Unfoldings.Cap.CrossFrameTraceQuadrants
 public import Unfoldings.Cap.SectorBoundaryCircleBankOrder
+public import Unfoldings.Topology.ChainFilterEndpoints
+public import Unfoldings.Geometry.SubdivisionNonemptyEndpoints
+public import Unfoldings.Geometry.QuadrantArgumentOrder
+public import Unfoldings.Geometry.QuadrantCircleOrderTransport
+public import Unfoldings.Cap.BoundaryRunTerminalPoint
+public import Unfoldings.Cap.BoundaryTerminalComponent

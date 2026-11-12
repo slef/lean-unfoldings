@@ -73,6 +73,35 @@ theorem sector_boundary_component_unattached {c : F.Component} {x : Plane}
   rw [scale, map_smul]
   exact ⟨mul_pos apos strict.1, mul_pos apos strict.2⟩
 
+omit positive small in
+/-- Every node of an unattached component lies on its actual radial skirt,
+including an original boundary vertex represented by that component. -/
+theorem unattached_component_positions_on_tail (c : F.Component)
+    (unattached : ∀ e : {w : C.Vertex Set.univ // w ∉ M.parents.roots},
+      M.cutPieceLabel F covered (Sum.inl e) ≠ c)
+    (w : F.GeometricVertex) (component : M.geometricComponent F covered w = c) :
+    F.geometricPosition w ∈ (F.componentTail c).carrier := by
+  cases w with
+  | inl w =>
+    by_cases boundary : C.IsBoundaryVertex Set.univ w
+    · have label := (M.geometricComponent_rim F covered w boundary).symm.trans component
+      exact ((congrArg (fun d => (F.componentTail d).carrier) label).subset
+        (F.rimComponent_mem covered w boundary))
+    · have nonroot : w ∉ M.parents.roots := by
+        simpa only [M.roots_eq, Set.mem_ofPred_eq] using boundary
+      exact (unattached ⟨w, nonroot⟩ component).elim
+  | inr w =>
+    cases w with
+    | inl d =>
+      change d.val = c at component
+      change F.componentSeed d.val ∈ _
+      rw [component]
+      exact (F.componentTail c).seed_mem
+    | inr d =>
+      change d = c at component
+      subst d
+      exact (F.componentTail c).tip_mem
+
 /-- A pure radial component can use any sector containing its ray. This
 allows the same actual component to be compared from both neighboring sectors. -/
 def radialComponentSector (c : F.Component)

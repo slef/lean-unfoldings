@@ -780,6 +780,12 @@ Separation of different banks and global nonoverlap remain open.
 - [x] Match actual circle endpoints from different frames with their named
   bank points in one developed plane, and derive their cross-frame order on
   a boundary component using uniform face margins and finite vertex radii.
+- [x] Retain both original physical sector banks after empty endpoint cells
+  are removed. Place a boundary run's highest actual terminal and its suffix
+  on the enclosing ray and prove the terminal belongs to an unattached radial
+  component, including equality with its geometric leaf height.
+- [x] Translate inner-terminal coordinate bounds to argument order and preserve
+  equal-radius endpoint order between overlapping oriented quadrant frames.
 - [ ] Assemble the actual outer surviving intervals across all five sectors,
   including disappearing boundary runs, and establish global cyclic order.
 - [ ] Prove side-by-side separation of all developed strips and hence all

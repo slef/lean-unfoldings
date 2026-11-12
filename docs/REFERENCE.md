@@ -1440,3 +1440,9 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Cap.CrossFrameCircleBankOrder](../Unfoldings/Cap/CrossFrameCircleBankOrder.lean) | Order named actual circle-bank endpoints from different sector frames in one common comparison frame |
 | [Unfoldings.Cap.CrossFrameTraceQuadrants](../Unfoldings/Cap/CrossFrameTraceQuadrants.lean) | Transfer actual face margins to approached traces in any comparison frame and control every sweep height |
 | [Unfoldings.Cap.SectorBoundaryCircleBankOrder](../Unfoldings/Cap/SectorBoundaryCircleBankOrder.lean) | Derive cross-sector circle-bank order along actual radial boundary cuts from physical geometry and uniform face margins |
+| [Unfoldings.Topology.ChainFilterEndpoints](../Unfoldings/Topology/ChainFilterEndpoints.lean) | Preserve first and last physical endpoints when identity pieces are removed from a chain |
+| [Unfoldings.Geometry.SubdivisionNonemptyEndpoints](../Unfoldings/Geometry/SubdivisionNonemptyEndpoints.lean) | Retain both enclosing-strip boundary contacts after empty physical endpoint cells are removed |
+| [Unfoldings.Geometry.QuadrantArgumentOrder](../Unfoldings/Geometry/QuadrantArgumentOrder.lean) | Convert equal-radius coordinate order and smaller-radius terminal barriers into exact argument inequalities |
+| [Unfoldings.Geometry.QuadrantCircleOrderTransport](../Unfoldings/Geometry/QuadrantCircleOrderTransport.lean) | Preserve actual circle endpoint order between overlapping oriented quadrant frames |
+| [Unfoldings.Cap.BoundaryRunTerminalPoint](../Unfoldings/Cap/BoundaryRunTerminalPoint.lean) | Place the actual highest terminal of an extreme disappearing run on its enclosing sector boundary |
+| [Unfoldings.Cap.BoundaryTerminalComponent](../Unfoldings/Cap/BoundaryTerminalComponent.lean) | Place actual boundary-terminal vertices on pure radial components, including terminal leaf-height contact |

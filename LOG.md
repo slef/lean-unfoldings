@@ -2,6 +2,24 @@
 
 ## Session Log
 
+### 2026-11-12 — extreme boundary runs and angular transport
+
+- Preserved the original first/last physical bank contacts after empty endpoint
+  cells are removed. Proved generic endpoint preservation for filtered identity
+  chains without requiring global transitivity of the bank relation.
+- Put the highest terminal of an extreme disappearing run, and its remaining
+  physical suffix, on the actual enclosing sector ray. Proved that terminal
+  belongs to an unattached radial component, including the case where it is
+  exactly at its geometric leaf height. No later collapsed trace value is used.
+- Converted equal-radius coordinate order and inner-terminal bounds into exact
+  argument inequalities. Proved circle endpoint order is preserved by an
+  oriented frame change when both pairs lie in the corresponding quadrants.
+- Verification: cache retrieval and full `lake build` pass; **9,178 unfolding /
+  7,243 pinned topology declarations**, standard axioms only; **1,399** local
+  documentation links and whitespace pass. Boundary-run comparison between
+  sectors, global cyclic assembly, original-face transfer, and the cap theorem
+  remain open.
+
 ### 2026-11-12 — actual bank order across sector frames
 
 - Classified actual sector-boundary cuts as radial skirt pieces or geometric
