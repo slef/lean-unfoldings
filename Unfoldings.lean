@@ -457,3 +457,4 @@ public import Unfoldings.Geometry.HeightGraphRadial
 public import Unfoldings.Cap.CenteredTraceSourceError
 public import Unfoldings.Cap.CenteredBankTraceRadial
 public import Unfoldings.Cap.ExtendedRadialBankTraces
+public import Unfoldings.Cap.CompletedFaceCopyOrder

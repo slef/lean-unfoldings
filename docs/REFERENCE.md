@@ -128,6 +128,7 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 | [Unfoldings.Cap.CenteredTraceSourceError](../Unfoldings/Cap/CenteredTraceSourceError.lean) | Extend actual source-position error to every visible one-sided trace point |
 | [Unfoldings.Cap.CenteredBankTraceRadial](../Unfoldings/Cap/CenteredBankTraceRadial.lean) | Actual visible bank traces progress strictly radially from quantitative chart and sector margins |
 | [Unfoldings.Cap.ExtendedRadialBankTraces](../Unfoldings/Cap/ExtendedRadialBankTraces.lean) | Uniform actual bank calibration with radial matched traces, whole-strip injectivity, and arbitrary position error |
+| [Unfoldings.Cap.CompletedFaceCopyOrder](../Unfoldings/Cap/CompletedFaceCopyOrder.lean) | Every actual branch and visible trace copy lies between its named entrance and exit banks |
 | [Unfoldings.Cap.ExtendedWaterfallRegular](../Unfoldings/Cap/ExtendedWaterfallRegular.lean) | One constructed waterfall retains geometric cut avoidance, pinch control, and all-development coherence |
 | [Unfoldings.Cap.ExtendedRegularBankTraces](../Unfoldings/Cap/ExtendedRegularBankTraces.lean) | Preserve actual geometric regularity and pinch control for the same complete bank traces |
 | [Unfoldings.Cap.GeometricTailLocalEdge](../Unfoldings/Cap/GeometricTailLocalEdge.lean) | Actual regular meshed tail points retain locally matching physical edge graphs |

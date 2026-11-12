@@ -2,6 +2,18 @@
 
 ## Session Log
 
+### 2026-11-11 — ordered actual copies at branch endpoints
+
+- Represented every intrinsic branch copy by its actual contour index and
+  transferred the derived sibling-excursion gap order to it.
+- Proved every actual containing-face value at a branch, and every visible
+  strip-trace copy there, lies between the named entrance and exit banks.
+  Distinct copies need not agree.
+- Verification: cache retrieval followed by full `lake build` pass; **8,458
+  unfolding / 7,243 pinned topology declarations**, standard axioms only;
+  indexed documentation links (**1,191**) and whitespace pass. Complete bank
+  continuations beyond collapsed tails and global separation remain open.
+
 ### 2026-11-11 — uniform radial matched banks in one actual calibration
 
 - Constructed `exists_uniform_extended_radial_bank_traces`. A positive tilt

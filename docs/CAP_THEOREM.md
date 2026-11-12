@@ -559,8 +559,11 @@ Separation of different banks and global nonoverlap remain open.
   bank-order calibration gives the same curves their named regular-bank
   matching, whole-strip injectivity, and arbitrarily small position error.
   Radial progress includes all coherent branch points before an active height.
-- [ ] Handle endpoint copies at branches and complete bank continuations beyond
-  terminated zero-width strip tails.
+- [x] Bound every actual containing-face copy at a branch between its named
+  entrance and exit banks. Visible strip traces retain these bounds at the
+  vertex, using the actual contour copy without identifying distinct copies.
+- [ ] Construct complete bank continuations beyond terminated zero-width strip
+  tails and compare their straight branch-gap segments.
 - [ ] Prove side-by-side separation of all developed strips and hence all
   distinct original face interiors.
 - [x] Apply the cut-disk and flat-development infrastructure to the fixed-wedge
