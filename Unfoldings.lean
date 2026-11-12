@@ -797,3 +797,4 @@ public import Unfoldings.Cap.ComponentClosedCircleContact
 public import Unfoldings.Geometry.MonotoneStripLocalCircleCrossing
 public import Unfoldings.Cap.ActiveBankCircleCrossing
 public import Unfoldings.Cap.ClosedCirclePinches
+public import Unfoldings.Cap.WaterfallClosedCircleContacts

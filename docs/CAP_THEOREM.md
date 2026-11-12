@@ -955,62 +955,39 @@ Complete auxiliary-bank comparison and global face-interior nonoverlap are prove
   derives both actual weak barriers. [ClosedBarrierContact](../Unfoldings/Cap/ClosedBarrierContact.lean)
   identifies every contact with the common actual inner barrier, or with one of
   the two actual ordered bank points.
-- [ ] Prove boundary injectivity for the pruned development, including contacts
-  between different cut paths, different trees, and rim points.
+- [x] Exclude every foreign contact at regular locally isometric roof points
+  using only local physical-region separation; see
+  [LocalRegularContact](../Unfoldings/Cap/LocalRegularContact.lean).
+- [x] Identify both actual bank values at weak circle contacts on an unattached
+  radial component, even when comparison points lie inside the circle. Equality
+  in the controlling coordinate forces matching parameters or a shared branch
+  endpoint. See [CompletedBankCoordinateContact](../Unfoldings/Cap/CompletedBankCoordinateContact.lean)
+  and [ComponentBankCircleContact](../Unfoldings/Cap/ComponentBankCircleContact.lean).
+- [x] Identify both physical strip-bank coordinates at closed image contacts.
+  [ClosedStripCircleContact](../Unfoldings/Cap/ClosedStripCircleContact.lean)
+  handles ordered circles in one frame;
+  [ComponentClosedCircleContact](../Unfoldings/Cap/ComponentClosedCircleContact.lean)
+  handles actual component banks in different sector frames.
+- [x] Apply the full finite waterfall survivor order to closed contacts and
+  construct both slices from the contact itself; see
+  [WaterfallClosedCircleContacts](../Unfoldings/Cap/WaterfallClosedCircleContacts.lean).
+  This assembly inherits the existing finite radius exclusions.
+- [x] Exclude all nonadjacent closed-sector contacts away from the source,
+  including vertex and pinch radii, with no exceptional set; see
+  [NonadjacentClosedSeparation](../Unfoldings/Cap/NonadjacentClosedSeparation.lean).
+- [x] Classify any approached point on an absent controlled circle as a physical
+  pinch and, in the actual mesh, a cut vertex. Thus an approached nonvertex
+  circle point always supplies an actual open slice; see
+  [ClosedCirclePinches](../Unfoldings/Cap/ClosedCirclePinches.lean).
+  The proof uses a local positive-width bank crossing and an explicit path.
+- [ ] Assemble the closed-contact classification across adjacent sectors and
+  disappearing boundary runs, retaining actual physical point identifications.
+- [ ] Identify all coincident intrinsic boundary copies after pruning, including
+  cut vertices, contacts between different trees, and original rim points.
+- [ ] Conclude boundary injectivity and state the simple-polygon existence theorem.
 
 ## Verification discipline
 
 No `sorry`, extra axioms, circular geometric certificates, or placeholder main
 theorem. Check and commit reusable milestones; import each completed module
 through `Unfoldings.lean` so the default audit sees its proof dependencies.
-
-Closed circle contacts now retain their actual bank names. The weak-barrier
-comparison identifies the only possible contact points; when both bank points
-lie on the source circle, a contact identifies both values. On one unattached
-radial component, the actual common completed chain then identifies the same
-physical surface point, including branch endpoints. See
-[ComponentBankCircleContact](../Unfoldings/Cap/ComponentBankCircleContact.lean).
-Global boundary injectivity remains open.
-
-The common-radius restriction on comparison banks has now been removed:
-[ChainWeakCircleContact](../Unfoldings/Cap/ChainWeakCircleContact.lean)
-uses actual chain order and strict edge progress to recover the same physical
-point even when either comparison bank lies inside the circle. Separately,
-[LocalRegularContact](../Unfoldings/Cap/LocalRegularContact.lean) excludes
-foreign contacts at regular roof points using separation only over the
-controlled open physical region.
-
-[ClosedStripCircleContact](../Unfoldings/Cap/ClosedStripCircleContact.lean)
-now turns the actual waterfall bank order into a closed-contact classification:
-ordered strip-circle images can meet only at their facing named endpoints.
-The result identifies their physical strip coordinates, using the proved
-injectivity of each approached trace. This does not yet assemble global
-boundary injectivity across all sectors and exceptional circle radii.
-
-Under the strict curvature budget already supplied by the uniform construction,
-a weak component-bank circle contact now identifies both actual developed
-bank values, even when the comparison points were initially allowed inside
-the circle. The proof derives equality from the controlling coordinate at
-matched edges and branch jumps; see
-[CompletedBankCoordinateContact](../Unfoldings/Cap/CompletedBankCoordinateContact.lean).
-
-[NonadjacentClosedSeparation](../Unfoldings/Cap/NonadjacentClosedSeparation.lean)
-excludes every contact between nonadjacent closed sector images except the
-common developed source. This includes vertex and pinch radii, with no finite
-exceptional set and no circle-survivor assumption. Same-sector and adjacent-sector
-contacts still require the remaining global assembly.
-
-[ComponentClosedCircleContact](../Unfoldings/Cap/ComponentClosedCircleContact.lean)
-applies the weak component-bank comparison to actual approached traces in
-different sector frames. A closed contact identifies both facing physical strip
-coordinates; the named comparison banks also represent the same physical point.
-Their chain, sector membership, and branch-gap equality are all derived.
-
-[ClosedCirclePinches](../Unfoldings/Cap/ClosedCirclePinches.lean) handles
-absent open slices without deleting exceptional radii. Any approached point
-on such a controlled circle has coincident physical banks. The actual mesh's
-approached-pinch invariant identifies it as a cut vertex and puts its radius
-in the existing actual vertex-radius set. Consequently every approached
-nonvertex circle point has an open slice; no separate maximal-radius exception
-is needed for that conclusion. The proof uses a local positive-width bank
-crossing and an explicit interpolating path inside the strip.

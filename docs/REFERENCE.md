@@ -1583,3 +1583,4 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Geometry.MonotoneStripLocalCircleCrossing](../Unfoldings/Geometry/MonotoneStripLocalCircleCrossing.lean) | Construct actual open circle slices from a radial crossing along a locally positive-width bank |
 | [Unfoldings.Cap.ActiveBankCircleCrossing](../Unfoldings/Cap/ActiveBankCircleCrossing.lean) | Prove every approached active bank point lies on a genuine open circle slice |
 | [Unfoldings.Cap.ClosedCirclePinches](../Unfoldings/Cap/ClosedCirclePinches.lean) | Classify all empty-circle closed contacts as actual cut-vertex pinches without removing exceptional radii |
+| [Unfoldings.Cap.WaterfallClosedCircleContacts](../Unfoldings/Cap/WaterfallClosedCircleContacts.lean) | Apply the full finite waterfall order to closed contacts and construct both facing bank slices from the actual contact |
