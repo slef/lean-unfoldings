@@ -1647,3 +1647,17 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Cap.ClosedCircleSectionBounds](../Unfoldings/Cap/ClosedCircleSectionBounds.lean) | Bound every approached circle point by its actual closed section, including degenerate sections |
 | [Unfoldings.Cap.ClosedSectionCircleContact](../Unfoldings/Cap/ClosedSectionCircleContact.lean) | Classify contacts between weakly ordered closed sections at all radii, including pinch-only sections |
 | [Unfoldings.Cap.ClosedCircleSectionLexOrder](../Unfoldings/Cap/ClosedCircleSectionLexOrder.lean) | Preserve physical point labels in the weak endpoint order of genuine and collapsed closed circle sections |
+| [Unfoldings.Cap.ClosedCircleAbsenceBounds](../Unfoldings/Cap/ClosedCircleAbsenceBounds.lean) | Prove a strip with no closed circle contact lies strictly inside the circle, without exceptional radii |
+| [Unfoldings.Cap.ClosedEmptyCircleTerminalPinch](../Unfoldings/Cap/ClosedEmptyCircleTerminalPinch.lean) | Construct actual terminal pinches inside absent closed circles at every controlled radius |
+| [Unfoldings.Cap.ClosedEmptyCircleTerminalCopy](../Unfoldings/Cap/ClosedEmptyCircleTerminalCopy.lean) | Retain the actual containing-face contour copy of each terminal below an absent closed circle |
+| [Unfoldings.Cap.ClosedEmptyCircleContinuation](../Unfoldings/Cap/ClosedEmptyCircleContinuation.lean) | Construct actual proper comparison continuations whenever the entire closed circle section is absent |
+| [Unfoldings.Cap.ExtendedClosedEmptyCircleContinuations](../Unfoldings/Cap/ExtendedClosedEmptyCircleContinuations.lean) | Derive closed-empty strip continuations from the actual roof geometry without any radius exclusions |
+| [Unfoldings.Geometry.ClosedBankOrderLimit](../Unfoldings/Geometry/ClosedBankOrderLimit.lean) | Extend ordered circle bank contacts across finite exceptional radius sets by compactness |
+| [Unfoldings.Cap.ClosedSectionBankOrderLimit](../Unfoldings/Cap/ClosedSectionBankOrderLimit.lean) | Extend actual facing-bank order to closed sections at every controlled radius |
+| [Unfoldings.Cap.WaterfallClosedSectionOrder](../Unfoldings/Cap/WaterfallClosedSectionOrder.lean) | Order every pair of actual closed waterfall sections, including vertex radii and pinch-only sections |
+| [Unfoldings.Cap.ClosedSharedSeparatorPrefixValue](../Unfoldings/Cap/ClosedSharedSeparatorPrefixValue.lean) | Extend actual shared-prefix coherence through terminal pinches without future positive width |
+| [Unfoldings.Cap.ClosedSectionTailContact](../Unfoldings/Cap/ClosedSectionTailContact.lean) | Identify physical tail contacts for genuine and collapsed closed circle sections |
+| [Unfoldings.Cap.ClosedSectionSeparatorContact](../Unfoldings/Cap/ClosedSectionSeparatorContact.lean) | Identify contacts across a constructed separator even when either closed section is a single pinch |
+| [Unfoldings.Cap.ClosedBankPropertyLimit](../Unfoldings/Cap/ClosedBankPropertyLimit.lean) | Preserve closed predicates of actual bank contacts across every finite exceptional radius set |
+| [Unfoldings.Cap.TerminalHeightUniqueness](../Unfoldings/Cap/TerminalHeightUniqueness.lean) | Prove permanent approached terminals have one physical height independent of the comparison radius |
+| [Unfoldings.Cap.ClosedEmptyCircleRadiusGap](../Unfoldings/Cap/ClosedEmptyCircleRadiusGap.lean) | Prove a compact strip below an absent closed circle has a uniform positive radial gap |

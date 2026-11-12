@@ -1091,6 +1091,11 @@ Complete auxiliary-bank comparison and global face-interior nonoverlap are prove
   provide weak bounds and physical endpoint classification in both cases.
   [ClosedCircleSectionLexOrder](../Unfoldings/Cap/ClosedCircleSectionLexOrder.lean)
   retains physical labels when the within-section interval collapses.
+- [x] Construct continuations for strips absent from the entire closed circle,
+  without exceptional radii. [ClosedCircleAbsenceBounds](../Unfoldings/Cap/ClosedCircleAbsenceBounds.lean)
+  uses an actual closed connector to prove strict enclosure. The actual terminal
+  pinch, containing-face contour copy, and proper comparison continuation follow;
+  see [ExtendedClosedEmptyCircleContinuations](../Unfoldings/Cap/ExtendedClosedEmptyCircleContinuations.lean).
 - [ ] Include these closed-only sections in the full finite waterfall circle order.
 - [ ] Exclude the remaining isolated contacts involving actual vertices.
 - [x] Identify coincident intrinsic copies at the same physical nonvertex point
@@ -1110,6 +1115,12 @@ Complete auxiliary-bank comparison and global face-interior nonoverlap are prove
   [PrunedVertexCopyUniqueness](../Unfoldings/Cap/PrunedVertexCopyUniqueness.lean)
   then identifies all intrinsic copies at that vertex using the actual retained
   link pairings. The vertex's own curvature need not vanish.
+- [x] Extend facing-bank order to every controlled radius, retaining closed-only
+  pinch sections. [WaterfallClosedSectionOrder](../Unfoldings/Cap/WaterfallClosedSectionOrder.lean)
+  uses compact actual bank graphs and the existing regular-radius order.
+- [x] Identify adjacent closed-section contacts, including terminal pinches.
+  [ClosedSectionSeparatorContact](../Unfoldings/Cap/ClosedSectionSeparatorContact.lean)
+  extends coherent prefix matching and actual tail matching without future width.
 - [ ] Identify all coincident intrinsic boundary copies after pruning, including
   cut vertices, contacts between different trees, and original rim points.
 - [ ] Conclude boundary injectivity and state the simple-polygon existence theorem.

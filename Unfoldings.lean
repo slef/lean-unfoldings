@@ -861,3 +861,17 @@ public import Unfoldings.Cap.ClosedCircleSectionDegeneracy
 public import Unfoldings.Cap.ClosedCircleSectionBounds
 public import Unfoldings.Cap.ClosedSectionCircleContact
 public import Unfoldings.Cap.ClosedCircleSectionLexOrder
+public import Unfoldings.Cap.ClosedCircleAbsenceBounds
+public import Unfoldings.Cap.ClosedEmptyCircleTerminalPinch
+public import Unfoldings.Cap.ClosedEmptyCircleTerminalCopy
+public import Unfoldings.Cap.ClosedEmptyCircleContinuation
+public import Unfoldings.Cap.ExtendedClosedEmptyCircleContinuations
+public import Unfoldings.Geometry.ClosedBankOrderLimit
+public import Unfoldings.Cap.ClosedSectionBankOrderLimit
+public import Unfoldings.Cap.WaterfallClosedSectionOrder
+public import Unfoldings.Cap.ClosedSharedSeparatorPrefixValue
+public import Unfoldings.Cap.ClosedSectionTailContact
+public import Unfoldings.Cap.ClosedSectionSeparatorContact
+public import Unfoldings.Cap.ClosedBankPropertyLimit
+public import Unfoldings.Cap.TerminalHeightUniqueness
+public import Unfoldings.Cap.ClosedEmptyCircleRadiusGap
