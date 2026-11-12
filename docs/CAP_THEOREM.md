@@ -971,3 +971,11 @@ radial component, the actual common completed chain then identifies the same
 physical surface point, including branch endpoints. See
 [ComponentBankCircleContact](../Unfoldings/Cap/ComponentBankCircleContact.lean).
 Global boundary injectivity remains open.
+
+The common-radius restriction on comparison banks has now been removed:
+[ChainWeakCircleContact](../Unfoldings/Cap/ChainWeakCircleContact.lean)
+uses actual chain order and strict edge progress to recover the same physical
+point even when either comparison bank lies inside the circle. Separately,
+[LocalRegularContact](../Unfoldings/Cap/LocalRegularContact.lean) excludes
+foreign contacts at regular roof points using separation only over the
+controlled open physical region.
