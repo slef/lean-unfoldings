@@ -1029,7 +1029,22 @@ Complete auxiliary-bank comparison and global face-interior nonoverlap are prove
   conclusion; see [UniformExtendedClosedContact](../Unfoldings/Cap/UniformExtendedClosedContact.lean).
   The theorem covers all closed face points in the controlled ball, with a finite
   excluded set of developed radii. It does not remove the exceptional contacts.
-- [ ] Complete the exceptional vertex-radius contact cases.
+- [x] Remove every exceptional-radius restriction for contacts between nonvertex
+  face points. [FiniteRadiusContact](../Unfoldings/Geometry/FiniteRadiusContact.lean)
+  extends physical identification along nontrivial convex contact sets;
+  [NonvertexTriangleContact](../Unfoldings/Geometry/NonvertexTriangleContact.lean)
+  proves isolated triangle contacts involve a corner.
+  [ClosedFaceVertexContact](../Unfoldings/Cap/ClosedFaceVertexContact.lean) combines
+  them. The uniform version is
+  [UniformExtendedVertexContact](../Unfoldings/Cap/UniformExtendedVertexContact.lean).
+  The remaining foreign physical contacts form a finite set, rather than merely
+  lying on finitely many circles; see
+  [ClosedFaceContactReduction](../Unfoldings/Cap/ClosedFaceContactReduction.lean).
+- [ ] Exclude the remaining isolated contacts involving actual vertices.
+- [x] Identify coincident intrinsic copies at the same physical nonvertex point
+  after pruning. [PrunedSeamContact](../Unfoldings/Cap/PrunedSeamContact.lean)
+  combines exact projected seam conformity, strict positive-curvature bank
+  separation, and equality across restored seams.
 - [ ] Identify all coincident intrinsic boundary copies after pruning, including
   cut vertices, contacts between different trees, and original rim points.
 - [ ] Conclude boundary injectivity and state the simple-polygon existence theorem.

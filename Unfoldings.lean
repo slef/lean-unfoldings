@@ -827,3 +827,9 @@ public import Unfoldings.Cap.AllSectorClosedCircleContact
 public import Unfoldings.Cap.ClosedTraceGraphs
 public import Unfoldings.Cap.ClosedFaceCircleContact
 public import Unfoldings.Cap.UniformExtendedClosedContact
+public import Unfoldings.Geometry.FiniteRadiusContact
+public import Unfoldings.Geometry.NonvertexTriangleContact
+public import Unfoldings.Cap.ClosedFaceContactReduction
+public import Unfoldings.Cap.ClosedFaceVertexContact
+public import Unfoldings.Cap.UniformExtendedVertexContact
+public import Unfoldings.Cap.PrunedSeamContact

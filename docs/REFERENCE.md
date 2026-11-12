@@ -1613,3 +1613,9 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Cap.ClosedTraceGraphs](../Unfoldings/Cap/ClosedTraceGraphs.lean) | Cover actual closed face copies by compact approached trace graphs, retaining physical coordinates |
 | [Unfoldings.Cap.ClosedFaceCircleContact](../Unfoldings/Cap/ClosedFaceCircleContact.lean) | Identify physical points at coincident actual closed-face copies on controlled nonexceptional circles |
 | [Unfoldings.Cap.UniformExtendedClosedContact](../Unfoldings/Cap/UniformExtendedClosedContact.lean) | Choose a mesh-independent tilt threshold for local physical identification of actual closed-face contacts outside finitely many image radii |
+| [Unfoldings.Geometry.FiniteRadiusContact](../Unfoldings/Geometry/FiniteRadiusContact.lean) | Extend continuous agreement across every nontrivial convex contact set despite finite radius exclusions |
+| [Unfoldings.Geometry.NonvertexTriangleContact](../Unfoldings/Geometry/NonvertexTriangleContact.lean) | Prove isolated triangle contacts involve a corner and construct nearby common points at all nonvertex contacts |
+| [Unfoldings.Cap.ClosedFaceContactReduction](../Unfoldings/Cap/ClosedFaceContactReduction.lean) | Remove radius exclusions from every nontrivial closed-face contact set and prove foreign physical contacts form a finite set |
+| [Unfoldings.Cap.ClosedFaceVertexContact](../Unfoldings/Cap/ClosedFaceVertexContact.lean) | Reduce every foreign physical closed-face contact to a corner with no excluded radii |
+| [Unfoldings.Cap.UniformExtendedVertexContact](../Unfoldings/Cap/UniformExtendedVertexContact.lean) | Choose a mesh-independent tilt threshold excluding all foreign contacts between nonvertex points, including exceptional radii |
+| [Unfoldings.Cap.PrunedSeamContact](../Unfoldings/Cap/PrunedSeamContact.lean) | Prove coincident copies of the same physical nonvertex point are intrinsically equal after restoring flat subtree cuts |
