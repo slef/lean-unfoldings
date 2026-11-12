@@ -808,3 +808,8 @@ public import Unfoldings.Cap.BoundaryRunNeighborCirclePhysicalCandidate
 public import Unfoldings.Cap.BoundaryRunClosedCircleContact
 public import Unfoldings.Cap.BoundaryRunClosedConstruction
 public import Unfoldings.Cap.AdjacentSurvivorClosedCircleContact
+public import Unfoldings.Topology.OrderedBankEndpointContacts
+public import Unfoldings.Cap.WaterfallClosedCircleExtremeBounds
+public import Unfoldings.Cap.AdjacentSectorClosedCircleContact
+public import Unfoldings.Cap.AcrossSectorClosedCircleContact
+public import Unfoldings.Cap.ParentPathCircleContact

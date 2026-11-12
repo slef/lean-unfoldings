@@ -995,7 +995,17 @@ Complete auxiliary-bank comparison and global face-interior nonoverlap are prove
   identifies both actual developed endpoints and their common physical point.
   Actual maximal terminals are chosen by
   [BoundaryRunClosedConstruction](../Unfoldings/Cap/BoundaryRunClosedConstruction.lean).
-- [ ] Pass from adjacent extreme survivors to arbitrary approached closed contacts.
+- [x] Pass from adjacent extreme survivors to arbitrary approached closed contacts.
+  [WaterfallClosedCircleExtremeBounds](../Unfoldings/Cap/WaterfallClosedCircleExtremeBounds.lean)
+  excludes foreign contacts at the exposed extreme endpoints, and
+  [AdjacentSectorClosedCircleContact](../Unfoldings/Cap/AdjacentSectorClosedCircleContact.lean)
+  identifies arbitrary adjacent-sector physical contacts.
+- [x] Assemble physical identification across every pair of distinct sectors;
+  see [AcrossSectorClosedCircleContact](../Unfoldings/Cap/AcrossSectorClosedCircleContact.lean).
+  The circle assembly retains its existing finite radius exclusions.
+- [x] Identify physical points at actual same-path circle endpoint contacts;
+  see [ParentPathCircleContact](../Unfoldings/Cap/ParentPathCircleContact.lean).
+- [ ] Assemble within-sector physical identification across separators and removed runs.
 - [ ] Identify all coincident intrinsic boundary copies after pruning, including
   cut vertices, contacts between different trees, and original rim points.
 - [ ] Conclude boundary injectivity and state the simple-polygon existence theorem.
