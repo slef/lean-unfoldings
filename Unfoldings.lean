@@ -476,3 +476,9 @@ public import Unfoldings.Cap.CompletedRadiusPrefix
 public import Unfoldings.Cap.SectorSweepBall
 public import Unfoldings.Cap.ExtendedRadiusPrefix
 public import Unfoldings.Cap.CompletedComparisonValues
+public import Unfoldings.Geometry.QuadrantSegments
+public import Unfoldings.Cap.CompletedComparisonQuadrants
+public import Unfoldings.Cap.CompletedComparisonPrefixes
+public import Unfoldings.Cap.CompletedPrefixCircleOrder
+public import Unfoldings.Cap.ExtendedBankGeometryBudget
+public import Unfoldings.Cap.CompletedTraceVertexCopy

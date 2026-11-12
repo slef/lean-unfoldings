@@ -114,6 +114,11 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Cap.CompletedTraceVertexCopy](../Unfoldings/Cap/CompletedTraceVertexCopy.lean) | Represent each actual one-sided branch trace value by its own contour copy |
+| [Unfoldings.Cap.ExtendedBankGeometryBudget](../Unfoldings/Cap/ExtendedBankGeometryBudget.lean) | One uniform choice retains strict roof curvature, radial matched banks, and face bounds |
+| [Unfoldings.Cap.CompletedPrefixCircleOrder](../Unfoldings/Cap/CompletedPrefixCircleOrder.lean) | Derived circle order and endpoint margins for actual bounded comparison prefixes |
+| [Unfoldings.Cap.CompletedComparisonPrefixes](../Unfoldings/Cap/CompletedComparisonPrefixes.lean) | All points of finite comparison prefixes lie in the same developed source quadrant |
+| [Unfoldings.Cap.CompletedComparisonQuadrants](../Unfoldings/Cap/CompletedComparisonQuadrants.lean) | Quantitative common-source quadrant bounds on actual comparison edges and branch gaps |
 | [Unfoldings.Cap.CompletedComparisonValues](../Unfoldings/Cap/CompletedComparisonValues.lean) | Actual comparison-bank face values and branch chords between copies of one vertex |
 | [Unfoldings.Cap.ExtendedRadiusPrefix](../Unfoldings/Cap/ExtendedRadiusPrefix.lean) | Constructed bounded fine-seam prefixes with common position and opening sectors |
 | [Unfoldings.Cap.SectorSweepBall](../Unfoldings/Cap/SectorSweepBall.lean) | Physical source balls lie strictly inside every sector sweep below the cutoff |
@@ -657,6 +662,7 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Geometry.QuadrantSegments](../Unfoldings/Geometry/QuadrantSegments.lean) | Linear quadrant margins and source-centered direction wedges on entire chords |
 | [Unfoldings.Geometry.ChainTruncation](../Unfoldings/Geometry/ChainTruncation.lean) | Exact finite polygonal-chain prefixes ending partway through an actual edge |
 | [Unfoldings.Geometry.ChainRadiusCrossing](../Unfoldings/Geometry/ChainRadiusCrossing.lean) | An outward chain reaches a prescribed sphere with its preceding path inside the ball |
 | [Unfoldings.Geometry.RecoverableStripClosure](../Unfoldings/Geometry/RecoverableStripClosure.lean) | Finite reopening pinches leave both source-to-active banks in the strict-strip closure |

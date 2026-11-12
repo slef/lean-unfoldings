@@ -2,6 +2,23 @@
 
 ## Session Log
 
+### 2026-11-11 — bounded comparison quadrants and derived circle order
+
+- Derived quantitative source-quadrant margins on every actual bank edge
+  and straight branch-copy chord. All points of the exact finite comparison
+  prefixes therefore lie in the common developed source quadrant.
+- Proved their opposite-bank circle order with those quadrant assumptions
+  discharged, and a stopping-radius margin for both developed endpoints.
+- Retained the strict roof-curvature budget together with the same radial
+  matched-bank calibration and all-face bounds, at one uniform smaller tilt.
+- Represented every visible branch trace value by its own actual contour
+  copy, so its comparison continuation starts at that developed value.
+- Verification: cache retrieval followed by full `lake build` pass; **8,563
+  unfolding / 7,243 pinned topology declarations**, standard axioms only;
+  indexed documentation links (**1,215**) and whitespace pass. Joining the
+  finite barriers into a global separation argument and cap nonoverlap
+  remain open.
+
 ### 2026-11-11 — bounded actual radius prefixes and bank face values
 
 - Proved sphere-crossing existence and exact finite chain truncation, retaining
