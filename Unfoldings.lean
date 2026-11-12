@@ -456,3 +456,4 @@ public import Unfoldings.Geometry.NearIdentityRadial
 public import Unfoldings.Geometry.HeightGraphRadial
 public import Unfoldings.Cap.CenteredTraceSourceError
 public import Unfoldings.Cap.CenteredBankTraceRadial
+public import Unfoldings.Cap.ExtendedRadialBankTraces

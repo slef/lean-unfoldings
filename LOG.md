@@ -2,6 +2,19 @@
 
 ## Session Log
 
+### 2026-11-11 — uniform radial matched banks in one actual calibration
+
+- Constructed `exists_uniform_extended_radial_bank_traces`. A positive tilt
+  threshold precedes both meshes and gives the actual bank-order calibration
+  arbitrarily small linear and source-position error.
+- In that same calibration, each constructed strip has an injective actual
+  map and continuous one-sided traces that progress strictly radially up to
+  every active height and match all regular named parent-bank pieces.
+- Verification: cache retrieval followed by full `lake build` pass; **8,455
+  unfolding / 7,243 pinned topology declarations**, standard axioms only;
+  indexed documentation links (**1,190**) and whitespace pass. Branch endpoint
+  copies, collapsed-tail continuations, and global strip assembly remain open.
+
 ### 2026-11-11 — radial progress through actual visible bank traces
 
 - Derived quantitative positive inner-product tests from linear chart error

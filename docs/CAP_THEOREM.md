@@ -555,8 +555,12 @@ Separation of different banks and global nonoverlap remain open.
   sector margins and linear chart error. Actual visible monotone-bank traces
   progress strictly radially under these numerical bounds, allowing arbitrary
   face switches and coherent branch points.
-- [ ] Construct these radial bank traces uniformly before both meshes, then
-  handle branch endpoints and complete bank continuations.
+- [x] Construct radial bank traces uniformly before both meshes. One actual
+  bank-order calibration gives the same curves their named regular-bank
+  matching, whole-strip injectivity, and arbitrarily small position error.
+  Radial progress includes all coherent branch points before an active height.
+- [ ] Handle endpoint copies at branches and complete bank continuations beyond
+  terminated zero-width strip tails.
 - [ ] Prove side-by-side separation of all developed strips and hence all
   distinct original face interiors.
 - [x] Apply the cut-disk and flat-development infrastructure to the fixed-wedge
