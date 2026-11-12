@@ -2,6 +2,20 @@
 
 ## Session Log
 
+### 2026-11-12 — original retained-seam compatibility, forward direction
+
+- Proved that every retained fine seam maps to an actual retained original
+  seam chain. Fine seams between different original parents lie along their
+  whole shared original edge; seams inside one parent are always retained.
+- Identified all fine point copies within each original face, including
+  vertices, and constructed a continuous map from that whole face into the
+  retained fine realization. Added reusable original projected-point copies
+  and recovered actual original seam labels from whole shared edges.
+- Verification: cache retrieval and full `lake build` pass; **9,480 unfolding /
+  7,243 pinned topology declarations**, standard axioms only. All 1,500 local
+  documentation links and whitespace pass. Reverse retained-seam compatibility
+  and the full original-edge cap theorem remain open.
+
 ### 2026-11-12 — actual original-face subdivision
 
 - Restricted the constructed roof mesh to triangles contained in original

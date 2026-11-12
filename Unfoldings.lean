@@ -746,3 +746,11 @@ public import Unfoldings.Geometry.ConstrainedTriangleCover
 public import Unfoldings.Cap.ClipOriginalCoordinates
 public import Unfoldings.Cap.ClipOriginalPieces
 public import Unfoldings.Cap.ClipOriginalSubdivision
+public import Unfoldings.Geometry.SharedEdgeInterior
+public import Unfoldings.Cap.ClipOriginalRetention
+public import Unfoldings.Cap.ClipOriginalCopies
+public import Unfoldings.Cap.ProjectedSeamCompletion
+public import Unfoldings.Cap.ProjectedPointCopies
+public import Unfoldings.Cap.ClipOriginalAdjacency
+public import Unfoldings.Cap.ClipOriginalRespects
+public import Unfoldings.Cap.ClipOriginalFaceMap

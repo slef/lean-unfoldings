@@ -890,7 +890,14 @@ Separation of different banks and global nonoverlap remain open.
   [ClipOriginalSubdivision](../Unfoldings/Cap/ClipOriginalSubdivision.lean)
   proves unique original parents, actual rigid coordinates, and coverage of
   every closed original face.
-- [ ] Prove both directions of retained-seam compatibility for this subdivision.
+- [x] Prove that every retained fine seam maps to an actual retained original
+  seam chain. [ClipOriginalRespects](../Unfoldings/Cap/ClipOriginalRespects.lean)
+  derives the actual original seam and its retention from the geometric cut set.
+  [ClipOriginalCopies](../Unfoldings/Cap/ClipOriginalCopies.lean) identifies all
+  fine copies within one original face, including vertices, and
+  [ClipOriginalFaceMap](../Unfoldings/Cap/ClipOriginalFaceMap.lean) constructs
+  continuous whole-face maps into the retained fine realization.
+- [ ] Lift every retained original seam chain to the actual fine subdivision.
 - [ ] Prove side-by-side separation of all developed strips and hence all
   distinct original face interiors.
 - [x] Apply the cut-disk and flat-development infrastructure to the fixed-wedge

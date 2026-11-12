@@ -1532,3 +1532,11 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Cap.ClipOriginalCoordinates](../Unfoldings/Cap/ClipOriginalCoordinates.lean) | Construct actual rigid embeddings of contained roof triangles into their original face coordinates |
 | [Unfoldings.Cap.ClipOriginalPieces](../Unfoldings/Cap/ClipOriginalPieces.lean) | Cover every closed original face by actual contained roof triangles with unique original parents |
 | [Unfoldings.Cap.ClipOriginalSubdivision](../Unfoldings/Cap/ClipOriginalSubdivision.lean) | Construct the actual original-face subcomplex and its isometric subdivision of the original input complex |
+| [Unfoldings.Geometry.SharedEdgeInterior](../Unfoldings/Geometry/SharedEdgeInterior.lean) | Put every shared nonvertex edge point inside a region containing both opposite triangles |
+| [Unfoldings.Cap.ClipOriginalRetention](../Unfoldings/Cap/ClipOriginalRetention.lean) | Retain every actual fine seam whose two triangles have the same original parent |
+| [Unfoldings.Cap.ClipOriginalCopies](../Unfoldings/Cap/ClipOriginalCopies.lean) | Identify all retained fine copies of each point within one original input face, including vertices |
+| [Unfoldings.Cap.ProjectedSeamCompletion](../Unfoldings/Cap/ProjectedSeamCompletion.lean) | Recover actual original seams from whole shared projected edges |
+| [Unfoldings.Cap.ProjectedPointCopies](../Unfoldings/Cap/ProjectedPointCopies.lean) | Compare intrinsic projected face copies across retained original seams |
+| [Unfoldings.Cap.ClipOriginalAdjacency](../Unfoldings/Cap/ClipOriginalAdjacency.lean) | Classify fine seams between distinct original parents by their common whole original edge |
+| [Unfoldings.Cap.ClipOriginalRespects](../Unfoldings/Cap/ClipOriginalRespects.lean) | Map every retained fine seam to an actual retained original seam chain |
+| [Unfoldings.Cap.ClipOriginalFaceMap](../Unfoldings/Cap/ClipOriginalFaceMap.lean) | Map each whole original face continuously into its retained fine subdivision |
