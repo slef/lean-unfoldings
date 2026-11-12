@@ -1081,7 +1081,17 @@ Complete auxiliary-bank comparison and global face-interior nonoverlap are prove
   tails and constructed shared separators; see
   [ClosedLeafTailCircleContact](../Unfoldings/Cap/ClosedLeafTailCircleContact.lean)
   and [ClosedContactSeparatorCircleContact](../Unfoldings/Cap/ClosedContactSeparatorCircleContact.lean).
-- [ ] Include closed-only pinch sections in the finite waterfall circle order.
+- [x] Retain closed-only pinch sections instead of deleting their circle radii.
+  [RadialClosedCircleSections](../Unfoldings/Cap/RadialClosedCircleSections.lean)
+  constructs a closed section from every approached point. Such a section is
+  a singleton exactly when its open slice is absent; see
+  [ClosedCircleSectionDegeneracy](../Unfoldings/Cap/ClosedCircleSectionDegeneracy.lean).
+  [ClosedCircleSectionBounds](../Unfoldings/Cap/ClosedCircleSectionBounds.lean) and
+  [ClosedSectionCircleContact](../Unfoldings/Cap/ClosedSectionCircleContact.lean)
+  provide weak bounds and physical endpoint classification in both cases.
+  [ClosedCircleSectionLexOrder](../Unfoldings/Cap/ClosedCircleSectionLexOrder.lean)
+  retains physical labels when the within-section interval collapses.
+- [ ] Include these closed-only sections in the full finite waterfall circle order.
 - [ ] Exclude the remaining isolated contacts involving actual vertices.
 - [x] Identify coincident intrinsic copies at the same physical nonvertex point
   after pruning. [PrunedSeamContact](../Unfoldings/Cap/PrunedSeamContact.lean)

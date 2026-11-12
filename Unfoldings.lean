@@ -855,3 +855,9 @@ public import Unfoldings.Cap.ClosedParentPathBankContact
 public import Unfoldings.Cap.ClosedLateRunPhysicalContact
 public import Unfoldings.Cap.ClosedLeafTailCircleContact
 public import Unfoldings.Cap.ClosedContactSeparatorCircleContact
+public import Unfoldings.Cap.ClosedStripCircleSection
+public import Unfoldings.Cap.RadialClosedCircleSections
+public import Unfoldings.Cap.ClosedCircleSectionDegeneracy
+public import Unfoldings.Cap.ClosedCircleSectionBounds
+public import Unfoldings.Cap.ClosedSectionCircleContact
+public import Unfoldings.Cap.ClosedCircleSectionLexOrder

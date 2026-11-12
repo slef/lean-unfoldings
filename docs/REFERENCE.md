@@ -1641,3 +1641,9 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Cap.ClosedLateRunPhysicalContact](../Unfoldings/Cap/ClosedLateRunPhysicalContact.lean) | Identify late contacts across an actual collapsed strip run at every radius, including all branch endpoints |
 | [Unfoldings.Cap.ClosedLeafTailCircleContact](../Unfoldings/Cap/ClosedLeafTailCircleContact.lean) | Identify actual leaf-tail endpoint contacts at every radius using closed parent-bank matching |
 | [Unfoldings.Cap.ClosedContactSeparatorCircleContact](../Unfoldings/Cap/ClosedContactSeparatorCircleContact.lean) | Identify physical circle endpoint contacts across a constructed shared separator without removing any vertex radii |
+| [Unfoldings.Cap.ClosedStripCircleSection](../Unfoldings/Cap/ClosedStripCircleSection.lean) | Represent actual closed circle sections, including sections collapsed to one pinch point |
+| [Unfoldings.Cap.RadialClosedCircleSections](../Unfoldings/Cap/RadialClosedCircleSections.lean) | Construct sections at every approached circle point and prove closed-only circle images are physical singletons |
+| [Unfoldings.Cap.ClosedCircleSectionDegeneracy](../Unfoldings/Cap/ClosedCircleSectionDegeneracy.lean) | Prove section bank values are canonical and collapse exactly when the open circle slice is absent |
+| [Unfoldings.Cap.ClosedCircleSectionBounds](../Unfoldings/Cap/ClosedCircleSectionBounds.lean) | Bound every approached circle point by its actual closed section, including degenerate sections |
+| [Unfoldings.Cap.ClosedSectionCircleContact](../Unfoldings/Cap/ClosedSectionCircleContact.lean) | Classify contacts between weakly ordered closed sections at all radii, including pinch-only sections |
+| [Unfoldings.Cap.ClosedCircleSectionLexOrder](../Unfoldings/Cap/ClosedCircleSectionLexOrder.lean) | Preserve physical point labels in the weak endpoint order of genuine and collapsed closed circle sections |
