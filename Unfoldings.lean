@@ -704,3 +704,7 @@ public import Unfoldings.Cap.ComponentBankCircleSeparation
 public import Unfoldings.Cap.BoundaryRunNeighborCircleCandidate
 public import Unfoldings.Cap.BoundaryRunLateCircleCandidate
 public import Unfoldings.Cap.BoundaryRunSourceBankCandidate
+public import Unfoldings.Cap.SharedBoundaryTraceMargins
+public import Unfoldings.Cap.SharedBoundaryBankMargins
+public import Unfoldings.Cap.BoundaryRunSharedMargins
+public import Unfoldings.Cap.BoundaryRunCircleSeparation

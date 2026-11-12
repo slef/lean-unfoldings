@@ -842,6 +842,10 @@ Separation of different banks and global nonoverlap remain open.
   bank bound. Derive shared coordinates, component membership, fine path, bank
   names, parameters, and radii. Retain the run-side candidate trace origin for
   subsequent comparison-margin estimates.
+- [x] Derive both comparison-frame margins from the candidates' actual
+  approached terminal or circle traces on the shared physical ray. Prove
+  actual neighboring circle-image separation across either upper or lower
+  disappearing boundary run, including early and late crossings and ties.
 - [ ] Assemble the actual outer surviving intervals across all five sectors,
   including disappearing boundary runs, and establish global cyclic order.
 - [ ] Prove side-by-side separation of all developed strips and hence all

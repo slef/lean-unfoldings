@@ -2,6 +2,20 @@
 
 ## Session Log
 
+### 2026-11-12 — separate neighboring circles across either boundary run
+
+- Derived strict margins in both neighboring frames for actual approached
+  copies on their shared physical ray, including maximal terminals and
+  circle crossings after a collapsed boundary run.
+- Proved disjointness of the actual surviving circle images across either
+  an upper or lower disappearing run. Constructed both component-bank
+  candidates, retained trace origins, physical cone membership, and all
+  comparison margins; covered early and late crossings and tied maxima.
+- Verification: cache retrieval and full `lake build` pass; **9,336 unfolding /
+  7,243 pinned topology declarations**, standard axioms only. Local
+  documentation links and whitespace pass. The zero-run case, global survivor
+  assembly, original-face transfer, and full cap theorem remain open.
+
 ### 2026-11-12 — complete run-side and neighboring bank candidates
 
 - Constructed a neighboring surviving circle candidate from physical bank
