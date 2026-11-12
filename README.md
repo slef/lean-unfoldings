@@ -94,11 +94,12 @@ total angle `2π` at every interior vertex has a locally isometric development,
 unique after fixing one face.
 Polygonal cuts use supplied conforming refinement certificates.
 
-The [nearly flat cap theorem](Unfoldings/Cap/EdgeUnfolding.lean) now constructs
+The [nearly flat cap development](Unfoldings/Cap/SameOriginalVertexEdgeUnfolding.lean) constructs
 original-edge cuts, a cut disk, and a face-interior nonoverlapping development
 with local isometry throughout its interior. Its positive tilt threshold depends
-only on the acute margin. The paper's stronger simple-polygon boundary conclusion
-remains open; see the [cap checklist](docs/CAP_THEOREM.md).
+only on the acute margin. Every remaining contact is between intrinsic copies
+of one physical vertex. Identifying those copies and concluding a simple polygon
+remain open; see the [cap checklist](docs/CAP_THEOREM.md).
 
 Remaining work includes:
 

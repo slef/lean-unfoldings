@@ -906,3 +906,9 @@ public import Unfoldings.Cap.WaterfallClosedSectionExtremeBounds
 public import Unfoldings.Cap.WaterfallClosedSectionNonempty
 public import Unfoldings.Geometry.QuadrantCircleCoordinateOrder
 public import Unfoldings.Geometry.RadialTailSeedHeight
+public import Unfoldings.Complex.VertexCopyFibers
+public import Unfoldings.Cap.ClosedContactFibers
+public import Unfoldings.Cap.UniformExtendedAllRadiusContact
+public import Unfoldings.Cap.UniformOriginalAllRadiusContact
+public import Unfoldings.Cap.PrunedVertexContactFibers
+public import Unfoldings.Cap.SameOriginalVertexEdgeUnfolding

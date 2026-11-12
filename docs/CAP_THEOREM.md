@@ -8,12 +8,19 @@ simple-polygon boundary conclusion remains open.**
 
 Current entry points:
 
+- [SameOriginalVertexEdgeUnfolding](../Unfoldings/Cap/SameOriginalVertexEdgeUnfolding.lean),
+  `exists_uniform_edge_unfolding_same_original_vertex_contacts`, constructs the
+  original-edge cut disk and proves every remaining self-contact is between
+  intrinsic copies of one original physical vertex. Vertex-edge contacts and
+  contacts between different physical vertices are excluded, with no exceptional
+  radii. Identifying those remaining copies after pruning is still open.
+
 - [VertexContactEdgeUnfolding](../Unfoldings/Cap/VertexContactEdgeUnfolding.lean),
   `exists_uniform_edge_unfolding_injective_off_vertices`, strengthens the original
   existence theorem below: the actual pruned development is injective on all
   intrinsic nonvertex points, including boundary banks. Its tilt threshold
-  depends only on the acute margin. Contacts involving intrinsic vertices
-  remain to be excluded.
+  depends only on the acute margin. The newer theorem above also classifies
+  every contact involving intrinsic vertices.
 
 - [EdgeUnfolding](../Unfoldings/Cap/EdgeUnfolding.lean),
   `exists_uniform_nonoverlapping_edge_unfolding`, chooses a positive tilt threshold
@@ -1134,8 +1141,14 @@ Complete auxiliary-bank comparison and global face-interior nonoverlap are prove
   [ClosedFaceAllRadiusContact](../Unfoldings/Cap/ClosedFaceAllRadiusContact.lean)
   retains degenerate closed sections, actual component-bank parameters, and
   physical endpoint labels throughout the comparison.
-- [ ] Identify all coincident intrinsic boundary copies after pruning, including
-  cut vertices, contacts between different trees, and original rim points.
+- [x] Exclude contacts between different physical points, including vertex-edge
+  contacts and different physical vertices. The uniform original-face theorem
+  [UniformOriginalAllRadiusContact](../Unfoldings/Cap/UniformOriginalAllRadiusContact.lean)
+  includes zero radius. The actual pruned development retains only same-original-
+  vertex contacts, and [PrunedVertexContactFibers](../Unfoldings/Cap/PrunedVertexContactFibers.lean)
+  proves that injectivity is equivalent to uniqueness among those vertex copies.
+- [ ] Identify coincident intrinsic copies over a single original vertex after
+  pruning, including general branch copies and original rim vertices.
 - [ ] Conclude boundary injectivity and state the simple-polygon existence theorem.
 
 ## Verification discipline

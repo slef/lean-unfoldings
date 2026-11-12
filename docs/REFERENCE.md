@@ -1692,3 +1692,9 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Cap.WaterfallClosedSectionNonempty](../Unfoldings/Cap/WaterfallClosedSectionNonempty.lean) | Prove each controlled sector circle has a surviving closed section |
 | [Unfoldings.Geometry.QuadrantCircleCoordinateOrder](../Unfoldings/Geometry/QuadrantCircleCoordinateOrder.lean) | Reverse vertical circle order from weak horizontal order in the positive quadrant |
 | [Unfoldings.Geometry.RadialTailSeedHeight](../Unfoldings/Geometry/RadialTailSeedHeight.lean) | Bound radial component seed heights by every later physical position |
+| [Unfoldings.Complex.VertexCopyFibers](../Unfoldings/Complex/VertexCopyFibers.lean) | Show that forgetting cuts preserves exactly vertex points and their original vertex labels |
+| [Unfoldings.Cap.ClosedContactFibers](../Unfoldings/Cap/ClosedContactFibers.lean) | Identify uncut intrinsic fibers from closed physical face-contact identification |
+| [Unfoldings.Cap.UniformExtendedAllRadiusContact](../Unfoldings/Cap/UniformExtendedAllRadiusContact.lean) | Choose a uniform roof tilt threshold identifying all closed contacts including zero radius |
+| [Unfoldings.Cap.UniformOriginalAllRadiusContact](../Unfoldings/Cap/UniformOriginalAllRadiusContact.lean) | Identify all coincident original closed face points under a uniform tilt bound |
+| [Unfoldings.Cap.PrunedVertexContactFibers](../Unfoldings/Cap/PrunedVertexContactFibers.lean) | Reduce every pruned self-contact to intrinsic copies of the same physical vertex |
+| [Unfoldings.Cap.SameOriginalVertexEdgeUnfolding](../Unfoldings/Cap/SameOriginalVertexEdgeUnfolding.lean) | Construct a uniform original-edge unfolding with only same-original-vertex contacts remaining |
