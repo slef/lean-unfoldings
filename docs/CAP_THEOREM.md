@@ -536,6 +536,9 @@ Separation of different banks and global nonoverlap remain open.
   Construct the parent edge's exact height graph and local cut interval.
   Regular positive-width lower/upper strip traces select the actual named
   entrance/exit charts from cut avoidance, without supplied side certificates.
+- [x] Derive positive width at actual regular bank points before any later
+  active height. Every possible reopening pinch is a preserved mesh vertex,
+  so regular points avoid the constructed pinch set.
 - [ ] Package matching for the constructed waterfall through branch endpoints,
   then control radial order and complete bank continuations.
 - [ ] Prove side-by-side separation of all developed strips and hence all

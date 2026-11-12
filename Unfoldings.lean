@@ -444,3 +444,5 @@ public import Unfoldings.Geometry.WedgeFrameSides
 public import Unfoldings.Cap.CompletedBankPhysicalSides
 public import Unfoldings.Cap.CompletedBankGraphSides
 public import Unfoldings.Cap.CompletedBankTraceMatching
+public import Unfoldings.Geometry.RecoverableStripRegularWidth
+public import Unfoldings.Cap.RegularWaterfallWidth

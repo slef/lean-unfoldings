@@ -2,6 +2,18 @@
 
 ## Session Log
 
+### 2026-11-11 — automatic positive width at regular bank points
+
+- Proved every regular carrier point before a later active strip height has
+  positive width if reopening pinches are confined to the designated set.
+- Proved actual regular mesh points avoid the source and all geometric leaf
+  pinch points. Derived `regular_waterfall_width` for the constructed actual
+  pinch set, including both banks.
+- Verification: cache retrieval followed by full `lake build` pass; **8,439
+  unfolding / 7,243 pinned topology declarations**, standard axioms only;
+  indexed documentation links (**1,179**) and whitespace pass. Global strip
+  separation and the full cap theorem remain open.
+
 ### 2026-11-11 — named entrance/exit strip-trace matching
 
 - Proved positive sector frames preserve physical directed-edge side signs.
