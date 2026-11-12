@@ -1463,3 +1463,7 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Cap.RadialComponentFineAncestry](../Unfoldings/Cap/RadialComponentFineAncestry.lean) | Derive actual fine-forest ancestry from physical order on an unattached radial component |
 | [Unfoldings.Cap.BoundaryRunIncomingBankMatching](../Unfoldings/Cap/BoundaryRunIncomingBankMatching.lean) | Identify extreme terminal copies with actual incoming fine parent-bank endpoints |
 | [Unfoldings.Cap.RadialComponentIncomingBank](../Unfoldings/Cap/RadialComponentIncomingBank.lean) | Construct the actual incoming fine edge and its positive physical boundary-bank height |
+| [Unfoldings.Geometry.OrientedInnerBarriers](../Unfoldings/Geometry/OrientedInnerBarriers.lean) | Separate outward arcs using one actual inner point in different oriented quadrant frames |
+| [Unfoldings.Cap.CrossFrameInnerTerminalSeparation](../Unfoldings/Cap/CrossFrameInnerTerminalSeparation.lean) | Derive cross-frame separation for inner terminals and circle crossings from actual bank-chain progress |
+| [Unfoldings.Cap.StripCirclePointBounds](../Unfoldings/Cap/StripCirclePointBounds.lean) | Bound every open strip-circle point strictly by its actual approached bank endpoints |
+| [Unfoldings.Cap.CrossFrameStripCircleBounds](../Unfoldings/Cap/CrossFrameStripCircleBounds.lean) | Apply actual cross-frame bank barriers to constructed waterfall circle images with strict open-arc bounds |

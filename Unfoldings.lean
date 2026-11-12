@@ -677,3 +677,7 @@ public import Unfoldings.Cap.EnclosingBankSegments
 public import Unfoldings.Cap.RadialComponentFineAncestry
 public import Unfoldings.Cap.BoundaryRunIncomingBankMatching
 public import Unfoldings.Cap.RadialComponentIncomingBank
+public import Unfoldings.Geometry.OrientedInnerBarriers
+public import Unfoldings.Cap.CrossFrameInnerTerminalSeparation
+public import Unfoldings.Cap.StripCirclePointBounds
+public import Unfoldings.Cap.CrossFrameStripCircleBounds

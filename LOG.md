@@ -2,6 +2,24 @@
 
 ## Session Log
 
+### 2026-11-12 — cross-frame bank barriers for actual circle images
+
+- Proved signed-area separation using one actual inner point in two oriented
+  quadrant frames. A second version permits a point on the source circle when
+  the open-arc coordinate bounds are strict.
+- Derived the useful cross-frame coordinate alternative from actual fine
+  parent-bank progress. Bounding bank points may independently be inner
+  terminals or actual circle crossings, covering all four comparison cases.
+- Proved strict coordinate bounds for every point of an actual open strip-circle
+  slice and applied the comparison theorem to constructed trace images. This
+  remains conditional on each side's own bounds on named points of a common
+  actual bank chain; no gap order between sectors is supplied.
+- Verification: cache retrieval and full `lake build` pass; **9,280 unfolding /
+  7,243 pinned topology declarations**, standard axioms only; **1,420** local
+  documentation links and whitespace pass. Deriving those common-chain bounds
+  for every neighboring boundary run, global assembly, original-face transfer,
+  and the cap theorem remain open.
+
 ### 2026-11-12 — approached boundary terminals and actual incoming banks
 
 - Proved first/last maximal boundary-run terminals approach their enclosing

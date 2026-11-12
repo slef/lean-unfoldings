@@ -801,6 +801,11 @@ Separation of different banks and global nonoverlap remain open.
   named incoming parent banks. Derive fine ancestry, actual incoming edges,
   sector directions, and their positive boundary-ray heights from shared
   radial-component positions.
+- [x] Prove a cross-frame bank-chain separation theorem for points inside or
+  on the source circle. Actual fine-path order selects the useful coordinate
+  in its own sector frame. Derive strict bounds for every open strip-circle
+  point and apply the theorem to actual trace images, conditional on their
+  own terminal/circle endpoint bounds on that common bank chain.
 - [ ] Assemble the actual outer surviving intervals across all five sectors,
   including disappearing boundary runs, and establish global cyclic order.
 - [ ] Prove side-by-side separation of all developed strips and hence all
