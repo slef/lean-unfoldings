@@ -824,6 +824,11 @@ Separation of different banks and global nonoverlap remain open.
   neighboring source-circle trace. The cut classification and terminal tail
   then place every neighboring boundary-circle crossing on the same actual
   radial component as the terminal, in either boundary orientation.
+- [x] Recoordinate shared physical bank points exactly in either neighboring
+  frame. Cover all nontip component positions by the actual fine seed path.
+  Bound approached circle points in a physical source ball and match their
+  actual entrance/exit fine banks, retaining component membership and exact
+  source radii with only finite vertex-radius exclusions.
 - [ ] Assemble the actual outer surviving intervals across all five sectors,
   including disappearing boundary runs, and establish global cyclic order.
 - [ ] Prove side-by-side separation of all developed strips and hence all

@@ -2,6 +2,23 @@
 
 ## Session Log
 
+### 2026-11-12 — exact shared-bank coordinates and named circle banks
+
+- Recoordinated positive shared-bank points exactly between neighboring sector
+  frames. Both representations retain positive physical height and the named
+  enclosing bank, with no mesh or development assumptions.
+- Proved the actual fine parent path from a radial-component seed covers every
+  nontip component position. A quantitative source-circle estimate places
+  every approached circle point in a controlled physical source ball.
+- Matched actual lower/upper circle endpoints on these components with named
+  fine entrance/exit bank points. Derived their actual fine edge, component
+  membership, and exact developed source radius. The sweep version derives
+  outer-tip exclusion from the physical source-ball bound.
+- Verification: cache retrieval and full `lake build` pass; **9,317 unfolding /
+  7,243 pinned topology declarations**, standard axioms only; **1,436** local
+  documentation links and whitespace pass. Full neighboring-run assembly,
+  the zero-run case, original-face transfer, and the cap theorem remain open.
+
 ### 2026-11-12 — neighboring circle crossings on terminal components
 
 - Covered every positive enclosing-bank prefix position below a run terminal

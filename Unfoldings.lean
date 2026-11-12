@@ -693,3 +693,7 @@ public import Unfoldings.Cap.CoherentEmptyCircleExclusion
 public import Unfoldings.Cap.BoundaryRunClosedPrefix
 public import Unfoldings.Cap.BoundaryRunCirclePrefix
 public import Unfoldings.Cap.BoundaryRunCircleComponent
+public import Unfoldings.Cap.SharedSectorBankCoordinates
+public import Unfoldings.Cap.RadialComponentSeedPath
+public import Unfoldings.Cap.RadialStripCirclePhysicalBounds
+public import Unfoldings.Cap.RadialComponentCircleBanks

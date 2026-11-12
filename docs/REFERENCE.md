@@ -1479,3 +1479,7 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Cap.BoundaryRunClosedPrefix](../Unfoldings/Cap/BoundaryRunClosedPrefix.lean) | Cover every boundary-prefix position by an actual approached disappearing-strip bank |
 | [Unfoldings.Cap.BoundaryRunCirclePrefix](../Unfoldings/Cap/BoundaryRunCirclePrefix.lean) | Put neighboring coherent circle crossings strictly beyond actual boundary-run terminals |
 | [Unfoldings.Cap.BoundaryRunCircleComponent](../Unfoldings/Cap/BoundaryRunCircleComponent.lean) | Put every neighboring boundary-circle crossing on the same actual radial component as the run terminal |
+| [Unfoldings.Cap.SharedSectorBankCoordinates](../Unfoldings/Cap/SharedSectorBankCoordinates.lean) | Convert positive heights on a shared physical sector bank exactly between neighboring frames |
+| [Unfoldings.Cap.RadialComponentSeedPath](../Unfoldings/Cap/RadialComponentSeedPath.lean) | Cover every nontip radial-component position by the actual fine path from its seed |
+| [Unfoldings.Cap.RadialStripCirclePhysicalBounds](../Unfoldings/Cap/RadialStripCirclePhysicalBounds.lean) | Bound approached source-circle points by an explicit physical source ball |
+| [Unfoldings.Cap.RadialComponentCircleBanks](../Unfoldings/Cap/RadialComponentCircleBanks.lean) | Match actual circle endpoints on radial components to named fine parent banks with exact radii |
