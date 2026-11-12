@@ -1387,3 +1387,14 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Cap.PositiveWidthBankStartOrder](../Unfoldings/Cap/PositiveWidthBankStartOrder.lean) | Bound actual regular positive-width bank traces by a named starting copy without a circle condition |
 | [Unfoldings.Cap.FramedVertexHeights](../Unfoldings/Cap/FramedVertexHeights.lean) | Exclude all actual physical mesh vertices using one finite set of sweep heights |
 | [Unfoldings.Cap.ClosedBankStartOrder](../Unfoldings/Cap/ClosedBankStartOrder.lean) | Extend actual bank progress from a named copy through every branch vertex and interval endpoint |
+| [Unfoldings.Geometry.FiniteAffineSegmentOrder](../Unfoldings/Geometry/FiniteAffineSegmentOrder.lean) | Preserve a linear coordinate along a continuous finite affine selection on a segment |
+| [Unfoldings.Geometry.NearIdentityHeightOrder](../Unfoldings/Geometry/NearIdentityHeightOrder.lean) | Preserve individual right/down coordinates at equal sweep height under near-identity linear maps |
+| [Unfoldings.Cap.RadialStripLevelOrder](../Unfoldings/Cap/RadialStripLevelOrder.lean) | Retain individual actual developed coordinate order across a closed physical strip level |
+| [Unfoldings.Cap.GeometricSectorCutPoint](../Unfoldings/Cap/GeometricSectorCutPoint.lean) | Locate every strict-sector physical cut point on an actual leaf tail in that sector |
+| [Unfoldings.Cap.GeometricLevelBankOrder](../Unfoldings/Cap/GeometricLevelBankOrder.lean) | Derive actual regular facing-bank coordinate order across any physically coincident cell walls |
+| [Unfoldings.Topology.ChainIdentityContraction](../Unfoldings/Topology/ChainIdentityContraction.lean) | Contract removed identity pieces in finite endpoint-matched chains |
+| [Unfoldings.Topology.OrderedBankPieces](../Unfoldings/Topology/OrderedBankPieces.lean) | Compose consecutive endpoint inequalities into pairwise order of finite bank pieces |
+| [Unfoldings.Geometry.SubdivisionActiveCells](../Unfoldings/Geometry/SubdivisionActiveCells.lean) | Preserve exact physical bank contacts after arbitrarily many collapsed subdivision cells are skipped |
+| [Unfoldings.Cap.WaterfallLevelBankOrder](../Unfoldings/Cap/WaterfallLevelBankOrder.lean) | Order all surviving actual bank intervals at each regular physical sweep height across arbitrary collapsed-cell runs |
+| [Unfoldings.Cap.RadialStripClosedBanks](../Unfoldings/Cap/RadialStripClosedBanks.lean) | Track both actual approached banks at every height before an approached endpoint |
+| [Unfoldings.Cap.WaterfallClosedLevelBankOrder](../Unfoldings/Cap/WaterfallClosedLevelBankOrder.lean) | Compare ordered actual approached banks through every physical sweep height, including terminal vertices |

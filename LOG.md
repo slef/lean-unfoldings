@@ -2,6 +2,28 @@
 
 ## Session Log
 
+### 2026-11-12 — global order at physical waterfall levels
+
+- Proved a generic continuous finite affine selection preserves linear order
+  on a segment. Near-identity chart estimates give individual horizontal and
+  reverse vertical order across every actual closed strip level.
+- Derived a specified-sector actual leaf tail through any strict-sector cut
+  point. At a regular physical contact, actual positive-width strip banks
+  inherit parent-bank gap order, including contacts across collapsed cells.
+- Proved generic identity contraction for finite endpoint-matched chains and
+  composition of ordered bank pieces. Filtering the actual subdivision retains
+  cell membership and exact physical contacts across arbitrary zero-width runs.
+- Ordered all surviving actual developed bank intervals pairwise at every
+  regular physical height. Finite vertex heights, earlier closed-bank approach,
+  and continuity extend this to ordered approached banks at every height,
+  including terminal copies where direct regular chart matching is unavailable.
+- Verification: cache retrieval followed by full `lake build` pass; **9,061
+  unfolding / 7,243 pinned topology declarations**, standard axioms only;
+  **1,345** local documentation links and whitespace pass. These results compare
+  equal physical heights. Early equal-radius crossings across arbitrary missing
+  strips, sector transitions, original-face transfer, and the full cap theorem
+  remain open.
+
 ### 2026-11-12 — uniform one-strip gaps and late finite strip chains
 
 - Strengthened the actual uniform roof construction with separation across one

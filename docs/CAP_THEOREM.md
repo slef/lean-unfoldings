@@ -731,6 +731,16 @@ Separation of different banks and global nonoverlap remain open.
 - [x] Remove the circle hypothesis from actual bank progress bounds. Finite
   physical vertex heights and trace continuity extend these bounds to whole
   closed intervals, including branch vertices and terminal endpoint values.
+- [x] Prove individual developed coordinate order across each closed physical
+  strip level. Every regular common bank point strictly inside a sweep sector
+  lies on an actual leaf tail in that sector, so its fine parent-bank gap order
+  is derived even across intervening collapsed cells.
+- [x] Contract zero-width cells from the actual ordered cell chain at a tested
+  height while retaining original cell membership. All surviving developed
+  bank intervals are ordered pairwise at every regular physical height.
+  Finite vertex heights and continuity extend this order to any two approached
+  banks in subdivision order, including terminal vertex copies. This compares
+  equal physical heights; global equal-radius separation still remains.
 - [ ] Compare surviving strips across intervening strips whose circle slice is
   empty, then establish a global cyclic order across the sector boundaries.
 - [ ] Prove side-by-side separation of all developed strips and hence all

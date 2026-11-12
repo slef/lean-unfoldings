@@ -601,3 +601,14 @@ public import Unfoldings.Cap.EmptyStripChainLateCircleSeparation
 public import Unfoldings.Cap.PositiveWidthBankStartOrder
 public import Unfoldings.Cap.FramedVertexHeights
 public import Unfoldings.Cap.ClosedBankStartOrder
+public import Unfoldings.Geometry.FiniteAffineSegmentOrder
+public import Unfoldings.Geometry.NearIdentityHeightOrder
+public import Unfoldings.Cap.RadialStripLevelOrder
+public import Unfoldings.Cap.GeometricSectorCutPoint
+public import Unfoldings.Cap.GeometricLevelBankOrder
+public import Unfoldings.Topology.ChainIdentityContraction
+public import Unfoldings.Topology.OrderedBankPieces
+public import Unfoldings.Geometry.SubdivisionActiveCells
+public import Unfoldings.Cap.WaterfallLevelBankOrder
+public import Unfoldings.Cap.RadialStripClosedBanks
+public import Unfoldings.Cap.WaterfallClosedLevelBankOrder
