@@ -897,7 +897,13 @@ Separation of different banks and global nonoverlap remain open.
   fine copies within one original face, including vertices, and
   [ClipOriginalFaceMap](../Unfoldings/Cap/ClipOriginalFaceMap.lean) constructs
   continuous whole-face maps into the retained fine realization.
-- [ ] Lift every retained original seam chain to the actual fine subdivision.
+- [x] Lift every retained original seam chain to the actual fine subdivision.
+  [ClipOriginalConforming](../Unfoldings/Cap/ClipOriginalConforming.lean) constructs
+  exact retained-seam conformity and the intrinsic metric equivalence, including
+  all seam endpoints. [ClipOriginalNonoverlap](../Unfoldings/Cap/ClipOriginalNonoverlap.lean)
+  transfers nonoverlap from any fine development of a connected original cut cap.
+- [x] Prove that actual exterior skirt cuts leave exactly the original retained
+  seams on original faces; see [OriginalCutRestriction](../Unfoldings/Cap/OriginalCutRestriction.lean).
 - [ ] Prove side-by-side separation of all developed strips and hence all
   distinct original face interiors.
 - [x] Apply the cut-disk and flat-development infrastructure to the fixed-wedge

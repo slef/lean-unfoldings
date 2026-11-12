@@ -2,6 +2,21 @@
 
 ## Session Log
 
+### 2026-11-12 — exact original retained-seam refinement
+
+- Proved both directions of retained-seam compatibility for the constructed
+  original-face subdivision, including every seam endpoint. Continuous whole-face
+  maps extend agreement past the finite vertex exceptions on each whole edge.
+- Constructed the exact intrinsic metric equivalence and transferred nonoverlap
+  from any actual fine development to the connected original cut cap.
+- Identified the selected original forest segments with the closed original
+  seam cut set. Proved that the actual exterior skirt cuts leave exactly the
+  original retained seams on the original-face restriction.
+- Verification: cache retrieval and full `lake build` pass; **9,512 unfolding /
+  7,243 pinned topology declarations**, standard axioms only. Local documentation
+  links and whitespace pass. Instantiating this transfer with the uniform roof
+  separation and the full cap theorem remain open.
+
 ### 2026-11-12 — original retained-seam compatibility, forward direction
 
 - Proved that every retained fine seam maps to an actual retained original

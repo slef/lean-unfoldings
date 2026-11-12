@@ -754,3 +754,12 @@ public import Unfoldings.Cap.ProjectedPointCopies
 public import Unfoldings.Cap.ClipOriginalAdjacency
 public import Unfoldings.Cap.ClipOriginalRespects
 public import Unfoldings.Cap.ClipOriginalFaceMap
+public import Unfoldings.Complex.FaceRestrictionClasses
+public import Unfoldings.Cap.ClipRetainedClasses
+public import Unfoldings.Cap.ClipOriginalRegularCopies
+public import Unfoldings.Cap.ClipOriginalSeamMap
+public import Unfoldings.Cap.ClipOriginalConforming
+public import Unfoldings.Cap.ClipOriginalNonoverlap
+public import Unfoldings.Geometry.SharedEdgeCutSet
+public import Unfoldings.Cap.OriginalCutCarrier
+public import Unfoldings.Cap.OriginalCutRestriction

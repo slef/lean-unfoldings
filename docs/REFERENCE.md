@@ -1540,3 +1540,12 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Cap.ClipOriginalAdjacency](../Unfoldings/Cap/ClipOriginalAdjacency.lean) | Classify fine seams between distinct original parents by their common whole original edge |
 | [Unfoldings.Cap.ClipOriginalRespects](../Unfoldings/Cap/ClipOriginalRespects.lean) | Map every retained fine seam to an actual retained original seam chain |
 | [Unfoldings.Cap.ClipOriginalFaceMap](../Unfoldings/Cap/ClipOriginalFaceMap.lean) | Map each whole original face continuously into its retained fine subdivision |
+| [Unfoldings.Complex.FaceRestrictionClasses](../Unfoldings/Complex/FaceRestrictionClasses.lean) | Preserve retained nonvertex point identifications under whole-face restriction |
+| [Unfoldings.Cap.ClipRetainedClasses](../Unfoldings/Cap/ClipRetainedClasses.lean) | Keep all actual roof point identifications away from the physical cut set |
+| [Unfoldings.Cap.ClipOriginalRegularCopies](../Unfoldings/Cap/ClipOriginalRegularCopies.lean) | Identify regular fine copies across original parents away from original cuts |
+| [Unfoldings.Cap.ClipOriginalSeamMap](../Unfoldings/Cap/ClipOriginalSeamMap.lean) | Identify entire retained original seams in the fine realization, including endpoints |
+| [Unfoldings.Cap.ClipOriginalConforming](../Unfoldings/Cap/ClipOriginalConforming.lean) | Prove exact retained-seam conformity and intrinsic metric equivalence for the actual original-face subdivision |
+| [Unfoldings.Cap.ClipOriginalNonoverlap](../Unfoldings/Cap/ClipOriginalNonoverlap.lean) | Transfer nonoverlap from any actual fine development to the connected original cut cap |
+| [Unfoldings.Geometry.SharedEdgeCutSet](../Unfoldings/Geometry/SharedEdgeCutSet.lean) | Show that exterior skirt cuts cannot add a whole shared edge inside the original region |
+| [Unfoldings.Cap.OriginalCutCarrier](../Unfoldings/Cap/OriginalCutCarrier.lean) | Identify selected original forest segments with the actual closed original seam cut set |
+| [Unfoldings.Cap.OriginalCutRestriction](../Unfoldings/Cap/OriginalCutRestriction.lean) | Prove exterior skirt cuts leave exactly the original retained seams on original faces |
