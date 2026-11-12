@@ -2,6 +2,23 @@
 
 ## Session Log
 
+### 2026-11-12 — approached boundary terminals and actual incoming banks
+
+- Proved first/last maximal boundary-run terminals approach their enclosing
+  bank from below. All skipped terminals lie strictly below a common positive
+  threshold, retaining local physical contacts through tied maxima.
+- Matched these actual terminal trace copies to the named entrance/exit bank
+  of an incoming fine edge by continuity through mesh vertices. Terminal
+  vertices in the controlled physical ball are not completed forest roots.
+- Derived fine-forest ancestry from physical order on an unattached radial
+  component. Constructed its actual incoming selected fine edge, derived its
+  sector direction, and located its child on the enclosing bank at a positive
+  height strictly below the terminal. No developed separation is assumed.
+- Verification: cache retrieval and full `lake build` pass; **9,263 unfolding /
+  7,243 pinned topology declarations**, standard axioms only; **1,416** local
+  documentation links and whitespace pass. Adjacent-sector circle separation,
+  global assembly, original-face transfer, and the cap theorem remain open.
+
 ### 2026-11-12 — cyclic frame geometry and nonadjacent sectors
 
 - Proved the five actual acute sectors make exactly one full turn and their

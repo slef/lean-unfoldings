@@ -796,6 +796,11 @@ Separation of different banks and global nonoverlap remain open.
   is disjoint, including across the argument seam. Separate their actual
   developed strip images with a positive trace-error bound chosen before
   any mesh or subdivision, deriving each physical cell margin.
+- [x] Approach first/last maximal boundary-run terminals along the actual
+  enclosing bank from below. Match these copies through fine vertices with
+  named incoming parent banks. Derive fine ancestry, actual incoming edges,
+  sector directions, and their positive boundary-ray heights from shared
+  radial-component positions.
 - [ ] Assemble the actual outer surviving intervals across all five sectors,
   including disappearing boundary runs, and establish global cyclic order.
 - [ ] Prove side-by-side separation of all developed strips and hence all

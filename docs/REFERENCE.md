@@ -1458,3 +1458,8 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Geometry.OrientedFramePhase](../Unfoldings/Geometry/OrientedFramePhase.lean) | Recover an oriented frame rotation from one named ray and separate rotated quadrants |
 | [Unfoldings.Geometry.FiveSectorFrameRotation](../Unfoldings/Geometry/FiveSectorFrameRotation.lean) | Recover exact five-sector frame rotations and separate nonadjacent comparison quadrants |
 | [Unfoldings.Cap.NonadjacentSectorSeparation](../Unfoldings/Cap/NonadjacentSectorSeparation.lean) | Separate actual developed strip and circle images in every nonadjacent pair of sectors |
+| [Unfoldings.Cap.BoundaryRunApproachedBanks](../Unfoldings/Cap/BoundaryRunApproachedBanks.lean) | Approach extreme maximal terminals along the actual enclosing bank from below |
+| [Unfoldings.Cap.EnclosingBankSegments](../Unfoldings/Cap/EnclosingBankSegments.lean) | Track enclosing-ray bank positions on actual segments between controlled heights |
+| [Unfoldings.Cap.RadialComponentFineAncestry](../Unfoldings/Cap/RadialComponentFineAncestry.lean) | Derive actual fine-forest ancestry from physical order on an unattached radial component |
+| [Unfoldings.Cap.BoundaryRunIncomingBankMatching](../Unfoldings/Cap/BoundaryRunIncomingBankMatching.lean) | Identify extreme terminal copies with actual incoming fine parent-bank endpoints |
+| [Unfoldings.Cap.RadialComponentIncomingBank](../Unfoldings/Cap/RadialComponentIncomingBank.lean) | Construct the actual incoming fine edge and its positive physical boundary-bank height |

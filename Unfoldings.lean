@@ -672,3 +672,8 @@ public import Unfoldings.Geometry.FiveSectorFrameMargins
 public import Unfoldings.Geometry.OrientedFramePhase
 public import Unfoldings.Geometry.FiveSectorFrameRotation
 public import Unfoldings.Cap.NonadjacentSectorSeparation
+public import Unfoldings.Cap.BoundaryRunApproachedBanks
+public import Unfoldings.Cap.EnclosingBankSegments
+public import Unfoldings.Cap.RadialComponentFineAncestry
+public import Unfoldings.Cap.BoundaryRunIncomingBankMatching
+public import Unfoldings.Cap.RadialComponentIncomingBank
