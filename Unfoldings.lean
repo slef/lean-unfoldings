@@ -434,3 +434,6 @@ public import Unfoldings.Cap.ExtendedFaceQuadrants
 public import Unfoldings.Cap.CompletedBankFaceValues
 public import Unfoldings.Cap.CompletedBankPositionMargins
 public import Unfoldings.Cap.CompletedBankCircleOrder
+public import Unfoldings.Cap.ProjectedSeamFaces
+public import Unfoldings.Cap.TraceFacingFace
+public import Unfoldings.Geometry.HeightNetworkLocalGraph

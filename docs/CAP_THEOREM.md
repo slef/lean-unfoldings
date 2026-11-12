@@ -523,7 +523,12 @@ Separation of different banks and global nonoverlap remain open.
   placement and transfer the common-source error and coordinate bounds to it.
   Opposite branching banks lying in a common source quadrant have the correct
   equal-radius order, without radial monotonicity assumptions on branch jumps.
-- [ ] Identify the facing cut banks from one-sided face visibility, then
+- [x] Prove the local facing-face criterion: a regular projected seam point
+  has exactly its two actual incident-face labels. A trace approached strictly
+  from one side cannot use the opposite closed face. Apply this criterion to
+  locally matching lower and upper strip walls. Prove covered finite-network
+  tails agree locally with their actual straight edge away from network vertices.
+- [ ] Instantiate facing-bank criteria for the actual waterfall walls, then
   control radial order and complete bank continuations.
 - [ ] Prove side-by-side separation of all developed strips and hence all
   distinct original face interiors.

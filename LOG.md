@@ -2,6 +2,20 @@
 
 ## Session Log
 
+### 2026-11-11 — local facing-face and straight-tail criteria
+
+- Classified the actual containing faces of every regular projected seam
+  point from exact intrinsic equivalence classes.
+- Proved one-sided trace visibility excludes the opposite closed half-plane,
+  with lower/upper strip-wall versions requiring only local wall agreement.
+- Proved a covered finite-network height graph locally agrees with its actual
+  affine edge graph away from network vertices, deriving local agreement from
+  finite closed-edge activity and forward uniqueness.
+- Verification: cache retrieval followed by full `lake build` pass; **8,393
+  unfolding / 7,243 pinned topology declarations**, standard axioms only.
+  These are local criteria; their full actual-waterfall instantiation and the
+  global nonoverlap theorem remain open.
+
 ### 2026-11-11 — actual bank face values and common-source circle comparison
 
 - Proved each complete entrance/exit bank point equals its own incident-face
