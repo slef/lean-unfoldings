@@ -464,3 +464,6 @@ public import Unfoldings.Cap.ExtendedBankGeometry
 public import Unfoldings.Geometry.StrictQuadrantSums
 public import Unfoldings.Geometry.WeakChainLinear
 public import Unfoldings.Cap.CompletedExcursionStrictOrder
+public import Unfoldings.Geometry.InterleavedSegments
+public import Unfoldings.Cap.CompletedComparisonChains
+public import Unfoldings.Cap.CompletedComparisonProgress

@@ -565,8 +565,13 @@ Separation of different banks and global nonoverlap remain open.
 - [x] Prove actual branch gaps are zero if their controlling coordinate is
   zero, and prove controlling-coordinate injectivity for weakly monotone
   chains whose zero-coordinate steps are flat.
-- [ ] Construct complete bank continuations beyond terminated zero-width strip
-  tails and compare their straight branch-gap segments.
+- [x] Construct paired comparison chains from every actual branch copy along
+  the entire outward parent path, with explicit straight branch-gap segments.
+  Prove their controlling-coordinate injectivity and opposite-bank circle
+  order in a common source quadrant, retaining zero-length gaps.
+- [ ] Transfer physical component position and direction sectors together;
+  truncate comparison continuations before the far clip boundary, and derive
+  their common source-quadrant bounds from the actual calibrated geometry.
 - [x] Prove paired-bank circle order with only rightward right-bank and upward
   left-bank progress. Straight branch-gap steps may decrease the other
   coordinate; no radial monotonicity of these steps is required.

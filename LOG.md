@@ -2,6 +2,22 @@
 
 ## Session Log
 
+### 2026-11-11 — explicit complete comparison banks
+
+- Constructed paired polygonal chains from any actual branch copy, alternating
+  every outward parent-bank edge with the straight gap to its next copy.
+  Every predecessor is proved to be a copy of the next child vertex.
+- Derived all gap signs, flatness, and matched increment bounds from the
+  actual contour. The right bank's horizontal and left bank's vertical
+  coordinates distinguish points on their entire images, including gaps.
+- Proved opposite complete comparison-bank circle order in a common source
+  quadrant, allowing nonradial branch-gap steps.
+- Verification: cache retrieval followed by full `lake build` pass; **8,518
+  unfolding / 7,243 pinned topology declarations**, standard axioms only;
+  indexed documentation links (**1,200**) and whitespace pass. Consistent
+  component position sectors, truncation before the far rim, and global cap
+  nonoverlap remain open.
+
 ### 2026-11-11 — flat branch gaps and controlling-coordinate injectivity
 
 - Proved that either zero coordinate of an actual excursion displacement
