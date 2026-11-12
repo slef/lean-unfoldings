@@ -1698,3 +1698,11 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Cap.UniformOriginalAllRadiusContact](../Unfoldings/Cap/UniformOriginalAllRadiusContact.lean) | Identify all coincident original closed face points under a uniform tilt bound |
 | [Unfoldings.Cap.PrunedVertexContactFibers](../Unfoldings/Cap/PrunedVertexContactFibers.lean) | Reduce every pruned self-contact to intrinsic copies of the same physical vertex |
 | [Unfoldings.Cap.SameOriginalVertexEdgeUnfolding](../Unfoldings/Cap/SameOriginalVertexEdgeUnfolding.lean) | Construct a uniform original-edge unfolding with only same-original-vertex contacts remaining |
+| [Unfoldings.Complex.RestoredBankEndpoints](../Unfoldings/Complex/RestoredBankEndpoints.lean) | Identify matching original endpoints after restoring their actual seam |
+| [Unfoldings.Topology.CyclicInternalIntervals](../Unfoldings/Topology/CyclicInternalIntervals.lean) | Choose an internal oriented arc between any two points of a cyclic interval |
+| [Unfoldings.Cap.ContourExcursion](../Unfoldings/Cap/ContourExcursion.lean) | Integrate actual paired bank displacements along partial subtree excursions |
+| [Unfoldings.Cap.VertexExcursions](../Unfoldings/Cap/VertexExcursions.lean) | Construct actual contour prefixes and suffixes between branch copies |
+| [Unfoldings.Cap.RestoredParentBankEndpoints](../Unfoldings/Cap/RestoredParentBankEndpoints.lean) | Match both intrinsic endpoints of actual flat parent banks after pruning |
+| [Unfoldings.Cap.ContourExcursionFlatness](../Unfoldings/Cap/ContourExcursionFlatness.lean) | Characterize closing subtree excursions by flatness of their selected openings |
+| [Unfoldings.Cap.ContourExcursionRestoration](../Unfoldings/Cap/ContourExcursionRestoration.lean) | Identify endpoints of closing excursions in the actual pruned intrinsic quotient |
+| [Unfoldings.Cap.InternalVertexContact](../Unfoldings/Cap/InternalVertexContact.lean) | Identify arbitrary coincident contour copies of an original interior vertex |

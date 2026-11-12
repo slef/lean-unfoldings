@@ -1147,8 +1147,12 @@ Complete auxiliary-bank comparison and global face-interior nonoverlap are prove
   includes zero radius. The actual pruned development retains only same-original-
   vertex contacts, and [PrunedVertexContactFibers](../Unfoldings/Cap/PrunedVertexContactFibers.lean)
   proves that injectivity is equivalent to uniqueness among those vertex copies.
-- [ ] Identify coincident intrinsic copies over a single original vertex after
-  pruning, including general branch copies and original rim vertices.
+- [x] Identify arbitrary coincident contour copies over original interior vertices.
+  [InternalVertexContact](../Unfoldings/Cap/InternalVertexContact.lean) constructs
+  an actual internal excursion; its displacement forces each selected subtree
+  flat, and additive intrinsic vertex labels prove endpoint equality after pruning.
+- [ ] Identify coincident intrinsic copies over original rim vertices and assemble
+  full vertex-copy injectivity.
 - [ ] Conclude boundary injectivity and state the simple-polygon existence theorem.
 
 ## Verification discipline

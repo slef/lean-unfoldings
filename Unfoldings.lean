@@ -912,3 +912,11 @@ public import Unfoldings.Cap.UniformExtendedAllRadiusContact
 public import Unfoldings.Cap.UniformOriginalAllRadiusContact
 public import Unfoldings.Cap.PrunedVertexContactFibers
 public import Unfoldings.Cap.SameOriginalVertexEdgeUnfolding
+public import Unfoldings.Complex.RestoredBankEndpoints
+public import Unfoldings.Topology.CyclicInternalIntervals
+public import Unfoldings.Cap.ContourExcursion
+public import Unfoldings.Cap.VertexExcursions
+public import Unfoldings.Cap.RestoredParentBankEndpoints
+public import Unfoldings.Cap.ContourExcursionFlatness
+public import Unfoldings.Cap.ContourExcursionRestoration
+public import Unfoldings.Cap.InternalVertexContact
