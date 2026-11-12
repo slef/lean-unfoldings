@@ -802,3 +802,9 @@ public import Unfoldings.Cap.RadialComponentCirclePhysicalBanks
 public import Unfoldings.Cap.BoundaryCirclePhysicalAlternative
 public import Unfoldings.Cap.OuterCirclePhysicalAlternative
 public import Unfoldings.Cap.OuterClosedCircleContact
+public import Unfoldings.Cap.BoundaryRunLateCirclePhysicalCandidate
+public import Unfoldings.Cap.BoundaryRunSourcePhysicalCandidate
+public import Unfoldings.Cap.BoundaryRunNeighborCirclePhysicalCandidate
+public import Unfoldings.Cap.BoundaryRunClosedCircleContact
+public import Unfoldings.Cap.BoundaryRunClosedConstruction
+public import Unfoldings.Cap.AdjacentSurvivorClosedCircleContact

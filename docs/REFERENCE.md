@@ -1588,3 +1588,9 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Cap.BoundaryCirclePhysicalAlternative](../Unfoldings/Cap/BoundaryCirclePhysicalAlternative.lean) | Retain physical point equality in the coherent shared-ray circle alternative |
 | [Unfoldings.Cap.OuterCirclePhysicalAlternative](../Unfoldings/Cap/OuterCirclePhysicalAlternative.lean) | Classify outer circle endpoints with physical equality or a common actual radial component |
 | [Unfoldings.Cap.OuterClosedCircleContact](../Unfoldings/Cap/OuterClosedCircleContact.lean) | Identify the same physical surface point at actual closed outer-bank contacts across adjacent sectors |
+| [Unfoldings.Cap.BoundaryRunLateCirclePhysicalCandidate](../Unfoldings/Cap/BoundaryRunLateCirclePhysicalCandidate.lean) | Retain exact physical coordinates of late circle candidates past a maximal boundary-run terminal |
+| [Unfoldings.Cap.BoundaryRunSourcePhysicalCandidate](../Unfoldings/Cap/BoundaryRunSourcePhysicalCandidate.lean) | Distinguish strict interior source-bank candidates from actual physical circle crossings |
+| [Unfoldings.Cap.BoundaryRunNeighborCirclePhysicalCandidate](../Unfoldings/Cap/BoundaryRunNeighborCirclePhysicalCandidate.lean) | Retain actual physical parameters of neighboring-sector circle bank candidates |
+| [Unfoldings.Cap.BoundaryRunClosedCircleContact](../Unfoldings/Cap/BoundaryRunClosedCircleContact.lean) | Identify actual physical endpoints at weak contacts across either disappearing boundary run |
+| [Unfoldings.Cap.BoundaryRunClosedConstruction](../Unfoldings/Cap/BoundaryRunClosedConstruction.lean) | Construct actual extreme terminals and identify weak closed contacts across either indexed boundary run |
+| [Unfoldings.Cap.AdjacentSurvivorClosedCircleContact](../Unfoldings/Cap/AdjacentSurvivorClosedCircleContact.lean) | Identify one physical surface point at weak contacts between adjacent extreme survivors, including disappearing boundary runs |

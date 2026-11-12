@@ -985,8 +985,17 @@ Complete auxiliary-bank comparison and global face-interior nonoverlap are prove
   [OuterClosedCircleContact](../Unfoldings/Cap/OuterClosedCircleContact.lean).
   Stronger companion lemmas retain coherent physical endpoint equality and
   the exact parameters of named fine banks.
-- [ ] Assemble the remaining adjacent-sector disappearing boundary runs and
-  pass from extreme survivors to arbitrary closed contacts.
+- [x] Identify actual physical endpoints at weak circle contacts across either
+  disappearing boundary run; see
+  [BoundaryRunClosedCircleContact](../Unfoldings/Cap/BoundaryRunClosedCircleContact.lean).
+  Strictly interior terminal candidates cannot contact the circle. Remaining
+  candidates retain their exact physical crossing parameters.
+- [x] Assemble no-run and disappearing-run cases for adjacent extreme survivors;
+  [AdjacentSurvivorClosedCircleContact](../Unfoldings/Cap/AdjacentSurvivorClosedCircleContact.lean)
+  identifies both actual developed endpoints and their common physical point.
+  Actual maximal terminals are chosen by
+  [BoundaryRunClosedConstruction](../Unfoldings/Cap/BoundaryRunClosedConstruction.lean).
+- [ ] Pass from adjacent extreme survivors to arbitrary approached closed contacts.
 - [ ] Identify all coincident intrinsic boundary copies after pruning, including
   cut vertices, contacts between different trees, and original rim points.
 - [ ] Conclude boundary injectivity and state the simple-polygon existence theorem.
