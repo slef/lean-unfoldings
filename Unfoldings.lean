@@ -558,3 +558,8 @@ public import Unfoldings.Cap.EmptyCircleTerminalCopy
 public import Unfoldings.Geometry.AffineGraphPinches
 public import Unfoldings.Geometry.ApproachedStripInsertion
 public import Unfoldings.Geometry.VertexPinchWaterfall
+public import Unfoldings.Cap.RadialWaterfallBankControl
+public import Unfoldings.Cap.ExtendedAdjacentCircleGeometry
+public import Unfoldings.Cap.ExtendedCalibratedComparisonArcs
+public import Unfoldings.Cap.EmptyCircleContinuation
+public import Unfoldings.Cap.ExtendedEmptyCircleContinuations

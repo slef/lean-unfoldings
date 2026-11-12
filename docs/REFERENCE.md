@@ -126,6 +126,11 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 | [Unfoldings.Cap.ExtendedAdjacentCircleSeparation](../Unfoldings/Cap/ExtendedAdjacentCircleSeparation.lean) | One tilt before both meshes constructs a single trace family with disjoint neighboring source-circle slices |
 | [Unfoldings.Cap.EmptyCircleTerminalPinch](../Unfoldings/Cap/EmptyCircleTerminalPinch.lean) | An absent controlled circle supplies a permanent terminal pinch with an actual visible trace inside |
 | [Unfoldings.Cap.EmptyCircleStripBounds](../Unfoldings/Cap/EmptyCircleStripBounds.lean) | An empty nonexceptional circle slice places the entire approached strip closure strictly inside the circle |
+| [Unfoldings.Cap.ExtendedEmptyCircleContinuations](../Unfoldings/Cap/ExtendedEmptyCircleContinuations.lean) | Construct actual disappearing-strip continuations from the roof geometry in the same calibration |
+| [Unfoldings.Cap.EmptyCircleContinuation](../Unfoldings/Cap/EmptyCircleContinuation.lean) | A disappearing strip retains its actual terminal copy and ordered proper comparison arcs |
+| [Unfoldings.Cap.ExtendedCalibratedComparisonArcs](../Unfoldings/Cap/ExtendedCalibratedComparisonArcs.lean) | Actual roof-face bounds construct proper comparison arcs in a specified bank calibration |
+| [Unfoldings.Cap.ExtendedAdjacentCircleGeometry](../Unfoldings/Cap/ExtendedAdjacentCircleGeometry.lean) | One uniform calibration gives neighboring circle separation and actual disappearing-strip continuations |
+| [Unfoldings.Cap.RadialWaterfallBankControl](../Unfoldings/Cap/RadialWaterfallBankControl.lean) | The actual radial trace family supplies all-face error estimates in the same calibration |
 | [Unfoldings.Cap.EmptyCircleTerminalCopy](../Unfoldings/Cap/EmptyCircleTerminalCopy.lean) | A disappearing actual strip supplies its own cut-vertex contour copy inside the source circle |
 | [Unfoldings.Cap.GeometricTailAffine](../Unfoldings/Cap/GeometricTailAffine.lean) | Actual tail graphs and exterior rays are locally affine away from geometric vertices |
 | [Unfoldings.Cap.GeometricChainSectors](../Unfoldings/Cap/GeometricChainSectors.lean) | Actual completed parent edges and curved descendants retain their specified geometric leaf sector |

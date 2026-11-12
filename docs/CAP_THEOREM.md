@@ -681,6 +681,12 @@ Separation of different banks and global nonoverlap remain open.
   Preserve it as a fine cut vertex in the same uniform radial and adjacent
   circle construction. A disappearing strip supplies its own actual contour
   copy strictly inside the source circle.
+- [x] Continue every disappearing nonempty strip from its own terminal contour
+  copy by a pair of simple proper comparison arcs, with ordered source-circle
+  ends. The actual trace family supplies all-face quadrant margins in the same
+  calibration. One uniform threshold before both meshes supplies these arcs
+  and neighboring-strip separation together. Separation of the continuation
+  arcs from other strips is not yet proved.
 - [ ] Compare surviving strips across intervening strips whose circle slice is
   empty, then establish a global cyclic order across the sector boundaries.
 - [ ] Prove side-by-side separation of all developed strips and hence all

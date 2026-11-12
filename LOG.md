@@ -2,6 +2,26 @@
 
 ## Session Log
 
+### 2026-11-12 — uniform disappearing-strip comparison continuations
+
+- Derived the all-face waterfall position estimates from the actual radial
+  trace family in its own calibration. The same uniform tilt supplies positive
+  source-quadrant margins for every actual roof-face copy.
+- Extracted the proper comparison construction so it applies in a specified
+  calibration with actual face estimates, preserving its previous uniform API.
+- Constructed a disappearing strip's ordered pair of simple proper comparison
+  arcs from its own actual terminal copy. Derived the physical stopping-ball
+  bound from the closed source-distance estimate.
+- One threshold chosen before both meshes now supplies the same trace family
+  its neighboring-circle separation, cut-vertex terminal classification,
+  all-face margins, and disappearing-strip continuations together.
+- Preserved the three previous public theorem statements byte-for-byte.
+- Verification: cache retrieval followed by full `lake build` pass; **8,938
+  unfolding / 7,243 pinned topology declarations**, standard axioms only;
+  indexed documentation links (**1,296**) and whitespace pass. Separation of
+  comparison continuations from other strips, global cyclic order, original-face
+  transfer, and the full cap theorem remain open.
+
 ### 2026-11-12 — actual terminal vertices and developed contour copies
 
 - Proved ordered locally affine banks cannot have an approached zero-width

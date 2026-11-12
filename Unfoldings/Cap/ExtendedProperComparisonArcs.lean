@@ -5,6 +5,7 @@ public import Unfoldings.Cap.ExtendedBankChainPositions
 public import Unfoldings.Cap.CompletedRadiusPrefix
 public import Unfoldings.Cap.SectorSweepBall
 public import Unfoldings.Cap.ProperComparisonData
+public import Unfoldings.Cap.ExtendedCalibratedComparisonArcs
 
 /-! Uniformly construct proper comparison arcs in the actual roof and radial-bank calibration. -/
 
@@ -80,53 +81,8 @@ theorem exists_uniform_extended_proper_comparison_arcs (t : ℝ) (positive : 0 <
   refine ⟨budget, fun D => ?_⟩
   obtain ⟨B, control, face_bounds⟩ := banks D
   refine ⟨B, control, face_bounds, ?_⟩
-  intro radius room w member start target original circle near far
-  have height : ∀ f, (3 : ℝ) / 4 ≤ K.normal f 2 := fun f => normal.trans (tilt f)
-  obtain ⟨i, sectors, positions⟩ := M.cornerExtendedOutward_bankChain_sector_positions
-    positive small T internal source_height lower conforming height w member
-  have radius_positive : 0 < radius := (norm_nonneg _).trans_lt start
-  have radius_cutoff : radius ≤ cutoff := by linarith
-  have deepQ : Metric.closedBall (K.projectedVertex origin) radius ⊆ interior Q.footprint := by
-    rw [L.partition.normalizedCap_footprint L.conforming lower]
-    exact (Metric.closedBall_subset_closedBall radius_cutoff).trans deep
-  have distance (p : Plane) : dist (K.projectedVertex origin) p =
-      ‖p - K.projectedVertex origin‖ := (dist_comm _ _).trans (dist_eq_norm _ _)
-  obtain ⟨terminal, parameter, endpoint, vertices, points⟩ :=
-    R.completedRootPath_exists_radius_prefix network.property member radius
-      (by rw [distance]; exact start) deepQ
-  have endpoint_norm : ‖(R.completedRootPath w).point terminal parameter -
-      K.projectedVertex origin‖ = radius := (distance _).symm.trans endpoint
-  have vertices_norm : ∀ j : Fin (R.spanningCompletion.parents.distanceToRoot w + 1),
-      j.val ≤ terminal.val →
-        ‖(R.completedRootPath w).vertex j - K.projectedVertex origin‖ ≤ radius :=
-    fun j before => (distance _).symm.trans_le (vertices j before)
-  have points_norm : ∀ j : Fin (R.spanningCompletion.parents.distanceToRoot w), ∀ r : unitInterval,
-      PolygonalChain.Before j r terminal parameter →
-        ‖(R.completedRootPath w).point j r - K.projectedVertex origin‖ ≤ radius :=
-    fun j r before => (distance _).symm.trans_le (points j r before)
-  have bounded_faces (f) (p : Plane) (at_face : p ∈ (Q.projectedTriangle f).carrier)
-      (bounded : ‖p - K.projectedVertex origin‖ ≤ radius)
-      (cone : p - K.projectedVertex origin ∈ closedFiveSector t i) :=
-    face_bounds i f p at_face cone (closedBall_subset_sectorSweepInterior positive small
-      (K.projectedVertex origin) room
-      (by change dist p (K.projectedVertex origin) ≤ radius; rw [dist_eq_norm]; exact bounded))
-  obtain ⟨right, left, right_image, left_image, _, order⟩ := B.exists_proper_comparison_arcs
-    i w (D.projectedMap Q (K.projectedVertex origin)) μ radius μbounds.1.le positions bounded_faces
-    target original (fun j => (sectors j).2) budget (fun j => (sectors j).1) terminal parameter
-    endpoint_norm vertices_norm points_norm circle near far
-  exact ⟨{
-    sector := i
-    terminal := terminal
-    parameter := parameter
-    original := original
-    endpoint_radius := endpoint_norm
-    positions := positions
-    vertices_bounded := vertices_norm
-    points_bounded := points_norm
-    right := right
-    left := left
-    right_image := right_image
-    left_image := left_image
-    circle_order := order }⟩
+  exact M.cornerExtendedOutward_proper_comparison_data positive small T internal source_height
+    lower conforming (fun f => normal.trans (tilt f)) cutoff deep μ μbounds.1.le
+    D B face_bounds budget
 
 end Unfoldings.ConvexCap
