@@ -115,6 +115,11 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 | Module | Purpose |
 | --- | --- |
 | [Unfoldings.Cap.ExtendedWaterfallBankTraces](../Unfoldings/Cap/ExtendedWaterfallBankTraces.lean) | Construct complete actual bank traces from the common source through active heights |
+| [Unfoldings.Cap.ExtendedFacePositionControl](../Unfoldings/Cap/ExtendedFacePositionControl.lean) | Uniform common-source position bounds for every actual roof face and bank copy |
+| [Unfoldings.Cap.WaterfallFaceError](../Unfoldings/Cap/WaterfallFaceError.lean) | Extend strict-strip estimates to all containing-face values without identifying cut copies |
+| [Unfoldings.Cap.CenteredFrameError](../Unfoldings/Cap/CenteredFrameError.lean) | Frame independence of actual common-source position error |
+| [Unfoldings.Cap.ProjectedInteriorCoherence](../Unfoldings/Cap/ProjectedInteriorCoherence.lean) | Unique containing faces and actual map values at projected face interiors |
+| [Unfoldings.Cap.SectorWaterfallDensity](../Unfoldings/Cap/SectorWaterfallDensity.lean) | Strict sector cells are dense within each projected face in the open sweep region |
 | [Unfoldings.Cap.CenteredTraceValues](../Unfoldings/Cap/CenteredTraceValues.lean) | Trace values are approached through their own faces and match coherent copies |
 | [Unfoldings.Cap.CenteredBankTrace](../Unfoldings/Cap/CenteredBankTrace.lean) | Complete source-based bank traces with actual one-sided containing-face visibility |
 | [Unfoldings.Cap.ExtendedWaterfallTraces](../Unfoldings/Cap/ExtendedWaterfallTraces.lean) | Actual whole-strip maps are uniformly Lipschitz and have containing-face boundary traces |
@@ -619,6 +624,7 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 | Module | Purpose |
 | --- | --- |
 | [Unfoldings.Geometry.RecoverableStripClosure](../Unfoldings/Geometry/RecoverableStripClosure.lean) | Finite reopening pinches leave both source-to-active banks in the strict-strip closure |
+| [Unfoldings.Geometry.MonotoneStripDensity](../Unfoldings/Geometry/MonotoneStripDensity.lean) | Finite waterfall walls are closed nowhere dense; off-wall points lie in strict cells |
 | [Unfoldings.Geometry.MonotoneStripLipschitz](../Unfoldings/Geometry/MonotoneStripLipschitz.lean) | Uniform Lipschitz bounds for affine selections on bounded monotone strips |
 | [Unfoldings.Geometry.MonotoneStripCoreLipschitz](../Unfoldings/Geometry/MonotoneStripCoreLipschitz.lean) | Uniform strict-strip Lipschitz bounds across coherent reopening pinches |
 | [Unfoldings.Geometry.FiniteSelectionNormBounds](../Unfoldings/Geometry/FiniteSelectionNormBounds.lean) | Upper norm bounds across arbitrary continuous affine chart switches |

@@ -510,9 +510,13 @@ Separation of different banks and global nonoverlap remain open.
   approached through its own containing face, and the source value is its
   actual coherent developed value. Permanently collapsed continuations are
   not identified with these one-sided traces.
-- [ ] Identify the facing cut banks from one-sided face visibility. Transfer
-  position estimates to all actual face copies using density of strict strip
-  interiors, then control radial order and complete bank continuations.
+- [x] Transfer position estimates to every actual containing-face copy. Finite
+  waterfall walls are closed nowhere dense, so strict cells are dense within
+  each projected face in the open comparison region. Facewise continuity
+  extends the estimate to every bank and branch copy in the same bank-order
+  calibration, with the tilt threshold chosen before either mesh.
+- [ ] Identify the facing cut banks from one-sided face visibility, then
+  control radial order and complete bank continuations.
 - [ ] Prove side-by-side separation of all developed strips and hence all
   distinct original face interiors.
 - [x] Apply the cut-disk and flat-development infrastructure to the fixed-wedge

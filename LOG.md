@@ -2,6 +2,21 @@
 
 ## Session Log
 
+### 2026-11-11 — source-position control for every actual face copy
+
+- Proved finite monotone waterfall walls closed nowhere dense, and strict
+  sector cells dense within each projected face in the open comparison region.
+- Proved unique containing-face selection in face interiors and frame
+  independence of source-position error. Facewise continuity transfers the
+  strict-strip estimate to every containing-face value on cuts and branches.
+- Derived `exists_uniform_extended_face_position_control`: arbitrarily small
+  relative position error in the actual bank-order calibration, uniformly
+  before both meshes. Different branch copies remain distinct.
+- Verification: cache retrieval followed by full `lake build` pass; **8,371
+  unfolding / 7,243 pinned topology declarations**, standard axioms only;
+  indexed documentation links (**1,162**) and whitespace pass. Facing-bank
+  identification, complete continuations, and global separation remain open.
+
 ### 2026-11-11 — complete source-based bank traces with face visibility
 
 - Proved finite reopening pinches leave both full banks up to every active

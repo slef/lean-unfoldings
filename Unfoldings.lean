@@ -423,3 +423,9 @@ public import Unfoldings.Cap.CenteredTraceValues
 public import Unfoldings.Cap.ExtendedWaterfallBankTraces
 public import Unfoldings.Geometry.RecoverableStripClosure
 public import Unfoldings.Topology.FiniteSelectionVisibility
+public import Unfoldings.Geometry.MonotoneStripDensity
+public import Unfoldings.Cap.SectorWaterfallDensity
+public import Unfoldings.Cap.ProjectedInteriorCoherence
+public import Unfoldings.Cap.CenteredFrameError
+public import Unfoldings.Cap.WaterfallFaceError
+public import Unfoldings.Cap.ExtendedFacePositionControl
