@@ -1129,6 +1129,11 @@ Complete auxiliary-bank comparison and global face-interior nonoverlap are prove
   [ClosedSectionBoundaryRunContact](../Unfoldings/Cap/ClosedSectionBoundaryRunContact.lean)
   preserves actual component-bank parameters on both sides, including closed-only
   pinches and arbitrary tied terminal maxima.
+- [x] Identify coincident actual closed face copies at every controlled positive
+  radius, across all sectors, with no finite exceptional set.
+  [ClosedFaceAllRadiusContact](../Unfoldings/Cap/ClosedFaceAllRadiusContact.lean)
+  retains degenerate closed sections, actual component-bank parameters, and
+  physical endpoint labels throughout the comparison.
 - [ ] Identify all coincident intrinsic boundary copies after pruning, including
   cut vertices, contacts between different trees, and original rim points.
 - [ ] Conclude boundary injectivity and state the simple-polygon existence theorem.

@@ -892,3 +892,17 @@ public import Unfoldings.Cap.ClosedSectionBoundaryNeighborCandidate
 public import Unfoldings.Cap.ClosedSectionSharedBankMargins
 public import Unfoldings.Cap.ClosedSectionBoundaryRunMargins
 public import Unfoldings.Cap.ClosedSectionBoundaryRunContact
+public import Unfoldings.Cap.AcrossSectorAllRadiusContact
+public import Unfoldings.Cap.AdjacentClosedSectionSurvivorContact
+public import Unfoldings.Cap.AdjacentSectorAllRadiusContact
+public import Unfoldings.Cap.AllSectorAllRadiusContact
+public import Unfoldings.Cap.ClosedFaceAllRadiusContact
+public import Unfoldings.Cap.ClosedOuterSectionComponentBank
+public import Unfoldings.Cap.ClosedSectionBoundaryRunConstruction
+public import Unfoldings.Cap.OuterClosedSectionAlternative
+public import Unfoldings.Cap.OuterClosedSectionContact
+public import Unfoldings.Cap.SameSectorAllRadiusContact
+public import Unfoldings.Cap.WaterfallClosedSectionExtremeBounds
+public import Unfoldings.Cap.WaterfallClosedSectionNonempty
+public import Unfoldings.Geometry.QuadrantCircleCoordinateOrder
+public import Unfoldings.Geometry.RadialTailSeedHeight

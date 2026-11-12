@@ -1678,3 +1678,17 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Cap.ClosedSectionSharedBankMargins](../Unfoldings/Cap/ClosedSectionSharedBankMargins.lean) | Keep both comparison margins for shared-ray closed circle sections |
 | [Unfoldings.Cap.ClosedSectionBoundaryRunMargins](../Unfoldings/Cap/ClosedSectionBoundaryRunMargins.lean) | Derive actual candidate comparison margins for closed sections across boundary runs |
 | [Unfoldings.Cap.ClosedSectionBoundaryRunContact](../Unfoldings/Cap/ClosedSectionBoundaryRunContact.lean) | Identify physical contacts across upper and lower boundary runs at every controlled radius |
+| [Unfoldings.Cap.AcrossSectorAllRadiusContact](../Unfoldings/Cap/AcrossSectorAllRadiusContact.lean) | Identify closed contacts across every pair of distinct sectors without exceptional radii |
+| [Unfoldings.Cap.AdjacentClosedSectionSurvivorContact](../Unfoldings/Cap/AdjacentClosedSectionSurvivorContact.lean) | Identify contacts between adjacent-sector closed extreme survivors at every radius |
+| [Unfoldings.Cap.AdjacentSectorAllRadiusContact](../Unfoldings/Cap/AdjacentSectorAllRadiusContact.lean) | Identify all actual closed contacts across adjacent sectors including pinch-only sections |
+| [Unfoldings.Cap.AllSectorAllRadiusContact](../Unfoldings/Cap/AllSectorAllRadiusContact.lean) | Identify all actual five-sector closed trace contacts at every controlled positive radius |
+| [Unfoldings.Cap.ClosedFaceAllRadiusContact](../Unfoldings/Cap/ClosedFaceAllRadiusContact.lean) | Identify the physical points of coincident actual closed face copies at every controlled radius |
+| [Unfoldings.Cap.ClosedOuterSectionComponentBank](../Unfoldings/Cap/ClosedOuterSectionComponentBank.lean) | Match actual outer component banks through closed endpoints including coherent seeds |
+| [Unfoldings.Cap.ClosedSectionBoundaryRunConstruction](../Unfoldings/Cap/ClosedSectionBoundaryRunConstruction.lean) | Construct actual closed-empty boundary runs and identify contacts with a neighboring outer bank |
+| [Unfoldings.Cap.OuterClosedSectionAlternative](../Unfoldings/Cap/OuterClosedSectionAlternative.lean) | Classify facing closed outer bank endpoints by a common point or an actual radial component |
+| [Unfoldings.Cap.OuterClosedSectionContact](../Unfoldings/Cap/OuterClosedSectionContact.lean) | Identify weak contacts across facing outer banks without excluding vertex radii |
+| [Unfoldings.Cap.SameSectorAllRadiusContact](../Unfoldings/Cap/SameSectorAllRadiusContact.lean) | Identify arbitrary same-sector closed contacts in either physical cell order |
+| [Unfoldings.Cap.WaterfallClosedSectionExtremeBounds](../Unfoldings/Cap/WaterfallClosedSectionExtremeBounds.lean) | Bound all closed circle images by the first and last closed section endpoints |
+| [Unfoldings.Cap.WaterfallClosedSectionNonempty](../Unfoldings/Cap/WaterfallClosedSectionNonempty.lean) | Prove each controlled sector circle has a surviving closed section |
+| [Unfoldings.Geometry.QuadrantCircleCoordinateOrder](../Unfoldings/Geometry/QuadrantCircleCoordinateOrder.lean) | Reverse vertical circle order from weak horizontal order in the positive quadrant |
+| [Unfoldings.Geometry.RadialTailSeedHeight](../Unfoldings/Geometry/RadialTailSeedHeight.lean) | Bound radial component seed heights by every later physical position |
