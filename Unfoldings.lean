@@ -544,3 +544,8 @@ public import Unfoldings.Cap.CircleStripSeparation
 public import Unfoldings.Cap.RegularCircleRadius
 public import Unfoldings.Cap.LeafTailCircleSeparation
 public import Unfoldings.Topology.FiniteRadiusAvoidance
+public import Unfoldings.Geometry.SubdivisionWallContacts
+public import Unfoldings.Cap.GeometricSeparatorPrefix
+public import Unfoldings.Cap.SharedSeparatorCirclePrefix
+public import Unfoldings.Cap.SharedSeparatorCircleSeparation
+public import Unfoldings.Cap.ExtendedAdjacentCircleSeparation

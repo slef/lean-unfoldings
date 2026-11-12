@@ -663,8 +663,16 @@ Separation of different banks and global nonoverlap remain open.
   Leaf tracking and the specified leaf sector supply both complete path banks
   and all curvature-carrying descendant directions; no gap-order certificate
   or comparison-curve separation is an input.
-- [ ] Derive coherent shared prefixes for every actual adjacent separator, then
-  establish one global cyclic order for all developed strip-circle intervals.
+- [x] Derive coherent shared prefixes for actual adjacent separators. Reopening
+  wall contacts lie in the coherent pinch set; a leaf cannot lie on an earlier
+  distinct tail. Both exterior-ray contacts and collapsed neighbors with later
+  positive width are included. No supplied shared-prefix coherence is needed.
+- [x] Uniformly construct one radial trace family with disjoint neighboring
+  strip-circle slices off the finite vertex-radius set. Tilt and error bounds
+  precede both meshes, and all prefix, tail, leaf-copy, curvature-sector, and
+  chart-matching hypotheses are derived for this same subdivision.
+- [ ] Compare surviving strips across intervening strips whose circle slice is
+  empty, then establish a global cyclic order across the sector boundaries.
 - [ ] Prove side-by-side separation of all developed strips and hence all
   distinct original face interiors.
 - [x] Apply the cut-disk and flat-development infrastructure to the fixed-wedge

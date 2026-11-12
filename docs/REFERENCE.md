@@ -120,6 +120,10 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 | [Unfoldings.Cap.CompletedGeometricTailTracking](../Unfoldings/Cap/CompletedGeometricTailTracking.lean) | Actual completed cut paths supply support, genuine outward edges, and a far endpoint for tail tracking |
 | [Unfoldings.Cap.GeometricVertexCutPiece](../Unfoldings/Cap/GeometricVertexCutPiece.lean) | Every nonterminal geometric cut vertex has an actual containing piece with its own component label |
 | [Unfoldings.Cap.LeafCompletedTailTracking](../Unfoldings/Cap/LeafCompletedTailTracking.lean) | Constructed leaf tails track the actual completed forest without a path-matching certificate |
+| [Unfoldings.Cap.GeometricSeparatorPrefix](../Unfoldings/Cap/GeometricSeparatorPrefix.lean) | Actual shared separator prefixes are cut-free or coherent, including exterior-ray contacts |
+| [Unfoldings.Cap.SharedSeparatorCirclePrefix](../Unfoldings/Cap/SharedSeparatorCirclePrefix.lean) | Actual neighboring circle endpoints coincide before their shared leaf or both lie beyond it |
+| [Unfoldings.Cap.SharedSeparatorCircleSeparation](../Unfoldings/Cap/SharedSeparatorCircleSeparation.lean) | Actual adjacent strip-circle images are disjoint across the coherent prefix and common leaf tail |
+| [Unfoldings.Cap.ExtendedAdjacentCircleSeparation](../Unfoldings/Cap/ExtendedAdjacentCircleSeparation.lean) | One tilt before both meshes constructs a single trace family with disjoint neighboring source-circle slices |
 | [Unfoldings.Cap.GeometricChainSectors](../Unfoldings/Cap/GeometricChainSectors.lean) | Actual completed parent edges and curved descendants retain their specified geometric leaf sector |
 | [Unfoldings.Cap.CompletedChartComparisonPoints](../Unfoldings/Cap/CompletedChartComparisonPoints.lean) | Centered parent-bank chart values equal the corresponding complete comparison-chain points |
 | [Unfoldings.Cap.RadialStripCircleComparison](../Unfoldings/Cap/RadialStripCircleComparison.lean) | Actual regular strip-circle endpoints are points of the named entrance and exit comparison banks |
@@ -719,6 +723,7 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 | [Unfoldings.Geometry.ChainRadiusCrossing](../Unfoldings/Geometry/ChainRadiusCrossing.lean) | An outward chain reaches a prescribed sphere with its preceding path inside the ball |
 | [Unfoldings.Geometry.HeightNetworkChainTracking](../Unfoldings/Geometry/HeightNetworkChainTracking.lean) | A monotone fine chain and a tail with the same start follow the same forward-deterministic network |
 | [Unfoldings.Geometry.ChainPointCoverLabels](../Unfoldings/Geometry/ChainPointCoverLabels.lean) | Every whole-edge point of a covered fine chain retains its starting component label |
+| [Unfoldings.Geometry.SubdivisionWallContacts](../Unfoldings/Geometry/SubdivisionWallContacts.lean) | Recorded walls that meet and later separate have a contact in the coherent pinch set |
 | [Unfoldings.Geometry.RecoverableStripInitialClosure](../Unfoldings/Geometry/RecoverableStripInitialClosure.lean) | Every earlier carrier point lies in the approached closure of a finitely pinched strip |
 | [Unfoldings.Geometry.RecoverableStripClosure](../Unfoldings/Geometry/RecoverableStripClosure.lean) | Finite reopening pinches leave both source-to-active banks in the strict-strip closure |
 | [Unfoldings.Geometry.MonotoneStripDensity](../Unfoldings/Geometry/MonotoneStripDensity.lean) | Finite waterfall walls are closed nowhere dense; off-wall points lie in strict cells |

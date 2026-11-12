@@ -2,6 +2,28 @@
 
 ## Session Log
 
+### 2026-11-12 — uniform actual adjacent-strip circle separation
+
+- Proved contacts between recorded subdivision walls lie in the coherent pinch
+  set whenever those walls later separate. A separator meeting a cut before
+  its own leaf must meet an earlier recorded tail; distinct-leaf avoidance
+  forces that contact to reopen and hence be coherent.
+- Included exterior-ray contacts and adjacent cells collapsed at the tested
+  height but active later. Derived the required pinch coherence from the
+  actual strip records themselves.
+- Proved actual neighboring circle endpoints coincide on the common prefix or
+  both lie beyond the leaf. Combined this with actual tail-bank separation.
+- Constructed one uniform subdivision and trace family with disjoint adjacent
+  source-circle slices outside the finite vertex-radius set. Tilt and error
+  thresholds precede both meshes; leaf copies, prefix coherence, physical
+  tail matching, curvature sectors, and chart bounds are all derived.
+- Preserved the previous shared-prefix theorem statement byte-for-byte.
+- Verification: cache retrieval followed by full `lake build` pass; **8,866
+  unfolding / 7,243 pinned topology declarations**, standard axioms only;
+  indexed documentation links (**1,282**) and whitespace pass. Surviving strips
+  separated by empty circle slices, cyclic sector order, original-face transfer,
+  and the full cap theorem remain open.
+
 ### 2026-11-12 — actual leaf-tail circle separation
 
 - Proved the specified leaf sector controls every actual completed parent edge

@@ -37,16 +37,17 @@ theorem shared_bank_value_of_coherent
   rw [wall]
   exact first_value.trans last_value.symm
 
-/-- At equal positive source radius, adjacent endpoints either coincide at the
-same prefix height or both lie beyond the coherent prefix. This includes approached
-terminal points; neither strip is assumed active beyond its tested bank height. -/
-theorem shared_bank_circle_prefix_alternative
+/-- Only agreement up to both tested active heights is needed. Permanently
+collapsed tails outside the approached domains impose no prefix-value condition. -/
+theorem circle_bank_prefix_alternative
     (data : N.RadialStripTraceData positive small D calibration i S ε cutoff)
     (other : N.RadialStripTraceData positive small D calibration i T ε cutoff)
-    (wall : S.upper = T.lower) (prefixHeight : ℝ)
-    (coherent : ∀ h ∈ Set.Icc 0 prefixHeight, D.ProjectedCoherentAt K
-      (source + (fiveSectorFrame t positive small i).place.symm (S.upper.point h)))
-    {a b radius : ℝ} (apositive : 0 ≤ a) (bpositive : 0 ≤ b) (radius_positive : 0 < radius)
+    (prefixHeight : ℝ) {a b radius : ℝ}
+    (common_prefix : ∀ h ∈ Set.Icc 0 prefixHeight, h ≤ a → h ≤ b →
+      S.upper.point h ∈ closure data.strictDomain →
+      T.lower.point h ∈ closure other.strictDomain →
+      data.value (S.upper.point h) = other.value (T.lower.point h))
+    (apositive : 0 ≤ a) (bpositive : 0 ≤ b) (radius_positive : 0 < radius)
     (first : S.upper.point a ∈ closure data.strictDomain)
     (last : T.lower.point b ∈ closure other.strictDomain)
     (first_radius : ‖data.value (S.upper.point a) - data.center‖ = radius)
@@ -71,8 +72,7 @@ theorem shared_bank_circle_prefix_alternative
         other.closed_initial last (last_carrier a) (by
           rw [T.lower.point_height, T.lower.point_height]
           exact ⟨apositive, ordered⟩)
-      have common := data.shared_bank_value_of_coherent other wall first other_closed
-        (coherent a ⟨apositive, before⟩)
+      have common := common_prefix a ⟨apositive, before⟩ le_rfl ordered first other_closed
       obtain ⟨active, member⟩ :=
         (show (closure other.strictDomain).Nonempty from ⟨T.lower.point b, last⟩).of_closure
       have other_radius : ‖other.value (T.lower.point a) - other.center‖ = radius := by
@@ -88,8 +88,7 @@ theorem shared_bank_circle_prefix_alternative
         data.closed_initial first (first_carrier b) (by
           rw [S.upper.point_height, S.upper.point_height]
           exact ⟨bpositive, ordered⟩)
-      have common := data.shared_bank_value_of_coherent other wall data_closed last
-        (coherent b ⟨bpositive, before⟩)
+      have common := common_prefix b ⟨bpositive, before⟩ ordered le_rfl data_closed last
       obtain ⟨active, member⟩ :=
         (show (closure data.strictDomain).Nonempty from ⟨S.upper.point a, first⟩).of_closure
       have data_radius : ‖data.value (S.upper.point b) - data.center‖ = radius := by
@@ -100,5 +99,27 @@ theorem shared_bank_circle_prefix_alternative
         data_closed first data_radius first_radius
       exact Or.inl ⟨same.symm, by simpa only [same] using common⟩
     · exact Or.inr ⟨(lt_of_not_ge before).trans_le ordered, lt_of_not_ge before⟩
+
+
+/-- At equal positive source radius, adjacent endpoints either coincide at the
+same prefix height or both lie beyond the coherent prefix. This includes approached
+terminal points; neither strip is assumed active beyond its tested bank height. -/
+theorem shared_bank_circle_prefix_alternative
+    (data : N.RadialStripTraceData positive small D calibration i S ε cutoff)
+    (other : N.RadialStripTraceData positive small D calibration i T ε cutoff)
+    (wall : S.upper = T.lower) (prefixHeight : ℝ)
+    (coherent : ∀ h ∈ Set.Icc 0 prefixHeight, D.ProjectedCoherentAt K
+      (source + (fiveSectorFrame t positive small i).place.symm (S.upper.point h)))
+    {a b radius : ℝ} (apositive : 0 ≤ a) (bpositive : 0 ≤ b) (radius_positive : 0 < radius)
+    (first : S.upper.point a ∈ closure data.strictDomain)
+    (last : T.lower.point b ∈ closure other.strictDomain)
+    (first_radius : ‖data.value (S.upper.point a) - data.center‖ = radius)
+    (last_radius : ‖other.value (T.lower.point b) - other.center‖ = radius) :
+    (a = b ∧ data.value (S.upper.point a) = other.value (T.lower.point b)) ∨
+      (prefixHeight < a ∧ prefixHeight < b) := by
+  exact data.circle_bank_prefix_alternative other prefixHeight
+    (fun h bounds _ _ first last =>
+      data.shared_bank_value_of_coherent other wall first last (coherent h bounds))
+    apositive bpositive radius_positive first last first_radius last_radius
 
 end Unfoldings.ConvexCap.RadialCutForest.RadialStripTraceData
