@@ -564,6 +564,9 @@ Separation of different banks and global nonoverlap remain open.
   vertex, using the actual contour copy without identifying distinct copies.
 - [ ] Construct complete bank continuations beyond terminated zero-width strip
   tails and compare their straight branch-gap segments.
+- [x] Prove paired-bank circle order with only rightward right-bank and upward
+  left-bank progress. Straight branch-gap steps may decrease the other
+  coordinate; no radial monotonicity of these steps is required.
 - [ ] Prove side-by-side separation of all developed strips and hence all
   distinct original face interiors.
 - [x] Apply the cut-disk and flat-development infrastructure to the fixed-wedge

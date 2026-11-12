@@ -2,6 +2,18 @@
 
 ## Session Log
 
+### 2026-11-11 — circle order allowing straight branch-gap steps
+
+- Proved matched coordinate-increment bounds give global left-or-above order
+  using only right-bank horizontal and left-bank vertical progress. The other
+  coordinate may decrease along a branch-gap step.
+- Derived equal-radius circle order for such paired chains in a common source
+  quadrant, without radial monotonicity assumptions on the gap steps.
+- Verification: cache retrieval followed by full `lake build` pass; **8,460
+  unfolding / 7,243 pinned topology declarations**, standard axioms only;
+  whitespace passes. Constructing the complete actual comparison chains and
+  global nonoverlap remain open.
+
 ### 2026-11-11 — ordered actual copies at branch endpoints
 
 - Represented every intrinsic branch copy by its actual contour index and

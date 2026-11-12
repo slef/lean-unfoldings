@@ -651,6 +651,7 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 | [Unfoldings.Geometry.HeightGraphSegments](../Unfoldings/Geometry/HeightGraphSegments.lean) | Exact whole-segment graphs, directed-side formulas, and transported cut avoidance |
 | [Unfoldings.Geometry.NearIdentityRadial](../Unfoldings/Geometry/NearIdentityRadial.lean) | Derive positive radial tests from linear chart error and source-position margins |
 | [Unfoldings.Geometry.HeightGraphRadial](../Unfoldings/Geometry/HeightGraphRadial.lean) | Monotone height graphs give strict radial progress through continuous finite face selections |
+| [Unfoldings.Geometry.MixedBankOrder](../Unfoldings/Geometry/MixedBankOrder.lean) | Paired-bank circle order needs rightward right-bank and upward left-bank progress, allowing branch-gap steps |
 | [Unfoldings.Geometry.RecoverableStripRegularWidth](../Unfoldings/Geometry/RecoverableStripRegularWidth.lean) | Derive positive strip width from a later active height and avoidance of reopening pinches |
 | [Unfoldings.Geometry.WedgeFrameSides](../Unfoldings/Geometry/WedgeFrameSides.lean) | Positive acute-wedge frames preserve every actual directed-edge side, including centered coordinates |
 | [Unfoldings.Geometry.StripCutSides](../Unfoldings/Geometry/StripCutSides.lean) | Positive strip width and cut avoidance force the local side even at a mere wall contact |
