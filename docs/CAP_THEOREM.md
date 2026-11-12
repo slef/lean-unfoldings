@@ -1121,6 +1121,10 @@ Complete auxiliary-bank comparison and global face-interior nonoverlap are prove
 - [x] Identify adjacent closed-section contacts, including terminal pinches.
   [ClosedSectionSeparatorContact](../Unfoldings/Cap/ClosedSectionSeparatorContact.lean)
   extends coherent prefix matching and actual tail matching without future width.
+- [x] Identify every within-sector approached contact at all controlled radii.
+  [WithinSectorAllRadiusContact](../Unfoldings/Cap/WithinSectorAllRadiusContact.lean)
+  retains pinch-only sections and handles arbitrary disappearing runs using
+  radius-independent terminal heights, closed early bounds, and strict late progress.
 - [ ] Identify all coincident intrinsic boundary copies after pruning, including
   cut vertices, contacts between different trees, and original rim points.
 - [ ] Conclude boundary injectivity and state the simple-polygon existence theorem.

@@ -1661,3 +1661,12 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Cap.ClosedBankPropertyLimit](../Unfoldings/Cap/ClosedBankPropertyLimit.lean) | Preserve closed predicates of actual bank contacts across every finite exceptional radius set |
 | [Unfoldings.Cap.TerminalHeightUniqueness](../Unfoldings/Cap/TerminalHeightUniqueness.lean) | Prove permanent approached terminals have one physical height independent of the comparison radius |
 | [Unfoldings.Cap.ClosedEmptyCircleRadiusGap](../Unfoldings/Cap/ClosedEmptyCircleRadiusGap.lean) | Prove a compact strip below an absent closed circle has a uniform positive radial gap |
+| [Unfoldings.Cap.ClosedBankCircleCrossing](../Unfoldings/Cap/ClosedBankCircleCrossing.lean) | Cross every smaller circle on the actual approached bank below a prescribed endpoint |
+| [Unfoldings.Cap.ClosedEmptyCircleRunRadiusGap](../Unfoldings/Cap/ClosedEmptyCircleRunRadiusGap.lean) | Keep a finite disappearing strip run absent from all sufficiently close smaller circles |
+| [Unfoldings.Cap.ClosedSectionEarlyRunBounds](../Unfoldings/Cap/ClosedSectionEarlyRunBounds.lean) | Extend both early terminal bounds through vertex radii while preserving actual terminal heights |
+| [Unfoldings.Cap.ClosedSectionLateRunBounds](../Unfoldings/Cap/ClosedSectionLateRunBounds.lean) | Track pinch-only closed sections and prove strict late progress from their actual terminal copies |
+| [Unfoldings.Geometry.CircleTerminalStrictContact](../Unfoldings/Geometry/CircleTerminalStrictContact.lean) | Force coincident circle endpoints strictly beyond a smaller terminal using early and strict late bounds |
+| [Unfoldings.Cap.ClosedSectionRunPhysicalContact](../Unfoldings/Cap/ClosedSectionRunPhysicalContact.lean) | Identify closed-section contacts across a nonempty disappearing strip run at every controlled radius |
+| [Unfoldings.Cap.ClosedSectionRemovedRunContact](../Unfoldings/Cap/ClosedSectionRemovedRunContact.lean) | Identify physical contacts across any removed run including the adjacent-separator case |
+| [Unfoldings.Cap.WaterfallClosedSectionPhysicalOrder](../Unfoldings/Cap/WaterfallClosedSectionPhysicalOrder.lean) | Preserve physical point labels in the complete closed-section survivor order at all radii |
+| [Unfoldings.Cap.WithinSectorAllRadiusContact](../Unfoldings/Cap/WithinSectorAllRadiusContact.lean) | Identify every actual within-sector closed trace contact without excluding any vertex radii |

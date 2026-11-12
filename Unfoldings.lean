@@ -875,3 +875,12 @@ public import Unfoldings.Cap.ClosedSectionSeparatorContact
 public import Unfoldings.Cap.ClosedBankPropertyLimit
 public import Unfoldings.Cap.TerminalHeightUniqueness
 public import Unfoldings.Cap.ClosedEmptyCircleRadiusGap
+public import Unfoldings.Cap.ClosedBankCircleCrossing
+public import Unfoldings.Cap.ClosedEmptyCircleRunRadiusGap
+public import Unfoldings.Cap.ClosedSectionEarlyRunBounds
+public import Unfoldings.Cap.ClosedSectionLateRunBounds
+public import Unfoldings.Geometry.CircleTerminalStrictContact
+public import Unfoldings.Cap.ClosedSectionRunPhysicalContact
+public import Unfoldings.Cap.ClosedSectionRemovedRunContact
+public import Unfoldings.Cap.WaterfallClosedSectionPhysicalOrder
+public import Unfoldings.Cap.WithinSectorAllRadiusContact
