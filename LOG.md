@@ -2,6 +2,29 @@
 
 ## Session Log
 
+### 2026-11-12 — uniform one-strip gaps and late finite strip chains
+
+- Strengthened the actual uniform roof construction with separation across one
+  nonempty disappearing strip, using the same calibration, subdivision, trace
+  family, error bound, and mesh-independent positive tilt threshold. Derived all
+  shared-leaf realizations and continuations. Preserved the former interface as
+  a projection of this stronger construction.
+- Proved the subdivision's ordered cell-wall chain, retaining zero-width cells.
+  A finite chain of collapsed strips identifies all physical banks. Applied this
+  to actual circle separation once both crossings are beyond the run's pinches;
+  the former single-strip result is now a special case.
+- Generalized actual bank gap order to equality of the tested physical points,
+  and completed-leaf height order to tail agreement only after the tested height.
+- Removed the circle condition from regular bank progress. Excluded finitely many
+  physical vertex heights and used continuity to retain those bounds on closed
+  intervals, including branch vertices and terminal copies.
+- Preserved all six saved previous theorem headers byte-for-byte.
+- Verification: cache retrieval followed by full `lake build` pass; **9,043
+  unfolding / 7,243 pinned topology declarations**, standard axioms only;
+  **1,334** local documentation links and whitespace pass. Early crossings across
+  arbitrary missing-strip runs, global sector order, original-face transfer,
+  and the full cap theorem remain open.
+
 ### 2026-11-12 — circle separation across one disappearing strip
 
 - Proved that a permanent terminal height cannot precede a leaf completed by

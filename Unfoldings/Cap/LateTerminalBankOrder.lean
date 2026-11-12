@@ -1,7 +1,7 @@
 module
 
 public import Unfoldings.Cap.SameSectorEmptyCircleComparison
-public import Unfoldings.Cap.CompletedComparisonStartOrder
+public import Unfoldings.Cap.PositiveWidthBankStartOrder
 public import Unfoldings.Cap.RadialStripCircleComparison
 public import Unfoldings.Cap.RegularCircleRadius
 
@@ -66,15 +66,12 @@ theorem terminal_re_le_late_lower_circle
         (R.completedRootPath continuation.vertex).point j s := by
     rw [wall]
     exact tracked
-  let origin := (R.completedDevelopment D).boundaryPosition
-    (R.completedContour.cycle.point continuation.target)
-  have value := B.circle_lower_eq_entrance_comparison_point i data radius_positive far slice
-    continuation.vertex continuation.on_cuts directions origin j s
+  have bound := B.lower_bank_start_order i continuation.vertex continuation.on_cuts
+    continuation.target continuation.original directions sectors budget data
+    (data.circle_slice_heights radius_positive far slice).1
+    (data.circle_slice_width radius_positive slice).1 j s
     (data.regular_of_radius_not_vertexRadii outside slice.lower_closed slice.lower_radius) physical
-  have bound := B.entranceComparisonChain_start_le i continuation.vertex continuation.target
-    continuation.original sectors budget directions ⟨2 * j.val + 1, by omega⟩ s
-  dsimp only at bound
-  rw [← continuation.value, ← value] at bound
+  rw [← continuation.value] at bound
   exact bound
 
 /-- A late exit crossing lies above the same actual terminal copy. -/
@@ -94,15 +91,12 @@ theorem terminal_im_le_late_upper_circle
         (R.completedRootPath continuation.vertex).point j s := by
     rw [wall]
     exact tracked
-  let origin := (R.completedDevelopment D).boundaryPosition
-    (R.completedContour.cycle.point continuation.target)
-  have value := B.circle_upper_eq_exit_comparison_point i data radius_positive far slice
-    continuation.vertex continuation.on_cuts directions origin j s
+  have bound := B.upper_bank_start_order i continuation.vertex continuation.on_cuts
+    continuation.target continuation.original directions sectors budget data
+    (data.circle_slice_heights radius_positive far slice).2
+    (data.circle_slice_width radius_positive slice).2 j s
     (data.regular_of_radius_not_vertexRadii outside slice.upper_closed slice.upper_radius) physical
-  have bound := B.exitComparisonChain_start_le i continuation.vertex continuation.target
-    continuation.original sectors budget directions ⟨2 * j.val + 1, by omega⟩ s
-  dsimp only at bound
-  rw [← continuation.value, ← value] at bound
+  rw [← continuation.value] at bound
   exact bound
 
 end Unfoldings.ConvexCap.SectorForest

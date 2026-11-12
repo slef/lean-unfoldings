@@ -594,3 +594,10 @@ public import Unfoldings.Geometry.StripSlabApproach
 public import Unfoldings.Cap.EmptyNeighborCirclePrefix
 public import Unfoldings.Geometry.CircleTerminalOrder
 public import Unfoldings.Cap.EmptyStripCircleSeparation
+public import Unfoldings.Cap.ExtendedOneEmptyCircleGeometry
+public import Unfoldings.Geometry.SubdivisionCellChain
+public import Unfoldings.Geometry.StripBankChain
+public import Unfoldings.Cap.EmptyStripChainLateCircleSeparation
+public import Unfoldings.Cap.PositiveWidthBankStartOrder
+public import Unfoldings.Cap.FramedVertexHeights
+public import Unfoldings.Cap.ClosedBankStartOrder

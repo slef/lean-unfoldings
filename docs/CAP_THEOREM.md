@@ -718,8 +718,19 @@ Separation of different banks and global nonoverlap remain open.
   slices across one nonempty disappearing strip, in all four height cases.
   Both early crossings use an interior terminal corner; mixed cases use one
   coordinate, and both late crossings use their common actual parent path.
-  The theorem retains actual subdivision, separator, mesh, and calibration data;
-  applying it uniformly and handling arbitrary runs of missing strips remain.
+- [x] Integrate one-strip separation into the uniform roof construction: the
+  same error bound, tilt threshold, calibration, subdivision, and actual trace
+  family supply neighboring separation, terminal continuations, and separation
+  across one nonempty disappearing strip. All geometric leaf copies, sectors,
+  prefix agreements, and matching data are derived before applying the result.
+- [x] Retain the ordered physical chain of subdivision cells, including
+  zero-width cells. An arbitrary finite run of permanently collapsed strips
+  identifies both outside banks with an actual terminal parent path. Separate
+  surviving circle slices when both crossings lie beyond that run's terminal
+  heights. Early crossings across arbitrary runs remain open.
+- [x] Remove the circle hypothesis from actual bank progress bounds. Finite
+  physical vertex heights and trace continuity extend these bounds to whole
+  closed intervals, including branch vertices and terminal endpoint values.
 - [ ] Compare surviving strips across intervening strips whose circle slice is
   empty, then establish a global cyclic order across the sector boundaries.
 - [ ] Prove side-by-side separation of all developed strips and hence all

@@ -1,6 +1,6 @@
 module
 
-public import Unfoldings.Cap.SameSectorEmptyCircleComparison
+public import Unfoldings.Cap.EmptyStripChainLateCircleSeparation
 public import Unfoldings.Cap.ParentPathCircleBankOrder
 public import Unfoldings.Cap.RegularCircleRadius
 
@@ -67,34 +67,10 @@ theorem circle_slices_disjoint_after_terminal_strip
     (last_after : continuation.height ≤ last_slice.lowerHeight) :
     Disjoint (data.value '' S.openSlab 0 cutoff ∩ {z | ‖z - data.center‖ = radius})
       (other.value '' T.openSlab 0 cutoff ∩ {z | ‖z - other.center‖ = radius}) := by
-  obtain ⟨leaf, after_leaf, same_start, _⟩ :=
-    terminal_geometric_tail R D B middle tails continuation
-  have before_end := continuation.height_bounds.2.trans (leaf.tail_end_beyond_clip_ball deep)
-  obtain ⟨_, directions, sectors⟩ := leaf.completed_bank_geometry_from_height R outward
-    continuation.vertex after_leaf before_end same_start curvature_covered
-  have tracked := terminal_banks_on_completed_path R outward D B middle tails continuation
-    footprint deep
-  obtain ⟨j, s, first_point, _⟩ := tracked first_slice.upperHeight
-    ⟨first_after, first_slice.upper_bounds.2⟩
-  obtain ⟨k, r, _, last_point⟩ := tracked last_slice.lowerHeight
-    ⟨last_after, last_slice.lower_bounds.2⟩
-  have first_physical : K.projectedVertex origin + (fiveSectorFrame t positive small i).place.symm
-      (S.upper.point first_slice.upperHeight) =
-        (R.completedRootPath continuation.vertex).point j s := by
-    rw [first_wall]
-    exact first_point
-  have last_physical : K.projectedVertex origin + (fiveSectorFrame t positive small i).place.symm
-      (T.lower.point last_slice.lowerHeight) =
-        (R.completedRootPath continuation.vertex).point k r := by
-    rw [last_wall]
-    exact last_point
-  exact B.circle_parent_path_slices_disjoint i data other nonnegative small_error numerical
-    linear_error first_margin last_margin radius_positive far first_slice last_slice
-    continuation.vertex continuation.on_cuts directions sectors budget j k s r
-    (data.regular_of_radius_not_vertexRadii outside
-      first_slice.upper_closed first_slice.upper_radius)
-    (other.regular_of_radius_not_vertexRadii outside
-      last_slice.lower_closed last_slice.lower_radius)
-    first_physical last_physical
+  exact circle_slices_disjoint_after_terminal_strip_chain R outward D B data other middle tails
+    continuation footprint deep nonnegative small_error numerical linear_error first_margin
+    last_margin curvature_covered budget radius_positive far outside first_slice last_slice
+    (n := 0) (fun _ => U) (fun j => Fin.elim0 j) 0 rfl first_wall last_wall
+    (fun _ => continuation.merged) first_after last_after
 
 end Unfoldings.ConvexCap.SectorForest

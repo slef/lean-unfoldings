@@ -1380,3 +1380,10 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Cap.EmptyNeighborCirclePrefix](../Unfoldings/Cap/EmptyNeighborCirclePrefix.lean) | Derive surviving circle crossings lie beyond the actual shared leaves of an empty neighbor |
 | [Unfoldings.Geometry.CircleTerminalOrder](../Unfoldings/Geometry/CircleTerminalOrder.lean) | Combine all early and late height cases into first-quadrant circle order |
 | [Unfoldings.Cap.EmptyStripCircleSeparation](../Unfoldings/Cap/EmptyStripCircleSeparation.lean) | Separate actual surviving circle slices across one disappearing strip in all height cases |
+| [Unfoldings.Cap.ExtendedOneEmptyCircleGeometry](../Unfoldings/Cap/ExtendedOneEmptyCircleGeometry.lean) | Uniformly separate survivors across one disappearing strip in the same actual roof trace family |
+| [Unfoldings.Geometry.SubdivisionCellChain](../Unfoldings/Geometry/SubdivisionCellChain.lean) | Retain the ordered chain of actual subdivision cell walls, including zero-width cells |
+| [Unfoldings.Geometry.StripBankChain](../Unfoldings/Geometry/StripBankChain.lean) | Identify all physical banks in a finite chain of permanently collapsed strips |
+| [Unfoldings.Cap.EmptyStripChainLateCircleSeparation](../Unfoldings/Cap/EmptyStripChainLateCircleSeparation.lean) | Separate surviving circle slices beyond an arbitrary chain of collapsed intermediate strips |
+| [Unfoldings.Cap.PositiveWidthBankStartOrder](../Unfoldings/Cap/PositiveWidthBankStartOrder.lean) | Bound actual regular positive-width bank traces by a named starting copy without a circle condition |
+| [Unfoldings.Cap.FramedVertexHeights](../Unfoldings/Cap/FramedVertexHeights.lean) | Exclude all actual physical mesh vertices using one finite set of sweep heights |
+| [Unfoldings.Cap.ClosedBankStartOrder](../Unfoldings/Cap/ClosedBankStartOrder.lean) | Extend actual bank progress from a named copy through every branch vertex and interval endpoint |
