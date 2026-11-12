@@ -884,3 +884,11 @@ public import Unfoldings.Cap.ClosedSectionRunPhysicalContact
 public import Unfoldings.Cap.ClosedSectionRemovedRunContact
 public import Unfoldings.Cap.WaterfallClosedSectionPhysicalOrder
 public import Unfoldings.Cap.WithinSectorAllRadiusContact
+public import Unfoldings.Topology.ClosedCompactWitness
+public import Unfoldings.Cap.ClosedSectionEarlyRunMaxima
+public import Unfoldings.Cap.ClosedSectionBoundaryLateCandidate
+public import Unfoldings.Cap.ClosedSectionBoundarySourceCandidate
+public import Unfoldings.Cap.ClosedSectionBoundaryNeighborCandidate
+public import Unfoldings.Cap.ClosedSectionSharedBankMargins
+public import Unfoldings.Cap.ClosedSectionBoundaryRunMargins
+public import Unfoldings.Cap.ClosedSectionBoundaryRunContact

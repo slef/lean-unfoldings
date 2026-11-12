@@ -1670,3 +1670,11 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Cap.ClosedSectionRemovedRunContact](../Unfoldings/Cap/ClosedSectionRemovedRunContact.lean) | Identify physical contacts across any removed run including the adjacent-separator case |
 | [Unfoldings.Cap.WaterfallClosedSectionPhysicalOrder](../Unfoldings/Cap/WaterfallClosedSectionPhysicalOrder.lean) | Preserve physical point labels in the complete closed-section survivor order at all radii |
 | [Unfoldings.Cap.WithinSectorAllRadiusContact](../Unfoldings/Cap/WithinSectorAllRadiusContact.lean) | Identify every actual within-sector closed trace contact without excluding any vertex radii |
+| [Unfoldings.Topology.ClosedCompactWitness](../Unfoldings/Topology/ClosedCompactWitness.lean) | Project closed conditions through finite families of compact witness spaces |
+| [Unfoldings.Cap.ClosedSectionEarlyRunMaxima](../Unfoldings/Cap/ClosedSectionEarlyRunMaxima.lean) | Retain early coordinate bounds at any chosen maximal terminal of a closed-empty run |
+| [Unfoldings.Cap.ClosedSectionBoundaryLateCandidate](../Unfoldings/Cap/ClosedSectionBoundaryLateCandidate.lean) | Match a late closed section to its actual radial component bank at every radius |
+| [Unfoldings.Cap.ClosedSectionBoundarySourceCandidate](../Unfoldings/Cap/ClosedSectionBoundarySourceCandidate.lean) | Construct source-side component bank candidates for closed sections including terminal pinches |
+| [Unfoldings.Cap.ClosedSectionBoundaryNeighborCandidate](../Unfoldings/Cap/ClosedSectionBoundaryNeighborCandidate.lean) | Preserve neighboring actual component-bank parameters through exceptional circle radii |
+| [Unfoldings.Cap.ClosedSectionSharedBankMargins](../Unfoldings/Cap/ClosedSectionSharedBankMargins.lean) | Keep both comparison margins for shared-ray closed circle sections |
+| [Unfoldings.Cap.ClosedSectionBoundaryRunMargins](../Unfoldings/Cap/ClosedSectionBoundaryRunMargins.lean) | Derive actual candidate comparison margins for closed sections across boundary runs |
+| [Unfoldings.Cap.ClosedSectionBoundaryRunContact](../Unfoldings/Cap/ClosedSectionBoundaryRunContact.lean) | Identify physical contacts across upper and lower boundary runs at every controlled radius |
