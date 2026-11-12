@@ -7,12 +7,18 @@ This is a proof-development checklist; unchecked claims are not Lean declaration
 
 Current entry points:
 
+- [UniformExtendedFaceSeparation](../Unfoldings/Cap/UniformExtendedFaceSeparation.lean)
+  chooses a positive tilt threshold before both meshes and separates actual
+  roof-face interiors in a controlled source ball. All circle geometry and
+  finite exceptional-radius avoidance are discharged. The original-face
+  refinement and retained-seam transfer remain open.
+
 - [AllSectorCircleSeparation](../Unfoldings/Cap/AllSectorCircleSeparation.lean)
   proves pairwise separation of every actual strip-circle image across all
   five sectors from the constructed waterfall geometry. The proof derives
   extreme survivors, removed boundary runs, maximal terminals, bank candidates,
-  and comparison margins. Uniform instantiation and original-face transfer
-  remain open.
+  and comparison margins. Uniform instantiation is proved below; original-face
+  transfer remains open.
 
 - [OuterCircleCaps](../Unfoldings/Cap/OuterCircleCaps.lean) and
   [BoundaryRunCircleCaps](../Unfoldings/Cap/BoundaryRunCircleCaps.lean) separate
@@ -875,8 +881,13 @@ Separation of different banks and global nonoverlap remain open.
   Derive every within-sector endpoint bound in both coordinates and prove
   pairwise separation of all actual strip-circle images across all five sectors,
   including arbitrary adjacent-sector cells and empty images.
-- [ ] Instantiate all-sector separation uniformly from the tilt threshold
-  chosen before both meshes and apply finite-radius avoidance to actual face interiors.
+- [x] Instantiate all-sector separation uniformly from a positive tilt threshold
+  chosen before both meshes. Apply finite-radius avoidance and common-source
+  position estimates to actual roof-face interiors in a controlled physical ball.
+- [x] Prove nonoverlap invariance under normalization and transfer from any
+  development of a connected conforming refinement to a coarse development.
+- [ ] Build the actual original-face restriction and conforming refinement,
+  including both directions of retained-seam compatibility.
 - [ ] Prove side-by-side separation of all developed strips and hence all
   distinct original face interiors.
 - [x] Apply the cut-disk and flat-development infrastructure to the fixed-wedge

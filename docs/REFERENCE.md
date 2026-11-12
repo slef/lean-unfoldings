@@ -1522,3 +1522,7 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Cap.WaterfallCircleExtremeBounds](../Unfoldings/Cap/WaterfallCircleExtremeBounds.lean) | Bound every actual sector circle image by its extreme surviving bank coordinates |
 | [Unfoldings.Cap.AdjacentSectorCircleSeparation](../Unfoldings/Cap/AdjacentSectorCircleSeparation.lean) | Separate every actual strip-circle pair in adjacent sectors including non-extreme and empty cells |
 | [Unfoldings.Cap.AllSectorCircleSeparation](../Unfoldings/Cap/AllSectorCircleSeparation.lean) | Separate all actual strip-circle images across the complete five-sector waterfall |
+| [Unfoldings.Cap.WaterfallMapDistance](../Unfoldings/Cap/WaterfallMapDistance.lean) | Transfer uniform containing-face distance estimates to the actual selected projected development map |
+| [Unfoldings.Cap.UniformExtendedFaceSeparation](../Unfoldings/Cap/UniformExtendedFaceSeparation.lean) | Choose a positive tilt threshold before both meshes and separate actual roof-face interiors in a controlled source ball |
+| [Unfoldings.Development.NonoverlapNormalization](../Unfoldings/Development/NonoverlapNormalization.lean) | Preserve actual face-interior nonoverlap under global rigid motion, root normalization, and development uniqueness |
+| [Unfoldings.Development.RefinementNonoverlap](../Unfoldings/Development/RefinementNonoverlap.lean) | Transfer nonoverlap from any actual development of a connected conforming refinement to a coarse development |

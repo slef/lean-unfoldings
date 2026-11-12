@@ -736,3 +736,7 @@ public import Unfoldings.Cap.WaterfallCircleSurvivorBanks
 public import Unfoldings.Cap.WaterfallCircleExtremeBounds
 public import Unfoldings.Cap.AdjacentSectorCircleSeparation
 public import Unfoldings.Cap.AllSectorCircleSeparation
+public import Unfoldings.Cap.WaterfallMapDistance
+public import Unfoldings.Cap.UniformExtendedFaceSeparation
+public import Unfoldings.Development.NonoverlapNormalization
+public import Unfoldings.Development.RefinementNonoverlap

@@ -2,6 +2,22 @@
 
 ## Session Log
 
+### 2026-11-12 — uniform actual roof-face separation
+
+- Chose one positive error and tilt threshold before the original and
+  auxiliary meshes. Constructed the actual five-sector geometry, eliminated
+  its finite exceptional radius set, and proved pairwise separation of actual
+  roof-face interiors in a controlled source-centered physical ball.
+- Transferred the all-face position estimates to the actual selected projected
+  map, including points with more than one approached face copy.
+- Proved nonoverlap invariance under global rigid motion and root normalization.
+  Development uniqueness and the exact subdivision metric equivalence now
+  transfer nonoverlap from any development of a connected conforming refinement.
+- Verification: cache retrieval and full `lake build` pass; **9,407 unfolding /
+  7,243 pinned topology declarations**, standard axioms only. Documentation
+  links and whitespace pass. The actual original-face restriction, retained-seam
+  refinement bridge, and full original-edge cap theorem remain open.
+
 ### 2026-11-12 — separate every actual five-sector strip-circle pair
 
 - Derived either a direct enclosing-bank contact or an actual indexed removed
