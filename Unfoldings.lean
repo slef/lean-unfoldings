@@ -448,3 +448,5 @@ public import Unfoldings.Geometry.RecoverableStripRegularWidth
 public import Unfoldings.Cap.RegularWaterfallWidth
 public import Unfoldings.Cap.ExtendedWaterfallRegular
 public import Unfoldings.Cap.ExtendedRegularBankTraces
+public import Unfoldings.Cap.ClosedSectorStrip
+public import Unfoldings.Cap.RegularWaterfallBankWidth

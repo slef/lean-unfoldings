@@ -543,6 +543,9 @@ Separation of different banks and global nonoverlap remain open.
   and complete one-sided bank traces for the same constructed waterfall.
   Earlier public theorem statements follow unchanged from these stronger
   constructors, with no duplicated construction proofs.
+- [x] Keep the full closed strip, including both banks, within the deep sweep
+  ball. Subdivision bounds now derive regular bank width without a separate
+  interior-location hypothesis.
 - [ ] Package matching for the constructed waterfall through branch endpoints,
   then control radial order and complete bank continuations.
 - [ ] Prove side-by-side separation of all developed strips and hence all

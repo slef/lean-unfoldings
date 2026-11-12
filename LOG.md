@@ -2,6 +2,18 @@
 
 ## Session Log
 
+### 2026-11-11 — closed banks stay inside the comparison clip
+
+- Proved every point of the closed enclosing strip has norm at most its
+  nonnegative diagonal height. Both actual banks therefore stay in the deep
+  comparison ball, including sector boundaries.
+- Derived regular bank width directly from deep clipping, subdivision bounds,
+  and the constructed pinch set; no separate interior-location proof is needed.
+- Verification: cache retrieval followed by full `lake build` pass; **8,444
+  unfolding / 7,243 pinned topology declarations**, standard axioms only;
+  indexed documentation links (**1,183**) and whitespace pass. Full cap
+  nonoverlap remains open.
+
 ### 2026-11-11 — retain geometry and traces for one actual waterfall
 
 - Strengthened the constructed waterfall output to retain geometric cut
