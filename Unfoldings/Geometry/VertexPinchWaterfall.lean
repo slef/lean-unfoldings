@@ -11,7 +11,8 @@ noncomputable section
 
 namespace Unfoldings.MonotoneStrip
 
-theorem exists_finite_waterfall_vertex_pinches (S : MonotoneStrip) (n : ℕ) (p : Fin n → ℂ)
+theorem exists_finite_waterfall_vertex_pinches_preserving
+    (S : MonotoneStrip) (n : ℕ) (p : Fin n → ℂ)
     (tail : Fin n → MonotoneHeightGraph) (cutoff : ℝ)
     (first_source : S.lower.coordinate 0 = 0) (last_source : S.upper.coordinate 0 = 0)
     (nonnegative : ∀ j, 0 ≤ (p j).re ∧ 0 ≤ (p j).im)
@@ -40,21 +41,39 @@ theorem exists_finite_waterfall_vertex_pinches (S : MonotoneStrip) (n : ℕ) (p 
     (first_affine : ∀ h ∈ Set.Ioo (0 : ℝ) cutoff, S.lower.point h ∉ V → S.lower.AffineAt h)
     (last_affine : ∀ h ∈ Set.Ioo (0 : ℝ) cutoff, S.upper.point h ∉ V → S.upper.AffineAt h)
     (tail_affine : ∀ j h, h ∈ Set.Ioo ((p j).re + (p j).im) cutoff →
-      (tail j).point h ∉ V → (tail j).AffineAt h) :
+      (tail j).point h ∉ V → (tail j).AffineAt h)
+    (Extra : MonotoneStrip → Prop) (initial_extra : Extra S)
+    (extra_step : ∀ (j : Fin n) (R : MonotoneStrip) (member : p j ∈ R.carrier),
+      (R.lower = S.lower ∨ ∃ k : Fin n, k < j ∧ CompletesTail (p k) (tail k) cutoff R.lower) →
+      (R.upper = S.upper ∨ ∃ k : Fin n, k < j ∧ CompletesTail (p k) (tail k) cutoff R.upper) →
+      (∀ h ∈ Set.Icc ((p j).re + (p j).im) cutoff,
+        R.lower.coordinate h ≤ (tail j).coordinate h ∧
+          (tail j).coordinate h ≤ R.upper.coordinate h) →
+      R.lower.StrictCoordinatesOn (Set.Icc 0 cutoff) →
+      R.upper.StrictCoordinatesOn (Set.Icc 0 cutoff) → Extra R →
+      let G := R.insertionGraph (p j) member (tail j) (at_target j)
+      let bounds := R.insertionGraph_bounds (p j) member (tail j) (at_target j)
+      Extra (R.lowerSplit G bounds) ∧ Extra (R.upperSplit G bounds)) :
     ∃ T : S.Subdivision,
       (∀ G ∈ T.separators, ∃ j, CompletesTail (p j) (tail j) cutoff G) ∧
       (∀ j, ∃ G ∈ T.separators, CompletesTail (p j) (tail j) cutoff G) ∧
       ∀ R ∈ T.cells, (R.lower.StrictCoordinatesOn (Set.Icc 0 cutoff) ∧
         R.upper.StrictCoordinatesOn (Set.Icc 0 cutoff) ∧ R.RecoverablePinchesIn E 0 cutoff) ∧
-          R.ApproachedPinchesIn V 0 cutoff := by
+          R.ApproachedPinchesIn V 0 cutoff ∧ Extra R := by
   apply S.exists_finite_waterfall_recoverable_preserving n p tail cutoff first_source last_source
     nonnegative heights below at_target outer_bounds coalesces E initial target_coherent
     strict_tails outer_left_sticks outer_right_sticks
-    (fun R => R.ApproachedPinchesIn V 0 cutoff) initial_pinches
+    (fun R => R.ApproachedPinchesIn V 0 cutoff ∧ Extra R) ⟨initial_pinches, initial_extra⟩
   intro j R member left_wall right_wall trapped first_strict last_strict old
+  have extra_good :=
+    extra_step j R member left_wall right_wall trapped first_strict last_strict old.2
+  have old := old.1
   let c := (p j).re + (p j).im
   let G := R.insertionGraph (p j) member (tail j) (at_target j)
   let bounds := R.insertionGraph_bounds (p j) member (tail j) (at_target j)
+  suffices new_pinches : (R.lowerSplit G bounds).ApproachedPinchesIn V 0 cutoff ∧
+      (R.upperSplit G bounds).ApproachedPinchesIn V 0 cutoff from
+    ⟨⟨new_pinches.1, extra_good.1⟩, ⟨new_pinches.2, extra_good.2⟩⟩
   have agrees : Set.EqOn G.coordinate (tail j).coordinate (Set.Icc c cutoff) := by
     intro h within
     exact R.insertionGraph_preserves_tail _ _ _ _ within.1
@@ -96,5 +115,50 @@ theorem exists_finite_waterfall_vertex_pinches (S : MonotoneStrip) (n : ℕ) (p 
     have regular : (tail j).point h ∉ V := fun inside => outside (at_point.symm ▸ inside)
     exact (tail_affine j h within regular).congr_on_Ioo
       (fun _ bounds => agrees ⟨bounds.1.le, bounds.2.le⟩) within
+
+/-- Retain the vertex-pinch interface without an additional cell invariant. -/
+theorem exists_finite_waterfall_vertex_pinches (S : MonotoneStrip) (n : ℕ) (p : Fin n → ℂ)
+    (tail : Fin n → MonotoneHeightGraph) (cutoff : ℝ)
+    (first_source : S.lower.coordinate 0 = 0) (last_source : S.upper.coordinate 0 = 0)
+    (nonnegative : ∀ j, 0 ≤ (p j).re ∧ 0 ≤ (p j).im)
+    (heights : Monotone (fun j => (p j).re + (p j).im))
+    (below : ∀ j, (p j).re + (p j).im ≤ cutoff)
+    (at_target : ∀ j, (tail j).coordinate ((p j).re + (p j).im) = (p j).re)
+    (outer_bounds : ∀ j h, h ∈ Set.Icc ((p j).re + (p j).im) cutoff →
+      S.lower.coordinate h ≤ (tail j).coordinate h ∧
+        (tail j).coordinate h ≤ S.upper.coordinate h)
+    (coalesces : ∀ j k : Fin n, j < k →
+      (tail j).CoalescesOn (tail k) ((p k).re + (p k).im) cutoff)
+    (E : Set ℂ)
+    (initial : S.lower.StrictCoordinatesOn (Set.Icc 0 cutoff) ∧
+      S.upper.StrictCoordinatesOn (Set.Icc 0 cutoff) ∧ S.RecoverablePinchesIn E 0 cutoff)
+    (target_coherent : ∀ j, p j ∈ E)
+    (strict_tails : ∀ j,
+      (tail j).StrictCoordinatesOn (Set.Icc ((p j).re + (p j).im) cutoff))
+    (outer_left_sticks : ∀ j h, h ∈ Set.Ioc ((p j).re + (p j).im) cutoff →
+      S.lower.coordinate h = (tail j).coordinate h →
+        ∀ k ∈ Set.Icc h cutoff, S.lower.coordinate k = (tail j).coordinate k)
+    (outer_right_sticks : ∀ j h, h ∈ Set.Ioc ((p j).re + (p j).im) cutoff →
+      (tail j).coordinate h = S.upper.coordinate h →
+        ∀ k ∈ Set.Icc h cutoff, (tail j).coordinate k = S.upper.coordinate k)
+    (V : Set ℂ) (initial_pinches : S.ApproachedPinchesIn V 0 cutoff)
+    (target_vertex : ∀ j, p j ∈ V)
+    (first_affine : ∀ h ∈ Set.Ioo (0 : ℝ) cutoff, S.lower.point h ∉ V → S.lower.AffineAt h)
+    (last_affine : ∀ h ∈ Set.Ioo (0 : ℝ) cutoff, S.upper.point h ∉ V → S.upper.AffineAt h)
+    (tail_affine : ∀ j h, h ∈ Set.Ioo ((p j).re + (p j).im) cutoff →
+      (tail j).point h ∉ V → (tail j).AffineAt h) :
+    ∃ T : S.Subdivision,
+      (∀ G ∈ T.separators, ∃ j, CompletesTail (p j) (tail j) cutoff G) ∧
+      (∀ j, ∃ G ∈ T.separators, CompletesTail (p j) (tail j) cutoff G) ∧
+      ∀ R ∈ T.cells, (R.lower.StrictCoordinatesOn (Set.Icc 0 cutoff) ∧
+        R.upper.StrictCoordinatesOn (Set.Icc 0 cutoff) ∧ R.RecoverablePinchesIn E 0 cutoff) ∧
+          R.ApproachedPinchesIn V 0 cutoff := by
+  obtain ⟨T, provenance, represented, good⟩ :=
+    S.exists_finite_waterfall_vertex_pinches_preserving n p tail cutoff first_source last_source
+      nonnegative heights below at_target outer_bounds coalesces E initial target_coherent
+      strict_tails outer_left_sticks outer_right_sticks V initial_pinches target_vertex
+      first_affine last_affine tail_affine (fun _ => True) trivial
+      (fun _ _ _ _ _ _ _ _ _ => ⟨trivial, trivial⟩)
+  exact ⟨T, provenance, represented, fun R member => ⟨(good R member).1, (good R member).2.1⟩⟩
 
 end Unfoldings.MonotoneStrip

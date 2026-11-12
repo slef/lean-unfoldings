@@ -126,6 +126,8 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 | [Unfoldings.Cap.ExtendedAdjacentCircleSeparation](../Unfoldings/Cap/ExtendedAdjacentCircleSeparation.lean) | One tilt before both meshes constructs a single trace family with disjoint neighboring source-circle slices |
 | [Unfoldings.Cap.EmptyCircleTerminalPinch](../Unfoldings/Cap/EmptyCircleTerminalPinch.lean) | An absent controlled circle supplies a permanent terminal pinch with an actual visible trace inside |
 | [Unfoldings.Cap.EmptyCircleStripBounds](../Unfoldings/Cap/EmptyCircleStripBounds.lean) | An empty nonexceptional circle slice places the entire approached strip closure strictly inside the circle |
+| [Unfoldings.Cap.GeometricTailVertices](../Unfoldings/Cap/GeometricTailVertices.lean) | A geometric vertex reached by an actual tail is an ancestor in the same cut component |
+| [Unfoldings.Cap.GeometricFreshWaterfallLeaf](../Unfoldings/Cap/GeometricFreshWaterfallLeaf.lean) | Fresh actual leaves enter positive-width cells, including tied insertion heights and source insertions |
 | [Unfoldings.Cap.WaterfallCircleExceptions](../Unfoldings/Cap/WaterfallCircleExceptions.lean) | One finite radius set covers all vertex-copy and disappearing-strip exceptions |
 | [Unfoldings.Cap.WaterfallCircleNonoverlap](../Unfoldings/Cap/WaterfallCircleNonoverlap.lean) | Global strip-circle separation implies separation of actual developed face interiors |
 | [Unfoldings.Cap.RadialStripPhysicalMap](../Unfoldings/Cap/RadialStripPhysicalMap.lean) | Actual strip maps and source-circle slices in one common developed plane |
@@ -740,6 +742,9 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 | [Unfoldings.Geometry.SubdivisionWallContacts](../Unfoldings/Geometry/SubdivisionWallContacts.lean) | Recorded walls that meet and later separate have a contact in the coherent pinch set |
 | [Unfoldings.Geometry.RecoverableStripRadiusCrossing](../Unfoldings/Geometry/RecoverableStripRadiusCrossing.lean) | Source-to-strip core paths cross every intermediate circle outside the pinch radii |
 | [Unfoldings.Geometry.MonotoneStripTerminalPinch](../Unfoldings/Geometry/MonotoneStripTerminalPinch.lean) | A bounded nonempty strip that stops before the cutoff has an approached permanent terminal pinch |
+| [Unfoldings.Geometry.SubdivisionFreshTargets](../Unfoldings/Geometry/SubdivisionFreshTargets.lean) | Targets avoiding existing separators belong to positive-width subdivision cells |
+| [Unfoldings.Geometry.StripInsertionTerminalTail](../Unfoldings/Geometry/StripInsertionTerminalTail.lean) | Permanently merged child strips follow the actual inserted tail after its leaf |
+| [Unfoldings.Geometry.RayStripWidth](../Unfoldings/Geometry/RayStripWidth.lean) | Distinct positive rays enclose positive strip width at every positive height |
 | [Unfoldings.Geometry.VertexPinchWaterfall](../Unfoldings/Geometry/VertexPinchWaterfall.lean) | Construct recoverable waterfall subdivisions with all approached pinches confined to specified vertices |
 | [Unfoldings.Geometry.ApproachedStripInsertion](../Unfoldings/Geometry/ApproachedStripInsertion.lean) | Strict source prefixes and locally affine tails preserve the approached-pinch invariant |
 | [Unfoldings.Geometry.AffineGraphPinches](../Unfoldings/Geometry/AffineGraphPinches.lean) | Ordered locally affine banks cannot have an approached zero-width pinch |

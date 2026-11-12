@@ -569,3 +569,8 @@ public import Unfoldings.Cap.ProjectedDenseSeparation
 public import Unfoldings.Cap.RadialStripPhysicalMap
 public import Unfoldings.Cap.WaterfallCircleNonoverlap
 public import Unfoldings.Cap.WaterfallCircleExceptions
+public import Unfoldings.Cap.GeometricFreshWaterfallLeaf
+public import Unfoldings.Cap.GeometricTailVertices
+public import Unfoldings.Geometry.RayStripWidth
+public import Unfoldings.Geometry.StripInsertionTerminalTail
+public import Unfoldings.Geometry.SubdivisionFreshTargets

@@ -693,6 +693,12 @@ Separation of different banks and global nonoverlap remain open.
   finite exceptional circles and physical subdivision walls cannot hide open
   overlap. Combine every vertex-copy and disappearing-strip exception in one
   finite radius set. This is conditional on the remaining global separation.
+- [x] Prove every permanently merged positive bank pair follows a named
+  actual geometric leaf tail, with that leaf starting no later than the tested
+  height. Fresh leaf avoidance gives positive insertion width, including tied
+  heights and source insertions. Retain these tail witnesses in the same
+  uniform circle construction. Every geometric vertex reached on a tail is
+  an ancestor in that same component.
 - [ ] Compare surviving strips across intervening strips whose circle slice is
   empty, then establish a global cyclic order across the sector boundaries.
 - [ ] Prove side-by-side separation of all developed strips and hence all

@@ -2,6 +2,28 @@
 
 ## Session Log
 
+### 2026-11-12 — actual geometric tails beyond terminal pinches
+
+- Proved distinct positive rays enclose positive width at every positive height.
+  A target avoiding recorded separators belongs to a positive-width cell.
+- Derived fresh actual leaf avoidance from the geometric forest, including
+  tied insertion heights. Source insertions are handled separately.
+- Proved a new child cannot permanently close before its positive-width target.
+  Every permanently merged positive bank pair follows a named actual leaf tail,
+  with that leaf starting no later than the tested height.
+- Preserved this invariant through the same geometric, meshed, radial, and
+  uniform circle constructions. Generalized vertex-pinch preservation to retain
+  an additional cell invariant without duplicating the finite construction.
+- Proved a geometric vertex reached on an actual tail is an ancestor in that
+  same component, and refactored distinct-leaf avoidance through this result.
+- Preserved all six previous public theorem statements byte-for-byte.
+- Verification: cache retrieval followed by full `lake build` pass; **8,985
+  unfolding / 7,243 pinned topology declarations**, standard axioms only;
+  indexed documentation links (**1,307**) and whitespace pass. Global ordering
+  across disappearing strips and sectors, transfer to original input faces,
+  and the full cap theorem remain open. Straight comparison chords are not
+  assumed to avoid other developed strips.
+
 ### 2026-11-12 — global circle separation to actual face-interior separation
 
 - Proved the reusable topological fact that injectivity on an open dense set

@@ -28,7 +28,7 @@ universe u v
 
 /-- The actual bank-order calibration has strictly radial complete strip-bank traces.
 Only cap geometry and the constructed forest are inputs; the threshold precedes both meshes. -/
-theorem exists_uniform_extended_vertex_pinched_radial_waterfall
+theorem exists_uniform_extended_terminal_radial_waterfall
     (t : ℝ) (positive : 0 < t) (small : t < 1)
     {ε : ℝ} (εpositive : 0 < ε) :
     ∃ φ ∈ Set.Ioo (0 : ℝ) (Real.pi / 2), (3 : ℝ) / 4 ≤ Real.cos φ ∧
@@ -67,6 +67,9 @@ theorem exists_uniform_extended_vertex_pinched_radial_waterfall
                             MonotoneStrip.CompletesTail leaf.point leaf.tailGraph.graph cutoff G) ∧
                       (∀ S ∈ P.cells, S.lower.StrictCoordinatesOn (Set.Icc 0 cutoff) ∧
                         S.upper.StrictCoordinatesOn (Set.Icc 0 cutoff)) ∧
+                      (∀ S ∈ P.cells, S.TerminalTailsFrom
+                        (fun leaf : M.GeometricSectorLeaf F covered positive small lower i =>
+                          leaf.point) (fun leaf => leaf.tailGraph.graph) cutoff) ∧
                       (∀ S ∈ P.cells, S.ApproachedPinchesIn
                         (Set.range (fun w : {w : L.partition.pairedComplex.Vertex Set.univ //
                           Q.projectedVertex w ∈ M.extendedGeometricCuts F} =>
@@ -107,7 +110,7 @@ theorem exists_uniform_extended_vertex_pinched_radial_waterfall
   have roof_tilt : Q.TiltBound φ := L.partition.normalizedCap_tiltBound L.conforming lower tilt
   obtain ⟨budget, frames⟩ := control Q roof_tilt (K.projectedVertex origin)
     (M.extendedGeometricCuts F) R wedges
-  have domains := M.cornerExtendedOutward_exists_vertex_pinched_waterfall positive small T
+  have domains := M.cornerExtendedOutward_exists_terminal_waterfall positive small T
     internal source_height lower conforming height cutoff deep
   refine ⟨budget, fun D => ?_⟩
   obtain ⟨bankFrame, linear_error⟩ := frames (R.completedDevelopment D)
@@ -120,9 +123,9 @@ theorem exists_uniform_extended_vertex_pinched_radial_waterfall
     have comparison : c ≤ ε := by linarith
     exact estimate.trans (mul_le_mul_of_nonneg_right comparison (norm_nonneg z))
   refine fun i => ?_
-  obtain ⟨P, provenance, represented, coordinates, pinches, geometric, vertices, physical⟩ :=
+  obtain ⟨P, provenance, represented, coordinates, pinches, geometric, tails, vertices, physical⟩ :=
     domains i
-  refine ⟨P, provenance, represented, coordinates, vertices, fun S cell => ?_⟩
+  refine ⟨P, provenance, represented, coordinates, tails, vertices, fun S cell => ?_⟩
   let B := fiveSectorFrame t positive small i
   let frame := B.place
   let E := insert (0 : ℂ) (Set.range (fun w :
@@ -222,6 +225,70 @@ theorem exists_uniform_extended_vertex_pinched_radial_waterfall
       calibration frame cpositive.le (fun f z => linear_error frame f z) S E first_source
       last_source (pinches S cell) (physical D S cell) member slab
     exact estimate.trans (mul_le_mul_of_nonneg_right cε slab.1)
+
+/-- Retain vertex-pinched radial data without the actual terminal-tail witness. -/
+theorem exists_uniform_extended_vertex_pinched_radial_waterfall
+    (t : ℝ) (positive : 0 < t) (small : t < 1)
+    {ε : ℝ} (εpositive : 0 < ε) :
+    ∃ φ ∈ Set.Ioo (0 : ℝ) (Real.pi / 2), (3 : ℝ) / 4 ≤ Real.cos φ ∧
+      ∀ {Face : Type u} [Fintype Face] {C : TriangleComplex.{u, v} Face} (K : ConvexCap C),
+        K.TiltBound φ → ∀ {origin : C.Vertex Set.univ} (M : K.SectorForest t origin),
+          ∀ (internal : ¬ C.IsBoundaryVertex Set.univ origin)
+            (source_height : 0 < K.roofHeight (K.projectedVertex origin))
+            {Z : ℝ} (lower : Z < 0) (T : K.ClipSpatialTriangles Z),
+              TriangleFamily.Conforming T.projectedTriangle →
+                ∀ cutoff : ℝ, Metric.closedBall (K.projectedVertex origin) cutoff ⊆
+                  interior (K.clipFootprint Z) →
+                let inside := (K.projectedVertex_mem_interior_iff origin).mpr internal
+                let F := T.cornerTails inside source_height lower
+                let covered := T.cornerTails_covers_rim inside source_height lower
+                let L := F.mesh T lower
+                let Q := L.partition.normalizedCap L.conforming lower
+                letI := @Fintype.ofFinite _ L.partition.finite
+                let R := (M.cornerExtendedOutwardForest positive small T
+                  internal source_height lower).val
+                L.partition.pairedComplex.totalInteriorAngularDefect Set.univ < Real.pi ∧
+                ∀ D : FacewiseDevelopment L.partition.pairedComplex R.retain,
+                  ∃ bankFrame : R.FiveSectorFrameData positive small (R.completedDevelopment D),
+                  let calibration := R.calibratedFrame (R.completedDevelopment D)
+                    bankFrame.anchor bankFrame.reference
+                  (∀ (frame : Plane ≃ₗᵢ[ℝ] ℂ) f z,
+                    ‖(D.coordinatePlacement Q calibration frame f).linear z - z‖ ≤ ε * ‖z‖) ∧
+                  ∀ i : FiveSector,
+                    ∃ P : (fiveSectorFrame t positive small i).enclosingStrip.Subdivision,
+                      (∀ G ∈ P.separators,
+                        ∃ leaf : M.GeometricSectorLeaf F covered positive small lower i,
+                          leaf.point.re + leaf.point.im ≤ cutoff ∧
+                            MonotoneStrip.CompletesTail leaf.point leaf.tailGraph.graph cutoff G) ∧
+                      (∀ leaf : M.GeometricSectorLeaf F covered positive small lower i,
+                        leaf.point.re + leaf.point.im ≤ cutoff →
+                          ∃ G ∈ P.separators,
+                            MonotoneStrip.CompletesTail leaf.point leaf.tailGraph.graph cutoff G) ∧
+                      (∀ S ∈ P.cells, S.lower.StrictCoordinatesOn (Set.Icc 0 cutoff) ∧
+                        S.upper.StrictCoordinatesOn (Set.Icc 0 cutoff)) ∧
+                      (∀ S ∈ P.cells, S.ApproachedPinchesIn
+                        (Set.range (fun w : {w : L.partition.pairedComplex.Vertex Set.univ //
+                          Q.projectedVertex w ∈ M.extendedGeometricCuts F} =>
+                          (fiveSectorFrame t positive small i).place
+                            (Q.projectedVertex w.val - K.projectedVertex origin))) 0 cutoff) ∧
+                      ∀ S ∈ P.cells,
+                        Nonempty (R.RadialStripTraceData positive small D calibration i S
+                          ε cutoff) := by
+  obtain ⟨φ, bounds, normal, construct⟩ :=
+    exists_uniform_extended_terminal_radial_waterfall.{u, v} t positive small εpositive
+  refine ⟨φ, bounds, normal, ?_⟩
+  intro Face _ C K tilt origin M internal source_height Z lower T conforming cutoff deep
+  let inside := (K.projectedVertex_mem_interior_iff origin).mpr internal
+  let F := T.cornerTails inside source_height lower
+  let L := F.mesh T lower
+  let := @Fintype.ofFinite _ L.partition.finite
+  obtain ⟨budget, frames⟩ :=
+    construct K tilt M internal source_height lower T conforming cutoff deep
+  refine ⟨budget, fun D => ?_⟩
+  obtain ⟨B, error, sectors⟩ := frames D
+  refine ⟨B, error, fun i => ?_⟩
+  obtain ⟨P, provenance, represented, coordinates, _, vertices, traces⟩ := sectors i
+  exact ⟨P, provenance, represented, coordinates, vertices, traces⟩
 
 /-- Retain the radial-data interface without the extra terminal-pinch output. -/
 theorem exists_uniform_extended_radial_waterfall_data (t : ℝ) (positive : 0 < t) (small : t < 1)
