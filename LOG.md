@@ -2,6 +2,25 @@
 
 ## Session Log
 
+### 2026-11-12 — circle separation across one disappearing strip
+
+- Proved that a permanent terminal height cannot precede a leaf completed by
+  either bank: the contrary would put a distinct childless leaf on an older tail.
+- Extracted actual coherent separator-prefix value agreement without requiring
+  both traces to meet the circle. Refactored the older circle-prefix proof
+  through this result, preserving its saved theorem header byte-for-byte.
+- Proved surviving circle crossings lie strictly beyond their shared leaves
+  when the neighbor has disappeared. Regular approached width and local open
+  slab closure supply the actual chart and empty-circle bounds.
+- Combined all four early/late crossing cases into actual open-circle slice
+  separation across one nonempty disappearing strip. The same terminal copy
+  controls both sides; straight comparison chords have no assumed avoidance.
+- Verification: cache retrieval followed by full `lake build` pass; **9,022
+  unfolding / 7,243 pinned topology declarations**, standard axioms only;
+  **1,327** local documentation links and whitespace pass. Uniform integration,
+  arbitrary runs of disappearing strips, sector transitions, original-face
+  transfer, and the full cap theorem remain open.
+
 ### 2026-11-12 — actual coordinate order across terminal strip heights
 
 - Generalized actual tail tracking to intermediate fine vertices, including

@@ -1,6 +1,6 @@
 module
 
-public import Unfoldings.Cap.GeometricSeparatorPrefix
+public import Unfoldings.Cap.SharedSeparatorPrefixValue
 public import Unfoldings.Cap.SharedBankCirclePrefix
 public import Unfoldings.Cap.RadialStripCircleWidth
 public import Unfoldings.Cap.ExtendedWaterfallDomains
@@ -55,23 +55,6 @@ theorem shared_separator_circle_prefix_alternative
         other.value (T.lower.point last_slice.lowerHeight)) ∨
       (leaf.point.re + leaf.point.im < first_slice.upperHeight ∧
         leaf.point.re + leaf.point.im < last_slice.lowerHeight) := by
-  let frame := (fiveSectorFrame t positive small i).place
-  let E := {z : ℂ | D.ProjectedCoherentAt Q (K.projectedVertex origin + frame.symm z)}
-  have pinches : ∀ S ∈ P.cells, S.RecoverablePinchesIn E 0 cutoff := by
-    intro S cell h slab collapsed k later width
-    obtain ⟨trace⟩ := traces S cell
-    have coherent := trace.pinches h slab collapsed k later width
-    exact (trace.physical _ (Or.inr coherent) (by rw [S.lower.point_height]; exact slab)).2
-  have leaf_member : leaf.point ∈ E := by
-    have position : K.projectedVertex origin + frame.symm leaf.point =
-        F.geometricPosition leaf.val := by
-      change K.projectedVertex origin + frame.symm
-        (frame (F.geometricPosition leaf.val - K.projectedVertex origin)) = _
-      rw [frame.symm_apply_apply]
-      abel
-    change D.ProjectedCoherentAt Q (K.projectedVertex origin + frame.symm leaf.point)
-    rw [position]
-    exact leaf_coherent
   have first_width := (data.circle_slice_width radius_positive first_slice).2
   have last_width := (other.circle_slice_width radius_positive last_slice).1
   apply data.circle_bank_prefix_alternative other (leaf.point.re + leaf.point.im) _
@@ -79,16 +62,9 @@ theorem shared_separator_circle_prefix_alternative
     first_slice.upper_closed last_slice.lower_closed first_slice.upper_radius
     last_slice.lower_radius
   intro h height before_first before_last first_closed last_closed
-  have geometric := M.shared_separator_prefix_uncut_or_coherent F covered positive small lower
-    deep P represented pinches separator leaf active completion leaf_member first_cell last_cell
-    first_wall last_wall height ⟨before_first, first_slice.upper_bounds.2⟩ first_width
-    ⟨before_last, last_slice.lower_bounds.2⟩ last_width
-  have coherent : D.ProjectedCoherentAt Q (K.projectedVertex origin + frame.symm (H.point h)) := by
-    rcases geometric with coherent | outside
-    · exact coherent
-    · exact D.projected_coherentAt_of_not_cut Q (fun cut => outside (R.projectedCutSet_subset cut))
-  rw [← first_wall] at coherent
-  exact data.shared_bank_value_of_coherent other (first_wall.trans last_wall.symm)
-    first_closed last_closed coherent
+  exact leaf.shared_separator_prefix_value R D calibration deep P represented traces separator
+    active completion leaf_coherent first_cell last_cell first_wall last_wall data other height
+    ⟨before_first, first_slice.upper_bounds.2⟩ first_width
+    ⟨before_last, last_slice.lower_bounds.2⟩ last_width first_closed last_closed
 
 end Unfoldings.ConvexCap.SectorForest.GeometricSectorLeaf

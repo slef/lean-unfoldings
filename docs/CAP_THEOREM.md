@@ -710,8 +710,16 @@ Separation of different banks and global nonoverlap remain open.
   Named parent-bank matching bounds an early left exit horizontally and an
   early right entrance vertically by the intermediate terminal copy. Complete
   comparison-chain increments give the complementary late-crossing bounds.
-  The early bounds currently require the crossing to be after the shared leaf;
-  this correspondence still needs to be derived in the global construction.
+- [x] Derive that a permanently collapsed strip ends after every actual leaf
+  completed by either bank. Extend coherent prefix agreement to independently
+  witnessed active heights. An empty neighbor cannot share a surviving
+  crossing on that prefix, so the crossing lies strictly after the shared leaf.
+- [x] Combine the early and late bounds to separate surviving actual circle
+  slices across one nonempty disappearing strip, in all four height cases.
+  Both early crossings use an interior terminal corner; mixed cases use one
+  coordinate, and both late crossings use their common actual parent path.
+  The theorem retains actual subdivision, separator, mesh, and calibration data;
+  applying it uniformly and handling arbitrary runs of missing strips remain.
 - [ ] Compare surviving strips across intervening strips whose circle slice is
   empty, then establish a global cyclic order across the sector boundaries.
 - [ ] Prove side-by-side separation of all developed strips and hence all

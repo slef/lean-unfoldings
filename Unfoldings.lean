@@ -588,3 +588,9 @@ public import Unfoldings.Geometry.HeightGraphAffineOrder
 public import Unfoldings.Cap.EarlyTerminalBankOrder
 public import Unfoldings.Geometry.CircleInnerCornerOrder
 public import Unfoldings.Cap.LateTerminalBankOrder
+public import Unfoldings.Cap.TerminalHeightLeafOrder
+public import Unfoldings.Cap.SharedSeparatorPrefixValue
+public import Unfoldings.Geometry.StripSlabApproach
+public import Unfoldings.Cap.EmptyNeighborCirclePrefix
+public import Unfoldings.Geometry.CircleTerminalOrder
+public import Unfoldings.Cap.EmptyStripCircleSeparation

@@ -1374,3 +1374,9 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Cap.EarlyTerminalBankOrder](../Unfoldings/Cap/EarlyTerminalBankOrder.lean) | Bound early surviving circle crossings by the actual intermediate terminal copy |
 | [Unfoldings.Geometry.CircleInnerCornerOrder](../Unfoldings/Geometry/CircleInnerCornerOrder.lean) | Order circle endpoints separated by a corner strictly inside the circle |
 | [Unfoldings.Cap.LateTerminalBankOrder](../Unfoldings/Cap/LateTerminalBankOrder.lean) | Bound late surviving circle crossings beyond the actual intermediate terminal copy |
+| [Unfoldings.Cap.TerminalHeightLeafOrder](../Unfoldings/Cap/TerminalHeightLeafOrder.lean) | A permanent terminal height follows every actual leaf completed by either bank |
+| [Unfoldings.Cap.SharedSeparatorPrefixValue](../Unfoldings/Cap/SharedSeparatorPrefixValue.lean) | Agree actual approached separator prefix values using independently witnessed active heights |
+| [Unfoldings.Geometry.StripSlabApproach](../Unfoldings/Geometry/StripSlabApproach.lean) | Localize approached banks to open height slabs and extract later active strip points |
+| [Unfoldings.Cap.EmptyNeighborCirclePrefix](../Unfoldings/Cap/EmptyNeighborCirclePrefix.lean) | Derive surviving circle crossings lie beyond the actual shared leaves of an empty neighbor |
+| [Unfoldings.Geometry.CircleTerminalOrder](../Unfoldings/Geometry/CircleTerminalOrder.lean) | Combine all early and late height cases into first-quadrant circle order |
+| [Unfoldings.Cap.EmptyStripCircleSeparation](../Unfoldings/Cap/EmptyStripCircleSeparation.lean) | Separate actual surviving circle slices across one disappearing strip in all height cases |
