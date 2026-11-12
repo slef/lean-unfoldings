@@ -8,6 +8,13 @@ simple-polygon boundary conclusion remains open.**
 
 Current entry points:
 
+- [VertexContactEdgeUnfolding](../Unfoldings/Cap/VertexContactEdgeUnfolding.lean),
+  `exists_uniform_edge_unfolding_injective_off_vertices`, strengthens the original
+  existence theorem below: the actual pruned development is injective on all
+  intrinsic nonvertex points, including boundary banks. Its tilt threshold
+  depends only on the acute margin. Contacts involving intrinsic vertices
+  remain to be excluded.
+
 - [EdgeUnfolding](../Unfoldings/Cap/EdgeUnfolding.lean),
   `exists_uniform_nonoverlapping_edge_unfolding`, chooses a positive tilt threshold
   depending only on the acute margin, before the face type and entire mesh.
@@ -1040,11 +1047,26 @@ Complete auxiliary-bank comparison and global face-interior nonoverlap are prove
   The remaining foreign physical contacts form a finite set, rather than merely
   lying on finitely many circles; see
   [ClosedFaceContactReduction](../Unfoldings/Cap/ClosedFaceContactReduction.lean).
+- [x] Transfer these closed-contact conclusions to the original mesh.
+  [ClipOriginalPlacementAgreement](../Unfoldings/Cap/ClipOriginalPlacementAgreement.lean)
+  normalizes one actual roof development to agree with every original whole-face
+  chart, including all edge and vertex copies.
+  [UniformOriginalClosedContact](../Unfoldings/Cap/UniformOriginalClosedContact.lean)
+  chooses a mesh-independent threshold and transfers the finite-radius theorem.
+  [UniformOriginalVertexContact](../Unfoldings/Cap/UniformOriginalVertexContact.lean)
+  excludes foreign contacts between original nonvertex points at every radius.
 - [ ] Exclude the remaining isolated contacts involving actual vertices.
 - [x] Identify coincident intrinsic copies at the same physical nonvertex point
   after pruning. [PrunedSeamContact](../Unfoldings/Cap/PrunedSeamContact.lean)
   combines exact projected seam conformity, strict positive-curvature bank
   separation, and equality across restored seams.
+- [x] Assemble the geometric and pruning arguments on the actual original cut
+  disk. [PrunedContactReduction](../Unfoldings/Cap/PrunedContactReduction.lean)
+  proves every remaining self-contact involves an intrinsic vertex and that
+  global injectivity is equivalent to uniqueness of the fibers through vertices.
+  [VertexContactEdgeUnfolding](../Unfoldings/Cap/VertexContactEdgeUnfolding.lean)
+  obtains this reduction from cap geometry and the acute margin alone, alongside
+  the rooted forest, closed disk, face-interior nonoverlap, and local isometry.
 - [ ] Identify all coincident intrinsic boundary copies after pruning, including
   cut vertices, contacts between different trees, and original rim points.
 - [ ] Conclude boundary injectivity and state the simple-polygon existence theorem.

@@ -833,3 +833,10 @@ public import Unfoldings.Cap.ClosedFaceContactReduction
 public import Unfoldings.Cap.ClosedFaceVertexContact
 public import Unfoldings.Cap.UniformExtendedVertexContact
 public import Unfoldings.Cap.PrunedSeamContact
+public import Unfoldings.Cap.ClipOriginalPlacementAgreement
+public import Unfoldings.Cap.UniformOriginalClosedContact
+public import Unfoldings.Cap.UniformOriginalVertexContact
+public import Unfoldings.Cap.ProjectedPointCopyValues
+public import Unfoldings.Cap.PrunedContactReduction
+public import Unfoldings.Cap.PrunedDevelopmentLocalIsometry
+public import Unfoldings.Cap.VertexContactEdgeUnfolding
