@@ -666,3 +666,9 @@ public import Unfoldings.Cap.SectorBankRays
 public import Unfoldings.Cap.AdjacentBoundaryRunComponents
 public import Unfoldings.Cap.ClosedParentBankMatching
 public import Unfoldings.Cap.RadialComponentFinePath
+public import Unfoldings.Geometry.FiveSectorCycle
+public import Unfoldings.Geometry.AcuteWedgeMarginAngle
+public import Unfoldings.Geometry.FiveSectorFrameMargins
+public import Unfoldings.Geometry.OrientedFramePhase
+public import Unfoldings.Geometry.FiveSectorFrameRotation
+public import Unfoldings.Cap.NonadjacentSectorSeparation

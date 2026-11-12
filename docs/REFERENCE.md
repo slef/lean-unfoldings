@@ -1452,3 +1452,9 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Cap.AdjacentBoundaryRunComponents](../Unfoldings/Cap/AdjacentBoundaryRunComponents.lean) | Identify the same actual radial component for extreme disappearing runs in neighboring sectors |
 | [Unfoldings.Cap.ClosedParentBankMatching](../Unfoldings/Cap/ClosedParentBankMatching.lean) | Extend named actual parent-bank chart matching through closed fine-vertex and terminal endpoints |
 | [Unfoldings.Cap.RadialComponentFinePath](../Unfoldings/Cap/RadialComponentFinePath.lean) | Track every radial-component position on actual completed fine parent paths ending at the genuine outer tip |
+| [Unfoldings.Geometry.FiveSectorCycle](../Unfoldings/Geometry/FiveSectorCycle.lean) | Give the actual five-sector cyclic ray order and prove their acute angles make exactly one full turn |
+| [Unfoldings.Geometry.AcuteWedgeMarginAngle](../Unfoldings/Geometry/AcuteWedgeMarginAngle.lean) | Identify the exact angular slack represented by an acute wedge frame margin |
+| [Unfoldings.Geometry.FiveSectorFrameMargins](../Unfoldings/Geometry/FiveSectorFrameMargins.lean) | Compute exact five-sector quadrant offsets, their cyclic increment, and their total margin |
+| [Unfoldings.Geometry.OrientedFramePhase](../Unfoldings/Geometry/OrientedFramePhase.lean) | Recover an oriented frame rotation from one named ray and separate rotated quadrants |
+| [Unfoldings.Geometry.FiveSectorFrameRotation](../Unfoldings/Geometry/FiveSectorFrameRotation.lean) | Recover exact five-sector frame rotations and separate nonadjacent comparison quadrants |
+| [Unfoldings.Cap.NonadjacentSectorSeparation](../Unfoldings/Cap/NonadjacentSectorSeparation.lean) | Separate actual developed strip and circle images in every nonadjacent pair of sectors |

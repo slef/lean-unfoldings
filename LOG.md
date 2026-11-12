@@ -2,6 +2,20 @@
 
 ## Session Log
 
+### 2026-11-12 — cyclic frame geometry and nonadjacent sectors
+
+- Proved the five actual acute sectors make exactly one full turn and their
+  frame margins sum to π/4. Computed their exact oriented frame rotations;
+  nonadjacent comparison quadrants are disjoint, including both seam pairs.
+- Separated actual developed open-strip images in every nonadjacent sector
+  pair, hence their circle images at every radius. A positive admissible trace
+  error is chosen before any mesh, development, or subdivision, with physical
+  cell margins derived from the enclosing strips.
+- Verification: cache retrieval and full `lake build` pass; **9,246 unfolding /
+  7,243 pinned topology declarations**, standard axioms only; **1,411** local
+  documentation links and whitespace pass. Adjacent-sector terminal-copy
+  bounds, global assembly, original-face transfer, and the cap theorem remain open.
+
 ### 2026-11-12 — shared boundary components and actual fine paths
 
 - Identified each enclosing strip's named physical ray banks and proved that

@@ -791,6 +791,11 @@ Separation of different banks and global nonoverlap remain open.
   and terminal contour copies. Match named bank charts through closed mesh
   endpoints and track every intermediate component position on an actual fine
   parent path ending at the genuine outer tip.
+- [x] Prove the actual five-sector fan makes exactly one turn, its frame
+  margins sum to π/4, and every nonadjacent pair of open comparison quadrants
+  is disjoint, including across the argument seam. Separate their actual
+  developed strip images with a positive trace-error bound chosen before
+  any mesh or subdivision, deriving each physical cell margin.
 - [ ] Assemble the actual outer surviving intervals across all five sectors,
   including disappearing boundary runs, and establish global cyclic order.
 - [ ] Prove side-by-side separation of all developed strips and hence all
