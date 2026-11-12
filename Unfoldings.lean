@@ -798,3 +798,7 @@ public import Unfoldings.Geometry.MonotoneStripLocalCircleCrossing
 public import Unfoldings.Cap.ActiveBankCircleCrossing
 public import Unfoldings.Cap.ClosedCirclePinches
 public import Unfoldings.Cap.WaterfallClosedCircleContacts
+public import Unfoldings.Cap.RadialComponentCirclePhysicalBanks
+public import Unfoldings.Cap.BoundaryCirclePhysicalAlternative
+public import Unfoldings.Cap.OuterCirclePhysicalAlternative
+public import Unfoldings.Cap.OuterClosedCircleContact

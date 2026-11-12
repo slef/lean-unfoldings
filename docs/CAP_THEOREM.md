@@ -980,8 +980,13 @@ Complete auxiliary-bank comparison and global face-interior nonoverlap are prove
   circle point always supplies an actual open slice; see
   [ClosedCirclePinches](../Unfoldings/Cap/ClosedCirclePinches.lean).
   The proof uses a local positive-width bank crossing and an explicit path.
-- [ ] Assemble the closed-contact classification across adjacent sectors and
-  disappearing boundary runs, retaining actual physical point identifications.
+- [x] Identify the same physical surface point at actual facing outer-bank
+  contacts across adjacent sectors, allowing cuts along the shared ray; see
+  [OuterClosedCircleContact](../Unfoldings/Cap/OuterClosedCircleContact.lean).
+  Stronger companion lemmas retain coherent physical endpoint equality and
+  the exact parameters of named fine banks.
+- [ ] Assemble the remaining adjacent-sector disappearing boundary runs and
+  pass from extreme survivors to arbitrary closed contacts.
 - [ ] Identify all coincident intrinsic boundary copies after pruning, including
   cut vertices, contacts between different trees, and original rim points.
 - [ ] Conclude boundary injectivity and state the simple-polygon existence theorem.

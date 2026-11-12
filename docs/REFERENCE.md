@@ -1584,3 +1584,7 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Cap.ActiveBankCircleCrossing](../Unfoldings/Cap/ActiveBankCircleCrossing.lean) | Prove every approached active bank point lies on a genuine open circle slice |
 | [Unfoldings.Cap.ClosedCirclePinches](../Unfoldings/Cap/ClosedCirclePinches.lean) | Classify all empty-circle closed contacts as actual cut-vertex pinches without removing exceptional radii |
 | [Unfoldings.Cap.WaterfallClosedCircleContacts](../Unfoldings/Cap/WaterfallClosedCircleContacts.lean) | Apply the full finite waterfall order to closed contacts and construct both facing bank slices from the actual contact |
+| [Unfoldings.Cap.RadialComponentCirclePhysicalBanks](../Unfoldings/Cap/RadialComponentCirclePhysicalBanks.lean) | Retain the exact physical line-map parameters of actual lower and upper component-bank circle matches |
+| [Unfoldings.Cap.BoundaryCirclePhysicalAlternative](../Unfoldings/Cap/BoundaryCirclePhysicalAlternative.lean) | Retain physical point equality in the coherent shared-ray circle alternative |
+| [Unfoldings.Cap.OuterCirclePhysicalAlternative](../Unfoldings/Cap/OuterCirclePhysicalAlternative.lean) | Classify outer circle endpoints with physical equality or a common actual radial component |
+| [Unfoldings.Cap.OuterClosedCircleContact](../Unfoldings/Cap/OuterClosedCircleContact.lean) | Identify the same physical surface point at actual closed outer-bank contacts across adjacent sectors |
