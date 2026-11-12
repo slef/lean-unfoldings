@@ -1599,3 +1599,12 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Cap.AdjacentSectorClosedCircleContact](../Unfoldings/Cap/AdjacentSectorClosedCircleContact.lean) | Identify one physical surface point at arbitrary approached closed contacts across adjacent sectors |
 | [Unfoldings.Cap.AcrossSectorClosedCircleContact](../Unfoldings/Cap/AcrossSectorClosedCircleContact.lean) | Assemble adjacent and nonadjacent cases for closed contacts across every pair of distinct waterfall sectors |
 | [Unfoldings.Cap.ParentPathCircleContact](../Unfoldings/Cap/ParentPathCircleContact.lean) | Identify physical points at contacts of actual circle endpoints tracked along one completed parent path |
+| [Unfoldings.Cap.LeafTailCircleContact](../Unfoldings/Cap/LeafTailCircleContact.lean) | Identify actual physical endpoints at contacts across one geometric leaf tail |
+| [Unfoldings.Cap.ContactSeparatorCircleContact](../Unfoldings/Cap/ContactSeparatorCircleContact.lean) | Identify physical endpoints at circle contacts across a constructed shared separator |
+| [Unfoldings.Cap.PositiveWidthBankStartContact](../Unfoldings/Cap/PositiveWidthBankStartContact.lean) | Recover an actual starting copy from equality in the controlling bank coordinate |
+| [Unfoldings.Cap.TerminalRunStrictLateBoundsContacts](../Unfoldings/Cap/TerminalRunStrictLateBoundsContacts.lean) | Prove strict controlling-coordinate progress for late circle crossings beyond interior terminal copies |
+| [Unfoldings.Cap.EmptyStripChainLatePhysicalContact](../Unfoldings/Cap/EmptyStripChainLatePhysicalContact.lean) | Identify physical endpoints once both circle crossings follow a collapsed chain past its terminal |
+| [Unfoldings.Geometry.CircleTerminalContact](../Unfoldings/Geometry/CircleTerminalContact.lean) | Prove coincident circle endpoints must both be beyond a strictly interior terminal |
+| [Unfoldings.Cap.EmptyStripRunPhysicalContact](../Unfoldings/Cap/EmptyStripRunPhysicalContact.lean) | Identify the same physical point at circle contacts across an arbitrary empty strip run |
+| [Unfoldings.Cap.RemovedRunPhysicalContact](../Unfoldings/Cap/RemovedRunPhysicalContact.lean) | Assemble physical contact identification between consecutive survivors across either a separator or a removed run |
+| [Unfoldings.Cap.WaterfallCirclePhysicalOrder](../Unfoldings/Cap/WaterfallCirclePhysicalOrder.lean) | Preserve actual physical point identifications in the full finite survivor order using Mathlib lexicographic order |

@@ -1005,7 +1005,16 @@ Complete auxiliary-bank comparison and global face-interior nonoverlap are prove
   The circle assembly retains its existing finite radius exclusions.
 - [x] Identify physical points at actual same-path circle endpoint contacts;
   see [ParentPathCircleContact](../Unfoldings/Cap/ParentPathCircleContact.lean).
-- [ ] Assemble within-sector physical identification across separators and removed runs.
+- [x] Identify contacts between consecutive within-sector survivors across a
+  shared separator or any removed run; see
+  [RemovedRunPhysicalContact](../Unfoldings/Cap/RemovedRunPhysicalContact.lean).
+  Strict late coordinate bounds exclude early contacts at an interior terminal.
+  The surviving late case identifies two points on one actual parent path.
+- [x] Retain physical identifications in the full within-sector survivor order;
+  [WaterfallCirclePhysicalOrder](../Unfoldings/Cap/WaterfallCirclePhysicalOrder.lean)
+  uses Mathlib's lexicographic order on coordinates and singleton physical
+  labels to preserve equality through the complete finite-order argument.
+- [ ] Apply that order to arbitrary within-sector closed contacts.
 - [ ] Identify all coincident intrinsic boundary copies after pruning, including
   cut vertices, contacts between different trees, and original rim points.
 - [ ] Conclude boundary injectivity and state the simple-polygon existence theorem.

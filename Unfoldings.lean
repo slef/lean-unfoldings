@@ -813,3 +813,12 @@ public import Unfoldings.Cap.WaterfallClosedCircleExtremeBounds
 public import Unfoldings.Cap.AdjacentSectorClosedCircleContact
 public import Unfoldings.Cap.AcrossSectorClosedCircleContact
 public import Unfoldings.Cap.ParentPathCircleContact
+public import Unfoldings.Cap.LeafTailCircleContact
+public import Unfoldings.Cap.ContactSeparatorCircleContact
+public import Unfoldings.Cap.PositiveWidthBankStartContact
+public import Unfoldings.Cap.TerminalRunStrictLateBoundsContacts
+public import Unfoldings.Cap.EmptyStripChainLatePhysicalContact
+public import Unfoldings.Geometry.CircleTerminalContact
+public import Unfoldings.Cap.EmptyStripRunPhysicalContact
+public import Unfoldings.Cap.RemovedRunPhysicalContact
+public import Unfoldings.Cap.WaterfallCirclePhysicalOrder
