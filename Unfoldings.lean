@@ -459,3 +459,5 @@ public import Unfoldings.Cap.CenteredBankTraceRadial
 public import Unfoldings.Cap.ExtendedRadialBankTraces
 public import Unfoldings.Cap.CompletedFaceCopyOrder
 public import Unfoldings.Geometry.MixedBankOrder
+public import Unfoldings.Cap.WaterfallBankControl
+public import Unfoldings.Cap.ExtendedBankGeometry

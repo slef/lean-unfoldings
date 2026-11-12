@@ -2,6 +2,20 @@
 
 ## Session Log
 
+### 2026-11-11 — common geometry for radial banks and every branch copy
+
+- Retained one actual calibration's linear error, source error, injective
+  strips, radial bank traces, and regular named-bank matching together.
+- Derived all-face position and two-sided source-distance bounds from this
+  same data. Every containing-face copy has a uniform positive quadrant
+  margin; straight segments between branch copies retain that margin.
+- Constructed `exists_uniform_extended_bank_geometry`, with a positive margin
+  at most `1/8` and tilt threshold both chosen before either mesh.
+- Verification: cache retrieval followed by full `lake build` pass; **8,468
+  unfolding / 7,243 pinned topology declarations**, standard axioms only;
+  indexed documentation links (**1,194**) and whitespace pass. Complete
+  comparison continuations and global cap nonoverlap remain open.
+
 ### 2026-11-11 — circle order allowing straight branch-gap steps
 
 - Proved matched coordinate-increment bounds give global left-or-above order

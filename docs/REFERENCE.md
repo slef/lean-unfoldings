@@ -129,6 +129,8 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 | [Unfoldings.Cap.CenteredBankTraceRadial](../Unfoldings/Cap/CenteredBankTraceRadial.lean) | Actual visible bank traces progress strictly radially from quantitative chart and sector margins |
 | [Unfoldings.Cap.ExtendedRadialBankTraces](../Unfoldings/Cap/ExtendedRadialBankTraces.lean) | Uniform actual bank calibration with radial matched traces, whole-strip injectivity, and arbitrary position error |
 | [Unfoldings.Cap.CompletedFaceCopyOrder](../Unfoldings/Cap/CompletedFaceCopyOrder.lean) | Every actual branch and visible trace copy lies between its named entrance and exit banks |
+| [Unfoldings.Cap.WaterfallBankControl](../Unfoldings/Cap/WaterfallBankControl.lean) | One calibration retains radial matched banks, all-face distance bounds, and branch-gap quadrant margins |
+| [Unfoldings.Cap.ExtendedBankGeometry](../Unfoldings/Cap/ExtendedBankGeometry.lean) | Uniform all-copy source quadrants and radial matched bank control in the same actual calibration |
 | [Unfoldings.Cap.ExtendedWaterfallRegular](../Unfoldings/Cap/ExtendedWaterfallRegular.lean) | One constructed waterfall retains geometric cut avoidance, pinch control, and all-development coherence |
 | [Unfoldings.Cap.ExtendedRegularBankTraces](../Unfoldings/Cap/ExtendedRegularBankTraces.lean) | Preserve actual geometric regularity and pinch control for the same complete bank traces |
 | [Unfoldings.Cap.GeometricTailLocalEdge](../Unfoldings/Cap/GeometricTailLocalEdge.lean) | Actual regular meshed tail points retain locally matching physical edge graphs |
