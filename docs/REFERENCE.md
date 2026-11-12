@@ -114,6 +114,10 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Cap.SharedBankCirclePrefix](../Unfoldings/Cap/SharedBankCirclePrefix.lean) | Adjacent equal-radius bank endpoints coincide on a coherent prefix or both lie beyond it |
+| [Unfoldings.Cap.RadialStripCircleWidth](../Unfoldings/Cap/RadialStripCircleWidth.lean) | Nonempty controlled circle slices have positive-width bank points strictly between source and cutoff |
+| [Unfoldings.Cap.MatchedBankAtHeight](../Unfoldings/Cap/MatchedBankAtHeight.lean) | Positive physical width supplies active-height witnesses for actual named parent-bank matching |
+| [Unfoldings.Cap.RadialStripCircleMatching](../Unfoldings/Cap/RadialStripCircleMatching.lean) | Regular actual circle endpoints select their named entrance and exit parent-bank charts |
 | [Unfoldings.Cap.RadialStripPointOrder](../Unfoldings/Cap/RadialStripPointOrder.lean) | Closed actual strip points preserve strict radial progress and signed mixed-coordinate order |
 | [Unfoldings.Cap.RadialStripBankOrder](../Unfoldings/Cap/RadialStripBankOrder.lean) | Actual lower and upper banks have strict source-circle order, including pinches |
 | [Unfoldings.Cap.ExtendedOrientedStripCircleIntervals](../Unfoldings/Cap/ExtendedOrientedStripCircleIntervals.lean) | Uniform actual strips have oriented bank-bounded source-circle intervals before either mesh |

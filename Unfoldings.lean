@@ -521,3 +521,7 @@ public import Unfoldings.Cap.RadialStripPointOrder
 public import Unfoldings.Cap.RadialStripBankOrder
 public import Unfoldings.Cap.ExtendedOrientedStripCircleIntervals
 public import Unfoldings.Geometry.RecoverableStripInitialClosure
+public import Unfoldings.Cap.SharedBankCirclePrefix
+public import Unfoldings.Cap.RadialStripCircleWidth
+public import Unfoldings.Cap.MatchedBankAtHeight
+public import Unfoldings.Cap.RadialStripCircleMatching

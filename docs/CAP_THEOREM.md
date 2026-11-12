@@ -637,6 +637,13 @@ Separation of different banks and global nonoverlap remain open.
   signed developed coordinate. Finite recoverable pinches keep the connecting
   paths in the approached closure. The uniform oriented-circle construction
   derives every margin and chart bound before both meshes.
+- [x] Prove nonempty controlled circle slices meet their physical banks at
+  positive width and heights strictly between source and cutoff. This supplies
+  direct named entrance/exit matching at every regular circle endpoint.
+- [x] Compare adjacent equal-radius bank endpoints on a specified coherent
+  shared prefix: they either coincide at the same prefix height or both lie
+  beyond it. Deriving the needed prefix and tail correspondences for every
+  actual adjacent pair remains part of the global separation argument.
 - [ ] Compare these actual adjacent intervals in one global cyclic order.
 - [ ] Prove side-by-side separation of all developed strips and hence all
   distinct original face interiors.

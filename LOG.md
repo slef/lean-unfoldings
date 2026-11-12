@@ -2,6 +2,23 @@
 
 ## Session Log
 
+### 2026-11-11 — shared-prefix circle comparison and actual endpoint matching
+
+- Proved that equal-radius endpoints on adjacent banks coincide at the same
+  coherent prefix height or both lie beyond that prefix, including approached
+  terminal heights without a later active-height assumption.
+- Proved a nonempty circle slice cannot end at a zero-width pinch: radial
+  uniqueness would identify its two distinct endpoints. Both bank heights lie
+  strictly between source and cutoff for controlled radii.
+- Used this positive width to supply active-height witnesses and select the
+  actual entrance/exit chart at every regular circle endpoint. All traces and
+  matching use the original construction's same calibration.
+- Verification: cache retrieval followed by full `lake build` pass; **8,824
+  unfolding / 7,243 pinned topology declarations**, standard axioms only;
+  indexed documentation links (**1,258**) and whitespace pass. Deriving all
+  adjacent prefix/tail correspondences and global cyclic separation remains
+  open; the full cap theorem is not yet proved.
+
 ### 2026-11-11 — uniform oriented strip-circle intervals
 
 - Proved that the approached closure of a strip with finite recoverable pinches
