@@ -819,6 +819,11 @@ Separation of different banks and global nonoverlap remain open.
   represent that seed by a coherent fine vertex, and derive actual fine
   ancestry to the terminal. Each terminal is coherent or has an actual
   incoming fine bank with positive boundary height and derived sector control.
+- [x] Cover every boundary-prefix position by an approached bank of an
+  actual disappearing-run strip. Exclude a coherent contact there with a
+  neighboring source-circle trace. The cut classification and terminal tail
+  then place every neighboring boundary-circle crossing on the same actual
+  radial component as the terminal, in either boundary orientation.
 - [ ] Assemble the actual outer surviving intervals across all five sectors,
   including disappearing boundary runs, and establish global cyclic order.
 - [ ] Prove side-by-side separation of all developed strips and hence all

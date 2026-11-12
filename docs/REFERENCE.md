@@ -1475,3 +1475,7 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Cap.NoAdjacentBoundaryRuns](../Unfoldings/Cap/NoAdjacentBoundaryRuns.lean) | Exclude disappearing physical boundary runs on both sides of a shared sector ray using actual component assignments |
 | [Unfoldings.Cap.RadialComponentSeed](../Unfoldings/Cap/RadialComponentSeed.lean) | Identify the unique nonroot geometric position of a pure radial component and its coherent fine seed vertex |
 | [Unfoldings.Cap.BoundaryTerminalSeedAncestor](../Unfoldings/Cap/BoundaryTerminalSeedAncestor.lean) | Reach actual boundary terminals from coherent fine seed vertices and derive their incoming boundary banks |
+| [Unfoldings.Cap.CoherentEmptyCircleExclusion](../Unfoldings/Cap/CoherentEmptyCircleExclusion.lean) | Exclude coherent contacts between approached empty-strip points and another sector frame source circle |
+| [Unfoldings.Cap.BoundaryRunClosedPrefix](../Unfoldings/Cap/BoundaryRunClosedPrefix.lean) | Cover every boundary-prefix position by an actual approached disappearing-strip bank |
+| [Unfoldings.Cap.BoundaryRunCirclePrefix](../Unfoldings/Cap/BoundaryRunCirclePrefix.lean) | Put neighboring coherent circle crossings strictly beyond actual boundary-run terminals |
+| [Unfoldings.Cap.BoundaryRunCircleComponent](../Unfoldings/Cap/BoundaryRunCircleComponent.lean) | Put every neighboring boundary-circle crossing on the same actual radial component as the run terminal |

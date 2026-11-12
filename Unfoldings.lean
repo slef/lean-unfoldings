@@ -689,3 +689,7 @@ public import Unfoldings.Cap.BoundaryTerminalSectorAssignment
 public import Unfoldings.Cap.NoAdjacentBoundaryRuns
 public import Unfoldings.Cap.RadialComponentSeed
 public import Unfoldings.Cap.BoundaryTerminalSeedAncestor
+public import Unfoldings.Cap.CoherentEmptyCircleExclusion
+public import Unfoldings.Cap.BoundaryRunClosedPrefix
+public import Unfoldings.Cap.BoundaryRunCirclePrefix
+public import Unfoldings.Cap.BoundaryRunCircleComponent

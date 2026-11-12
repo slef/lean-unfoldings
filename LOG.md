@@ -2,6 +2,23 @@
 
 ## Session Log
 
+### 2026-11-12 — neighboring circle crossings on terminal components
+
+- Covered every positive enclosing-bank prefix position below a run terminal
+  by an actual approached strip bank, choosing the first/last terminal that
+  reaches that height and retaining all local physical contacts.
+- Proved an approached empty-strip point cannot coherently meet a source
+  circle supplied by another sector's actual trace. Hence every coherent
+  neighboring boundary crossing lies beyond the selected run terminal.
+- Combined this with the actual cut classification and tail tracking: every
+  neighboring boundary-circle crossing belongs to the same actual radial
+  component as the run terminal, in either boundary orientation. This uses
+  finite empty-circle exceptions and no developed separation hypothesis.
+- Verification: cache retrieval and full `lake build` pass; **9,307 unfolding /
+  7,243 pinned topology declarations**, standard axioms only; **1,432** local
+  documentation links and whitespace pass. Complete named-circle-bank candidate
+  assembly, the zero-run case, original-face transfer, and the cap theorem remain open.
+
 ### 2026-11-12 — coherent fine seeds and derived incoming terminal banks
 
 - Retained the exact geometric leaf, tail agreement, and component in the
