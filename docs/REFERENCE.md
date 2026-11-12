@@ -1608,3 +1608,8 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Cap.EmptyStripRunPhysicalContact](../Unfoldings/Cap/EmptyStripRunPhysicalContact.lean) | Identify the same physical point at circle contacts across an arbitrary empty strip run |
 | [Unfoldings.Cap.RemovedRunPhysicalContact](../Unfoldings/Cap/RemovedRunPhysicalContact.lean) | Assemble physical contact identification between consecutive survivors across either a separator or a removed run |
 | [Unfoldings.Cap.WaterfallCirclePhysicalOrder](../Unfoldings/Cap/WaterfallCirclePhysicalOrder.lean) | Preserve actual physical point identifications in the full finite survivor order using Mathlib lexicographic order |
+| [Unfoldings.Cap.WithinSectorClosedCircleContact](../Unfoldings/Cap/WithinSectorClosedCircleContact.lean) | Prove every actual controlled closed contact within one sector has the same physical strip coordinate |
+| [Unfoldings.Cap.AllSectorClosedCircleContact](../Unfoldings/Cap/AllSectorClosedCircleContact.lean) | Assemble physical identification for every controlled nonexceptional closed waterfall contact across all sectors |
+| [Unfoldings.Cap.ClosedTraceGraphs](../Unfoldings/Cap/ClosedTraceGraphs.lean) | Cover actual closed face copies by compact approached trace graphs, retaining physical coordinates |
+| [Unfoldings.Cap.ClosedFaceCircleContact](../Unfoldings/Cap/ClosedFaceCircleContact.lean) | Identify physical points at coincident actual closed-face copies on controlled nonexceptional circles |
+| [Unfoldings.Cap.UniformExtendedClosedContact](../Unfoldings/Cap/UniformExtendedClosedContact.lean) | Choose a mesh-independent tilt threshold for local physical identification of actual closed-face contacts outside finitely many image radii |

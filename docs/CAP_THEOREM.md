@@ -1014,7 +1014,22 @@ Complete auxiliary-bank comparison and global face-interior nonoverlap are prove
   [WaterfallCirclePhysicalOrder](../Unfoldings/Cap/WaterfallCirclePhysicalOrder.lean)
   uses Mathlib's lexicographic order on coordinates and singleton physical
   labels to preserve equality through the complete finite-order argument.
-- [ ] Apply that order to arbitrary within-sector closed contacts.
+- [x] Apply that order to arbitrary within-sector closed contacts;
+  [WithinSectorClosedCircleContact](../Unfoldings/Cap/WithinSectorClosedCircleContact.lean)
+  identifies their physical strip coordinates.
+- [x] Assemble all sectors: every controlled nonexceptional closed waterfall
+  contact identifies one physical surface point; see
+  [AllSectorClosedCircleContact](../Unfoldings/Cap/AllSectorClosedCircleContact.lean).
+- [x] Transfer closed-trace physical identification to actual containing-face copies.
+  [ClosedTraceGraphs](../Unfoldings/Cap/ClosedTraceGraphs.lean) uses a finite compact
+  graph cover and density to retain each containing-face copy, including edges
+  and vertices. [ClosedFaceCircleContact](../Unfoldings/Cap/ClosedFaceCircleContact.lean)
+  then identifies the physical points at controlled nonexceptional contacts.
+- [x] Choose the tilt threshold before either mesh for this local closed-face
+  conclusion; see [UniformExtendedClosedContact](../Unfoldings/Cap/UniformExtendedClosedContact.lean).
+  The theorem covers all closed face points in the controlled ball, with a finite
+  excluded set of developed radii. It does not remove the exceptional contacts.
+- [ ] Complete the exceptional vertex-radius contact cases.
 - [ ] Identify all coincident intrinsic boundary copies after pruning, including
   cut vertices, contacts between different trees, and original rim points.
 - [ ] Conclude boundary injectivity and state the simple-polygon existence theorem.

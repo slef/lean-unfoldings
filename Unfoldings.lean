@@ -822,3 +822,8 @@ public import Unfoldings.Geometry.CircleTerminalContact
 public import Unfoldings.Cap.EmptyStripRunPhysicalContact
 public import Unfoldings.Cap.RemovedRunPhysicalContact
 public import Unfoldings.Cap.WaterfallCirclePhysicalOrder
+public import Unfoldings.Cap.WithinSectorClosedCircleContact
+public import Unfoldings.Cap.AllSectorClosedCircleContact
+public import Unfoldings.Cap.ClosedTraceGraphs
+public import Unfoldings.Cap.ClosedFaceCircleContact
+public import Unfoldings.Cap.UniformExtendedClosedContact
