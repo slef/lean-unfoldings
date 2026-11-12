@@ -2,6 +2,22 @@
 
 ## Session Log
 
+### 2026-11-11 — developed strip-circle interval criterion
+
+- Parametrized each positive-quadrant source circle by its horizontal
+  coordinate and proved bounded open real sets with two possible frontier
+  points fill the intervening interval.
+- Extended radial bank progress to every approached terminal bank point and
+  proved uniqueness of positive-circle bank intersections, including pinches.
+- Combined exact strip-image frontiers, closed-trace injectivity, radial
+  progress, source normalization, quadrant bounds, and end-level avoidance:
+  each circle intersection is empty or one interval with actual bank endpoints.
+- Verification: cache retrieval followed by full `lake build` pass; **8,727
+  unfolding / 7,243 pinned topology declarations**, standard axioms only;
+  indexed documentation links (**1,242**) and whitespace pass. Deriving all
+  interval-criterion hypotheses from uniform strip data and comparing adjacent
+  intervals globally remain open.
+
 ### 2026-11-11 — exact bounded strip-image frontiers
 
 - Proved every bounded physical strip slab is compact, its strict open slab

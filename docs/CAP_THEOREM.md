@@ -617,6 +617,13 @@ Separation of different banks and global nonoverlap remain open.
   The physical frontier consists only of banks and end levels, including
   reopening pinches. Transfer this to the whole developed strip-image frontier
   using closed-trace injectivity, with no unaccounted boundary components.
+- [x] Extend radial progress to approached terminal bank heights and prove
+  positive-circle bank uniqueness there. Parametrize source-quarter circles
+  by a real coordinate. Prove the single-interval criterion from closed-trace
+  injectivity, radial banks, source normalization, quadrant bounds, and
+  end-level avoidance, retaining actual bank endpoints and the empty case.
+- [ ] Derive every circle-interval hypothesis for the same uniformly constructed
+  strips, then compare their adjacent intervals in one global cyclic order.
 - [ ] Prove side-by-side separation of all developed strips and hence all
   distinct original face interiors.
 - [x] Apply the cut-disk and flat-development infrastructure to the fixed-wedge

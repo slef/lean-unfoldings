@@ -114,6 +114,8 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Cap.StripCircleInterval](../Unfoldings/Cap/StripCircleInterval.lean) | Developed strip-circle intersections are empty or one interval with actual bank endpoints |
+| [Unfoldings.Cap.ClosedRadialBankTrace](../Unfoldings/Cap/ClosedRadialBankTrace.lean) | Strict radial bank progress and circle uniqueness include approached terminal pinches |
 | [Unfoldings.Cap.ExtendedClosedRadialBankTraces](../Unfoldings/Cap/ExtendedClosedRadialBankTraces.lean) | One uniform calibration gives full closed-trace injectivity and radial matched banks |
 | [Unfoldings.Cap.RadialBankTraceProperty](../Unfoldings/Cap/RadialBankTraceProperty.lean) | Strict radial progress of each visible bank trace before every active height |
 | [Unfoldings.Cap.CenteredClosedBankTrace](../Unfoldings/Cap/CenteredClosedBankTrace.lean) | Construct visible actual bank traces and full closed-trace injectivity together |
@@ -671,6 +673,8 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Geometry.QuadrantCircleInterval](../Unfoldings/Geometry/QuadrantCircleInterval.lean) | Two possible bank values force a single angular interval within a source quadrant |
+| [Unfoldings.Geometry.QuadrantCircle](../Unfoldings/Geometry/QuadrantCircle.lean) | Continuous horizontal parametrization of source circles in a positive quadrant |
 | [Unfoldings.Geometry.MonotoneStripImageFrontier](../Unfoldings/Geometry/MonotoneStripImageFrontier.lean) | Whole developed strip-image frontiers consist of actual bank and end-level values |
 | [Unfoldings.Geometry.MonotoneStripTopology](../Unfoldings/Geometry/MonotoneStripTopology.lean) | Compact bounded strip closures and exact physical bank/end frontier alternatives |
 | [Unfoldings.Geometry.RecoverableStripLowerBound](../Unfoldings/Geometry/RecoverableStripLowerBound.lean) | Uniform lower separation through coherent reopening pinches and trace closure |
@@ -904,6 +908,7 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Topology.IntervalFrontier](../Unfoldings/Topology/IntervalFrontier.lean) | A bounded nonempty open real set with two possible frontier points is their interval |
 | [Unfoldings.Topology.CompactImageFrontier](../Unfoldings/Topology/CompactImageFrontier.lean) | Exact frontier transport for continuous planar maps injective on compact closures |
 | [Unfoldings.Topology.ClosureLowerBound](../Unfoldings/Topology/ClosureLowerBound.lean) | Continuous lower distance bounds and injectivity extend to the whole domain closure |
 | [Unfoldings.Topology.SphereArc](../Unfoldings/Topology/SphereArc.lean) | Simple arcs first reaching a prescribed source sphere only at their final point |

@@ -504,3 +504,8 @@ public import Unfoldings.Cap.ExtendedClosedRadialBankTraces
 public import Unfoldings.Topology.CompactImageFrontier
 public import Unfoldings.Geometry.MonotoneStripTopology
 public import Unfoldings.Geometry.MonotoneStripImageFrontier
+public import Unfoldings.Topology.IntervalFrontier
+public import Unfoldings.Geometry.QuadrantCircle
+public import Unfoldings.Geometry.QuadrantCircleInterval
+public import Unfoldings.Cap.ClosedRadialBankTrace
+public import Unfoldings.Cap.StripCircleInterval
