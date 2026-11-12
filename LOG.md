@@ -2,6 +2,22 @@
 
 ## Session Log
 
+### 2026-11-12 — derived common chains and terminal margins
+
+- Proved nonroot fine vertices on one unattached radial component are
+  comparable in the actual completed forest. Neither is the outer tip, so
+  linear radial height gives the required strict endpoint room.
+- Located two actual selected fine edges at named indices of one completed
+  parent path. Derived both neighboring sector geometries, all curved-subtree
+  assignments, and the cross-frame actual-bank coordinate alternative.
+- Transferred uniform physical face margins to actual approached terminal
+  copies in either frame. Their named developed points retain the terminal's
+  strict inner-radius bound; no later collapsed trace value is used.
+- Verification: cache retrieval and full `lake build` pass; **9,289 unfolding /
+  7,243 pinned topology declarations**, standard axioms only; **1,423** local
+  documentation links and whitespace pass. Full neighboring-run candidate
+  bounds, global assembly, original-face transfer, and the cap theorem remain open.
+
 ### 2026-11-12 — cross-frame bank barriers for actual circle images
 
 - Proved signed-area separation using one actual inner point in two oriented

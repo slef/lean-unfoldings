@@ -1467,3 +1467,6 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Cap.CrossFrameInnerTerminalSeparation](../Unfoldings/Cap/CrossFrameInnerTerminalSeparation.lean) | Derive cross-frame separation for inner terminals and circle crossings from actual bank-chain progress |
 | [Unfoldings.Cap.StripCirclePointBounds](../Unfoldings/Cap/StripCirclePointBounds.lean) | Bound every open strip-circle point strictly by its actual approached bank endpoints |
 | [Unfoldings.Cap.CrossFrameStripCircleBounds](../Unfoldings/Cap/CrossFrameStripCircleBounds.lean) | Apply actual cross-frame bank barriers to constructed waterfall circle images with strict open-arc bounds |
+| [Unfoldings.Geometry.RadialTailHeightOrder](../Unfoldings/Geometry/RadialTailHeightOrder.lean) | Put every nontip radial-component position strictly below its outer tip in any increasing linear height |
+| [Unfoldings.Cap.RadialComponentCommonChain](../Unfoldings/Cap/RadialComponentCommonChain.lean) | Derive one actual fine parent chain and both sector geometries for edges on a shared radial component |
+| [Unfoldings.Cap.BoundaryTerminalMargins](../Unfoldings/Cap/BoundaryTerminalMargins.lean) | Derive actual terminal-copy radius bounds and strict margins in either neighboring frame |

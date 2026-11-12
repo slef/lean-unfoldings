@@ -806,6 +806,10 @@ Separation of different banks and global nonoverlap remain open.
   in its own sector frame. Derive strict bounds for every open strip-circle
   point and apply the theorem to actual trace images, conditional on their
   own terminal/circle endpoint bounds on that common bank chain.
+- [x] Derive a single actual fine bank chain for two named edges on a shared
+  unattached radial component, including both sector geometries and the
+  cross-frame coordinate comparison. Transfer uniform physical face margins
+  and inner-radius bounds to the actual approached terminal copies.
 - [ ] Assemble the actual outer surviving intervals across all five sectors,
   including disappearing boundary runs, and establish global cyclic order.
 - [ ] Prove side-by-side separation of all developed strips and hence all
