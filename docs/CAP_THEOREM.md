@@ -550,8 +550,13 @@ Separation of different banks and global nonoverlap remain open.
   before its development or calibration. Width, cut avoidance, and one-sided
   values are derived for the same subdivision. Every regular parent-edge
   portion has its actual entrance/exit chart, without supplied matching data.
-- [ ] Continue through branch endpoints, then control radial order and complete
-  bank continuations.
+- [x] Extend actual source-position error to all visible trace points by
+  continuity. Derive positive radial inner-product tests from quantitative
+  sector margins and linear chart error. Actual visible monotone-bank traces
+  progress strictly radially under these numerical bounds, allowing arbitrary
+  face switches and coherent branch points.
+- [ ] Construct these radial bank traces uniformly before both meshes, then
+  handle branch endpoints and complete bank continuations.
 - [ ] Prove side-by-side separation of all developed strips and hence all
   distinct original face interiors.
 - [x] Apply the cut-disk and flat-development infrastructure to the fixed-wedge

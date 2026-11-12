@@ -452,3 +452,7 @@ public import Unfoldings.Cap.ClosedSectorStrip
 public import Unfoldings.Cap.RegularWaterfallBankWidth
 public import Unfoldings.Cap.MatchedBankTrace
 public import Unfoldings.Cap.ExtendedMatchedBankTraces
+public import Unfoldings.Geometry.NearIdentityRadial
+public import Unfoldings.Geometry.HeightGraphRadial
+public import Unfoldings.Cap.CenteredTraceSourceError
+public import Unfoldings.Cap.CenteredBankTraceRadial

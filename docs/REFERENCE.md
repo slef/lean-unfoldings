@@ -125,6 +125,8 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 | [Unfoldings.Cap.RegularWaterfallBankWidth](../Unfoldings/Cap/RegularWaterfallBankWidth.lean) | Deep clipping and subdivision bounds derive actual regular bank width without an interior-location hypothesis |
 | [Unfoldings.Cap.MatchedBankTrace](../Unfoldings/Cap/MatchedBankTrace.lean) | Complete one-sided traces match every regular named parent-bank piece before active heights |
 | [Unfoldings.Cap.ExtendedMatchedBankTraces](../Unfoldings/Cap/ExtendedMatchedBankTraces.lean) | Construct actual waterfall traces with derived width, cut avoidance, and named regular-bank matching |
+| [Unfoldings.Cap.CenteredTraceSourceError](../Unfoldings/Cap/CenteredTraceSourceError.lean) | Extend actual source-position error to every visible one-sided trace point |
+| [Unfoldings.Cap.CenteredBankTraceRadial](../Unfoldings/Cap/CenteredBankTraceRadial.lean) | Actual visible bank traces progress strictly radially from quantitative chart and sector margins |
 | [Unfoldings.Cap.ExtendedWaterfallRegular](../Unfoldings/Cap/ExtendedWaterfallRegular.lean) | One constructed waterfall retains geometric cut avoidance, pinch control, and all-development coherence |
 | [Unfoldings.Cap.ExtendedRegularBankTraces](../Unfoldings/Cap/ExtendedRegularBankTraces.lean) | Preserve actual geometric regularity and pinch control for the same complete bank traces |
 | [Unfoldings.Cap.GeometricTailLocalEdge](../Unfoldings/Cap/GeometricTailLocalEdge.lean) | Actual regular meshed tail points retain locally matching physical edge graphs |
@@ -645,6 +647,8 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 | [Unfoldings.Geometry.MonotoneStripDensity](../Unfoldings/Geometry/MonotoneStripDensity.lean) | Finite waterfall walls are closed nowhere dense; off-wall points lie in strict cells |
 | [Unfoldings.Geometry.HeightNetworkLocalGraph](../Unfoldings/Geometry/HeightNetworkLocalGraph.lean) | Covered tails agree locally with their actual affine edge graphs away from network vertices |
 | [Unfoldings.Geometry.HeightGraphSegments](../Unfoldings/Geometry/HeightGraphSegments.lean) | Exact whole-segment graphs, directed-side formulas, and transported cut avoidance |
+| [Unfoldings.Geometry.NearIdentityRadial](../Unfoldings/Geometry/NearIdentityRadial.lean) | Derive positive radial tests from linear chart error and source-position margins |
+| [Unfoldings.Geometry.HeightGraphRadial](../Unfoldings/Geometry/HeightGraphRadial.lean) | Monotone height graphs give strict radial progress through continuous finite face selections |
 | [Unfoldings.Geometry.RecoverableStripRegularWidth](../Unfoldings/Geometry/RecoverableStripRegularWidth.lean) | Derive positive strip width from a later active height and avoidance of reopening pinches |
 | [Unfoldings.Geometry.WedgeFrameSides](../Unfoldings/Geometry/WedgeFrameSides.lean) | Positive acute-wedge frames preserve every actual directed-edge side, including centered coordinates |
 | [Unfoldings.Geometry.StripCutSides](../Unfoldings/Geometry/StripCutSides.lean) | Positive strip width and cut avoidance force the local side even at a mere wall contact |

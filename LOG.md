@@ -2,6 +2,20 @@
 
 ## Session Log
 
+### 2026-11-11 — radial progress through actual visible bank traces
+
+- Derived quantitative positive inner-product tests from linear chart error
+  and source-position margins. Continuous finite affine selections along a
+  monotone height graph then progress strictly radially.
+- Extended the actual developed source-position estimate to all visible trace
+  points by continuity. Applied the radial criterion to actual containing-face
+  traces, allowing arbitrary face switches and coherent branch points.
+- Verification: cache retrieval followed by full `lake build` pass; **8,453
+  unfolding / 7,243 pinned topology declarations**, standard axioms only;
+  indexed documentation links (**1,189**) and whitespace pass. Uniform actual
+  radial-trace construction, complete continuations, and global assembly remain
+  open; the full cap theorem is not proved.
+
 ### 2026-11-11 — constructed matched regular-bank traces
 
 - Packaged matching of every regular parent-bank piece before each active
