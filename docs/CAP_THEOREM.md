@@ -940,6 +940,15 @@ Complete auxiliary-bank comparison and global face-interior nonoverlap are prove
   disk, and proves that every remaining cut has positive subtree curvature.
   [CurvaturePrunedDevelopment](../Unfoldings/Cap/CurvaturePrunedDevelopment.lean)
   preserves necessary curvature cuts, nonoverlap, and interior local isometry.
+- [x] Exclude foreign contacts at face interiors and retained nonvertex hinges,
+  both globally and within the actual controlled roof region. Genuine regular
+  points with a local isometry have unique developed preimages, including against
+  boundary copies. [PrunedInteriorContact](../Unfoldings/Cap/PrunedInteriorContact.lean)
+  applies this to the whole pruned cap interior and proves that global injectivity
+  is equivalent to injectivity restricted to its intrinsic boundary.
+- [x] Every remaining original parent cut has positive subtree curvature; its
+  opposite regular bank interiors are strictly separate under the actual bank
+  frame and curvature budget.
 - [ ] Prove boundary injectivity for the pruned development, including contacts
   between different cut paths, different trees, and rim points.
 

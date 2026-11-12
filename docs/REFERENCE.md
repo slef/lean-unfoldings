@@ -1559,3 +1559,10 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Cap.FlatSubtreeBanks](../Unfoldings/Cap/FlatSubtreeBanks.lean) | Prove zero-curvature original subtrees have coincident whole seam banks |
 | [Unfoldings.Cap.CurvaturePrunedForest](../Unfoldings/Cap/CurvaturePrunedForest.lean) | Remove every flat descendant subtree while preserving an actual original-edge rooted forest and cut disk |
 | [Unfoldings.Cap.CurvaturePrunedDevelopment](../Unfoldings/Cap/CurvaturePrunedDevelopment.lean) | Preserve necessary curvature cuts, nonoverlap, and interior local isometry after pruning flat subtrees |
+| [Unfoldings.Development.ClosedFaceSeparation](../Unfoldings/Development/ClosedFaceSeparation.lean) | Exclude every foreign closed-face contact at a developed face interior or an open two-face patch |
+| [Unfoldings.Development.HingeInteriorContact](../Unfoldings/Development/HingeInteriorContact.lean) | Prove unique intrinsic preimages at retained nonvertex hinges under face-interior nonoverlap |
+| [Unfoldings.Cap.LocalClosedFaceSeparation](../Unfoldings/Cap/LocalClosedFaceSeparation.lean) | Exclude foreign closed-face contacts from local roof separation on an open physical region |
+| [Unfoldings.Cap.LocalHingeContact](../Unfoldings/Cap/LocalHingeContact.lean) | Exclude foreign physical contacts at retained nonvertex hinges using actual local roof-face separation |
+| [Unfoldings.Metric.LocalIsometryBallImage](../Unfoldings/Metric/LocalIsometryBallImage.lean) | Map sufficiently small intrinsic balls onto Euclidean balls at actual regular points |
+| [Unfoldings.Development.RegularInteriorContact](../Unfoldings/Development/RegularInteriorContact.lean) | Prove unique intrinsic preimages at every regular point where a nonoverlapping development is locally isometric |
+| [Unfoldings.Cap.PrunedInteriorContact](../Unfoldings/Cap/PrunedInteriorContact.lean) | Exclude every foreign developed preimage at pruned cap interior points, including all boundary copies |

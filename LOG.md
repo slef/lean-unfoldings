@@ -2,6 +2,23 @@
 
 ## Session Log
 
+### 2026-11-12 — exclude foreign interior contacts after pruning
+
+- Proved unique intrinsic preimages at developed face interiors and retained
+  nonvertex hinges. Local versions apply in the actual controlled roof region,
+  without assuming nonoverlap of the entire auxiliary roof.
+- Proved that a local isometry at a genuine Euclidean regular point maps small
+  intrinsic balls onto planar balls. Combined this with face nonoverlap to rule
+  out every foreign copy at a regular point, including boundary copies.
+- Applied the result to the entire pruned cap interior. Global injectivity of
+  its development is now equivalent to injectivity on its intrinsic boundary.
+  Also identified the remaining parent cuts exactly by positive subtree curvature
+  and derived strict separation of their opposite regular bank interiors.
+- Verification: cache retrieval and full `lake build` pass; **9,584 unfolding /
+  7,243 pinned topology declarations**, standard axioms only. All local links
+  and whitespace pass. The remaining simple-polygon obligation is boundary-to-boundary
+  contact, including different cut paths and trees, rim points, and vertices.
+
 ### 2026-11-12 — remove redundant original flat subtrees
 
 - Proved that zero-curvature original subtrees have identical whole parent-seam

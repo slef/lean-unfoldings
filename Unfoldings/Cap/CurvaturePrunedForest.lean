@@ -115,6 +115,19 @@ theorem curved_cut_subtree_positive {s : C.Seam} (cut : s ∉ M.curvedRetain) :
     (fun zero => e.property (Or.inr zero.symm))
 
 open Classical in
+theorem curved_parent_cut_iff (e : {v : C.Vertex Set.univ // v ∉ M.parents.roots}) :
+    M.selection.edge e ∉ M.curvedRetain ↔ 0 < M.subtreeCurvature e.val := by
+  constructor
+  · intro cut
+    obtain ⟨v, named, positive⟩ := M.curved_cut_subtree_positive cut
+    have same : v = e := M.selection.edge_injective named
+    exact same ▸ positive
+  · intro positive kept
+    let a : {v : C.Vertex Set.univ // v ∉ M.curvedParents.roots} :=
+      ⟨e.val, fun root => root.elim e.property (ne_of_gt positive)⟩
+    exact kept ⟨a, rfl⟩
+
+open Classical in
 def curvedDevelopment (D : FacewiseDevelopment C M.retain) (nonoverlap : D.Nonoverlapping) :
     FacewiseDevelopment C M.curvedRetain :=
   D.restoreSeams K.folding nonoverlap M.curvedRetain (M.curvedRetain_subset_coherentSeams D)
@@ -123,5 +136,21 @@ open Classical in
 theorem curvedDevelopment_nonoverlapping (D : FacewiseDevelopment C M.retain)
     (nonoverlap : D.Nonoverlapping) : (M.curvedDevelopment D nonoverlap).Nonoverlapping :=
   nonoverlap
+
+namespace SectorFrameData
+
+variable {M}
+
+open Classical in
+theorem curved_parent_bank_interiors_ne {positive : 0 < t} {small : t < 1}
+    {D : FacewiseDevelopment C M.retain} (B : M.SectorFrameData positive small D)
+    (e : {v : C.Vertex Set.univ // v ∉ M.parents.roots})
+    (cut : M.selection.edge e ∉ M.curvedRetain) {s r : ℝ}
+    (s_before : s < 1) (r_before : r < 1)
+    (budget : C.totalInteriorAngularDefect Set.univ < Real.pi) :
+    M.parentEntrancePoint D e s ≠ M.parentExitPoint D e r :=
+  B.parent_bank_interiors_ne e s_before r_before budget ((M.curved_parent_cut_iff e).mp cut)
+
+end SectorFrameData
 
 end Unfoldings.ConvexCap.SectorForest

@@ -773,3 +773,10 @@ public import Unfoldings.Cap.OriginalBankFaceValues
 public import Unfoldings.Cap.FlatSubtreeBanks
 public import Unfoldings.Cap.CurvaturePrunedForest
 public import Unfoldings.Cap.CurvaturePrunedDevelopment
+public import Unfoldings.Development.ClosedFaceSeparation
+public import Unfoldings.Development.HingeInteriorContact
+public import Unfoldings.Cap.LocalClosedFaceSeparation
+public import Unfoldings.Cap.LocalHingeContact
+public import Unfoldings.Metric.LocalIsometryBallImage
+public import Unfoldings.Development.RegularInteriorContact
+public import Unfoldings.Cap.PrunedInteriorContact

@@ -4,7 +4,7 @@ public import Unfoldings.Cap.CurvaturePrunedForest
 public import Unfoldings.Cap.CurvatureCutDevelopment
 public import Unfoldings.Development.NonoverlapNormalization
 
-/-! Pruning flat original subtrees retains all necessary curvature cuts and interior local isometry. -/
+/-! Pruning flat subtrees preserves necessary curvature cuts and interior local isometry. -/
 
 @[expose] public section
 
