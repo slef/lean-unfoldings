@@ -792,3 +792,5 @@ public import Unfoldings.Geometry.ClosedCircleCapsContact
 public import Unfoldings.Cap.ClosedStripCircleContact
 public import Unfoldings.Cap.CompletedBankCoordinateContact
 public import Unfoldings.Cap.NonadjacentClosedSeparation
+public import Unfoldings.Cap.ClosedCircleBankCoordinates
+public import Unfoldings.Cap.ComponentClosedCircleContact

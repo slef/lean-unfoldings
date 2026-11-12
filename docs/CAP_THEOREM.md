@@ -999,3 +999,9 @@ excludes every contact between nonadjacent closed sector images except the
 common developed source. This includes vertex and pinch radii, with no finite
 exceptional set and no circle-survivor assumption. Same-sector and adjacent-sector
 contacts still require the remaining global assembly.
+
+[ComponentClosedCircleContact](../Unfoldings/Cap/ComponentClosedCircleContact.lean)
+applies the weak component-bank comparison to actual approached traces in
+different sector frames. A closed contact identifies both facing physical strip
+coordinates; the named comparison banks also represent the same physical point.
+Their chain, sector membership, and branch-gap equality are all derived.
