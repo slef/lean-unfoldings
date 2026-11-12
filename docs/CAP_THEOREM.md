@@ -604,6 +604,10 @@ Separation of different banks and global nonoverlap remain open.
   radial matched-bank calibration, with margin and tilt preceding both meshes.
   Retain the physical stopping seam, bounded prefix, component sector, contour
   start, actual bank-image inclusion, and whole-arc quadrant/circle order.
+- [x] Prove quantitative lower distance bounds through coherent reopening
+  pinches and extend them to the actual trace closure. Construct the complete
+  visible bank trace injectively on that closure, including terminal pinches;
+  permanently collapsed future tails stay excluded.
 - [ ] Prove side-by-side separation of all developed strips and hence all
   distinct original face interiors.
 - [x] Apply the cut-disk and flat-development infrastructure to the fixed-wedge

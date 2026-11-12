@@ -2,6 +2,20 @@
 
 ## Session Log
 
+### 2026-11-11 — quantitative separation and full closed-trace injectivity
+
+- Proved a common positive lower distance bound on whole monotone strips,
+  retaining the same coefficient through insets and coherent reopening pinches.
+- Proved continuous lower distance bounds pass to the full domain closure;
+  the actual continuous developed trace is consequently injective there.
+- Constructed one continuous extension with both complete visible bank values
+  and injectivity on the entire approached strict-slab closure, including its
+  terminal pinch. Permanently collapsed future tails remain excluded.
+- Verification: cache retrieval followed by full `lake build` pass; **8,696
+  unfolding / 7,243 pinned topology declarations**, standard axioms only;
+  indexed documentation links (**1,232**) and whitespace pass. Uniform closed
+  radial-bank assembly and global strip-image separation remain open.
+
 ### 2026-11-11 — uniform actual proper comparison arcs
 
 - Constructed `exists_uniform_extended_proper_comparison_arcs`: a positive

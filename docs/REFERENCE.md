@@ -114,6 +114,8 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Cap.CenteredClosedBankTrace](../Unfoldings/Cap/CenteredClosedBankTrace.lean) | Construct visible actual bank traces and full closed-trace injectivity together |
+| [Unfoldings.Cap.CenteredTraceInjectivity](../Unfoldings/Cap/CenteredTraceInjectivity.lean) | Actual continuous strip traces are injective on their whole approached boundary |
 | [Unfoldings.Cap.ExtendedProperComparisonArcs](../Unfoldings/Cap/ExtendedProperComparisonArcs.lean) | Uniform construction of proper comparison arcs in the actual radial matched-bank calibration |
 | [Unfoldings.Cap.ProperComparisonData](../Unfoldings/Cap/ProperComparisonData.lean) | Proper comparison arcs retaining actual contour copies, bounded physical prefixes, and circle order |
 | [Unfoldings.Cap.ProperComparisonArcs](../Unfoldings/Cap/ProperComparisonArcs.lean) | Constructed simple comparison subarcs ending on one source circle in derived bank order |
@@ -667,6 +669,8 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Geometry.RecoverableStripLowerBound](../Unfoldings/Geometry/RecoverableStripLowerBound.lean) | Uniform lower separation through coherent reopening pinches and trace closure |
+| [Unfoldings.Geometry.MonotoneStripLowerBound](../Unfoldings/Geometry/MonotoneStripLowerBound.lean) | Quantitative distance separation for continuous finite affine selections on bounded strips |
 | [Unfoldings.Geometry.ChainGraphArc](../Unfoldings/Geometry/ChainGraphArc.lean) | Simple-arc parametrizations retaining the entire geometric chain image |
 | [Unfoldings.Geometry.ChainTruncationLinear](../Unfoldings/Geometry/ChainTruncationLinear.lean) | Weak coordinate progress and flat zero steps persist under exact truncation |
 | [Unfoldings.Geometry.ChainLinearGraph](../Unfoldings/Geometry/ChainLinearGraph.lean) | The entire chain image is homeomorphic to its controlling-coordinate interval |
@@ -896,6 +900,7 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Topology.ClosureLowerBound](../Unfoldings/Topology/ClosureLowerBound.lean) | Continuous lower distance bounds and injectivity extend to the whole domain closure |
 | [Unfoldings.Topology.SphereArc](../Unfoldings/Topology/SphereArc.lean) | Simple arcs first reaching a prescribed source sphere only at their final point |
 | [Unfoldings.Topology.IntervalArc](../Unfoldings/Topology/IntervalArc.lean) | Injective continuous paths for sets homeomorphic to nondegenerate real intervals |
 | [Unfoldings.Topology.PathRadiusExit](../Unfoldings/Topology/PathRadiusExit.lean) | First source-sphere crossings with strictly interior preceding paths and preserved simplicity |

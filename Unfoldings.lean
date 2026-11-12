@@ -494,3 +494,8 @@ public import Unfoldings.Topology.SphereArc
 public import Unfoldings.Cap.ProperComparisonArcs
 public import Unfoldings.Cap.ProperComparisonData
 public import Unfoldings.Cap.ExtendedProperComparisonArcs
+public import Unfoldings.Geometry.MonotoneStripLowerBound
+public import Unfoldings.Topology.ClosureLowerBound
+public import Unfoldings.Geometry.RecoverableStripLowerBound
+public import Unfoldings.Cap.CenteredTraceInjectivity
+public import Unfoldings.Cap.CenteredClosedBankTrace
