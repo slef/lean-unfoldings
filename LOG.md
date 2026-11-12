@@ -2,6 +2,22 @@
 
 ## Session Log
 
+### 2026-11-11 — uniform actual strip-circle intervals
+
+- Retained each actual strip's coherent pinches, source normalization, complete
+  visible banks, closed injectivity, radial progress, and position error in one
+  construction; preserved the previous radial-bank theorem statements.
+- Derived closed source-distance bounds, quadrant placement, and end-level
+  avoidance from those data. The circle criterion now needs end exclusions
+  only on the approached closure, allowing arbitrary collapsed future tails.
+- Constructed bank-bounded source-circle intervals for every actual waterfall
+  strip and every positive radius below one quarter of the cutoff. The tilt
+  and error thresholds precede both original and auxiliary meshes.
+- Verification: cache retrieval followed by full `lake build` pass; **8,772
+  unfolding / 7,243 pinned topology declarations**, standard axioms only;
+  indexed documentation links (**1,247**) and whitespace pass. Global adjacent
+  interval order and the full nonoverlap theorem remain open.
+
 ### 2026-11-11 — developed strip-circle interval criterion
 
 - Parametrized each positive-quadrant source circle by its horizontal

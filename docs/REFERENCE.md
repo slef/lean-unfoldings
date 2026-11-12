@@ -114,6 +114,11 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Cap.RadialStripTraceData](../Unfoldings/Cap/RadialStripTraceData.lean) | The same constructed radial trace retains source normalization, coherent pinches, and visible bank values |
+| [Unfoldings.Cap.RadialStripTraceBounds](../Unfoldings/Cap/RadialStripTraceBounds.lean) | Actual trace data give closed source-distance bounds, source values, and strict quadrant margins |
+| [Unfoldings.Cap.ExtendedRadialStripData](../Unfoldings/Cap/ExtendedRadialStripData.lean) | Uniform actual strip data retain closed injectivity, radial matching, and coherent source geometry together |
+| [Unfoldings.Cap.RadialStripCircleInterval](../Unfoldings/Cap/RadialStripCircleInterval.lean) | Actual strip data discharge every source-circle interval hypothesis, including collapsed terminal tails |
+| [Unfoldings.Cap.ExtendedStripCircleIntervals](../Unfoldings/Cap/ExtendedStripCircleIntervals.lean) | Every constructed waterfall strip has at most one bank-bounded source-circle interval at a uniform tilt |
 | [Unfoldings.Cap.StripCircleInterval](../Unfoldings/Cap/StripCircleInterval.lean) | Developed strip-circle intersections are empty or one interval with actual bank endpoints |
 | [Unfoldings.Cap.ClosedRadialBankTrace](../Unfoldings/Cap/ClosedRadialBankTrace.lean) | Strict radial bank progress and circle uniqueness include approached terminal pinches |
 | [Unfoldings.Cap.ExtendedClosedRadialBankTraces](../Unfoldings/Cap/ExtendedClosedRadialBankTraces.lean) | One uniform calibration gives full closed-trace injectivity and radial matched banks |

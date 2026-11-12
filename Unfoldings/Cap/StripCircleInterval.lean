@@ -14,10 +14,25 @@ namespace Unfoldings.MonotoneStrip
 
 variable (S : MonotoneStrip)
 
+/-- A source circle has at most one open strip interval, whose possible endpoints
+are the unique actual values on the two approached banks. -/
+def HasBankCircleInterval (G : ℂ → ℂ) (center : ℂ) (cutoff radius : ℝ) : Prop :=
+  ∃ lower upper : ℂ,
+    (∀ h ∈ Set.Icc 0 cutoff,
+      S.lower.point h ∈ closure {z | z ∈ S.strictCarrier ∧ z.re + z.im ∈ Set.Icc 0 cutoff} →
+      ‖G (S.lower.point h) - center‖ = radius → G (S.lower.point h) = lower) ∧
+    (∀ h ∈ Set.Icc 0 cutoff,
+      S.upper.point h ∈ closure {z | z ∈ S.strictCarrier ∧ z.re + z.im ∈ Set.Icc 0 cutoff} →
+      ‖G (S.upper.point h) - center‖ = radius → G (S.upper.point h) = upper) ∧
+    (quadrantCirclePoint center radius ⁻¹' (G '' S.openSlab 0 cutoff) = ∅ ∨
+      quadrantCirclePoint center radius ⁻¹' (G '' S.openSlab 0 cutoff) =
+        Set.Ioo (min (lower - center).re (upper - center).re)
+          (max (lower - center).re (upper - center).re))
+
 /-- The only two possible angular endpoints come from actual approached bank values.
 Closure injectivity, radial bank progress, and exclusion of the physical end levels
 rule out any additional component on the circle. -/
-theorem exists_bank_circle_interval {G : ℂ → ℂ} (continuous : Continuous G)
+theorem exists_bank_circle_interval_of_closed_ends {G : ℂ → ℂ} (continuous : Continuous G)
     (center : ℂ) (cutoff radius : ℝ) (positive : 0 < radius)
     (injective : Set.InjOn G
       (closure {z | z ∈ S.strictCarrier ∧ z.re + z.im ∈ Set.Icc 0 cutoff}))
@@ -25,7 +40,8 @@ theorem exists_bank_circle_interval {G : ℂ → ℂ} (continuous : Continuous G
     (source_values : G (S.lower.point 0) = center ∧ G (S.upper.point 0) = center)
     (quadrant : ∀ z ∈ S.openSlab 0 cutoff,
       0 < (G z - center).re ∧ 0 < (G z - center).im)
-    (ends_avoid : ∀ z ∈ S.boundedCarrier 0 cutoff,
+    (ends_avoid : ∀ z ∈ closure
+      {z | z ∈ S.strictCarrier ∧ z.re + z.im ∈ Set.Icc 0 cutoff},
       (z.re + z.im = 0 ∨ z.re + z.im = cutoff) → ‖G z - center‖ ≠ radius) :
     ∃ lower upper : ℂ,
       (∀ h ∈ Set.Icc 0 cutoff,
@@ -85,7 +101,37 @@ theorem exists_bank_circle_interval {G : ℂ → ℂ} (continuous : Continuous G
       z = G p := value.symm
       _ = G (S.upper.point (p.re + p.im)) := congrArg G last
       _ = upper := at_upper _ bounded.2 (last ▸ closed) (last ▸ physical_size)
-  · exact (ends_avoid p bounded (Or.inl source) physical_size).elim
-  · exact (ends_avoid p bounded (Or.inr finish) physical_size).elim
+  · exact (ends_avoid p closed (Or.inl source) physical_size).elim
+  · exact (ends_avoid p closed (Or.inr finish) physical_size).elim
+
+
+/-- The bounded-end formulation follows from the sharper approached-end criterion. -/
+theorem exists_bank_circle_interval {G : ℂ → ℂ} (continuous : Continuous G)
+    (center : ℂ) (cutoff radius : ℝ) (positive : 0 < radius)
+    (injective : Set.InjOn G
+      (closure {z | z ∈ S.strictCarrier ∧ z.re + z.im ∈ Set.Icc 0 cutoff}))
+    (radial : S.RadialBankTraces G center cutoff)
+    (source_values : G (S.lower.point 0) = center ∧ G (S.upper.point 0) = center)
+    (quadrant : ∀ z ∈ S.openSlab 0 cutoff,
+      0 < (G z - center).re ∧ 0 < (G z - center).im)
+    (ends_avoid : ∀ z ∈ S.boundedCarrier 0 cutoff,
+      (z.re + z.im = 0 ∨ z.re + z.im = cutoff) → ‖G z - center‖ ≠ radius) :
+    ∃ lower upper : ℂ,
+      (∀ h ∈ Set.Icc 0 cutoff,
+        S.lower.point h ∈ closure {z | z ∈ S.strictCarrier ∧ z.re + z.im ∈ Set.Icc 0 cutoff} →
+        ‖G (S.lower.point h) - center‖ = radius → G (S.lower.point h) = lower) ∧
+      (∀ h ∈ Set.Icc 0 cutoff,
+        S.upper.point h ∈ closure {z | z ∈ S.strictCarrier ∧ z.re + z.im ∈ Set.Icc 0 cutoff} →
+        ‖G (S.upper.point h) - center‖ = radius → G (S.upper.point h) = upper) ∧
+      (quadrantCirclePoint center radius ⁻¹' (G '' S.openSlab 0 cutoff) = ∅ ∨
+        quadrantCirclePoint center radius ⁻¹' (G '' S.openSlab 0 cutoff) =
+          Set.Ioo (min (lower - center).re (upper - center).re)
+            (max (lower - center).re (upper - center).re)) := by
+  have subset : {z : ℂ | z ∈ S.strictCarrier ∧ z.re + z.im ∈ Set.Icc 0 cutoff} ⊆
+      S.boundedCarrier 0 cutoff := fun _ member =>
+    ⟨⟨member.1.1.le, member.1.2.le⟩, member.2⟩
+  have extend := closure_minimal subset (S.isClosed_boundedCarrier 0 cutoff)
+  exact S.exists_bank_circle_interval_of_closed_ends continuous center cutoff radius positive
+    injective radial source_values quadrant (fun z closed ends => ends_avoid z (extend closed) ends)
 
 end Unfoldings.MonotoneStrip

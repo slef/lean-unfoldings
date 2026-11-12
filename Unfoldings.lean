@@ -509,3 +509,8 @@ public import Unfoldings.Geometry.QuadrantCircle
 public import Unfoldings.Geometry.QuadrantCircleInterval
 public import Unfoldings.Cap.ClosedRadialBankTrace
 public import Unfoldings.Cap.StripCircleInterval
+public import Unfoldings.Cap.RadialStripTraceData
+public import Unfoldings.Cap.RadialStripTraceBounds
+public import Unfoldings.Cap.ExtendedRadialStripData
+public import Unfoldings.Cap.RadialStripCircleInterval
+public import Unfoldings.Cap.ExtendedStripCircleIntervals

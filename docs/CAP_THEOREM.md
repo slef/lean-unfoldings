@@ -622,8 +622,13 @@ Separation of different banks and global nonoverlap remain open.
   by a real coordinate. Prove the single-interval criterion from closed-trace
   injectivity, radial banks, source normalization, quadrant bounds, and
   end-level avoidance, retaining actual bank endpoints and the empty case.
-- [ ] Derive every circle-interval hypothesis for the same uniformly constructed
-  strips, then compare their adjacent intervals in one global cyclic order.
+- [x] Derive every circle-interval hypothesis for the same uniformly constructed
+  strips. Retain their coherent pinches, source normalization, visibility, radial
+  progress, and closed injectivity together. Every positive source circle below
+  one quarter of the cutoff meets each strip in at most one bank-bounded
+  interval, with the tilt chosen before both meshes. Only approached end-level
+  points require distance bounds; permanently collapsed tails are excluded.
+- [ ] Compare these actual adjacent intervals in one global cyclic order.
 - [ ] Prove side-by-side separation of all developed strips and hence all
   distinct original face interiors.
 - [x] Apply the cut-disk and flat-development infrastructure to the fixed-wedge
