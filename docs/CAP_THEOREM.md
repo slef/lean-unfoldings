@@ -837,6 +837,11 @@ Separation of different banks and global nonoverlap remain open.
   images, constructing the common fine path and both sector geometries from
   the candidates. Derive strict cross-frame circle quadrants from uniform face
   margins. The remaining inputs bound each strip by its own actual candidate.
+- [x] Construct both candidates for a one-run boundary comparison from actual
+  data: the neighboring surviving circle endpoint and an early-or-late run-side
+  bank bound. Derive shared coordinates, component membership, fine path, bank
+  names, parameters, and radii. Retain the run-side candidate trace origin for
+  subsequent comparison-margin estimates.
 - [ ] Assemble the actual outer surviving intervals across all five sectors,
   including disappearing boundary runs, and establish global cyclic order.
 - [ ] Prove side-by-side separation of all developed strips and hence all

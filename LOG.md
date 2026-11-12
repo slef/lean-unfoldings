@@ -2,6 +2,23 @@
 
 ## Session Log
 
+### 2026-11-12 — complete run-side and neighboring bank candidates
+
+- Constructed a neighboring surviving circle candidate from physical bank
+  contacts alone. Derived its positive coordinates in the run frame, actual
+  component and seed path, fine bank name, parameter, and exact source radius.
+- Constructed the run-side on-circle candidate after its maximal terminal,
+  including equality at that height. Actual collapsed chains identify its
+  physical bank with the enclosing ray before fine-bank matching.
+- Combined early terminal-record bounds and late circle matching into one
+  run-side candidate theorem. Retained its actual approached trace origin,
+  including the late-height condition, for uniform face-margin estimates.
+- Verification: cache retrieval and full `lake build` pass; **9,327 unfolding /
+  7,243 pinned topology declarations**, standard axioms only; **1,443** local
+  documentation links and whitespace pass. Comparison-margin assembly, full
+  neighboring-strip separation, the zero-run case, original-face transfer,
+  and the cap theorem remain open.
+
 ### 2026-11-12 — component-derived separation of actual strip images
 
 - Applied actual radial-component comparison directly to actual strip-circle

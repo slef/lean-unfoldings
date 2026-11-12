@@ -701,3 +701,6 @@ public import Unfoldings.Cap.CoherentParentBankPoints
 public import Unfoldings.Cap.BoundaryRunTerminalBankCandidate
 public import Unfoldings.Cap.CrossFrameCircleStrictMargins
 public import Unfoldings.Cap.ComponentBankCircleSeparation
+public import Unfoldings.Cap.BoundaryRunNeighborCircleCandidate
+public import Unfoldings.Cap.BoundaryRunLateCircleCandidate
+public import Unfoldings.Cap.BoundaryRunSourceBankCandidate
