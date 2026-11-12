@@ -1494,3 +1494,12 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Cap.SharedBoundaryBankMargins](../Unfoldings/Cap/SharedBoundaryBankMargins.lean) | Derive both comparison margins for actual shared-ray terminals and circle endpoints |
 | [Unfoldings.Cap.BoundaryRunSharedMargins](../Unfoldings/Cap/BoundaryRunSharedMargins.lean) | Obtain both neighboring comparison margins from actual terminal or late-circle candidate origins |
 | [Unfoldings.Cap.BoundaryRunCircleSeparation](../Unfoldings/Cap/BoundaryRunCircleSeparation.lean) | Separate actual neighboring circle images across an upper or lower disappearing boundary run, deriving candidates and comparison margins |
+| [Unfoldings.Cap.BoundaryComponentFineSeed](../Unfoldings/Cap/BoundaryComponentFineSeed.lean) | Construct a coherent represented fine seed for any sector-boundary component inside the clip |
+| [Unfoldings.Cap.CrossFrameCircleCoherence](../Unfoldings/Cap/CrossFrameCircleCoherence.lean) | Identify actual circle endpoints at coherent earlier physical contacts across different sector frames |
+| [Unfoldings.Geometry.RadialTailHeightMembership](../Unfoldings/Geometry/RadialTailHeightMembership.lean) | Keep later collinear positions on a radial tail until its tip height |
+| [Unfoldings.Cap.SectorRadialTailHeight](../Unfoldings/Cap/SectorRadialTailHeight.lean) | Put actual radial-component tips beyond a controlled interior sweep height |
+| [Unfoldings.Cap.SharedEndpointCircleSeparation](../Unfoldings/Cap/SharedEndpointCircleSeparation.lean) | Separate actual open strip-circle images at a shared developed endpoint |
+| [Unfoldings.Cap.BoundaryCircleContactAlternative](../Unfoldings/Cap/BoundaryCircleContactAlternative.lean) | Classify ordered shared-ray circle contacts as equal values or a common actual radial component |
+| [Unfoldings.Cap.SharedSectorBankPointOrder](../Unfoldings/Cap/SharedSectorBankPointOrder.lean) | Order shared physical bank points exactly across their different sector height scales |
+| [Unfoldings.Cap.OuterCircleContactAlternative](../Unfoldings/Cap/OuterCircleContactAlternative.lean) | Classify surviving outer circle endpoints without assuming their shared physical ray is uncut |
+| [Unfoldings.Cap.OuterCircleSeparation](../Unfoldings/Cap/OuterCircleSeparation.lean) | Separate actual adjacent outer circle images with coherent contacts or genuine radial cuts |

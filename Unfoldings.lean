@@ -708,3 +708,12 @@ public import Unfoldings.Cap.SharedBoundaryTraceMargins
 public import Unfoldings.Cap.SharedBoundaryBankMargins
 public import Unfoldings.Cap.BoundaryRunSharedMargins
 public import Unfoldings.Cap.BoundaryRunCircleSeparation
+public import Unfoldings.Cap.BoundaryComponentFineSeed
+public import Unfoldings.Cap.CrossFrameCircleCoherence
+public import Unfoldings.Geometry.RadialTailHeightMembership
+public import Unfoldings.Cap.SectorRadialTailHeight
+public import Unfoldings.Cap.SharedEndpointCircleSeparation
+public import Unfoldings.Cap.BoundaryCircleContactAlternative
+public import Unfoldings.Cap.SharedSectorBankPointOrder
+public import Unfoldings.Cap.OuterCircleContactAlternative
+public import Unfoldings.Cap.OuterCircleSeparation

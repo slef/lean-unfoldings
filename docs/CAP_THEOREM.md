@@ -846,6 +846,10 @@ Separation of different banks and global nonoverlap remain open.
   approached terminal or circle traces on the shared physical ray. Prove
   actual neighboring circle-image separation across either upper or lower
   disappearing boundary run, including early and late crossings and ties.
+- [x] Prove adjacent outer-circle separation with no disappearing run.
+  Account for different sector height scales and actual radial cuts on the
+  shared ray: the endpoints coincide coherently or lie on one component,
+  whose coherent fine seed, bank candidates, and margins are constructed.
 - [ ] Assemble the actual outer surviving intervals across all five sectors,
   including disappearing boundary runs, and establish global cyclic order.
 - [ ] Prove side-by-side separation of all developed strips and hence all

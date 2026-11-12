@@ -2,6 +2,22 @@
 
 ## Session Log
 
+### 2026-11-12 — separate adjacent outer circles with no disappearing run
+
+- Proved that an earlier coherent physical contact identifies both actual
+  circle endpoints across different sector frames. A shared endpoint separates
+  the open arcs using their strict own-bank bounds.
+- Ordered shared physical bank points exactly across different height scales.
+  Classified actual outer-circle endpoints as equal developed values or
+  positions on one actual radial component. The shared ray may contain cuts.
+- Constructed coherent fine seeds for arbitrary boundary components inside
+  the clip. Matched both actual circle banks on their seed path and derived
+  both comparison margins, completing the no-run outer-circle separation proof.
+- Verification: cache retrieval and full `lake build` pass; **9,345 unfolding /
+  7,243 pinned topology declarations**, standard axioms only; **1,456** local
+  documentation links and whitespace pass. Global survivor assembly,
+  original-face transfer, and the full cap theorem remain open.
+
 ### 2026-11-12 — separate neighboring circles across either boundary run
 
 - Derived strict margins in both neighboring frames for actual approached
