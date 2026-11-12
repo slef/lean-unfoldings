@@ -829,6 +829,10 @@ Separation of different banks and global nonoverlap remain open.
   Bound approached circle points in a physical source ball and match their
   actual entrance/exit fine banks, retaining component membership and exact
   source radii with only finite vertex-radius exclusions.
+- [x] Identify both named bank values at coherent physical points. Combine
+  coherent terminal vertices and derived incoming banks into one actual
+  terminal candidate theorem, retaining the fine edge, parameter, component,
+  exact trace value, and strict inner-radius bound in either orientation.
 - [ ] Assemble the actual outer surviving intervals across all five sectors,
   including disappearing boundary runs, and establish global cyclic order.
 - [ ] Prove side-by-side separation of all developed strips and hence all

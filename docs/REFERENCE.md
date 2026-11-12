@@ -1483,3 +1483,5 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Cap.RadialComponentSeedPath](../Unfoldings/Cap/RadialComponentSeedPath.lean) | Cover every nontip radial-component position by the actual fine path from its seed |
 | [Unfoldings.Cap.RadialStripCirclePhysicalBounds](../Unfoldings/Cap/RadialStripCirclePhysicalBounds.lean) | Bound approached source-circle points by an explicit physical source ball |
 | [Unfoldings.Cap.RadialComponentCircleBanks](../Unfoldings/Cap/RadialComponentCircleBanks.lean) | Match actual circle endpoints on radial components to named fine parent banks with exact radii |
+| [Unfoldings.Cap.CoherentParentBankPoints](../Unfoldings/Cap/CoherentParentBankPoints.lean) | Identify both actual named parent-bank values at coherent physical points, including child vertices |
+| [Unfoldings.Cap.BoundaryRunTerminalBankCandidate](../Unfoldings/Cap/BoundaryRunTerminalBankCandidate.lean) | Derive actual inner fine-bank candidates for extreme boundary terminals, including coherent terminal vertices |

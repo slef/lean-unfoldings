@@ -2,6 +2,20 @@
 
 ## Session Log
 
+### 2026-11-12 — unified actual terminal bank candidates
+
+- Proved both completed parent-bank points have the actual developed value
+  at every coherent physical point, including a child vertex. Completion
+  preserves the original face placements used for this equality.
+- Constructed one terminal-bank candidate in either boundary orientation.
+  A noncoherent terminal uses its derived incoming bank; a coherent terminal
+  uses its outgoing bank at the child endpoint. Retained the actual fine edge,
+  parameter, component membership, exact trace value, and strict inner radius.
+- Verification: cache retrieval and full `lake build` pass; **9,320 unfolding /
+  7,243 pinned topology declarations**, standard axioms only; **1,438** local
+  documentation links and whitespace pass. Complete neighboring-strip assembly,
+  the zero-run case, original-face transfer, and the cap theorem remain open.
+
 ### 2026-11-12 — exact shared-bank coordinates and named circle banks
 
 - Recoordinated positive shared-bank points exactly between neighboring sector
