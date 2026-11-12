@@ -790,3 +790,4 @@ public import Unfoldings.Cap.ChainWeakCircleContact
 public import Unfoldings.Cap.LocalRegularContact
 public import Unfoldings.Geometry.ClosedCircleCapsContact
 public import Unfoldings.Cap.ClosedStripCircleContact
+public import Unfoldings.Cap.CompletedBankCoordinateContact

@@ -196,4 +196,53 @@ theorem weak_circle_caps_contact_physical_eq
     (by simpa only [left] using first_bound_le) (by simpa only [right] using last_bound_le) member
   simpa only [left, right] using contact
 
+/-- A weak circle contact identifies both actual component-bank values; neither
+comparison point is assumed to lie on the circle in advance. -/
+theorem weak_circle_caps_contact_values_of_component_bank_bounds
+    (positive : 0 < t) (small : t < 1) (outward : R.Outward)
+    (footprint : Q.footprint = K.clipFootprint Z) (i l : FiveSector)
+    (first_inside : Q.projectedVertex e.val - K.projectedVertex origin ∈ closedFiveSector t i)
+    (last_inside : Q.projectedVertex e.val - K.projectedVertex origin ∈ closedFiveSector t l)
+    (curvature_covered : ∀ v : FineC.Vertex Set.univ,
+      0 < FineC.interiorAngularDefect Set.univ v →
+        Q.projectedVertex v ∈ M.extendedGeometricCuts F)
+    (D : FacewiseDevelopment FineC R.retain)
+    (B : R.FiveSectorFrameData positive small (R.completedDevelopment D))
+    (budget : FineC.totalInteriorAngularDefect Set.univ < Real.pi)
+    (s r : unitInterval) (center : Plane) {radius : ℝ}
+    (exit_inside : ‖R.parentExitPoint (R.completedDevelopment D) e (1 - (s : ℝ)) - center‖ ≤ radius)
+    (entrance_inside :
+      ‖R.parentEntrancePoint (R.completedDevelopment D) f (1 - (r : ℝ)) - center‖ ≤ radius)
+    (quadrants : ∀ a, a = i ∨ a = l →
+      (0 < (B.sectorFrame a
+          (R.parentExitPoint (R.completedDevelopment D) e (1 - (s : ℝ)) - center)).re ∧
+        0 < (B.sectorFrame a
+          (R.parentExitPoint (R.completedDevelopment D) e (1 - (s : ℝ)) - center)).im) ∧
+      (0 < (B.sectorFrame a
+          (R.parentEntrancePoint (R.completedDevelopment D) f (1 - (r : ℝ)) - center)).re ∧
+        0 < (B.sectorFrame a
+          (R.parentEntrancePoint (R.completedDevelopment D) f (1 - (r : ℝ)) - center)).im))
+    {first_bound last_bound : ℝ}
+    (first_bound_le : first_bound ≤ (B.sectorFrame i
+      (R.parentExitPoint (R.completedDevelopment D) e (1 - (s : ℝ)) - center)).re)
+    (last_bound_le : last_bound ≤ (B.sectorFrame l
+      (R.parentEntrancePoint (R.completedDevelopment D) f (1 - (r : ℝ)) - center)).im)
+    {p : Plane} (member : p ∈
+      weakCircleUpperCap (B.sectorFrame i) center radius first_bound ∩
+        weakCircleLowerCap (B.sectorFrame l) center radius last_bound) :
+    p = R.parentExitPoint (R.completedDevelopment D) e (1 - (s : ℝ)) ∧
+      R.parentExitPoint (R.completedDevelopment D) e (1 - (s : ℝ)) =
+        R.parentEntrancePoint (R.completedDevelopment D) f (1 - (r : ℝ)) := by
+  obtain ⟨w, j, k, left, right, geometry⟩ := M.unattached_component_common_bank_chain_geometry F
+    covered lower R e f c unattached first last positive small outward footprint i l
+    first_inside last_inside curvature_covered
+  have contact := B.chain_weak_circle_caps_contact_values i l
+    (R.completedBankChain w) (R.completedBankChain_parent w)
+    (geometry i (Or.inl rfl)).1 (geometry l (Or.inr rfl)).1
+    (geometry i (Or.inl rfl)).2 (geometry l (Or.inr rfl)).2 budget j k s r center
+    (by simpa only [left] using exit_inside) (by simpa only [right] using entrance_inside)
+    (by simpa only [left, right] using quadrants)
+    (by simpa only [left] using first_bound_le) (by simpa only [right] using last_bound_le) member
+  simpa only [left, right] using contact
+
 end Unfoldings.ConvexCap.SectorForest

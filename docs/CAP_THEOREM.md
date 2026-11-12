@@ -986,3 +986,10 @@ ordered strip-circle images can meet only at their facing named endpoints.
 The result identifies their physical strip coordinates, using the proved
 injectivity of each approached trace. This does not yet assemble global
 boundary injectivity across all sectors and exceptional circle radii.
+
+Under the strict curvature budget already supplied by the uniform construction,
+a weak component-bank circle contact now identifies both actual developed
+bank values, even when the comparison points were initially allowed inside
+the circle. The proof derives equality from the controlling coordinate at
+matched edges and branch jumps; see
+[CompletedBankCoordinateContact](../Unfoldings/Cap/CompletedBankCoordinateContact.lean).
