@@ -649,8 +649,12 @@ Separation of different banks and global nonoverlap remain open.
   same deterministic sector network; its forward uniqueness identifies coarse
   tail points with whole fine-edge points. The actual construction supplies
   component labels, edge support, nonzero outward directions, and far endpoints.
-- [ ] Retain leaf/separator provenance for the same developed subdivisions, then
-  compare their actual adjacent intervals in one global cyclic order.
+- [x] Retain leaf/separator provenance for the same developed subdivisions:
+  every separator completes a named actual leaf tail, every active leaf is
+  represented, and both walls retain strict coordinate progress. One uniform
+  calibration supplies the same subdivision its complete radial strip data.
+- [ ] Derive actual adjacent-prefix coherence and tail-bank comparisons, then
+  establish one global cyclic order for all developed strip-circle intervals.
 - [ ] Prove side-by-side separation of all developed strips and hence all
   distinct original face interiors.
 - [x] Apply the cut-disk and flat-development infrastructure to the fixed-wedge

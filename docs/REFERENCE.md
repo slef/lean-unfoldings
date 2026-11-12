@@ -120,6 +120,8 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 | [Unfoldings.Cap.CompletedGeometricTailTracking](../Unfoldings/Cap/CompletedGeometricTailTracking.lean) | Actual completed cut paths supply support, genuine outward edges, and a far endpoint for tail tracking |
 | [Unfoldings.Cap.GeometricVertexCutPiece](../Unfoldings/Cap/GeometricVertexCutPiece.lean) | Every nonterminal geometric cut vertex has an actual containing piece with its own component label |
 | [Unfoldings.Cap.LeafCompletedTailTracking](../Unfoldings/Cap/LeafCompletedTailTracking.lean) | Constructed leaf tails track the actual completed forest without a path-matching certificate |
+| [Unfoldings.Cap.ExtendedWaterfallProvenance](../Unfoldings/Cap/ExtendedWaterfallProvenance.lean) | Retain actual leaf/separator provenance and strict walls with coherent cut-avoiding waterfall domains |
+| [Unfoldings.Cap.ExtendedRadialWaterfallData](../Unfoldings/Cap/ExtendedRadialWaterfallData.lean) | One uniform calibration retains leaf provenance and the complete radial developed data for the same subdivision |
 | [Unfoldings.Cap.ExtendedLeafTailTracking](../Unfoldings/Cap/ExtendedLeafTailTracking.lean) | Every constructed roof leaf tail has an actual fine parent-path point at every controlled height |
 | [Unfoldings.Cap.SharedBankCirclePrefix](../Unfoldings/Cap/SharedBankCirclePrefix.lean) | Adjacent equal-radius bank endpoints coincide on a coherent prefix or both lie beyond it |
 | [Unfoldings.Cap.RadialStripCircleWidth](../Unfoldings/Cap/RadialStripCircleWidth.lean) | Nonempty controlled circle slices have positive-width bank points strictly between source and cutoff |

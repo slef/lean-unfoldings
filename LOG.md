@@ -2,6 +2,22 @@
 
 ## Session Log
 
+### 2026-11-12 — leaf provenance and radial traces for the same waterfall
+
+- Retained each separator's actual leaf completion, representation of every
+  active leaf, and strict wall coordinates with the cut-avoiding coherent
+  subdivision.
+- Carried that provenance through the uniform calibrated radial-strip
+  construction. Leaf tails, pinch sets, and developed traces now belong to
+  the same chosen subdivision, rather than separate existential choices.
+- Derived both previous public constructor statements from the stronger
+  results, checking their headers byte-for-byte unchanged.
+- Verification: cache retrieval followed by full `lake build` pass; **8,837
+  unfolding / 7,243 pinned topology declarations**, standard axioms only;
+  indexed documentation links (**1,269**) and whitespace pass. Actual adjacent
+  prefix coherence, tail-bank comparisons, and global cyclic separation remain
+  open; the full cap theorem is not yet proved.
+
 ### 2026-11-12 — actual geometric leaf tails on completed fine parent paths
 
 - Proved every point of a physical fine chain retains its component label.

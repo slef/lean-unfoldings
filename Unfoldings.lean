@@ -534,3 +534,5 @@ public import Unfoldings.Cap.CompletedGeometricTailTracking
 public import Unfoldings.Cap.GeometricVertexCutPiece
 public import Unfoldings.Cap.LeafCompletedTailTracking
 public import Unfoldings.Cap.ExtendedLeafTailTracking
+public import Unfoldings.Cap.ExtendedWaterfallProvenance
+public import Unfoldings.Cap.ExtendedRadialWaterfallData
