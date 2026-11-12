@@ -2,6 +2,22 @@
 
 ## Session Log
 
+### 2026-11-12 — empty source circles and actual terminal strip traces
+
+- Proved every intermediate source circle meets an open strip unless it has
+  a recorded pinch radius. An empty nonexceptional slice places the whole
+  approached closure strictly inside the circle; only one additional maximal
+  radius per strip is excluded.
+- Proved a nonempty bounded strip that stops before the cutoff has a permanent
+  terminal pinch. Applied the actual closed distance estimate and visibility
+  theorem to locate this pinch strictly inside an absent controlled circle,
+  retaining its own approached face value.
+- Verification: cache retrieval followed by full `lake build` pass; **8,885
+  unfolding / 7,243 pinned topology declarations**, standard axioms only;
+  indexed documentation links (**1,286**) and whitespace pass. Comparison across
+  empty slices, cyclic sector order, original-face transfer, and the full cap
+  theorem remain open.
+
 ### 2026-11-12 — uniform actual adjacent-strip circle separation
 
 - Proved contacts between recorded subdivision walls lie in the coherent pinch

@@ -549,3 +549,7 @@ public import Unfoldings.Cap.GeometricSeparatorPrefix
 public import Unfoldings.Cap.SharedSeparatorCirclePrefix
 public import Unfoldings.Cap.SharedSeparatorCircleSeparation
 public import Unfoldings.Cap.ExtendedAdjacentCircleSeparation
+public import Unfoldings.Cap.EmptyCircleStripBounds
+public import Unfoldings.Cap.EmptyCircleTerminalPinch
+public import Unfoldings.Geometry.MonotoneStripTerminalPinch
+public import Unfoldings.Geometry.RecoverableStripRadiusCrossing

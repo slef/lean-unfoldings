@@ -671,6 +671,11 @@ Separation of different banks and global nonoverlap remain open.
   strip-circle slices off the finite vertex-radius set. Tilt and error bounds
   precede both meshes, and all prefix, tail, leaf-copy, curvature-sector, and
   chart-matching hypotheses are derived for this same subdivision.
+- [x] Prove empty nonexceptional circle slices place the entire approached
+  closure strictly inside the circle. A nonempty strip absent from a controlled
+  circle has a permanent terminal pinch below the cutoff, with an actual
+  one-sided face trace inside. Pinch radii and the maximal closure radius add
+  only finitely many exceptions.
 - [ ] Compare surviving strips across intervening strips whose circle slice is
   empty, then establish a global cyclic order across the sector boundaries.
 - [ ] Prove side-by-side separation of all developed strips and hence all
