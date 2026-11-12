@@ -470,3 +470,9 @@ public import Unfoldings.Cap.CompletedComparisonProgress
 public import Unfoldings.Cap.CompletedBankChainPositions
 public import Unfoldings.Cap.GeometricComponentPieces
 public import Unfoldings.Cap.ExtendedBankChainPositions
+public import Unfoldings.Geometry.ChainRadiusCrossing
+public import Unfoldings.Geometry.ChainTruncation
+public import Unfoldings.Cap.CompletedRadiusPrefix
+public import Unfoldings.Cap.SectorSweepBall
+public import Unfoldings.Cap.ExtendedRadiusPrefix
+public import Unfoldings.Cap.CompletedComparisonValues

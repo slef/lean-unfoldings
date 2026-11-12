@@ -2,6 +2,22 @@
 
 ## Session Log
 
+### 2026-11-11 — bounded actual radius prefixes and bank face values
+
+- Proved sphere-crossing existence and exact finite chain truncation, retaining
+  whole edges and ending partway through the final edge. An outward path's
+  entire preceding trace stays inside the chosen closed source ball.
+- Applied this to the actual completed cut forest and deep roof: the endpoint
+  lies on a real fine seam, with common component sectors retained. A source
+  ball of radius less than half the sweep cutoff lies inside every sweep.
+- Identified comparison-bank original-edge points with their actual named
+  banks. Every gap point is a chord between two containing-face copies of
+  exactly the same physical branch vertex.
+- Verification: cache retrieval followed by full `lake build` pass; **8,544
+  unfolding / 7,243 pinned topology declarations**, standard axioms only;
+  indexed documentation links (**1,209**) and whitespace pass. Developed
+  prefix quadrant bounds and global cap nonoverlap remain open.
+
 ### 2026-11-11 — common physical position and direction sectors
 
 - Retained the chosen geometric component's sector on every whole original

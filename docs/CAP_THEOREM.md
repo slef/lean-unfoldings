@@ -572,8 +572,12 @@ Separation of different banks and global nonoverlap remain open.
 - [x] Transfer one geometric component sector to all physical fine path
   positions, outward directions, and curvature-carrying descendant openings.
   Whole original and radial cut pieces retain the same sector data.
-- [ ] Truncate comparison continuations before the far clip boundary, and
-  derive their common source-quadrant bounds from actual calibrated geometry.
+- [x] Construct exact physical cut-path prefixes ending on a prescribed source
+  sphere before the far clip boundary. Every preceding physical point lies in
+  that source ball, with the component position and direction sectors retained.
+  Identify original comparison edges and branch gaps with actual face values.
+- [ ] Derive common developed source-quadrant bounds for these finite comparison
+  continuations, including their straight branch-gap chords.
 - [x] Prove paired-bank circle order with only rightward right-bank and upward
   left-bank progress. Straight branch-gap steps may decrease the other
   coordinate; no radial monotonicity of these steps is required.

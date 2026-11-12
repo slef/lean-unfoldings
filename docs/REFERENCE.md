@@ -114,6 +114,10 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Cap.CompletedComparisonValues](../Unfoldings/Cap/CompletedComparisonValues.lean) | Actual comparison-bank face values and branch chords between copies of one vertex |
+| [Unfoldings.Cap.ExtendedRadiusPrefix](../Unfoldings/Cap/ExtendedRadiusPrefix.lean) | Constructed bounded fine-seam prefixes with common position and opening sectors |
+| [Unfoldings.Cap.SectorSweepBall](../Unfoldings/Cap/SectorSweepBall.lean) | Physical source balls lie strictly inside every sector sweep below the cutoff |
+| [Unfoldings.Cap.CompletedRadiusPrefix](../Unfoldings/Cap/CompletedRadiusPrefix.lean) | Actual completed cut paths reach a controlled source radius before the boundary |
 | [Unfoldings.Cap.ExtendedBankChainPositions](../Unfoldings/Cap/ExtendedBankChainPositions.lean) | Derived common position and direction sectors for actual roof-meshed cut paths |
 | [Unfoldings.Cap.GeometricComponentPieces](../Unfoldings/Cap/GeometricComponentPieces.lean) | Whole cut-piece positions and directions in the chosen geometric component sector |
 | [Unfoldings.Cap.CompletedBankChainPositions](../Unfoldings/Cap/CompletedBankChainPositions.lean) | One sector for every fine path position, direction, and curved subtree |
@@ -653,6 +657,8 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Geometry.ChainTruncation](../Unfoldings/Geometry/ChainTruncation.lean) | Exact finite polygonal-chain prefixes ending partway through an actual edge |
+| [Unfoldings.Geometry.ChainRadiusCrossing](../Unfoldings/Geometry/ChainRadiusCrossing.lean) | An outward chain reaches a prescribed sphere with its preceding path inside the ball |
 | [Unfoldings.Geometry.RecoverableStripClosure](../Unfoldings/Geometry/RecoverableStripClosure.lean) | Finite reopening pinches leave both source-to-active banks in the strict-strip closure |
 | [Unfoldings.Geometry.MonotoneStripDensity](../Unfoldings/Geometry/MonotoneStripDensity.lean) | Finite waterfall walls are closed nowhere dense; off-wall points lie in strict cells |
 | [Unfoldings.Geometry.HeightNetworkLocalGraph](../Unfoldings/Geometry/HeightNetworkLocalGraph.lean) | Covered tails agree locally with their actual affine edge graphs away from network vertices |
