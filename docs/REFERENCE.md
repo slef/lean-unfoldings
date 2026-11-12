@@ -114,6 +114,13 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Cap.GeometricComponentNetwork](../Unfoldings/Cap/GeometricComponentNetwork.lean) | Whole original and radial cut pieces belong to their actual component sector network |
+| [Unfoldings.Cap.GeometricChainNetwork](../Unfoldings/Cap/GeometricChainNetwork.lean) | Physical fine cut chains inherit network coverage and strictly positive sector coordinates |
+| [Unfoldings.Cap.GeometricFineTailTracking](../Unfoldings/Cap/GeometricFineTailTracking.lean) | Actual geometric tail points lie on whole edges of every compatible outward fine cut chain |
+| [Unfoldings.Cap.CompletedGeometricTailTracking](../Unfoldings/Cap/CompletedGeometricTailTracking.lean) | Actual completed cut paths supply support, genuine outward edges, and a far endpoint for tail tracking |
+| [Unfoldings.Cap.GeometricVertexCutPiece](../Unfoldings/Cap/GeometricVertexCutPiece.lean) | Every nonterminal geometric cut vertex has an actual containing piece with its own component label |
+| [Unfoldings.Cap.LeafCompletedTailTracking](../Unfoldings/Cap/LeafCompletedTailTracking.lean) | Constructed leaf tails track the actual completed forest without a path-matching certificate |
+| [Unfoldings.Cap.ExtendedLeafTailTracking](../Unfoldings/Cap/ExtendedLeafTailTracking.lean) | Every constructed roof leaf tail has an actual fine parent-path point at every controlled height |
 | [Unfoldings.Cap.SharedBankCirclePrefix](../Unfoldings/Cap/SharedBankCirclePrefix.lean) | Adjacent equal-radius bank endpoints coincide on a coherent prefix or both lie beyond it |
 | [Unfoldings.Cap.RadialStripCircleWidth](../Unfoldings/Cap/RadialStripCircleWidth.lean) | Nonempty controlled circle slices have positive-width bank points strictly between source and cutoff |
 | [Unfoldings.Cap.MatchedBankAtHeight](../Unfoldings/Cap/MatchedBankAtHeight.lean) | Positive physical width supplies active-height witnesses for actual named parent-bank matching |
@@ -701,6 +708,8 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 | [Unfoldings.Geometry.QuadrantSegments](../Unfoldings/Geometry/QuadrantSegments.lean) | Linear quadrant margins and source-centered direction wedges on entire chords |
 | [Unfoldings.Geometry.ChainTruncation](../Unfoldings/Geometry/ChainTruncation.lean) | Exact finite polygonal-chain prefixes ending partway through an actual edge |
 | [Unfoldings.Geometry.ChainRadiusCrossing](../Unfoldings/Geometry/ChainRadiusCrossing.lean) | An outward chain reaches a prescribed sphere with its preceding path inside the ball |
+| [Unfoldings.Geometry.HeightNetworkChainTracking](../Unfoldings/Geometry/HeightNetworkChainTracking.lean) | A monotone fine chain and a tail with the same start follow the same forward-deterministic network |
+| [Unfoldings.Geometry.ChainPointCoverLabels](../Unfoldings/Geometry/ChainPointCoverLabels.lean) | Every whole-edge point of a covered fine chain retains its starting component label |
 | [Unfoldings.Geometry.RecoverableStripInitialClosure](../Unfoldings/Geometry/RecoverableStripInitialClosure.lean) | Every earlier carrier point lies in the approached closure of a finitely pinched strip |
 | [Unfoldings.Geometry.RecoverableStripClosure](../Unfoldings/Geometry/RecoverableStripClosure.lean) | Finite reopening pinches leave both source-to-active banks in the strict-strip closure |
 | [Unfoldings.Geometry.MonotoneStripDensity](../Unfoldings/Geometry/MonotoneStripDensity.lean) | Finite waterfall walls are closed nowhere dense; off-wall points lie in strict cells |

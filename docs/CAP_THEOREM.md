@@ -644,7 +644,13 @@ Separation of different banks and global nonoverlap remain open.
   shared prefix: they either coincide at the same prefix height or both lie
   beyond it. Deriving the needed prefix and tail correspondences for every
   actual adjacent pair remains part of the global separation argument.
-- [ ] Compare these actual adjacent intervals in one global cyclic order.
+- [x] Track every actual geometric leaf tail along the constructed fine outward
+  parent path up to the deep cutoff. Original and radial pieces belong to the
+  same deterministic sector network; its forward uniqueness identifies coarse
+  tail points with whole fine-edge points. The actual construction supplies
+  component labels, edge support, nonzero outward directions, and far endpoints.
+- [ ] Retain leaf/separator provenance for the same developed subdivisions, then
+  compare their actual adjacent intervals in one global cyclic order.
 - [ ] Prove side-by-side separation of all developed strips and hence all
   distinct original face interiors.
 - [x] Apply the cut-disk and flat-development infrastructure to the fixed-wedge

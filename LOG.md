@@ -2,6 +2,25 @@
 
 ## Session Log
 
+### 2026-11-12 — actual geometric leaf tails on completed fine parent paths
+
+- Proved every point of a physical fine chain retains its component label.
+  Whole original cut edges and radial continuations lie in the actual
+  forward-deterministic sector network, with positive outward coordinates.
+- Used network coalescence to identify geometric tail points with whole fine
+  edge points, including after arbitrary subdivision. The actual completed
+  forest supplies support, nonzero outward edges, and a far endpoint; deep
+  clipping derives the stopping bounds.
+- Specialized to the constructed roof: every geometric leaf survives as a
+  fine vertex, and every controlled leaf-tail height has an actual physical
+  parent-path point. Component labels and coarse/fine path matching are
+  conclusions, not certificates supplied to the construction.
+- Verification: cache retrieval followed by full `lake build` pass; **8,835
+  unfolding / 7,243 pinned topology declarations**, standard axioms only;
+  indexed documentation links (**1,267**) and whitespace pass. Retaining these
+  leaves for the same developed subdivisions and proving global adjacent-strip
+  separation remain open; the full cap theorem is not yet proved.
+
 ### 2026-11-11 — shared-prefix circle comparison and actual endpoint matching
 
 - Proved that equal-radius endpoints on adjacent banks coincide at the same

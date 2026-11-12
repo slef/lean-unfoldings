@@ -525,3 +525,12 @@ public import Unfoldings.Cap.SharedBankCirclePrefix
 public import Unfoldings.Cap.RadialStripCircleWidth
 public import Unfoldings.Cap.MatchedBankAtHeight
 public import Unfoldings.Cap.RadialStripCircleMatching
+public import Unfoldings.Geometry.HeightNetworkChainTracking
+public import Unfoldings.Geometry.ChainPointCoverLabels
+public import Unfoldings.Cap.GeometricComponentNetwork
+public import Unfoldings.Cap.GeometricChainNetwork
+public import Unfoldings.Cap.GeometricFineTailTracking
+public import Unfoldings.Cap.CompletedGeometricTailTracking
+public import Unfoldings.Cap.GeometricVertexCutPiece
+public import Unfoldings.Cap.LeafCompletedTailTracking
+public import Unfoldings.Cap.ExtendedLeafTailTracking
