@@ -114,6 +114,7 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Cap.CompletedPrefixGraphs](../Unfoldings/Cap/CompletedPrefixGraphs.lean) | Actual finite comparison-bank graph homeomorphisms and visible-trace start values |
 | [Unfoldings.Cap.CompletedTraceVertexCopy](../Unfoldings/Cap/CompletedTraceVertexCopy.lean) | Represent each actual one-sided branch trace value by its own contour copy |
 | [Unfoldings.Cap.ExtendedBankGeometryBudget](../Unfoldings/Cap/ExtendedBankGeometryBudget.lean) | One uniform choice retains strict roof curvature, radial matched banks, and face bounds |
 | [Unfoldings.Cap.CompletedPrefixCircleOrder](../Unfoldings/Cap/CompletedPrefixCircleOrder.lean) | Derived circle order and endpoint margins for actual bounded comparison prefixes |
@@ -662,6 +663,10 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Geometry.ChainGraphArc](../Unfoldings/Geometry/ChainGraphArc.lean) | Simple-arc parametrizations retaining the entire geometric chain image |
+| [Unfoldings.Geometry.ChainTruncationLinear](../Unfoldings/Geometry/ChainTruncationLinear.lean) | Weak coordinate progress and flat zero steps persist under exact truncation |
+| [Unfoldings.Geometry.ChainLinearGraph](../Unfoldings/Geometry/ChainLinearGraph.lean) | The entire chain image is homeomorphic to its controlling-coordinate interval |
+| [Unfoldings.Geometry.ChainPaths](../Unfoldings/Geometry/ChainPaths.lean) | Continuous concatenated chain paths with exactly the original closed-edge image |
 | [Unfoldings.Geometry.QuadrantSegments](../Unfoldings/Geometry/QuadrantSegments.lean) | Linear quadrant margins and source-centered direction wedges on entire chords |
 | [Unfoldings.Geometry.ChainTruncation](../Unfoldings/Geometry/ChainTruncation.lean) | Exact finite polygonal-chain prefixes ending partway through an actual edge |
 | [Unfoldings.Geometry.ChainRadiusCrossing](../Unfoldings/Geometry/ChainRadiusCrossing.lean) | An outward chain reaches a prescribed sphere with its preceding path inside the ball |
@@ -887,6 +892,8 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Topology.IntervalArc](../Unfoldings/Topology/IntervalArc.lean) | Injective continuous paths for sets homeomorphic to nondegenerate real intervals |
+| [Unfoldings.Topology.PathRadiusExit](../Unfoldings/Topology/PathRadiusExit.lean) | First source-sphere crossings with strictly interior preceding paths and preserved simplicity |
 | [Unfoldings.Topology.FiniteSelectionVisibility](../Unfoldings/Topology/FiniteSelectionVisibility.lean) | Trace branches are approached through their own actual closed pieces |
 | [Unfoldings.Topology.FiniteSelectionClosure](../Unfoldings/Topology/FiniteSelectionClosure.lean) | Finite closed-piece selections retain actual branch values at closure points |
 | [Unfoldings.Topology.ComplexLipschitzExtension](../Unfoldings/Topology/ComplexLipschitzExtension.lean) | Continuous planar extensions and uniqueness of their closure traces |

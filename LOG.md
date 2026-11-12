@@ -2,6 +2,23 @@
 
 ## Session Log
 
+### 2026-11-11 — whole comparison-bank graph arcs
+
+- Constructed continuous polygonal-chain paths with exactly the closed-edge
+  image. A controlling coordinate gives a homeomorphism of the entire image
+  to its closed interval when every zero step is flat. Strict endpoint
+  progress then gives an injective path with precisely that same image.
+- Proved weak coordinate progress and flatness survive exact truncation;
+  applied the graph homeomorphisms to both actual comparison prefixes.
+  Their common initial point is exactly the visible branch trace value.
+- Proved first source-sphere crossings for arbitrary continuous paths and
+  preservation of simplicity on the initial subpath. Earlier points lie
+  strictly inside the ball, without requiring radial monotonicity.
+- Verification: cache retrieval followed by full `lake build` pass; **8,630
+  unfolding / 7,243 pinned topology declarations**, standard axioms only;
+  indexed documentation links (**1,222**) and whitespace pass. The paired
+  proper-arc assembly and global strip separation remain open.
+
 ### 2026-11-11 — bounded comparison quadrants and derived circle order
 
 - Derived quantitative source-quadrant margins on every actual bank edge

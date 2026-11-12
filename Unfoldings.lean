@@ -482,3 +482,10 @@ public import Unfoldings.Cap.CompletedComparisonPrefixes
 public import Unfoldings.Cap.CompletedPrefixCircleOrder
 public import Unfoldings.Cap.ExtendedBankGeometryBudget
 public import Unfoldings.Cap.CompletedTraceVertexCopy
+public import Unfoldings.Geometry.ChainPaths
+public import Unfoldings.Geometry.ChainLinearGraph
+public import Unfoldings.Geometry.ChainTruncationLinear
+public import Unfoldings.Cap.CompletedPrefixGraphs
+public import Unfoldings.Topology.PathRadiusExit
+public import Unfoldings.Topology.IntervalArc
+public import Unfoldings.Geometry.ChainGraphArc

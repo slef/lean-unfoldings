@@ -590,6 +590,11 @@ Separation of different banks and global nonoverlap remain open.
   radial matched traces, injective strips, and position errors. Derive two-sided
   source-distance bounds for all face copies. Straight segments between copies
   at the same branch retain the positive source-quadrant margins.
+- [x] Construct continuous paths with the whole comparison-bank images and
+  graph homeomorphisms to their controlling-coordinate intervals. Strict
+  endpoint progress gives simple arcs despite flat gaps and repeated vertices.
+  The visible trace supplies their exact common initial value. First-crossing
+  initial subpaths stay strictly inside a source circle before their endpoint.
 - [ ] Prove side-by-side separation of all developed strips and hence all
   distinct original face interiors.
 - [x] Apply the cut-disk and flat-development infrastructure to the fixed-wedge
