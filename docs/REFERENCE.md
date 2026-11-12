@@ -1571,3 +1571,4 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Cap.ClosedBarrierContact](../Unfoldings/Cap/ClosedBarrierContact.lean) | Identify the only possible contact of actual cross-frame weak circle barriers |
 | [Unfoldings.Cap.StripCircleClosedBounds](../Unfoldings/Cap/StripCircleClosedBounds.lean) | Classify every approached closed strip-circle point by its open image or actual bank endpoints |
 | [Unfoldings.Cap.ClosedStripCircleCaps](../Unfoldings/Cap/ClosedStripCircleCaps.lean) | Bound actual approached closed strip-circle images by both weak endpoint barriers |
+| [Unfoldings.Cap.ComponentBankCircleContact](../Unfoldings/Cap/ComponentBankCircleContact.lean) | Identify actual physical points at closed component-bank contacts, including branch endpoints |

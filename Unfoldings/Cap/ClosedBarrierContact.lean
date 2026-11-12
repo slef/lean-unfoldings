@@ -90,4 +90,59 @@ theorem weak_circle_caps_inter_subset_bank_points (i l : FiveSector) (center fir
       (first_inside.trans_eq member.2.2.2.2.symm)
     exact Set.mem_insert_iff.mpr (Or.inl equal)
 
+/-- At a common radius, weak barrier contact identifies both named bank points. -/
+theorem weak_circle_caps_contact_eq (i l : FiveSector) (center first last : Plane)
+    (radius first_bound last_bound : ℝ)
+    (first_radius : ‖first - center‖ = radius) (last_radius : ‖last - center‖ = radius)
+    (quadrants : ∀ a, a = i ∨ a = l →
+      (0 < (B.sectorFrame a (first - center)).re ∧
+        0 < (B.sectorFrame a (first - center)).im) ∧
+      (0 < (B.sectorFrame a (last - center)).re ∧
+        0 < (B.sectorFrame a (last - center)).im))
+    (first_bound_le : first_bound ≤ (B.sectorFrame i (first - center)).re)
+    (last_bound_le : last_bound ≤ (B.sectorFrame l (last - center)).im)
+    (alternative : (B.sectorFrame i (first - center)).re ≤
+        (B.sectorFrame i (last - center)).re ∨
+      (B.sectorFrame l (last - center)).im ≤ (B.sectorFrame l (first - center)).im)
+    {p : Plane} (member : p ∈ weakCircleUpperCap (B.sectorFrame i) center radius first_bound ∩
+      weakCircleLowerCap (B.sectorFrame l) center radius last_bound) :
+    p = first ∧ first = last := by
+  rcases alternative with horizontal | vertical
+  · have contact : p = last := B.inner_barrier_point_eq_of_norm_le i l center last p
+      (quadrants i (Or.inl rfl)).2 (quadrants l (Or.inr rfl)).2
+      ⟨member.1.1, member.1.2.1⟩ ⟨member.2.1, member.2.2.1⟩
+      ((member.1.2.2.1.trans first_bound_le).trans horizontal)
+      (member.2.2.2.1.trans last_bound_le) (last_radius.trans member.1.2.2.2.symm).le
+    have reverse : (B.sectorFrame i (last - center)).re ≤
+        (B.sectorFrame i (first - center)).re := by
+      rw [← contact]
+      exact member.1.2.2.1.trans first_bound_le
+    have equal : B.sectorFrame i (first - center) = B.sectorFrame i (last - center) := by
+      apply complex_eq_of_norm_re_eq
+      · simpa only [(B.sectorFrame i).norm_map] using first_radius.trans last_radius.symm
+      · exact le_antisymm horizontal reverse
+      · exact (quadrants i (Or.inl rfl)).1.2.le
+      · exact (quadrants i (Or.inl rfl)).2.2.le
+    have displacement : first - center = last - center := (B.sectorFrame i).injective equal
+    have banks : first = last := sub_left_inj.mp displacement
+    exact ⟨contact.trans banks.symm, banks⟩
+  · have contact : p = first := B.inner_barrier_point_eq_of_norm_le i l center first p
+      (quadrants i (Or.inl rfl)).1 (quadrants l (Or.inr rfl)).1
+      ⟨member.1.1, member.1.2.1⟩ ⟨member.2.1, member.2.2.1⟩
+      (member.1.2.2.1.trans first_bound_le)
+      ((member.2.2.2.1.trans last_bound_le).trans vertical)
+      (first_radius.trans member.2.2.2.2.symm).le
+    have reverse : (B.sectorFrame l (first - center)).im ≤
+        (B.sectorFrame l (last - center)).im := by
+      rw [← contact]
+      exact member.2.2.2.1.trans last_bound_le
+    have equal : B.sectorFrame l (first - center) = B.sectorFrame l (last - center) := by
+      apply complex_eq_of_norm_im_eq
+      · simpa only [(B.sectorFrame l).norm_map] using first_radius.trans last_radius.symm
+      · exact le_antisymm reverse vertical
+      · exact (quadrants l (Or.inr rfl)).1.1.le
+      · exact (quadrants l (Or.inr rfl)).2.1.le
+    have displacement : first - center = last - center := (B.sectorFrame l).injective equal
+    exact ⟨contact, sub_left_inj.mp displacement⟩
+
 end Unfoldings.ConvexCap.RadialCutForest.FiveSectorFrameData

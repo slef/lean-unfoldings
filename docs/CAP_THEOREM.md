@@ -963,3 +963,11 @@ Complete auxiliary-bank comparison and global face-interior nonoverlap are prove
 No `sorry`, extra axioms, circular geometric certificates, or placeholder main
 theorem. Check and commit reusable milestones; import each completed module
 through `Unfoldings.lean` so the default audit sees its proof dependencies.
+
+Closed circle contacts now retain their actual bank names. The weak-barrier
+comparison identifies the only possible contact points; when both bank points
+lie on the source circle, a contact identifies both values. On one unattached
+radial component, the actual common completed chain then identifies the same
+physical surface point, including branch endpoints. See
+[ComponentBankCircleContact](../Unfoldings/Cap/ComponentBankCircleContact.lean).
+Global boundary injectivity remains open.

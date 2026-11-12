@@ -34,4 +34,22 @@ theorem weakCircleLowerCap_mono (frame : Plane ≃ₗᵢ[ℝ] ℂ) (center : Pla
     weakCircleLowerCap frame center radius a ⊆ weakCircleLowerCap frame center radius b :=
   fun _ member => ⟨member.1, member.2.1, member.2.2.1.trans ordered, member.2.2.2⟩
 
+/-- A circle has at most one point of a given real coordinate in the upper half-plane. -/
+theorem complex_eq_of_norm_re_eq {z w : ℂ} (size : ‖z‖ = ‖w‖)
+    (horizontal : z.re = w.re) (above_z : 0 ≤ z.im) (above_w : 0 ≤ w.im) : z = w := by
+  have squares := congrArg (fun r : ℝ => r ^ 2) size
+  simp only [← Complex.normSq_eq_norm_sq, Complex.normSq_apply] at squares
+  rw [horizontal] at squares
+  apply Complex.ext horizontal
+  nlinarith
+
+/-- A circle has at most one point of a given imaginary coordinate in the right half-plane. -/
+theorem complex_eq_of_norm_im_eq {z w : ℂ} (size : ‖z‖ = ‖w‖)
+    (vertical : z.im = w.im) (right_z : 0 ≤ z.re) (right_w : 0 ≤ w.re) : z = w := by
+  have squares := congrArg (fun r : ℝ => r ^ 2) size
+  simp only [← Complex.normSq_eq_norm_sq, Complex.normSq_apply] at squares
+  rw [vertical] at squares
+  apply Complex.ext _ vertical
+  nlinarith
+
 end Unfoldings
