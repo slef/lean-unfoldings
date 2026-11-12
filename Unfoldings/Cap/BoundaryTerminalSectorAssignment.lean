@@ -25,7 +25,7 @@ variable {Face : Type u} [Fintype Face] {C : TriangleComplex.{u, v} Face}
 /-- Agreement on the terminal suffix is physical. The proof also covers a
 terminal exactly at its geometric leaf height, without evaluating developed
 trace values on any later collapsed bank. -/
-theorem boundary_terminal_on_assigned_component
+theorem boundary_terminal_leaf_component
     {FineFace : Type u₁} [Fintype FineFace] {FineC : TriangleComplex.{u₁, v₁} FineFace}
     {Q : ConvexCap FineC}
     (R : Q.RadialCutForest (K.projectedVertex origin) (M.extendedGeometricCuts F))
@@ -43,10 +43,18 @@ theorem boundary_terminal_on_assigned_component
     (wall : H = (fiveSectorFrame t positive small i).enclosingStrip.lower ∨
       H = (fiveSectorFrame t positive small i).enclosingStrip.upper)
     (agreement : Set.EqOn H.point S.lower.point (Set.Icc continuation.height cutoff)) :
-    ∃ c : F.Component, Q.projectedVertex continuation.vertex ∈ (F.componentTail c).carrier ∧
-      (M.geometricComponentSector F covered positive small lower c).sector = i ∧
+    ∃ leaf : M.GeometricSectorLeaf F covered positive small lower i,
+      leaf.point.re + leaf.point.im ≤ continuation.height ∧
+      (fiveSectorFrame t positive small i).place
+        (Q.projectedVertex continuation.vertex - K.projectedVertex origin) =
+          leaf.tailGraph.graph.point continuation.height ∧
+      (∀ h ∈ Set.Icc continuation.height cutoff,
+        S.lower.point h = leaf.tailGraph.graph.point h ∧
+          S.upper.point h = leaf.tailGraph.graph.point h) ∧
+      Q.projectedVertex continuation.vertex ∈
+        (F.componentTail (M.geometricComponent F covered leaf.val)).carrier ∧
       ∀ e : {w : C.Vertex Set.univ // w ∉ M.parents.roots},
-        M.cutPieceLabel F covered (Sum.inl e) ≠ c := by
+        M.cutPieceLabel F covered (Sum.inl e) ≠ M.geometricComponent F covered leaf.val := by
   obtain ⟨leaf, after_leaf, same_start, follows⟩ :=
     terminal_geometric_tail R D B data tails continuation
   let frame := (fiveSectorFrame t positive small i).place
@@ -73,7 +81,7 @@ theorem boundary_terminal_on_assigned_component
     (below.trans (leaf.tail_end_beyond_clip_ball deep)) (x_boundary i)
   have unattached := M.sector_boundary_component_unattached positive small F covered
     radial x_boundary
-  refine ⟨M.geometricComponent F covered leaf.val, ?_, leaf.property.2.2, unattached⟩
+  refine ⟨leaf, after_leaf, same_start, follows, ?_, unattached⟩
   have terminal_bank : Q.projectedVertex continuation.vertex - K.projectedVertex origin =
       frame.symm (H.point continuation.height) := by
     rw [← continuation.physical, add_sub_cancel_left,
@@ -95,6 +103,32 @@ theorem boundary_terminal_on_assigned_component
       exact sub_left_injective shifted
     rw [physical]
     exact M.unattached_component_positions_on_tail F covered _ unattached leaf.val rfl
+
+theorem boundary_terminal_on_assigned_component
+    {FineFace : Type u₁} [Fintype FineFace] {FineC : TriangleComplex.{u₁, v₁} FineFace}
+    {Q : ConvexCap FineC}
+    (R : Q.RadialCutForest (K.projectedVertex origin) (M.extendedGeometricCuts F))
+    (D : FacewiseDevelopment FineC R.retain)
+    (B : R.FiveSectorFrameData positive small (R.completedDevelopment D))
+    {S : MonotoneStrip} {ε cutoff physicalRadius radius : ℝ}
+    (data : R.RadialStripTraceData positive small D
+      (R.calibratedFrame (R.completedDevelopment D) B.anchor B.reference) i S ε cutoff)
+    (tails : S.TerminalTailsFrom
+      (fun leaf : M.GeometricSectorLeaf F covered positive small lower i => leaf.point)
+      (fun leaf => leaf.tailGraph.graph) cutoff)
+    (continuation : B.EmptyCircleContinuation i data physicalRadius radius)
+    (deep : Metric.closedBall (K.projectedVertex origin) cutoff ⊆ interior (K.clipFootprint Z))
+    (H : MonotoneHeightGraph)
+    (wall : H = (fiveSectorFrame t positive small i).enclosingStrip.lower ∨
+      H = (fiveSectorFrame t positive small i).enclosingStrip.upper)
+    (agreement : Set.EqOn H.point S.lower.point (Set.Icc continuation.height cutoff)) :
+    ∃ c : F.Component, Q.projectedVertex continuation.vertex ∈ (F.componentTail c).carrier ∧
+      (M.geometricComponentSector F covered positive small lower c).sector = i ∧
+      ∀ e : {w : C.Vertex Set.univ // w ∉ M.parents.roots},
+        M.cutPieceLabel F covered (Sum.inl e) ≠ c := by
+  obtain ⟨leaf, _, _, _, member, unattached⟩ := boundary_terminal_leaf_component R D B data tails
+    continuation deep H wall agreement
+  exact ⟨M.geometricComponent F covered leaf.val, member, leaf.property.2.2, unattached⟩
 
 variable {FineFace : Type u₁} [Fintype FineFace] {FineC : TriangleComplex.{u₁, v₁} FineFace}
   {Q : ConvexCap FineC}

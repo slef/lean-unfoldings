@@ -687,3 +687,5 @@ public import Unfoldings.Cap.BoundaryTerminalMargins
 public import Unfoldings.Cap.TerminalRunEarlyMaximaContacts
 public import Unfoldings.Cap.BoundaryTerminalSectorAssignment
 public import Unfoldings.Cap.NoAdjacentBoundaryRuns
+public import Unfoldings.Cap.RadialComponentSeed
+public import Unfoldings.Cap.BoundaryTerminalSeedAncestor

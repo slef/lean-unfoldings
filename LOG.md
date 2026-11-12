@@ -2,6 +2,23 @@
 
 ## Session Log
 
+### 2026-11-12 — coherent fine seeds and derived incoming terminal banks
+
+- Retained the exact geometric leaf, tail agreement, and component in the
+  boundary-terminal theorem. The assigned-component theorem is now a facade
+  with its existing declaration header preserved byte for byte.
+- Proved every nonroot geometric node of an unattached radial component is
+  its seed. Actual leaf representation and coherence produce a coherent fine
+  vertex at that same seed.
+- Derived actual fine ancestry from this coherent seed to the terminal. Every
+  actual boundary terminal is consequently coherent or has a genuine incoming
+  fine edge, with on-cut membership, component membership, sector direction,
+  and a positive enclosing-bank child height below the terminal all derived.
+- Verification: cache retrieval and full `lake build` pass; **9,301 unfolding /
+  7,243 pinned topology declarations**, standard axioms only; **1,428** local
+  documentation links and whitespace pass. Locating every neighboring circle
+  crossing, global assembly, original-face transfer, and the cap theorem remain open.
+
 ### 2026-11-12 — tied maxima and exclusion of two boundary runs
 
 - Extended early-circle bounds to every maximal terminal copy. Equal-height

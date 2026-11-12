@@ -814,6 +814,11 @@ Separation of different banks and global nonoverlap remain open.
   actual subdivision order at tied heights. Preserve the component assignment
   in boundary-terminal witnesses and rule out disappearing boundary runs on
   both sides of a shared sector ray.
+- [x] Retain the exact leaf supporting an actual boundary terminal. Prove
+  that every nonroot geometric node of its unattached component is the seed,
+  represent that seed by a coherent fine vertex, and derive actual fine
+  ancestry to the terminal. Each terminal is coherent or has an actual
+  incoming fine bank with positive boundary height and derived sector control.
 - [ ] Assemble the actual outer surviving intervals across all five sectors,
   including disappearing boundary runs, and establish global cyclic order.
 - [ ] Prove side-by-side separation of all developed strips and hence all

@@ -1473,3 +1473,5 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Cap.TerminalRunEarlyMaximaContacts](../Unfoldings/Cap/TerminalRunEarlyMaximaContacts.lean) | Bound early circle crossings by any maximal terminal while retaining ordered tied contour copies |
 | [Unfoldings.Cap.BoundaryTerminalSectorAssignment](../Unfoldings/Cap/BoundaryTerminalSectorAssignment.lean) | Retain the unique actual component-sector assignment of boundary-run terminals |
 | [Unfoldings.Cap.NoAdjacentBoundaryRuns](../Unfoldings/Cap/NoAdjacentBoundaryRuns.lean) | Exclude disappearing physical boundary runs on both sides of a shared sector ray using actual component assignments |
+| [Unfoldings.Cap.RadialComponentSeed](../Unfoldings/Cap/RadialComponentSeed.lean) | Identify the unique nonroot geometric position of a pure radial component and its coherent fine seed vertex |
+| [Unfoldings.Cap.BoundaryTerminalSeedAncestor](../Unfoldings/Cap/BoundaryTerminalSeedAncestor.lean) | Reach actual boundary terminals from coherent fine seed vertices and derive their incoming boundary banks |
