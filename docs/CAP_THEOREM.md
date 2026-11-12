@@ -600,6 +600,10 @@ Separation of different banks and global nonoverlap remain open.
   their actual comparison-bank images and their order at all common radii.
   Each nonterminal arc point stays strictly inside the ball. Separation from
   the developed strip interiors is not asserted here.
+- [x] Construct these proper comparison arcs uniformly in the same actual
+  radial matched-bank calibration, with margin and tilt preceding both meshes.
+  Retain the physical stopping seam, bounded prefix, component sector, contour
+  start, actual bank-image inclusion, and whole-arc quadrant/circle order.
 - [ ] Prove side-by-side separation of all developed strips and hence all
   distinct original face interiors.
 - [x] Apply the cut-disk and flat-development infrastructure to the fixed-wedge

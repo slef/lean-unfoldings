@@ -2,6 +2,22 @@
 
 ## Session Log
 
+### 2026-11-11 — uniform actual proper comparison arcs
+
+- Constructed `exists_uniform_extended_proper_comparison_arcs`: a positive
+  margin and one tilt threshold precede both meshes. The actual radial-bank
+  calibration supplies all-face bounds, strict roof curvature, and proper
+  comparison arcs from every eligible actual contour copy.
+- Retained each arc pair's physical stopping seam, bounded physical prefix,
+  chosen component sector, and exact inclusion in the actual comparison-bank
+  images. Derived endpoint order and quadrant bounds for the whole arcs.
+- No curve lift, simplicity, quadrant, or circle-order certificate is an
+  input to the uniform construction. Global separation of developed strips
+  remains a separate open theorem.
+- Verification: cache retrieval followed by full `lake build` pass; **8,687
+  unfolding / 7,243 pinned topology declarations**, standard axioms only;
+  indexed documentation links (**1,227**) and whitespace pass.
+
 ### 2026-11-11 — paired simple comparison arcs on a common source circle
 
 - Derived strict endpoint-coordinate progress from the physical stopping

@@ -114,6 +114,8 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Cap.ExtendedProperComparisonArcs](../Unfoldings/Cap/ExtendedProperComparisonArcs.lean) | Uniform construction of proper comparison arcs in the actual radial matched-bank calibration |
+| [Unfoldings.Cap.ProperComparisonData](../Unfoldings/Cap/ProperComparisonData.lean) | Proper comparison arcs retaining actual contour copies, bounded physical prefixes, and circle order |
 | [Unfoldings.Cap.ProperComparisonArcs](../Unfoldings/Cap/ProperComparisonArcs.lean) | Constructed simple comparison subarcs ending on one source circle in derived bank order |
 | [Unfoldings.Cap.SimpleComparisonPaths](../Unfoldings/Cap/SimpleComparisonPaths.lean) | Simple parametrizations with exactly the actual finite comparison-bank images |
 | [Unfoldings.Cap.CompletedPrefixGraphs](../Unfoldings/Cap/CompletedPrefixGraphs.lean) | Actual finite comparison-bank graph homeomorphisms and visible-trace start values |

@@ -492,3 +492,5 @@ public import Unfoldings.Geometry.ChainGraphArc
 public import Unfoldings.Cap.SimpleComparisonPaths
 public import Unfoldings.Topology.SphereArc
 public import Unfoldings.Cap.ProperComparisonArcs
+public import Unfoldings.Cap.ProperComparisonData
+public import Unfoldings.Cap.ExtendedProperComparisonArcs
