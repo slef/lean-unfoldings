@@ -25,7 +25,7 @@ variable {Face : Type u} [Fintype Face] {C : TriangleComplex.{u, v} Face}
 /-- The actual forest supplies cut support, outwardness, genuine fine edges, and
 an endpoint beyond the deep cutoff. Only the common physical start and component
 are identified; no fine/coarse path correspondence is an input. -/
-theorem tail_point_on_completed_path
+theorem tail_point_on_completed_path_from_height
     {FineFace : Type u₁} [Fintype FineFace] {FineC : TriangleComplex.{u₁, v₁} FineFace}
     {Q : ConvexCap FineC}
     (R : Q.RadialCutForest (K.projectedVertex origin) (M.extendedGeometricCuts F))
@@ -38,11 +38,13 @@ theorem tail_point_on_completed_path
     (nonroot : z ∉ (M.geometricParents F covered positive small lower).roots)
     (same_component : M.geometricComponent F covered z = c)
     (H : M.SectorTailGraph F covered positive small lower data.sector z)
-    (same_start : Q.projectedVertex w = F.geometricPosition z) {cutoff : ℝ}
+    (a : ℝ)
+    (tail_start : M.geometricTailStartHeight F covered positive small lower data.sector z ≤ a)
+    (same_start : (fiveSectorFrame t positive small data.sector).place
+      (Q.projectedVertex w - K.projectedVertex origin) = H.graph.point a) {cutoff : ℝ}
     (deep : Metric.closedBall (K.projectedVertex origin) cutoff ⊆ interior Q.footprint)
     (tail_finish : cutoff < M.geometricTailEndHeight F covered positive small lower data.sector z)
-    {h : ℝ} (member : h ∈ Set.Icc
-      (M.geometricTailStartHeight F covered positive small lower data.sector z) cutoff) :
+    {h : ℝ} (member : h ∈ Set.Icc a cutoff) :
     ∃ j : Fin (R.spanningCompletion.parents.distanceToRoot w), ∃ s : unitInterval,
       H.graph.point h = (fiveSectorFrame t positive small data.sector).place
         ((R.completedRootPath w).point j s - K.projectedVertex origin) := by
@@ -86,8 +88,41 @@ theorem tail_point_on_completed_path
   have component_genuine :=
     M.geometric_component_nonconstant F covered positive small lower z nonroot
   rw [same_component] at component_genuine
-  exact data.tail_point_on_cut_chain component_genuine P cover anchor component path_start
-    (R.completedRootPath_outward outward on_cuts) genuine H same_start (beyond.trans_le size)
+  exact data.tail_point_on_cut_chain_from_height component_genuine P cover anchor component
+    path_start
+    (R.completedRootPath_outward outward on_cuts) genuine H a tail_start same_start
+    (beyond.trans_le size)
     tail_finish member
+
+/-- Retain the original start-vertex interface as a special case. -/
+theorem tail_point_on_completed_path
+    {FineFace : Type u₁} [Fintype FineFace] {FineC : TriangleComplex.{u₁, v₁} FineFace}
+    {Q : ConvexCap FineC}
+    (R : Q.RadialCutForest (K.projectedVertex origin) (M.extendedGeometricCuts F))
+    (outward : R.Outward) (w : FineC.Vertex Set.univ)
+    (on_cuts : Q.projectedVertex w ∈ M.extendedGeometricCuts F)
+    (anchor : M.ExtendedCutPiece F) (component : M.cutPieceLabel F covered anchor = c)
+    (start : Q.projectedVertex w ∈
+      segment ℝ (M.cutPieceFirst F anchor) (M.cutPieceLast F anchor))
+    {z : F.GeometricVertex}
+    (nonroot : z ∉ (M.geometricParents F covered positive small lower).roots)
+    (same_component : M.geometricComponent F covered z = c)
+    (H : M.SectorTailGraph F covered positive small lower data.sector z)
+    (same_start : Q.projectedVertex w = F.geometricPosition z) {cutoff : ℝ}
+    (deep : Metric.closedBall (K.projectedVertex origin) cutoff ⊆ interior Q.footprint)
+    (tail_finish : cutoff < M.geometricTailEndHeight F covered positive small lower data.sector z)
+    {h : ℝ} (member : h ∈ Set.Icc
+      (M.geometricTailStartHeight F covered positive small lower data.sector z) cutoff) :
+    ∃ j : Fin (R.spanningCompletion.parents.distanceToRoot w), ∃ s : unitInterval,
+      H.graph.point h = (fiveSectorFrame t positive small data.sector).place
+        ((R.completedRootPath w).point j s - K.projectedVertex origin) := by
+  apply data.tail_point_on_completed_path_from_height R outward w on_cuts anchor component start
+    nonroot same_component H
+    (M.geometricTailStartHeight F covered positive small lower data.sector z) le_rfl _
+    deep tail_finish member
+  rw [same_start]
+  exact (H.graph.point_eq_of_coordinate
+    ((fiveSectorFrame t positive small data.sector).place
+      (F.geometricPosition z - K.projectedVertex origin)) (H.vertices 0)).symm
 
 end Unfoldings.ConvexCap.SectorForest.GeometricComponentSector

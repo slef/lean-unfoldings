@@ -574,3 +574,17 @@ public import Unfoldings.Cap.GeometricTailVertices
 public import Unfoldings.Geometry.RayStripWidth
 public import Unfoldings.Geometry.StripInsertionTerminalTail
 public import Unfoldings.Geometry.SubdivisionFreshTargets
+public import Unfoldings.Cap.ApproachedVertexPinchWidth
+public import Unfoldings.Cap.CompletedComparisonStartOrder
+public import Unfoldings.Cap.CompletedProperComparisonData
+public import Unfoldings.Cap.EmptyStripLateCircleSeparation
+public import Unfoldings.Cap.GeometricComponentBanks
+public import Unfoldings.Cap.GeometricTailPieces
+public import Unfoldings.Cap.GeometricTailTraceOrder
+public import Unfoldings.Cap.MatchedStripBankOrder
+public import Unfoldings.Cap.SameSectorEmptyCircleComparison
+public import Unfoldings.Cap.TailHeightBankGeometry
+public import Unfoldings.Geometry.HeightGraphAffineOrder
+public import Unfoldings.Cap.EarlyTerminalBankOrder
+public import Unfoldings.Geometry.CircleInnerCornerOrder
+public import Unfoldings.Cap.LateTerminalBankOrder

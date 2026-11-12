@@ -2,6 +2,29 @@
 
 ## Session Log
 
+### 2026-11-12 — actual coordinate order across terminal strip heights
+
+- Generalized actual tail tracking to intermediate fine vertices, including
+  vertices introduced inside a coarse edge. Retained component labels, the
+  specified sector, and every curvature-carrying descendant sector.
+- Constructed proper comparison data in a specified sector and retargeted
+  disappearing strips at their own actual terminal contour copies.
+- Proved actual circle separation across one intermediate terminal strip when
+  both surviving crossings occur after its terminal height.
+- Proved affine coordinate order along exact height graphs and continuous
+  selections of finitely many charts; applied it to actual visible cut tails.
+  Proved regular approached bank width, actual matched strip-bank gap order,
+  and horizontal/vertical progress from comparison chains' starting copies.
+- Derived complementary bounds on early and late surviving circle crossings
+  relative to the same terminal copy. Early bounds retain the explicit
+  post-leaf correspondence; deriving it and closing the global argument remain
+  open. No avoidance property of straight comparison chords is assumed.
+- Preserved all seven saved previous theorem headers byte-for-byte.
+- Verification: cache retrieval followed by full `lake build` pass; **9,014
+  unfolding / 7,243 pinned topology declarations**, standard axioms only;
+  **1,321** local documentation links and whitespace pass. Global separation,
+  transfer to original input faces, and the full cap theorem remain open.
+
 ### 2026-11-12 — actual geometric tails beyond terminal pinches
 
 - Proved distinct positive rays enclose positive width at every positive height.

@@ -1360,3 +1360,17 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Cap.RadialLeafCoherence](../Unfoldings/Cap/RadialLeafCoherence.lean) | Derive coherent developed values at local radial minima |
 | [Unfoldings.Cap.GeometricLeafInterior](../Unfoldings/Cap/GeometricLeafInterior.lean) | Nonterminal geometric nodes lie strictly inside the roof clip |
 | [Unfoldings.Cap.ExtendedLeafCoherence](../Unfoldings/Cap/ExtendedLeafCoherence.lean) | Preserve and prove coherence at every actual geometric leaf |
+| [Unfoldings.Cap.ApproachedVertexPinchWidth](../Unfoldings/Cap/ApproachedVertexPinchWidth.lean) | Derive positive width at regular approached bank points, including terminal domains |
+| [Unfoldings.Cap.CompletedComparisonStartOrder](../Unfoldings/Cap/CompletedComparisonStartOrder.lean) | Bound complete comparison banks by their actual starting contour copy |
+| [Unfoldings.Cap.CompletedProperComparisonData](../Unfoldings/Cap/CompletedProperComparisonData.lean) | Construct proper comparison data in a specified sector |
+| [Unfoldings.Cap.EmptyStripLateCircleSeparation](../Unfoldings/Cap/EmptyStripLateCircleSeparation.lean) | Separate surviving circle slices beyond an intervening terminal strip |
+| [Unfoldings.Cap.GeometricComponentBanks](../Unfoldings/Cap/GeometricComponentBanks.lean) | Retain one specified component sector along actual completed parent banks |
+| [Unfoldings.Cap.GeometricTailPieces](../Unfoldings/Cap/GeometricTailPieces.lean) | Locate arbitrary actual tail points on labeled geometric parent edges |
+| [Unfoldings.Cap.GeometricTailTraceOrder](../Unfoldings/Cap/GeometricTailTraceOrder.lean) | Prove both developed coordinates progress along actual visible cut tails |
+| [Unfoldings.Cap.MatchedStripBankOrder](../Unfoldings/Cap/MatchedStripBankOrder.lean) | Transfer matched actual parent-bank coordinate order to adjacent strip traces |
+| [Unfoldings.Cap.SameSectorEmptyCircleComparison](../Unfoldings/Cap/SameSectorEmptyCircleComparison.lean) | Continue the actual terminal contour copy in its geometric tail sector |
+| [Unfoldings.Cap.TailHeightBankGeometry](../Unfoldings/Cap/TailHeightBankGeometry.lean) | Derive actual completed bank geometry from an intermediate tail height |
+| [Unfoldings.Geometry.HeightGraphAffineOrder](../Unfoldings/Geometry/HeightGraphAffineOrder.lean) | Preserve affine coordinate order through continuous finite chart selection on a chain |
+| [Unfoldings.Cap.EarlyTerminalBankOrder](../Unfoldings/Cap/EarlyTerminalBankOrder.lean) | Bound early surviving circle crossings by the actual intermediate terminal copy |
+| [Unfoldings.Geometry.CircleInnerCornerOrder](../Unfoldings/Geometry/CircleInnerCornerOrder.lean) | Order circle endpoints separated by a corner strictly inside the circle |
+| [Unfoldings.Cap.LateTerminalBankOrder](../Unfoldings/Cap/LateTerminalBankOrder.lean) | Bound late surviving circle crossings beyond the actual intermediate terminal copy |

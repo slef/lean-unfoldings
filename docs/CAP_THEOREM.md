@@ -699,6 +699,19 @@ Separation of different banks and global nonoverlap remain open.
   heights and source insertions. Retain these tail witnesses in the same
   uniform circle construction. Every geometric vertex reached on a tail is
   an ancestor in that same component.
+- [x] Track completed fine parent paths from an arbitrary intermediate geometric
+  tail height, retaining the specified sector and all curved descendant sectors.
+  Continue the actual terminal contour copy in that same sector. When both
+  surviving crossings occur after an intermediate terminal height, derive their
+  actual bank order and separate their open circle images.
+- [x] Prove coordinate monotonicity of actual visible traces along geometric
+  cut tails, through continuous finite affine-chart selection. Regular approached
+  bank points have positive width without requiring a later active height.
+  Named parent-bank matching bounds an early left exit horizontally and an
+  early right entrance vertically by the intermediate terminal copy. Complete
+  comparison-chain increments give the complementary late-crossing bounds.
+  The early bounds currently require the crossing to be after the shared leaf;
+  this correspondence still needs to be derived in the global construction.
 - [ ] Compare surviving strips across intervening strips whose circle slice is
   empty, then establish a global cyclic order across the sector boundaries.
 - [ ] Prove side-by-side separation of all developed strips and hence all
