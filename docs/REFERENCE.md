@@ -126,6 +126,11 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 | [Unfoldings.Cap.ExtendedAdjacentCircleSeparation](../Unfoldings/Cap/ExtendedAdjacentCircleSeparation.lean) | One tilt before both meshes constructs a single trace family with disjoint neighboring source-circle slices |
 | [Unfoldings.Cap.EmptyCircleTerminalPinch](../Unfoldings/Cap/EmptyCircleTerminalPinch.lean) | An absent controlled circle supplies a permanent terminal pinch with an actual visible trace inside |
 | [Unfoldings.Cap.EmptyCircleStripBounds](../Unfoldings/Cap/EmptyCircleStripBounds.lean) | An empty nonexceptional circle slice places the entire approached strip closure strictly inside the circle |
+| [Unfoldings.Cap.WaterfallCircleExceptions](../Unfoldings/Cap/WaterfallCircleExceptions.lean) | One finite radius set covers all vertex-copy and disappearing-strip exceptions |
+| [Unfoldings.Cap.WaterfallCircleNonoverlap](../Unfoldings/Cap/WaterfallCircleNonoverlap.lean) | Global strip-circle separation implies separation of actual developed face interiors |
+| [Unfoldings.Cap.RadialStripPhysicalMap](../Unfoldings/Cap/RadialStripPhysicalMap.lean) | Actual strip maps and source-circle slices in one common developed plane |
+| [Unfoldings.Cap.ProjectedDenseSeparation](../Unfoldings/Cap/ProjectedDenseSeparation.lean) | Regular projected-map injectivity separates actual developed face interiors |
+| [Unfoldings.Cap.SectorWaterfallRegular](../Unfoldings/Cap/SectorWaterfallRegular.lean) | Avoiding all physical waterfall walls is open and dense and supplies an actual open strip |
 | [Unfoldings.Cap.ExtendedEmptyCircleContinuations](../Unfoldings/Cap/ExtendedEmptyCircleContinuations.lean) | Construct actual disappearing-strip continuations from the roof geometry in the same calibration |
 | [Unfoldings.Cap.EmptyCircleContinuation](../Unfoldings/Cap/EmptyCircleContinuation.lean) | A disappearing strip retains its actual terminal copy and ordered proper comparison arcs |
 | [Unfoldings.Cap.ExtendedCalibratedComparisonArcs](../Unfoldings/Cap/ExtendedCalibratedComparisonArcs.lean) | Actual roof-face bounds construct proper comparison arcs in a specified bank calibration |
@@ -962,6 +967,7 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 | Module | Purpose |
 | --- | --- |
 | [Unfoldings.Topology.FiniteRadiusAvoidance](../Unfoldings/Topology/FiniteRadiusAvoidance.lean) | Open overlap is detected on source circles outside any finite exceptional radius set |
+| [Unfoldings.Topology.DenseChartSeparation](../Unfoldings/Topology/DenseChartSeparation.lean) | Injectivity on an open dense set separates open images of actual homeomorphic charts |
 | [Unfoldings.Topology.IntervalFrontier](../Unfoldings/Topology/IntervalFrontier.lean) | A bounded nonempty open real set with two possible frontier points is their interval |
 | [Unfoldings.Topology.CompactImageFrontier](../Unfoldings/Topology/CompactImageFrontier.lean) | Exact frontier transport for continuous planar maps injective on compact closures |
 | [Unfoldings.Topology.ClosureLowerBound](../Unfoldings/Topology/ClosureLowerBound.lean) | Continuous lower distance bounds and injectivity extend to the whole domain closure |

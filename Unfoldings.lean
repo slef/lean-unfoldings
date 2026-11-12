@@ -563,3 +563,9 @@ public import Unfoldings.Cap.ExtendedAdjacentCircleGeometry
 public import Unfoldings.Cap.ExtendedCalibratedComparisonArcs
 public import Unfoldings.Cap.EmptyCircleContinuation
 public import Unfoldings.Cap.ExtendedEmptyCircleContinuations
+public import Unfoldings.Topology.DenseChartSeparation
+public import Unfoldings.Cap.SectorWaterfallRegular
+public import Unfoldings.Cap.ProjectedDenseSeparation
+public import Unfoldings.Cap.RadialStripPhysicalMap
+public import Unfoldings.Cap.WaterfallCircleNonoverlap
+public import Unfoldings.Cap.WaterfallCircleExceptions

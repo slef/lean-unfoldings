@@ -2,6 +2,28 @@
 
 ## Session Log
 
+### 2026-11-12 — global circle separation to actual face-interior separation
+
+- Proved the reusable topological fact that injectivity on an open dense set
+  separates open homeomorphic chart images. Applied it to actual projected
+  face charts, including a whole-development nonoverlap criterion.
+- Proved avoiding the finite physical waterfall walls is open and dense.
+  Every such point in the controlled sweep lies in an actual open strip.
+- Identified actual strip domains, injective projected maps, open developed
+  images, and circle slices in one common plane, preserving source distances
+  across the different sector frames.
+- Combined all vertex-copy and disappearing-strip radii into one finite set.
+  Positive circles below a controlled radius suffice to rule out open overlap
+  there; the center causes no exception to the argument.
+- Proved the closing implication from global strip-circle separation to actual
+  developed face-interior separation in the controlled physical region. Its
+  remaining geometric separation hypothesis is explicit, not assumed proved.
+- Verification: cache retrieval followed by full `lake build` pass; **8,970
+  unfolding / 7,243 pinned topology declarations**, standard axioms only;
+  indexed documentation links (**1,302**) and whitespace pass. Global ordering
+  across disappearing strips and sectors, transfer to original input faces,
+  and the full cap theorem remain open.
+
 ### 2026-11-12 — uniform disappearing-strip comparison continuations
 
 - Derived the all-face waterfall position estimates from the actual radial

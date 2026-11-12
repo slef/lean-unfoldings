@@ -687,6 +687,12 @@ Separation of different banks and global nonoverlap remain open.
   calibration. One uniform threshold before both meshes supplies these arcs
   and neighboring-strip separation together. Separation of the continuation
   arcs from other strips is not yet proved.
+- [x] Prove the closing density argument: global circle separation in the common
+  developed plane implies separation of actual face-interior images in the
+  controlled physical region. Strip images are open and individually injective;
+  finite exceptional circles and physical subdivision walls cannot hide open
+  overlap. Combine every vertex-copy and disappearing-strip exception in one
+  finite radius set. This is conditional on the remaining global separation.
 - [ ] Compare surviving strips across intervening strips whose circle slice is
   empty, then establish a global cyclic order across the sector boundaries.
 - [ ] Prove side-by-side separation of all developed strips and hence all
