@@ -1577,3 +1577,4 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Geometry.ClosedCircleCapsContact](../Unfoldings/Geometry/ClosedCircleCapsContact.lean) | Identify the common named endpoint of horizontally ordered closed circle portions |
 | [Unfoldings.Cap.ClosedStripCircleContact](../Unfoldings/Cap/ClosedStripCircleContact.lean) | Classify actual closed strip-circle contacts and recover both physical bank coordinates |
 | [Unfoldings.Cap.CompletedBankCoordinateContact](../Unfoldings/Cap/CompletedBankCoordinateContact.lean) | Recover actual closed bank values from equality in a controlling coordinate, including branch jumps |
+| [Unfoldings.Cap.NonadjacentClosedSeparation](../Unfoldings/Cap/NonadjacentClosedSeparation.lean) | Exclude all contacts of nonadjacent closed sector images away from the source, including exceptional radii |
