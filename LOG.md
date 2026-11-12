@@ -2,6 +2,20 @@
 
 ## Session Log
 
+### 2026-11-12 — component-derived separation of actual strip images
+
+- Applied actual radial-component comparison directly to actual strip-circle
+  images. The common fine path and both sector geometries are constructed
+  from candidate component membership; the caller supplies only each strip's
+  own named candidate bounds, radii, and comparison quadrants.
+- Derived strict comparison quadrants for approached circle points from the
+  uniform physical face margins, their actual closed trace values, and the
+  controlled sweep radius.
+- Verification: cache retrieval and full `lake build` pass; **9,323 unfolding /
+  7,243 pinned topology declarations**, standard axioms only; **1,440** local
+  documentation links and whitespace pass. Complete boundary-run candidate
+  assembly, the zero-run case, original-face transfer, and the cap theorem remain open.
+
 ### 2026-11-12 — unified actual terminal bank candidates
 
 - Proved both completed parent-bank points have the actual developed value

@@ -699,3 +699,5 @@ public import Unfoldings.Cap.RadialStripCirclePhysicalBounds
 public import Unfoldings.Cap.RadialComponentCircleBanks
 public import Unfoldings.Cap.CoherentParentBankPoints
 public import Unfoldings.Cap.BoundaryRunTerminalBankCandidate
+public import Unfoldings.Cap.CrossFrameCircleStrictMargins
+public import Unfoldings.Cap.ComponentBankCircleSeparation

@@ -1485,3 +1485,5 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Cap.RadialComponentCircleBanks](../Unfoldings/Cap/RadialComponentCircleBanks.lean) | Match actual circle endpoints on radial components to named fine parent banks with exact radii |
 | [Unfoldings.Cap.CoherentParentBankPoints](../Unfoldings/Cap/CoherentParentBankPoints.lean) | Identify both actual named parent-bank values at coherent physical points, including child vertices |
 | [Unfoldings.Cap.BoundaryRunTerminalBankCandidate](../Unfoldings/Cap/BoundaryRunTerminalBankCandidate.lean) | Derive actual inner fine-bank candidates for extreme boundary terminals, including coherent terminal vertices |
+| [Unfoldings.Cap.CrossFrameCircleStrictMargins](../Unfoldings/Cap/CrossFrameCircleStrictMargins.lean) | Derive strict comparison quadrants for approached source-circle points from uniform physical face margins |
+| [Unfoldings.Cap.ComponentBankCircleSeparation](../Unfoldings/Cap/ComponentBankCircleSeparation.lean) | Separate actual strip-circle images from component geometry and each strip own named bank bounds |

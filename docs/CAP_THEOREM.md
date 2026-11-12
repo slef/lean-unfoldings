@@ -833,6 +833,10 @@ Separation of different banks and global nonoverlap remain open.
   coherent terminal vertices and derived incoming banks into one actual
   terminal candidate theorem, retaining the fine edge, parameter, component,
   exact trace value, and strict inner-radius bound in either orientation.
+- [x] Apply component-derived bank comparison directly to actual strip-circle
+  images, constructing the common fine path and both sector geometries from
+  the candidates. Derive strict cross-frame circle quadrants from uniform face
+  margins. The remaining inputs bound each strip by its own actual candidate.
 - [ ] Assemble the actual outer surviving intervals across all five sectors,
   including disappearing boundary runs, and establish global cyclic order.
 - [ ] Prove side-by-side separation of all developed strips and hence all
