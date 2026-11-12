@@ -719,9 +719,10 @@ construction obligations in a structure field named `isSourceUnfolding`.
 
 ## Nearly flat convex caps
 
-O’Rourke’s original-edge cap theorem is the next major target. The detailed
-[proof checklist](docs/CAP_THEOREM.md) distinguishes completed lemmas from
-remaining forest, uniform-turn, and global nonoverlap arguments.
+The original-edge nonoverlap conclusion of O’Rourke’s cap theorem is proved,
+with a positive threshold chosen before the mesh. The detailed
+[proof checklist](docs/CAP_THEOREM.md) tracks the remaining simple-polygon
+boundary conclusion and distinguishes it from face-interior nonoverlap.
 
 - [x] Geometric cap inputs, derived disk topology, and the uncut flat case.
 - [x] Whole-edge and arbitrary-anchor radial monotonicity of polygonal chains.
@@ -788,7 +789,7 @@ remaining forest, uniform-turn, and global nonoverlap arguments.
   with finite route distances and uniform intrinsic projection bounds.
 - [x] Preserve original cut geometry: construct line-constrained conforming roof
   triangulations and exact whole-edge unions for every original spatial edge.
-- [ ] Construct the extended cut forest and retained-seam correspondence, and
+- [x] Construct the extended cut forest and retained-seam correspondence, and
   handle all extra extension vertices.
 - [x] Continue prescribed skirt seeds to the outer rim in disjoint radial
   components, outside the original footprint's interior, and mesh every whole
@@ -801,8 +802,11 @@ remaining forest, uniform-turn, and global nonoverlap arguments.
   forest edges plus the constructed skirt components cover all positive curvature.
 - [x] Select the actual extended retained seams and prove every surviving
   interior vertex copy flat, allowing auxiliary flat vertices to remain uncut.
-- [ ] Prove separation between different seams, whole branching paths, and trees.
-- [ ] Global strip assembly and the full nearly flat cap theorem.
+- [x] Prove whole branching-bank comparison and global strip face-interior separation.
+- [x] Assemble uniform original-edge nonoverlap, an actual cut disk, and interior
+  local isometry from cap and positive acute-margin assumptions alone.
+- [ ] Remove redundant flat cuts and prove the simple-polygon boundary conclusion.
+- [ ] Formalize the paper's quantitative threshold and quadratic running-time bound.
 
 ## Later targets and Fewest Nets
 

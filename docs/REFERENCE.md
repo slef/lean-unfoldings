@@ -1549,3 +1549,8 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Geometry.SharedEdgeCutSet](../Unfoldings/Geometry/SharedEdgeCutSet.lean) | Show that exterior skirt cuts cannot add a whole shared edge inside the original region |
 | [Unfoldings.Cap.OriginalCutCarrier](../Unfoldings/Cap/OriginalCutCarrier.lean) | Identify selected original forest segments with the actual closed original seam cut set |
 | [Unfoldings.Cap.OriginalCutRestriction](../Unfoldings/Cap/OriginalCutRestriction.lean) | Prove exterior skirt cuts leave exactly the original retained seams on original faces |
+| [Unfoldings.Cap.ExtendedOriginalRetain](../Unfoldings/Cap/ExtendedOriginalRetain.lean) | Derive the original retained fine seams from any actual selected auxiliary radial forest |
+| [Unfoldings.Cap.ClipOriginalLocalSeparation](../Unfoldings/Cap/ClipOriginalLocalSeparation.lean) | Transfer local roof-face separation covering the original footprint to original-cap nonoverlap |
+| [Unfoldings.Cap.UniformOriginalNonoverlap](../Unfoldings/Cap/UniformOriginalNonoverlap.lean) | Choose a positive mesh-independent tilt threshold for nonoverlap of every original sector-forest development |
+| [Unfoldings.Cap.FlatMetric](../Unfoldings/Cap/FlatMetric.lean) | Prove the uncut flat cap development preserves the entire intrinsic metric |
+| [Unfoldings.Cap.EdgeUnfolding](../Unfoldings/Cap/EdgeUnfolding.lean) | Prove O'Rourke's uniform nearly flat cap theorem with original-edge cuts, a cut disk, nonoverlap, and interior local isometry |

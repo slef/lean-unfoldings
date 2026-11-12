@@ -2,6 +2,23 @@
 
 ## Session Log
 
+### 2026-11-12 — uniform original-edge cap nonoverlap
+
+- Chose a sufficiently deep actual roof clip so that its controlled separation
+  ball contains the entire original footprint. Restricted its actual development
+  to original pieces and derived every required original retained seam from the
+  selected radial forest; transferred nonoverlap to any original forest development.
+- Proved a positive tilt threshold depending only on the acute margin, quantified
+  before the input face type and mesh. The output has only original seam cuts,
+  a boundary-rooted forest, an intrinsic cut disk, disjoint developed face
+  interiors, and local isometry throughout its interior. Flat caps and caps
+  without interior vertices are included; the flat development is globally isometric.
+- Verification: cache retrieval and full `lake build` pass; **9,520 unfolding /
+  7,243 pinned topology declarations**, standard axioms only. The paper defines
+  a net as a simple polygon: boundary injectivity and redundant flat cuts remain
+  separate open obligations. Its numerical threshold and running-time bound
+  are not asserted by the new theorem.
+
 ### 2026-11-12 — exact original retained-seam refinement
 
 - Proved both directions of retained-seam compatibility for the constructed

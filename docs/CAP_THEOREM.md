@@ -3,28 +3,42 @@
 Target: Joseph O'Rourke, *Edge-Unfolding Nearly Flat Convex Caps*,
 [2021 extended version](https://arxiv.org/abs/1707.01006v4), Theorem 1.
 This is a proof-development checklist; unchecked claims are not Lean declarations.
-**The full nonoverlap theorem is not yet proved.**
+**Original-edge face-interior nonoverlap is proved. The paper's stronger
+simple-polygon boundary conclusion remains open.**
 
 Current entry points:
+
+- [EdgeUnfolding](../Unfoldings/Cap/EdgeUnfolding.lean),
+  `exists_uniform_nonoverlapping_edge_unfolding`, chooses a positive tilt threshold
+  depending only on the acute margin, before the face type and entire mesh.
+  It constructs cuts using original seams, a boundary-rooted cut forest, an
+  intrinsic closed cut disk, and a development with disjoint face interiors
+  and local isometry throughout the open disk. Flat caps and caps without
+  interior vertices are included. It does not assert boundary injectivity,
+  the paper's numerical threshold, or its quadratic running-time bound.
+- [UniformOriginalNonoverlap](../Unfoldings/Cap/UniformOriginalNonoverlap.lean)
+  proves nonoverlap for every development of a qualifying original sector
+  forest. The constructed auxiliary roof is deep enough to cover the entire
+  original footprint inside the proved separation ball.
 
 - [UniformExtendedFaceSeparation](../Unfoldings/Cap/UniformExtendedFaceSeparation.lean)
   chooses a positive tilt threshold before both meshes and separates actual
   roof-face interiors in a controlled source ball. All circle geometry and
   finite exceptional-radius avoidance are discharged. The actual original-face
-  subdivision is constructed; retained-seam transfer remains open.
+  subdivision and both directions of retained-seam transfer are proved below.
 
 - [AllSectorCircleSeparation](../Unfoldings/Cap/AllSectorCircleSeparation.lean)
   proves pairwise separation of every actual strip-circle image across all
   five sectors from the constructed waterfall geometry. The proof derives
   extreme survivors, removed boundary runs, maximal terminals, bank candidates,
   and comparison margins. Uniform instantiation is proved below; original-face
-  transfer remains open.
+  transfer is proved below.
 
 - [OuterCircleCaps](../Unfoldings/Cap/OuterCircleCaps.lean) and
   [BoundaryRunCircleCaps](../Unfoldings/Cap/BoundaryRunCircleCaps.lean) separate
   actual adjacent outer-bank circle portions, with or without a disappearing
   boundary run. Shared physical rays may contain cuts. The finite assembly
-  for arbitrary surviving pairs remains open.
+  for arbitrary surviving pairs is proved by the all-sector theorem.
 - [WaterfallCircleSurvivorOrder](../Unfoldings/Cap/WaterfallCircleSurvivorOrder.lean)
   retains all actual surviving bank endpoint order, and
   [WaterfallCircleNonempty](../Unfoldings/Cap/WaterfallCircleNonempty.lean)
@@ -33,7 +47,7 @@ Current entry points:
 - [SectorBoundaryCircleBankOrder](../Unfoldings/Cap/SectorBoundaryCircleBankOrder.lean)
   derives cross-frame order for circle endpoints on actual radial boundary
   cuts. Boundary classification and the comparison quadrants are proved from
-  the cap geometry. Global cyclic interval assembly is still open.
+  the cap geometry; global cyclic interval assembly is proved below.
 - [ExtendedSectorCircleGeometry](../Unfoldings/Cap/ExtendedSectorCircleGeometry.lean)
   chooses a uniform positive tilt threshold before both meshes and separates
   all actual waterfall strip-circle images within each sector. Separation
@@ -66,7 +80,7 @@ Current entry points:
   constructs finite waterfall subdivisions of the actual deep roof. Their strict
   interiors avoid every cut, and the actual developed map is injective on every
   positive-width height slab. Chart selection and continuity are proved.
-  Global separation across the five sectors remains open.
+  Global face-interior separation across the five sectors is proved below.
 - [GnomonicArea](../Unfoldings/Cap/GnomonicArea.lean) proves a mesh-independent
   positive tilt threshold for arbitrarily small total spherical normal-image
   area, bounded by the actual planar normal-polygon areas.
@@ -337,7 +351,7 @@ The constant is conservative. Continuity at tilt zero gives an arbitrarily
 small total-curvature budget uniformly across all meshes. The proof uses
 volume-induced solid angle; it does not need an equality with normalized
 Hausdorff area. Strict actual sector margins and individual paired-seam separation are checked.
-Separation of different banks and global nonoverlap remain open.
+Complete auxiliary-bank comparison and global face-interior nonoverlap are proved below.
 
 ### Global assembly (Sections 9--10, Appendices A.5--A.6)
 
@@ -904,15 +918,19 @@ Separation of different banks and global nonoverlap remain open.
   transfers nonoverlap from any fine development of a connected original cut cap.
 - [x] Prove that actual exterior skirt cuts leave exactly the original retained
   seams on original faces; see [OriginalCutRestriction](../Unfoldings/Cap/OriginalCutRestriction.lean).
-- [ ] Prove side-by-side separation of all developed strips and hence all
+- [x] Prove side-by-side separation of all developed strips and hence all
   distinct original face interiors.
 - [x] Apply the cut-disk and flat-development infrastructure to the fixed-wedge
   forest. All vertex copies are on the boundary, so the actual open cut disk
   is flat. Construct a locally isometric development, unique after fixing
   one original face, with overlap permitted.
-- [ ] Apply the geometric nonoverlap argument to a constructed source-centered
-  forest and its developed banks.
-- [ ] State the full cap theorem using only cap and acute-margin assumptions.
+- [x] Apply the geometric nonoverlap argument to a constructed source-centered
+  forest and transfer it from the actual roof mesh to original input faces.
+- [x] State uniform original-edge nonoverlap using only cap and acute-margin
+  assumptions. The output includes a boundary-rooted forest, actual cut disk,
+  and local isometry throughout the open disk; see
+  [EdgeUnfolding](../Unfoldings/Cap/EdgeUnfolding.lean).
+- [ ] Obtain the paper's full simple-polygon conclusion, including boundary injectivity.
 - [ ] Address redundant flat cuts and the precise simple-polygon conclusion.
 
 ## Verification discipline

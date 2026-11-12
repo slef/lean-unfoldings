@@ -763,3 +763,8 @@ public import Unfoldings.Cap.ClipOriginalNonoverlap
 public import Unfoldings.Geometry.SharedEdgeCutSet
 public import Unfoldings.Cap.OriginalCutCarrier
 public import Unfoldings.Cap.OriginalCutRestriction
+public import Unfoldings.Cap.ExtendedOriginalRetain
+public import Unfoldings.Cap.ClipOriginalLocalSeparation
+public import Unfoldings.Cap.UniformOriginalNonoverlap
+public import Unfoldings.Cap.FlatMetric
+public import Unfoldings.Cap.EdgeUnfolding

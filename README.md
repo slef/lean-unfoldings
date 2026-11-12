@@ -94,9 +94,11 @@ total angle `2π` at every interior vertex has a locally isometric development,
 unique after fixing one face.
 Polygonal cuts use supplied conforming refinement certificates.
 
-The next major target is O’Rourke’s nearly flat convex-cap theorem. Checked
-cap, projection, and chain lemmas and the remaining proof obligations are tracked
-in the [cap checklist](docs/CAP_THEOREM.md). The full cap theorem is not yet proved.
+The [nearly flat cap theorem](Unfoldings/Cap/EdgeUnfolding.lean) now constructs
+original-edge cuts, a cut disk, and a face-interior nonoverlapping development
+with local isometry throughout its interior. Its positive tilt threshold depends
+only on the acute margin. The paper's stronger simple-polygon boundary conclusion
+remains open; see the [cap checklist](docs/CAP_THEOREM.md).
 
 Remaining work includes:
 
