@@ -1574,3 +1574,5 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Cap.ComponentBankCircleContact](../Unfoldings/Cap/ComponentBankCircleContact.lean) | Identify actual physical points at closed component-bank contacts, including branch endpoints |
 | [Unfoldings.Cap.ChainWeakCircleContact](../Unfoldings/Cap/ChainWeakCircleContact.lean) | Recover matching physical bank points from weak circle contacts even when comparison banks lie inside the circle |
 | [Unfoldings.Cap.LocalRegularContact](../Unfoldings/Cap/LocalRegularContact.lean) | Exclude all foreign contacts at regular locally isometric roof points using separation only in the controlled open region |
+| [Unfoldings.Geometry.ClosedCircleCapsContact](../Unfoldings/Geometry/ClosedCircleCapsContact.lean) | Identify the common named endpoint of horizontally ordered closed circle portions |
+| [Unfoldings.Cap.ClosedStripCircleContact](../Unfoldings/Cap/ClosedStripCircleContact.lean) | Classify actual closed strip-circle contacts and recover both physical bank coordinates |

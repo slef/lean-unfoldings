@@ -979,3 +979,10 @@ point even when either comparison bank lies inside the circle. Separately,
 [LocalRegularContact](../Unfoldings/Cap/LocalRegularContact.lean) excludes
 foreign contacts at regular roof points using separation only over the
 controlled open physical region.
+
+[ClosedStripCircleContact](../Unfoldings/Cap/ClosedStripCircleContact.lean)
+now turns the actual waterfall bank order into a closed-contact classification:
+ordered strip-circle images can meet only at their facing named endpoints.
+The result identifies their physical strip coordinates, using the proved
+injectivity of each approached trace. This does not yet assemble global
+boundary injectivity across all sectors and exceptional circle radii.

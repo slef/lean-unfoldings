@@ -788,3 +788,5 @@ public import Unfoldings.Cap.ClosedStripCircleCaps
 public import Unfoldings.Cap.ComponentBankCircleContact
 public import Unfoldings.Cap.ChainWeakCircleContact
 public import Unfoldings.Cap.LocalRegularContact
+public import Unfoldings.Geometry.ClosedCircleCapsContact
+public import Unfoldings.Cap.ClosedStripCircleContact
