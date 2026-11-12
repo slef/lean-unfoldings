@@ -1407,3 +1407,21 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Cap.TerminalRunLateBounds](../Unfoldings/Cap/TerminalRunLateBounds.lean) | Bound late surviving circle crossings by one actual terminal copy across a finite collapsed run |
 | [Unfoldings.Cap.TerminalRunEarlyBounds](../Unfoldings/Cap/TerminalRunEarlyBounds.lean) | Bound early surviving circle crossings by extreme actual terminal maxima across arbitrary disappearing runs |
 | [Unfoldings.Cap.EmptyStripRunCircleSeparation](../Unfoldings/Cap/EmptyStripRunCircleSeparation.lean) | Separate actual surviving circle slices across any finite run of disappearing nonempty strips |
+| [Unfoldings.Geometry.EmptyStripBanks](../Unfoldings/Geometry/EmptyStripBanks.lean) | Identify both physical banks on a closed slab when its open strip is wholly empty |
+| [Unfoldings.Geometry.StripBankContacts](../Unfoldings/Geometry/StripBankContacts.lean) | Derive finite bank-chain identities from contacts only at the tested height |
+| [Unfoldings.Geometry.SubdivisionNonemptyCells](../Unfoldings/Geometry/SubdivisionNonemptyCells.lean) | Remove wholly empty physical cells while retaining exact bank contacts on the controlled slab |
+| [Unfoldings.Cap.TerminalRunRecordsContacts](../Unfoldings/Cap/TerminalRunRecordsContacts.lean) | Retain actual terminal bounds with bank contacts restricted to the controlled physical slab |
+| [Unfoldings.Cap.EarlyCircleTerminalPrefixContacts](../Unfoldings/Cap/EarlyCircleTerminalPrefixContacts.lean) | Retain actual terminal bounds with bank contacts restricted to the controlled physical slab |
+| [Unfoldings.Cap.TerminalRunLateBoundsContacts](../Unfoldings/Cap/TerminalRunLateBoundsContacts.lean) | Retain actual terminal bounds with bank contacts restricted to the controlled physical slab |
+| [Unfoldings.Cap.ContactSeparatorPrefix](../Unfoldings/Cap/ContactSeparatorPrefix.lean) | Prove coherent separator prefixes and terminal-height bounds from physical bank contact |
+| [Unfoldings.Cap.ContactTraceValues](../Unfoldings/Cap/ContactTraceValues.lean) | Identify actual approached trace values at a coherent physical contact |
+| [Unfoldings.Geometry.SubdivisionBankContact](../Unfoldings/Geometry/SubdivisionBankContact.lean) | Locate positive bank contacts in the root interior and identify their separators |
+| [Unfoldings.Cap.EmptyNeighborContactPrefix](../Unfoldings/Cap/EmptyNeighborContactPrefix.lean) | Exclude early circle crossings on coherent prefixes using only physical bank contact |
+| [Unfoldings.Cap.TerminalRunEarlyBoundsContacts](../Unfoldings/Cap/TerminalRunEarlyBoundsContacts.lean) | Propagate early actual circle bounds across terminal runs with only slab-restricted bank contact |
+| [Unfoldings.Cap.EmptyStripChainLateContactSeparation](../Unfoldings/Cap/EmptyStripChainLateContactSeparation.lean) | Separate late actual circle slices across chains joined only inside the controlled slab |
+| [Unfoldings.Cap.EmptyStripRunContactSeparation](../Unfoldings/Cap/EmptyStripRunContactSeparation.lean) | Separate actual circle slices across arbitrary terminal runs with slab-restricted contacts |
+| [Unfoldings.Cap.ContactSeparatorValues](../Unfoldings/Cap/ContactSeparatorValues.lean) | Identify actual prefix values across physical bank contacts, including recoverable pinches |
+| [Unfoldings.Geometry.TailContact](../Unfoldings/Geometry/TailContact.lean) | Transfer completion of an actual tail across slab-restricted bank contact |
+| [Unfoldings.Cap.ContactSeparatorCirclePrefix](../Unfoldings/Cap/ContactSeparatorCirclePrefix.lean) | Identify circle endpoints on coherent separator prefixes after physically empty cells are removed |
+| [Unfoldings.Cap.LeafTailCircleOrder](../Unfoldings/Cap/LeafTailCircleOrder.lean) | Order actual circle endpoints on opposite banks of one completed leaf tail |
+| [Unfoldings.Cap.ContactSeparatorCircleOrder](../Unfoldings/Cap/ContactSeparatorCircleOrder.lean) | Order actual surviving circle endpoints after physically empty cells between their banks are removed |

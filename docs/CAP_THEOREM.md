@@ -7,6 +7,15 @@ This is a proof-development checklist; unchecked claims are not Lean declaration
 
 Current entry points:
 
+- [SubdivisionNonemptyCells](../Unfoldings/Geometry/SubdivisionNonemptyCells.lean)
+  removes wholly empty physical cells while preserving exact bank contact on
+  the controlled closed slab.
+- [EmptyStripRunContactSeparation](../Unfoldings/Cap/EmptyStripRunContactSeparation.lean)
+  proves actual endpoint order and disjointness across arbitrary disappearing
+  runs using only those local contacts.
+- [ContactSeparatorCircleOrder](../Unfoldings/Cap/ContactSeparatorCircleOrder.lean)
+  proves actual endpoint order when no physically nonempty intermediate strip
+  remains. Assembly for the full survivor list is still open.
 - [ForestExistence](../Unfoldings/Cap/ForestExistence.lean) constructs an actual
   original-edge rooted forest for uniformly small positive tilt.
 - [ForestDevelopment](../Unfoldings/Cap/ForestDevelopment.lean) constructs its

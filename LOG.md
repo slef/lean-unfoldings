@@ -2,6 +2,22 @@
 
 ## Session Log
 
+### 2026-11-12 — physically empty cells and local bank contacts
+
+- Proved that a wholly empty open slab has identical physical banks on its
+  closed height interval. Removing such subdivision cells preserves exact bank
+  contacts throughout that interval, without constraining exterior extensions.
+- Generalized actual terminal records, early prefix/suffix bounds, and late
+  completed-parent-path bounds to these slab-restricted contacts. Derived
+  coherent prefix values and tail completion across the retained contacts.
+- Proved both facing-endpoint order and circle-slice disjointness across any
+  finite disappearing run with these local contacts. The no-intermediate-run
+  case also has actual endpoint order across the contacted separator.
+- Verification: cache retrieval and full `lake build` pass; **9,122 unfolding /
+  7,243 pinned topology declarations**, standard axioms only. Existing theorem
+  statements are unchanged. Global surviving-strip and sector assembly,
+  original-face transfer, and the full cap theorem remain open.
+
 ### 2026-11-12 — arbitrary disappearing-run circle separation
 
 - Generalized actual geometric bank progress to a specified tail interval and
