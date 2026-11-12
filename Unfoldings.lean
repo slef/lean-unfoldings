@@ -853,3 +853,5 @@ public import Unfoldings.Cap.TerminalRunClosedLateBounds
 public import Unfoldings.Cap.ClosedParentPathBankMatching
 public import Unfoldings.Cap.ClosedParentPathBankContact
 public import Unfoldings.Cap.ClosedLateRunPhysicalContact
+public import Unfoldings.Cap.ClosedLeafTailCircleContact
+public import Unfoldings.Cap.ClosedContactSeparatorCircleContact

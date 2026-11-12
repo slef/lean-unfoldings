@@ -1077,6 +1077,11 @@ Complete auxiliary-bank comparison and global face-interior nonoverlap are prove
 - [x] Apply closed matching to late physical contacts across actual collapsed
   strip runs, with no excluded radii; see
   [ClosedLateRunPhysicalContact](../Unfoldings/Cap/ClosedLateRunPhysicalContact.lean).
+- [x] Remove vertex-radius exclusions from physical contacts across actual leaf
+  tails and constructed shared separators; see
+  [ClosedLeafTailCircleContact](../Unfoldings/Cap/ClosedLeafTailCircleContact.lean)
+  and [ClosedContactSeparatorCircleContact](../Unfoldings/Cap/ClosedContactSeparatorCircleContact.lean).
+- [ ] Include closed-only pinch sections in the finite waterfall circle order.
 - [ ] Exclude the remaining isolated contacts involving actual vertices.
 - [x] Identify coincident intrinsic copies at the same physical nonvertex point
   after pruning. [PrunedSeamContact](../Unfoldings/Cap/PrunedSeamContact.lean)
