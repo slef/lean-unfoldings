@@ -569,9 +569,11 @@ Separation of different banks and global nonoverlap remain open.
   the entire outward parent path, with explicit straight branch-gap segments.
   Prove their controlling-coordinate injectivity and opposite-bank circle
   order in a common source quadrant, retaining zero-length gaps.
-- [ ] Transfer physical component position and direction sectors together;
-  truncate comparison continuations before the far clip boundary, and derive
-  their common source-quadrant bounds from the actual calibrated geometry.
+- [x] Transfer one geometric component sector to all physical fine path
+  positions, outward directions, and curvature-carrying descendant openings.
+  Whole original and radial cut pieces retain the same sector data.
+- [ ] Truncate comparison continuations before the far clip boundary, and
+  derive their common source-quadrant bounds from actual calibrated geometry.
 - [x] Prove paired-bank circle order with only rightward right-bank and upward
   left-bank progress. Straight branch-gap steps may decrease the other
   coordinate; no radial monotonicity of these steps is required.

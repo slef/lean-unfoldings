@@ -467,3 +467,6 @@ public import Unfoldings.Cap.CompletedExcursionStrictOrder
 public import Unfoldings.Geometry.InterleavedSegments
 public import Unfoldings.Cap.CompletedComparisonChains
 public import Unfoldings.Cap.CompletedComparisonProgress
+public import Unfoldings.Cap.CompletedBankChainPositions
+public import Unfoldings.Cap.GeometricComponentPieces
+public import Unfoldings.Cap.ExtendedBankChainPositions

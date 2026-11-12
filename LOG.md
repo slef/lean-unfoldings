@@ -2,6 +2,19 @@
 
 ## Session Log
 
+### 2026-11-11 — common physical position and direction sectors
+
+- Retained the chosen geometric component's sector on every whole original
+  or radial cut piece, for both source-centered positions and directions.
+- Transferred this same sector through the actual fine-seam parent path and
+  every curvature-carrying descendant opening. The new companion theorem
+  preserves the existing direction-only API.
+- Verification: cache retrieval followed by full `lake build` pass; **8,521
+  unfolding / 7,243 pinned topology declarations**, standard axioms only;
+  indexed documentation links (**1,203**) and whitespace pass. Finite radial
+  truncation, common-quadrant comparison continuations, and global cap
+  nonoverlap remain open.
+
 ### 2026-11-11 — explicit complete comparison banks
 
 - Constructed paired polygonal chains from any actual branch copy, alternating

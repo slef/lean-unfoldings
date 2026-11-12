@@ -114,6 +114,9 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Cap.ExtendedBankChainPositions](../Unfoldings/Cap/ExtendedBankChainPositions.lean) | Derived common position and direction sectors for actual roof-meshed cut paths |
+| [Unfoldings.Cap.GeometricComponentPieces](../Unfoldings/Cap/GeometricComponentPieces.lean) | Whole cut-piece positions and directions in the chosen geometric component sector |
+| [Unfoldings.Cap.CompletedBankChainPositions](../Unfoldings/Cap/CompletedBankChainPositions.lean) | One sector for every fine path position, direction, and curved subtree |
 | [Unfoldings.Cap.ExtendedWaterfallBankTraces](../Unfoldings/Cap/ExtendedWaterfallBankTraces.lean) | Construct complete actual bank traces from the common source through active heights |
 | [Unfoldings.Cap.ExtendedFacePositionControl](../Unfoldings/Cap/ExtendedFacePositionControl.lean) | Uniform common-source position bounds for every actual roof face and bank copy |
 | [Unfoldings.Cap.ProjectedSeamFaces](../Unfoldings/Cap/ProjectedSeamFaces.lean) | Regular projected seam points have exactly their two actual incident-face labels |
