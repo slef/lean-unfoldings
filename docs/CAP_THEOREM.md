@@ -786,6 +786,11 @@ Separation of different banks and global nonoverlap remain open.
   component, including equality with its geometric leaf height.
 - [x] Translate inner-terminal coordinate bounds to argument order and preserve
   equal-radius endpoint order between overlapping oriented quadrant frames.
+- [x] Identify the same actual radial component for the extreme disappearing
+  runs on both sides of a shared named sector ray, retaining distinct heights
+  and terminal contour copies. Match named bank charts through closed mesh
+  endpoints and track every intermediate component position on an actual fine
+  parent path ending at the genuine outer tip.
 - [ ] Assemble the actual outer surviving intervals across all five sectors,
   including disappearing boundary runs, and establish global cyclic order.
 - [ ] Prove side-by-side separation of all developed strips and hence all

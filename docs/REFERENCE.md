@@ -1446,3 +1446,9 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Geometry.QuadrantCircleOrderTransport](../Unfoldings/Geometry/QuadrantCircleOrderTransport.lean) | Preserve actual circle endpoint order between overlapping oriented quadrant frames |
 | [Unfoldings.Cap.BoundaryRunTerminalPoint](../Unfoldings/Cap/BoundaryRunTerminalPoint.lean) | Place the actual highest terminal of an extreme disappearing run on its enclosing sector boundary |
 | [Unfoldings.Cap.BoundaryTerminalComponent](../Unfoldings/Cap/BoundaryTerminalComponent.lean) | Place actual boundary-terminal vertices on pure radial components, including terminal leaf-height contact |
+| [Unfoldings.Geometry.RayStripBankOrder](../Unfoldings/Geometry/RayStripBankOrder.lean) | Identify the named first and last ray banks of an oriented quadrant strip |
+| [Unfoldings.Geometry.RadialTailComponentRays](../Unfoldings/Geometry/RadialTailComponentRays.lean) | Identify clipped radial components from positive source-centered collinearity at different positions |
+| [Unfoldings.Cap.SectorBankRays](../Unfoldings/Cap/SectorBankRays.lean) | Identify named boundary rays and the same actual radial component from neighboring sector frames |
+| [Unfoldings.Cap.AdjacentBoundaryRunComponents](../Unfoldings/Cap/AdjacentBoundaryRunComponents.lean) | Identify the same actual radial component for extreme disappearing runs in neighboring sectors |
+| [Unfoldings.Cap.ClosedParentBankMatching](../Unfoldings/Cap/ClosedParentBankMatching.lean) | Extend named actual parent-bank chart matching through closed fine-vertex and terminal endpoints |
+| [Unfoldings.Cap.RadialComponentFinePath](../Unfoldings/Cap/RadialComponentFinePath.lean) | Track every radial-component position on actual completed fine parent paths ending at the genuine outer tip |

@@ -660,3 +660,9 @@ public import Unfoldings.Geometry.QuadrantArgumentOrder
 public import Unfoldings.Geometry.QuadrantCircleOrderTransport
 public import Unfoldings.Cap.BoundaryRunTerminalPoint
 public import Unfoldings.Cap.BoundaryTerminalComponent
+public import Unfoldings.Geometry.RayStripBankOrder
+public import Unfoldings.Geometry.RadialTailComponentRays
+public import Unfoldings.Cap.SectorBankRays
+public import Unfoldings.Cap.AdjacentBoundaryRunComponents
+public import Unfoldings.Cap.ClosedParentBankMatching
+public import Unfoldings.Cap.RadialComponentFinePath

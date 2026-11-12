@@ -2,6 +2,23 @@
 
 ## Session Log
 
+### 2026-11-12 — shared boundary components and actual fine paths
+
+- Identified each enclosing strip's named physical ray banks and proved that
+  positive source-centered collinearity determines a unique radial component.
+  Neighboring sectors' extreme disappearing-run maxima consequently lie on
+  the same genuine radial component, even at different physical heights.
+- Extended actual named parent-bank chart matching through closed terminal
+  and fine-vertex endpoints, using continuity and finite physical vertex heights.
+- Proved an unattached component's actual completed fine path stays on its
+  radial skirt and ends at its outer tip. Every intermediate physical position
+  is located on an actual whole fine parent edge, with no supplied fine/coarse
+  correspondence or acute-angle hypothesis on auxiliary faces.
+- Verification: cache retrieval and full `lake build` pass; **9,196 unfolding /
+  7,243 pinned topology declarations**, standard axioms only; **1,405** local
+  documentation links and whitespace pass. Cross-sector terminal-copy bounds,
+  cyclic interval assembly, original-face transfer, and the cap theorem remain open.
+
 ### 2026-11-12 — extreme boundary runs and angular transport
 
 - Preserved the original first/last physical bank contacts after empty endpoint
