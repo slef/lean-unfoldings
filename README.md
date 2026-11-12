@@ -73,6 +73,7 @@ data and theorems for use in further proofs.
 | Develop a flat metric disk, with overlap allowed | [Development/FlatDisk.lean](Unfoldings/Development/FlatDisk.lean) |
 | Cut polygonal forests carried by a refinement | [Complex/PolygonalCuts.lean](Unfoldings/Complex/PolygonalCuts.lean), [Complex/PolygonalCutGraph.lean](Unfoldings/Complex/PolygonalCutGraph.lean) |
 | Refine triangles without changing intrinsic geometry | [Complex/SubdivisionMetric.lean](Unfoldings/Complex/SubdivisionMetric.lean), [Examples/Subdivision.lean](Unfoldings/Examples/Subdivision.lean) |
+| Unfold a sufficiently flat acute convex cap to a simple polygon | [Cap/SimpleEdgeUnfolding.lean](Unfoldings/Cap/SimpleEdgeUnfolding.lean) |
 | Try small examples | [Examples/Metric.lean](Unfoldings/Examples/Metric.lean), [Examples/Hinge.lean](Unfoldings/Examples/Hinge.lean) |
 
 For a specific lemma, use the [module index](docs/REFERENCE.md#module-index).
@@ -94,12 +95,11 @@ total angle `2π` at every interior vertex has a locally isometric development,
 unique after fixing one face.
 Polygonal cuts use supplied conforming refinement certificates.
 
-The [nearly flat cap development](Unfoldings/Cap/SameOriginalVertexEdgeUnfolding.lean) constructs
-original-edge cuts, a cut disk, and a face-interior nonoverlapping development
-with local isometry throughout its interior. Its positive tilt threshold depends
-only on the acute margin. Every remaining contact is between intrinsic copies
-of one physical vertex. Identifying those copies and concluding a simple polygon
-remain open; see the [cap checklist](docs/CAP_THEOREM.md).
+[O'Rourke's nearly flat cap theorem](Unfoldings/Cap/SimpleEdgeUnfolding.lean) is
+also proved. A positive acute margin determines a tilt threshold uniform over
+all input meshes. The result constructs original-edge forest cuts, an intrinsic
+cut disk, and a globally injective development with a simple polygon boundary.
+See the [cap theorem guide](docs/CAP_THEOREM.md) for its output API and proof.
 
 Remaining work includes:
 

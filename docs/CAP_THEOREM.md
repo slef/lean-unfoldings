@@ -2,18 +2,46 @@
 
 Target: Joseph O'Rourke, *Edge-Unfolding Nearly Flat Convex Caps*,
 [2021 extended version](https://arxiv.org/abs/1707.01006v4), Theorem 1.
-This is a proof-development checklist; unchecked claims are not Lean declarations.
-**Original-edge face-interior nonoverlap is proved. The paper's stronger
-simple-polygon boundary conclusion remains open.**
+**The geometric existence theorem is proved, including the simple polygon boundary.**
+The numerical threshold and algorithmic running-time bound are separate future work.
 
-Current entry points:
+Start with [SimpleEdgeUnfolding](../Unfoldings/Cap/SimpleEdgeUnfolding.lean),
+`Unfoldings.ConvexCap.orourke_cap_theorem`. For each positive acute margin it
+chooses a positive tilt threshold before the face type and entire cap mesh.
+Its output `U : K.SimpleEdgeUnfolding` provides:
+
+- `retain`, `cutForest`, and `disk`: actual original-seam cuts forming a
+  boundary-rooted forest, with their intrinsic closed cut disk.
+- `development`, `nonoverlapping`, `local_isometry`, and `injective`: actual
+  rigid face placements, interior local isometry, and global closed-disk injectivity.
+- `footprintHomeomorph`: the intrinsic cut disk is homeomorphic to its whole image.
+- `frontier_isJordanCurve`, `frontier_eq_segments`, and `finite_banks`: the
+  exact image frontier is a finite simple polygon of actual developed bank segments.
+
+Flat caps, caps without interior vertices, flat subdivisions, arbitrary branch
+vertices, and original rim vertices are included. General library developments
+continue to permit overlap and boundary contacts.
+
+The final injectivity argument is in
+[PrunedAllVertexContact](../Unfoldings/Cap/PrunedAllVertexContact.lean).
+A contour excursion between equal-image copies of one physical vertex contains
+only flat selected subtrees. Restoring their seams identifies its endpoints in
+the intrinsic quotient. For rim roots,
+[RootSubtreeContour](../Unfoldings/Cap/RootSubtreeContour.lean) constructs the
+actual two original-rim exits. The reusable polygon-frontier bridge is
+[SimpleBoundary](../Unfoldings/Development/SimpleBoundary.lean).
+
+## Earlier entry points
+
+These remain useful weaker theorems. The final theorem above discharges their
+remaining contact and boundary-injectivity obligations.
 
 - [SameOriginalVertexEdgeUnfolding](../Unfoldings/Cap/SameOriginalVertexEdgeUnfolding.lean),
   `exists_uniform_edge_unfolding_same_original_vertex_contacts`, constructs the
   original-edge cut disk and proves every remaining self-contact is between
   intrinsic copies of one original physical vertex. Vertex-edge contacts and
   contacts between different physical vertices are excluded, with no exceptional
-  radii. Identifying those remaining copies after pruning is still open.
+  radii. The final theorem identifies these copies after pruning.
 
 - [VertexContactEdgeUnfolding](../Unfoldings/Cap/VertexContactEdgeUnfolding.lean),
   `exists_uniform_edge_unfolding_injective_off_vertices`, strengthens the original
@@ -107,7 +135,7 @@ Current entry points:
 - [UniformCurvature](../Unfoldings/Cap/UniformCurvature.lean) gives a positive
   total-curvature threshold quantified before the entire input mesh.
 
-The intended statement takes the cap's acute input triangulation as given.
+The proved statement takes the cap's acute input triangulation as given.
 For every fixed positive acuteness margin, there is a positive normal-tilt
 threshold, uniform in the number of vertices, below which an original-edge
 nonoverlapping unfolding exists. The rim is planar and its projection convex.
@@ -141,7 +169,7 @@ constant in the paper is not a substitute for an exact inequality.
 - Convex-boundary local geometry, angle links, and source developments.
 
 The source-unfolding theorem does not make an arbitrary edge forest safe.
-The remaining nonoverlap argument must be proved independently.
+Its independent cap nonoverlap argument is developed below.
 
 ## Proof milestones
 
@@ -189,6 +217,9 @@ The remaining nonoverlap argument must be proved independently.
   frame by the sum of all descendant curvatures. This sum lies between zero
   and total cap curvature; when it is at most pi it is the genuine aperture.
   Zero curvature allows contact. See [SubtreeOpening](../Unfoldings/Cap/SubtreeOpening.lean).
+The following paper-style comparison lemmas remain optional generalizations.
+The completed cap theorem instead uses the checked common-quadrant route below.
+
 - [ ] Represent matched edge lengths and signed opening angles by actual rigid
   planar motions, retaining unwrapped real heading information.
 - [ ] Define the left-of relation at equal radii without conflating touching
@@ -199,8 +230,8 @@ The remaining nonoverlap argument must be proved independently.
   including finite endpoints and every intermediate suffix.
 - [ ] Prove branching-bank noncrossing, including the altered opposite bank
   (Corollary 10). The actual whole-subtree rotation, strict quadrant headings,
-  and individual paired-seam separation are checked. Comparing different
-  original edges and complete branching banks remains open.
+  and individual paired-seam separation are checked. The full Corollary 10
+  generalization is optional; cap-specific global contacts are resolved below.
 
 A stronger special-case route is also checked: matched banks whose unreduced
 headings are ordered in a common open quadrant are ordered at every equal
@@ -348,12 +379,14 @@ global strip hypotheses are constructed. It is not a proof of Theorem 9.
   curvature and matched parameters.
 - [x] Prove immediate-child subtree gap balance and the distinguished internal
   origin's leaf property. Its actual two child-bank endpoints coincide.
-- [ ] Compare different original seams and complete branching banks globally.
+- [x] Compare different original seams and complete branching banks on the actual
+  cap; closed physical contact control and pruned vertex-copy identification
+  yield global injectivity.
 
 The section-and-crossing-potential route proves the actual whole-section heading
 bound directly. The alternative paper-style prefix-region closures, truncations,
 and artificial connecting segments remain unformalized and are not used in this
-checked route. Global bank and strip separation still need proofs.
+checked route. Global cap separation and injectivity are proved below.
 
 The checked numerical estimate, for `3/4 ≤ c` and all normal heights at least
 `c`, is
@@ -945,7 +978,8 @@ Complete auxiliary-bank comparison and global face-interior nonoverlap are prove
   assumptions. The output includes a boundary-rooted forest, actual cut disk,
   and local isometry throughout the open disk; see
   [EdgeUnfolding](../Unfoldings/Cap/EdgeUnfolding.lean).
-- [ ] Obtain the paper's full simple-polygon conclusion, including boundary injectivity.
+- [x] Obtain the paper's simple-polygon conclusion, including boundary injectivity;
+  see [SimpleEdgeUnfolding](../Unfoldings/Cap/SimpleEdgeUnfolding.lean).
 - [x] Remove all zero-curvature descendant subtrees from the original cut forest.
   [FlatSubtreeBanks](../Unfoldings/Cap/FlatSubtreeBanks.lean) proves pointwise
   agreement of the actual whole seam banks, including positional offsets.
@@ -1103,8 +1137,8 @@ Complete auxiliary-bank comparison and global face-interior nonoverlap are prove
   uses an actual closed connector to prove strict enclosure. The actual terminal
   pinch, containing-face contour copy, and proper comparison continuation follow;
   see [ExtendedClosedEmptyCircleContinuations](../Unfoldings/Cap/ExtendedClosedEmptyCircleContinuations.lean).
-- [ ] Include these closed-only sections in the full finite waterfall circle order.
-- [ ] Exclude the remaining isolated contacts involving actual vertices.
+- [x] Include closed-only sections in the full finite waterfall circle order.
+- [x] Exclude the isolated contacts involving actual vertices.
 - [x] Identify coincident intrinsic copies at the same physical nonvertex point
   after pruning. [PrunedSeamContact](../Unfoldings/Cap/PrunedSeamContact.lean)
   combines exact projected seam conformity, strict positive-curvature bank
@@ -1151,9 +1185,14 @@ Complete auxiliary-bank comparison and global face-interior nonoverlap are prove
   [InternalVertexContact](../Unfoldings/Cap/InternalVertexContact.lean) constructs
   an actual internal excursion; its displacement forces each selected subtree
   flat, and additive intrinsic vertex labels prove endpoint equality after pruning.
-- [ ] Identify coincident intrinsic copies over original rim vertices and assemble
-  full vertex-copy injectivity.
-- [ ] Conclude boundary injectivity and state the simple-polygon existence theorem.
+- [x] Identify coincident intrinsic copies over original rim vertices and assemble
+  full vertex-copy injectivity; see
+  [PrunedAllVertexContact](../Unfoldings/Cap/PrunedAllVertexContact.lean).
+- [x] Prove global closed-disk injectivity with a uniform acute-cap threshold;
+  see [InjectiveEdgeUnfolding](../Unfoldings/Cap/InjectiveEdgeUnfolding.lean).
+- [x] Identify the exact footprint frontier as a finite polygonal Jordan curve and
+  state `orourke_cap_theorem`; see
+  [SimpleEdgeUnfolding](../Unfoldings/Cap/SimpleEdgeUnfolding.lean).
 
 ## Verification discipline
 

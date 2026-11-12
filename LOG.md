@@ -2,6 +2,28 @@
 
 ## Session Log
 
+### 2026-11-12 — complete the simple-polygon cap theorem
+
+- Proved `ConvexCap.orourke_cap_theorem` in
+  [SimpleEdgeUnfolding](Unfoldings/Cap/SimpleEdgeUnfolding.lean). A positive acute
+  margin chooses a positive tilt threshold before the entire cap mesh. The output
+  includes original-edge rooted-forest cuts, the actual intrinsic closed cut disk,
+  interior local isometry, face-interior nonoverlap, and global injectivity.
+- Identified all closed-face contacts physically at every radius. Closing contour
+  excursions force all selected subtrees flat; additive intrinsic vertex labels
+  then identify their endpoints after pruning. Constructed the two actual rim
+  exits of root subtrees to include arbitrary original boundary vertex copies.
+- Proved that the exact footprint frontier is a Jordan curve consisting of the
+  finitely many actual straight bank segments. Added a footprint homeomorphism
+  and a public result API; updated the README, plan, and cap theorem guide.
+- Verification: `lake exe cache get`, then full `lake build` passed (**4,887 jobs**).
+  The audit checked **9,952 unfolding / 7,243 pinned topology declarations**, with
+  only standard Lean axioms. No unfinished proofs or new project warnings.
+  Local documentation links (**1,765**) and whitespace checks pass. No existing
+  theorem statements changed; no temporary worktrees were created.
+- The paper's explicit numerical threshold and quadratic algorithmic running-time
+  bound remain separate work; the geometric simple-polygon existence result is complete.
+
 ### 2026-11-12 — retain actual closed strip-circle endpoint contacts
 
 - Proved strict signed-area barriers whenever two weakly bounded points differ.

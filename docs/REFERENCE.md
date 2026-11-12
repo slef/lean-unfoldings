@@ -1706,3 +1706,13 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Cap.ContourExcursionFlatness](../Unfoldings/Cap/ContourExcursionFlatness.lean) | Characterize closing subtree excursions by flatness of their selected openings |
 | [Unfoldings.Cap.ContourExcursionRestoration](../Unfoldings/Cap/ContourExcursionRestoration.lean) | Identify endpoints of closing excursions in the actual pruned intrinsic quotient |
 | [Unfoldings.Cap.InternalVertexContact](../Unfoldings/Cap/InternalVertexContact.lean) | Identify arbitrary coincident contour copies of an original interior vertex |
+| [Unfoldings.Complex.BoundaryEndDistinct](../Unfoldings/Complex/BoundaryEndDistinct.lean) | Distinguish the two intrinsic endpoints of any boundary bank using a spatial folding |
+| [Unfoldings.Cap.RootSubtreeContour](../Unfoldings/Cap/RootSubtreeContour.lean) | Identify the two actual rim exits of every boundary-root descendant subtree |
+| [Unfoldings.Cap.VertexContourExcursion](../Unfoldings/Cap/VertexContourExcursion.lean) | Integrate actual vertex excursions including original rim roots and exclude rim banks |
+| [Unfoldings.Cap.VertexExcursionFlatness](../Unfoldings/Cap/VertexExcursionFlatness.lean) | Force every selected opening flat when an arbitrary vertex excursion closes |
+| [Unfoldings.Cap.VertexExcursionRestoration](../Unfoldings/Cap/VertexExcursionRestoration.lean) | Identify all closing vertex-excursion endpoints in the actual pruned quotient |
+| [Unfoldings.Cap.AllVertexContact](../Unfoldings/Cap/AllVertexContact.lean) | Construct internal excursions and identify every actual same-vertex contour contact |
+| [Unfoldings.Cap.PrunedAllVertexContact](../Unfoldings/Cap/PrunedAllVertexContact.lean) | Prove global injectivity of the pruned development from closed physical contact control |
+| [Unfoldings.Cap.InjectiveEdgeUnfolding](../Unfoldings/Cap/InjectiveEdgeUnfolding.lean) | Construct globally injective original-edge developments under a uniform acute-cap tilt bound |
+| [Unfoldings.Development.SimpleBoundary](../Unfoldings/Development/SimpleBoundary.lean) | Identify the exact footprint frontier of a developed disk as a finite polygonal Jordan curve |
+| [Unfoldings.Cap.SimpleEdgeUnfolding](../Unfoldings/Cap/SimpleEdgeUnfolding.lean) | Prove O'Rourke's cap theorem and expose the actual cut disk, embedding, and simple polygon frontier |

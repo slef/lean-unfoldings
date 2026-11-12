@@ -920,3 +920,13 @@ public import Unfoldings.Cap.RestoredParentBankEndpoints
 public import Unfoldings.Cap.ContourExcursionFlatness
 public import Unfoldings.Cap.ContourExcursionRestoration
 public import Unfoldings.Cap.InternalVertexContact
+public import Unfoldings.Complex.BoundaryEndDistinct
+public import Unfoldings.Cap.RootSubtreeContour
+public import Unfoldings.Cap.VertexContourExcursion
+public import Unfoldings.Cap.VertexExcursionFlatness
+public import Unfoldings.Cap.VertexExcursionRestoration
+public import Unfoldings.Cap.AllVertexContact
+public import Unfoldings.Cap.PrunedAllVertexContact
+public import Unfoldings.Cap.InjectiveEdgeUnfolding
+public import Unfoldings.Development.SimpleBoundary
+public import Unfoldings.Cap.SimpleEdgeUnfolding

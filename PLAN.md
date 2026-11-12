@@ -719,10 +719,10 @@ construction obligations in a structure field named `isSourceUnfolding`.
 
 ## Nearly flat convex caps
 
-The original-edge nonoverlap conclusion of O’Rourke’s cap theorem is proved,
-with a positive threshold chosen before the mesh. The detailed
-[proof checklist](docs/CAP_THEOREM.md) tracks the remaining simple-polygon
-boundary conclusion and distinguishes it from face-interior nonoverlap.
+O’Rourke’s geometric cap theorem is proved, including a simple polygon boundary
+and a positive tilt threshold chosen before the mesh. Start with
+[SimpleEdgeUnfolding](Unfoldings/Cap/SimpleEdgeUnfolding.lean); the detailed
+[proof checklist](docs/CAP_THEOREM.md) records the construction and verification.
 
 - [x] Geometric cap inputs, derived disk topology, and the uncut flat case.
 - [x] Whole-edge and arbitrary-anchor radial monotonicity of polygonal chains.
@@ -807,7 +807,10 @@ boundary conclusion and distinguishes it from face-interior nonoverlap.
   local isometry from cap and positive acute-margin assumptions alone.
 - [x] Remove zero-curvature original subtrees without changing face placements;
   preserve the rooted forest, cut disk, nonoverlap, and interior local isometry.
-- [ ] Prove boundary injectivity and the simple-polygon conclusion after pruning.
+- [x] Identify all closed-face contacts physically, with no exceptional radii.
+- [x] Identify all coincident branch and rim vertex copies in the pruned quotient.
+- [x] Prove global injectivity and the simple-polygon conclusion after pruning.
+- [x] Expose the actual intrinsic disk, footprint homeomorphism, and polygon frontier.
 - [ ] Formalize the paper's quantitative threshold and quadratic running-time bound.
 
 ## Later targets and Fewest Nets
