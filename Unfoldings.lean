@@ -439,3 +439,8 @@ public import Unfoldings.Cap.TraceFacingFace
 public import Unfoldings.Geometry.HeightNetworkLocalGraph
 public import Unfoldings.Cap.GeometricTailLocalEdge
 public import Unfoldings.Geometry.StripCutSides
+public import Unfoldings.Geometry.HeightGraphSegments
+public import Unfoldings.Geometry.WedgeFrameSides
+public import Unfoldings.Cap.CompletedBankPhysicalSides
+public import Unfoldings.Cap.CompletedBankGraphSides
+public import Unfoldings.Cap.CompletedBankTraceMatching

@@ -532,8 +532,12 @@ Separation of different banks and global nonoverlap remain open.
   tails: regular interior mesh points avoid every geometric network vertex.
   Derive one-sided strip approach directly from positive width and local cut
   avoidance, including a wall that only touches the cut.
-- [ ] Instantiate facing-bank criteria for the actual waterfall walls, then
-  control radial order and complete bank continuations.
+- [x] Derive physical entrance/exit face signs in the actual sector frames.
+  Construct the parent edge's exact height graph and local cut interval.
+  Regular positive-width lower/upper strip traces select the actual named
+  entrance/exit charts from cut avoidance, without supplied side certificates.
+- [ ] Package matching for the constructed waterfall through branch endpoints,
+  then control radial order and complete bank continuations.
 - [ ] Prove side-by-side separation of all developed strips and hence all
   distinct original face interiors.
 - [x] Apply the cut-disk and flat-development infrastructure to the fixed-wedge

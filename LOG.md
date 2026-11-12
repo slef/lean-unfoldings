@@ -2,6 +2,21 @@
 
 ## Session Log
 
+### 2026-11-11 — named entrance/exit strip-trace matching
+
+- Proved positive sector frames preserve physical directed-edge side signs.
+  Exact segment height graphs retain both endpoints, the full physical edge,
+  strict interior heights, and transported cut avoidance.
+- Derived signed-side bounds for the actual complete-bank incident faces from
+  the positively oriented contour. Constructed each actual parent cut graph
+  and derived its face signs and local cut interval.
+- Proved regular positive-width lower and upper strip traces select the named
+  entrance and exit charts. Physical cut avoidance supplies the local side
+  test; no bank-side or wall-coincidence certificate is assumed.
+- Verification: cache retrieval followed by full `lake build` pass; **8,436
+  unfolding / 7,243 pinned topology declarations**, standard axioms only.
+  Branch endpoints, complete continuations, and global separation remain open.
+
 ### 2026-11-11 — actual local tail edges and one-sided cut contacts
 
 - Proved regular interior roof-mesh points avoid every geometric cut vertex:

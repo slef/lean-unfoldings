@@ -117,6 +117,9 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 | [Unfoldings.Cap.ExtendedWaterfallBankTraces](../Unfoldings/Cap/ExtendedWaterfallBankTraces.lean) | Construct complete actual bank traces from the common source through active heights |
 | [Unfoldings.Cap.ExtendedFacePositionControl](../Unfoldings/Cap/ExtendedFacePositionControl.lean) | Uniform common-source position bounds for every actual roof face and bank copy |
 | [Unfoldings.Cap.ProjectedSeamFaces](../Unfoldings/Cap/ProjectedSeamFaces.lean) | Regular projected seam points have exactly their two actual incident-face labels |
+| [Unfoldings.Cap.CompletedBankPhysicalSides](../Unfoldings/Cap/CompletedBankPhysicalSides.lean) | Named entrance and exit incident faces have their actual physical side signs |
+| [Unfoldings.Cap.CompletedBankGraphSides](../Unfoldings/Cap/CompletedBankGraphSides.lean) | Construct actual parent cut graphs and derive named face-side and strip-avoidance tests |
+| [Unfoldings.Cap.CompletedBankTraceMatching](../Unfoldings/Cap/CompletedBankTraceMatching.lean) | Regular positive-width lower/upper strip traces select actual entrance/exit charts |
 | [Unfoldings.Cap.GeometricTailLocalEdge](../Unfoldings/Cap/GeometricTailLocalEdge.lean) | Actual regular meshed tail points retain locally matching physical edge graphs |
 | [Unfoldings.Cap.TraceFacingFace](../Unfoldings/Cap/TraceFacingFace.lean) | One-sided strip traces select the facing seam chart from local wall and half-plane data |
 | [Unfoldings.Cap.CompletedBankFaceValues](../Unfoldings/Cap/CompletedBankFaceValues.lean) | Complete actual bank points equal their own incident-face placements |
@@ -634,6 +637,8 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 | [Unfoldings.Geometry.RecoverableStripClosure](../Unfoldings/Geometry/RecoverableStripClosure.lean) | Finite reopening pinches leave both source-to-active banks in the strict-strip closure |
 | [Unfoldings.Geometry.MonotoneStripDensity](../Unfoldings/Geometry/MonotoneStripDensity.lean) | Finite waterfall walls are closed nowhere dense; off-wall points lie in strict cells |
 | [Unfoldings.Geometry.HeightNetworkLocalGraph](../Unfoldings/Geometry/HeightNetworkLocalGraph.lean) | Covered tails agree locally with their actual affine edge graphs away from network vertices |
+| [Unfoldings.Geometry.HeightGraphSegments](../Unfoldings/Geometry/HeightGraphSegments.lean) | Exact whole-segment graphs, directed-side formulas, and transported cut avoidance |
+| [Unfoldings.Geometry.WedgeFrameSides](../Unfoldings/Geometry/WedgeFrameSides.lean) | Positive acute-wedge frames preserve every actual directed-edge side, including centered coordinates |
 | [Unfoldings.Geometry.StripCutSides](../Unfoldings/Geometry/StripCutSides.lean) | Positive strip width and cut avoidance force the local side even at a mere wall contact |
 | [Unfoldings.Geometry.MonotoneStripLipschitz](../Unfoldings/Geometry/MonotoneStripLipschitz.lean) | Uniform Lipschitz bounds for affine selections on bounded monotone strips |
 | [Unfoldings.Geometry.MonotoneStripCoreLipschitz](../Unfoldings/Geometry/MonotoneStripCoreLipschitz.lean) | Uniform strict-strip Lipschitz bounds across coherent reopening pinches |
