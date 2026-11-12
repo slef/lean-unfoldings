@@ -1513,3 +1513,12 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Topology.OrderedBankEndpoints](../Unfoldings/Topology/OrderedBankEndpoints.lean) | Bound every ordered interval by the first and last retained bank pieces |
 | [Unfoldings.Cap.WaterfallCircleNonempty](../Unfoldings/Cap/WaterfallCircleNonempty.lean) | Prove that every controlled sector circle has an actual surviving waterfall strip |
 | [Unfoldings.Topology.FilterBoundaryRuns](../Unfoldings/Topology/FilterBoundaryRuns.lean) | Retain the actual removed prefix and suffix at the first and last filtered survivors |
+| [Unfoldings.Topology.IndexedBoundaryRun](../Unfoldings/Topology/IndexedBoundaryRun.lean) | Index actual initial and final removed runs with their occurrence order and facing contacts |
+| [Unfoldings.Geometry.SubdivisionNonemptyBoundary](../Unfoldings/Geometry/SubdivisionNonemptyBoundary.lean) | Retain either enclosing-bank contact at an extreme physically nonempty cell |
+| [Unfoldings.Geometry.SubdivisionBoundaryRun](../Unfoldings/Geometry/SubdivisionBoundaryRun.lean) | Derive a direct enclosing-bank contact or an actual indexed removed boundary run from filtered extremes |
+| [Unfoldings.Cap.BoundaryRunCircleConstruction](../Unfoldings/Cap/BoundaryRunCircleConstruction.lean) | Construct extreme maximal terminals and actual circle barriers from indexed boundary-run data |
+| [Unfoldings.Cap.AdjacentSurvivorCircleCaps](../Unfoldings/Cap/AdjacentSurvivorCircleCaps.lean) | Derive adjacent extreme-survivor separation from actual filtered subdivisions and rule out two boundary runs |
+| [Unfoldings.Cap.WaterfallCircleSurvivorBanks](../Unfoldings/Cap/WaterfallCircleSurvivorBanks.lean) | Retain both actual bank coordinates in the full survivor endpoint order |
+| [Unfoldings.Cap.WaterfallCircleExtremeBounds](../Unfoldings/Cap/WaterfallCircleExtremeBounds.lean) | Bound every actual sector circle image by its extreme surviving bank coordinates |
+| [Unfoldings.Cap.AdjacentSectorCircleSeparation](../Unfoldings/Cap/AdjacentSectorCircleSeparation.lean) | Separate every actual strip-circle pair in adjacent sectors including non-extreme and empty cells |
+| [Unfoldings.Cap.AllSectorCircleSeparation](../Unfoldings/Cap/AllSectorCircleSeparation.lean) | Separate all actual strip-circle images across the complete five-sector waterfall |

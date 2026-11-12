@@ -7,6 +7,13 @@ This is a proof-development checklist; unchecked claims are not Lean declaration
 
 Current entry points:
 
+- [AllSectorCircleSeparation](../Unfoldings/Cap/AllSectorCircleSeparation.lean)
+  proves pairwise separation of every actual strip-circle image across all
+  five sectors from the constructed waterfall geometry. The proof derives
+  extreme survivors, removed boundary runs, maximal terminals, bank candidates,
+  and comparison margins. Uniform instantiation and original-face transfer
+  remain open.
+
 - [OuterCircleCaps](../Unfoldings/Cap/OuterCircleCaps.lean) and
   [BoundaryRunCircleCaps](../Unfoldings/Cap/BoundaryRunCircleCaps.lean) separate
   actual adjacent outer-bank circle portions, with or without a disappearing
@@ -24,7 +31,7 @@ Current entry points:
 - [ExtendedSectorCircleGeometry](../Unfoldings/Cap/ExtendedSectorCircleGeometry.lean)
   chooses a uniform positive tilt threshold before both meshes and separates
   all actual waterfall strip-circle images within each sector. Separation
-  for arbitrary survivor pairs across different sectors is still open.
+  across all sectors is available in the all-sector theorem under its geometric inputs.
 - [SubdivisionNonemptyCells](../Unfoldings/Geometry/SubdivisionNonemptyCells.lean)
   removes wholly empty physical cells while preserving exact bank contact on
   the controlled closed slab.
@@ -864,8 +871,12 @@ Separation of different banks and global nonoverlap remain open.
   choices, and prove that every sector circle has a survivor. Strengthen
   outer-bank and disappearing-run separation to whole circle portions bounded
   by the actual bank coordinates, preserving existing image-separation APIs.
-- [ ] Assemble the actual outer surviving intervals across all five sectors,
-  including disappearing boundary runs, and establish global cyclic order.
+- [x] Assemble actual extreme survivors and indexed removed boundary runs.
+  Derive every within-sector endpoint bound in both coordinates and prove
+  pairwise separation of all actual strip-circle images across all five sectors,
+  including arbitrary adjacent-sector cells and empty images.
+- [ ] Instantiate all-sector separation uniformly from the tilt threshold
+  chosen before both meshes and apply finite-radius avoidance to actual face interiors.
 - [ ] Prove side-by-side separation of all developed strips and hence all
   distinct original face interiors.
 - [x] Apply the cut-disk and flat-development infrastructure to the fixed-wedge

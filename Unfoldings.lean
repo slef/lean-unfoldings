@@ -727,3 +727,12 @@ public import Unfoldings.Geometry.SubdivisionCollapsedBanks
 public import Unfoldings.Topology.OrderedBankEndpoints
 public import Unfoldings.Cap.WaterfallCircleNonempty
 public import Unfoldings.Topology.FilterBoundaryRuns
+public import Unfoldings.Topology.IndexedBoundaryRun
+public import Unfoldings.Geometry.SubdivisionNonemptyBoundary
+public import Unfoldings.Geometry.SubdivisionBoundaryRun
+public import Unfoldings.Cap.BoundaryRunCircleConstruction
+public import Unfoldings.Cap.AdjacentSurvivorCircleCaps
+public import Unfoldings.Cap.WaterfallCircleSurvivorBanks
+public import Unfoldings.Cap.WaterfallCircleExtremeBounds
+public import Unfoldings.Cap.AdjacentSectorCircleSeparation
+public import Unfoldings.Cap.AllSectorCircleSeparation

@@ -2,6 +2,23 @@
 
 ## Session Log
 
+### 2026-11-12 — separate every actual five-sector strip-circle pair
+
+- Derived either a direct enclosing-bank contact or an actual indexed removed
+  run at each filtered extreme. Constructed extreme maximal terminals within
+  the proof and ruled out simultaneous runs on both sides of a shared ray.
+- Retained survivor endpoint order in both coordinates and bounded every
+  actual circle image by its extreme surviving banks. The earlier real-order
+  theorem keeps its exact statement and follows from this stronger companion.
+- Proved separation for arbitrary adjacent-sector strip-circle pairs, then
+  combined within-sector, adjacent-sector, and nonadjacent-sector results into
+  full pairwise separation across all five actual waterfalls.
+- Verification: cache retrieval and full `lake build` pass; **9,400 unfolding /
+  7,243 pinned topology declarations**, standard axioms only. Local
+  documentation links, preserved theorem headers, and whitespace pass.
+  Uniform geometric instantiation, original-face transfer, and the full cap
+  theorem remain open.
+
 ### 2026-11-12 — retain circle barriers and full survivor order
 
 - Strengthened both boundary-run orientations and the no-run outer-bank
@@ -16,7 +33,7 @@
   enclosing wedge's positive width. Added first/last interval bounds and
   extraction of actual removed boundary prefixes and suffixes.
 - Verification: cache retrieval and full `lake build` pass; **9,364 unfolding /
-  7,243 pinned topology declarations**, standard axioms only; **1,466** local
+  7,243 pinned topology declarations**, standard axioms only; **1,470** local
   documentation links and whitespace pass. Global survivor assembly,
   original-face transfer, and the full cap theorem remain open.
 
