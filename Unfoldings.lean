@@ -842,3 +842,14 @@ public import Unfoldings.Cap.PrunedDevelopmentLocalIsometry
 public import Unfoldings.Cap.VertexContactEdgeUnfolding
 public import Unfoldings.Cap.ChildBankContactFlatness
 public import Unfoldings.Cap.PrunedVertexCopyUniqueness
+public import Unfoldings.Geometry.ChainCoordinateMargins
+public import Unfoldings.Geometry.ClosedChainTracking
+public import Unfoldings.Cap.ClosedStripIncrementError
+public import Unfoldings.Cap.ClosedStripPathProgress
+public import Unfoldings.Cap.ClosedParentPathProgress
+public import Unfoldings.Cap.ClosedBankStrictStartOrder
+public import Unfoldings.Cap.ActiveBankClosedInterval
+public import Unfoldings.Cap.TerminalRunClosedLateBounds
+public import Unfoldings.Cap.ClosedParentPathBankMatching
+public import Unfoldings.Cap.ClosedParentPathBankContact
+public import Unfoldings.Cap.ClosedLateRunPhysicalContact

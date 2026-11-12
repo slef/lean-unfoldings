@@ -1055,6 +1055,28 @@ Complete auxiliary-bank comparison and global face-interior nonoverlap are prove
   chooses a mesh-independent threshold and transfers the finite-radius theorem.
   [UniformOriginalVertexContact](../Unfoldings/Cap/UniformOriginalVertexContact.lean)
   excludes foreign contacts between original nonvertex points at every radius.
+- [x] Preserve quantitative trace progress through actual parent-path vertices.
+  [ClosedStripIncrementError](../Unfoldings/Cap/ClosedStripIncrementError.lean)
+  bounds increments between closed points through arbitrary face switches.
+  [ClosedParentPathProgress](../Unfoldings/Cap/ClosedParentPathProgress.lean)
+  derives strict progress from the actual common-sector parent path.
+  [ClosedBankStrictStartOrder](../Unfoldings/Cap/ClosedBankStrictStartOrder.lean)
+  applies this beyond the first height of a closed tracking interval.
+- [x] Remove vertex-radius exclusions from weak late bounds across collapsed
+  runs; see [TerminalRunClosedLateBounds](../Unfoldings/Cap/TerminalRunClosedLateBounds.lean).
+  Strict bounds also hold when the surviving bank height is strictly past the
+  chosen terminal. Actual closed tracking intervals are constructed from local
+  positive width, not supplied as extra certificates.
+- [x] Preserve exact physical and named developed bank matching along actual
+  parent paths at every closed height, including vertices; see
+  [ClosedParentPathBankMatching](../Unfoldings/Cap/ClosedParentPathBankMatching.lean).
+  Compact joint graphs retain the correct endpoint copy from regular heights.
+  [ClosedParentPathBankContact](../Unfoldings/Cap/ClosedParentPathBankContact.lean)
+  identifies physical points at opposite-bank contacts on the same path without
+  any vertex-height or circle-radius exclusions.
+- [x] Apply closed matching to late physical contacts across actual collapsed
+  strip runs, with no excluded radii; see
+  [ClosedLateRunPhysicalContact](../Unfoldings/Cap/ClosedLateRunPhysicalContact.lean).
 - [ ] Exclude the remaining isolated contacts involving actual vertices.
 - [x] Identify coincident intrinsic copies at the same physical nonvertex point
   after pruning. [PrunedSeamContact](../Unfoldings/Cap/PrunedSeamContact.lean)
