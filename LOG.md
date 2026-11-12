@@ -2,6 +2,19 @@
 
 ## Session Log
 
+### 2026-11-11 — retain geometry and traces for one actual waterfall
+
+- Strengthened the constructed waterfall output to retain geometric cut
+  avoidance together with pinch control and coherence for every development.
+- Constructed complete bank traces for this same waterfall while retaining
+  those geometric facts, so trace matching can use its actual cut-avoidance
+  proof. Refactored the earlier constructors through the stronger results;
+  their public theorem statements are unchanged.
+- Verification: cache retrieval followed by full `lake build` pass; **8,441
+  unfolding / 7,243 pinned topology declarations**, standard axioms only;
+  indexed documentation links (**1,181**) and whitespace pass. Global strip
+  separation and the cap theorem remain open.
+
 ### 2026-11-11 — automatic positive width at regular bank points
 
 - Proved every regular carrier point before a later active strip height has

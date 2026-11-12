@@ -121,6 +121,8 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 | [Unfoldings.Cap.CompletedBankGraphSides](../Unfoldings/Cap/CompletedBankGraphSides.lean) | Construct actual parent cut graphs and derive named face-side and strip-avoidance tests |
 | [Unfoldings.Cap.CompletedBankTraceMatching](../Unfoldings/Cap/CompletedBankTraceMatching.lean) | Regular positive-width lower/upper strip traces select actual entrance/exit charts |
 | [Unfoldings.Cap.RegularWaterfallWidth](../Unfoldings/Cap/RegularWaterfallWidth.lean) | Regular actual bank points avoid the pinch set and have positive width before active heights |
+| [Unfoldings.Cap.ExtendedWaterfallRegular](../Unfoldings/Cap/ExtendedWaterfallRegular.lean) | One constructed waterfall retains geometric cut avoidance, pinch control, and all-development coherence |
+| [Unfoldings.Cap.ExtendedRegularBankTraces](../Unfoldings/Cap/ExtendedRegularBankTraces.lean) | Preserve actual geometric regularity and pinch control for the same complete bank traces |
 | [Unfoldings.Cap.GeometricTailLocalEdge](../Unfoldings/Cap/GeometricTailLocalEdge.lean) | Actual regular meshed tail points retain locally matching physical edge graphs |
 | [Unfoldings.Cap.TraceFacingFace](../Unfoldings/Cap/TraceFacingFace.lean) | One-sided strip traces select the facing seam chart from local wall and half-plane data |
 | [Unfoldings.Cap.CompletedBankFaceValues](../Unfoldings/Cap/CompletedBankFaceValues.lean) | Complete actual bank points equal their own incident-face placements |

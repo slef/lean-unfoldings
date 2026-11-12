@@ -446,3 +446,5 @@ public import Unfoldings.Cap.CompletedBankGraphSides
 public import Unfoldings.Cap.CompletedBankTraceMatching
 public import Unfoldings.Geometry.RecoverableStripRegularWidth
 public import Unfoldings.Cap.RegularWaterfallWidth
+public import Unfoldings.Cap.ExtendedWaterfallRegular
+public import Unfoldings.Cap.ExtendedRegularBankTraces

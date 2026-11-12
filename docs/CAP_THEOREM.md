@@ -539,6 +539,10 @@ Separation of different banks and global nonoverlap remain open.
 - [x] Derive positive width at actual regular bank points before any later
   active height. Every possible reopening pinch is a preserved mesh vertex,
   so regular points avoid the constructed pinch set.
+- [x] Retain geometric cut avoidance, pinch control, all-development coherence,
+  and complete one-sided bank traces for the same constructed waterfall.
+  Earlier public theorem statements follow unchanged from these stronger
+  constructors, with no duplicated construction proofs.
 - [ ] Package matching for the constructed waterfall through branch endpoints,
   then control radial order and complete bank continuations.
 - [ ] Prove side-by-side separation of all developed strips and hence all
