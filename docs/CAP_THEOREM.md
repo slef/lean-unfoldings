@@ -7,6 +7,10 @@ This is a proof-development checklist; unchecked claims are not Lean declaration
 
 Current entry points:
 
+- [ExtendedSectorCircleGeometry](../Unfoldings/Cap/ExtendedSectorCircleGeometry.lean)
+  chooses a uniform positive tilt threshold before both meshes and separates
+  all actual waterfall strip-circle images within each sector. Separation
+  across different sectors is still open.
 - [SubdivisionNonemptyCells](../Unfoldings/Geometry/SubdivisionNonemptyCells.lean)
   removes wholly empty physical cells while preserving exact bank contact on
   the controlled closed slab.
@@ -15,7 +19,7 @@ Current entry points:
   runs using only those local contacts.
 - [ContactSeparatorCircleOrder](../Unfoldings/Cap/ContactSeparatorCircleOrder.lean)
   proves actual endpoint order when no physically nonempty intermediate strip
-  remains. Assembly for the full survivor list is still open.
+  remains. The full survivor list is assembled below.
 - [ForestExistence](../Unfoldings/Cap/ForestExistence.lean) constructs an actual
   original-edge rooted forest for uniformly small positive tilt.
 - [ForestDevelopment](../Unfoldings/Cap/ForestDevelopment.lean) constructs its
@@ -758,9 +762,15 @@ Separation of different banks and global nonoverlap remain open.
   of disappearing strips with nonempty physical interiors, in all four height
   cases. Every strip retains its own actual terminal copy and continuation;
   no synthetic curve avoidance or supplied developed gap order is assumed.
-- [ ] Handle intervening cells with an entirely empty physical open slab,
-  assemble separation of all surviving strips in a sector, and establish
-  global cyclic order across sector boundaries.
+- [x] Remove entirely empty physical open slabs, retaining exact bank contacts
+  on the controlled closed height interval. Transfer actual prefix values,
+  completed tails, terminal records, and circle endpoint order across them.
+- [x] Extract every finite removed run, including the empty run, and assemble
+  pairwise separation of all actual strip-circle images within one sector.
+  Restore empty image entries. Package this with a uniform tilt threshold
+  quantified before both meshes in
+  [ExtendedSectorCircleGeometry](../Unfoldings/Cap/ExtendedSectorCircleGeometry.lean).
+- [ ] Establish global cyclic order across sector boundaries.
 - [ ] Prove side-by-side separation of all developed strips and hence all
   distinct original face interiors.
 - [x] Apply the cut-disk and flat-development infrastructure to the fixed-wedge

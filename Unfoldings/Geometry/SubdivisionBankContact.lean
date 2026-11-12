@@ -1,6 +1,7 @@
 module
 
 public import Unfoldings.Geometry.MonotoneStripSubdivision
+public import Unfoldings.Geometry.MonotoneStripTopology
 
 /-! Positive cells meeting at one physical level meet strictly inside the root strip. -/
 
@@ -44,5 +45,21 @@ theorem lower_bank_separator_of_contact (first : A ∈ P.cells) (last : B ∈ P.
     rw [coordinate, exterior] at bound
     exact (lt_irrefl _ bound).elim
   · exact separator
+
+theorem upper_bank_separator_of_nonempty_contact
+    (first : A ∈ P.cells) (last : B ∈ P.cells) {a b : ℝ}
+    (contact : Set.EqOn A.upper.point B.lower.point (Set.Icc a b))
+    (nonempty : (B.openSlab a b).Nonempty) : A.upper ∈ P.separators := by
+  obtain ⟨z, inside, height⟩ := nonempty
+  exact P.upper_bank_separator_of_contact first last (contact ⟨height.1.le, height.2.le⟩)
+    (inside.1.trans inside.2)
+
+theorem lower_bank_separator_of_nonempty_contact
+    (first : A ∈ P.cells) (last : B ∈ P.cells) {a b : ℝ}
+    (contact : Set.EqOn A.upper.point B.lower.point (Set.Icc a b))
+    (nonempty : (A.openSlab a b).Nonempty) : B.lower ∈ P.separators := by
+  obtain ⟨z, inside, height⟩ := nonempty
+  exact P.lower_bank_separator_of_contact first last (contact ⟨height.1.le, height.2.le⟩)
+    (inside.1.trans inside.2)
 
 end Unfoldings.MonotoneStrip.Subdivision

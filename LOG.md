@@ -2,6 +2,23 @@
 
 ## Session Log
 
+### 2026-11-12 — complete within-sector circle separation
+
+- Proved finite-list lemmas extracting every removed run and preserving its
+  ordered occurrences and physical contacts. Consecutive survivor endpoint
+  inequalities compose into pairwise order; empty image entries can be restored.
+- Applied the actual terminal geometry to every removed run, including the
+  empty run. All actual waterfall strip-circle images in a fixed sector are
+  now pairwise disjoint, including nonadjacent cells and both kinds of emptiness.
+- Packaged this in `exists_uniform_extended_sector_circle_geometry`, choosing
+  the positive tilt threshold before the original and auxiliary meshes. The
+  previous one-empty-strip theorem is a facade with its header unchanged.
+- Verification: cache retrieval and full `lake build` pass; **9,134 unfolding /
+  7,243 pinned topology declarations**, standard axioms only; **1,381** local
+  documentation links and whitespace pass. Also normalized the previous
+  milestone's appended import/index lines to LF. Cross-sector cyclic order,
+  original-face transfer, and the full cap theorem remain open.
+
 ### 2026-11-12 — physically empty cells and local bank contacts
 
 - Proved that a wholly empty open slab has identical physical banks on its

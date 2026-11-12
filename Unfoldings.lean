@@ -639,3 +639,9 @@ public import Unfoldings.Geometry.TailContact
 public import Unfoldings.Cap.ContactSeparatorCirclePrefix
 public import Unfoldings.Cap.LeafTailCircleOrder
 public import Unfoldings.Cap.ContactSeparatorCircleOrder
+public import Unfoldings.Topology.FilterRunChain
+public import Unfoldings.Topology.IndexedRun
+public import Unfoldings.Cap.WaterfallCircleRunOrder
+public import Unfoldings.Cap.WaterfallCircleSurvivors
+public import Unfoldings.Topology.FilterDisjoint
+public import Unfoldings.Cap.ExtendedSectorCircleGeometry

@@ -1425,3 +1425,9 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Cap.ContactSeparatorCirclePrefix](../Unfoldings/Cap/ContactSeparatorCirclePrefix.lean) | Identify circle endpoints on coherent separator prefixes after physically empty cells are removed |
 | [Unfoldings.Cap.LeafTailCircleOrder](../Unfoldings/Cap/LeafTailCircleOrder.lean) | Order actual circle endpoints on opposite banks of one completed leaf tail |
 | [Unfoldings.Cap.ContactSeparatorCircleOrder](../Unfoldings/Cap/ContactSeparatorCircleOrder.lean) | Order actual surviving circle endpoints after physically empty cells between their banks are removed |
+| [Unfoldings.Topology.FilterRunChain](../Unfoldings/Topology/FilterRunChain.lean) | Assemble order of consecutive survivors from every finite removed run, and retain ordered list occurrences |
+| [Unfoldings.Topology.IndexedRun](../Unfoldings/Topology/IndexedRun.lean) | Extract exact contacts, ordered occurrences, and both endpoint contacts from a finite list run |
+| [Unfoldings.Cap.WaterfallCircleRunOrder](../Unfoldings/Cap/WaterfallCircleRunOrder.lean) | Order actual circle banks across every removed subdivision run, including the empty run |
+| [Unfoldings.Cap.WaterfallCircleSurvivors](../Unfoldings/Cap/WaterfallCircleSurvivors.lean) | Prove pairwise disjointness of every surviving actual strip-circle image in one waterfall sector |
+| [Unfoldings.Topology.FilterDisjoint](../Unfoldings/Topology/FilterDisjoint.lean) | Restore empty set entries after pairwise separation of a filtered list is proved |
+| [Unfoldings.Cap.ExtendedSectorCircleGeometry](../Unfoldings/Cap/ExtendedSectorCircleGeometry.lean) | Derive uniform within-sector separation for all actual waterfall strip-circle images, quantified before both meshes |
