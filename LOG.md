@@ -2,6 +2,23 @@
 
 ## Session Log
 
+### 2026-11-12 — actual bank order across sector frames
+
+- Classified actual sector-boundary cuts as radial skirt pieces or geometric
+  leaf endpoints; all other boundary contacts are coherent in the development.
+- Proved every nontrivial original tree reaches the rim strictly inside its
+  sector. Hence a radial component on a sector boundary has no original tree
+  attached, and can use either neighboring sector's comparison geometry.
+- Derived actual fine-path directions and curved-descendant sector control
+  in either frame. Transported approached face copies and named circle-bank
+  points into the common developed plane, retaining their actual incident faces.
+- Proved cross-frame circle-bank order on these actual boundary paths. The
+  specialized result derives comparison quadrants from uniform face margins,
+  controls all sweep heights, and excludes only actual finite vertex radii.
+- Verification: cache retrieval and full `lake build` pass; **9,158 unfolding /
+  7,243 pinned topology declarations**, standard axioms only. Global cyclic
+  assembly, original-face transfer, and the full cap theorem remain open.
+
 ### 2026-11-12 — complete within-sector circle separation
 
 - Proved finite-list lemmas extracting every removed run and preserving its
@@ -14,7 +31,7 @@
   the positive tilt threshold before the original and auxiliary meshes. The
   previous one-empty-strip theorem is a facade with its header unchanged.
 - Verification: cache retrieval and full `lake build` pass; **9,134 unfolding /
-  7,243 pinned topology declarations**, standard axioms only; **1,381** local
+  7,243 pinned topology declarations**, standard axioms only; **1,383** local
   documentation links and whitespace pass. Also normalized the previous
   milestone's appended import/index lines to LF. Cross-sector cyclic order,
   original-face transfer, and the full cap theorem remain open.

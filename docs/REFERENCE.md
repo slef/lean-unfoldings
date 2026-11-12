@@ -1431,3 +1431,12 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Cap.WaterfallCircleSurvivors](../Unfoldings/Cap/WaterfallCircleSurvivors.lean) | Prove pairwise disjointness of every surviving actual strip-circle image in one waterfall sector |
 | [Unfoldings.Topology.FilterDisjoint](../Unfoldings/Topology/FilterDisjoint.lean) | Restore empty set entries after pairwise separation of a filtered list is proved |
 | [Unfoldings.Cap.ExtendedSectorCircleGeometry](../Unfoldings/Cap/ExtendedSectorCircleGeometry.lean) | Derive uniform within-sector separation for all actual waterfall strip-circle images, quantified before both meshes |
+| [Unfoldings.Cap.SectorBoundaryCutPoints](../Unfoldings/Cap/SectorBoundaryCutPoints.lean) | Classify actual sector-boundary cuts as radial skirt pieces or geometric leaf endpoints |
+| [Unfoldings.Cap.CoherentPhysicalTraceContact](../Unfoldings/Cap/CoherentPhysicalTraceContact.lean) | Identify coherent approached values across different sector frames in one actual developed plane |
+| [Unfoldings.Geometry.RadialTailPositions](../Unfoldings/Geometry/RadialTailPositions.lean) | Identify any two radial-tail positions by a positive source-centered scaling |
+| [Unfoldings.Cap.SectorBoundaryComponents](../Unfoldings/Cap/SectorBoundaryComponents.lean) | Exclude attached original trees on sector-boundary components and allow both neighboring sector frames |
+| [Unfoldings.Cap.SectorBoundaryBankGeometry](../Unfoldings/Cap/SectorBoundaryBankGeometry.lean) | Derive actual boundary-path direction and curved-descendant control in either neighboring sector |
+| [Unfoldings.Cap.CirclePhysicalBankMatching](../Unfoldings/Cap/CirclePhysicalBankMatching.lean) | Match circle endpoints from any sector with their named actual parent-bank points in the developed plane |
+| [Unfoldings.Cap.CrossFrameCircleBankOrder](../Unfoldings/Cap/CrossFrameCircleBankOrder.lean) | Order named actual circle-bank endpoints from different sector frames in one common comparison frame |
+| [Unfoldings.Cap.CrossFrameTraceQuadrants](../Unfoldings/Cap/CrossFrameTraceQuadrants.lean) | Transfer actual face margins to approached traces in any comparison frame and control every sweep height |
+| [Unfoldings.Cap.SectorBoundaryCircleBankOrder](../Unfoldings/Cap/SectorBoundaryCircleBankOrder.lean) | Derive cross-sector circle-bank order along actual radial boundary cuts from physical geometry and uniform face margins |

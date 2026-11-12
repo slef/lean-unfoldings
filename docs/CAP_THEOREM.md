@@ -7,6 +7,10 @@ This is a proof-development checklist; unchecked claims are not Lean declaration
 
 Current entry points:
 
+- [SectorBoundaryCircleBankOrder](../Unfoldings/Cap/SectorBoundaryCircleBankOrder.lean)
+  derives cross-frame order for circle endpoints on actual radial boundary
+  cuts. Boundary classification and the comparison quadrants are proved from
+  the cap geometry. Global cyclic interval assembly is still open.
 - [ExtendedSectorCircleGeometry](../Unfoldings/Cap/ExtendedSectorCircleGeometry.lean)
   chooses a uniform positive tilt threshold before both meshes and separates
   all actual waterfall strip-circle images within each sector. Separation
@@ -770,7 +774,14 @@ Separation of different banks and global nonoverlap remain open.
   Restore empty image entries. Package this with a uniform tilt threshold
   quantified before both meshes in
   [ExtendedSectorCircleGeometry](../Unfoldings/Cap/ExtendedSectorCircleGeometry.lean).
-- [ ] Establish global cyclic order across sector boundaries.
+- [x] Classify actual boundary cuts as radial skirt components or coherent
+  leaf endpoints. Prove boundary components have no attached original trees
+  and support actual parent-bank comparison in either neighboring sector.
+- [x] Match actual circle endpoints from different frames with their named
+  bank points in one developed plane, and derive their cross-frame order on
+  a boundary component using uniform face margins and finite vertex radii.
+- [ ] Assemble the actual outer surviving intervals across all five sectors,
+  including disappearing boundary runs, and establish global cyclic order.
 - [ ] Prove side-by-side separation of all developed strips and hence all
   distinct original face interiors.
 - [x] Apply the cut-disk and flat-development infrastructure to the fixed-wedge

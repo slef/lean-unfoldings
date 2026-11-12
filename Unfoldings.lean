@@ -645,3 +645,12 @@ public import Unfoldings.Cap.WaterfallCircleRunOrder
 public import Unfoldings.Cap.WaterfallCircleSurvivors
 public import Unfoldings.Topology.FilterDisjoint
 public import Unfoldings.Cap.ExtendedSectorCircleGeometry
+public import Unfoldings.Cap.SectorBoundaryCutPoints
+public import Unfoldings.Cap.CoherentPhysicalTraceContact
+public import Unfoldings.Geometry.RadialTailPositions
+public import Unfoldings.Cap.SectorBoundaryComponents
+public import Unfoldings.Cap.SectorBoundaryBankGeometry
+public import Unfoldings.Cap.CirclePhysicalBankMatching
+public import Unfoldings.Cap.CrossFrameCircleBankOrder
+public import Unfoldings.Cap.CrossFrameTraceQuadrants
+public import Unfoldings.Cap.SectorBoundaryCircleBankOrder
