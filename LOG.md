@@ -2,6 +2,19 @@
 
 ## Session Log
 
+### 2026-11-11 — flat branch gaps and controlling-coordinate injectivity
+
+- Proved that either zero coordinate of an actual excursion displacement
+  forces the whole displacement to vanish under the strict curvature budget.
+  The same holds for gaps from arbitrary branch copies to the named banks.
+- Proved a general polygonal-chain lemma: a weakly monotone coordinate is
+  injective on the chain image when every zero-coordinate edge is flat.
+  Repeated endpoints and zero gap segments are allowed.
+- Verification: cache retrieval followed by full `lake build` pass; **8,476
+  unfolding / 7,243 pinned topology declarations**, standard axioms only;
+  indexed documentation links (**1,197**) and whitespace pass. Construction
+  of complete comparison chains and global cap nonoverlap remain open.
+
 ### 2026-11-11 — common geometry for radial banks and every branch copy
 
 - Retained one actual calibration's linear error, source error, injective

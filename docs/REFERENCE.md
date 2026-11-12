@@ -129,6 +129,7 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 | [Unfoldings.Cap.CenteredBankTraceRadial](../Unfoldings/Cap/CenteredBankTraceRadial.lean) | Actual visible bank traces progress strictly radially from quantitative chart and sector margins |
 | [Unfoldings.Cap.ExtendedRadialBankTraces](../Unfoldings/Cap/ExtendedRadialBankTraces.lean) | Uniform actual bank calibration with radial matched traces, whole-strip injectivity, and arbitrary position error |
 | [Unfoldings.Cap.CompletedFaceCopyOrder](../Unfoldings/Cap/CompletedFaceCopyOrder.lean) | Every actual branch and visible trace copy lies between its named entrance and exit banks |
+| [Unfoldings.Cap.CompletedExcursionStrictOrder](../Unfoldings/Cap/CompletedExcursionStrictOrder.lean) | Actual branch excursions and endpoint-copy gaps vanish if a controlling coordinate does |
 | [Unfoldings.Cap.WaterfallBankControl](../Unfoldings/Cap/WaterfallBankControl.lean) | One calibration retains radial matched banks, all-face distance bounds, and branch-gap quadrant margins |
 | [Unfoldings.Cap.ExtendedBankGeometry](../Unfoldings/Cap/ExtendedBankGeometry.lean) | Uniform all-copy source quadrants and radial matched bank control in the same actual calibration |
 | [Unfoldings.Cap.ExtendedWaterfallRegular](../Unfoldings/Cap/ExtendedWaterfallRegular.lean) | One constructed waterfall retains geometric cut avoidance, pinch control, and all-development coherence |
@@ -654,6 +655,8 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 | [Unfoldings.Geometry.NearIdentityRadial](../Unfoldings/Geometry/NearIdentityRadial.lean) | Derive positive radial tests from linear chart error and source-position margins |
 | [Unfoldings.Geometry.HeightGraphRadial](../Unfoldings/Geometry/HeightGraphRadial.lean) | Monotone height graphs give strict radial progress through continuous finite face selections |
 | [Unfoldings.Geometry.MixedBankOrder](../Unfoldings/Geometry/MixedBankOrder.lean) | Paired-bank circle order needs rightward right-bank and upward left-bank progress, allowing branch-gap steps |
+| [Unfoldings.Geometry.StrictQuadrantSums](../Unfoldings/Geometry/StrictQuadrantSums.lean) | A sum of zero or strictly up-left vectors vanishes whenever either coordinate does |
+| [Unfoldings.Geometry.WeakChainLinear](../Unfoldings/Geometry/WeakChainLinear.lean) | A monotone controlling coordinate distinguishes all actual chain points when zero steps are flat |
 | [Unfoldings.Geometry.RecoverableStripRegularWidth](../Unfoldings/Geometry/RecoverableStripRegularWidth.lean) | Derive positive strip width from a later active height and avoidance of reopening pinches |
 | [Unfoldings.Geometry.WedgeFrameSides](../Unfoldings/Geometry/WedgeFrameSides.lean) | Positive acute-wedge frames preserve every actual directed-edge side, including centered coordinates |
 | [Unfoldings.Geometry.StripCutSides](../Unfoldings/Geometry/StripCutSides.lean) | Positive strip width and cut avoidance force the local side even at a mere wall contact |

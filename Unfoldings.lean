@@ -461,3 +461,6 @@ public import Unfoldings.Cap.CompletedFaceCopyOrder
 public import Unfoldings.Geometry.MixedBankOrder
 public import Unfoldings.Cap.WaterfallBankControl
 public import Unfoldings.Cap.ExtendedBankGeometry
+public import Unfoldings.Geometry.StrictQuadrantSums
+public import Unfoldings.Geometry.WeakChainLinear
+public import Unfoldings.Cap.CompletedExcursionStrictOrder

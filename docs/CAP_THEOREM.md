@@ -562,6 +562,9 @@ Separation of different banks and global nonoverlap remain open.
 - [x] Bound every actual containing-face copy at a branch between its named
   entrance and exit banks. Visible strip traces retain these bounds at the
   vertex, using the actual contour copy without identifying distinct copies.
+- [x] Prove actual branch gaps are zero if their controlling coordinate is
+  zero, and prove controlling-coordinate injectivity for weakly monotone
+  chains whose zero-coordinate steps are flat.
 - [ ] Construct complete bank continuations beyond terminated zero-width strip
   tails and compare their straight branch-gap segments.
 - [x] Prove paired-bank circle order with only rightward right-bank and upward
