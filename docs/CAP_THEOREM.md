@@ -1005,3 +1005,12 @@ applies the weak component-bank comparison to actual approached traces in
 different sector frames. A closed contact identifies both facing physical strip
 coordinates; the named comparison banks also represent the same physical point.
 Their chain, sector membership, and branch-gap equality are all derived.
+
+[ClosedCirclePinches](../Unfoldings/Cap/ClosedCirclePinches.lean) handles
+absent open slices without deleting exceptional radii. Any approached point
+on such a controlled circle has coincident physical banks. The actual mesh's
+approached-pinch invariant identifies it as a cut vertex and puts its radius
+in the existing actual vertex-radius set. Consequently every approached
+nonvertex circle point has an open slice; no separate maximal-radius exception
+is needed for that conclusion. The proof uses a local positive-width bank
+crossing and an explicit interpolating path inside the strip.

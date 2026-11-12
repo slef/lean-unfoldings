@@ -1580,3 +1580,6 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Cap.NonadjacentClosedSeparation](../Unfoldings/Cap/NonadjacentClosedSeparation.lean) | Exclude all contacts of nonadjacent closed sector images away from the source, including exceptional radii |
 | [Unfoldings.Cap.ClosedCircleBankCoordinates](../Unfoldings/Cap/ClosedCircleBankCoordinates.lean) | Recover physical bank endpoints from equality in an actual approached circle coordinate |
 | [Unfoldings.Cap.ComponentClosedCircleContact](../Unfoldings/Cap/ComponentClosedCircleContact.lean) | Identify closed strip-contact endpoint coordinates and comparison-bank physical points across an actual component in different sector frames |
+| [Unfoldings.Geometry.MonotoneStripLocalCircleCrossing](../Unfoldings/Geometry/MonotoneStripLocalCircleCrossing.lean) | Construct actual open circle slices from a radial crossing along a locally positive-width bank |
+| [Unfoldings.Cap.ActiveBankCircleCrossing](../Unfoldings/Cap/ActiveBankCircleCrossing.lean) | Prove every approached active bank point lies on a genuine open circle slice |
+| [Unfoldings.Cap.ClosedCirclePinches](../Unfoldings/Cap/ClosedCirclePinches.lean) | Classify all empty-circle closed contacts as actual cut-vertex pinches without removing exceptional radii |
