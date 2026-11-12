@@ -2,6 +2,20 @@
 
 ## Session Log
 
+### 2026-11-11 — actual local tail edges and one-sided cut contacts
+
+- Proved regular interior roof-mesh points avoid every geometric cut vertex:
+  nonroots survive meshing, while roots lie on the outer clip boundary.
+- Derived `SectorTailGraph.locally_eq_edge` for actual sector tails from the
+  finite network, with its genuine coordinate steps and physical edge graph.
+- Proved positive strip width and local cut avoidance force the side of an
+  approached cut even at a mere wall contact. Added facing-trace criteria
+  that use this fact without requiring local coincidence with the wall.
+- Verification: cache retrieval followed by full `lake build` pass; **8,401
+  unfolding / 7,243 pinned topology declarations**, standard axioms only;
+  documentation and whitespace checks pass. Actual bank-side signs and global
+  strip separation remain open.
+
 ### 2026-11-11 — local facing-face and straight-tail criteria
 
 - Classified the actual containing faces of every regular projected seam

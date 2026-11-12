@@ -2,6 +2,7 @@ module
 
 public import Unfoldings.Cap.CenteredTraceValues
 public import Unfoldings.Cap.ProjectedSeamFaces
+public import Unfoldings.Geometry.StripCutSides
 
 /-! One-sided face visibility identifies the actual facing chart at a regular cut edge. -/
 
@@ -120,6 +121,64 @@ theorem traceVisibleAt_eq_right_of_upper_wall (q : Plane)
   · intro x member
     rw [← wall member.2]
     exact sub_pos.mpr (strict member.1).2
+  · intro x member
+    exact sub_nonpos.mpr (opposite x member)
+
+/-- Positive width and actual cut avoidance supply the side test even when the wall
+merely touches the cut graph. There is no local wall-coincidence hypothesis. -/
+theorem traceVisibleAt_eq_left_of_lower_cut (q : Plane)
+    (calibration frame : Plane ≃ₗᵢ[ℝ] ℂ)
+    {G : ℂ → ℂ} {domain : Set ℂ} {z : ℂ}
+    (trace : D.TraceVisibleAt K q calibration frame G domain z) (s : C.Seam)
+    (on_edge : q + frame.symm z ∈
+      (K.projectedTriangle (C.left s).face).edge (C.left s).edge)
+    (regular : ∀ f j, q + frame.symm z ≠ (K.projectedTriangle f).vertex j)
+    (S : MonotoneStrip) (H : MonotoneHeightGraph) (a b : ℝ)
+    (strict : domain ⊆ S.strictCarrier) (near : z.re + z.im ∈ Set.Ioo a b)
+    (on_wall : S.lower.coordinate (z.re + z.im) = z.re)
+    (touch : H.coordinate (z.re + z.im) = z.re)
+    (width : S.lower.coordinate (z.re + z.im) < S.upper.coordinate (z.re + z.im))
+    (avoids : ∀ k ∈ Set.Ioo a b, H.point k ∉ S.strictCarrier)
+    (opposite : ∀ x, q + frame.symm x ∈ (K.projectedTriangle (C.right s).face).carrier →
+      x.re ≤ H.coordinate (x.re + x.im)) :
+    G z = D.centeredCoordinatePlacement K q calibration frame (C.left s).face z := by
+  obtain ⟨c, d, around, _, side⟩ := S.cut_below_lower_locally H near
+    (touch.trans on_wall.symm) width avoids
+  let U := {x : ℂ | x.re + x.im ∈ Set.Ioo c d}
+  have opened : IsOpen U := isOpen_Ioo.preimage
+    (Complex.continuous_re.add Complex.continuous_im)
+  apply D.traceVisibleAt_eq_left_of_seam_side K q calibration frame trace s on_edge regular
+    (fun x => x.re - H.coordinate (x.re + x.im)) U opened around
+  · intro x member
+    exact sub_pos.mpr ((side _ member.2).trans_lt (strict member.1).1)
+  · intro x member
+    exact sub_nonpos.mpr (opposite x member)
+
+theorem traceVisibleAt_eq_right_of_upper_cut (q : Plane)
+    (calibration frame : Plane ≃ₗᵢ[ℝ] ℂ)
+    {G : ℂ → ℂ} {domain : Set ℂ} {z : ℂ}
+    (trace : D.TraceVisibleAt K q calibration frame G domain z) (s : C.Seam)
+    (on_edge : q + frame.symm z ∈
+      (K.projectedTriangle (C.left s).face).edge (C.left s).edge)
+    (regular : ∀ f j, q + frame.symm z ≠ (K.projectedTriangle f).vertex j)
+    (S : MonotoneStrip) (H : MonotoneHeightGraph) (a b : ℝ)
+    (strict : domain ⊆ S.strictCarrier) (near : z.re + z.im ∈ Set.Ioo a b)
+    (on_wall : S.upper.coordinate (z.re + z.im) = z.re)
+    (touch : H.coordinate (z.re + z.im) = z.re)
+    (width : S.lower.coordinate (z.re + z.im) < S.upper.coordinate (z.re + z.im))
+    (avoids : ∀ k ∈ Set.Ioo a b, H.point k ∉ S.strictCarrier)
+    (opposite : ∀ x, q + frame.symm x ∈ (K.projectedTriangle (C.left s).face).carrier →
+      H.coordinate (x.re + x.im) ≤ x.re) :
+    G z = D.centeredCoordinatePlacement K q calibration frame (C.right s).face z := by
+  obtain ⟨c, d, around, _, side⟩ := S.cut_above_upper_locally H near
+    (touch.trans on_wall.symm) width avoids
+  let U := {x : ℂ | x.re + x.im ∈ Set.Ioo c d}
+  have opened : IsOpen U := isOpen_Ioo.preimage
+    (Complex.continuous_re.add Complex.continuous_im)
+  apply D.traceVisibleAt_eq_right_of_seam_side K q calibration frame trace s on_edge regular
+    (fun x => H.coordinate (x.re + x.im) - x.re) U opened around
+  · intro x member
+    exact sub_pos.mpr ((strict member.1).2.trans_le (side _ member.2))
   · intro x member
     exact sub_nonpos.mpr (opposite x member)
 

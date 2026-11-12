@@ -528,6 +528,10 @@ Separation of different banks and global nonoverlap remain open.
   from one side cannot use the opposite closed face. Apply this criterion to
   locally matching lower and upper strip walls. Prove covered finite-network
   tails agree locally with their actual straight edge away from network vertices.
+- [x] Instantiate local straight-edge agreement for actual geometric sector
+  tails: regular interior mesh points avoid every geometric network vertex.
+  Derive one-sided strip approach directly from positive width and local cut
+  avoidance, including a wall that only touches the cut.
 - [ ] Instantiate facing-bank criteria for the actual waterfall walls, then
   control radial order and complete bank continuations.
 - [ ] Prove side-by-side separation of all developed strips and hence all

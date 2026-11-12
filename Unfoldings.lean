@@ -437,3 +437,5 @@ public import Unfoldings.Cap.CompletedBankCircleOrder
 public import Unfoldings.Cap.ProjectedSeamFaces
 public import Unfoldings.Cap.TraceFacingFace
 public import Unfoldings.Geometry.HeightNetworkLocalGraph
+public import Unfoldings.Cap.GeometricTailLocalEdge
+public import Unfoldings.Geometry.StripCutSides

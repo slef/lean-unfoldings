@@ -117,6 +117,7 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 | [Unfoldings.Cap.ExtendedWaterfallBankTraces](../Unfoldings/Cap/ExtendedWaterfallBankTraces.lean) | Construct complete actual bank traces from the common source through active heights |
 | [Unfoldings.Cap.ExtendedFacePositionControl](../Unfoldings/Cap/ExtendedFacePositionControl.lean) | Uniform common-source position bounds for every actual roof face and bank copy |
 | [Unfoldings.Cap.ProjectedSeamFaces](../Unfoldings/Cap/ProjectedSeamFaces.lean) | Regular projected seam points have exactly their two actual incident-face labels |
+| [Unfoldings.Cap.GeometricTailLocalEdge](../Unfoldings/Cap/GeometricTailLocalEdge.lean) | Actual regular meshed tail points retain locally matching physical edge graphs |
 | [Unfoldings.Cap.TraceFacingFace](../Unfoldings/Cap/TraceFacingFace.lean) | One-sided strip traces select the facing seam chart from local wall and half-plane data |
 | [Unfoldings.Cap.CompletedBankFaceValues](../Unfoldings/Cap/CompletedBankFaceValues.lean) | Complete actual bank points equal their own incident-face placements |
 | [Unfoldings.Cap.CompletedBankPositionMargins](../Unfoldings/Cap/CompletedBankPositionMargins.lean) | Transfer common-source position and quadrant bounds to named complete banks |
@@ -633,6 +634,7 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 | [Unfoldings.Geometry.RecoverableStripClosure](../Unfoldings/Geometry/RecoverableStripClosure.lean) | Finite reopening pinches leave both source-to-active banks in the strict-strip closure |
 | [Unfoldings.Geometry.MonotoneStripDensity](../Unfoldings/Geometry/MonotoneStripDensity.lean) | Finite waterfall walls are closed nowhere dense; off-wall points lie in strict cells |
 | [Unfoldings.Geometry.HeightNetworkLocalGraph](../Unfoldings/Geometry/HeightNetworkLocalGraph.lean) | Covered tails agree locally with their actual affine edge graphs away from network vertices |
+| [Unfoldings.Geometry.StripCutSides](../Unfoldings/Geometry/StripCutSides.lean) | Positive strip width and cut avoidance force the local side even at a mere wall contact |
 | [Unfoldings.Geometry.MonotoneStripLipschitz](../Unfoldings/Geometry/MonotoneStripLipschitz.lean) | Uniform Lipschitz bounds for affine selections on bounded monotone strips |
 | [Unfoldings.Geometry.MonotoneStripCoreLipschitz](../Unfoldings/Geometry/MonotoneStripCoreLipschitz.lean) | Uniform strict-strip Lipschitz bounds across coherent reopening pinches |
 | [Unfoldings.Geometry.FiniteSelectionNormBounds](../Unfoldings/Geometry/FiniteSelectionNormBounds.lean) | Upper norm bounds across arbitrary continuous affine chart switches |
