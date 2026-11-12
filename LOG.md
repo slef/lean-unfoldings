@@ -2,6 +2,26 @@
 
 ## Session Log
 
+### 2026-11-12 — actual leaf-tail circle separation
+
+- Proved the specified leaf sector controls every actual completed parent edge
+  and every curvature-carrying descendant. Centered bank charts identify
+  regular circle endpoints with their actual comparison-chain points.
+- Derived facing-bank order along the same parent path and disjointness of
+  both open strip-circle images, allowing boundary contact across flat gaps.
+- Constructed one finite exceptional radius set containing every actual
+  vertex-copy value in all sectors. All closed strip points on other circles
+  are regular. Proved finite exceptional circles cannot hide open overlap.
+- Combined actual leaf-tail tracking and named bank matching: once both
+  facing endpoints are beyond their common constructed leaf, their controlled
+  circle slices are disjoint off those finitely many radii. No gap-order or
+  comparison-curve separation certificate is assumed.
+- Verification: cache retrieval followed by full `lake build` pass; **8,857
+  unfolding / 7,243 pinned topology declarations**, standard axioms only;
+  indexed documentation links (**1,277**) and whitespace pass. Actual shared
+  prefix coherence and global cyclic no-wrap remain open, along with the
+  original-face transfer and full cap theorem.
+
 ### 2026-11-12 — leaf provenance and radial traces for the same waterfall
 
 - Retained each separator's actual leaf completion, representation of every

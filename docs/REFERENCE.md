@@ -120,6 +120,13 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 | [Unfoldings.Cap.CompletedGeometricTailTracking](../Unfoldings/Cap/CompletedGeometricTailTracking.lean) | Actual completed cut paths supply support, genuine outward edges, and a far endpoint for tail tracking |
 | [Unfoldings.Cap.GeometricVertexCutPiece](../Unfoldings/Cap/GeometricVertexCutPiece.lean) | Every nonterminal geometric cut vertex has an actual containing piece with its own component label |
 | [Unfoldings.Cap.LeafCompletedTailTracking](../Unfoldings/Cap/LeafCompletedTailTracking.lean) | Constructed leaf tails track the actual completed forest without a path-matching certificate |
+| [Unfoldings.Cap.GeometricChainSectors](../Unfoldings/Cap/GeometricChainSectors.lean) | Actual completed parent edges and curved descendants retain their specified geometric leaf sector |
+| [Unfoldings.Cap.CompletedChartComparisonPoints](../Unfoldings/Cap/CompletedChartComparisonPoints.lean) | Centered parent-bank chart values equal the corresponding complete comparison-chain points |
+| [Unfoldings.Cap.RadialStripCircleComparison](../Unfoldings/Cap/RadialStripCircleComparison.lean) | Actual regular strip-circle endpoints are points of the named entrance and exit comparison banks |
+| [Unfoldings.Cap.ParentPathCircleBankOrder](../Unfoldings/Cap/ParentPathCircleBankOrder.lean) | Derive facing endpoint order and disjoint circle slices on one actual outward parent path |
+| [Unfoldings.Cap.CircleStripSeparation](../Unfoldings/Cap/CircleStripSeparation.lean) | Weak gap order separates open strip-circle intervals while allowing boundary contact |
+| [Unfoldings.Cap.RegularCircleRadius](../Unfoldings/Cap/RegularCircleRadius.lean) | One finite set excludes vertex values of every actual closed strip trace in all sectors |
+| [Unfoldings.Cap.LeafTailCircleSeparation](../Unfoldings/Cap/LeafTailCircleSeparation.lean) | Actual facing strip-circle slices are disjoint after their common constructed leaf, off finitely many radii |
 | [Unfoldings.Cap.ExtendedWaterfallProvenance](../Unfoldings/Cap/ExtendedWaterfallProvenance.lean) | Retain actual leaf/separator provenance and strict walls with coherent cut-avoiding waterfall domains |
 | [Unfoldings.Cap.ExtendedRadialWaterfallData](../Unfoldings/Cap/ExtendedRadialWaterfallData.lean) | One uniform calibration retains leaf provenance and the complete radial developed data for the same subdivision |
 | [Unfoldings.Cap.ExtendedLeafTailTracking](../Unfoldings/Cap/ExtendedLeafTailTracking.lean) | Every constructed roof leaf tail has an actual fine parent-path point at every controlled height |
@@ -935,6 +942,7 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Topology.FiniteRadiusAvoidance](../Unfoldings/Topology/FiniteRadiusAvoidance.lean) | Open overlap is detected on source circles outside any finite exceptional radius set |
 | [Unfoldings.Topology.IntervalFrontier](../Unfoldings/Topology/IntervalFrontier.lean) | A bounded nonempty open real set with two possible frontier points is their interval |
 | [Unfoldings.Topology.CompactImageFrontier](../Unfoldings/Topology/CompactImageFrontier.lean) | Exact frontier transport for continuous planar maps injective on compact closures |
 | [Unfoldings.Topology.ClosureLowerBound](../Unfoldings/Topology/ClosureLowerBound.lean) | Continuous lower distance bounds and injectivity extend to the whole domain closure |

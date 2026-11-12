@@ -653,7 +653,17 @@ Separation of different banks and global nonoverlap remain open.
   every separator completes a named actual leaf tail, every active leaf is
   represented, and both walls retain strict coordinate progress. One uniform
   calibration supplies the same subdivision its complete radial strip data.
-- [ ] Derive actual adjacent-prefix coherence and tail-bank comparisons, then
+- [x] Exclude all actual vertex-copy values using one finite exceptional radius
+  set for every strip and sector. Prove open overlap cannot hide on a finite
+  family of exceptional source circles.
+- [x] Identify regular circle endpoints on actual parent paths with their named
+  complete comparison banks. Derive their facing order and separate the open
+  circle slices, permitting boundary contact when the gap is flat.
+- [x] Prove actual tail-circle separation after a common constructed leaf.
+  Leaf tracking and the specified leaf sector supply both complete path banks
+  and all curvature-carrying descendant directions; no gap-order certificate
+  or comparison-curve separation is an input.
+- [ ] Derive coherent shared prefixes for every actual adjacent separator, then
   establish one global cyclic order for all developed strip-circle intervals.
 - [ ] Prove side-by-side separation of all developed strips and hence all
   distinct original face interiors.

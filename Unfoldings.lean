@@ -536,3 +536,11 @@ public import Unfoldings.Cap.LeafCompletedTailTracking
 public import Unfoldings.Cap.ExtendedLeafTailTracking
 public import Unfoldings.Cap.ExtendedWaterfallProvenance
 public import Unfoldings.Cap.ExtendedRadialWaterfallData
+public import Unfoldings.Cap.GeometricChainSectors
+public import Unfoldings.Cap.CompletedChartComparisonPoints
+public import Unfoldings.Cap.RadialStripCircleComparison
+public import Unfoldings.Cap.ParentPathCircleBankOrder
+public import Unfoldings.Cap.CircleStripSeparation
+public import Unfoldings.Cap.RegularCircleRadius
+public import Unfoldings.Cap.LeafTailCircleSeparation
+public import Unfoldings.Topology.FiniteRadiusAvoidance
