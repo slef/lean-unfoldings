@@ -805,7 +805,9 @@ boundary conclusion and distinguishes it from face-interior nonoverlap.
 - [x] Prove whole branching-bank comparison and global strip face-interior separation.
 - [x] Assemble uniform original-edge nonoverlap, an actual cut disk, and interior
   local isometry from cap and positive acute-margin assumptions alone.
-- [ ] Remove redundant flat cuts and prove the simple-polygon boundary conclusion.
+- [x] Remove zero-curvature original subtrees without changing face placements;
+  preserve the rooted forest, cut disk, nonoverlap, and interior local isometry.
+- [ ] Prove boundary injectivity and the simple-polygon conclusion after pruning.
 - [ ] Formalize the paper's quantitative threshold and quadratic running-time bound.
 
 ## Later targets and Fewest Nets

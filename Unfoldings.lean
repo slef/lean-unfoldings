@@ -768,3 +768,8 @@ public import Unfoldings.Cap.ClipOriginalLocalSeparation
 public import Unfoldings.Cap.UniformOriginalNonoverlap
 public import Unfoldings.Cap.FlatMetric
 public import Unfoldings.Cap.EdgeUnfolding
+public import Unfoldings.Development.RestoreSeams
+public import Unfoldings.Cap.OriginalBankFaceValues
+public import Unfoldings.Cap.FlatSubtreeBanks
+public import Unfoldings.Cap.CurvaturePrunedForest
+public import Unfoldings.Cap.CurvaturePrunedDevelopment

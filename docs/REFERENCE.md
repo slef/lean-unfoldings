@@ -1554,3 +1554,8 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Cap.UniformOriginalNonoverlap](../Unfoldings/Cap/UniformOriginalNonoverlap.lean) | Choose a positive mesh-independent tilt threshold for nonoverlap of every original sector-forest development |
 | [Unfoldings.Cap.FlatMetric](../Unfoldings/Cap/FlatMetric.lean) | Prove the uncut flat cap development preserves the entire intrinsic metric |
 | [Unfoldings.Cap.EdgeUnfolding](../Unfoldings/Cap/EdgeUnfolding.lean) | Prove O'Rourke's uniform nearly flat cap theorem with original-edge cuts, a cut disk, nonoverlap, and interior local isometry |
+| [Unfoldings.Development.RestoreSeams](../Unfoldings/Development/RestoreSeams.lean) | Restore coincident whole seam banks with unchanged face placements and nonoverlap |
+| [Unfoldings.Cap.OriginalBankFaceValues](../Unfoldings/Cap/OriginalBankFaceValues.lean) | Identify original parent-bank points with their actual incident-face placements |
+| [Unfoldings.Cap.FlatSubtreeBanks](../Unfoldings/Cap/FlatSubtreeBanks.lean) | Prove zero-curvature original subtrees have coincident whole seam banks |
+| [Unfoldings.Cap.CurvaturePrunedForest](../Unfoldings/Cap/CurvaturePrunedForest.lean) | Remove every flat descendant subtree while preserving an actual original-edge rooted forest and cut disk |
+| [Unfoldings.Cap.CurvaturePrunedDevelopment](../Unfoldings/Cap/CurvaturePrunedDevelopment.lean) | Preserve necessary curvature cuts, nonoverlap, and interior local isometry after pruning flat subtrees |

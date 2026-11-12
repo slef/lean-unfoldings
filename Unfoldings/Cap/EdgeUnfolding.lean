@@ -6,6 +6,7 @@ public import Unfoldings.Cap.RoofInteriorHeight
 public import Unfoldings.Cap.NoInterior
 public import Unfoldings.Cap.FlatMetric
 public import Unfoldings.Cap.Tilt
+public import Unfoldings.Cap.CurvaturePrunedDevelopment
 
 /-!
 # Original-edge nonoverlap for nearly flat convex caps
@@ -69,10 +70,13 @@ theorem exists_uniform_nonoverlapping_edge_unfolding {α : ℝ} (positive : 0 < 
   · obtain ⟨origin, origin_internal, ⟨M⟩⟩ := forest K acute tilt_forest internal
     rcases K.flat_or_positive_interior_roof with flat | positive_height
     · exact K.exists_edge_unfolding_of_flat flat
-    · obtain ⟨E, local_isometry⟩ := M.exists_locally_isometric_development
-      refine ⟨M.retain, M.rootedForest, M.cutDisk, E, ?_, local_isometry⟩
-      exact nonoverlap K tilt_geometry M origin_internal
-        (positive_height _ ((K.projectedVertex_mem_interior_iff origin).mpr origin_internal)) E
+    · obtain ⟨D, _local_isometry⟩ := M.exists_locally_isometric_development
+      have separated := nonoverlap K tilt_geometry M origin_internal
+        (positive_height _ ((K.projectedVertex_mem_interior_iff origin).mpr origin_internal)) D
+      obtain ⟨E, nonoverlapping, local_isometry⟩ :=
+        M.exists_curved_nonoverlapping_local_development D separated
+      exact ⟨M.curvedRetain, M.curved_rootedForest, M.curvedCutDisk, E,
+        nonoverlapping, local_isometry⟩
   · apply K.exists_edge_unfolding_of_flat
     apply K.flat_of_no_interior
     intro v

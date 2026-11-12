@@ -16,6 +16,7 @@ Current entry points:
   and local isometry throughout the open disk. Flat caps and caps without
   interior vertices are included. It does not assert boundary injectivity,
   the paper's numerical threshold, or its quadratic running-time bound.
+  Its construction now removes every zero-curvature descendant subtree.
 - [UniformOriginalNonoverlap](../Unfoldings/Cap/UniformOriginalNonoverlap.lean)
   proves nonoverlap for every development of a qualifying original sector
   forest. The constructed auxiliary roof is deep enough to cover the entire
@@ -931,7 +932,16 @@ Complete auxiliary-bank comparison and global face-interior nonoverlap are prove
   and local isometry throughout the open disk; see
   [EdgeUnfolding](../Unfoldings/Cap/EdgeUnfolding.lean).
 - [ ] Obtain the paper's full simple-polygon conclusion, including boundary injectivity.
-- [ ] Address redundant flat cuts and the precise simple-polygon conclusion.
+- [x] Remove all zero-curvature descendant subtrees from the original cut forest.
+  [FlatSubtreeBanks](../Unfoldings/Cap/FlatSubtreeBanks.lean) proves pointwise
+  agreement of the actual whole seam banks, including positional offsets.
+  [CurvaturePrunedForest](../Unfoldings/Cap/CurvaturePrunedForest.lean) restores
+  precisely these cuts, retains an actual original-edge rooted forest and cut
+  disk, and proves that every remaining cut has positive subtree curvature.
+  [CurvaturePrunedDevelopment](../Unfoldings/Cap/CurvaturePrunedDevelopment.lean)
+  preserves necessary curvature cuts, nonoverlap, and interior local isometry.
+- [ ] Prove boundary injectivity for the pruned development, including contacts
+  between different cut paths, different trees, and rim points.
 
 ## Verification discipline
 

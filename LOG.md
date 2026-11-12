@@ -2,6 +2,22 @@
 
 ## Session Log
 
+### 2026-11-12 — remove redundant original flat subtrees
+
+- Proved that zero-curvature original subtrees have identical whole parent-seam
+  banks, including positional offsets. Added a reusable seam-restoration API
+  that preserves actual placements, strict opposite-side opening, and nonoverlap.
+- Removed all zero-curvature descendant subtrees from the original forest.
+  The remaining cuts still form a boundary-rooted forest, yield an actual cut
+  disk, and each has positive subtree curvature. All positive-curvature vertices
+  are still cut, so a nonoverlapping interior local isometry remains available.
+- Updated the uniform original-edge nonoverlap construction to use these pruned
+  cuts without changing its theorem statement.
+- Verification: cache retrieval and full `lake build` pass; **9,563 unfolding /
+  7,243 pinned topology declarations**, standard axioms only. The original main
+  theorem header, local documentation links, and whitespace pass. Boundary
+  injectivity for the pruned development remains open.
+
 ### 2026-11-12 — uniform original-edge cap nonoverlap
 
 - Chose a sufficiently deep actual roof clip so that its controlled separation
