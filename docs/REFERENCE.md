@@ -1398,3 +1398,12 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Cap.WaterfallLevelBankOrder](../Unfoldings/Cap/WaterfallLevelBankOrder.lean) | Order all surviving actual bank intervals at each regular physical sweep height across arbitrary collapsed-cell runs |
 | [Unfoldings.Cap.RadialStripClosedBanks](../Unfoldings/Cap/RadialStripClosedBanks.lean) | Track both actual approached banks at every height before an approached endpoint |
 | [Unfoldings.Cap.WaterfallClosedLevelBankOrder](../Unfoldings/Cap/WaterfallClosedLevelBankOrder.lean) | Compare ordered actual approached banks through every physical sweep height, including terminal vertices |
+| [Unfoldings.Topology.FiniteRecordProgress](../Unfoldings/Topology/FiniteRecordProgress.lean) | Propagate progress at successive strict records to a first finite maximum |
+| [Unfoldings.Cap.TerminalBankIntervalOrder](../Unfoldings/Cap/TerminalBankIntervalOrder.lean) | Derive actual coordinate progress on an approached bank following an earlier terminal tail |
+| [Unfoldings.Cap.TerminalRecordStep](../Unfoldings/Cap/TerminalRecordStep.lean) | Propagate actual terminal-copy coordinates to a later terminal along a shared physical tail |
+| [Unfoldings.Cap.TerminalRunRecords](../Unfoldings/Cap/TerminalRunRecords.lean) | Propagate actual terminal coordinates through arbitrary finite records of disappearing strips |
+| [Unfoldings.Cap.EarlyCircleTerminalPrefix](../Unfoldings/Cap/EarlyCircleTerminalPrefix.lean) | Bound early surviving circle crossings after arbitrary terminated prefixes and before terminated suffixes |
+| [Unfoldings.Topology.FiniteMaxPositions](../Unfoldings/Topology/FiniteMaxPositions.lean) | Locate first and last finite maxima and threshold crossings with strict bounds outside them |
+| [Unfoldings.Cap.TerminalRunLateBounds](../Unfoldings/Cap/TerminalRunLateBounds.lean) | Bound late surviving circle crossings by one actual terminal copy across a finite collapsed run |
+| [Unfoldings.Cap.TerminalRunEarlyBounds](../Unfoldings/Cap/TerminalRunEarlyBounds.lean) | Bound early surviving circle crossings by extreme actual terminal maxima across arbitrary disappearing runs |
+| [Unfoldings.Cap.EmptyStripRunCircleSeparation](../Unfoldings/Cap/EmptyStripRunCircleSeparation.lean) | Separate actual surviving circle slices across any finite run of disappearing nonempty strips |

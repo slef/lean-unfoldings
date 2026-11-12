@@ -1,7 +1,7 @@
 module
 
 public import Unfoldings.Cap.GeometricSectorData
-public import Unfoldings.Cap.RadialStripPointOrder
+public import Unfoldings.Cap.RadialStripClosedBanks
 public import Unfoldings.Cap.CompletedSectorQuadrants
 public import Unfoldings.Geometry.HeightGraphAffineOrder
 public import Unfoldings.Geometry.FiniteWaterfall
@@ -103,6 +103,37 @@ theorem developed_tail_order
 
 /-- A completed physical bank supplies the whole visible tail interval from
 its final approached point; no choice of visible charts is required. -/
+theorem developed_bank_tail_interval_order
+    {FineFace : Type u₁} [Fintype FineFace] {FineC : TriangleComplex.{u₁, v₁} FineFace}
+    {Q : ConvexCap FineC}
+    (R : Q.RadialCutForest (K.projectedVertex origin) (M.extendedGeometricCuts F))
+    (D : FacewiseDevelopment FineC R.retain)
+    (B : R.FiveSectorFrameData positive small (R.completedDevelopment D))
+    {S : MonotoneStrip} {ε cutoff : ℝ}
+    (data : R.RadialStripTraceData positive small D
+      (R.calibratedFrame (R.completedDevelopment D) B.anchor B.reference) i S ε cutoff)
+    {H : MonotoneHeightGraph} (bank : H = S.lower ∨ H = S.upper)
+    {a b : ℝ} (start : leaf.point.re + leaf.point.im ≤ a) (ordered : a ≤ b)
+    (finish : b < M.geometricTailEndHeight F covered positive small lower i leaf.val)
+    (agreement : Set.EqOn H.point leaf.tailGraph.graph.point (Set.Icc a b))
+    (endpoint : H.point b ∈ closure data.strictDomain) :
+    (data.value (H.point a)).re ≤ (data.value (H.point b)).re ∧
+      (data.value (H.point a)).im ≤ (data.value (H.point b)).im := by
+  have nonnegative : 0 ≤ a :=
+    (add_nonneg leaf.point_nonnegative.1 leaf.point_nonnegative.2).trans start
+  have closed (h : ℝ) (bounds : h ∈ Set.Icc a b) :
+      leaf.tailGraph.graph.point h ∈ closure data.strictDomain := by
+    rw [← agreement bounds]
+    have height : h ∈ Set.Icc 0 ((H.point b).re + (H.point b).im) := by
+      rw [H.point_height]
+      exact ⟨nonnegative.trans bounds.1, bounds.2⟩
+    rcases bank with rfl | rfl
+    · exact data.lower_bank_closed_before endpoint height
+    · exact data.upper_bank_closed_before endpoint height
+  rw [agreement ⟨le_rfl, ordered⟩, agreement ⟨ordered, le_rfl⟩]
+  exact leaf.developed_tail_order R D B data start ordered finish closed
+
+/-- Retain the complete-tail bank interface. -/
 theorem developed_completed_bank_order
     {FineFace : Type u₁} [Fintype FineFace] {FineC : TriangleComplex.{u₁, v₁} FineFace}
     {Q : ConvexCap FineC}
@@ -125,25 +156,7 @@ theorem developed_completed_bank_order
     · exact completion.2 h ⟨start.trans bounds.1, bounds.2.trans within⟩
     · change h - H.coordinate h = h - leaf.tailGraph.graph.coordinate h
       rw [completion.2 h ⟨start.trans bounds.1, bounds.2.trans within⟩]
-  have closed (h : ℝ) (bounds : h ∈ Set.Icc a b) :
-      leaf.tailGraph.graph.point h ∈ closure data.strictDomain := by
-    rw [← point h bounds]
-    apply data.closed_initial endpoint
-    · rcases bank with rfl | rfl
-      · change S.lower.coordinate ((S.lower.point h).re + (S.lower.point h).im) ≤
-          (S.lower.point h).re ∧ (S.lower.point h).re ≤
-            S.upper.coordinate ((S.lower.point h).re + (S.lower.point h).im)
-        rw [S.lower.point_height]
-        exact ⟨le_rfl, S.ordered h⟩
-      · change S.lower.coordinate ((S.upper.point h).re + (S.upper.point h).im) ≤
-          (S.upper.point h).re ∧ (S.upper.point h).re ≤
-            S.upper.coordinate ((S.upper.point h).re + (S.upper.point h).im)
-        rw [S.upper.point_height]
-        exact ⟨S.ordered h, le_rfl⟩
-    · rw [H.point_height, H.point_height]
-      exact ⟨(add_nonneg leaf.point_nonnegative.1 leaf.point_nonnegative.2).trans
-        (start.trans bounds.1), bounds.2⟩
-  rw [point a ⟨le_rfl, ordered⟩, point b ⟨ordered, le_rfl⟩]
-  exact leaf.developed_tail_order R D B data start ordered finish closed
+  exact leaf.developed_bank_tail_interval_order R D B data bank start ordered finish
+    (fun h bounds => point h bounds) endpoint
 
 end Unfoldings.ConvexCap.SectorForest.GeometricSectorLeaf

@@ -727,7 +727,7 @@ Separation of different banks and global nonoverlap remain open.
   zero-width cells. An arbitrary finite run of permanently collapsed strips
   identifies both outside banks with an actual terminal parent path. Separate
   surviving circle slices when both crossings lie beyond that run's terminal
-  heights. Early crossings across arbitrary runs remain open.
+  heights. Early crossings for nonempty physical strips are handled below.
 - [x] Remove the circle hypothesis from actual bank progress bounds. Finite
   physical vertex heights and trace continuity extend these bounds to whole
   closed intervals, including branch vertices and terminal endpoint values.
@@ -741,8 +741,17 @@ Separation of different banks and global nonoverlap remain open.
   Finite vertex heights and continuity extend this order to any two approached
   banks in subdivision order, including terminal vertex copies. This compares
   equal physical heights; global equal-radius separation still remains.
-- [ ] Compare surviving strips across intervening strips whose circle slice is
-  empty, then establish a global cyclic order across the sector boundaries.
+- [x] Propagate actual terminal coordinates through strict height records to
+  the first and last maximal terminal heights. Compare tied maxima using the
+  actual approached-level theorem. First/last threshold crossings derive both
+  early circle bounds, while collapsed bank chains derive both late bounds.
+- [x] Separate surviving actual circle slices across an arbitrary finite run
+  of disappearing strips with nonempty physical interiors, in all four height
+  cases. Every strip retains its own actual terminal copy and continuation;
+  no synthetic curve avoidance or supplied developed gap order is assumed.
+- [ ] Handle intervening cells with an entirely empty physical open slab,
+  assemble separation of all surviving strips in a sector, and establish
+  global cyclic order across sector boundaries.
 - [ ] Prove side-by-side separation of all developed strips and hence all
   distinct original face interiors.
 - [x] Apply the cut-disk and flat-development infrastructure to the fixed-wedge

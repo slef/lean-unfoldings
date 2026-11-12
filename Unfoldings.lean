@@ -612,3 +612,12 @@ public import Unfoldings.Geometry.SubdivisionActiveCells
 public import Unfoldings.Cap.WaterfallLevelBankOrder
 public import Unfoldings.Cap.RadialStripClosedBanks
 public import Unfoldings.Cap.WaterfallClosedLevelBankOrder
+public import Unfoldings.Topology.FiniteRecordProgress
+public import Unfoldings.Cap.TerminalBankIntervalOrder
+public import Unfoldings.Cap.TerminalRecordStep
+public import Unfoldings.Cap.TerminalRunRecords
+public import Unfoldings.Cap.EarlyCircleTerminalPrefix
+public import Unfoldings.Topology.FiniteMaxPositions
+public import Unfoldings.Cap.TerminalRunLateBounds
+public import Unfoldings.Cap.TerminalRunEarlyBounds
+public import Unfoldings.Cap.EmptyStripRunCircleSeparation

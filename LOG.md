@@ -2,6 +2,27 @@
 
 ## Session Log
 
+### 2026-11-12 — arbitrary disappearing-run circle separation
+
+- Generalized actual geometric bank progress to a specified tail interval and
+  then to arbitrary starting heights after an actual terminal pinch. Preserved
+  both previous public theorem headers byte-for-byte.
+- Derived physical lower/upper bank agreement through selected partial ranges
+  of collapsed cells. Ordered approached values and actual tail progress give
+  terminal-copy steps in both directions.
+- Proved generic finite strict-record progress to first/last maxima and located
+  extreme maxima and threshold crossings. Applied these to actual terminal
+  copies, including tied maximal heights in their actual subdivision order.
+- Derived early bounds past terminated prefixes and before terminated suffixes,
+  and late bounds along the common actual completed parent path. Combined all
+  four height cases to separate surviving circle slices across any finite run
+  of disappearing strips with nonempty physical interiors.
+- Verification: cache retrieval followed by full `lake build` pass; **9,084
+  unfolding / 7,243 pinned topology declarations**, standard axioms only;
+  **1,354** local documentation links and whitespace pass. Cells with wholly
+  empty physical slabs, global surviving-strip and sector order, original-face
+  transfer, and the full cap theorem remain open.
+
 ### 2026-11-12 — global order at physical waterfall levels
 
 - Proved a generic continuous finite affine selection preserves linear order
