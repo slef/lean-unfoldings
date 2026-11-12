@@ -780,3 +780,8 @@ public import Unfoldings.Cap.LocalHingeContact
 public import Unfoldings.Metric.LocalIsometryBallImage
 public import Unfoldings.Development.RegularInteriorContact
 public import Unfoldings.Cap.PrunedInteriorContact
+public import Unfoldings.Geometry.ClosedInnerBarriers
+public import Unfoldings.Geometry.WeakCircleCaps
+public import Unfoldings.Cap.ClosedBarrierContact
+public import Unfoldings.Cap.StripCircleClosedBounds
+public import Unfoldings.Cap.ClosedStripCircleCaps

@@ -949,6 +949,12 @@ Complete auxiliary-bank comparison and global face-interior nonoverlap are prove
 - [x] Every remaining original parent cut has positive subtree curvature; its
   opposite regular bank interiors are strictly separate under the actual bank
   frame and curvature budget.
+- [x] Retain possible circle endpoint contacts with weak bank bounds. Actual
+  approached closed strip-circle points are either open strip points or named
+  bank endpoints; [ClosedStripCircleCaps](../Unfoldings/Cap/ClosedStripCircleCaps.lean)
+  derives both actual weak barriers. [ClosedBarrierContact](../Unfoldings/Cap/ClosedBarrierContact.lean)
+  identifies every contact with the common actual inner barrier, or with one of
+  the two actual ordered bank points.
 - [ ] Prove boundary injectivity for the pruned development, including contacts
   between different cut paths, different trees, and rim points.
 

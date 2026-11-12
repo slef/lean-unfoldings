@@ -1566,3 +1566,8 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Metric.LocalIsometryBallImage](../Unfoldings/Metric/LocalIsometryBallImage.lean) | Map sufficiently small intrinsic balls onto Euclidean balls at actual regular points |
 | [Unfoldings.Development.RegularInteriorContact](../Unfoldings/Development/RegularInteriorContact.lean) | Prove unique intrinsic preimages at every regular point where a nonoverlapping development is locally isometric |
 | [Unfoldings.Cap.PrunedInteriorContact](../Unfoldings/Cap/PrunedInteriorContact.lean) | Exclude every foreign developed preimage at pruned cap interior points, including all boundary copies |
+| [Unfoldings.Geometry.ClosedInnerBarriers](../Unfoldings/Geometry/ClosedInnerBarriers.lean) | Identify equality under weak inner-circle barriers in different oriented frames |
+| [Unfoldings.Geometry.WeakCircleCaps](../Unfoldings/Geometry/WeakCircleCaps.lean) | Retain possible endpoint contacts in circle portions with weak bank bounds |
+| [Unfoldings.Cap.ClosedBarrierContact](../Unfoldings/Cap/ClosedBarrierContact.lean) | Identify the only possible contact of actual cross-frame weak circle barriers |
+| [Unfoldings.Cap.StripCircleClosedBounds](../Unfoldings/Cap/StripCircleClosedBounds.lean) | Classify every approached closed strip-circle point by its open image or actual bank endpoints |
+| [Unfoldings.Cap.ClosedStripCircleCaps](../Unfoldings/Cap/ClosedStripCircleCaps.lean) | Bound actual approached closed strip-circle images by both weak endpoint barriers |

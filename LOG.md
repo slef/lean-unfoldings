@@ -2,6 +2,20 @@
 
 ## Session Log
 
+### 2026-11-12 — retain actual closed strip-circle endpoint contacts
+
+- Proved strict signed-area barriers whenever two weakly bounded points differ.
+  In different oriented sector frames, weak inner-circle bounds therefore force
+  equality with the actual barrier point. Two ordered bank barriers restrict
+  every possible weak-cap contact to their actual bank points.
+- Classified every approached closed strip-circle point as an open strip point
+  or one of the actual approached bank endpoints. Derived weak bank-coordinate
+  bounds for actual closed radial-strip images from the constructed trace data,
+  including endpoint and terminal-pinch closure membership.
+- Verification: cache retrieval and full `lake build` pass; **9,600 unfolding /
+  7,243 pinned topology declarations**, standard axioms only. Local documentation
+  links and whitespace pass. Global boundary-contact assembly remains open.
+
 ### 2026-11-12 — exclude foreign interior contacts after pruning
 
 - Proved unique intrinsic preimages at developed face interiors and retained
