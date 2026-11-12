@@ -684,3 +684,6 @@ public import Unfoldings.Cap.CrossFrameStripCircleBounds
 public import Unfoldings.Geometry.RadialTailHeightOrder
 public import Unfoldings.Cap.RadialComponentCommonChain
 public import Unfoldings.Cap.BoundaryTerminalMargins
+public import Unfoldings.Cap.TerminalRunEarlyMaximaContacts
+public import Unfoldings.Cap.BoundaryTerminalSectorAssignment
+public import Unfoldings.Cap.NoAdjacentBoundaryRuns

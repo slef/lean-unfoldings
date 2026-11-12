@@ -2,6 +2,24 @@
 
 ## Session Log
 
+### 2026-11-12 — tied maxima and exclusion of two boundary runs
+
+- Extended early-circle bounds to every maximal terminal copy. Equal-height
+  terminal copies retain their actual approached subdivision order, so the
+  extreme copy needed for incoming-bank matching may be selected safely.
+- Strengthened boundary-terminal witnesses to retain the component's unique
+  assigned sector. The previous theorem is a facade with its declaration
+  header preserved byte for byte.
+- Proved disappearing physical boundary runs cannot occur on both sides of
+  a shared sector ray: their actual terminals would identify one radial
+  component with two incompatible sector assignments. This removes the
+  two-run cross-sector case from the remaining construction.
+- Verification: cache retrieval and full `lake build` pass; **9,296 unfolding /
+  7,243 pinned topology declarations**, standard axioms only; **1,426** local
+  documentation links and whitespace pass. Remaining cases have at most one
+  disappearing boundary run; their complete candidate bounds, global assembly,
+  original-face transfer, and the cap theorem remain open.
+
 ### 2026-11-12 — derived common chains and terminal margins
 
 - Proved nonroot fine vertices on one unattached radial component are

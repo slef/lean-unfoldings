@@ -810,6 +810,10 @@ Separation of different banks and global nonoverlap remain open.
   unattached radial component, including both sector geometries and the
   cross-frame coordinate comparison. Transfer uniform physical face margins
   and inner-radius bounds to the actual approached terminal copies.
+- [x] Extend early-crossing bounds to every maximal terminal copy, retaining
+  actual subdivision order at tied heights. Preserve the component assignment
+  in boundary-terminal witnesses and rule out disappearing boundary runs on
+  both sides of a shared sector ray.
 - [ ] Assemble the actual outer surviving intervals across all five sectors,
   including disappearing boundary runs, and establish global cyclic order.
 - [ ] Prove side-by-side separation of all developed strips and hence all

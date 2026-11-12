@@ -1470,3 +1470,6 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Geometry.RadialTailHeightOrder](../Unfoldings/Geometry/RadialTailHeightOrder.lean) | Put every nontip radial-component position strictly below its outer tip in any increasing linear height |
 | [Unfoldings.Cap.RadialComponentCommonChain](../Unfoldings/Cap/RadialComponentCommonChain.lean) | Derive one actual fine parent chain and both sector geometries for edges on a shared radial component |
 | [Unfoldings.Cap.BoundaryTerminalMargins](../Unfoldings/Cap/BoundaryTerminalMargins.lean) | Derive actual terminal-copy radius bounds and strict margins in either neighboring frame |
+| [Unfoldings.Cap.TerminalRunEarlyMaximaContacts](../Unfoldings/Cap/TerminalRunEarlyMaximaContacts.lean) | Bound early circle crossings by any maximal terminal while retaining ordered tied contour copies |
+| [Unfoldings.Cap.BoundaryTerminalSectorAssignment](../Unfoldings/Cap/BoundaryTerminalSectorAssignment.lean) | Retain the unique actual component-sector assignment of boundary-run terminals |
+| [Unfoldings.Cap.NoAdjacentBoundaryRuns](../Unfoldings/Cap/NoAdjacentBoundaryRuns.lean) | Exclude disappearing physical boundary runs on both sides of a shared sector ray using actual component assignments |

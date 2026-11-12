@@ -1,5 +1,6 @@
 module
 
+public import Unfoldings.Cap.BoundaryTerminalSectorAssignment
 public import Unfoldings.Cap.SameSectorEmptyCircleComparison
 public import Unfoldings.Cap.SectorBoundaryComponents
 public import Unfoldings.Cap.GeometricTailBankContacts
@@ -46,54 +47,9 @@ theorem boundary_terminal_on_unattached_component
     ∃ c : F.Component, Q.projectedVertex continuation.vertex ∈ (F.componentTail c).carrier ∧
       ∀ e : {w : C.Vertex Set.univ // w ∉ M.parents.roots},
         M.cutPieceLabel F covered (Sum.inl e) ≠ c := by
-  obtain ⟨leaf, after_leaf, same_start, follows⟩ :=
-    terminal_geometric_tail R D B data tails continuation
-  let frame := (fiveSectorFrame t positive small i).place
-  have boundary (h : ℝ) (nonnegative : 0 ≤ h) :
-      ∀ j, frame.symm (H.point h) ∉ strictFiveSector t j := by
-    have banks := fiveSector_enclosingStrip_bank_not_strict_any positive small i nonnegative
-    rcases wall with equal | equal
-    · exact equal.symm ▸ banks.1
-    · exact equal.symm ▸ banks.2
-  let h := (continuation.height + cutoff) / 2
-  have above : continuation.height < h := by dsimp only [h]; linarith [continuation.height_bounds.2]
-  have below : h < cutoff := by dsimp only [h]; linarith [continuation.height_bounds.2]
-  have interval : h ∈ Set.Icc continuation.height cutoff := ⟨above.le, below.le⟩
-  let x := K.projectedVertex origin + frame.symm (H.point h)
-  have at_point : frame (x - K.projectedVertex origin) = leaf.tailGraph.graph.point h := by
-    dsimp only [x]
-    rw [add_sub_cancel_left, frame.apply_symm_apply]
-    exact (agreement interval).trans (follows h interval).1
-  have x_boundary : ∀ j, x - K.projectedVertex origin ∉ strictFiveSector t j := by
-    dsimp only [x]
-    rw [add_sub_cancel_left]
-    exact boundary h (continuation.height_bounds.1.le.trans above.le)
-  have radial := leaf.tail_bank_contact_radial at_point (after_leaf.trans_lt above)
-    (below.trans (leaf.tail_end_beyond_clip_ball deep)) (x_boundary i)
-  have unattached := M.sector_boundary_component_unattached positive small F covered
-    radial x_boundary
-  refine ⟨M.geometricComponent F covered leaf.val, ?_, unattached⟩
-  have terminal_bank : Q.projectedVertex continuation.vertex - K.projectedVertex origin =
-      frame.symm (H.point continuation.height) := by
-    rw [← continuation.physical, add_sub_cancel_left,
-      agreement ⟨le_rfl, continuation.height_bounds.2.le⟩]
-  by_cases after : leaf.point.re + leaf.point.im < continuation.height
-  · exact leaf.tail_bank_contact_radial same_start after
-      (continuation.height_bounds.2.trans (leaf.tail_end_beyond_clip_ball deep))
-      (terminal_bank ▸ boundary continuation.height continuation.height_bounds.1.le i)
-  · have equal_height : continuation.height = leaf.point.re + leaf.point.im :=
-      le_antisymm (le_of_not_gt after) after_leaf
-    have point : leaf.tailGraph.graph.point (leaf.point.re + leaf.point.im) = leaf.point :=
-      leaf.tailGraph.graph.point_eq_of_coordinate leaf.point leaf.tailGraph_target
-    have physical : Q.projectedVertex continuation.vertex = F.geometricPosition leaf.val := by
-      have shifted : Q.projectedVertex continuation.vertex - K.projectedVertex origin =
-          F.geometricPosition leaf.val - K.projectedVertex origin := by
-        apply frame.injective
-        rw [same_start, equal_height, point]
-        rfl
-      exact sub_left_injective shifted
-    rw [physical]
-    exact M.unattached_component_positions_on_tail F covered _ unattached leaf.val rfl
+  obtain ⟨c, member, _, unattached⟩ := boundary_terminal_on_assigned_component R D B data tails
+    continuation deep H wall agreement
+  exact ⟨c, member, unattached⟩
 
 variable {FineFace : Type u₁} [Fintype FineFace] {FineC : TriangleComplex.{u₁, v₁} FineFace}
   {Q : ConvexCap FineC}
