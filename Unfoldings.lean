@@ -840,3 +840,5 @@ public import Unfoldings.Cap.ProjectedPointCopyValues
 public import Unfoldings.Cap.PrunedContactReduction
 public import Unfoldings.Cap.PrunedDevelopmentLocalIsometry
 public import Unfoldings.Cap.VertexContactEdgeUnfolding
+public import Unfoldings.Cap.ChildBankContactFlatness
+public import Unfoldings.Cap.PrunedVertexCopyUniqueness

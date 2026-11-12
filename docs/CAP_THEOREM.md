@@ -1067,6 +1067,12 @@ Complete auxiliary-bank comparison and global face-interior nonoverlap are prove
   [VertexContactEdgeUnfolding](../Unfoldings/Cap/VertexContactEdgeUnfolding.lean)
   obtains this reduction from cap geometry and the acute margin alone, alongside
   the rooted forest, closed disk, face-interior nonoverlap, and local isometry.
+- [x] Resolve actual paired child-endpoint contacts after pruning.
+  [ChildBankContactFlatness](../Unfoldings/Cap/ChildBankContactFlatness.lean)
+  characterizes contact by flatness of every proper descendant subtree;
+  [PrunedVertexCopyUniqueness](../Unfoldings/Cap/PrunedVertexCopyUniqueness.lean)
+  then identifies all intrinsic copies at that vertex using the actual retained
+  link pairings. The vertex's own curvature need not vanish.
 - [ ] Identify all coincident intrinsic boundary copies after pruning, including
   cut vertices, contacts between different trees, and original rim points.
 - [ ] Conclude boundary injectivity and state the simple-polygon existence theorem.
