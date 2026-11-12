@@ -2,6 +2,22 @@
 
 ## Session Log
 
+### 2026-11-11 — uniform oriented strip-circle intervals
+
+- Proved that the approached closure of a strip with finite recoverable pinches
+  contains every earlier carrier point. Actual monotone and mixed-coordinate
+  connecting paths therefore stay in the domain of the same closed trace.
+- Derived strict radial progress for all coordinate-comparable closed points
+  and strict signed output progress for right/down displacements, through
+  arbitrary face switches and coherent pinches.
+- Proved actual lower/upper bank circle order and removed the interval's
+  minimum/maximum ambiguity. Constructed these oriented circle intervals
+  uniformly before both meshes, using only actual cap strip data.
+- Verification: cache retrieval followed by full `lake build` pass; **8,817
+  unfolding / 7,243 pinned topology declarations**, standard axioms only;
+  indexed documentation links (**1,254**) and whitespace pass. Adjacent-strip
+  order, cyclic no-wrap, and the full cap nonoverlap theorem remain open.
+
 ### 2026-11-11 — actual endpoints of nonempty strip-circle slices
 
 - Proved every nonempty controlled circle slice reaches both actual approached

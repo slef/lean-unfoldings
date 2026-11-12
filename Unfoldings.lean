@@ -517,3 +517,7 @@ public import Unfoldings.Cap.ExtendedStripCircleIntervals
 public import Unfoldings.Cap.StripCircleBanks
 public import Unfoldings.Cap.RadialStripTraceVisibility
 public import Unfoldings.Cap.RadialStripCircleBanks
+public import Unfoldings.Cap.RadialStripPointOrder
+public import Unfoldings.Cap.RadialStripBankOrder
+public import Unfoldings.Cap.ExtendedOrientedStripCircleIntervals
+public import Unfoldings.Geometry.RecoverableStripInitialClosure

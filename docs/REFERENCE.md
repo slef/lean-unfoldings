@@ -114,6 +114,9 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Cap.RadialStripPointOrder](../Unfoldings/Cap/RadialStripPointOrder.lean) | Closed actual strip points preserve strict radial progress and signed mixed-coordinate order |
+| [Unfoldings.Cap.RadialStripBankOrder](../Unfoldings/Cap/RadialStripBankOrder.lean) | Actual lower and upper banks have strict source-circle order, including pinches |
+| [Unfoldings.Cap.ExtendedOrientedStripCircleIntervals](../Unfoldings/Cap/ExtendedOrientedStripCircleIntervals.lean) | Uniform actual strips have oriented bank-bounded source-circle intervals before either mesh |
 | [Unfoldings.Cap.StripCircleBanks](../Unfoldings/Cap/StripCircleBanks.lean) | Nonempty strip-circle intervals have distinct endpoints at actual approached heights on both banks |
 | [Unfoldings.Cap.RadialStripTraceVisibility](../Unfoldings/Cap/RadialStripTraceVisibility.lean) | Every point of the actual closed trace retains a face approached from this strip, including terminal pinches |
 | [Unfoldings.Cap.RadialStripCircleBanks](../Unfoldings/Cap/RadialStripCircleBanks.lean) | Construct actual bank heights and distinct endpoint values for every nonempty controlled circle slice |
@@ -694,6 +697,7 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 | [Unfoldings.Geometry.QuadrantSegments](../Unfoldings/Geometry/QuadrantSegments.lean) | Linear quadrant margins and source-centered direction wedges on entire chords |
 | [Unfoldings.Geometry.ChainTruncation](../Unfoldings/Geometry/ChainTruncation.lean) | Exact finite polygonal-chain prefixes ending partway through an actual edge |
 | [Unfoldings.Geometry.ChainRadiusCrossing](../Unfoldings/Geometry/ChainRadiusCrossing.lean) | An outward chain reaches a prescribed sphere with its preceding path inside the ball |
+| [Unfoldings.Geometry.RecoverableStripInitialClosure](../Unfoldings/Geometry/RecoverableStripInitialClosure.lean) | Every earlier carrier point lies in the approached closure of a finitely pinched strip |
 | [Unfoldings.Geometry.RecoverableStripClosure](../Unfoldings/Geometry/RecoverableStripClosure.lean) | Finite reopening pinches leave both source-to-active banks in the strict-strip closure |
 | [Unfoldings.Geometry.MonotoneStripDensity](../Unfoldings/Geometry/MonotoneStripDensity.lean) | Finite waterfall walls are closed nowhere dense; off-wall points lie in strict cells |
 | [Unfoldings.Geometry.HeightNetworkLocalGraph](../Unfoldings/Geometry/HeightNetworkLocalGraph.lean) | Covered tails agree locally with their actual affine edge graphs away from network vertices |

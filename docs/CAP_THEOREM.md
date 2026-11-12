@@ -632,6 +632,11 @@ Separation of different banks and global nonoverlap remain open.
   approached bank heights and prove their developed values distinct. Recover
   a face approached from the same strip at every closed trace point, including
   terminal pinches with no later active height.
+- [x] Prove strict lower/upper order within each nonempty circle slice. Comparable
+  physical points move strictly outward; mixed-coordinate moves increase the
+  signed developed coordinate. Finite recoverable pinches keep the connecting
+  paths in the approached closure. The uniform oriented-circle construction
+  derives every margin and chart bound before both meshes.
 - [ ] Compare these actual adjacent intervals in one global cyclic order.
 - [ ] Prove side-by-side separation of all developed strips and hence all
   distinct original face interiors.
