@@ -546,8 +546,12 @@ Separation of different banks and global nonoverlap remain open.
 - [x] Keep the full closed strip, including both banks, within the deep sweep
   ball. Subdivision bounds now derive regular bank width without a separate
   interior-location hypothesis.
-- [ ] Package matching for the constructed waterfall through branch endpoints,
-  then control radial order and complete bank continuations.
+- [x] Construct matched regular-bank traces for the actual roof waterfall,
+  before its development or calibration. Width, cut avoidance, and one-sided
+  values are derived for the same subdivision. Every regular parent-edge
+  portion has its actual entrance/exit chart, without supplied matching data.
+- [ ] Continue through branch endpoints, then control radial order and complete
+  bank continuations.
 - [ ] Prove side-by-side separation of all developed strips and hence all
   distinct original face interiors.
 - [x] Apply the cut-disk and flat-development infrastructure to the fixed-wedge

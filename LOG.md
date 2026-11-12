@@ -2,6 +2,18 @@
 
 ## Session Log
 
+### 2026-11-11 — constructed matched regular-bank traces
+
+- Packaged matching of every regular parent-bank piece before each active
+  strip height, retaining the actual entrance/exit face names.
+- Constructed `cornerExtendedOutward_exists_matched_bank_traces` for the actual
+  roof. The waterfall precedes development and calibration; its cut avoidance,
+  regular width, one-sided values, and bank identities are all derived.
+- Verification: cache retrieval followed by full `lake build` pass; **8,447
+  unfolding / 7,243 pinned topology declarations**, standard axioms only;
+  indexed documentation links (**1,185**) and whitespace pass. Branch endpoints,
+  radial order, full continuations, and global separation remain open.
+
 ### 2026-11-11 — closed banks stay inside the comparison clip
 
 - Proved every point of the closed enclosing strip has norm at most its

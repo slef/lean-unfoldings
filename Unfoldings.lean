@@ -450,3 +450,5 @@ public import Unfoldings.Cap.ExtendedWaterfallRegular
 public import Unfoldings.Cap.ExtendedRegularBankTraces
 public import Unfoldings.Cap.ClosedSectorStrip
 public import Unfoldings.Cap.RegularWaterfallBankWidth
+public import Unfoldings.Cap.MatchedBankTrace
+public import Unfoldings.Cap.ExtendedMatchedBankTraces

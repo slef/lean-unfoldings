@@ -123,6 +123,8 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 | [Unfoldings.Cap.RegularWaterfallWidth](../Unfoldings/Cap/RegularWaterfallWidth.lean) | Regular actual bank points avoid the pinch set and have positive width before active heights |
 | [Unfoldings.Cap.ClosedSectorStrip](../Unfoldings/Cap/ClosedSectorStrip.lean) | Both closed sector-strip banks stay within their diagonal sweep-height ball |
 | [Unfoldings.Cap.RegularWaterfallBankWidth](../Unfoldings/Cap/RegularWaterfallBankWidth.lean) | Deep clipping and subdivision bounds derive actual regular bank width without an interior-location hypothesis |
+| [Unfoldings.Cap.MatchedBankTrace](../Unfoldings/Cap/MatchedBankTrace.lean) | Complete one-sided traces match every regular named parent-bank piece before active heights |
+| [Unfoldings.Cap.ExtendedMatchedBankTraces](../Unfoldings/Cap/ExtendedMatchedBankTraces.lean) | Construct actual waterfall traces with derived width, cut avoidance, and named regular-bank matching |
 | [Unfoldings.Cap.ExtendedWaterfallRegular](../Unfoldings/Cap/ExtendedWaterfallRegular.lean) | One constructed waterfall retains geometric cut avoidance, pinch control, and all-development coherence |
 | [Unfoldings.Cap.ExtendedRegularBankTraces](../Unfoldings/Cap/ExtendedRegularBankTraces.lean) | Preserve actual geometric regularity and pinch control for the same complete bank traces |
 | [Unfoldings.Cap.GeometricTailLocalEdge](../Unfoldings/Cap/GeometricTailLocalEdge.lean) | Actual regular meshed tail points retain locally matching physical edge graphs |
