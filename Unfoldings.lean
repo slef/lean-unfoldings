@@ -429,3 +429,5 @@ public import Unfoldings.Cap.ProjectedInteriorCoherence
 public import Unfoldings.Cap.CenteredFrameError
 public import Unfoldings.Cap.WaterfallFaceError
 public import Unfoldings.Cap.ExtendedFacePositionControl
+public import Unfoldings.Cap.FacePositionMargins
+public import Unfoldings.Cap.ExtendedFaceQuadrants

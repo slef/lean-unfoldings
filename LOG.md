@@ -2,6 +2,20 @@
 
 ## Session Log
 
+### 2026-11-11 — quadrant margins for every bank and branch copy
+
+- Converted sector coordinate margins to bounds proportional to source
+  distance. Proved actual containing-face errors are invariant under centered
+  input frames and give quantitative developed coordinate margins.
+- Derived `exists_uniform_extended_face_quadrants`: one positive margin and
+  tilt threshold precede both meshes, in the actual bank-order calibration.
+  Every containing-face copy in its assigned sector satisfies both margins,
+  including distinct copies at a branch vertex.
+- Verification: cache retrieval followed by full `lake build` pass; **8,375
+  unfolding / 7,243 pinned topology declarations**, standard axioms only;
+  indexed documentation links (**1,164**) and whitespace pass. Full cap
+  nonoverlap remains open.
+
 ### 2026-11-11 — source-position control for every actual face copy
 
 - Proved finite monotone waterfall walls closed nowhere dense, and strict

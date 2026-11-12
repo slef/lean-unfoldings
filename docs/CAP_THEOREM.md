@@ -515,6 +515,10 @@ Separation of different banks and global nonoverlap remain open.
   each projected face in the open comparison region. Facewise continuity
   extends the estimate to every bank and branch copy in the same bank-order
   calibration, with the tilt threshold chosen before either mesh.
+- [x] Keep every actual containing-face copy uniformly within its assigned
+  sector quadrant relative to the common developed source. The positive
+  coordinate margin is proportional to source distance and depends only on
+  the sector parameter; branch copies need not coincide.
 - [ ] Identify the facing cut banks from one-sided face visibility, then
   control radial order and complete bank continuations.
 - [ ] Prove side-by-side separation of all developed strips and hence all
