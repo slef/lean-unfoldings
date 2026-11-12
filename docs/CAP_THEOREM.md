@@ -628,6 +628,10 @@ Separation of different banks and global nonoverlap remain open.
   one quarter of the cutoff meets each strip in at most one bank-bounded
   interval, with the tilt chosen before both meshes. Only approached end-level
   points require distance bounds; permanently collapsed tails are excluded.
+- [x] Realize both endpoints of every nonempty controlled circle slice at actual
+  approached bank heights and prove their developed values distinct. Recover
+  a face approached from the same strip at every closed trace point, including
+  terminal pinches with no later active height.
 - [ ] Compare these actual adjacent intervals in one global cyclic order.
 - [ ] Prove side-by-side separation of all developed strips and hence all
   distinct original face interiors.

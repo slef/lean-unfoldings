@@ -2,6 +2,19 @@
 
 ## Session Log
 
+### 2026-11-11 — actual endpoints of nonempty strip-circle slices
+
+- Proved every nonempty controlled circle slice reaches both actual approached
+  banks, at distinct developed values. Stored the physical bank heights and
+  the exact interval in `BankCircleSlice`, including terminal pinches.
+- Recovered an actual face approached from the same strip at every point of
+  its trace closure. Terminal bank values retain their own face-copy provenance
+  without assuming a later active strip height.
+- Verification: cache retrieval followed by full `lake build` pass; **8,802
+  unfolding / 7,243 pinned topology declarations**, standard axioms only;
+  indexed documentation links (**1,250**) and whitespace pass. Actual global
+  adjacent-strip order and the full cap nonoverlap theorem remain open.
+
 ### 2026-11-11 — uniform actual strip-circle intervals
 
 - Retained each actual strip's coherent pinches, source normalization, complete

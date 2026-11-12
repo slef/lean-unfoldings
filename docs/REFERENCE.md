@@ -114,6 +114,9 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Cap.StripCircleBanks](../Unfoldings/Cap/StripCircleBanks.lean) | Nonempty strip-circle intervals have distinct endpoints at actual approached heights on both banks |
+| [Unfoldings.Cap.RadialStripTraceVisibility](../Unfoldings/Cap/RadialStripTraceVisibility.lean) | Every point of the actual closed trace retains a face approached from this strip, including terminal pinches |
+| [Unfoldings.Cap.RadialStripCircleBanks](../Unfoldings/Cap/RadialStripCircleBanks.lean) | Construct actual bank heights and distinct endpoint values for every nonempty controlled circle slice |
 | [Unfoldings.Cap.RadialStripTraceData](../Unfoldings/Cap/RadialStripTraceData.lean) | The same constructed radial trace retains source normalization, coherent pinches, and visible bank values |
 | [Unfoldings.Cap.RadialStripTraceBounds](../Unfoldings/Cap/RadialStripTraceBounds.lean) | Actual trace data give closed source-distance bounds, source values, and strict quadrant margins |
 | [Unfoldings.Cap.ExtendedRadialStripData](../Unfoldings/Cap/ExtendedRadialStripData.lean) | Uniform actual strip data retain closed injectivity, radial matching, and coherent source geometry together |

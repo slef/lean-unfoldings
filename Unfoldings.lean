@@ -514,3 +514,6 @@ public import Unfoldings.Cap.RadialStripTraceBounds
 public import Unfoldings.Cap.ExtendedRadialStripData
 public import Unfoldings.Cap.RadialStripCircleInterval
 public import Unfoldings.Cap.ExtendedStripCircleIntervals
+public import Unfoldings.Cap.StripCircleBanks
+public import Unfoldings.Cap.RadialStripTraceVisibility
+public import Unfoldings.Cap.RadialStripCircleBanks
