@@ -676,6 +676,11 @@ Separation of different banks and global nonoverlap remain open.
   circle has a permanent terminal pinch below the cutoff, with an actual
   one-sided face trace inside. Pinch radii and the maximal closure radius add
   only finitely many exceptions.
+- [x] Classify every approached zero-width pinch of the actual waterfall as
+  a geometric vertex, including terminal contacts and exterior sector rays.
+  Preserve it as a fine cut vertex in the same uniform radial and adjacent
+  circle construction. A disappearing strip supplies its own actual contour
+  copy strictly inside the source circle.
 - [ ] Compare surviving strips across intervening strips whose circle slice is
   empty, then establish a global cyclic order across the sector boundaries.
 - [ ] Prove side-by-side separation of all developed strips and hence all

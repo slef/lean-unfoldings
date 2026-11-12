@@ -553,3 +553,8 @@ public import Unfoldings.Cap.EmptyCircleStripBounds
 public import Unfoldings.Cap.EmptyCircleTerminalPinch
 public import Unfoldings.Geometry.MonotoneStripTerminalPinch
 public import Unfoldings.Geometry.RecoverableStripRadiusCrossing
+public import Unfoldings.Cap.GeometricTailAffine
+public import Unfoldings.Cap.EmptyCircleTerminalCopy
+public import Unfoldings.Geometry.AffineGraphPinches
+public import Unfoldings.Geometry.ApproachedStripInsertion
+public import Unfoldings.Geometry.VertexPinchWaterfall

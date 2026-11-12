@@ -4,6 +4,8 @@ public import Unfoldings.Cap.GeometricWaterfall
 public import Unfoldings.Cap.GeometricBankPersistence
 public import Unfoldings.Cap.StrictGeometricTailGraphs
 public import Unfoldings.Geometry.RecoverableWaterfall
+public import Unfoldings.Cap.GeometricTailAffine
+public import Unfoldings.Geometry.VertexPinchWaterfall
 
 /-! Every constructed actual sector waterfall reopens only at its source or geometric leaves. -/
 
@@ -24,12 +26,14 @@ variable {Face : Type u} [Fintype Face] {C : TriangleComplex.{u, v} Face}
 
 /-- Actual geometry supplies every persistence and strictness hypothesis of the finite
 construction. No pinch classification, strip cover, or compatible map is an input. -/
-theorem exists_geometric_sector_waterfall_recoverable (i : FiveSector) (cutoff : ℝ)
+theorem exists_geometric_sector_waterfall_vertex_pinches (i : FiveSector) (cutoff : ℝ)
     (tips_beyond : ∀ w : M.GeometricSectorLeaf F covered positive small lower i,
       w.point.re + w.point.im ≤ cutoff →
         cutoff < M.geometricTailEndHeight F covered positive small lower i w.val) :
     let E := insert (0 : ℂ) (Set.range (fun w :
       M.GeometricSectorLeaf F covered positive small lower i => w.point))
+    let V := Set.range (fun w : F.GeometricVertex =>
+      (fiveSectorFrame t positive small i).place (F.geometricPosition w - K.projectedVertex origin))
     ∃ T : (fiveSectorFrame t positive small i).enclosingStrip.Subdivision,
       (∀ G ∈ T.separators,
         ∃ w : M.GeometricSectorLeaf F covered positive small lower i,
@@ -39,8 +43,9 @@ theorem exists_geometric_sector_waterfall_recoverable (i : FiveSector) (cutoff :
         w.point.re + w.point.im ≤ cutoff →
           ∃ G ∈ T.separators,
             MonotoneStrip.CompletesTail w.point w.tailGraph.graph cutoff G) ∧
-      ∀ R ∈ T.cells, R.lower.StrictCoordinatesOn (Set.Icc 0 cutoff) ∧
-        R.upper.StrictCoordinatesOn (Set.Icc 0 cutoff) ∧ R.RecoverablePinchesIn E 0 cutoff := by
+      ∀ R ∈ T.cells, (R.lower.StrictCoordinatesOn (Set.Icc 0 cutoff) ∧
+        R.upper.StrictCoordinatesOn (Set.Icc 0 cutoff) ∧ R.RecoverablePinchesIn E 0 cutoff) ∧
+          R.ApproachedPinchesIn V 0 cutoff := by
   let Leaf := M.GeometricSectorLeaf F covered positive small lower i
   let E := insert (0 : ℂ) (Set.range (fun w : Leaf => w.point))
   let Active := {w : Leaf // w.point.re + w.point.im ≤ cutoff}
@@ -50,6 +55,8 @@ theorem exists_geometric_sector_waterfall_recoverable (i : FiveSector) (cutoff :
   let tail : Fin n → MonotoneHeightGraph := fun j => (e j).val.tailGraph.graph
   let B := fiveSectorFrame t positive small i
   let S := B.enclosingStrip
+  let V := Set.range (fun w : F.GeometricVertex =>
+    B.place (F.geometricPosition w - K.projectedVertex origin))
   have sources := B.enclosingStrip_source
   have initial : S.lower.StrictCoordinatesOn (Set.Icc 0 cutoff) ∧
       S.upper.StrictCoordinatesOn (Set.Icc 0 cutoff) ∧ S.RecoverablePinchesIn E 0 cutoff := by
@@ -57,7 +64,11 @@ theorem exists_geometric_sector_waterfall_recoverable (i : FiveSector) (cutoff :
       (B.enclosingStrip_strictCoordinatesOn _).2, ?_⟩
     intro h slab same k later width
     exact Or.inl (B.enclosingStrip_recoverablePinchesIn cutoff h slab same k later width)
-  obtain ⟨T, provenance, represented, good⟩ := S.exists_finite_waterfall_recoverable n p tail
+  have vertex_pinches : S.ApproachedPinchesIn V 0 cutoff := by
+    intro h bounds same closed
+    have affine := B.enclosingStrip_affineAt bounds.1
+    exact (S.not_mem_closure_strictCarrier_of_affine_pinch affine.1 affine.2 same closed).elim
+  obtain ⟨T, provenance, represented, good⟩ := S.exists_finite_waterfall_vertex_pinches n p tail
     cutoff sources.1 sources.2 (fun j => (e j).val.point_nonnegative) ordered
     (fun j => (e j).property) (fun j => (e j).val.tailGraph_target)
     (fun j h inside => by
@@ -78,6 +89,12 @@ theorem exists_geometric_sector_waterfall_recoverable (i : FiveSector) (cutoff :
     (fun j h slab same k later =>
       ((e j).val.tailGraph_enclosing_wall_sticks S.upper (Or.inr rfl) slab.1 slab.2
         (tips_beyond (e j).val (e j).property) same.symm k later).symm)
+    V vertex_pinches (fun j => ⟨(e j).val.val, rfl⟩)
+    (fun h bounds _ => (B.enclosingStrip_affineAt bounds.1).1)
+    (fun h bounds _ => (B.enclosingStrip_affineAt bounds.1).2)
+    (fun j h within outside => (e j).val.tailGraph.affineAt_of_ne_vertices within.1
+      (within.2.trans (tips_beyond (e j).val (e j).property))
+      (fun w equal => outside ⟨w, equal.symm⟩))
   refine ⟨T, ?_, ?_, good⟩
   · intro G member
     obtain ⟨j, completion⟩ := provenance G member
@@ -91,5 +108,28 @@ theorem exists_geometric_sector_waterfall_recoverable (i : FiveSector) (cutoff :
       MonotoneStrip.CompletesTail a.val.point a.val.tailGraph.graph cutoff G)
       (e.apply_symm_apply ⟨w, active⟩)
     exact transfer.mp completion
+
+/-- Retain the reopening-pinch interface without the stronger terminal classification. -/
+theorem exists_geometric_sector_waterfall_recoverable (i : FiveSector) (cutoff : ℝ)
+    (tips_beyond : ∀ w : M.GeometricSectorLeaf F covered positive small lower i,
+      w.point.re + w.point.im ≤ cutoff →
+        cutoff < M.geometricTailEndHeight F covered positive small lower i w.val) :
+    let E := insert (0 : ℂ) (Set.range (fun w :
+      M.GeometricSectorLeaf F covered positive small lower i => w.point))
+    ∃ T : (fiveSectorFrame t positive small i).enclosingStrip.Subdivision,
+      (∀ G ∈ T.separators,
+        ∃ w : M.GeometricSectorLeaf F covered positive small lower i,
+          w.point.re + w.point.im ≤ cutoff ∧
+            MonotoneStrip.CompletesTail w.point w.tailGraph.graph cutoff G) ∧
+      (∀ w : M.GeometricSectorLeaf F covered positive small lower i,
+        w.point.re + w.point.im ≤ cutoff →
+          ∃ G ∈ T.separators,
+            MonotoneStrip.CompletesTail w.point w.tailGraph.graph cutoff G) ∧
+      ∀ R ∈ T.cells, R.lower.StrictCoordinatesOn (Set.Icc 0 cutoff) ∧
+        R.upper.StrictCoordinatesOn (Set.Icc 0 cutoff) ∧ R.RecoverablePinchesIn E 0 cutoff := by
+  obtain ⟨T, provenance, represented, good⟩ :=
+    M.exists_geometric_sector_waterfall_vertex_pinches F covered positive small lower i cutoff
+      tips_beyond
+  exact ⟨T, provenance, represented, fun R member => (good R member).1⟩
 
 end Unfoldings.ConvexCap.SectorForest

@@ -2,6 +2,26 @@
 
 ## Session Log
 
+### 2026-11-12 — actual terminal vertices and developed contour copies
+
+- Proved ordered locally affine banks cannot have an approached zero-width
+  pinch. Strict connector prefixes preserve old pinches; actual tails are
+  locally affine away from geometric vertices, including exterior ray contacts.
+- Generalized the recoverable finite waterfall construction to preserve an
+  additional cell invariant. Applied it to classify every approached pinch
+  of the actual geometric subdivision as a vertex, including permanent tails.
+- Preserved each such point as a fine-mesh vertex on the actual prescribed cuts.
+  Retained this classification in the same uniform radial trace construction
+  and neighboring-circle separation theorem, with thresholds before both meshes.
+- A disappearing strip now supplies its own actual cut-vertex contour copy
+  strictly inside the source circle. Other copies are not identified.
+- Preserved all five existing public theorem statements byte-for-byte.
+- Verification: cache retrieval followed by full `lake build` pass; **8,903
+  unfolding / 7,243 pinned topology declarations**, standard axioms only;
+  indexed documentation links (**1,291**) and whitespace pass. Comparison across
+  empty slices, cyclic sector order, original-face transfer, and the full cap
+  theorem remain open.
+
 ### 2026-11-12 — empty source circles and actual terminal strip traces
 
 - Proved every intermediate source circle meets an open strip unless it has
