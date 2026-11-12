@@ -1,6 +1,6 @@
 module
 
-public import Unfoldings.Cap.WaterfallCircleRunOrder
+public import Unfoldings.Cap.WaterfallCircleSurvivorOrder
 public import Unfoldings.Topology.OrderedBankPieces
 public import Unfoldings.Topology.FilterDisjoint
 
@@ -109,48 +109,12 @@ theorem waterfall_circle_survivors_pairwise_disjoint :
   have close_margin : ε < μ := by nlinarith [sq_nonneg ε]
   let slices := fun cell (meet : meets cell) => Classical.choice
     ((traces cell).circle_slice close_margin (margins cell) radius_positive far meet)
-  let first := fun cell => if meet : meets cell then
-    ((traces cell).value (cell.val.lower.point (slices cell meet).lowerHeight) -
-      (traces cell).center).re else 0
-  let last := fun cell => if meet : meets cell then
-    ((traces cell).value (cell.val.upper.point (slices cell meet).upperHeight) -
-      (traces cell).center).re else 0
   have survivor_meets {cell} (member : cell ∈ survivors) : meets cell :=
     of_decide_eq_true (List.mem_filter.mp member).2
-  have within : ∀ cell ∈ survivors, first cell ≤ last cell := by
-    intro cell member
-    have meet := survivor_meets member
-    have order := (traces cell).bank_circle_order nonnegative small_error numerical linear_error
-      (margins cell) radius_positive (slices cell meet).lower_closed (slices cell meet).upper_closed
-      (slices cell meet).lower_radius (slices cell meet).upper_radius (slices cell meet).distinct
-    simpa only [first, last, dite_eq_left meet] using order.1.le
-  have cutoff_positive : 0 < cutoff := by
-    by_contra nonpositive
-    have bound := mul_nonpos_of_nonneg_of_nonpos (sub_nonneg.mpr small_error.le)
-      (not_lt.mp nonpositive)
-    exact (not_lt_of_ge bound) (radius_positive.trans far)
-  have chain : survivors.IsChain (fun a b => last a ≤ first b) := by
-    apply isChain_filter_of_removed_runs keep (P.nonemptyCells cutoff)
-    intro before a middle b after equal kept_a kept_b removed
-    have meet_a : meets a := of_decide_eq_true kept_a
-    have meet_b : meets b := of_decide_eq_true kept_b
-    have run : List.IsInfix (a :: (middle ++ [b])) (P.nonemptyCells cutoff) := by
-      refine ⟨before, after, ?_⟩
-      rw [equal]
-      simp only [List.append_assoc, List.cons_append, List.nil_append]
-    have order := circle_banks_order_across_removed_run R outward D B leaf_vertices footprint
-      deep P traces curvature_covered budget nonnegative small_error linear_error pinches
-      provenance represented leaf_coherent a b (slices a meet_a) (slices b meet_b)
-      numerical (margins a) (margins b) radius_positive far outside all_tails continuations
-      all_outside_empty middle (run.sublist.trans (P.nonemptyCells_sublist cutoff))
-      ((P.nonemptyCells_bank_contact_chain cutoff_positive).infix run)
-      (fun cell member => (P.mem_nonemptyCells cutoff cell).mp
-        (run.subset (List.mem_cons_of_mem _ (List.mem_append_left _ member))))
-      (fun cell member => Set.not_nonempty_iff_eq_empty.mp (by
-        intro meet
-        exact removed cell member (by simpa only [keep, decide_eq_true_eq] using meet)))
-    simpa only [first, last, dite_eq_left meet_a, dite_eq_left meet_b] using order.1
-  have ordered := ordered_bank_pieces_pairwise first last survivors within chain
+  have ordered := waterfall_circle_survivor_bank_order R outward D B leaf_vertices footprint
+    deep P traces curvature_covered budget nonnegative small_error linear_error pinches provenance
+    represented leaf_coherent numerical margins radius_positive far outside all_tails continuations
+    all_outside_empty slices
   apply List.Pairwise.imp_of_mem _ ordered
   intro a b member_a member_b gap
   have meet_a := survivor_meets member_a
@@ -163,8 +127,7 @@ theorem waterfall_circle_survivors_pairwise_disjoint :
     (slices b meet_b).lower_radius (slices b meet_b).upper_radius (slices b meet_b).distinct
   apply (slices a meet_a).disjoint_circle_images_of_bank_order (slices b meet_b)
     first_order.1 last_order.1
-  · simpa only [first, last, dite_eq_left meet_a, dite_eq_left meet_b,
-      RadialCutForest.RadialStripTraceData.center] using gap
+  · simpa only [RadialCutForest.RadialStripTraceData.center] using gap meet_a meet_b
   · rintro z ⟨p, member, rfl⟩
     exact (traces a).strict_quadrant_of_margin close_margin (margins a) member
 

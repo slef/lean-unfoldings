@@ -2,6 +2,24 @@
 
 ## Session Log
 
+### 2026-11-12 — retain circle barriers and full survivor order
+
+- Strengthened both boundary-run orientations and the no-run outer-bank
+  theorem to separate entire portions of the circle bounded by the actual
+  bank coordinates. Existing image-separation statements are unchanged and
+  now follow by inclusion in these proved regions.
+- Exposed full ordered survivor-bank endpoints, with independently chosen
+  actual slices. Refactored the existing pairwise-disjoint proof to use this
+  stronger result without changing its statement.
+- Proved that each controlled sector circle has a surviving actual strip:
+  otherwise every cell would collapse at the cutoff, contradicting the
+  enclosing wedge's positive width. Added first/last interval bounds and
+  extraction of actual removed boundary prefixes and suffixes.
+- Verification: cache retrieval and full `lake build` pass; **9,364 unfolding /
+  7,243 pinned topology declarations**, standard axioms only; **1,466** local
+  documentation links and whitespace pass. Global survivor assembly,
+  original-face transfer, and the full cap theorem remain open.
+
 ### 2026-11-12 — separate adjacent outer circles with no disappearing run
 
 - Proved that an earlier coherent physical contact identifies both actual

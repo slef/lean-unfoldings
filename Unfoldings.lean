@@ -717,3 +717,13 @@ public import Unfoldings.Cap.BoundaryCircleContactAlternative
 public import Unfoldings.Cap.SharedSectorBankPointOrder
 public import Unfoldings.Cap.OuterCircleContactAlternative
 public import Unfoldings.Cap.OuterCircleSeparation
+public import Unfoldings.Cap.WaterfallCircleSurvivorOrder
+public import Unfoldings.Geometry.CircleCoordinateCaps
+public import Unfoldings.Cap.StripCircleCoordinateCaps
+public import Unfoldings.Cap.ComponentBankCircleCaps
+public import Unfoldings.Cap.BoundaryRunCircleCaps
+public import Unfoldings.Cap.OuterCircleCaps
+public import Unfoldings.Geometry.SubdivisionCollapsedBanks
+public import Unfoldings.Topology.OrderedBankEndpoints
+public import Unfoldings.Cap.WaterfallCircleNonempty
+public import Unfoldings.Topology.FilterBoundaryRuns

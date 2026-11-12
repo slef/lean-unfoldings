@@ -1503,3 +1503,13 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Cap.SharedSectorBankPointOrder](../Unfoldings/Cap/SharedSectorBankPointOrder.lean) | Order shared physical bank points exactly across their different sector height scales |
 | [Unfoldings.Cap.OuterCircleContactAlternative](../Unfoldings/Cap/OuterCircleContactAlternative.lean) | Classify surviving outer circle endpoints without assuming their shared physical ray is uncut |
 | [Unfoldings.Cap.OuterCircleSeparation](../Unfoldings/Cap/OuterCircleSeparation.lean) | Separate actual adjacent outer circle images with coherent contacts or genuine radial cuts |
+| [Unfoldings.Cap.WaterfallCircleSurvivorOrder](../Unfoldings/Cap/WaterfallCircleSurvivorOrder.lean) | Retain the full actual bank-endpoint order of every surviving source-circle interval |
+| [Unfoldings.Geometry.CircleCoordinateCaps](../Unfoldings/Geometry/CircleCoordinateCaps.lean) | Describe and compare circle portions bounded by one bank coordinate |
+| [Unfoldings.Cap.StripCircleCoordinateCaps](../Unfoldings/Cap/StripCircleCoordinateCaps.lean) | Place actual circle images inside their own bank-coordinate portions and separate them at common points |
+| [Unfoldings.Cap.ComponentBankCircleCaps](../Unfoldings/Cap/ComponentBankCircleCaps.lean) | Separate entire coordinate-bounded circle portions using actual component-bank comparisons |
+| [Unfoldings.Cap.BoundaryRunCircleCaps](../Unfoldings/Cap/BoundaryRunCircleCaps.lean) | Separate whole circle portions across either actual disappearing boundary run |
+| [Unfoldings.Cap.OuterCircleCaps](../Unfoldings/Cap/OuterCircleCaps.lean) | Separate whole circle portions at actual adjacent outer banks, allowing shared-ray cuts |
+| [Unfoldings.Geometry.SubdivisionCollapsedBanks](../Unfoldings/Geometry/SubdivisionCollapsedBanks.lean) | Transfer simultaneous cell-bank collapse to the enclosing subdivision banks |
+| [Unfoldings.Topology.OrderedBankEndpoints](../Unfoldings/Topology/OrderedBankEndpoints.lean) | Bound every ordered interval by the first and last retained bank pieces |
+| [Unfoldings.Cap.WaterfallCircleNonempty](../Unfoldings/Cap/WaterfallCircleNonempty.lean) | Prove that every controlled sector circle has an actual surviving waterfall strip |
+| [Unfoldings.Topology.FilterBoundaryRuns](../Unfoldings/Topology/FilterBoundaryRuns.lean) | Retain the actual removed prefix and suffix at the first and last filtered survivors |

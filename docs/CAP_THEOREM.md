@@ -7,6 +7,16 @@ This is a proof-development checklist; unchecked claims are not Lean declaration
 
 Current entry points:
 
+- [OuterCircleCaps](../Unfoldings/Cap/OuterCircleCaps.lean) and
+  [BoundaryRunCircleCaps](../Unfoldings/Cap/BoundaryRunCircleCaps.lean) separate
+  actual adjacent outer-bank circle portions, with or without a disappearing
+  boundary run. Shared physical rays may contain cuts. The finite assembly
+  for arbitrary surviving pairs remains open.
+- [WaterfallCircleSurvivorOrder](../Unfoldings/Cap/WaterfallCircleSurvivorOrder.lean)
+  retains all actual surviving bank endpoint order, and
+  [WaterfallCircleNonempty](../Unfoldings/Cap/WaterfallCircleNonempty.lean)
+  proves every controlled sector circle has a survivor.
+
 - [SectorBoundaryCircleBankOrder](../Unfoldings/Cap/SectorBoundaryCircleBankOrder.lean)
   derives cross-frame order for circle endpoints on actual radial boundary
   cuts. Boundary classification and the comparison quadrants are proved from
@@ -14,7 +24,7 @@ Current entry points:
 - [ExtendedSectorCircleGeometry](../Unfoldings/Cap/ExtendedSectorCircleGeometry.lean)
   chooses a uniform positive tilt threshold before both meshes and separates
   all actual waterfall strip-circle images within each sector. Separation
-  across different sectors is still open.
+  for arbitrary survivor pairs across different sectors is still open.
 - [SubdivisionNonemptyCells](../Unfoldings/Geometry/SubdivisionNonemptyCells.lean)
   removes wholly empty physical cells while preserving exact bank contact on
   the controlled closed slab.
@@ -43,7 +53,7 @@ Current entry points:
   constructs finite waterfall subdivisions of the actual deep roof. Their strict
   interiors avoid every cut, and the actual developed map is injective on every
   positive-width height slab. Chart selection and continuity are proved.
-  Separation between different strips or across pinches remains open.
+  Global separation across the five sectors remains open.
 - [GnomonicArea](../Unfoldings/Cap/GnomonicArea.lean) proves a mesh-independent
   positive tilt threshold for arbitrarily small total spherical normal-image
   area, bounded by the actual planar normal-polygon areas.
@@ -850,6 +860,10 @@ Separation of different banks and global nonoverlap remain open.
   Account for different sector height scales and actual radial cuts on the
   shared ray: the endpoints coincide coherently or lie on one component,
   whose coherent fine seed, bank candidates, and margins are constructed.
+- [x] Retain full survivor-bank endpoint order, with arbitrary actual slice
+  choices, and prove that every sector circle has a survivor. Strengthen
+  outer-bank and disappearing-run separation to whole circle portions bounded
+  by the actual bank coordinates, preserving existing image-separation APIs.
 - [ ] Assemble the actual outer surviving intervals across all five sectors,
   including disappearing boundary runs, and establish global cyclic order.
 - [ ] Prove side-by-side separation of all developed strips and hence all

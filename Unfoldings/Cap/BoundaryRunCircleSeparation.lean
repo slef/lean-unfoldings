@@ -3,7 +3,8 @@ module
 public import Unfoldings.Cap.BoundaryRunSourceBankCandidate
 public import Unfoldings.Cap.BoundaryRunNeighborCircleCandidate
 public import Unfoldings.Cap.BoundaryRunSharedMargins
-public import Unfoldings.Cap.ComponentBankCircleSeparation
+public import Unfoldings.Cap.BoundaryRunCircleCaps
+public import Unfoldings.Cap.StripCircleCoordinateCaps
 
 /-! Actual neighboring circle images are disjoint across one disappearing boundary run. -/
 
@@ -130,79 +131,17 @@ theorem circle_images_disjoint_across_upper_boundary_run
         {z | ‖z - (traces source).center‖ = radius}))
       (other.outputFrame.symm '' (other.value '' T.openSlab 0 cutoff ∩
         {z | ‖z - other.center‖ = radius})) := by
-  have physical_nonnegative : 0 ≤ physicalRadius :=
-    (norm_nonneg _).trans (terminals pivot).physical_inside.le
-  have physical_bound : physicalRadius ≤ cutoff := by linarith
-  obtain ⟨c, terminal_member, unattached, e, child, s, trace_origin, bound, inside⟩ :=
-    exists_boundary_run_source_bank_candidate_with_trace R outward D B leaf_vertices footprint deep
-      P traces curvature_covered budget nonnegative small_error linear_error pinches cells contacts
-      ordered_cells terminals tails provenance represented leaf_coherent source slice
-      radius_positive
-      far outside outside_empty empty pivot highest physical_bound true last_maximum source_order
-      facing separator outer
-  obtain ⟨d, other_terminal, _, f, other_child, r, matching, size⟩ :=
-    exists_boundary_run_neighbor_circle_candidate R outward D B (fun k => (cells k).val)
-      (fun k => traces (cells k)) contacts terminals tails pivot highest footprint deep
-      physical_bound
-      leaf_vertices all_leaf_coherent true shared outer radius_positive small_error room
-      outside_empty
-      empty other other_slice neighbor_outer outside
-  have same : d = c := F.component_eq_of_pos_scaled_positions lower other_terminal terminal_member
-    zero_lt_one (by simp only [one_smul])
-  have last_member : Q.projectedVertex f.val ∈ (F.componentTail c).carrier :=
-    (congrArg (fun a => (F.componentTail a).carrier) same).subset other_child
-  have exit_margins := B.boundary_run_candidate_shared_margins i j true shared
-    (fun k => (cells k).val) (fun k => traces (cells k)) contacts terminals pivot highest outer
-    positive_margin face_bounds (traces source) slice physical_room radius_positive small_error
-    room facing _ trace_origin
-  have other_heights := other.circle_slice_heights radius_positive far other_slice
-  have entrance_margins := B.circle_shared_bank_margins j i false shared positive_margin
-    face_bounds other other_slice radius_positive small_error room
-    (neighbor_outer ⟨other_heights.1.1.le, other_heights.1.2.le⟩)
-  change other.outputFrame.symm (other.value (T.lower.point other_slice.lowerHeight)) =
-    R.parentEntrancePoint (R.completedDevelopment D) f (1 - (r : ℝ)) at matching
-  change ∀ a, a = j ∨ a = i →
-    0 < (B.sectorFrame a (other.outputFrame.symm
-      (other.value (T.lower.point other_slice.lowerHeight)) -
-        D.projectedMap Q (K.projectedVertex origin))).re ∧
-    0 < (B.sectorFrame a (other.outputFrame.symm
-      (other.value (T.lower.point other_slice.lowerHeight)) -
-        D.projectedMap Q (K.projectedVertex origin))).im at entrance_margins
-  rw [matching] at entrance_margins
-  have at_root : (cells pivot).val.lower.point (terminals pivot).height =
-      (fiveSectorFrame t positive small i).enclosingStrip.upper.point (terminals pivot).height :=
-    B.last_run_lower_tail_on_boundary i (fun k => (cells k).val) (fun k => traces (cells k))
-      contacts terminals pivot highest outer ⟨le_rfl, (terminals pivot).height_bounds.2.le⟩
-  have cones := shared_sector_bank_mem_both_cones positive small i j true shared
-    (terminals pivot).height_bounds.1
-  have physical : Q.projectedVertex (terminals pivot).vertex - K.projectedVertex origin =
-      (fiveSectorFrame t positive small i).place.symm
-        ((fiveSectorFrame t positive small i).enclosingStrip.upper.point
-          (terminals pivot).height) := by
-    rw [← (terminals pivot).physical, add_sub_cancel_left, at_root]
-  have first_inside : Q.projectedVertex e.val - K.projectedVertex origin ∈ closedFiveSector t i :=
-    (F.componentTail c).position_inDirectionWedge_of_mem terminal_member
-      (physical.symm ▸ cones.1) child
-  have last_inside : Q.projectedVertex e.val - K.projectedVertex origin ∈ closedFiveSector t j :=
-    (F.componentTail c).position_inDirectionWedge_of_mem terminal_member
-      (physical.symm ▸ cones.2) child
-  have centered : other.value (T.lower.point other_slice.lowerHeight) - other.center =
-      B.sectorFrame j (R.parentEntrancePoint (R.completedDevelopment D) f (1 - (r : ℝ)) -
-        D.projectedMap Q (K.projectedVertex origin)) := by
-    have value := congrArg other.outputFrame matching
-    rw [LinearIsometryEquiv.apply_symm_apply] at value
-    rw [value, other.center_eq_outputFrame, map_sub]
-    rfl
-  apply M.circle_images_disjoint_of_component_bank_bounds F covered lower R e f c unattached
-    child
-    last_member positive small outward footprint i j first_inside last_inside curvature_covered D B
-    (traces source) other slice other_slice first_order last_order first_error last_error
-    first_margin
-    last_margin radius_positive budget.le s r inside size.le
-  · intro a choice
-    exact ⟨exit_margins a choice, entrance_margins a choice.symm⟩
-  · exact bound
-  · rw [← centered]
+  have caps := circle_caps_disjoint_across_upper_boundary_run R outward D B leaf_vertices
+    footprint deep P traces curvature_covered budget nonnegative small_error linear_error pinches
+    cells contacts ordered_cells terminals tails provenance represented leaf_coherent source slice
+    radius_positive far outside outside_empty empty pivot highest last_maximum physical_room
+    source_order facing separator outer j shared all_leaf_coherent other other_slice neighbor_outer
+    room positive_margin face_bounds
+  exact caps.mono
+    (B.circle_image_subset_upper_cap i (traces source) slice first_order first_error first_margin
+      radius_positive)
+    (B.circle_image_subset_lower_cap j other other_slice last_order last_error last_margin
+      radius_positive)
 
 theorem circle_images_disjoint_across_lower_boundary_run
     (pivot : Fin (n + 1))
@@ -251,80 +190,17 @@ theorem circle_images_disjoint_across_lower_boundary_run
         {z | ‖z - (traces source).center‖ = radius}))
       (other.outputFrame.symm '' (other.value '' T.openSlab 0 cutoff ∩
         {z | ‖z - other.center‖ = radius})) := by
-  have physical_nonnegative : 0 ≤ physicalRadius :=
-    (norm_nonneg _).trans (terminals pivot).physical_inside.le
-  have physical_bound : physicalRadius ≤ cutoff := by linarith
-  obtain ⟨c, terminal_member, unattached, e, child, s, trace_origin, bound, inside⟩ :=
-    exists_boundary_run_source_bank_candidate_with_trace R outward D B leaf_vertices footprint deep
-      P traces curvature_covered budget nonnegative small_error linear_error pinches cells contacts
-      ordered_cells terminals tails provenance represented leaf_coherent source slice
-      radius_positive
-      far outside outside_empty empty pivot highest physical_bound false first_maximum source_order
-      facing separator outer
-  obtain ⟨d, other_terminal, _, f, other_child, r, matching, size⟩ :=
-    exists_boundary_run_neighbor_circle_candidate R outward D B (fun k => (cells k).val)
-      (fun k => traces (cells k)) contacts terminals tails pivot highest footprint deep
-      physical_bound
-      leaf_vertices all_leaf_coherent false shared outer radius_positive small_error room
-      outside_empty
-      empty other other_slice neighbor_outer outside
-  have same : d = c := F.component_eq_of_pos_scaled_positions lower other_terminal terminal_member
-    zero_lt_one (by simp only [one_smul])
-  have last_member : Q.projectedVertex f.val ∈ (F.componentTail c).carrier :=
-    (congrArg (fun a => (F.componentTail a).carrier) same).subset other_child
-  have entrance_margins := B.boundary_run_candidate_shared_margins i j false shared
-    (fun k => (cells k).val) (fun k => traces (cells k)) contacts terminals pivot highest outer
-    positive_margin face_bounds (traces source) slice physical_room radius_positive small_error
-    room facing _ trace_origin
-  have other_heights := other.circle_slice_heights radius_positive far other_slice
-  have exit_margins := B.circle_shared_bank_margins j i true shared positive_margin
-    face_bounds other other_slice radius_positive small_error room
-    (neighbor_outer ⟨other_heights.2.1.le, other_heights.2.2.le⟩)
-  change other.outputFrame.symm (other.value (T.upper.point other_slice.upperHeight)) =
-    R.parentExitPoint (R.completedDevelopment D) f (1 - (r : ℝ)) at matching
-  change ∀ a, a = j ∨ a = i →
-    0 < (B.sectorFrame a (other.outputFrame.symm
-      (other.value (T.upper.point other_slice.upperHeight)) -
-        D.projectedMap Q (K.projectedVertex origin))).re ∧
-    0 < (B.sectorFrame a (other.outputFrame.symm
-      (other.value (T.upper.point other_slice.upperHeight)) -
-        D.projectedMap Q (K.projectedVertex origin))).im at exit_margins
-  rw [matching] at exit_margins
-  have at_root : (cells pivot).val.lower.point (terminals pivot).height =
-      (fiveSectorFrame t positive small i).enclosingStrip.lower.point (terminals pivot).height :=
-    (B.first_run_lower_tail_on_boundary i (fun k => (cells k).val) (fun k => traces (cells k))
-      contacts terminals pivot highest outer ⟨le_rfl, (terminals pivot).height_bounds.2.le⟩).symm
-  have cones := shared_sector_bank_mem_both_cones positive small i j false shared
-    (terminals pivot).height_bounds.1
-  have physical : Q.projectedVertex (terminals pivot).vertex - K.projectedVertex origin =
-      (fiveSectorFrame t positive small i).place.symm
-        ((fiveSectorFrame t positive small i).enclosingStrip.lower.point
-          (terminals pivot).height) := by
-    rw [← (terminals pivot).physical, add_sub_cancel_left, at_root]
-  have first_inside : Q.projectedVertex f.val - K.projectedVertex origin ∈
-      closedFiveSector t j :=
-    (F.componentTail c).position_inDirectionWedge_of_mem terminal_member
-      (physical.symm ▸ cones.2) last_member
-  have last_inside : Q.projectedVertex f.val - K.projectedVertex origin ∈ closedFiveSector t i :=
-    (F.componentTail c).position_inDirectionWedge_of_mem terminal_member
-      (physical.symm ▸ cones.1) last_member
-  have centered : other.value (T.upper.point other_slice.upperHeight) - other.center =
-      B.sectorFrame j (R.parentExitPoint (R.completedDevelopment D) f (1 - (r : ℝ)) -
-        D.projectedMap Q (K.projectedVertex origin)) := by
-    have value := congrArg other.outputFrame matching
-    rw [LinearIsometryEquiv.apply_symm_apply] at value
-    rw [value, other.center_eq_outputFrame, map_sub]
-    rfl
-  apply Disjoint.symm
-  apply M.circle_images_disjoint_of_component_bank_bounds F covered lower R f e c unattached
-    last_member child positive small outward footprint j i first_inside last_inside
-    curvature_covered
-    D B other (traces source) other_slice slice last_order first_order last_error first_error
-    last_margin first_margin radius_positive budget.le r s size.le inside
-  · intro a choice
-    exact ⟨exit_margins a choice, entrance_margins a choice.symm⟩
-  · rw [← centered]
-  · exact bound
+  have caps := circle_caps_disjoint_across_lower_boundary_run R outward D B leaf_vertices
+    footprint deep P traces curvature_covered budget nonnegative small_error linear_error pinches
+    cells contacts ordered_cells terminals tails provenance represented leaf_coherent source slice
+    radius_positive far outside outside_empty empty pivot highest first_maximum physical_room
+    source_order facing separator outer j shared all_leaf_coherent other other_slice neighbor_outer
+    room positive_margin face_bounds
+  exact caps.mono
+    (B.circle_image_subset_lower_cap i (traces source) slice first_order first_error first_margin
+      radius_positive)
+    (B.circle_image_subset_upper_cap j other other_slice last_order last_error last_margin
+      radius_positive)
 
 end Unfoldings.ConvexCap.SectorForest
 
