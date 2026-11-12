@@ -114,6 +114,8 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Cap.ProperComparisonArcs](../Unfoldings/Cap/ProperComparisonArcs.lean) | Constructed simple comparison subarcs ending on one source circle in derived bank order |
+| [Unfoldings.Cap.SimpleComparisonPaths](../Unfoldings/Cap/SimpleComparisonPaths.lean) | Simple parametrizations with exactly the actual finite comparison-bank images |
 | [Unfoldings.Cap.CompletedPrefixGraphs](../Unfoldings/Cap/CompletedPrefixGraphs.lean) | Actual finite comparison-bank graph homeomorphisms and visible-trace start values |
 | [Unfoldings.Cap.CompletedTraceVertexCopy](../Unfoldings/Cap/CompletedTraceVertexCopy.lean) | Represent each actual one-sided branch trace value by its own contour copy |
 | [Unfoldings.Cap.ExtendedBankGeometryBudget](../Unfoldings/Cap/ExtendedBankGeometryBudget.lean) | One uniform choice retains strict roof curvature, radial matched banks, and face bounds |
@@ -892,6 +894,7 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Topology.SphereArc](../Unfoldings/Topology/SphereArc.lean) | Simple arcs first reaching a prescribed source sphere only at their final point |
 | [Unfoldings.Topology.IntervalArc](../Unfoldings/Topology/IntervalArc.lean) | Injective continuous paths for sets homeomorphic to nondegenerate real intervals |
 | [Unfoldings.Topology.PathRadiusExit](../Unfoldings/Topology/PathRadiusExit.lean) | First source-sphere crossings with strictly interior preceding paths and preserved simplicity |
 | [Unfoldings.Topology.FiniteSelectionVisibility](../Unfoldings/Topology/FiniteSelectionVisibility.lean) | Trace branches are approached through their own actual closed pieces |

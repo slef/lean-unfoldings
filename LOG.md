@@ -2,6 +2,22 @@
 
 ## Session Log
 
+### 2026-11-11 — paired simple comparison arcs on a common source circle
+
+- Derived strict endpoint-coordinate progress from the physical stopping
+  radius and actual endpoint margins. Reparametrized both full comparison
+  prefixes as simple paths, preserving exactly their geometric images.
+- Constructed paired simple subarcs that first reach one prescribed source
+  circle. Every nonterminal point stays strictly inside the ball; all common
+  source-circle intersections retain the derived opposite-bank order.
+- These curves come from actual comparison-bank images. Their separation
+  from all developed strip interiors is a further theorem, not an assumption
+  or conclusion of this construction.
+- Verification: cache retrieval followed by full `lake build` pass; **8,656
+  unfolding / 7,243 pinned topology declarations**, standard axioms only;
+  indexed documentation links (**1,225**) and whitespace pass. Uniform
+  assembly of these arcs and global strip separation remain open.
+
 ### 2026-11-11 — whole comparison-bank graph arcs
 
 - Constructed continuous polygonal-chain paths with exactly the closed-edge

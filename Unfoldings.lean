@@ -489,3 +489,6 @@ public import Unfoldings.Cap.CompletedPrefixGraphs
 public import Unfoldings.Topology.PathRadiusExit
 public import Unfoldings.Topology.IntervalArc
 public import Unfoldings.Geometry.ChainGraphArc
+public import Unfoldings.Cap.SimpleComparisonPaths
+public import Unfoldings.Topology.SphereArc
+public import Unfoldings.Cap.ProperComparisonArcs

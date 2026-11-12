@@ -595,6 +595,11 @@ Separation of different banks and global nonoverlap remain open.
   endpoint progress gives simple arcs despite flat gaps and repeated vertices.
   The visible trace supplies their exact common initial value. First-crossing
   initial subpaths stay strictly inside a source circle before their endpoint.
+- [x] Derive strict endpoint progress from the physical stopping radius and
+  construct paired simple comparison subarcs to one source circle, retaining
+  their actual comparison-bank images and their order at all common radii.
+  Each nonterminal arc point stays strictly inside the ball. Separation from
+  the developed strip interiors is not asserted here.
 - [ ] Prove side-by-side separation of all developed strips and hence all
   distinct original face interiors.
 - [x] Apply the cut-disk and flat-development infrastructure to the fixed-wedge
