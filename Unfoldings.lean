@@ -740,3 +740,9 @@ public import Unfoldings.Cap.WaterfallMapDistance
 public import Unfoldings.Cap.UniformExtendedFaceSeparation
 public import Unfoldings.Development.NonoverlapNormalization
 public import Unfoldings.Development.RefinementNonoverlap
+public import Unfoldings.Complex.FaceRestriction
+public import Unfoldings.Development.FaceRestriction
+public import Unfoldings.Geometry.ConstrainedTriangleCover
+public import Unfoldings.Cap.ClipOriginalCoordinates
+public import Unfoldings.Cap.ClipOriginalPieces
+public import Unfoldings.Cap.ClipOriginalSubdivision

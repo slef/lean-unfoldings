@@ -10,8 +10,8 @@ Current entry points:
 - [UniformExtendedFaceSeparation](../Unfoldings/Cap/UniformExtendedFaceSeparation.lean)
   chooses a positive tilt threshold before both meshes and separates actual
   roof-face interiors in a controlled source ball. All circle geometry and
-  finite exceptional-radius avoidance are discharged. The original-face
-  refinement and retained-seam transfer remain open.
+  finite exceptional-radius avoidance are discharged. The actual original-face
+  subdivision is constructed; retained-seam transfer remains open.
 
 - [AllSectorCircleSeparation](../Unfoldings/Cap/AllSectorCircleSeparation.lean)
   proves pairwise separation of every actual strip-circle image across all
@@ -886,8 +886,11 @@ Separation of different banks and global nonoverlap remain open.
   position estimates to actual roof-face interiors in a controlled physical ball.
 - [x] Prove nonoverlap invariance under normalization and transfer from any
   development of a connected conforming refinement to a coarse development.
-- [ ] Build the actual original-face restriction and conforming refinement,
-  including both directions of retained-seam compatibility.
+- [x] Build the actual original-face restriction and isometric subdivision.
+  [ClipOriginalSubdivision](../Unfoldings/Cap/ClipOriginalSubdivision.lean)
+  proves unique original parents, actual rigid coordinates, and coverage of
+  every closed original face.
+- [ ] Prove both directions of retained-seam compatibility for this subdivision.
 - [ ] Prove side-by-side separation of all developed strips and hence all
   distinct original face interiors.
 - [x] Apply the cut-disk and flat-development infrastructure to the fixed-wedge

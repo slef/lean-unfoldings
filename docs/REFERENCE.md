@@ -1526,3 +1526,9 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Cap.UniformExtendedFaceSeparation](../Unfoldings/Cap/UniformExtendedFaceSeparation.lean) | Choose a positive tilt threshold before both meshes and separate actual roof-face interiors in a controlled source ball |
 | [Unfoldings.Development.NonoverlapNormalization](../Unfoldings/Development/NonoverlapNormalization.lean) | Preserve actual face-interior nonoverlap under global rigid motion, root normalization, and development uniqueness |
 | [Unfoldings.Development.RefinementNonoverlap](../Unfoldings/Development/RefinementNonoverlap.lean) | Transfer nonoverlap from any actual development of a connected conforming refinement to a coarse development |
+| [Unfoldings.Complex.FaceRestriction](../Unfoldings/Complex/FaceRestriction.lean) | Restrict whole triangle-complex faces and inherit exactly the seams between retained faces |
+| [Unfoldings.Development.FaceRestriction](../Unfoldings/Development/FaceRestriction.lean) | Restrict actual facewise developments and preserve face-interior nonoverlap |
+| [Unfoldings.Geometry.ConstrainedTriangleCover](../Unfoldings/Geometry/ConstrainedTriangleCover.lean) | Cover a coarse triangle by contained cells from a finite line-aligned geometric cover |
+| [Unfoldings.Cap.ClipOriginalCoordinates](../Unfoldings/Cap/ClipOriginalCoordinates.lean) | Construct actual rigid embeddings of contained roof triangles into their original face coordinates |
+| [Unfoldings.Cap.ClipOriginalPieces](../Unfoldings/Cap/ClipOriginalPieces.lean) | Cover every closed original face by actual contained roof triangles with unique original parents |
+| [Unfoldings.Cap.ClipOriginalSubdivision](../Unfoldings/Cap/ClipOriginalSubdivision.lean) | Construct the actual original-face subcomplex and its isometric subdivision of the original input complex |

@@ -2,6 +2,18 @@
 
 ## Session Log
 
+### 2026-11-12 — actual original-face subdivision
+
+- Restricted the constructed roof mesh to triangles contained in original
+  faces. Proved unique original parents, rigid spatial coordinates, and coverage
+  of every closed original face, including all edge and vertex points.
+- Added reusable whole-face restrictions of triangle complexes and developments,
+  and a finite constrained-triangle coverage theorem.
+- Verification: cache retrieval and full `lake build` pass; **9,441 unfolding /
+  7,243 pinned topology declarations**, standard axioms only. Local documentation
+  links and whitespace pass. Retained-seam compatibility and the full original-edge
+  cap theorem remain open.
+
 ### 2026-11-12 — uniform actual roof-face separation
 
 - Chose one positive error and tilt threshold before the original and
