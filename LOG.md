@@ -2,6 +2,19 @@
 
 ## Session Log
 
+### 2026-11-11 — exact bounded strip-image frontiers
+
+- Proved every bounded physical strip slab is compact, its strict open slab
+  has compact closure, and its frontier lies on the two actual banks or
+  the two end levels. This includes reopening pinches.
+- Applied exact planar frontier transport to closed injective strip traces.
+  Every developed image-frontier point is consequently an actual bank value
+  or an end-level value; no unaccounted image-boundary component remains.
+- Verification: cache retrieval followed by full `lake build` pass; **8,710
+  unfolding / 7,243 pinned topology declarations**, standard axioms only;
+  indexed documentation links (**1,237**) and whitespace pass. Identifying
+  strip-circle intervals and global cyclic strip separation remain open.
+
 ### 2026-11-11 — uniform closed radial banks and exact planar frontier transport
 
 - Added the stronger uniform radial-bank factory with whole closed-trace

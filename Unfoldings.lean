@@ -502,3 +502,5 @@ public import Unfoldings.Cap.CenteredClosedBankTrace
 public import Unfoldings.Cap.RadialBankTraceProperty
 public import Unfoldings.Cap.ExtendedClosedRadialBankTraces
 public import Unfoldings.Topology.CompactImageFrontier
+public import Unfoldings.Geometry.MonotoneStripTopology
+public import Unfoldings.Geometry.MonotoneStripImageFrontier

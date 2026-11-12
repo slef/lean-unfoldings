@@ -613,6 +613,10 @@ Separation of different banks and global nonoverlap remain open.
   and normal-height bounds. Preserve the existing radial-bank theorem statement.
 - [x] Prove exact frontier transport for open planar sets with compact closure
   under a continuous map injective on that closure.
+- [x] Prove compactness of bounded strip slabs and their open-slab closures.
+  The physical frontier consists only of banks and end levels, including
+  reopening pinches. Transfer this to the whole developed strip-image frontier
+  using closed-trace injectivity, with no unaccounted boundary components.
 - [ ] Prove side-by-side separation of all developed strips and hence all
   distinct original face interiors.
 - [x] Apply the cut-disk and flat-development infrastructure to the fixed-wedge

@@ -671,6 +671,8 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Geometry.MonotoneStripImageFrontier](../Unfoldings/Geometry/MonotoneStripImageFrontier.lean) | Whole developed strip-image frontiers consist of actual bank and end-level values |
+| [Unfoldings.Geometry.MonotoneStripTopology](../Unfoldings/Geometry/MonotoneStripTopology.lean) | Compact bounded strip closures and exact physical bank/end frontier alternatives |
 | [Unfoldings.Geometry.RecoverableStripLowerBound](../Unfoldings/Geometry/RecoverableStripLowerBound.lean) | Uniform lower separation through coherent reopening pinches and trace closure |
 | [Unfoldings.Geometry.MonotoneStripLowerBound](../Unfoldings/Geometry/MonotoneStripLowerBound.lean) | Quantitative distance separation for continuous finite affine selections on bounded strips |
 | [Unfoldings.Geometry.ChainGraphArc](../Unfoldings/Geometry/ChainGraphArc.lean) | Simple-arc parametrizations retaining the entire geometric chain image |
