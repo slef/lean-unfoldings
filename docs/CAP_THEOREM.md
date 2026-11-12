@@ -504,6 +504,15 @@ Separation of different banks and global nonoverlap remain open.
   selection proves each value is an actual containing-face placement. The
   waterfall is chosen before its development and calibration. Bank matching,
   full boundary-curve parametrization, and global separation remain open.
+- [x] Parametrize both complete actual bank traces from the common source up
+  to every active positive-width height. Finite coherent pinches imply all
+  those bank points lie in the strict-strip closure. Each trace value is
+  approached through its own containing face, and the source value is its
+  actual coherent developed value. Permanently collapsed continuations are
+  not identified with these one-sided traces.
+- [ ] Identify the facing cut banks from one-sided face visibility. Transfer
+  position estimates to all actual face copies using density of strict strip
+  interiors, then control radial order and complete bank continuations.
 - [ ] Prove side-by-side separation of all developed strips and hence all
   distinct original face interiors.
 - [x] Apply the cut-disk and flat-development infrastructure to the fixed-wedge

@@ -418,3 +418,8 @@ public import Unfoldings.Geometry.MonotoneStripCoreLipschitz
 public import Unfoldings.Geometry.MonotoneStripLipschitz
 public import Unfoldings.Topology.ComplexLipschitzExtension
 public import Unfoldings.Topology.FiniteSelectionClosure
+public import Unfoldings.Cap.CenteredBankTrace
+public import Unfoldings.Cap.CenteredTraceValues
+public import Unfoldings.Cap.ExtendedWaterfallBankTraces
+public import Unfoldings.Geometry.RecoverableStripClosure
+public import Unfoldings.Topology.FiniteSelectionVisibility

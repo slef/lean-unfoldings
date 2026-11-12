@@ -114,6 +114,9 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Cap.ExtendedWaterfallBankTraces](../Unfoldings/Cap/ExtendedWaterfallBankTraces.lean) | Construct complete actual bank traces from the common source through active heights |
+| [Unfoldings.Cap.CenteredTraceValues](../Unfoldings/Cap/CenteredTraceValues.lean) | Trace values are approached through their own faces and match coherent copies |
+| [Unfoldings.Cap.CenteredBankTrace](../Unfoldings/Cap/CenteredBankTrace.lean) | Complete source-based bank traces with actual one-sided containing-face visibility |
 | [Unfoldings.Cap.ExtendedWaterfallTraces](../Unfoldings/Cap/ExtendedWaterfallTraces.lean) | Actual whole-strip maps are uniformly Lipschitz and have containing-face boundary traces |
 | [Unfoldings.Cap.ExtendedWaterfallCoherent](../Unfoldings/Cap/ExtendedWaterfallCoherent.lean) | One constructed waterfall has coherent domains for every minimal development |
 | [Unfoldings.Cap.CenteredMapTrace](../Unfoldings/Cap/CenteredMapTrace.lean) | Construct unique one-sided actual strip traces retaining containing-face placements |
@@ -615,6 +618,7 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Geometry.RecoverableStripClosure](../Unfoldings/Geometry/RecoverableStripClosure.lean) | Finite reopening pinches leave both source-to-active banks in the strict-strip closure |
 | [Unfoldings.Geometry.MonotoneStripLipschitz](../Unfoldings/Geometry/MonotoneStripLipschitz.lean) | Uniform Lipschitz bounds for affine selections on bounded monotone strips |
 | [Unfoldings.Geometry.MonotoneStripCoreLipschitz](../Unfoldings/Geometry/MonotoneStripCoreLipschitz.lean) | Uniform strict-strip Lipschitz bounds across coherent reopening pinches |
 | [Unfoldings.Geometry.FiniteSelectionNormBounds](../Unfoldings/Geometry/FiniteSelectionNormBounds.lean) | Upper norm bounds across arbitrary continuous affine chart switches |
@@ -824,6 +828,7 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Topology.FiniteSelectionVisibility](../Unfoldings/Topology/FiniteSelectionVisibility.lean) | Trace branches are approached through their own actual closed pieces |
 | [Unfoldings.Topology.FiniteSelectionClosure](../Unfoldings/Topology/FiniteSelectionClosure.lean) | Finite closed-piece selections retain actual branch values at closure points |
 | [Unfoldings.Topology.ComplexLipschitzExtension](../Unfoldings/Topology/ComplexLipschitzExtension.lean) | Continuous planar extensions and uniqueness of their closure traces |
 | [Unfoldings.Topology.FiniteSelectionBounds](../Unfoldings/Topology/FiniteSelectionBounds.lean) | Two-sided increment bounds for arbitrary continuous finite selections |

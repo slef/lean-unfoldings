@@ -2,6 +2,22 @@
 
 ## Session Log
 
+### 2026-11-11 — complete source-based bank traces with face visibility
+
+- Proved finite reopening pinches leave both full banks up to every active
+  height in the strict-strip closure. This includes the common source and
+  isolated leaf pinches, without extending through permanently collapsed tails.
+- Strengthened trace values to retain the face approached from the strip
+  interior. An arbitrary containing-face choice is insufficient for bank
+  matching. Proved equality with actual map values at coherent endpoints.
+- Derived `cornerExtendedOutward_exists_waterfall_bank_traces` for the actual
+  roof. The constructed curves start at its real developed source and retain
+  one-sided face visibility at every bank point up to each active height.
+- Verification: cache retrieval followed by full `lake build` pass; **8,352
+  unfolding / 7,243 pinned topology declarations**, standard axioms only;
+  indexed documentation links (**1,156**) and whitespace pass. Facing cut-bank
+  identification and global separation are still open.
+
 ### 2026-11-11 — constructed actual one-sided waterfall traces
 
 - Proved uniform Lipschitz bounds for continuous finite affine selections on
