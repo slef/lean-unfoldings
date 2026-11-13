@@ -2,6 +2,20 @@
 
 ## Session Log
 
+### 2026-11-12 — componentwise geometric selection disks
+
+- Proved that every whole-edge component of any closed convex-gradient roof
+  selection has an actual geometric closed-disk homeomorphism and Jordan frontier.
+  Other selected components may meet it at original vertices.
+- Propagated component labels across all selected interior contacts, including
+  original vertices, and throughout connected interior regions. Combining this
+  with gradient escape fills the Jordan domain of each actual bank subcurve.
+- Verification: cache retrieval followed by full `lake build` passed (4,922 jobs),
+  auditing 10,327 unfolding and 7,243 pinned topology declarations with only
+  standard Lean axioms. All 70 abstract independence checks pass; no new warnings.
+- The intrinsic projection-injectivity bridge for selection components and the
+  arbitrary-rim acute-roof unfolding theorem remain in progress.
+
 ### 2026-11-12 — disks for connected convex-gradient selections
 
 - Proved connected complement and enclosed-region filling for every closed

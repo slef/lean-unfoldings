@@ -383,6 +383,9 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 | [Unfoldings.Roof.RestrictedBoundaryJordan](../Unfoldings/Roof/RestrictedBoundaryJordan.lean) | Extract a Jordan curve from restricted banks despite possible coincident vertex copies |
 | [Unfoldings.Roof.RestrictedDisk](../Unfoldings/Roof/RestrictedDisk.lean) | Prove the disk and Jordan-boundary theorem for whole-edge connected gradient selections |
 | [Unfoldings.Roof.SelectionComplement](../Unfoldings/Roof/SelectionComplement.lean) | Prove connected complement and enclosed-region filling for convex-gradient selections |
+| [Unfoldings.Roof.SelectionComponents](../Unfoldings/Roof/SelectionComponents.lean) | Define actual whole-edge selection components and prove connected interior |
+| [Unfoldings.Roof.SelectionInteriorLabels](../Unfoldings/Roof/SelectionInteriorLabels.lean) | Propagate component labels across all interior contacts and connected selected regions |
+| [Unfoldings.Roof.SelectionComponentDisk](../Unfoldings/Roof/SelectionComponentDisk.lean) | Prove a geometric closed disk and Jordan frontier for every convex-gradient component |
 
 ## Triangle complexes
 
@@ -1055,6 +1058,7 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 | [Unfoldings.Topology.EscapeRays](../Unfoldings/Topology/EscapeRays.lean) | Derive connected planar complements from straight escape rays |
 | [Unfoldings.Topology.GraphVertexIdentifications](../Unfoldings/Topology/GraphVertexIdentifications.lean) | Extract actual Jordan curves when graph images identify only vertices |
 | [Unfoldings.Topology.JordanBoundarySubset](../Unfoldings/Topology/JordanBoundarySubset.lean) | Derive a disk from connected interior and complement and one Jordan boundary subcurve |
+| [Unfoldings.Topology.JordanFilling](../Unfoldings/Topology/JordanFilling.lean) | Identify regular patches from filled Jordan subcurves and avoid countable exceptional points |
 | [Unfoldings.Topology.SphereSubsetChart](../Unfoldings/Topology/SphereSubsetChart.lean) | Closed-set complements in spheres have open Euclidean embeddings |
 ## Examples and core imports
 

@@ -30,8 +30,11 @@ No numerical threshold or algorithmic running-time bound is part of this target.
 - [x] Give a [concrete nonflat cap](../Unfoldings/Examples/Pyramid.lean) with
   actual supporting normals, projection embedding, horizontal rim, and a derived
   positive acute margin. This checks the input model, not a numerical tilt threshold.
-- [ ] Derive disk topology for every nonempty edge-connected convex-gradient
-  selection component, including exclusion of boundary pinches.
+- [x] Prove a [geometric disk and Jordan frontier](../Unfoldings/Roof/SelectionComponentDisk.lean)
+  for every nonempty whole-edge selection component, including disconnected
+  selections whose distinct components touch at vertices.
+- [ ] Prove projection injectivity for the corresponding intrinsic whole-face
+  restriction, excluding distinct intrinsic vertex copies with one planar image.
 - [ ] Construct the convex extension used by the arbitrary-rim acute forest.
 - [ ] Preserve whole original faces and their original seam names in the extension.
 - [ ] Construct and control the actual acute forest and its developed banks.

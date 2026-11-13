@@ -961,3 +961,7 @@ public import Unfoldings.Roof.SelectionComplement
 public import Unfoldings.Topology.EscapeRays
 public import Unfoldings.Topology.GraphVertexIdentifications
 public import Unfoldings.Topology.JordanBoundarySubset
+public import Unfoldings.Roof.SelectionComponents
+public import Unfoldings.Roof.SelectionInteriorLabels
+public import Unfoldings.Roof.SelectionComponentDisk
+public import Unfoldings.Topology.JordanFilling
