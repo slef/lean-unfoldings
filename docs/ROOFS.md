@@ -35,9 +35,16 @@ No numerical threshold or algorithmic running-time bound is part of this target.
   selections whose distinct components touch at vertices.
 - [x] Prove [intrinsic disks and projection injectivity](../Unfoldings/Roof/SelectionIntrinsicDisk.lean)
   for every component, excluding distinct intrinsic vertex copies with one planar image.
-- [ ] Construct the convex extension used by the arbitrary-rim acute forest.
+- [x] Construct a [proper affine extension](../Unfoldings/Roof/TentClips.lean)
+  with four new support planes inactive on the original footprint. Its actual
+  [normals preserve the chosen tilt budget](../Unfoldings/Roof/TentNormals.lean),
+  and sufficiently low horizontal clips contain any prescribed compact region.
+- [ ] Assemble a compatible spatial triangulation of the auxiliary clipped cap.
 - [ ] Preserve whole original faces and their original seam names in the extension.
-- [ ] Construct and control the actual acute forest and its developed banks.
+- [x] Construct an [original-edge acute forest](../Unfoldings/Roof/SectorForestExistence.lean),
+  its actual intrinsic cut disk, and locally isometric development. Sources are
+  interior planar points, so roofs without interior mesh vertices are included.
+- [ ] Complete the auxiliary forest and control its actual developed banks.
 - [ ] Restrict to an intrinsic original-edge cut disk with one boundary root per tree.
 - [ ] Prove global injectivity and the exact simple polygon frontier under a
   mesh-independent tilt threshold.

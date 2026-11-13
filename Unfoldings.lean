@@ -974,3 +974,16 @@ public import Unfoldings.Roof.RestrictedEmbedding
 public import Unfoldings.Roof.SelectionIntrinsicDisk
 public import Unfoldings.Topology.AmbientJordanDisk
 public import Unfoldings.Topology.PuncturedJordanNeighborhood
+public import Unfoldings.Geometry.AffineEnvelope
+public import Unfoldings.Geometry.GraphNormal
+public import Unfoldings.Roof.HeightContinuity
+public import Unfoldings.Roof.TentCompletion
+public import Unfoldings.Roof.TentClips
+public import Unfoldings.Roof.TentNormals
+public import Unfoldings.Roof.ForestSource
+public import Unfoldings.Roof.ThreeSectorProgress
+public import Unfoldings.Roof.SectorForest
+public import Unfoldings.Roof.SectorForestPaths
+public import Unfoldings.Roof.SectorForestGeometry
+public import Unfoldings.Roof.SectorDevelopment
+public import Unfoldings.Roof.SectorForestExistence

@@ -390,6 +390,17 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 | [Unfoldings.Roof.ProjectedSeamCompletion](../Unfoldings/Roof/ProjectedSeamCompletion.lean) | Identify all matching projected whole edges with actual original seams |
 | [Unfoldings.Roof.RestrictedEmbedding](../Unfoldings/Roof/RestrictedEmbedding.lean) | Exclude intrinsic vertex pinches in whole-face Jordan roof patches |
 | [Unfoldings.Roof.SelectionIntrinsicDisk](../Unfoldings/Roof/SelectionIntrinsicDisk.lean) | Prove intrinsic closed disks and injective projection for every gradient selection component |
+| [Unfoldings.Roof.HeightContinuity](../Unfoldings/Roof/HeightContinuity.lean) | Prove continuity of arbitrary-rim supporting roofs |
+| [Unfoldings.Roof.TentCompletion](../Unfoldings/Roof/TentCompletion.lean) | Add four inactive support planes while preserving all original roof heights |
+| [Unfoldings.Roof.TentClips](../Unfoldings/Roof/TentClips.lean) | Prove properness and arbitrarily deep compact horizontal sections of completed roofs |
+| [Unfoldings.Roof.TentNormals](../Unfoldings/Roof/TentNormals.lean) | Preserve the prescribed tilt budget with actual supporting normals of the completion |
+| [Unfoldings.Roof.ForestSource](../Unfoldings/Roof/ForestSource.lean) | Choose an interior source to the right of all interior vertices, including meshes with none |
+| [Unfoldings.Roof.ThreeSectorProgress](../Unfoldings/Roof/ThreeSectorProgress.lean) | Prove actual seam progress in the prescribed acute sectors for arbitrary-rim roofs |
+| [Unfoldings.Roof.SectorForest](../Unfoldings/Roof/SectorForest.lean) | Construct source-centered original-edge sector forests with interior planar sources |
+| [Unfoldings.Roof.SectorForestPaths](../Unfoldings/Roof/SectorForestPaths.lean) | Prove acute-wedge and radial monotonicity of all selected original-edge paths |
+| [Unfoldings.Roof.SectorForestGeometry](../Unfoldings/Roof/SectorForestGeometry.lean) | Control source-centered positions, rim roots, and the empty forward sector gap |
+| [Unfoldings.Roof.SectorDevelopment](../Unfoldings/Roof/SectorDevelopment.lean) | Construct the actual intrinsic cut disk and a locally isometric facewise development |
+| [Unfoldings.Roof.SectorForestExistence](../Unfoldings/Roof/SectorForestExistence.lean) | Choose forest and tilt parameters uniformly from only the original acute margin |
 
 ## Triangle complexes
 
@@ -984,6 +995,8 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 | [Unfoldings.Geometry.UnitLine](../Unfoldings/Geometry/UnitLine.lean) | A nonzero real line has two opposite unit directions |
 | [Unfoldings.Geometry.TriangleUnionInterior](../Unfoldings/Geometry/TriangleUnionInterior.lean) | Prove regular closedness and connected interior of whole-edge connected triangular patches |
 | [Unfoldings.Geometry.ConformingJordanStar](../Unfoldings/Geometry/ConformingJordanStar.lean) | Identify incident point copies in conforming nonconvex Jordan disks |
+| [Unfoldings.Geometry.AffineEnvelope](../Unfoldings/Geometry/AffineEnvelope.lean) | Define continuous concave finite affine roofs, active cells, and horizontal sections |
+| [Unfoldings.Geometry.GraphNormal](../Unfoldings/Geometry/GraphNormal.lean) | Construct upward unit normals for affine height graphs and prove tilt bounds |
 
 ## Topology and combinatorics
 

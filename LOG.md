@@ -2,6 +2,23 @@
 
 ## Session Log
 
+### 2026-11-12 — proper arbitrary-rim extension and actual acute forests
+
+- Added four distant affine support planes whose roof is proper and agrees with
+  every original roof face. Every finite horizontal section is compact; deeper
+  sections contain any prescribed compact region strictly in their interior.
+- Constructed actual upward supporting unit normals for the added planes. Their
+  positive slopes can preserve the entire chosen tilt budget without extra loss.
+- Constructed source-centered original-edge acute forests for arbitrary rims,
+  with intrinsic cut disks and locally isometric developments. Interior planar
+  sources include roofs having no interior mesh vertices; all forest parameters
+  are chosen uniformly before the mesh from only the positive acute margin.
+- Verification: cache retrieval followed by full `lake build` passed (4,944 jobs),
+  auditing 10,476 unfolding and 7,243 pinned topology declarations with only
+  standard Lean axioms. All 70 abstract independence checks pass; no new warnings.
+- Auxiliary spatial meshing, forest completion, and the final global separation
+  and injectivity proofs remain. The arbitrary-rim theorem is not yet complete.
+
 ### 2026-11-12 — intrinsic gradient-selection disks and absence of pinches
 
 - Completed `ConvexRoof.convex_gradient_selection_component`: each nonempty
