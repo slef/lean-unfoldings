@@ -39,7 +39,10 @@ No numerical threshold or algorithmic running-time bound is part of this target.
   with four new support planes inactive on the original footprint. Its actual
   [normals preserve the chosen tilt budget](../Unfoldings/Roof/TentNormals.lean),
   and sufficiently low horizontal clips contain any prescribed compact region.
-- [ ] Assemble a compatible spatial triangulation of the auxiliary clipped cap.
+- [x] Assemble an [actual auxiliary cap mesh](../Unfoldings/Roof/CompletionMesh.lean)
+  with rigid Euclidean triangles, whole-edge spatial seam isometries, injective
+  projection, and the original tilt budget. Prescribed finite line constraints
+  survive the common geometric refinement.
 - [ ] Preserve whole original faces and their original seam names in the extension.
 - [x] Construct an [original-edge acute forest](../Unfoldings/Roof/SectorForestExistence.lean),
   its actual intrinsic cut disk, and locally isometric development. Sources are

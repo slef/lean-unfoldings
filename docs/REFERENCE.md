@@ -401,6 +401,11 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 | [Unfoldings.Roof.SectorForestGeometry](../Unfoldings/Roof/SectorForestGeometry.lean) | Control source-centered positions, rim roots, and the empty forward sector gap |
 | [Unfoldings.Roof.SectorDevelopment](../Unfoldings/Roof/SectorDevelopment.lean) | Construct the actual intrinsic cut disk and a locally isometric facewise development |
 | [Unfoldings.Roof.SectorForestExistence](../Unfoldings/Roof/SectorForestExistence.lean) | Choose forest and tilt parameters uniformly from only the original acute margin |
+| [Unfoldings.Roof.SpatialEnvelopeRoof](../Unfoldings/Roof/SpatialEnvelopeRoof.lean) | Construct embedded convex roofs from conforming physical support-plane partitions |
+| [Unfoldings.Roof.HorizontalLevelCap](../Unfoldings/Roof/HorizontalLevelCap.lean) | Translate horizontal-boundary roofs into the geometric convex-cap interface |
+| [Unfoldings.Roof.SpatialEnvelopeCap](../Unfoldings/Roof/SpatialEnvelopeCap.lean) | Assemble genuine geometric caps from actual horizontal affine-roof sections |
+| [Unfoldings.Roof.CompletionPlanes](../Unfoldings/Roof/CompletionPlanes.lean) | Preserve old rigid face planes and construct actual new planes in roof completions |
+| [Unfoldings.Roof.CompletionMesh](../Unfoldings/Roof/CompletionMesh.lean) | Construct tilt-preserving physical cap meshes extending arbitrary-rim roofs |
 
 ## Triangle complexes
 
@@ -997,6 +1002,12 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 | [Unfoldings.Geometry.ConformingJordanStar](../Unfoldings/Geometry/ConformingJordanStar.lean) | Identify incident point copies in conforming nonconvex Jordan disks |
 | [Unfoldings.Geometry.AffineEnvelope](../Unfoldings/Geometry/AffineEnvelope.lean) | Define continuous concave finite affine roofs, active cells, and horizontal sections |
 | [Unfoldings.Geometry.GraphNormal](../Unfoldings/Geometry/GraphNormal.lean) | Construct upward unit normals for affine height graphs and prove tilt bounds |
+| [Unfoldings.Geometry.SpatialAffineGraph](../Unfoldings/Geometry/SpatialAffineGraph.lean) | Construct actual rigid Euclidean coordinates for arbitrary affine height planes |
+| [Unfoldings.Geometry.SupportedPlane](../Unfoldings/Geometry/SupportedPlane.lean) | Package genuine spatial support planes and derive their actual supporting halfspaces |
+| [Unfoldings.Geometry.AffineEnvelopeTriangulation](../Unfoldings/Geometry/AffineEnvelopeTriangulation.lean) | Triangulate compact affine roofs while respecting every prescribed finite proper line |
+| [Unfoldings.Geometry.SpatialEnvelope](../Unfoldings/Geometry/SpatialEnvelope.lean) | Construct actual spatial graphs of finite supporting-plane envelopes |
+| [Unfoldings.Geometry.SpatialEnvelopeTriangles](../Unfoldings/Geometry/SpatialEnvelopeTriangles.lean) | Build physical roof triangle partitions and preserve line constraints through refinement |
+| [Unfoldings.Geometry.SpatialEnvelopePairings](../Unfoldings/Geometry/SpatialEnvelopePairings.lean) | Pair all matching projected whole edges by their actual spatial isometries |
 
 ## Topology and combinatorics
 

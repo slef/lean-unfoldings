@@ -2,6 +2,25 @@
 
 ## Session Log
 
+### 2026-11-12 — genuine physical cap completions of arbitrary-rim roofs
+
+- Constructed actual rigid coordinates for arbitrary affine support planes and
+  a generic finite supported spatial roof, independent of any cap triangulation.
+- Triangulated every compact affine-roof section while respecting prescribed
+  finite proper lines. Retained the actual constraint signs and inequalities
+  through common refinement, then built whole-edge spatial seam isometries and
+  proved injective projection of the full glued surface.
+- Assembled a genuine geometric convex cap after translating the clipping level.
+  `ConvexRoof.exists_completionMesh` extends any arbitrary-rim roof, contains
+  any prescribed compact region, agrees on all original heights, and preserves
+  the entire input tilt bound. Auxiliary triangles need not be acute.
+- Verification: cache retrieval, full `lake build`, then a full build after a
+  comment-only warning fix passed (4,955 jobs). The audit checked 10,700 unfolding
+  and 7,243 pinned topology declarations with only standard Lean axioms; all
+  70 abstract independence checks pass. No new project warnings remain.
+- Original-face metric reassembly, forest completion, and global unfolding
+  separation remain. The arbitrary-rim acute-roof theorem is not yet complete.
+
 ### 2026-11-12 — proper arbitrary-rim extension and actual acute forests
 
 - Added four distant affine support planes whose roof is proper and agrees with

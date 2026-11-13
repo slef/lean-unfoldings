@@ -987,3 +987,14 @@ public import Unfoldings.Roof.SectorForestPaths
 public import Unfoldings.Roof.SectorForestGeometry
 public import Unfoldings.Roof.SectorDevelopment
 public import Unfoldings.Roof.SectorForestExistence
+public import Unfoldings.Geometry.SpatialAffineGraph
+public import Unfoldings.Geometry.SupportedPlane
+public import Unfoldings.Geometry.AffineEnvelopeTriangulation
+public import Unfoldings.Geometry.SpatialEnvelope
+public import Unfoldings.Geometry.SpatialEnvelopeTriangles
+public import Unfoldings.Geometry.SpatialEnvelopePairings
+public import Unfoldings.Roof.SpatialEnvelopeRoof
+public import Unfoldings.Roof.HorizontalLevelCap
+public import Unfoldings.Roof.SpatialEnvelopeCap
+public import Unfoldings.Roof.CompletionPlanes
+public import Unfoldings.Roof.CompletionMesh
