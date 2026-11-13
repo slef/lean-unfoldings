@@ -386,6 +386,10 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 | [Unfoldings.Roof.SelectionComponents](../Unfoldings/Roof/SelectionComponents.lean) | Define actual whole-edge selection components and prove connected interior |
 | [Unfoldings.Roof.SelectionInteriorLabels](../Unfoldings/Roof/SelectionInteriorLabels.lean) | Propagate component labels across all interior contacts and connected selected regions |
 | [Unfoldings.Roof.SelectionComponentDisk](../Unfoldings/Roof/SelectionComponentDisk.lean) | Prove a geometric closed disk and Jordan frontier for every convex-gradient component |
+| [Unfoldings.Roof.ProjectedConformity](../Unfoldings/Roof/ProjectedConformity.lean) | Derive face-to-face conformity from an embedded roof projection |
+| [Unfoldings.Roof.ProjectedSeamCompletion](../Unfoldings/Roof/ProjectedSeamCompletion.lean) | Identify all matching projected whole edges with actual original seams |
+| [Unfoldings.Roof.RestrictedEmbedding](../Unfoldings/Roof/RestrictedEmbedding.lean) | Exclude intrinsic vertex pinches in whole-face Jordan roof patches |
+| [Unfoldings.Roof.SelectionIntrinsicDisk](../Unfoldings/Roof/SelectionIntrinsicDisk.lean) | Prove intrinsic closed disks and injective projection for every gradient selection component |
 
 ## Triangle complexes
 
@@ -486,6 +490,8 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 | [Unfoldings.Complex.Subdivision](../Unfoldings/Complex/Subdivision.lean) | Geometric parent placements and exact seam-chain conformity |
 | [Unfoldings.Complex.Vertices](../Unfoldings/Complex/Vertices.lean) | Actual cut vertex classes, boundary incidence and copy maps |
 | [Unfoldings.Complex](../Unfoldings/Complex.lean) | Finite edge-paired complexes and their cut realizations |
+| [Unfoldings.Complex.FaceRestrictionPairings](../Unfoldings/Complex/FaceRestrictionPairings.lean) | Preserve every original seam name between whole faces in a restriction |
+| [Unfoldings.Complex.ProjectedJordanEmbedding](../Unfoldings/Complex/ProjectedJordanEmbedding.lean) | Prove exact intrinsic fibers for conforming projections onto Jordan disks |
 
 ## Cuts and layouts
 
@@ -977,6 +983,7 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 | [Unfoldings.Geometry.Triangle](../Unfoldings/Geometry/Triangle.lean) | Nondegenerate cells and full edge subspaces |
 | [Unfoldings.Geometry.UnitLine](../Unfoldings/Geometry/UnitLine.lean) | A nonzero real line has two opposite unit directions |
 | [Unfoldings.Geometry.TriangleUnionInterior](../Unfoldings/Geometry/TriangleUnionInterior.lean) | Prove regular closedness and connected interior of whole-edge connected triangular patches |
+| [Unfoldings.Geometry.ConformingJordanStar](../Unfoldings/Geometry/ConformingJordanStar.lean) | Identify incident point copies in conforming nonconvex Jordan disks |
 
 ## Topology and combinatorics
 
@@ -1059,6 +1066,8 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 | [Unfoldings.Topology.GraphVertexIdentifications](../Unfoldings/Topology/GraphVertexIdentifications.lean) | Extract actual Jordan curves when graph images identify only vertices |
 | [Unfoldings.Topology.JordanBoundarySubset](../Unfoldings/Topology/JordanBoundarySubset.lean) | Derive a disk from connected interior and complement and one Jordan boundary subcurve |
 | [Unfoldings.Topology.JordanFilling](../Unfoldings/Topology/JordanFilling.lean) | Identify regular patches from filled Jordan subcurves and avoid countable exceptional points |
+| [Unfoldings.Topology.AmbientJordanDisk](../Unfoldings/Topology/AmbientJordanDisk.lean) | Straighten a compact Jordan domain by a homeomorphism of the entire plane |
+| [Unfoldings.Topology.PuncturedJordanNeighborhood](../Unfoldings/Topology/PuncturedJordanNeighborhood.lean) | Construct arbitrarily small connected punctured neighborhoods in Jordan disks |
 | [Unfoldings.Topology.SphereSubsetChart](../Unfoldings/Topology/SphereSubsetChart.lean) | Closed-set complements in spheres have open Euclidean embeddings |
 ## Examples and core imports
 

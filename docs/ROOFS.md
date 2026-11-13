@@ -33,8 +33,8 @@ No numerical threshold or algorithmic running-time bound is part of this target.
 - [x] Prove a [geometric disk and Jordan frontier](../Unfoldings/Roof/SelectionComponentDisk.lean)
   for every nonempty whole-edge selection component, including disconnected
   selections whose distinct components touch at vertices.
-- [ ] Prove projection injectivity for the corresponding intrinsic whole-face
-  restriction, excluding distinct intrinsic vertex copies with one planar image.
+- [x] Prove [intrinsic disks and projection injectivity](../Unfoldings/Roof/SelectionIntrinsicDisk.lean)
+  for every component, excluding distinct intrinsic vertex copies with one planar image.
 - [ ] Construct the convex extension used by the arbitrary-rim acute forest.
 - [ ] Preserve whole original faces and their original seam names in the extension.
 - [ ] Construct and control the actual acute forest and its developed banks.

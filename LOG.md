@@ -2,6 +2,21 @@
 
 ## Session Log
 
+### 2026-11-12 — intrinsic gradient-selection disks and absence of pinches
+
+- Completed `ConvexRoof.convex_gradient_selection_component`: each nonempty
+  whole-edge component of a closed convex-gradient selection has an intrinsic
+  closed-disk homeomorphism, injective actual projection, and Jordan frontier.
+  All metric cells and retained seam names come from the original roof.
+- Proved whole-edge point-copy compatibility for conforming Jordan disks,
+  including reflex boundary vertices. Constructed ambient disk homeomorphisms
+  and small connected punctured neighborhoods to identify every vertex copy.
+- Added reusable face-restriction pairing and conforming-projection APIs.
+- Verification: cache retrieval followed by full `lake build` passed (4,931 jobs),
+  auditing 10,350 unfolding and 7,243 pinned topology declarations with only
+  standard Lean axioms. All 70 abstract independence checks pass; no new warnings.
+- The arbitrary-rim acute-roof unfolding theorem remains in progress.
+
 ### 2026-11-12 — componentwise geometric selection disks
 
 - Proved that every whole-edge component of any closed convex-gradient roof

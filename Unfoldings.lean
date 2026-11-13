@@ -965,3 +965,12 @@ public import Unfoldings.Roof.SelectionComponents
 public import Unfoldings.Roof.SelectionInteriorLabels
 public import Unfoldings.Roof.SelectionComponentDisk
 public import Unfoldings.Topology.JordanFilling
+public import Unfoldings.Complex.FaceRestrictionPairings
+public import Unfoldings.Complex.ProjectedJordanEmbedding
+public import Unfoldings.Geometry.ConformingJordanStar
+public import Unfoldings.Roof.ProjectedConformity
+public import Unfoldings.Roof.ProjectedSeamCompletion
+public import Unfoldings.Roof.RestrictedEmbedding
+public import Unfoldings.Roof.SelectionIntrinsicDisk
+public import Unfoldings.Topology.AmbientJordanDisk
+public import Unfoldings.Topology.PuncturedJordanNeighborhood
