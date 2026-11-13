@@ -74,6 +74,7 @@ data and theorems for use in further proofs.
 | Cut polygonal forests carried by a refinement | [Complex/PolygonalCuts.lean](Unfoldings/Complex/PolygonalCuts.lean), [Complex/PolygonalCutGraph.lean](Unfoldings/Complex/PolygonalCutGraph.lean) |
 | Refine triangles without changing intrinsic geometry | [Complex/SubdivisionMetric.lean](Unfoldings/Complex/SubdivisionMetric.lean), [Examples/Subdivision.lean](Unfoldings/Examples/Subdivision.lean) |
 | Unfold a sufficiently flat acute convex cap to a simple polygon | [Cap/SimpleEdgeUnfolding.lean](Unfoldings/Cap/SimpleEdgeUnfolding.lean) |
+| Unfold an acute convex roof with arbitrary boundary heights | [Roof/SimpleEdgeUnfolding.lean](Unfoldings/Roof/SimpleEdgeUnfolding.lean) |
 | Inspect a concrete nonflat convex cap | [Examples/Pyramid.lean](Unfoldings/Examples/Pyramid.lean) |
 | Try small examples | [Examples/Metric.lean](Unfoldings/Examples/Metric.lean), [Examples/Hinge.lean](Unfoldings/Examples/Hinge.lean) |
 
@@ -107,6 +108,11 @@ Its definitions and theorem state the mathematical claim; Lean checks the proof
 through [AbstractBridge.lean](Unfoldings/Cap/AbstractBridge.lean). Import
 `Unfoldings.Cap.Abstract`; the usual `lake build` checks it and audits that its
 public definitions and statements use only the abstract suite and Mathlib.
+
+The [arbitrary-rim acute-roof theorem](Unfoldings/Roof/SimpleEdgeUnfolding.lean)
+extends this conclusion to roofs over convex polygons with unrestricted boundary
+heights. Its positive tilt threshold also depends only on the acute margin.
+See the [roof guide](docs/ROOFS.md) for inputs, outputs, and the proof structure.
 
 Remaining work includes:
 

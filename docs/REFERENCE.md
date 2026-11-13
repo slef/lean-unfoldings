@@ -11,6 +11,7 @@ source, including its module documentation and declarations.
 
 - [Source unfoldings](#source-unfoldings)
 - [Convex caps](#convex-caps)
+- [Convex roofs](#convex-roofs)
 - [Triangle complexes](#triangle-complexes)
 - [Cuts and layouts](#cuts-and-layouts)
 - [Metrics and gluing](#metrics-and-gluing)
@@ -376,39 +377,338 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 | [Unfoldings.Cap.HeadingBanks](../Unfoldings/Cap/HeadingBanks.lean) | Whole-chain bank order from matched lengths and ordered quadrant headings |
 | [Unfoldings.Cap.Projection](../Unfoldings/Cap/Projection.lean) | Horizontal projection, tangent-plane metric and vertical-motion estimates |
 | [Unfoldings.Cap.Topology](../Unfoldings/Cap/Topology.lean) | Disk topology derived from the actual convex footprint |
+
+## Convex roofs
+
+Start with the [theorem and proof guide](ROOFS.md). Boundary heights are unrestricted.
+
+| Module | Purpose |
+| --- | --- |
+| [Unfoldings.Roof.AcrossSectorAllRadiusContact](../Unfoldings/Roof/AcrossSectorAllRadiusContact.lean) | All actual waterfall strip-circle images are pairwise disjoint across the five sectors |
+| [Unfoldings.Roof.AcuteProjection](../Unfoldings/Roof/AcuteProjection.lean) | Preserve acute angle margins under uniformly small roof tilt |
+| [Unfoldings.Roof.AdjacentClosedSectionSurvivorContact](../Unfoldings/Roof/AdjacentClosedSectionSurvivorContact.lean) | Actual extreme circle survivors in adjacent sectors have disjoint bounding portions |
+| [Unfoldings.Roof.AdjacentSectorAllRadiusContact](../Unfoldings/Roof/AdjacentSectorAllRadiusContact.lean) | Every pair of actual waterfall circle images in adjacent sectors is disjoint |
+| [Unfoldings.Roof.AdjacentSectorCircleSeparation](../Unfoldings/Roof/AdjacentSectorCircleSeparation.lean) | Every pair of actual waterfall circle images in adjacent sectors is disjoint |
+| [Unfoldings.Roof.AdjacentSurvivorCircleCaps](../Unfoldings/Roof/AdjacentSurvivorCircleCaps.lean) | Actual extreme circle survivors in adjacent sectors have disjoint bounding portions |
+| [Unfoldings.Roof.AllSectorAllRadiusContact](../Unfoldings/Roof/AllSectorAllRadiusContact.lean) | All actual waterfall strip-circle images are pairwise disjoint across the five sectors |
+| [Unfoldings.Roof.AllSectorCircleSeparation](../Unfoldings/Roof/AllSectorCircleSeparation.lean) | All actual waterfall strip-circle images are pairwise disjoint across the five sectors |
+| [Unfoldings.Roof.AllVertexContact](../Unfoldings/Roof/AllVertexContact.lean) | All coincident copies of one original vertex agree after pruning, including rim roots |
+| [Unfoldings.Roof.AngleBalance](../Unfoldings/Roof/AngleBalance.lean) | Relative angle-defect balance |
+| [Unfoldings.Roof.AngularCurvature](../Unfoldings/Roof/AngularCurvature.lean) | Intrinsic vertex curvature is actual outward solid angle |
+| [Unfoldings.Roof.BankPositionOrder](../Unfoldings/Roof/BankPositionOrder.lean) | Actual branching bank position order |
+| [Unfoldings.Roof.BankSegments](../Unfoldings/Roof/BankSegments.lean) | The matched parameters are exactly the actual straight parent-bank segments |
+| [Unfoldings.Roof.Basic](../Unfoldings/Roof/Basic.lean) | Define supported convex triangular roofs with unrestricted boundary heights |
+| [Unfoldings.Roof.Boundary](../Unfoldings/Roof/Boundary.lean) | Identify intrinsic roof boundary vertices with the projected domain frontier |
+| [Unfoldings.Roof.BoundaryCircleContactAlternative](../Unfoldings/Roof/BoundaryCircleContactAlternative.lean) | An earlier shared-ray circle contact is coherent or puts both crossings on one actual cut |
+| [Unfoldings.Roof.BoundaryCirclePhysicalAlternative](../Unfoldings/Roof/BoundaryCirclePhysicalAlternative.lean) | A coherent shared-ray circle contact retains its actual physical point equality |
+| [Unfoldings.Roof.BoundaryComponentFineSeed](../Unfoldings/Roof/BoundaryComponentFineSeed.lean) | Any radial component meeting a sector bank inside the clip has a coherent fine seed |
+| [Unfoldings.Roof.BoundaryFaceValues](../Unfoldings/Roof/BoundaryFaceValues.lean) | Actual original bank vertices and closed bank segments in arbitrary-rim roof face charts |
+| [Unfoldings.Roof.BoundaryRunCircleCaps](../Unfoldings/Roof/BoundaryRunCircleCaps.lean) | One actual disappearing boundary run separates whole coordinate-bounded circle portions |
+| [Unfoldings.Roof.BoundaryRunCircleComponent](../Unfoldings/Roof/BoundaryRunCircleComponent.lean) | Neighboring boundary-circle crossings lie on the terminal's actual radial component |
+| [Unfoldings.Roof.BoundaryRunCircleConstruction](../Unfoldings/Roof/BoundaryRunCircleConstruction.lean) | Construct extreme actual terminals and separating circle portions for indexed boundary runs |
+| [Unfoldings.Roof.BoundaryRunLateCircleCandidate](../Unfoldings/Roof/BoundaryRunLateCircleCandidate.lean) | Crossings after maximal boundary-run terminals supply exact actual circle-bank candidates |
+| [Unfoldings.Roof.BoundaryRunNeighborCircleCandidate](../Unfoldings/Roof/BoundaryRunNeighborCircleCandidate.lean) | A neighboring surviving boundary circle supplies its actual bank candidate automatically |
+| [Unfoldings.Roof.BoundaryRunNeighborCirclePhysicalCandidate](../Unfoldings/Roof/BoundaryRunNeighborCirclePhysicalCandidate.lean) | A neighboring surviving boundary circle supplies its actual bank candidate automatically |
+| [Unfoldings.Roof.BoundaryRunSourceBankCandidate](../Unfoldings/Roof/BoundaryRunSourceBankCandidate.lean) | Every run-side circle crossing has its own actual component-bank bound |
+| [Unfoldings.Roof.BoundaryRunTerminalBankCandidate](../Unfoldings/Roof/BoundaryRunTerminalBankCandidate.lean) | Every extreme boundary-run terminal supplies an actual inner bank candidate |
+| [Unfoldings.Roof.BoundaryTerminalSectorAssignment](../Unfoldings/Roof/BoundaryTerminalSectorAssignment.lean) | A boundary terminal retains the unique assigned sector of its actual radial component |
+| [Unfoldings.Roof.BoundaryTerminalSeedAncestor](../Unfoldings/Roof/BoundaryTerminalSeedAncestor.lean) | Boundary terminals are reached from coherent fine seeds of their radial components |
+| [Unfoldings.Roof.BranchDisplacements](../Unfoldings/Roof/BranchDisplacements.lean) | Position gaps include every attached branch |
+| [Unfoldings.Roof.CapBridge](../Unfoldings/Roof/CapBridge.lean) | View every existing convex cap as a roof without changing its faces or seams |
+| [Unfoldings.Roof.ClosedContactFibers](../Unfoldings/Roof/ClosedContactFibers.lean) | Closed physical contact identification determines the entire uncut intrinsic fiber |
+| [Unfoldings.Roof.ClosedFaceAllRadiusContact](../Unfoldings/Roof/ClosedFaceAllRadiusContact.lean) | Coincident actual closed-face copies identify the same physical point at controlled radii |
+| [Unfoldings.Roof.ClosedLeafTailCircleContact](../Unfoldings/Roof/ClosedLeafTailCircleContact.lean) | Contact across one actual leaf tail identifies the same physical circle endpoint |
+| [Unfoldings.Roof.ClosedOuterSectionComponentBank](../Unfoldings/Roof/ClosedOuterSectionComponentBank.lean) | Named component circle banks retain their exact physical surface coordinates |
+| [Unfoldings.Roof.ClosedSectionBoundaryLateCandidate](../Unfoldings/Roof/ClosedSectionBoundaryLateCandidate.lean) | Closed sections retain strict terminal progress even when they end at a pinch |
+| [Unfoldings.Roof.ClosedSectionBoundaryNeighborCandidate](../Unfoldings/Roof/ClosedSectionBoundaryNeighborCandidate.lean) | A neighboring surviving boundary circle supplies its actual bank candidate automatically |
+| [Unfoldings.Roof.ClosedSectionBoundaryRunConstruction](../Unfoldings/Roof/ClosedSectionBoundaryRunConstruction.lean) | Construct actual extreme terminals and identify closed contacts across an indexed boundary run |
+| [Unfoldings.Roof.ClosedSectionBoundaryRunContact](../Unfoldings/Roof/ClosedSectionBoundaryRunContact.lean) | Weak contacts across disappearing boundary runs identify actual physical endpoints |
+| [Unfoldings.Roof.ClosedSectionBoundarySourceCandidate](../Unfoldings/Roof/ClosedSectionBoundarySourceCandidate.lean) | Early terminal bounds persist at every closed circle section, including vertex radii |
+| [Unfoldings.Roof.ClosedSectionEarlyRunBounds](../Unfoldings/Roof/ClosedSectionEarlyRunBounds.lean) | Early terminal bounds persist at every closed circle section, including vertex radii |
+| [Unfoldings.Roof.ClosedSectionEarlyRunMaxima](../Unfoldings/Roof/ClosedSectionEarlyRunMaxima.lean) | Early terminal bounds persist at every closed circle section, including vertex radii |
+| [Unfoldings.Roof.ClosedSectionLateRunBounds](../Unfoldings/Roof/ClosedSectionLateRunBounds.lean) | Closed sections retain strict terminal progress even when they end at a pinch |
+| [Unfoldings.Roof.ClosedSectionRemovedRunContact](../Unfoldings/Roof/ClosedSectionRemovedRunContact.lean) | Contacts between consecutive actual circle survivors preserve their physical surface point |
+| [Unfoldings.Roof.ClosedSectionRunPhysicalContact](../Unfoldings/Roof/ClosedSectionRunPhysicalContact.lean) | Closed section contacts across disappearing strip runs preserve physical points at all radii |
+| [Unfoldings.Roof.ClosedSectionSeparatorContact](../Unfoldings/Roof/ClosedSectionSeparatorContact.lean) | Circle endpoint contact across an actual shared separator preserves the physical point |
+| [Unfoldings.Roof.ClosedSectionTailContact](../Unfoldings/Roof/ClosedSectionTailContact.lean) | Contact across one actual leaf tail identifies the same physical circle endpoint |
+| [Unfoldings.Roof.ClosedSharedSeparatorPrefixValue](../Unfoldings/Roof/ClosedSharedSeparatorPrefixValue.lean) | Shared separator prefixes remain coherent through approached terminal pinches |
+| [Unfoldings.Roof.CompletedGeometricTailTracking](../Unfoldings/Roof/CompletedGeometricTailTracking.lean) | Actual completed cut paths track the prescribed geometric tails before the deep cutoff |
+| [Unfoldings.Roof.CompletionAllRadiusContact](../Unfoldings/Roof/CompletionAllRadiusContact.lean) | Uniform identification of actual closed-face contacts at all controlled radii |
+| [Unfoldings.Roof.CompletionBankChainPositions](../Unfoldings/Roof/CompletionBankChainPositions.lean) | Actual fine cut paths inherit source positions and bank-opening sectors together |
+| [Unfoldings.Roof.CompletionBankChains](../Unfoldings/Roof/CompletionBankChains.lean) | Entire actual fine-seam bank paths inherit one sector from the original cut component |
+| [Unfoldings.Roof.CompletionCalibratedComparisonArcs](../Unfoldings/Roof/CompletionCalibratedComparisonArcs.lean) | Actual roof face bounds construct proper comparison arcs in any specified bank calibration |
+| [Unfoldings.Roof.CompletionClosedEmptyCircleContinuations](../Unfoldings/Roof/CompletionClosedEmptyCircleContinuations.lean) | Construct actual disappearing-strip continuations in the same roof calibration |
+| [Unfoldings.Roof.CompletionCutRestriction](../Unfoldings/Roof/CompletionCutRestriction.lean) | Exterior radial cuts preserve exactly the retained original seam classes |
+| [Unfoldings.Roof.CompletionDomain](../Unfoldings/Roof/CompletionDomain.lean) | The actual support family and convex domain of a physical roof completion |
+| [Unfoldings.Roof.CompletionEmptyCircleContinuations](../Unfoldings/Roof/CompletionEmptyCircleContinuations.lean) | Construct actual disappearing-strip continuations in the same roof calibration |
+| [Unfoldings.Roof.CompletionEndpointVertices](../Unfoldings/Roof/CompletionEndpointVertices.lean) | Every original vertex survives as an actual vertex of the physical completion mesh |
+| [Unfoldings.Roof.CompletionExtendedMesh](../Unfoldings/Roof/CompletionExtendedMesh.lean) | The constructed original and skirt cut set is an actual union of removed physical seams |
+| [Unfoldings.Roof.CompletionFaceSeparation](../Unfoldings/Roof/CompletionFaceSeparation.lean) | A positive threshold chosen before both meshes separates actual roof-face interiors locally |
+| [Unfoldings.Roof.CompletionLeafCoherence](../Unfoldings/Roof/CompletionLeafCoherence.lean) | Actual geometric leaves survive refinement and have coherent developed endpoint values |
+| [Unfoldings.Roof.CompletionMesh](../Unfoldings/Roof/CompletionMesh.lean) | Construct tilt-preserving physical cap meshes extending arbitrary-rim roofs |
+| [Unfoldings.Roof.CompletionOriginalAdjacency](../Unfoldings/Roof/CompletionOriginalAdjacency.lean) | Locate fine adjacency between different original faces on their common edge |
+| [Unfoldings.Roof.CompletionOriginalConforming](../Unfoldings/Roof/CompletionOriginalConforming.lean) | Prove exact retained seam classes and the original-cut metric equivalence |
+| [Unfoldings.Roof.CompletionOriginalCoordinates](../Unfoldings/Roof/CompletionOriginalCoordinates.lean) | Prove that contained auxiliary pieces have the actual original face Euclidean metric |
+| [Unfoldings.Roof.CompletionOriginalCopies](../Unfoldings/Roof/CompletionOriginalCopies.lean) | Identify every fine point copy within one whole original face |
+| [Unfoldings.Roof.CompletionOriginalCurvature](../Unfoldings/Roof/CompletionOriginalCurvature.lean) | Completion curvature inside the original roof is supported only on original vertices |
+| [Unfoldings.Roof.CompletionOriginalEdgeCover](../Unfoldings/Roof/CompletionOriginalEdgeCover.lean) | Original whole edges are exact unions of physical completion edges |
+| [Unfoldings.Roof.CompletionOriginalFaceMap](../Unfoldings/Roof/CompletionOriginalFaceMap.lean) | Map each whole original face continuously into its fine cut surface |
+| [Unfoldings.Roof.CompletionOriginalForestRetention](../Unfoldings/Roof/CompletionOriginalForestRetention.lean) | Auxiliary radial forests keep all fine seams needed by the original cut roof |
+| [Unfoldings.Roof.CompletionOriginalLocalSeparation](../Unfoldings/Roof/CompletionOriginalLocalSeparation.lean) | Local roof-face separation over the whole original footprint proves original-roof nonoverlap |
+| [Unfoldings.Roof.CompletionOriginalNonoverlap](../Unfoldings/Roof/CompletionOriginalNonoverlap.lean) | Transfer nonoverlap between the fine pieces and the original development |
+| [Unfoldings.Roof.CompletionOriginalPieces](../Unfoldings/Roof/CompletionOriginalPieces.lean) | Cover every whole original face by contained auxiliary triangles with unique old parents |
+| [Unfoldings.Roof.CompletionOriginalPlacementAgreement](../Unfoldings/Roof/CompletionOriginalPlacementAgreement.lean) | Normalize an actual roof development to agree with every original whole-face placement |
+| [Unfoldings.Roof.CompletionOriginalRegularCopies](../Unfoldings/Roof/CompletionOriginalRegularCopies.lean) | Restrict auxiliary point identifications away from vertices and cuts |
+| [Unfoldings.Roof.CompletionOriginalRespects](../Unfoldings/Roof/CompletionOriginalRespects.lean) | Send retained fine seams to retained original seam chains |
+| [Unfoldings.Roof.CompletionOriginalRetention](../Unfoldings/Roof/CompletionOriginalRetention.lean) | Keep every fine seam internal to one original face |
+| [Unfoldings.Roof.CompletionOriginalSeamMap](../Unfoldings/Roof/CompletionOriginalSeamMap.lean) | Join whole original face maps across retained seams, including endpoints |
+| [Unfoldings.Roof.CompletionOriginalSubdivision](../Unfoldings/Roof/CompletionOriginalSubdivision.lean) | Construct the isometric subdivision of the original mesh inside the physical completion |
+| [Unfoldings.Roof.CompletionOutwardForest](../Unfoldings/Roof/CompletionOutwardForest.lean) | Construct an actual outward auxiliary forest from the original forest and radial tails |
+| [Unfoldings.Roof.CompletionPathWedges](../Unfoldings/Roof/CompletionPathWedges.lean) | Curvature-carrying auxiliary paths inherit the acute wedges of the constructed network |
+| [Unfoldings.Roof.CompletionPlanes](../Unfoldings/Roof/CompletionPlanes.lean) | Preserve old rigid face planes and construct actual new planes in roof completions |
+| [Unfoldings.Roof.CompletionPrescribedSegments](../Unfoldings/Roof/CompletionPrescribedSegments.lean) | Mesh prescribed closed segments while retaining all original roof edge constraints |
+| [Unfoldings.Roof.CompletionRadialCurvature](../Unfoldings/Roof/CompletionRadialCurvature.lean) | Constructed original and radial cuts cover every positive-curvature auxiliary vertex |
+| [Unfoldings.Roof.CompletionRadialMesh](../Unfoldings/Roof/CompletionRadialMesh.lean) | Construct the actual whole-edge mesh of the previously chosen exterior radial components |
+| [Unfoldings.Roof.CompletionRadialWaterfallData](../Unfoldings/Roof/CompletionRadialWaterfallData.lean) | One actual radial waterfall retains all leaf provenance and developed strip data uniformly |
+| [Unfoldings.Roof.CompletionRefinement](../Unfoldings/Roof/CompletionRefinement.lean) | Refine an existing physical roof completion without changing its height function or domain |
+| [Unfoldings.Roof.CompletionRefinementCurvature](../Unfoldings/Roof/CompletionRefinementCurvature.lean) | Physical line refinement creates no positive curvature away from preceding mesh corners |
+| [Unfoldings.Roof.CompletionRegularBankWidth](../Unfoldings/Roof/CompletionRegularBankWidth.lean) | Positive-height regular points avoid every actual geometric waterfall pinch |
+| [Unfoldings.Roof.CompletionSectorCircleGeometry](../Unfoldings/Roof/CompletionSectorCircleGeometry.lean) | Uniform separation of all actual strip-circle images within each waterfall sector |
+| [Unfoldings.Roof.CompletionSectorQuadrants](../Unfoldings/Roof/CompletionSectorQuadrants.lean) | One mesh-independent tilt budget controls actual directions throughout the completed roof |
+| [Unfoldings.Roof.CompletionSkirtSeeds](../Unfoldings/Roof/CompletionSkirtSeeds.lean) | Actual exterior corners are selected before the radial continuation mesh is constructed |
+| [Unfoldings.Roof.CompletionSourceCoherence](../Unfoldings/Roof/CompletionSourceCoherence.lean) | The planar source has one actual developed value, even when it is not a mesh vertex |
+| [Unfoldings.Roof.CompletionSubtreeSectors](../Unfoldings/Roof/CompletionSubtreeSectors.lean) | Actual extended parent subtrees have derived common five-sector coordinates |
+| [Unfoldings.Roof.CompletionWaterfallDomains](../Unfoldings/Roof/CompletionWaterfallDomains.lean) | Constructed waterfall strip interiors lie in the actual uncut completion domain |
+| [Unfoldings.Roof.CompletionWaterfallProvenance](../Unfoldings/Roof/CompletionWaterfallProvenance.lean) | Retain actual leaf/separator provenance with cut avoidance and coherent waterfall domains |
+| [Unfoldings.Roof.ComponentBankCircleCaps](../Unfoldings/Roof/ComponentBankCircleCaps.lean) | Actual component banks separate entire coordinate-bounded circle portions |
+| [Unfoldings.Roof.ComponentBankCircleContact](../Unfoldings/Roof/ComponentBankCircleContact.lean) | Any weak circle contact across actual skirt-component banks is an actual named bank point |
+| [Unfoldings.Roof.ComponentBankCircleSeparation](../Unfoldings/Roof/ComponentBankCircleSeparation.lean) | Actual radial-component banks separate outward circle arcs in neighboring frames |
+| [Unfoldings.Roof.ContactSeparatorCircleOrder](../Unfoldings/Roof/ContactSeparatorCircleOrder.lean) | Actual adjacent developed strip-circle slices are disjoint across their shared separator |
+| [Unfoldings.Roof.ContactSeparatorCirclePrefix](../Unfoldings/Roof/ContactSeparatorCirclePrefix.lean) | Actual adjacent circle endpoints agree before their shared separator's leaf |
+| [Unfoldings.Roof.ContactSeparatorPrefix](../Unfoldings/Roof/ContactSeparatorPrefix.lean) | Coherent separator prefixes and terminal-height bounds need only physical bank contact |
+| [Unfoldings.Roof.ContactSeparatorValues](../Unfoldings/Roof/ContactSeparatorValues.lean) | Actual developed traces agree on a separator's approached coherent prefix |
+| [Unfoldings.Roof.ContourExcursion](../Unfoldings/Roof/ContourExcursion.lean) | Exact displacement for a partial contour excursion between copies of one original vertex |
+| [Unfoldings.Roof.CurvatureBudget](../Unfoldings/Roof/CurvatureBudget.lean) | Nonnegative intrinsic curvature and its mesh-independent small-tilt budget |
+| [Unfoldings.Roof.CurvatureCutDevelopment](../Unfoldings/Roof/CurvatureCutDevelopment.lean) | Developing cut disks while leaving flat subdivision vertices uncut |
+| [Unfoldings.Roof.CurvatureNonnegative](../Unfoldings/Roof/CurvatureNonnegative.lean) | Nonnegative intrinsic curvature and its mesh-independent small-tilt budget |
+| [Unfoldings.Roof.CurvaturePrunedDevelopment](../Unfoldings/Roof/CurvaturePrunedDevelopment.lean) | Pruning flat subtrees preserves necessary curvature cuts and interior local isometry |
+| [Unfoldings.Roof.CurvaturePrunedForest](../Unfoldings/Roof/CurvaturePrunedForest.lean) | Remove every zero-curvature descendant subtree from the actual original cutting forest |
+| [Unfoldings.Roof.DeepGeometricWaterfall](../Unfoldings/Roof/DeepGeometricWaterfall.lean) | Deep clipping makes the actual waterfall strip interiors lie in the regular roof region |
+| [Unfoldings.Roof.DevelopmentCoordinates](../Unfoldings/Roof/DevelopmentCoordinates.lean) | Actual developed face charts over the horizontal coordinates of an arbitrary-rim roof |
+| [Unfoldings.Roof.DevelopmentOrientation](../Unfoldings/Roof/DevelopmentOrientation.lean) | One orientation relative to actual roof projection |
+| [Unfoldings.Roof.EarlyCircleTerminalPrefix](../Unfoldings/Roof/EarlyCircleTerminalPrefix.lean) | Early circle crossings beyond a terminated prefix are controlled by the first later terminal |
+| [Unfoldings.Roof.EarlyCircleTerminalPrefixContacts](../Unfoldings/Roof/EarlyCircleTerminalPrefixContacts.lean) | Early circle crossings beyond a terminated prefix are controlled by the first later terminal |
+| [Unfoldings.Roof.EarlyTerminalBankOrder](../Unfoldings/Roof/EarlyTerminalBankOrder.lean) | Early surviving circle crossings are bounded by the intermediate strip's terminal copy |
+| [Unfoldings.Roof.EdgeUnfolding](../Unfoldings/Roof/EdgeUnfolding.lean) | Every sufficiently shallow acute convex roof has a nonoverlapping original-edge cut disk |
+| [Unfoldings.Roof.EmptyNeighborCirclePrefix](../Unfoldings/Roof/EmptyNeighborCirclePrefix.lean) | A surviving circle crossing lies beyond its shared leaf when its neighbor has disappeared |
+| [Unfoldings.Roof.EmptyNeighborContactPrefix](../Unfoldings/Roof/EmptyNeighborContactPrefix.lean) | A surviving circle crossing lies beyond its shared leaf when its neighbor has disappeared |
+| [Unfoldings.Roof.EmptyStripChainLateCircleSeparation](../Unfoldings/Roof/EmptyStripChainLateCircleSeparation.lean) | Separate surviving circle slices beyond a finite chain of permanently collapsed strips |
+| [Unfoldings.Roof.EmptyStripChainLateContactSeparation](../Unfoldings/Roof/EmptyStripChainLateContactSeparation.lean) | Separate surviving circle slices beyond a finite chain of permanently collapsed strips |
+| [Unfoldings.Roof.EmptyStripCircleSeparation](../Unfoldings/Roof/EmptyStripCircleSeparation.lean) | Separate two surviving circle slices across one disappearing actual strip |
+| [Unfoldings.Roof.EmptyStripLateCircleSeparation](../Unfoldings/Roof/EmptyStripLateCircleSeparation.lean) | Separate surviving strip slices beyond an intervening strip's actual terminal height |
+| [Unfoldings.Roof.EmptyStripRunContactSeparation](../Unfoldings/Roof/EmptyStripRunContactSeparation.lean) | Separate circle slices across any nonempty run of disappearing actual strips |
+| [Unfoldings.Roof.ExtendedComponentSectors](../Unfoldings/Roof/ExtendedComponentSectors.lean) | Every actual geometric cut component lies in one of the five fixed sectors |
+| [Unfoldings.Roof.ExtendedComponentWedges](../Unfoldings/Roof/ExtendedComponentWedges.lean) | Each complete extended geometric cut component has one acute direction wedge |
+| [Unfoldings.Roof.ExtendedCutCarrier](../Unfoldings/Roof/ExtendedCutCarrier.lean) | The explicit geometric parent forest represents the entire original-and-skirt cut set |
+| [Unfoldings.Roof.ExtendedCutEmbedding](../Unfoldings/Roof/ExtendedCutEmbedding.lean) | The finite geometric cut forest has distinct actual projected vertex positions |
+| [Unfoldings.Roof.ExtendedCutGrowth](../Unfoldings/Roof/ExtendedCutGrowth.lean) | Local outward progress on the constructed original cuts and radial skirt continuations |
+| [Unfoldings.Roof.ExtendedCutLabels](../Unfoldings/Roof/ExtendedCutLabels.lean) | Consistent radial-component labels for every actual original cut and skirt continuation |
+| [Unfoldings.Roof.ExtendedCutParents](../Unfoldings/Roof/ExtendedCutParents.lean) | The complete geometric original-cut and skirt network is an explicit finite parent forest |
+| [Unfoldings.Roof.ExtendedGeometricCuts](../Unfoldings/Roof/ExtendedGeometricCuts.lean) | Actual original whole-edge cuts together with their exterior radial continuations |
 | [Unfoldings.Roof.FaceRestriction](../Unfoldings/Roof/FaceRestriction.lean) | Restrict rigid roof geometry and identify all nonvertex projection fibers |
+| [Unfoldings.Roof.FlatSubtreeBanks](../Unfoldings/Roof/FlatSubtreeBanks.lean) | Original parent seams bounding zero-curvature subtrees are actual removable flat slits |
+| [Unfoldings.Roof.ForestSource](../Unfoldings/Roof/ForestSource.lean) | Choose an interior source to the right of all interior vertices, including meshes with none |
+| [Unfoldings.Roof.GeometricBankPersistence](../Unfoldings/Roof/GeometricBankPersistence.lean) | An actual tail cannot leave an exterior sector bank after contacting it beyond its leaf |
+| [Unfoldings.Roof.GeometricChainNetwork](../Unfoldings/Roof/GeometricChainNetwork.lean) | Physical fine cut chains inherit the actual sector network and its positive coordinates |
+| [Unfoldings.Roof.GeometricChainSectors](../Unfoldings/Roof/GeometricChainSectors.lean) | Fine parent directions use the same chosen sector as their actual geometric leaf |
+| [Unfoldings.Roof.GeometricComponentBanks](../Unfoldings/Roof/GeometricComponentBanks.lean) | A specified geometric component controls fine parent banks starting at any of its cut points |
+| [Unfoldings.Roof.GeometricComponentNetwork](../Unfoldings/Roof/GeometricComponentNetwork.lean) | Physical component cut pieces belong to the actual deterministic sector network |
+| [Unfoldings.Roof.GeometricComponentPieces](../Unfoldings/Roof/GeometricComponentPieces.lean) | Whole physical cut pieces retain their geometric component's chosen sector data |
+| [Unfoldings.Roof.GeometricCutFlow](../Unfoldings/Roof/GeometricCutFlow.lean) | The complete geometric cut forest has a unique forward edge at every nonterminal point |
+| [Unfoldings.Roof.GeometricCutIncidence](../Unfoldings/Roof/GeometricCutIncidence.lean) | A geometric cut vertex lying on a geometric edge is one of its actual endpoints |
+| [Unfoldings.Roof.GeometricCutLabels](../Unfoldings/Roof/GeometricCutLabels.lean) | Component labels and fixed sectors on the complete geometric cut parent forest |
+| [Unfoldings.Roof.GeometricCutNoncrossing](../Unfoldings/Roof/GeometricCutNoncrossing.lean) | Distinct edges of the complete geometric forest meet only at shared endpoints |
+| [Unfoldings.Roof.GeometricCutPaths](../Unfoldings/Roof/GeometricCutPaths.lean) | Exact monotone height graphs for all complete geometric cut paths |
+| [Unfoldings.Roof.GeometricFineTailTracking](../Unfoldings/Roof/GeometricFineTailTracking.lean) | The actual geometric tail point is on a whole edge of every outward fine cut chain |
+| [Unfoldings.Roof.GeometricFreshWaterfallLeaf](../Unfoldings/Roof/GeometricFreshWaterfallLeaf.lean) | A fresh actual leaf is inserted in a positive-width cell, unless it is the source itself |
+| [Unfoldings.Roof.GeometricHeightNetwork](../Unfoldings/Roof/GeometricHeightNetwork.lean) | Instantiate the forward-deterministic height network with actual geometric cut components |
+| [Unfoldings.Roof.GeometricLeafAvoidance](../Unfoldings/Roof/GeometricLeafAvoidance.lean) | An unprocessed geometric leaf cannot lie on another leaf's existing root path |
+| [Unfoldings.Roof.GeometricLeafInterior](../Unfoldings/Roof/GeometricLeafInterior.lean) | Every nonterminal node of the actual geometric forest lies strictly inside the roof clip |
+| [Unfoldings.Roof.GeometricLeafMinimum](../Unfoldings/Roof/GeometricLeafMinimum.lean) | Actual geometric leaves are local radial minima of the complete prescribed cut network |
+| [Unfoldings.Roof.GeometricLeafSupport](../Unfoldings/Roof/GeometricLeafSupport.lean) | Every geometric cut-edge point lies above a descendant leaf in its component sweep |
+| [Unfoldings.Roof.GeometricLeafSweep](../Unfoldings/Roof/GeometricLeafSweep.lean) | Each geometric component admits a height sweep in which every edge lies above a leaf |
+| [Unfoldings.Roof.GeometricLevelBankOrder](../Unfoldings/Roof/GeometricLevelBankOrder.lean) | Actual regular facing banks have gap order whenever their physical points coincide |
+| [Unfoldings.Roof.GeometricRadialEdges](../Unfoldings/Roof/GeometricRadialEdges.lean) | Every active geometric component has an actual seed-to-tip edge in the cut forest |
+| [Unfoldings.Roof.GeometricRadialGraphs](../Unfoldings/Roof/GeometricRadialGraphs.lean) | Construct the exact source-ray graph of the radial edge of every active cut component |
+| [Unfoldings.Roof.GeometricRecoverableWaterfall](../Unfoldings/Roof/GeometricRecoverableWaterfall.lean) | Every constructed actual sector waterfall reopens only at its source or geometric leaves |
+| [Unfoldings.Roof.GeometricSectorBankPoints](../Unfoldings/Roof/GeometricSectorBankPoints.lean) | The same numerical sector banks support the arbitrary-rim geometric forest |
+| [Unfoldings.Roof.GeometricSectorBoundaryLeaves](../Unfoldings/Roof/GeometricSectorBoundaryLeaves.lean) | A nonterminal geometric node on its sector bank must be a leaf |
+| [Unfoldings.Roof.GeometricSectorCutPoint](../Unfoldings/Roof/GeometricSectorCutPoint.lean) | Every actual cut point strictly inside a sweep sector belongs to a leaf tail in that sector |
+| [Unfoldings.Roof.GeometricSectorData](../Unfoldings/Roof/GeometricSectorData.lean) | Actual component sector choices and exact enclosing strips for their geometric tails |
+| [Unfoldings.Roof.GeometricSectorNetwork](../Unfoldings/Roof/GeometricSectorNetwork.lean) | One sector network includes every geometric tree whose edge directions lie in that sector |
+| [Unfoldings.Roof.GeometricSectorPositions](../Unfoldings/Roof/GeometricSectorPositions.lean) | Choose a sector containing both the positions and the directions of an actual cut component |
+| [Unfoldings.Roof.GeometricSectorTails](../Unfoldings/Roof/GeometricSectorTails.lean) | Common-sector networks control actual tails from different geometric components |
+| [Unfoldings.Roof.GeometricSeparatorPrefix](../Unfoldings/Roof/GeometricSeparatorPrefix.lean) | A separator's strict-sector prefix can meet actual cuts only at coherent wall contacts |
+| [Unfoldings.Roof.GeometricTailAffine](../Unfoldings/Roof/GeometricTailAffine.lean) | Actual tail graphs and exterior rays are locally affine away from geometric vertices |
+| [Unfoldings.Roof.GeometricTailBankContacts](../Unfoldings/Roof/GeometricTailBankContacts.lean) | Beyond its starting leaf, an actual tail can meet a sector bank only on its radial skirt |
+| [Unfoldings.Roof.GeometricTailCoalescence](../Unfoldings/Roof/GeometricTailCoalescence.lean) | Constructed actual cut tails merge permanently and retain a consistent sweep order |
+| [Unfoldings.Roof.GeometricTailCutoff](../Unfoldings/Roof/GeometricTailCutoff.lean) | A deep physical roof clip puts every actual tail endpoint beyond the chosen sweep slab |
+| [Unfoldings.Roof.GeometricTailEdgeCover](../Unfoldings/Roof/GeometricTailEdgeCover.lean) | Every point on an actual ancestor edge is on the exact represented tail graph |
+| [Unfoldings.Roof.GeometricTailGraphs](../Unfoldings/Roof/GeometricTailGraphs.lean) | Construct exact covered height graphs for every tail of one actual geometric component |
+| [Unfoldings.Roof.GeometricTailLeaves](../Unfoldings/Roof/GeometricTailLeaves.lean) | A new geometric leaf is strictly separated from every distinct existing tail at its height |
+| [Unfoldings.Roof.GeometricTailLocalEdge](../Unfoldings/Roof/GeometricTailLocalEdge.lean) | Actual regular tail points avoid network vertices and retain a local physical edge graph |
+| [Unfoldings.Roof.GeometricTailPieces](../Unfoldings/Roof/GeometricTailPieces.lean) | Every covered actual tail point lies on a labeled geometric parent edge |
+| [Unfoldings.Roof.GeometricTailTraceOrder](../Unfoldings/Roof/GeometricTailTraceOrder.lean) | Actual visible traces progress in both coordinates along a geometric cut tail |
+| [Unfoldings.Roof.GeometricTailVertices](../Unfoldings/Roof/GeometricTailVertices.lean) | A geometric vertex on an actual tail is an ancestor in that same cut component |
+| [Unfoldings.Roof.GeometricVertexCutPiece](../Unfoldings/Roof/GeometricVertexCutPiece.lean) | Every nonterminal geometric cut vertex has an actual containing piece with its own label |
+| [Unfoldings.Roof.GeometricWaterfall](../Unfoldings/Roof/GeometricWaterfall.lean) | Construct a finite strip subdivision from the actual geometric leaves in each sector |
+| [Unfoldings.Roof.GeometricWaterfallAvoidance](../Unfoldings/Roof/GeometricWaterfallAvoidance.lean) | Actual cut edges lie on the constructed waterfall boundaries, away from strip interiors |
+| [Unfoldings.Roof.GeometricWaterfallRegular](../Unfoldings/Roof/GeometricWaterfallRegular.lean) | Regularity applies to every constructed subdivision retaining the actual leaf tails |
+| [Unfoldings.Roof.GeometricWaterfallSectors](../Unfoldings/Roof/GeometricWaterfallSectors.lean) | A waterfall strip interior avoids geometric cut edges from every sector |
+| [Unfoldings.Roof.GermCrossing](../Unfoldings/Roof/GermCrossing.lean) | A sign change in an actual incident face meets the supported cone boundary |
+| [Unfoldings.Roof.GermNormalCone](../Unfoldings/Roof/GermNormalCone.lean) | Detecting actual normal-cone membership from all incident edge directions |
+| [Unfoldings.Roof.GermSupports](../Unfoldings/Roof/GermSupports.lean) | Actual supporting inequalities along incident spatial edge rays |
+| [Unfoldings.Roof.GermVectors](../Unfoldings/Roof/GermVectors.lean) | Actual projected germ vectors and their rigid developed images on parent banks |
+| [Unfoldings.Roof.Gnomonic](../Unfoldings/Roof/Gnomonic.lean) | Gnomonic coordinates recover the actual supporting normals |
+| [Unfoldings.Roof.GnomonicArea](../Unfoldings/Roof/GnomonicArea.lean) | The actual spherical normal image has no more area than its slope polygon |
+| [Unfoldings.Roof.GradientSelection](../Unfoldings/Roof/GradientSelection.lean) | Prove gradient monotonicity and straight escape rays from all omitted faces |
+| [Unfoldings.Roof.HeightContinuity](../Unfoldings/Roof/HeightContinuity.lean) | Prove continuity of arbitrary-rim supporting roofs |
+| [Unfoldings.Roof.HorizontalLevelCap](../Unfoldings/Roof/HorizontalLevelCap.lean) | Translate horizontal-boundary roofs into the geometric convex-cap interface |
+| [Unfoldings.Roof.IncidentDirections](../Unfoldings/Roof/IncidentDirections.lean) | The closed projected corner cones cover every direction at an interior vertex |
+| [Unfoldings.Roof.InjectiveEdgeUnfolding](../Unfoldings/Roof/InjectiveEdgeUnfolding.lean) | Uniformly shallow acute arbitrary-rim roofs admit globally injective original-edge unfoldings |
+| [Unfoldings.Roof.LateTerminalBankOrder](../Unfoldings/Roof/LateTerminalBankOrder.lean) | Late circle crossings progress beyond an intermediate strip's actual terminal copy |
+| [Unfoldings.Roof.LeafCompletedTailTracking](../Unfoldings/Roof/LeafCompletedTailTracking.lean) | Every constructed leaf's tail is tracked by the actual fine outward forest |
+| [Unfoldings.Roof.LeafTailCircleOrder](../Unfoldings/Roof/LeafTailCircleOrder.lean) | Actual strip-circle slices on opposite sides of a constructed leaf tail are disjoint |
+| [Unfoldings.Roof.LeafTailCircleSeparation](../Unfoldings/Roof/LeafTailCircleSeparation.lean) | Actual strip-circle slices on opposite sides of a constructed leaf tail are disjoint |
+| [Unfoldings.Roof.LinkCrossingBound](../Unfoldings/Roof/LinkCrossingBound.lean) | Convexity bounds the actual cyclic vertex link by two hemisphere crossings |
+| [Unfoldings.Roof.LinkCrossings](../Unfoldings/Roof/LinkCrossings.lean) | The genuine roof link has zero or two crossings according to its actual normal cone |
+| [Unfoldings.Roof.MatchedBankPoints](../Unfoldings/Roof/MatchedBankPoints.lean) | Matched points on actual branching parent banks |
+| [Unfoldings.Roof.NoAdjacentBoundaryRuns](../Unfoldings/Roof/NoAdjacentBoundaryRuns.lean) | The actual one-sector assignment rules out disappearing runs on both sides of a shared ray |
+| [Unfoldings.Roof.NormalArea](../Unfoldings/Roof/NormalArea.lean) | A uniform area budget for all planar normal polygons |
+| [Unfoldings.Roof.NormalAreaThreshold](../Unfoldings/Roof/NormalAreaThreshold.lean) | Uniform smallness of the complete planar normal image |
+| [Unfoldings.Roof.NormalCone](../Unfoldings/Roof/NormalCone.lean) | The spherical normal polygon is the actual outward normal cone |
+| [Unfoldings.Roof.NormalImage](../Unfoldings/Roof/NormalImage.lean) | Planar normal images of convex roof vertices |
+| [Unfoldings.Roof.OriginalBankFaceValues](../Unfoldings/Roof/OriginalBankFaceValues.lean) | Every original parent-bank point is the actual affine placement of its incident face |
+| [Unfoldings.Roof.OriginalCutCarrier](../Unfoldings/Roof/OriginalCutCarrier.lean) | The selected original forest segments are exactly the actual closed original seam cut set |
+| [Unfoldings.Roof.OriginalCutLabels](../Unfoldings/Roof/OriginalCutLabels.lean) | Actual original cut segments have consistent tree labels at every geometric contact |
+| [Unfoldings.Roof.OriginalCuts](../Unfoldings/Roof/OriginalCuts.lean) | Locate original seam cuts outside every face interior |
+| [Unfoldings.Roof.OriginalFaceHeight](../Unfoldings/Roof/OriginalFaceHeight.lean) | Original whole-face height identities, including arbitrary rim points |
+| [Unfoldings.Roof.OriginalSectorFrames](../Unfoldings/Roof/OriginalSectorFrames.lean) | Construct actual common quadrant frames on original faces using their physical cap completion |
+| [Unfoldings.Roof.OuterCircleCaps](../Unfoldings/Roof/OuterCircleCaps.lean) | Actual outer banks separate whole coordinate-bounded circle portions across a shared ray |
+| [Unfoldings.Roof.OuterCircleContactAlternative](../Unfoldings/Roof/OuterCircleContactAlternative.lean) | Actual surviving outer-bank circle endpoints coincide or belong to one radial component |
+| [Unfoldings.Roof.OuterCirclePhysicalAlternative](../Unfoldings/Roof/OuterCirclePhysicalAlternative.lean) | Outer-bank circle endpoints have a common physical point or one actual radial component |
+| [Unfoldings.Roof.OuterClosedCircleContact](../Unfoldings/Roof/OuterClosedCircleContact.lean) | Weak outer-circle contacts retain equality of both developed and physical endpoints |
+| [Unfoldings.Roof.OuterClosedSectionAlternative](../Unfoldings/Roof/OuterClosedSectionAlternative.lean) | Outer-bank circle endpoints have a common physical point or one actual radial component |
+| [Unfoldings.Roof.OuterClosedSectionContact](../Unfoldings/Roof/OuterClosedSectionContact.lean) | Weak outer-circle contacts retain equality of both developed and physical endpoints |
+| [Unfoldings.Roof.ParentBankDisplacements](../Unfoldings/Roof/ParentBankDisplacements.lean) | Actual contour entrances, exits, and the positional gap at a branching parent seam |
+| [Unfoldings.Roof.ParentBankNoncrossing](../Unfoldings/Roof/ParentBankNoncrossing.lean) | Noncrossing of the actual two banks of a branching parent seam |
+| [Unfoldings.Roof.ParentBankOpening](../Unfoldings/Roof/ParentBankOpening.lean) | Constructed actual oriented parent-bank opening data |
+| [Unfoldings.Roof.ParentBankVectorOrder](../Unfoldings/Roof/ParentBankVectorOrder.lean) | Actual branching parent-bank vector order in common sector quadrants |
+| [Unfoldings.Roof.ParentDirectionRotation](../Unfoldings/Roof/ParentDirectionRotation.lean) | Actual signed parent-direction rotations in a projection-preserving frame |
+| [Unfoldings.Roof.ParentRadialGrowth](../Unfoldings/Roof/ParentRadialGrowth.lean) | Every selected parent edge strictly increases source distance along its entire length |
+| [Unfoldings.Roof.ParentSegments](../Unfoldings/Roof/ParentSegments.lean) | Actual projected parent segments are the original selected seam edges |
+| [Unfoldings.Roof.ProjectedConformity](../Unfoldings/Roof/ProjectedConformity.lean) | Derive face-to-face conformity from an embedded roof projection |
+| [Unfoldings.Roof.ProjectedFaces](../Unfoldings/Roof/ProjectedFaces.lean) | Construct exact projected face triangles for arbitrary-rim roofs |
+| [Unfoldings.Roof.ProjectedFlatness](../Unfoldings/Roof/ProjectedFlatness.lean) | Projected interior links are flat |
+| [Unfoldings.Roof.ProjectedLink](../Unfoldings/Roof/ProjectedLink.lean) | Actual projected rays and disjoint direction cones of a roof vertex link |
 | [Unfoldings.Roof.ProjectedOpening](../Unfoldings/Roof/ProjectedOpening.lean) | Prove that actual projected roof seams open to opposite sides |
+| [Unfoldings.Roof.ProjectedPointCopies](../Unfoldings/Roof/ProjectedPointCopies.lean) | Compare original point copies across retained whole edges |
+| [Unfoldings.Roof.ProjectedPointCopyValues](../Unfoldings/Roof/ProjectedPointCopyValues.lean) | Actual developed values and exact vertex classification of projected face copies |
+| [Unfoldings.Roof.ProjectedSeamCompletion](../Unfoldings/Roof/ProjectedSeamCompletion.lean) | Identify all matching projected whole edges with actual original seams |
+| [Unfoldings.Roof.ProjectedSeamEndpoints](../Unfoldings/Roof/ProjectedSeamEndpoints.lean) | An actual projected vertex on a seam edge is one of that seam's intrinsic endpoints |
+| [Unfoldings.Roof.ProjectedSeamUnique](../Unfoldings/Roof/ProjectedSeamUnique.lean) | Prove uniqueness of an original seam at a nonvertex point |
+| [Unfoldings.Roof.ProjectionContour](../Unfoldings/Roof/ProjectionContour.lean) | Actual boundary contours oriented by the original roof projection |
+| [Unfoldings.Roof.ProjectionFrame](../Unfoldings/Roof/ProjectionFrame.lean) | A common developed frame preserving the actual projection orientation |
+| [Unfoldings.Roof.PrunedAllVertexContact](../Unfoldings/Roof/PrunedAllVertexContact.lean) | Global injectivity of curvature-pruned roof developments under physical contact control |
+| [Unfoldings.Roof.PrunedContactReduction](../Unfoldings/Roof/PrunedContactReduction.lean) | All remaining self-contacts of the pruned development involve an actual intrinsic vertex |
+| [Unfoldings.Roof.PrunedDevelopmentLocalIsometry](../Unfoldings/Roof/PrunedDevelopmentLocalIsometry.lean) | The actual development obtained by restoring flat cuts is locally isometric on the open disk |
+| [Unfoldings.Roof.PrunedSeamContact](../Unfoldings/Roof/PrunedSeamContact.lean) | Pruning removes every coincident pair of regular banks at the same physical roof point |
+| [Unfoldings.Roof.PrunedVertexContactFibers](../Unfoldings/Roof/PrunedVertexContactFibers.lean) | All remaining pruned contacts are between intrinsic copies of one physical vertex |
+| [Unfoldings.Roof.RadialComponentCircleBanks](../Unfoldings/Roof/RadialComponentCircleBanks.lean) | Actual circle endpoints on radial components select named fine parent banks |
+| [Unfoldings.Roof.RadialComponentCirclePhysicalBanks](../Unfoldings/Roof/RadialComponentCirclePhysicalBanks.lean) | Named component circle banks retain their exact physical surface coordinates |
+| [Unfoldings.Roof.RadialComponentCommonChain](../Unfoldings/Roof/RadialComponentCommonChain.lean) | Actual fine edges on one pure radial component belong to one common parent chain |
+| [Unfoldings.Roof.RadialComponentFineAncestry](../Unfoldings/Roof/RadialComponentFineAncestry.lean) | Physical order along a radial component gives actual fine-forest ancestry |
+| [Unfoldings.Roof.RadialComponentFinePath](../Unfoldings/Roof/RadialComponentFinePath.lean) | Actual completed fine paths cover each unattached radial component up to its outer tip |
+| [Unfoldings.Roof.RadialComponentIncomingBank](../Unfoldings/Roof/RadialComponentIncomingBank.lean) | Derive an actual incoming fine edge and its positive enclosing-ray coordinates |
+| [Unfoldings.Roof.RadialComponentSeed](../Unfoldings/Roof/RadialComponentSeed.lean) | Every nonroot geometric node of a pure radial component is its single seed |
+| [Unfoldings.Roof.RadialComponentSeedPath](../Unfoldings/Roof/RadialComponentSeedPath.lean) | The actual fine path from a component seed covers all of its nontip positions |
+| [Unfoldings.Roof.RestoredParentBankEndpoints](../Unfoldings/Roof/RestoredParentBankEndpoints.lean) | The actual entrance and exit banks match after pruning a flat subtree |
 | [Unfoldings.Roof.RestrictedBoundaryExistence](../Unfoldings/Roof/RestrictedBoundaryExistence.lean) | Construct a boundary bank for every nonempty whole-face roof restriction |
 | [Unfoldings.Roof.RestrictedBoundaryFrontier](../Unfoldings/Roof/RestrictedBoundaryFrontier.lean) | Place all actual restricted banks, including endpoints, on the geometric frontier |
 | [Unfoldings.Roof.RestrictedBoundaryJordan](../Unfoldings/Roof/RestrictedBoundaryJordan.lean) | Extract a Jordan curve from restricted banks despite possible coincident vertex copies |
 | [Unfoldings.Roof.RestrictedDisk](../Unfoldings/Roof/RestrictedDisk.lean) | Prove the disk and Jordan-boundary theorem for whole-edge connected gradient selections |
+| [Unfoldings.Roof.RestrictedEmbedding](../Unfoldings/Roof/RestrictedEmbedding.lean) | Exclude intrinsic vertex pinches in whole-face Jordan roof patches |
+| [Unfoldings.Roof.RimTails](../Unfoldings/Roof/RimTails.lean) | Original rim continuations from an interior planar source, without a rim-height assumption |
+| [Unfoldings.Roof.RootSubtreeContour](../Unfoldings/Roof/RootSubtreeContour.lean) | An original rim-root subtree has exactly the two original rim banks as contour exits |
+| [Unfoldings.Roof.SameSectorAllRadiusContact](../Unfoldings/Roof/SameSectorAllRadiusContact.lean) | Full survivor order retains physical point equality whenever developed bank values coincide |
+| [Unfoldings.Roof.SameSectorEmptyCircleComparison](../Unfoldings/Roof/SameSectorEmptyCircleComparison.lean) | A disappearing strip's own terminal copy has proper comparison arcs in that strip's sector |
+| [Unfoldings.Roof.SectorBankRays](../Unfoldings/Roof/SectorBankRays.lean) | The named enclosing banks identify a common radial component across adjacent sectors |
+| [Unfoldings.Roof.SectorBoundaryComponents](../Unfoldings/Roof/SectorBoundaryComponents.lean) | A skirt component on a sector boundary has no original tree attached to it |
+| [Unfoldings.Roof.SectorBoundaryCutPoints](../Unfoldings/Roof/SectorBoundaryCutPoints.lean) | Cuts on sector boundary rays are radial skirt pieces or actual leaf endpoints |
+| [Unfoldings.Roof.SectorDevelopment](../Unfoldings/Roof/SectorDevelopment.lean) | Construct the actual intrinsic cut disk and a locally isometric facewise development |
+| [Unfoldings.Roof.SectorForest](../Unfoldings/Roof/SectorForest.lean) | Construct source-centered original-edge sector forests with interior planar sources |
+| [Unfoldings.Roof.SectorForestExistence](../Unfoldings/Roof/SectorForestExistence.lean) | Choose forest and tilt parameters uniformly from only the original acute margin |
+| [Unfoldings.Roof.SectorForestGeometry](../Unfoldings/Roof/SectorForestGeometry.lean) | Control source-centered positions, rim roots, and the empty forward sector gap |
+| [Unfoldings.Roof.SectorForestPaths](../Unfoldings/Roof/SectorForestPaths.lean) | Prove acute-wedge and radial monotonicity of all selected original-edge paths |
+| [Unfoldings.Roof.SectorQuadrants](../Unfoldings/Roof/SectorQuadrants.lean) | Projection-preserving common frames for original roof developments and their sector banks |
 | [Unfoldings.Roof.SelectionComplement](../Unfoldings/Roof/SelectionComplement.lean) | Prove connected complement and enclosed-region filling for convex-gradient selections |
+| [Unfoldings.Roof.SelectionComponentDisk](../Unfoldings/Roof/SelectionComponentDisk.lean) | Prove a geometric closed disk and Jordan frontier for every convex-gradient component |
 | [Unfoldings.Roof.SelectionComponents](../Unfoldings/Roof/SelectionComponents.lean) | Define actual whole-edge selection components and prove connected interior |
 | [Unfoldings.Roof.SelectionInteriorLabels](../Unfoldings/Roof/SelectionInteriorLabels.lean) | Propagate component labels across all interior contacts and connected selected regions |
-| [Unfoldings.Roof.SelectionComponentDisk](../Unfoldings/Roof/SelectionComponentDisk.lean) | Prove a geometric closed disk and Jordan frontier for every convex-gradient component |
-| [Unfoldings.Roof.ProjectedConformity](../Unfoldings/Roof/ProjectedConformity.lean) | Derive face-to-face conformity from an embedded roof projection |
-| [Unfoldings.Roof.ProjectedSeamCompletion](../Unfoldings/Roof/ProjectedSeamCompletion.lean) | Identify all matching projected whole edges with actual original seams |
-| [Unfoldings.Roof.RestrictedEmbedding](../Unfoldings/Roof/RestrictedEmbedding.lean) | Exclude intrinsic vertex pinches in whole-face Jordan roof patches |
 | [Unfoldings.Roof.SelectionIntrinsicDisk](../Unfoldings/Roof/SelectionIntrinsicDisk.lean) | Prove intrinsic closed disks and injective projection for every gradient selection component |
-| [Unfoldings.Roof.HeightContinuity](../Unfoldings/Roof/HeightContinuity.lean) | Prove continuity of arbitrary-rim supporting roofs |
-| [Unfoldings.Roof.TentCompletion](../Unfoldings/Roof/TentCompletion.lean) | Add four inactive support planes while preserving all original roof heights |
-| [Unfoldings.Roof.TentClips](../Unfoldings/Roof/TentClips.lean) | Prove properness and arbitrarily deep compact horizontal sections of completed roofs |
-| [Unfoldings.Roof.TentNormals](../Unfoldings/Roof/TentNormals.lean) | Preserve the prescribed tilt budget with actual supporting normals of the completion |
-| [Unfoldings.Roof.ForestSource](../Unfoldings/Roof/ForestSource.lean) | Choose an interior source to the right of all interior vertices, including meshes with none |
-| [Unfoldings.Roof.ThreeSectorProgress](../Unfoldings/Roof/ThreeSectorProgress.lean) | Prove actual seam progress in the prescribed acute sectors for arbitrary-rim roofs |
-| [Unfoldings.Roof.SectorForest](../Unfoldings/Roof/SectorForest.lean) | Construct source-centered original-edge sector forests with interior planar sources |
-| [Unfoldings.Roof.SectorForestPaths](../Unfoldings/Roof/SectorForestPaths.lean) | Prove acute-wedge and radial monotonicity of all selected original-edge paths |
-| [Unfoldings.Roof.SectorForestGeometry](../Unfoldings/Roof/SectorForestGeometry.lean) | Control source-centered positions, rim roots, and the empty forward sector gap |
-| [Unfoldings.Roof.SectorDevelopment](../Unfoldings/Roof/SectorDevelopment.lean) | Construct the actual intrinsic cut disk and a locally isometric facewise development |
-| [Unfoldings.Roof.SectorForestExistence](../Unfoldings/Roof/SectorForestExistence.lean) | Choose forest and tilt parameters uniformly from only the original acute margin |
-| [Unfoldings.Roof.SpatialEnvelopeRoof](../Unfoldings/Roof/SpatialEnvelopeRoof.lean) | Construct embedded convex roofs from conforming physical support-plane partitions |
-| [Unfoldings.Roof.HorizontalLevelCap](../Unfoldings/Roof/HorizontalLevelCap.lean) | Translate horizontal-boundary roofs into the geometric convex-cap interface |
+| [Unfoldings.Roof.SharedSeparatorCirclePrefix](../Unfoldings/Roof/SharedSeparatorCirclePrefix.lean) | Actual adjacent circle endpoints agree before their shared separator's leaf |
+| [Unfoldings.Roof.SharedSeparatorCircleSeparation](../Unfoldings/Roof/SharedSeparatorCircleSeparation.lean) | Actual adjacent developed strip-circle slices are disjoint across their shared separator |
+| [Unfoldings.Roof.SharedSeparatorPrefixValue](../Unfoldings/Roof/SharedSeparatorPrefixValue.lean) | Actual developed traces agree on a separator's approached coherent prefix |
+| [Unfoldings.Roof.SimpleEdgeUnfolding](../Unfoldings/Roof/SimpleEdgeUnfolding.lean) | The arbitrary-rim acute-roof theorem |
+| [Unfoldings.Roof.SkirtAttachments](../Unfoldings/Roof/SkirtAttachments.lean) | A skirt component attaches to an original rim vertex exactly at its seed |
+| [Unfoldings.Roof.SkirtRadialCuts](../Unfoldings/Roof/SkirtRadialCuts.lean) | Finite radial skirt continuations between arbitrary nested convex footprints |
+| [Unfoldings.Roof.SkirtRimComponents](../Unfoldings/Roof/SkirtRimComponents.lean) | Original rim roots attach to uniquely labeled radial skirt components |
+| [Unfoldings.Roof.SolidNormalArea](../Unfoldings/Roof/SolidNormalArea.lean) | A mesh-independent solid-angle budget for all roof normal cones |
 | [Unfoldings.Roof.SpatialEnvelopeCap](../Unfoldings/Roof/SpatialEnvelopeCap.lean) | Assemble genuine geometric caps from actual horizontal affine-roof sections |
-| [Unfoldings.Roof.CompletionPlanes](../Unfoldings/Roof/CompletionPlanes.lean) | Preserve old rigid face planes and construct actual new planes in roof completions |
-| [Unfoldings.Roof.CompletionMesh](../Unfoldings/Roof/CompletionMesh.lean) | Construct tilt-preserving physical cap meshes extending arbitrary-rim roofs |
-| [Unfoldings.Roof.CompletionOriginalPieces](../Unfoldings/Roof/CompletionOriginalPieces.lean) | Cover every whole original face by contained auxiliary triangles with unique old parents |
-| [Unfoldings.Roof.CompletionOriginalCoordinates](../Unfoldings/Roof/CompletionOriginalCoordinates.lean) | Prove that contained auxiliary pieces have the actual original face Euclidean metric |
-| [Unfoldings.Roof.CompletionOriginalSubdivision](../Unfoldings/Roof/CompletionOriginalSubdivision.lean) | Construct the isometric subdivision of the original mesh inside the physical completion |
+| [Unfoldings.Roof.SpatialEnvelopeCoordinates](../Unfoldings/Roof/SpatialEnvelopeCoordinates.lean) | Exact projected coordinates of the normalized physical affine-roof mesh |
+| [Unfoldings.Roof.SpatialEnvelopeCurvature](../Unfoldings/Roof/SpatialEnvelopeCurvature.lean) | Incident slopes of the actual normalized spatial roof are active support slopes |
+| [Unfoldings.Roof.SpatialEnvelopeEndpointVertices](../Unfoldings/Roof/SpatialEnvelopeEndpointVertices.lean) | Whole-edge segment coverage preserves actual vertices of spatial envelope meshes |
+| [Unfoldings.Roof.SpatialEnvelopeInteriorSeams](../Unfoldings/Roof/SpatialEnvelopeInteriorSeams.lean) | Whole physical edges meeting the completion interior have actual seam partners |
+| [Unfoldings.Roof.SpatialEnvelopeRetainedClasses](../Unfoldings/Roof/SpatialEnvelopeRetainedClasses.lean) | Preserve physical auxiliary seam classes away from geometric cuts |
+| [Unfoldings.Roof.SpatialEnvelopeRoof](../Unfoldings/Roof/SpatialEnvelopeRoof.lean) | Construct embedded convex roofs from conforming physical support-plane partitions |
+| [Unfoldings.Roof.StrictGeometricTailGraphs](../Unfoldings/Roof/StrictGeometricTailGraphs.lean) | Actual geometric cut tails and enclosing sector walls progress in both coordinates |
+| [Unfoldings.Roof.SubtreeAngles](../Unfoldings/Roof/SubtreeAngles.lean) | Actual branching-subtree angles for the constructed roof forest |
+| [Unfoldings.Roof.SupportingEnvelope](../Unfoldings/Roof/SupportingEnvelope.lean) | Identify a roof with the lower envelope of its actual supporting planes |
+| [Unfoldings.Roof.TailHeightBankGeometry](../Unfoldings/Roof/TailHeightBankGeometry.lean) | Retargeted actual fine banks retain the specified geometric tail's sector |
+| [Unfoldings.Roof.TentClips](../Unfoldings/Roof/TentClips.lean) | Prove properness and arbitrarily deep compact horizontal sections of completed roofs |
+| [Unfoldings.Roof.TentCompletion](../Unfoldings/Roof/TentCompletion.lean) | Add four inactive support planes while preserving all original roof heights |
+| [Unfoldings.Roof.TentNormals](../Unfoldings/Roof/TentNormals.lean) | Preserve the prescribed tilt budget with actual supporting normals of the completion |
+| [Unfoldings.Roof.TerminalBankIntervalOrder](../Unfoldings/Roof/TerminalBankIntervalOrder.lean) | An approached bank following a collapsed strip's actual tail progresses in both coordinates |
+| [Unfoldings.Roof.TerminalHeightLeafOrder](../Unfoldings/Roof/TerminalHeightLeafOrder.lean) | A permanently collapsed strip cannot end before a leaf completed by either bank |
+| [Unfoldings.Roof.TerminalRecordStep](../Unfoldings/Roof/TerminalRecordStep.lean) | Progress from one actual terminal copy to a later terminal along the same physical tail |
+| [Unfoldings.Roof.TerminalRunClosedLateBounds](../Unfoldings/Roof/TerminalRunClosedLateBounds.lean) | Late surviving bank bounds include all vertex radii, using actual closed tracking intervals |
+| [Unfoldings.Roof.TerminalRunEarlyBoundsContacts](../Unfoldings/Roof/TerminalRunEarlyBoundsContacts.lean) | Early circle crossings are bounded by extreme terminal maxima of a disappearing run |
+| [Unfoldings.Roof.TerminalRunEarlyMaximaContacts](../Unfoldings/Roof/TerminalRunEarlyMaximaContacts.lean) | Every maximal terminal, including either extreme tied copy, bounds an early circle crossing |
+| [Unfoldings.Roof.TerminalRunLateBoundsContacts](../Unfoldings/Roof/TerminalRunLateBoundsContacts.lean) | Late surviving circle crossings progress beyond an actual terminal of a finite collapsed run |
+| [Unfoldings.Roof.TerminalRunRecords](../Unfoldings/Roof/TerminalRunRecords.lean) | Actual terminal-copy progress propagates through arbitrary runs of disappearing strips |
+| [Unfoldings.Roof.TerminalRunRecordsContacts](../Unfoldings/Roof/TerminalRunRecordsContacts.lean) | Actual terminal-copy progress propagates through arbitrary runs of disappearing strips |
+| [Unfoldings.Roof.ThreeSectorProgress](../Unfoldings/Roof/ThreeSectorProgress.lean) | Prove actual seam progress in the prescribed acute sectors for arbitrary-rim roofs |
+| [Unfoldings.Roof.Tilt](../Unfoldings/Roof/Tilt.lean) | Monotonicity of the geometric normal tilt bound for arbitrary-rim roofs |
+| [Unfoldings.Roof.Topology](../Unfoldings/Roof/Topology.lean) | Derive the intrinsic disk topology of a convex-domain roof |
+| [Unfoldings.Roof.UniformCurvature](../Unfoldings/Roof/UniformCurvature.lean) | A curvature threshold quantified before the entire mesh |
+| [Unfoldings.Roof.UniformOriginalAllRadiusContact](../Unfoldings/Roof/UniformOriginalAllRadiusContact.lean) | Uniform control of actual original closed-face contacts at all radii |
+| [Unfoldings.Roof.UniformOriginalNonoverlap](../Unfoldings/Roof/UniformOriginalNonoverlap.lean) | Uniformly small tilt makes original sector-forest developments nonoverlapping |
+| [Unfoldings.Roof.VertexContourExcursion](../Unfoldings/Roof/VertexContourExcursion.lean) | Exact displacement for a partial contour excursion between copies of one original vertex |
+| [Unfoldings.Roof.VertexExcursionFlatness](../Unfoldings/Roof/VertexExcursionFlatness.lean) | A zero displacement excursion contains only flat selected subtrees |
+| [Unfoldings.Roof.VertexExcursionRestoration](../Unfoldings/Roof/VertexExcursionRestoration.lean) | Closing contour excursions identify their endpoints after the actual flat seams are restored |
+| [Unfoldings.Roof.VertexExcursions](../Unfoldings/Roof/VertexExcursions.lean) | Construct actual contour prefixes and suffixes between developed copies of a branch vertex |
+| [Unfoldings.Roof.VertexProgress](../Unfoldings/Roof/VertexProgress.lean) | Find actual outgoing original edges at interior roof vertices |
+| [Unfoldings.Roof.WaterfallCircleExtremeBounds](../Unfoldings/Roof/WaterfallCircleExtremeBounds.lean) | Every actual sector circle image lies between the extreme surviving bank bounds |
+| [Unfoldings.Roof.WaterfallCircleRunOrder](../Unfoldings/Roof/WaterfallCircleRunOrder.lean) | Actual facing circle endpoints retain order across every removed physical-cell run |
+| [Unfoldings.Roof.WaterfallCircleSurvivorBanks](../Unfoldings/Roof/WaterfallCircleSurvivorBanks.lean) | Surviving source-circle intervals retain both ordered bank coordinates |
+| [Unfoldings.Roof.WaterfallCircleSurvivorOrder](../Unfoldings/Roof/WaterfallCircleSurvivorOrder.lean) | Actual source-circle survivors retain their full ordered bank endpoints |
+| [Unfoldings.Roof.WaterfallCircleSurvivors](../Unfoldings/Roof/WaterfallCircleSurvivors.lean) | Pairwise separation of surviving actual strip-circle images in one sector |
+| [Unfoldings.Roof.WaterfallClosedLevelBankOrder](../Unfoldings/Roof/WaterfallClosedLevelBankOrder.lean) | Actual approached bank order extends to all sweep heights, including terminal mesh vertices |
+| [Unfoldings.Roof.WaterfallClosedSectionExtremeBounds](../Unfoldings/Roof/WaterfallClosedSectionExtremeBounds.lean) | Full waterfall bank order includes closed-only sections and all vertex radii |
+| [Unfoldings.Roof.WaterfallClosedSectionOrder](../Unfoldings/Roof/WaterfallClosedSectionOrder.lean) | Full waterfall bank order includes closed-only sections and all vertex radii |
+| [Unfoldings.Roof.WaterfallClosedSectionPhysicalOrder](../Unfoldings/Roof/WaterfallClosedSectionPhysicalOrder.lean) | Full survivor order retains physical point equality whenever developed bank values coincide |
+| [Unfoldings.Roof.WaterfallLevelBankOrder](../Unfoldings/Roof/WaterfallLevelBankOrder.lean) | All surviving actual bank intervals are ordered at every regular physical sweep height |
+| [Unfoldings.Roof.WithinSectorAllRadiusContact](../Unfoldings/Roof/WithinSectorAllRadiusContact.lean) | Full survivor order retains physical point equality whenever developed bank values coincide |
 
 ## Triangle complexes
 
@@ -1770,15 +2070,6 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Cap.AbstractBridge](../Unfoldings/Cap/AbstractBridge.lean) | Translate independent geometric cap data and polygon statements to the checked implementation |
 | [Unfoldings.Cap.Abstract](../Unfoldings/Cap/Abstract.lean) | State the cap theorem using only independent definitions and Mathlib background notions |
 | [Unfoldings.Geometry.SpatialTriangle](../Unfoldings/Geometry/SpatialTriangle.lean) | Construct rigid planar coordinates for genuine spatial triangles from their positive Gram determinant |
-| [Unfoldings.Roof.Basic](../Unfoldings/Roof/Basic.lean) | Define supported convex triangular roofs with unrestricted boundary heights |
-| [Unfoldings.Roof.ProjectedFaces](../Unfoldings/Roof/ProjectedFaces.lean) | Construct exact projected face triangles for arbitrary-rim roofs |
-| [Unfoldings.Roof.AcuteProjection](../Unfoldings/Roof/AcuteProjection.lean) | Preserve acute angle margins under uniformly small roof tilt |
-| [Unfoldings.Roof.SupportingEnvelope](../Unfoldings/Roof/SupportingEnvelope.lean) | Identify a roof with the lower envelope of its actual supporting planes |
-| [Unfoldings.Roof.Topology](../Unfoldings/Roof/Topology.lean) | Derive the intrinsic disk topology of a convex-domain roof |
-| [Unfoldings.Roof.VertexProgress](../Unfoldings/Roof/VertexProgress.lean) | Find actual outgoing original edges at interior roof vertices |
-| [Unfoldings.Roof.Boundary](../Unfoldings/Roof/Boundary.lean) | Identify intrinsic roof boundary vertices with the projected domain frontier |
-| [Unfoldings.Roof.GradientSelection](../Unfoldings/Roof/GradientSelection.lean) | Prove gradient monotonicity and straight escape rays from all omitted faces |
-| [Unfoldings.Roof.CapBridge](../Unfoldings/Roof/CapBridge.lean) | View every existing convex cap as a roof without changing its faces or seams |
 | [Unfoldings.Geometry.TriangleAffineEquiv](../Unfoldings/Geometry/TriangleAffineEquiv.lean) | Construct the canonical corner-matching affine equivalence of genuine triangles |
 | [Unfoldings.Complex.ProjectedEmbedding](../Unfoldings/Complex/ProjectedEmbedding.lean) | Identify intrinsic seam fibers from conforming convex projections and complete geometric pairings |
 | [Unfoldings.Examples.Pyramid.Coordinates](../Unfoldings/Examples/Pyramid/Coordinates.lean) | Construct genuine rigid faces of the four-face diamond pyramid |
@@ -1788,206 +2079,7 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Examples.Pyramid.Normals](../Unfoldings/Examples/Pyramid/Normals.lean) | Verify explicit unit upward supporting normals on the genuine nonflat pyramid |
 | [Unfoldings.Examples.Pyramid](../Unfoldings/Examples/Pyramid.lean) | Construct a concrete nonflat convex cap and derive a positive acute margin |
 | [Unfoldings.Geometry.SpatialEnvelopeCuts](../Unfoldings/Geometry/SpatialEnvelopeCuts.lean) | Cut whole physical seams and identify every shared projected edge |
-| [Unfoldings.Roof.CompletionOriginalAdjacency](../Unfoldings/Roof/CompletionOriginalAdjacency.lean) | Locate fine adjacency between different original faces on their common edge |
-| [Unfoldings.Roof.CompletionOriginalConforming](../Unfoldings/Roof/CompletionOriginalConforming.lean) | Prove exact retained seam classes and the original-cut metric equivalence |
-| [Unfoldings.Roof.CompletionOriginalCopies](../Unfoldings/Roof/CompletionOriginalCopies.lean) | Identify every fine point copy within one whole original face |
-| [Unfoldings.Roof.CompletionOriginalFaceMap](../Unfoldings/Roof/CompletionOriginalFaceMap.lean) | Map each whole original face continuously into its fine cut surface |
-| [Unfoldings.Roof.CompletionOriginalNonoverlap](../Unfoldings/Roof/CompletionOriginalNonoverlap.lean) | Transfer nonoverlap between the fine pieces and the original development |
-| [Unfoldings.Roof.CompletionOriginalRegularCopies](../Unfoldings/Roof/CompletionOriginalRegularCopies.lean) | Restrict auxiliary point identifications away from vertices and cuts |
-| [Unfoldings.Roof.CompletionOriginalRespects](../Unfoldings/Roof/CompletionOriginalRespects.lean) | Send retained fine seams to retained original seam chains |
-| [Unfoldings.Roof.CompletionOriginalRetention](../Unfoldings/Roof/CompletionOriginalRetention.lean) | Keep every fine seam internal to one original face |
-| [Unfoldings.Roof.CompletionOriginalSeamMap](../Unfoldings/Roof/CompletionOriginalSeamMap.lean) | Join whole original face maps across retained seams, including endpoints |
-| [Unfoldings.Roof.OriginalCuts](../Unfoldings/Roof/OriginalCuts.lean) | Locate original seam cuts outside every face interior |
-| [Unfoldings.Roof.ProjectedPointCopies](../Unfoldings/Roof/ProjectedPointCopies.lean) | Compare original point copies across retained whole edges |
-| [Unfoldings.Roof.ProjectedSeamUnique](../Unfoldings/Roof/ProjectedSeamUnique.lean) | Prove uniqueness of an original seam at a nonvertex point |
-| [Unfoldings.Roof.SpatialEnvelopeRetainedClasses](../Unfoldings/Roof/SpatialEnvelopeRetainedClasses.lean) | Preserve physical auxiliary seam classes away from geometric cuts |
 | [Unfoldings.Geometry.SpatialEnvelopeAlignment](../Unfoldings/Geometry/SpatialEnvelopeAlignment.lean) | Prescribed line refinements preserve the actual spatial supports and parent triangles |
 | [Unfoldings.Geometry.SpatialEnvelopeChordSlopes](../Unfoldings/Geometry/SpatialEnvelopeChordSlopes.lean) | An unchanged open chord forces all active supporting normal slopes to be collinear |
 | [Unfoldings.Geometry.SpatialPlaneSlopes](../Unfoldings/Geometry/SpatialPlaneSlopes.lean) | Gnomonic slopes and exact height differences of rigid spatial support planes |
-| [Unfoldings.Roof.CompletionCutRestriction](../Unfoldings/Roof/CompletionCutRestriction.lean) | Exterior radial cuts preserve exactly the retained original seam classes |
-| [Unfoldings.Roof.CompletionExtendedMesh](../Unfoldings/Roof/CompletionExtendedMesh.lean) | The constructed original and skirt cut set is an actual union of removed physical seams |
-| [Unfoldings.Roof.CompletionOriginalCurvature](../Unfoldings/Roof/CompletionOriginalCurvature.lean) | Completion curvature inside the original roof is supported only on original vertices |
-| [Unfoldings.Roof.CompletionOriginalEdgeCover](../Unfoldings/Roof/CompletionOriginalEdgeCover.lean) | Original whole edges are exact unions of physical completion edges |
-| [Unfoldings.Roof.CompletionOriginalForestRetention](../Unfoldings/Roof/CompletionOriginalForestRetention.lean) | Auxiliary radial forests keep all fine seams needed by the original cut roof |
-| [Unfoldings.Roof.CompletionOutwardForest](../Unfoldings/Roof/CompletionOutwardForest.lean) | Construct an actual outward auxiliary forest from the original forest and radial tails |
-| [Unfoldings.Roof.CompletionPathWedges](../Unfoldings/Roof/CompletionPathWedges.lean) | Curvature-carrying auxiliary paths inherit the acute wedges of the constructed network |
-| [Unfoldings.Roof.CompletionPrescribedSegments](../Unfoldings/Roof/CompletionPrescribedSegments.lean) | Mesh prescribed closed segments while retaining all original roof edge constraints |
-| [Unfoldings.Roof.CompletionRadialCurvature](../Unfoldings/Roof/CompletionRadialCurvature.lean) | Constructed original and radial cuts cover every positive-curvature auxiliary vertex |
-| [Unfoldings.Roof.CompletionRadialMesh](../Unfoldings/Roof/CompletionRadialMesh.lean) | Construct the actual whole-edge mesh of the previously chosen exterior radial components |
-| [Unfoldings.Roof.CompletionRefinement](../Unfoldings/Roof/CompletionRefinement.lean) | Refine an existing physical roof completion without changing its height function or domain |
-| [Unfoldings.Roof.CompletionRefinementCurvature](../Unfoldings/Roof/CompletionRefinementCurvature.lean) | Physical line refinement creates no positive curvature away from preceding mesh corners |
-| [Unfoldings.Roof.CompletionSectorQuadrants](../Unfoldings/Roof/CompletionSectorQuadrants.lean) | One mesh-independent tilt budget controls actual directions throughout the completed roof |
-| [Unfoldings.Roof.CompletionSkirtSeeds](../Unfoldings/Roof/CompletionSkirtSeeds.lean) | Actual exterior corners are selected before the radial continuation mesh is constructed |
-| [Unfoldings.Roof.ExtendedComponentWedges](../Unfoldings/Roof/ExtendedComponentWedges.lean) | Each complete extended geometric cut component has one acute direction wedge |
-| [Unfoldings.Roof.ExtendedCutCarrier](../Unfoldings/Roof/ExtendedCutCarrier.lean) | The explicit geometric parent forest represents the entire original-and-skirt cut set |
-| [Unfoldings.Roof.ExtendedCutEmbedding](../Unfoldings/Roof/ExtendedCutEmbedding.lean) | The finite geometric cut forest has distinct actual projected vertex positions |
-| [Unfoldings.Roof.ExtendedCutGrowth](../Unfoldings/Roof/ExtendedCutGrowth.lean) | Local outward progress on the constructed original cuts and radial skirt continuations |
-| [Unfoldings.Roof.ExtendedCutLabels](../Unfoldings/Roof/ExtendedCutLabels.lean) | Consistent radial-component labels for every actual original cut and skirt continuation |
-| [Unfoldings.Roof.ExtendedCutParents](../Unfoldings/Roof/ExtendedCutParents.lean) | The complete geometric original-cut and skirt network is an explicit finite parent forest |
-| [Unfoldings.Roof.ExtendedGeometricCuts](../Unfoldings/Roof/ExtendedGeometricCuts.lean) | Actual original whole-edge cuts together with their exterior radial continuations |
-| [Unfoldings.Roof.OriginalCutCarrier](../Unfoldings/Roof/OriginalCutCarrier.lean) | The selected original forest segments are exactly the actual closed original seam cut set |
-| [Unfoldings.Roof.OriginalCutLabels](../Unfoldings/Roof/OriginalCutLabels.lean) | Actual original cut segments have consistent tree labels at every geometric contact |
-| [Unfoldings.Roof.OriginalFaceHeight](../Unfoldings/Roof/OriginalFaceHeight.lean) | Original whole-face height identities, including arbitrary rim points |
-| [Unfoldings.Roof.ParentRadialGrowth](../Unfoldings/Roof/ParentRadialGrowth.lean) | Every selected parent edge strictly increases source distance along its entire length |
-| [Unfoldings.Roof.ParentSegments](../Unfoldings/Roof/ParentSegments.lean) | Actual projected parent segments are the original selected seam edges |
-| [Unfoldings.Roof.ProjectedSeamEndpoints](../Unfoldings/Roof/ProjectedSeamEndpoints.lean) | An actual projected vertex on a seam edge is one of that seam's intrinsic endpoints |
-| [Unfoldings.Roof.RimTails](../Unfoldings/Roof/RimTails.lean) | Original rim continuations from an interior planar source, without a rim-height assumption |
-| [Unfoldings.Roof.SkirtAttachments](../Unfoldings/Roof/SkirtAttachments.lean) | A skirt component attaches to an original rim vertex exactly at its seed |
-| [Unfoldings.Roof.SkirtRadialCuts](../Unfoldings/Roof/SkirtRadialCuts.lean) | Finite radial skirt continuations between arbitrary nested convex footprints |
-| [Unfoldings.Roof.SkirtRimComponents](../Unfoldings/Roof/SkirtRimComponents.lean) | Original rim roots attach to uniquely labeled radial skirt components |
-| [Unfoldings.Roof.SpatialEnvelopeCoordinates](../Unfoldings/Roof/SpatialEnvelopeCoordinates.lean) | Exact projected coordinates of the normalized physical affine-roof mesh |
-| [Unfoldings.Roof.SpatialEnvelopeCurvature](../Unfoldings/Roof/SpatialEnvelopeCurvature.lean) | Incident slopes of the actual normalized spatial roof are active support slopes |
-| [Unfoldings.Roof.SpatialEnvelopeInteriorSeams](../Unfoldings/Roof/SpatialEnvelopeInteriorSeams.lean) | Whole physical edges meeting the completion interior have actual seam partners |
-| [Unfoldings.Roof.ExtendedComponentSectors](../Unfoldings/Roof/ExtendedComponentSectors.lean) | Every actual geometric cut component lies in one of the five fixed sectors |
-| [Unfoldings.Roof.GeometricBankPersistence](../Unfoldings/Roof/GeometricBankPersistence.lean) | An actual tail cannot leave an exterior sector bank after contacting it beyond its leaf |
-| [Unfoldings.Roof.GeometricCutFlow](../Unfoldings/Roof/GeometricCutFlow.lean) | The complete geometric cut forest has a unique forward edge at every nonterminal point |
-| [Unfoldings.Roof.GeometricCutIncidence](../Unfoldings/Roof/GeometricCutIncidence.lean) | A geometric cut vertex lying on a geometric edge is one of its actual endpoints |
-| [Unfoldings.Roof.GeometricCutLabels](../Unfoldings/Roof/GeometricCutLabels.lean) | Component labels and fixed sectors on the complete geometric cut parent forest |
-| [Unfoldings.Roof.GeometricCutNoncrossing](../Unfoldings/Roof/GeometricCutNoncrossing.lean) | Distinct edges of the complete geometric forest meet only at shared endpoints |
-| [Unfoldings.Roof.GeometricCutPaths](../Unfoldings/Roof/GeometricCutPaths.lean) | Exact monotone height graphs for all complete geometric cut paths |
-| [Unfoldings.Roof.GeometricHeightNetwork](../Unfoldings/Roof/GeometricHeightNetwork.lean) | Instantiate the forward-deterministic height network with actual geometric cut components |
-| [Unfoldings.Roof.GeometricLeafAvoidance](../Unfoldings/Roof/GeometricLeafAvoidance.lean) | An unprocessed geometric leaf cannot lie on another leaf's existing root path |
-| [Unfoldings.Roof.GeometricLeafInterior](../Unfoldings/Roof/GeometricLeafInterior.lean) | Every nonterminal node of the actual geometric forest lies strictly inside the roof clip |
-| [Unfoldings.Roof.GeometricLeafMinimum](../Unfoldings/Roof/GeometricLeafMinimum.lean) | Actual geometric leaves are local radial minima of the complete prescribed cut network |
-| [Unfoldings.Roof.GeometricLeafSweep](../Unfoldings/Roof/GeometricLeafSweep.lean) | Each geometric component admits a height sweep in which every edge lies above a leaf |
-| [Unfoldings.Roof.GeometricRadialEdges](../Unfoldings/Roof/GeometricRadialEdges.lean) | Every active geometric component has an actual seed-to-tip edge in the cut forest |
-| [Unfoldings.Roof.GeometricRadialGraphs](../Unfoldings/Roof/GeometricRadialGraphs.lean) | Construct the exact source-ray graph of the radial edge of every active cut component |
-| [Unfoldings.Roof.GeometricSectorBoundaryLeaves](../Unfoldings/Roof/GeometricSectorBoundaryLeaves.lean) | A nonterminal geometric node on its sector bank must be a leaf |
-| [Unfoldings.Roof.GeometricSectorData](../Unfoldings/Roof/GeometricSectorData.lean) | Actual component sector choices and exact enclosing strips for their geometric tails |
-| [Unfoldings.Roof.GeometricSectorNetwork](../Unfoldings/Roof/GeometricSectorNetwork.lean) | One sector network includes every geometric tree whose edge directions lie in that sector |
-| [Unfoldings.Roof.GeometricSectorPositions](../Unfoldings/Roof/GeometricSectorPositions.lean) | Choose a sector containing both the positions and the directions of an actual cut component |
-| [Unfoldings.Roof.GeometricSectorTails](../Unfoldings/Roof/GeometricSectorTails.lean) | Common-sector networks control actual tails from different geometric components |
-| [Unfoldings.Roof.GeometricTailBankContacts](../Unfoldings/Roof/GeometricTailBankContacts.lean) | Beyond its starting leaf, an actual tail can meet a sector bank only on its radial skirt |
-| [Unfoldings.Roof.GeometricTailCoalescence](../Unfoldings/Roof/GeometricTailCoalescence.lean) | Constructed actual cut tails merge permanently and retain a consistent sweep order |
-| [Unfoldings.Roof.GeometricTailCutoff](../Unfoldings/Roof/GeometricTailCutoff.lean) | A deep physical roof clip puts every actual tail endpoint beyond the chosen sweep slab |
-| [Unfoldings.Roof.GeometricTailGraphs](../Unfoldings/Roof/GeometricTailGraphs.lean) | Construct exact covered height graphs for every tail of one actual geometric component |
-| [Unfoldings.Roof.GeometricTailLeaves](../Unfoldings/Roof/GeometricTailLeaves.lean) | A new geometric leaf is strictly separated from every distinct existing tail at its height |
-| [Unfoldings.Roof.GeometricTailPieces](../Unfoldings/Roof/GeometricTailPieces.lean) | Every covered actual tail point lies on a labeled geometric parent edge |
-| [Unfoldings.Roof.GeometricTailVertices](../Unfoldings/Roof/GeometricTailVertices.lean) | A geometric vertex on an actual tail is an ancestor in that same cut component |
-| [Unfoldings.Roof.GeometricWaterfall](../Unfoldings/Roof/GeometricWaterfall.lean) | Construct a finite strip subdivision from the actual geometric leaves in each sector |
-| [Unfoldings.Roof.StrictGeometricTailGraphs](../Unfoldings/Roof/StrictGeometricTailGraphs.lean) | Actual geometric cut tails and enclosing sector walls progress in both coordinates |
 | [Unfoldings.Cap.MatchedBankTracePositiveHeight](../Unfoldings/Cap/MatchedBankTracePositiveHeight.lean) | Matching parent banks requires regular width only at strictly positive heights |
-| [Unfoldings.Roof.AcrossSectorAllRadiusContact](../Unfoldings/Roof/AcrossSectorAllRadiusContact.lean) | All actual waterfall strip-circle images are pairwise disjoint across the five sectors |
-| [Unfoldings.Roof.AdjacentClosedSectionSurvivorContact](../Unfoldings/Roof/AdjacentClosedSectionSurvivorContact.lean) | Actual extreme circle survivors in adjacent sectors have disjoint bounding portions |
-| [Unfoldings.Roof.AdjacentSectorAllRadiusContact](../Unfoldings/Roof/AdjacentSectorAllRadiusContact.lean) | Every pair of actual waterfall circle images in adjacent sectors is disjoint |
-| [Unfoldings.Roof.AdjacentSectorCircleSeparation](../Unfoldings/Roof/AdjacentSectorCircleSeparation.lean) | Every pair of actual waterfall circle images in adjacent sectors is disjoint |
-| [Unfoldings.Roof.AdjacentSurvivorCircleCaps](../Unfoldings/Roof/AdjacentSurvivorCircleCaps.lean) | Actual extreme circle survivors in adjacent sectors have disjoint bounding portions |
-| [Unfoldings.Roof.AllSectorAllRadiusContact](../Unfoldings/Roof/AllSectorAllRadiusContact.lean) | All actual waterfall strip-circle images are pairwise disjoint across the five sectors |
-| [Unfoldings.Roof.AllSectorCircleSeparation](../Unfoldings/Roof/AllSectorCircleSeparation.lean) | All actual waterfall strip-circle images are pairwise disjoint across the five sectors |
-| [Unfoldings.Roof.BoundaryCircleContactAlternative](../Unfoldings/Roof/BoundaryCircleContactAlternative.lean) | An earlier shared-ray circle contact is coherent or puts both crossings on one actual cut |
-| [Unfoldings.Roof.BoundaryCirclePhysicalAlternative](../Unfoldings/Roof/BoundaryCirclePhysicalAlternative.lean) | A coherent shared-ray circle contact retains its actual physical point equality |
-| [Unfoldings.Roof.BoundaryComponentFineSeed](../Unfoldings/Roof/BoundaryComponentFineSeed.lean) | Any radial component meeting a sector bank inside the clip has a coherent fine seed |
-| [Unfoldings.Roof.BoundaryRunCircleCaps](../Unfoldings/Roof/BoundaryRunCircleCaps.lean) | One actual disappearing boundary run separates whole coordinate-bounded circle portions |
-| [Unfoldings.Roof.BoundaryRunCircleComponent](../Unfoldings/Roof/BoundaryRunCircleComponent.lean) | Neighboring boundary-circle crossings lie on the terminal's actual radial component |
-| [Unfoldings.Roof.BoundaryRunCircleConstruction](../Unfoldings/Roof/BoundaryRunCircleConstruction.lean) | Construct extreme actual terminals and separating circle portions for indexed boundary runs |
-| [Unfoldings.Roof.BoundaryRunLateCircleCandidate](../Unfoldings/Roof/BoundaryRunLateCircleCandidate.lean) | Crossings after maximal boundary-run terminals supply exact actual circle-bank candidates |
-| [Unfoldings.Roof.BoundaryRunNeighborCircleCandidate](../Unfoldings/Roof/BoundaryRunNeighborCircleCandidate.lean) | A neighboring surviving boundary circle supplies its actual bank candidate automatically |
-| [Unfoldings.Roof.BoundaryRunNeighborCirclePhysicalCandidate](../Unfoldings/Roof/BoundaryRunNeighborCirclePhysicalCandidate.lean) | A neighboring surviving boundary circle supplies its actual bank candidate automatically |
-| [Unfoldings.Roof.BoundaryRunSourceBankCandidate](../Unfoldings/Roof/BoundaryRunSourceBankCandidate.lean) | Every run-side circle crossing has its own actual component-bank bound |
-| [Unfoldings.Roof.BoundaryRunTerminalBankCandidate](../Unfoldings/Roof/BoundaryRunTerminalBankCandidate.lean) | Every extreme boundary-run terminal supplies an actual inner bank candidate |
-| [Unfoldings.Roof.BoundaryTerminalSectorAssignment](../Unfoldings/Roof/BoundaryTerminalSectorAssignment.lean) | A boundary terminal retains the unique assigned sector of its actual radial component |
-| [Unfoldings.Roof.BoundaryTerminalSeedAncestor](../Unfoldings/Roof/BoundaryTerminalSeedAncestor.lean) | Boundary terminals are reached from coherent fine seeds of their radial components |
-| [Unfoldings.Roof.ClosedLeafTailCircleContact](../Unfoldings/Roof/ClosedLeafTailCircleContact.lean) | Contact across one actual leaf tail identifies the same physical circle endpoint |
-| [Unfoldings.Roof.ClosedOuterSectionComponentBank](../Unfoldings/Roof/ClosedOuterSectionComponentBank.lean) | Named component circle banks retain their exact physical surface coordinates |
-| [Unfoldings.Roof.ClosedSectionBoundaryLateCandidate](../Unfoldings/Roof/ClosedSectionBoundaryLateCandidate.lean) | Closed sections retain strict terminal progress even when they end at a pinch |
-| [Unfoldings.Roof.ClosedSectionBoundaryNeighborCandidate](../Unfoldings/Roof/ClosedSectionBoundaryNeighborCandidate.lean) | A neighboring surviving boundary circle supplies its actual bank candidate automatically |
-| [Unfoldings.Roof.ClosedSectionBoundaryRunConstruction](../Unfoldings/Roof/ClosedSectionBoundaryRunConstruction.lean) | Construct actual extreme terminals and identify closed contacts across an indexed boundary run |
-| [Unfoldings.Roof.ClosedSectionBoundaryRunContact](../Unfoldings/Roof/ClosedSectionBoundaryRunContact.lean) | Weak contacts across disappearing boundary runs identify actual physical endpoints |
-| [Unfoldings.Roof.ClosedSectionBoundarySourceCandidate](../Unfoldings/Roof/ClosedSectionBoundarySourceCandidate.lean) | Early terminal bounds persist at every closed circle section, including vertex radii |
-| [Unfoldings.Roof.ClosedSectionEarlyRunBounds](../Unfoldings/Roof/ClosedSectionEarlyRunBounds.lean) | Early terminal bounds persist at every closed circle section, including vertex radii |
-| [Unfoldings.Roof.ClosedSectionEarlyRunMaxima](../Unfoldings/Roof/ClosedSectionEarlyRunMaxima.lean) | Early terminal bounds persist at every closed circle section, including vertex radii |
-| [Unfoldings.Roof.ClosedSectionLateRunBounds](../Unfoldings/Roof/ClosedSectionLateRunBounds.lean) | Closed sections retain strict terminal progress even when they end at a pinch |
-| [Unfoldings.Roof.ClosedSectionRemovedRunContact](../Unfoldings/Roof/ClosedSectionRemovedRunContact.lean) | Contacts between consecutive actual circle survivors preserve their physical surface point |
-| [Unfoldings.Roof.ClosedSectionRunPhysicalContact](../Unfoldings/Roof/ClosedSectionRunPhysicalContact.lean) | Closed section contacts across disappearing strip runs preserve physical points at all radii |
-| [Unfoldings.Roof.ClosedSectionSeparatorContact](../Unfoldings/Roof/ClosedSectionSeparatorContact.lean) | Circle endpoint contact across an actual shared separator preserves the physical point |
-| [Unfoldings.Roof.ClosedSectionTailContact](../Unfoldings/Roof/ClosedSectionTailContact.lean) | Contact across one actual leaf tail identifies the same physical circle endpoint |
-| [Unfoldings.Roof.ClosedSharedSeparatorPrefixValue](../Unfoldings/Roof/ClosedSharedSeparatorPrefixValue.lean) | Shared separator prefixes remain coherent through approached terminal pinches |
-| [Unfoldings.Roof.CompletedGeometricTailTracking](../Unfoldings/Roof/CompletedGeometricTailTracking.lean) | Actual completed cut paths track the prescribed geometric tails before the deep cutoff |
-| [Unfoldings.Roof.CompletionEndpointVertices](../Unfoldings/Roof/CompletionEndpointVertices.lean) | Every original vertex survives as an actual vertex of the physical completion mesh |
-| [Unfoldings.Roof.CompletionLeafCoherence](../Unfoldings/Roof/CompletionLeafCoherence.lean) | Actual geometric leaves survive refinement and have coherent developed endpoint values |
-| [Unfoldings.Roof.CompletionRegularBankWidth](../Unfoldings/Roof/CompletionRegularBankWidth.lean) | Positive-height regular points avoid every actual geometric waterfall pinch |
-| [Unfoldings.Roof.CompletionSourceCoherence](../Unfoldings/Roof/CompletionSourceCoherence.lean) | The planar source has one actual developed value, even when it is not a mesh vertex |
-| [Unfoldings.Roof.CompletionWaterfallDomains](../Unfoldings/Roof/CompletionWaterfallDomains.lean) | Constructed waterfall strip interiors lie in the actual uncut completion domain |
-| [Unfoldings.Roof.CompletionWaterfallProvenance](../Unfoldings/Roof/CompletionWaterfallProvenance.lean) | Retain actual leaf/separator provenance with cut avoidance and coherent waterfall domains |
-| [Unfoldings.Roof.ComponentBankCircleCaps](../Unfoldings/Roof/ComponentBankCircleCaps.lean) | Actual component banks separate entire coordinate-bounded circle portions |
-| [Unfoldings.Roof.ComponentBankCircleContact](../Unfoldings/Roof/ComponentBankCircleContact.lean) | Any weak circle contact across actual skirt-component banks is an actual named bank point |
-| [Unfoldings.Roof.ComponentBankCircleSeparation](../Unfoldings/Roof/ComponentBankCircleSeparation.lean) | Actual radial-component banks separate outward circle arcs in neighboring frames |
-| [Unfoldings.Roof.ContactSeparatorCircleOrder](../Unfoldings/Roof/ContactSeparatorCircleOrder.lean) | Actual adjacent developed strip-circle slices are disjoint across their shared separator |
-| [Unfoldings.Roof.ContactSeparatorCirclePrefix](../Unfoldings/Roof/ContactSeparatorCirclePrefix.lean) | Actual adjacent circle endpoints agree before their shared separator's leaf |
-| [Unfoldings.Roof.ContactSeparatorPrefix](../Unfoldings/Roof/ContactSeparatorPrefix.lean) | Coherent separator prefixes and terminal-height bounds need only physical bank contact |
-| [Unfoldings.Roof.ContactSeparatorValues](../Unfoldings/Roof/ContactSeparatorValues.lean) | Actual developed traces agree on a separator's approached coherent prefix |
-| [Unfoldings.Roof.DeepGeometricWaterfall](../Unfoldings/Roof/DeepGeometricWaterfall.lean) | Deep clipping makes the actual waterfall strip interiors lie in the regular roof region |
-| [Unfoldings.Roof.EarlyCircleTerminalPrefix](../Unfoldings/Roof/EarlyCircleTerminalPrefix.lean) | Early circle crossings beyond a terminated prefix are controlled by the first later terminal |
-| [Unfoldings.Roof.EarlyCircleTerminalPrefixContacts](../Unfoldings/Roof/EarlyCircleTerminalPrefixContacts.lean) | Early circle crossings beyond a terminated prefix are controlled by the first later terminal |
-| [Unfoldings.Roof.EarlyTerminalBankOrder](../Unfoldings/Roof/EarlyTerminalBankOrder.lean) | Early surviving circle crossings are bounded by the intermediate strip's terminal copy |
-| [Unfoldings.Roof.EmptyNeighborCirclePrefix](../Unfoldings/Roof/EmptyNeighborCirclePrefix.lean) | A surviving circle crossing lies beyond its shared leaf when its neighbor has disappeared |
-| [Unfoldings.Roof.EmptyNeighborContactPrefix](../Unfoldings/Roof/EmptyNeighborContactPrefix.lean) | A surviving circle crossing lies beyond its shared leaf when its neighbor has disappeared |
-| [Unfoldings.Roof.EmptyStripChainLateContactSeparation](../Unfoldings/Roof/EmptyStripChainLateContactSeparation.lean) | Separate surviving circle slices beyond a finite chain of permanently collapsed strips |
-| [Unfoldings.Roof.EmptyStripRunContactSeparation](../Unfoldings/Roof/EmptyStripRunContactSeparation.lean) | Separate circle slices across any nonempty run of disappearing actual strips |
-| [Unfoldings.Roof.GeometricChainNetwork](../Unfoldings/Roof/GeometricChainNetwork.lean) | Physical fine cut chains inherit the actual sector network and its positive coordinates |
-| [Unfoldings.Roof.GeometricChainSectors](../Unfoldings/Roof/GeometricChainSectors.lean) | Fine parent directions use the same chosen sector as their actual geometric leaf |
-| [Unfoldings.Roof.GeometricComponentBanks](../Unfoldings/Roof/GeometricComponentBanks.lean) | A specified geometric component controls fine parent banks starting at any of its cut points |
-| [Unfoldings.Roof.GeometricComponentNetwork](../Unfoldings/Roof/GeometricComponentNetwork.lean) | Physical component cut pieces belong to the actual deterministic sector network |
-| [Unfoldings.Roof.GeometricComponentPieces](../Unfoldings/Roof/GeometricComponentPieces.lean) | Whole physical cut pieces retain their geometric component's chosen sector data |
-| [Unfoldings.Roof.GeometricFineTailTracking](../Unfoldings/Roof/GeometricFineTailTracking.lean) | The actual geometric tail point is on a whole edge of every outward fine cut chain |
-| [Unfoldings.Roof.GeometricFreshWaterfallLeaf](../Unfoldings/Roof/GeometricFreshWaterfallLeaf.lean) | A fresh actual leaf is inserted in a positive-width cell, unless it is the source itself |
-| [Unfoldings.Roof.GeometricLeafSupport](../Unfoldings/Roof/GeometricLeafSupport.lean) | Every geometric cut-edge point lies above a descendant leaf in its component sweep |
-| [Unfoldings.Roof.GeometricLevelBankOrder](../Unfoldings/Roof/GeometricLevelBankOrder.lean) | Actual regular facing banks have gap order whenever their physical points coincide |
-| [Unfoldings.Roof.GeometricRecoverableWaterfall](../Unfoldings/Roof/GeometricRecoverableWaterfall.lean) | Every constructed actual sector waterfall reopens only at its source or geometric leaves |
-| [Unfoldings.Roof.GeometricSectorBankPoints](../Unfoldings/Roof/GeometricSectorBankPoints.lean) | The same numerical sector banks support the arbitrary-rim geometric forest |
-| [Unfoldings.Roof.GeometricSectorCutPoint](../Unfoldings/Roof/GeometricSectorCutPoint.lean) | Every actual cut point strictly inside a sweep sector belongs to a leaf tail in that sector |
-| [Unfoldings.Roof.GeometricSeparatorPrefix](../Unfoldings/Roof/GeometricSeparatorPrefix.lean) | A separator's strict-sector prefix can meet actual cuts only at coherent wall contacts |
-| [Unfoldings.Roof.GeometricTailAffine](../Unfoldings/Roof/GeometricTailAffine.lean) | Actual tail graphs and exterior rays are locally affine away from geometric vertices |
-| [Unfoldings.Roof.GeometricTailEdgeCover](../Unfoldings/Roof/GeometricTailEdgeCover.lean) | Every point on an actual ancestor edge is on the exact represented tail graph |
-| [Unfoldings.Roof.GeometricTailLocalEdge](../Unfoldings/Roof/GeometricTailLocalEdge.lean) | Actual regular tail points avoid network vertices and retain a local physical edge graph |
-| [Unfoldings.Roof.GeometricTailTraceOrder](../Unfoldings/Roof/GeometricTailTraceOrder.lean) | Actual visible traces progress in both coordinates along a geometric cut tail |
-| [Unfoldings.Roof.GeometricVertexCutPiece](../Unfoldings/Roof/GeometricVertexCutPiece.lean) | Every nonterminal geometric cut vertex has an actual containing piece with its own label |
-| [Unfoldings.Roof.GeometricWaterfallAvoidance](../Unfoldings/Roof/GeometricWaterfallAvoidance.lean) | Actual cut edges lie on the constructed waterfall boundaries, away from strip interiors |
-| [Unfoldings.Roof.GeometricWaterfallRegular](../Unfoldings/Roof/GeometricWaterfallRegular.lean) | Regularity applies to every constructed subdivision retaining the actual leaf tails |
-| [Unfoldings.Roof.GeometricWaterfallSectors](../Unfoldings/Roof/GeometricWaterfallSectors.lean) | A waterfall strip interior avoids geometric cut edges from every sector |
-| [Unfoldings.Roof.LeafCompletedTailTracking](../Unfoldings/Roof/LeafCompletedTailTracking.lean) | Every constructed leaf's tail is tracked by the actual fine outward forest |
-| [Unfoldings.Roof.LeafTailCircleOrder](../Unfoldings/Roof/LeafTailCircleOrder.lean) | Actual strip-circle slices on opposite sides of a constructed leaf tail are disjoint |
-| [Unfoldings.Roof.LeafTailCircleSeparation](../Unfoldings/Roof/LeafTailCircleSeparation.lean) | Actual strip-circle slices on opposite sides of a constructed leaf tail are disjoint |
-| [Unfoldings.Roof.NoAdjacentBoundaryRuns](../Unfoldings/Roof/NoAdjacentBoundaryRuns.lean) | The actual one-sector assignment rules out disappearing runs on both sides of a shared ray |
-| [Unfoldings.Roof.OuterCircleCaps](../Unfoldings/Roof/OuterCircleCaps.lean) | Actual outer banks separate whole coordinate-bounded circle portions across a shared ray |
-| [Unfoldings.Roof.OuterCircleContactAlternative](../Unfoldings/Roof/OuterCircleContactAlternative.lean) | Actual surviving outer-bank circle endpoints coincide or belong to one radial component |
-| [Unfoldings.Roof.OuterCirclePhysicalAlternative](../Unfoldings/Roof/OuterCirclePhysicalAlternative.lean) | Outer-bank circle endpoints have a common physical point or one actual radial component |
-| [Unfoldings.Roof.OuterClosedCircleContact](../Unfoldings/Roof/OuterClosedCircleContact.lean) | Weak outer-circle contacts retain equality of both developed and physical endpoints |
-| [Unfoldings.Roof.OuterClosedSectionAlternative](../Unfoldings/Roof/OuterClosedSectionAlternative.lean) | Outer-bank circle endpoints have a common physical point or one actual radial component |
-| [Unfoldings.Roof.OuterClosedSectionContact](../Unfoldings/Roof/OuterClosedSectionContact.lean) | Weak outer-circle contacts retain equality of both developed and physical endpoints |
-| [Unfoldings.Roof.RadialComponentCircleBanks](../Unfoldings/Roof/RadialComponentCircleBanks.lean) | Actual circle endpoints on radial components select named fine parent banks |
-| [Unfoldings.Roof.RadialComponentCirclePhysicalBanks](../Unfoldings/Roof/RadialComponentCirclePhysicalBanks.lean) | Named component circle banks retain their exact physical surface coordinates |
-| [Unfoldings.Roof.RadialComponentCommonChain](../Unfoldings/Roof/RadialComponentCommonChain.lean) | Actual fine edges on one pure radial component belong to one common parent chain |
-| [Unfoldings.Roof.RadialComponentFineAncestry](../Unfoldings/Roof/RadialComponentFineAncestry.lean) | Physical order along a radial component gives actual fine-forest ancestry |
-| [Unfoldings.Roof.RadialComponentFinePath](../Unfoldings/Roof/RadialComponentFinePath.lean) | Actual completed fine paths cover each unattached radial component up to its outer tip |
-| [Unfoldings.Roof.RadialComponentIncomingBank](../Unfoldings/Roof/RadialComponentIncomingBank.lean) | Derive an actual incoming fine edge and its positive enclosing-ray coordinates |
-| [Unfoldings.Roof.RadialComponentSeed](../Unfoldings/Roof/RadialComponentSeed.lean) | Every nonroot geometric node of a pure radial component is its single seed |
-| [Unfoldings.Roof.RadialComponentSeedPath](../Unfoldings/Roof/RadialComponentSeedPath.lean) | The actual fine path from a component seed covers all of its nontip positions |
-| [Unfoldings.Roof.SameSectorAllRadiusContact](../Unfoldings/Roof/SameSectorAllRadiusContact.lean) | Full survivor order retains physical point equality whenever developed bank values coincide |
-| [Unfoldings.Roof.SameSectorEmptyCircleComparison](../Unfoldings/Roof/SameSectorEmptyCircleComparison.lean) | A disappearing strip's own terminal copy has proper comparison arcs in that strip's sector |
-| [Unfoldings.Roof.SectorBankRays](../Unfoldings/Roof/SectorBankRays.lean) | The named enclosing banks identify a common radial component across adjacent sectors |
-| [Unfoldings.Roof.SectorBoundaryComponents](../Unfoldings/Roof/SectorBoundaryComponents.lean) | A skirt component on a sector boundary has no original tree attached to it |
-| [Unfoldings.Roof.SectorBoundaryCutPoints](../Unfoldings/Roof/SectorBoundaryCutPoints.lean) | Cuts on sector boundary rays are radial skirt pieces or actual leaf endpoints |
-| [Unfoldings.Roof.SharedSeparatorPrefixValue](../Unfoldings/Roof/SharedSeparatorPrefixValue.lean) | Actual developed traces agree on a separator's approached coherent prefix |
-| [Unfoldings.Roof.SpatialEnvelopeEndpointVertices](../Unfoldings/Roof/SpatialEnvelopeEndpointVertices.lean) | Whole-edge segment coverage preserves actual vertices of spatial envelope meshes |
-| [Unfoldings.Roof.TailHeightBankGeometry](../Unfoldings/Roof/TailHeightBankGeometry.lean) | Retargeted actual fine banks retain the specified geometric tail's sector |
-| [Unfoldings.Roof.TerminalBankIntervalOrder](../Unfoldings/Roof/TerminalBankIntervalOrder.lean) | An approached bank following a collapsed strip's actual tail progresses in both coordinates |
-| [Unfoldings.Roof.TerminalHeightLeafOrder](../Unfoldings/Roof/TerminalHeightLeafOrder.lean) | A permanently collapsed strip cannot end before a leaf completed by either bank |
-| [Unfoldings.Roof.TerminalRecordStep](../Unfoldings/Roof/TerminalRecordStep.lean) | Progress from one actual terminal copy to a later terminal along the same physical tail |
-| [Unfoldings.Roof.TerminalRunClosedLateBounds](../Unfoldings/Roof/TerminalRunClosedLateBounds.lean) | Late surviving bank bounds include all vertex radii, using actual closed tracking intervals |
-| [Unfoldings.Roof.TerminalRunEarlyBoundsContacts](../Unfoldings/Roof/TerminalRunEarlyBoundsContacts.lean) | Early circle crossings are bounded by extreme terminal maxima of a disappearing run |
-| [Unfoldings.Roof.TerminalRunEarlyMaximaContacts](../Unfoldings/Roof/TerminalRunEarlyMaximaContacts.lean) | Every maximal terminal, including either extreme tied copy, bounds an early circle crossing |
-| [Unfoldings.Roof.TerminalRunLateBoundsContacts](../Unfoldings/Roof/TerminalRunLateBoundsContacts.lean) | Late surviving circle crossings progress beyond an actual terminal of a finite collapsed run |
-| [Unfoldings.Roof.TerminalRunRecords](../Unfoldings/Roof/TerminalRunRecords.lean) | Actual terminal-copy progress propagates through arbitrary runs of disappearing strips |
-| [Unfoldings.Roof.TerminalRunRecordsContacts](../Unfoldings/Roof/TerminalRunRecordsContacts.lean) | Actual terminal-copy progress propagates through arbitrary runs of disappearing strips |
-| [Unfoldings.Roof.WaterfallCircleExtremeBounds](../Unfoldings/Roof/WaterfallCircleExtremeBounds.lean) | Every actual sector circle image lies between the extreme surviving bank bounds |
-| [Unfoldings.Roof.WaterfallCircleRunOrder](../Unfoldings/Roof/WaterfallCircleRunOrder.lean) | Actual facing circle endpoints retain order across every removed physical-cell run |
-| [Unfoldings.Roof.WaterfallCircleSurvivorBanks](../Unfoldings/Roof/WaterfallCircleSurvivorBanks.lean) | Surviving source-circle intervals retain both ordered bank coordinates |
-| [Unfoldings.Roof.WaterfallCircleSurvivorOrder](../Unfoldings/Roof/WaterfallCircleSurvivorOrder.lean) | Actual source-circle survivors retain their full ordered bank endpoints |
-| [Unfoldings.Roof.WaterfallCircleSurvivors](../Unfoldings/Roof/WaterfallCircleSurvivors.lean) | Pairwise separation of surviving actual strip-circle images in one sector |
-| [Unfoldings.Roof.WaterfallClosedLevelBankOrder](../Unfoldings/Roof/WaterfallClosedLevelBankOrder.lean) | Actual approached bank order extends to all sweep heights, including terminal mesh vertices |
-| [Unfoldings.Roof.WaterfallClosedSectionExtremeBounds](../Unfoldings/Roof/WaterfallClosedSectionExtremeBounds.lean) | Full waterfall bank order includes closed-only sections and all vertex radii |
-| [Unfoldings.Roof.WaterfallClosedSectionOrder](../Unfoldings/Roof/WaterfallClosedSectionOrder.lean) | Full waterfall bank order includes closed-only sections and all vertex radii |
-| [Unfoldings.Roof.WaterfallClosedSectionPhysicalOrder](../Unfoldings/Roof/WaterfallClosedSectionPhysicalOrder.lean) | Full survivor order retains physical point equality whenever developed bank values coincide |
-| [Unfoldings.Roof.WaterfallLevelBankOrder](../Unfoldings/Roof/WaterfallLevelBankOrder.lean) | All surviving actual bank intervals are ordered at every regular physical sweep height |
-| [Unfoldings.Roof.WithinSectorAllRadiusContact](../Unfoldings/Roof/WithinSectorAllRadiusContact.lean) | Full survivor order retains physical point equality whenever developed bank values coincide |

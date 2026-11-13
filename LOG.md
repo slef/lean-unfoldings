@@ -2,6 +2,28 @@
 
 ## Session Log
 
+### 2026-11-12 — arbitrary-rim acute-roof theorem completed
+
+- Proved `ConvexRoof.arbitrary_rim_acute_roof_theorem`: a positive acute margin
+  determines a positive tilt threshold before the entire mesh. Every qualifying
+  convex roof has an original-edge cut disk with a globally injective development
+  and an exact simple polygon frontier. Original boundary heights are unrestricted.
+- Assembled actual completion bank traces, uniform face separation, and physical
+  identification of closed-face contacts at every radius. Transferred them to
+  whole original triangles using the exact intrinsic subdivision correspondence.
+- Derived the original roof's curvature budget and common sector frames from its
+  actual supporting normals and physical completion. Restored precisely the flat
+  descendant cuts, retaining one boundary root per tree; eliminated all remaining
+  branch and rim vertex contacts. Interior local isometry survives the restoration.
+- The result includes flat subdivision vertices and roofs with no interior mesh
+  vertices. It asserts existence, without a numerical threshold or running-time bound.
+- Added all 84 new public modules to the root import and reference index, grouped
+  the roof index, and updated the README, feature plan, and roof proof guide.
+- Verification: cache retrieval completed before full `lake build`, which passed
+  all 5,246 jobs. The audit checked 11,823 unfolding and 7,243 pinned topology
+  declarations using only standard Lean axioms; all 70 cap abstract independence
+  checks passed. No new project warnings remain.
+
 ### 2026-11-12 — arbitrary-rim closed contact comparisons and coherent trace domains
 
 - Adapted the geometric bank, terminal-run, and circle-contact comparison proofs

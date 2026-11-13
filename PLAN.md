@@ -813,6 +813,19 @@ and a positive tilt threshold chosen before the mesh. Start with
 - [x] Expose the actual intrinsic disk, footprint homeomorphism, and polygon frontier.
 - [ ] Formalize the paper's quantitative threshold and quadratic running-time bound.
 
+## Arbitrary-rim convex roofs
+
+The [arbitrary-rim acute-roof theorem](Unfoldings/Roof/SimpleEdgeUnfolding.lean)
+is proved. It constructs a simple original-edge unfolding with a positive tilt
+threshold depending only on the acute margin; boundary heights are unrestricted.
+The [roof checklist](docs/ROOFS.md) records the construction.
+
+- [x] Independent cap abstract and a concrete nonflat cap example.
+- [x] Intrinsic disks and injective projections for every gradient-selection component.
+- [x] Physical cap completion preserving original faces and tilt.
+- [x] Uniform original-face separation and all-radius physical contact control.
+- [x] Flat-cut pruning, global injectivity, and an exact simple polygon frontier.
+
 ## Later targets and Fewest Nets
 
 - [ ] Star unfolding after the source-unfolding theorem.
@@ -821,7 +834,7 @@ and a positive tilt threshold chosen before the mesh. Start with
 - [ ] Complete one-ended forest cuts and intrinsic polygonal-gap insertion.
 - [ ] Completeness for finite noncompact complexes with controlled ends.
 - [ ] Local-isometry/covering arguments for completed flat planes.
-- [ ] Original-edge restriction to a disk with one boundary root per tree.
+- [x] Original-edge restriction to a disk with one boundary root per tree.
 
 These later features are motivated by Fewest Nets, but its normal partitions,
 optimized progress bodies, and numerical certificates belong in a downstream
