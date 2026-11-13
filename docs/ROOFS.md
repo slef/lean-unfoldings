@@ -23,7 +23,9 @@ No numerical threshold or algorithmic running-time bound is part of this target.
 
 ## Remaining proof milestones
 
-- [ ] Give a concrete nonflat cap example exercising the geometric hypotheses.
+- [x] Give a [concrete nonflat cap](../Unfoldings/Examples/Pyramid.lean) with
+  actual supporting normals, projection embedding, horizontal rim, and a derived
+  positive acute margin. This checks the input model, not a numerical tilt threshold.
 - [ ] Derive disk topology for every nonempty edge-connected convex-gradient
   selection component, including exclusion of boundary pinches.
 - [ ] Construct the convex extension used by the arbitrary-rim acute forest.

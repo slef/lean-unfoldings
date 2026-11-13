@@ -942,3 +942,11 @@ public import Unfoldings.Roof.VertexProgress
 public import Unfoldings.Roof.Boundary
 public import Unfoldings.Roof.GradientSelection
 public import Unfoldings.Roof.CapBridge
+public import Unfoldings.Geometry.TriangleAffineEquiv
+public import Unfoldings.Complex.ProjectedEmbedding
+public import Unfoldings.Examples.Pyramid.Coordinates
+public import Unfoldings.Examples.Pyramid.Complex
+public import Unfoldings.Examples.Pyramid.Projection
+public import Unfoldings.Examples.Pyramid.Embedding
+public import Unfoldings.Examples.Pyramid.Normals
+public import Unfoldings.Examples.Pyramid

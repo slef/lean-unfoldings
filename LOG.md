@@ -2,6 +2,21 @@
 
 ## Session Log
 
+### 2026-11-12 — explicit nonflat acute pyramid cap
+
+- Constructed a four-face diamond pyramid with apex height one, equilateral
+  faces, upward supporting unit normals, horizontal rim, and a derived positive
+  acute margin. Proved its projection injective on the actual glued surface,
+  including all vertex copies, and proved it is not flat.
+- Added reusable affine equivalences between triangular cells and a generic
+  projected-embedding proof for conforming triangulations of a convex domain.
+- Verification: cache retrieval, then full `lake build` passed (4,907 jobs),
+  auditing 10,247 unfolding and 7,243 pinned topology declarations using only
+  standard Lean axioms. All 70 independent abstract declarations pass.
+- The pyramid checks the geometric input model, not a numerical shallow-tilt
+  threshold. The selected-component disk and arbitrary-rim unfolding theorems
+  remain in progress.
+
 ### 2026-11-12 — independent cap abstract and arbitrary-rim roof foundations
 
 - Applied the `lean-abstract` skill. Added independent geometric triangles,

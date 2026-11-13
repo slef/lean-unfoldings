@@ -1728,3 +1728,11 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Roof.Boundary](../Unfoldings/Roof/Boundary.lean) | Identify intrinsic roof boundary vertices with the projected domain frontier |
 | [Unfoldings.Roof.GradientSelection](../Unfoldings/Roof/GradientSelection.lean) | Prove gradient monotonicity and straight escape rays from all omitted faces |
 | [Unfoldings.Roof.CapBridge](../Unfoldings/Roof/CapBridge.lean) | View every existing convex cap as a roof without changing its faces or seams |
+| [Unfoldings.Geometry.TriangleAffineEquiv](../Unfoldings/Geometry/TriangleAffineEquiv.lean) | Construct the canonical corner-matching affine equivalence of genuine triangles |
+| [Unfoldings.Complex.ProjectedEmbedding](../Unfoldings/Complex/ProjectedEmbedding.lean) | Identify intrinsic seam fibers from conforming convex projections and complete geometric pairings |
+| [Unfoldings.Examples.Pyramid.Coordinates](../Unfoldings/Examples/Pyramid/Coordinates.lean) | Construct genuine rigid faces of the four-face diamond pyramid |
+| [Unfoldings.Examples.Pyramid.Complex](../Unfoldings/Examples/Pyramid/Complex.lean) | Pair the four actual radial pyramid seams and prove their spatial compatibility |
+| [Unfoldings.Examples.Pyramid.Projection](../Unfoldings/Examples/Pyramid/Projection.lean) | Prove the exact conforming convex diamond projection of the pyramid faces |
+| [Unfoldings.Examples.Pyramid.Embedding](../Unfoldings/Examples/Pyramid/Embedding.lean) | Prove injectivity of the actual intrinsic pyramid projection, including every vertex |
+| [Unfoldings.Examples.Pyramid.Normals](../Unfoldings/Examples/Pyramid/Normals.lean) | Verify explicit unit upward supporting normals on the genuine nonflat pyramid |
+| [Unfoldings.Examples.Pyramid](../Unfoldings/Examples/Pyramid.lean) | Construct a concrete nonflat convex cap and derive a positive acute margin |

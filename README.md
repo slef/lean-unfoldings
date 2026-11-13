@@ -74,6 +74,7 @@ data and theorems for use in further proofs.
 | Cut polygonal forests carried by a refinement | [Complex/PolygonalCuts.lean](Unfoldings/Complex/PolygonalCuts.lean), [Complex/PolygonalCutGraph.lean](Unfoldings/Complex/PolygonalCutGraph.lean) |
 | Refine triangles without changing intrinsic geometry | [Complex/SubdivisionMetric.lean](Unfoldings/Complex/SubdivisionMetric.lean), [Examples/Subdivision.lean](Unfoldings/Examples/Subdivision.lean) |
 | Unfold a sufficiently flat acute convex cap to a simple polygon | [Cap/SimpleEdgeUnfolding.lean](Unfoldings/Cap/SimpleEdgeUnfolding.lean) |
+| Inspect a concrete nonflat convex cap | [Examples/Pyramid.lean](Unfoldings/Examples/Pyramid.lean) |
 | Try small examples | [Examples/Metric.lean](Unfoldings/Examples/Metric.lean), [Examples/Hinge.lean](Unfoldings/Examples/Hinge.lean) |
 
 For a specific lemma, use the [module index](docs/REFERENCE.md#module-index).
