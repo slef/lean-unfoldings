@@ -2,6 +2,19 @@
 
 ## Session Log
 
+### 2026-11-12 — exact original-face cut metric correspondence
+
+- Reassembled each whole original roof face from the actual physical completion
+  pieces using affine isometries, with exact coverage and original parent labels.
+- Proved both directions of the retained seam-class correspondence for arbitrary
+  original cuts, including boundary vertices. The resulting intrinsic surfaces
+  are isometric; nonoverlap transfers in both directions for connected cut roofs.
+- Verification: cache retrieval followed by full `lake build` passed (4,972 jobs).
+  The audit checked 10,816 unfolding and 7,243 pinned topology declarations using
+  only standard Lean axioms; all 70 abstract independence checks passed.
+- Auxiliary forest completion and global separation remain; the arbitrary-rim
+  acute-roof unfolding theorem is not yet complete.
+
 ### 2026-11-12 — genuine physical cap completions of arbitrary-rim roofs
 
 - Constructed actual rigid coordinates for arbitrary affine support planes and

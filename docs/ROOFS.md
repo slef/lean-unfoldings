@@ -43,7 +43,11 @@ No numerical threshold or algorithmic running-time bound is part of this target.
   with rigid Euclidean triangles, whole-edge spatial seam isometries, injective
   projection, and the original tilt budget. Prescribed finite line constraints
   survive the common geometric refinement.
-- [ ] Preserve whole original faces and their original seam names in the extension.
+- [x] Recover [every whole original face isometrically](../Unfoldings/Roof/CompletionOriginalSubdivision.lean)
+  from its auxiliary pieces.
+- [x] Prove the [correspondence of arbitrary retained original seam classes](../Unfoldings/Roof/CompletionOriginalConforming.lean)
+  with the retained auxiliary subdivision, including original boundary vertex copies,
+  and transfer nonoverlap in both directions.
 - [x] Construct an [original-edge acute forest](../Unfoldings/Roof/SectorForestExistence.lean),
   its actual intrinsic cut disk, and locally isometric development. Sources are
   interior planar points, so roofs without interior mesh vertices are included.

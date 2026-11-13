@@ -406,6 +406,9 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 | [Unfoldings.Roof.SpatialEnvelopeCap](../Unfoldings/Roof/SpatialEnvelopeCap.lean) | Assemble genuine geometric caps from actual horizontal affine-roof sections |
 | [Unfoldings.Roof.CompletionPlanes](../Unfoldings/Roof/CompletionPlanes.lean) | Preserve old rigid face planes and construct actual new planes in roof completions |
 | [Unfoldings.Roof.CompletionMesh](../Unfoldings/Roof/CompletionMesh.lean) | Construct tilt-preserving physical cap meshes extending arbitrary-rim roofs |
+| [Unfoldings.Roof.CompletionOriginalPieces](../Unfoldings/Roof/CompletionOriginalPieces.lean) | Cover every whole original face by contained auxiliary triangles with unique old parents |
+| [Unfoldings.Roof.CompletionOriginalCoordinates](../Unfoldings/Roof/CompletionOriginalCoordinates.lean) | Prove that contained auxiliary pieces have the actual original face Euclidean metric |
+| [Unfoldings.Roof.CompletionOriginalSubdivision](../Unfoldings/Roof/CompletionOriginalSubdivision.lean) | Construct the isometric subdivision of the original mesh inside the physical completion |
 
 ## Triangle complexes
 
@@ -1784,3 +1787,17 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Examples.Pyramid.Embedding](../Unfoldings/Examples/Pyramid/Embedding.lean) | Prove injectivity of the actual intrinsic pyramid projection, including every vertex |
 | [Unfoldings.Examples.Pyramid.Normals](../Unfoldings/Examples/Pyramid/Normals.lean) | Verify explicit unit upward supporting normals on the genuine nonflat pyramid |
 | [Unfoldings.Examples.Pyramid](../Unfoldings/Examples/Pyramid.lean) | Construct a concrete nonflat convex cap and derive a positive acute margin |
+| [Unfoldings.Geometry.SpatialEnvelopeCuts](../Unfoldings/Geometry/SpatialEnvelopeCuts.lean) | Cut whole physical seams and identify every shared projected edge |
+| [Unfoldings.Roof.CompletionOriginalAdjacency](../Unfoldings/Roof/CompletionOriginalAdjacency.lean) | Locate fine adjacency between different original faces on their common edge |
+| [Unfoldings.Roof.CompletionOriginalConforming](../Unfoldings/Roof/CompletionOriginalConforming.lean) | Prove exact retained seam classes and the original-cut metric equivalence |
+| [Unfoldings.Roof.CompletionOriginalCopies](../Unfoldings/Roof/CompletionOriginalCopies.lean) | Identify every fine point copy within one whole original face |
+| [Unfoldings.Roof.CompletionOriginalFaceMap](../Unfoldings/Roof/CompletionOriginalFaceMap.lean) | Map each whole original face continuously into its fine cut surface |
+| [Unfoldings.Roof.CompletionOriginalNonoverlap](../Unfoldings/Roof/CompletionOriginalNonoverlap.lean) | Transfer nonoverlap between the fine pieces and the original development |
+| [Unfoldings.Roof.CompletionOriginalRegularCopies](../Unfoldings/Roof/CompletionOriginalRegularCopies.lean) | Restrict auxiliary point identifications away from vertices and cuts |
+| [Unfoldings.Roof.CompletionOriginalRespects](../Unfoldings/Roof/CompletionOriginalRespects.lean) | Send retained fine seams to retained original seam chains |
+| [Unfoldings.Roof.CompletionOriginalRetention](../Unfoldings/Roof/CompletionOriginalRetention.lean) | Keep every fine seam internal to one original face |
+| [Unfoldings.Roof.CompletionOriginalSeamMap](../Unfoldings/Roof/CompletionOriginalSeamMap.lean) | Join whole original face maps across retained seams, including endpoints |
+| [Unfoldings.Roof.OriginalCuts](../Unfoldings/Roof/OriginalCuts.lean) | Locate original seam cuts outside every face interior |
+| [Unfoldings.Roof.ProjectedPointCopies](../Unfoldings/Roof/ProjectedPointCopies.lean) | Compare original point copies across retained whole edges |
+| [Unfoldings.Roof.ProjectedSeamUnique](../Unfoldings/Roof/ProjectedSeamUnique.lean) | Prove uniqueness of an original seam at a nonvertex point |
+| [Unfoldings.Roof.SpatialEnvelopeRetainedClasses](../Unfoldings/Roof/SpatialEnvelopeRetainedClasses.lean) | Preserve physical auxiliary seam classes away from geometric cuts |
