@@ -59,8 +59,10 @@ subdivision vertices are included. These noncomputable constructions expose
 data and theorems for use in further proofs.
 
 For an independent formal statement, read [Source/Abstract.lean](Unfoldings/Source/Abstract.lean).
-It introduces the geometric inputs and source-net conclusion without implementation types;
-Lean verifies the proof through [Source/AbstractBridge.lean](Unfoldings/Source/AbstractBridge.lean).
+Its general `IsNetOf` predicate describes a disk that folds rigidly onto a spatial
+surface. The source theorem constructs a valid net of the given polyhedron with
+the additional shortest-path properties. Construction proofs live in
+[Source/AbstractBridge.lean](Unfoldings/Source/AbstractBridge.lean).
 Import `Unfoldings.Source.Abstract`; `lake build` checks both the proof and the
 independence of its public definitions and statements.
 

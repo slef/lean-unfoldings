@@ -28,8 +28,8 @@ source, including its module documentation and declarations.
 
 | Module | Purpose |
 | --- | --- |
-| [Unfoldings.Source.Abstract](../Unfoldings/Source/Abstract.lean) | State source unfolding using independent triangulation, distance, cut-locus, and polygonal net definitions |
-| [Unfoldings.Source.AbstractBridge](../Unfoldings/Source/AbstractBridge.lean) | Prove metric and shortest-path correspondences and transfer the constructed source net |
+| [Unfoldings.Source.Abstract](../Unfoldings/Source/Abstract.lean) | State source unfolding using independent triangulation, distance, cut locus, and general net validity |
+| [Unfoldings.Source.AbstractBridge](../Unfoldings/Source/AbstractBridge.lean) | Prove metric and shortest-path correspondences and that the constructed net folds to its polyhedron |
 | [Unfoldings.Source.ActualCut](../Unfoldings/Source/ActualCut.lean) | The actual cut complement, exact cut-locus boundary projection and constructed source-disk properties |
 | [Unfoldings.Source.AmbientCoordinates](../Unfoldings/Source/AmbientCoordinates.lean) | Extend retained coordinates for local arguments, with proved agreement on the cut complement |
 | [Unfoldings.Source.Bisectors](../Unfoldings/Source/Bisectors.lean) | Distinct shortest paths in a face interior determine distinct virtual-source images |

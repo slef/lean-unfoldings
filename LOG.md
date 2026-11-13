@@ -2,6 +2,27 @@
 
 ## Session Log
 
+### 2026-11-13 — explicit general net validity in the source abstract
+
+- Defined `IsNetOf surface region fold` independently of sources and convexity.
+  It requires an actual planar closed disk, continuous folding onto the entire
+  spatial surface, interior injectivity, and a finite nonoverlapping subdivision
+  into polygons with rigid spatial folding maps and a polygonal boundary.
+- Replaced the public verified-data record with `IsSourceUnfolding`, which includes
+  `IsNetOf K.surface` and the intrinsic projection, exact cut locus, local isometry,
+  preserved source distances, radial geodesics, and all shortest-path lifts.
+  The main theorem now explicitly produces a region and a valid source unfolding
+  of the supplied polyhedron.
+- Moved mesh construction, record assembly, and spatial validity proofs into the
+  bridge. The abstract theorem contains only a bridge invocation. Coordinate
+  equations for seam identifications also remove its edge-membership proof term.
+- Updated the README and reference. Cache retrieval completed before full
+  `lake build`, which passed all 5,248 jobs. The audit checked 11,981 unfolding
+  and 7,243 pinned topology declarations with only standard Lean axioms; all
+  70 cap and 64 source abstract independence checks passed. The new changes
+  produced no warnings. A separate signature check confirms the explicit
+  existential conclusion and the three standard axioms of the main theorem.
+
 ### 2026-11-13 — independent source-unfolding abstract
 
 - Added `Source/Abstract.lean`: independent finite triangle gluings, convex

@@ -6,7 +6,7 @@ public import Unfoldings.Source.AbstractBridge
 # A formal abstract of source unfolding
 
 This file introduces triangulated convex polyhedral boundaries, intrinsic distance,
-and polygonal source nets, and proves the source-unfolding theorem at every
+and general net validity, and proves the source-unfolding theorem at every
 nonextreme source. To assess the mathematical claim, read only these definitions
 and theorem statements. Lean checks the proofs through `AbstractBridge.lean`
 and the rest of the library. Genuine cone vertices are outside this theorem.
@@ -58,14 +58,10 @@ variable {Face Seam : Type} [Fintype Face] [Fintype Seam] (M : Mesh Face Seam)
 finite chains of the prescribed edge pairings, including their reversals. -/
 abbrev Point := (f : Face) × triangle (M.vertex f)
 
-def edgePoint (a : Face × Corner) (x : edge (M.vertex a.1) a.2) : M.Point :=
-  ⟨a.1, ⟨x.val, (convex_convexHull ℝ (Set.range (M.vertex a.1))).segment_subset
-    (subset_convexHull ℝ _ ⟨a.2, rfl⟩)
-    (subset_convexHull ℝ _ ⟨next a.2, rfl⟩) x.property⟩⟩
-
 def glue (p q : M.Point) : Prop :=
-  ∃ s, ∃ x, p = M.edgePoint (M.first s) x ∧
-    q = M.edgePoint (M.last s) (M.identify s x)
+  ∃ s, ∃ x : edge (M.vertex (M.first s).1) (M.first s).2,
+    p.1 = (M.first s).1 ∧ p.2.val = x.val ∧
+    q.1 = (M.last s).1 ∧ q.2.val = (M.identify s x).val
 
 abbrev Surface := Quot M.glue
 
@@ -115,50 +111,60 @@ def Polygon (s : Set Plane) : Prop :=
     ∃ n : ℕ, ∃ halfplane : Fin n → Plane →ᵃ[ℝ] ℝ,
       s = {x | ∀ i, 0 ≤ halfplane i x}
 
-/-- A source net is an embedded planar closed disk, subdivided into finitely many
-nonoverlapping polygons that fold rigidly into the original triangles. Its interior
-is exactly the cut-locus complement and is locally isometric to the original surface.
-The cut can cross faces; it is not required to follow original edges.
+/-- The spatial surface is the union of the placed closed triangles. -/
+def Polyhedron.surface {Face Seam : Type} [Fintype Face] [Fintype Seam]
+    {M : Mesh Face Seam} (K : Polyhedron M) : Set Space :=
+  ⋃ f, K.place f '' triangle (M.vertex f)
 
-The source is at the planar origin. Every radial segment folds to a shortest path,
-and every normalized shortest path has exactly one radial lift, including tied
-paths to the same endpoint. The entire net boundary folds onto the cut locus. -/
-structure SourceNet {Face Seam : Type} [Fintype Face] [Fintype Seam]
-    (M : Mesh Face Seam) (source : M.Surface) where
-  region : Set Plane
-  zero_interior : (0 : Plane) ∈ interior region
-  disk : Nonempty (region ≃ₜ Metric.closedBall (0 : Plane) 1)
-  fold : region → M.Surface
-  continuous_fold : Continuous fold
-  surjective_fold : Function.Surjective fold
-  radial : ∀ (z : region) (t : unitInterval), (t : ℝ) • z.val ∈ region
-  source_image : fold ⟨0, interior_subset zero_interior⟩ = source
-  pieces : ∃ n : ℕ, ∃ piece : Fin n → Set Plane,
+/-- A net of a spatial surface is a planar closed disk with a continuous folding
+onto that entire surface. Distinct interior points remain distinct on the surface.
+The disk is a finite union of nonoverlapping polygons, and the folding on each
+polygon is a rigid map into three-space. Its boundary consists of finitely many segments.
+This definition applies to any spatial surface; it assumes no source or convexity. -/
+def IsNetOf (surface : Set Space) (region : Set Plane) (fold : region → Space) : Prop :=
+  Nonempty (region ≃ₜ Metric.closedBall (0 : Plane) 1) ∧
+  Continuous fold ∧ Set.range fold = surface ∧
+  Set.InjOn fold {z : region | z.val ∈ interior region} ∧
+  (∃ n : ℕ, ∃ piece : Fin n → Set Plane,
     (∀ i, Polygon (piece i)) ∧
     Pairwise (fun i j => Disjoint (interior (piece i)) (interior (piece j))) ∧
     (⋃ i, piece i) = region ∧
-    ∃ face : Fin n → Face, ∃ motion : Fin n → Plane ≃ᵃⁱ[ℝ] Plane,
-      ∀ i (x : piece i), ∃ h : motion i x.val ∈ triangle (M.vertex (face i)),
-        ∃ hz : x.val ∈ region, fold ⟨x.val, hz⟩ = M.point ⟨face i, motion i x.val, h⟩
-  polygonal_boundary : ∃ n : ℕ, ∃ a b : Fin n → Plane,
-    frontier region = ⋃ i, segment ℝ (a i) (b i)
-  cut_complement : ∃ H : interior region ≃ₜ ↥((M.cutLocus source)ᶜ),
-    ∀ z, (H z).val = fold ⟨z.val, interior_subset z.property⟩
-  local_isometry : ∀ x : interior region,
-    ∃ T : Set (interior region), IsOpen T ∧ x ∈ T ∧
+    ∃ motion : Fin n → Plane →ᵃⁱ[ℝ] Space,
+      ∀ i (x : piece i), ∃ hz : x.val ∈ region, fold ⟨x.val, hz⟩ = motion i x.val) ∧
+  ∃ n : ℕ, ∃ a b : Fin n → Plane, frontier region = ⋃ i, segment ℝ (a i) (b i)
+
+/-- A source unfolding is a net of the given polyhedron with the source at the origin.
+Its folding lifts to the abstract surface, identifies the interior with the cut-locus
+complement by a local isometry, and maps the whole boundary exactly onto the cut locus.
+Every radial segment folds to a shortest path, and every normalized shortest path
+has exactly one radial lift, including distinct paths tied at one endpoint. -/
+def IsSourceUnfolding {Face Seam : Type} [Fintype Face] [Fintype Seam]
+    {M : Mesh Face Seam} (K : Polyhedron M) (source : M.Point)
+    (region : Set Plane) (fold : region → Space) : Prop :=
+  IsNetOf K.surface region fold ∧ ∃ project : region → M.Surface,
+    Continuous project ∧ Function.Surjective project ∧
+    (∀ z p, project z = M.point p → fold z = K.place p.1 p.2.val) ∧
+    (0 : Plane) ∈ interior region ∧
+    (∀ (z : region) (t : unitInterval), (t : ℝ) • z.val ∈ region) ∧
+    (∀ h : (0 : Plane) ∈ region, project ⟨0, h⟩ = M.point source) ∧
+    (∃ H : interior region ≃ₜ ↥((M.cutLocus (M.point source))ᶜ),
+      ∀ z, (H z).val = project ⟨z.val, interior_subset z.property⟩) ∧
+    (∀ x : interior region, ∃ T : Set (interior region), IsOpen T ∧ x ∈ T ∧
       ∀ y z : T, M.distance
-        (fold ⟨y.val.val, interior_subset y.val.property⟩)
-        (fold ⟨z.val.val, interior_subset z.val.property⟩) = edist y.val.val z.val.val
-  boundary_projection : fold '' {z : region | z.val ∈ frontier region} = M.cutLocus source
-  source_distance : ∀ z : region, M.distance source (fold z) = ENNReal.ofReal ‖z.val‖
-  radial_geodesic : ∀ (z : region) (s t : unitInterval),
-    M.distance (fold ⟨(s : ℝ) • z.val, radial z s⟩)
-      (fold ⟨(t : ℝ) • z.val, radial z t⟩) = ENNReal.ofReal ‖z.val‖ * edist s t
-  all_shortest_paths : ∀ x (p : Path source x), M.Shortest p →
-    ∃! z : region, ∀ t : unitInterval, fold ⟨(t : ℝ) • z.val, radial z t⟩ = p t
+        (project ⟨y.val.val, interior_subset y.val.property⟩)
+        (project ⟨z.val.val, interior_subset z.val.property⟩) = edist y.val.val z.val.val) ∧
+    project '' {z : region | z.val ∈ frontier region} = M.cutLocus (M.point source) ∧
+    (∀ z : region, M.distance (M.point source) (project z) = ENNReal.ofReal ‖z.val‖) ∧
+    (∀ (z : region) (s t : unitInterval)
+      (hs : (s : ℝ) • z.val ∈ region) (ht : (t : ℝ) • z.val ∈ region),
+      M.distance (project ⟨(s : ℝ) • z.val, hs⟩) (project ⟨(t : ℝ) • z.val, ht⟩) =
+        ENNReal.ofReal ‖z.val‖ * edist s t) ∧
+    ∀ x (p : Path (M.point source) x), M.Shortest p →
+      ∃! z : region, ∀ t : unitInterval, ∃ hz : (t : ℝ) • z.val ∈ region,
+        project ⟨(t : ℝ) • z.val, hz⟩ = p t
 
 /-- **The source-unfolding theorem.** Every nonextreme point of a triangulated convex
-polyhedron has a finite nonoverlapping polygonal source net. A tagged source merely
+polyhedron has a valid source unfolding of that polyhedron. A tagged source merely
 chooses a face representation of the physical point. Sources on creases and flat
 subdivision vertices are included; no generic-position assumption is needed. -/
 theorem source_unfolding {Face Seam : Type} [Fintype Face] [Fintype Seam]
@@ -166,31 +172,9 @@ theorem source_unfolding {Face Seam : Type} [Fintype Face] [Fintype Seam]
     (nonextreme : K.place source.1 source.2.val ∉
       (convexHull ℝ (Set.range (fun p : Face × Corner =>
         K.place p.1 (M.vertex p.1 p.2)))).extremePoints ℝ) :
-    Nonempty (SourceNet M (M.point source)) := by
-  classical
-  let C := Unfoldings.CapAbstractBridge.meshComplex M.vertex M.nondegenerate
-    M.first M.last M.distinct M.identify M.unique
-  let F : Unfoldings.SpatialFolding C := ⟨K.place, K.joined⟩
-  let D : Unfoldings.SourceAbstractBridge.NetData (C := C) M.Surface M.distance
-      (fun f x => M.point ⟨f, x⟩) (M.point source) :=
-    Unfoldings.SourceAbstractBridge.geometric_source_net F M.glue rfl
-      K.embedded K.interior_nonempty K.boundary source nonextreme
-  exact ⟨
-    { region := D.region
-      zero_interior := D.zero_interior
-      disk := D.disk
-      fold := D.fold
-      continuous_fold := D.continuous_fold
-      surjective_fold := D.surjective_fold
-      radial := D.radial
-      source_image := D.source_image
-      pieces := D.pieces
-      polygonal_boundary := D.polygonal_boundary
-      cut_complement := D.cut_complement
-      local_isometry := D.local_isometry
-      boundary_projection := D.boundary_projection
-      source_distance := D.source_distance
-      radial_geodesic := D.radial_geodesic
-      all_shortest_paths := D.all_shortest_paths }⟩
+    ∃ region : Set Plane, ∃ fold : region → Space, IsSourceUnfolding K source region fold := by
+  exact Unfoldings.SourceAbstractBridge.abstract_source_unfolding M.vertex M.nondegenerate
+    M.first M.last M.distinct M.identify M.unique K.place K.joined K.embedded
+    K.interior_nonempty K.boundary source nonextreme
 
 end Unfoldings.SourceAbstract
