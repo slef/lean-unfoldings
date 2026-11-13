@@ -18,6 +18,10 @@ No numerical threshold or algorithmic running-time bound is part of this target.
 - [x] [Gradient selection escape](../Unfoldings/Roof/GradientSelection.lean):
   monotonicity of directional gradients gives a straight ray from every omitted
   face that avoids every selected face at positive distance.
+- [x] [Whole-edge connected selections](../Unfoldings/Roof/RestrictedDisk.lean)
+  have an actual closed-disk homeomorphism and Jordan frontier. The proof constructs
+  a boundary Jordan subcurve and excludes all additional branches and pinches.
+  Extending this to each component of a disconnected selection remains below.
 - [x] [Cap inclusion](../Unfoldings/Roof/CapBridge.lean) preserves the entire
   original complex, folding, footprint, and tilt bound.
 

@@ -376,6 +376,13 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 | [Unfoldings.Cap.HeadingBanks](../Unfoldings/Cap/HeadingBanks.lean) | Whole-chain bank order from matched lengths and ordered quadrant headings |
 | [Unfoldings.Cap.Projection](../Unfoldings/Cap/Projection.lean) | Horizontal projection, tangent-plane metric and vertical-motion estimates |
 | [Unfoldings.Cap.Topology](../Unfoldings/Cap/Topology.lean) | Disk topology derived from the actual convex footprint |
+| [Unfoldings.Roof.FaceRestriction](../Unfoldings/Roof/FaceRestriction.lean) | Restrict rigid roof geometry and identify all nonvertex projection fibers |
+| [Unfoldings.Roof.ProjectedOpening](../Unfoldings/Roof/ProjectedOpening.lean) | Prove that actual projected roof seams open to opposite sides |
+| [Unfoldings.Roof.RestrictedBoundaryExistence](../Unfoldings/Roof/RestrictedBoundaryExistence.lean) | Construct a boundary bank for every nonempty whole-face roof restriction |
+| [Unfoldings.Roof.RestrictedBoundaryFrontier](../Unfoldings/Roof/RestrictedBoundaryFrontier.lean) | Place all actual restricted banks, including endpoints, on the geometric frontier |
+| [Unfoldings.Roof.RestrictedBoundaryJordan](../Unfoldings/Roof/RestrictedBoundaryJordan.lean) | Extract a Jordan curve from restricted banks despite possible coincident vertex copies |
+| [Unfoldings.Roof.RestrictedDisk](../Unfoldings/Roof/RestrictedDisk.lean) | Prove the disk and Jordan-boundary theorem for whole-edge connected gradient selections |
+| [Unfoldings.Roof.SelectionComplement](../Unfoldings/Roof/SelectionComplement.lean) | Prove connected complement and enclosed-region filling for convex-gradient selections |
 
 ## Triangle complexes
 
@@ -966,6 +973,7 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 | [Unfoldings.Geometry.TriangleSplit](../Unfoldings/Geometry/TriangleSplit.lean) | Construct nondegenerate edge splits and prove their exact cover |
 | [Unfoldings.Geometry.Triangle](../Unfoldings/Geometry/Triangle.lean) | Nondegenerate cells and full edge subspaces |
 | [Unfoldings.Geometry.UnitLine](../Unfoldings/Geometry/UnitLine.lean) | A nonzero real line has two opposite unit directions |
+| [Unfoldings.Geometry.TriangleUnionInterior](../Unfoldings/Geometry/TriangleUnionInterior.lean) | Prove regular closedness and connected interior of whole-edge connected triangular patches |
 
 ## Topology and combinatorics
 
@@ -1044,6 +1052,9 @@ The full nearly flat edge-unfolding theorem remains in progress; see the
 | [Unfoldings.Topology.RootedForest](../Unfoldings/Topology/RootedForest.lean) | Outside-vertex tree equivalence for forests with exactly one root per connected component |
 | [Unfoldings.Topology.SmallHalfPlanePush](../Unfoldings/Topology/SmallHalfPlanePush.lean) | Construct inward pushes in arbitrarily small half-plane neighborhoods |
 | [Unfoldings.Topology.SphereChart](../Unfoldings/Topology/SphereChart.lean) | Explicit Euclidean homeomorphisms for punctured unit spheres |
+| [Unfoldings.Topology.EscapeRays](../Unfoldings/Topology/EscapeRays.lean) | Derive connected planar complements from straight escape rays |
+| [Unfoldings.Topology.GraphVertexIdentifications](../Unfoldings/Topology/GraphVertexIdentifications.lean) | Extract actual Jordan curves when graph images identify only vertices |
+| [Unfoldings.Topology.JordanBoundarySubset](../Unfoldings/Topology/JordanBoundarySubset.lean) | Derive a disk from connected interior and complement and one Jordan boundary subcurve |
 | [Unfoldings.Topology.SphereSubsetChart](../Unfoldings/Topology/SphereSubsetChart.lean) | Closed-set complements in spheres have open Euclidean embeddings |
 ## Examples and core imports
 

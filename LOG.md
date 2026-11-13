@@ -2,6 +2,23 @@
 
 ## Session Log
 
+### 2026-11-12 — disks for connected convex-gradient selections
+
+- Proved connected complement and enclosed-region filling for every closed
+  convex-gradient selection of an arbitrary-rim roof.
+- Proved that any nonempty whole-edge connected selection has one actual Jordan
+  frontier and a homeomorphism of its geometric union to the closed disk.
+  The proof constructs the boundary subcurve from the actual bank cycles;
+  coincident vertex images are allowed until the disk argument excludes pinches.
+- Added reusable topology for escape rays, vertex identifications in graph
+  drawings, and Jordan subcurves in regular compact planar patches, together
+  with whole-face restriction and triangle-union interior lemmas.
+- Verification: cache retrieval followed by full `lake build` passed (4,918 jobs),
+  auditing 10,305 unfolding and 7,243 pinned topology declarations using only
+  standard Lean axioms. All 70 abstract independence checks pass; no new warnings.
+- The componentwise theorem for disconnected selections and the arbitrary-rim
+  acute-roof unfolding theorem remain in progress.
+
 ### 2026-11-12 — explicit nonflat acute pyramid cap
 
 - Constructed a four-face diamond pyramid with apex height one, equilateral

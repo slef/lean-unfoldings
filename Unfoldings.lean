@@ -950,3 +950,14 @@ public import Unfoldings.Examples.Pyramid.Projection
 public import Unfoldings.Examples.Pyramid.Embedding
 public import Unfoldings.Examples.Pyramid.Normals
 public import Unfoldings.Examples.Pyramid
+public import Unfoldings.Geometry.TriangleUnionInterior
+public import Unfoldings.Roof.FaceRestriction
+public import Unfoldings.Roof.ProjectedOpening
+public import Unfoldings.Roof.RestrictedBoundaryExistence
+public import Unfoldings.Roof.RestrictedBoundaryFrontier
+public import Unfoldings.Roof.RestrictedBoundaryJordan
+public import Unfoldings.Roof.RestrictedDisk
+public import Unfoldings.Roof.SelectionComplement
+public import Unfoldings.Topology.EscapeRays
+public import Unfoldings.Topology.GraphVertexIdentifications
+public import Unfoldings.Topology.JordanBoundarySubset
