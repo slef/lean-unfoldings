@@ -1838,3 +1838,31 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Roof.SpatialEnvelopeCoordinates](../Unfoldings/Roof/SpatialEnvelopeCoordinates.lean) | Exact projected coordinates of the normalized physical affine-roof mesh |
 | [Unfoldings.Roof.SpatialEnvelopeCurvature](../Unfoldings/Roof/SpatialEnvelopeCurvature.lean) | Incident slopes of the actual normalized spatial roof are active support slopes |
 | [Unfoldings.Roof.SpatialEnvelopeInteriorSeams](../Unfoldings/Roof/SpatialEnvelopeInteriorSeams.lean) | Whole physical edges meeting the completion interior have actual seam partners |
+| [Unfoldings.Roof.ExtendedComponentSectors](../Unfoldings/Roof/ExtendedComponentSectors.lean) | Every actual geometric cut component lies in one of the five fixed sectors |
+| [Unfoldings.Roof.GeometricBankPersistence](../Unfoldings/Roof/GeometricBankPersistence.lean) | An actual tail cannot leave an exterior sector bank after contacting it beyond its leaf |
+| [Unfoldings.Roof.GeometricCutFlow](../Unfoldings/Roof/GeometricCutFlow.lean) | The complete geometric cut forest has a unique forward edge at every nonterminal point |
+| [Unfoldings.Roof.GeometricCutIncidence](../Unfoldings/Roof/GeometricCutIncidence.lean) | A geometric cut vertex lying on a geometric edge is one of its actual endpoints |
+| [Unfoldings.Roof.GeometricCutLabels](../Unfoldings/Roof/GeometricCutLabels.lean) | Component labels and fixed sectors on the complete geometric cut parent forest |
+| [Unfoldings.Roof.GeometricCutNoncrossing](../Unfoldings/Roof/GeometricCutNoncrossing.lean) | Distinct edges of the complete geometric forest meet only at shared endpoints |
+| [Unfoldings.Roof.GeometricCutPaths](../Unfoldings/Roof/GeometricCutPaths.lean) | Exact monotone height graphs for all complete geometric cut paths |
+| [Unfoldings.Roof.GeometricHeightNetwork](../Unfoldings/Roof/GeometricHeightNetwork.lean) | Instantiate the forward-deterministic height network with actual geometric cut components |
+| [Unfoldings.Roof.GeometricLeafAvoidance](../Unfoldings/Roof/GeometricLeafAvoidance.lean) | An unprocessed geometric leaf cannot lie on another leaf's existing root path |
+| [Unfoldings.Roof.GeometricLeafInterior](../Unfoldings/Roof/GeometricLeafInterior.lean) | Every nonterminal node of the actual geometric forest lies strictly inside the roof clip |
+| [Unfoldings.Roof.GeometricLeafMinimum](../Unfoldings/Roof/GeometricLeafMinimum.lean) | Actual geometric leaves are local radial minima of the complete prescribed cut network |
+| [Unfoldings.Roof.GeometricLeafSweep](../Unfoldings/Roof/GeometricLeafSweep.lean) | Each geometric component admits a height sweep in which every edge lies above a leaf |
+| [Unfoldings.Roof.GeometricRadialEdges](../Unfoldings/Roof/GeometricRadialEdges.lean) | Every active geometric component has an actual seed-to-tip edge in the cut forest |
+| [Unfoldings.Roof.GeometricRadialGraphs](../Unfoldings/Roof/GeometricRadialGraphs.lean) | Construct the exact source-ray graph of the radial edge of every active cut component |
+| [Unfoldings.Roof.GeometricSectorBoundaryLeaves](../Unfoldings/Roof/GeometricSectorBoundaryLeaves.lean) | A nonterminal geometric node on its sector bank must be a leaf |
+| [Unfoldings.Roof.GeometricSectorData](../Unfoldings/Roof/GeometricSectorData.lean) | Actual component sector choices and exact enclosing strips for their geometric tails |
+| [Unfoldings.Roof.GeometricSectorNetwork](../Unfoldings/Roof/GeometricSectorNetwork.lean) | One sector network includes every geometric tree whose edge directions lie in that sector |
+| [Unfoldings.Roof.GeometricSectorPositions](../Unfoldings/Roof/GeometricSectorPositions.lean) | Choose a sector containing both the positions and the directions of an actual cut component |
+| [Unfoldings.Roof.GeometricSectorTails](../Unfoldings/Roof/GeometricSectorTails.lean) | Common-sector networks control actual tails from different geometric components |
+| [Unfoldings.Roof.GeometricTailBankContacts](../Unfoldings/Roof/GeometricTailBankContacts.lean) | Beyond its starting leaf, an actual tail can meet a sector bank only on its radial skirt |
+| [Unfoldings.Roof.GeometricTailCoalescence](../Unfoldings/Roof/GeometricTailCoalescence.lean) | Constructed actual cut tails merge permanently and retain a consistent sweep order |
+| [Unfoldings.Roof.GeometricTailCutoff](../Unfoldings/Roof/GeometricTailCutoff.lean) | A deep physical roof clip puts every actual tail endpoint beyond the chosen sweep slab |
+| [Unfoldings.Roof.GeometricTailGraphs](../Unfoldings/Roof/GeometricTailGraphs.lean) | Construct exact covered height graphs for every tail of one actual geometric component |
+| [Unfoldings.Roof.GeometricTailLeaves](../Unfoldings/Roof/GeometricTailLeaves.lean) | A new geometric leaf is strictly separated from every distinct existing tail at its height |
+| [Unfoldings.Roof.GeometricTailPieces](../Unfoldings/Roof/GeometricTailPieces.lean) | Every covered actual tail point lies on a labeled geometric parent edge |
+| [Unfoldings.Roof.GeometricTailVertices](../Unfoldings/Roof/GeometricTailVertices.lean) | A geometric vertex on an actual tail is an ancestor in that same cut component |
+| [Unfoldings.Roof.GeometricWaterfall](../Unfoldings/Roof/GeometricWaterfall.lean) | Construct a finite strip subdivision from the actual geometric leaves in each sector |
+| [Unfoldings.Roof.StrictGeometricTailGraphs](../Unfoldings/Roof/StrictGeometricTailGraphs.lean) | Actual geometric cut tails and enclosing sector walls progress in both coordinates |

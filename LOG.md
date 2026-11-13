@@ -2,6 +2,19 @@
 
 ## Session Log
 
+### 2026-11-12 — arbitrary-rim geometric waterfall networks
+
+- Derived forward uniqueness, endpoint incidence, radial order, and exact monotone
+  height graphs for the complete original-tree and radial-tail network.
+- Assigned all components and their leaves to fixed sectors, retaining both
+  position and direction bounds. Constructed finite waterfall subdivisions from
+  the actual leaves and proved persistence and local radial-minimum properties.
+- Verification: cache retrieval followed by full `lake build` passed (5,037 jobs).
+  The audit checked 11,166 unfolding and 7,243 pinned topology declarations using
+  standard Lean axioms; all 70 abstract independence checks passed.
+- Physical bank traces and global separation remain; the arbitrary-rim acute-roof
+  theorem is not yet complete.
+
 ### 2026-11-12 — constructed auxiliary radial forests for arbitrary rims
 
 - Selected exterior curvature seeds before refinement, continued them radially
