@@ -2,6 +2,25 @@
 
 ## Session Log
 
+### 2026-11-12 — constructed auxiliary radial forests for arbitrary rims
+
+- Selected exterior curvature seeds before refinement, continued them radially
+  to the outer rim, and merged nested tails. Original trees remain separate;
+  every complete component has one acute direction wedge.
+- Meshed all original edges and radial segments as actual whole physical seams.
+  Refinement preserves supporting planes and creates no new positive curvature
+  away from preceding corners. Inside the original footprint, curvature remains
+  supported only on original vertices, including along the unrestricted rim.
+- Constructed outward boundary-rooted auxiliary forests, intrinsic cut disks,
+  and locally isometric developments. Their curvature-carrying completed paths
+  inherit acute wedges and uniform five-sector frame control. The additional
+  cuts retain all seam classes needed by the original cut roof.
+- Verification: cache retrieval and full `lake build` passed (5,009 jobs).
+  The audit checked 11,047 unfolding and 7,243 pinned topology declarations with
+  standard Lean axioms; all 70 abstract independence checks passed.
+- Developed bank separation and global injectivity remain; the arbitrary-rim
+  acute-roof theorem is not yet complete.
+
 ### 2026-11-12 — exact original-face cut metric correspondence
 
 - Reassembled each whole original roof face from the actual physical completion

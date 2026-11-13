@@ -1801,3 +1801,40 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Roof.ProjectedPointCopies](../Unfoldings/Roof/ProjectedPointCopies.lean) | Compare original point copies across retained whole edges |
 | [Unfoldings.Roof.ProjectedSeamUnique](../Unfoldings/Roof/ProjectedSeamUnique.lean) | Prove uniqueness of an original seam at a nonvertex point |
 | [Unfoldings.Roof.SpatialEnvelopeRetainedClasses](../Unfoldings/Roof/SpatialEnvelopeRetainedClasses.lean) | Preserve physical auxiliary seam classes away from geometric cuts |
+| [Unfoldings.Geometry.SpatialEnvelopeAlignment](../Unfoldings/Geometry/SpatialEnvelopeAlignment.lean) | Prescribed line refinements preserve the actual spatial supports and parent triangles |
+| [Unfoldings.Geometry.SpatialEnvelopeChordSlopes](../Unfoldings/Geometry/SpatialEnvelopeChordSlopes.lean) | An unchanged open chord forces all active supporting normal slopes to be collinear |
+| [Unfoldings.Geometry.SpatialPlaneSlopes](../Unfoldings/Geometry/SpatialPlaneSlopes.lean) | Gnomonic slopes and exact height differences of rigid spatial support planes |
+| [Unfoldings.Roof.CompletionCutRestriction](../Unfoldings/Roof/CompletionCutRestriction.lean) | Exterior radial cuts preserve exactly the retained original seam classes |
+| [Unfoldings.Roof.CompletionExtendedMesh](../Unfoldings/Roof/CompletionExtendedMesh.lean) | The constructed original and skirt cut set is an actual union of removed physical seams |
+| [Unfoldings.Roof.CompletionOriginalCurvature](../Unfoldings/Roof/CompletionOriginalCurvature.lean) | Completion curvature inside the original roof is supported only on original vertices |
+| [Unfoldings.Roof.CompletionOriginalEdgeCover](../Unfoldings/Roof/CompletionOriginalEdgeCover.lean) | Original whole edges are exact unions of physical completion edges |
+| [Unfoldings.Roof.CompletionOriginalForestRetention](../Unfoldings/Roof/CompletionOriginalForestRetention.lean) | Auxiliary radial forests keep all fine seams needed by the original cut roof |
+| [Unfoldings.Roof.CompletionOutwardForest](../Unfoldings/Roof/CompletionOutwardForest.lean) | Construct an actual outward auxiliary forest from the original forest and radial tails |
+| [Unfoldings.Roof.CompletionPathWedges](../Unfoldings/Roof/CompletionPathWedges.lean) | Curvature-carrying auxiliary paths inherit the acute wedges of the constructed network |
+| [Unfoldings.Roof.CompletionPrescribedSegments](../Unfoldings/Roof/CompletionPrescribedSegments.lean) | Mesh prescribed closed segments while retaining all original roof edge constraints |
+| [Unfoldings.Roof.CompletionRadialCurvature](../Unfoldings/Roof/CompletionRadialCurvature.lean) | Constructed original and radial cuts cover every positive-curvature auxiliary vertex |
+| [Unfoldings.Roof.CompletionRadialMesh](../Unfoldings/Roof/CompletionRadialMesh.lean) | Construct the actual whole-edge mesh of the previously chosen exterior radial components |
+| [Unfoldings.Roof.CompletionRefinement](../Unfoldings/Roof/CompletionRefinement.lean) | Refine an existing physical roof completion without changing its height function or domain |
+| [Unfoldings.Roof.CompletionRefinementCurvature](../Unfoldings/Roof/CompletionRefinementCurvature.lean) | Physical line refinement creates no positive curvature away from preceding mesh corners |
+| [Unfoldings.Roof.CompletionSectorQuadrants](../Unfoldings/Roof/CompletionSectorQuadrants.lean) | One mesh-independent tilt budget controls actual directions throughout the completed roof |
+| [Unfoldings.Roof.CompletionSkirtSeeds](../Unfoldings/Roof/CompletionSkirtSeeds.lean) | Actual exterior corners are selected before the radial continuation mesh is constructed |
+| [Unfoldings.Roof.ExtendedComponentWedges](../Unfoldings/Roof/ExtendedComponentWedges.lean) | Each complete extended geometric cut component has one acute direction wedge |
+| [Unfoldings.Roof.ExtendedCutCarrier](../Unfoldings/Roof/ExtendedCutCarrier.lean) | The explicit geometric parent forest represents the entire original-and-skirt cut set |
+| [Unfoldings.Roof.ExtendedCutEmbedding](../Unfoldings/Roof/ExtendedCutEmbedding.lean) | The finite geometric cut forest has distinct actual projected vertex positions |
+| [Unfoldings.Roof.ExtendedCutGrowth](../Unfoldings/Roof/ExtendedCutGrowth.lean) | Local outward progress on the constructed original cuts and radial skirt continuations |
+| [Unfoldings.Roof.ExtendedCutLabels](../Unfoldings/Roof/ExtendedCutLabels.lean) | Consistent radial-component labels for every actual original cut and skirt continuation |
+| [Unfoldings.Roof.ExtendedCutParents](../Unfoldings/Roof/ExtendedCutParents.lean) | The complete geometric original-cut and skirt network is an explicit finite parent forest |
+| [Unfoldings.Roof.ExtendedGeometricCuts](../Unfoldings/Roof/ExtendedGeometricCuts.lean) | Actual original whole-edge cuts together with their exterior radial continuations |
+| [Unfoldings.Roof.OriginalCutCarrier](../Unfoldings/Roof/OriginalCutCarrier.lean) | The selected original forest segments are exactly the actual closed original seam cut set |
+| [Unfoldings.Roof.OriginalCutLabels](../Unfoldings/Roof/OriginalCutLabels.lean) | Actual original cut segments have consistent tree labels at every geometric contact |
+| [Unfoldings.Roof.OriginalFaceHeight](../Unfoldings/Roof/OriginalFaceHeight.lean) | Original whole-face height identities, including arbitrary rim points |
+| [Unfoldings.Roof.ParentRadialGrowth](../Unfoldings/Roof/ParentRadialGrowth.lean) | Every selected parent edge strictly increases source distance along its entire length |
+| [Unfoldings.Roof.ParentSegments](../Unfoldings/Roof/ParentSegments.lean) | Actual projected parent segments are the original selected seam edges |
+| [Unfoldings.Roof.ProjectedSeamEndpoints](../Unfoldings/Roof/ProjectedSeamEndpoints.lean) | An actual projected vertex on a seam edge is one of that seam's intrinsic endpoints |
+| [Unfoldings.Roof.RimTails](../Unfoldings/Roof/RimTails.lean) | Original rim continuations from an interior planar source, without a rim-height assumption |
+| [Unfoldings.Roof.SkirtAttachments](../Unfoldings/Roof/SkirtAttachments.lean) | A skirt component attaches to an original rim vertex exactly at its seed |
+| [Unfoldings.Roof.SkirtRadialCuts](../Unfoldings/Roof/SkirtRadialCuts.lean) | Finite radial skirt continuations between arbitrary nested convex footprints |
+| [Unfoldings.Roof.SkirtRimComponents](../Unfoldings/Roof/SkirtRimComponents.lean) | Original rim roots attach to uniquely labeled radial skirt components |
+| [Unfoldings.Roof.SpatialEnvelopeCoordinates](../Unfoldings/Roof/SpatialEnvelopeCoordinates.lean) | Exact projected coordinates of the normalized physical affine-roof mesh |
+| [Unfoldings.Roof.SpatialEnvelopeCurvature](../Unfoldings/Roof/SpatialEnvelopeCurvature.lean) | Incident slopes of the actual normalized spatial roof are active support slopes |
+| [Unfoldings.Roof.SpatialEnvelopeInteriorSeams](../Unfoldings/Roof/SpatialEnvelopeInteriorSeams.lean) | Whole physical edges meeting the completion interior have actual seam partners |
