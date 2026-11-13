@@ -2,6 +2,28 @@
 
 ## Session Log
 
+### 2026-11-12 — independent cap abstract and arbitrary-rim roof foundations
+
+- Applied the `lean-abstract` skill. Added independent geometric triangles,
+  full-edge pairings, cap data, quotient surfaces, and simple polygon nets in
+  [Abstract](Unfoldings/Cap/Abstract.lean); its theorem is proved through
+  [AbstractBridge](Unfoldings/Cap/AbstractBridge.lean).
+- Added a permanent default-build audit checking every public abstract definition
+  and theorem statement for implementation dependencies, transitively through
+  all abstract declarations. All 70 declarations pass, in addition to the normal
+  proof-axiom audit.
+- Added arbitrary-rim `ConvexRoof` inputs, exact projection and disk topology,
+  supporting envelopes, and the geometric bridge from existing convex caps.
+  Proved directional gradient monotonicity and convex-gradient escape rays.
+- Constructed rigid planar coordinates for any genuine spatial triangle from
+  a positive Gram determinant. The concrete nonflat cap example, selected-component
+  disk theorem, and arbitrary-rim unfolding theorem remain in progress; see the
+  [roof checklist](docs/ROOFS.md).
+- Verification: cache retrieval followed by full `lake build` passed (4,899 jobs),
+  auditing 10,139 unfolding and 7,243 pinned topology declarations with only
+  standard Lean axioms; no new project warnings or unfinished proofs. Existing
+  theorem statements are unchanged.
+
 ### 2026-11-12 — complete the simple-polygon cap theorem
 
 - Proved `ConvexCap.orourke_cap_theorem` in

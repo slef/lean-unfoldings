@@ -930,3 +930,15 @@ public import Unfoldings.Cap.PrunedAllVertexContact
 public import Unfoldings.Cap.InjectiveEdgeUnfolding
 public import Unfoldings.Development.SimpleBoundary
 public import Unfoldings.Cap.SimpleEdgeUnfolding
+public import Unfoldings.Cap.AbstractBridge
+public import Unfoldings.Cap.Abstract
+public import Unfoldings.Geometry.SpatialTriangle
+public import Unfoldings.Roof.Basic
+public import Unfoldings.Roof.ProjectedFaces
+public import Unfoldings.Roof.AcuteProjection
+public import Unfoldings.Roof.SupportingEnvelope
+public import Unfoldings.Roof.Topology
+public import Unfoldings.Roof.VertexProgress
+public import Unfoldings.Roof.Boundary
+public import Unfoldings.Roof.GradientSelection
+public import Unfoldings.Roof.CapBridge

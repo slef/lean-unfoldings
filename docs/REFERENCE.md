@@ -1716,3 +1716,15 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Cap.InjectiveEdgeUnfolding](../Unfoldings/Cap/InjectiveEdgeUnfolding.lean) | Construct globally injective original-edge developments under a uniform acute-cap tilt bound |
 | [Unfoldings.Development.SimpleBoundary](../Unfoldings/Development/SimpleBoundary.lean) | Identify the exact footprint frontier of a developed disk as a finite polygonal Jordan curve |
 | [Unfoldings.Cap.SimpleEdgeUnfolding](../Unfoldings/Cap/SimpleEdgeUnfolding.lean) | Prove O'Rourke's cap theorem and expose the actual cut disk, embedding, and simple polygon frontier |
+| [Unfoldings.Cap.AbstractBridge](../Unfoldings/Cap/AbstractBridge.lean) | Translate independent geometric cap data and polygon statements to the checked implementation |
+| [Unfoldings.Cap.Abstract](../Unfoldings/Cap/Abstract.lean) | State the cap theorem using only independent definitions and Mathlib background notions |
+| [Unfoldings.Geometry.SpatialTriangle](../Unfoldings/Geometry/SpatialTriangle.lean) | Construct rigid planar coordinates for genuine spatial triangles from their positive Gram determinant |
+| [Unfoldings.Roof.Basic](../Unfoldings/Roof/Basic.lean) | Define supported convex triangular roofs with unrestricted boundary heights |
+| [Unfoldings.Roof.ProjectedFaces](../Unfoldings/Roof/ProjectedFaces.lean) | Construct exact projected face triangles for arbitrary-rim roofs |
+| [Unfoldings.Roof.AcuteProjection](../Unfoldings/Roof/AcuteProjection.lean) | Preserve acute angle margins under uniformly small roof tilt |
+| [Unfoldings.Roof.SupportingEnvelope](../Unfoldings/Roof/SupportingEnvelope.lean) | Identify a roof with the lower envelope of its actual supporting planes |
+| [Unfoldings.Roof.Topology](../Unfoldings/Roof/Topology.lean) | Derive the intrinsic disk topology of a convex-domain roof |
+| [Unfoldings.Roof.VertexProgress](../Unfoldings/Roof/VertexProgress.lean) | Find actual outgoing original edges at interior roof vertices |
+| [Unfoldings.Roof.Boundary](../Unfoldings/Roof/Boundary.lean) | Identify intrinsic roof boundary vertices with the projected domain frontier |
+| [Unfoldings.Roof.GradientSelection](../Unfoldings/Roof/GradientSelection.lean) | Prove gradient monotonicity and straight escape rays from all omitted faces |
+| [Unfoldings.Roof.CapBridge](../Unfoldings/Roof/CapBridge.lean) | View every existing convex cap as a roof without changing its faces or seams |

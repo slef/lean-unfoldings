@@ -101,6 +101,12 @@ all input meshes. The result constructs original-edge forest cuts, an intrinsic
 cut disk, and a globally injective development with a simple polygon boundary.
 See the [cap theorem guide](docs/CAP_THEOREM.md) for its output API and proof.
 
+For an independent statement, read [Cap/Abstract.lean](Unfoldings/Cap/Abstract.lean).
+Its definitions and theorem state the mathematical claim; Lean checks the proof
+through [AbstractBridge.lean](Unfoldings/Cap/AbstractBridge.lean). Import
+`Unfoldings.Cap.Abstract`; the usual `lake build` checks it and audits that its
+public definitions and statements use only the abstract suite and Mathlib.
+
 Remaining work includes:
 
 - Sources at genuine cone vertices, which need sector-valued source frames.
