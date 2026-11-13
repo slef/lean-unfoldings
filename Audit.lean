@@ -33,29 +33,32 @@ run_cmd do
   logInfo (m!"Audited {declarations} unfolding and {planarDeclarations} pinned " ++
     m!"planar-topology declarations; only standard Lean axioms occur.")
 
--- Public abstract statements and definitions must be independent of implementation
--- declarations. Background libraries cannot depend on this project, so checking
--- every abstract declaration follows all possible transitive project references.
+-- Check every abstract definition, including private helpers, and theorem types.
+-- Module origins catch implementation declarations even in global namespaces such
+-- as `Path`. Checking every helper makes independence transitive through aliases.
+-- Theorem proofs may use the bridge; their statements must remain independent.
 open Lean in
 run_cmd do
   let environment ← getEnv
-  let abstractNamespace := `Unfoldings.CapAbstract
-  let mut checked : Nat := 0
-  for i in [:environment.header.moduleNames.size] do
-    if environment.header.moduleNames[i]! == `Unfoldings.Cap.Abstract then
-      for info in environment.header.moduleData[i]!.constants do
-        if abstractNamespace.isPrefixOf info.name then
+  for (moduleName, label) in #[
+      (`Unfoldings.Cap.Abstract, "cap"), (`Unfoldings.Source.Abstract, "source")] do
+    let mut checked : Nat := 0
+    for i in [:environment.header.moduleNames.size] do
+      if environment.header.moduleNames[i]! == moduleName then
+        for info in environment.header.moduleData[i]!.constants do
           let mut dependencies := info.type.getUsedConstants
           unless info.isTheorem do
             if let some value := info.value? (allowOpaque := true) then
               dependencies := dependencies ++ value.getUsedConstants
           for dependency in dependencies do
-            let project := (`Unfoldings).isPrefixOf dependency ||
-              (`Schoenflies).isPrefixOf dependency
-            if project && !abstractNamespace.isPrefixOf dependency then
-              throwError "Abstract declaration {info.name} exposes implementation {dependency}"
+            if let some index := environment.getModuleIdxFor? dependency then
+              let origin := environment.header.moduleNames[index]!
+              let project := origin == `Unfoldings || origin.toString.startsWith "Unfoldings." ||
+                origin == `Schoenflies || origin.toString.startsWith "Schoenflies."
+              if project && origin != moduleName then
+                throwError "Abstract declaration {info.name} exposes implementation {dependency}"
           checked := checked + 1
-  if checked == 0 then
-    throwError "The independent cap abstract is missing from the default build."
-  logInfo (m!"Audited {checked} cap abstract declarations; " ++
-    m!"public definitions and statements are independent.")
+    if checked == 0 then
+      throwError "The independent {label} abstract is missing from the default build."
+    logInfo (m!"Audited {checked} {label} abstract declarations; " ++
+      m!"public definitions and statements are independent.")

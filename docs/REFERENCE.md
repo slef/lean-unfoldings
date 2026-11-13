@@ -28,6 +28,8 @@ source, including its module documentation and declarations.
 
 | Module | Purpose |
 | --- | --- |
+| [Unfoldings.Source.Abstract](../Unfoldings/Source/Abstract.lean) | State source unfolding using independent triangulation, distance, cut-locus, and polygonal net definitions |
+| [Unfoldings.Source.AbstractBridge](../Unfoldings/Source/AbstractBridge.lean) | Prove metric and shortest-path correspondences and transfer the constructed source net |
 | [Unfoldings.Source.ActualCut](../Unfoldings/Source/ActualCut.lean) | The actual cut complement, exact cut-locus boundary projection and constructed source-disk properties |
 | [Unfoldings.Source.AmbientCoordinates](../Unfoldings/Source/AmbientCoordinates.lean) | Extend retained coordinates for local arguments, with proved agreement on the cut complement |
 | [Unfoldings.Source.Bisectors](../Unfoldings/Source/Bisectors.lean) | Distinct shortest paths in a face interior determine distinct virtual-source images |
@@ -1516,6 +1518,10 @@ The audit follows transitive proof dependencies and permits only
 It rejects unfinished proofs and native-decision axioms. Imported modules of
 the pinned Jordan–Schönflies library are audited in full as well, with separate
 counts for unfolding and planar-topology declarations.
+The independent [source](../Unfoldings/Source/Abstract.lean) and
+[cap](../Unfoldings/Cap/Abstract.lean) abstracts are also checked: public
+definitions and theorem statements may reference only their own abstract suite
+and Mathlib, including through inferred instances and intermediate definitions.
 
 ### Cache options
 

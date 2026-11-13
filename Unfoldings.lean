@@ -1289,3 +1289,5 @@ public import Unfoldings.Roof.VertexContourExcursion
 public import Unfoldings.Roof.VertexExcursionFlatness
 public import Unfoldings.Roof.VertexExcursionRestoration
 public import Unfoldings.Roof.VertexExcursions
+public import Unfoldings.Source.AbstractBridge
+public import Unfoldings.Source.Abstract

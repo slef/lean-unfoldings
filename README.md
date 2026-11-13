@@ -58,11 +58,18 @@ already have an intrinsic regularity proof. Sources on creases and flat
 subdivision vertices are included. These noncomputable constructions expose
 data and theorems for use in further proofs.
 
+For an independent formal statement, read [Source/Abstract.lean](Unfoldings/Source/Abstract.lean).
+It introduces the geometric inputs and source-net conclusion without implementation types;
+Lean verifies the proof through [Source/AbstractBridge.lean](Unfoldings/Source/AbstractBridge.lean).
+Import `Unfoldings.Source.Abstract`; `lake build` checks both the proof and the
+independence of its public definitions and statements.
+
 ## Find your starting point
 
 | Goal | Start here |
 | --- | --- |
 | Read the main result and its output API | [Source/Unfolding.lean](Unfoldings/Source/Unfolding.lean) |
+| Read an independent statement of source unfolding | [Source/Abstract.lean](Unfoldings/Source/Abstract.lean) |
 | Define a triangulated surface and its cuts | [Complex.lean](Unfoldings/Complex.lean) |
 | Supply an embedded convex-boundary model | [Complex/Folding.lean](Unfoldings/Complex/Folding.lean), [Polyhedron/Convex.lean](Unfoldings/Polyhedron/Convex.lean) |
 | Work with overlapping or nonoverlapping layouts | [Development.lean](Unfoldings/Development.lean), [PolygonalLayout.lean](Unfoldings/PolygonalLayout.lean) |

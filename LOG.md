@@ -2,6 +2,28 @@
 
 ## Session Log
 
+### 2026-11-13 — independent source-unfolding abstract
+
+- Added `Source/Abstract.lean`: independent finite triangle gluings, convex
+  polyhedral boundaries, intrinsic distance, normalized shortest paths, cut loci,
+  and finite polygonal source nets. The theorem covers every nonextreme source,
+  including crease points and flat subdivision vertices.
+- The conclusion supplies a planar closed disk, nonoverlapping polygon pieces
+  with rigid original-face folding maps, a locally isometric interior identified
+  with the cut-locus complement, exact boundary projection, preserved source
+  distances, radial geodesics, and a unique radial lift of every shortest path.
+- `Source/AbstractBridge.lean` proves the intrinsic metric correspondence and
+  transports paths and cut loci before transferring the actual constructed net.
+  The abstract's definitions and theorem statements use only its own suite and
+  accepted background libraries; implementation references occur only in proofs.
+- Linked both files from the README and reference, and included them in the root
+  build. Strengthened abstract independence checking to inspect module origins
+  and private helpers, including implementation declarations in global namespaces.
+- Verification: cache retrieval completed before full `lake build`, which passed
+  all 5,248 jobs. The audit checked 12,001 unfolding and 7,243 pinned topology
+  declarations using only standard Lean axioms. All 70 cap and 92 source abstract
+  independence checks passed; the new modules produced no warnings.
+
 ### 2026-11-12 — arbitrary-rim acute-roof theorem completed
 
 - Proved `ConvexRoof.arbitrary_rim_acute_roof_theorem`: a positive acute margin
