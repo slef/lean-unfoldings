@@ -2,6 +2,23 @@
 
 ## Session Log
 
+### 2026-11-12 — arbitrary-rim closed contact comparisons and coherent trace domains
+
+- Adapted the geometric bank, terminal-run, and circle-contact comparison proofs
+  to arbitrary nested convex roof domains. Equality cases retain the underlying
+  physical point, including branch, sector-boundary, and disappearing-strip cases.
+- Proved that geometric leaves survive physical meshing and have coherent placed
+  values. The actual planar source is also coherent, whether it is an original
+  vertex or lies elsewhere. Constructed coherent waterfall trace domains from
+  these facts, without supplying an unfolding or a bank-matching certificate.
+- Added a reusable positive-height bank-matching companion: width is needed only
+  at positive sweep heights, so the source need not be an auxiliary mesh vertex.
+- Verification: cache retrieval followed by full `lake build` passed (5,162 jobs).
+  The audit checked 11,388 unfolding and 7,243 pinned topology declarations using
+  standard Lean axioms; all 70 abstract independence checks passed.
+- Uniform physical trace assembly, original-face separation transfer, and final
+  cut pruning/injectivity remain. The arbitrary-rim theorem is not complete.
+
 ### 2026-11-12 — arbitrary-rim geometric waterfall networks
 
 - Derived forward uniqueness, endpoint incidence, radial order, and exact monotone
