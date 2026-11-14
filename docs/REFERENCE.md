@@ -2089,3 +2089,10 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Geometry.SpatialEnvelopeChordSlopes](../Unfoldings/Geometry/SpatialEnvelopeChordSlopes.lean) | An unchanged open chord forces all active supporting normal slopes to be collinear |
 | [Unfoldings.Geometry.SpatialPlaneSlopes](../Unfoldings/Geometry/SpatialPlaneSlopes.lean) | Gnomonic slopes and exact height differences of rigid spatial support planes |
 | [Unfoldings.Cap.MatchedBankTracePositiveHeight](../Unfoldings/Cap/MatchedBankTracePositiveHeight.lean) | Matching parent banks requires regular width only at strictly positive heights |
+| [Unfoldings.Geometry.SphericalConvex](../Unfoldings/Geometry/SphericalConvex.lean) | Convert closed spherical convex normal regions to closed convex gnomonic selections |
+| [Unfoldings.Roof.SphericalSelection](../Unfoldings/Roof/SphericalSelection.lean) | Prove intrinsic disks and Jordan frontiers for spherical normal selections on roofs |
+| [Unfoldings.Polyhedron.SupportingNormals](../Unfoldings/Polyhedron/SupportingNormals.lean) | Construct actual outward unit supporting normals for every original face |
+| [Unfoldings.Polyhedron.FaceHalfspaces](../Unfoldings/Polyhedron/FaceHalfspaces.lean) | Identify the convex body exactly as the intersection of its original face halfspaces |
+| [Unfoldings.Topology.PathFrontier](../Unfoldings/Topology/PathFrontier.lean) | Cross the frontier of a closed set strictly between interior and exterior path endpoints |
+| [Unfoldings.Polyhedron.UpperPlanes](../Unfoldings/Polyhedron/UpperPlanes.lean) | Construct genuine projected coordinates and original upward supporting graph planes |
+| [Unfoldings.Polyhedron.UpperGraph](../Unfoldings/Polyhedron/UpperGraph.lean) | Construct the exact upper boundary graph over the full convex body projection |

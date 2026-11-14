@@ -826,6 +826,12 @@ The [roof checklist](docs/ROOFS.md) records the construction.
 - [x] Uniform original-face separation and all-radius physical contact control.
 - [x] Flat-cut pruning, global injectivity, and an exact simple polygon frontier.
 
+## Normal selections and common-potential forests
+
+The [construction checklist](docs/NORMAL_SELECTIONS.md) tracks the next bridge to
+Fewest Nets: whole-polyhedron normal selections, exact clipped extensions, and
+routing that controls every merged history.
+
 ## Later targets and Fewest Nets
 
 - [ ] Star unfolding after the source-unfolding theorem.

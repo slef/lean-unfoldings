@@ -2,6 +2,25 @@
 
 ## Session Log
 
+### 2026-11-14 — supporting normals and exact upper graphs
+
+- Constructed actual unit outward normals for every original triangle, including
+  coplanar subdivisions. Proved that their halfspaces recover the whole convex body.
+- Constructed the upper graph from the original upward face planes over the full
+  convex body projection. The graph lies on the actual boundary and attains the
+  highest point of each vertical fiber; the projected domain is compact, convex,
+  and has nonempty interior.
+- Proved gnomonic convexity and closedness of spherical normal selections, and
+  transferred the intrinsic component-disk theorem to spherical selections on roofs.
+  Added a generic inner-time path/frontier crossing lemma for the halfspace proof.
+- Added `docs/NORMAL_SELECTIONS.md` with the complete remaining construction
+  checklist. Whole-polyhedron component disks still require the original-triangle
+  upper roof and arbitrary hemisphere frames. Exact clipped extensions and common-
+  potential compatible routing remain to be constructed.
+- Verification: cache retrieval completed before full `lake build` (5,255 jobs).
+  The audit checked 12,072 unfolding and 7,243 pinned topology declarations using
+  standard Lean axioms; 70 cap and 64 source independence checks passed.
+
 ### 2026-11-13 — explicit general net validity in the source abstract
 
 - Defined `IsNetOf surface region fold` independently of sources and convexity.

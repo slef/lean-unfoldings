@@ -1291,3 +1291,10 @@ public import Unfoldings.Roof.VertexExcursionRestoration
 public import Unfoldings.Roof.VertexExcursions
 public import Unfoldings.Source.AbstractBridge
 public import Unfoldings.Source.Abstract
+public import Unfoldings.Geometry.SphericalConvex
+public import Unfoldings.Roof.SphericalSelection
+public import Unfoldings.Polyhedron.SupportingNormals
+public import Unfoldings.Polyhedron.FaceHalfspaces
+public import Unfoldings.Topology.PathFrontier
+public import Unfoldings.Polyhedron.UpperPlanes
+public import Unfoldings.Polyhedron.UpperGraph
