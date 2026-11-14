@@ -2269,3 +2269,6 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 
 | [`RegionalCornerPartition`](../Unfoldings/Complex/RegionalCornerPartition.lean) | Exact complementary and disjoint face-star partitions |
 | [`ComplementaryBankTurns`](../Unfoldings/Cap/ComplementaryBankTurns.lean) | Opposite bank turn errors differ by original path curvature |
+
+| [`Complex/BoundaryRolling`](../Unfoldings/Complex/BoundaryRolling.lean) | Canonical rolled bank chain from actual intrinsic lengths and real fan turns |
+| [`Development/BoundaryRolling`](../Unfoldings/Development/BoundaryRolling.lean) | Exact agreement with developed bank edges and vertices; closure from development |

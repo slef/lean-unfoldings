@@ -2,6 +2,16 @@
 
 ## Session Log
 
+### 2026-11-14 — canonical intrinsic bank rolling
+
+- Constructed a canonical planar bank chain from actual original edge lengths
+  and unreduced exterior fan turns. It permits overlap and need not close for
+  a curved enclosed patch.
+- Proved exact agreement, up to one rigid frame, with all actual developed bank
+  vectors and vertex positions. A genuine global development forces closure.
+- Verification: cache retrieval and full `lake build` passed 5,428 jobs, including
+  axiom and abstract audits. The final compatible-cut graft is still open.
+
 ### 2026-11-14 — ordered Jordan boundary turns and complementary banks
 
 - Identified the actual intrinsic bank boundary with the geometric Jordan curve

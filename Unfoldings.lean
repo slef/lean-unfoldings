@@ -1481,3 +1481,6 @@ public import Unfoldings.Cap.JordanBankTurnBounds
 
 public import Unfoldings.Complex.RegionalCornerPartition
 public import Unfoldings.Cap.ComplementaryBankTurns
+
+public import Unfoldings.Complex.BoundaryRolling
+public import Unfoldings.Development.BoundaryRolling

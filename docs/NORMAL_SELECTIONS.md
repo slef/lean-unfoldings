@@ -283,3 +283,11 @@ bank portion's error to enclosed curvature and aggregate closing-link error.
 [ComplementaryBankTurns](../Unfoldings/Cap/ComplementaryBankTurns.lean) controls
 switching sides by the actual original path curvature. The closing-link error
 still needs its geometric section and endpoint estimates.
+
+## Canonical intrinsic bank rolling
+
+[BoundaryRolling](../Unfoldings/Complex/BoundaryRolling.lean) constructs an actual
+planar chain using intrinsic bank lengths and real fan turns, including for
+curved Jordan patches. Its [development bridge](../Unfoldings/Development/BoundaryRolling.lean)
+proves exact agreement with developed edges and positions when a global
+facewise development exists; in that case the full contour closes.
