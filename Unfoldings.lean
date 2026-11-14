@@ -1384,3 +1384,15 @@ public import Unfoldings.Roof.SeamEmbedding
 public import Unfoldings.Roof.TerminalTruncation
 public import Unfoldings.Roof.TruncatedCutEmbedding
 public import Unfoldings.Topology.ParentLeaves
+
+public import Unfoldings.Geometry.LocalPotentialGrowth
+public import Unfoldings.Geometry.PrescribedSegments
+public import Unfoldings.Roof.CompatibleCutMesh
+public import Unfoldings.Roof.CompatibleMeshForest
+public import Unfoldings.Roof.PotentialCutDisk
+public import Unfoldings.Roof.PotentialCutForest
+public import Unfoldings.Roof.SpatialEnvelopeProjection
+public import Unfoldings.Roof.TruncatedCutGrowth
+public import Unfoldings.Roof.TruncatedCutProgress
+public import Unfoldings.Roof.TruncatedCutSegments
+public import Unfoldings.Metric.CoerciveGluing

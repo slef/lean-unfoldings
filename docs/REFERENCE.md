@@ -2173,3 +2173,14 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Roof.TerminalTruncation](../Unfoldings/Roof/TerminalTruncation.lean) | Truncate terminal rays on one actual envelope level, preserving original parents |
 | [Unfoldings.Roof.TruncatedCutEmbedding](../Unfoldings/Roof/TruncatedCutEmbedding.lean) | Construct a bounded embedded forest rooted exactly on its level boundary |
 | [Unfoldings.Topology.ParentLeaves](../Unfoldings/Topology/ParentLeaves.lean) | Extend increasing forests by one separately named boundary leaf per old root |
+| [Unfoldings.Geometry.LocalPotentialGrowth](../Unfoldings/Geometry/LocalPotentialGrowth.lean) | Derive incident increasing segments from local growth of a convex potential |
+| [Unfoldings.Geometry.PrescribedSegments](../Unfoldings/Geometry/PrescribedSegments.lean) | Prove exact whole-edge coverage of arbitrary prescribed physical segments |
+| [Unfoldings.Metric.CoerciveGluing](../Unfoldings/Metric/CoerciveGluing.lean) | Prove completeness of finite noncompact gluings using compatible coercive cell heights |
+| [Unfoldings.Roof.CompatibleCutMesh](../Unfoldings/Roof/CompatibleCutMesh.lean) | Construct conforming physical meshes respecting all original triangle and cut lines |
+| [Unfoldings.Roof.CompatibleMeshForest](../Unfoldings/Roof/CompatibleMeshForest.lean) | Construct supported fine-edge forests and actual flat intrinsic cut disks |
+| [Unfoldings.Roof.PotentialCutDisk](../Unfoldings/Roof/PotentialCutDisk.lean) | Derive genuine cut disks and local isometric developments from increasing seam parents |
+| [Unfoldings.Roof.PotentialCutForest](../Unfoldings/Roof/PotentialCutForest.lean) | Choose actual increasing seams using local convex-potential growth |
+| [Unfoldings.Roof.SpatialEnvelopeProjection](../Unfoldings/Roof/SpatialEnvelopeProjection.lean) | Identify actual physical mesh roof projections and footprints |
+| [Unfoldings.Roof.TruncatedCutGrowth](../Unfoldings/Roof/TruncatedCutGrowth.lean) | Prove local common-potential growth through every bounded cut merger |
+| [Unfoldings.Roof.TruncatedCutProgress](../Unfoldings/Roof/TruncatedCutProgress.lean) | Prove strict common-potential increase on arbitrary truncated cut subsegments |
+| [Unfoldings.Roof.TruncatedCutSegments](../Unfoldings/Roof/TruncatedCutSegments.lean) | Reindex bounded cuts and construct their actual supporting and endpoint constraints |

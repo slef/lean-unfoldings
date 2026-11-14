@@ -838,9 +838,14 @@ The [construction guide](docs/NORMAL_SELECTIONS.md) records the completed bridge
 - [x] Truncate at a common envelope level, obtaining an embedded straight forest
   rooted exactly on the section frontier and still covering actual curvature.
 
-Next: realize these bounded forests on conforming physical meshes and construct
-intrinsic cut disks, then prove gap-grafting nonoverlap. Normal-cover selection
-and Euler counting follow.
+- [x] Construct conforming meshes respecting all cut segments and original triangles.
+- [x] Select supported increasing fine-edge forests and derive flat intrinsic cut disks
+  with local isometric developments.
+- [x] Prove finite noncompact gluing completeness from compatible coercive cell heights.
+
+Next: transfer the original routing to the fine cuts, construct actual polygonal
+gaps and their end heights, and prove gap-grafting nonoverlap. Normal-cover
+selection and Euler counting follow.
 
 ## Later targets and Fewest Nets
 

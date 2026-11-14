@@ -130,8 +130,9 @@ and compatible common-potential forests are also constructed. The forest bounds
 cover all incoming histories, partial edges, and terminal rays. See the
 [normal-selection guide](docs/NORMAL_SELECTIONS.md) for the main APIs and hypotheses.
 The cuts now form embedded straight forests and can be truncated at a common
-envelope level with exactly one boundary root per tree. Realizing those forests
-as intrinsic cut disks and proving gap-grafting nonoverlap are the next steps.
+envelope level with exactly one boundary root per tree. Supported cuts on a
+constructed conforming mesh give flat intrinsic cut disks and local isometric
+developments. Gap-grafting nonoverlap remains the next major theorem.
 
 Remaining work includes:
 

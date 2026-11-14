@@ -2,8 +2,9 @@
 
 The normal-selection, clipped-extension, and compatible-forest constructions are
 implemented, including bounded embedded cut forests. They prepare the geometric
-input for the Fewest Nets development argument; its intrinsic cut disks,
-gap-grafting nonoverlap, and counting theorems remain to be proved.
+input for the Fewest Nets development argument. Supported fine-edge forests now
+give flat intrinsic cut disks and local isometric developments. Gap-grafting
+nonoverlap and counting remain to be proved.
 
 ## Start here
 
@@ -100,11 +101,20 @@ counting for Fewest Nets follow that development theorem.
   frontier; all open edges lie in the interior.
 - [x] Preserve original selected interior parents exactly and retain coverage of
   every actual positive-curvature vertex on physical extension meshes.
-- [ ] Realize the bounded embedded forest as whole-edge cuts of a conforming
-  physical mesh, proving the refined cut graph is a boundary-rooted forest.
-- [ ] Apply the disk-cut and flat-development theorems to that actual mesh.
+- [x] Construct a conforming physical mesh respecting every original triangle
+  line and cut segment, including endpoint constraints; cover each segment
+  exactly by whole fine edges and locate actual removed seams.
+- [x] Use local common-potential growth to select supported increasing fine-edge
+  parents. Derive their boundary-rooted cut forest and actual intrinsic cut disk.
+- [x] Cover all positive curvature on that mesh, prove every retained interior
+  copy is flat, and construct a rigid locally isometric development.
+- [ ] Prove exact retention of the full prescribed cut network and transfer the
+  original routing's whole-path estimates to the selected fine-edge paths.
 - [ ] Construct complete one-ended forest cuts and intrinsic polygonal gaps.
-- [ ] Prove metric completeness and local isometry after gap insertion, and use
+- [x] Prove completeness of finite noncompact gluings from compatible uniformly
+  Lipschitz cell heights whose sublevels are compact.
+- [ ] Construct those heights on the actual gap end cells.
+- [ ] Prove local isometry after gap insertion, and use
   the flat-plane covering argument to obtain nonoverlap.
 
 Start with [`truncatedCutEmbedding`](../Unfoldings/Roof/TruncatedCutEmbedding.lean).
@@ -118,3 +128,12 @@ The remaining noncompact step needs cells with controlled unbounded ends,
 completed cut metrics with distinct banks, and actual metric gap insertion.
 The existing finite triangle gluing and flat-disk development theorems provide
 parts of that argument, but do not by themselves prove it.
+
+The mesh result is
+[`exists_compatibleMesh_development`](../Unfoldings/Roof/CompatibleMeshForest.lean).
+It constructs supported fine-edge cuts, their intrinsic disk, and a local isometric
+development; it does not assert nonoverlap. The supporting finite physical model
+and routing are constructed by the earlier APIs. The generic metric lemma
+[`completeSpace_of_compact_sublevels`](../Unfoldings/Metric/CoerciveGluing.lean)
+also applies to unbounded cells; its cellwise height hypotheses still need to be
+verified for the eventual grafted surface.
