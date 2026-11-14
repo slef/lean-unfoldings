@@ -828,9 +828,15 @@ The [roof checklist](docs/ROOFS.md) records the construction.
 
 ## Normal selections and common-potential forests
 
-The [construction checklist](docs/NORMAL_SELECTIONS.md) tracks the next bridge to
-Fewest Nets: whole-polyhedron normal selections, exact clipped extensions, and
-routing that controls every merged history.
+The [construction guide](docs/NORMAL_SELECTIONS.md) records the completed bridge:
+
+- [x] Whole-polyhedron spherical normal selections have intrinsic disk components.
+- [x] Exact finite clipped extensions preserve selected faces and locate actual curvature.
+- [x] Construct compatible original-edge and exterior forests, controlling all merged histories.
+- [x] Prove whole-path length and positive radial margins, including terminal rays.
+
+Next: intrinsic cuts and gap-grafting nonoverlap for these forests, followed by
+normal-cover selection and Euler counting.
 
 ## Later targets and Fewest Nets
 

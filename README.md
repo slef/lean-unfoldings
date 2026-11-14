@@ -84,6 +84,8 @@ independence of its public definitions and statements.
 | Refine triangles without changing intrinsic geometry | [Complex/SubdivisionMetric.lean](Unfoldings/Complex/SubdivisionMetric.lean), [Examples/Subdivision.lean](Unfoldings/Examples/Subdivision.lean) |
 | Unfold a sufficiently flat acute convex cap to a simple polygon | [Cap/SimpleEdgeUnfolding.lean](Unfoldings/Cap/SimpleEdgeUnfolding.lean) |
 | Unfold an acute convex roof with arbitrary boundary heights | [Roof/SimpleEdgeUnfolding.lean](Unfoldings/Roof/SimpleEdgeUnfolding.lean) |
+| Select whole-face disks by convex spherical normal regions | [Polyhedron/NormalSelection.lean](Unfoldings/Polyhedron/NormalSelection.lean) |
+| Construct exact clipped extensions and compatible forests | [Normal-selection guide](docs/NORMAL_SELECTIONS.md) |
 | Inspect a concrete nonflat convex cap | [Examples/Pyramid.lean](Unfoldings/Examples/Pyramid.lean) |
 | Try small examples | [Examples/Metric.lean](Unfoldings/Examples/Metric.lean), [Examples/Hinge.lean](Unfoldings/Examples/Hinge.lean) |
 
@@ -122,6 +124,12 @@ The [arbitrary-rim acute-roof theorem](Unfoldings/Roof/SimpleEdgeUnfolding.lean)
 extends this conclusion to roofs over convex polygons with unrestricted boundary
 heights. Its positive tilt threshold also depends only on the acute margin.
 See the [roof guide](docs/ROOFS.md) for inputs, outputs, and the proof structure.
+
+Whole-polyhedron normal-selection disks, exact clipped polyhedral extensions,
+and compatible common-potential forests are also constructed. The forest bounds
+cover all incoming histories, partial edges, and terminal rays. See the
+[normal-selection guide](docs/NORMAL_SELECTIONS.md) for the main APIs and hypotheses.
+The gap-grafting nonoverlap theorem is the next Fewest Nets target.
 
 Remaining work includes:
 

@@ -2124,3 +2124,41 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Roof.DualFace](../Unfoldings/Roof/DualFace.lean) | Recover exact original graph heights and domain from finite primal contact hulls |
 | [Unfoldings.Roof.Fenchel](../Unfoldings/Roof/Fenchel.lean) | Prove Fenchel equality for original roof normal cells, including rim cones |
 | [Unfoldings.Topology.ConvexFrontier](../Unfoldings/Topology/ConvexFrontier.lean) | Keep convex sets inside a region when they avoid its frontier |
+| [Unfoldings.Convex.AnnularProgress](../Unfoldings/Convex/AnnularProgress.lean) | Convert an inner slope disk and angular edge choices into uniform potential gains |
+| [Unfoldings.Convex.CommonPotential](../Unfoldings/Convex/CommonPotential.lean) | Bound every incoming history using any active slope at a merger |
+| [Unfoldings.Convex.ExteriorRayCompatibility](../Unfoldings/Convex/ExteriorRayCompatibility.lean) | Prove a fixed boundary direction assignment prevents open exterior ray crossings |
+| [Unfoldings.Convex.PotentialPaths](../Unfoldings/Convex/PotentialPaths.lean) | Telescope changing active slopes on actual polygonal paths |
+| [Unfoldings.Geometry.BoundarySupportDirection](../Unfoldings/Geometry/BoundarySupportDirection.lean) | Construct deterministic unit outward supporting directions at boundary slopes |
+| [Unfoldings.Geometry.PolygonalLength](../Unfoldings/Geometry/PolygonalLength.lean) | Prove exact edge sums and projected lengths of finite polygonal chains |
+| [Unfoldings.Geometry.PositiveSides](../Unfoldings/Geometry/PositiveSides.lean) | Prove distinct positive unit-normal support lines intersect at most once |
+| [Unfoldings.Roof.CommonPotentialForest](../Unfoldings/Roof/CommonPotentialForest.lean) | Construct original-edge forests and prove exactly one boundary root per restricted tree |
+| [Unfoldings.Roof.CommonPotentialHistories](../Unfoldings/Roof/CommonPotentialHistories.lean) | Bound every actual incoming parent history in the constructed forest |
+| [Unfoldings.Roof.CommonPotentialStep](../Unfoldings/Roof/CommonPotentialStep.lean) | Choose quantitatively advancing original edges inside nonconvex selected patches |
+| [Unfoldings.Roof.PrimalNormalCone](../Unfoldings/Roof/PrimalNormalCone.lean) | Identify interior primal normal cells and prove rim cells unbounded |
+| [Unfoldings.Roof.SelectedStrictRegion](../Unfoldings/Roof/SelectedStrictRegion.lean) | Identify the extension strict region exactly with selected component interiors |
+| [Unfoldings.Convex.ExteriorPlan](../Unfoldings/Convex/ExteriorPlan.lean) | Construct canonical safe exterior rays at prescribed exterior roots |
+| [Unfoldings.Convex.ExteriorContacts](../Unfoldings/Convex/ExteriorContacts.lean) | Construct first-contact forests and straight contact-free terminal rays |
+| [Unfoldings.Convex.ExteriorPieces](../Unfoldings/Convex/ExteriorPieces.lean) | Prove all first-contact open ray pieces are geometrically disjoint |
+| [Unfoldings.Convex.ActiveCell](../Unfoldings/Convex/ActiveCell.lean) | Prove convexity of finite dual costs and actual active normal cells |
+| [Unfoldings.Convex.CoerciveEnvelope](../Unfoldings/Convex/CoerciveEnvelope.lean) | Prove compact sublevel sets using an inner slope disk |
+| [Unfoldings.Convex.ExteriorProgress](../Unfoldings/Convex/ExteriorProgress.lean) | Prove uniform boundary-potential progress along safe exterior contacts |
+| [Unfoldings.Convex.FiniteSlopeModel](../Unfoldings/Convex/FiniteSlopeModel.lean) | Construct actual rigid spatial support planes for finite conjugate models |
+| [Unfoldings.Convex.PhysicalModelMesh](../Unfoldings/Convex/PhysicalModelMesh.lean) | Construct conforming physical meshes respecting prescribed finite lines |
+| [Unfoldings.Convex.PhysicalNormalCells](../Unfoldings/Convex/PhysicalNormalCells.lean) | Transfer positive intrinsic curvature to full active normal cells |
+| [Unfoldings.Geometry.GnomonicCollinearNull](../Unfoldings/Geometry/GnomonicCollinearNull.lean) | Prove collinear gnomonic images have zero solid angle at every tilt |
+| [Unfoldings.Geometry.GraphNormalSlope](../Unfoldings/Geometry/GraphNormalSlope.lean) | Recover exact slope parameters from constructed graph-plane normals |
+| [Unfoldings.Roof.ClippedPhysicalCurvature](../Unfoldings/Roof/ClippedPhysicalCurvature.lean) | Construct clipped physical models and locate every positive intrinsic curvature vertex |
+| [Unfoldings.Roof.CompatiblePotentialHistories](../Unfoldings/Roof/CompatiblePotentialHistories.lean) | Control all incoming histories across attached interior and exterior forests |
+| [Unfoldings.Roof.CompatiblePotentialRouting](../Unfoldings/Roof/CompatiblePotentialRouting.lean) | Construct and attach original-edge forests and safe exterior continuations |
+| [Unfoldings.Roof.CurvatureNormalInterior](../Unfoldings/Roof/CurvatureNormalInterior.lean) | Force full normal polygons from positive actual intrinsic curvature |
+| [Unfoldings.Topology.AttachAscendingParents](../Unfoldings/Topology/AttachAscendingParents.lean) | Attach increasing forests at their roots while preserving original interior parents |
+| [Unfoldings.Convex.ExteriorDirectionAngle](../Unfoldings/Convex/ExteriorDirectionAngle.lean) | Bound actual safe exterior direction angles using the slope annulus |
+| [Unfoldings.Geometry.AnnularRadialMargin](../Unfoldings/Geometry/AnnularRadialMargin.lean) | Prove positivity of the explicit annular radial margin |
+| [Unfoldings.Roof.CompatiblePotentialRadial](../Unfoldings/Roof/CompatiblePotentialRadial.lean) | Prove the explicit radial margin for every actual incoming merger history |
+| [Unfoldings.Convex.SegmentProgress](../Unfoldings/Convex/SegmentProgress.lean) | Prove common-potential progress between arbitrary points on oriented edges |
+| [Unfoldings.Roof.CompatibleCutCarrier](../Unfoldings/Roof/CompatibleCutCarrier.lean) | Construct actual cut carriers and cover every positive extension curvature vertex |
+| [Unfoldings.Convex.AnnularHistoryMargin](../Unfoldings/Convex/AnnularHistoryMargin.lean) | Bound arbitrary incoming paths using the explicit annular radial margin |
+| [Unfoldings.Geometry.RadialMarginSegment](../Unfoldings/Geometry/RadialMarginSegment.lean) | Extend a quantitative radial margin along an entire straight edge |
+| [Unfoldings.Roof.CompatiblePotentialPaths](../Unfoldings/Roof/CompatiblePotentialPaths.lean) | Control arbitrary partial edges and unbounded terminal tails with one potential |
+| [Unfoldings.Roof.CompatiblePotentialWholePaths](../Unfoldings/Roof/CompatiblePotentialWholePaths.lean) | Prove positive radial margins on whole compatible paths and terminal rays |
+| [Unfoldings.Roof.ComponentPotentialForest](../Unfoldings/Roof/ComponentPotentialForest.lean) | Restrict the shared original-edge forest to each component with exactly one boundary root |

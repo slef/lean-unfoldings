@@ -1328,3 +1328,47 @@ public import Unfoldings.Roof.ClippedStrictRegion
 public import Unfoldings.Roof.DualFace
 public import Unfoldings.Roof.Fenchel
 public import Unfoldings.Topology.ConvexFrontier
+
+public import Unfoldings.Convex.AnnularProgress
+public import Unfoldings.Convex.CommonPotential
+public import Unfoldings.Convex.ExteriorRayCompatibility
+public import Unfoldings.Convex.PotentialPaths
+public import Unfoldings.Geometry.BoundarySupportDirection
+public import Unfoldings.Geometry.PolygonalLength
+public import Unfoldings.Geometry.PositiveSides
+public import Unfoldings.Roof.CommonPotentialForest
+public import Unfoldings.Roof.CommonPotentialHistories
+public import Unfoldings.Roof.CommonPotentialStep
+public import Unfoldings.Roof.PrimalNormalCone
+public import Unfoldings.Roof.SelectedStrictRegion
+
+public import Unfoldings.Convex.ExteriorPlan
+public import Unfoldings.Convex.ExteriorContacts
+public import Unfoldings.Convex.ExteriorPieces
+
+public import Unfoldings.Convex.ActiveCell
+public import Unfoldings.Convex.CoerciveEnvelope
+public import Unfoldings.Convex.ExteriorProgress
+public import Unfoldings.Convex.FiniteSlopeModel
+public import Unfoldings.Convex.PhysicalModelMesh
+public import Unfoldings.Convex.PhysicalNormalCells
+public import Unfoldings.Geometry.GnomonicCollinearNull
+public import Unfoldings.Geometry.GraphNormalSlope
+public import Unfoldings.Roof.ClippedPhysicalCurvature
+public import Unfoldings.Roof.CompatiblePotentialHistories
+public import Unfoldings.Roof.CompatiblePotentialRouting
+public import Unfoldings.Roof.CurvatureNormalInterior
+public import Unfoldings.Topology.AttachAscendingParents
+
+public import Unfoldings.Convex.ExteriorDirectionAngle
+public import Unfoldings.Geometry.AnnularRadialMargin
+public import Unfoldings.Roof.CompatiblePotentialRadial
+
+public import Unfoldings.Convex.SegmentProgress
+public import Unfoldings.Roof.CompatibleCutCarrier
+
+public import Unfoldings.Convex.AnnularHistoryMargin
+public import Unfoldings.Geometry.RadialMarginSegment
+public import Unfoldings.Roof.CompatiblePotentialPaths
+public import Unfoldings.Roof.CompatiblePotentialWholePaths
+public import Unfoldings.Roof.ComponentPotentialForest

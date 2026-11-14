@@ -2,6 +2,39 @@
 
 ## Session Log
 
+### 2026-11-14 — compatible forests, whole-path bounds, and physical curvature
+
+- Completed the strict-region identity with the union of interiors of selected
+  whole-edge components. Interior normal cells are exactly incident-slope hulls;
+  original rim normal cells are unbounded.
+- Constructed actual finite spatial graph-plane models and conforming meshes of
+  compact horizontal sections, respecting prescribed finite lines. Proved that
+  every positive intrinsic curvature vertex is an original lifted roof corner.
+  The curvature bridge uses actual angular defect and needs no tilt restriction.
+- Constructed common-potential original-edge forests on nonconvex selected patches.
+  Restrictions of the shared forest to each whole-edge component have exactly one
+  root on that component's own frontier, even at contacts between components.
+- Constructed globally consistent outward support directions, first-contact
+  exterior parent forests, disjoint retained open pieces, and straight terminal
+  rays without further root contacts. Attached these to the original forest
+  without changing any original interior parent.
+- Proved uniform length and explicit positive radial margins for all incoming
+  histories, then for whole paths and subpaths with arbitrary partial edges and
+  unbounded terminal tails. Every active potential slope at a merger controls
+  every incoming history. The explicit margin is the paper's minimum of the
+  interior and exterior cosine margins.
+- Constructed the actual cut carrier, proved coverage of every positive-curvature
+  extension vertex, and retained original selected edges while open exterior rays
+  avoid every closed selected face.
+- Updated the README, module index, PLAN, and completed construction guide. The
+  next Fewest Nets target is intrinsic cuts and gap-grafting nonoverlap for these
+  forests; the paper's normal-cover and counting theorems remain later targets.
+- Verification: successful cache retrieval followed by full integrated builds;
+  the final build passed all 5,321 jobs with no new project warnings. Audited
+  12,535 unfolding and 7,243 pinned topology declarations using only standard
+  Lean axioms. All 70 cap and 64 source abstract-independence checks passed.
+  No `sorry`, `admit`, or new axioms were introduced.
+
 ### 2026-11-14 — exact clipped conjugates and safe exterior rays
 
 - Constructed the finite conjugate from actual lifted original roof vertices.
