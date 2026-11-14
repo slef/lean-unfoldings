@@ -2,6 +2,17 @@
 
 ## Session Log
 
+### 2026-11-14 — exact projected halfplane fans on straight boundary links
+
+- Proved complementary projected partial-link angle bounds using the original
+  complete projected vertex star and exact original corner order.
+- Identified the selected projected fan angle with pi at a straight boundary
+  vertex. Its projected exterior turn is zero.
+- Bounded the actual intrinsic/projected Jordan contour error there by the
+  genuine spatial bend, with no artificial subdivision-vertex charge.
+- Verification: cache retrieval and full `lake build` passed 5,464 jobs, including
+  standard-axiom and abstract-independence audits.
+
 ### 2026-11-14 — actual one-sided fan turn contracts spatial bending
 
 - Extended arbitrary finite pairing chains to their complete cycles while

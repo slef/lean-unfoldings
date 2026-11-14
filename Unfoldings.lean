@@ -1523,3 +1523,8 @@ public import Unfoldings.Polyhedron.LinkFanTurn
 public import Unfoldings.Complex.FaceRestrictionLinks
 public import Unfoldings.Polyhedron.RestrictedBoundaryTurns
 public import Unfoldings.Cap.JordanVertexTurnBound
+
+public import Unfoldings.Cap.ProjectedPartialLink
+public import Unfoldings.Complex.LinkCornerWeights
+public import Unfoldings.Cap.RestrictedStraightTurns
+public import Unfoldings.Cap.JordanStraightVertex

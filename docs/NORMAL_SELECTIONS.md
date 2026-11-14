@@ -348,3 +348,10 @@ actual intrinsic Jordan boundary fan's absolute exterior turn by its genuine
 spatial bend. The proof uses both sides of the original corner link and applies
 to reflex fans and arbitrary-valence flat subdivision vertices. Ordered
 straight-connector summation and corner distortion estimates remain open.
+
+## Straight-link fan errors
+
+[JordanStraightVertex](../Unfoldings/Cap/JordanStraightVertex.lean) proves that
+the actual contour error on a straight projected bank is bounded by its spatial
+bend. Its selected projected fan is exactly a halfplane, so the projected
+exterior turn vanishes. This applies to actual subdivision vertices as well.

@@ -2311,3 +2311,8 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [`Complex/FaceRestrictionLinks`](../Unfoldings/Complex/FaceRestrictionLinks.lean) | Embed actual restricted corner chains in their original full link |
 | [`Polyhedron/RestrictedBoundaryTurns`](../Unfoldings/Polyhedron/RestrictedBoundaryTurns.lean) | Spatial bend bound for actual restricted boundary fans, including reflex fans |
 | [`Cap/JordanVertexTurnBound`](../Unfoldings/Cap/JordanVertexTurnBound.lean) | Spatial bend bound for every actual intrinsic Jordan boundary vertex |
+
+| [`Cap/ProjectedPartialLink`](../Unfoldings/Cap/ProjectedPartialLink.lean) | Actual selected and complementary projected fan angle bounds |
+| [`Complex/LinkCornerWeights`](../Unfoldings/Complex/LinkCornerWeights.lean) | Exact arbitrary original corner-weight sums in an actual link order |
+| [`Cap/RestrictedStraightTurns`](../Unfoldings/Cap/RestrictedStraightTurns.lean) | Straight boundary fans have projected angle pi and spatially controlled turn error |
+| [`Cap/JordanStraightVertex`](../Unfoldings/Cap/JordanStraightVertex.lean) | Actual straight Jordan contour errors contract spatial bends |
