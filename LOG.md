@@ -2,6 +2,29 @@
 
 ## Session Log
 
+### 2026-11-14 — global isometry for flat finite planar gluings
+
+- Proved that complete isometric cell maps in a finite cover make a local
+  homeomorphism closed with finite fibers, hence a covering. A connected
+  covering of the simply connected plane has one sheet.
+- Proved global metric isometry from the route universal property and the
+  finite closed-cover Lipschitz bound on the inverse.
+- Derived local homeomorphisms from Euclidean charts and local metric
+  isometries, using rigid extension on whole chart balls.
+- Derived whole-cell rigid motions from local isometry on convex interiors,
+  extending to every boundary point by continuity. Boundary-only seam gluing
+  supplies the needed local cell isometries by seam clearance; no global
+  cell embedding or rigidity is assumed.
+- Constructed a surjective global planar isometry for simply connected flat
+  boundary gluings of finitely many closed full-dimensional convex planar
+  cells, allowing unbounded cells. The actual gap construction must still
+  prove flat charts and topology before applying this theorem.
+- Verification: `lake exe cache get` exited successfully; full `lake build`
+  passed 5,349 jobs, with no new project warnings. Audited 12,777 unfolding
+  and 7,243 pinned topology declarations; only standard Lean axioms occur.
+  All cap and source abstract independence checks still pass.
+- Continuing with exact mesh routing and polygonal Jordan gap construction.
+
 ### 2026-11-14 — physical compatible cut disks and noncompact gluing completeness
 
 - Generalized local radial growth to local growth of any convex potential.

@@ -114,8 +114,11 @@ counting for Fewest Nets follow that development theorem.
 - [x] Prove completeness of finite noncompact gluings from compatible uniformly
   Lipschitz cell heights whose sublevels are compact.
 - [ ] Construct those heights on the actual gap end cells.
-- [ ] Prove local isometry after gap insertion, and use
-  the flat-plane covering argument to obtain nonoverlap.
+- [x] Prove that a simply connected flat boundary gluing of finitely many closed
+  convex planar cells admits a surjective global isometry to the plane. Derive
+  local homeomorphisms, complete-cell rigidity, and the covering argument.
+- [ ] Construct the actual grafted gluing and prove its local Euclidean regularity
+  and simple connectedness, then apply the global theorem to obtain nonoverlap.
 
 Start with [`truncatedCutEmbedding`](../Unfoldings/Roof/TruncatedCutEmbedding.lean).
 Its hypotheses are the constructed compatible routing, no original slope on the
@@ -137,3 +140,14 @@ and routing are constructed by the earlier APIs. The generic metric lemma
 [`completeSpace_of_compact_sublevels`](../Unfoldings/Metric/CoerciveGluing.lean)
 also applies to unbounded cells; its cellwise height hypotheses still need to be
 verified for the eventual grafted surface.
+
+The global metric theorem is
+[`exists_global_planar_isometry`](../Unfoldings/Metric/FlatPlanarGluing.lean).
+It allows unbounded closed convex cells and assumes only boundary identifications,
+local metric Euclidean charts, and simple connectedness (with local path
+connectedness). It constructs the development and proves its global isometry;
+cellwise rigidity, quotient completeness, a covering map, and nonoverlap are
+not supplied as conclusions disguised as hypotheses. The finite complete cell
+cover gives a closed map with finite fibers, so this proof avoids a separate
+continuation-to-infinity argument. The actual gap construction must still
+establish its geometric and topological inputs.

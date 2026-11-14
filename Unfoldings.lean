@@ -1396,3 +1396,9 @@ public import Unfoldings.Roof.TruncatedCutGrowth
 public import Unfoldings.Roof.TruncatedCutProgress
 public import Unfoldings.Roof.TruncatedCutSegments
 public import Unfoldings.Metric.CoerciveGluing
+public import Unfoldings.Geometry.ConvexInteriorRigidity
+public import Unfoldings.Metric.BoundaryCellDevelopment
+public import Unfoldings.Metric.EuclideanLocalHomeomorph
+public import Unfoldings.Metric.FinitePlanarDevelopment
+public import Unfoldings.Metric.FlatPlanarGluing
+public import Unfoldings.Topology.FiniteCellCovering

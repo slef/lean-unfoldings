@@ -2184,3 +2184,9 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Roof.TruncatedCutGrowth](../Unfoldings/Roof/TruncatedCutGrowth.lean) | Prove local common-potential growth through every bounded cut merger |
 | [Unfoldings.Roof.TruncatedCutProgress](../Unfoldings/Roof/TruncatedCutProgress.lean) | Prove strict common-potential increase on arbitrary truncated cut subsegments |
 | [Unfoldings.Roof.TruncatedCutSegments](../Unfoldings/Roof/TruncatedCutSegments.lean) | Reindex bounded cuts and construct their actual supporting and endpoint constraints |
+| [Unfoldings.Geometry.ConvexInteriorRigidity](../Unfoldings/Geometry/ConvexInteriorRigidity.lean) | Extend local isometries on a convex cell interior to one rigid whole-cell motion |
+| [Unfoldings.Metric.BoundaryCellDevelopment](../Unfoldings/Metric/BoundaryCellDevelopment.lean) | Derive developed whole-cell rigidity from boundary-only gluing and seam clearance |
+| [Unfoldings.Metric.EuclideanLocalHomeomorph](../Unfoldings/Metric/EuclideanLocalHomeomorph.lean) | Derive local homeomorphisms from actual Euclidean charts and local metric isometries |
+| [Unfoldings.Metric.FinitePlanarDevelopment](../Unfoldings/Metric/FinitePlanarDevelopment.lean) | Prove a local planar development on finitely many complete cells is globally isometric |
+| [Unfoldings.Metric.FlatPlanarGluing](../Unfoldings/Metric/FlatPlanarGluing.lean) | Construct global planar isometries of simply connected flat boundary gluings |
+| [Unfoldings.Topology.FiniteCellCovering](../Unfoldings/Topology/FiniteCellCovering.lean) | Derive finite fibers and a covering map from a finite complete isometric cell cover |

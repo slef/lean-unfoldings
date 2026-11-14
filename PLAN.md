@@ -842,6 +842,8 @@ The [construction guide](docs/NORMAL_SELECTIONS.md) records the completed bridge
 - [x] Select supported increasing fine-edge forests and derive flat intrinsic cut disks
   with local isometric developments.
 - [x] Prove finite noncompact gluing completeness from compatible coercive cell heights.
+- [x] Construct global planar isometries of simply connected flat boundary gluings
+  of finite closed convex cells, including unbounded cells.
 
 Next: transfer the original routing to the fine cuts, construct actual polygonal
 gaps and their end heights, and prove gap-grafting nonoverlap. Normal-cover
