@@ -28,16 +28,30 @@ selected component projections need not be convex.
 
 ## Exact clipped extension
 
-- [ ] Construct the finite convex dual and its clipping to a compact slope polygon.
-- [ ] Preserve each selected original whole face with exactly its original domain.
-- [ ] Identify the strict difference from the boundary-slope envelope with the
-  interiors of the whole-face selected components.
-- [ ] Identify every positive-curvature extension vertex and its clipped normal cell.
-- [ ] Prove constant-cell exterior rays and their avoidance of closed selected faces.
+- [x] Construct the finite vertex conjugate and clipped conjugate of an actual roof:
+  [ClippedExtension](../Unfoldings/Roof/ClippedExtension.lean).
+- [x] Construct a finite polyhedral representation for polygon clipping, using
+  actual arrangement triangles: [ClippedPolyhedral](../Unfoldings/Roof/ClippedPolyhedral.lean).
+- [x] Preserve every selected original whole triangle and the exact full physical
+  supporting-face domain, including coplanar subdivisions.
+- [x] Identify `{G > h}` exactly with original domain points whose full normal cell
+  lies inside the slope polygon, including unbounded rim normal cones:
+  [ClippedStrictRegion](../Unfoldings/Roof/ClippedStrictRegion.lean).
+- [ ] Identify that original normal-cell condition with the union of interiors of
+  whole-face selected components under the no-boundary-gradient assumption.
+- [x] Prove that full-dimensional extension normal cells occur only at actual
+  original lifted corners; surviving normal cells are exactly clipped original cells.
+- [ ] Connect that normal-cell statement to positive intrinsic curvature on a
+  constructed spatial triangulation of the finite extension.
+- [x] Prove constant-cell exterior rays, equality with the boundary potential, and
+  avoidance of every closed selected original face:
+  [ClippedExteriorRay](../Unfoldings/Roof/ClippedExteriorRay.lean).
 
 ## Compatible common-potential forests
 
-- [ ] Choose original outgoing edges from the active potential slope.
+- [x] Choose an original incident edge within half the projected corner bound of
+  any requested direction: [MeshDirectionProgress](../Unfoldings/Geometry/MeshDirectionProgress.lean).
+- [ ] Assemble those local choices into original-edge rooted forests.
 - [ ] Prove strict potential progress and one boundary root per restricted tree.
 - [ ] Construct finite compatible exterior continuations, including root contacts.
 - [ ] Bound every incoming history at every merger by the same active slope.

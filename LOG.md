@@ -2,6 +2,27 @@
 
 ## Session Log
 
+### 2026-11-14 — exact clipped conjugates and safe exterior rays
+
+- Constructed the finite conjugate from actual lifted original roof vertices.
+  Selected whole triangles retain their actual graph heights. At interior selected
+  slopes, equality domains are exactly the original physical supporting faces.
+- Constructed a finite polyhedral representation by partitioning the slope polygon
+  along dual-plane intersections and taking the actual triangle vertices.
+- Proved the exact strict-region identity using full original primal normal cells,
+  including rim domain cones. Surviving cells are clipped original cells, and any
+  full-dimensional extension cell occurs at an original lifted corner.
+- Proved constant active cells on open exterior rays, equality with the boundary
+  potential, and avoidance of all closed selected original triangles.
+- Proved an independent local mesh lemma choosing an original incident edge within
+  half the projected corner-angle bound of any requested nonzero direction.
+- Remaining: identify the strict region with selected component interiors; connect
+  normal-cell dimensionality to intrinsic curvature on a physical extension mesh;
+  construct the complete compatible forests and their geometric path bounds.
+- Verification: successful cache retrieval followed by full `lake build` (5,283 jobs).
+  Audited 12,255 unfolding and 7,243 topology declarations with standard Lean axioms;
+  all 70 cap and 64 source independence checks passed.
+
 ### 2026-11-14 — original polyhedron normal-selection disks
 
 - Constructed the complete upper roof from the original upward triangles and

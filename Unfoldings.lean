@@ -1310,3 +1310,21 @@ public import Unfoldings.Polyhedron.UpperAdjacency
 public import Unfoldings.Polyhedron.UpperCover
 public import Unfoldings.Polyhedron.UpperRoof
 public import Unfoldings.Polyhedron.UpperTriangles
+
+public import Unfoldings.Convex.BoundaryPotential
+public import Unfoldings.Convex.ExteriorRay
+public import Unfoldings.Convex.FiniteClippedExtension
+public import Unfoldings.Convex.FiniteDual
+public import Unfoldings.Convex.FiniteDualFace
+public import Unfoldings.Convex.FiniteDualPlanes
+public import Unfoldings.Convex.FiniteDualVertices
+public import Unfoldings.Convex.SlopeEnvelope
+public import Unfoldings.Geometry.AffineEnvelopeDomainPartition
+public import Unfoldings.Geometry.MeshDirectionProgress
+public import Unfoldings.Roof.ClippedExtension
+public import Unfoldings.Roof.ClippedExteriorRay
+public import Unfoldings.Roof.ClippedPolyhedral
+public import Unfoldings.Roof.ClippedStrictRegion
+public import Unfoldings.Roof.DualFace
+public import Unfoldings.Roof.Fenchel
+public import Unfoldings.Topology.ConvexFrontier

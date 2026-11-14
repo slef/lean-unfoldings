@@ -2107,3 +2107,20 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Polyhedron.UpperCover](../Unfoldings/Polyhedron/UpperCover.lean) | Cover the exact body footprint by original upward faces, including the silhouette |
 | [Unfoldings.Polyhedron.UpperRoof](../Unfoldings/Polyhedron/UpperRoof.lean) | Construct the complete original upper roof with intrinsic projection injectivity |
 | [Unfoldings.Polyhedron.UpperTriangles](../Unfoldings/Polyhedron/UpperTriangles.lean) | Prove conformity, separation, and actual seam completeness of upward triangles |
+| [Unfoldings.Convex.BoundaryPotential](../Unfoldings/Convex/BoundaryPotential.lean) | Identify boundary potential and exclude interior slopes on open exterior rays |
+| [Unfoldings.Convex.ExteriorRay](../Unfoldings/Convex/ExteriorRay.lean) | Identify exact constant active cells along outward supporting-side rays |
+| [Unfoldings.Convex.FiniteClippedExtension](../Unfoldings/Convex/FiniteClippedExtension.lean) | Construct an actual finite polyhedral clipped conjugate |
+| [Unfoldings.Convex.FiniteDual](../Unfoldings/Convex/FiniteDual.lean) | Construct finite vertex conjugates and preserve entire original supporting faces |
+| [Unfoldings.Convex.FiniteDualFace](../Unfoldings/Convex/FiniteDualFace.lean) | Prove exact primal face domains at interior maximizing slopes |
+| [Unfoldings.Convex.FiniteDualPlanes](../Unfoldings/Convex/FiniteDualPlanes.lean) | Partition the finite dual cost over compact slope polygons |
+| [Unfoldings.Convex.FiniteDualVertices](../Unfoldings/Convex/FiniteDualVertices.lean) | Show full extension normal cells occur only at original lifted vertices |
+| [Unfoldings.Convex.SlopeEnvelope](../Unfoldings/Convex/SlopeEnvelope.lean) | Construct continuous convex compact-slope envelopes and actual maximizing slopes |
+| [Unfoldings.Geometry.AffineEnvelopeDomainPartition](../Unfoldings/Geometry/AffineEnvelopeDomainPartition.lean) | Triangulate affine envelopes over independently prescribed compact polygons |
+| [Unfoldings.Geometry.MeshDirectionProgress](../Unfoldings/Geometry/MeshDirectionProgress.lean) | Choose original incident edges within half the corner-angle bound of any direction |
+| [Unfoldings.Roof.ClippedExtension](../Unfoldings/Roof/ClippedExtension.lean) | Construct the clipped extension of actual original lifted roof vertices |
+| [Unfoldings.Roof.ClippedExteriorRay](../Unfoldings/Roof/ClippedExteriorRay.lean) | Prove safe exterior rays avoid all closed selected original triangles |
+| [Unfoldings.Roof.ClippedPolyhedral](../Unfoldings/Roof/ClippedPolyhedral.lean) | Construct finite polyhedral roof extensions and exact surviving normal cells |
+| [Unfoldings.Roof.ClippedStrictRegion](../Unfoldings/Roof/ClippedStrictRegion.lean) | Identify the strict difference region using full original primal normal cells |
+| [Unfoldings.Roof.DualFace](../Unfoldings/Roof/DualFace.lean) | Recover exact original graph heights and domain from finite primal contact hulls |
+| [Unfoldings.Roof.Fenchel](../Unfoldings/Roof/Fenchel.lean) | Prove Fenchel equality for original roof normal cells, including rim cones |
+| [Unfoldings.Topology.ConvexFrontier](../Unfoldings/Topology/ConvexFrontier.lean) | Keep convex sets inside a region when they avoid its frontier |
