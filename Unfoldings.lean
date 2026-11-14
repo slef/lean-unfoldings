@@ -1466,3 +1466,6 @@ public import Unfoldings.Geometry.JordanTriangleSelection
 public import Unfoldings.Cap.JordanFaceSelection
 public import Unfoldings.Cap.JordanRegionalAngles
 public import Unfoldings.Cap.JordanAngleBalance
+public import Unfoldings.Geometry.ConstraintInteriors
+public import Unfoldings.Geometry.PolygonalClosureEquations
+public import Unfoldings.Roof.PolygonalClosureMesh

@@ -2,6 +2,21 @@
 
 ## Session Log
 
+### 2026-11-14 — respecting physical meshes for actual polygonal closures
+
+- Constructed an explicit proper finite affine equation family supporting every
+  original path link and all three actual closing segments, including flat links.
+- Proved that proper weak affine constraints are strict on triangle interiors;
+  constructed constrained refinements therefore avoid the supported curve.
+- Constructed physical line-aligned cap meshes for each closure, with original
+  spatial supports, exact footprints, and proved conforming incidence.
+- Applied geometric Jordan angle balance on these actual meshes, discharging
+  the prior assumption that a mesh respecting the curve had been supplied.
+- Verification: cache retrieval and full `lake build` passed 5,416 jobs.
+  Audited 13,191 unfolding and 7,243 pinned topology declarations with standard
+  axioms only; abstract checks passed, without new project warnings.
+
+
 ### 2026-11-14 — actual Jordan fillings and geometric relative angle balance
 
 - Constructed the actual bounded Jordan filling as the closure of its inside.

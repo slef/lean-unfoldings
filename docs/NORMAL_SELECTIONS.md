@@ -256,3 +256,11 @@ No Euler formula or supplied region-disk certificate is used.
 
 The next bridge constructs the respecting physical mesh for each polygonal
 closure and identifies the path and connector heading changes with these fans.
+
+## Constructed closure meshes
+
+[PolygonalClosureMesh](../Unfoldings/Roof/PolygonalClosureMesh.lean) constructs
+a conforming physical cap refinement respecting every path and closing link.
+The complete proper equation family and triangle-interior curve avoidance are
+proved. The exact geometric Jordan angle balance applies to this constructed
+mesh; its footprint and original spatial support labels are retained.

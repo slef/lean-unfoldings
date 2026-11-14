@@ -2254,3 +2254,6 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Cap.JordanFaceSelection](../Unfoldings/Cap/JordanFaceSelection.lean) | Select actual projected cap faces and prove full-star inclusion inside Jordan fillings |
 | [Unfoldings.Cap.JordanRegionalAngles](../Unfoldings/Cap/JordanRegionalAngles.lean) | Identify actual Jordan-boundary fan excess and bound it by total cap curvature |
 | [Unfoldings.Cap.JordanAngleBalance](../Unfoldings/Cap/JordanAngleBalance.lean) | Prove exact geometric boundary-angle excess equals actual curvature strictly inside the Jordan filling |
+| [Unfoldings.Geometry.ConstraintInteriors](../Unfoldings/Geometry/ConstraintInteriors.lean) | Derive strict interior constraint signs and actual curve avoidance for line-respecting meshes |
+| [Unfoldings.Geometry.PolygonalClosureEquations](../Unfoldings/Geometry/PolygonalClosureEquations.lean) | Construct proper finite equations for every actual polygonal closure link |
+| [Unfoldings.Roof.PolygonalClosureMesh](../Unfoldings/Roof/PolygonalClosureMesh.lean) | Construct respecting physical closure meshes and their exact geometric Jordan angle balance |
