@@ -2298,3 +2298,7 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [`Geometry/StrictRadialTrimming`](../Unfoldings/Geometry/StrictRadialTrimming.lean) | Strict original radial progress survives genuine endpoint trimming |
 | [`Geometry/SegmentExtendedAvoidance`](../Unfoldings/Geometry/SegmentExtendedAvoidance.lean) | Entire extended connector lines avoid prescribed exceptional points |
 | [`Geometry/GenericBankClosure`](../Unfoldings/Geometry/GenericBankClosure.lean) | Construct actual trimmed Jordan closures with three completely regular closing lines |
+
+| [`Development/SingleSeam`](../Unfoldings/Development/SingleSeam.lean) | Construct the genuine outward development retaining one original seam |
+| [`Cap/IntrinsicSectionTurns`](../Unfoldings/Cap/IntrinsicSectionTurns.lean) | Actual vertex-avoiding straight-section intrinsic turns total at most twice the tilt |
+| [`Cap/IntrinsicSectionTurnAgreement`](../Unfoldings/Cap/IntrinsicSectionTurnAgreement.lean) | Hinge rigidity identifies the intrinsic turn in every retained development |

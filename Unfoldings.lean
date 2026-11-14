@@ -1510,3 +1510,7 @@ public import Unfoldings.Geometry.GenericEndTrimming
 public import Unfoldings.Geometry.StrictRadialTrimming
 public import Unfoldings.Geometry.SegmentExtendedAvoidance
 public import Unfoldings.Geometry.GenericBankClosure
+
+public import Unfoldings.Development.SingleSeam
+public import Unfoldings.Cap.IntrinsicSectionTurns
+public import Unfoldings.Cap.IntrinsicSectionTurnAgreement

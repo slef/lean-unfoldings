@@ -332,3 +332,11 @@ progress follow from exact increasing edge subparametrizations.
 trimming and generic closure construction. Every original bank turn remains;
 all three complete extended closing lines avoid the prescribed vertices. This
 provides the regularity input of the existing actual section-trace API.
+
+## Constructed intrinsic straight-section turns
+
+[IntrinsicSectionTurns](../Unfoldings/Cap/IntrinsicSectionTurns.lean) constructs
+each regular section crossing's actual outward hinge turn, proves agreement
+with any retained development, and bounds the total by `2φ` independently of
+mesh size. The paper's sharper `2φ sin φ` bound remains open; the current bound
+is useful for a qualitative small-tilt comparison.

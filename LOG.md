@@ -2,6 +2,19 @@
 
 ## Session Log
 
+### 2026-11-14 — constructed intrinsic straight-section turning
+
+- Constructed a genuine single-seam outward development directly from the
+  original edge isometry and opposite-side hinge placement.
+- Defined each actual regular section crossing's intrinsic turn using that
+  constructed hinge. Its absolute turn is at most the corresponding spatial
+  bend; the full trace has total intrinsic turn at most twice the tilt.
+- Proved agreement with every development retaining the seam, using outward
+  hinge rigidity. No global development of the curved cap is assumed.
+- Verification: cache retrieval and full `lake build` passed 5,452 jobs, including
+  standard-axiom and abstract-independence audits. The paper's sharper
+  `2φ sin φ` section bound remains unproved.
+
 ### 2026-11-14 — fully regular actual trimmed bank closures
 
 - Constructed the combined endpoint trim, generic nearby radial source and
