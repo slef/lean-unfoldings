@@ -2,6 +2,19 @@
 
 ## Session Log
 
+### 2026-11-14 — unordered actual straight-link sums
+
+- Proved that active supporting-face inclination intervals at distinct collinear
+  roof contacts have disjoint interiors. Actual interval packing bounds their
+  total variation by twice the tilt, with no ordering or adjacency assumption.
+- Identified actual restricted bank vectors with their original active support
+  directions. Summed genuine fan errors over arbitrary collinear Jordan vertex
+  sets; injectivity follows from the actual contour vertex enumeration.
+- Verification: cache retrieval and full `lake build` passed 5,482 jobs; all
+  13,492 unfolding declarations passed the standard-axiom audit. Abstract
+  independence checks passed. Deriving opposite bank rays from local straight
+  boundary geometry, saved-frontier nesting and the final graft remain open.
+
 ### 2026-11-14 — uniform Jordan corner errors and cyclic sections
 
 - Reindexed actual boundary contours without changing banks or orientation,

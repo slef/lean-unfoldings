@@ -1541,3 +1541,9 @@ public import Unfoldings.Geometry.RelativeSineError
 public import Unfoldings.Cap.RelativeFaceAngleError
 public import Unfoldings.Cap.RegionalProjectionError
 public import Unfoldings.Cap.JordanCornerError
+public import Unfoldings.Geometry.IntervalVariationPacking
+public import Unfoldings.Cap.ActiveSectionVariation
+public import Unfoldings.Geometry.OppositeRayAngles
+public import Unfoldings.Cap.RestrictedSectionDirections
+public import Unfoldings.Cap.RestrictedSectionSum
+public import Unfoldings.Cap.JordanSectionSet

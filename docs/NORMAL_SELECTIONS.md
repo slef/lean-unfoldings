@@ -375,3 +375,14 @@ independently of valence and without generic-position assumptions.
 [CyclicBoundarySection](../Unfoldings/Cap/CyclicBoundarySection.lean) also removes
 the enumeration-origin restriction on ordered straight sections. The remaining
 bank comparison must derive its closing-link contribution from actual geometry.
+
+## Straight-link sums without traversal data
+
+[ActiveSectionVariation](../Unfoldings/Cap/ActiveSectionVariation.lean) bounds
+turning at arbitrary distinct collinear active-face contacts by `2φ`, using
+actual disjoint inclination intervals.
+[JordanSectionSet](../Unfoldings/Cap/JordanSectionSet.lean) applies this to any
+selected contour vertex set with collinear positions and opposite projected
+bank rays. No sorted order, adjacency or cyclic-interval data are inputs.
+Deriving the ray condition from local straightness of the constructed curve
+remains to be connected.

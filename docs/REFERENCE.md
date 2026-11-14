@@ -2330,3 +2330,10 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [`Cap/RelativeFaceAngleError`](../Unfoldings/Cap/RelativeFaceAngleError.lean) | Uniform relative face and corner projection-angle distortion |
 | [`Cap/RegionalProjectionError`](../Unfoldings/Cap/RegionalProjectionError.lean) | Selected fan error bounded by its projected angle, independently of valence |
 | [`Cap/JordanCornerError`](../Unfoldings/Cap/JordanCornerError.lean) | Uniform actual Jordan corner errors without generic incidence assumptions |
+
+| [`Geometry/IntervalVariationPacking`](../Unfoldings/Geometry/IntervalVariationPacking.lean) | Total real variation from actual disjoint interval packing |
+| [`Cap/ActiveSectionVariation`](../Unfoldings/Cap/ActiveSectionVariation.lean) | Active support faces at distinct section contacts have total bend at most twice tilt |
+| [`Geometry/OppositeRayAngles`](../Unfoldings/Geometry/OppositeRayAngles.lean) | Opposite real scalar rays give exact straight angles and spatial bends |
+| [`Cap/RestrictedSectionDirections`](../Unfoldings/Cap/RestrictedSectionDirections.lean) | Identify physical bank rays with their actual active support-plane directions |
+| [`Cap/RestrictedSectionSum`](../Unfoldings/Cap/RestrictedSectionSum.lean) | Sum straight boundary fan errors without ordering or adjacency hypotheses |
+| [`Cap/JordanSectionSet`](../Unfoldings/Cap/JordanSectionSet.lean) | Bound arbitrary selected collinear Jordan vertex sets independently of contour enumeration |
