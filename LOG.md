@@ -2,6 +2,25 @@
 
 ## Session Log
 
+### 2026-11-14 — actual hinge gaps and fixed-prefix clearance
+
+- Split finite chain carriers and infinite rays exactly at actual vertices;
+  affine images preserve every point and the original straight tail.
+- Identified the moved infinite suffix with its precise hinge-fixed affine
+  rotation. The resulting gap has exactly the old and moved suffixes as banks,
+  which meet only at the hinge.
+- Proved gap points are swept by actual intermediate rotated banks. Source-radius
+  ordering separates each kept prefix from its infinite suffix, so uniform
+  radial control throughout an opening proves gap-prefix clearance.
+- Derived that continuous family of radial tests from one small-opening budget
+  and the original bank's quantitative length and radial margins.
+- Multiple-opening nesting, intrinsic-bank comparison with compatible routing,
+  saved-frontier fan bookkeeping, and global intrinsic grafting remain open.
+- Verification: cache retrieval succeeded, then full `lake build` passed
+  5,390 jobs. Audited 13,068 unfolding and 7,243 pinned topology declarations;
+  standard axioms only, with cap/source abstract independence checks passing.
+
+
 ### 2026-11-14 — proper polygonal banks and actual source-rotation gaps
 
 - Constructed polygonal rays with exact finite prefixes and straight infinite

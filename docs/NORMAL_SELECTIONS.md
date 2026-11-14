@@ -197,3 +197,14 @@ each source-rotation gap, with pairwise-disjoint cell interiors.
 The source-rotation gap is the first case. Nesting successive internal hinge
 openings, saved-frontier fan bookkeeping, and the intrinsic graft construction
 remain to be proved before claiming compatible-cut nonoverlap.
+
+## Internal hinge gaps
+
+[HingeGap](../Unfoldings/Geometry/HingeGap.lean) identifies the exact old and
+moved infinite suffixes as the gap banks. [SmallHingeGap](../Unfoldings/Geometry/SmallHingeGap.lean)
+proves that a sufficiently small opening stays clear of the prefix kept fixed.
+The proof controls every intermediate rotation with the original radial and
+length constants, then sweeps the whole gap by these actual banks.
+
+These results treat individual hinge gaps. Nesting multiple openings and the
+intrinsic saved-frontier construction remain open.

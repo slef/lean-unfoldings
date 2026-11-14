@@ -2221,3 +2221,13 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Geometry.PolygonalRayEquations](../Unfoldings/Geometry/PolygonalRayEquations.lean) | Construct finite proper affine supports for whole polygonal banks and their infinite tails |
 | [Unfoldings.Geometry.SourceRotation](../Unfoldings/Geometry/SourceRotation.lean) | Represent actual source-fixed rotations as affine isometric equivalences |
 | [Unfoldings.Geometry.PolygonalGapCells](../Unfoldings/Geometry/PolygonalGapCells.lean) | Construct finite closed full-dimensional convex cells with disjoint interiors covering rotation gaps |
+| [Unfoldings.Geometry.ChainSplit](../Unfoldings/Geometry/ChainSplit.lean) | Split actual closed chain carriers at arbitrary retained vertices |
+| [Unfoldings.Geometry.PolygonalRaySuffix](../Unfoldings/Geometry/PolygonalRaySuffix.lean) | Retain exact infinite suffixes and derive their hinge-centered radial tests |
+| [Unfoldings.Geometry.ChainAffineMap](../Unfoldings/Geometry/ChainAffineMap.lean) | Retain entire polygonal chain carriers under affine maps |
+| [Unfoldings.Geometry.PolygonalRayAffineMap](../Unfoldings/Geometry/PolygonalRayAffineMap.lean) | Retain complete polygonal banks and actual infinite tails under affine maps |
+| [Unfoldings.Geometry.HingeGap](../Unfoldings/Geometry/HingeGap.lean) | Identify actual hinge gap banks with the old and moved infinite suffixes |
+| [Unfoldings.Geometry.RaySplitRadius](../Unfoldings/Geometry/RaySplitRadius.lean) | Separate kept prefixes from infinite suffixes by actual source-radius ordering |
+| [Unfoldings.Geometry.RotationGapSweep](../Unfoldings/Geometry/RotationGapSweep.lean) | Cover each rotation gap by its actual intermediate rotated banks |
+| [Unfoldings.Geometry.HingeGapPrefix](../Unfoldings/Geometry/HingeGapPrefix.lean) | Prove a radial hinge gap meets its unchanged prefix only at its hinge |
+| [Unfoldings.Geometry.SingleOpeningRadial](../Unfoldings/Geometry/SingleOpeningRadial.lean) | Control every partial opening angle with one quantitative radial budget |
+| [Unfoldings.Geometry.SmallHingeGap](../Unfoldings/Geometry/SmallHingeGap.lean) | Derive actual gap-prefix clearance from original-bank length and radial margins |

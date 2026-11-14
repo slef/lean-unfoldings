@@ -1433,3 +1433,13 @@ public import Unfoldings.Geometry.ComplexLineEquation
 public import Unfoldings.Geometry.PolygonalRayEquations
 public import Unfoldings.Geometry.SourceRotation
 public import Unfoldings.Geometry.PolygonalGapCells
+public import Unfoldings.Geometry.ChainSplit
+public import Unfoldings.Geometry.PolygonalRaySuffix
+public import Unfoldings.Geometry.ChainAffineMap
+public import Unfoldings.Geometry.PolygonalRayAffineMap
+public import Unfoldings.Geometry.HingeGap
+public import Unfoldings.Geometry.RaySplitRadius
+public import Unfoldings.Geometry.RotationGapSweep
+public import Unfoldings.Geometry.HingeGapPrefix
+public import Unfoldings.Geometry.SingleOpeningRadial
+public import Unfoldings.Geometry.SmallHingeGap
