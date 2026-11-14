@@ -2337,3 +2337,18 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [`Cap/RestrictedSectionDirections`](../Unfoldings/Cap/RestrictedSectionDirections.lean) | Identify physical bank rays with their actual active support-plane directions |
 | [`Cap/RestrictedSectionSum`](../Unfoldings/Cap/RestrictedSectionSum.lean) | Sum straight boundary fan errors without ordering or adjacency hypotheses |
 | [`Cap/JordanSectionSet`](../Unfoldings/Cap/JordanSectionSet.lean) | Bound arbitrary selected collinear Jordan vertex sets independently of contour enumeration |
+
+| [`Complex/DirectedBoundaryPath`](../Unfoldings/Complex/DirectedBoundaryPath.lean) | Genuine directed affine bank paths with exact physical positions |
+| [`Cap/RestrictedBankSegments`](../Unfoldings/Cap/RestrictedBankSegments.lean) | Actual projected boundary banks at one vertex have distinct positive rays |
+| [`Geometry/LocalLineSegment`](../Unfoldings/Geometry/LocalLineSegment.lean) | Local line containment determines the whole genuine segment direction |
+| [`Cap/JordanLocalSection`](../Unfoldings/Cap/JordanLocalSection.lean) | Derive opposite bank rays and error sums from actual local boundary straightness |
+| [`Cap/JordanClosingLink`](../Unfoldings/Cap/JordanClosingLink.lean) | Actual closing-link error at most twice tilt from a closed geometric curve decomposition |
+
+| [`Topology/FiniteWeightedCover`](../Unfoldings/Topology/FiniteWeightedCover.lean) | Nonnegative finite covering weight bounds allowing overlaps |
+| [`Cap/JordanBankPositions`](../Unfoldings/Cap/JordanBankPositions.lean) | Injective actual Jordan contour positions and geometric corner counts |
+| [`Cap/GeometricBankTurnComparison`](../Unfoldings/Cap/GeometricBankTurnComparison.lean) | Curvature plus derived straight-link and geometric-corner bank-turn bounds |
+
+| [`Geometry/RadialClosingLinks`](../Unfoldings/Geometry/RadialClosingLinks.lean) | Actual radial closing segments have only prescribed corner contacts |
+| [`Cap/RadialBankTurnComparison`](../Unfoldings/Cap/RadialBankTurnComparison.lean) | Derived actual radial bank error bound: curvature plus six times tilt plus relative corner error |
+| [`Cap/RadialBankThreshold`](../Unfoldings/Cap/RadialBankThreshold.lean) | One uniform positive tilt makes every actual radial bank turn error arbitrarily small |
+| [`Roof/ClosureBankComparison`](../Unfoldings/Roof/ClosureBankComparison.lean) | Apply the uniform bank bound to the actual constructed physical closure mesh |

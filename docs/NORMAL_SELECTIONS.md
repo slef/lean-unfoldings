@@ -386,3 +386,17 @@ selected contour vertex set with collinear positions and opposite projected
 bank rays. No sorted order, adjacency or cyclic-interval data are inputs.
 Deriving the ray condition from local straightness of the constructed curve
 remains to be connected.
+
+## Derived geometric bank comparison
+
+[JordanClosingLink](../Unfoldings/Cap/JordanClosingLink.lean) derives each `2φ`
+closing-link bound from the actual closed curve decomposition. Opposite bank
+rays follow from local straightness and actual bank separation.
+[RadialBankTurnComparison](../Unfoldings/Cap/RadialBankTurnComparison.lean)
+bounds the geometric bank's error by `Ω + 6φ + 8πε`, with corners counted once.
+[RadialBankThreshold](../Unfoldings/Cap/RadialBankThreshold.lean) makes that error
+arbitrarily small at one positive tilt, independently of the input mesh.
+[ClosureBankComparison](../Unfoldings/Roof/ClosureBankComparison.lean) applies it
+to the actual physical closure-respecting refinement; its tilt and avoidance
+properties are constructed. Relating these bank portions to successive saved
+openings, proving nesting, and assembling the complete graft remain open.

@@ -2,6 +2,24 @@
 
 ## Session Log
 
+### 2026-11-14 — geometric radial bank comparison on actual closure meshes
+
+- Constructed genuine directed bank paths. Exact projection and regular fibers
+  prove that the two banks at one vertex have different positive rays.
+- Derived opposite bank directions from local straightness of the actual Jordan
+  curve, then derived each closing-link error bound from its closed geometric
+  remainder. No ordering, adjacency, or closing-turn certificate is supplied.
+- Counted actual geometric corners once and proved connector intersection
+  control from radial separation. The actual radial bank error is at most
+  curvature plus `6φ + 8πε`, where epsilon is a relative face-angle tolerance.
+- Chose one positive tilt making that whole error arbitrarily small, before any
+  mesh is supplied. Applied it to the actually constructed physical cap mesh,
+  deriving its tilt and closure avoidance from the original support planes.
+- Verification: cache retrieval and full `lake build` passed 5,494 jobs; all
+  13,526 unfolding declarations passed the standard-axiom audit. Both abstract
+  independence checks passed. The paper's sharper numerical threshold, bank
+  correspondence for saved openings, nesting and the complete graft remain open.
+
 ### 2026-11-14 — unordered actual straight-link sums
 
 - Proved that active supporting-face inclination intervals at distinct collinear

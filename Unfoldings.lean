@@ -1547,3 +1547,15 @@ public import Unfoldings.Geometry.OppositeRayAngles
 public import Unfoldings.Cap.RestrictedSectionDirections
 public import Unfoldings.Cap.RestrictedSectionSum
 public import Unfoldings.Cap.JordanSectionSet
+public import Unfoldings.Complex.DirectedBoundaryPath
+public import Unfoldings.Cap.RestrictedBankSegments
+public import Unfoldings.Geometry.LocalLineSegment
+public import Unfoldings.Cap.JordanLocalSection
+public import Unfoldings.Cap.JordanClosingLink
+public import Unfoldings.Topology.FiniteWeightedCover
+public import Unfoldings.Cap.JordanBankPositions
+public import Unfoldings.Cap.GeometricBankTurnComparison
+public import Unfoldings.Geometry.RadialClosingLinks
+public import Unfoldings.Cap.RadialBankTurnComparison
+public import Unfoldings.Cap.RadialBankThreshold
+public import Unfoldings.Roof.ClosureBankComparison
