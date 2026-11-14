@@ -2257,3 +2257,7 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Geometry.ConstraintInteriors](../Unfoldings/Geometry/ConstraintInteriors.lean) | Derive strict interior constraint signs and actual curve avoidance for line-respecting meshes |
 | [Unfoldings.Geometry.PolygonalClosureEquations](../Unfoldings/Geometry/PolygonalClosureEquations.lean) | Construct proper finite equations for every actual polygonal closure link |
 | [Unfoldings.Roof.PolygonalClosureMesh](../Unfoldings/Roof/PolygonalClosureMesh.lean) | Construct respecting physical closure meshes and their exact geometric Jordan angle balance |
+| [Unfoldings.Cap.JordanIntrinsicDisk](../Unfoldings/Cap/JordanIntrinsicDisk.lean) | Construct the actual selected intrinsic Jordan disk with injective geometric projection |
+| [Unfoldings.Complex.FaceRestrictionVertices](../Unfoldings/Complex/FaceRestrictionVertices.lean) | Include restricted vertex classes and recover actual selected intrinsic corner angles |
+| [Unfoldings.Complex.FaceRestrictionWeights](../Unfoldings/Complex/FaceRestrictionWeights.lean) | Recover arbitrary original corner weights from actual restricted vertex fibers |
+| [Unfoldings.Cap.JordanFanAngles](../Unfoldings/Cap/JordanFanAngles.lean) | Identify intrinsic Jordan vertex fans with exactly their selected original corner contributions |

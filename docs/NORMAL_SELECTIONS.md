@@ -264,3 +264,12 @@ a conforming physical cap refinement respecting every path and closing link.
 The complete proper equation family and triangle-interior curve avoidance are
 proved. The exact geometric Jordan angle balance applies to this constructed
 mesh; its footprint and original spatial support labels are retained.
+
+## Intrinsic Jordan fans
+
+[JordanIntrinsicDisk](../Unfoldings/Cap/JordanIntrinsicDisk.lean) constructs the
+actual whole-face intrinsic disk, with projection a homeomorphism onto the
+closed Jordan domain. [JordanFanAngles](../Unfoldings/Cap/JordanFanAngles.lean)
+identifies each of its vertex fans with exactly the original selected corners,
+for intrinsic angles and arbitrary projected corner weights. No fan or disk
+certificate is assumed.

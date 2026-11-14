@@ -1469,3 +1469,7 @@ public import Unfoldings.Cap.JordanAngleBalance
 public import Unfoldings.Geometry.ConstraintInteriors
 public import Unfoldings.Geometry.PolygonalClosureEquations
 public import Unfoldings.Roof.PolygonalClosureMesh
+public import Unfoldings.Cap.JordanIntrinsicDisk
+public import Unfoldings.Complex.FaceRestrictionVertices
+public import Unfoldings.Complex.FaceRestrictionWeights
+public import Unfoldings.Cap.JordanFanAngles
