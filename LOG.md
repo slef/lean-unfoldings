@@ -2,6 +2,19 @@
 
 ## Session Log
 
+### 2026-11-14 — actual Jordan bank heading and speed comparison
+
+- Constructed the projected metric and identity development of the actual
+  selected Jordan patch, with the identical ordered bank contour.
+- Identified intrinsic-minus-projected real rolling headings with cumulative
+  actual fan errors. Contiguous heading changes inherit the geometric Jordan
+  curvature plus closing-link bound.
+- Proved exact edgewise heading/speed factors and normal-height stretch bounds
+  between the actual intrinsically rolled bank and its projected counterpart.
+- Verification: cache retrieval and full `lake build` passed 5,437 jobs, including
+  standard-axiom and abstract-independence audits. Closing-link estimates and
+  multi-opening saved-frontier nesting remain to be proved.
+
 ### 2026-11-14 — separate projected metric with exact original bank order
 
 - Constructed a second triangle complex using compatible invertible affine

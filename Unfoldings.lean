@@ -1490,3 +1490,8 @@ public import Unfoldings.Complex.AffineProjectionClasses
 public import Unfoldings.Complex.AffineProjectionAngles
 public import Unfoldings.Complex.AffineProjectionBoundary
 public import Unfoldings.Development.AffineProjection
+
+public import Unfoldings.Cap.JordanRolling
+public import Unfoldings.Cap.JordanRollingBounds
+public import Unfoldings.Cap.BankLengthProjection
+public import Unfoldings.Cap.JordanBankStretch

@@ -2278,3 +2278,8 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [`Complex/AffineProjectionAngles`](../Unfoldings/Complex/AffineProjectionAngles.lean) | Actual projected corner-angle sums |
 | [`Complex/AffineProjectionBoundary`](../Unfoldings/Complex/AffineProjectionBoundary.lean) | Same directed banks, vertex mates and contour order |
 | [`Development/AffineProjection`](../Unfoldings/Development/AffineProjection.lean) | Global identity development from actual separated projected faces |
+
+| [`Cap/JordanRolling`](../Unfoldings/Cap/JordanRolling.lean) | Actual intrinsic and projected Jordan bank rolling; exact real heading discrepancies |
+| [`Cap/JordanRollingBounds`](../Unfoldings/Cap/JordanRollingBounds.lean) | Curvature and closing-link bounds for actual contiguous bank headings |
+| [`Cap/BankLengthProjection`](../Unfoldings/Cap/BankLengthProjection.lean) | Normal-dependent contraction of actual original bank lengths |
+| [`Cap/JordanBankStretch`](../Unfoldings/Cap/JordanBankStretch.lean) | Exact intrinsic/projected bank edge speed and heading factors |

@@ -299,3 +299,12 @@ separate projected metric complex. It retains the original seam classes,
 vertex names, directed banks and complete contour order, with exact projected
 fan angles. Separated actual projected triangles supply its global identity
 development, allowing the same rolling API to describe the geometric bank.
+
+## Actual real bank headings and speeds
+
+[JordanRollingBounds](../Unfoldings/Cap/JordanRollingBounds.lean) applies the
+geometric Jordan comparison to real unreduced headings of actual rolled bank
+portions. [JordanBankStretch](../Unfoldings/Cap/JordanBankStretch.lean) proves
+the exact edgewise heading/speed factorization and bounds stretch between one
+and reciprocal normal height. These are the actual bank data needed by the
+length-weighted radial estimates. Geometric closing-link bounds are still open.
