@@ -2,6 +2,27 @@
 
 ## Session Log
 
+### 2026-11-14 — exact compatible mesh cuts and inherited routing
+
+- Proved every selected fine edge lies wholly in one prescribed coarse cut
+  segment, using the actual supporting and endpoint line constraints.
+- Retained affine parameters for oriented coarse subsegments. Unique outgoing
+  coarse edges have disjoint half-open images; two forward fine edges at the
+  same point would overlap, so the fine embedded graph forces their equality.
+- Proved the selected fine parent forest contains every prescribed cut seam
+  and cuts no others. Its retained set is exactly `retainOutside` of the full
+  constructed compatible carrier.
+- Constructed the actual flat intrinsic disk and local isometric development
+  for that exact network, not just a supported subforest.
+- Proved fine parent histories follow the original compatible routing and
+  inherit its whole-path length constant, including arbitrary initial orbit
+  portions up to the first boundary root.
+- Verification: successful cache retrieval followed by full `lake build`,
+  5,359 jobs. Audited 12,845 unfolding and 7,243 pinned topology declarations
+  with only standard Lean axioms; all cap and source abstract independence
+  checks passed. No new project warnings or placeholders.
+- Continuing with the quantitative bank perturbation and Jordan-gap geometry.
+
 ### 2026-11-14 — global isometry for flat finite planar gluings
 
 - Proved that complete isometric cell maps in a finite cover make a local

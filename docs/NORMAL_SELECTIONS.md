@@ -108,8 +108,10 @@ counting for Fewest Nets follow that development theorem.
   parents. Derive their boundary-rooted cut forest and actual intrinsic cut disk.
 - [x] Cover all positive curvature on that mesh, prove every retained interior
   copy is flat, and construct a rigid locally isometric development.
-- [ ] Prove exact retention of the full prescribed cut network and transfer the
-  original routing's whole-path estimates to the selected fine-edge paths.
+- [x] Prove that selected fine cut seams are exactly the full prescribed cut
+  network; the fine forest omits none of those seams.
+- [x] Prove every fine parent follows one oriented coarse segment and transfer
+  whole-path length estimates to all fine parent histories up to the boundary.
 - [ ] Construct complete one-ended forest cuts and intrinsic polygonal gaps.
 - [x] Prove completeness of finite noncompact gluings from compatible uniformly
   Lipschitz cell heights whose sublevels are compact.
@@ -151,3 +153,12 @@ not supplied as conclusions disguised as hypotheses. The finite complete cell
 cover gives a closed map with finite fibers, so this proof avoids a separate
 continuation-to-infinity argument. The actual gap construction must still
 establish its geometric and topological inputs.
+
+Exact network retention is
+[`compatibleMesh_retain_eq_prescribed`](../Unfoldings/Roof/CompatibleMeshRetention.lean).
+Thus [`exists_prescribedCompatibleCut_development`](../Unfoldings/Roof/PrescribedCompatibleCutDisk.lean)
+constructs the intrinsic flat disk for all prescribed cuts, rather than an
+unspecified supported subforest. The proof uses the unique forward coarse edge
+and the actual fine-edge embedding to force every prescribed seam into the
+selected parent forest. Fine parent histories follow the original routing and
+retain its length constant.

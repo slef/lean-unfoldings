@@ -2190,3 +2190,13 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Metric.FinitePlanarDevelopment](../Unfoldings/Metric/FinitePlanarDevelopment.lean) | Prove a local planar development on finitely many complete cells is globally isometric |
 | [Unfoldings.Metric.FlatPlanarGluing](../Unfoldings/Metric/FlatPlanarGluing.lean) | Construct global planar isometries of simply connected flat boundary gluings |
 | [Unfoldings.Topology.FiniteCellCovering](../Unfoldings/Topology/FiniteCellCovering.lean) | Derive finite fibers and a covering map from a finite complete isometric cell cover |
+| [Unfoldings.Geometry.CommonInitialSubsegments](../Unfoldings/Geometry/CommonInitialSubsegments.lean) | Prove forward subsegments with one affine start overlap in their interiors |
+| [Unfoldings.Geometry.HalfOpenStraightGraph](../Unfoldings/Geometry/HalfOpenStraightGraph.lean) | Separate directed half-open edges when every vertex has at most one outgoing edge |
+| [Unfoldings.Geometry.OrientedSubsegments](../Unfoldings/Geometry/OrientedSubsegments.lean) | Retain coarse edge parameters and prove forward fine edges are unique |
+| [Unfoldings.Geometry.PrescribedSubedge](../Unfoldings/Geometry/PrescribedSubedge.lean) | Use supporting-line constraints to place a whole fine edge in one prescribed segment |
+| [Unfoldings.Roof.CompatibleMeshOrientation](../Unfoldings/Roof/CompatibleMeshOrientation.lean) | Orient fine cut seams inside unique coarse compatible segments |
+| [Unfoldings.Roof.CompatibleMeshPaths](../Unfoldings/Roof/CompatibleMeshPaths.lean) | Transfer actual fine parent histories and their length bounds to the original routing |
+| [Unfoldings.Roof.CompatibleMeshRetention](../Unfoldings/Roof/CompatibleMeshRetention.lean) | Prove selected fine cuts equal exactly the prescribed whole-seam cut network |
+| [Unfoldings.Roof.CompatibleMeshSubedges](../Unfoldings/Roof/CompatibleMeshSubedges.lean) | Identify the single prescribed cut segment containing each fine cut edge |
+| [Unfoldings.Roof.PrescribedCompatibleCutDisk](../Unfoldings/Roof/PrescribedCompatibleCutDisk.lean) | Construct flat intrinsic disks and local developments for the exact prescribed cuts |
+| [Unfoldings.Roof.SeamSegments](../Unfoldings/Roof/SeamSegments.lean) | Identify a closed projected linked segment with its actual whole seam edge |

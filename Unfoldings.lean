@@ -1402,3 +1402,13 @@ public import Unfoldings.Metric.EuclideanLocalHomeomorph
 public import Unfoldings.Metric.FinitePlanarDevelopment
 public import Unfoldings.Metric.FlatPlanarGluing
 public import Unfoldings.Topology.FiniteCellCovering
+public import Unfoldings.Geometry.CommonInitialSubsegments
+public import Unfoldings.Geometry.HalfOpenStraightGraph
+public import Unfoldings.Geometry.OrientedSubsegments
+public import Unfoldings.Geometry.PrescribedSubedge
+public import Unfoldings.Roof.CompatibleMeshOrientation
+public import Unfoldings.Roof.CompatibleMeshPaths
+public import Unfoldings.Roof.CompatibleMeshRetention
+public import Unfoldings.Roof.CompatibleMeshSubedges
+public import Unfoldings.Roof.PrescribedCompatibleCutDisk
+public import Unfoldings.Roof.SeamSegments

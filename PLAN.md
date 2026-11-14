@@ -839,14 +839,16 @@ The [construction guide](docs/NORMAL_SELECTIONS.md) records the completed bridge
   rooted exactly on the section frontier and still covering actual curvature.
 
 - [x] Construct conforming meshes respecting all cut segments and original triangles.
+- [x] Prove exact retention of all prescribed fine cut seams and transfer the
+  original routing and length bounds to actual fine parent histories.
 - [x] Select supported increasing fine-edge forests and derive flat intrinsic cut disks
   with local isometric developments.
 - [x] Prove finite noncompact gluing completeness from compatible coercive cell heights.
 - [x] Construct global planar isometries of simply connected flat boundary gluings
   of finite closed convex cells, including unbounded cells.
 
-Next: transfer the original routing to the fine cuts, construct actual polygonal
-gaps and their end heights, and prove gap-grafting nonoverlap. Normal-cover
+Next: construct actual polygonal Jordan gaps and their end heights, then prove
+gap-grafting nonoverlap. Normal-cover
 selection and Euler counting follow.
 
 ## Later targets and Fewest Nets
