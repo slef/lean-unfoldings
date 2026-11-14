@@ -219,3 +219,16 @@ route distances; every interior point has a metric-ball Euclidean chart.
 
 The general [PolygonalClosedCover](../Unfoldings/Metric/PolygonalClosedCover.lean)
 result applies to unbounded finite closed convex-cell regions as well.
+
+## Length-weighted radial blocks
+
+[RadialBlockBounds](../Unfoldings/Geometry/RadialBlockBounds.lean) derives chord,
+radial, and length bounds from length-weighted polar-block comparisons, allowing
+variable intrinsic link speeds and unbounded total polar winding. The relative
+chord error is `C*(S-1) + S*B*C*(1+C*K/δ)`.
+
+[ChainPolarVariation](../Unfoldings/Geometry/ChainPolarVariation.lean) proves the
+geometric weighted variation estimate from actual radial progress and prefix
+length bounds, with the exact factor `K = sqrt(1-γ²)`. The remaining geometric
+input is the one-sided intrinsic-bank turn comparison, obtained in the paper
+using radial-wedge Jordan closures. It is still an explicit hypothesis here.

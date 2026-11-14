@@ -2,6 +2,24 @@
 
 ## Session Log
 
+### 2026-11-14 — length-weighted radial-block estimates
+
+- Proved the finite Fubini identity converting future polar variation into
+  earlier-length weights, allowing arbitrarily long total polar winding.
+- Controlled actual bank chords with simultaneous real heading errors and
+  lifted link-speed factors. Derived the explicit relative chord error
+  `C*(S-1) + S*B*C*(1+C*K/δ)` and its radial-margin and length-constant consequences.
+- Proved actual straight-link polar sweep bounds from radial progress, with
+  exactly `sqrt(1-γ²)`. Source-starting links and zero directions are included.
+  Identified the discrete earlier length with the exact contiguous prefix
+  length and proved the weighted variation estimate for actual chain geometry.
+- The geometric one-sided-bank turn comparison on radial-wedge Jordan closures
+  remains open; the quantitative theorem exposes that heading hypothesis.
+- Verification: cache retrieval and full `lake build` passed 5,400 jobs.
+  Audited 13,115 unfolding and 7,243 pinned topology declarations with standard
+  axioms only; both abstract independence checks passed, without new warnings.
+
+
 ### 2026-11-14 — complete intrinsic metrics on constructed polygonal gaps
 
 - Proved completeness from a finite isometric cover by complete spaces.

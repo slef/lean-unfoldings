@@ -1446,3 +1446,10 @@ public import Unfoldings.Geometry.SmallHingeGap
 public import Unfoldings.Metric.FiniteCompleteCover
 public import Unfoldings.Metric.PolygonalClosedCover
 public import Unfoldings.Geometry.RotationGapMetric
+public import Unfoldings.Geometry.WeightedHeadingBudget
+public import Unfoldings.Geometry.HeadingSpeedError
+public import Unfoldings.Geometry.ChordRotationControl
+public import Unfoldings.Geometry.RadialBlockError
+public import Unfoldings.Geometry.RadialBlockBounds
+public import Unfoldings.Geometry.RadialPolarVariation
+public import Unfoldings.Geometry.ChainPolarVariation

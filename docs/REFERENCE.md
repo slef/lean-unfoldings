@@ -2234,3 +2234,10 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Metric.FiniteCompleteCover](../Unfoldings/Metric/FiniteCompleteCover.lean) | Prove completeness from a finite isometric cover by complete spaces |
 | [Unfoldings.Metric.PolygonalClosedCover](../Unfoldings/Metric/PolygonalClosedCover.lean) | Identify intrinsic topology and completeness of finite closed convex-cell regions |
 | [Unfoldings.Geometry.RotationGapMetric](../Unfoldings/Geometry/RotationGapMetric.lean) | Construct complete intrinsic gap metrics, finite route distances and exact sector topology |
+| [Unfoldings.Geometry.WeightedHeadingBudget](../Unfoldings/Geometry/WeightedHeadingBudget.lean) | Bound length-weighted future polar variation by a finite Fubini argument |
+| [Unfoldings.Geometry.HeadingSpeedError](../Unfoldings/Geometry/HeadingSpeedError.lean) | Control bank chords with simultaneous heading and intrinsic-speed errors |
+| [Unfoldings.Geometry.ChordRotationControl](../Unfoldings/Geometry/ChordRotationControl.lean) | Transfer aligned chord bounds to actual bank radial margins and length constants |
+| [Unfoldings.Geometry.RadialBlockError](../Unfoldings/Geometry/RadialBlockError.lean) | Prove the radial-block chord estimate without a global heading cone |
+| [Unfoldings.Geometry.RadialBlockBounds](../Unfoldings/Geometry/RadialBlockBounds.lean) | Derive explicit radial margins and length constants from weighted block comparisons |
+| [Unfoldings.Geometry.RadialPolarVariation](../Unfoldings/Geometry/RadialPolarVariation.lean) | Bound true link polar sweep by radial progress with the exact square-root factor |
+| [Unfoldings.Geometry.ChainPolarVariation](../Unfoldings/Geometry/ChainPolarVariation.lean) | Identify true chain prefix lengths and bound length-weighted actual polar variation |
