@@ -2,6 +2,19 @@
 
 ## Session Log
 
+### 2026-11-14 — constructed generic, vertex-avoiding Jordan closures
+
+- Proved that positive source-radius progress survives arbitrarily small
+  generic source perturbations, while wedge supports become strict.
+- Constructed generic closing points preserving the actual Jordan closure.
+  All three added links avoid prescribed original vertices except their
+  allowed fixed endpoints; both new corners avoid any finite affine supports.
+- Derived strict perturbation tests from actual positive radial margins and
+  whole-path supporting inequalities from the original chain vertices.
+- Verification: cache retrieval and full `lake build` passed 5,442 jobs, including
+  standard-axiom and abstract-independence audits. Intrinsic closing-link turn
+  estimates, saved-frontier nesting and the final graft remain open.
+
 ### 2026-11-14 — actual Jordan bank heading and speed comparison
 
 - Constructed the projected metric and identity development of the actual

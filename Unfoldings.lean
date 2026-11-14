@@ -1495,3 +1495,9 @@ public import Unfoldings.Cap.JordanRolling
 public import Unfoldings.Cap.JordanRollingBounds
 public import Unfoldings.Cap.BankLengthProjection
 public import Unfoldings.Cap.JordanBankStretch
+
+public import Unfoldings.Geometry.GenericRadialSource
+public import Unfoldings.Geometry.LinearPathBounds
+public import Unfoldings.Geometry.GenericWedgeClosure
+public import Unfoldings.Geometry.SegmentLineAvoidance
+public import Unfoldings.Geometry.VertexAvoidingWedgeClosure

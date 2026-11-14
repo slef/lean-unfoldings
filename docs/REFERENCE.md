@@ -2283,3 +2283,9 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [`Cap/JordanRollingBounds`](../Unfoldings/Cap/JordanRollingBounds.lean) | Curvature and closing-link bounds for actual contiguous bank headings |
 | [`Cap/BankLengthProjection`](../Unfoldings/Cap/BankLengthProjection.lean) | Normal-dependent contraction of actual original bank lengths |
 | [`Cap/JordanBankStretch`](../Unfoldings/Cap/JordanBankStretch.lean) | Exact intrinsic/projected bank edge speed and heading factors |
+
+| [`Geometry/GenericRadialSource`](../Unfoldings/Geometry/GenericRadialSource.lean) | Generic source perturbations preserving radial progress and strict pointed wedges |
+| [`Geometry/LinearPathBounds`](../Unfoldings/Geometry/LinearPathBounds.lean) | Vertex support bounds imply support on the entire actual chain |
+| [`Geometry/GenericWedgeClosure`](../Unfoldings/Geometry/GenericWedgeClosure.lean) | Generic closing points for actual radial-wedge Jordan closures |
+| [`Geometry/SegmentLineAvoidance`](../Unfoldings/Geometry/SegmentLineAvoidance.lean) | Proper segment equations exclude exceptional connector incidences |
+| [`Geometry/VertexAvoidingWedgeClosure`](../Unfoldings/Geometry/VertexAvoidingWedgeClosure.lean) | Actual Jordan closures with all three closing links avoiding prescribed vertices |

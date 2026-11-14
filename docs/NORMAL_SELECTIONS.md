@@ -308,3 +308,12 @@ portions. [JordanBankStretch](../Unfoldings/Cap/JordanBankStretch.lean) proves
 the exact edgewise heading/speed factorization and bounds stretch between one
 and reciprocal normal height. These are the actual bank data needed by the
 length-weighted radial estimates. Geometric closing-link bounds are still open.
+
+## Generic closure incidences
+
+[VertexAvoidingWedgeClosure](../Unfoldings/Geometry/VertexAvoidingWedgeClosure.lean)
+constructs actual generic source and closing points, preserving radial progress
+and Jordan simplicity. All three closing links avoid prescribed vertices
+except their allowed fixed endpoints. Both new corners avoid any prescribed
+finite affine supports, including the original mesh lines. Endpoint trimming
+and geometric intrinsic section-turn estimates still need to be connected.
