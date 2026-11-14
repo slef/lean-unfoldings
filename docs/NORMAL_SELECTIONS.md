@@ -208,3 +208,14 @@ length constants, then sweeps the whole gap by these actual banks.
 
 These results treat individual hinge gaps. Nesting multiple openings and the
 intrinsic saved-frontier construction remain open.
+
+## Intrinsic polygonal gap metrics
+
+[RotationGapMetric](../Unfoldings/Geometry/RotationGapMetric.lean) constructs the
+actual intrinsic polygonal metric on each gap. The proved finite convex cell
+cover gives completeness and agreement with the planar topology, including the
+banks. An explicit closed-sector homeomorphism gives contractibility and finite
+route distances; every interior point has a metric-ball Euclidean chart.
+
+The general [PolygonalClosedCover](../Unfoldings/Metric/PolygonalClosedCover.lean)
+result applies to unbounded finite closed convex-cell regions as well.

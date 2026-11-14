@@ -1443,3 +1443,6 @@ public import Unfoldings.Geometry.RotationGapSweep
 public import Unfoldings.Geometry.HingeGapPrefix
 public import Unfoldings.Geometry.SingleOpeningRadial
 public import Unfoldings.Geometry.SmallHingeGap
+public import Unfoldings.Metric.FiniteCompleteCover
+public import Unfoldings.Metric.PolygonalClosedCover
+public import Unfoldings.Geometry.RotationGapMetric

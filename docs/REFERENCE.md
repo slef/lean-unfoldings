@@ -2231,3 +2231,6 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Geometry.HingeGapPrefix](../Unfoldings/Geometry/HingeGapPrefix.lean) | Prove a radial hinge gap meets its unchanged prefix only at its hinge |
 | [Unfoldings.Geometry.SingleOpeningRadial](../Unfoldings/Geometry/SingleOpeningRadial.lean) | Control every partial opening angle with one quantitative radial budget |
 | [Unfoldings.Geometry.SmallHingeGap](../Unfoldings/Geometry/SmallHingeGap.lean) | Derive actual gap-prefix clearance from original-bank length and radial margins |
+| [Unfoldings.Metric.FiniteCompleteCover](../Unfoldings/Metric/FiniteCompleteCover.lean) | Prove completeness from a finite isometric cover by complete spaces |
+| [Unfoldings.Metric.PolygonalClosedCover](../Unfoldings/Metric/PolygonalClosedCover.lean) | Identify intrinsic topology and completeness of finite closed convex-cell regions |
+| [Unfoldings.Geometry.RotationGapMetric](../Unfoldings/Geometry/RotationGapMetric.lean) | Construct complete intrinsic gap metrics, finite route distances and exact sector topology |

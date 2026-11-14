@@ -2,6 +2,21 @@
 
 ## Session Log
 
+### 2026-11-14 — complete intrinsic metrics on constructed polygonal gaps
+
+- Proved completeness from a finite isometric cover by complete spaces.
+  Applied this to actual convex cell inclusions in intrinsic polygonal metrics.
+- Proved that finite closed convex covers make the intrinsic polygonal topology
+  agree with the ambient topology, including boundary points and unbounded ends.
+- Applied the constructed gap cell cover: every rotation gap has a complete
+  intrinsic metric, finite route distances, an explicit closed-sector
+  homeomorphism, contractibility, and interior metric-ball Euclidean charts.
+- Verification: cache retrieval and full `lake build` succeeded, 5,393 jobs.
+  Audited 13,085 unfolding and 7,243 pinned topology declarations with standard
+  axioms only; both abstract independence checks passed. No new project warnings.
+- The actual forest graft and saved-frontier nesting remain to be constructed.
+
+
 ### 2026-11-14 — actual hinge gaps and fixed-prefix clearance
 
 - Split finite chain carriers and infinite rays exactly at actual vertices;
