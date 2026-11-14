@@ -1453,3 +1453,10 @@ public import Unfoldings.Geometry.RadialBlockError
 public import Unfoldings.Geometry.RadialBlockBounds
 public import Unfoldings.Geometry.RadialPolarVariation
 public import Unfoldings.Geometry.ChainPolarVariation
+public import Unfoldings.Geometry.RadialGraphArc
+public import Unfoldings.Topology.PathJordanArc
+public import Unfoldings.Geometry.RadialClosureSegments
+public import Unfoldings.Geometry.RadialClosureJordan
+public import Unfoldings.Geometry.WedgeClosingDirection
+public import Unfoldings.Geometry.RadialWedgeClosure
+public import Unfoldings.Geometry.ConvexCellRegion

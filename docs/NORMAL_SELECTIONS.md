@@ -232,3 +232,16 @@ geometric weighted variation estimate from actual radial progress and prefix
 length bounds, with the exact factor `K = sqrt(1-γ²)`. The remaining geometric
 input is the one-sided intrinsic-bank turn comparison, obtained in the paper
 using radial-wedge Jordan closures. It is still an explicit hypothesis here.
+
+## Radial-wedge Jordan closures
+
+[RadialWedgeClosure](../Unfoldings/Geometry/RadialWedgeClosure.lean) constructs
+the actual three-segment closure of a radially ordered path in any pointed
+positive-span wedge. The proof derives a simple path parametrization, constructs
+an outward closing point beyond a supporting side, and proves every required
+segment intersection before applying Jordan arc concatenation.
+
+[ConvexCellRegion](../Unfoldings/Geometry/ConvexCellRegion.lean) constructs exact
+face selections for regular closed regions when full convex-cell interiors
+avoid the frontier. The remaining turn-comparison bridge must apply this to
+an actual physical mesh and identify its boundary fans.

@@ -2,6 +2,27 @@
 
 ## Session Log
 
+### 2026-11-14 — constructed radial-wedge Jordan closures
+
+- Constructed exact radius-coordinate homeomorphisms and simple path
+  parametrizations of complete radial polygonal carriers, retaining flat edges.
+- Proved the disk and supporting-half-plane separation of all three closing
+  segments, including their exact endpoint intersections.
+- Constructed an outward direction strictly beyond a supporting side of any
+  pointed positive-span wedge, then an actual outer closing corner.
+- Used the proved injective path and segment intersection control to construct
+  the radial-wedge Jordan curve. No Jordan-loop or closure certificate is input.
+- Proved a general region-selection theorem: finite full convex cells whose
+  interiors avoid a regular closed region's frontier recover it exactly by
+  selecting cells that meet its interior. All incident cells at an interior
+  point are selected.
+- Verification: cache retrieval succeeded; full `lake build` passed 5,407 jobs
+  after fixing standalone imports. Audited 13,149 unfolding and 7,243 pinned
+  topology declarations with standard axioms only; abstract checks passed.
+- Continuing with the actual Jordan filling and its mesh face selection before
+  applying regional angle balance to intrinsic bank turns.
+
+
 ### 2026-11-14 — length-weighted radial-block estimates
 
 - Proved the finite Fubini identity converting future polar variation into

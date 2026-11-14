@@ -2241,3 +2241,10 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Geometry.RadialBlockBounds](../Unfoldings/Geometry/RadialBlockBounds.lean) | Derive explicit radial margins and length constants from weighted block comparisons |
 | [Unfoldings.Geometry.RadialPolarVariation](../Unfoldings/Geometry/RadialPolarVariation.lean) | Bound true link polar sweep by radial progress with the exact square-root factor |
 | [Unfoldings.Geometry.ChainPolarVariation](../Unfoldings/Geometry/ChainPolarVariation.lean) | Identify true chain prefix lengths and bound length-weighted actual polar variation |
+| [Unfoldings.Geometry.RadialGraphArc](../Unfoldings/Geometry/RadialGraphArc.lean) | Construct a simple interval parametrization of entire source-radial polygonal carriers |
+| [Unfoldings.Topology.PathJordanArc](../Unfoldings/Topology/PathJordanArc.lean) | Convert actual injective paths to named-endpoint Jordan arcs |
+| [Unfoldings.Geometry.RadialClosureSegments](../Unfoldings/Geometry/RadialClosureSegments.lean) | Prove exact disk and half-plane separation of radial closing segments |
+| [Unfoldings.Geometry.RadialClosureJordan](../Unfoldings/Geometry/RadialClosureJordan.lean) | Construct Jordan closures from actual radial paths and supporting-half-plane geometry |
+| [Unfoldings.Geometry.WedgeClosingDirection](../Unfoldings/Geometry/WedgeClosingDirection.lean) | Construct outward directions beyond a supporting side of every pointed wedge |
+| [Unfoldings.Geometry.RadialWedgeClosure](../Unfoldings/Geometry/RadialWedgeClosure.lean) | Construct the actual three-segment Jordan closure for radially ordered pointed wedges |
+| [Unfoldings.Geometry.ConvexCellRegion](../Unfoldings/Geometry/ConvexCellRegion.lean) | Construct exact region face selections when full convex-cell interiors avoid the frontier |
