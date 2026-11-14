@@ -2261,3 +2261,11 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Complex.FaceRestrictionVertices](../Unfoldings/Complex/FaceRestrictionVertices.lean) | Include restricted vertex classes and recover actual selected intrinsic corner angles |
 | [Unfoldings.Complex.FaceRestrictionWeights](../Unfoldings/Complex/FaceRestrictionWeights.lean) | Recover arbitrary original corner weights from actual restricted vertex fibers |
 | [Unfoldings.Cap.JordanFanAngles](../Unfoldings/Cap/JordanFanAngles.lean) | Identify intrinsic Jordan vertex fans with exactly their selected original corner contributions |
+
+| [`JordanBoundary`](../Unfoldings/Cap/JordanBoundary.lean) | Exact intrinsic and geometric Jordan boundary; constructed contour |
+| [`JordanVertexEnumeration`](../Unfoldings/Cap/JordanVertexEnumeration.lean) | Bijections with original geometric filling and boundary vertices |
+| [`JordanContourTurns`](../Unfoldings/Cap/JordanContourTurns.lean) | Exact ordered intrinsic/projected boundary turn comparison |
+| [`JordanBankTurnBounds`](../Unfoldings/Cap/JordanBankTurnBounds.lean) | One-sided bank error from actual closure curvature and connector error |
+
+| [`RegionalCornerPartition`](../Unfoldings/Complex/RegionalCornerPartition.lean) | Exact complementary and disjoint face-star partitions |
+| [`ComplementaryBankTurns`](../Unfoldings/Cap/ComplementaryBankTurns.lean) | Opposite bank turn errors differ by original path curvature |

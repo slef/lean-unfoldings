@@ -273,3 +273,13 @@ closed Jordan domain. [JordanFanAngles](../Unfoldings/Cap/JordanFanAngles.lean)
 identifies each of its vertex fans with exactly the original selected corners,
 for intrinsic angles and arbitrary projected corner weights. No fan or disk
 certificate is assumed.
+
+## Ordered bank turn comparison
+
+[JordanContourTurns](../Unfoldings/Cap/JordanContourTurns.lean) proves the exact
+intrinsic/projected exterior-turn comparison in the constructed contour order.
+[JordanBankTurnBounds](../Unfoldings/Cap/JordanBankTurnBounds.lean) reduces a
+bank portion's error to enclosed curvature and aggregate closing-link error.
+[ComplementaryBankTurns](../Unfoldings/Cap/ComplementaryBankTurns.lean) controls
+switching sides by the actual original path curvature. The closing-link error
+still needs its geometric section and endpoint estimates.

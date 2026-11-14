@@ -1473,3 +1473,11 @@ public import Unfoldings.Cap.JordanIntrinsicDisk
 public import Unfoldings.Complex.FaceRestrictionVertices
 public import Unfoldings.Complex.FaceRestrictionWeights
 public import Unfoldings.Cap.JordanFanAngles
+
+public import Unfoldings.Cap.JordanBoundary
+public import Unfoldings.Cap.JordanVertexEnumeration
+public import Unfoldings.Cap.JordanContourTurns
+public import Unfoldings.Cap.JordanBankTurnBounds
+
+public import Unfoldings.Complex.RegionalCornerPartition
+public import Unfoldings.Cap.ComplementaryBankTurns
