@@ -2,6 +2,24 @@
 
 ## Session Log
 
+### 2026-11-14 — quantitative bank perturbation and true hinge openings
+
+- Proved the aligned chord error from real heading errors and path length,
+  retaining the explicit radial margin `(d-Dε)/(1+Dε)` and length constant
+  `D/(1-Dε)`, independently of the number of edges.
+- Constructed actual hinge-fixed suffix rotations, including the current hinge
+  translation. All original link lengths are preserved and exact real heading
+  corrections add under repeated openings.
+- Bounded heading oscillation by the absolute opening budget. Original
+  curvatures spent once bound that budget; signed comparisons have oscillation
+  at most twice the total curvature.
+- The geometric saved-frontier fan invariant and positive Jordan gaps remain
+  open; the algebraic budget does not assume or assert those constructions.
+- Verification: successful `lake exe cache get`, then full `lake build`,
+  5,366 jobs. Audited 12,898 unfolding and 7,243 pinned topology declarations
+  with standard Lean axioms only; abstract independence checks passed.
+
+
 ### 2026-11-14 — exact compatible mesh cuts and inherited routing
 
 - Proved every selected fine edge lies wholly in one prescribed coarse cut

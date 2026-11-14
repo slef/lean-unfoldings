@@ -162,3 +162,15 @@ unspecified supported subforest. The proof uses the unique forward coarse edge
 and the actual fine-edge embedding to force every prescribed seam into the
 selected parent forest. Fine parent histories follow the original routing and
 retain its length constant.
+
+## Heading perturbations and actual hinge openings
+
+[HeadingPerturbation](../Unfoldings/Geometry/HeadingPerturbation.lean) proves the
+mesh-independent chord estimate and the explicit perturbed radial and length
+constants. [SuffixOpening](../Unfoldings/Geometry/SuffixOpening.lean) rotates each
+actual bank suffix about its current hinge, preserving translations and link
+lengths. [OpeningBudget](../Unfoldings/Geometry/OpeningBudget.lean) controls all
+these rotations by their total absolute angle. Curvature spent once bounds that
+budget; signed original-curvature comparisons have oscillation at most twice
+the total curvature. The geometric saved-frontier fan invariant, the comparison
+with intrinsic banks, and construction of positive Jordan gaps remain open.

@@ -2200,3 +2200,10 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Roof.CompatibleMeshSubedges](../Unfoldings/Roof/CompatibleMeshSubedges.lean) | Identify the single prescribed cut segment containing each fine cut edge |
 | [Unfoldings.Roof.PrescribedCompatibleCutDisk](../Unfoldings/Roof/PrescribedCompatibleCutDisk.lean) | Construct flat intrinsic disks and local developments for the exact prescribed cuts |
 | [Unfoldings.Roof.SeamSegments](../Unfoldings/Roof/SeamSegments.lean) | Identify a closed projected linked segment with its actual whole seam edge |
+| [Unfoldings.Geometry.ChordPerturbation](../Unfoldings/Geometry/ChordPerturbation.lean) | Transfer radial margins and length constants through relative chord errors |
+| [Unfoldings.Geometry.ComplexRotation](../Unfoldings/Geometry/ComplexRotation.lean) | Construct real linear isometries for complex plane rotations |
+| [Unfoldings.Geometry.HeadingChordError](../Unfoldings/Geometry/HeadingChordError.lean) | Bound aligned chord errors by real heading errors and actual path length |
+| [Unfoldings.Geometry.HeadingPerturbation](../Unfoldings/Geometry/HeadingPerturbation.lean) | Prove quantitative radial and length bounds under mesh-independent heading perturbations |
+| [Unfoldings.Geometry.SuffixOpening](../Unfoldings/Geometry/SuffixOpening.lean) | Rotate actual chain suffixes about current hinges while retaining translations |
+| [Unfoldings.Geometry.OpeningBudget](../Unfoldings/Geometry/OpeningBudget.lean) | Bound accumulated true suffix openings and their radial margin losses |
+| [Unfoldings.Geometry.OpeningCurvature](../Unfoldings/Geometry/OpeningCurvature.lean) | Control heading oscillation by original curvatures spent once |

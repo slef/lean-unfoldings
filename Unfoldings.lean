@@ -1412,3 +1412,10 @@ public import Unfoldings.Roof.CompatibleMeshRetention
 public import Unfoldings.Roof.CompatibleMeshSubedges
 public import Unfoldings.Roof.PrescribedCompatibleCutDisk
 public import Unfoldings.Roof.SeamSegments
+public import Unfoldings.Geometry.ChordPerturbation
+public import Unfoldings.Geometry.ComplexRotation
+public import Unfoldings.Geometry.HeadingChordError
+public import Unfoldings.Geometry.HeadingPerturbation
+public import Unfoldings.Geometry.SuffixOpening
+public import Unfoldings.Geometry.OpeningBudget
+public import Unfoldings.Geometry.OpeningCurvature
