@@ -1419,3 +1419,17 @@ public import Unfoldings.Geometry.HeadingPerturbation
 public import Unfoldings.Geometry.SuffixOpening
 public import Unfoldings.Geometry.OpeningBudget
 public import Unfoldings.Geometry.OpeningCurvature
+public import Unfoldings.Geometry.ChainInterval
+public import Unfoldings.Geometry.HeadingRadialChain
+public import Unfoldings.Geometry.PolygonalRay
+public import Unfoldings.Geometry.PolygonalRayEmbedding
+public import Unfoldings.Geometry.PolygonalRayOpening
+public import Unfoldings.Geometry.RadialTwist
+public import Unfoldings.Geometry.PolygonalRayFrame
+public import Unfoldings.Geometry.PolygonalRotationGap
+public import Unfoldings.Geometry.UnboundedArrangement
+public import Unfoldings.Cone.SectorFrontier
+public import Unfoldings.Geometry.ComplexLineEquation
+public import Unfoldings.Geometry.PolygonalRayEquations
+public import Unfoldings.Geometry.SourceRotation
+public import Unfoldings.Geometry.PolygonalGapCells

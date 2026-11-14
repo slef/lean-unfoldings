@@ -2207,3 +2207,17 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Geometry.SuffixOpening](../Unfoldings/Geometry/SuffixOpening.lean) | Rotate actual chain suffixes about current hinges while retaining translations |
 | [Unfoldings.Geometry.OpeningBudget](../Unfoldings/Geometry/OpeningBudget.lean) | Bound accumulated true suffix openings and their radial margin losses |
 | [Unfoldings.Geometry.OpeningCurvature](../Unfoldings/Geometry/OpeningCurvature.lean) | Control heading oscillation by original curvatures spent once |
+| [Unfoldings.Geometry.ChainInterval](../Unfoldings/Geometry/ChainInterval.lean) | Retain exact contiguous subchains and their original edge vectors |
+| [Unfoldings.Geometry.HeadingRadialChain](../Unfoldings/Geometry/HeadingRadialChain.lean) | Preserve whole-chain radial monotonicity under uniform heading errors |
+| [Unfoldings.Geometry.PolygonalRay](../Unfoldings/Geometry/PolygonalRay.lean) | Represent actual finite polygonal prefixes with unbounded straight tails |
+| [Unfoldings.Geometry.PolygonalRayEmbedding](../Unfoldings/Geometry/PolygonalRayEmbedding.lean) | Derive proper embedded half-lines from source-radial tests |
+| [Unfoldings.Geometry.PolygonalRayOpening](../Unfoldings/Geometry/PolygonalRayOpening.lean) | Rotate actual infinite bank suffixes and retain quantitative radial bounds |
+| [Unfoldings.Geometry.RadialTwist](../Unfoldings/Geometry/RadialTwist.lean) | Construct whole-plane homeomorphisms from continuous rotations on concentric circles |
+| [Unfoldings.Geometry.PolygonalRayFrame](../Unfoldings/Geometry/PolygonalRayFrame.lean) | Straighten actual radial polygonal banks by ambient plane homeomorphisms |
+| [Unfoldings.Geometry.PolygonalRotationGap](../Unfoldings/Geometry/PolygonalRotationGap.lean) | Construct source-rotation gaps with exact bank frontier and source-only bank intersection |
+| [Unfoldings.Geometry.UnboundedArrangement](../Unfoldings/Geometry/UnboundedArrangement.lean) | Decompose unbounded regular closed regions into finite closed convex chamber cells |
+| [Unfoldings.Cone.SectorFrontier](../Unfoldings/Cone/SectorFrontier.lean) | Identify a sector frontier with exactly its two closed boundary rays |
+| [Unfoldings.Geometry.ComplexLineEquation](../Unfoldings/Geometry/ComplexLineEquation.lean) | Construct proper supporting equations for entire complex lines, including degenerate segments |
+| [Unfoldings.Geometry.PolygonalRayEquations](../Unfoldings/Geometry/PolygonalRayEquations.lean) | Construct finite proper affine supports for whole polygonal banks and their infinite tails |
+| [Unfoldings.Geometry.SourceRotation](../Unfoldings/Geometry/SourceRotation.lean) | Represent actual source-fixed rotations as affine isometric equivalences |
+| [Unfoldings.Geometry.PolygonalGapCells](../Unfoldings/Geometry/PolygonalGapCells.lean) | Construct finite closed full-dimensional convex cells with disjoint interiors covering rotation gaps |

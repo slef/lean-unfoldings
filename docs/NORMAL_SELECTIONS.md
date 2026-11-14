@@ -174,3 +174,26 @@ these rotations by their total absolute angle. Curvature spent once bounds that
 budget; signed original-curvature comparisons have oscillation at most twice
 the total curvature. The geometric saved-frontier fan invariant, the comparison
 with intrinsic banks, and construction of positive Jordan gaps remain open.
+
+## Polygonal banks and source-rotation gaps
+
+[PolygonalRay](../Unfoldings/Geometry/PolygonalRay.lean) retains a finite chain
+and its actual straight infinite tail, without imposing nonoverlap. Source-radial
+tests prove the carrier a proper embedded half-line, parameterized by its exact
+radius. [PolygonalRayOpening](../Unfoldings/Geometry/PolygonalRayOpening.lean)
+extends actual hinge rotations to the tail and preserves radial monotonicity
+under the quantitative opening budget.
+
+[PolygonalRayFrame](../Unfoldings/Geometry/PolygonalRayFrame.lean) constructs an
+ambient plane homeomorphism that straightens the bank. Its image of a closed
+sector is an actual source-rotation gap: closed, with nonempty interior and
+frontier exactly the two polygonal banks, meeting only at their source.
+[UnboundedArrangement](../Unfoldings/Geometry/UnboundedArrangement.lean) removes
+the compactness restriction on finite affine-boundary cell decompositions.
+[PolygonalGapCells](../Unfoldings/Geometry/PolygonalGapCells.lean) constructs the
+actual supporting lines and a finite closed full-dimensional convex cover of
+each source-rotation gap, with pairwise-disjoint cell interiors.
+
+The source-rotation gap is the first case. Nesting successive internal hinge
+openings, saved-frontier fan bookkeeping, and the intrinsic graft construction
+remain to be proved before claiming compatible-cut nonoverlap.

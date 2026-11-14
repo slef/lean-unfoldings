@@ -2,6 +2,29 @@
 
 ## Session Log
 
+### 2026-11-14 — proper polygonal banks and actual source-rotation gaps
+
+- Constructed polygonal rays with exact finite prefixes and straight infinite
+  tails, allowing overlap and collapsed subdivision edges in the representation.
+  Source-radial tests prove a closed carrier, a unique point on every concentric
+  circle, properness, and an actual half-line homeomorphism.
+- Extended quantitative heading perturbation to all contiguous subchains and
+  actual infinite suffix rotations, retaining the hinge translations and tails.
+- Constructed an ambient plane homeomorphism straightening each radial bank.
+  A closed sector maps to an actual source-rotation gap with nonempty interior,
+  exact two-bank frontier, and source-only bank intersection for distinct rays.
+- Constructed proper finite affine supports for the complete banks. Extended
+  arrangement decomposition to unbounded regular closed regions, and used the
+  actual supports to construct finite closed full-dimensional convex gap cells
+  with pairwise-disjoint interiors.
+- This proves the source-rotation case. Internal hinge nesting, saved-frontier
+  fan bookkeeping, intrinsic gap grafting, and final nonoverlap remain open.
+- Verification: successful cache retrieval followed by full `lake build`,
+  5,380 jobs. Audited 13,029 unfolding and 7,243 pinned topology declarations
+  with standard Lean axioms only; cap/source abstract independence checks passed.
+  Fixed the new style warnings and reran the full build successfully.
+
+
 ### 2026-11-14 — quantitative bank perturbation and true hinge openings
 
 - Proved the aligned chord error from real heading errors and path length,
