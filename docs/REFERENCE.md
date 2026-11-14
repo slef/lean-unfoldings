@@ -2302,3 +2302,12 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [`Development/SingleSeam`](../Unfoldings/Development/SingleSeam.lean) | Construct the genuine outward development retaining one original seam |
 | [`Cap/IntrinsicSectionTurns`](../Unfoldings/Cap/IntrinsicSectionTurns.lean) | Actual vertex-avoiding straight-section intrinsic turns total at most twice the tilt |
 | [`Cap/IntrinsicSectionTurnAgreement`](../Unfoldings/Cap/IntrinsicSectionTurnAgreement.lean) | Hinge rigidity identifies the intrinsic turn in every retained development |
+
+| [`Topology/PairedInvolutionExtension`](../Unfoldings/Topology/PairedInvolutionExtension.lean) | Extend any prescribed finite pairing chain to its full cycle |
+| [`Topology/FinitePrefixSum`](../Unfoldings/Topology/FinitePrefixSum.lean) | Exact prefix sums under finite index inclusions |
+| [`Geometry/ClosedRayChain`](../Unfoldings/Geometry/ClosedRayChain.lean) | Complementary closed-chain angular length bounds endpoint angle |
+| [`Polyhedron/ComplementaryLinkAngles`](../Unfoldings/Polyhedron/ComplementaryLinkAngles.lean) | Original complementary vertex corners bound the spatial endpoint angle |
+| [`Polyhedron/LinkFanTurn`](../Unfoldings/Polyhedron/LinkFanTurn.lean) | Actual convex one-sided fan exterior turns contract spatial bends |
+| [`Complex/FaceRestrictionLinks`](../Unfoldings/Complex/FaceRestrictionLinks.lean) | Embed actual restricted corner chains in their original full link |
+| [`Polyhedron/RestrictedBoundaryTurns`](../Unfoldings/Polyhedron/RestrictedBoundaryTurns.lean) | Spatial bend bound for actual restricted boundary fans, including reflex fans |
+| [`Cap/JordanVertexTurnBound`](../Unfoldings/Cap/JordanVertexTurnBound.lean) | Spatial bend bound for every actual intrinsic Jordan boundary vertex |

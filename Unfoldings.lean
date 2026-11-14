@@ -1514,3 +1514,12 @@ public import Unfoldings.Geometry.GenericBankClosure
 public import Unfoldings.Development.SingleSeam
 public import Unfoldings.Cap.IntrinsicSectionTurns
 public import Unfoldings.Cap.IntrinsicSectionTurnAgreement
+
+public import Unfoldings.Topology.PairedInvolutionExtension
+public import Unfoldings.Topology.FinitePrefixSum
+public import Unfoldings.Geometry.ClosedRayChain
+public import Unfoldings.Polyhedron.ComplementaryLinkAngles
+public import Unfoldings.Polyhedron.LinkFanTurn
+public import Unfoldings.Complex.FaceRestrictionLinks
+public import Unfoldings.Polyhedron.RestrictedBoundaryTurns
+public import Unfoldings.Cap.JordanVertexTurnBound

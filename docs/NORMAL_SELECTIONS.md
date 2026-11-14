@@ -340,3 +340,11 @@ each regular section crossing's actual outward hinge turn, proves agreement
 with any retained development, and bounds the total by `2φ` independently of
 mesh size. The paper's sharper `2φ sin φ` bound remains open; the current bound
 is useful for a qualitative small-tilt comparison.
+
+## Actual fan turn contraction
+
+[JordanVertexTurnBound](../Unfoldings/Cap/JordanVertexTurnBound.lean) bounds each
+actual intrinsic Jordan boundary fan's absolute exterior turn by its genuine
+spatial bend. The proof uses both sides of the original corner link and applies
+to reflex fans and arbitrary-valence flat subdivision vertices. Ordered
+straight-connector summation and corner distortion estimates remain open.

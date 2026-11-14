@@ -2,6 +2,19 @@
 
 ## Session Log
 
+### 2026-11-14 — actual one-sided fan turn contracts spatial bending
+
+- Extended arbitrary finite pairing chains to their complete cycles while
+  preserving the prescribed original corner order.
+- Proved the spatial endpoint angle bound using complementary original corners,
+  then bounded the absolute exterior turn of either convex fan, including reflex fans.
+- Embedded actual restricted face-link chains in the original full vertex links.
+  Applied the turn bound to the actual intrinsic Jordan bank, at arbitrary
+  valence and including new flat crease subdivision vertices.
+- Verification: cache retrieval and full `lake build` passed 5,460 jobs, including
+  standard-axiom and abstract-independence audits. Ordered straight-connector
+  summation, saved-frontier nesting and the final intrinsic graft remain open.
+
 ### 2026-11-14 — constructed intrinsic straight-section turning
 
 - Constructed a genuine single-seam outward development directly from the
