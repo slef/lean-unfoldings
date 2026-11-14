@@ -2,6 +2,27 @@
 
 ## Session Log
 
+### 2026-11-14 — actual Jordan fillings and geometric relative angle balance
+
+- Constructed the actual bounded Jordan filling as the closure of its inside.
+  Proved compactness, regularity, exact original frontier, and an ambient disk
+  homeomorphism. Convex containers contain the whole filling; strict boundary
+  containment puts the entire filling in the container's interior.
+- Selected exact whole triangles when a physical mesh respects the curve.
+  Proved that every incident cell at an interior point is selected and that
+  original full stars correspond exactly to points inside the filling.
+- Identified the abstract partial-star sum with the actual geometric boundary
+  sum, eliminating all exterior vertices and rim terms.
+- Proved exact relative Gauss–Bonnet: the selected intrinsic-minus-projected
+  boundary-fan sum equals the actual angular curvature strictly inside the
+  filling. Its absolute value is bounded by total cap curvature.
+- Verification: cache retrieval and full `lake build` passed 5,413 jobs.
+  Audited 13,171 unfolding and 7,243 pinned topology declarations with standard
+  axioms only; cap/source abstract independence checks passed, without new warnings.
+- Continuing by constructing the physical constraint mesh for each polygonal
+  closure, then identifying path and connector turns in these actual fans.
+
+
 ### 2026-11-14 — constructed radial-wedge Jordan closures
 
 - Constructed exact radius-coordinate homeomorphisms and simple path

@@ -2248,3 +2248,9 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Geometry.WedgeClosingDirection](../Unfoldings/Geometry/WedgeClosingDirection.lean) | Construct outward directions beyond a supporting side of every pointed wedge |
 | [Unfoldings.Geometry.RadialWedgeClosure](../Unfoldings/Geometry/RadialWedgeClosure.lean) | Construct the actual three-segment Jordan closure for radially ordered pointed wedges |
 | [Unfoldings.Geometry.ConvexCellRegion](../Unfoldings/Geometry/ConvexCellRegion.lean) | Construct exact region face selections when full convex-cell interiors avoid the frontier |
+| [Unfoldings.Topology.ClosedJordanDomain](../Unfoldings/Topology/ClosedJordanDomain.lean) | Construct compact regular Jordan fillings, exact frontiers and ambient disk homeomorphisms |
+| [Unfoldings.Topology.IncidentCellNeighborhood](../Unfoldings/Topology/IncidentCellNeighborhood.lean) | Derive whole neighborhoods from the finitely many closed cells incident at a point |
+| [Unfoldings.Geometry.JordanTriangleSelection](../Unfoldings/Geometry/JordanTriangleSelection.lean) | Construct exact whole-triangle fillings for respected Jordan curves |
+| [Unfoldings.Cap.JordanFaceSelection](../Unfoldings/Cap/JordanFaceSelection.lean) | Select actual projected cap faces and prove full-star inclusion inside Jordan fillings |
+| [Unfoldings.Cap.JordanRegionalAngles](../Unfoldings/Cap/JordanRegionalAngles.lean) | Identify actual Jordan-boundary fan excess and bound it by total cap curvature |
+| [Unfoldings.Cap.JordanAngleBalance](../Unfoldings/Cap/JordanAngleBalance.lean) | Prove exact geometric boundary-angle excess equals actual curvature strictly inside the Jordan filling |

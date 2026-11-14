@@ -1460,3 +1460,9 @@ public import Unfoldings.Geometry.RadialClosureJordan
 public import Unfoldings.Geometry.WedgeClosingDirection
 public import Unfoldings.Geometry.RadialWedgeClosure
 public import Unfoldings.Geometry.ConvexCellRegion
+public import Unfoldings.Topology.ClosedJordanDomain
+public import Unfoldings.Topology.IncidentCellNeighborhood
+public import Unfoldings.Geometry.JordanTriangleSelection
+public import Unfoldings.Cap.JordanFaceSelection
+public import Unfoldings.Cap.JordanRegionalAngles
+public import Unfoldings.Cap.JordanAngleBalance

@@ -245,3 +245,14 @@ segment intersection before applying Jordan arc concatenation.
 face selections for regular closed regions when full convex-cell interiors
 avoid the frontier. The remaining turn-comparison bridge must apply this to
 an actual physical mesh and identify its boundary fans.
+
+## Geometric Jordan angle balance
+
+[JordanAngleBalance](../Unfoldings/Cap/JordanAngleBalance.lean) proves that the
+actual boundary-fan excess along an interior Jordan curve equals the angular
+curvature strictly inside its constructed whole-face filling. The cap mesh must
+respect the curve; full-star incidence and the exact face selection are proved.
+No Euler formula or supplied region-disk certificate is used.
+
+The next bridge constructs the respecting physical mesh for each polygonal
+closure and identifies the path and connector heading changes with these fans.
