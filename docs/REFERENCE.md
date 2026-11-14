@@ -2162,3 +2162,14 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Roof.CompatiblePotentialPaths](../Unfoldings/Roof/CompatiblePotentialPaths.lean) | Control arbitrary partial edges and unbounded terminal tails with one potential |
 | [Unfoldings.Roof.CompatiblePotentialWholePaths](../Unfoldings/Roof/CompatiblePotentialWholePaths.lean) | Prove positive radial margins on whole compatible paths and terminal rays |
 | [Unfoldings.Roof.ComponentPotentialForest](../Unfoldings/Roof/ComponentPotentialForest.lean) | Restrict the shared original-edge forest to each component with exactly one boundary root |
+| [Unfoldings.Complex.SeamEmbedding](../Unfoldings/Complex/SeamEmbedding.lean) | Embed the original whole-seam graph in the uncut intrinsic surface |
+| [Unfoldings.Convex.EnvelopeSublevels](../Unfoldings/Convex/EnvelopeSublevels.lean) | Control strict sublevels along segments with a possible boundary endpoint |
+| [Unfoldings.Convex.ExteriorEmbedding](../Unfoldings/Convex/ExteriorEmbedding.lean) | Realize actual first-contact segments as an embedded straight rooted forest |
+| [Unfoldings.Geometry.ParentSegments](../Unfoldings/Geometry/ParentSegments.lean) | Realize increasing parent forests by disjoint straight segments |
+| [Unfoldings.Geometry.StraightGraphLinks](../Unfoldings/Geometry/StraightGraphLinks.lean) | Transfer straight-edge separation and vertex avoidance to oriented links |
+| [Unfoldings.Roof.CompatibleCutEmbedding](../Unfoldings/Roof/CompatibleCutEmbedding.lean) | Construct the finite embedded forest of original and exterior parent segments |
+| [Unfoldings.Roof.CompatibleCutPieces](../Unfoldings/Roof/CompatibleCutPieces.lean) | Separate all open cut pieces, including full contact-free terminal rays |
+| [Unfoldings.Roof.SeamEmbedding](../Unfoldings/Roof/SeamEmbedding.lean) | Identify the roof seam embedding with exact projected straight edges |
+| [Unfoldings.Roof.TerminalTruncation](../Unfoldings/Roof/TerminalTruncation.lean) | Truncate terminal rays on one actual envelope level, preserving original parents |
+| [Unfoldings.Roof.TruncatedCutEmbedding](../Unfoldings/Roof/TruncatedCutEmbedding.lean) | Construct a bounded embedded forest rooted exactly on its level boundary |
+| [Unfoldings.Topology.ParentLeaves](../Unfoldings/Topology/ParentLeaves.lean) | Extend increasing forests by one separately named boundary leaf per old root |

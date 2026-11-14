@@ -129,7 +129,9 @@ Whole-polyhedron normal-selection disks, exact clipped polyhedral extensions,
 and compatible common-potential forests are also constructed. The forest bounds
 cover all incoming histories, partial edges, and terminal rays. See the
 [normal-selection guide](docs/NORMAL_SELECTIONS.md) for the main APIs and hypotheses.
-The gap-grafting nonoverlap theorem is the next Fewest Nets target.
+The cuts now form embedded straight forests and can be truncated at a common
+envelope level with exactly one boundary root per tree. Realizing those forests
+as intrinsic cut disks and proving gap-grafting nonoverlap are the next steps.
 
 Remaining work includes:
 

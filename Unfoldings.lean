@@ -1372,3 +1372,15 @@ public import Unfoldings.Geometry.RadialMarginSegment
 public import Unfoldings.Roof.CompatiblePotentialPaths
 public import Unfoldings.Roof.CompatiblePotentialWholePaths
 public import Unfoldings.Roof.ComponentPotentialForest
+
+public import Unfoldings.Complex.SeamEmbedding
+public import Unfoldings.Convex.EnvelopeSublevels
+public import Unfoldings.Convex.ExteriorEmbedding
+public import Unfoldings.Geometry.ParentSegments
+public import Unfoldings.Geometry.StraightGraphLinks
+public import Unfoldings.Roof.CompatibleCutEmbedding
+public import Unfoldings.Roof.CompatibleCutPieces
+public import Unfoldings.Roof.SeamEmbedding
+public import Unfoldings.Roof.TerminalTruncation
+public import Unfoldings.Roof.TruncatedCutEmbedding
+public import Unfoldings.Topology.ParentLeaves

@@ -1,8 +1,9 @@
 # Normal selections, clipped extensions, and compatible forests
 
-These three construction milestones are implemented. They prepare the geometric
-input for the Fewest Nets development argument; they do not yet prove its
-nonoverlap or counting theorems.
+The normal-selection, clipped-extension, and compatible-forest constructions are
+implemented, including bounded embedded cut forests. They prepare the geometric
+input for the Fewest Nets development argument; its intrinsic cut disks,
+gap-grafting nonoverlap, and counting theorems remain to be proved.
 
 ## Start here
 
@@ -83,3 +84,37 @@ unexplained certificate. The constructors build the data from the input geometry
 Use these geometric forests in the intrinsic cut and development construction,
 then prove the gap-grafting nonoverlap theorem. Normal-cover selection and Euler
 counting for Fewest Nets follow that development theorem.
+
+## Embedded cuts and the next bridge
+
+- [x] Embed every original whole seam in the intrinsic surface and identify its
+  exact projected straight segment.
+- [x] Realize the compatible finite parents as an embedded straight rooted forest:
+  distinct open edges are disjoint and avoid every original vertex.
+- [x] Include the complete terminal rays in a pairwise disjoint family of open
+  cut pieces, handling coincident rays and first contacts.
+- [x] Construct a common envelope level strictly above all original vertices.
+  Truncate each terminal ray at its actual positive-time level intersection.
+- [x] Prove the resulting finite straight graph is a forest with exactly one
+  boundary root per tree. Precisely its new leaves lie on the actual sublevel
+  frontier; all open edges lie in the interior.
+- [x] Preserve original selected interior parents exactly and retain coverage of
+  every actual positive-curvature vertex on physical extension meshes.
+- [ ] Realize the bounded embedded forest as whole-edge cuts of a conforming
+  physical mesh, proving the refined cut graph is a boundary-rooted forest.
+- [ ] Apply the disk-cut and flat-development theorems to that actual mesh.
+- [ ] Construct complete one-ended forest cuts and intrinsic polygonal gaps.
+- [ ] Prove metric completeness and local isometry after gap insertion, and use
+  the flat-plane covering argument to obtain nonoverlap.
+
+Start with [`truncatedCutEmbedding`](../Unfoldings/Roof/TruncatedCutEmbedding.lean).
+Its hypotheses are the constructed compatible routing, no original slope on the
+clipping polygon boundary, and any level above the original vertex heights;
+[`exists_truncation_level`](../Unfoldings/Roof/TerminalTruncation.lean) supplies
+such a level. An inner slope disk makes this level section compact by the existing
+coercivity theorem. No cut-disk or nonoverlap conclusion is assumed in this API.
+
+The remaining noncompact step needs cells with controlled unbounded ends,
+completed cut metrics with distinct banks, and actual metric gap insertion.
+The existing finite triangle gluing and flat-disk development theorems provide
+parts of that argument, but do not by themselves prove it.

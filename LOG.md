@@ -2,6 +2,36 @@
 
 ## Session Log
 
+### 2026-11-14 — embedded compatible cuts and common-level truncation
+
+- Embedded the full original whole-seam graph in the uncut intrinsic surface;
+  its roof projection is exactly the prescribed straight-edge embedding.
+- Constructed actual embedded straight graphs for exterior first contacts and
+  for the complete finite compatible parent forest. Open edges avoid every
+  original vertex and are pairwise disjoint.
+- Extended the separation result to include complete contact-free terminal
+  rays. This also handles coincident exterior rays by retaining only their
+  actual first-contact pieces.
+- Added a generic increasing-forest extension with one separately named leaf
+  beyond each old root. Constructed a common envelope level above all original
+  vertices and the exact positive travel times to it along terminal rays.
+- Constructed the bounded embedded straight forest. Precisely its new leaves
+  lie on the actual sublevel frontier, every open edge lies in the interior,
+  and every tree has exactly one boundary root. Truncation preserves original
+  selected interior parents and covers every positive intrinsic curvature
+  vertex of the physical extension meshes.
+- Updated public imports, module reference, README, and the construction guide.
+  The next bridge is realization as whole-edge cuts on a conforming physical
+  mesh and the resulting intrinsic flat cut disk. Noncompact gap insertion,
+  completeness, and gap-grafting nonoverlap remain open; no such conclusion is
+  hidden in the forest hypotheses.
+- Verification: `lake exe cache get` exited successfully, followed by a full
+  `lake build` passing all 5,332 jobs. The audit checked 12,659 unfolding and
+  7,243 pinned planar-topology declarations with only `propext`,
+  `Classical.choice`, and `Quot.sound`; all 70 cap and 64 source abstract
+  declarations remained independent. No new project warnings or placeholders.
+  Only the main worktree exists; no temporary worktrees need cleanup.
+
 ### 2026-11-14 — compatible forests, whole-path bounds, and physical curvature
 
 - Completed the strict-region identity with the union of interiors of selected

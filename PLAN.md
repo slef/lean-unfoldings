@@ -834,9 +834,13 @@ The [construction guide](docs/NORMAL_SELECTIONS.md) records the completed bridge
 - [x] Exact finite clipped extensions preserve selected faces and locate actual curvature.
 - [x] Construct compatible original-edge and exterior forests, controlling all merged histories.
 - [x] Prove whole-path length and positive radial margins, including terminal rays.
+- [x] Realize compatible cut segments and terminal rays as disjoint embedded pieces.
+- [x] Truncate at a common envelope level, obtaining an embedded straight forest
+  rooted exactly on the section frontier and still covering actual curvature.
 
-Next: intrinsic cuts and gap-grafting nonoverlap for these forests, followed by
-normal-cover selection and Euler counting.
+Next: realize these bounded forests on conforming physical meshes and construct
+intrinsic cut disks, then prove gap-grafting nonoverlap. Normal-cover selection
+and Euler counting follow.
 
 ## Later targets and Fewest Nets
 
