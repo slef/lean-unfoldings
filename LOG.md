@@ -2,6 +2,17 @@
 
 ## Session Log
 
+### 2026-11-14 — fully regular actual trimmed bank closures
+
+- Constructed the combined endpoint trim, generic nearby radial source and
+  actual closing point from finite exceptional vertex/equation data.
+- Proved that all three complete extended closing lines avoid every prescribed
+  vertex, preserving Jordan simplicity and all original bank turns. The new
+  corners also avoid the prescribed affine supports.
+- Verification: cache retrieval and full `lake build` passed 5,449 jobs, including
+  standard-axiom and abstract-independence audits. Intrinsic section/fan matching,
+  saved-frontier nesting and the final compatible-cut graft remain open.
+
 ### 2026-11-14 — exact bank endpoint trimming
 
 - Constructed simultaneous endpoint trims preserving every intermediate original

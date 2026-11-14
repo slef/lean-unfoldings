@@ -1506,3 +1506,7 @@ public import Unfoldings.Geometry.ChainEndTrimming
 public import Unfoldings.Geometry.ChainEndTrimPaths
 public import Unfoldings.Geometry.ChainEndTrimTurns
 public import Unfoldings.Geometry.GenericEndTrimming
+
+public import Unfoldings.Geometry.StrictRadialTrimming
+public import Unfoldings.Geometry.SegmentExtendedAvoidance
+public import Unfoldings.Geometry.GenericBankClosure

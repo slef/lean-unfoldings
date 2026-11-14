@@ -325,3 +325,10 @@ endpoints strictly inside the first and last actual links, avoiding prescribed
 vertices. Every intermediate original corner, normalized direction, turn and
 intrinsic/projected edge factor is retained. Carrier containment and radial
 progress follow from exact increasing edge subparametrizations.
+
+## Fully regular closing lines
+
+[GenericBankClosure](../Unfoldings/Geometry/GenericBankClosure.lean) combines
+trimming and generic closure construction. Every original bank turn remains;
+all three complete extended closing lines avoid the prescribed vertices. This
+provides the regularity input of the existing actual section-trace API.

@@ -2294,3 +2294,7 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [`Geometry/ChainEndTrimPaths`](../Unfoldings/Geometry/ChainEndTrimPaths.lean) | Exact subparametrizations preserve carrier order and radial progress |
 | [`Geometry/ChainEndTrimTurns`](../Unfoldings/Geometry/ChainEndTrimTurns.lean) | Genuine trims preserve all original directions, turns and complex edge factors |
 | [`Geometry/GenericEndTrimming`](../Unfoldings/Geometry/GenericEndTrimming.lean) | Choose interior terminal fractions avoiding any finite prescribed vertex set |
+
+| [`Geometry/StrictRadialTrimming`](../Unfoldings/Geometry/StrictRadialTrimming.lean) | Strict original radial progress survives genuine endpoint trimming |
+| [`Geometry/SegmentExtendedAvoidance`](../Unfoldings/Geometry/SegmentExtendedAvoidance.lean) | Entire extended connector lines avoid prescribed exceptional points |
+| [`Geometry/GenericBankClosure`](../Unfoldings/Geometry/GenericBankClosure.lean) | Construct actual trimmed Jordan closures with three completely regular closing lines |
