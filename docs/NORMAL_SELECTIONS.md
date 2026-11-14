@@ -364,3 +364,14 @@ constructs physical traces from actual projected bank coordinates and adjacency.
 sum of absolute contour fan errors on a straight interval by `2φ`, including
 subdivision vertices. Deriving those ordered intervals from the constructed
 three-link closure, and bounding its closing corners, remain open.
+
+## Uniform corner comparison
+
+[RelativeFaceAngleError](../Unfoldings/Cap/RelativeFaceAngleError.lean) derives
+relative angular distortion from actual projection length bounds and continuity.
+[JordanCornerError](../Unfoldings/Cap/JordanCornerError.lean) sums it over actual
+fans: one positive tilt makes every Jordan corner error arbitrarily small,
+independently of valence and without generic-position assumptions.
+[CyclicBoundarySection](../Unfoldings/Cap/CyclicBoundarySection.lean) also removes
+the enumeration-origin restriction on ordered straight sections. The remaining
+bank comparison must derive its closing-link contribution from actual geometry.

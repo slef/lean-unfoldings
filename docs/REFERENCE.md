@@ -2321,3 +2321,12 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [`Cap/BoundarySectionTrace`](../Unfoldings/Cap/BoundarySectionTrace.lean) | Actual straight boundary sections have total fan-turn error at most twice tilt |
 | [`Cap/BoundarySectionConstruction`](../Unfoldings/Cap/BoundarySectionConstruction.lean) | Construct physical straight boundary traces from actual projected contour coordinates |
 | [`Cap/JordanStraightSection`](../Unfoldings/Cap/JordanStraightSection.lean) | Uniform contour error bound on actual ordered straight Jordan intervals |
+
+| [`Complex/BoundaryContourRotation`](../Unfoldings/Complex/BoundaryContourRotation.lean) | Reindex actual directed boundary contours while preserving every bank |
+| [`Cap/CyclicBoundarySection`](../Unfoldings/Cap/CyclicBoundarySection.lean) | Straight section fan error bounds across the cyclic contour origin |
+| [`Geometry/PlanarAngleArea`](../Unfoldings/Geometry/PlanarAngleArea.lean) | Exact planar angular area from the Gram determinant |
+| [`Geometry/LinearAngleSine`](../Unfoldings/Geometry/LinearAngleSine.lean) | Near-unit sine ratio from actual planar length contraction |
+| [`Geometry/RelativeSineError`](../Unfoldings/Geometry/RelativeSineError.lean) | Relative angular error from additive and sine ratio estimates |
+| [`Cap/RelativeFaceAngleError`](../Unfoldings/Cap/RelativeFaceAngleError.lean) | Uniform relative face and corner projection-angle distortion |
+| [`Cap/RegionalProjectionError`](../Unfoldings/Cap/RegionalProjectionError.lean) | Selected fan error bounded by its projected angle, independently of valence |
+| [`Cap/JordanCornerError`](../Unfoldings/Cap/JordanCornerError.lean) | Uniform actual Jordan corner errors without generic incidence assumptions |

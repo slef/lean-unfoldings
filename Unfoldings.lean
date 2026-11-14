@@ -1533,3 +1533,11 @@ public import Unfoldings.Polyhedron.BoundaryDirections
 public import Unfoldings.Cap.BoundarySectionTrace
 public import Unfoldings.Cap.BoundarySectionConstruction
 public import Unfoldings.Cap.JordanStraightSection
+public import Unfoldings.Complex.BoundaryContourRotation
+public import Unfoldings.Cap.CyclicBoundarySection
+public import Unfoldings.Geometry.PlanarAngleArea
+public import Unfoldings.Geometry.LinearAngleSine
+public import Unfoldings.Geometry.RelativeSineError
+public import Unfoldings.Cap.RelativeFaceAngleError
+public import Unfoldings.Cap.RegionalProjectionError
+public import Unfoldings.Cap.JordanCornerError

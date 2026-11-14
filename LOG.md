@@ -2,6 +2,20 @@
 
 ## Session Log
 
+### 2026-11-14 — uniform Jordan corner errors and cyclic sections
+
+- Reindexed actual boundary contours without changing banks or orientation,
+  and extended the straight-section bound across the enumeration origin.
+- Proved relative face-angle distortion from actual norm contraction: planar
+  area controls sine ratios, which combine with additive angle continuity.
+- Summed relative errors over actual selected corner fans. Every Jordan corner
+  has a uniform small-tilt error bound independent of valence, including reflex
+  fans; no generic incidence or common local physical plane is assumed.
+- Verification: cache retrieval and full `lake build` passed 5,476 jobs; all
+  13,474 unfolding declarations passed the standard-axiom audit. Both abstract
+  independence checks passed. Closing-link extraction, saved-frontier nesting
+  and the final intrinsic graft remain open.
+
 ### 2026-11-14 — actual straight boundary section sums
 
 - Derived folded bank directions from actual vertex positions and boundary adjacency.
