@@ -1528,3 +1528,8 @@ public import Unfoldings.Cap.ProjectedPartialLink
 public import Unfoldings.Complex.LinkCornerWeights
 public import Unfoldings.Cap.RestrictedStraightTurns
 public import Unfoldings.Cap.JordanStraightVertex
+
+public import Unfoldings.Polyhedron.BoundaryDirections
+public import Unfoldings.Cap.BoundarySectionTrace
+public import Unfoldings.Cap.BoundarySectionConstruction
+public import Unfoldings.Cap.JordanStraightSection

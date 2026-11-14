@@ -2,6 +2,18 @@
 
 ## Session Log
 
+### 2026-11-14 — actual straight boundary section sums
+
+- Derived folded bank directions from actual vertex positions and boundary adjacency.
+- Constructed physical section traces from projected coordinates alone, including
+  contiguous intervals of the actual Jordan contour.
+- Bounded the sum of absolute intrinsic/projected fan errors on each such straight
+  interval by twice the tilt, independently of subdivision count.
+- Verification: cache retrieval and full `lake build` passed 5,468 jobs; all
+  13,435 unfolding declarations passed the standard-axiom audit. Abstract
+  independence checks passed. Automatic extraction of closing-link intervals,
+  corner distortion, saved-frontier nesting and the final graft remain open.
+
 ### 2026-11-14 — exact projected halfplane fans on straight boundary links
 
 - Proved complementary projected partial-link angle bounds using the original

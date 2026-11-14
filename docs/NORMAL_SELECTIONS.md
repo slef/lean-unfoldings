@@ -355,3 +355,12 @@ straight-connector summation and corner distortion estimates remain open.
 the actual contour error on a straight projected bank is bounded by its spatial
 bend. Its selected projected fan is exactly a halfplane, so the projected
 exterior turn vanishes. This applies to actual subdivision vertices as well.
+
+## Actual straight boundary sections
+
+[BoundarySectionConstruction](../Unfoldings/Cap/BoundarySectionConstruction.lean)
+constructs physical traces from actual projected bank coordinates and adjacency.
+[JordanStraightSection](../Unfoldings/Cap/JordanStraightSection.lean) bounds the
+sum of absolute contour fan errors on a straight interval by `2φ`, including
+subdivision vertices. Deriving those ordered intervals from the constructed
+three-link closure, and bounding its closing corners, remain open.

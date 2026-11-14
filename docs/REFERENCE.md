@@ -2316,3 +2316,8 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [`Complex/LinkCornerWeights`](../Unfoldings/Complex/LinkCornerWeights.lean) | Exact arbitrary original corner-weight sums in an actual link order |
 | [`Cap/RestrictedStraightTurns`](../Unfoldings/Cap/RestrictedStraightTurns.lean) | Straight boundary fans have projected angle pi and spatially controlled turn error |
 | [`Cap/JordanStraightVertex`](../Unfoldings/Cap/JordanStraightVertex.lean) | Actual straight Jordan contour errors contract spatial bends |
+
+| [`Polyhedron/BoundaryDirections`](../Unfoldings/Polyhedron/BoundaryDirections.lean) | Actual folded bank vectors and adjacent physical boundary positions |
+| [`Cap/BoundarySectionTrace`](../Unfoldings/Cap/BoundarySectionTrace.lean) | Actual straight boundary sections have total fan-turn error at most twice tilt |
+| [`Cap/BoundarySectionConstruction`](../Unfoldings/Cap/BoundarySectionConstruction.lean) | Construct physical straight boundary traces from actual projected contour coordinates |
+| [`Cap/JordanStraightSection`](../Unfoldings/Cap/JordanStraightSection.lean) | Uniform contour error bound on actual ordered straight Jordan intervals |
