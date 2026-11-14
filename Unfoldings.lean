@@ -1501,3 +1501,8 @@ public import Unfoldings.Geometry.LinearPathBounds
 public import Unfoldings.Geometry.GenericWedgeClosure
 public import Unfoldings.Geometry.SegmentLineAvoidance
 public import Unfoldings.Geometry.VertexAvoidingWedgeClosure
+
+public import Unfoldings.Geometry.ChainEndTrimming
+public import Unfoldings.Geometry.ChainEndTrimPaths
+public import Unfoldings.Geometry.ChainEndTrimTurns
+public import Unfoldings.Geometry.GenericEndTrimming

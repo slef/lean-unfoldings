@@ -317,3 +317,11 @@ and Jordan simplicity. All three closing links avoid prescribed vertices
 except their allowed fixed endpoints. Both new corners avoid any prescribed
 finite affine supports, including the original mesh lines. Endpoint trimming
 and geometric intrinsic section-turn estimates still need to be connected.
+
+## Trimmed bank endpoints
+
+[GenericEndTrimming](../Unfoldings/Geometry/GenericEndTrimming.lean) chooses
+endpoints strictly inside the first and last actual links, avoiding prescribed
+vertices. Every intermediate original corner, normalized direction, turn and
+intrinsic/projected edge factor is retained. Carrier containment and radial
+progress follow from exact increasing edge subparametrizations.

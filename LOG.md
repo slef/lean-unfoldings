@@ -2,6 +2,18 @@
 
 ## Session Log
 
+### 2026-11-14 — exact bank endpoint trimming
+
+- Constructed simultaneous endpoint trims preserving every intermediate original
+  corner, with exact positive edge factors for genuine interior fractions.
+- Proved exact increasing subparametrizations, carrier containment, inherited
+  radial progress, and strict endpoint radial progress from a nonzero final link.
+- Proved that every normalized edge direction and turn, and the actual complex
+  speed/heading factors, remain unchanged. Chose interior endpoint fractions
+  avoiding any finite prescribed set of original vertices.
+- Verification: cache retrieval and full `lake build` passed 5,446 jobs, including
+  standard-axiom and abstract-independence audits.
+
 ### 2026-11-14 — constructed generic, vertex-avoiding Jordan closures
 
 - Proved that positive source-radius progress survives arbitrarily small
