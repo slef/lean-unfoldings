@@ -2096,3 +2096,14 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [Unfoldings.Topology.PathFrontier](../Unfoldings/Topology/PathFrontier.lean) | Cross the frontier of a closed set strictly between interior and exterior path endpoints |
 | [Unfoldings.Polyhedron.UpperPlanes](../Unfoldings/Polyhedron/UpperPlanes.lean) | Construct genuine projected coordinates and original upward supporting graph planes |
 | [Unfoldings.Polyhedron.UpperGraph](../Unfoldings/Polyhedron/UpperGraph.lean) | Construct the exact upper boundary graph over the full convex body projection |
+| [Unfoldings.Geometry.NorthFrame](../Unfoldings/Geometry/NorthFrame.lean) | Construct an orthogonal frame for any containing hemisphere |
+| [Unfoldings.Geometry.SegmentEquation](../Unfoldings/Geometry/SegmentEquation.lean) | Choose proper affine equations even for collapsed projected edges |
+| [Unfoldings.Geometry.SphericalRotation](../Unfoldings/Geometry/SphericalRotation.lean) | Preserve spherical convexity under orthogonal coordinates |
+| [Unfoldings.Geometry.SupportedNormalUnique](../Unfoldings/Geometry/SupportedNormalUnique.lean) | Prove uniqueness of unit supporting normals on a rigid face |
+| [Unfoldings.Polyhedron.FaceNormalContact](../Unfoldings/Polyhedron/FaceNormalContact.lean) | Identify the normal of any original face with an interior support contact |
+| [Unfoldings.Polyhedron.NormalSelection](../Unfoldings/Polyhedron/NormalSelection.lean) | Prove original spherical normal-selection components are intrinsic disks |
+| [Unfoldings.Polyhedron.Rotation](../Unfoldings/Polyhedron/Rotation.lean) | Rotate the original polyhedron, supporting normals, and boundary conditions |
+| [Unfoldings.Polyhedron.UpperAdjacency](../Unfoldings/Polyhedron/UpperAdjacency.lean) | Identify projected whole-edge adjacency with original seams |
+| [Unfoldings.Polyhedron.UpperCover](../Unfoldings/Polyhedron/UpperCover.lean) | Cover the exact body footprint by original upward faces, including the silhouette |
+| [Unfoldings.Polyhedron.UpperRoof](../Unfoldings/Polyhedron/UpperRoof.lean) | Construct the complete original upper roof with intrinsic projection injectivity |
+| [Unfoldings.Polyhedron.UpperTriangles](../Unfoldings/Polyhedron/UpperTriangles.lean) | Prove conformity, separation, and actual seam completeness of upward triangles |

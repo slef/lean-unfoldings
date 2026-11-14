@@ -1298,3 +1298,15 @@ public import Unfoldings.Polyhedron.FaceHalfspaces
 public import Unfoldings.Topology.PathFrontier
 public import Unfoldings.Polyhedron.UpperPlanes
 public import Unfoldings.Polyhedron.UpperGraph
+
+public import Unfoldings.Geometry.NorthFrame
+public import Unfoldings.Geometry.SegmentEquation
+public import Unfoldings.Geometry.SphericalRotation
+public import Unfoldings.Geometry.SupportedNormalUnique
+public import Unfoldings.Polyhedron.FaceNormalContact
+public import Unfoldings.Polyhedron.NormalSelection
+public import Unfoldings.Polyhedron.Rotation
+public import Unfoldings.Polyhedron.UpperAdjacency
+public import Unfoldings.Polyhedron.UpperCover
+public import Unfoldings.Polyhedron.UpperRoof
+public import Unfoldings.Polyhedron.UpperTriangles

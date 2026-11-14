@@ -18,10 +18,13 @@ selected component projections need not be convex.
 - [x] Construct the exact scalar upper graph over the full convex body projection:
   [UpperGraph](../Unfoldings/Polyhedron/UpperGraph.lean), using actual
   [upward face planes](../Unfoldings/Polyhedron/UpperPlanes.lean).
-- [ ] Construct the complete upper roof of an actual convex polyhedron, retaining
-  original triangles and seam classes, including at silhouette vertices.
-- [ ] Allow every containing hemisphere by constructing an orthogonal frame.
-- [ ] Prove intrinsic disks for the original whole-edge spherical normal components.
+- [x] Construct the complete upper roof of an actual convex polyhedron, retaining
+  original triangles and seam classes, including at silhouette vertices:
+  [UpperRoof](../Unfoldings/Polyhedron/UpperRoof.lean).
+- [x] Allow every containing hemisphere by constructing an orthogonal frame:
+  [NorthFrame](../Unfoldings/Geometry/NorthFrame.lean).
+- [x] Prove intrinsic disks for the original whole-edge spherical normal components:
+  [NormalSelection](../Unfoldings/Polyhedron/NormalSelection.lean).
 
 ## Exact clipped extension
 

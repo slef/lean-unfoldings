@@ -2,6 +2,21 @@
 
 ## Session Log
 
+### 2026-11-14 — original polyhedron normal-selection disks
+
+- Constructed the complete upper roof from the original upward triangles and
+  inherited seams, including silhouette vertices and vertical neighboring faces.
+  Proved projected conformity, nonoverlap, coverage, and intrinsic injectivity.
+- Constructed orthogonal hemisphere frames and rotated spatial foldings and
+  supporting normals. Closed spherical convex selections in any open hemisphere
+  now have intrinsic disk components with injective projection and Jordan frontier.
+- Identified selection adjacency exactly with original seams between selected
+  original faces. No mesh refinement, roof certificate, or disk certificate is input.
+- Verification: cache retrieval exited successfully before full `lake build`
+  (5,266 jobs); 12,148 unfolding and 7,243 pinned topology declarations audited
+  with standard Lean axioms, plus all 70 cap and 64 source independence checks.
+- Exact clipped extensions and compatible common-potential forests remain next.
+
 ### 2026-11-14 — supporting normals and exact upper graphs
 
 - Constructed actual unit outward normals for every original triangle, including
