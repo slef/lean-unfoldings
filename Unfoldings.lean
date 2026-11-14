@@ -1484,3 +1484,9 @@ public import Unfoldings.Cap.ComplementaryBankTurns
 
 public import Unfoldings.Complex.BoundaryRolling
 public import Unfoldings.Development.BoundaryRolling
+
+public import Unfoldings.Complex.AffineProjection
+public import Unfoldings.Complex.AffineProjectionClasses
+public import Unfoldings.Complex.AffineProjectionAngles
+public import Unfoldings.Complex.AffineProjectionBoundary
+public import Unfoldings.Development.AffineProjection

@@ -2272,3 +2272,9 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 
 | [`Complex/BoundaryRolling`](../Unfoldings/Complex/BoundaryRolling.lean) | Canonical rolled bank chain from actual intrinsic lengths and real fan turns |
 | [`Development/BoundaryRolling`](../Unfoldings/Development/BoundaryRolling.lean) | Exact agreement with developed bank edges and vertices; closure from development |
+
+| [`Complex/AffineProjection`](../Unfoldings/Complex/AffineProjection.lean) | Separate projected metric complex with inherited seam names |
+| [`Complex/AffineProjectionClasses`](../Unfoldings/Complex/AffineProjectionClasses.lean) | Exact preservation of retained corner classes |
+| [`Complex/AffineProjectionAngles`](../Unfoldings/Complex/AffineProjectionAngles.lean) | Actual projected corner-angle sums |
+| [`Complex/AffineProjectionBoundary`](../Unfoldings/Complex/AffineProjectionBoundary.lean) | Same directed banks, vertex mates and contour order |
+| [`Development/AffineProjection`](../Unfoldings/Development/AffineProjection.lean) | Global identity development from actual separated projected faces |

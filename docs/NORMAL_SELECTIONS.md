@@ -291,3 +291,11 @@ planar chain using intrinsic bank lengths and real fan turns, including for
 curved Jordan patches. Its [development bridge](../Unfoldings/Development/BoundaryRolling.lean)
 proves exact agreement with developed edges and positions when a global
 facewise development exists; in that case the full contour closes.
+
+## Projected metric and exact bank order
+
+[AffineProjection](../Unfoldings/Complex/AffineProjection.lean) constructs a
+separate projected metric complex. It retains the original seam classes,
+vertex names, directed banks and complete contour order, with exact projected
+fan angles. Separated actual projected triangles supply its global identity
+development, allowing the same rolling API to describe the geometric bank.

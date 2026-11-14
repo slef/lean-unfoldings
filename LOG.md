@@ -2,6 +2,18 @@
 
 ## Session Log
 
+### 2026-11-14 — separate projected metric with exact original bank order
+
+- Constructed a second triangle complex using compatible invertible affine
+  face projections, preserving actual seam and corner names.
+- Proved equivalence of retained seam chains and original vertex classes,
+  exact projected angle sums, and unchanged directed boundary mates/contours.
+- Constructed its genuine global identity development from separated actual
+  projected triangles. This changes the metric explicitly; the original
+  projection is not asserted to be an intrinsic isometry.
+- Verification: cache retrieval and full `lake build` passed 5,433 jobs, including
+  standard-axiom and abstract-independence audits.
+
 ### 2026-11-14 — canonical intrinsic bank rolling
 
 - Constructed a canonical planar bank chain from actual original edge lengths
