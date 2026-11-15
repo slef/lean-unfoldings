@@ -6,6 +6,28 @@ input for the Fewest Nets development argument. Supported fine-edge forests now
 give flat intrinsic cut disks and local isometric developments. Gap-grafting
 nonoverlap and counting remain to be proved.
 
+## Gap-grafting status
+
+- [x] Construct actual gap corner charts at the source, internal bends, finite
+  edge interiors, the last finite bend, and all positive infinite-tail points.
+- [x] Compute complementary angles from original bank vectors and construct
+  exact metric sector completions and junction-remainder models, including flat
+  junctions and reentrant sectors.
+- [x] Construct first-contact parent histories and their complete original-contour
+  schedule; derive distinct curvature charges and their exact total.
+- [ ] Match the original one-sided path fans to the reference Jordan comparison
+  banks, preserving regional angles through the physical completion.
+- [ ] Identify the physical saved-frontier curves with the constructed histories
+  and prove that their selected original side is untouched. Apply the local
+  metric remainder models to those actual updates.
+- [ ] Identify the complete unbounded cut-space banks and cyclic fans, assemble
+  the graft, and prove completeness, simple connectivity and local Euclidean
+  charts. Then apply the global planar-isometry theorem for nonoverlap.
+
+The completed local models and combinatorial histories do not assume these
+remaining geometric identifications. The paper's sharp numerical constants and
+the final net-counting theorem remain open too.
+
 ## Start here
 
 | Result | Main API |
@@ -903,3 +925,12 @@ constructs the genuinely fresh incoming predecessor at first contact, and
 [`ContactJunctionModels`](../Unfoldings/Cap/ContactJunctionModels.lean)
 applies the selected-junction models without an incoming-child certificate.
 The actual geometric untouched-side and saved-frontier matching remain open.
+
+[`SelectedContourHistory`](../Unfoldings/Complex/SelectedContourHistory.lean)
+constructs a complete first-contact schedule directly from the actual original
+cyclic cut contour. It covers every original vertex and charges each nonroot
+exactly once; arbitrary root-vanishing weights are conserved.
+[`ContourResidualCharge`](../Unfoldings/Cap/ContourResidualCharge.lean)
+therefore derives exact total absolute original opposite-bank residual charge
+along that schedule, equal to total cap curvature. Coverage and distinctness
+are consequences of the original contour and the constructed history.

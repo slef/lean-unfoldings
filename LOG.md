@@ -2,6 +2,25 @@
 
 ## Session Log
 
+### 2026-11-15 — original contour scheduling and exact complete residual charge
+
+- Constructed first-contact processing seeds from the original cut contour's
+  actual cyclic bank order, retaining all original vertex and seam labels.
+- Proved this contour schedule reaches every original vertex and explores the
+  entire parent forest. Its constructed history contains every original nonroot
+  exactly once, even though contour seeds can repeat original vertices.
+- Preserved every original root-vanishing weight along that complete history;
+  in particular its actual original curvature charge is exactly total curvature.
+- Applied this exact conservation to the original opposite-bank residuals,
+  deriving exact total absolute residual charge without a seed-coverage or
+  distinct-vertex certificate.
+- Added a short gap-grafting status checklist and refreshed the plan to separate
+  completed local models and schedules from physical saved-frontier matching.
+- Verification: cache retrieval and full `lake build` passed 5,746 jobs; all
+  15,194 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Physical bank transport, the untouched-side invariant and
+  complete graft assembly remain open; no final gap-grafting theorem is claimed.
+
 ### 2026-11-15 — actual selected junction copies and first-contact model applications
 
 - Derived distinct sibling cut copies at a nonroot with a selected incoming

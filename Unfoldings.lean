@@ -1811,3 +1811,5 @@ public import Unfoldings.Complex.SelectedJunctionCopies
 public import Unfoldings.Cap.SelectedJunctionModels
 public import Unfoldings.Topology.ParentFrontierContact
 public import Unfoldings.Cap.ContactJunctionModels
+public import Unfoldings.Complex.SelectedContourHistory
+public import Unfoldings.Cap.ContourResidualCharge

@@ -851,16 +851,18 @@ The [construction guide](docs/NORMAL_SELECTIONS.md) records the completed bridge
 - [x] Construct global planar isometries of simply connected flat boundary gluings
   of finite closed convex cells, including unbounded cells.
 
-Next: identify exact complementary gap corners, construct saved-frontier
-surgery and assemble the complete flat graft. Actual Jordan gaps and their
-finite complete boundary-cell models are available. The finite-cell route to
+Next: match the physical saved-frontier paths to the original comparison banks,
+identify their untouched original fan sides, and assemble the complete flat graft.
+Actual Jordan gaps, intrinsic corner charts and local junction-surgery models are
+available, together with complete first-contact histories and exact curvature charges.
+See the [gap-grafting checklist](docs/NORMAL_SELECTIONS.md#gap-grafting-status). The finite-cell route to
 global isometry does not require a separate end-height certificate. Normal-cover
 selection and Euler counting follow.
 
 ## Later targets and Fewest Nets
 
 - [ ] Star unfolding after the source-unfolding theorem.
-- [ ] Positive hinge openings and two-bank developments.
+- [x] Positive hinge openings and two-bank developments, allowing zero-angle contact separately.
 - [x] Quantitative heading perturbation and actual hinge-fixed suffix-opening bounds.
 - [x] Actual hinge gaps avoid the closed hinge-radius ball except at the hinge,
   and have joint angle/radius coordinates on the unbounded exterior.
@@ -879,15 +881,24 @@ selection and Euler counting follow.
   gluings having boundary-only seams.
 - [x] Construct the actual source-corner metric sector from original initial bank
   edges, with exact whole-ball isometries and no assumed tangent-angle certificate.
-- [ ] Prove exact complementary internal bank-corner charts for grafting these regions.
-- [ ] Positive Jordan gaps from radially monotone polygonal banks.
+- [x] Derive actual internal-bend, finite-edge, terminal-bend and infinite-tail
+  gap corner charts from original bank rays and the occupied source-normal side.
+- [x] Identify complementary retained-cap widths when the bank follows the actual
+  original boundary-chain development, including the mirrored orientation.
+- [x] Complete original split tangent fans and construct exact local metric
+  junction-remainder models; zero-curvature insertions are included.
+- [x] Construct first-contact parent histories and their complete original-contour
+  schedule, deriving distinct charges and exact total original curvature.
+- [x] Positive Jordan gaps from controlled radially monotone polygonal banks.
+- [ ] Match physical saved-frontier banks and untouched original sides to those
+  histories, comparison fans and local surgery models.
 - [x] Construct complete unbounded roof cut metrics with actual planar cells,
   boundary-only seams and exact metric-ball restoration away from closed cuts.
 - [x] Construct complete unbounded cuts aligned to the actual compatible forest
   and every whole terminal ray; retain the exact seam-quotient topology.
 - [ ] Identify the actual one-ended forest bank fans and insert intrinsic polygonal gaps.
-- [ ] Completeness for finite noncompact complexes with controlled ends.
-- [ ] Local-isometry/covering arguments for completed flat planes.
+- [x] Completeness for finite noncompact complexes with compatible coercive cell heights.
+- [x] Local-isometry and covering arguments for complete simply connected flat planar-cell gluings.
 - [x] Original-edge restriction to a disk with one boundary root per tree.
 
 These later features are motivated by Fewest Nets, but its normal partitions,

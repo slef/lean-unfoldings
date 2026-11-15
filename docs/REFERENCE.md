@@ -2688,3 +2688,9 @@ corners and does not yet identify their widths with the actual retained cap fan.
   the original last fresh edge into the first processed ancestor.
 - [`ContactJunctionModels`](../Unfoldings/Cap/ContactJunctionModels.lean):
   constructed contact histories supply the selected-junction hypotheses themselves.
+
+- [`SelectedContourHistory`](../Unfoldings/Complex/SelectedContourHistory.lean):
+  the actual original cyclic contour supplies a complete first-contact schedule
+  and conserves every root-vanishing original weight.
+- [`ContourResidualCharge`](../Unfoldings/Cap/ContourResidualCharge.lean):
+  exact total original opposite-bank residual charge for that constructed schedule.
