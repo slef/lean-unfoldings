@@ -704,3 +704,8 @@ identifies each original forest vertex's local cut with its actual labeled
 outgoing parent ray and incoming child rays. Its unit directions form a finite
 set. The cyclic order of the complementary bank sectors still has to be linked
 to the metric corner fans.
+
+[`segment_cellGerm_interior`](../Unfoldings/Geometry/SegmentInteriorGerm.lean)
+and [`ray_cellGerm_interior`](../Unfoldings/Geometry/RayInteriorGerm.lean)
+identify all ordinary cut points with the original two-sided edge line. Every
+segment or terminal-ray germ is supported on those original directions.

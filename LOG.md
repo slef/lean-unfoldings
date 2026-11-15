@@ -2,6 +2,16 @@
 
 ## Session Log
 
+### 2026-11-15 — exact ordinary edge and terminal-ray local directions
+
+- Identified strict interior segment points with the full original direction
+  line, and every positive-time terminal-ray point with the same two-sided model.
+- Proved that at every physical point an original segment or entire terminal
+  ray can contribute only its original forward and reverse directions.
+- Verification: cache retrieval and full `lake build` passed 5,646 jobs; all
+  14,529 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Cyclic bank-fan ordering and complementary graft angles remain open.
+
 ### 2026-11-15 — exact original branching parent-cut directions
 
 - Identified local cut germs of finite embedded segment networks with precisely

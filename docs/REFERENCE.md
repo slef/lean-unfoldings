@@ -2535,3 +2535,7 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [`Geometry/SegmentIncidentGerm`](../Unfoldings/Geometry/SegmentIncidentGerm.lean) | Actual incident endpoint-ray models for finite embedded segment networks |
 | [`Geometry/IncidentDirectionCircle`](../Unfoldings/Geometry/IncidentDirectionCircle.lean) | The original incident rays give finitely many actual unit cut directions |
 | [`Geometry/ParentCutGerm`](../Unfoldings/Geometry/ParentCutGerm.lean) | Exact original parent and child direction models at every branching forest vertex |
+
+| [`Geometry/SegmentInteriorGerm`](../Unfoldings/Geometry/SegmentInteriorGerm.lean) | Exact original forward and reverse direction models at interior segment points |
+| [`Geometry/RayInteriorGerm`](../Unfoldings/Geometry/RayInteriorGerm.lean) | Exact two-sided local direction models everywhere beyond an actual terminal-ray source |
+| [`Geometry/EdgeGermDirectionSupport`](../Unfoldings/Geometry/EdgeGermDirectionSupport.lean) | Every actual edge and ray germ uses only its original forward and reverse directions |

@@ -1710,3 +1710,6 @@ public import Unfoldings.Geometry.SegmentEndpointGerm
 public import Unfoldings.Geometry.SegmentIncidentGerm
 public import Unfoldings.Geometry.IncidentDirectionCircle
 public import Unfoldings.Geometry.ParentCutGerm
+public import Unfoldings.Geometry.SegmentInteriorGerm
+public import Unfoldings.Geometry.RayInteriorGerm
+public import Unfoldings.Geometry.EdgeGermDirectionSupport
