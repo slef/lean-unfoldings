@@ -1010,6 +1010,14 @@ public import Unfoldings.Roof.CompletionMarkedPoints
 public import Unfoldings.Geometry.RadialClosureContacts
 public import Unfoldings.Roof.MarkedClosureCompletion
 public import Unfoldings.Roof.MarkedContourPartition
+public import Unfoldings.Topology.FiniteTwoCutOrder
+public import Unfoldings.Cap.JordanContourBankOrder
+public import Unfoldings.Cap.JordanContourBankInterval
+public import Unfoldings.Geometry.FiniteHeadingWindow
+public import Unfoldings.Cap.JordanCyclicRolling
+public import Unfoldings.Geometry.RadialBankInterior
+public import Unfoldings.Cap.RadialCyclicBankComparison
+public import Unfoldings.Roof.CompletedRollingComparison
 public import Unfoldings.Roof.CompletionOriginalPieces
 public import Unfoldings.Roof.CompletionOriginalCoordinates
 public import Unfoldings.Roof.CompletionOriginalSubdivision

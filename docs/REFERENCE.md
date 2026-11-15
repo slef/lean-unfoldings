@@ -460,6 +460,14 @@ Start with the [theorem and proof guide](ROOFS.md). Boundary heights are unrestr
 | [Unfoldings.Geometry.RadialClosureContacts](../Unfoldings/Geometry/RadialClosureContacts.lean) | Exact radial bank contacts and the actual four-piece closure cover |
 | [Unfoldings.Roof.MarkedClosureCompletion](../Unfoldings/Roof/MarkedClosureCompletion.lean) | Construct a physical completion with every closing corner on its actual contour |
 | [Unfoldings.Roof.MarkedContourPartition](../Unfoldings/Roof/MarkedContourPartition.lean) | Derive whole-bank correspondence to the radial bank and three closing links |
+| [Unfoldings.Topology.FiniteTwoCutOrder](../Unfoldings/Topology/FiniteTwoCutOrder.lean) | Propagate labels along finite intervals and split a cyclic order at two contacts |
+| [Unfoldings.Cap.JordanContourBankOrder](../Unfoldings/Cap/JordanContourBankOrder.lean) | Derive opposite bank runs from two nontrivial geometric arcs |
+| [Unfoldings.Cap.JordanContourBankInterval](../Unfoldings/Cap/JordanContourBankInterval.lean) | Identify actual geometric bank indices with a strict cyclic interval |
+| [Unfoldings.Geometry.FiniteHeadingWindow](../Unfoldings/Geometry/FiniteHeadingWindow.lean) | Strict internal vertex sums are exactly last-link heading prefixes |
+| [Unfoldings.Cap.JordanCyclicRolling](../Unfoldings/Cap/JordanCyclicRolling.lean) | Actual rotated intrinsic rolling has the exact geometric bank turn sum |
+| [Unfoldings.Geometry.RadialBankInterior](../Unfoldings/Geometry/RadialBankInterior.lean) | Construct bank interior witnesses and exclude the two off-bank closing corners |
+| [Unfoldings.Cap.RadialCyclicBankComparison](../Unfoldings/Cap/RadialCyclicBankComparison.lean) | Derive orientation and real heading comparison for the actual radial bank |
+| [Unfoldings.Roof.CompletedRollingComparison](../Unfoldings/Roof/CompletedRollingComparison.lean) | Construct a uniformly small actual rolling error on a roof-preserving completion |
 | [Unfoldings.Roof.CompletionOriginalAdjacency](../Unfoldings/Roof/CompletionOriginalAdjacency.lean) | Locate fine adjacency between different original faces on their common edge |
 | [Unfoldings.Roof.CompletionOriginalConforming](../Unfoldings/Roof/CompletionOriginalConforming.lean) | Prove exact retained seam classes and the original-cut metric equivalence |
 | [Unfoldings.Roof.CompletionOriginalCoordinates](../Unfoldings/Roof/CompletionOriginalCoordinates.lean) | Prove that contained auxiliary pieces have the actual original face Euclidean metric |

@@ -2,6 +2,21 @@
 
 ## Session Log
 
+### 2026-11-14 — geometric bank error equals actual unreduced rolling error
+
+- Derived two constant cyclic bank runs from the actual two geometric contacts,
+  and proved that nontrivial complementary arcs occupy opposite runs.
+- Identified the geometric bank indices with the strict interior of the bank
+  run. Constructed actual rotated intrinsic/projected rolling and proved that
+  its first-to-last real heading discrepancy equals the geometric bank sum.
+- Derived the radial bank orientation and heading bound from geometry. One
+  uniform positive tilt constructs a roof-preserving completion whose actual
+  intrinsic rolling error is arbitrarily small.
+- Verification: cache retrieval and full `lake build` passed 5,521 jobs; all
+  13,651 unfolding declarations passed the standard-axiom audit. Both abstract
+  independence checks passed. Transport to original cut-bank histories,
+  saved-opening nesting and the complete graft remain open.
+
 ### 2026-11-14 — actual marked contour bank correspondence
 
 - Proved the exact cyclic segment cover of the physical Jordan boundary and

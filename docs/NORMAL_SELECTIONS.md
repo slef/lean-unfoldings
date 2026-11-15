@@ -431,3 +431,15 @@ constructs a completion with all four closing corners retained as actual mesh
 vertices. [MarkedContourPartition](../Unfoldings/Roof/MarkedContourPartition.lean)
 derives each entire bank's membership in the radial bank or one closing link.
 The rolling interval and saved-opening correspondence remain to be extracted.
+
+## Actual cyclic bank rolling
+
+[JordanContourBankInterval](../Unfoldings/Cap/JordanContourBankInterval.lean)
+now extracts the geometric bank's strict cyclic interval from its two actual
+contacts. [JordanCyclicRolling](../Unfoldings/Cap/JordanCyclicRolling.lean)
+identifies its geometric turn sum with the actual intrinsic/projected real
+heading change, retaining full turns.
+[CompletedRollingComparison](../Unfoldings/Roof/CompletedRollingComparison.lean)
+constructs a roof-preserving physical completion with uniformly small actual
+bank rolling error. Transport to the original cut-bank histories and the
+saved-opening invariant remain open.
