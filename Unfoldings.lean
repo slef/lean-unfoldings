@@ -1761,3 +1761,7 @@ public import Unfoldings.Geometry.RegularClosedRecognition
 public import Unfoldings.Cone.SectorRecognition
 public import Unfoldings.Geometry.TwoBankGapInteriorSide
 public import Unfoldings.Geometry.TwoBankGapInteriorApproach
+public import Unfoldings.Geometry.CircularConeApproach
+public import Unfoldings.Geometry.TwoBankGapOrientationWitness
+public import Unfoldings.Cone.RotatedSectorRecognition
+public import Unfoldings.Geometry.TwoBankGapBankSector

@@ -2601,3 +2601,8 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [`Cone/SectorRecognition`](../Unfoldings/Cone/SectorRecognition.lean) | An exact corner cone is selected by the original bank rays and arbitrarily near geometric interior witnesses |
 | [`Geometry/TwoBankGapInteriorSide`](../Unfoldings/Geometry/TwoBankGapInteriorSide.lean) | Actual strict interior tests along both polygonal gap banks, including their bends |
 | [`Geometry/TwoBankGapInteriorApproach`](../Unfoldings/Geometry/TwoBankGapInteriorApproach.lean) | Small opposite circular motions from the two actual banks construct genuine gap-interior witnesses |
+
+| [`Geometry/CircularConeApproach`](../Unfoldings/Geometry/CircularConeApproach.lean) | Original source-circle tangents inside a cone construct actual nearby geometric interior points |
+| [`Geometry/TwoBankGapOrientationWitness`](../Unfoldings/Geometry/TwoBankGapOrientationWitness.lean) | Source-circle normals select actual first-bank gap orientation samples without an aperture premise |
+| [`Cone/RotatedSectorRecognition`](../Unfoldings/Cone/RotatedSectorRecognition.lean) | Recognize the complete corner sector while retaining the original rigid edge frame |
+| [`Geometry/TwoBankGapBankSector`](../Unfoldings/Geometry/TwoBankGapBankSector.lean) | Construct whole actual gap-bank sector charts from the original incident rays and source-circle normal |

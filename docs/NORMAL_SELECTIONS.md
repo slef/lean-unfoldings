@@ -794,3 +794,10 @@ interior samples.
 and the opposite second-bank theorem construct actual circular paths into the
 gap interior, including at bends. The next step relates these paths to the
 original outgoing and incoming bank directions to select the complementary cone.
+
+[`exists_first_bank_sector_chart`](../Unfoldings/Geometry/TwoBankGapBankSector.lean)
+constructs a whole intrinsic chart of an actual internal gap-bank corner from
+its original incident direction pair and the side of its source-circle normal.
+The occupied sector is proved through frontier recognition and actual inward
+circular motions. Those geometric inputs still need to be derived for the named
+original bank bends, before assembling the graft.

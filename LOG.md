@@ -2,6 +2,22 @@
 
 ## Session Log
 
+### 2026-11-15 — actual bank sector charts from original rays and source normals
+
+- Computed the derivative of physical source-circle rotation and proved that
+  a source-circle tangent inside a homogeneous cone gives actual nearby
+  interior points of that cone.
+- Combined this with the actual gap's inward circular motions to construct
+  arbitrarily near gap-interior orientation witnesses from the original normal.
+- Recognized the full actual corner cone while preserving its original rigid
+  edge frame. The resulting first-bank theorem constructs a whole intrinsic
+  fan-ball chart from the original incident rays and the normal's geometric
+  side; no local aperture or metric-flatness model is supplied.
+- Verification: cache retrieval and full `lake build` passed 5,698 jobs; all
+  14,938 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Deriving those incident-ray and normal inputs at the
+  named internal bank bends, saved-frontier surgery and graft assembly remain open.
+
 ### 2026-11-15 — geometric corner recognition and actual bank orientation paths
 
 - Proved exact bank frontiers, regular closedness and connected interiors and
