@@ -1622,3 +1622,7 @@ public import Unfoldings.Roof.CompletionBankOrder
 public import Unfoldings.Roof.CompletionDirectedBank
 public import Unfoldings.Complex.BoundaryChainRolling
 public import Unfoldings.Roof.CompletionBankRolling
+public import Unfoldings.Topology.CyclicRegionTurns
+public import Unfoldings.Topology.FiniteCyclicTurns
+public import Unfoldings.Complex.SubtreeRolling
+public import Unfoldings.Cap.SubtreeRealHeading

@@ -520,3 +520,17 @@ These results concern actual cut metric copies, not angles modulo a full turn.
 The remaining comparison must match the original path's selected fans to the
 reference Jordan bank, then control the saved-frontier history and successive
 gaps. The complete intrinsic graft and final nonoverlap are still open.
+
+## Unreduced subtree parent-bank holonomy
+
+`Complex/SubtreeRolling.exists_subtree_real_bank_heading` chooses the actual
+entering bank of any selected nonroot subtree and its actual opposite exit
+bank. Rolling the original cut contour from that entrance gives real exit
+heading plus `pi` exactly equal to the descendant curvature sum. The proof
+uses the actual one-sided original fan turns and includes all branching copies.
+It does not pass through angles modulo a full turn.
+
+`Cap/SubtreeRealHeading` bounds this actual correction between zero and total
+cap curvature. `CyclicRegionTurns` proves the additive finite-region
+cancellation, and `FiniteCyclicTurns` applies it to genuine real heading prefixes.
+Matching these corrections to the saved-frontier history still remains.

@@ -2419,3 +2419,8 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [`Roof/CompletionDirectedBank`](../Unfoldings/Roof/CompletionDirectedBank.lean) | The ordered fine edges follow the actual intrinsic boundary successor |
 | [`Complex/BoundaryChainRolling`](../Unfoldings/Complex/BoundaryChainRolling.lean) | Roll actual finite bank chains using real turns and original edge lengths |
 | [`Roof/CompletionBankRolling`](../Unfoldings/Roof/CompletionBankRolling.lean) | Construct actual old cut-bank refinements with zero extra unreduced heading |
+
+| [`Topology/CyclicRegionTurns`](../Unfoldings/Topology/CyclicRegionTurns.lean) | Exact additive turn cancellation across actual entering and leaving banks |
+| [`Topology/FiniteCyclicTurns`](../Unfoldings/Topology/FiniteCyclicTurns.lean) | Identify finite unreduced heading prefixes with selected cyclic region turn sums |
+| [`Complex/SubtreeRolling`](../Unfoldings/Complex/SubtreeRolling.lean) | Actual opposite parent banks have real reversed-exit heading equal to subtree curvature |
+| [`Cap/SubtreeRealHeading`](../Unfoldings/Cap/SubtreeRealHeading.lean) | Bound actual real subtree bank holonomy between zero and total cap curvature |

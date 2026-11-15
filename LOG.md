@@ -2,6 +2,20 @@
 
 ## Session Log
 
+### 2026-11-14 — exact real subtree parent-bank holonomy
+
+- Chose the actual opposite parent banks around each selected nonroot subtree.
+  Their real rolled exit heading, after reversal, is exactly the descendant
+  curvature sum, with all actual branching fan copies accounted for.
+- Proved nonnegativity and the full cap curvature bound for these actual real
+  corrections, independently of any planar development or modulo-angle choice.
+- Added finite additive region cancellation using only the selected heading
+  steps; the contour's omitted closing step is handled explicitly.
+- Verification: cache retrieval and full `lake build` passed 5,559 jobs; all
+  13,916 unfolding declarations passed the standard-axiom audit. Both abstract
+  independence checks passed. Saved-frontier history transport, nesting and the
+  complete intrinsic graft remain open.
+
 ### 2026-11-14 — actual directed bank refinements and real rolling
 
 - Ordered each original side's fine physical whole edges, visiting every edge
