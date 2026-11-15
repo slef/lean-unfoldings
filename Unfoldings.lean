@@ -1925,3 +1925,6 @@ public import Unfoldings.Roof.CompletionBankMetricRefinement
 public import Unfoldings.Roof.CompletionBankBlocks
 public import Unfoldings.Topology.ChainConcatRange
 public import Unfoldings.Topology.ChainBlockAssembly
+public import Unfoldings.Complex.DirectedCutBank
+public import Unfoldings.Complex.DirectedBankChain
+public import Unfoldings.Roof.CompletionBankPathAssembly

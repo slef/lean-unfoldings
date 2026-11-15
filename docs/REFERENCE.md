@@ -2923,3 +2923,9 @@ corners and does not yet identify their widths with the actual retained cap fan.
 - [`ChainConcatRange`](../Unfoldings/Topology/ChainConcatRange.lean),
   [`ChainBlockAssembly`](../Unfoldings/Topology/ChainBlockAssembly.lean):
   assemble finite ordered block families with exact original directed-label coverage.
+
+- [`DirectedCutBank`](../Unfoldings/Complex/DirectedCutBank.lean),
+  [`DirectedBankChain`](../Unfoldings/Complex/DirectedBankChain.lean):
+  recover original seam, side and endpoint labels from actual cut-bank chains.
+- [`CompletionBankPathAssembly`](../Unfoldings/Roof/CompletionBankPathAssembly.lean):
+  complete physical fine paths with exact metric endpoints and directed piece coverage.

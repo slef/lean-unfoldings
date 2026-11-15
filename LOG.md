@@ -2,6 +2,16 @@
 
 ## Session Log
 
+### 2026-11-15 — whole physical paths from original directed bank labels
+
+- Represented an original cut bank together with its side and directed endpoint.
+  Extracted these labels and their actual corner joins from boundary chains.
+- Assembled whole physical fine paths from nonempty lists of distinct original
+  banks, deriving exact metric endpoints and exact directed piece coverage.
+- Verification: cache retrieval and full `lake build` passed 5,862 jobs;
+  15,728 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Whole hinge transport and the physical graft remain open.
+
 ### 2026-11-15 — finite assembly preserves every original directed bank piece
 
 - Proved concatenation has exactly the original oriented point labels from its
