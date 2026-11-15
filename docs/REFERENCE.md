@@ -3226,3 +3226,17 @@ corners and does not yet identify their widths with the actual retained cap fan.
   retaining all actual incident physical cells preserves a whole intrinsic ball.
   The patch need not be convex or globally isometric in the full cut. Selecting
   every cell containing the physical center supplies the needed class membership.
+
+- [`LocalChartTargetTransport`](../Unfoldings/Metric/LocalChartTargetTransport.lean):
+  exact patch-ball charts and physical interior conditions survive target isometries,
+  retaining the canonical inclusion and physical folding.
+- [`SpatialEnvelopeWindowCut`](../Unfoldings/Geometry/SpatialEnvelopeWindowCut.lean),
+  [`SpatialEnvelopeWindowCompact`](../Unfoldings/Geometry/SpatialEnvelopeWindowCompact.lean):
+  actual aligned polygonal-window cuts retain all original interior metric copies
+  and whole small balls. Compact windows yield compact intrinsic patches, including
+  disconnected cuts; global convexity or an isometric patch inclusion is not assumed.
+- [`CompatibleWindowModel`](../Unfoldings/Roof/CompatibleWindowModel.lean),
+  [`CompatibleWindowPatch`](../Unfoldings/Roof/CompatibleWindowPatch.lean):
+  constructs one retained model aligned to the actual forest and independent window
+  lines. Its compact window patch preserves whole neighborhoods of every interior
+  original-model copy, with nonexpansion and exact physical folding.

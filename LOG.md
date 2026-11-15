@@ -2,6 +2,25 @@
 
 ## Session Log
 
+### 2026-11-15 — constructed compact original forest-cut window patches
+
+- Constructed actual whole-roof models aligned simultaneously to the original
+  forest cut and independent polygonal window lines.
+- Built the actual selected-cell window cut and its nonexpanding inclusion,
+  preserving original spatial roof points and every interior cut-bank copy.
+- Proved compact windows give compact intrinsic metric patches, including when
+  cutting disconnects the patch. No global isometry or convexity is assumed.
+- Constructed whole intrinsic patch-ball charts at every strict-interior original
+  metric copy in any retained initial model, using partition independence.
+- Factored fold-preserving chart transport into reusable metric lemmas; direct
+  inclusion definitions keep kernel checks small without heartbeat increases.
+- Verification: actual cache retrieval and full `lake build` passed 6,000 jobs;
+  16,587 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. The full theorem remains open: identify the physical finite
+  completion mesh and corner fans in these patches, join the finite and whole-ray
+  banks, derive respected radial closure geometry, transport the saved frontier
+  through actual gap attachments, and assemble the complete flat graft.
+
 ### 2026-11-15 — whole metric balls in arbitrary actual cut subfamilies
 
 - Constructed local inverse cell maps whenever a selected physical subfamily

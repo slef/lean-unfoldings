@@ -2061,3 +2061,8 @@ public import Unfoldings.Geometry.SpatialEnvelopePartitionCopies
 public import Unfoldings.Roof.CompatiblePartialCutPartitionIndependence
 public import Unfoldings.Metric.CutSubfamilyLocalInverse
 public import Unfoldings.Metric.CutSubfamilyBall
+public import Unfoldings.Metric.LocalChartTargetTransport
+public import Unfoldings.Geometry.SpatialEnvelopeWindowCut
+public import Unfoldings.Geometry.SpatialEnvelopeWindowCompact
+public import Unfoldings.Roof.CompatibleWindowModel
+public import Unfoldings.Roof.CompatibleWindowPatch
