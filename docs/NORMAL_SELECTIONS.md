@@ -45,7 +45,8 @@ nonoverlap and counting remain to be proved.
   exterior-ray point, with a whole neighborhood supplied by the finite envelope.
 - [x] Retain one reusable complete cut model with its actual side assignments.
   Embeddedness supplies isolated terminal cut-line germs, combined with the two
-  fixed roof faces in a whole neighborhood; metric bank charts remain to be derived.
+  fixed roof faces in a whole neighborhood. Every positive metric bank copy admits
+  exact whole-ball restoration of all other forest cuts; halfplane fan charts remain.
 - [ ] Identify the full unbounded comparison banks, including terminal rays and
   completion fans, and supply their admissible respected radial closure geometry.
 - [ ] Carry physical saved-frontier curves and their untouched original sides through

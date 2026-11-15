@@ -3089,3 +3089,10 @@ corners and does not yet identify their widths with the actual retained cap fan.
   preserves whole intrinsic balls even at centers with several cut-bank copies.
 - [`PolygonalCutGerm`](../Unfoldings/Metric/PolygonalCutGerm.lean):
   equal local geometric cut sets give exact canonical whole-ball restoration maps.
+
+- [`SpatialEnvelopeCutExcision`](../Unfoldings/Geometry/SpatialEnvelopeCutExcision.lean):
+  canonical restoration in the same rigid roof coordinates, preserving physical folding
+  and whole intrinsic balls whenever the horizontal cut germs agree.
+- [`CompatibleTerminalExcision`](../Unfoldings/Roof/CompatibleTerminalExcision.lean):
+  every actual positive terminal bank copy has an exact whole-ball isometry after
+  all other forest cuts are restored, retaining the full original terminal ray.

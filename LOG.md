@@ -2,6 +2,19 @@
 
 ## Session Log
 
+### 2026-11-15 — exact terminal-ray metric reduction in the same roof model
+
+- Constructed canonical cut restoration in the original rigid partition cells,
+  commuting with physical coordinate changes and preserving the original roof point.
+- Transferred local physical cut-germ excision to exact whole-ball charts in
+  those same roof coordinates, retaining distinct original metric bank copies.
+- Derived local equality of the whole forest cut and each original full terminal
+  ray. Every metric copy above every positive terminal point has a canonical
+  whole-ball isometry after all other forest cuts are restored.
+- Verification: actual cache retrieval and full `lake build` passed 5,948 jobs;
+  16,185 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Halfplane bank charts, finite joins and the full graft remain open.
+
 ### 2026-11-15 — metric excision from local physical cut germs
 
 - Split finite closed physical seam domains without changing the exact declared

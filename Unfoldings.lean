@@ -2012,3 +2012,5 @@ public import Unfoldings.Roof.CompatibleTerminalLocalModel
 public import Unfoldings.Metric.PhysicalSeamsSplit
 public import Unfoldings.Metric.PhysicalSeamsLocalExcision
 public import Unfoldings.Metric.PolygonalCutGerm
+public import Unfoldings.Geometry.SpatialEnvelopeCutExcision
+public import Unfoldings.Roof.CompatibleTerminalExcision
