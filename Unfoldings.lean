@@ -1813,3 +1813,6 @@ public import Unfoldings.Topology.ParentFrontierContact
 public import Unfoldings.Cap.ContactJunctionModels
 public import Unfoldings.Complex.SelectedContourHistory
 public import Unfoldings.Cap.ContourResidualCharge
+public import Unfoldings.Complex.ProcessedParentCuts
+public import Unfoldings.Cap.FreshSourceStar
+public import Unfoldings.Cap.FreshSourceCompletion

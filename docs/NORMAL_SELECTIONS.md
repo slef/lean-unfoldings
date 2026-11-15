@@ -15,6 +15,9 @@ nonoverlap and counting remain to be proved.
   junctions and reentrant sectors.
 - [x] Construct first-contact parent histories and their complete original-contour
   schedule; derive distinct curvature charges and their exact total.
+- [x] Construct the actual retained original seams at intermediate processing
+  stages and the unique full-angle fresh-source star after its branch is cut.
+
 - [ ] Match the original one-sided path fans to the reference Jordan comparison
   banks, preserving regional angles through the physical completion.
 - [ ] Identify the physical saved-frontier curves with the constructed histories
@@ -934,3 +937,13 @@ exactly once; arbitrary root-vanishing weights are conserved.
 therefore derives exact total absolute original opposite-bank residual charge
 along that schedule, equal to total cap curvature. Coverage and distinctness
 are consequences of the original contour and the constructed history.
+
+[`ProcessedParentCuts`](../Unfoldings/Complex/ProcessedParentCuts.lean)
+constructs actual intermediate retained-seam realizations and ends at the exact
+final selected cut. Each fresh source has only its outgoing parent seam cut,
+even if it has children in the final forest.
+[`FreshSourceStar`](../Unfoldings/Cap/FreshSourceStar.lean) constructs its unique
+actual cut copy carrying the entire original angle, and
+[`FreshSourceCompletion`](../Unfoldings/Cap/FreshSourceCompletion.lean) completes
+its positive-curvature tangent fan by the complementary geometric sector.
+No global development of a partially processed curved surface is assumed.

@@ -2694,3 +2694,10 @@ corners and does not yet identify their widths with the actual retained cap fan.
   and conserves every root-vanishing original weight.
 - [`ContourResidualCharge`](../Unfoldings/Cap/ContourResidualCharge.lean):
   exact total original opposite-bank residual charge for that constructed schedule.
+
+- [`ProcessedParentCuts`](../Unfoldings/Complex/ProcessedParentCuts.lean):
+  exact actual retained seams at every intermediate parent-frontier stage.
+- [`FreshSourceStar`](../Unfoldings/Cap/FreshSourceStar.lean):
+  the unique full-original-angle cut copy of each fresh source.
+- [`FreshSourceCompletion`](../Unfoldings/Cap/FreshSourceCompletion.lean):
+  local intrinsic plane completion of a positive-curvature fresh source.

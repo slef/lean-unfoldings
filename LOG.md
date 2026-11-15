@@ -2,6 +2,25 @@
 
 ## Session Log
 
+### 2026-11-15 — actual intermediate cut spaces and fresh-source star completion
+
+- Constructed retained-seam sets at every parent-frontier stage: initially no
+  seam is cut, processing only removes fresh original parent seams, and the
+  complete original-contour schedule ends at the exact final selected cut.
+- Proved no old processed cut meets a fresh original source. After adding its
+  fresh branch, the only cut incident there is its own original parent seam;
+  a final-forest childless hypothesis is unnecessary.
+- Constructed the actual single source copy with its full original corner angle
+  and proved uniqueness among all source copies at that stage.
+- Completed positive-curvature fresh-source tangent fans to the plane by their
+  actual complementary geometric sector, preserving original angular placement.
+  This is a local intrinsic construction and assumes no global development of
+  an intermediate surface with unprocessed curvature.
+- Verification: cache retrieval and full `lake build` passed 5,749 jobs; all
+  15,209 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. The physical saved-frontier identification and assembled
+  graft remain open.
+
 ### 2026-11-15 — original contour scheduling and exact complete residual charge
 
 - Constructed first-contact processing seeds from the original cut contour's
