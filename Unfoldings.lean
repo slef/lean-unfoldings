@@ -2000,3 +2000,8 @@ public import Unfoldings.Metric.ConvexCutSubfamily
 public import Unfoldings.Metric.AffineHalfspaceBank
 public import Unfoldings.Metric.AffineHalfspaceBankSeparation
 public import Unfoldings.Metric.PlanarRayCutBanks
+public import Unfoldings.Geometry.AffineLineSide
+public import Unfoldings.Geometry.AffineEnvelopeActiveGerm
+public import Unfoldings.Convex.ExteriorActivePlanes
+public import Unfoldings.Convex.ExteriorBankSupports
+public import Unfoldings.Convex.ExteriorRayFaceGerms

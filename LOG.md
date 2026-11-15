@@ -2,6 +2,20 @@
 
 ## Session Log
 
+### 2026-11-15 — actual fixed one-sided roof faces along whole terminal rays
+
+- Identified actual finite active planes with original active slopes and proved
+  their active set is constant along every positive exterior ray.
+- Proved each terminal partition cell's support stays active all the way back
+  to the original source. Its full-dimensional interior determines the correct
+  affine lower bound on its entire chosen side of the ray.
+- Excluded inactive finite planes by strict-gap neighborhoods. Constructed two
+  fixed actual support cells describing the exact roof on opposite halfplanes
+  in a whole ball around every positive ray point, with no fan certificate.
+- Verification: actual cache retrieval and full `lake build` passed 5,939 jobs;
+  16,121 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Metric fan charts, roof-bank joins and the full graft remain open.
+
 ### 2026-11-15 — whole planar slit-ray banks and their exact common endpoint
 
 - Constructed both canonical banks along the full supporting line of an actual

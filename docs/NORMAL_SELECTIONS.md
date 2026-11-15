@@ -41,6 +41,8 @@ nonoverlap and counting remain to be proved.
   including boundary cut copies and unbounded affine halfspaces. Canonical flat
   halfspace banks embed in the full cut space, cover it, and separate along cuts.
   An actual flat slit ray has two whole closed banks meeting exactly at its source.
+- [x] Derive two fixed actual supporting faces on opposite sides near every positive
+  exterior-ray point, with a whole neighborhood supplied by the finite envelope.
 - [ ] Identify the full unbounded comparison banks, including terminal rays and
   completion fans, and supply their admissible respected radial closure geometry.
 - [ ] Carry physical saved-frontier curves and their untouched original sides through

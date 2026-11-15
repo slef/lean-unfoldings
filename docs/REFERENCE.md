@@ -3064,3 +3064,12 @@ corners and does not yet identify their widths with the actual retained cap fan.
   two canonical whole banks of an actual flat slit ray. Both positive banks are
   closed embeddings with exact distances, and they intersect at exactly their
   common source. Copies agree precisely on the uncut nonpositive continuation.
+
+- [`AffineLineSide`](../Unfoldings/Geometry/AffineLineSide.lean),
+  [`AffineEnvelopeActiveGerm`](../Unfoldings/Geometry/AffineEnvelopeActiveGerm.lean):
+  derive affine halfplane comparisons and local envelope germs from active supports.
+- [`ExteriorActivePlanes`](../Unfoldings/Convex/ExteriorActivePlanes.lean),
+  [`ExteriorBankSupports`](../Unfoldings/Convex/ExteriorBankSupports.lean),
+  [`ExteriorRayFaceGerms`](../Unfoldings/Convex/ExteriorRayFaceGerms.lean):
+  actual terminal cells select two fixed support faces describing the roof on opposite
+  halfplanes near every positive point of the entire exterior ray.
