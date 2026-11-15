@@ -786,3 +786,11 @@ identifies each constructed gap cone's frontier with the original physical bank
 directions and proves its regular closedness. At an internal bank point, the
 distant bank contributes no directions. Selecting the occupied side and matching
 that cone to the complementary sector remain next.
+
+[`local_cone_eq_sector_of_frequent_witness`](../Unfoldings/Cone/SectorRecognition.lean)
+recognizes the occupied sector from its original bank rays and arbitrarily near
+interior samples.
+[`eventually_rotate_first_bank_mem_gap_interior`](../Unfoldings/Geometry/TwoBankGapInteriorApproach.lean)
+and the opposite second-bank theorem construct actual circular paths into the
+gap interior, including at bends. The next step relates these paths to the
+original outgoing and incoming bank directions to select the complementary cone.

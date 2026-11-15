@@ -1755,3 +1755,9 @@ public import Unfoldings.Geometry.LocalConeFrontier
 public import Unfoldings.Geometry.LocalConeRegularClosed
 public import Unfoldings.Geometry.ComplexBankGerm
 public import Unfoldings.Geometry.TwoBankGapConeFrontier
+public import Unfoldings.Cone.ReentrantSectorTopology
+public import Unfoldings.Cone.ReentrantSectorBoundary
+public import Unfoldings.Geometry.RegularClosedRecognition
+public import Unfoldings.Cone.SectorRecognition
+public import Unfoldings.Geometry.TwoBankGapInteriorSide
+public import Unfoldings.Geometry.TwoBankGapInteriorApproach

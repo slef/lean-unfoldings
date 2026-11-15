@@ -2594,3 +2594,10 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [`Geometry/LocalConeRegularClosed`](../Unfoldings/Geometry/LocalConeRegularClosed.lean) | Exact homogeneous local models inherit regular closedness from the physical region |
 | [`Geometry/ComplexBankGerm`](../Unfoldings/Geometry/ComplexBankGerm.lean) | Original complex polygonal bank direction germs include precisely their actual incident segments and tails |
 | [`Geometry/TwoBankGapConeFrontier`](../Unfoldings/Geometry/TwoBankGapConeFrontier.lean) | Constructed gap corner cones are regular closed with frontier exactly the actual original bank directions |
+
+| [`Cone/ReentrantSectorTopology`](../Unfoldings/Cone/ReentrantSectorTopology.lean) | Actual sub-full-turn sectors are regular closed, and every strict positive-radius heading is interior |
+| [`Cone/ReentrantSectorBoundary`](../Unfoldings/Cone/ReentrantSectorBoundary.lean) | Exact bank frontiers and connected geometric interiors of convex and reentrant sectors |
+| [`Geometry/RegularClosedRecognition`](../Unfoldings/Geometry/RegularClosedRecognition.lean) | A regular closed region with connected interior and exterior is recognized from its boundary and one interior witness |
+| [`Cone/SectorRecognition`](../Unfoldings/Cone/SectorRecognition.lean) | An exact corner cone is selected by the original bank rays and arbitrarily near geometric interior witnesses |
+| [`Geometry/TwoBankGapInteriorSide`](../Unfoldings/Geometry/TwoBankGapInteriorSide.lean) | Actual strict interior tests along both polygonal gap banks, including their bends |
+| [`Geometry/TwoBankGapInteriorApproach`](../Unfoldings/Geometry/TwoBankGapInteriorApproach.lean) | Small opposite circular motions from the two actual banks construct genuine gap-interior witnesses |

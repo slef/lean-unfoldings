@@ -2,6 +2,23 @@
 
 ## Session Log
 
+### 2026-11-15 — geometric corner recognition and actual bank orientation paths
+
+- Proved exact bank frontiers, regular closedness and connected interiors and
+  exteriors for all positive geometric sectors below one full turn.
+- Proved a general regular-closed region recognition theorem from the frontier
+  and one interior witness. Applied it to homogeneous sector corner models,
+  allowing arbitrarily near physical orientation samples rather than a supplied
+  aperture description.
+- Identified the actual strict interior side along both polygonal gap banks,
+  including their bends. Small counterclockwise source-circle motions from the
+  first bank and clockwise motions from the second enter the actual gap interior.
+- Verification: cache retrieval and full `lake build` passed 5,694 jobs; all
+  14,925 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. The original incident rays and these orientation paths
+  still must select each actual complementary corner; saved-frontier surgery
+  and assembled-graft regularity remain open.
+
 ### 2026-11-15 — exact original frontiers of the actual gap cones
 
 - Transferred the original polygonal bank direction germs into the actual
