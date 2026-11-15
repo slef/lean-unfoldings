@@ -2815,3 +2815,6 @@ corners and does not yet identify their widths with the actual retained cap fan.
 - [`BoundaryFanRestoration`](../Unfoldings/Cone/BoundaryFanRestoration.lean),
   [`RootwardPathFanMetric`](../Unfoldings/Cone/RootwardPathFanMetric.lean):
   whole intrinsic tangent-fan isometries fixing original supporting-wedge points.
+
+- [`RootwardFanModels`](../Unfoldings/Cap/RootwardFanModels.lean): actual
+  rootward junctions supply strict apertures, whole-ball charts and exact-curvature remainder models.

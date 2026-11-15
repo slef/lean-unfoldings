@@ -1872,3 +1872,4 @@ public import Unfoldings.Complex.SurvivingBoundaryChain
 public import Unfoldings.Complex.RootwardReferenceChain
 public import Unfoldings.Cone.BoundaryFanRestoration
 public import Unfoldings.Cone.RootwardPathFanMetric
+public import Unfoldings.Cap.RootwardFanModels

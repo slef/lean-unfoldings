@@ -2,6 +2,18 @@
 
 ## Session Log
 
+### 2026-11-15 — constructed local models on actual rootward junctions
+
+- Derived distinct original cut copies at the constructed current rootward
+  junctions from actual parent-child incidence and the cap's intermediate disk.
+- Derived strict full-turn bounds, actual whole-ball sector charts and local
+  junction-remainder models there, including zero-curvature original junctions.
+  No sibling-copy, internality or fan-angle certificate is supplied.
+- Verification: cache retrieval and full `lake build` passed 5,806 jobs; all
+  15,447 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. These are local original-fan models; attaching them through
+  physical gap patches and assembling the flat graft remain open.
+
 ### 2026-11-15 — pointwise original rootward reference rolls and tangent metrics
 
 - Proved any surviving directed bank chain remains an actual boundary chain
