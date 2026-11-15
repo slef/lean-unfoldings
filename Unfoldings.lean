@@ -1841,3 +1841,7 @@ public import Unfoldings.Cone.RestoredBoundaryFan
 public import Unfoldings.Complex.BoundaryFanExcision
 public import Unfoldings.Topology.LinearTwoExits
 public import Unfoldings.Complex.LinearSubtreeContour
+public import Unfoldings.Complex.ContourActiveAncestors
+public import Unfoldings.Complex.OrientedParentBanks
+public import Unfoldings.Complex.UnprocessedParentBanks
+public import Unfoldings.Complex.ContourContactExcision

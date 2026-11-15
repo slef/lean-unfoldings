@@ -2,6 +2,21 @@
 
 ## Session Log
 
+### 2026-11-15 — active ancestor frontier and actual unprocessed-bank closure
+
+- Proved every unfinished processed nonroot lies on the current original ancestor
+  path. Every processed child off that path has its entire subtree completed.
+- Named opposite parent-bank sides from the actual oriented subtree exits without
+  assuming a global development of the intermediate curved surface.
+- Proved unprocessed parent banks close at both their original child and parent
+  endpoints in the current intrinsic cut, allowing positive fresh curvature.
+- Constructed whole-ball canonical restoration charts at actual contour contact
+  corners; both surviving terminal banks are derived from the schedule.
+- Verification: cache retrieval and full `lake build` passed 5,778 jobs; all
+  15,326 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Identifying the physical saved-frontier through attached
+  gap patches, and constructing the complete flat graft, remain open.
+
 ### 2026-11-15 — whole-ball fan restoration and derived depth-first order
 
 - Proved surviving terminal banks keep every actual incident original seam.

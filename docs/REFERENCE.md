@@ -2752,3 +2752,11 @@ corners and does not yet identify their widths with the actual retained cap fan.
 - [`LinearTwoExits`](../Unfoldings/Topology/LinearTwoExits.lean),
   [`LinearSubtreeContour`](../Unfoldings/Complex/LinearSubtreeContour.lean):
   derive a true depth-first order and complete processing before each subtree exit.
+
+- [`ContourActiveAncestors`](../Unfoldings/Complex/ContourActiveAncestors.lean):
+  unfinished processed vertices lie on the original current ancestor path.
+- [`OrientedParentBanks`](../Unfoldings/Complex/OrientedParentBanks.lean),
+  [`UnprocessedParentBanks`](../Unfoldings/Complex/UnprocessedParentBanks.lean):
+  original oriented bank names and actual intrinsic endpoint closure before processing.
+- [`ContourContactExcision`](../Unfoldings/Complex/ContourContactExcision.lean):
+  derive whole-ball restoration charts at original contour contact corners.
