@@ -2,6 +2,20 @@
 
 ## Session Log
 
+### 2026-11-15 — exact processed-curvature turn of intermediate subtrees
+
+- Counted edge ends in the ancestor-closed processed part of each original
+  descendant subtree: twice its actual processed-vertex count minus one.
+- Derived the matching multiplicity of actual intermediate boundary copies and
+  preserved all original corner contributions under seam restoration.
+- Proved the aggregate actual intermediate contour turn is pi minus the sum of
+  original curvature of processed descendants. Fresh curved vertices remain
+  internal and are excluded from the charge.
+- Verification: cache retrieval and full `lake build` passed 5,780 jobs; all
+  15,334 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. This is turn accounting on the actual original cut;
+  physical saved-frontier placement through gap patches remains open.
+
 ### 2026-11-15 — active ancestor frontier and actual unprocessed-bank closure
 
 - Proved every unfinished processed nonroot lies on the current original ancestor

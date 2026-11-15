@@ -2760,3 +2760,8 @@ corners and does not yet identify their widths with the actual retained cap fan.
   original oriented bank names and actual intrinsic endpoint closure before processing.
 - [`ContourContactExcision`](../Unfoldings/Complex/ContourContactExcision.lean):
   derive whole-ball restoration charts at original contour contact corners.
+
+- [`ProcessedDescendantIncidence`](../Unfoldings/Topology/ProcessedDescendantIncidence.lean):
+  exact original edge-end counts in processed descendant subtrees.
+- [`ProcessedSubtreeAngles`](../Unfoldings/Complex/ProcessedSubtreeAngles.lean):
+  actual intermediate contour turn equals pi minus processed original subtree curvature.
