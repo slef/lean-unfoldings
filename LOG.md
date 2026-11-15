@@ -2,6 +2,20 @@
 
 ## Session Log
 
+### 2026-11-15 — one reusable complete model with exact terminal local geometry
+
+- Constructed the finite closed-piece cover of the whole compatible forest,
+  retaining every final ray and identifying open pieces and original endpoints.
+- Used actual embeddedness and vertex avoidance to isolate a single full cut
+  line in a whole ball at every positive terminal point.
+- Added a reusable `WholeCutModel` constructor retaining the actual partition,
+  finite indices and cut-side assignments, together with completeness and restoration.
+- In that same model, constructed the actual terminal support cells and exact
+  two-face/single-cut neighborhoods at every positive point, without local-model inputs.
+- Verification: actual cache retrieval and full `lake build` passed 5,943 jobs;
+  16,161 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Metric bank charts, finite joins and the full graft remain open.
+
 ### 2026-11-15 — actual fixed one-sided roof faces along whole terminal rays
 
 - Identified actual finite active planes with original active slopes and proved

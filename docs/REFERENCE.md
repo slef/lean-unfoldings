@@ -3073,3 +3073,12 @@ corners and does not yet identify their widths with the actual retained cap fan.
   [`ExteriorRayFaceGerms`](../Unfoldings/Convex/ExteriorRayFaceGerms.lean):
   actual terminal cells select two fixed support faces describing the roof on opposite
   halfplanes near every positive point of the entire exterior ray.
+
+- [`CompatibleClosedPieces`](../Unfoldings/Roof/CompatibleClosedPieces.lean),
+  [`CompatibleTerminalCutGerm`](../Unfoldings/Roof/CompatibleTerminalCutGerm.lean):
+  finite closed forest pieces include every whole terminal ray; embeddedness supplies
+  a whole single-cut-line neighborhood at every positive terminal point.
+- [`CompatibleWholeCutModel`](../Unfoldings/Roof/CompatibleWholeCutModel.lean),
+  [`CompatibleTerminalLocalModel`](../Unfoldings/Roof/CompatibleTerminalLocalModel.lean):
+  reusable actual partitions retain their side assignments. The same model carries
+  complete cut metrics, two terminal support cells and exact two-face/single-line germs.

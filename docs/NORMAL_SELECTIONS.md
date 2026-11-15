@@ -43,6 +43,9 @@ nonoverlap and counting remain to be proved.
   An actual flat slit ray has two whole closed banks meeting exactly at its source.
 - [x] Derive two fixed actual supporting faces on opposite sides near every positive
   exterior-ray point, with a whole neighborhood supplied by the finite envelope.
+- [x] Retain one reusable complete cut model with its actual side assignments.
+  Embeddedness supplies isolated terminal cut-line germs, combined with the two
+  fixed roof faces in a whole neighborhood; metric bank charts remain to be derived.
 - [ ] Identify the full unbounded comparison banks, including terminal rays and
   completion fans, and supply their admissible respected radial closure geometry.
 - [ ] Carry physical saved-frontier curves and their untouched original sides through

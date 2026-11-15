@@ -2005,3 +2005,7 @@ public import Unfoldings.Geometry.AffineEnvelopeActiveGerm
 public import Unfoldings.Convex.ExteriorActivePlanes
 public import Unfoldings.Convex.ExteriorBankSupports
 public import Unfoldings.Convex.ExteriorRayFaceGerms
+public import Unfoldings.Roof.CompatibleClosedPieces
+public import Unfoldings.Roof.CompatibleTerminalCutGerm
+public import Unfoldings.Roof.CompatibleWholeCutModel
+public import Unfoldings.Roof.CompatibleTerminalLocalModel
