@@ -2892,3 +2892,10 @@ corners and does not yet identify their widths with the actual retained cap fan.
   the actual chain's internal vertices are exactly the geometric bank vertices.
 - [`JordanChainTurnSum`](../Unfoldings/Cap/JordanChainTurnSum.lean):
   exact equality of actual hinge-error and geometric bank sums, with original vertex copies.
+
+- [`RestrictedChainCornerWeights`](../Unfoldings/Complex/RestrictedChainCornerWeights.lean),
+  [`OriginalChainTurnError`](../Unfoldings/Cap/OriginalChainTurnError.lean):
+  exact actual projected fan weights, original cut-fan errors and physical chain preservation.
+- [`JordanChainErrorBound`](../Unfoldings/Cap/JordanChainErrorBound.lean),
+  [`OriginalRadialChainErrorBound`](../Unfoldings/Cap/OriginalRadialChainErrorBound.lean):
+  derive the geometric curvature-and-tilt error bound for actual original one-sided cut banks.

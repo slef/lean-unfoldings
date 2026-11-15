@@ -2,6 +2,20 @@
 
 ## Session Log
 
+### 2026-11-15 — geometric radial comparison for actual original cut fans
+
+- Applied the geometric bank estimate to the exact actual Jordan hinge-error sum,
+  deriving the mesh-independent curvature, section-turn and corner-error bound.
+- Preserved arbitrary original corner weights along matched actual chains,
+  including projected fan angles as well as intrinsic one-sided angles.
+- Constructed the actual original cut-fan error and transferred the radial bound
+  back to it. The full physical projected chain, including its terminal endpoint,
+  is preserved. No fan, length, error-sum or heading match is supplied.
+- Verification: cache retrieval and full `lake build` passed 5,846 jobs;
+  15,599 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Selecting the initial incident side, refining whole coarse
+  paths and transport through the inserted physical graft remain open.
+
 ### 2026-11-15 — exact actual-chain and geometric-bank error sums
 
 - Recovered actual internal chain vertices from path points outside open edges.

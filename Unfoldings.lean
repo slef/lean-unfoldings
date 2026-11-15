@@ -1909,3 +1909,7 @@ public import Unfoldings.Cap.RadialJordanChainLift
 public import Unfoldings.Geometry.PolygonalVertexCoverage
 public import Unfoldings.Cap.JordanChainCoverage
 public import Unfoldings.Cap.JordanChainTurnSum
+public import Unfoldings.Complex.RestrictedChainCornerWeights
+public import Unfoldings.Cap.OriginalChainTurnError
+public import Unfoldings.Cap.JordanChainErrorBound
+public import Unfoldings.Cap.OriginalRadialChainErrorBound
