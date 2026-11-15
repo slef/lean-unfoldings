@@ -2,6 +2,17 @@
 
 ## Session Log
 
+### 2026-11-15 — finite assembly preserves every original directed bank piece
+
+- Proved concatenation has exactly the original oriented point labels from its
+  two input blocks, with no extra reverse labels.
+- Constructed one actual chain from any nonempty finite ordered family of
+  separated blocks. Derived all successors, preserved both endpoints and proved
+  exact directed-label coverage of every block.
+- Verification: cache retrieval and full `lake build` passed 5,858 jobs;
+  15,695 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Physical whole-path specialization and the graft remain open.
+
 ### 2026-11-15 — concrete directed metric bank blocks
 
 - Constructed complete directed fine-bank blocks with exact original cut-metric

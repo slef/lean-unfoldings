@@ -1923,3 +1923,5 @@ public import Unfoldings.Roof.CompletionOrientedBankRolling
 public import Unfoldings.Roof.CompletionBankBlockJoins
 public import Unfoldings.Roof.CompletionBankMetricRefinement
 public import Unfoldings.Roof.CompletionBankBlocks
+public import Unfoldings.Topology.ChainConcatRange
+public import Unfoldings.Topology.ChainBlockAssembly

@@ -2919,3 +2919,7 @@ corners and does not yet identify their widths with the actual retained cap fan.
 - [`CompletionBankMetricRefinement`](../Unfoldings/Roof/CompletionBankMetricRefinement.lean),
   [`CompletionBankBlocks`](../Unfoldings/Roof/CompletionBankBlocks.lean):
   construct directed metric blocks and concatenate them from original corner and bank labels.
+
+- [`ChainConcatRange`](../Unfoldings/Topology/ChainConcatRange.lean),
+  [`ChainBlockAssembly`](../Unfoldings/Topology/ChainBlockAssembly.lean):
+  assemble finite ordered block families with exact original directed-label coverage.
