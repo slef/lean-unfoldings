@@ -2,6 +2,18 @@
 
 ## Session Log
 
+### 2026-11-15 — exact original branching parent-cut directions
+
+- Identified local cut germs of finite embedded segment networks with precisely
+  their actual incident endpoint rays.
+- Identified the parent forest's local cut model with its labeled outgoing
+  parent ray and incoming child rays, including arbitrary branching.
+- Proved finiteness of the actual incident unit directions, using normalization
+  of the original geometric vectors.
+- Verification: cache retrieval and full `lake build` passed 5,643 jobs; all
+  14,522 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Cyclic bank ordering and complementary graft angles remain open.
+
 ### 2026-11-15 — original endpoint vectors in the actual local cut models
 
 - Proved uniqueness of exact positively homogeneous local direction models.

@@ -1707,3 +1707,6 @@ public import Unfoldings.Geometry.PolygonalRayInequalities
 public import Unfoldings.Geometry.PolygonalRayGerm
 public import Unfoldings.Geometry.HomogeneousGerm
 public import Unfoldings.Geometry.SegmentEndpointGerm
+public import Unfoldings.Geometry.SegmentIncidentGerm
+public import Unfoldings.Geometry.IncidentDirectionCircle
+public import Unfoldings.Geometry.ParentCutGerm

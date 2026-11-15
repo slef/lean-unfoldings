@@ -2531,3 +2531,7 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 
 | [`Geometry/HomogeneousGerm`](../Unfoldings/Geometry/HomogeneousGerm.lean) | Uniqueness of exact positively homogeneous local direction models |
 | [`Geometry/SegmentEndpointGerm`](../Unfoldings/Geometry/SegmentEndpointGerm.lean) | Actual original outgoing and incoming endpoint directions for segment and ray cut germs |
+
+| [`Geometry/SegmentIncidentGerm`](../Unfoldings/Geometry/SegmentIncidentGerm.lean) | Actual incident endpoint-ray models for finite embedded segment networks |
+| [`Geometry/IncidentDirectionCircle`](../Unfoldings/Geometry/IncidentDirectionCircle.lean) | The original incident rays give finitely many actual unit cut directions |
+| [`Geometry/ParentCutGerm`](../Unfoldings/Geometry/ParentCutGerm.lean) | Exact original parent and child direction models at every branching forest vertex |

@@ -698,3 +698,9 @@ finite branching families. Cyclic ordering of the resulting bank fans remains op
 its terminal-endpoint counterpart identify the actual incident edge vectors in
 the affine cut models. The terminal-ray source has the same exact outgoing-ray
 model. These identifications retain the original geometric directions.
+
+[`eventually_mem_parent_cuts_iff_directions`](../Unfoldings/Geometry/ParentCutGerm.lean)
+identifies each original forest vertex's local cut with its actual labeled
+outgoing parent ray and incoming child rays. Its unit directions form a finite
+set. The cyclic order of the complementary bank sectors still has to be linked
+to the metric corner fans.
