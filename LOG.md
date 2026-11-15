@@ -2,6 +2,20 @@
 
 ## Session Log
 
+### 2026-11-15 — exact rootward bank enumeration and intrinsic excursion pruning
+
+- Identified upcoming surviving original banks with processed original ancestors,
+  retaining their original selector, side and endpoint labels. Proved the exact
+  bijection: no ancestor bank is omitted or repeated.
+- Proved restored original contour excursions close at their actual current
+  intrinsic endpoint, including fresh subtrees with positive curvature.
+- Derived the actual boundary successor after pruning such excursions.
+  Surviving original banks preserve their complete parametrizations and lengths.
+- Verification: cache retrieval and full `lake build` passed 5,793 jobs; all
+  15,389 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Carrying the constructed original banks through physical
+  inserted gap patches and assembling the global graft remain open.
+
 ### 2026-11-15 — variation bounds for actual intermediate bank measurements
 
 - Proved measured original parent-bank holonomies are monotone as the actual

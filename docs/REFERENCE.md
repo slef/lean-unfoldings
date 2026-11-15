@@ -2781,3 +2781,15 @@ corners and does not yet identify their widths with the actual retained cap fan.
 
 - [`ProcessedParentBankVariation`](../Unfoldings/Cap/ProcessedParentBankVariation.lean):
   actual current parent-bank measurements are monotone and have oscillation at most total curvature.
+
+- [`CurrentBankSelectors`](../Unfoldings/Complex/CurrentBankSelectors.lean),
+  [`LinearSubtreeBanks`](../Unfoldings/Complex/LinearSubtreeBanks.lean),
+  [`FutureParentBanks`](../Unfoldings/Complex/FutureParentBanks.lean): identify
+  actual upcoming current banks as original ancestor exit banks.
+- [`RootwardBankEnumeration`](../Unfoldings/Complex/RootwardBankEnumeration.lean):
+  exact bijection between surviving upcoming banks and processed original ancestors.
+- [`RestoredContourExcursion`](../Unfoldings/Complex/RestoredContourExcursion.lean),
+  [`PrunedContourStep`](../Unfoldings/Complex/PrunedContourStep.lean): restored
+  excursions close intrinsically and give the actual current boundary successor.
+- [`SurvivingBoundaryBanks`](../Unfoldings/Complex/SurvivingBoundaryBanks.lean):
+  preserve original endpoints, lengths and entire bank parametrizations under restoration.

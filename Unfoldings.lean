@@ -1853,3 +1853,10 @@ public import Unfoldings.Complex.ProcessedSubtreeRolling
 public import Unfoldings.Topology.ProcessedDescendantWeights
 public import Unfoldings.Cap.ProcessedParentBankHeading
 public import Unfoldings.Cap.ProcessedParentBankVariation
+public import Unfoldings.Complex.CurrentBankSelectors
+public import Unfoldings.Complex.LinearSubtreeBanks
+public import Unfoldings.Complex.FutureParentBanks
+public import Unfoldings.Complex.RestoredContourExcursion
+public import Unfoldings.Complex.SurvivingBoundaryBanks
+public import Unfoldings.Complex.PrunedContourStep
+public import Unfoldings.Complex.RootwardBankEnumeration
