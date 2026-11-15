@@ -594,3 +594,9 @@ no intermediate safe-bank or nonoverlap certificate is assumed. This is a
 single-bank-trace theorem. The remaining application must construct and compare
 the actual branching saved-frontier histories, identify their curvature events,
 and assemble the complete intrinsic graft.
+
+[`exists_subtree_residual_budget`](../Unfoldings/Cap/SubtreeResidualBudget.lean)
+identifies actual unreduced parent-bank holonomy minus immediate-child
+holonomies with the original junction curvature. Any distinct list of these
+actual residuals spends at most total cap curvature. The remaining geometric
+fan-surgery proof must identify the saved-frontier updates with these residuals.

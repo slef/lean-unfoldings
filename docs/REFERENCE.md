@@ -2476,3 +2476,7 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [`Geometry/OpeningGapSeparation`](../Unfoldings/Geometry/OpeningGapSeparation.lean) | Pairwise interior separation of actual successive positive hinge gaps |
 | [`Geometry/OpeningAllAnchors`](../Unfoldings/Geometry/OpeningAllAnchors.lean) | Derive every intermediate bank and suffix radial test from original subhistory bounds |
 | [`Geometry/OpeningGapNonoverlap`](../Unfoldings/Geometry/OpeningGapNonoverlap.lean) | Construct nonoverlapping actual positive hinge-gap families from uniform original margins |
+
+| [`Topology/SubtreeResidualWeights`](../Unfoldings/Topology/SubtreeResidualWeights.lean) | Subtracting immediate-child subtree weights leaves the original junction weight |
+| [`Complex/SubtreeResidualHeading`](../Unfoldings/Complex/SubtreeResidualHeading.lean) | Actual unreduced opposite-bank holonomies have residual exactly the local angular defect |
+| [`Cap/SubtreeResidualBudget`](../Unfoldings/Cap/SubtreeResidualBudget.lean) | Actual junction residuals are nonnegative and spend original cap curvature once |

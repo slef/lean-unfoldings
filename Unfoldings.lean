@@ -1668,3 +1668,6 @@ public import Unfoldings.Geometry.OpeningCircleTrace
 public import Unfoldings.Geometry.OpeningGapSeparation
 public import Unfoldings.Geometry.OpeningAllAnchors
 public import Unfoldings.Geometry.OpeningGapNonoverlap
+public import Unfoldings.Topology.SubtreeResidualWeights
+public import Unfoldings.Complex.SubtreeResidualHeading
+public import Unfoldings.Cap.SubtreeResidualBudget

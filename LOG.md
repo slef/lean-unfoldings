@@ -2,6 +2,20 @@
 
 ## Session Log
 
+### 2026-11-14 — exact local residual of actual branching bank headings
+
+- Subtracted all immediate-child subtree weights from their parent's descendant
+  weight, leaving exactly the original junction weight for arbitrary weights.
+- Chose actual opposite banks on the original cut contour at every nonroot.
+  Their unreduced real heading residual is exactly the original local angular
+  defect, with arbitrary branching included.
+- Proved nonnegativity on convex caps and a total-curvature budget for the
+  absolute residuals of any distinct list of original junctions.
+- Verification: cache retrieval and full `lake build` passed 5,604 jobs; all
+  14,148 unfolding declarations passed the standard-axiom audit, along with both
+  abstract independence checks. The actual saved-frontier fan surgery and the
+  complete intrinsic graft remain open.
+
 ### 2026-11-14 — nonoverlap of actual finite positive opening traces
 
 - Constructed one continuous common-frame heading for the actual prefix banks
