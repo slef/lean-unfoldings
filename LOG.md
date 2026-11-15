@@ -2,6 +2,18 @@
 
 ## Session Log
 
+### 2026-11-15 — actual leaf bank angle complements the retained fan
+
+- Computed the genuine initial bank-vector angle of a positive source opening;
+  subsequent internal hinge openings contribute no turn to that source edge.
+- For the actual childless vertex cuts, identified the retained corner fan with
+  the original fan and proved its angle plus the geometric bank gap is exactly
+  a full turn. The gap angle is the original leaf curvature.
+- Verification: cache retrieval and full `lake build` passed 5,658 jobs; all
+  14,584 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Closing this metric fan, identifying internal corners,
+  saved-frontier surgery and assembling the actual flat graft remain open.
+
 ### 2026-11-15 — exact metric sector at the actual gap source
 
 - Identified initial radial bank coordinates exactly from genuine original

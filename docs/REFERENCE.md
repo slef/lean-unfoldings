@@ -2554,3 +2554,6 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [`Metric/PolygonalConvexChart`](../Unfoldings/Metric/PolygonalConvexChart.lean) | Whole intrinsic metric-ball isometries from local equality with an actual convex region |
 | [`Geometry/TwoBankGapSourceSector`](../Unfoldings/Geometry/TwoBankGapSourceSector.lean) | The actual gap agrees locally with the genuine sector of its original initial edge vectors |
 | [`Geometry/TwoBankGapSourceChart`](../Unfoldings/Geometry/TwoBankGapSourceChart.lean) | Exact intrinsic source-corner sector-ball isometries without an assumed tangent angle |
+
+| [`Geometry/OpeningSourceAngle`](../Unfoldings/Geometry/OpeningSourceAngle.lean) | The original positive source opening is the exact geometric sector angle and later hinges spend no source turn |
+| [`Cap/LeafGapSector`](../Unfoldings/Cap/LeafGapSector.lean) | Actual named leaf bank vectors give precisely the sector complementary to the retained original corner fan |

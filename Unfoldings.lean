@@ -1723,3 +1723,5 @@ public import Unfoldings.Geometry.BankInitialSegment
 public import Unfoldings.Metric.PolygonalConvexChart
 public import Unfoldings.Geometry.TwoBankGapSourceSector
 public import Unfoldings.Geometry.TwoBankGapSourceChart
+public import Unfoldings.Geometry.OpeningSourceAngle
+public import Unfoldings.Cap.LeafGapSector

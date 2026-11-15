@@ -733,3 +733,8 @@ constructs the exact whole intrinsic source-ball chart from genuine original
 initial bank segments. Its Euclidean sector angle is computed from the original
 edge vectors and proved to lie strictly between zero and pi. Internal bank
 corner charts and their saved-frontier fan complements remain open.
+
+[`exists_childless_complementary_gap_angle`](../Unfoldings/Cap/LeafGapSector.lean)
+computes the actual leaf bank-vector gap angle as its original curvature. The
+retained corner fan plus this geometric gap has total angle exactly a full turn.
+The completed local metric model and its attachment to the graft remain next.
