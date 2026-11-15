@@ -2902,3 +2902,10 @@ corners and does not yet identify their widths with the actual retained cap fan.
 
 - [`OriginalBankHeadingComparison`](../Unfoldings/Cap/OriginalBankHeadingComparison.lean):
   actual unreduced heading-prefix identities and a uniform mesh-independent small-tilt bound.
+
+- [`ChainConcatenation`](../Unfoldings/Topology/ChainConcatenation.lean),
+  [`ChainReversal`](../Unfoldings/Topology/ChainReversal.lean):
+  join and reorient actual bank blocks while preserving original labels and endpoints.
+- [`CommonSubedge`](../Unfoldings/Geometry/CommonSubedge.lean),
+  [`CompletionBankDistinctness`](../Unfoldings/Roof/CompletionBankDistinctness.lean):
+  different original cut banks have distinct actual physical fine-bank pieces.

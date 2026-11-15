@@ -1914,3 +1914,7 @@ public import Unfoldings.Cap.OriginalChainTurnError
 public import Unfoldings.Cap.JordanChainErrorBound
 public import Unfoldings.Cap.OriginalRadialChainErrorBound
 public import Unfoldings.Cap.OriginalBankHeadingComparison
+public import Unfoldings.Topology.ChainConcatenation
+public import Unfoldings.Topology.ChainReversal
+public import Unfoldings.Geometry.CommonSubedge
+public import Unfoldings.Roof.CompletionBankDistinctness

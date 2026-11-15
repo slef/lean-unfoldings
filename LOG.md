@@ -2,6 +2,18 @@
 
 ## Session Log
 
+### 2026-11-15 — assemble and orient distinct actual bank blocks
+
+- Constructed exact concatenation of separated paired-involution chains at their
+  actual successor, preserving every original interval label and both endpoints.
+- Constructed involutive chain reversal, reversing both order and endpoint flags.
+- Proved a genuine fine edge cannot lie on two sides of one original triangle.
+  Applied this to the physical completion: coincident fine banks determine the
+  same original cut bank, independently of a proposed traversal ordering.
+- Verification: cache retrieval and full `lake build` passed 5,851 jobs;
+  15,637 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Whole coarse-path refinement and the physical graft remain open.
+
 ### 2026-11-15 — uniform actual original-bank real-heading comparison
 
 - Expressed every unreduced intrinsic-minus-projected heading prefix as the
