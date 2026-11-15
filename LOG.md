@@ -2,6 +2,22 @@
 
 ## Session Log
 
+### 2026-11-15 — original rolled banks determine the complementary metric corner
+
+- Computed the positive geometric corner aperture directly from an original
+  finite boundary chain's intrinsic lengths and unreduced actual fan turns.
+- Matched finite-chain rolling to the actual development's bank vectors and
+  named vertex positions in one common rigid frame, without requiring a cycle
+  or a closing development.
+- Constructed the actual second-bank gap's whole intrinsic chart with width
+  exactly `2 * pi - totalAngle` of the original retained cap copy. A distinct
+  sibling copy supplies the strict bound; no aperture identity is assumed.
+  The geometric hypothesis identifies the bank with the original intrinsic roll.
+- Verification: cache retrieval and full `lake build` passed 5,712 jobs; all
+  15,000 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Identifying the saved-frontier paths with these rolls,
+  fan surgery and assembling the complete graft remain open.
+
 ### 2026-11-15 — second-bank internal metric charts and complementary side widths
 
 - Derived the actual clockwise source-circle tangent and its interior samples,
@@ -12,7 +28,7 @@
   its width complements the left-side width to one full turn and equals the
   positive angle of the named reversed incoming and outgoing edges.
 - Verification: cache retrieval and full `lake build` passed 5,709 jobs; all
-  14,981 unfolding declarations passed the standard-axiom audit and both abstract
+  14,989 unfolding declarations passed the standard-axiom audit and both abstract
   independence checks. Retained-cap angle matching, saved-frontier surgery and
   actual assembled-graft regularity remain open.
 

@@ -1776,3 +1776,6 @@ public import Unfoldings.Geometry.TwoBankGapSecondWitness
 public import Unfoldings.Geometry.TwoBankGapSecondSector
 public import Unfoldings.Geometry.RadialRightCorner
 public import Unfoldings.Geometry.TwoBankGapSecondInternalCorner
+public import Unfoldings.Complex.BoundaryChainAperture
+public import Unfoldings.Cap.RolledBankGapCorner
+public import Unfoldings.Development.BoundaryChainRolling

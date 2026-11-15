@@ -2623,3 +2623,10 @@ corners and does not yet identify their widths with the actual retained cap fan.
   actual second-bank internal fan-ball charts from the original edges.
 - [`RadialRightCorner`](../Unfoldings/Geometry/RadialRightCorner.lean):
   original right-side frame, normal, bank rays and complementary aperture.
+
+- [`BoundaryChainAperture`](../Unfoldings/Complex/BoundaryChainAperture.lean):
+  actual original finite-roll lengths, directions and complementary aperture.
+- [`Development/BoundaryChainRolling`](../Unfoldings/Development/BoundaryChainRolling.lean):
+  finite intrinsic rolls realize the actual developed bank vectors and positions.
+- [`RolledBankGapCorner`](../Unfoldings/Cap/RolledBankGapCorner.lean):
+  actual second-bank gap charts with the complementary retained-cap width.

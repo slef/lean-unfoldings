@@ -821,3 +821,13 @@ The second-bank analogue is now constructed in
 It derives its occupied side using actual clockwise source-circle motion. The
 original outgoing and reversed incoming edges determine both side apertures,
 which sum to a full turn; metric charts allow either aperture to be reentrant.
+
+For a bank identified with the original intrinsic boundary-chain roll,
+[`exists_second_rolled_bank_complement_chart`](../Unfoldings/Cap/RolledBankGapCorner.lean)
+constructs the actual gap metric corner with width `2 * pi - totalAngle` of its
+retained cap copy. The aperture follows from the original edge lengths and real
+fan turns, with strictness derived from a distinct original cut copy.
+[`Development/BoundaryChainRolling`](../Unfoldings/Development/BoundaryChainRolling.lean)
+identifies the finite intrinsic roll's edge vectors and named starts with their
+actual developed values in one common rigid frame. Saved-frontier bank-history
+identification and graft assembly remain to be proved.
