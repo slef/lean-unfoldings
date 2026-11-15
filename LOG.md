@@ -2,6 +2,20 @@
 
 ## Session Log
 
+### 2026-11-15 — second-bank internal metric charts and complementary side widths
+
+- Derived the actual clockwise source-circle tangent and its interior samples,
+  retaining the second bank's opposite orientation.
+- Constructed second-bank sector charts from the original incident rays and
+  negative source normal, then specialized them to named internal bank vertices.
+- Computed the right-side corner by reversing the original edge directions;
+  its width complements the left-side width to one full turn and equals the
+  positive angle of the named reversed incoming and outgoing edges.
+- Verification: cache retrieval and full `lake build` passed 5,709 jobs; all
+  14,981 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Retained-cap angle matching, saved-frontier surgery and
+  actual assembled-graft regularity remain open.
+
 ### 2026-11-15 — intrinsic gap charts at original internal bank vertices
 
 - Derived strict incoming radial progress at each genuine outward edge endpoint,

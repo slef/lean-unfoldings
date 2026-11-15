@@ -815,3 +815,9 @@ and rigid frame; the source-circle normal selects the occupied side. Genuine
 outward edges give strict incoming progress automatically; strict outgoing
 progress remains an explicit geometric hypothesis. This includes reentrant
 corners and does not yet identify their widths with the actual retained cap fan.
+
+The second-bank analogue is now constructed in
+[`TwoBankGapSecondInternalCorner`](../Unfoldings/Geometry/TwoBankGapSecondInternalCorner.lean).
+It derives its occupied side using actual clockwise source-circle motion. The
+original outgoing and reversed incoming edges determine both side apertures,
+which sum to a full turn; metric charts allow either aperture to be reentrant.

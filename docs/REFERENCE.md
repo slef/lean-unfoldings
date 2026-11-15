@@ -2618,3 +2618,8 @@ and rigid frame; the source-circle normal selects the occupied side. Genuine
 outward edges give strict incoming progress automatically; strict outgoing
 progress remains an explicit geometric hypothesis. This includes reentrant
 corners and does not yet identify their widths with the actual retained cap fan.
+
+- [`TwoBankGapSecondInternalCorner`](../Unfoldings/Geometry/TwoBankGapSecondInternalCorner.lean):
+  actual second-bank internal fan-ball charts from the original edges.
+- [`RadialRightCorner`](../Unfoldings/Geometry/RadialRightCorner.lean):
+  original right-side frame, normal, bank rays and complementary aperture.

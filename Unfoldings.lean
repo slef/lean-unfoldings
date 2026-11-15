@@ -1771,3 +1771,8 @@ public import Unfoldings.Geometry.PolygonalBankVertexGerm
 public import Unfoldings.Geometry.RadialCornerSector
 public import Unfoldings.Geometry.RadialVertexCoordinates
 public import Unfoldings.Geometry.TwoBankGapInternalCorner
+public import Unfoldings.Geometry.ClockwiseConeApproach
+public import Unfoldings.Geometry.TwoBankGapSecondWitness
+public import Unfoldings.Geometry.TwoBankGapSecondSector
+public import Unfoldings.Geometry.RadialRightCorner
+public import Unfoldings.Geometry.TwoBankGapSecondInternalCorner
