@@ -534,3 +534,27 @@ It does not pass through angles modulo a full turn.
 cap curvature. `CyclicRegionTurns` proves the additive finite-region
 cancellation, and `FiniteCyclicTurns` applies it to genuine real heading prefixes.
 Matching these corrections to the saved-frontier history still remains.
+
+## Parent membership changes and fine-vertex radial margins
+
+`SubtreePotentialWeights` telescopes original parent differences along each
+root path before summing nested descendant weights. `SubtreeBankPotential`
+chooses actual opposite-bank rolling headings for all nonroots and bounds
+any signed parent-membership-change sum by total cap curvature. No root-path
+crossing-count certificate is supplied. Relating a saved-frontier history to
+these changes remains a separate geometric task.
+
+`ActiveRayProgress` proves that an actual maximizing slope cannot lose its
+forward dot-product bound as we advance along a compatible straight piece.
+This yields the alternative fine-vertex margin
+`cos (2 * annularHistoryAngle (a / b) beta)` under the explicit stronger
+condition `2 * annularHistoryAngle (a / b) beta < pi / 2`.
+`AnnularFineMargin` proves positivity and chooses a positive routing width
+before meshing whenever `arccos (a / b) < pi / 4`.
+
+`CompatibleFineMargins` handles arbitrary partial histories and next steps,
+including terminal rays. `CompatibleMeshMargins` applies it to actual selected
+fine parent histories. `CompatibleSubhistoryMargins` gives the same bound at
+every earlier fine anchor and whole-point radial monotonicity, including
+sources inside edges. This avoids splitting a history at its last coarse
+vertex. It does not assert the paper's sharper numerical threshold.

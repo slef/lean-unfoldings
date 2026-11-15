@@ -841,6 +841,10 @@ The [construction guide](docs/NORMAL_SELECTIONS.md) records the completed bridge
 - [x] Construct conforming meshes respecting all cut segments and original triangles.
 - [x] Prove exact retention of all prescribed fine cut seams and transfer the
   original routing and length bounds to actual fine parent histories.
+- [x] Transport exact original cut fans and construct directed fine bank refinements
+  with zero extra real rolling turns.
+- [x] Prove fine-mesh radial margins and whole-point radial monotonicity under the
+  explicit stronger two-history-angle condition.
 - [x] Select supported increasing fine-edge forests and derive flat intrinsic cut disks
   with local isometric developments.
 - [x] Prove finite noncompact gluing completeness from compatible coercive cell heights.

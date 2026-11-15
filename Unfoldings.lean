@@ -1626,3 +1626,10 @@ public import Unfoldings.Topology.CyclicRegionTurns
 public import Unfoldings.Topology.FiniteCyclicTurns
 public import Unfoldings.Complex.SubtreeRolling
 public import Unfoldings.Cap.SubtreeRealHeading
+public import Unfoldings.Topology.SubtreePotentialWeights
+public import Unfoldings.Cap.SubtreeBankPotential
+public import Unfoldings.Convex.ActiveRayProgress
+public import Unfoldings.Geometry.AnnularFineMargin
+public import Unfoldings.Roof.CompatibleFineMargins
+public import Unfoldings.Roof.CompatibleMeshMargins
+public import Unfoldings.Roof.CompatibleSubhistoryMargins

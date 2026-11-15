@@ -2,6 +2,23 @@
 
 ## Session Log
 
+### 2026-11-14 — actual bank potentials and uniform fine-vertex radial margins
+
+- Telescoped parent membership changes before charging nested subtree weights.
+  Actual real opposite-bank heading sums are bounded by total original cap
+  curvature, without a supplied root-path crossing-count premise.
+- Proved forward support monotonicity for actual active slopes along every
+  partial compatible edge and terminal ray. Derived radial margins at arbitrary
+  fine mesh vertices under an explicit stronger two-history-angle condition.
+- Applied the margin to actual fine parent histories and all contiguous
+  subhistories. Derived radial monotonicity from arbitrary earlier edge points.
+  Chose positive mesh-independent routing widths for sufficiently round annuli.
+- Verification: cache retrieval and full `lake build` passed 5,566 jobs; all
+  13,939 unfolding declarations passed the standard-axiom audit. Both abstract
+  independence checks passed. Saved-frontier history transport, successive-gap
+  nesting and the complete intrinsic graft remain open; sharp paper constants
+  have not been claimed.
+
 ### 2026-11-14 — exact real subtree parent-bank holonomy
 
 - Chose the actual opposite parent banks around each selected nonroot subtree.

@@ -2424,3 +2424,12 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [`Topology/FiniteCyclicTurns`](../Unfoldings/Topology/FiniteCyclicTurns.lean) | Identify finite unreduced heading prefixes with selected cyclic region turn sums |
 | [`Complex/SubtreeRolling`](../Unfoldings/Complex/SubtreeRolling.lean) | Actual opposite parent banks have real reversed-exit heading equal to subtree curvature |
 | [`Cap/SubtreeRealHeading`](../Unfoldings/Cap/SubtreeRealHeading.lean) | Bound actual real subtree bank holonomy between zero and total cap curvature |
+
+| [`Topology/SubtreePotentialWeights`](../Unfoldings/Topology/SubtreePotentialWeights.lean) | Exact root-path telescoping of nested subtree weights and parent membership changes |
+| [`Cap/SubtreeBankPotential`](../Unfoldings/Cap/SubtreeBankPotential.lean) | Actual real opposite-bank heading potentials are bounded by original cap curvature |
+
+| [`Convex/ActiveRayProgress`](../Unfoldings/Convex/ActiveRayProgress.lean) | Actual active slopes preserve forward support at arbitrary partial ray points |
+| [`Geometry/AnnularFineMargin`](../Unfoldings/Geometry/AnnularFineMargin.lean) | Choose a positive mesh-independent routing width for the fine-vertex margin |
+| [`Roof/CompatibleFineMargins`](../Unfoldings/Roof/CompatibleFineMargins.lean) | Quantitative radial margins at arbitrary fine endpoints of compatible histories |
+| [`Roof/CompatibleMeshMargins`](../Unfoldings/Roof/CompatibleMeshMargins.lean) | Actual fine mesh parent histories inherit radial margins automatically |
+| [`Roof/CompatibleSubhistoryMargins`](../Unfoldings/Roof/CompatibleSubhistoryMargins.lean) | Uniform margins for all fine subhistories and radial order from arbitrary earlier edge points |
