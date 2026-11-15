@@ -411,3 +411,12 @@ actual radial margins and length bounds.
 supported Jordan closing links after genuine endpoint trims, from a short
 source-ray angle sum. Internal vertices and turns are retained. Relating the
 geometric bank sum to the actual rolled bank remains open.
+
+## Completion across comparison connectors
+
+[CompletionRegion](../Unfoldings/Roof/CompletionRegion.lean) constructs a cap
+preserving the extended roof on any compact region.
+[CompletedBankComparison](../Unfoldings/Roof/CompletedBankComparison.lean)
+preserves the whole Jordan filling and derives a uniformly small geometric
+bank error on that actual cap. Closing points may lie outside the original
+footprint; flat input roofs are included.

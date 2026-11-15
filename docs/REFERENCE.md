@@ -448,6 +448,9 @@ Start with the [theorem and proof guide](ROOFS.md). Boundary heights are unrestr
 | [Unfoldings.Roof.CompletionFaceSeparation](../Unfoldings/Roof/CompletionFaceSeparation.lean) | A positive threshold chosen before both meshes separates actual roof-face interiors locally |
 | [Unfoldings.Roof.CompletionLeafCoherence](../Unfoldings/Roof/CompletionLeafCoherence.lean) | Actual geometric leaves survive refinement and have coherent developed endpoint values |
 | [Unfoldings.Roof.CompletionMesh](../Unfoldings/Roof/CompletionMesh.lean) | Construct tilt-preserving physical cap meshes extending arbitrary-rim roofs |
+| [Unfoldings.Roof.CompletionRegion](../Unfoldings/Roof/CompletionRegion.lean) | Preserve the extended roof on any compact region in a physical completion |
+| [Unfoldings.Roof.CompletionCurve](../Unfoldings/Roof/CompletionCurve.lean) | Derive strict containment and curve avoidance for the actual completion cap |
+| [Unfoldings.Roof.CompletedBankComparison](../Unfoldings/Roof/CompletedBankComparison.lean) | Construct a small-error comparison cap preserving the entire Jordan filling |
 | [Unfoldings.Roof.CompletionOriginalAdjacency](../Unfoldings/Roof/CompletionOriginalAdjacency.lean) | Locate fine adjacency between different original faces on their common edge |
 | [Unfoldings.Roof.CompletionOriginalConforming](../Unfoldings/Roof/CompletionOriginalConforming.lean) | Prove exact retained seam classes and the original-cut metric equivalence |
 | [Unfoldings.Roof.CompletionOriginalCoordinates](../Unfoldings/Roof/CompletionOriginalCoordinates.lean) | Prove that contained auxiliary pieces have the actual original face Euclidean metric |

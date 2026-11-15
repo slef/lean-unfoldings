@@ -2,6 +2,19 @@
 
 ## Session Log
 
+### 2026-11-14 — completion preserving the entire comparison filling
+
+- Kept added tent planes inactive on any prescribed compact region, including
+  points outside the original footprint. Constructed a physical completion with
+  exact original roof heights throughout that region.
+- Derived strict containment and triangle-interior curve avoidance from the
+  completion's actual constraints. Applied the uniform bank estimate to a
+  constructed cap preserving the entire Jordan filling.
+- Verification: cache retrieval and full `lake build` passed 5,504 jobs; all
+  13,573 unfolding declarations passed the standard-axiom audit. Both abstract
+  independence checks passed. Bank-order correspondence, saved-opening nesting
+  and the complete graft remain open.
+
 ### 2026-11-14 — local radial windows and supported closures
 
 - Derived weighted real heading bounds from local windows, charging disjoint

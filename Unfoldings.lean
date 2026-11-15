@@ -998,6 +998,9 @@ public import Unfoldings.Roof.HorizontalLevelCap
 public import Unfoldings.Roof.SpatialEnvelopeCap
 public import Unfoldings.Roof.CompletionPlanes
 public import Unfoldings.Roof.CompletionMesh
+public import Unfoldings.Roof.CompletionRegion
+public import Unfoldings.Roof.CompletionCurve
+public import Unfoldings.Roof.CompletedBankComparison
 public import Unfoldings.Roof.CompletionOriginalPieces
 public import Unfoldings.Roof.CompletionOriginalCoordinates
 public import Unfoldings.Roof.CompletionOriginalSubdivision
