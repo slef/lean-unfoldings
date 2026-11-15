@@ -2,6 +2,18 @@
 
 ## Session Log
 
+### 2026-11-15 — exact isometric physical placement and cut-subcover maps
+
+- Proved closed isometric spatial placement commutes with every separately closed
+  physical cut attachment and the entire cut metric, including unbounded ends.
+- Constructed canonical maps of physical cell subcovers into full original cuts,
+  preserving original copies and spatial folds.
+- Proved exact flat subcover metrics remain exact in the full physical cut.
+  Convex full-dimensional regions with boundary cuts supply that metric directly.
+- Verification: actual cache retrieval and full `lake build` passed 5,954 jobs;
+  16,240 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. One-sided roof bank charts and the full graft remain open.
+
 ### 2026-11-15 — exact convex face-side regions in common rigid coordinates
 
 - Constructed rigid coordinate equivalences between coplanar original supports,

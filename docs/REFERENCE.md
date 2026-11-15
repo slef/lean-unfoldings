@@ -3103,3 +3103,10 @@ corners and does not yet identify their widths with the actual retained cap fan.
   [`SpatialEnvelopeFaceSideCoordinates`](../Unfoldings/Geometry/SpatialEnvelopeFaceSideCoordinates.lean):
   actual one-sided support cells cover their full convex region, including its boundary.
   Common rigid coordinates preserve every spatial point, distance and full cell interior.
+
+- [`PolygonalCutIsometricImage`](../Unfoldings/Metric/PolygonalCutIsometricImage.lean):
+  closed isometric physical placement commutes with the exact whole cut metric.
+- [`CutCoverMap`](../Unfoldings/Metric/CutCoverMap.lean),
+  [`CutIsometricCoverMap`](../Unfoldings/Metric/CutIsometricCoverMap.lean):
+  original physical subcovers map canonically into full cuts. Convex planar regions
+  with boundary-only cuts retain their exact metric after the original spatial placement.

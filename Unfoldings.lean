@@ -2017,3 +2017,6 @@ public import Unfoldings.Roof.CompatibleTerminalExcision
 public import Unfoldings.Geometry.SpatialPlaneCoordinates
 public import Unfoldings.Geometry.SpatialEnvelopeFaceSide
 public import Unfoldings.Geometry.SpatialEnvelopeFaceSideCoordinates
+public import Unfoldings.Metric.PolygonalCutIsometricImage
+public import Unfoldings.Metric.CutCoverMap
+public import Unfoldings.Metric.CutIsometricCoverMap
