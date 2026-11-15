@@ -36,7 +36,8 @@ nonoverlap and counting remain to be proved.
   uniform small-tilt bound for their unreduced real heading error.
 - [x] Construct whole physical fine refinements of actual coarse cut-bank chains,
   preserving exact metric copies, all old fan angles and real terminal headings.
-- [ ] Preserve every ordered heading prefix and radial margin along these refinements.
+- [x] Derive contiguous fine blocks and preserve every ordered real heading prefix.
+- [ ] Transport the complete physical traces and radial margins along these refinements.
 - [ ] Construct the required initial incident side of the reference closure.
 - [ ] Identify the physical saved-frontier curves with the constructed histories
   and prove that their selected original side is untouched. Apply the local
@@ -57,8 +58,8 @@ original corner fan inside a comparison patch. Radial closure geometry now
 constructs the entire Jordan traversal from one initial incident side, with a
 uniform bound for the actual unreduced heading error. Complete coarse-to-fine paths
 now preserve exact old metric copies and fan angles, insert only straight hinges,
-and preserve the real terminal heading. Ordered prefix and radial transport and
-the initial-side choice remain open. The bank must
+and preserve every real heading prefix in order. Full trace and radial transport
+and the initial-side choice remain open. The bank must
 also be carried through actual gap attachments, preserving arclength, hinges and
 the untouched original side.
 

@@ -2937,3 +2937,10 @@ corners and does not yet identify their widths with the actual retained cap fan.
   [`CompletionChainHeading`](../Unfoldings/Roof/CompletionChainHeading.lean):
   whole physical fine paths preserve old fan angles and real terminal headings;
   every inserted hinge is straight.
+
+- [`ChainSubsequence`](../Unfoldings/Topology/ChainSubsequence.lean),
+  [`CompletionChainOrder`](../Unfoldings/Roof/CompletionChainOrder.lean):
+  actual successors derive exact contiguous fine blocks and ordered old hinges.
+- [`BoundaryChainHeadingStep`](../Unfoldings/Complex/BoundaryChainHeadingStep.lean),
+  [`CompletionChainPrefixHeading`](../Unfoldings/Roof/CompletionChainPrefixHeading.lean):
+  every fine piece retains its original bank's exact unreduced real heading.

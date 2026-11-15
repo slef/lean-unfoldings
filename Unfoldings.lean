@@ -1932,3 +1932,7 @@ public import Unfoldings.Complex.BoundaryChainVertices
 public import Unfoldings.Roof.CompletionOriginalChainRefinement
 public import Unfoldings.Roof.CompletionChainFanRefinement
 public import Unfoldings.Roof.CompletionChainHeading
+public import Unfoldings.Topology.ChainSubsequence
+public import Unfoldings.Roof.CompletionChainOrder
+public import Unfoldings.Complex.BoundaryChainHeadingStep
+public import Unfoldings.Roof.CompletionChainPrefixHeading

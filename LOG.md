@@ -2,6 +2,18 @@
 
 ## Session Log
 
+### 2026-11-15 — ordered whole-path refinements preserve every real heading
+
+- Proved directed subchains have exact contiguous numerical indices when they
+  do not wrap across the chosen first end; no proposed ordering is assumed.
+- Derived contiguous placements of all physical fine-bank blocks and strict
+  order of old hinges from actual boundary successors and original bank labels.
+- Preserved every original real heading prefix and proved each fine piece has
+  its original bank's heading. The entire set of unreduced headings is unchanged.
+- Verification: cache retrieval and full `lake build` passed 5,870 jobs;
+  15,804 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Radial transport and the physical graft remain open.
+
 ### 2026-11-15 — whole original chains preserve actual fans and real terminal heading
 
 - Constructed a canonical physical fine refinement of every actual original
