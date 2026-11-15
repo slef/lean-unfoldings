@@ -451,6 +451,15 @@ Start with the [theorem and proof guide](ROOFS.md). Boundary heights are unrestr
 | [Unfoldings.Roof.CompletionRegion](../Unfoldings/Roof/CompletionRegion.lean) | Preserve the extended roof on any compact region in a physical completion |
 | [Unfoldings.Roof.CompletionCurve](../Unfoldings/Roof/CompletionCurve.lean) | Derive strict containment and curve avoidance for the actual completion cap |
 | [Unfoldings.Roof.CompletedBankComparison](../Unfoldings/Roof/CompletedBankComparison.lean) | Construct a small-error comparison cap preserving the entire Jordan filling |
+| [Unfoldings.Complex.BoundaryContourPaths](../Unfoldings/Complex/BoundaryContourPaths.lean) | Complete directed contours cover actual banks and avoid vertices on open banks |
+| [Unfoldings.Cap.JordanContourSegments](../Unfoldings/Cap/JordanContourSegments.lean) | Exact cyclic segment cover of a Jordan curve with its actual physical vertex positions |
+| [Unfoldings.Topology.ClosedPartition](../Unfoldings/Topology/ClosedPartition.lean) | Connected pieces cannot switch closed sets away from their contacts |
+| [Unfoldings.Cap.JordanContourPartition](../Unfoldings/Cap/JordanContourPartition.lean) | Assign whole actual contour banks to finite closed arcs meeting at contour vertices |
+| [Unfoldings.Geometry.MarkedPointConstraints](../Unfoldings/Geometry/MarkedPointConstraints.lean) | Crossing coordinate constraints force marked points to be actual mesh corners |
+| [Unfoldings.Roof.CompletionMarkedPoints](../Unfoldings/Roof/CompletionMarkedPoints.lean) | Preserve prescribed points as genuine intrinsic vertices of a completion cap |
+| [Unfoldings.Geometry.RadialClosureContacts](../Unfoldings/Geometry/RadialClosureContacts.lean) | Exact radial bank contacts and the actual four-piece closure cover |
+| [Unfoldings.Roof.MarkedClosureCompletion](../Unfoldings/Roof/MarkedClosureCompletion.lean) | Construct a physical completion with every closing corner on its actual contour |
+| [Unfoldings.Roof.MarkedContourPartition](../Unfoldings/Roof/MarkedContourPartition.lean) | Derive whole-bank correspondence to the radial bank and three closing links |
 | [Unfoldings.Roof.CompletionOriginalAdjacency](../Unfoldings/Roof/CompletionOriginalAdjacency.lean) | Locate fine adjacency between different original faces on their common edge |
 | [Unfoldings.Roof.CompletionOriginalConforming](../Unfoldings/Roof/CompletionOriginalConforming.lean) | Prove exact retained seam classes and the original-cut metric equivalence |
 | [Unfoldings.Roof.CompletionOriginalCoordinates](../Unfoldings/Roof/CompletionOriginalCoordinates.lean) | Prove that contained auxiliary pieces have the actual original face Euclidean metric |

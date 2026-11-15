@@ -1001,6 +1001,15 @@ public import Unfoldings.Roof.CompletionMesh
 public import Unfoldings.Roof.CompletionRegion
 public import Unfoldings.Roof.CompletionCurve
 public import Unfoldings.Roof.CompletedBankComparison
+public import Unfoldings.Complex.BoundaryContourPaths
+public import Unfoldings.Cap.JordanContourSegments
+public import Unfoldings.Topology.ClosedPartition
+public import Unfoldings.Cap.JordanContourPartition
+public import Unfoldings.Geometry.MarkedPointConstraints
+public import Unfoldings.Roof.CompletionMarkedPoints
+public import Unfoldings.Geometry.RadialClosureContacts
+public import Unfoldings.Roof.MarkedClosureCompletion
+public import Unfoldings.Roof.MarkedContourPartition
 public import Unfoldings.Roof.CompletionOriginalPieces
 public import Unfoldings.Roof.CompletionOriginalCoordinates
 public import Unfoldings.Roof.CompletionOriginalSubdivision

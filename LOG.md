@@ -2,6 +2,20 @@
 
 ## Session Log
 
+### 2026-11-14 — actual marked contour bank correspondence
+
+- Proved the exact cyclic segment cover of the physical Jordan boundary and
+  exclusion of all contour vertices from open banks.
+- Derived whole-bank assignment to closed geometric arcs whose contacts are
+  actual contour vertices. This includes finite arc covers.
+- Constructed crossing coordinate constraints forcing every prescribed closing
+  corner to be an actual intrinsic mesh vertex. Derived all four corner
+  occurrences and whole-bank correspondence to the radial bank and connectors.
+- Verification: cache retrieval and full `lake build` passed 5,513 jobs; all
+  13,619 unfolding declarations passed the standard-axiom audit. Both abstract
+  independence checks passed. Extracting the rolling interval, saved-opening
+  nesting and the complete graft remain open.
+
 ### 2026-11-14 — completion preserving the entire comparison filling
 
 - Kept added tent planes inactive on any prescribed compact region, including

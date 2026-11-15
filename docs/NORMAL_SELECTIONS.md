@@ -420,3 +420,14 @@ preserving the extended roof on any compact region.
 preserves the whole Jordan filling and derives a uniformly small geometric
 bank error on that actual cap. Closing points may lie outside the original
 footprint; flat input roofs are included.
+
+## Actual marked contour correspondence
+
+[JordanContourSegments](../Unfoldings/Cap/JordanContourSegments.lean) identifies
+the actual Jordan curve with its consecutive physical bank segments and proves
+that no open bank contains another contour vertex.
+[MarkedClosureCompletion](../Unfoldings/Roof/MarkedClosureCompletion.lean)
+constructs a completion with all four closing corners retained as actual mesh
+vertices. [MarkedContourPartition](../Unfoldings/Roof/MarkedContourPartition.lean)
+derives each entire bank's membership in the radial bank or one closing link.
+The rolling interval and saved-opening correspondence remain to be extracted.
