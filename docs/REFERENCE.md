@@ -2972,3 +2972,12 @@ corners and does not yet identify their widths with the actual retained cap fan.
 - [`JordanSeamSideSelection`](../Unfoldings/Cap/JordanSeamSideSelection.lean),
   [`JordanInitialSeamBank`](../Unfoldings/Cap/JordanInitialSeamBank.lean):
   construct the unique selected initial original seam bank, retaining actual endpoint transport.
+
+- [`ProjectedSignedBankRays`](../Unfoldings/Cap/ProjectedSignedBankRays.lean),
+  [`SignedJordanBankPropagation`](../Unfoldings/Cap/SignedJordanBankPropagation.lean),
+  [`SignedJordanLocalChainLift`](../Unfoldings/Cap/SignedJordanLocalChainLift.lean):
+  actual occupied-side ray uniqueness and Jordan bank propagation in either orientation.
+- [`SignedRadialJordanChainLift`](../Unfoldings/Cap/SignedRadialJordanChainLift.lean),
+  [`SignedOriginalRadialChainErrorBound`](../Unfoldings/Cap/SignedOriginalRadialChainErrorBound.lean),
+  [`SignedOriginalBankHeadingComparison`](../Unfoldings/Cap/SignedOriginalBankHeadingComparison.lean):
+  construct actual radial comparison chains and uniform real-heading bounds without a sign input.

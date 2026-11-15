@@ -2,6 +2,19 @@
 
 ## Session Log
 
+### 2026-11-15 — actual Jordan comparison in either traversal orientation
+
+- Identified original germs from equal positively scaled physical rays and the
+  same occupied-side sign, covering both positive and negative orientations.
+- Derived orientation consistency from actual boundary successors. Propagated
+  selected Jordan banks through local two-ray geometry without a sign input.
+- Constructed full actual radial Jordan comparison chains in either orientation,
+  retaining every original fan, real heading and full roll. Obtained the same
+  mesh-independent curvature-and-tilt and uniform real-heading bounds.
+- Verification: cache retrieval and full `lake build` passed 5,892 jobs;
+  15,912 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Complementary-fan identification and the physical graft remain open.
+
 ### 2026-11-15 — concrete rootward refinements and constructed initial Jordan bank
 
 - Applied the whole physical refinement to the actual current rootward parent

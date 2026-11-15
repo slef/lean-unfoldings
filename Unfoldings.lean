@@ -1952,3 +1952,9 @@ public import Unfoldings.Roof.CompletionChainRadial
 public import Unfoldings.Roof.CompletionRootwardChain
 public import Unfoldings.Cap.JordanSeamSideSelection
 public import Unfoldings.Cap.JordanInitialSeamBank
+public import Unfoldings.Cap.ProjectedSignedBankRays
+public import Unfoldings.Cap.SignedJordanBankPropagation
+public import Unfoldings.Cap.SignedJordanLocalChainLift
+public import Unfoldings.Cap.SignedRadialJordanChainLift
+public import Unfoldings.Cap.SignedOriginalRadialChainErrorBound
+public import Unfoldings.Cap.SignedOriginalBankHeadingComparison
