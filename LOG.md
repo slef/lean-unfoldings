@@ -2,6 +2,22 @@
 
 ## Session Log
 
+### 2026-11-14 — nonoverlap of actual finite positive opening traces
+
+- Constructed one continuous common-frame heading for the actual prefix banks
+  and every intermediate hinge angle. Inactive circles retain the original
+  prefix contact; active circles have the exact positive real increment.
+- Proved that actual gap interiors lie strictly between consecutive bank
+  headings. Earlier gap interiors miss every later closed gap, so all actual
+  successive gaps have pairwise disjoint interiors.
+- Derived all whole-bank and hinge-suffix radial tests from the original
+  subhistory length and margin bounds. The constructor assumes neither a
+  nonoverlap certificate nor separate intermediate radial certificates.
+- Verification: cache retrieval and full `lake build` passed 5,601 jobs; all
+  14,143 unfolding declarations passed the standard-axiom audit, along with both
+  abstract independence checks. Matching branching saved-frontier histories
+  to these traces and constructing the complete intrinsic graft remain open.
+
 ### 2026-11-14 — uniform circle control for actual opening sequences
 
 - Converted positive radial margins into norm progress on all partial edges,

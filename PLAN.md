@@ -866,6 +866,8 @@ selection and Euler counting follow.
   from terminal-ray limits and connected noncontact families.
 - [x] Prove uniform equal-circle contact bounds for actual opening sequences,
   including the tail, with a mesh-independent common-halfplane threshold.
+- [x] Construct nonoverlapping actual finite positive opening traces from original
+  subhistory bounds, deriving every intermediate bank and suffix radial test.
 - [ ] Positive Jordan gaps from radially monotone polygonal banks.
 - [ ] Complete one-ended forest cuts and intrinsic polygonal-gap insertion.
 - [ ] Completeness for finite noncompact complexes with controlled ends.

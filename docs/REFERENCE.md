@@ -2461,3 +2461,18 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 
 | [`Topology/CircleRealLift`](../Unfoldings/Topology/CircleRealLift.lean) | A real lift in an interval shorter than a full turn inherits phase continuity |
 | [`Geometry/HingeCircleLift`](../Unfoldings/Geometry/HingeCircleLift.lean) | Continuous strictly increasing real angular lifts of complete actual hinge-circle arcs |
+
+| [`Geometry/HingeCircleBelow`](../Unfoldings/Geometry/HingeCircleBelow.lean) | Circles on or below a hinge retain their exact original prefix contact |
+| [`Geometry/HingeHeadingComparison`](../Unfoldings/Geometry/HingeHeadingComparison.lean) | Continuous common-frame headings have the exact positive real hinge increment |
+| [`Geometry/BankCircleDirection`](../Unfoldings/Geometry/BankCircleDirection.lean) | Actual normalized contacts throughout active and inactive hinge circles |
+| [`Geometry/HingeCommonHeading`](../Unfoldings/Geometry/HingeCommonHeading.lean) | Monotone common-frame headings on every positive source circle |
+| [`Geometry/OpeningCommonDirection`](../Unfoldings/Geometry/OpeningCommonDirection.lean) | The actual opening budget constructs the common open-halfplane frame |
+| [`Geometry/OpeningPrefixBudget`](../Unfoldings/Geometry/OpeningPrefixBudget.lean) | Actual prefix and partial-event banks obey the original cumulative budget |
+
+| [`Geometry/OpeningZero`](../Unfoldings/Geometry/OpeningZero.lean) | Zero openings retain the exact original finite chain and terminal ray |
+| [`Geometry/HingeGapCircleContacts`](../Unfoldings/Geometry/HingeGapCircleContacts.lean) | Actual gap interiors correspond to strict intermediate circle contacts |
+| [`Geometry/HingeGapHeadingBounds`](../Unfoldings/Geometry/HingeGapHeadingBounds.lean) | Actual gap interiors lie strictly between their common-frame bank headings |
+| [`Geometry/OpeningCircleTrace`](../Unfoldings/Geometry/OpeningCircleTrace.lean) | One monotone heading sequence for all actual banks and intermediate positive openings |
+| [`Geometry/OpeningGapSeparation`](../Unfoldings/Geometry/OpeningGapSeparation.lean) | Pairwise interior separation of actual successive positive hinge gaps |
+| [`Geometry/OpeningAllAnchors`](../Unfoldings/Geometry/OpeningAllAnchors.lean) | Derive every intermediate bank and suffix radial test from original subhistory bounds |
+| [`Geometry/OpeningGapNonoverlap`](../Unfoldings/Geometry/OpeningGapNonoverlap.lean) | Construct nonoverlapping actual positive hinge-gap families from uniform original margins |

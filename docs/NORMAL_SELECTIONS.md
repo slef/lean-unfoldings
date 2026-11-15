@@ -206,8 +206,9 @@ proves that a sufficiently small opening stays clear of the prefix kept fixed.
 The proof controls every intermediate rotation with the original radial and
 length constants, then sweeps the whole gap by these actual banks.
 
-These results treat individual hinge gaps. Nesting multiple openings and the
-intrinsic saved-frontier construction remain open.
+These results treat individual hinge gaps. The finite-trace result below now
+proves interior nonoverlap of successive openings; the branching saved-frontier
+construction remains open.
 
 ## Intrinsic polygonal gap metrics
 
@@ -577,3 +578,19 @@ when `3 * openingBudget < radialMargin^2`. It assumes the opened bank is outward
 existing opening estimates supply that condition under their subhistory bounds.
 The bound is independent of the number of fine edges. It does not yet establish
 nonoverlap of the successive gaps.
+
+## Nonoverlap of finite positive opening traces
+
+[`exists_nonoverlapping_positive_opening_gaps`](../Unfoldings/Geometry/OpeningGapNonoverlap.lean)
+constructs the actual successive hinge gaps and proves pairwise disjoint
+interiors. More strongly, every earlier gap interior misses each later closed
+gap. Inputs are original subhistory length and positive radial-margin bounds,
+positive opening angles below pi, and the sufficient budgets
+`D * openingBudget < radialMargin` and
+`3 * openingBudget < radialMargin^2`.
+
+The proof constructs all intermediate radial tests and a common angular frame;
+no intermediate safe-bank or nonoverlap certificate is assumed. This is a
+single-bank-trace theorem. The remaining application must construct and compare
+the actual branching saved-frontier histories, identify their curvature events,
+and assemble the complete intrinsic graft.

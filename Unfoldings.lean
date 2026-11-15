@@ -1655,3 +1655,16 @@ public import Unfoldings.Geometry.OpeningMatchedError
 public import Unfoldings.Geometry.OpeningCircleThreshold
 public import Unfoldings.Topology.CircleRealLift
 public import Unfoldings.Geometry.HingeCircleLift
+public import Unfoldings.Geometry.HingeCircleBelow
+public import Unfoldings.Geometry.HingeHeadingComparison
+public import Unfoldings.Geometry.BankCircleDirection
+public import Unfoldings.Geometry.HingeCommonHeading
+public import Unfoldings.Geometry.OpeningCommonDirection
+public import Unfoldings.Geometry.OpeningPrefixBudget
+public import Unfoldings.Geometry.OpeningZero
+public import Unfoldings.Geometry.HingeGapCircleContacts
+public import Unfoldings.Geometry.HingeGapHeadingBounds
+public import Unfoldings.Geometry.OpeningCircleTrace
+public import Unfoldings.Geometry.OpeningGapSeparation
+public import Unfoldings.Geometry.OpeningAllAnchors
+public import Unfoldings.Geometry.OpeningGapNonoverlap
