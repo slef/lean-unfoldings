@@ -663,3 +663,11 @@ quotients for finite selected closed physical attachment pieces. Finite closed
 physical cells give completeness and the actual seam-quotient topology even
 with unbounded seams. This supports cut-space construction while leaving the
 choice and cyclic ordering of the actual retained bank pieces to be proved.
+
+[`PolygonalCut`](../Unfoldings/Metric/PolygonalCut.lean) constructs a complete
+metric from closures of the actual uncut cell attachments, and recovers the
+original intrinsic metric for an empty cut set.
+[`exists_cutToPolygonal_ball_isometry`](../Unfoldings/Metric/PolygonalCutLocal.lean)
+proves whole-ball restoration isometries away from closed cuts. These results
+establish the metric construction; identifying its bank fans with the original
+forest and filling their complementary angles remains necessary.

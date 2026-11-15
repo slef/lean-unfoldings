@@ -2,6 +2,19 @@
 
 ## Session Log
 
+### 2026-11-15 — complete cut metrics and exact restoration away from cuts
+
+- Constructed cut spaces by closing each original uncut cell attachment
+  separately. Point-only cut intersections disappear, while endpoints of retained
+  attachment intervals remain attached on their own sides.
+- Proved completeness, exact uncut recovery, surjective nonexpanding restoration
+  and unique preimages over all points away from the cut set.
+- Proved whole intrinsic metric-ball restoration isometries away from closed
+  cuts using short-route estimates and finite physical seam classes.
+- Verification: cache retrieval and full `lake build` passed 5,631 jobs; all
+  14,447 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Actual bank-fan topology and complementary graft angles remain open.
+
 ### 2026-11-15 — exact complete closed physical-seam systems
 
 - Constructed finite closed isometric seam systems from arbitrary selected

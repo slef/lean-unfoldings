@@ -2514,3 +2514,6 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [`Geometry/AffineArrangementConeChart`](../Unfoldings/Geometry/AffineArrangementConeChart.lean) | Isometric whole cell-ball coordinates on the constructed active tangent cones |
 
 | [`Metric/PhysicalSeams`](../Unfoldings/Metric/PhysicalSeams.lean) | Exact complete metric and quotient topology for arbitrary finite closed physical seam pieces, including unbounded cuts |
+
+| [`Metric/PolygonalCut`](../Unfoldings/Metric/PolygonalCut.lean) | Complete actual cut metrics from closures of uncut physical attachments, with exact uncut recovery |
+| [`Metric/PolygonalCutLocal`](../Unfoldings/Metric/PolygonalCutLocal.lean) | Restoring a closed physical cut preserves whole intrinsic metric balls away from the cut |

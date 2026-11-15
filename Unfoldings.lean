@@ -1696,3 +1696,5 @@ public import Unfoldings.Geometry.SpatialEnvelopePartition
 public import Unfoldings.Geometry.AffineArrangementLocalCone
 public import Unfoldings.Geometry.AffineArrangementConeChart
 public import Unfoldings.Metric.PhysicalSeams
+public import Unfoldings.Metric.PolygonalCut
+public import Unfoldings.Metric.PolygonalCutLocal
