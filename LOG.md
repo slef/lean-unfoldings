@@ -2,6 +2,17 @@
 
 ## Session Log
 
+### 2026-11-15 — closed embedded terminal banks and exact spatial speed
+
+- Proved every actual exterior ray is spatially affine on its whole positive
+  domain. Its squared speed is `1 + rate^2`, retaining the vertical roof drop.
+- Proved exact cut-cell tail speeds and constructed real half-line dilations.
+- Upgraded the same compatible terminal bank witnesses to disjoint closed
+  embedded dilations in the actual cut metric, with their original exact folds.
+- Verification: actual cache retrieval and full `lake build` passed 5,926 jobs;
+  16,041 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Finite-bank joins and the complete flat graft remain open.
+
 ### 2026-11-15 — distinct complete terminal banks in the actual cut metric
 
 - Proved finite convex covers supply an eventual cell for a whole ray. Finite

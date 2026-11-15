@@ -1989,3 +1989,6 @@ public import Unfoldings.Geometry.SpatialEnvelopeCutBanks
 public import Unfoldings.Geometry.RayForwardHalfspace
 public import Unfoldings.Geometry.SpatialEnvelopeRayBanks
 public import Unfoldings.Roof.CompatibleTerminalBanks
+public import Unfoldings.Geometry.SpatialEnvelopeRayDilation
+public import Unfoldings.Convex.ExteriorSpatialRays
+public import Unfoldings.Roof.CompatibleEmbeddedTerminalBanks

@@ -36,6 +36,7 @@ nonoverlap and counting remain to be proved.
   certificates, independent of mesh size, path length and vertex valence.
 - [x] Construct two disjoint actual metric tails for every terminal ray, with exact
   folding and every pairwise spatial distance, without an upper truncation.
+  These are closed embedded dilations, with the full spatial speed including height.
 - [ ] Identify the full unbounded comparison banks, including terminal rays and
   completion fans, and supply their admissible respected radial closure geometry.
 - [ ] Carry physical saved-frontier curves and their untouched original sides through

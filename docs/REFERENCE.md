@@ -3035,3 +3035,9 @@ corners and does not yet identify their widths with the actual retained cap fan.
   construct two disjoint unbounded bank tails with exact folding and spatial distances.
 - [`CompatibleTerminalBanks`](../Unfoldings/Roof/CompatibleTerminalBanks.lean):
   construct those actual terminal banks simultaneously for every compatible forest end.
+
+- [`SpatialEnvelopeRayDilation`](../Unfoldings/Geometry/SpatialEnvelopeRayDilation.lean),
+  [`ExteriorSpatialRays`](../Unfoldings/Convex/ExteriorSpatialRays.lean):
+  exact intrinsic tail speeds, full spatial affine rays, and closed embedded half-lines.
+- [`CompatibleEmbeddedTerminalBanks`](../Unfoldings/Roof/CompatibleEmbeddedTerminalBanks.lean):
+  the actual compatible terminal bank witnesses are disjoint closed embedded dilations.
