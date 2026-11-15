@@ -2,6 +2,16 @@
 
 ## Session Log
 
+### 2026-11-15 — whole metric balls of actual one-sided roof banks
+
+- Derived every incident cut class's support and side from the local roof and
+  cut-line geometry, including boundary-centered affine patches.
+- Proved the full convex face-side embedding covers a whole original metric
+  ball, using closed-seam class transport rather than assuming bank charts.
+- Verification: actual cache retrieval and full `lake build` passed 5,960 jobs;
+  16,270 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Halfplane charts and the full graft remain open.
+
 ### 2026-11-15 — entire original face-side cuts embed in the actual roof metric
 
 - Constructed the full common-coordinate face-side cut and its exact intrinsic

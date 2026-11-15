@@ -2022,3 +2022,7 @@ public import Unfoldings.Metric.CutCoverMap
 public import Unfoldings.Metric.CutIsometricCoverMap
 public import Unfoldings.Geometry.SpatialEnvelopeFaceSideCut
 public import Unfoldings.Geometry.SpatialEnvelopeFaceSideCutPoints
+public import Unfoldings.Metric.ClosedSubcoverBall
+public import Unfoldings.Geometry.AffinePatch
+public import Unfoldings.Geometry.SpatialEnvelopeCutClassSide
+public import Unfoldings.Geometry.SpatialEnvelopeFaceSideBall

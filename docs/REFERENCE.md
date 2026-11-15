@@ -3115,3 +3115,12 @@ corners and does not yet identify their widths with the actual retained cap fan.
   [`SpatialEnvelopeFaceSideCutPoints`](../Unfoldings/Geometry/SpatialEnvelopeFaceSideCutPoints.lean):
   full original face-side regions embed isometrically in the actual roof cut. The
   canonical maps preserve every original metric copy and spatial placement.
+
+- [`ClosedSubcoverBall`](../Unfoldings/Metric/ClosedSubcoverBall.lean):
+  an isometric subcover containing all incident cells contains a whole intrinsic ball.
+- [`AffinePatch`](../Unfoldings/Geometry/AffinePatch.lean),
+  [`SpatialEnvelopeCutClassSide`](../Unfoldings/Geometry/SpatialEnvelopeCutClassSide.lean):
+  local geometry determines every actual bank-class support and its original side.
+- [`SpatialEnvelopeFaceSideBall`](../Unfoldings/Geometry/SpatialEnvelopeFaceSideBall.lean):
+  whole-ball isometries between canonical original face-side regions and actual bank
+  neighborhoods, deriving incident supports and ball coverage from local roof geometry.
