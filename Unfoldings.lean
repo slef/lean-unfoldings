@@ -1791,3 +1791,8 @@ public import Unfoldings.Cap.DevelopedBankGapCorner
 public import Unfoldings.Geometry.PolygonalBankTailGerm
 public import Unfoldings.Geometry.TwoBankGapTailCorner
 public import Unfoldings.Geometry.TwoBankGapSecondTailCorner
+public import Unfoldings.Geometry.RadialRayEdgePoints
+public import Unfoldings.Geometry.SegmentInteriorDirections
+public import Unfoldings.Geometry.PolygonalBankEdgeGerm
+public import Unfoldings.Geometry.TwoBankGapEdgeChart
+public import Unfoldings.Geometry.TwoBankGapSecondEdgeChart

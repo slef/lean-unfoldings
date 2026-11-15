@@ -856,3 +856,11 @@ infinite tail. [`TwoBankGapTailCorner`](../Unfoldings/Geometry/TwoBankGapTailCor
 and [`TwoBankGapSecondTailCorner`](../Unfoldings/Geometry/TwoBankGapSecondTailCorner.lean)
 construct the two oriented intrinsic tail-bend charts. Strict terminal radial
 progress is explicit; these theorems do not truncate or replace the tail.
+
+[`PolygonalBankEdgeGerm`](../Unfoldings/Geometry/PolygonalBankEdgeGerm.lean)
+derives exact forward/reverse original direction rays at every strict finite
+edge point. Genuine outward banks supply isolation from all other finite edges
+and the entire tail, and strict radial progress at the actual point.
+[`TwoBankGapEdgeChart`](../Unfoldings/Geometry/TwoBankGapEdgeChart.lean) and
+[`TwoBankGapSecondEdgeChart`](../Unfoldings/Geometry/TwoBankGapSecondEdgeChart.lean)
+then construct the actual occupied intrinsic half-plane charts, with angle `pi`.

@@ -2,6 +2,22 @@
 
 ## Session Log
 
+### 2026-11-15 — exact straight finite bank germs and metric half-plane charts
+
+- Proved strict original edge interiors avoid every other closed finite edge,
+  the entire later tail and the source, using actual source-radial order.
+- Derived their strict forward radial progress directly from the original
+  outward condition, including edges whose initial radial progress is zero.
+- Generalized the exact segment direction-line germ to arbitrary real normed
+  spaces, with a positive radius derived from original endpoint clearance.
+- Constructed both actual occupied bank charts at every strict finite edge
+  point, with angle exactly `pi`. No isolation, local rays or metric model is
+  supplied as a hypothesis.
+- Verification: cache retrieval and full `lake build` passed 5,729 jobs; all
+  15,051 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. The tail-interior charts, saved-frontier history
+  identification, fan surgery and the actual assembled graft remain open.
+
 ### 2026-11-15 — physical developed apertures and actual terminal-tail corner charts
 
 - Proved common nonzero complex scaling preserves the positive named-bank
@@ -15,7 +31,7 @@
 - Constructed both oriented whole intrinsic gap charts at that terminal bend,
   preserving its original physical position and tail direction.
 - Verification: cache retrieval and full `lake build` passed 5,724 jobs; all
-  15,043 unfolding declarations passed the standard-axiom audit and both abstract
+  15,039 unfolding declarations passed the standard-axiom audit and both abstract
   independence checks. Saved-frontier path matching, fan surgery, straight-bank
   coverage and the actual assembled graft remain open.
 

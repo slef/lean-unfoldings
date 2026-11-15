@@ -2649,3 +2649,13 @@ corners and does not yet identify their widths with the actual retained cap fan.
 - [`TwoBankGapTailCorner`](../Unfoldings/Geometry/TwoBankGapTailCorner.lean),
   [`TwoBankGapSecondTailCorner`](../Unfoldings/Geometry/TwoBankGapSecondTailCorner.lean):
   both occupied intrinsic gap corners at the last finite bend.
+
+- [`RadialRayEdgePoints`](../Unfoldings/Geometry/RadialRayEdgePoints.lean):
+  original edge-point isolation and strict radial progress.
+- [`SegmentInteriorDirections`](../Unfoldings/Geometry/SegmentInteriorDirections.lean):
+  exact direction-line germs in arbitrary real normed spaces.
+- [`PolygonalBankEdgeGerm`](../Unfoldings/Geometry/PolygonalBankEdgeGerm.lean):
+  actual original finite-edge direction germs.
+- [`TwoBankGapEdgeChart`](../Unfoldings/Geometry/TwoBankGapEdgeChart.lean),
+  [`TwoBankGapSecondEdgeChart`](../Unfoldings/Geometry/TwoBankGapSecondEdgeChart.lean):
+  both actual whole intrinsic half-plane charts at strict finite bank edge points.
