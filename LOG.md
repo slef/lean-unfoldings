@@ -2,6 +2,18 @@
 
 ## Session Log
 
+### 2026-11-15 — complementary original link intervals partition the whole star
+
+- Constructed exact suffixes and complements of proper intervals in connected
+  finite pairing cycles, deriving the actual joins, separation and full coverage.
+- Proved two intervals with complementary endpoint pairings partition that cycle,
+  without supplied separation or coverage. Preserved arbitrary additive interval weights.
+- Applied this to interior original vertex links: opposite actual fan intervals
+  partition every original corner weight, including when the second is reversed.
+- Verification: cache retrieval and full `lake build` passed 5,904 jobs;
+  15,950 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Physical fan identification and the full graft remain open.
+
 ### 2026-11-15 — physical Jordan traversal with no initial-side hypothesis
 
 - Proved an interior directed projected ray determines exactly the two original

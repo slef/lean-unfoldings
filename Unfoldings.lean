@@ -1966,3 +1966,7 @@ public import Unfoldings.Cap.JordanPhysicalInitialBank
 public import Unfoldings.Cap.PhysicalBoundaryChainLift
 public import Unfoldings.Cap.JordanPhysicalChainLift
 public import Unfoldings.Cap.RadialJordanPhysicalChain
+public import Unfoldings.Topology.ChainSuffix
+public import Unfoldings.Topology.ChainComplement
+public import Unfoldings.Topology.ChainConcatSum
+public import Unfoldings.Complex.ComplementaryLinkChains

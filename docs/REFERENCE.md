@@ -2996,3 +2996,10 @@ corners and does not yet identify their widths with the actual retained cap fan.
   [`JordanPhysicalChainLift`](../Unfoldings/Cap/JordanPhysicalChainLift.lean),
   [`RadialJordanPhysicalChain`](../Unfoldings/Cap/RadialJordanPhysicalChain.lean):
   whole actual radial Jordan traversals from geometry alone, without an initial-side input.
+
+- [`ChainSuffix`](../Unfoldings/Topology/ChainSuffix.lean),
+  [`ChainComplement`](../Unfoldings/Topology/ChainComplement.lean),
+  [`ChainConcatSum`](../Unfoldings/Topology/ChainConcatSum.lean):
+  exact complementary original intervals, derived cycle partitions and additive weights.
+- [`ComplementaryLinkChains`](../Unfoldings/Complex/ComplementaryLinkChains.lean):
+  actual complementary interior vertex-link intervals partition every original corner weight.
