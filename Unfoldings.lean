@@ -1616,3 +1616,9 @@ public import Unfoldings.Roof.CompletionFaceStraightAngles
 public import Unfoldings.Roof.CompletionInsertedAngles
 public import Unfoldings.Complex.SubdivisionWeightedAngles
 public import Unfoldings.Roof.CompletionBankSubdivision
+public import Unfoldings.Topology.FiniteIntervalPartition
+public import Unfoldings.Geometry.SegmentPartitionOrder
+public import Unfoldings.Roof.CompletionBankOrder
+public import Unfoldings.Roof.CompletionDirectedBank
+public import Unfoldings.Complex.BoundaryChainRolling
+public import Unfoldings.Roof.CompletionBankRolling

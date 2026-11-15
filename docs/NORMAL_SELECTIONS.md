@@ -501,3 +501,22 @@ arbitrary original face weights, hence every regional old-corner angle sum.
 A traversal matching these banks to the reference Jordan contour and the
 saved-frontier construction is still required; the gap-grafting nonoverlap
 conclusion remains open.
+
+## Actual directed refinements and real bank rolling
+
+`FiniteIntervalPartition` and `SegmentPartitionOrder` construct the unique
+increasing order of a finite genuine segment partition. `CompletionBankOrder`
+proves that physical fine pieces of an original side satisfy these hypotheses.
+`CompletionDirectedBank` identifies this order with the actual intrinsic
+boundary successor, with no bank repeated in either direction.
+
+`CompletionBankRolling.exists_original_cutBank_straight_roll` constructs the
+entire directed fine refinement of every original cut side. It reaches the
+correct original endpoints and has exactly zero extra real heading on every
+prefix. `original_bankEnd_totalAngle_at_old_corner` also identifies endpoint
+fans with their original one-sided cut fan angles, including branching cuts.
+These results concern actual cut metric copies, not angles modulo a full turn.
+
+The remaining comparison must match the original path's selected fans to the
+reference Jordan bank, then control the saved-frontier history and successive
+gaps. The complete intrinsic graft and final nonoverlap are still open.

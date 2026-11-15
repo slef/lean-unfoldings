@@ -2,6 +2,21 @@
 
 ## Session Log
 
+### 2026-11-14 — actual directed bank refinements and real rolling
+
+- Ordered each original side's fine physical whole edges, visiting every edge
+  once and identifying the geometric order with the actual intrinsic boundary
+  successor. Derived disjointness from the actual conforming face geometry.
+- Constructed each original cut side's genuine fine boundary chain with exact
+  endpoint positions. All inserted turns vanish as real numbers, so every
+  prefix has zero extra unreduced heading.
+- Identified original bank endpoint copies and their one-sided cut fan angles
+  under the actual metric equivalence, including branching cuts.
+- Verification: cache retrieval and full `lake build` passed 5,555 jobs; all
+  13,910 unfolding declarations passed the standard-axiom audit. Both abstract
+  independence checks passed. Reference-Jordan fan matching, saved-frontier
+  bookkeeping, successive-gap nesting and the complete graft remain open.
+
 ### 2026-11-14 — straight inserted fans and exact cut-bank refinement
 
 - Proved that actual inserted vertices inside old faces have full Euclidean

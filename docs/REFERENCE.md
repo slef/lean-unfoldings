@@ -2412,3 +2412,10 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [`Roof/CompletionInsertedAngles`](../Unfoldings/Roof/CompletionInsertedAngles.lean) | Inserted original cut-bank vertices have zero real exterior rolling turn |
 | [`Complex/SubdivisionWeightedAngles`](../Unfoldings/Complex/SubdivisionWeightedAngles.lean) | Arbitrary original face weights and regional fan angles survive refinement |
 | [`Roof/CompletionBankSubdivision`](../Unfoldings/Roof/CompletionBankSubdivision.lean) | Whole original cut banks are exactly covered by genuine fine bank images in the cut metric |
+
+| [`Topology/FiniteIntervalPartition`](../Unfoldings/Topology/FiniteIntervalPartition.lean) | Exact increasing order of all nondegenerate intervals in a finite partition |
+| [`Geometry/SegmentPartitionOrder`](../Unfoldings/Geometry/SegmentPartitionOrder.lean) | Construct a directed segment subdivision using every genuine fine segment once |
+| [`Roof/CompletionBankOrder`](../Unfoldings/Roof/CompletionBankOrder.lean) | Actual physical fine bank edges form an exact ordered segment partition |
+| [`Roof/CompletionDirectedBank`](../Unfoldings/Roof/CompletionDirectedBank.lean) | The ordered fine edges follow the actual intrinsic boundary successor |
+| [`Complex/BoundaryChainRolling`](../Unfoldings/Complex/BoundaryChainRolling.lean) | Roll actual finite bank chains using real turns and original edge lengths |
+| [`Roof/CompletionBankRolling`](../Unfoldings/Roof/CompletionBankRolling.lean) | Construct actual old cut-bank refinements with zero extra unreduced heading |
