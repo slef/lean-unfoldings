@@ -2,6 +2,21 @@
 
 ## Session Log
 
+### 2026-11-15 — intrinsic contact fans with original point placements
+
+- Identified the contact corner immediately after cutting the next contour source,
+  including the final contour position. Its triangle corners and total angle are
+  exactly those of its named final original contour corner.
+- Derived the cap junction remainder directly from that original contour angle;
+  its actual current-copy identity, fan matching and local curvature charge are
+  constructed from the processing history.
+- Constructed an isometry of entire tangent fans under seam restoration when
+  their terminal banks survive, fixing every original tangent-cell point.
+- Verification: cache retrieval and full `lake build` passed 5,771 jobs; all
+  15,313 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Physical gap attachment and the assembled flat surface
+  are still required for the nonoverlap theorem.
+
 ### 2026-11-15 — exact original boundary-fan retention at intermediate cuts
 
 - Embedded actual ordered link chains under seam restoration, preserving every

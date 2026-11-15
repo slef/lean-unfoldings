@@ -2739,3 +2739,10 @@ corners and does not yet identify their widths with the actual retained cap fan.
   ordered original fans survive restoration when both terminal banks remain.
 - [`ProcessedContourFans`](../Unfoldings/Complex/ProcessedContourFans.lean):
   derive the surviving banks and exact original fan at earlier contour positions.
+
+- [`ContourContactFans`](../Unfoldings/Complex/ContourContactFans.lean): identify
+  the original contact fan immediately after its fresh child is processed.
+- [`ContourContactRemainder`](../Unfoldings/Cap/ContourContactRemainder.lean):
+  derive the contact model and exact curvature charge from the original contour.
+- [`RestoredBoundaryFan`](../Unfoldings/Cone/RestoredBoundaryFan.lean): isometries
+  of entire surviving original tangent fans, fixing every original cell point.

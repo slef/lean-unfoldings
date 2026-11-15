@@ -1835,3 +1835,6 @@ public import Unfoldings.Complex.RimStartedContour
 public import Unfoldings.Cap.RimStartedContour
 public import Unfoldings.Complex.RestoredLinkChain
 public import Unfoldings.Complex.ProcessedContourFans
+public import Unfoldings.Complex.ContourContactFans
+public import Unfoldings.Cap.ContourContactRemainder
+public import Unfoldings.Cone.RestoredBoundaryFan
