@@ -2,6 +2,18 @@
 
 ## Session Log
 
+### 2026-11-15 — whole closed bank completion in the full forest cut
+
+- Completed positive Lipschitz rays in complete extended-metric targets while
+  preserving every positive value and all continuous identities at the endpoint.
+- Applied this to the unique original terminal-bank lifts. Restoration recovers
+  the entire supplied one-ray-cut bank, including its completed endpoint.
+- Proved every whole-bank distance is unchanged. Closed embedded dilations lift
+  to closed embedded dilations in the original full forest cut.
+- Verification: actual cache retrieval and full `lake build` passed 5,969 jobs;
+  16,335 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Opposite-bank assembly and the complete graft remain open.
+
 ### 2026-11-15 — unique full-forest terminal fibers and Lipschitz lifts
 
 - Proved local agreement of physical cut carriers preserves entire metric fibers

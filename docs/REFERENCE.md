@@ -3143,3 +3143,11 @@ corners and does not yet identify their widths with the actual retained cap fan.
 - [`CompatibleTerminalFiber`](../Unfoldings/Roof/CompatibleTerminalFiber.lean):
   every positive terminal bank copy has a unique original full-forest preimage.
   Canonical positive-bank lifts preserve spatial folding and Lipschitz constants.
+
+- [`PositiveHalflineExtension`](../Unfoldings/Metric/PositiveHalflineExtension.lean):
+  completeness supplies the missing endpoint of a positive Lipschitz ray, preserving
+  all positive values, the same bound, and continuous identities.
+- [`CompatibleTerminalCompletion`](../Unfoldings/Roof/CompatibleTerminalCompletion.lean):
+  whole one-ray-cut terminal banks lift to whole closed banks in the actual full forest
+  cut. Every distance and spatial point is retained, including the completed endpoint;
+  closed embedded dilations survive the lift.

@@ -2033,3 +2033,5 @@ public import Unfoldings.Metric.PhysicalSeamFiber
 public import Unfoldings.Geometry.SpatialEnvelopeCutFiber
 public import Unfoldings.Metric.LocalIsometricLift
 public import Unfoldings.Roof.CompatibleTerminalFiber
+public import Unfoldings.Metric.PositiveHalflineExtension
+public import Unfoldings.Roof.CompatibleTerminalCompletion
