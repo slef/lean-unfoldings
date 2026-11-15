@@ -3110,3 +3110,8 @@ corners and does not yet identify their widths with the actual retained cap fan.
   [`CutIsometricCoverMap`](../Unfoldings/Metric/CutIsometricCoverMap.lean):
   original physical subcovers map canonically into full cuts. Convex planar regions
   with boundary-only cuts retain their exact metric after the original spatial placement.
+
+- [`SpatialEnvelopeFaceSideCut`](../Unfoldings/Geometry/SpatialEnvelopeFaceSideCut.lean),
+  [`SpatialEnvelopeFaceSideCutPoints`](../Unfoldings/Geometry/SpatialEnvelopeFaceSideCutPoints.lean):
+  full original face-side regions embed isometrically in the actual roof cut. The
+  canonical maps preserve every original metric copy and spatial placement.

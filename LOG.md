@@ -2,6 +2,18 @@
 
 ## Session Log
 
+### 2026-11-15 — entire original face-side cuts embed in the actual roof metric
+
+- Constructed the full common-coordinate face-side cut and its exact intrinsic
+  convex-region isometry. Line-supported cuts lie only on the region boundary.
+- Embedded that entire original physical region isometrically into the same
+  whole-roof cut, deriving absence of shortcuts through other roof pieces.
+- Preserved each original cell copy, every spatial point and the exact support
+  placement. Added the canonical isometric map from the full convex region.
+- Verification: actual cache retrieval and full `lake build` passed 5,956 jobs;
+  16,260 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Whole-bank ball coverage and the full graft remain open.
+
 ### 2026-11-15 — exact isometric physical placement and cut-subcover maps
 
 - Proved closed isometric spatial placement commutes with every separately closed

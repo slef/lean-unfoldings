@@ -2020,3 +2020,5 @@ public import Unfoldings.Geometry.SpatialEnvelopeFaceSideCoordinates
 public import Unfoldings.Metric.PolygonalCutIsometricImage
 public import Unfoldings.Metric.CutCoverMap
 public import Unfoldings.Metric.CutIsometricCoverMap
+public import Unfoldings.Geometry.SpatialEnvelopeFaceSideCut
+public import Unfoldings.Geometry.SpatialEnvelopeFaceSideCutPoints
