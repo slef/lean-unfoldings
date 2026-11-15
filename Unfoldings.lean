@@ -1719,3 +1719,7 @@ public import Unfoldings.Metric.ClosedSeamsTopology
 public import Unfoldings.Geometry.VariableSectorMembership
 public import Unfoldings.Geometry.VariableSectorLocalSide
 public import Unfoldings.Geometry.TwoBankGapLocalSide
+public import Unfoldings.Geometry.BankInitialSegment
+public import Unfoldings.Metric.PolygonalConvexChart
+public import Unfoldings.Geometry.TwoBankGapSourceSector
+public import Unfoldings.Geometry.TwoBankGapSourceChart

@@ -2,6 +2,22 @@
 
 ## Session Log
 
+### 2026-11-15 — exact metric sector at the actual gap source
+
+- Identified initial radial bank coordinates exactly from genuine original
+  straight segments and proved that the bank frame is rigid on the initial ball.
+- Proved that the actual geometric Jordan gap agrees on a whole source
+  neighborhood with the sector of those original edge vectors; its angle is
+  strictly between zero and pi.
+- Constructed a whole intrinsic source-ball isometry to that actual Euclidean
+  sector, with physical coordinates preserved. No tangent-angle or flatness
+  certificate is assumed. A reusable local-convex-patch metric theorem supplies
+  the exact intrinsic distance comparison.
+- Verification: cache retrieval and full `lake build` passed 5,656 jobs; all
+  14,579 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Internal complementary bank corners, cyclic fan matching,
+  saved-frontier surgery and the assembled flat graft remain open.
+
 ### 2026-11-15 — exact local geometric sides on both actual gap banks
 
 - Proved positive clearance of the inactive halfplane along both banks of a

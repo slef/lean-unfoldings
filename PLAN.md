@@ -877,7 +877,9 @@ selection and Euler counting follow.
   prescribed cut-support lines, with boundary-only physical seams.
 - [x] Identify actual Jordan-gap intrinsic metrics with complete finite planar-cell
   gluings having boundary-only seams.
-- [ ] Prove exact complementary bank-corner charts for grafting these regions.
+- [x] Construct the actual source-corner metric sector from original initial bank
+  edges, with exact whole-ball isometries and no assumed tangent-angle certificate.
+- [ ] Prove exact complementary internal bank-corner charts for grafting these regions.
 - [ ] Positive Jordan gaps from radially monotone polygonal banks.
 - [x] Construct complete unbounded roof cut metrics with actual planar cells,
   boundary-only seams and exact metric-ball restoration away from closed cuts.

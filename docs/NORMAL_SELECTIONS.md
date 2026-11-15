@@ -727,3 +727,9 @@ and the second-bank counterpart prove exact geometric one-sided membership
 near both actual frontier banks away from the source. The other supporting
 halfplane has actual positive clearance. Internal metric corner angles still
 need to be identified from these side tests.
+
+[`exists_twoBankGap_source_sector_isometry`](../Unfoldings/Geometry/TwoBankGapSourceChart.lean)
+constructs the exact whole intrinsic source-ball chart from genuine original
+initial bank segments. Its Euclidean sector angle is computed from the original
+edge vectors and proved to lie strictly between zero and pi. Internal bank
+corner charts and their saved-frontier fan complements remain open.

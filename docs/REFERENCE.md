@@ -2549,3 +2549,8 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 
 | [`Geometry/VariableSectorLocalSide`](../Unfoldings/Geometry/VariableSectorLocalSide.lean) | Exact one-sided neighborhoods on both actual variable-sector banks |
 | [`Geometry/TwoBankGapLocalSide`](../Unfoldings/Geometry/TwoBankGapLocalSide.lean) | Exact local side tests along both geometric frontier banks of the actual Jordan gap |
+
+| [`Geometry/BankInitialSegment`](../Unfoldings/Geometry/BankInitialSegment.lean) | Exact rigid initial bank coordinates and physical source radii |
+| [`Metric/PolygonalConvexChart`](../Unfoldings/Metric/PolygonalConvexChart.lean) | Whole intrinsic metric-ball isometries from local equality with an actual convex region |
+| [`Geometry/TwoBankGapSourceSector`](../Unfoldings/Geometry/TwoBankGapSourceSector.lean) | The actual gap agrees locally with the genuine sector of its original initial edge vectors |
+| [`Geometry/TwoBankGapSourceChart`](../Unfoldings/Geometry/TwoBankGapSourceChart.lean) | Exact intrinsic source-corner sector-ball isometries without an assumed tangent angle |
