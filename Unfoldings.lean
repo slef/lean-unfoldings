@@ -1970,3 +1970,6 @@ public import Unfoldings.Topology.ChainSuffix
 public import Unfoldings.Topology.ChainComplement
 public import Unfoldings.Topology.ChainConcatSum
 public import Unfoldings.Complex.ComplementaryLinkChains
+public import Unfoldings.Complex.RawLinkComplement
+public import Unfoldings.Complex.OppositeRestrictedFans
+public import Unfoldings.Complex.EdgeReverseGerm

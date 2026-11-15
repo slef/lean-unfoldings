@@ -3003,3 +3003,9 @@ corners and does not yet identify their widths with the actual retained cap fan.
   exact complementary original intervals, derived cycle partitions and additive weights.
 - [`ComplementaryLinkChains`](../Unfoldings/Complex/ComplementaryLinkChains.lean):
   actual complementary interior vertex-link intervals partition every original corner weight.
+
+- [`RawLinkComplement`](../Unfoldings/Complex/RawLinkComplement.lean),
+  [`OppositeRestrictedFans`](../Unfoldings/Complex/OppositeRestrictedFans.lean):
+  opposite actual retained fans partition all original corner weights from their seam endpoints.
+- [`EdgeReverseGerm`](../Unfoldings/Complex/EdgeReverseGerm.lean):
+  original seam endpoint transport commutes with directed edge reversal.

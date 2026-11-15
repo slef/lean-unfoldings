@@ -2,6 +2,18 @@
 
 ## Session Log
 
+### 2026-11-15 — complementary actual retained fan weights from old seam endpoints
+
+- Restored raw original fan chains to their exact original vertex links and
+  proved opposite terminal seam pairings partition all original corner weights.
+- Applied the partition to actual retained fans in independent face restrictions,
+  deriving complete corner-weight conservation without fan-angle certificates.
+- Proved original across-seam endpoint transport commutes with reversing an edge,
+  including originally unpaired boundary banks.
+- Verification: cache retrieval and full `lake build` passed 5,907 jobs;
+  15,969 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Whole physical-chain fan identification and the full graft remain open.
+
 ### 2026-11-15 — complementary original link intervals partition the whole star
 
 - Constructed exact suffixes and complements of proper intervals in connected
