@@ -1891,3 +1891,7 @@ public import Unfoldings.Cap.RestrictedCutFanAgreement
 public import Unfoldings.Roof.CompletionPatchFanAgreement
 public import Unfoldings.Complex.RestrictedBoundaryChainAgreement
 public import Unfoldings.Cap.ProjectedBoundaryChainAgreement
+public import Unfoldings.Complex.BoundaryEdgeDetection
+public import Unfoldings.Cap.JordanOriginalBanks
+public import Unfoldings.Cap.RestrictedBoundaryChainLift
+public import Unfoldings.Cap.JordanBoundaryChainLift

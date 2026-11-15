@@ -2,6 +2,20 @@
 
 ## Session Log
 
+### 2026-11-15 — construct actual Jordan traversals of original banks
+
+- Detected the actual boundary status of an original edge from one regular
+  quotient boundary point, without manifold or development hypotheses.
+- Constructed actual Jordan banks from original edges on the curve and selected
+  incident faces. Injective projection derives their intrinsic successor order.
+- Lifted whole original bank chains to actual Jordan chains, preserving all
+  original labels, unreduced heading prefixes, lengths and full normalized rolls.
+  No contour-index or fan-angle correspondence is supplied.
+- Verification: cache retrieval and full `lake build` passed 5,828 jobs;
+  15,544 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. The reference closure still must supply the selected-side
+  and edge-on-curve geometry; the physical saved-frontier graft remains open.
+
 ### 2026-11-15 — full actual bank rolls from physical projected positions
 
 - Proved chains in independently cut face restrictions with matching original

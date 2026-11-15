@@ -2857,3 +2857,11 @@ corners and does not yet identify their widths with the actual retained cap fan.
 - [`RestrictedBoundaryChainAgreement`](../Unfoldings/Complex/RestrictedBoundaryChainAgreement.lean),
   [`ProjectedBoundaryChainAgreement`](../Unfoldings/Cap/ProjectedBoundaryChainAgreement.lean):
   match actual chains and preserve full real rolling from physical projected vertex positions.
+
+- [`BoundaryEdgeDetection`](../Unfoldings/Complex/BoundaryEdgeDetection.lean):
+  detect an original bank from one regular quotient boundary point.
+- [`JordanOriginalBanks`](../Unfoldings/Cap/JordanOriginalBanks.lean):
+  construct actual Jordan banks from selected original edges on the curve.
+- [`RestrictedBoundaryChainLift`](../Unfoldings/Cap/RestrictedBoundaryChainLift.lean),
+  [`JordanBoundaryChainLift`](../Unfoldings/Cap/JordanBoundaryChainLift.lean):
+  derive actual patch successors and preserve the entire original bank roll.
