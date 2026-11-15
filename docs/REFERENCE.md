@@ -2915,3 +2915,7 @@ corners and does not yet identify their widths with the actual retained cap fan.
   actual directed fine refinements in either endpoint order with zero extra real turn.
 - [`CompletionBankBlockJoins`](../Unfoldings/Roof/CompletionBankBlockJoins.lean):
   derive actual fine block separation and successors from original labels and corner copies.
+
+- [`CompletionBankMetricRefinement`](../Unfoldings/Roof/CompletionBankMetricRefinement.lean),
+  [`CompletionBankBlocks`](../Unfoldings/Roof/CompletionBankBlocks.lean):
+  construct directed metric blocks and concatenate them from original corner and bank labels.

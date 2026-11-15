@@ -2,6 +2,19 @@
 
 ## Session Log
 
+### 2026-11-15 — concrete directed metric bank blocks
+
+- Constructed complete directed fine-bank blocks with exact original cut-metric
+  endpoint images, every fine piece once and zero extra real heading.
+- Exposed a canonical block constructor whose endpoint copies, piece order and
+  angles are proved from the physical completion; no certificates are inputs.
+- Constructed concrete concatenations from distinct original bank labels and a
+  shared original cut-corner class. Actual fine successor and separation follow
+  from the exact metric equivalence and physical piece geometry.
+- Verification: cache retrieval and full `lake build` passed 5,856 jobs;
+  15,689 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Assembly along whole paths and the full graft remain open.
+
 ### 2026-11-15 — directed physical fine-bank refinements and derived joins
 
 - Proved reversed actual boundary chains have the same original hinge copies.

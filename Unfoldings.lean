@@ -1921,3 +1921,5 @@ public import Unfoldings.Roof.CompletionBankDistinctness
 public import Unfoldings.Complex.ReversedBoundaryChain
 public import Unfoldings.Roof.CompletionOrientedBankRolling
 public import Unfoldings.Roof.CompletionBankBlockJoins
+public import Unfoldings.Roof.CompletionBankMetricRefinement
+public import Unfoldings.Roof.CompletionBankBlocks
