@@ -1996,3 +1996,6 @@ public import Unfoldings.Metric.ConvexLocalLipschitz
 public import Unfoldings.Metric.PolygonalCutInterior
 public import Unfoldings.Metric.PolygonalBoundaryCuts
 public import Unfoldings.Metric.AffineHalfspaceCut
+public import Unfoldings.Metric.ConvexCutSubfamily
+public import Unfoldings.Metric.AffineHalfspaceBank
+public import Unfoldings.Metric.AffineHalfspaceBankSeparation

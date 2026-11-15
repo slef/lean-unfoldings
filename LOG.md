@@ -2,6 +2,19 @@
 
 ## Session Log
 
+### 2026-11-15 — canonical whole halfspace banks in actual flat cuts
+
+- Constructed retained-seam inclusions of actual cell subfamilies and proved
+  convex one-sided subregions embed isometrically in the full physical cut.
+- Constructed canonical full closed-halfspace banks for finite aligned flat
+  partitions, agreeing with every original cell copy, including bank junctions.
+- Proved their exact physical folds, global isometry, full cut-space coverage,
+  agreement off cuts and separation along locally complete cut-line neighborhoods.
+  In complete finite-dimensional coordinates, the full bank images are closed.
+- Verification: actual cache retrieval and full `lake build` passed 5,933 jobs;
+  16,087 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Roof-bank joins and the complete flat graft remain open.
+
 ### 2026-11-15 — exact convex one-sided regions and boundary bank copies
 
 - Proved a common local Lipschitz bound is global on convex domains, including

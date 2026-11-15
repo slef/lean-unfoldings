@@ -3051,3 +3051,11 @@ corners and does not yet identify their widths with the actual retained cap fan.
 - [`AffineHalfspaceCut`](../Unfoldings/Metric/AffineHalfspaceCut.lean):
   one side of an aligned finite partition recovers the exact complete closed halfspace,
   including its actual cut-bank attachments.
+
+- [`ConvexCutSubfamily`](../Unfoldings/Metric/ConvexCutSubfamily.lean):
+  exact retained-seam inclusions and isometric embeddings of convex one-sided subregions.
+- [`AffineHalfspaceBank`](../Unfoldings/Metric/AffineHalfspaceBank.lean),
+  [`AffineHalfspaceBankSeparation`](../Unfoldings/Metric/AffineHalfspaceBankSeparation.lean):
+  canonical closed isometric halfspace banks in a flat cut metric, agreeing with every
+  original cell copy. Their images cover the cut space, agree off cuts and are distinct
+  along locally complete cuts.

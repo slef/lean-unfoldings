@@ -38,7 +38,8 @@ nonoverlap and counting remain to be proved.
   folding and every pairwise spatial distance, without an upper truncation.
   These are closed embedded dilations, with the full spatial speed including height.
 - [x] Recover exact convex one-sided metric regions from full physical cells,
-  including boundary cut copies and unbounded affine halfspaces.
+  including boundary cut copies and unbounded affine halfspaces. Canonical flat
+  halfspace banks embed in the full cut space, cover it, and separate along cuts.
 - [ ] Identify the full unbounded comparison banks, including terminal rays and
   completion fans, and supply their admissible respected radial closure geometry.
 - [ ] Carry physical saved-frontier curves and their untouched original sides through
