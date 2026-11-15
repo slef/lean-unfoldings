@@ -1973,3 +1973,10 @@ public import Unfoldings.Complex.ComplementaryLinkChains
 public import Unfoldings.Complex.RawLinkComplement
 public import Unfoldings.Complex.OppositeRestrictedFans
 public import Unfoldings.Complex.EdgeReverseGerm
+public import Unfoldings.Cap.PhysicalBankSideDichotomy
+public import Unfoldings.Cap.PhysicalOppositeFanWeights
+public import Unfoldings.Cap.PhysicalOppositeFanError
+public import Unfoldings.Cap.OriginalChainCurvature
+public import Unfoldings.Cap.PhysicalChainErrorComparison
+public import Unfoldings.Cap.UnconditionalOriginalRadialChainErrorBound
+public import Unfoldings.Cap.UnconditionalOriginalBankHeadingComparison

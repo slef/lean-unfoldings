@@ -24,62 +24,32 @@ nonoverlap and counting remain to be proved.
 - [x] Derive actual intermediate parent-bank real headings, exact singleton
   curvature increments and oscillation bounded by total original curvature.
 
-- [x] Prune restored contour excursions and construct the actual surviving
-  rootward chain in original parent order, preserving reference fans and full rolls.
-- [x] Derive physical bank positions and incident sides and preserve selected
-  one-sided fan angles through concrete completion subdivisions.
-- [x] Recover comparison-patch fan angles from matching physical terminal banks.
+- [x] Construct actual surviving rootward chains and identify their original reference
+  fans, tangent metrics, projected parent segments and full rolls.
+- [x] Construct complete physical fine paths, preserving exact metric copies and traces,
+  old fan angles, all ordered real headings, arclength and every radial margin.
+- [x] Construct entire actual Jordan traversals from radial closure geometry, deriving
+  initial incident sides, orientations, full spatial vectors and bank lengths.
+- [x] Derive the global same-side/opposite-side alternative, complete original fan
+  partitions and exact curvature charges at distinct physical path hinges.
+- [x] Obtain one uniform small-tilt real-heading bound without side, fan-match or sum
+  certificates, independent of mesh size, path length and vertex valence.
+- [ ] Identify the full unbounded comparison banks, including terminal rays and
+  completion fans, and supply their admissible respected radial closure geometry.
+- [ ] Carry physical saved-frontier curves and their untouched original sides through
+  actual prior gap attachments. Apply the local metric remainder models to those updates.
+- [ ] Assemble the complete graft and prove completeness, simple connectivity and local
+  Euclidean charts. Apply the global planar-isometry theorem for nonoverlap.
 
-- [x] Construct actual Jordan bank traversals from radial geometry and one initial
-  incident side, preserving all original corner weights and full real rolls.
-- [x] Transfer the geometric error sum to actual original cut fans and obtain a
-  uniform small-tilt bound for their unreduced real heading error.
-- [x] Construct whole physical fine refinements of actual coarse cut-bank chains,
-  preserving exact metric copies, all old fan angles and real terminal headings.
-- [x] Derive contiguous fine blocks and preserve every ordered real heading prefix.
-- [x] Identify complete intrinsic, spatial and projected fine traces with the old banks.
-- [x] Preserve every bank's intrinsic length, whole arclength and rolled block displacement.
-- [x] Preserve the full ordered pointwise roll, exact path image and all radial margins
-  with their original constants, including every inserted vertex and bank endpoint.
-- [x] Construct the unique actual initial Jordan bank from the original seam geometry.
-- [x] Construct the full selected Jordan comparison in either traversal orientation,
-  with the same uniform real-heading bound and no initial sign input.
-- [x] Bound complementary original fan sums along actual Jordan chains by the same
-  radial comparison plus one extra total-curvature term; choose one uniform tilt.
-- [x] Construct the whole physical radial Jordan traversal without an initial-side,
-  orientation or nonrim-bank input, preserving full vectors and intrinsic bank lengths.
-- [ ] Identify its intrinsic fan with the prescribed bank's original fan or complementary
-  corner weights, then transfer the corresponding real-heading bound.
-- [ ] Identify the physical saved-frontier curves with the constructed histories
-  and prove that their selected original side is untouched. Apply the local
-  metric remainder models to those actual updates.
-- [ ] Identify the complete unbounded cut-space banks and cyclic fans, assemble
-  the graft, and prove completeness, simple connectivity and local Euclidean
-  charts. Then apply the global planar-isometry theorem for nonoverlap.
+The finite-path comparison now constructs its actual Jordan traversal and derives
+all original fan alternatives. Complete physical refinements preserve every ordered
+point, real heading, intrinsic length and quantitative radial margin. For an admissible
+respected radial closure, the real-heading error is bounded by twice total curvature
+plus the closing-link and corner-error terms; one tilt works uniformly for all meshes.
 
-Unprocessed subtree excursions now close intrinsically. Their surviving banks
-form the actual current rootward chain in original parent order. Restoring side
-cuts identifies its exact original reference fans, tangent metrics and full rolls.
-The banks project pointwise to the original parent segments, with their physical
-incident-face sides derived from a positive rim-started contour.
-
-Physical completion subdivisions preserve each selected one-sided fan angle.
-Matching physical terminal bank positions and directions now recovers the actual
-original corner fan inside a comparison patch. Radial closure geometry now
-constructs the entire Jordan traversal from one initial incident side, with a
-uniform bound for the actual unreduced heading error. Complete coarse-to-fine paths
-now preserve exact old metric copies and fan angles, insert only straight hinges,
-and preserve every real heading prefix in order. Whole intrinsic, spatial and
-projected traces agree exactly, as do every bank's intrinsic length, whole
-arclength and rolled block displacements. Every fine rolled point is its ordered
-old bank point, and radial order and all quantitative margins survive without loss.
-The unique initial Jordan bank is now constructed, with its exact original seam
-endpoint transport. The full physical Jordan traversal now follows the prescribed geometry without a
-side or orientation input. Its intrinsic fan still needs identification with the
-prescribed fan or its complement before the unconditional heading bound follows.
-The bank must
-also be carried through actual gap attachments, preserving arclength, hinges and
-the untouched original side.
+The full unbounded banks and the saved frontier through already inserted gaps still
+need identification. The geometric closure hypotheses are explicit; the finite-path
+comparison alone does not construct the complete flat graft.
 
 The completed local models and combinatorial histories do not assume these
 remaining geometric identifications. The paper's sharp numerical constants and

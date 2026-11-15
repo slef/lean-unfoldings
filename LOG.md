@@ -2,6 +2,22 @@
 
 ## Session Log
 
+### 2026-11-15 — real-heading comparison without selected-side assumptions
+
+- Derived a global same-side/opposite-side dichotomy for physically matching
+  actual chains. The choice cannot change independently from hinge to hinge.
+- Proved opposite actual fan errors add to the original curvature at each
+  hinge. Path simplicity derives complete fan partitions and distinct charges.
+- Compared original and actual Jordan fan sums at total-curvature cost, then
+  obtained the radial bound `2 * totalCurvature + 6 * tilt + 8 * pi * cornerError`.
+- Proved one uniform positive tilt makes the original unreduced real-heading
+  error arbitrarily small without initial-side, orientation, fan-match or sum
+  certificates. The admissible respected radial closure geometry remains an input.
+- Verification: cache retrieval and full `lake build` passed 5,914 jobs;
+  15,989 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Full unbounded comparison banks, physical saved-frontier
+  transport through inserted gaps and the complete flat graft remain open.
+
 ### 2026-11-15 — complementary actual retained fan weights from old seam endpoints
 
 - Restored raw original fan chains to their exact original vertex links and

@@ -859,17 +859,13 @@ whole-ball restoration and actual intermediate parent-bank heading increments.
 Restored contour excursions now give actual rootward chains, with exact original
 reference fans, whole tangent metrics and full rolls. Their projected segments and
 incident-face sides are identified, and selected angles survive physical completion.
-Actual radial geometry and one initial incident side now construct the Jordan
-traversal and give a uniform bound on the original unreduced heading error.
-Whole physical fine paths preserve exact metric copies, old fan angles and real
-headings on every ordered prefix, with every new hinge straight and every bank's
-fine pieces contiguous. Whole intrinsic, spatial and projected traces agree.
-Full arclength, all ordered pointwise rolls and whole rolled path images agree too.
-Radial order and every quantitative radial margin survive with the original constant.
-The whole physical Jordan traversal is constructed without an initial-side input,
-with exact positions, full vectors, projected path and bank lengths. Identifying
-its intrinsic fan with the prescribed fan or complementary original weights,
-transport through inserted gaps and the complete graft remain open.
+Actual radial closure geometry now constructs the entire physical Jordan traversal,
+including its initial side. Consistent bank-side alternatives and complete original
+fan partitions give a uniform unreduced real-heading bound with no side certificate.
+Whole physical fine paths preserve metric and spatial traces, every ordered point,
+old fan angle, real heading, intrinsic length and quantitative radial margin.
+The full unbounded comparison banks and their admissible closure geometry, physical
+saved-frontier transport through prior gaps and the complete flat graft remain open.
 See the [gap-grafting checklist](docs/NORMAL_SELECTIONS.md#gap-grafting-status). The finite-cell route to
 global isometry does not require a separate end-height certificate. Normal-cover
 selection and Euler counting follow.

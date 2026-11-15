@@ -3009,3 +3009,14 @@ corners and does not yet identify their widths with the actual retained cap fan.
   opposite actual retained fans partition all original corner weights from their seam endpoints.
 - [`EdgeReverseGerm`](../Unfoldings/Complex/EdgeReverseGerm.lean):
   original seam endpoint transport commutes with directed edge reversal.
+
+- [`PhysicalBankSideDichotomy`](../Unfoldings/Cap/PhysicalBankSideDichotomy.lean),
+  [`PhysicalOppositeFanWeights`](../Unfoldings/Cap/PhysicalOppositeFanWeights.lean),
+  [`PhysicalOppositeFanError`](../Unfoldings/Cap/PhysicalOppositeFanError.lean):
+  actual physical chains choose one consistent original side; opposite fan errors add to curvature.
+- [`OriginalChainCurvature`](../Unfoldings/Cap/OriginalChainCurvature.lean),
+  [`PhysicalChainErrorComparison`](../Unfoldings/Cap/PhysicalChainErrorComparison.lean):
+  derive distinct original hinge charges and compare either actual fan side at total-curvature cost.
+- [`UnconditionalOriginalRadialChainErrorBound`](../Unfoldings/Cap/UnconditionalOriginalRadialChainErrorBound.lean),
+  [`UnconditionalOriginalBankHeadingComparison`](../Unfoldings/Cap/UnconditionalOriginalBankHeadingComparison.lean):
+  original real-heading bounds from admissible radial closure geometry, without initial-side inputs.
