@@ -2839,3 +2839,8 @@ corners and does not yet identify their widths with the actual retained cap fan.
 - [`RawGermChains`](../Unfoldings/Complex/RawGermChains.lean),
   [`RestrictedFanAgreement`](../Unfoldings/Complex/RestrictedFanAgreement.lean):
   actual cut and restricted fans have the same original corner weights when their terminal germs agree.
+
+- [`ProjectedBankUniqueness`](../Unfoldings/Cap/ProjectedBankUniqueness.lean):
+  physical projected banks determine actual original germs, for either orientation.
+- [`ProjectedFanOrientation`](../Unfoldings/Cap/ProjectedFanOrientation.lean):
+  arbitrary link subchains have disjoint cones and actual fan terminal orientations are opposite.

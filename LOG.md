@@ -2,6 +2,18 @@
 
 ## Session Log
 
+### 2026-11-15 — physical bank uniqueness and actual fan orientations
+
+- Proved projected position, direction and orientation sign identify an original
+  raw bank germ. Both positive outgoing and negative incoming banks are covered.
+- Proved projected corner cones are disjoint for arbitrary original link
+  subchains, without a whole-link coverage assumption. Propagated orientation
+  along them and derived the opposite incoming sign for actual retained and
+  whole-face restricted fans, with no global development assumption.
+- Verification: cache retrieval and full `lake build` passed 5,818 jobs;
+  15,506 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Matching the actual reference banks and graft remains open.
+
 ### 2026-11-15 — ordered original fan agreement across face restriction
 
 - Proved deterministic finite paired-involution chains with matching terminal

@@ -1883,3 +1883,5 @@ public import Unfoldings.Complex.BoundaryFanAgreement
 public import Unfoldings.Topology.ChainTerminalUniqueness
 public import Unfoldings.Complex.RawGermChains
 public import Unfoldings.Complex.RestrictedFanAgreement
+public import Unfoldings.Cap.ProjectedBankUniqueness
+public import Unfoldings.Cap.ProjectedFanOrientation
