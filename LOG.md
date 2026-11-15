@@ -2,6 +2,18 @@
 
 ## Session Log
 
+### 2026-11-15 — metric excision from local physical cut germs
+
+- Split finite closed physical seam domains without changing the exact declared
+  relation. This separates nearby attachment pieces from distant ones.
+- Proved local carrier agreement under seam restoration preserves a whole
+  intrinsic ball, including centers lying on retained cuts with several bank copies.
+- Proved local geometric cut-set equality survives separate attachment closure,
+  and derived canonical whole-ball cut-restoration charts without an off-cut premise.
+- Verification: actual cache retrieval and full `lake build` passed 5,946 jobs;
+  16,173 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Terminal metric reductions and the full graft remain open.
+
 ### 2026-11-15 — one reusable complete model with exact terminal local geometry
 
 - Constructed the finite closed-piece cover of the whole compatible forest,

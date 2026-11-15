@@ -2009,3 +2009,6 @@ public import Unfoldings.Roof.CompatibleClosedPieces
 public import Unfoldings.Roof.CompatibleTerminalCutGerm
 public import Unfoldings.Roof.CompatibleWholeCutModel
 public import Unfoldings.Roof.CompatibleTerminalLocalModel
+public import Unfoldings.Metric.PhysicalSeamsSplit
+public import Unfoldings.Metric.PhysicalSeamsLocalExcision
+public import Unfoldings.Metric.PolygonalCutGerm

@@ -3082,3 +3082,10 @@ corners and does not yet identify their widths with the actual retained cap fan.
   [`CompatibleTerminalLocalModel`](../Unfoldings/Roof/CompatibleTerminalLocalModel.lean):
   reusable actual partitions retain their side assignments. The same model carries
   complete cut metrics, two terminal support cells and exact two-face/single-line germs.
+
+- [`PhysicalSeamsSplit`](../Unfoldings/Metric/PhysicalSeamsSplit.lean),
+  [`PhysicalSeamsLocalExcision`](../Unfoldings/Metric/PhysicalSeamsLocalExcision.lean):
+  split closed seam domains without changing attachments; local carrier agreement
+  preserves whole intrinsic balls even at centers with several cut-bank copies.
+- [`PolygonalCutGerm`](../Unfoldings/Metric/PolygonalCutGerm.lean):
+  equal local geometric cut sets give exact canonical whole-ball restoration maps.
