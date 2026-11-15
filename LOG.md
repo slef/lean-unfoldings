@@ -2,6 +2,24 @@
 
 ## Session Log
 
+### 2026-11-15 — both bank orientations and exact split-fan plane completion
+
+- Proved reflection with bank exchange preserves the full positive aperture,
+  including reentrant and coincident directions. The mirrored original bank
+  now gives the first-bank complementary retained-cap chart.
+- Preserved the quantitative subhistory margin before discarding its strictness.
+  Original genuine edges remain genuine after openings, and the original opening
+  budget supplies strict outgoing progress at every internal bend.
+- Constructed the metric completion of an original intrinsic corner space by its
+  complementary geometric sector. Its metric is exactly the whole plane, and
+  all cross-piece identifications are precisely the two equal-radius banks.
+- Applied this completion to the actual retained split-bank tangent fan, preserving
+  its original corner labels and angular placement. Either side may be reentrant.
+- Verification: cache retrieval and full `lake build` passed 5,718 jobs; all
+  15,031 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. These are actual local tangent models; saved-frontier
+  history identification, global fan surgery and graft assembly remain open.
+
 ### 2026-11-15 — original rolled banks determine the complementary metric corner
 
 - Computed the positive geometric corner aperture directly from an original

@@ -1779,3 +1779,9 @@ public import Unfoldings.Geometry.TwoBankGapSecondInternalCorner
 public import Unfoldings.Complex.BoundaryChainAperture
 public import Unfoldings.Cap.RolledBankGapCorner
 public import Unfoldings.Development.BoundaryChainRolling
+public import Unfoldings.Geometry.ConjugateGapAngle
+public import Unfoldings.Cap.MirroredBankGapCorner
+public import Unfoldings.Geometry.HeadingSubhistoryMargin
+public import Unfoldings.Geometry.OpeningStrictProgress
+public import Unfoldings.Cone.ComplementaryModelCompletion
+public import Unfoldings.Cap.SplitBankCompletedPlane

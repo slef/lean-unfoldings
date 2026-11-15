@@ -2630,3 +2630,12 @@ corners and does not yet identify their widths with the actual retained cap fan.
   finite intrinsic rolls realize the actual developed bank vectors and positions.
 - [`RolledBankGapCorner`](../Unfoldings/Cap/RolledBankGapCorner.lean):
   actual second-bank gap charts with the complementary retained-cap width.
+
+- [`MirroredBankGapCorner`](../Unfoldings/Cap/MirroredBankGapCorner.lean):
+  first-bank complementary retained-cap chart in the mirrored orientation.
+- [`OpeningStrictProgress`](../Unfoldings/Geometry/OpeningStrictProgress.lean):
+  original opening budgets give strict radial progress at internal bank bends.
+- [`ComplementaryModelCompletion`](../Unfoldings/Cone/ComplementaryModelCompletion.lean):
+  keep the original corner model, attach its geometric complement, recover the plane.
+- [`SplitBankCompletedPlane`](../Unfoldings/Cap/SplitBankCompletedPlane.lean):
+  actual retained tangent fans completed along exactly their two ordered banks.

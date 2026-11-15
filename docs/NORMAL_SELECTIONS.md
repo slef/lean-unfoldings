@@ -831,3 +831,16 @@ fan turns, with strictness derived from a distinct original cut copy.
 identifies the finite intrinsic roll's edge vectors and named starts with their
 actual developed values in one common rigid frame. Saved-frontier bank-history
 identification and graft assembly remain to be proved.
+
+[`MirroredBankGapCorner`](../Unfoldings/Cap/MirroredBankGapCorner.lean) gives the
+first-bank complementary chart for the mirrored original intrinsic roll.
+[`OpeningStrictProgress`](../Unfoldings/Geometry/OpeningStrictProgress.lean)
+derives strict internal outgoing progress from the original opening-budget
+subhistory estimates, retaining genuine original edges.
+
+[`exists_split_bank_completed_plane`](../Unfoldings/Cap/SplitBankCompletedPlane.lean)
+keeps the entire actual retained tangent fan as one metric piece and glues its
+complementary geometric sector only along the two equal-radius banks. The result
+is isometric to the whole plane, with both physical placement formulas. Neither
+side is restricted to convex angles. This proves exact local tangent-model
+completion; the actual assembled graft still needs its local-to-global proof.
