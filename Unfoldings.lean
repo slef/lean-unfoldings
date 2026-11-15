@@ -1860,3 +1860,9 @@ public import Unfoldings.Complex.RestoredContourExcursion
 public import Unfoldings.Complex.SurvivingBoundaryBanks
 public import Unfoldings.Complex.PrunedContourStep
 public import Unfoldings.Complex.RootwardBankEnumeration
+public import Unfoldings.Topology.AncestorInterval
+public import Unfoldings.Topology.LinearBankInterval
+public import Unfoldings.Complex.RootwardBankOrder
+public import Unfoldings.Complex.ConsecutiveRootwardBanks
+public import Unfoldings.Complex.RootwardBoundaryStep
+public import Unfoldings.Complex.RootwardParentChain

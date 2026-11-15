@@ -2,6 +2,20 @@
 
 ## Session Log
 
+### 2026-11-15 — actual directed rootward parent-bank chains
+
+- Proved the surviving contour-bank order is exactly strict original ancestry.
+  Consecutive original parent edges have no surviving bank between them.
+- Applied intrinsic restored-excursion pruning to derive their actual current
+  boundary successor, including the adjacent-bank case.
+- Constructed nonempty rootward chains directly from original parent iterates,
+  with actual current bank endpoints and seam-side flags. No meeting-point,
+  parent-order or current-boundary adjacency certificate is supplied.
+- Verification: cache retrieval and full `lake build` passed 5,799 jobs; all
+  15,413 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Physical transport through inserted gap patches and the
+  complete flat graft remain open.
+
 ### 2026-11-15 — exact rootward bank enumeration and intrinsic excursion pruning
 
 - Identified upcoming surviving original banks with processed original ancestors,

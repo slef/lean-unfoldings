@@ -2793,3 +2793,13 @@ corners and does not yet identify their widths with the actual retained cap fan.
   excursions close intrinsically and give the actual current boundary successor.
 - [`SurvivingBoundaryBanks`](../Unfoldings/Complex/SurvivingBoundaryBanks.lean):
   preserve original endpoints, lengths and entire bank parametrizations under restoration.
+
+- [`RootwardBankOrder`](../Unfoldings/Complex/RootwardBankOrder.lean),
+  [`ConsecutiveRootwardBanks`](../Unfoldings/Complex/ConsecutiveRootwardBanks.lean):
+  exact ancestor order and restoration of every intervening contour bank.
+- [`AncestorInterval`](../Unfoldings/Topology/AncestorInterval.lean),
+  [`LinearBankInterval`](../Unfoldings/Topology/LinearBankInterval.lean):
+  original parent-neighbor intervals and explicit nonwrapping cyclic bank regions.
+- [`RootwardBoundaryStep`](../Unfoldings/Complex/RootwardBoundaryStep.lean),
+  [`RootwardParentChain`](../Unfoldings/Complex/RootwardParentChain.lean):
+  derive actual current bank adjacency and construct chains from original parent iterates.
