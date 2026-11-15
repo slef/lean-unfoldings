@@ -2,6 +2,22 @@
 
 ## Session Log
 
+### 2026-11-14 — constructed short-window rolling with original-cut constraints
+
+- Constructed the whole short-window comparison from radial geometry: genuine
+  trims, supported Jordan closure, a physical completion preserving the full
+  filling, actual endpoint copies and a uniformly small unreduced rolling error.
+- Combined original-face sides and comparison lines on the exact same physical
+  mesh. Reused `CompletionOriginalConforming.originalMetricEquiv` for arbitrary
+  retained original cuts; constraint views change no cap geometry.
+- Identified the original auxiliary patch's exact footprint and spatial
+  placements. Added the general bounded-convex Jordan-frontier and convex
+  whole-face restriction lemmas used for its projection.
+- Verification: cache retrieval and full `lake build` passed 5,529 jobs; all
+  13,697 unfolding declarations passed the standard-axiom audit. Both abstract
+  independence checks passed. Transport of bank fan histories to the reference
+  comparison, saved-opening nesting and the complete graft remain open.
+
 ### 2026-11-14 — geometric bank error equals actual unreduced rolling error
 
 - Derived two constant cyclic bank runs from the actual two geometric contacts,

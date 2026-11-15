@@ -443,3 +443,14 @@ heading change, retaining full turns.
 constructs a roof-preserving physical completion with uniformly small actual
 bank rolling error. Transport to the original cut-bank histories and the
 saved-opening invariant remain open.
+
+## Constructed short-window comparison
+
+[ShortWindowRolling](../Unfoldings/Roof/ShortWindowRolling.lean) now combines
+the trim, closure, physical completion and actual rolling comparison. One
+uniform positive tilt works for every short radial window.
+[CompletionCombinedConstraints](../Unfoldings/Roof/CompletionCombinedConstraints.lean)
+retains original-face sides and comparison lines on the same mesh, reusing the
+existing metric equivalence for arbitrary retained original cuts. Transporting
+the actual cut-bank fan histories and proving the saved-opening invariant
+remain open.

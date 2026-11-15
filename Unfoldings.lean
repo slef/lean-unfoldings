@@ -1018,6 +1018,14 @@ public import Unfoldings.Cap.JordanCyclicRolling
 public import Unfoldings.Geometry.RadialBankInterior
 public import Unfoldings.Cap.RadialCyclicBankComparison
 public import Unfoldings.Roof.CompletedRollingComparison
+public import Unfoldings.Topology.ConvexJordanBoundary
+public import Unfoldings.Roof.ConvexRestriction
+public import Unfoldings.Roof.CompletionOriginalCarrier
+public import Unfoldings.Roof.CompletionConstraintSelection
+public import Unfoldings.Roof.CompletionCombinedConstraints
+public import Unfoldings.Cap.SmallBankRolling
+public import Unfoldings.Roof.MarkedCompletionRolling
+public import Unfoldings.Roof.ShortWindowRolling
 public import Unfoldings.Roof.CompletionOriginalPieces
 public import Unfoldings.Roof.CompletionOriginalCoordinates
 public import Unfoldings.Roof.CompletionOriginalSubdivision

@@ -468,6 +468,14 @@ Start with the [theorem and proof guide](ROOFS.md). Boundary heights are unrestr
 | [Unfoldings.Geometry.RadialBankInterior](../Unfoldings/Geometry/RadialBankInterior.lean) | Construct bank interior witnesses and exclude the two off-bank closing corners |
 | [Unfoldings.Cap.RadialCyclicBankComparison](../Unfoldings/Cap/RadialCyclicBankComparison.lean) | Derive orientation and real heading comparison for the actual radial bank |
 | [Unfoldings.Roof.CompletedRollingComparison](../Unfoldings/Roof/CompletedRollingComparison.lean) | Construct a uniformly small actual rolling error on a roof-preserving completion |
+| [Unfoldings.Topology.ConvexJordanBoundary](../Unfoldings/Topology/ConvexJordanBoundary.lean) | A bounded convex planar body has an actual Jordan frontier |
+| [Unfoldings.Roof.ConvexRestriction](../Unfoldings/Roof/ConvexRestriction.lean) | Convex whole-face restrictions preserve every intrinsic point under projection |
+| [Unfoldings.Roof.CompletionOriginalCarrier](../Unfoldings/Roof/CompletionOriginalCarrier.lean) | The original physical patch has exactly its original footprint and spatial placements |
+| [Unfoldings.Roof.CompletionConstraintSelection](../Unfoldings/Roof/CompletionConstraintSelection.lean) | Select named equations while keeping the exact same physical mesh and cap |
+| [Unfoldings.Roof.CompletionCombinedConstraints](../Unfoldings/Roof/CompletionCombinedConstraints.lean) | Combine original-face sides and new cuts with the existing original-cut metric isometry |
+| [Unfoldings.Cap.SmallBankRolling](../Unfoldings/Cap/SmallBankRolling.lean) | Concrete actual endpoint copies, bank span and unreduced rolling error conclusion |
+| [Unfoldings.Roof.MarkedCompletionRolling](../Unfoldings/Roof/MarkedCompletionRolling.lean) | Uniform actual rolling bound for every marked completion mesh |
+| [Unfoldings.Roof.ShortWindowRolling](../Unfoldings/Roof/ShortWindowRolling.lean) | Construct accurate intrinsic rolling from short radial-window geometry alone |
 | [Unfoldings.Roof.CompletionOriginalAdjacency](../Unfoldings/Roof/CompletionOriginalAdjacency.lean) | Locate fine adjacency between different original faces on their common edge |
 | [Unfoldings.Roof.CompletionOriginalConforming](../Unfoldings/Roof/CompletionOriginalConforming.lean) | Prove exact retained seam classes and the original-cut metric equivalence |
 | [Unfoldings.Roof.CompletionOriginalCoordinates](../Unfoldings/Roof/CompletionOriginalCoordinates.lean) | Prove that contained auxiliary pieces have the actual original face Euclidean metric |
