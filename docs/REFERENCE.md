@@ -2544,3 +2544,5 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [`Roof/CompatibleWholeCutPartition`](../Unfoldings/Roof/CompatibleWholeCutPartition.lean) | Construct complete unbounded physical roof cut metrics aligned to the actual compatible one-ended forest |
 
 | [`Metric/ClosedSeamsTopology`](../Unfoldings/Metric/ClosedSeamsTopology.lean) | Exact metric and seam-quotient topology for finite closed-seam systems with finite classes, without compact or complete cells |
+
+| [`Geometry/VariableSectorMembership`](../Unfoldings/Geometry/VariableSectorMembership.lean) | Exact pointwise membership in the geometric sector at the point's own radius |

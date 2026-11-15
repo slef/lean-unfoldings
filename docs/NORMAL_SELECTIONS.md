@@ -717,3 +717,7 @@ is closed, so whole-ball restoration away from cuts applies directly.
 [`ClosedSeams.seamHomeomorph`](../Unfoldings/Metric/ClosedSeamsTopology.lean)
 also identifies metric and seam-quotient topologies for general finite closed
 seam systems with finite classes, including grafts without a spatial folding.
+
+[`mem_variableSectorGap_iff`](../Unfoldings/Geometry/VariableSectorMembership.lean)
+gives an exact pointwise geometric sector test for the constructed gap model.
+This supports local side and corner calculations on the actual region.

@@ -2,6 +2,16 @@
 
 ## Session Log
 
+### 2026-11-15 — pointwise geometric membership in actual variable sectors
+
+- Proved positive-scale invariance of actual planar sectors and the exact
+  pointwise sector test for the radius-dependent ambient homeomorphism.
+- Identified the constructed variable-opening region at every point with the
+  actual fixed-angle geometric sector at that point's radius.
+- Verification: cache retrieval and full `lake build` passed 5,650 jobs; all
+  14,549 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Complementary bank-corner charts and graft assembly remain open.
+
 ### 2026-11-15 — complete unbounded cuts of the actual compatible forest
 
 - Proved closedness of the actual compatible forest carrier, including every
