@@ -1765,3 +1765,6 @@ public import Unfoldings.Geometry.CircularConeApproach
 public import Unfoldings.Geometry.TwoBankGapOrientationWitness
 public import Unfoldings.Cone.RotatedSectorRecognition
 public import Unfoldings.Geometry.TwoBankGapBankSector
+public import Unfoldings.Geometry.RadialRayVertices
+public import Unfoldings.Geometry.SegmentIncidentRays
+public import Unfoldings.Geometry.PolygonalBankVertexGerm

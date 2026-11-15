@@ -2606,3 +2606,7 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [`Geometry/TwoBankGapOrientationWitness`](../Unfoldings/Geometry/TwoBankGapOrientationWitness.lean) | Source-circle normals select actual first-bank gap orientation samples without an aperture premise |
 | [`Cone/RotatedSectorRecognition`](../Unfoldings/Cone/RotatedSectorRecognition.lean) | Recognize the complete corner sector while retaining the original rigid edge frame |
 | [`Geometry/TwoBankGapBankSector`](../Unfoldings/Geometry/TwoBankGapBankSector.lean) | Construct whole actual gap-bank sector charts from the original incident rays and source-circle normal |
+
+| [`Geometry/RadialRayVertices`](../Unfoldings/Geometry/RadialRayVertices.lean) | Genuine outward bank vertices have strict radial order, avoid all open edges and miss the later whole tail |
+| [`Geometry/SegmentIncidentRays`](../Unfoldings/Geometry/SegmentIncidentRays.lean) | Exact original endpoint-ray germs for finite segment families in arbitrary normed spaces |
+| [`Geometry/PolygonalBankVertexGerm`](../Unfoldings/Geometry/PolygonalBankVertexGerm.lean) | A named genuine outward bank bend has precisely its original incoming and outgoing rays, with incidences derived |

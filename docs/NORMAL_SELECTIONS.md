@@ -801,3 +801,9 @@ its original incident direction pair and the side of its source-circle normal.
 The occupied sector is proved through frontier recognition and actual inward
 circular motions. Those geometric inputs still need to be derived for the named
 original bank bends, before assembling the graft.
+
+[`complexCarrierGerm_internal_vertex`](../Unfoldings/Geometry/PolygonalBankVertexGerm.lean)
+derives the exact original incoming and outgoing ray pair at each genuine
+internal outward-bank vertex. Strict radial vertex order supplies every needed
+incidence and whole-tail avoidance fact. Matching the source-normal side now
+selects the actual internal gap sector.

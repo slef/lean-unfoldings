@@ -2,6 +2,21 @@
 
 ## Session Log
 
+### 2026-11-15 — derived exact rays at named internal bank bends
+
+- Proved strict source-radial vertex order for genuine outward polygonal banks,
+  deriving vertex injectivity, avoidance of every original open edge, and
+  avoidance of the entire later tail.
+- Extended the exact incident endpoint-ray germ theorem to finite segment
+  families in arbitrary normed spaces.
+- Derived the exact incoming and outgoing direction pair at every named
+  internal complex bank vertex from those original radial facts; no incidence,
+  tail-avoidance or local bank model certificate is supplied.
+- Verification: cache retrieval and full `lake build` passed 5,701 jobs; all
+  14,949 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. The source-normal side and complementary aperture must
+  still be matched to these derived rays before saved-frontier graft surgery.
+
 ### 2026-11-15 — actual bank sector charts from original rays and source normals
 
 - Computed the derivative of physical source-circle rotation and proved that
