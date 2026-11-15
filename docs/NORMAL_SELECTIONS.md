@@ -671,3 +671,9 @@ original intrinsic metric for an empty cut set.
 proves whole-ball restoration isometries away from closed cuts. These results
 establish the metric construction; identifying its bank fans with the original
 forest and filling their complementary angles remains necessary.
+
+[`WholePartition.Cut`](../Unfoldings/Geometry/SpatialEnvelopeCut.lean) gives the
+whole roof actual complete cut metrics in rigid planar cells, with boundary-only
+seams and exact whole-ball restoration away from closed horizontal cuts. The
+remaining bank-fan topology proof must identify the quotient copies at cut
+points, their cyclic sectors and the original forest banks before grafting.

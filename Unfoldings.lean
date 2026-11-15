@@ -1698,3 +1698,5 @@ public import Unfoldings.Geometry.AffineArrangementConeChart
 public import Unfoldings.Metric.PhysicalSeams
 public import Unfoldings.Metric.PolygonalCut
 public import Unfoldings.Metric.PolygonalCutLocal
+public import Unfoldings.Metric.PhysicalSeamsDiagonal
+public import Unfoldings.Geometry.SpatialEnvelopeCut

@@ -2517,3 +2517,6 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 
 | [`Metric/PolygonalCut`](../Unfoldings/Metric/PolygonalCut.lean) | Complete actual cut metrics from closures of uncut physical attachments, with exact uncut recovery |
 | [`Metric/PolygonalCutLocal`](../Unfoldings/Metric/PolygonalCutLocal.lean) | Restoring a closed physical cut preserves whole intrinsic metric balls away from the cut |
+
+| [`Metric/PhysicalSeamsDiagonal`](../Unfoldings/Metric/PhysicalSeamsDiagonal.lean) | Omit same-cell physical identity seams while preserving the exact metric |
+| [`Geometry/SpatialEnvelopeCut`](../Unfoldings/Geometry/SpatialEnvelopeCut.lean) | Complete unbounded planar-cell roof cut metrics with boundary-only seams and exact local restoration |

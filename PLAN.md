@@ -879,7 +879,9 @@ selection and Euler counting follow.
   gluings having boundary-only seams.
 - [ ] Prove exact complementary bank-corner charts for grafting these regions.
 - [ ] Positive Jordan gaps from radially monotone polygonal banks.
-- [ ] Complete one-ended forest cuts and intrinsic polygonal-gap insertion.
+- [x] Construct complete unbounded roof cut metrics with actual planar cells,
+  boundary-only seams and exact metric-ball restoration away from closed cuts.
+- [ ] Identify the actual one-ended forest bank fans and insert intrinsic polygonal gaps.
 - [ ] Completeness for finite noncompact complexes with controlled ends.
 - [ ] Local-isometry/covering arguments for completed flat planes.
 - [x] Original-edge restriction to a disk with one boundary root per tree.

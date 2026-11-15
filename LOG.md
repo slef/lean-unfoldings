@@ -2,6 +2,19 @@
 
 ## Session Log
 
+### 2026-11-15 — actual complete unbounded roof cut spaces
+
+- Applied the retained-attachment construction to the exact whole-roof
+  partition, using the prescribed horizontal cut locus on the physical graph.
+- Constructed actual rigid planar-cell cut realizations, omitting same-cell
+  identity seams without changing their metric. Every remaining seam lies on
+  the original planar cell boundary.
+- Proved completeness, surjective nonexpanding restoration to the original
+  intrinsic roof and exact whole-ball restoration away from closed cuts.
+- Verification: cache retrieval and full `lake build` passed 5,633 jobs; all
+  14,470 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Cut-bank fan topology and complementary graft corners remain open.
+
 ### 2026-11-15 — complete cut metrics and exact restoration away from cuts
 
 - Constructed cut spaces by closing each original uncut cell attachment
