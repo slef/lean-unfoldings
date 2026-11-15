@@ -1940,3 +1940,7 @@ public import Unfoldings.Complex.BoundaryChainTrace
 public import Unfoldings.Roof.CompletionChainTrace
 public import Unfoldings.Roof.CompletionOriginalSpatial
 public import Unfoldings.Roof.CompletionChainSpatialTrace
+public import Unfoldings.Geometry.OrderedSegmentLength
+public import Unfoldings.Complex.BoundaryBankLength
+public import Unfoldings.Roof.CompletionBankLength
+public import Unfoldings.Roof.CompletionChainLength

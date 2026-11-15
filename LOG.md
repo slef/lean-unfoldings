@@ -2,6 +2,18 @@
 
 ## Session Log
 
+### 2026-11-15 — actual whole-path arclength and rolled displacement
+
+- Proved an ordered genuine segment partition preserves the sum of piece
+  lengths under every affine map, including the physical old-face coordinates.
+- Proved each actual physical bank block has exactly the old intrinsic edge
+  length. Derived a bijection between all fine banks and original-bank pieces.
+- Preserved the whole path's arclength, every block's rolled displacement and
+  the exact endpoint of the whole intrinsic roll, allowing overlap throughout.
+- Verification: cache retrieval and full `lake build` passed 5,878 jobs;
+  15,846 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Full pointwise roll and radial transport and the graft remain open.
+
 ### 2026-11-15 — exact whole-path metric, spatial and projected traces
 
 - Defined whole actual bank traces, including every closed-bank point and

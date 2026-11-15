@@ -864,8 +864,8 @@ traversal and give a uniform bound on the original unreduced heading error.
 Whole physical fine paths preserve exact metric copies, old fan angles and real
 headings on every ordered prefix, with every new hinge straight and every bank's
 fine pieces contiguous. Whole intrinsic, spatial and projected traces agree.
-Full arclength and radial-direction transport and the initial-side choice remain
-open, as do transport through
+Full arclength and all rolled block displacements agree too. Full pointwise roll
+and radial-direction transport and the initial-side choice remain open, as do transport through
 inserted gaps and the complete graft.
 See the [gap-grafting checklist](docs/NORMAL_SELECTIONS.md#gap-grafting-status). The finite-cell route to
 global isometry does not require a separate end-height certificate. Normal-cover

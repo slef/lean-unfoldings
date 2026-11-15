@@ -2951,3 +2951,10 @@ corners and does not yet identify their widths with the actual retained cap fan.
 - [`CompletionOriginalSpatial`](../Unfoldings/Roof/CompletionOriginalSpatial.lean),
   [`CompletionChainSpatialTrace`](../Unfoldings/Roof/CompletionChainSpatialTrace.lean):
   actual physical foldings commute, preserving whole spatial and projected bank traces.
+
+- [`OrderedSegmentLength`](../Unfoldings/Geometry/OrderedSegmentLength.lean),
+  [`BoundaryBankLength`](../Unfoldings/Complex/BoundaryBankLength.lean),
+  [`CompletionBankLength`](../Unfoldings/Roof/CompletionBankLength.lean):
+  genuine physical fine pieces preserve each original bank's full intrinsic length.
+- [`CompletionChainLength`](../Unfoldings/Roof/CompletionChainLength.lean):
+  fine-bank piece bijections, whole arclength and exact rolled block displacements and endpoint.
