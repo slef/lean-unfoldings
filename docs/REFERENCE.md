@@ -2877,3 +2877,7 @@ corners and does not yet identify their widths with the actual retained cap fan.
   [`JordanBankPropagation`](../Unfoldings/Cap/JordanBankPropagation.lean),
   [`JordanLocalChainLift`](../Unfoldings/Cap/JordanLocalChainLift.lean):
   one initial selected face and local curve geometry construct the full actual Jordan bank roll.
+
+- [`PolygonalVertexRays`](../Unfoldings/Geometry/PolygonalVertexRays.lean),
+  [`RadialClosureVertexRays`](../Unfoldings/Geometry/RadialClosureVertexRays.lean):
+  radial order derives the exact two original hinge rays in the actual comparison closure.

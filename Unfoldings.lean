@@ -1902,3 +1902,5 @@ public import Unfoldings.Cap.ProjectedRawBankRays
 public import Unfoldings.Cap.JordanLocalTwoRays
 public import Unfoldings.Cap.JordanBankPropagation
 public import Unfoldings.Cap.JordanLocalChainLift
+public import Unfoldings.Geometry.PolygonalVertexRays
+public import Unfoldings.Geometry.RadialClosureVertexRays

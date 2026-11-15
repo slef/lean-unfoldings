@@ -2,6 +2,18 @@
 
 ## Session Log
 
+### 2026-11-15 — derive original hinge rays from radial closure geometry
+
+- Proved genuine source-radial polygonal edges strictly order all vertex radii
+  and exclude every original vertex from every open bank edge.
+- Identified the exact local path at every internal vertex with its two original
+  incident rays. A disjoint closed complementary arc cannot change this model.
+- Applied the actual radial three-link contact theorem to obtain these exact
+  hinge rays in the geometric comparison closure, without a supplied local model.
+- Verification: cache retrieval and full `lake build` passed 5,837 jobs;
+  15,560 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Actual radial-bank comparison and graft transport remain open.
+
 ### 2026-11-15 — propagate actual Jordan banks from one original side
 
 - Derived positive outgoing directions from the actual curve's local two-ray
