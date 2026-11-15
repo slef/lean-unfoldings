@@ -2,6 +2,19 @@
 
 ## Session Log
 
+### 2026-11-15 — whole-roof partitions aligned to the actual cut supports
+
+- Constructed finite unbounded full-dimensional closed convex active-plane
+  partitions respecting any finite family of proper prescribed affine lines.
+- Constructed their actual rigid planar cells and physical seams, proving an
+  exact isometry to the whole spatial roof, completeness and plane topology.
+  All seams lie on cell boundaries, including with repeated supporting planes.
+- Proved that every prescribed supporting line lies on the actual cell frontiers.
+  There is no artificial outer boundary in this model.
+- Verification: cache retrieval and full `lake build` passed 5,626 jobs; all
+  14,355 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Actual cut-bank copies, corner charts and graft surgery remain open.
+
 ### 2026-11-15 — complete boundary-only planar-cell models of actual gaps
 
 - Proved that changing declared seams to the same metric identifications gives

@@ -1690,3 +1690,6 @@ public import Unfoldings.Geometry.SpatialEnvelopeWholeGluing
 public import Unfoldings.Metric.ChangeSeams
 public import Unfoldings.Metric.PolygonalBoundaryCover
 public import Unfoldings.Geometry.TwoBankGapGluing
+public import Unfoldings.Geometry.AffineSupportBoundary
+public import Unfoldings.Geometry.AffineEnvelopeWholePartition
+public import Unfoldings.Geometry.SpatialEnvelopePartition

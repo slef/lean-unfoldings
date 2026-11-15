@@ -2505,3 +2505,7 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [`Metric/ChangeSeams`](../Unfoldings/Metric/ChangeSeams.lean) | Replacing seams by the same metric identifications preserves the constructed gluing metric |
 | [`Metric/PolygonalBoundaryCover`](../Unfoldings/Metric/PolygonalBoundaryCover.lean) | Exact intrinsic covers with actual distinct-cell seams confined to cell boundaries |
 | [`Geometry/TwoBankGapGluing`](../Unfoldings/Geometry/TwoBankGapGluing.lean) | Complete boundary-only finite planar-cell gluing models of actual two-bank Jordan gaps |
+
+| [`Geometry/AffineSupportBoundary`](../Unfoldings/Geometry/AffineSupportBoundary.lean) | Proper affine support levels avoid supported-set interiors |
+| [`Geometry/AffineEnvelopeWholePartition`](../Unfoldings/Geometry/AffineEnvelopeWholePartition.lean) | Full unbounded active-plane partitions aligned to arbitrary prescribed proper affine lines |
+| [`Geometry/SpatialEnvelopePartition`](../Unfoldings/Geometry/SpatialEnvelopePartition.lean) | Exact complete boundary-only planar-cell roof partitions with prescribed lines on actual frontiers |

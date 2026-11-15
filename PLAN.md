@@ -873,6 +873,8 @@ selection and Euler counting follow.
 - [x] Construct geometric two-bank Jordan regions for positive source-opening
   traces, with finite convex cells, complete intrinsic metrics and sector topology.
 - [x] Give the entire physical roof an exact complete rigid planar-cell gluing model.
+- [x] Construct full-dimensional unbounded active-plane partitions aligned to all
+  prescribed cut-support lines, with boundary-only physical seams.
 - [x] Identify actual Jordan-gap intrinsic metrics with complete finite planar-cell
   gluings having boundary-only seams.
 - [ ] Prove exact complementary bank-corner charts for grafting these regions.

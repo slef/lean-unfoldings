@@ -645,3 +645,10 @@ constructs a complete contractible finite planar-cell gluing of the actual
 Jordan gap, with full-dimensional cells and boundary-only seams. Its explicit
 isometry sends each cell point to that same physical point of the gap. Exact
 complementary corner charts still have to be proved before graft flatness.
+
+[`exists_wholePartition`](../Unfoldings/Geometry/SpatialEnvelopePartition.lean)
+constructs full-dimensional unbounded roof partitions aligned to any prescribed
+finite proper affine cut-support lines. Their physical-seam gluing has exactly
+the complete intrinsic roof metric and plane topology; seams and prescribed
+lines lie on actual cell frontiers. This supplies cells for the cut construction,
+without yet constructing the duplicated cut banks or their local fans.
