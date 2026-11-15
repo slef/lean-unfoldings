@@ -2,6 +2,18 @@
 
 ## Session Log
 
+### 2026-11-15 — exact whole-path metric, spatial and projected traces
+
+- Defined whole actual bank traces, including every closed-bank point and
+  distinct intrinsic endpoint copy, and identified them with directed path images.
+- Proved each whole physical fine trace has exactly the original trace under
+  the cut-metric isometry. No projected injectivity or nonoverlap is assumed.
+- Proved the concrete original-piece folding commutes with that isometry for
+  every cut system. Derived exact whole spatial and horizontal projected traces.
+- Verification: cache retrieval and full `lake build` passed 5,874 jobs;
+  15,826 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Arclength and radial-direction transport and the graft remain open.
+
 ### 2026-11-15 — ordered whole-path refinements preserve every real heading
 
 - Proved directed subchains have exact contiguous numerical indices when they

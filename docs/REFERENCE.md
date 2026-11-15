@@ -2944,3 +2944,10 @@ corners and does not yet identify their widths with the actual retained cap fan.
 - [`BoundaryChainHeadingStep`](../Unfoldings/Complex/BoundaryChainHeadingStep.lean),
   [`CompletionChainPrefixHeading`](../Unfoldings/Roof/CompletionChainPrefixHeading.lean):
   every fine piece retains its original bank's exact unreduced real heading.
+
+- [`BoundaryChainTrace`](../Unfoldings/Complex/BoundaryChainTrace.lean),
+  [`CompletionChainTrace`](../Unfoldings/Roof/CompletionChainTrace.lean):
+  exact whole intrinsic bank traces under the concrete cut-metric equivalence.
+- [`CompletionOriginalSpatial`](../Unfoldings/Roof/CompletionOriginalSpatial.lean),
+  [`CompletionChainSpatialTrace`](../Unfoldings/Roof/CompletionChainSpatialTrace.lean):
+  actual physical foldings commute, preserving whole spatial and projected bank traces.

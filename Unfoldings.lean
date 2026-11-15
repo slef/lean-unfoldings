@@ -1936,3 +1936,7 @@ public import Unfoldings.Topology.ChainSubsequence
 public import Unfoldings.Roof.CompletionChainOrder
 public import Unfoldings.Complex.BoundaryChainHeadingStep
 public import Unfoldings.Roof.CompletionChainPrefixHeading
+public import Unfoldings.Complex.BoundaryChainTrace
+public import Unfoldings.Roof.CompletionChainTrace
+public import Unfoldings.Roof.CompletionOriginalSpatial
+public import Unfoldings.Roof.CompletionChainSpatialTrace
