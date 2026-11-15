@@ -2546,3 +2546,6 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [`Metric/ClosedSeamsTopology`](../Unfoldings/Metric/ClosedSeamsTopology.lean) | Exact metric and seam-quotient topology for finite closed-seam systems with finite classes, without compact or complete cells |
 
 | [`Geometry/VariableSectorMembership`](../Unfoldings/Geometry/VariableSectorMembership.lean) | Exact pointwise membership in the geometric sector at the point's own radius |
+
+| [`Geometry/VariableSectorLocalSide`](../Unfoldings/Geometry/VariableSectorLocalSide.lean) | Exact one-sided neighborhoods on both actual variable-sector banks |
+| [`Geometry/TwoBankGapLocalSide`](../Unfoldings/Geometry/TwoBankGapLocalSide.lean) | Exact local side tests along both geometric frontier banks of the actual Jordan gap |

@@ -2,6 +2,17 @@
 
 ## Session Log
 
+### 2026-11-15 — exact local geometric sides on both actual gap banks
+
+- Proved positive clearance of the inactive halfplane along both banks of a
+  radius-dependent sector, giving exact local one-sided membership tests.
+- Transferred these tests through the actual polygonal bank frame to both
+  geometric frontier banks of the constructed Jordan gap, away from the source.
+  The bank-side tests are conclusions, not input certificates.
+- Verification: cache retrieval and full `lake build` passed 5,652 jobs; all
+  14,561 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Exact internal complementary corner charts and graft surgery remain open.
+
 ### 2026-11-15 — pointwise geometric membership in actual variable sectors
 
 - Proved positive-scale invariance of actual planar sectors and the exact

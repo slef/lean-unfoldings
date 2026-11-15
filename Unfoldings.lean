@@ -1717,3 +1717,5 @@ public import Unfoldings.Roof.CompatibleCutClosed
 public import Unfoldings.Roof.CompatibleWholeCutPartition
 public import Unfoldings.Metric.ClosedSeamsTopology
 public import Unfoldings.Geometry.VariableSectorMembership
+public import Unfoldings.Geometry.VariableSectorLocalSide
+public import Unfoldings.Geometry.TwoBankGapLocalSide

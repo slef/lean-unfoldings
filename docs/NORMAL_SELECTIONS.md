@@ -721,3 +721,9 @@ seam systems with finite classes, including grafts without a spatial folding.
 [`mem_variableSectorGap_iff`](../Unfoldings/Geometry/VariableSectorMembership.lean)
 gives an exact pointwise geometric sector test for the constructed gap model.
 This supports local side and corner calculations on the actual region.
+
+[`eventually_mem_twoBankGap_iff_first_side`](../Unfoldings/Geometry/TwoBankGapLocalSide.lean)
+and the second-bank counterpart prove exact geometric one-sided membership
+near both actual frontier banks away from the source. The other supporting
+halfplane has actual positive clearance. Internal metric corner angles still
+need to be identified from these side tests.
