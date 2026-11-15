@@ -2966,3 +2966,9 @@ corners and does not yet identify their widths with the actual retained cap fan.
   [`RadialMarginSubdivision`](../Unfoldings/Geometry/RadialMarginSubdivision.lean),
   [`CompletionChainRadial`](../Unfoldings/Roof/CompletionChainRadial.lean):
   whole-bank radial order and quantitative radial margins survive actual refinement without loss.
+
+- [`CompletionRootwardChain`](../Unfoldings/Roof/CompletionRootwardChain.lean):
+  actual current rootward stems construct full physical fine paths with their reference roll.
+- [`JordanSeamSideSelection`](../Unfoldings/Cap/JordanSeamSideSelection.lean),
+  [`JordanInitialSeamBank`](../Unfoldings/Cap/JordanInitialSeamBank.lean):
+  construct the unique selected initial original seam bank, retaining actual endpoint transport.

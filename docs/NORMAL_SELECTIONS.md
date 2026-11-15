@@ -41,7 +41,9 @@ nonoverlap and counting remain to be proved.
 - [x] Preserve every bank's intrinsic length, whole arclength and rolled block displacement.
 - [x] Preserve the full ordered pointwise roll, exact path image and all radial margins
   with their original constants, including every inserted vertex and bank endpoint.
-- [ ] Construct the required initial incident side of the reference closure.
+- [x] Construct the unique actual initial Jordan bank from the original seam geometry.
+- [ ] Identify the prescribed comparison bank with that side, or handle its complementary
+  fan when the bounded filling selects the other side.
 - [ ] Identify the physical saved-frontier curves with the constructed histories
   and prove that their selected original side is untouched. Apply the local
   metric remainder models to those actual updates.
@@ -65,7 +67,9 @@ and preserve every real heading prefix in order. Whole intrinsic, spatial and
 projected traces agree exactly, as do every bank's intrinsic length, whole
 arclength and rolled block displacements. Every fine rolled point is its ordered
 old bank point, and radial order and all quantitative margins survive without loss.
-The initial-side choice remains open. The bank must
+The unique initial Jordan bank is now constructed, with its exact original seam
+endpoint transport. The prescribed bank may be on the other side, so the heading
+comparison still needs that case; its selected-side hypothesis remains. The bank must
 also be carried through actual gap attachments, preserving arclength, hinges and
 the untouched original side.
 

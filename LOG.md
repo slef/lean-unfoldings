@@ -2,6 +2,20 @@
 
 ## Session Log
 
+### 2026-11-15 — concrete rootward refinements and constructed initial Jordan bank
+
+- Applied the whole physical refinement to the actual current rootward parent
+  stem, deriving its exact ancestor-reference rolled trace, length and radial order.
+- Proved every respected original seam on a Jordan curve has exactly one
+  selected incident face. Constructed its unique actual initial Jordan bank,
+  preserving the original seam isometry's endpoint permutation.
+- Either original side may be selected. The comparison must still identify
+  the prescribed bank with that side or account for the complementary fan;
+  the existing heading theorem's selected-side hypothesis has not been removed.
+- Verification: cache retrieval and full `lake build` passed 5,886 jobs;
+  15,902 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Complementary comparison and the physical graft remain open.
+
 ### 2026-11-15 — full pointwise intrinsic rolls and lossless radial transport
 
 - Located every old rolled vertex exactly and every inserted vertex by its

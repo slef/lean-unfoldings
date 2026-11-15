@@ -1949,3 +1949,6 @@ public import Unfoldings.Geometry.FiniteInterpolation
 public import Unfoldings.Roof.CompletionChainRollTrace
 public import Unfoldings.Geometry.RadialMarginSubdivision
 public import Unfoldings.Roof.CompletionChainRadial
+public import Unfoldings.Roof.CompletionRootwardChain
+public import Unfoldings.Cap.JordanSeamSideSelection
+public import Unfoldings.Cap.JordanInitialSeamBank
