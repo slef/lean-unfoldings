@@ -2048,3 +2048,7 @@ public import Unfoldings.Metric.PhysicalCutRefinement
 public import Unfoldings.Metric.PhysicalCutRefinementSeams
 public import Unfoldings.Metric.PhysicalCutRefinementEquiv
 public import Unfoldings.Metric.ConvexCutRefinement
+public import Unfoldings.Metric.FlatPhysicalCutCover
+public import Unfoldings.Metric.FlatPhysicalCutRefinement
+public import Unfoldings.Geometry.SpatialEnvelopeRefinement
+public import Unfoldings.Geometry.SpatialEnvelopeCutRefinement

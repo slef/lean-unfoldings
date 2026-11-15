@@ -3187,3 +3187,13 @@ corners and does not yet identify their widths with the actual retained cap fan.
 - [`ConvexCutRefinement`](../Unfoldings/Metric/ConvexCutRefinement.lean):
   full convex planar subdivisions with cuts outside the original cell interiors
   supply all per-parent metric data geometrically.
+
+- [`FlatPhysicalCutCover`](../Unfoldings/Metric/FlatPhysicalCutCover.lean),
+  [`FlatPhysicalCutRefinement`](../Unfoldings/Metric/FlatPhysicalCutRefinement.lean):
+  rigid planar covers recover actual spatial cut metrics and supply refinement data.
+  Full dimension is needed only in the original plane coordinates.
+- [`SpatialEnvelopeRefinement`](../Unfoldings/Geometry/SpatialEnvelopeRefinement.lean),
+  [`SpatialEnvelopeCutRefinement`](../Unfoldings/Geometry/SpatialEnvelopeCutRefinement.lean):
+  a geometric subdivision of actual whole-roof cells gives a complete cut isometry.
+  The original support coordinates derive every local metric comparison; actual
+  fine copies map to their physical parent copies and every roof point is retained.

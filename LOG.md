@@ -2,6 +2,18 @@
 
 ## Session Log
 
+### 2026-11-15 — actual whole-roof cut metrics survive geometric refinements
+
+- Derived exact spatial cut metrics from complete rigid planar covers, preserving
+  every original physical copy. Ambient three-dimensional interiors are not required.
+- Constructed original parent support coordinates for actual whole-roof refinements.
+  Physical containment and covers derive every local metric comparison.
+- Constructed a global isometry between the actual refined and original whole-roof
+  cuts, preserving both spatial folding and each original fine copy's parent copy.
+- Verification: actual cache retrieval and full `lake build` passed 5,986 jobs;
+  the standard-axiom audit and both abstract independence checks passed. The full
+  completion comparison, finite-bank joins and the complete graft remain open.
+
 ### 2026-11-15 — exact physical cut subdivision invariance
 
 - Reconstructed every original physical cell from its fine cut block and retained
