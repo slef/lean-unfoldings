@@ -2539,3 +2539,8 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [`Geometry/SegmentInteriorGerm`](../Unfoldings/Geometry/SegmentInteriorGerm.lean) | Exact original forward and reverse direction models at interior segment points |
 | [`Geometry/RayInteriorGerm`](../Unfoldings/Geometry/RayInteriorGerm.lean) | Exact two-sided local direction models everywhere beyond an actual terminal-ray source |
 | [`Geometry/EdgeGermDirectionSupport`](../Unfoldings/Geometry/EdgeGermDirectionSupport.lean) | Every actual edge and ray germ uses only its original forward and reverse directions |
+
+| [`Roof/CompatibleCutClosed`](../Unfoldings/Roof/CompatibleCutClosed.lean) | Closedness of the actual compatible finite forest and all its complete terminal rays |
+| [`Roof/CompatibleWholeCutPartition`](../Unfoldings/Roof/CompatibleWholeCutPartition.lean) | Construct complete unbounded physical roof cut metrics aligned to the actual compatible one-ended forest |
+
+| [`Metric/ClosedSeamsTopology`](../Unfoldings/Metric/ClosedSeamsTopology.lean) | Exact metric and seam-quotient topology for finite closed-seam systems with finite classes, without compact or complete cells |

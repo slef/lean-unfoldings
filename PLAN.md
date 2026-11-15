@@ -881,6 +881,8 @@ selection and Euler counting follow.
 - [ ] Positive Jordan gaps from radially monotone polygonal banks.
 - [x] Construct complete unbounded roof cut metrics with actual planar cells,
   boundary-only seams and exact metric-ball restoration away from closed cuts.
+- [x] Construct complete unbounded cuts aligned to the actual compatible forest
+  and every whole terminal ray; retain the exact seam-quotient topology.
 - [ ] Identify the actual one-ended forest bank fans and insert intrinsic polygonal gaps.
 - [ ] Completeness for finite noncompact complexes with controlled ends.
 - [ ] Local-isometry/covering arguments for completed flat planes.

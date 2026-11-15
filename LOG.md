@@ -2,6 +2,22 @@
 
 ## Session Log
 
+### 2026-11-15 — complete unbounded cuts of the actual compatible forest
+
+- Proved closedness of the actual compatible forest carrier, including every
+  entire terminal ray, without a finite outer truncation.
+- Constructed named proper supporting lines for all its actual finite segments
+  and complete rays, and aligned full unbounded physical roof partitions to them.
+  The resulting original-forest cut metrics are complete and restore surjectively
+  to the original intrinsic roof.
+- Proved equality of metric and seam-quotient topologies for arbitrary finite
+  closed-seam systems with finite classes. Cells may be unbounded, incomplete
+  and without a common spatial folding, as needed by the eventual graft.
+- Verification: cache retrieval and full `lake build` passed 5,649 jobs; all
+  14,544 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Actual cyclic bank fans, complementary corner charts,
+  saved-frontier surgery and assembled graft flatness remain open.
+
 ### 2026-11-15 — exact ordinary edge and terminal-ray local directions
 
 - Identified strict interior segment points with the full original direction
