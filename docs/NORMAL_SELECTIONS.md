@@ -683,3 +683,8 @@ characterizes actual retained attachments at a cut point by common tangent
 directions outside all cut-piece germs. This is an exact geometric test for
 finite affine-cell cuts. Converting the resulting adjacency into the original
 cyclic forest bank fans remains necessary.
+
+[`carrier_eq_iUnion_closedChamber`](../Unfoldings/Geometry/PolygonalRayInequalities.lean)
+represents the exact original polygonal cut carrier by finite affine cells,
+including its entire terminal ray. Thus the local active-cone attachment tests
+apply to the original geometry without substituting a proxy cut set.

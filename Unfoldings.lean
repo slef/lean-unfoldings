@@ -1702,3 +1702,5 @@ public import Unfoldings.Metric.PhysicalSeamsDiagonal
 public import Unfoldings.Geometry.SpatialEnvelopeCut
 public import Unfoldings.Geometry.LocalConeClosure
 public import Unfoldings.Geometry.AffineArrangementGerm
+public import Unfoldings.Geometry.SegmentInequalities
+public import Unfoldings.Geometry.PolygonalRayInequalities

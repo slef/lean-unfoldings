@@ -2,6 +2,17 @@
 
 ## Session Log
 
+### 2026-11-15 — actual polygonal cuts as finite affine pieces
+
+- Represented every actual planar segment and terminal ray by a fixed finite
+  affine inequality system. Zero-length segments and zero terminal directions
+  are included, without a nondegeneracy premise.
+- Represented each original polygonal ray carrier exactly as its initial point,
+  original finite edge pieces and entire unbounded terminal piece.
+- Verification: cache retrieval and full `lake build` passed 5,637 jobs; all
+  14,492 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Original forest fan ordering and graft corner angles remain open.
+
 ### 2026-11-15 — exact retained-attachment tests from actual local directions
 
 - Constructed conical germs for all finite affine cells, including empty germs

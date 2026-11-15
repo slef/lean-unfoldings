@@ -2523,3 +2523,6 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 
 | [`Geometry/LocalConeClosure`](../Unfoldings/Geometry/LocalConeClosure.lean) | Attachment at a locally conical point is equivalent to a nonempty direction set |
 | [`Geometry/AffineArrangementGerm`](../Unfoldings/Geometry/AffineArrangementGerm.lean) | Exact conical germs and retained-attachment direction tests for actual affine-cell cuts |
+
+| [`Geometry/SegmentInequalities`](../Unfoldings/Geometry/SegmentInequalities.lean) | Exact fixed finite affine halfspace systems for actual segments and unbounded rays, including zero-length pieces |
+| [`Geometry/PolygonalRayInequalities`](../Unfoldings/Geometry/PolygonalRayInequalities.lean) | Exact finite affine-cell representation of every original polygonal ray and its whole terminal tail |
