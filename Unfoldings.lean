@@ -1728,3 +1728,8 @@ public import Unfoldings.Cap.LeafGapSector
 public import Unfoldings.Cone.AngularClosure
 public import Unfoldings.Cone.AppendSector
 public import Unfoldings.Cap.LeafCompletedFan
+public import Unfoldings.Geometry.TwoBankOppositeSide
+public import Unfoldings.Metric.RouteLocal
+public import Unfoldings.Metric.PolygonalGerm
+public import Unfoldings.Geometry.FiniteRegionGermMetric
+public import Unfoldings.Geometry.TwoBankGapCornerChart

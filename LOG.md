@@ -2,6 +2,22 @@
 
 ## Session Log
 
+### 2026-11-15 — exact intrinsic cones at actual gap bank corners
+
+- Identified the second gap-bank side test with the opposite imaginary
+  coordinate in that bank's own ambient frame.
+- Proved that short routes cannot escape a supplied radial budget. Local
+  equality of polygonal regions with a star-shaped model now constructs exact
+  whole intrinsic ball isometries, including at reentrant corners.
+- Constructed the active-cone model of every finite affine-cell region and
+  applied it to every point of the actual Jordan gap. The construction retains
+  its original bank equations and physical coordinates; no tangent-angle or
+  local-flatness certificate is supplied.
+- Verification: cache retrieval and full `lake build` passed 5,666 jobs; all
+  14,653 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Identifying these cones' exact complementary bank
+  angles, the saved-frontier surgeries and the assembled flat graft remain open.
+
 ### 2026-11-15 — exact completed leaf fan plane metric
 
 - Constructed the quotient closing only the two outer banks of a full-turn

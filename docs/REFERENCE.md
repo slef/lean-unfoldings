@@ -2561,3 +2561,9 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [`Cone/AngularClosure`](../Unfoldings/Cone/AngularClosure.lean) | Closing only the two outer banks of a full-turn fan yields the exact Euclidean plane metric |
 | [`Cone/AppendSector`](../Unfoldings/Cone/AppendSector.lean) | Complete a slit fan by its genuine complementary sector, preserving all original cell placements |
 | [`Cap/LeafCompletedFan`](../Unfoldings/Cap/LeafCompletedFan.lean) | The actual leaf corner completed by its geometric bank-gap sector is isometric to the plane |
+
+| [`Geometry/TwoBankOppositeSide`](../Unfoldings/Geometry/TwoBankOppositeSide.lean) | The actual second gap bank has the opposite geometric side in its own ambient bank frame |
+| [`Metric/RouteLocal`](../Unfoldings/Metric/RouteLocal.lean) | A radial budget localizes route estimates without global step control |
+| [`Metric/PolygonalGerm`](../Unfoldings/Metric/PolygonalGerm.lean) | Locally equal star-shaped corners have exact intrinsic whole-ball isometries, including reentrant corners |
+| [`Geometry/FiniteRegionGermMetric`](../Unfoldings/Geometry/FiniteRegionGermMetric.lean) | Exact intrinsic corner cones of finite affine-cell regions from the actual active inequalities |
+| [`Geometry/TwoBankGapCornerChart`](../Unfoldings/Geometry/TwoBankGapCornerChart.lean) | Constructed intrinsic cone-ball isometries at every actual Jordan-gap corner, retaining the original bank equations |

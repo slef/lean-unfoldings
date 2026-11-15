@@ -744,3 +744,9 @@ now completes that actual retained fan by its geometric bank-gap sector and
 constructs a plane isometry. Every original sector keeps its placement, and the
 added sector has the complementary placement. This is the completed tangent
 model; its neighborhood in the full graft still needs to be identified.
+
+[`exists_twoBankGap_corner_cone_isometries`](../Unfoldings/Geometry/TwoBankGapCornerChart.lean)
+constructs whole intrinsic cone-ball charts at every actual gap point, including
+reentrant internal bank vertices. The cones come from the actual active bank
+inequalities. Their exact complementary apertures and attachment to the retained
+surface fans still need to be proved.
