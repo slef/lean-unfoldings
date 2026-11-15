@@ -2,6 +2,18 @@
 
 ## Session Log
 
+### 2026-11-15 — full actual bank rolls from physical projected positions
+
+- Proved chains in independently cut face restrictions with matching original
+  bank germs have equal lengths, internal fan angles, real heading prefixes and
+  complete normalized polygonal rolls.
+- Derived bank matching from projected vertex positions, the terminal endpoint
+  and initial orientation alone. Orientation propagation, bank vectors, lengths
+  and fan agreement are proved internally, including all hinge positions.
+- Verification: cache retrieval and full `lake build` passed 5,824 jobs;
+  15,537 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. The reference traversal and physical graft remain open.
+
 ### 2026-11-15 — original cut angles inside physical completion patches
 
 - Compared actual fans in independent whole-face restrictions with arbitrary

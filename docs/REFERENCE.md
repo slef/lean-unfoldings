@@ -2853,3 +2853,7 @@ corners and does not yet identify their widths with the actual retained cap fan.
   compare actual fans in independently cut face restrictions from terminal banks.
 - [`CompletionPatchFanAgreement`](../Unfoldings/Roof/CompletionPatchFanAgreement.lean):
   recover original one-sided cut angles inside concrete physical comparison patches.
+
+- [`RestrictedBoundaryChainAgreement`](../Unfoldings/Complex/RestrictedBoundaryChainAgreement.lean),
+  [`ProjectedBoundaryChainAgreement`](../Unfoldings/Cap/ProjectedBoundaryChainAgreement.lean):
+  match actual chains and preserve full real rolling from physical projected vertex positions.

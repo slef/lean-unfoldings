@@ -1889,3 +1889,5 @@ public import Unfoldings.Cap.ProjectedFanAgreement
 public import Unfoldings.Complex.RestrictedCutFanAgreement
 public import Unfoldings.Cap.RestrictedCutFanAgreement
 public import Unfoldings.Roof.CompletionPatchFanAgreement
+public import Unfoldings.Complex.RestrictedBoundaryChainAgreement
+public import Unfoldings.Cap.ProjectedBoundaryChainAgreement
