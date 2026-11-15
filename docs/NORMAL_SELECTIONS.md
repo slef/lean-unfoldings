@@ -34,6 +34,8 @@ nonoverlap and counting remain to be proved.
   partitions and exact curvature charges at distinct physical path hinges.
 - [x] Obtain one uniform small-tilt real-heading bound without side, fan-match or sum
   certificates, independent of mesh size, path length and vertex valence.
+- [x] Construct two disjoint actual metric tails for every terminal ray, with exact
+  folding and every pairwise spatial distance, without an upper truncation.
 - [ ] Identify the full unbounded comparison banks, including terminal rays and
   completion fans, and supply their admissible respected radial closure geometry.
 - [ ] Carry physical saved-frontier curves and their untouched original sides through
@@ -47,8 +49,9 @@ point, real heading, intrinsic length and quantitative radial margin. For an adm
 respected radial closure, the real-heading error is bounded by twice total curvature
 plus the closing-link and corner-error terms; one tilt works uniformly for all meshes.
 
-The full unbounded banks and the saved frontier through already inserted gaps still
-need identification. The geometric closure hypotheses are explicit; the finite-path
+The terminal tails now have two disjoint actual cut-metric copies. Joining the finite
+banks to those tails, identifying completion fans, and carrying the saved frontier
+through already inserted gaps still need proof. The geometric closure hypotheses are explicit; the finite-path
 comparison alone does not construct the complete flat graft.
 
 The completed local models and combinatorial histories do not assume these

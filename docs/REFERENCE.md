@@ -3020,3 +3020,18 @@ corners and does not yet identify their widths with the actual retained cap fan.
 - [`UnconditionalOriginalRadialChainErrorBound`](../Unfoldings/Cap/UnconditionalOriginalRadialChainErrorBound.lean),
   [`UnconditionalOriginalBankHeadingComparison`](../Unfoldings/Cap/UnconditionalOriginalBankHeadingComparison.lean):
   original real-heading bounds from admissible radial closure geometry, without initial-side inputs.
+
+- [`EventualRayCell`](../Unfoldings/Geometry/EventualRayCell.lean),
+  [`AffineSideRayCells`](../Unfoldings/Geometry/AffineSideRayCells.lean):
+  a ray in a finite convex cover eventually lies in one cell; aligned closed cells
+  supply a terminal cell on each specified side of the line.
+- [`PhysicalSeamLabels`](../Unfoldings/Metric/PhysicalSeamLabels.lean),
+  [`AffineCutBanks`](../Unfoldings/Metric/AffineCutBanks.lean):
+  local affine cuts preserve side labels and distinguish actual metric bank copies.
+- [`SpatialEnvelopeCutRays`](../Unfoldings/Geometry/SpatialEnvelopeCutRays.lean),
+  [`SpatialEnvelopeCutBanks`](../Unfoldings/Geometry/SpatialEnvelopeCutBanks.lean),
+  [`RayForwardHalfspace`](../Unfoldings/Geometry/RayForwardHalfspace.lean),
+  [`SpatialEnvelopeRayBanks`](../Unfoldings/Geometry/SpatialEnvelopeRayBanks.lean):
+  construct two disjoint unbounded bank tails with exact folding and spatial distances.
+- [`CompatibleTerminalBanks`](../Unfoldings/Roof/CompatibleTerminalBanks.lean):
+  construct those actual terminal banks simultaneously for every compatible forest end.

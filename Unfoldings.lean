@@ -1980,3 +1980,12 @@ public import Unfoldings.Cap.OriginalChainCurvature
 public import Unfoldings.Cap.PhysicalChainErrorComparison
 public import Unfoldings.Cap.UnconditionalOriginalRadialChainErrorBound
 public import Unfoldings.Cap.UnconditionalOriginalBankHeadingComparison
+public import Unfoldings.Geometry.EventualRayCell
+public import Unfoldings.Geometry.AffineSideRayCells
+public import Unfoldings.Metric.PhysicalSeamLabels
+public import Unfoldings.Metric.AffineCutBanks
+public import Unfoldings.Geometry.SpatialEnvelopeCutRays
+public import Unfoldings.Geometry.SpatialEnvelopeCutBanks
+public import Unfoldings.Geometry.RayForwardHalfspace
+public import Unfoldings.Geometry.SpatialEnvelopeRayBanks
+public import Unfoldings.Roof.CompatibleTerminalBanks

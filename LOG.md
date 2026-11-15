@@ -2,6 +2,21 @@
 
 ## Session Log
 
+### 2026-11-15 — distinct complete terminal banks in the actual cut metric
+
+- Proved finite convex covers supply an eventual cell for a whole ray. Finite
+  closed aligned covers supply one on each chosen side, including the cut line.
+- Constructed exact rigid-cell lifts into the complete unbounded cut metric,
+  preserving folding and every pairwise spatial distance without a tail cutoff.
+- Proved local affine cuts preserve side labels along every retained seam chain;
+  opposite bank copies remain distinct in the actual metric quotient.
+- Constructed both disjoint terminal tails for every compatible forest end in
+  one actual whole-roof partition. Finite-bank joins, completion fans, physical
+  saved-frontier transport through prior gaps and the full flat graft remain open.
+- Verification: actual cache retrieval and full `lake build` passed 5,923 jobs;
+  16,024 unfolding and 7,243 pinned planar-topology declarations passed the
+  standard-axiom audit. Both abstract independence checks passed.
+
 ### 2026-11-15 — real-heading comparison without selected-side assumptions
 
 - Derived a global same-side/opposite-side dichotomy for physically matching
