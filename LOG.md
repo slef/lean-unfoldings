@@ -2,6 +2,19 @@
 
 ## Session Log
 
+### 2026-11-15 — uniform actual original-bank real-heading comparison
+
+- Expressed every unreduced intrinsic-minus-projected heading prefix as the
+  actual original one-sided cut-fan error sum, with no principal-angle reduction.
+- Proved one positive tilt makes the terminal heading error arbitrarily small
+  for all actual source-radial cut-bank chains, independently of mesh size,
+  path length and vertex valence. The geometric closure and its initial incident
+  side are inputs; all later banks, fan sums and rolling comparisons are derived.
+- Verification: cache retrieval and full `lake build` passed 5,847 jobs;
+  15,606 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Initial-side construction, complete coarse-path refinement,
+  physical saved-frontier transport and the full flat graft remain open.
+
 ### 2026-11-15 — geometric radial comparison for actual original cut fans
 
 - Applied the geometric bank estimate to the exact actual Jordan hinge-error sum,

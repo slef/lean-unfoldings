@@ -2899,3 +2899,6 @@ corners and does not yet identify their widths with the actual retained cap fan.
 - [`JordanChainErrorBound`](../Unfoldings/Cap/JordanChainErrorBound.lean),
   [`OriginalRadialChainErrorBound`](../Unfoldings/Cap/OriginalRadialChainErrorBound.lean):
   derive the geometric curvature-and-tilt error bound for actual original one-sided cut banks.
+
+- [`OriginalBankHeadingComparison`](../Unfoldings/Cap/OriginalBankHeadingComparison.lean):
+  actual unreduced heading-prefix identities and a uniform mesh-independent small-tilt bound.

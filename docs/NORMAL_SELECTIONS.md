@@ -30,8 +30,12 @@ nonoverlap and counting remain to be proved.
   one-sided fan angles through concrete completion subdivisions.
 - [x] Recover comparison-patch fan angles from matching physical terminal banks.
 
-- [ ] Match the original one-sided path fans to the reference Jordan comparison
-  banks, preserving regional angles through the physical completion.
+- [x] Construct actual Jordan bank traversals from radial geometry and one initial
+  incident side, preserving all original corner weights and full real rolls.
+- [x] Transfer the geometric error sum to actual original cut fans and obtain a
+  uniform small-tilt bound for their unreduced real heading error.
+- [ ] Construct the required initial incident side of the reference closure and
+  refine complete coarse original paths into their actual physical fine bank chains.
 - [ ] Identify the physical saved-frontier curves with the constructed histories
   and prove that their selected original side is untouched. Apply the local
   metric remainder models to those actual updates.
@@ -47,9 +51,12 @@ incident-face sides derived from a positive rim-started contour.
 
 Physical completion subdivisions preserve each selected one-sided fan angle.
 Matching physical terminal bank positions and directions now recovers the actual
-original corner fan inside a comparison patch. The remaining reference traversal
-must supply that matching data. The bank must also be carried through actual gap
-attachments, preserving arclength, hinges and the untouched original side.
+original corner fan inside a comparison patch. Radial closure geometry now
+constructs the entire Jordan traversal from one initial incident side, with a
+uniform bound for the actual unreduced heading error. The initial-side choice and
+complete coarse-to-fine path refinement still need construction. The bank must
+also be carried through actual gap attachments, preserving arclength, hinges and
+the untouched original side.
 
 The completed local models and combinatorial histories do not assume these
 remaining geometric identifications. The paper's sharp numerical constants and

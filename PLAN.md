@@ -859,8 +859,10 @@ whole-ball restoration and actual intermediate parent-bank heading increments.
 Restored contour excursions now give actual rootward chains, with exact original
 reference fans, whole tangent metrics and full rolls. Their projected segments and
 incident-face sides are identified, and selected angles survive physical completion.
-The reference traversal still must supply matching terminal banks. Transport through
-actual inserted gaps and construction of the complete graft remain open.
+Actual radial geometry and one initial incident side now construct the Jordan
+traversal and give a uniform bound on the original unreduced heading error.
+The initial-side choice and complete coarse-to-fine path refinement still need
+construction. Transport through inserted gaps and the complete graft remain open.
 See the [gap-grafting checklist](docs/NORMAL_SELECTIONS.md#gap-grafting-status). The finite-cell route to
 global isometry does not require a separate end-height certificate. Normal-cover
 selection and Euler counting follow.
