@@ -2,6 +2,23 @@
 
 ## Session Log
 
+### 2026-11-14 — uniform circle control for actual opening sequences
+
+- Converted positive radial margins into norm progress on all partial edges,
+  across vertices, and along the original infinite tail. Proved a uniform
+  Lipschitz bound for the actual radial inverse.
+- Bounded every actual matched point under a finite sequence of hinge-fixed
+  suffix openings, preserving translations and original edge fractions.
+- Derived explicit equal-circle contact errors. The sufficient threshold
+  `3 * openingBudget < radialMargin^2` keeps every actual contact in the same
+  open source-centered halfplane as its original contact.
+- Extended positive hinge-circle angles continuously to displacement zero on
+  the saved starting bank, preserving strict real angular order.
+- Verification: cache retrieval and full `lake build` passed 5,588 jobs; all
+  14,072 unfolding declarations passed the standard-axiom audit, along with both
+  abstract independence checks. Successive-gap nesting, saved-frontier
+  transport and the complete intrinsic graft remain open.
+
 ### 2026-11-14 — positive original-source circle order of actual hinge gaps
 
 - Constructed the real angular coordinate on the circle punctured at its saved

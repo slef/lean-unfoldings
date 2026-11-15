@@ -570,3 +570,10 @@ quantitative opening-budget theorem supplies that control for small openings.
 [`strictMono_hingeCircleAngle`](../Unfoldings/Geometry/HingeCircleOrder.lean)
 proves strict counterclockwise order of contacts within each actual hinge gap,
 using its terminal-ray limit. Nonoverlap across successive gaps remains open.
+
+[`openings_radial_contact_inner_pos`](../Unfoldings/Geometry/OpeningCircleThreshold.lean)
+keeps contacts of actual opening sequences in a common open source halfplane
+when `3 * openingBudget < radialMargin^2`. It assumes the opened bank is outward;
+existing opening estimates supply that condition under their subhistory bounds.
+The bound is independent of the number of fine edges. It does not yet establish
+nonoverlap of the successive gaps.

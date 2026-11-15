@@ -1646,3 +1646,12 @@ public import Unfoldings.Topology.NoncrossingOrder
 public import Unfoldings.Geometry.HingeCircleDirections
 public import Unfoldings.Geometry.HingeCircleAsymptote
 public import Unfoldings.Geometry.HingeCircleOrder
+public import Unfoldings.Geometry.RadialNormProgress
+public import Unfoldings.Geometry.RadialChainProgress
+public import Unfoldings.Geometry.RadialRayProgress
+public import Unfoldings.Geometry.RadialContactPerturbation
+public import Unfoldings.Geometry.RadialMatchedError
+public import Unfoldings.Geometry.OpeningMatchedError
+public import Unfoldings.Geometry.OpeningCircleThreshold
+public import Unfoldings.Topology.CircleRealLift
+public import Unfoldings.Geometry.HingeCircleLift

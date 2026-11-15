@@ -864,6 +864,8 @@ selection and Euler counting follow.
   and have joint angle/radius coordinates on the unbounded exterior.
 - [x] Prove strict counterclockwise contact order within each actual hinge gap
   from terminal-ray limits and connected noncontact families.
+- [x] Prove uniform equal-circle contact bounds for actual opening sequences,
+  including the tail, with a mesh-independent common-halfplane threshold.
 - [ ] Positive Jordan gaps from radially monotone polygonal banks.
 - [ ] Complete one-ended forest cuts and intrinsic polygonal-gap insertion.
 - [ ] Completeness for finite noncompact complexes with controlled ends.

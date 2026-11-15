@@ -2449,3 +2449,15 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [`Geometry/HingeCircleDirections`](../Unfoldings/Geometry/HingeCircleDirections.lean) | Actual normalized hinge-circle contacts and their positive real angular displacements |
 | [`Geometry/HingeCircleAsymptote`](../Unfoldings/Geometry/HingeCircleAsymptote.lean) | Actual source-circle angular displacement tends to the true opening at infinity |
 | [`Geometry/HingeCircleOrder`](../Unfoldings/Geometry/HingeCircleOrder.lean) | Actual contacts move strictly counterclockwise at every source radius above the hinge |
+
+| [`Geometry/RadialNormProgress`](../Unfoldings/Geometry/RadialNormProgress.lean) | Convert quantitative radial margins to norm progress on every partial straight edge |
+| [`Geometry/RadialChainProgress`](../Unfoldings/Geometry/RadialChainProgress.lean) | Uniform inverse-radius bounds between all actual polygonal-chain points |
+| [`Geometry/RadialRayProgress`](../Unfoldings/Geometry/RadialRayProgress.lean) | Uniform Lipschitz radial inverse including the original unbounded terminal ray |
+| [`Geometry/RadialContactPerturbation`](../Unfoldings/Geometry/RadialContactPerturbation.lean) | Convert matched bank perturbations to explicit equal-circle contact bounds |
+
+| [`Geometry/RadialMatchedError`](../Unfoldings/Geometry/RadialMatchedError.lean) | Quantitative matched-point bounds from edge errors and actual radial progress |
+| [`Geometry/OpeningMatchedError`](../Unfoldings/Geometry/OpeningMatchedError.lean) | Uniform actual equal-circle error bounds for finite hinge-opening sequences |
+| [`Geometry/OpeningCircleThreshold`](../Unfoldings/Geometry/OpeningCircleThreshold.lean) | A mesh-independent opening budget keeps all actual contacts in one open source halfplane |
+
+| [`Topology/CircleRealLift`](../Unfoldings/Topology/CircleRealLift.lean) | A real lift in an interval shorter than a full turn inherits phase continuity |
+| [`Geometry/HingeCircleLift`](../Unfoldings/Geometry/HingeCircleLift.lean) | Continuous strictly increasing real angular lifts of complete actual hinge-circle arcs |
