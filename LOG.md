@@ -2,6 +2,18 @@
 
 ## Session Log
 
+### 2026-11-15 — exact active tangent-cone charts for unbounded affine cells
+
+- Constructed each cell's actual closed convex homogeneous tangent cone using
+  precisely the inequalities active at the chosen physical point.
+- Proved exact translated set equality on a positive-radius ball, with inactive
+  inequalities removed by their actual positive clearance.
+- Constructed a whole cell-ball isometry by translation to that tangent cone,
+  including at corners of unbounded cells.
+- Verification: cache retrieval and full `lake build` passed 5,628 jobs; all
+  14,374 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Complementary bank-corner angles and assembled graft charts remain open.
+
 ### 2026-11-15 — whole-roof partitions aligned to the actual cut supports
 
 - Constructed finite unbounded full-dimensional closed convex active-plane

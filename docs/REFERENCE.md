@@ -2509,3 +2509,6 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [`Geometry/AffineSupportBoundary`](../Unfoldings/Geometry/AffineSupportBoundary.lean) | Proper affine support levels avoid supported-set interiors |
 | [`Geometry/AffineEnvelopeWholePartition`](../Unfoldings/Geometry/AffineEnvelopeWholePartition.lean) | Full unbounded active-plane partitions aligned to arbitrary prescribed proper affine lines |
 | [`Geometry/SpatialEnvelopePartition`](../Unfoldings/Geometry/SpatialEnvelopePartition.lean) | Exact complete boundary-only planar-cell roof partitions with prescribed lines on actual frontiers |
+
+| [`Geometry/AffineArrangementLocalCone`](../Unfoldings/Geometry/AffineArrangementLocalCone.lean) | Exact local tangent cones from the active inequalities of actual finite affine cells |
+| [`Geometry/AffineArrangementConeChart`](../Unfoldings/Geometry/AffineArrangementConeChart.lean) | Isometric whole cell-ball coordinates on the constructed active tangent cones |

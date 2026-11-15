@@ -1693,3 +1693,5 @@ public import Unfoldings.Geometry.TwoBankGapGluing
 public import Unfoldings.Geometry.AffineSupportBoundary
 public import Unfoldings.Geometry.AffineEnvelopeWholePartition
 public import Unfoldings.Geometry.SpatialEnvelopePartition
+public import Unfoldings.Geometry.AffineArrangementLocalCone
+public import Unfoldings.Geometry.AffineArrangementConeChart
