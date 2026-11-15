@@ -476,6 +476,11 @@ Start with the [theorem and proof guide](ROOFS.md). Boundary heights are unrestr
 | [Unfoldings.Cap.SmallBankRolling](../Unfoldings/Cap/SmallBankRolling.lean) | Concrete actual endpoint copies, bank span and unreduced rolling error conclusion |
 | [Unfoldings.Roof.MarkedCompletionRolling](../Unfoldings/Roof/MarkedCompletionRolling.lean) | Uniform actual rolling bound for every marked completion mesh |
 | [Unfoldings.Roof.ShortWindowRolling](../Unfoldings/Roof/ShortWindowRolling.lean) | Construct accurate intrinsic rolling from short radial-window geometry alone |
+| [Unfoldings.Geometry.PolarWindowInterval](../Unfoldings/Geometry/PolarWindowInterval.lean) | Actual internal source-ray sums equal the original strict polar-window variation |
+| [Unfoldings.Geometry.PolarWindowRadial](../Unfoldings/Geometry/PolarWindowRadial.lean) | Actual planar subwindows inherit genuine rays, links and strict radial progress |
+| [Unfoldings.Roof.PolarWindowRolling](../Unfoldings/Roof/PolarWindowRolling.lean) | The weighted estimates' precise polar windows construct actual physical rolling comparisons |
+| [Unfoldings.Geometry.RadialBlockThreshold](../Unfoldings/Geometry/RadialBlockThreshold.lean) | Positive mesh-independent heading and tilt tolerances make weighted radial loss small |
+| [Unfoldings.Roof.RollingRadialBlockThreshold](../Unfoldings/Roof/RollingRadialBlockThreshold.lean) | One uniform tolerance controls actual bank rolling and radial loss at every smaller tilt |
 | [Unfoldings.Roof.CompletionOriginalAdjacency](../Unfoldings/Roof/CompletionOriginalAdjacency.lean) | Locate fine adjacency between different original faces on their common edge |
 | [Unfoldings.Roof.CompletionOriginalConforming](../Unfoldings/Roof/CompletionOriginalConforming.lean) | Prove exact retained seam classes and the original-cut metric equivalence |
 | [Unfoldings.Roof.CompletionOriginalCoordinates](../Unfoldings/Roof/CompletionOriginalCoordinates.lean) | Prove that contained auxiliary pieces have the actual original face Euclidean metric |

@@ -454,3 +454,13 @@ retains original-face sides and comparison lines on the same mesh, reusing the
 existing metric equivalence for arbitrary retained original cuts. Transporting
 the actual cut-bank fan histories and proving the saved-opening invariant
 remain open.
+
+## Exact polar windows and numerical tolerances
+
+[PolarWindowRolling](../Unfoldings/Roof/PolarWindowRolling.lean) uses exactly
+the strict polar-variation windows in the weighted heading estimates; source
+rays and links come from the actual original subchain.
+[RollingRadialBlockThreshold](../Unfoldings/Roof/RollingRadialBlockThreshold.lean)
+chooses one positive heading tolerance and tilt controlling both actual rolling
+and weighted radial loss, with the bounds valid at every smaller positive tilt.
+These remain comparison models until bank-history transport is established.

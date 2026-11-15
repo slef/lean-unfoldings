@@ -1026,6 +1026,11 @@ public import Unfoldings.Roof.CompletionCombinedConstraints
 public import Unfoldings.Cap.SmallBankRolling
 public import Unfoldings.Roof.MarkedCompletionRolling
 public import Unfoldings.Roof.ShortWindowRolling
+public import Unfoldings.Geometry.PolarWindowInterval
+public import Unfoldings.Geometry.PolarWindowRadial
+public import Unfoldings.Roof.PolarWindowRolling
+public import Unfoldings.Geometry.RadialBlockThreshold
+public import Unfoldings.Roof.RollingRadialBlockThreshold
 public import Unfoldings.Roof.CompletionOriginalPieces
 public import Unfoldings.Roof.CompletionOriginalCoordinates
 public import Unfoldings.Roof.CompletionOriginalSubdivision

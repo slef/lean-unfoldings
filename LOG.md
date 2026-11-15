@@ -2,6 +2,21 @@
 
 ## Session Log
 
+### 2026-11-14 — exact polar windows and a common radial-loss threshold
+
+- Identified the actual internal source-ray angle sum with the precise strict
+  polar-variation window used by the weighted heading argument. Inherited all
+  genuine-link and strict-radial properties from the actual original subchain.
+- Applied the physical short-window rolling construction to those precise
+  windows, including original-cut metric preservation.
+- Chose positive local-heading and tilt tolerances giving arbitrarily small
+  weighted radial loss. One common choice also bounds actual bank rolling on
+  every marked physical completion, at every smaller positive tilt.
+- Verification: cache retrieval and full `lake build` passed 5,534 jobs; all
+  13,725 unfolding declarations passed the standard-axiom audit. Both abstract
+  independence checks passed. Bank-history transport, saved-opening nesting
+  and the complete graft remain open.
+
 ### 2026-11-14 — constructed short-window rolling with original-cut constraints
 
 - Constructed the whole short-window comparison from radial geometry: genuine
