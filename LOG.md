@@ -2,6 +2,19 @@
 
 ## Session Log
 
+### 2026-11-15 — exact original tail copies and halfplane bank coordinates
+
+- Identified canonical whole face-side points with every specified selected
+  original physical cell copy at the same spatial point.
+- Proved the constructed full-forest whole banks equal their original anchor-cell
+  tails as actual metric points, not merely as curves sharing a spatial trace.
+- Strengthened the constructed halfplane charts to retain every nearby whole-bank
+  point's exact original rigid ray coordinate, with the same whole-ball coverage.
+- Verification: actual cache retrieval and full `lake build` passed 5,977 jobs;
+  16,405 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Finite-bank joins, completion fans, saved-frontier transport
+  and the complete graft remain open.
+
 ### 2026-11-15 — constructed opposite whole banks and their original halfplane charts
 
 - Selected actual opposite eventual support cells in the same retained partition

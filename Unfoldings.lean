@@ -2040,3 +2040,6 @@ public import Unfoldings.Roof.CompatibleWholeTerminalBanks
 public import Unfoldings.Metric.CenteredBallChartRestriction
 public import Unfoldings.Metric.PlacedBallComposition
 public import Unfoldings.Roof.CompatibleTerminalHalfplane
+public import Unfoldings.Geometry.SpatialEnvelopeFaceSideCellAgreement
+public import Unfoldings.Roof.CompatibleWholeBankCellAgreement
+public import Unfoldings.Roof.CompatibleTerminalChartCoordinates

@@ -3165,3 +3165,13 @@ corners and does not yet identify their widths with the actual retained cap fan.
 - [`CompatibleTerminalHalfplane`](../Unfoldings/Roof/CompatibleTerminalHalfplane.lean):
   every positive point of each constructed full-forest whole bank has a whole original
   rigid halfplane metric ball, with its exact spatial placement.
+
+- [`SpatialEnvelopeFaceSideCellAgreement`](../Unfoldings/Geometry/SpatialEnvelopeFaceSideCellAgreement.lean):
+  each canonical full-region bank point agrees with any specified selected original
+  physical cell copy at that point, including the actual anchor-cell lifts.
+- [`CompatibleWholeBankCellAgreement`](../Unfoldings/Roof/CompatibleWholeBankCellAgreement.lean):
+  the constructed whole banks agree exactly with their original retained partition-cell
+  tails in the full forest cut; agreement is of actual metric copies.
+- [`CompatibleTerminalChartCoordinates`](../Unfoldings/Roof/CompatibleTerminalChartCoordinates.lean):
+  whole-bank halfplane charts retain every nearby bank point's exact original rigid
+  ray coordinate, in addition to spatial placement and whole-ball coverage.

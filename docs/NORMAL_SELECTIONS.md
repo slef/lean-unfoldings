@@ -53,7 +53,9 @@ nonoverlap and counting remain to be proved.
 - [x] Construct both whole closed banks in the original full forest cut, preserving
   the actual endpoint copies, every spatial point and every pairwise distance.
   Opposite banks cannot meet at a positive parameter. Every positive point has a
-  whole halfplane metric chart with its original support placement.
+  whole halfplane metric chart with its original support placement and exact
+  nearby bank-ray coordinates. Whole banks agree with their original anchor-cell
+  tails as actual metric copies.
 - [ ] Identify the full unbounded comparison banks, including terminal rays and
   completion fans, and supply their admissible respected radial closure geometry.
 - [ ] Carry physical saved-frontier curves and their untouched original sides through
