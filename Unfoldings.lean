@@ -1880,3 +1880,6 @@ public import Unfoldings.Complex.RetainedFanFaces
 public import Unfoldings.Complex.RetainedFanSubdivision
 public import Unfoldings.Roof.CompletionRetainedFanAngles
 public import Unfoldings.Complex.BoundaryFanAgreement
+public import Unfoldings.Topology.ChainTerminalUniqueness
+public import Unfoldings.Complex.RawGermChains
+public import Unfoldings.Complex.RestrictedFanAgreement

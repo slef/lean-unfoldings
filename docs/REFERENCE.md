@@ -2833,3 +2833,9 @@ corners and does not yet identify their widths with the actual retained cap fan.
 
 - [`BoundaryFanAgreement`](../Unfoldings/Complex/BoundaryFanAgreement.lean):
   two actual terminal bank germs determine all original corner weights and fan angles.
+
+- [`ChainTerminalUniqueness`](../Unfoldings/Topology/ChainTerminalUniqueness.lean):
+  deterministic chains with matching ends have identical lengths and ordered points.
+- [`RawGermChains`](../Unfoldings/Complex/RawGermChains.lean),
+  [`RestrictedFanAgreement`](../Unfoldings/Complex/RestrictedFanAgreement.lean):
+  actual cut and restricted fans have the same original corner weights when their terminal germs agree.

@@ -2,6 +2,17 @@
 
 ## Session Log
 
+### 2026-11-15 — ordered original fan agreement across face restriction
+
+- Proved deterministic finite paired-involution chains with matching terminal
+  germs have equal lengths and equal ordered points, without a finiteness premise.
+- Embedded actual cut and face-restricted links into the common original raw
+  germ system. Derived equality of every original corner-weight sum and actual
+  intrinsic fan angle from terminal banks alone.
+- Verification: cache retrieval and full `lake build` passed 5,816 jobs;
+  15,493 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Physical terminal-bank identification is the next step.
+
 ### 2026-11-15 — terminal banks determine the actual original fan
 
 - Proved that two named terminal bank germs determine the full original corner
