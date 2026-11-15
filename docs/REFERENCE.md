@@ -2711,3 +2711,12 @@ corners and does not yet identify their widths with the actual retained cap fan.
   exact intermediate rooted forests, original parent routes and intrinsic cut disks.
 - [`ProcessedCutBoundary`](../Unfoldings/Complex/ProcessedCutBoundary.lean):
   boundary copies are exactly processed vertices; construct each actual bank contour.
+
+- [`WeightedBoundaryIncidence`](../Unfoldings/Complex/WeightedBoundaryIncidence.lean):
+  actual contour incidence when internal vertex weights vanish.
+- [`ProcessedCutIncidence`](../Unfoldings/Complex/ProcessedCutIncidence.lean):
+  original active selector/seam bijection and exact intermediate weighted copy counts.
+- [`ProcessedJunctionCopies`](../Unfoldings/Complex/ProcessedJunctionCopies.lean):
+  current parent-child incidence forces intermediate sibling cut copies.
+- [`ProcessedContactModels`](../Unfoldings/Cap/ProcessedContactModels.lean):
+  first-contact local surgery models on actual intermediate original cut disks.

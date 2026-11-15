@@ -2,6 +2,22 @@
 
 ## Session Log
 
+### 2026-11-15 — actual intermediate junction incidence and contact models
+
+- Generalized actual boundary-contour incidence to weights vanishing at internal
+  copies, allowing unprocessed curved interior vertices throughout the argument.
+- Enumerated intermediate cut seams by their actual processed original selectors
+  and proved exact weighted parent-edge incidence for intermediate vertex copies.
+- Derived distinct sibling cut copies at current processed parent-child junctions,
+  using only current edge incidence and the constructed intermediate boundary.
+- Applied those facts at the actual first-contact vertex in the intermediate
+  original cut disk. The contour comes from the cap's derived disk topology;
+  incoming child, processed status and splitting are constructed from the history.
+- Verification: cache retrieval and full `lake build` passed 5,757 jobs; all
+  15,249 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. The local remainder model now concerns the actual
+  intermediate original cut. Physical saved-frontier placement is still open.
+
 ### 2026-11-15 — intermediate cut disks and exact processed boundary copies
 
 - Proved every intermediate cut graph is a genuine subforest of the original

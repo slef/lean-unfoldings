@@ -1820,3 +1820,7 @@ public import Unfoldings.Cone.IntervalBankClosure
 public import Unfoldings.Cap.FreshFlatSource
 public import Unfoldings.Complex.ProcessedCutForest
 public import Unfoldings.Complex.ProcessedCutBoundary
+public import Unfoldings.Complex.WeightedBoundaryIncidence
+public import Unfoldings.Complex.ProcessedCutIncidence
+public import Unfoldings.Complex.ProcessedJunctionCopies
+public import Unfoldings.Cap.ProcessedContactModels

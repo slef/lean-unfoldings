@@ -961,3 +961,13 @@ every intermediate original cut is a rooted forest and preserves disk topology.
 identifies its boundary copies exactly with processed original vertices, preserves
 unprocessed full corner angles, and constructs its actual cyclic bank contour.
 This applies while unprocessed curved vertices remain in the disk interior.
+
+[`WeightedBoundaryIncidence`](../Unfoldings/Complex/WeightedBoundaryIncidence.lean)
+and [`ProcessedCutIncidence`](../Unfoldings/Complex/ProcessedCutIncidence.lean)
+prove actual intermediate cut-copy counts while unprocessed curved vertices
+remain internal. [`ProcessedJunctionCopies`](../Unfoldings/Complex/ProcessedJunctionCopies.lean)
+derives genuine splitting from current parent-child incidence.
+[`ProcessedContactModels`](../Unfoldings/Cap/ProcessedContactModels.lean)
+constructs the actual intermediate first-contact remainder model without supplied
+contour, incoming-child or splitting certificates. Its geometric saved-frontier
+placement still must be identified.
