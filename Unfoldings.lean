@@ -1906,3 +1906,6 @@ public import Unfoldings.Geometry.PolygonalVertexRays
 public import Unfoldings.Geometry.RadialClosureVertexRays
 public import Unfoldings.Cap.ProjectedBoundaryChain
 public import Unfoldings.Cap.RadialJordanChainLift
+public import Unfoldings.Geometry.PolygonalVertexCoverage
+public import Unfoldings.Cap.JordanChainCoverage
+public import Unfoldings.Cap.JordanChainTurnSum

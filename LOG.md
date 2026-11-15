@@ -2,6 +2,19 @@
 
 ## Session Log
 
+### 2026-11-15 — exact actual-chain and geometric-bank error sums
+
+- Recovered actual internal chain vertices from path points outside open edges.
+  Injectivity of the physical Jordan patch excludes every other Jordan vertex
+  from the interior of each actual bank edge.
+- Constructed the actual contour index of each internal chain vertex and proved
+  exact equality of its intrinsic vertex copy, position and one-sided turn error.
+- Derived equality of the full actual hinge-error sum and the geometric bank sum,
+  without an assumed contour interval, enumeration or sum correspondence.
+- Verification: cache retrieval and full `lake build` passed 5,842 jobs;
+  15,586 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Original-error transfer and the physical graft remain open.
+
 ### 2026-11-15 — actual radial original banks lift to the comparison patch
 
 - Constructed the complete physical projected chain of any actual restricted-cut

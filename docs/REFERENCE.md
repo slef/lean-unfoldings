@@ -2886,3 +2886,9 @@ corners and does not yet identify their widths with the actual retained cap fan.
   the entire actual projected bank path, with exact parametrizations and original edge coverage.
 - [`RadialJordanChainLift`](../Unfoldings/Cap/RadialJordanChainLift.lean):
   physical radial closure geometry constructs the actual Jordan comparison roll from one initial side.
+
+- [`PolygonalVertexCoverage`](../Unfoldings/Geometry/PolygonalVertexCoverage.lean),
+  [`JordanChainCoverage`](../Unfoldings/Cap/JordanChainCoverage.lean):
+  the actual chain's internal vertices are exactly the geometric bank vertices.
+- [`JordanChainTurnSum`](../Unfoldings/Cap/JordanChainTurnSum.lean):
+  exact equality of actual hinge-error and geometric bank sums, with original vertex copies.
