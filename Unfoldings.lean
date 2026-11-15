@@ -1879,3 +1879,4 @@ public import Unfoldings.Cap.RootwardBankSides
 public import Unfoldings.Complex.RetainedFanFaces
 public import Unfoldings.Complex.RetainedFanSubdivision
 public import Unfoldings.Roof.CompletionRetainedFanAngles
+public import Unfoldings.Complex.BoundaryFanAgreement

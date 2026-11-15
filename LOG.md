@@ -2,6 +2,15 @@
 
 ## Session Log
 
+### 2026-11-15 — terminal banks determine the actual original fan
+
+- Proved that two named terminal bank germs determine the full original corner
+  fan, even when the retained seam sets are incomparable. Every original corner
+  weight and the unreduced intrinsic angle agree.
+- Verification: cache retrieval and full `lake build` passed 5,813 jobs;
+  15,480 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Physical Jordan-bank matching and the graft remain open.
+
 ### 2026-11-15 — physical bank sides and exact refined one-sided fan angles
 
 - Constructed an original rim-started contour with every bank positively oriented

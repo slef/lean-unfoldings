@@ -2830,3 +2830,6 @@ corners and does not yet identify their widths with the actual retained cap fan.
   exact original face selections and selected one-sided angle preservation under refinement.
 - [`CompletionRetainedFanAngles`](../Unfoldings/Roof/CompletionRetainedFanAngles.lean):
   concrete physical completions preserve the actual selected original fan angle.
+
+- [`BoundaryFanAgreement`](../Unfoldings/Complex/BoundaryFanAgreement.lean):
+  two actual terminal bank germs determine all original corner weights and fan angles.
