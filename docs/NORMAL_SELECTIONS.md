@@ -750,3 +750,11 @@ constructs whole intrinsic cone-ball charts at every actual gap point, including
 reentrant internal bank vertices. The cones come from the actual active bank
 inequalities. Their exact complementary apertures and attachment to the retained
 surface fans still need to be proved.
+
+[`exists_childless_geometric_completion`](../Unfoldings/Cap/LeafGeometricCompletion.lean)
+uses the actual developed bank vectors to attach the physical geometric source
+sector to the entire retained intrinsic leaf fan along both equal-radius banks.
+Its constructed plane isometry preserves the original development and has an
+explicit physical gap-coordinate formula. The actual graft neighborhoods must
+still be matched to these models; internal complementary apertures and
+saved-frontier surgery remain open.

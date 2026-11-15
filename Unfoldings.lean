@@ -1733,3 +1733,8 @@ public import Unfoldings.Metric.RouteLocal
 public import Unfoldings.Metric.PolygonalGerm
 public import Unfoldings.Geometry.FiniteRegionGermMetric
 public import Unfoldings.Geometry.TwoBankGapCornerChart
+public import Unfoldings.Geometry.SourceSectorCoordinates
+public import Unfoldings.Cone.AttachSector
+public import Unfoldings.Cone.AttachSectorPlane
+public import Unfoldings.Cone.PhysicalGapCompletion
+public import Unfoldings.Cap.LeafGeometricCompletion

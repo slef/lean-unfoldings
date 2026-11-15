@@ -2567,3 +2567,9 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [`Metric/PolygonalGerm`](../Unfoldings/Metric/PolygonalGerm.lean) | Locally equal star-shaped corners have exact intrinsic whole-ball isometries, including reentrant corners |
 | [`Geometry/FiniteRegionGermMetric`](../Unfoldings/Geometry/FiniteRegionGermMetric.lean) | Exact intrinsic corner cones of finite affine-cell regions from the actual active inequalities |
 | [`Geometry/TwoBankGapCornerChart`](../Unfoldings/Geometry/TwoBankGapCornerChart.lean) | Constructed intrinsic cone-ball isometries at every actual Jordan-gap corner, retaining the original bank equations |
+
+| [`Geometry/SourceSectorCoordinates`](../Unfoldings/Geometry/SourceSectorCoordinates.lean) | Rigid canonical coordinates for the actual Jordan-gap source metric, using its genuine bank vector |
+| [`Cone/AttachSector`](../Unfoldings/Cone/AttachSector.lean) | Glue the entire retained intrinsic fan to a separate gap sector along its two named banks |
+| [`Cone/AttachSectorPlane`](../Unfoldings/Cone/AttachSectorPlane.lean) | The two-piece complementary sector attachment has exactly the whole Euclidean plane metric |
+| [`Cone/PhysicalGapCompletion`](../Unfoldings/Cone/PhysicalGapCompletion.lean) | Complete the retained fan with its actual geometric source sector, keeping physical bank coordinates |
+| [`Cap/LeafGeometricCompletion`](../Unfoldings/Cap/LeafGeometricCompletion.lean) | Constructed plane isometry for the actual retained leaf fan completed by the physical sector of its named bank vectors |

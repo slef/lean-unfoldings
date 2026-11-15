@@ -2,6 +2,22 @@
 
 ## Session Log
 
+### 2026-11-15 — actual two-piece geometric leaf completion
+
+- Gave the actual Jordan-gap source ball rigid canonical sector coordinates,
+  computed from its genuine initial edge vector. Identified both geometric
+  sector banks with the exact original normalized edge rays.
+- Constructed the two-piece attachment of the entire retained intrinsic fan
+  and a separate complementary sector, with both equal-radius bank seams
+  explicit. Proved that this metric quotient is isometric to the whole plane.
+- Transferred the attachment to the physical source-sector coordinates and
+  applied it to the actual childless cut fan and its named developed bank
+  vectors, preserving the original development and the geometric gap formula.
+- Verification: cache retrieval and full `lake build` passed 5,671 jobs; all
+  14,760 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Matching actual graft neighborhoods, internal corner
+  apertures, saved-frontier surgery and global nonoverlap remain open.
+
 ### 2026-11-15 — exact intrinsic cones at actual gap bank corners
 
 - Identified the second gap-bank side test with the opposite imaginary
