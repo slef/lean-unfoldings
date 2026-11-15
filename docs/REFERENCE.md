@@ -2765,3 +2765,8 @@ corners and does not yet identify their widths with the actual retained cap fan.
   exact original edge-end counts in processed descendant subtrees.
 - [`ProcessedSubtreeAngles`](../Unfoldings/Complex/ProcessedSubtreeAngles.lean):
   actual intermediate contour turn equals pi minus processed original subtree curvature.
+
+- [`BoundaryContourRegions`](../Unfoldings/Complex/BoundaryContourRegions.lean):
+  arbitrary current vertex regions cross exactly their actual contour banks.
+- [`ProcessedSubtreeBanks`](../Unfoldings/Complex/ProcessedSubtreeBanks.lean):
+  derive the two actual current parent banks and orient their subtree entry and exit.

@@ -1847,3 +1847,5 @@ public import Unfoldings.Complex.UnprocessedParentBanks
 public import Unfoldings.Complex.ContourContactExcision
 public import Unfoldings.Topology.ProcessedDescendantIncidence
 public import Unfoldings.Complex.ProcessedSubtreeAngles
+public import Unfoldings.Complex.BoundaryContourRegions
+public import Unfoldings.Complex.ProcessedSubtreeBanks

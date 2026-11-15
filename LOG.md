@@ -2,6 +2,18 @@
 
 ## Session Log
 
+### 2026-11-15 — the two actual intermediate parent banks
+
+- Generalized contour-region crossings to arbitrary current vertex regions,
+  preserving actual bank names and the cyclic boundary successor.
+- Proved every processed nonroot's original parent seam supplies exactly the
+  two current banks crossing its descendant separator, with one entry and one
+  exit, even while fresh curved vertices remain internal.
+- Verification: cache retrieval and full `lake build` passed 5,782 jobs; all
+  15,350 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. The actual gap attachments and saved-frontier placement
+  through them remain open.
+
 ### 2026-11-15 — exact processed-curvature turn of intermediate subtrees
 
 - Counted edge ends in the ancestor-closed processed part of each original
