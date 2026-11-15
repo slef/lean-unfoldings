@@ -2,6 +2,24 @@
 
 ## Session Log
 
+### 2026-11-15 — complete tail-interior charts and constructed first-contact charging
+
+- Derived the whole original tail-line germ at every positive tail parameter,
+  with exact isolation from the finite prefix and strict radial progress.
+  Both occupied bank charts have angle `pi`, allowing finite-edge degeneracies.
+- Constructed processed ancestor frontiers, their first-contact times, and the
+  fresh original nonroot branch at each step. The updated state remains parent
+  closed and each fresh branch is strictly ordered by the original potential.
+- Proved the complete constructed processing history has no repeated original
+  curvature vertex, for arbitrary seed order and repeated seeds.
+- Applied this derived distinctness to actual opposite-bank residuals: the whole
+  first-contact history spends at most original cap curvature, without a supplied
+  distinct-vertex or crossing-count certificate.
+- Verification: cache retrieval and full `lake build` passed 5,735 jobs; all
+  15,113 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. The first-contact states are combinatorial; identifying
+  their physical saved-frontier banks, fan surgery and graft assembly remain open.
+
 ### 2026-11-15 — exact straight finite bank germs and metric half-plane charts
 
 - Proved strict original edge interiors avoid every other closed finite edge,

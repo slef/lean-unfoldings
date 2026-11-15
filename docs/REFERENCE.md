@@ -2659,3 +2659,13 @@ corners and does not yet identify their widths with the actual retained cap fan.
 - [`TwoBankGapEdgeChart`](../Unfoldings/Geometry/TwoBankGapEdgeChart.lean),
   [`TwoBankGapSecondEdgeChart`](../Unfoldings/Geometry/TwoBankGapSecondEdgeChart.lean):
   both actual whole intrinsic half-plane charts at strict finite bank edge points.
+
+- [`PolygonalBankTailInterior`](../Unfoldings/Geometry/PolygonalBankTailInterior.lean):
+  exact infinite-tail direction germs, prefix isolation and strict radial progress.
+- [`TwoBankGapTailInteriorChart`](../Unfoldings/Geometry/TwoBankGapTailInteriorChart.lean),
+  [`TwoBankGapSecondTailInteriorChart`](../Unfoldings/Geometry/TwoBankGapSecondTailInteriorChart.lean):
+  both actual whole intrinsic half-plane charts at positive tail points.
+- [`ParentFrontierHistory`](../Unfoldings/Topology/ParentFrontierHistory.lean):
+  first-contact branch processing with constructed distinct original vertex charges.
+- [`ParentFrontierResidualBudget`](../Unfoldings/Cap/ParentFrontierResidualBudget.lean):
+  actual original opposite-bank residual budget for every constructed history.

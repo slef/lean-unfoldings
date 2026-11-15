@@ -1796,3 +1796,9 @@ public import Unfoldings.Geometry.SegmentInteriorDirections
 public import Unfoldings.Geometry.PolygonalBankEdgeGerm
 public import Unfoldings.Geometry.TwoBankGapEdgeChart
 public import Unfoldings.Geometry.TwoBankGapSecondEdgeChart
+public import Unfoldings.Geometry.RayInteriorDirections
+public import Unfoldings.Geometry.PolygonalBankTailInterior
+public import Unfoldings.Geometry.TwoBankGapTailInteriorChart
+public import Unfoldings.Geometry.TwoBankGapSecondTailInteriorChart
+public import Unfoldings.Topology.ParentFrontierHistory
+public import Unfoldings.Cap.ParentFrontierResidualBudget

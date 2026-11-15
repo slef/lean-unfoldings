@@ -864,3 +864,19 @@ and the entire tail, and strict radial progress at the actual point.
 [`TwoBankGapEdgeChart`](../Unfoldings/Geometry/TwoBankGapEdgeChart.lean) and
 [`TwoBankGapSecondEdgeChart`](../Unfoldings/Geometry/TwoBankGapSecondEdgeChart.lean)
 then construct the actual occupied intrinsic half-plane charts, with angle `pi`.
+
+[`PolygonalBankTailInterior`](../Unfoldings/Geometry/PolygonalBankTailInterior.lean)
+identifies the exact direction line and strict progress at every positive point
+of the original infinite tail. Both whole intrinsic half-plane charts are in
+[`TwoBankGapTailInteriorChart`](../Unfoldings/Geometry/TwoBankGapTailInteriorChart.lean)
+and [`TwoBankGapSecondTailInteriorChart`](../Unfoldings/Geometry/TwoBankGapSecondTailInteriorChart.lean),
+without finite-edge nondegeneracy hypotheses.
+
+[`ParentFrontierHistory`](../Unfoldings/Topology/ParentFrontierHistory.lean)
+constructs the fresh original parent branch up to first contact with the updated
+processed ancestor set. All constructed charges are distinct, for arbitrary
+seed order and repeated seeds.
+[`ParentFrontierResidualBudget`](../Unfoldings/Cap/ParentFrontierResidualBudget.lean)
+therefore bounds the actual original opposite-bank residuals along the entire
+history by total cap curvature. These processed sets do not assert geometric
+saved-frontier placement; matching that geometry and fan surgery remain open.
