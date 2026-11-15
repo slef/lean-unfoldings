@@ -1633,3 +1633,9 @@ public import Unfoldings.Geometry.AnnularFineMargin
 public import Unfoldings.Roof.CompatibleFineMargins
 public import Unfoldings.Roof.CompatibleMeshMargins
 public import Unfoldings.Roof.CompatibleSubhistoryMargins
+public import Unfoldings.Geometry.RotationSweepUniqueness
+public import Unfoldings.Geometry.HingeGapRadius
+public import Unfoldings.Geometry.HingeCircleContinuity
+public import Unfoldings.Topology.ProperClosedGraph
+public import Unfoldings.Geometry.HingeSweepContinuity
+public import Unfoldings.Geometry.HingeExteriorCoordinates

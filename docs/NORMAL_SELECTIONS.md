@@ -558,3 +558,13 @@ fine parent histories. `CompatibleSubhistoryMargins` gives the same bound at
 every earlier fine anchor and whole-point radial monotonicity, including
 sources inside edges. This avoids splitting a history at its last coarse
 vertex. It does not assert the paper's sharper numerical threshold.
+
+## Source-centered hinge-gap coordinates
+
+Actual outward hinge sweeps now have continuous, injective circle contacts above
+the hinge radius. [`hingeExteriorHomeomorph`](../Unfoldings/Geometry/HingeExteriorCoordinates.lean)
+identifies the entire corresponding gap with the opening interval times the open
+radius half-line. The gap meets the closed hinge-radius ball only at its hinge.
+These results assume radial monotonicity throughout the actual opening; the
+quantitative opening-budget theorem supplies that control for small openings.
+Positive angular order across successive gaps remains to be proved.

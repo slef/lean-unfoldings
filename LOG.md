@@ -2,6 +2,21 @@
 
 ## Session Log
 
+### 2026-11-14 — actual source-centered coordinates on hinge gaps
+
+- Proved unique intermediate banks away from the hinge and excluded the whole
+  closed source-centered hinge ball except for the hinge itself.
+- Constructed homeomorphisms from the real opening interval onto actual source
+  circle slices. Proved joint continuity in angle and radius, including the
+  fixed prefix and the hinge radius.
+- Constructed product coordinates on the entire unbounded gap beyond that
+  circle, with continuous inverse and the actual original-source radius.
+- Added a general closed-graph continuity lemma using a proper coordinate.
+- Verification: cache retrieval and full `lake build` passed 5,572 jobs; all
+  13,983 unfolding declarations passed the standard-axiom audit, along with both
+  abstract independence checks. Saved-frontier transport, successive-gap
+  nesting and the complete intrinsic graft remain open.
+
 ### 2026-11-14 — actual bank potentials and uniform fine-vertex radial margins
 
 - Telescoped parent membership changes before charging nested subtree weights.

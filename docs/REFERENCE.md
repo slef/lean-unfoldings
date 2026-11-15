@@ -2433,3 +2433,11 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [`Roof/CompatibleFineMargins`](../Unfoldings/Roof/CompatibleFineMargins.lean) | Quantitative radial margins at arbitrary fine endpoints of compatible histories |
 | [`Roof/CompatibleMeshMargins`](../Unfoldings/Roof/CompatibleMeshMargins.lean) | Actual fine mesh parent histories inherit radial margins automatically |
 | [`Roof/CompatibleSubhistoryMargins`](../Unfoldings/Roof/CompatibleSubhistoryMargins.lean) | Uniform margins for all fine subhistories and radial order from arbitrary earlier edge points |
+
+| [`Geometry/RotationSweepUniqueness`](../Unfoldings/Geometry/RotationSweepUniqueness.lean) | A nonapex rotation-gap point belongs to exactly one intermediate bank |
+| [`Geometry/HingeGapRadius`](../Unfoldings/Geometry/HingeGapRadius.lean) | Actual outward hinge gaps stay beyond the hinge radius and have injective circle contacts |
+| [`Geometry/HingeCircleContinuity`](../Unfoldings/Geometry/HingeCircleContinuity.lean) | The actual source-circle slice of an outward hinge gap is homeomorphic to its angle interval |
+
+| [`Topology/ProperClosedGraph`](../Unfoldings/Topology/ProperClosedGraph.lean) | A closed graph with a continuous proper coordinate is continuous |
+| [`Geometry/HingeSweepContinuity`](../Unfoldings/Geometry/HingeSweepContinuity.lean) | Actual hinge-bank contacts vary jointly continuously with angle and source radius |
+| [`Geometry/HingeExteriorCoordinates`](../Unfoldings/Geometry/HingeExteriorCoordinates.lean) | Product coordinates for the entire actual gap beyond its source-centered hinge circle |
