@@ -856,8 +856,11 @@ identify their untouched original fan sides, and assemble the complete flat graf
 Actual Jordan gaps, intrinsic corner charts and local junction-surgery models are
 available, together with derived depth-first histories, exact current contact fans,
 whole-ball restoration and actual intermediate parent-bank heading increments.
-Pruning unprocessed contour excursions and transporting their surviving banks
-through the physical gap attachments are the next identifications.
+Restored contour excursions now give actual rootward chains, with exact original
+reference fans, whole tangent metrics and full rolls. Their projected segments and
+incident-face sides are identified, and selected angles survive physical completion.
+The reference traversal still must supply matching terminal banks. Transport through
+actual inserted gaps and construction of the complete graft remain open.
 See the [gap-grafting checklist](docs/NORMAL_SELECTIONS.md#gap-grafting-status). The finite-cell route to
 global isometry does not require a separate end-height certificate. Normal-cover
 selection and Euler counting follow.

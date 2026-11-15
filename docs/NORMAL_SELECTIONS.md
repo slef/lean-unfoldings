@@ -24,6 +24,12 @@ nonoverlap and counting remain to be proved.
 - [x] Derive actual intermediate parent-bank real headings, exact singleton
   curvature increments and oscillation bounded by total original curvature.
 
+- [x] Prune restored contour excursions and construct the actual surviving
+  rootward chain in original parent order, preserving reference fans and full rolls.
+- [x] Derive physical bank positions and incident sides and preserve selected
+  one-sided fan angles through concrete completion subdivisions.
+- [x] Recover comparison-patch fan angles from matching physical terminal banks.
+
 - [ ] Match the original one-sided path fans to the reference Jordan comparison
   banks, preserving regional angles through the physical completion.
 - [ ] Identify the physical saved-frontier curves with the constructed histories
@@ -33,11 +39,17 @@ nonoverlap and counting remain to be proved.
   the graft, and prove completeness, simple connectivity and local Euclidean
   charts. Then apply the global planar-isometry theorem for nonoverlap.
 
-The next construction is to prune unprocessed subtree excursions from the full
-original contour and identify its surviving rootward bank and original path fan.
-That bank must then be carried through the actual gap attachments, preserving its
-arclength and hinge positions. The proved scalar heading identities do not yet
-supply this physical identification.
+Unprocessed subtree excursions now close intrinsically. Their surviving banks
+form the actual current rootward chain in original parent order. Restoring side
+cuts identifies its exact original reference fans, tangent metrics and full rolls.
+The banks project pointwise to the original parent segments, with their physical
+incident-face sides derived from a positive rim-started contour.
+
+Physical completion subdivisions preserve each selected one-sided fan angle.
+Matching physical terminal bank positions and directions now recovers the actual
+original corner fan inside a comparison patch. The remaining reference traversal
+must supply that matching data. The bank must also be carried through actual gap
+attachments, preserving arclength, hinges and the untouched original side.
 
 The completed local models and combinatorial histories do not assume these
 remaining geometric identifications. The paper's sharp numerical constants and

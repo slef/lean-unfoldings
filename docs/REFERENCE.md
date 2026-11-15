@@ -2847,3 +2847,9 @@ corners and does not yet identify their widths with the actual retained cap fan.
 
 - [`ProjectedFanAgreement`](../Unfoldings/Cap/ProjectedFanAgreement.lean):
   derive actual restricted fan weights and intrinsic angle from physical directed banks.
+
+- [`Complex.RestrictedCutFanAgreement`](../Unfoldings/Complex/RestrictedCutFanAgreement.lean),
+  [`Cap.RestrictedCutFanAgreement`](../Unfoldings/Cap/RestrictedCutFanAgreement.lean):
+  compare actual fans in independently cut face restrictions from terminal banks.
+- [`CompletionPatchFanAgreement`](../Unfoldings/Roof/CompletionPatchFanAgreement.lean):
+  recover original one-sided cut angles inside concrete physical comparison patches.

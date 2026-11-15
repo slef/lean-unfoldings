@@ -2,6 +2,19 @@
 
 ## Session Log
 
+### 2026-11-15 — original cut angles inside physical completion patches
+
+- Compared actual fans in independent whole-face restrictions with arbitrary
+  retained seams. Matching physical terminal banks determines every original
+  corner weight and the unreduced intrinsic angle.
+- Applied this to the concrete completion's original cut subdivision and any
+  comparison patch. At an old corner, the patch angle equals the actual original
+  one-sided cut angle; angle preservation is derived internally.
+- Verification: cache retrieval and full `lake build` passed 5,822 jobs;
+  15,522 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. The bank-position and direction matching hypotheses still
+  need to be constructed for the actual reference traversal and inserted graft.
+
 ### 2026-11-15 — recover actual restricted fan angles from physical banks
 
 - Matched actual raw terminal germs using the common physical projected vertex,

@@ -1886,3 +1886,6 @@ public import Unfoldings.Complex.RestrictedFanAgreement
 public import Unfoldings.Cap.ProjectedBankUniqueness
 public import Unfoldings.Cap.ProjectedFanOrientation
 public import Unfoldings.Cap.ProjectedFanAgreement
+public import Unfoldings.Complex.RestrictedCutFanAgreement
+public import Unfoldings.Cap.RestrictedCutFanAgreement
+public import Unfoldings.Roof.CompletionPatchFanAgreement
