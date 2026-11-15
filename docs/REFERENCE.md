@@ -3220,3 +3220,9 @@ corners and does not yet identify their widths with the actual retained cap fan.
 - [`CompatiblePartialCutPartitionIndependence`](../Unfoldings/Roof/CompatiblePartialCutPartitionIndependence.lean):
   every closed portion of the actual forest cut has the same metric across retained
   partitions. Restoring further cuts commutes with the identification of named copies.
+
+- [`CutSubfamilyLocalInverse`](../Unfoldings/Metric/CutSubfamilyLocalInverse.lean),
+  [`CutSubfamilyBall`](../Unfoldings/Metric/CutSubfamilyBall.lean):
+  retaining all actual incident physical cells preserves a whole intrinsic ball.
+  The patch need not be convex or globally isometric in the full cut. Selecting
+  every cell containing the physical center supplies the needed class membership.

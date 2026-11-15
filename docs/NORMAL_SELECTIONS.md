@@ -60,6 +60,9 @@ nonoverlap and counting remain to be proved.
   cut metric independent of the retained partition, preserving original cell copies
   and every spatial roof point. All boundary hypotheses follow from alignment.
   This holds for every closed partial forest cut and commutes with restoring cuts.
+- [x] Prove that actual cell subfamilies retaining all incident cells preserve whole
+  metric balls, without requiring a globally isometric or convex restricted patch.
+  A physical center-containment criterion derives the needed class membership.
 - [ ] Identify the full unbounded comparison banks, including terminal rays and
   completion fans, and supply their admissible respected radial closure geometry.
 - [ ] Carry physical saved-frontier curves and their untouched original sides through

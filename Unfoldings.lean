@@ -2059,3 +2059,5 @@ public import Unfoldings.Geometry.SpatialEnvelopePartitionIndependence
 public import Unfoldings.Roof.CompatibleCutPartitionIndependence
 public import Unfoldings.Geometry.SpatialEnvelopePartitionCopies
 public import Unfoldings.Roof.CompatiblePartialCutPartitionIndependence
+public import Unfoldings.Metric.CutSubfamilyLocalInverse
+public import Unfoldings.Metric.CutSubfamilyBall

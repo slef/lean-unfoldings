@@ -2,6 +2,20 @@
 
 ## Session Log
 
+### 2026-11-15 — whole metric balls in arbitrary actual cut subfamilies
+
+- Constructed local inverse cell maps whenever a selected physical subfamily
+  contains all cells incident to the original metric class.
+- Proved the actual subfamily inclusion is a whole-ball isometry. The patch need
+  not be convex or globally isometric in the full cut, so distant shortcuts cause
+  no problem for finite comparison neighborhoods.
+- Derived incident-cell membership from the physical criterion that every cell
+  containing the center is retained, including all original cut copies there.
+- Verification: actual cache retrieval and full `lake build` passed 5,995 jobs;
+  16,545 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Window-patch construction, completion fans and the full
+  graft remain open.
+
 ### 2026-11-15 — partition-independent whole and partial forest cut metrics
 
 - Constructed common actual whole-roof partitions from full-dimensional cell
