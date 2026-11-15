@@ -2026,3 +2026,6 @@ public import Unfoldings.Metric.ClosedSubcoverBall
 public import Unfoldings.Geometry.AffinePatch
 public import Unfoldings.Geometry.SpatialEnvelopeCutClassSide
 public import Unfoldings.Geometry.SpatialEnvelopeFaceSideBall
+public import Unfoldings.Metric.CenteredBallRestriction
+public import Unfoldings.Geometry.SpatialEnvelopeHalfspaceChart
+public import Unfoldings.Convex.ExteriorWholeBank

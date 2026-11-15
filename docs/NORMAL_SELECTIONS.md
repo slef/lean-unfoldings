@@ -46,7 +46,11 @@ nonoverlap and counting remain to be proved.
 - [x] Retain one reusable complete cut model with its actual side assignments.
   Embeddedness supplies isolated terminal cut-line germs, combined with the two
   fixed roof faces in a whole neighborhood. Every positive metric bank copy admits
-  exact whole-ball restoration of all other forest cuts; halfplane fan charts remain.
+  exact whole-ball restoration of all other forest cuts.
+- [x] Construct entire one-ray-cut exterior banks, including their endpoint, as closed
+  embedded dilations with exact spatial speed. Derive whole rigid halfplane balls
+  at every positive bank point from the original cut and roof geometry.
+- [ ] Lift these whole banks and their charts back to the original full forest cut.
 - [ ] Identify the full unbounded comparison banks, including terminal rays and
   completion fans, and supply their admissible respected radial closure geometry.
 - [ ] Carry physical saved-frontier curves and their untouched original sides through

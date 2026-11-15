@@ -2,6 +2,18 @@
 
 ## Session Log
 
+### 2026-11-15 — whole exterior banks and exact rigid halfplane charts
+
+- Constructed the entire original one-sided exterior bank in the one-ray cut,
+  including its source. A fixed actual support works across all partition cells.
+- Proved every pairwise distance equals the full spatial ray distance. Each
+  entire bank is a closed embedded dilation with its exact nonzero spatial speed.
+- Derived whole halfplane metric balls at every positive bank point, preserving
+  actual original spatial placement. Centered charts retain exact coverage when shrunk.
+- Verification: actual cache retrieval and full `lake build` passed 5,963 jobs;
+  16,296 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Full-forest lifting and the complete graft remain open.
+
 ### 2026-11-15 — whole metric balls of actual one-sided roof banks
 
 - Derived every incident cut class's support and side from the local roof and

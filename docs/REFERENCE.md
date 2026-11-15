@@ -3124,3 +3124,11 @@ corners and does not yet identify their widths with the actual retained cap fan.
 - [`SpatialEnvelopeFaceSideBall`](../Unfoldings/Geometry/SpatialEnvelopeFaceSideBall.lean):
   whole-ball isometries between canonical original face-side regions and actual bank
   neighborhoods, deriving incident supports and ball coverage from local roof geometry.
+
+- [`CenteredBallRestriction`](../Unfoldings/Metric/CenteredBallRestriction.lean):
+  centered whole-ball charts restrict to any smaller radius with exact ball coverage.
+- [`SpatialEnvelopeHalfspaceChart`](../Unfoldings/Geometry/SpatialEnvelopeHalfspaceChart.lean):
+  actual one-sided roof bank balls are whole rigid halfplane balls, preserving spatial placement.
+- [`ExteriorWholeBank`](../Unfoldings/Convex/ExteriorWholeBank.lean):
+  entire exterior banks in the actual one-ray cut, including their source. Exact spatial
+  speed makes each a closed embedded dilation; every positive point has a halfplane chart.
