@@ -1768,3 +1768,6 @@ public import Unfoldings.Geometry.TwoBankGapBankSector
 public import Unfoldings.Geometry.RadialRayVertices
 public import Unfoldings.Geometry.SegmentIncidentRays
 public import Unfoldings.Geometry.PolygonalBankVertexGerm
+public import Unfoldings.Geometry.RadialCornerSector
+public import Unfoldings.Geometry.RadialVertexCoordinates
+public import Unfoldings.Geometry.TwoBankGapInternalCorner

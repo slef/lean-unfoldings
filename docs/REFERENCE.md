@@ -2610,3 +2610,11 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [`Geometry/RadialRayVertices`](../Unfoldings/Geometry/RadialRayVertices.lean) | Genuine outward bank vertices have strict radial order, avoid all open edges and miss the later whole tail |
 | [`Geometry/SegmentIncidentRays`](../Unfoldings/Geometry/SegmentIncidentRays.lean) | Exact original endpoint-ray germs for finite segment families in arbitrary normed spaces |
 | [`Geometry/PolygonalBankVertexGerm`](../Unfoldings/Geometry/PolygonalBankVertexGerm.lean) | A named genuine outward bank bend has precisely its original incoming and outgoing rays, with incidences derived |
+
+The original internal first-bank corner now has a derived whole intrinsic chart:
+[`exists_first_internal_vertex_chart`](../Unfoldings/Geometry/TwoBankGapInternalCorner.lean).
+The original outgoing and reversed incoming edges determine its positive aperture
+and rigid frame; the source-circle normal selects the occupied side. Genuine
+outward edges give strict incoming progress automatically; strict outgoing
+progress remains an explicit geometric hypothesis. This includes reentrant
+corners and does not yet identify their widths with the actual retained cap fan.

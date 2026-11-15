@@ -807,3 +807,11 @@ derives the exact original incoming and outgoing ray pair at each genuine
 internal outward-bank vertex. Strict radial vertex order supplies every needed
 incidence and whole-tail avoidance fact. Matching the source-normal side now
 selects the actual internal gap sector.
+
+The original internal first-bank corner now has a derived whole intrinsic chart:
+[`exists_first_internal_vertex_chart`](../Unfoldings/Geometry/TwoBankGapInternalCorner.lean).
+The original outgoing and reversed incoming edges determine its positive aperture
+and rigid frame; the source-circle normal selects the occupied side. Genuine
+outward edges give strict incoming progress automatically; strict outgoing
+progress remains an explicit geometric hypothesis. This includes reentrant
+corners and does not yet identify their widths with the actual retained cap fan.

@@ -2,6 +2,22 @@
 
 ## Session Log
 
+### 2026-11-15 — intrinsic gap charts at original internal bank vertices
+
+- Derived strict incoming radial progress at each genuine outward edge endpoint,
+  and identified the original vertices in the source-radius parametrization.
+- Computed the occupied first-bank corner from the original edge vectors and
+  source-circle normal, including reentrant sectors. Its width equals the
+  positive geometric angle between the outgoing and reversed incoming edge.
+- Constructed whole intrinsic fan-ball charts at named internal first-bank
+  vertices, requiring only strict outgoing radial progress in addition to the
+  original genuine outward banks. No local rays, aperture or metric model is
+  supplied by the caller.
+- Verification: cache retrieval and full `lake build` passed 5,704 jobs; all
+  14,968 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. The second-bank construction, the retained-cap angle
+  matching, saved-frontier surgery and assembled graft remain open.
+
 ### 2026-11-15 — derived exact rays at named internal bank bends
 
 - Proved strict source-radial vertex order for genuine outward polygonal banks,
