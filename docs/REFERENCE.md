@@ -2909,3 +2909,9 @@ corners and does not yet identify their widths with the actual retained cap fan.
 - [`CommonSubedge`](../Unfoldings/Geometry/CommonSubedge.lean),
   [`CompletionBankDistinctness`](../Unfoldings/Roof/CompletionBankDistinctness.lean):
   different original cut banks have distinct actual physical fine-bank pieces.
+
+- [`ReversedBoundaryChain`](../Unfoldings/Complex/ReversedBoundaryChain.lean),
+  [`CompletionOrientedBankRolling`](../Unfoldings/Roof/CompletionOrientedBankRolling.lean):
+  actual directed fine refinements in either endpoint order with zero extra real turn.
+- [`CompletionBankBlockJoins`](../Unfoldings/Roof/CompletionBankBlockJoins.lean):
+  derive actual fine block separation and successors from original labels and corner copies.

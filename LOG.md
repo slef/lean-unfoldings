@@ -2,6 +2,19 @@
 
 ## Session Log
 
+### 2026-11-15 — directed physical fine-bank refinements and derived joins
+
+- Proved reversed actual boundary chains have the same original hinge copies.
+  Straight refinements retain zero extra real heading in either direction.
+- Constructed complete physical fine refinements in either prescribed original
+  endpoint order, including every piece exactly once and both true endpoints.
+- Derived separation of different original bank blocks and actual fine boundary
+  successors from matching original retained corner classes and physical endpoint
+  coordinates. Fine vertex-copy and fan correspondences are not assumed.
+- Verification: cache retrieval and full `lake build` passed 5,854 jobs;
+  15,651 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Whole coarse-path refinement and the full graft remain open.
+
 ### 2026-11-15 — assemble and orient distinct actual bank blocks
 
 - Constructed exact concatenation of separated paired-involution chains at their

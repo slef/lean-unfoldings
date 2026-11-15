@@ -1918,3 +1918,6 @@ public import Unfoldings.Topology.ChainConcatenation
 public import Unfoldings.Topology.ChainReversal
 public import Unfoldings.Geometry.CommonSubedge
 public import Unfoldings.Roof.CompletionBankDistinctness
+public import Unfoldings.Complex.ReversedBoundaryChain
+public import Unfoldings.Roof.CompletionOrientedBankRolling
+public import Unfoldings.Roof.CompletionBankBlockJoins
