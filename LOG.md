@@ -2,6 +2,21 @@
 
 ## Session Log
 
+### 2026-11-15 — physical bank sides and exact refined one-sided fan angles
+
+- Constructed an original rim-started contour with every bank positively oriented
+  in physical projection. Derived the actual incident-face side of every
+  rootward bank and projected parent segment.
+- Represented each actual retained fan by its exact original face selection.
+  A spatial folding suffices; no convex-cap or global nonoverlap assumption is
+  needed for this representation or its arbitrary corner-weight identities.
+- Proved geometric subdivision preserves the selected fan angle and applied this
+  to concrete physical roof completions, deriving angle preservation internally.
+- Verification: cache retrieval and full `lake build` passed 5,812 jobs; all
+  15,476 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Matching the comparator's actual Jordan fan and carrying
+  original banks through the inserted patches remain open.
+
 ### 2026-11-15 — actual rootward banks on original projected parent segments
 
 - Proved canonical bank parametrizations project to their original segment at

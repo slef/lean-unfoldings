@@ -2821,3 +2821,12 @@ corners and does not yet identify their widths with the actual retained cap fan.
 
 - [`RootwardProjectedBanks`](../Unfoldings/Cap/RootwardProjectedBanks.lean):
   the actual current bank chain projects pointwise to its original parent segments and rim root.
+
+- [`PositiveRimContour`](../Unfoldings/Cap/PositiveRimContour.lean),
+  [`RootwardBankSides`](../Unfoldings/Cap/RootwardBankSides.lean): construct the
+  positive rim-started orientation and the physical left side of actual parent banks.
+- [`RetainedFanFaces`](../Unfoldings/Complex/RetainedFanFaces.lean),
+  [`RetainedFanSubdivision`](../Unfoldings/Complex/RetainedFanSubdivision.lean):
+  exact original face selections and selected one-sided angle preservation under refinement.
+- [`CompletionRetainedFanAngles`](../Unfoldings/Roof/CompletionRetainedFanAngles.lean):
+  concrete physical completions preserve the actual selected original fan angle.

@@ -1874,3 +1874,8 @@ public import Unfoldings.Cone.BoundaryFanRestoration
 public import Unfoldings.Cone.RootwardPathFanMetric
 public import Unfoldings.Cap.RootwardFanModels
 public import Unfoldings.Cap.RootwardProjectedBanks
+public import Unfoldings.Cap.PositiveRimContour
+public import Unfoldings.Cap.RootwardBankSides
+public import Unfoldings.Complex.RetainedFanFaces
+public import Unfoldings.Complex.RetainedFanSubdivision
+public import Unfoldings.Roof.CompletionRetainedFanAngles
