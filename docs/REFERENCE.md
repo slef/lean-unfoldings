@@ -2405,3 +2405,10 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [`Complex/SubdivisionCornerAngles`](../Unfoldings/Complex/SubdivisionCornerAngles.lean) | Exact refinement angle sums preserve individual retained vertex fans |
 
 | [`Roof/CompletionSubdivisionAngles`](../Unfoldings/Roof/CompletionSubdivisionAngles.lean) | Actual completion subdivision preserves every original cut vertex fan |
+
+| [`Geometry/TriangleStraightBoundary`](../Unfoldings/Geometry/TriangleStraightBoundary.lean) | Distinct genuine boundary rays at triangle noncorners form angle pi |
+| [`Cap/TriangularFootprintStraightAngles`](../Unfoldings/Cap/TriangularFootprintStraightAngles.lean) | Exact straight projected fans on open sides of triangular footprints |
+| [`Roof/CompletionFaceStraightAngles`](../Unfoldings/Roof/CompletionFaceStraightAngles.lean) | Flat full and half-plane fans at inserted original-face patch vertices |
+| [`Roof/CompletionInsertedAngles`](../Unfoldings/Roof/CompletionInsertedAngles.lean) | Inserted original cut-bank vertices have zero real exterior rolling turn |
+| [`Complex/SubdivisionWeightedAngles`](../Unfoldings/Complex/SubdivisionWeightedAngles.lean) | Arbitrary original face weights and regional fan angles survive refinement |
+| [`Roof/CompletionBankSubdivision`](../Unfoldings/Roof/CompletionBankSubdivision.lean) | Whole original cut banks are exactly covered by genuine fine bank images in the cut metric |

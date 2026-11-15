@@ -1610,3 +1610,9 @@ public import Unfoldings.Geometry.RayWindowClosure
 public import Unfoldings.Complex.SubdivisionCornerAngles
 
 public import Unfoldings.Roof.CompletionSubdivisionAngles
+public import Unfoldings.Geometry.TriangleStraightBoundary
+public import Unfoldings.Cap.TriangularFootprintStraightAngles
+public import Unfoldings.Roof.CompletionFaceStraightAngles
+public import Unfoldings.Roof.CompletionInsertedAngles
+public import Unfoldings.Complex.SubdivisionWeightedAngles
+public import Unfoldings.Roof.CompletionBankSubdivision

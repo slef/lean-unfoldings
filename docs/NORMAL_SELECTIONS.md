@@ -483,3 +483,21 @@ is proved from the mesh geometry, rather than supplied as a hypothesis.
 The original cut-bank histories still need to be matched to the reference
 Jordan banks. Saved-frontier fan bookkeeping, successive-gap nesting and the
 complete intrinsic graft remain open.
+
+## Straight inserted bank vertices and exact bank coverage
+
+`CompletionInsertedAngles` identifies the actual cut fan at each new mesh
+vertex inside an original face or open original bank. Its angle is respectively
+`2 * pi` or `pi`; inserted bank vertices contribute exactly zero real exterior
+rolling turn. This uses the exact cut metric and isolation of nonvertex bank
+points, together with the physical face-patch geometry.
+
+`CompletionBankSubdivision` covers each entire original cut bank by genuine
+whole fine bank edges on its specified side. Their metric images are exactly
+the original bank image, including endpoints. It reuses the general constrained
+whole-edge subdivision theorem. `SubdivisionWeightedAngles` also preserves
+arbitrary original face weights, hence every regional old-corner angle sum.
+
+A traversal matching these banks to the reference Jordan contour and the
+saved-frontier construction is still required; the gap-grafting nonoverlap
+conclusion remains open.

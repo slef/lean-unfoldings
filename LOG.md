@@ -2,6 +2,21 @@
 
 ## Session Log
 
+### 2026-11-14 — straight inserted fans and exact cut-bank refinement
+
+- Proved that actual inserted vertices inside old faces have full Euclidean
+  fans, and those in open original cut banks have straight half-plane fans.
+  Their extra real exterior rolling turn is zero.
+- Covered each whole original cut bank by genuine physical fine bank edges,
+  and proved exact equality of their images in the original cut metric,
+  including all endpoints. Reused constrained whole-edge subdivision.
+- Preserved arbitrary original face weights and regional fan angle sums
+  through geometric angle-conserving refinements.
+- Verification: cache retrieval and full `lake build` passed 5,549 jobs; all
+  13,850 unfolding declarations passed the standard-axiom audit. Both abstract
+  independence checks passed. Reference-bank traversal matching, saved-frontier
+  bookkeeping, successive-gap nesting and the complete graft remain open.
+
 ### 2026-11-14 — exact original cut-fan angles through completion
 
 - Developed the actual completion pieces in each original face into precisely
