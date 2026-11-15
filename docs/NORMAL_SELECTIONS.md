@@ -688,3 +688,8 @@ cyclic forest bank fans remains necessary.
 represents the exact original polygonal cut carrier by finite affine cells,
 including its entire terminal ray. Thus the local active-cone attachment tests
 apply to the original geometry without substituting a proxy cut set.
+
+[`mem_closure_family_attachment_iff_unit`](../Unfoldings/Geometry/PolygonalRayGerm.lean)
+tests actual retained attachments at polygonal cut points on the unit direction
+circle. It uses the exact original edges and whole terminal rays, including
+finite branching families. Cyclic ordering of the resulting bank fans remains open.

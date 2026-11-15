@@ -2,6 +2,18 @@
 
 ## Session Log
 
+### 2026-11-15 — exact direction-circle attachments for original polygonal cuts
+
+- Constructed exact local cut germs from the original finite bends and whole
+  unbounded terminal ray, with no simplicity or nonzero-edge assumption.
+- Proved retained-attachment tests for finite families of the actual polygonal
+  cuts. At a cut point, attachment is equivalent to a common unit tangent
+  direction outside every incident cut germ.
+- Proved closedness of each actual polygonal-ray carrier even with a zero tail.
+- Verification: cache retrieval and full `lake build` passed 5,638 jobs; all
+  14,502 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Original forest fan ordering and graft corner angles remain open.
+
 ### 2026-11-15 — actual polygonal cuts as finite affine pieces
 
 - Represented every actual planar segment and terminal ray by a fixed finite
