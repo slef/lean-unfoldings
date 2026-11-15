@@ -2492,3 +2492,6 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [`Geometry/OpeningTracePositivePhase`](../Unfoldings/Geometry/OpeningTracePositivePhase.lean) | A positive source opening strictly separates actual original and final contacts on every circle |
 | [`Geometry/OpeningTraceControl`](../Unfoldings/Geometry/OpeningTraceControl.lean) | Construct all whole-bank and suffix radial tests for an actual trace from original estimates |
 | [`Geometry/PositiveOpeningTraceGap`](../Unfoldings/Geometry/PositiveOpeningTraceGap.lean) | Construct complete polygonal Jordan gaps from actual positive source-opening traces |
+
+| [`Geometry/SpatialEnvelopeWholeSurface`](../Unfoldings/Geometry/SpatialEnvelopeWholeSurface.lean) | The entire actual supported roof is a plane covered by finitely many closed convex spatial cells |
+| [`Geometry/SpatialEnvelopeWholeMetric`](../Unfoldings/Geometry/SpatialEnvelopeWholeMetric.lean) | A complete intrinsic polyhedral metric plane on the entire actual unbounded supported roof |

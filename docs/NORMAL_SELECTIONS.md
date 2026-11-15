@@ -614,3 +614,16 @@ The remaining grafting step must identify the local gap corner angles as the
 complements of the actual incident surface fans, then construct the saved
 frontier surgery and the complete flat gluing. These are additional conclusions;
 they are not included in the geometric Jordan-region theorem.
+
+## Complete unbounded starting surface
+
+[`wholeSurface_complete`](../Unfoldings/Geometry/SpatialEnvelopeWholeMetric.lean)
+proves completeness of the intrinsic polygonal metric on the entire finite
+support-plane envelope. Its actual closed convex spatial cells cover it, and
+horizontal projection gives a homeomorphism to the plane. The surface is
+contractible and has finite intrinsic distances. No outer truncation or
+separate end-height certificate is needed for this starting-surface result.
+
+The finite-cell route to the final global planar isometry uses completeness
+of actual closed cells. Constructing the cut-and-grafted cells, their local
+Euclidean charts and their global topology remains necessary.

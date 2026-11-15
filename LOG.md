@@ -2,6 +2,17 @@
 
 ## Session Log
 
+### 2026-11-14 — complete intrinsic geometry of the whole roof
+
+- Covered the entire unbounded support-plane envelope by its actual finite
+  closed convex spatial cells, with no artificial outer truncation.
+- Constructed its horizontal-projection homeomorphism to the plane and proved
+  completeness of its intrinsic polygonal metric, contractibility and finite
+  distances. This supplies the initial surface for intrinsic grafting.
+- Verification: cache retrieval and full `lake build` passed 5,616 jobs; all
+  14,235 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. The cut-and-graft construction remains open.
+
 ### 2026-11-14 — complete actual two-bank Jordan gaps
 
 - Constructed radius-dependent ambient linear direction changes preserving

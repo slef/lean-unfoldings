@@ -1681,3 +1681,5 @@ public import Unfoldings.Geometry.TwoBankGapMetric
 public import Unfoldings.Geometry.OpeningTracePositivePhase
 public import Unfoldings.Geometry.OpeningTraceControl
 public import Unfoldings.Geometry.PositiveOpeningTraceGap
+public import Unfoldings.Geometry.SpatialEnvelopeWholeSurface
+public import Unfoldings.Geometry.SpatialEnvelopeWholeMetric

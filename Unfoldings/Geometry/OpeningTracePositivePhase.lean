@@ -52,21 +52,25 @@ theorem prefixCircleHeading_final_pos (first : Fin events.length) (at_start : fi
     (source_hinge : (events[first.val]'first.isLt).hinge = 0) (r : ℝ≥0) (radius_positive : 0 < r) :
     0 < R.prefixCircleHeading events outward nonzero states r radius_positive events.length := by
   have above : dist (R.openingPrefix events first.val).start
-      ((R.openingPrefix events first.val).chain.vertex (events[first.val]'first.isLt).hinge) < (r : ℝ) := by
+      ((R.openingPrefix events first.val).chain.vertex
+        (events[first.val]'first.isLt).hinge) < (r : ℝ) := by
     rw [source_hinge]
     change dist (R.openingPrefix events first.val).start
       (R.openingPrefix events first.val).start < (r : ℝ)
     simpa only [dist_self] using (show (0 : ℝ) < r from radius_positive)
   have strict := (R.openingPrefix events first.val).strictMono_hingeCommonHeading_of_above
-    (events[first.val]'first.isLt).hinge (R.openingPrefix_direction_ne_zero events first.val nonzero)
-    (events[first.val]'first.isLt).angle (fun ψ bounds => sweeps first ⟨ψ, bounds⟩) r radius_positive
+    (events[first.val]'first.isLt).hinge
+    (R.openingPrefix_direction_ne_zero events first.val nonzero)
+    (events[first.val]'first.isLt).angle
+    (fun ψ bounds => sweeps first ⟨ψ, bounds⟩) r radius_positive
     (R.circleDirection outward nonzero r radius_positive) (suffixes first)
     (angles_positive first) (angles_small first)
     (R.openingPrefix_sweep_halfplane events outward nonzero γ positive small budget margin
       tail_margin sweeps first r radius_positive) above
   have strict_step := strict (show
     (⟨0, le_rfl, (angles_positive first).le⟩ : Set.Icc 0 (events[first.val]'first.isLt).angle) <
-      ⟨(events[first.val]'first.isLt).angle, (angles_positive first).le, le_rfl⟩ from angles_positive first)
+      ⟨(events[first.val]'first.isLt).angle, (angles_positive first).le, le_rfl⟩ from
+      angles_positive first)
   have next : R.openingPrefix events (first.val + 1) =
       (R.openingPrefix events first.val).rotateSuffix
         (events[first.val]'first.isLt).hinge (events[first.val]'first.isLt).angle :=
