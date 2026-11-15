@@ -1849,3 +1849,4 @@ public import Unfoldings.Topology.ProcessedDescendantIncidence
 public import Unfoldings.Complex.ProcessedSubtreeAngles
 public import Unfoldings.Complex.BoundaryContourRegions
 public import Unfoldings.Complex.ProcessedSubtreeBanks
+public import Unfoldings.Complex.ProcessedSubtreeRolling

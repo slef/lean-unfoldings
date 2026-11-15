@@ -2,6 +2,18 @@
 
 ## Session Log
 
+### 2026-11-15 — actual unreduced intermediate parent-bank headings
+
+- Rolled the actual intermediate contour from its entering original parent bank
+  to its reversed exiting bank, preserving both original seam-side names.
+- Proved its real heading is exactly processed original subtree curvature.
+  The proof derives oriented exits and sums actual current fan angles, without
+  a global development of an intermediate surface with fresh curvature.
+- Verification: cache retrieval and full `lake build` passed 5,783 jobs; all
+  15,353 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Physical saved-frontier matching and the global graft
+  remain open.
+
 ### 2026-11-15 — the two actual intermediate parent banks
 
 - Generalized contour-region crossings to arbitrary current vertex regions,

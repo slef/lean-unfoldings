@@ -2770,3 +2770,6 @@ corners and does not yet identify their widths with the actual retained cap fan.
   arbitrary current vertex regions cross exactly their actual contour banks.
 - [`ProcessedSubtreeBanks`](../Unfoldings/Complex/ProcessedSubtreeBanks.lean):
   derive the two actual current parent banks and orient their subtree entry and exit.
+
+- [`ProcessedSubtreeRolling`](../Unfoldings/Complex/ProcessedSubtreeRolling.lean):
+  exact unreduced current parent-bank heading equals processed original subtree curvature.
