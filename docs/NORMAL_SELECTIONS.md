@@ -954,3 +954,10 @@ fan is completed by closing only the original equal-radius outer banks, using
 [`IntervalBankClosure`](../Unfoldings/Cone/IntervalBankClosure.lean). The result
 has the exact plane metric and preserves original angular placements; no positive
 gap sector is inserted in this case.
+
+[`ProcessedCutForest`](../Unfoldings/Complex/ProcessedCutForest.lean) proves
+every intermediate original cut is a rooted forest and preserves disk topology.
+[`ProcessedCutBoundary`](../Unfoldings/Complex/ProcessedCutBoundary.lean)
+identifies its boundary copies exactly with processed original vertices, preserves
+unprocessed full corner angles, and constructs its actual cyclic bank contour.
+This applies while unprocessed curved vertices remain in the disk interior.

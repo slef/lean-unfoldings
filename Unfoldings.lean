@@ -1818,3 +1818,5 @@ public import Unfoldings.Cap.FreshSourceStar
 public import Unfoldings.Cap.FreshSourceCompletion
 public import Unfoldings.Cone.IntervalBankClosure
 public import Unfoldings.Cap.FreshFlatSource
+public import Unfoldings.Complex.ProcessedCutForest
+public import Unfoldings.Complex.ProcessedCutBoundary

@@ -2706,3 +2706,8 @@ corners and does not yet identify their widths with the actual retained cap fan.
   close the actual full-turn retained tangent fan along only its two original banks.
 - [`FreshFlatSource`](../Unfoldings/Cap/FreshFlatSource.lean):
   exact plane completion of zero-curvature fresh sources at intermediate stages.
+
+- [`ProcessedCutForest`](../Unfoldings/Complex/ProcessedCutForest.lean):
+  exact intermediate rooted forests, original parent routes and intrinsic cut disks.
+- [`ProcessedCutBoundary`](../Unfoldings/Complex/ProcessedCutBoundary.lean):
+  boundary copies are exactly processed vertices; construct each actual bank contour.

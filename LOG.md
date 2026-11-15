@@ -2,6 +2,23 @@
 
 ## Session Log
 
+### 2026-11-15 — intermediate cut disks and exact processed boundary copies
+
+- Proved every intermediate cut graph is a genuine subforest of the original
+  selected forest, with precisely the processed vertices and exactly one
+  original boundary root per component.
+- Constructed original parent paths in that actual cut graph and derived an
+  intrinsic cut-disk homeomorphism at every stage of an original disk.
+- Characterized actual intermediate boundary copies exactly by membership of
+  their original vertex in the processed set. Unprocessed vertex copies keep
+  their complete original corner angle.
+- Constructed an actual covering cyclic bank contour for each intermediate
+  intrinsic cut disk, without assuming all original vertices are boundary.
+- Verification: cache retrieval and full `lake build` passed 5,753 jobs; all
+  15,233 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Matching geometric saved-frontier updates and constructing
+  the actual flat graft remain open.
+
 ### 2026-11-15 — zero-curvature fresh-source completion by actual bank closure
 
 - Constructed closure of the actual retained interval tangent fan by restoring
