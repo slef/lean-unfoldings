@@ -1838,3 +1838,6 @@ public import Unfoldings.Complex.ProcessedContourFans
 public import Unfoldings.Complex.ContourContactFans
 public import Unfoldings.Cap.ContourContactRemainder
 public import Unfoldings.Cone.RestoredBoundaryFan
+public import Unfoldings.Complex.BoundaryFanExcision
+public import Unfoldings.Topology.LinearTwoExits
+public import Unfoldings.Complex.LinearSubtreeContour

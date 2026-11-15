@@ -2,6 +2,20 @@
 
 ## Session Log
 
+### 2026-11-15 — whole-ball fan restoration and derived depth-first order
+
+- Proved surviving terminal banks keep every actual incident original seam.
+  The canonical cut-restoration map therefore gives a whole small intrinsic-ball
+  isometry, including boundary points, rather than only an angle comparison.
+- Proved a cyclic region with two exits and its first index outside is one
+  ordinary linear interval. Applied this to actual original descendant subtrees.
+- Derived no reentry and complete processing of every original descendant at
+  its unique subtree exit, without a depth-first-order certificate.
+- Verification: cache retrieval and full `lake build` passed 5,774 jobs; all
+  15,319 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. The physical saved-frontier and actual graft assembly
+  remain open.
+
 ### 2026-11-15 — intrinsic contact fans with original point placements
 
 - Identified the contact corner immediately after cutting the next contour source,

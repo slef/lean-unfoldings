@@ -2746,3 +2746,9 @@ corners and does not yet identify their widths with the actual retained cap fan.
   derive the contact model and exact curvature charge from the original contour.
 - [`RestoredBoundaryFan`](../Unfoldings/Cone/RestoredBoundaryFan.lean): isometries
   of entire surviving original tangent fans, fixing every original cell point.
+
+- [`BoundaryFanExcision`](../Unfoldings/Complex/BoundaryFanExcision.lean):
+  actual cut restoration is a whole-ball isometry at surviving original fans.
+- [`LinearTwoExits`](../Unfoldings/Topology/LinearTwoExits.lean),
+  [`LinearSubtreeContour`](../Unfoldings/Complex/LinearSubtreeContour.lean):
+  derive a true depth-first order and complete processing before each subtree exit.
