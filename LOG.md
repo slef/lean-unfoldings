@@ -2,6 +2,19 @@
 
 ## Session Log
 
+### 2026-11-14 — local radial windows and supported closures
+
+- Derived weighted real heading bounds from local windows, charging disjoint
+  polar-variation budgets. Applied them to actual radial displacement and length.
+- Bounded source-ray angles by variation between terminal links. Constructed a
+  quadrant frame and genuine endpoint trims preserving all internal vertices.
+- Constructed the supporting line, outward corner and Jordan closing links for
+  each short radial window. No global heading cone is assumed.
+- Verification: cache retrieval and full `lake build` passed 5,501 jobs; all
+  13,556 unfolding declarations passed the standard-axiom audit. Both abstract
+  independence checks passed. Actual bank correspondence, saved-opening nesting
+  and the complete graft remain open.
+
 ### 2026-11-14 — geometric radial bank comparison on actual closure meshes
 
 - Constructed genuine directed bank paths. Exact projection and regular fibers

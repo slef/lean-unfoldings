@@ -2352,3 +2352,12 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [`Cap/RadialBankTurnComparison`](../Unfoldings/Cap/RadialBankTurnComparison.lean) | Derived actual radial bank error bound: curvature plus six times tilt plus relative corner error |
 | [`Cap/RadialBankThreshold`](../Unfoldings/Cap/RadialBankThreshold.lean) | One uniform positive tilt makes every actual radial bank turn error arbitrarily small |
 | [`Roof/ClosureBankComparison`](../Unfoldings/Roof/ClosureBankComparison.lean) | Apply the uniform bank bound to the actual constructed physical closure mesh |
+
+| [`Geometry/LocalHeadingBudget`](../Unfoldings/Geometry/LocalHeadingBudget.lean) | Chain local polar windows into a weighted real heading bound with no global cone |
+| [`Geometry/LocalRadialBlocks`](../Unfoldings/Geometry/LocalRadialBlocks.lean) | Derive actual chord, radial-margin and length bounds from local bank comparisons |
+| [`Geometry/RayWindowAngle`](../Unfoldings/Geometry/RayWindowAngle.lean) | Actual source-ray angles bounded by polar variation strictly between terminal links |
+
+| [`Geometry/AxisQuadrantFrame`](../Unfoldings/Geometry/AxisQuadrantFrame.lean) | One rigid frame puts an entire quarter-angle neighborhood in an open quadrant |
+| [`Geometry/OpenEndTrimming`](../Unfoldings/Geometry/OpenEndTrimming.lean) | Genuine endpoint trims enter an open set containing every internal original vertex |
+| [`Geometry/RayWindowTrimming`](../Unfoldings/Geometry/RayWindowTrimming.lean) | Construct a pointed quadrant and genuine trims from a short actual ray-angle sum |
+| [`Geometry/RayWindowClosure`](../Unfoldings/Geometry/RayWindowClosure.lean) | Construct supported Jordan closing links from a short radial window |

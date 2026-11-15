@@ -1559,3 +1559,10 @@ public import Unfoldings.Geometry.RadialClosingLinks
 public import Unfoldings.Cap.RadialBankTurnComparison
 public import Unfoldings.Cap.RadialBankThreshold
 public import Unfoldings.Roof.ClosureBankComparison
+public import Unfoldings.Geometry.LocalHeadingBudget
+public import Unfoldings.Geometry.LocalRadialBlocks
+public import Unfoldings.Geometry.RayWindowAngle
+public import Unfoldings.Geometry.AxisQuadrantFrame
+public import Unfoldings.Geometry.OpenEndTrimming
+public import Unfoldings.Geometry.RayWindowTrimming
+public import Unfoldings.Geometry.RayWindowClosure

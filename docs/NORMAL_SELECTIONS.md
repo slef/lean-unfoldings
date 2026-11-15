@@ -400,3 +400,14 @@ arbitrarily small at one positive tilt, independently of the input mesh.
 to the actual physical closure-respecting refinement; its tilt and avoidance
 properties are constructed. Relating these bank portions to successive saved
 openings, proving nesting, and assembling the complete graft remain open.
+
+## Short radial windows
+
+[LocalHeadingBudget](../Unfoldings/Geometry/LocalHeadingBudget.lean) derives a
+weighted heading bound from local polar windows, without a global heading cone.
+[LocalRadialBlocks](../Unfoldings/Geometry/LocalRadialBlocks.lean) applies it to
+actual radial margins and length bounds.
+[RayWindowClosure](../Unfoldings/Geometry/RayWindowClosure.lean) constructs
+supported Jordan closing links after genuine endpoint trims, from a short
+source-ray angle sum. Internal vertices and turns are retained. Relating the
+geometric bank sum to the actual rolled bank remains open.
