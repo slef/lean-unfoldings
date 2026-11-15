@@ -44,8 +44,10 @@ nonoverlap and counting remain to be proved.
 - [x] Construct the unique actual initial Jordan bank from the original seam geometry.
 - [x] Construct the full selected Jordan comparison in either traversal orientation,
   with the same uniform real-heading bound and no initial sign input.
-- [ ] Identify the prescribed comparison bank with that side, or handle its complementary
-  fan when the bounded filling selects the other side.
+- [x] Bound complementary original fan sums along actual Jordan chains by the same
+  radial comparison plus one extra total-curvature term; choose one uniform tilt.
+- [ ] Identify the prescribed comparison bank with the selected side or its complementary
+  original corner weights when the bounded filling selects the other side.
 - [ ] Identify the physical saved-frontier curves with the constructed histories
   and prove that their selected original side is untouched. Apply the local
   metric remainder models to those actual updates.

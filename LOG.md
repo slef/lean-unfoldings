@@ -2,6 +2,20 @@
 
 ## Session Log
 
+### 2026-11-15 — complementary actual Jordan-chain fan budgets
+
+- Identified the actual Jordan chain's fan error with its original selected
+  corner excess. Derived distinct interior original vertices from the chain and filling.
+- Proved complementary original fan sums differ from the actual chain error
+  by at most total cap curvature. Their radial bound is therefore twice total
+  curvature plus the same closing-link and corner-distortion terms.
+- Chose one uniform small tilt for that complementary budget, independently of
+  mesh size, path length and valence. Identifying a prescribed physical outside
+  bank with those complementary corner weights is still required.
+- Verification: cache retrieval and full `lake build` passed 5,893 jobs;
+  15,917 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Physical complementary-fan identification and the full graft remain open.
+
 ### 2026-11-15 — actual Jordan comparison in either traversal orientation
 
 - Identified original germs from equal positively scaled physical rays and the

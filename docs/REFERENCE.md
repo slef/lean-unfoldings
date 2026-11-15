@@ -2981,3 +2981,7 @@ corners and does not yet identify their widths with the actual retained cap fan.
   [`SignedOriginalRadialChainErrorBound`](../Unfoldings/Cap/SignedOriginalRadialChainErrorBound.lean),
   [`SignedOriginalBankHeadingComparison`](../Unfoldings/Cap/SignedOriginalBankHeadingComparison.lean):
   construct actual radial comparison chains and uniform real-heading bounds without a sign input.
+
+- [`JordanComplementaryChainError`](../Unfoldings/Cap/JordanComplementaryChainError.lean):
+  complementary original fan sums along actual Jordan chains pay at most one extra
+  total-curvature term, with a uniform mesh-independent small-tilt budget.

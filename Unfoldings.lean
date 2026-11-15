@@ -1958,3 +1958,4 @@ public import Unfoldings.Cap.SignedJordanLocalChainLift
 public import Unfoldings.Cap.SignedRadialJordanChainLift
 public import Unfoldings.Cap.SignedOriginalRadialChainErrorBound
 public import Unfoldings.Cap.SignedOriginalBankHeadingComparison
+public import Unfoldings.Cap.JordanComplementaryChainError
