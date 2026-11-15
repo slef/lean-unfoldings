@@ -2639,3 +2639,13 @@ corners and does not yet identify their widths with the actual retained cap fan.
   keep the original corner model, attach its geometric complement, recover the plane.
 - [`SplitBankCompletedPlane`](../Unfoldings/Cap/SplitBankCompletedPlane.lean):
   actual retained tangent fans completed along exactly their two ordered banks.
+
+- [`Development/BoundaryChainAperture`](../Unfoldings/Development/BoundaryChainAperture.lean):
+  complementary angles in the actual original common development frame.
+- [`DevelopedBankGapCorner`](../Unfoldings/Cap/DevelopedBankGapCorner.lean):
+  complementary second-bank charts using actual developed edge vectors.
+- [`PolygonalBankTailGerm`](../Unfoldings/Geometry/PolygonalBankTailGerm.lean):
+  exact original incoming and entire outgoing tail rays at the terminal vertex.
+- [`TwoBankGapTailCorner`](../Unfoldings/Geometry/TwoBankGapTailCorner.lean),
+  [`TwoBankGapSecondTailCorner`](../Unfoldings/Geometry/TwoBankGapSecondTailCorner.lean):
+  both occupied intrinsic gap corners at the last finite bend.

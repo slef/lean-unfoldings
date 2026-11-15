@@ -844,3 +844,15 @@ complementary geometric sector only along the two equal-radius banks. The result
 is isometric to the whole plane, with both physical placement formulas. Neither
 side is restricted to convex angles. This proves exact local tangent-model
 completion; the actual assembled graft still needs its local-to-global proof.
+
+[`DevelopedBankGapCorner`](../Unfoldings/Cap/DevelopedBankGapCorner.lean)
+uses the original development's physical bank vectors directly to obtain the
+complementary retained-cap metric corner. A common plane rotation preserves the
+positive aperture; the boundary-chain result needs no closed contour.
+
+[`PolygonalBankTailGerm`](../Unfoldings/Geometry/PolygonalBankTailGerm.lean)
+derives the exact rays at the original last finite vertex, including its actual
+infinite tail. [`TwoBankGapTailCorner`](../Unfoldings/Geometry/TwoBankGapTailCorner.lean)
+and [`TwoBankGapSecondTailCorner`](../Unfoldings/Geometry/TwoBankGapSecondTailCorner.lean)
+construct the two oriented intrinsic tail-bend charts. Strict terminal radial
+progress is explicit; these theorems do not truncate or replace the tail.

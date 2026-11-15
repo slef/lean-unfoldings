@@ -1785,3 +1785,9 @@ public import Unfoldings.Geometry.HeadingSubhistoryMargin
 public import Unfoldings.Geometry.OpeningStrictProgress
 public import Unfoldings.Cone.ComplementaryModelCompletion
 public import Unfoldings.Cap.SplitBankCompletedPlane
+public import Unfoldings.Geometry.GapAngleRotation
+public import Unfoldings.Development.BoundaryChainAperture
+public import Unfoldings.Cap.DevelopedBankGapCorner
+public import Unfoldings.Geometry.PolygonalBankTailGerm
+public import Unfoldings.Geometry.TwoBankGapTailCorner
+public import Unfoldings.Geometry.TwoBankGapSecondTailCorner

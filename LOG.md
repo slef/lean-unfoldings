@@ -2,6 +2,23 @@
 
 ## Session Log
 
+### 2026-11-15 — physical developed apertures and actual terminal-tail corner charts
+
+- Proved common nonzero complex scaling preserves the positive named-bank
+  aperture, retaining coincident and reentrant cases.
+- Computed complementary angles in the original development's common physical
+  bank frame. The second-bank metric chart now accepts the actual developed
+  bank vectors directly, rather than a normalized canonical-roll identity.
+- Derived the exact final finite vertex germ from its original incoming edge
+  and true entire tail ray, with all other finite incidences excluded by strict
+  source-radial order.
+- Constructed both oriented whole intrinsic gap charts at that terminal bend,
+  preserving its original physical position and tail direction.
+- Verification: cache retrieval and full `lake build` passed 5,724 jobs; all
+  15,043 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Saved-frontier path matching, fan surgery, straight-bank
+  coverage and the actual assembled graft remain open.
+
 ### 2026-11-15 — both bank orientations and exact split-fan plane completion
 
 - Proved reflection with bank exchange preserves the full positive aperture,
