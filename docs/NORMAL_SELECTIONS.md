@@ -766,3 +766,9 @@ full turn, including angles above pi.
 turns a local geometric sector description into a whole intrinsic corner chart,
 retaining its physical placement. For the actual internal gap banks, the
 remaining geometric step is to prove their complementary aperture formulas.
+
+[`complementarySectorPlaneIsometryEquiv`](../Unfoldings/Cone/ComplementarySectorPlane.lean)
+constructs the exact whole-plane metric by attaching two complementary intrinsic
+geometric sectors. Either may be reentrant. Their cross-piece identifications
+are precisely the two original bank rays at equal radii. Applying this to the
+actual internal gap corners still requires their complementary aperture formulas.

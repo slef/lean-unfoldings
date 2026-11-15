@@ -2,6 +2,21 @@
 
 ## Session Log
 
+### 2026-11-15 — full-plane metric from complementary reentrant sectors
+
+- Proved that the actual complementary geometric sectors cover the whole
+  plane and intersect precisely at their two original equal-radius bank rays.
+- Proved that regrouping finite closed convex cover cells into larger
+  intrinsic polygonal pieces preserves the final physical gluing metric.
+  The pieces may be nonconvex or unbounded.
+- Constructed the whole-plane isometry for the two complementary intrinsic
+  sector pieces and proved that their cross-piece identifications are exactly
+  the two intended banks. Either piece may have a reentrant angle.
+- Verification: cache retrieval and full `lake build` passed 5,678 jobs; all
+  14,863 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Matching the actual internal gap apertures and graft
+  neighborhoods, saved-frontier surgery and global nonoverlap remain open.
+
 ### 2026-11-15 — intrinsic reentrant-sector metric models
 
 - Proved that every slit angular fan below a full turn is isometric to its

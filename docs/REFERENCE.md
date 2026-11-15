@@ -2578,3 +2578,7 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [`Cone/ReentrantSector`](../Unfoldings/Cone/ReentrantSector.lean) | Two convex halves construct an intrinsic model for any geometric sector below a full turn, including reentrant angles |
 | [`Metric/PolygonalRigid`](../Unfoldings/Metric/PolygonalRigid.lean) | Rigid changes of physical region coordinates preserve the constructed intrinsic polygonal metric |
 | [`Cone/ReentrantCornerChart`](../Unfoldings/Cone/ReentrantCornerChart.lean) | A proved geometric corner sector yields an exact intrinsic whole-ball fan chart, including reentrant angles |
+
+| [`Cone/ComplementarySectors`](../Unfoldings/Cone/ComplementarySectors.lean) | Actual complementary geometric sectors cover the plane and meet exactly at their two equal-radius banks |
+| [`Metric/GroupedPolygonalCover`](../Unfoldings/Metric/GroupedPolygonalCover.lean) | Grouping convex cover cells into nonconvex intrinsic pieces preserves the final physical gluing metric |
+| [`Cone/ComplementarySectorPlane`](../Unfoldings/Cone/ComplementarySectorPlane.lean) | Two complementary intrinsic sectors glued along their actual banks give exactly the whole-plane metric |

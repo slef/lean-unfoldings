@@ -1742,3 +1742,6 @@ public import Unfoldings.Cone.AngularRegion
 public import Unfoldings.Cone.ReentrantSector
 public import Unfoldings.Metric.PolygonalRigid
 public import Unfoldings.Cone.ReentrantCornerChart
+public import Unfoldings.Cone.ComplementarySectors
+public import Unfoldings.Metric.GroupedPolygonalCover
+public import Unfoldings.Cone.ComplementarySectorPlane
