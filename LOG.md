@@ -2,6 +2,20 @@
 
 ## Session Log
 
+### 2026-11-15 — partition-independent whole and partial forest cut metrics
+
+- Constructed common actual whole-roof partitions from full-dimensional cell
+  intersections, retaining every original region and boundary point.
+- Proved the complete boundary-aligned cut metric independent of the physical
+  partition, preserving the original roof points and literal cell-bank copies.
+- Derived boundary avoidance in each actual compatible forest model and obtained
+  metric equivalences for two retained models without boundary certificates.
+- Extended this to every closed partial forest cut. Changing partition commutes
+  with restoring further cuts, with equality of the original metric copies.
+- Verification: actual cache retrieval and full `lake build` passed 5,993 jobs;
+  the standard-axiom audit and both abstract independence checks passed. Local
+  finite-completion patches, finite-bank joins and the full graft remain open.
+
 ### 2026-11-15 — actual whole-roof cut metrics survive geometric refinements
 
 - Derived exact spatial cut metrics from complete rigid planar covers, preserving

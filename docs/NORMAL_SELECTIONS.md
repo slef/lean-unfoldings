@@ -56,6 +56,10 @@ nonoverlap and counting remain to be proved.
   whole halfplane metric chart with its original support placement and exact
   nearby bank-ray coordinates. Whole banks agree with their original anchor-cell
   tails as actual metric copies.
+- [x] Construct common whole-roof refinements and prove the actual complete forest
+  cut metric independent of the retained partition, preserving original cell copies
+  and every spatial roof point. All boundary hypotheses follow from alignment.
+  This holds for every closed partial forest cut and commutes with restoring cuts.
 - [ ] Identify the full unbounded comparison banks, including terminal rays and
   completion fans, and supply their admissible respected radial closure geometry.
 - [ ] Carry physical saved-frontier curves and their untouched original sides through

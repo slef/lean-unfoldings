@@ -3197,3 +3197,26 @@ corners and does not yet identify their widths with the actual retained cap fan.
   a geometric subdivision of actual whole-roof cells gives a complete cut isometry.
   The original support coordinates derive every local metric comparison; actual
   fine copies map to their physical parent copies and every roof point is retained.
+
+- [`CommonModelTransport`](../Unfoldings/Metric/CommonModelTransport.lean):
+  physical maps and named copies commute with isometries through a shared model.
+- [`FullConvexIntersectionCover`](../Unfoldings/Geometry/FullConvexIntersectionCover.lean):
+  full-dimensional intersections of a finite closed convex cover retain every original
+  region point, including boundary points; lower-dimensional pieces can be discarded.
+- [`SpatialEnvelopeCommonRefinement`](../Unfoldings/Geometry/SpatialEnvelopeCommonRefinement.lean),
+  [`SpatialEnvelopePartitionIndependence`](../Unfoldings/Geometry/SpatialEnvelopePartitionIndependence.lean):
+  constructs a common actual whole-roof partition and proves the complete boundary-aligned
+  cut metric independent of the partition. Every physical roof point and every original
+  common-piece cell copy is preserved.
+- [`CompatibleCutPartitionIndependence`](../Unfoldings/Roof/CompatibleCutPartitionIndependence.lean):
+  two retained models of the same actual compatible forest cut have isometric complete
+  cut metrics, preserving the original roof point. All boundary hypotheses are derived.
+
+- [`SpatialEnvelopePartitionCopies`](../Unfoldings/Geometry/SpatialEnvelopePartitionCopies.lean):
+  every original physical cell copy has an actual target cell copy at the same point.
+  Changing the whole-roof partition commutes with restoring cuts, with equality of
+  the named metric copies throughout.
+
+- [`CompatiblePartialCutPartitionIndependence`](../Unfoldings/Roof/CompatiblePartialCutPartitionIndependence.lean):
+  every closed portion of the actual forest cut has the same metric across retained
+  partitions. Restoring further cuts commutes with the identification of named copies.

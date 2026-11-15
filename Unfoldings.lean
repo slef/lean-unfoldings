@@ -2052,3 +2052,10 @@ public import Unfoldings.Metric.FlatPhysicalCutCover
 public import Unfoldings.Metric.FlatPhysicalCutRefinement
 public import Unfoldings.Geometry.SpatialEnvelopeRefinement
 public import Unfoldings.Geometry.SpatialEnvelopeCutRefinement
+public import Unfoldings.Metric.CommonModelTransport
+public import Unfoldings.Geometry.FullConvexIntersectionCover
+public import Unfoldings.Geometry.SpatialEnvelopeCommonRefinement
+public import Unfoldings.Geometry.SpatialEnvelopePartitionIndependence
+public import Unfoldings.Roof.CompatibleCutPartitionIndependence
+public import Unfoldings.Geometry.SpatialEnvelopePartitionCopies
+public import Unfoldings.Roof.CompatiblePartialCutPartitionIndependence
