@@ -2,6 +2,20 @@
 
 ## Session Log
 
+### 2026-11-14 — positive original-source circle order of actual hinge gaps
+
+- Constructed the real angular coordinate on the circle punctured at its saved
+  starting bank. Proved continuity, injectivity and strict bounds between zero
+  and a full turn for actual positive-angle contacts.
+- Proved an explicit inverse-radius terminal-direction error bound for actual
+  bank points. Actual circle displacements tend to the true opening at infinity.
+- Used connected noncontact families and these limits to prove strict
+  counterclockwise contact order at every source radius beyond the hinge.
+- Verification: cache retrieval and full `lake build` passed 5,579 jobs; all
+  14,029 unfolding declarations passed the standard-axiom audit, along with both
+  abstract independence checks. Successive-gap nesting, saved-frontier
+  transport and the complete intrinsic graft remain open.
+
 ### 2026-11-14 — actual source-centered coordinates on hinge gaps
 
 - Proved unique intermediate banks away from the hinge and excluded the whole

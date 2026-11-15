@@ -862,6 +862,8 @@ selection and Euler counting follow.
 - [x] Quantitative heading perturbation and actual hinge-fixed suffix-opening bounds.
 - [x] Actual hinge gaps avoid the closed hinge-radius ball except at the hinge,
   and have joint angle/radius coordinates on the unbounded exterior.
+- [x] Prove strict counterclockwise contact order within each actual hinge gap
+  from terminal-ray limits and connected noncontact families.
 - [ ] Positive Jordan gaps from radially monotone polygonal banks.
 - [ ] Complete one-ended forest cuts and intrinsic polygonal-gap insertion.
 - [ ] Completeness for finite noncompact complexes with controlled ends.

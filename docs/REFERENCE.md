@@ -2441,3 +2441,11 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [`Topology/ProperClosedGraph`](../Unfoldings/Topology/ProperClosedGraph.lean) | A closed graph with a continuous proper coordinate is continuous |
 | [`Geometry/HingeSweepContinuity`](../Unfoldings/Geometry/HingeSweepContinuity.lean) | Actual hinge-bank contacts vary jointly continuously with angle and source radius |
 | [`Geometry/HingeExteriorCoordinates`](../Unfoldings/Geometry/HingeExteriorCoordinates.lean) | Product coordinates for the entire actual gap beyond its source-centered hinge circle |
+
+| [`Topology/CirclePositiveAngle`](../Unfoldings/Topology/CirclePositiveAngle.lean) | Continuous real angular coordinates on the circle punctured at one |
+| [`Geometry/ComplexNormalization`](../Unfoldings/Geometry/ComplexNormalization.lean) | Explicit relative perturbation bound for normalized complex directions |
+| [`Geometry/PolygonalRayAsymptote`](../Unfoldings/Geometry/PolygonalRayAsymptote.lean) | Actual source-circle contacts converge to the original terminal-ray direction |
+| [`Topology/NoncrossingOrder`](../Unfoldings/Topology/NoncrossingOrder.lean) | Ordered limits fix the order throughout a connected noncrossing family |
+| [`Geometry/HingeCircleDirections`](../Unfoldings/Geometry/HingeCircleDirections.lean) | Actual normalized hinge-circle contacts and their positive real angular displacements |
+| [`Geometry/HingeCircleAsymptote`](../Unfoldings/Geometry/HingeCircleAsymptote.lean) | Actual source-circle angular displacement tends to the true opening at infinity |
+| [`Geometry/HingeCircleOrder`](../Unfoldings/Geometry/HingeCircleOrder.lean) | Actual contacts move strictly counterclockwise at every source radius above the hinge |

@@ -1639,3 +1639,10 @@ public import Unfoldings.Geometry.HingeCircleContinuity
 public import Unfoldings.Topology.ProperClosedGraph
 public import Unfoldings.Geometry.HingeSweepContinuity
 public import Unfoldings.Geometry.HingeExteriorCoordinates
+public import Unfoldings.Topology.CirclePositiveAngle
+public import Unfoldings.Geometry.ComplexNormalization
+public import Unfoldings.Geometry.PolygonalRayAsymptote
+public import Unfoldings.Topology.NoncrossingOrder
+public import Unfoldings.Geometry.HingeCircleDirections
+public import Unfoldings.Geometry.HingeCircleAsymptote
+public import Unfoldings.Geometry.HingeCircleOrder

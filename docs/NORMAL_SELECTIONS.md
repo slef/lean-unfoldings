@@ -567,4 +567,6 @@ identifies the entire corresponding gap with the opening interval times the open
 radius half-line. The gap meets the closed hinge-radius ball only at its hinge.
 These results assume radial monotonicity throughout the actual opening; the
 quantitative opening-budget theorem supplies that control for small openings.
-Positive angular order across successive gaps remains to be proved.
+[`strictMono_hingeCircleAngle`](../Unfoldings/Geometry/HingeCircleOrder.lean)
+proves strict counterclockwise order of contacts within each actual hinge gap,
+using its terminal-ray limit. Nonoverlap across successive gaps remains open.
