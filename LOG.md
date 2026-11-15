@@ -2,6 +2,19 @@
 
 ## Session Log
 
+### 2026-11-15 — exact convex face-side regions in common rigid coordinates
+
+- Constructed rigid coordinate equivalences between coplanar original supports,
+  preserving their entire physical placements and Euclidean distances.
+- Proved all actual cells with the same support height and chosen cut side cover
+  the entire corresponding convex active region, including every boundary point.
+  Full-dimensional interiors derive the support and side labels.
+- Reparametrized every selected cell in the original anchor plane, preserving
+  closedness, convexity, full interiors and the exact complete region cover.
+- Verification: actual cache retrieval and full `lake build` passed 5,951 jobs;
+  16,208 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. One-sided metric fan charts and the full graft remain open.
+
 ### 2026-11-15 — exact terminal-ray metric reduction in the same roof model
 
 - Constructed canonical cut restoration in the original rigid partition cells,

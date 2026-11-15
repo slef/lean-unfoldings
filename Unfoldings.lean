@@ -2014,3 +2014,6 @@ public import Unfoldings.Metric.PhysicalSeamsLocalExcision
 public import Unfoldings.Metric.PolygonalCutGerm
 public import Unfoldings.Geometry.SpatialEnvelopeCutExcision
 public import Unfoldings.Roof.CompatibleTerminalExcision
+public import Unfoldings.Geometry.SpatialPlaneCoordinates
+public import Unfoldings.Geometry.SpatialEnvelopeFaceSide
+public import Unfoldings.Geometry.SpatialEnvelopeFaceSideCoordinates

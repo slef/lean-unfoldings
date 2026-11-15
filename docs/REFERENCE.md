@@ -3096,3 +3096,10 @@ corners and does not yet identify their widths with the actual retained cap fan.
 - [`CompatibleTerminalExcision`](../Unfoldings/Roof/CompatibleTerminalExcision.lean):
   every actual positive terminal bank copy has an exact whole-ball isometry after
   all other forest cuts are restored, retaining the full original terminal ray.
+
+- [`SpatialPlaneCoordinates`](../Unfoldings/Geometry/SpatialPlaneCoordinates.lean):
+  exact rigid coordinate changes between coplanar original physical support pieces.
+- [`SpatialEnvelopeFaceSide`](../Unfoldings/Geometry/SpatialEnvelopeFaceSide.lean),
+  [`SpatialEnvelopeFaceSideCoordinates`](../Unfoldings/Geometry/SpatialEnvelopeFaceSideCoordinates.lean):
+  actual one-sided support cells cover their full convex region, including its boundary.
+  Common rigid coordinates preserve every spatial point, distance and full cell interior.
