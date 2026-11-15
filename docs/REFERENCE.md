@@ -2778,3 +2778,6 @@ corners and does not yet identify their widths with the actual retained cap fan.
   exact singleton-step updates of original processed subtree weights.
 - [`ProcessedParentBankHeading`](../Unfoldings/Cap/ProcessedParentBankHeading.lean):
   actual constructed current bank measurements, curvature bounds and exact fresh-source increments.
+
+- [`ProcessedParentBankVariation`](../Unfoldings/Cap/ProcessedParentBankVariation.lean):
+  actual current parent-bank measurements are monotone and have oscillation at most total curvature.

@@ -2,6 +2,21 @@
 
 ## Session Log
 
+### 2026-11-15 — variation bounds for actual intermediate bank measurements
+
+- Proved measured original parent-bank holonomies are monotone as the actual
+  processed set grows and along original ancestor paths.
+- Bounded the oscillation between arbitrary measured intermediate parent banks
+  by total original curvature, without signed-charge or multiplicity premises.
+- Verification: cache retrieval and full `lake build` passed 5,786 jobs; all
+  15,366 unfolding and 7,243 pinned planar-topology declarations use only standard
+  Lean axioms. Both cap and source abstract independence checks passed.
+- Remaining: prune unprocessed subtree excursions to identify the actual
+  rootward boundary bank and its original path fan; carry that bank through
+  attached gap patches with its arclength and hinge positions; assemble the
+  complete simply connected flat graft and apply the global isometry theorem.
+  The current scalar bank measurements do not assert those physical matches.
+
 ### 2026-11-15 — singleton changes of actual intermediate bank headings
 
 - Defined parent-bank headings by rolling the actual intermediate intrinsic cut

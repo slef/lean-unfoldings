@@ -1852,3 +1852,4 @@ public import Unfoldings.Complex.ProcessedSubtreeBanks
 public import Unfoldings.Complex.ProcessedSubtreeRolling
 public import Unfoldings.Topology.ProcessedDescendantWeights
 public import Unfoldings.Cap.ProcessedParentBankHeading
+public import Unfoldings.Cap.ProcessedParentBankVariation

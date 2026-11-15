@@ -854,7 +854,10 @@ The [construction guide](docs/NORMAL_SELECTIONS.md) records the completed bridge
 Next: match the physical saved-frontier paths to the original comparison banks,
 identify their untouched original fan sides, and assemble the complete flat graft.
 Actual Jordan gaps, intrinsic corner charts and local junction-surgery models are
-available, together with complete first-contact histories and exact curvature charges.
+available, together with derived depth-first histories, exact current contact fans,
+whole-ball restoration and actual intermediate parent-bank heading increments.
+Pruning unprocessed contour excursions and transporting their surviving banks
+through the physical gap attachments are the next identifications.
 See the [gap-grafting checklist](docs/NORMAL_SELECTIONS.md#gap-grafting-status). The finite-cell route to
 global isometry does not require a separate end-height certificate. Normal-cover
 selection and Euler counting follow.
@@ -891,6 +894,8 @@ selection and Euler counting follow.
   schedule, deriving distinct charges and exact total original curvature.
 - [x] Construct rim-started singleton contour schedules and derive exact
   two-copy intermediate parent-corner splitting and angle conservation.
+- [x] Derive actual intermediate original parent-bank holonomies, their exact
+  singleton curvature increments, monotonicity and total-curvature oscillation bound.
 - [x] Positive Jordan gaps from controlled radially monotone polygonal banks.
 - [ ] Match physical saved-frontier banks and untouched original sides to those
   histories, comparison fans and local surgery models.

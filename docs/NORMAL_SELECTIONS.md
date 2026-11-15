@@ -21,6 +21,8 @@ nonoverlap and counting remain to be proved.
   derive its exact two-copy parent-corner splitting with angle conservation.
 - [x] Derive depth-first subtree intervals and identify exact original contact
   fans, preserving tangent-cell points and whole small intrinsic balls.
+- [x] Derive actual intermediate parent-bank real headings, exact singleton
+  curvature increments and oscillation bounded by total original curvature.
 
 - [ ] Match the original one-sided path fans to the reference Jordan comparison
   banks, preserving regional angles through the physical completion.
@@ -30,6 +32,12 @@ nonoverlap and counting remain to be proved.
 - [ ] Identify the complete unbounded cut-space banks and cyclic fans, assemble
   the graft, and prove completeness, simple connectivity and local Euclidean
   charts. Then apply the global planar-isometry theorem for nonoverlap.
+
+The next construction is to prune unprocessed subtree excursions from the full
+original contour and identify its surviving rootward bank and original path fan.
+That bank must then be carried through the actual gap attachments, preserving its
+arclength and hinge positions. The proved scalar heading identities do not yet
+supply this physical identification.
 
 The completed local models and combinatorial histories do not assume these
 remaining geometric identifications. The paper's sharp numerical constants and
