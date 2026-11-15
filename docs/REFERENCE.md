@@ -2720,3 +2720,17 @@ corners and does not yet identify their widths with the actual retained cap fan.
   current parent-child incidence forces intermediate sibling cut copies.
 - [`ProcessedContactModels`](../Unfoldings/Cap/ProcessedContactModels.lean):
   first-contact local surgery models on actual intermediate original cut disks.
+
+- [`ParentFrontierNeighbor`](../Unfoldings/Topology/ParentFrontierNeighbor.lean),
+  [`ParentFrontierSingleton`](../Unfoldings/Topology/ParentFrontierSingleton.lean):
+  fresh-neighbor first contact and singleton processed-set updates.
+- [`SelectedContourNeighbors`](../Unfoldings/Complex/SelectedContourNeighbors.lean),
+  [`ContourCutSteps`](../Unfoldings/Complex/ContourCutSteps.lean): actual original
+  contour adjacency and exact single-seam processing.
+- [`RimStartedContour`](../Unfoldings/Complex/RimStartedContour.lean),
+  [`Cap.RimStartedContour`](../Unfoldings/Cap/RimStartedContour.lean): constructed
+  rim-started orders and exact visited-prefix processed sets.
+- [`RelativeBoundaryCopyCount`](../Unfoldings/Complex/RelativeBoundaryCopyCount.lean),
+  [`SingleBoundaryCopySplit`](../Unfoldings/Complex/SingleBoundaryCopySplit.lean),
+  [`ProcessedParentCopySplit`](../Unfoldings/Cap/ProcessedParentCopySplit.lean):
+  exact intermediate parent-copy splitting and original angle conservation.

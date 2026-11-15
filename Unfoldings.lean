@@ -1824,3 +1824,12 @@ public import Unfoldings.Complex.WeightedBoundaryIncidence
 public import Unfoldings.Complex.ProcessedCutIncidence
 public import Unfoldings.Complex.ProcessedJunctionCopies
 public import Unfoldings.Cap.ProcessedContactModels
+public import Unfoldings.Topology.ParentFrontierNeighbor
+public import Unfoldings.Complex.SelectedContourNeighbors
+public import Unfoldings.Complex.ContourCutSteps
+public import Unfoldings.Complex.RelativeBoundaryCopyCount
+public import Unfoldings.Complex.SingleBoundaryCopySplit
+public import Unfoldings.Cap.ProcessedParentCopySplit
+public import Unfoldings.Topology.ParentFrontierSingleton
+public import Unfoldings.Complex.RimStartedContour
+public import Unfoldings.Cap.RimStartedContour

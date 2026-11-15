@@ -889,6 +889,8 @@ selection and Euler counting follow.
   junction-remainder models; zero-curvature insertions are included.
 - [x] Construct first-contact parent histories and their complete original-contour
   schedule, deriving distinct charges and exact total original curvature.
+- [x] Construct rim-started singleton contour schedules and derive exact
+  two-copy intermediate parent-corner splitting and angle conservation.
 - [x] Positive Jordan gaps from controlled radially monotone polygonal banks.
 - [ ] Match physical saved-frontier banks and untouched original sides to those
   histories, comparison fans and local surgery models.

@@ -17,6 +17,8 @@ nonoverlap and counting remain to be proved.
   schedule; derive distinct curvature charges and their exact total.
 - [x] Construct the actual retained original seams at intermediate processing
   stages and the unique full-angle fresh-source star after its branch is cut.
+- [x] Construct a rim-started actual contour with singleton fresh steps, and
+  derive its exact two-copy parent-corner splitting with angle conservation.
 
 - [ ] Match the original one-sided path fans to the reference Jordan comparison
   banks, preserving regional angles through the physical completion.

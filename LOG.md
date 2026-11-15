@@ -2,6 +2,21 @@
 
 ## Session Log
 
+### 2026-11-15 — rim-started singleton cuts and exact parent-corner splitting
+
+- Proved consecutive actual contour banks follow original parent edges or the rim.
+  Every later fresh step opens exactly one original parent seam.
+- Constructed a rim-started contour from the cap disk. Every step now has length
+  zero or one; its processed vertices are exactly roots and earlier contour labels.
+- Counted relative copies with weights on actual old boundary vertices and derived
+  exactly two new copies at a singleton cut's old boundary endpoint.
+- Applied this to the actual intermediate parent corner, constructing its identity,
+  the two distinct copies, their exact fiber and conservation of original angle.
+- Verification: cache retrieval and full `lake build` passed 5,766 jobs; all
+  15,284 unfolding declarations passed the standard-axiom audit, as did the cap
+  and source abstract independence checks. Physical saved-frontier placement
+  and the assembled flat graft remain open.
+
 ### 2026-11-15 — actual intermediate junction incidence and contact models
 
 - Generalized actual boundary-contour incidence to weights vanishing at internal
