@@ -2881,3 +2881,8 @@ corners and does not yet identify their widths with the actual retained cap fan.
 - [`PolygonalVertexRays`](../Unfoldings/Geometry/PolygonalVertexRays.lean),
   [`RadialClosureVertexRays`](../Unfoldings/Geometry/RadialClosureVertexRays.lean):
   radial order derives the exact two original hinge rays in the actual comparison closure.
+
+- [`ProjectedBoundaryChain`](../Unfoldings/Cap/ProjectedBoundaryChain.lean):
+  the entire actual projected bank path, with exact parametrizations and original edge coverage.
+- [`RadialJordanChainLift`](../Unfoldings/Cap/RadialJordanChainLift.lean):
+  physical radial closure geometry constructs the actual Jordan comparison roll from one initial side.

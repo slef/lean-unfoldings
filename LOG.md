@@ -2,6 +2,20 @@
 
 ## Session Log
 
+### 2026-11-15 — actual radial original banks lift to the comparison patch
+
+- Constructed the complete physical projected chain of any actual restricted-cut
+  bank chain, including its true terminal endpoint. Every directed edge parameter
+  and original projected bank edge is preserved, and every edge is genuine.
+- Derived all local hinge-ray conditions from actual source-radial order and the
+  three-segment closure. One initial incident side now constructs the actual
+  Jordan traversal with equal original banks, all real headings and the full roll.
+  No local-ray, fan-angle, length or contour correspondence is supplied.
+- Verification: cache retrieval and full `lake build` passed 5,839 jobs;
+  15,572 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Transferring the geometric error sum, selecting the initial
+  side for the reference closure and physical graft transport remain open.
+
 ### 2026-11-15 — derive original hinge rays from radial closure geometry
 
 - Proved genuine source-radial polygonal edges strictly order all vertex radii
