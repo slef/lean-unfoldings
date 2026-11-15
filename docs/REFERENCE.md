@@ -2808,3 +2808,10 @@ corners and does not yet identify their widths with the actual retained cap fan.
   original reference ancestor-path cuts and canonical restoration from current cuts.
 - [`RootwardPathFans`](../Unfoldings/Complex/RootwardPathFans.lean):
   derive exact one-sided reference corner sets, angles and whole-ball metric comparisons.
+
+- [`SurvivingBoundaryChain`](../Unfoldings/Complex/SurvivingBoundaryChain.lean),
+  [`RootwardReferenceChain`](../Unfoldings/Complex/RootwardReferenceChain.lean):
+  actual surviving reference chains preserve every real heading and the full polygonal roll.
+- [`BoundaryFanRestoration`](../Unfoldings/Cone/BoundaryFanRestoration.lean),
+  [`RootwardPathFanMetric`](../Unfoldings/Cone/RootwardPathFanMetric.lean):
+  whole intrinsic tangent-fan isometries fixing original supporting-wedge points.

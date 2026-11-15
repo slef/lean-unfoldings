@@ -1868,3 +1868,7 @@ public import Unfoldings.Complex.RootwardBoundaryStep
 public import Unfoldings.Complex.RootwardParentChain
 public import Unfoldings.Complex.AncestorPathCuts
 public import Unfoldings.Complex.RootwardPathFans
+public import Unfoldings.Complex.SurvivingBoundaryChain
+public import Unfoldings.Complex.RootwardReferenceChain
+public import Unfoldings.Cone.BoundaryFanRestoration
+public import Unfoldings.Cone.RootwardPathFanMetric

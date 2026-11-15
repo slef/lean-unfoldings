@@ -2,6 +2,21 @@
 
 ## Session Log
 
+### 2026-11-15 — pointwise original rootward reference rolls and tangent metrics
+
+- Proved any surviving directed bank chain remains an actual boundary chain
+  after restoring side cuts. All internal fan angles and unreduced heading
+  prefixes are preserved, so its full normalized polygonal roll is unchanged.
+- Applied this to the constructed rootward ancestor chains in the original
+  reference path cut. Equality includes all original link lengths and hinge
+  positions, not just final directions or angles modulo a full turn.
+- Constructed intrinsic isometries of complete actual rootward tangent fans to
+  their original reference fans, fixing every original supporting-wedge point.
+- Verification: cache retrieval and full `lake build` passed 5,805 jobs; all
+  15,441 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Physical transport through inserted gaps and the global
+  graft assembly remain open.
+
 ### 2026-11-15 — actual original one-sided rootward path fans
 
 - Constructed the original reference cut retaining every seam except the named
