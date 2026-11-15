@@ -2,6 +2,19 @@
 
 ## Session Log
 
+### 2026-11-14 — exact finite-cell model of intrinsic polygonal regions
+
+- Proved that finite closed-piece nonexpansion propagates along every allowed
+  straight segment and hence along intrinsic polygonal routes, even for
+  disconnected extended-metric targets.
+- Constructed mutually inverse nonexpanding maps between a finite closed convex
+  cover's coincident-point gluing and the actual intrinsic polygonal region.
+  This is an isometry, including unbounded and redundant cells, and proves
+  exactness without a separate separation certificate.
+- Verification: cache retrieval and full `lake build` passed 5,618 jobs; all
+  14,258 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Saved-frontier surgery and flat graft charts remain open.
+
 ### 2026-11-14 — complete intrinsic geometry of the whole roof
 
 - Covered the entire unbounded support-plane envelope by its actual finite

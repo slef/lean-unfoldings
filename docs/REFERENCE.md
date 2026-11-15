@@ -2495,3 +2495,6 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 
 | [`Geometry/SpatialEnvelopeWholeSurface`](../Unfoldings/Geometry/SpatialEnvelopeWholeSurface.lean) | The entire actual supported roof is a plane covered by finitely many closed convex spatial cells |
 | [`Geometry/SpatialEnvelopeWholeMetric`](../Unfoldings/Geometry/SpatialEnvelopeWholeMetric.lean) | A complete intrinsic polyhedral metric plane on the entire actual unbounded supported roof |
+
+| [`Metric/PolygonalPiecewise`](../Unfoldings/Metric/PolygonalPiecewise.lean) | Finite closed-piece nonexpansion controls the actual intrinsic polygonal metric |
+| [`Metric/PolygonalCoverGluing`](../Unfoldings/Metric/PolygonalCoverGluing.lean) | Finite closed convex cover gluings recover exactly the intrinsic polygonal metric, including unbounded and redundant cells |

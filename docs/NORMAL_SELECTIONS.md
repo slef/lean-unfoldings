@@ -627,3 +627,10 @@ separate end-height certificate is needed for this starting-surface result.
 The finite-cell route to the final global planar isometry uses completeness
 of actual closed cells. Constructing the cut-and-grafted cells, their local
 Euclidean charts and their global topology remains necessary.
+
+[`closedCoverIsometryEquiv`](../Unfoldings/Metric/PolygonalCoverGluing.lean)
+identifies the actual intrinsic region with its finite closed convex-cell metric
+gluing, using actual coincident-point seams. It handles unbounded and redundant
+cells and proves that no extra identifications arise. Thus the initial roof and
+constructed Jordan gaps can share the gluing API without assuming a separate
+metric compatibility certificate.
