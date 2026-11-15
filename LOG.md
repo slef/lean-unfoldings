@@ -2,6 +2,21 @@
 
 ## Session Log
 
+### 2026-11-15 — exact original frontiers of the actual gap cones
+
+- Transferred the original polygonal bank direction germs into the actual
+  complex plane, retaining finite pieces, degeneracies and entire terminal rays.
+  A bank absent from a point contributes no local directions.
+- Proved that exact local homogeneous models inherit the actual boundary germ
+  and regular closedness of the physical region.
+- Applied these theorems to the constructed active-inequality Jordan-gap cones.
+  Their frontier is exactly the union of the two original bank direction sets;
+  away from the source the distant bank contributes nothing.
+- Verification: cache retrieval and full `lake build` passed 5,688 jobs; all
+  14,904 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Selecting the actual occupied complementary sector,
+  saved-frontier surgery and assembled-graft regularity remain open.
+
 ### 2026-11-15 — actual split-bank sector charts and complementary vector angles
 
 - Proved that distinct sibling cut copies have strictly smaller fan angle than

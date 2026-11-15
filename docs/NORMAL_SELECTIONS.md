@@ -780,3 +780,9 @@ deriving that its angle is below a full turn from the distinct sibling copy.
 computes the complementary positive angle from its actual developed bank
 vectors, including reentrant gaps. The remaining geometric issue is to show
 that the actual Jordan gap locally occupies this complementary sector.
+
+[`frontier_twoBankGap_regionGerm`](../Unfoldings/Geometry/TwoBankGapConeFrontier.lean)
+identifies each constructed gap cone's frontier with the original physical bank
+directions and proves its regular closedness. At an internal bank point, the
+distant bank contributes no directions. Selecting the occupied side and matching
+that cone to the complementary sector remain next.

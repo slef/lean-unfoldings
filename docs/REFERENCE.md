@@ -2589,3 +2589,8 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [`Geometry/PositiveGapAngle`](../Unfoldings/Geometry/PositiveGapAngle.lean) | Positive geometric bank-vector angles retain genuine reentrant openings rather than reducing them to negative principal arguments |
 | [`Development/BankComplementAngle`](../Unfoldings/Development/BankComplementAngle.lean) | Actual terminal bank vectors compute exactly the complement of the real retained fan angle |
 | [`Cap/SplitBankComplement`](../Unfoldings/Cap/SplitBankComplement.lean) | Constructed actual split-bank intrinsic sectors with complementary angles derived from the developed original bank vectors |
+
+| [`Geometry/LocalConeFrontier`](../Unfoldings/Geometry/LocalConeFrontier.lean) | The frontier of an exact homogeneous corner model is forced by the original physical boundary germ |
+| [`Geometry/LocalConeRegularClosed`](../Unfoldings/Geometry/LocalConeRegularClosed.lean) | Exact homogeneous local models inherit regular closedness from the physical region |
+| [`Geometry/ComplexBankGerm`](../Unfoldings/Geometry/ComplexBankGerm.lean) | Original complex polygonal bank direction germs include precisely their actual incident segments and tails |
+| [`Geometry/TwoBankGapConeFrontier`](../Unfoldings/Geometry/TwoBankGapConeFrontier.lean) | Constructed gap corner cones are regular closed with frontier exactly the actual original bank directions |

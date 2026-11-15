@@ -1751,3 +1751,7 @@ public import Unfoldings.Cap.SplitBankSector
 public import Unfoldings.Geometry.PositiveGapAngle
 public import Unfoldings.Development.BankComplementAngle
 public import Unfoldings.Cap.SplitBankComplement
+public import Unfoldings.Geometry.LocalConeFrontier
+public import Unfoldings.Geometry.LocalConeRegularClosed
+public import Unfoldings.Geometry.ComplexBankGerm
+public import Unfoldings.Geometry.TwoBankGapConeFrontier
