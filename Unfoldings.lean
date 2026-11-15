@@ -1866,3 +1866,5 @@ public import Unfoldings.Complex.RootwardBankOrder
 public import Unfoldings.Complex.ConsecutiveRootwardBanks
 public import Unfoldings.Complex.RootwardBoundaryStep
 public import Unfoldings.Complex.RootwardParentChain
+public import Unfoldings.Complex.AncestorPathCuts
+public import Unfoldings.Complex.RootwardPathFans

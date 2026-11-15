@@ -2,6 +2,20 @@
 
 ## Session Log
 
+### 2026-11-15 — actual original one-sided rootward path fans
+
+- Constructed the original reference cut retaining every seam except the named
+  ancestor path, and its canonical restoration map from the current cut.
+- Proved both terminal banks of every current rootward junction survive in that
+  reference. The actual junction therefore has exactly the reference fan's
+  original triangle corners and whole original angle.
+- Constructed whole-ball isometries using canonical cut restoration on the
+  original faces and banks. No original fan-matching premise is supplied.
+- Verification: cache retrieval and full `lake build` passed 5,801 jobs; all
+  15,425 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Transport through actual inserted gap patches and the
+  assembled complete flat graft remain open.
+
 ### 2026-11-15 — actual directed rootward parent-bank chains
 
 - Proved the surviving contour-bank order is exactly strict original ancestry.

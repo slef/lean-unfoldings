@@ -2803,3 +2803,8 @@ corners and does not yet identify their widths with the actual retained cap fan.
 - [`RootwardBoundaryStep`](../Unfoldings/Complex/RootwardBoundaryStep.lean),
   [`RootwardParentChain`](../Unfoldings/Complex/RootwardParentChain.lean):
   derive actual current bank adjacency and construct chains from original parent iterates.
+
+- [`AncestorPathCuts`](../Unfoldings/Complex/AncestorPathCuts.lean):
+  original reference ancestor-path cuts and canonical restoration from current cuts.
+- [`RootwardPathFans`](../Unfoldings/Complex/RootwardPathFans.lean):
+  derive exact one-sided reference corner sets, angles and whole-ball metric comparisons.
