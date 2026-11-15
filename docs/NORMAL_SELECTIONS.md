@@ -880,3 +880,16 @@ seed order and repeated seeds.
 therefore bounds the actual original opposite-bank residuals along the entire
 history by total cap curvature. These processed sets do not assert geometric
 saved-frontier placement; matching that geometry and fan surgery remain open.
+
+[`ParentFrontierReach`](../Unfoldings/Topology/ParentFrontierReach.lean)
+identifies the processing history exactly with the original parent paths and
+previously unprocessed nonroot ancestors. Repeated seeds add no fresh branch.
+
+[`ConsecutiveSectorMetric`](../Unfoldings/Cone/ConsecutiveSectorMetric.lean)
+joins whole intrinsic sector pieces along their original common bank, including
+zero-angle insertions. [`CompletedCornerRemainder`](../Unfoldings/Cone/CompletedCornerRemainder.lean)
+constructs the complementary remainder after keeping an untouched original side.
+[`JunctionRemainderModel`](../Unfoldings/Cap/JunctionRemainderModel.lean)
+derives its angle increment as the actual original cap curvature, with a global
+budget bound. This is an exact local metric surgery model; matching it to the
+physical saved-frontier update and its untouched original side remains open.

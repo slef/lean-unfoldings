@@ -2,6 +2,27 @@
 
 ## Session Log
 
+### 2026-11-15 — exact first-contact reach and metric junction-remainder surgery
+
+- Characterized first-contact histories exactly: processing adds the original
+  parent paths, all ancestors beyond contact were already processed, and a
+  repeated source adds no fresh branch. The history's charged vertices are
+  exactly the previously unprocessed nonroot ancestors of its seeds.
+- Proved consecutive geometric sectors meet only along their common original
+  bank below a full turn, and their whole intrinsic gluing metric is the summed
+  sector metric. Zero-angle insertions are included and add no shortcuts.
+- Constructed the metric remainder after keeping an untouched original side:
+  original remainder plus defect sector has width `2 * pi - untouchedAngle`.
+  Its physical region is exactly that side's complement in the completed plane.
+- Applied this local surgery model to a named retained cap copy. Its real angle
+  increment equals original local curvature and is bounded by total curvature,
+  including zero-curvature junctions. Physical saved-frontier identification is
+  deliberately not asserted by this local model theorem.
+- Verification: cache retrieval and full `lake build` passed 5,740 jobs; all
+  15,174 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Actual saved-frontier geometry, comparison-bank transport
+  and the assembled complete graft remain open.
+
 ### 2026-11-15 — complete tail-interior charts and constructed first-contact charging
 
 - Derived the whole original tail-line germ at every positive tail parameter,

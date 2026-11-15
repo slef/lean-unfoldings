@@ -1802,3 +1802,8 @@ public import Unfoldings.Geometry.TwoBankGapTailInteriorChart
 public import Unfoldings.Geometry.TwoBankGapSecondTailInteriorChart
 public import Unfoldings.Topology.ParentFrontierHistory
 public import Unfoldings.Cap.ParentFrontierResidualBudget
+public import Unfoldings.Topology.ParentFrontierReach
+public import Unfoldings.Cone.ConsecutiveSectors
+public import Unfoldings.Cone.ConsecutiveSectorMetric
+public import Unfoldings.Cone.CompletedCornerRemainder
+public import Unfoldings.Cap.JunctionRemainderModel

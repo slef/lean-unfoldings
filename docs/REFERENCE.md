@@ -2669,3 +2669,13 @@ corners and does not yet identify their widths with the actual retained cap fan.
   first-contact branch processing with constructed distinct original vertex charges.
 - [`ParentFrontierResidualBudget`](../Unfoldings/Cap/ParentFrontierResidualBudget.lean):
   actual original opposite-bank residual budget for every constructed history.
+
+- [`ParentFrontierReach`](../Unfoldings/Topology/ParentFrontierReach.lean):
+  processing explores exactly the original parent paths and skips old ancestors.
+- [`ConsecutiveSectors`](../Unfoldings/Cone/ConsecutiveSectors.lean),
+  [`ConsecutiveSectorMetric`](../Unfoldings/Cone/ConsecutiveSectorMetric.lean):
+  exact common bank, geometric sum and whole intrinsic joined metric, including zero insertions.
+- [`CompletedCornerRemainder`](../Unfoldings/Cone/CompletedCornerRemainder.lean):
+  metric surgery remainder complementary to a retained untouched side.
+- [`JunctionRemainderModel`](../Unfoldings/Cap/JunctionRemainderModel.lean):
+  local cap remainder model with actual curvature increment and total-budget bound.
