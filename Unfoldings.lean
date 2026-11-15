@@ -2029,3 +2029,7 @@ public import Unfoldings.Geometry.SpatialEnvelopeFaceSideBall
 public import Unfoldings.Metric.CenteredBallRestriction
 public import Unfoldings.Geometry.SpatialEnvelopeHalfspaceChart
 public import Unfoldings.Convex.ExteriorWholeBank
+public import Unfoldings.Metric.PhysicalSeamFiber
+public import Unfoldings.Geometry.SpatialEnvelopeCutFiber
+public import Unfoldings.Metric.LocalIsometricLift
+public import Unfoldings.Roof.CompatibleTerminalFiber

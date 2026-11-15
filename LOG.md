@@ -2,6 +2,19 @@
 
 ## Session Log
 
+### 2026-11-15 — unique full-forest terminal fibers and Lipschitz lifts
+
+- Proved local agreement of physical cut carriers preserves entire metric fibers
+  under restoration, ruling out competing distant preimages of the same bank copy.
+- Derived a unique full-forest preimage of every actual positive terminal-bank
+  copy from the embedded forest's geometric cut germs.
+- Constructed canonical lifts of positive terminal curves. Whole-ball restoration
+  and unique fibers preserve their exact original spatial points and common
+  Lipschitz bounds on the full positive interval.
+- Verification: actual cache retrieval and full `lake build` passed 5,967 jobs;
+  16,311 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Closed endpoint completion and the full graft remain open.
+
 ### 2026-11-15 — whole exterior banks and exact rigid halfplane charts
 
 - Constructed the entire original one-sided exterior bank in the one-ray cut,

@@ -3132,3 +3132,14 @@ corners and does not yet identify their widths with the actual retained cap fan.
 - [`ExteriorWholeBank`](../Unfoldings/Convex/ExteriorWholeBank.lean):
   entire exterior banks in the actual one-ray cut, including their source. Exact spatial
   speed makes each a closed embedded dilation; every positive point has a halfplane chart.
+
+- [`PhysicalSeamFiber`](../Unfoldings/Metric/PhysicalSeamFiber.lean),
+  [`SpatialEnvelopeCutFiber`](../Unfoldings/Geometry/SpatialEnvelopeCutFiber.lean):
+  agreement of local cut germs preserves entire metric fibers under restoration.
+  This excludes competing preimages outside any chosen local ball.
+- [`LocalIsometricLift`](../Unfoldings/Metric/LocalIsometricLift.lean):
+  unique lifts through whole-ball isometries preserve a common Lipschitz bound
+  over a convex parameter domain, without requiring a global isometry.
+- [`CompatibleTerminalFiber`](../Unfoldings/Roof/CompatibleTerminalFiber.lean):
+  every positive terminal bank copy has a unique original full-forest preimage.
+  Canonical positive-bank lifts preserve spatial folding and Lipschitz constants.
