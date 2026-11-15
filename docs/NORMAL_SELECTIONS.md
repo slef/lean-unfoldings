@@ -40,6 +40,7 @@ nonoverlap and counting remain to be proved.
 - [x] Recover exact convex one-sided metric regions from full physical cells,
   including boundary cut copies and unbounded affine halfspaces. Canonical flat
   halfspace banks embed in the full cut space, cover it, and separate along cuts.
+  An actual flat slit ray has two whole closed banks meeting exactly at its source.
 - [ ] Identify the full unbounded comparison banks, including terminal rays and
   completion fans, and supply their admissible respected radial closure geometry.
 - [ ] Carry physical saved-frontier curves and their untouched original sides through

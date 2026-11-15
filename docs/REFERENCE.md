@@ -3059,3 +3059,8 @@ corners and does not yet identify their widths with the actual retained cap fan.
   canonical closed isometric halfspace banks in a flat cut metric, agreeing with every
   original cell copy. Their images cover the cut space, agree off cuts and are distinct
   along locally complete cuts.
+
+- [`PlanarRayCutBanks`](../Unfoldings/Metric/PlanarRayCutBanks.lean):
+  two canonical whole banks of an actual flat slit ray. Both positive banks are
+  closed embeddings with exact distances, and they intersect at exactly their
+  common source. Copies agree precisely on the uncut nonpositive continuation.

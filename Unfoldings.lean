@@ -1999,3 +1999,4 @@ public import Unfoldings.Metric.AffineHalfspaceCut
 public import Unfoldings.Metric.ConvexCutSubfamily
 public import Unfoldings.Metric.AffineHalfspaceBank
 public import Unfoldings.Metric.AffineHalfspaceBankSeparation
+public import Unfoldings.Metric.PlanarRayCutBanks

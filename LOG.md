@@ -2,6 +2,19 @@
 
 ## Session Log
 
+### 2026-11-15 — whole planar slit-ray banks and their exact common endpoint
+
+- Constructed both canonical banks along the full supporting line of an actual
+  geometric ray cut, with exact folding, same-side distances and continuity.
+- Proved their copies agree exactly at nonpositive parameters. Every positive
+  cut point has two distinct metric copies, including across different parameters.
+- Proved both whole positive banks are closed embeddings whose intersection
+  is precisely their actual common source. This is a flat local model; identifying
+  curved-roof bank joins, saved-frontier transport and the full graft remains open.
+- Verification: actual cache retrieval and full `lake build` passed 5,934 jobs;
+  16,108 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks.
+
 ### 2026-11-15 — canonical whole halfspace banks in actual flat cuts
 
 - Constructed retained-seam inclusions of actual cell subfamilies and proved
