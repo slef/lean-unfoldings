@@ -2818,3 +2818,6 @@ corners and does not yet identify their widths with the actual retained cap fan.
 
 - [`RootwardFanModels`](../Unfoldings/Cap/RootwardFanModels.lean): actual
   rootward junctions supply strict apertures, whole-ball charts and exact-curvature remainder models.
+
+- [`RootwardProjectedBanks`](../Unfoldings/Cap/RootwardProjectedBanks.lean):
+  the actual current bank chain projects pointwise to its original parent segments and rim root.

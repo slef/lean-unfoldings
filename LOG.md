@@ -2,6 +2,19 @@
 
 ## Session Log
 
+### 2026-11-15 — actual rootward banks on original projected parent segments
+
+- Proved canonical bank parametrizations project to their original segment at
+  every parameter, including strict interior points and both endpoints.
+- Identified every constructed current rootward bank with the actual original
+  child-to-parent segment, without a physical path-matching premise.
+- Constructed the projected chain from the same original parent iterates through
+  its first rim root, and proved its original projected vertices are distinct.
+- Verification: cache retrieval and full `lake build` passed 5,807 jobs; all
+  15,456 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Jordan completion matching and transport through inserted
+  gap patches remain to be connected to these original segment identifications.
+
 ### 2026-11-15 — constructed local models on actual rootward junctions
 
 - Derived distinct original cut copies at the constructed current rootward
