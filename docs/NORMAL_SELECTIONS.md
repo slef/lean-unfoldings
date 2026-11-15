@@ -947,3 +947,10 @@ actual cut copy carrying the entire original angle, and
 [`FreshSourceCompletion`](../Unfoldings/Cap/FreshSourceCompletion.lean) completes
 its positive-curvature tangent fan by the complementary geometric sector.
 No global development of a partially processed curved surface is assumed.
+
+[`FreshFlatSource`](../Unfoldings/Cap/FreshFlatSource.lean) handles zero-curvature
+fresh sources in the same actual intermediate cut spaces. Their full-turn slit
+fan is completed by closing only the original equal-radius outer banks, using
+[`IntervalBankClosure`](../Unfoldings/Cone/IntervalBankClosure.lean). The result
+has the exact plane metric and preserves original angular placements; no positive
+gap sector is inserted in this case.

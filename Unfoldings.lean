@@ -1816,3 +1816,5 @@ public import Unfoldings.Cap.ContourResidualCharge
 public import Unfoldings.Complex.ProcessedParentCuts
 public import Unfoldings.Cap.FreshSourceStar
 public import Unfoldings.Cap.FreshSourceCompletion
+public import Unfoldings.Cone.IntervalBankClosure
+public import Unfoldings.Cap.FreshFlatSource

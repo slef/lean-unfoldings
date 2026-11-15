@@ -2701,3 +2701,8 @@ corners and does not yet identify their widths with the actual retained cap fan.
   the unique full-original-angle cut copy of each fresh source.
 - [`FreshSourceCompletion`](../Unfoldings/Cap/FreshSourceCompletion.lean):
   local intrinsic plane completion of a positive-curvature fresh source.
+
+- [`IntervalBankClosure`](../Unfoldings/Cone/IntervalBankClosure.lean):
+  close the actual full-turn retained tangent fan along only its two original banks.
+- [`FreshFlatSource`](../Unfoldings/Cap/FreshFlatSource.lean):
+  exact plane completion of zero-curvature fresh sources at intermediate stages.
