@@ -1745,3 +1745,9 @@ public import Unfoldings.Cone.ReentrantCornerChart
 public import Unfoldings.Cone.ComplementarySectors
 public import Unfoldings.Metric.GroupedPolygonalCover
 public import Unfoldings.Cone.ComplementarySectorPlane
+public import Unfoldings.Complex.StrictCopyAngles
+public import Unfoldings.Cone.IntervalSector
+public import Unfoldings.Cap.SplitBankSector
+public import Unfoldings.Geometry.PositiveGapAngle
+public import Unfoldings.Development.BankComplementAngle
+public import Unfoldings.Cap.SplitBankComplement

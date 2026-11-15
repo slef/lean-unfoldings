@@ -2,6 +2,23 @@
 
 ## Session Log
 
+### 2026-11-15 — actual split-bank sector charts and complementary vector angles
+
+- Proved that distinct sibling cut copies have strictly smaller fan angle than
+  the original vertex and are actual boundary copies.
+- Constructed intrinsic geometric sector models of every retained interval fan
+  below a full turn, retaining its real angular development. For actual split
+  convex-cap banks, derived the required strict bound and constructed whole
+  intrinsic surface-ball sector charts, including reentrant fans.
+- Defined the positive geometric bank-vector angle so that reentrant openings
+  retain their positive width. Proved from the actual development's terminal
+  vectors that this angle is exactly a full turn minus the retained fan angle.
+- Verification: cache retrieval and full `lake build` passed 5,684 jobs; all
+  14,881 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. The actual Jordan gap still must be shown locally to
+  occupy that complementary sector; saved-frontier surgery, graft-neighborhood
+  matching and global nonoverlap remain open.
+
 ### 2026-11-15 — full-plane metric from complementary reentrant sectors
 
 - Proved that the actual complementary geometric sectors cover the whole

@@ -2582,3 +2582,10 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [`Cone/ComplementarySectors`](../Unfoldings/Cone/ComplementarySectors.lean) | Actual complementary geometric sectors cover the plane and meet exactly at their two equal-radius banks |
 | [`Metric/GroupedPolygonalCover`](../Unfoldings/Metric/GroupedPolygonalCover.lean) | Grouping convex cover cells into nonconvex intrinsic pieces preserves the final physical gluing metric |
 | [`Cone/ComplementarySectorPlane`](../Unfoldings/Cone/ComplementarySectorPlane.lean) | Two complementary intrinsic sectors glued along their actual banks give exactly the whole-plane metric |
+
+| [`Complex/StrictCopyAngles`](../Unfoldings/Complex/StrictCopyAngles.lean) | Distinct sibling cut copies have boundary fans strictly smaller than their original full star |
+| [`Cone/IntervalSector`](../Unfoldings/Cone/IntervalSector.lean) | The actual retained interval fan is isometric to its geometric intrinsic sector, preserving the original angular development |
+| [`Cap/SplitBankSector`](../Unfoldings/Cap/SplitBankSector.lean) | Whole intrinsic sector-ball charts for actual split cap-bank copies, with a derived genuine complementary width |
+| [`Geometry/PositiveGapAngle`](../Unfoldings/Geometry/PositiveGapAngle.lean) | Positive geometric bank-vector angles retain genuine reentrant openings rather than reducing them to negative principal arguments |
+| [`Development/BankComplementAngle`](../Unfoldings/Development/BankComplementAngle.lean) | Actual terminal bank vectors compute exactly the complement of the real retained fan angle |
+| [`Cap/SplitBankComplement`](../Unfoldings/Cap/SplitBankComplement.lean) | Constructed actual split-bank intrinsic sectors with complementary angles derived from the developed original bank vectors |

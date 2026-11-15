@@ -772,3 +772,11 @@ constructs the exact whole-plane metric by attaching two complementary intrinsic
 geometric sectors. Either may be reentrant. Their cross-piece identifications
 are precisely the two original bank rays at equal radii. Applying this to the
 actual internal gap corners still requires their complementary aperture formulas.
+
+[`exists_split_bank_corner_chart`](../Unfoldings/Cap/SplitBankSector.lean)
+constructs a whole intrinsic sector chart for an actual split cap-bank copy,
+deriving that its angle is below a full turn from the distinct sibling copy.
+[`exists_split_bank_complementary_model`](../Unfoldings/Cap/SplitBankComplement.lean)
+computes the complementary positive angle from its actual developed bank
+vectors, including reentrant gaps. The remaining geometric issue is to show
+that the actual Jordan gap locally occupies this complementary sector.
