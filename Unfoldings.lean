@@ -1695,3 +1695,4 @@ public import Unfoldings.Geometry.AffineEnvelopeWholePartition
 public import Unfoldings.Geometry.SpatialEnvelopePartition
 public import Unfoldings.Geometry.AffineArrangementLocalCone
 public import Unfoldings.Geometry.AffineArrangementConeChart
+public import Unfoldings.Metric.PhysicalSeams

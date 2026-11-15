@@ -657,3 +657,9 @@ without yet constructing the duplicated cut banks or their local fans.
 constructs exact local isometric coordinates on every finite affine cell,
 using its active inequality cone. These are charts of individual cells; the
 actual bank angles and compatibility of the assembled graft fan remain open.
+
+[`PhysicalSeams`](../Unfoldings/Metric/PhysicalSeams.lean) supplies exact metric
+quotients for finite selected closed physical attachment pieces. Finite closed
+physical cells give completeness and the actual seam-quotient topology even
+with unbounded seams. This supports cut-space construction while leaving the
+choice and cyclic ordering of the actual retained bank pieces to be proved.

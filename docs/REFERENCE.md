@@ -2512,3 +2512,5 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 
 | [`Geometry/AffineArrangementLocalCone`](../Unfoldings/Geometry/AffineArrangementLocalCone.lean) | Exact local tangent cones from the active inequalities of actual finite affine cells |
 | [`Geometry/AffineArrangementConeChart`](../Unfoldings/Geometry/AffineArrangementConeChart.lean) | Isometric whole cell-ball coordinates on the constructed active tangent cones |
+
+| [`Metric/PhysicalSeams`](../Unfoldings/Metric/PhysicalSeams.lean) | Exact complete metric and quotient topology for arbitrary finite closed physical seam pieces, including unbounded cuts |

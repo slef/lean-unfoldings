@@ -2,6 +2,19 @@
 
 ## Session Log
 
+### 2026-11-15 — exact complete closed physical-seam systems
+
+- Constructed finite closed isometric seam systems from arbitrary selected
+  closed physical attachment pieces, including unbounded pieces.
+- Proved that every seam class has at most one point per original cell. The
+  metric quotient therefore makes exactly the declared seam-chain identifications.
+- Proved original cell isometries, a nonexpanding spatial folding, completeness
+  for finite closed cells, and equality of seam-quotient and metric topologies
+  without compactness. Restoring selected seam pieces is nonexpanding.
+- Verification: cache retrieval and full `lake build` passed 5,629 jobs; all
+  14,419 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Actual bank fans and assembled graft flatness remain open.
+
 ### 2026-11-15 — exact active tangent-cone charts for unbounded affine cells
 
 - Constructed each cell's actual closed convex homogeneous tangent cone using
