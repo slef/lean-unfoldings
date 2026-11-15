@@ -1700,3 +1700,5 @@ public import Unfoldings.Metric.PolygonalCut
 public import Unfoldings.Metric.PolygonalCutLocal
 public import Unfoldings.Metric.PhysicalSeamsDiagonal
 public import Unfoldings.Geometry.SpatialEnvelopeCut
+public import Unfoldings.Geometry.LocalConeClosure
+public import Unfoldings.Geometry.AffineArrangementGerm

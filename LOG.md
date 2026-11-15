@@ -2,6 +2,19 @@
 
 ## Session Log
 
+### 2026-11-15 — exact retained-attachment tests from actual local directions
+
+- Constructed conical germs for all finite affine cells, including empty germs
+  at nonincident points, and proved exact local set agreement.
+- Proved that an attachment closure contains the physical point exactly when
+  the actual common tangent cones contain a direction outside every cut-piece
+  germ. The cut set may be a finite union of lower-dimensional affine cells.
+- This reduces retained corner attachments to finite actual direction tests;
+  it assumes no safe-bank or fan-surgery certificate.
+- Verification: cache retrieval and full `lake build` passed 5,635 jobs; all
+  14,476 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Actual forest fan ordering and complementary graft angles remain open.
+
 ### 2026-11-15 — actual complete unbounded roof cut spaces
 
 - Applied the retained-attachment construction to the exact whole-roof

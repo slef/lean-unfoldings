@@ -2520,3 +2520,6 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 
 | [`Metric/PhysicalSeamsDiagonal`](../Unfoldings/Metric/PhysicalSeamsDiagonal.lean) | Omit same-cell physical identity seams while preserving the exact metric |
 | [`Geometry/SpatialEnvelopeCut`](../Unfoldings/Geometry/SpatialEnvelopeCut.lean) | Complete unbounded planar-cell roof cut metrics with boundary-only seams and exact local restoration |
+
+| [`Geometry/LocalConeClosure`](../Unfoldings/Geometry/LocalConeClosure.lean) | Attachment at a locally conical point is equivalent to a nonempty direction set |
+| [`Geometry/AffineArrangementGerm`](../Unfoldings/Geometry/AffineArrangementGerm.lean) | Exact conical germs and retained-attachment direction tests for actual affine-cell cuts |

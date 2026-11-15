@@ -677,3 +677,9 @@ whole roof actual complete cut metrics in rigid planar cells, with boundary-only
 seams and exact whole-ball restoration away from closed horizontal cuts. The
 remaining bank-fan topology proof must identify the quotient copies at cut
 points, their cyclic sectors and the original forest banks before grafting.
+
+[`mem_closure_attachment_iff`](../Unfoldings/Geometry/AffineArrangementGerm.lean)
+characterizes actual retained attachments at a cut point by common tangent
+directions outside all cut-piece germs. This is an exact geometric test for
+finite affine-cell cuts. Converting the resulting adjacency into the original
+cyclic forest bank fans remains necessary.
