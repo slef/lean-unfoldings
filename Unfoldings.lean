@@ -2043,3 +2043,8 @@ public import Unfoldings.Roof.CompatibleTerminalHalfplane
 public import Unfoldings.Geometry.SpatialEnvelopeFaceSideCellAgreement
 public import Unfoldings.Roof.CompatibleWholeBankCellAgreement
 public import Unfoldings.Roof.CompatibleTerminalChartCoordinates
+public import Unfoldings.Metric.PhysicalCutCopyEquality
+public import Unfoldings.Metric.PhysicalCutRefinement
+public import Unfoldings.Metric.PhysicalCutRefinementSeams
+public import Unfoldings.Metric.PhysicalCutRefinementEquiv
+public import Unfoldings.Metric.ConvexCutRefinement

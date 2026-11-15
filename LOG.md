@@ -2,6 +2,20 @@
 
 ## Session Log
 
+### 2026-11-15 — exact physical cut subdivision invariance
+
+- Reconstructed every original physical cell from its fine cut block and retained
+  every specified fine-cell copy and its exact physical point.
+- Derived compatibility on each separately closed original seam by extending
+  agreement from actual uncut physical points. No seam-agreement certificate is input.
+- Constructed inverse canonical maps and a global isometry between the refined
+  and original cuts from exact per-parent metrics and physical covers.
+- Full convex planar subdivisions with cuts outside original cell interiors
+  supply all required local metric data directly from geometry.
+- Verification: actual cache retrieval and full `lake build` passed 5,982 jobs;
+  the standard-axiom audit and both abstract independence checks passed. Matching
+  the physical completion mesh, finite-bank joins and the full graft remain open.
+
 ### 2026-11-15 — exact original tail copies and halfplane bank coordinates
 
 - Identified canonical whole face-side points with every specified selected

@@ -3175,3 +3175,15 @@ corners and does not yet identify their widths with the actual retained cap fan.
 - [`CompatibleTerminalChartCoordinates`](../Unfoldings/Roof/CompatibleTerminalChartCoordinates.lean):
   whole-bank halfplane charts retain every nearby bank point's exact original rigid
   ray coordinate, in addition to spatial placement and whole-ball coverage.
+
+- [`PhysicalCutCopyEquality`](../Unfoldings/Metric/PhysicalCutCopyEquality.lean):
+  arbitrary cut-metric copies with the same physical point agree away from the cut.
+- [`PhysicalCutRefinement`](../Unfoldings/Metric/PhysicalCutRefinement.lean),
+  [`PhysicalCutRefinementSeams`](../Unfoldings/Metric/PhysicalCutRefinementSeams.lean),
+  [`PhysicalCutRefinementEquiv`](../Unfoldings/Metric/PhysicalCutRefinementEquiv.lean):
+  exact per-parent cut metrics and physical subdivision covers give a global cut
+  isometry preserving every fine copy and physical fold. Agreement along separately
+  closed old seams is derived by continuity from the uncut physical points.
+- [`ConvexCutRefinement`](../Unfoldings/Metric/ConvexCutRefinement.lean):
+  full convex planar subdivisions with cuts outside the original cell interiors
+  supply all per-parent metric data geometrically.
