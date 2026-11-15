@@ -2985,3 +2985,14 @@ corners and does not yet identify their widths with the actual retained cap fan.
 - [`JordanComplementaryChainError`](../Unfoldings/Cap/JordanComplementaryChainError.lean):
   complementary original fan sums along actual Jordan chains pay at most one extra
   total-curvature term, with a uniform mesh-independent small-tilt budget.
+
+- [`BankLengths`](../Unfoldings/Polyhedron/BankLengths.lean),
+  [`ProjectedUnsignedBankRays`](../Unfoldings/Cap/ProjectedUnsignedBankRays.lean):
+  directed rays determine original full edge vectors on either incident side, and intrinsic lengths.
+- [`JordanPhysicalInitialBank`](../Unfoldings/Cap/JordanPhysicalInitialBank.lean),
+  [`JordanPhysicalBankPropagation`](../Unfoldings/Cap/JordanPhysicalBankPropagation.lean):
+  construct the actual initial side and propagate full physical bank geometry without face matching.
+- [`PhysicalBoundaryChainLift`](../Unfoldings/Cap/PhysicalBoundaryChainLift.lean),
+  [`JordanPhysicalChainLift`](../Unfoldings/Cap/JordanPhysicalChainLift.lean),
+  [`RadialJordanPhysicalChain`](../Unfoldings/Cap/RadialJordanPhysicalChain.lean):
+  whole actual radial Jordan traversals from geometry alone, without an initial-side input.

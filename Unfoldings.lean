@@ -1959,3 +1959,10 @@ public import Unfoldings.Cap.SignedRadialJordanChainLift
 public import Unfoldings.Cap.SignedOriginalRadialChainErrorBound
 public import Unfoldings.Cap.SignedOriginalBankHeadingComparison
 public import Unfoldings.Cap.JordanComplementaryChainError
+public import Unfoldings.Polyhedron.BankLengths
+public import Unfoldings.Cap.ProjectedUnsignedBankRays
+public import Unfoldings.Cap.JordanPhysicalBankPropagation
+public import Unfoldings.Cap.JordanPhysicalInitialBank
+public import Unfoldings.Cap.PhysicalBoundaryChainLift
+public import Unfoldings.Cap.JordanPhysicalChainLift
+public import Unfoldings.Cap.RadialJordanPhysicalChain

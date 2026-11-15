@@ -46,8 +46,10 @@ nonoverlap and counting remain to be proved.
   with the same uniform real-heading bound and no initial sign input.
 - [x] Bound complementary original fan sums along actual Jordan chains by the same
   radial comparison plus one extra total-curvature term; choose one uniform tilt.
-- [ ] Identify the prescribed comparison bank with the selected side or its complementary
-  original corner weights when the bounded filling selects the other side.
+- [x] Construct the whole physical radial Jordan traversal without an initial-side,
+  orientation or nonrim-bank input, preserving full vectors and intrinsic bank lengths.
+- [ ] Identify its intrinsic fan with the prescribed bank's original fan or complementary
+  corner weights, then transfer the corresponding real-heading bound.
 - [ ] Identify the physical saved-frontier curves with the constructed histories
   and prove that their selected original side is untouched. Apply the local
   metric remainder models to those actual updates.
@@ -72,8 +74,10 @@ projected traces agree exactly, as do every bank's intrinsic length, whole
 arclength and rolled block displacements. Every fine rolled point is its ordered
 old bank point, and radial order and all quantitative margins survive without loss.
 The unique initial Jordan bank is now constructed, with its exact original seam
-endpoint transport. The prescribed bank may be on the other side, so the heading
-comparison still needs that case; its selected-side hypothesis remains. The bank must
+endpoint transport. The full physical Jordan traversal now follows the prescribed geometry without a
+side or orientation input. Its intrinsic fan still needs identification with the
+prescribed fan or its complement before the unconditional heading bound follows.
+The bank must
 also be carried through actual gap attachments, preserving arclength, hinges and
 the untouched original side.
 

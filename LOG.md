@@ -2,6 +2,20 @@
 
 ## Session Log
 
+### 2026-11-15 — physical Jordan traversal with no initial-side hypothesis
+
+- Proved an interior directed projected ray determines exactly the two original
+  incident germs and their identical full spatial edge vector, without a side sign.
+- Constructed an actual initial Jordan bank on the appropriate original side,
+  deriving its spatial position and full vector. Propagated those physical data
+  through every actual successor, allowing the selected face labels to differ.
+- Constructed whole radial Jordan traversals from the original closure geometry
+  with no selected-side, orientation or nonrim-bank input. Preserved all physical
+  starting points, full vectors, projected path and intrinsic bank lengths.
+- Verification: cache retrieval and full `lake build` passed 5,900 jobs;
+  15,933 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Intrinsic fan/complement identification and the full graft remain open.
+
 ### 2026-11-15 — complementary actual Jordan-chain fan budgets
 
 - Identified the actual Jordan chain's fan error with its original selected
