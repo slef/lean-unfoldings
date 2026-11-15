@@ -39,7 +39,8 @@ nonoverlap and counting remain to be proved.
 - [x] Derive contiguous fine blocks and preserve every ordered real heading prefix.
 - [x] Identify complete intrinsic, spatial and projected fine traces with the old banks.
 - [x] Preserve every bank's intrinsic length, whole arclength and rolled block displacement.
-- [ ] Preserve the full pointwise roll and transport radial-direction margins.
+- [x] Preserve the full ordered pointwise roll, exact path image and all radial margins
+  with their original constants, including every inserted vertex and bank endpoint.
 - [ ] Construct the required initial incident side of the reference closure.
 - [ ] Identify the physical saved-frontier curves with the constructed histories
   and prove that their selected original side is untouched. Apply the local
@@ -62,8 +63,9 @@ uniform bound for the actual unreduced heading error. Complete coarse-to-fine pa
 now preserve exact old metric copies and fan angles, insert only straight hinges,
 and preserve every real heading prefix in order. Whole intrinsic, spatial and
 projected traces agree exactly, as do every bank's intrinsic length, whole
-arclength and rolled block displacements. Full pointwise roll and radial-direction
-transport and the initial-side choice remain open. The bank must
+arclength and rolled block displacements. Every fine rolled point is its ordered
+old bank point, and radial order and all quantitative margins survive without loss.
+The initial-side choice remains open. The bank must
 also be carried through actual gap attachments, preserving arclength, hinges and
 the untouched original side.
 

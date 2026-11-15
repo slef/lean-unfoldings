@@ -2,6 +2,18 @@
 
 ## Session Log
 
+### 2026-11-15 — full pointwise intrinsic rolls and lossless radial transport
+
+- Located every old rolled vertex exactly and every inserted vertex by its
+  cumulative actual intrinsic arclength, in strict bank-parameter order.
+- Proved every point on a fine rolled bank is its ordered original bank point,
+  and every original point is attained. Whole rolled path images agree exactly.
+- Preserved whole-bank radial order and every quantitative radial margin with
+  the same constant. No mesh-size loss, development injectivity or nonoverlap is assumed.
+- Verification: cache retrieval and full `lake build` passed 5,883 jobs;
+  15,887 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. The initial-side choice, physical gap transport and full graft remain open.
+
 ### 2026-11-15 — actual whole-path arclength and rolled displacement
 
 - Proved an ordered genuine segment partition preserves the sum of piece

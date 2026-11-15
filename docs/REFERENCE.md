@@ -2958,3 +2958,11 @@ corners and does not yet identify their widths with the actual retained cap fan.
   genuine physical fine pieces preserve each original bank's full intrinsic length.
 - [`CompletionChainLength`](../Unfoldings/Roof/CompletionChainLength.lean):
   fine-bank piece bijections, whole arclength and exact rolled block displacements and endpoint.
+
+- [`CompletionChainRollPositions`](../Unfoldings/Roof/CompletionChainRollPositions.lean),
+  [`CompletionChainRollTrace`](../Unfoldings/Roof/CompletionChainRollTrace.lean):
+  exact ordered arclength parameters for every point and equality of whole rolled images.
+- [`FiniteInterpolation`](../Unfoldings/Geometry/FiniteInterpolation.lean),
+  [`RadialMarginSubdivision`](../Unfoldings/Geometry/RadialMarginSubdivision.lean),
+  [`CompletionChainRadial`](../Unfoldings/Roof/CompletionChainRadial.lean):
+  whole-bank radial order and quantitative radial margins survive actual refinement without loss.

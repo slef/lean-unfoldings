@@ -1944,3 +1944,8 @@ public import Unfoldings.Geometry.OrderedSegmentLength
 public import Unfoldings.Complex.BoundaryBankLength
 public import Unfoldings.Roof.CompletionBankLength
 public import Unfoldings.Roof.CompletionChainLength
+public import Unfoldings.Roof.CompletionChainRollPositions
+public import Unfoldings.Geometry.FiniteInterpolation
+public import Unfoldings.Roof.CompletionChainRollTrace
+public import Unfoldings.Geometry.RadialMarginSubdivision
+public import Unfoldings.Roof.CompletionChainRadial
