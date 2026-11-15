@@ -2,6 +2,20 @@
 
 ## Session Log
 
+### 2026-11-15 — singleton changes of actual intermediate bank headings
+
+- Defined parent-bank headings by rolling the actual intermediate intrinsic cut
+  contour constructed from the cap disk, retaining the original seam-side labels.
+- Proved those measurements equal the original curvature of processed descendants
+  and lie between zero and total original curvature.
+- Proved a singleton fresh step changes each measurement by exactly its original
+  source curvature on ancestor subtrees, and by zero elsewhere. Flat sources are
+  included; no heading-update or signed-charge certificate is assumed.
+- Verification: cache retrieval and full `lake build` passed 5,785 jobs; all
+  15,363 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. These measure actual original cut banks; their physical
+  identification through inserted gap patches remains open.
+
 ### 2026-11-15 — actual unreduced intermediate parent-bank headings
 
 - Rolled the actual intermediate contour from its entering original parent bank

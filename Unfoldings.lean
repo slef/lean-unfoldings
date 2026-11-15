@@ -1850,3 +1850,5 @@ public import Unfoldings.Complex.ProcessedSubtreeAngles
 public import Unfoldings.Complex.BoundaryContourRegions
 public import Unfoldings.Complex.ProcessedSubtreeBanks
 public import Unfoldings.Complex.ProcessedSubtreeRolling
+public import Unfoldings.Topology.ProcessedDescendantWeights
+public import Unfoldings.Cap.ProcessedParentBankHeading

@@ -2773,3 +2773,8 @@ corners and does not yet identify their widths with the actual retained cap fan.
 
 - [`ProcessedSubtreeRolling`](../Unfoldings/Complex/ProcessedSubtreeRolling.lean):
   exact unreduced current parent-bank heading equals processed original subtree curvature.
+
+- [`ProcessedDescendantWeights`](../Unfoldings/Topology/ProcessedDescendantWeights.lean):
+  exact singleton-step updates of original processed subtree weights.
+- [`ProcessedParentBankHeading`](../Unfoldings/Cap/ProcessedParentBankHeading.lean):
+  actual constructed current bank measurements, curvature bounds and exact fresh-source increments.
