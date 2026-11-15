@@ -2734,3 +2734,8 @@ corners and does not yet identify their widths with the actual retained cap fan.
   [`SingleBoundaryCopySplit`](../Unfoldings/Complex/SingleBoundaryCopySplit.lean),
   [`ProcessedParentCopySplit`](../Unfoldings/Cap/ProcessedParentCopySplit.lean):
   exact intermediate parent-copy splitting and original angle conservation.
+
+- [`RestoredLinkChain`](../Unfoldings/Complex/RestoredLinkChain.lean): exact
+  ordered original fans survive restoration when both terminal banks remain.
+- [`ProcessedContourFans`](../Unfoldings/Complex/ProcessedContourFans.lean):
+  derive the surviving banks and exact original fan at earlier contour positions.

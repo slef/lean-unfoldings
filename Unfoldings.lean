@@ -1833,3 +1833,5 @@ public import Unfoldings.Cap.ProcessedParentCopySplit
 public import Unfoldings.Topology.ParentFrontierSingleton
 public import Unfoldings.Complex.RimStartedContour
 public import Unfoldings.Cap.RimStartedContour
+public import Unfoldings.Complex.RestoredLinkChain
+public import Unfoldings.Complex.ProcessedContourFans

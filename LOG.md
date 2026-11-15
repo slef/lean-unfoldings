@@ -2,6 +2,21 @@
 
 ## Session Log
 
+### 2026-11-15 — exact original boundary-fan retention at intermediate cuts
+
+- Embedded actual ordered link chains under seam restoration, preserving every
+  original corner and crossing. Proved such a chain covers the restored fan
+  whenever both of its terminal banks survive.
+- Derived equality of actual corner sets and total angles from the two terminal
+  banks, without a supplied angle or corner-set equality.
+- Applied this to previously passed positions of the original contour: both
+  adjacent banks are already cut and the actual intermediate fan equals its
+  final original fan, even while cuts continue elsewhere.
+- Verification: cache retrieval and full `lake build` passed 5,768 jobs; all
+  15,298 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. This identifies original cut fans; matching the physical
+  saved-frontier in the assembled graft remains open.
+
 ### 2026-11-15 — rim-started singleton cuts and exact parent-corner splitting
 
 - Proved consecutive actual contour banks follow original parent edges or the rim.
