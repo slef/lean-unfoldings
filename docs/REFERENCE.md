@@ -2865,3 +2865,7 @@ corners and does not yet identify their widths with the actual retained cap fan.
 - [`RestrictedBoundaryChainLift`](../Unfoldings/Cap/RestrictedBoundaryChainLift.lean),
   [`JordanBoundaryChainLift`](../Unfoldings/Cap/JordanBoundaryChainLift.lean):
   derive actual patch successors and preserve the entire original bank roll.
+
+- [`PositiveRayCones`](../Unfoldings/Geometry/PositiveRayCones.lean),
+  [`ProjectedBankRays`](../Unfoldings/Cap/ProjectedBankRays.lean):
+  identify actual positive original banks from directed rays, independently of endpoint length.

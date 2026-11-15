@@ -2,6 +2,16 @@
 
 ## Session Log
 
+### 2026-11-15 — physical bank rays determine original germs
+
+- Proved positive rescaling preserves open corner cones and that corners on the
+  same occupied side of a shared directed ray cannot have disjoint interiors.
+- Used this to identify positive original cap bank germs even when their
+  projected endpoint distances differ. No edge-length equality is assumed.
+- Verification: cache retrieval and full `lake build` passed 5,830 jobs;
+  15,548 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Reference-side propagation and the physical graft remain open.
+
 ### 2026-11-15 — construct actual Jordan traversals of original banks
 
 - Detected the actual boundary status of an original edge from one regular

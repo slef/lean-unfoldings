@@ -1895,3 +1895,5 @@ public import Unfoldings.Complex.BoundaryEdgeDetection
 public import Unfoldings.Cap.JordanOriginalBanks
 public import Unfoldings.Cap.RestrictedBoundaryChainLift
 public import Unfoldings.Cap.JordanBoundaryChainLift
+public import Unfoldings.Geometry.PositiveRayCones
+public import Unfoldings.Cap.ProjectedBankRays
