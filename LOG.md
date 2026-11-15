@@ -2,6 +2,17 @@
 
 ## Session Log
 
+### 2026-11-15 — rigid planar-cell model of the whole unbounded roof
+
+- Constructed an isometry of metric gluings under arbitrary cellwise isometric
+  coordinate changes, preserving every declared seam.
+- Gave every actual unbounded support-plane cell its rigid planar coordinates.
+  The resulting physical-seam realization is isometric to the complete intrinsic
+  spatial roof, and hence complete and homeomorphic to the whole plane.
+- Verification: cache retrieval and full `lake build` passed 5,620 jobs; all
+  14,287 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Flat graft corner charts and saved-frontier surgery remain open.
+
 ### 2026-11-14 — exact finite-cell model of intrinsic polygonal regions
 
 - Proved that finite closed-piece nonexpansion propagates along every allowed

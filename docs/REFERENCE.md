@@ -2498,3 +2498,6 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 
 | [`Metric/PolygonalPiecewise`](../Unfoldings/Metric/PolygonalPiecewise.lean) | Finite closed-piece nonexpansion controls the actual intrinsic polygonal metric |
 | [`Metric/PolygonalCoverGluing`](../Unfoldings/Metric/PolygonalCoverGluing.lean) | Finite closed convex cover gluings recover exactly the intrinsic polygonal metric, including unbounded and redundant cells |
+
+| [`Metric/Reparametrize`](../Unfoldings/Metric/Reparametrize.lean) | Cellwise isometries preserve the actual gluing metric and all physical seams |
+| [`Geometry/SpatialEnvelopeWholeGluing`](../Unfoldings/Geometry/SpatialEnvelopeWholeGluing.lean) | Exact complete planar-cell metric gluing of the entire unbounded physical roof |

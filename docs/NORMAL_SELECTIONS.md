@@ -634,3 +634,8 @@ gluing, using actual coincident-point seams. It handles unbounded and redundant
 cells and proves that no extra identifications arise. Thus the initial roof and
 constructed Jordan gaps can share the gluing API without assuming a separate
 metric compatibility certificate.
+
+[`wholePlanarGluingIsometryEquiv`](../Unfoldings/Geometry/SpatialEnvelopeWholeGluing.lean)
+gives the complete physical roof an exact planar-cell gluing model using its
+actual rigid support-plane coordinates and physical coincidence seams. This
+transfers the intrinsic metric and plane topology, including redundant supports.
