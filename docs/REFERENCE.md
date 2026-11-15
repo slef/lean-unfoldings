@@ -2844,3 +2844,6 @@ corners and does not yet identify their widths with the actual retained cap fan.
   physical projected banks determine actual original germs, for either orientation.
 - [`ProjectedFanOrientation`](../Unfoldings/Cap/ProjectedFanOrientation.lean):
   arbitrary link subchains have disjoint cones and actual fan terminal orientations are opposite.
+
+- [`ProjectedFanAgreement`](../Unfoldings/Cap/ProjectedFanAgreement.lean):
+  derive actual restricted fan weights and intrinsic angle from physical directed banks.

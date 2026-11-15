@@ -1885,3 +1885,4 @@ public import Unfoldings.Complex.RawGermChains
 public import Unfoldings.Complex.RestrictedFanAgreement
 public import Unfoldings.Cap.ProjectedBankUniqueness
 public import Unfoldings.Cap.ProjectedFanOrientation
+public import Unfoldings.Cap.ProjectedFanAgreement

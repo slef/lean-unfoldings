@@ -2,6 +2,18 @@
 
 ## Session Log
 
+### 2026-11-15 — recover actual restricted fan angles from physical banks
+
+- Matched actual raw terminal germs using the common physical projected vertex,
+  both directed bank vectors and outgoing orientation. Derived the incoming
+  orientation from the two actual corner chains.
+- Obtained equality of every original corner weight and the unreduced intrinsic
+  angle with a whole-face restricted patch. No fan-angle equality is assumed.
+- Verification: cache retrieval and full `lake build` passed 5,819 jobs;
+  15,509 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Identifying these physical banks in the reference
+  comparison and carrying them through the graft remain open.
+
 ### 2026-11-15 — physical bank uniqueness and actual fan orientations
 
 - Proved projected position, direction and orientation sign identify an original
