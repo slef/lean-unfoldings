@@ -851,8 +851,10 @@ The [construction guide](docs/NORMAL_SELECTIONS.md) records the completed bridge
 - [x] Construct global planar isometries of simply connected flat boundary gluings
   of finite closed convex cells, including unbounded cells.
 
-Next: construct actual polygonal Jordan gaps and their end heights, then prove
-gap-grafting nonoverlap. Normal-cover
+Next: identify exact complementary gap corners, construct saved-frontier
+surgery and assemble the complete flat graft. Actual Jordan gaps and their
+finite complete boundary-cell models are available. The finite-cell route to
+global isometry does not require a separate end-height certificate. Normal-cover
 selection and Euler counting follow.
 
 ## Later targets and Fewest Nets
@@ -870,6 +872,9 @@ selection and Euler counting follow.
   subhistory bounds, deriving every intermediate bank and suffix radial test.
 - [x] Construct geometric two-bank Jordan regions for positive source-opening
   traces, with finite convex cells, complete intrinsic metrics and sector topology.
+- [x] Give the entire physical roof an exact complete rigid planar-cell gluing model.
+- [x] Identify actual Jordan-gap intrinsic metrics with complete finite planar-cell
+  gluings having boundary-only seams.
 - [ ] Prove exact complementary bank-corner charts for grafting these regions.
 - [ ] Positive Jordan gaps from radially monotone polygonal banks.
 - [ ] Complete one-ended forest cuts and intrinsic polygonal-gap insertion.

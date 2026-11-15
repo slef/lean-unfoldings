@@ -2501,3 +2501,7 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 
 | [`Metric/Reparametrize`](../Unfoldings/Metric/Reparametrize.lean) | Cellwise isometries preserve the actual gluing metric and all physical seams |
 | [`Geometry/SpatialEnvelopeWholeGluing`](../Unfoldings/Geometry/SpatialEnvelopeWholeGluing.lean) | Exact complete planar-cell metric gluing of the entire unbounded physical roof |
+
+| [`Metric/ChangeSeams`](../Unfoldings/Metric/ChangeSeams.lean) | Replacing seams by the same metric identifications preserves the constructed gluing metric |
+| [`Metric/PolygonalBoundaryCover`](../Unfoldings/Metric/PolygonalBoundaryCover.lean) | Exact intrinsic covers with actual distinct-cell seams confined to cell boundaries |
+| [`Geometry/TwoBankGapGluing`](../Unfoldings/Geometry/TwoBankGapGluing.lean) | Complete boundary-only finite planar-cell gluing models of actual two-bank Jordan gaps |

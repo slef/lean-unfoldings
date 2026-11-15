@@ -2,6 +2,20 @@
 
 ## Session Log
 
+### 2026-11-15 — complete boundary-only planar-cell models of actual gaps
+
+- Proved that changing declared seams to the same metric identifications gives
+  an isometry of the actual route-metric quotients.
+- Removed all same-cell identity seams from physical coincident-point gluings.
+  For full-dimensional closed convex cells with disjoint interiors, every
+  remaining seam point lies on the actual cell boundary.
+- Constructed such finite complete planar-cell gluings for the actual two-bank
+  Jordan gaps. Their metrics, contractibility and point placements agree with
+  the geometric regions, without a flat-corner or nonoverlap certificate.
+- Verification: cache retrieval and full `lake build` passed 5,623 jobs; all
+  14,305 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Complementary bank-corner charts and actual graft surgery remain open.
+
 ### 2026-11-15 — rigid planar-cell model of the whole unbounded roof
 
 - Constructed an isometry of metric gluings under arbitrary cellwise isometric

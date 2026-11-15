@@ -639,3 +639,9 @@ metric compatibility certificate.
 gives the complete physical roof an exact planar-cell gluing model using its
 actual rigid support-plane coordinates and physical coincidence seams. This
 transfers the intrinsic metric and plane topology, including redundant supports.
+
+[`exists_twoBankGap_boundary_gluing`](../Unfoldings/Geometry/TwoBankGapGluing.lean)
+constructs a complete contractible finite planar-cell gluing of the actual
+Jordan gap, with full-dimensional cells and boundary-only seams. Its explicit
+isometry sends each cell point to that same physical point of the gap. Exact
+complementary corner charts still have to be proved before graft flatness.

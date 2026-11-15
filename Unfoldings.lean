@@ -1687,3 +1687,6 @@ public import Unfoldings.Metric.PolygonalPiecewise
 public import Unfoldings.Metric.PolygonalCoverGluing
 public import Unfoldings.Metric.Reparametrize
 public import Unfoldings.Geometry.SpatialEnvelopeWholeGluing
+public import Unfoldings.Metric.ChangeSeams
+public import Unfoldings.Metric.PolygonalBoundaryCover
+public import Unfoldings.Geometry.TwoBankGapGluing
