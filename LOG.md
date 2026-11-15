@@ -2,6 +2,21 @@
 
 ## Session Log
 
+### 2026-11-15 — intrinsic reentrant-sector metric models
+
+- Proved that every slit angular fan below a full turn is isometric to its
+  actual planar region with the intrinsic polygonal metric, including reentrant
+  widths above pi. The proof uses the original rigid cell placements.
+- Constructed every positive sector below a full turn from two genuine convex
+  halves, retaining the real angular width and exact physical development.
+- Proved invariance of polygonal intrinsic metrics under rigid coordinate
+  changes. A local geometric sector description now gives a whole intrinsic
+  fan-ball chart, including at reentrant corners, with no metric-flatness premise.
+- Verification: cache retrieval and full `lake build` passed 5,675 jobs; all
+  14,819 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. The actual internal bank complementary apertures,
+  saved-frontier surgery and assembled-graft regularity remain open.
+
 ### 2026-11-15 — actual two-piece geometric leaf completion
 
 - Gave the actual Jordan-gap source ball rigid canonical sector coordinates,

@@ -1738,3 +1738,7 @@ public import Unfoldings.Cone.AttachSector
 public import Unfoldings.Cone.AttachSectorPlane
 public import Unfoldings.Cone.PhysicalGapCompletion
 public import Unfoldings.Cap.LeafGeometricCompletion
+public import Unfoldings.Cone.AngularRegion
+public import Unfoldings.Cone.ReentrantSector
+public import Unfoldings.Metric.PolygonalRigid
+public import Unfoldings.Cone.ReentrantCornerChart

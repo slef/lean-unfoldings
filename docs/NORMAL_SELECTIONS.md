@@ -758,3 +758,11 @@ Its constructed plane isometry preserves the original development and has an
 explicit physical gap-coordinate formula. The actual graft neighborhoods must
 still be matched to these models; internal complementary apertures and
 saved-frontier surgery remain open.
+
+[`reentrantSectorIsometryEquiv`](../Unfoldings/Cone/ReentrantSector.lean)
+constructs the exact intrinsic two-cell metric of any geometric sector below a
+full turn, including angles above pi.
+[`exists_reentrant_corner_fan_isometry`](../Unfoldings/Cone/ReentrantCornerChart.lean)
+turns a local geometric sector description into a whole intrinsic corner chart,
+retaining its physical placement. For the actual internal gap banks, the
+remaining geometric step is to prove their complementary aperture formulas.

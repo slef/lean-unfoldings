@@ -2573,3 +2573,8 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [`Cone/AttachSectorPlane`](../Unfoldings/Cone/AttachSectorPlane.lean) | The two-piece complementary sector attachment has exactly the whole Euclidean plane metric |
 | [`Cone/PhysicalGapCompletion`](../Unfoldings/Cone/PhysicalGapCompletion.lean) | Complete the retained fan with its actual geometric source sector, keeping physical bank coordinates |
 | [`Cap/LeafGeometricCompletion`](../Unfoldings/Cap/LeafGeometricCompletion.lean) | Constructed plane isometry for the actual retained leaf fan completed by the physical sector of its named bank vectors |
+
+| [`Cone/AngularRegion`](../Unfoldings/Cone/AngularRegion.lean) | Every slit fan below a full turn has exactly the intrinsic polygonal metric of its actual planar image |
+| [`Cone/ReentrantSector`](../Unfoldings/Cone/ReentrantSector.lean) | Two convex halves construct an intrinsic model for any geometric sector below a full turn, including reentrant angles |
+| [`Metric/PolygonalRigid`](../Unfoldings/Metric/PolygonalRigid.lean) | Rigid changes of physical region coordinates preserve the constructed intrinsic polygonal metric |
+| [`Cone/ReentrantCornerChart`](../Unfoldings/Cone/ReentrantCornerChart.lean) | A proved geometric corner sector yields an exact intrinsic whole-ball fan chart, including reentrant angles |
