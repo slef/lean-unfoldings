@@ -2,6 +2,20 @@
 
 ## Session Log
 
+### 2026-11-14 — exact original cut-fan angles through completion
+
+- Developed the actual completion pieces in each original face into precisely
+  its original metric triangle, deriving genuine opposite-side hinges.
+- Proved that fine corner angles over each original triangle corner sum to its
+  original Euclidean angle, using the geometry of the triangular footprint.
+- Transported these sums through conforming cut-metric equivalences. Every
+  original retained vertex copy has a unique fine copy with exactly the same
+  one-sided fan angle, for arbitrary original cuts.
+- Verification: cache retrieval and full `lake build` passed 5,543 jobs; all
+  13,815 unfolding declarations passed the standard-axiom audit. Both abstract
+  independence checks passed. Matching original bank histories to reference
+  Jordan banks, saved-frontier bookkeeping and the complete graft remain open.
+
 ### 2026-11-14 — exact polar windows and a common radial-loss threshold
 
 - Identified the actual internal source-ray angle sum with the precise strict

@@ -1031,6 +1031,13 @@ public import Unfoldings.Geometry.PolarWindowRadial
 public import Unfoldings.Roof.PolarWindowRolling
 public import Unfoldings.Geometry.RadialBlockThreshold
 public import Unfoldings.Roof.RollingRadialBlockThreshold
+public import Unfoldings.Development.RigidPlacements
+public import Unfoldings.Development.FlatCap
+public import Unfoldings.Roof.CompletionFacePatch
+public import Unfoldings.Geometry.TriangleBoundaryRays
+public import Unfoldings.Cap.TriangularFootprintAngles
+public import Unfoldings.Geometry.TriangleSubsetCorners
+public import Unfoldings.Roof.CompletionFaceAngles
 public import Unfoldings.Roof.CompletionOriginalPieces
 public import Unfoldings.Roof.CompletionOriginalCoordinates
 public import Unfoldings.Roof.CompletionOriginalSubdivision
@@ -1599,3 +1606,7 @@ public import Unfoldings.Geometry.AxisQuadrantFrame
 public import Unfoldings.Geometry.OpenEndTrimming
 public import Unfoldings.Geometry.RayWindowTrimming
 public import Unfoldings.Geometry.RayWindowClosure
+
+public import Unfoldings.Complex.SubdivisionCornerAngles
+
+public import Unfoldings.Roof.CompletionSubdivisionAngles

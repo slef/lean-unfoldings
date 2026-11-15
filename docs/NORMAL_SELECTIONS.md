@@ -464,3 +464,22 @@ rays and links come from the actual original subchain.
 chooses one positive heading tolerance and tilt controlling both actual rolling
 and weighted radial loss, with the bounds valid at every smaller positive tilt.
 These remain comparison models until bank-history transport is established.
+
+## Exact angles through physical completion subdivisions
+
+`CompletionFacePatch` develops the actual fine triangles in each original face
+into exactly that original metric triangle, with genuine opposite-side hinges.
+`TriangularFootprintAngles` identifies a triangular footprint's corner fan
+with its actual Euclidean corner angle. Together these give the exact sum of
+all physical fine corner angles over every original corner.
+
+`SubdivisionCornerAngles` transports this conservation through an arbitrary
+conforming cut-metric equivalence. Every original retained vertex copy has a
+unique fine vertex above it, and its one-sided total angle is unchanged.
+`CompletionSubdivisionAngles` proves these statements for the actual physical
+completion, for every choice of retained original seams. The angle conservation
+is proved from the mesh geometry, rather than supplied as a hypothesis.
+
+The original cut-bank histories still need to be matched to the reference
+Jordan banks. Saved-frontier fan bookkeeping, successive-gap nesting and the
+complete intrinsic graft remain open.

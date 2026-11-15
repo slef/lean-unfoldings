@@ -481,6 +481,13 @@ Start with the [theorem and proof guide](ROOFS.md). Boundary heights are unrestr
 | [Unfoldings.Roof.PolarWindowRolling](../Unfoldings/Roof/PolarWindowRolling.lean) | The weighted estimates' precise polar windows construct actual physical rolling comparisons |
 | [Unfoldings.Geometry.RadialBlockThreshold](../Unfoldings/Geometry/RadialBlockThreshold.lean) | Positive mesh-independent heading and tilt tolerances make weighted radial loss small |
 | [Unfoldings.Roof.RollingRadialBlockThreshold](../Unfoldings/Roof/RollingRadialBlockThreshold.lean) | One uniform tolerance controls actual bank rolling and radial loss at every smaller tilt |
+| [Unfoldings.Development.RigidPlacements](../Unfoldings/Development/RigidPlacements.lean) | Separated joined rigid placements derive opposite-side hinges |
+| [Unfoldings.Development.FlatCap](../Unfoldings/Development/FlatCap.lean) | Convex planar placements give flat caps and exact boundary fan angles |
+| [Unfoldings.Roof.CompletionFacePatch](../Unfoldings/Roof/CompletionFacePatch.lean) | Actual fine pieces in one original face develop injectively onto that metric triangle |
+| [Unfoldings.Geometry.TriangleBoundaryRays](../Unfoldings/Geometry/TriangleBoundaryRays.lean) | Actual frontier directions at a triangle corner recover its exact original angle |
+| [Unfoldings.Cap.TriangularFootprintAngles](../Unfoldings/Cap/TriangularFootprintAngles.lean) | Triangular footprint corners have their exact projected fan angles |
+| [Unfoldings.Geometry.TriangleSubsetCorners](../Unfoldings/Geometry/TriangleSubsetCorners.lean) | A contained triangle preserves every original extreme corner it contains |
+| [Unfoldings.Roof.CompletionFaceAngles](../Unfoldings/Roof/CompletionFaceAngles.lean) | Fine corner contributions at every original face corner sum to its exact old angle |
 | [Unfoldings.Roof.CompletionOriginalAdjacency](../Unfoldings/Roof/CompletionOriginalAdjacency.lean) | Locate fine adjacency between different original faces on their common edge |
 | [Unfoldings.Roof.CompletionOriginalConforming](../Unfoldings/Roof/CompletionOriginalConforming.lean) | Prove exact retained seam classes and the original-cut metric equivalence |
 | [Unfoldings.Roof.CompletionOriginalCoordinates](../Unfoldings/Roof/CompletionOriginalCoordinates.lean) | Prove that contained auxiliary pieces have the actual original face Euclidean metric |
@@ -2394,3 +2401,7 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [`Geometry/OpenEndTrimming`](../Unfoldings/Geometry/OpenEndTrimming.lean) | Genuine endpoint trims enter an open set containing every internal original vertex |
 | [`Geometry/RayWindowTrimming`](../Unfoldings/Geometry/RayWindowTrimming.lean) | Construct a pointed quadrant and genuine trims from a short actual ray-angle sum |
 | [`Geometry/RayWindowClosure`](../Unfoldings/Geometry/RayWindowClosure.lean) | Construct supported Jordan closing links from a short radial window |
+
+| [`Complex/SubdivisionCornerAngles`](../Unfoldings/Complex/SubdivisionCornerAngles.lean) | Exact refinement angle sums preserve individual retained vertex fans |
+
+| [`Roof/CompletionSubdivisionAngles`](../Unfoldings/Roof/CompletionSubdivisionAngles.lean) | Actual completion subdivision preserves every original cut vertex fan |
