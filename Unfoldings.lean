@@ -1992,3 +1992,7 @@ public import Unfoldings.Roof.CompatibleTerminalBanks
 public import Unfoldings.Geometry.SpatialEnvelopeRayDilation
 public import Unfoldings.Convex.ExteriorSpatialRays
 public import Unfoldings.Roof.CompatibleEmbeddedTerminalBanks
+public import Unfoldings.Metric.ConvexLocalLipschitz
+public import Unfoldings.Metric.PolygonalCutInterior
+public import Unfoldings.Metric.PolygonalBoundaryCuts
+public import Unfoldings.Metric.AffineHalfspaceCut

@@ -2,6 +2,21 @@
 
 ## Session Log
 
+### 2026-11-15 — exact convex one-sided regions and boundary bank copies
+
+- Proved a common local Lipschitz bound is global on convex domains, including
+  targets with infinite distances between other components.
+- Constructed canonical actual interior lifts. If a closed cut avoids a convex
+  region's interior, these lifts preserve every ambient distance.
+- Used full-dimensional cell interiors to derive every coincident boundary
+  identification. Removing boundary attachments preserves the entire actual
+  intrinsic convex-region metric, including unbounded cells.
+- Applied this to each side of an aligned finite affine partition: its cut
+  seam quotient recovers the exact full closed halfspace with all bank points.
+- Verification: actual cache retrieval and full `lake build` passed 5,930 jobs;
+  16,068 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Finite-bank joins and the complete flat graft remain open.
+
 ### 2026-11-15 — closed embedded terminal banks and exact spatial speed
 
 - Proved every actual exterior ray is spatially affine on its whole positive

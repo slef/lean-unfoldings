@@ -3041,3 +3041,13 @@ corners and does not yet identify their widths with the actual retained cap fan.
   exact intrinsic tail speeds, full spatial affine rays, and closed embedded half-lines.
 - [`CompatibleEmbeddedTerminalBanks`](../Unfoldings/Roof/CompatibleEmbeddedTerminalBanks.lean):
   the actual compatible terminal bank witnesses are disjoint closed embedded dilations.
+
+- [`ConvexLocalLipschitz`](../Unfoldings/Metric/ConvexLocalLipschitz.lean):
+  a common local Lipschitz bound extends across a convex domain with extended-metric targets.
+- [`PolygonalCutInterior`](../Unfoldings/Metric/PolygonalCutInterior.lean),
+  [`PolygonalBoundaryCuts`](../Unfoldings/Metric/PolygonalBoundaryCuts.lean):
+  canonical interior lifts are isometric when cuts avoid the interior; full-dimensional
+  cells recover every boundary copy and the entire convex-region metric.
+- [`AffineHalfspaceCut`](../Unfoldings/Metric/AffineHalfspaceCut.lean):
+  one side of an aligned finite partition recovers the exact complete closed halfspace,
+  including its actual cut-bank attachments.
