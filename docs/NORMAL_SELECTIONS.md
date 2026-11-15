@@ -34,8 +34,10 @@ nonoverlap and counting remain to be proved.
   incident side, preserving all original corner weights and full real rolls.
 - [x] Transfer the geometric error sum to actual original cut fans and obtain a
   uniform small-tilt bound for their unreduced real heading error.
-- [ ] Construct the required initial incident side of the reference closure and
-  refine complete coarse original paths into their actual physical fine bank chains.
+- [x] Construct whole physical fine refinements of actual coarse cut-bank chains,
+  preserving exact metric copies, all old fan angles and real terminal headings.
+- [ ] Preserve every ordered heading prefix and radial margin along these refinements.
+- [ ] Construct the required initial incident side of the reference closure.
 - [ ] Identify the physical saved-frontier curves with the constructed histories
   and prove that their selected original side is untouched. Apply the local
   metric remainder models to those actual updates.
@@ -53,8 +55,10 @@ Physical completion subdivisions preserve each selected one-sided fan angle.
 Matching physical terminal bank positions and directions now recovers the actual
 original corner fan inside a comparison patch. Radial closure geometry now
 constructs the entire Jordan traversal from one initial incident side, with a
-uniform bound for the actual unreduced heading error. The initial-side choice and
-complete coarse-to-fine path refinement still need construction. The bank must
+uniform bound for the actual unreduced heading error. Complete coarse-to-fine paths
+now preserve exact old metric copies and fan angles, insert only straight hinges,
+and preserve the real terminal heading. Ordered prefix and radial transport and
+the initial-side choice remain open. The bank must
 also be carried through actual gap attachments, preserving arclength, hinges and
 the untouched original side.
 

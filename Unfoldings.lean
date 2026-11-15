@@ -1928,3 +1928,7 @@ public import Unfoldings.Topology.ChainBlockAssembly
 public import Unfoldings.Complex.DirectedCutBank
 public import Unfoldings.Complex.DirectedBankChain
 public import Unfoldings.Roof.CompletionBankPathAssembly
+public import Unfoldings.Complex.BoundaryChainVertices
+public import Unfoldings.Roof.CompletionOriginalChainRefinement
+public import Unfoldings.Roof.CompletionChainFanRefinement
+public import Unfoldings.Roof.CompletionChainHeading

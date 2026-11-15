@@ -2,6 +2,18 @@
 
 ## Session Log
 
+### 2026-11-15 — whole original chains preserve actual fans and real terminal heading
+
+- Constructed a canonical physical fine refinement of every actual original
+  cut-bank chain, with both exact metric endpoints and every directed piece.
+- Located every old starting cut-vertex copy uniquely and preserved its full
+  intrinsic fan angle. Proved every other starting fine hinge has angle pi.
+- Proved exact equality of real terminal headings for the whole refined path;
+  no principal-angle reduction or supplied angle certificate is used.
+- Verification: cache retrieval and full `lake build` passed 5,866 jobs;
+  15,778 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Ordered prefix transport and the physical graft remain open.
+
 ### 2026-11-15 — whole physical paths from original directed bank labels
 
 - Represented an original cut bank together with its side and directed endpoint.

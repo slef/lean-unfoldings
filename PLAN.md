@@ -861,8 +861,10 @@ reference fans, whole tangent metrics and full rolls. Their projected segments a
 incident-face sides are identified, and selected angles survive physical completion.
 Actual radial geometry and one initial incident side now construct the Jordan
 traversal and give a uniform bound on the original unreduced heading error.
-The initial-side choice and complete coarse-to-fine path refinement still need
-construction. Transport through inserted gaps and the complete graft remain open.
+Whole physical fine paths preserve exact metric copies, old fan angles and real
+terminal headings, with every new hinge straight. Ordered prefix and radial
+transport and the initial-side choice remain open, as do transport through
+inserted gaps and the complete graft.
 See the [gap-grafting checklist](docs/NORMAL_SELECTIONS.md#gap-grafting-status). The finite-cell route to
 global isometry does not require a separate end-height certificate. Normal-cover
 selection and Euler counting follow.

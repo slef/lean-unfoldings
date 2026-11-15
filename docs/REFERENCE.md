@@ -2929,3 +2929,11 @@ corners and does not yet identify their widths with the actual retained cap fan.
   recover original seam, side and endpoint labels from actual cut-bank chains.
 - [`CompletionBankPathAssembly`](../Unfoldings/Roof/CompletionBankPathAssembly.lean):
   complete physical fine paths with exact metric endpoints and directed piece coverage.
+
+- [`BoundaryChainVertices`](../Unfoldings/Complex/BoundaryChainVertices.lean):
+  starting intrinsic vertex copies of any actual boundary chain are distinct.
+- [`CompletionOriginalChainRefinement`](../Unfoldings/Roof/CompletionOriginalChainRefinement.lean),
+  [`CompletionChainFanRefinement`](../Unfoldings/Roof/CompletionChainFanRefinement.lean),
+  [`CompletionChainHeading`](../Unfoldings/Roof/CompletionChainHeading.lean):
+  whole physical fine paths preserve old fan angles and real terminal headings;
+  every inserted hinge is straight.
