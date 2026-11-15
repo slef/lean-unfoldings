@@ -3151,3 +3151,17 @@ corners and does not yet identify their widths with the actual retained cap fan.
   whole one-ray-cut terminal banks lift to whole closed banks in the actual full forest
   cut. Every distance and spatial point is retained, including the completed endpoint;
   closed embedded dilations survive the lift.
+
+- [`SpatialEnvelopeFaceSideCopies`](../Unfoldings/Geometry/SpatialEnvelopeFaceSideCopies.lean):
+  every canonical full face-side bank point retains a selected original physical copy.
+  Opposite side labels give actual metric separation along a local complete cut line.
+- [`CompatibleWholeTerminalBanks`](../Unfoldings/Roof/CompatibleWholeTerminalBanks.lean):
+  constructs both whole terminal banks in the original full forest cut, including their
+  actual completed endpoints, exact spatial distances and closed embeddings. Opposite
+  banks cannot meet at a positive parameter; their endpoint copies are retained.
+- [`CenteredBallChartRestriction`](../Unfoldings/Metric/CenteredBallChartRestriction.lean),
+  [`PlacedBallComposition`](../Unfoldings/Metric/PlacedBallComposition.lean):
+  restrict and compose whole-ball charts while retaining their physical placements.
+- [`CompatibleTerminalHalfplane`](../Unfoldings/Roof/CompatibleTerminalHalfplane.lean):
+  every positive point of each constructed full-forest whole bank has a whole original
+  rigid halfplane metric ball, with its exact spatial placement.

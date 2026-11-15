@@ -2035,3 +2035,8 @@ public import Unfoldings.Metric.LocalIsometricLift
 public import Unfoldings.Roof.CompatibleTerminalFiber
 public import Unfoldings.Metric.PositiveHalflineExtension
 public import Unfoldings.Roof.CompatibleTerminalCompletion
+public import Unfoldings.Geometry.SpatialEnvelopeFaceSideCopies
+public import Unfoldings.Roof.CompatibleWholeTerminalBanks
+public import Unfoldings.Metric.CenteredBallChartRestriction
+public import Unfoldings.Metric.PlacedBallComposition
+public import Unfoldings.Roof.CompatibleTerminalHalfplane

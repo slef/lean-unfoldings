@@ -50,7 +50,10 @@ nonoverlap and counting remain to be proved.
 - [x] Construct entire one-ray-cut exterior banks, including their endpoint, as closed
   embedded dilations with exact spatial speed. Derive whole rigid halfplane balls
   at every positive bank point from the original cut and roof geometry.
-- [ ] Lift these whole banks and their charts back to the original full forest cut.
+- [x] Construct both whole closed banks in the original full forest cut, preserving
+  the actual endpoint copies, every spatial point and every pairwise distance.
+  Opposite banks cannot meet at a positive parameter. Every positive point has a
+  whole halfplane metric chart with its original support placement.
 - [ ] Identify the full unbounded comparison banks, including terminal rays and
   completion fans, and supply their admissible respected radial closure geometry.
 - [ ] Carry physical saved-frontier curves and their untouched original sides through

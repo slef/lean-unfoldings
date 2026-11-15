@@ -2,6 +2,21 @@
 
 ## Session Log
 
+### 2026-11-15 — constructed opposite whole banks and their original halfplane charts
+
+- Selected actual opposite eventual support cells in the same retained partition
+  and constructed both complete terminal banks in the original full forest cut.
+  Every spatial point and pairwise distance is retained, including endpoint copies.
+- Proved opposite whole banks cannot meet at any positive parameter. Every
+  canonical face-side point retains an original side-labeled physical cell copy.
+- Constructed whole rigid halfplane metric balls at every positive full-forest
+  bank point, preserving the exact original support's spatial placement.
+- Factored chart restriction and physical composition into reusable metric lemmas.
+- Verification: actual cache retrieval and full `lake build` passed 5,974 jobs;
+  16,397 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Finite-bank joins, completion fans, saved-frontier transport
+  and the complete graft remain open.
+
 ### 2026-11-15 — whole closed bank completion in the full forest cut
 
 - Completed positive Lipschitz rays in complete extended-metric targets while
