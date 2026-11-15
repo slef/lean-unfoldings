@@ -2869,3 +2869,11 @@ corners and does not yet identify their widths with the actual retained cap fan.
 - [`PositiveRayCones`](../Unfoldings/Geometry/PositiveRayCones.lean),
   [`ProjectedBankRays`](../Unfoldings/Cap/ProjectedBankRays.lean):
   identify actual positive original banks from directed rays, independently of endpoint length.
+
+- [`LocalTwoRays`](../Unfoldings/Geometry/LocalTwoRays.lean),
+  [`ProjectedRawBankRays`](../Unfoldings/Cap/ProjectedRawBankRays.lean):
+  recover physical outgoing rays and exact original labels without length assumptions.
+- [`JordanLocalTwoRays`](../Unfoldings/Cap/JordanLocalTwoRays.lean),
+  [`JordanBankPropagation`](../Unfoldings/Cap/JordanBankPropagation.lean),
+  [`JordanLocalChainLift`](../Unfoldings/Cap/JordanLocalChainLift.lean):
+  one initial selected face and local curve geometry construct the full actual Jordan bank roll.

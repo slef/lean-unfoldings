@@ -1897,3 +1897,8 @@ public import Unfoldings.Cap.RestrictedBoundaryChainLift
 public import Unfoldings.Cap.JordanBoundaryChainLift
 public import Unfoldings.Geometry.PositiveRayCones
 public import Unfoldings.Cap.ProjectedBankRays
+public import Unfoldings.Geometry.LocalTwoRays
+public import Unfoldings.Cap.ProjectedRawBankRays
+public import Unfoldings.Cap.JordanLocalTwoRays
+public import Unfoldings.Cap.JordanBankPropagation
+public import Unfoldings.Cap.JordanLocalChainLift

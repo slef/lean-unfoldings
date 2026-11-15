@@ -2,6 +2,20 @@
 
 ## Session Log
 
+### 2026-11-15 — propagate actual Jordan banks from one original side
+
+- Derived positive outgoing directions from the actual curve's local two-ray
+  geometry, including straight hinges and arbitrary positive endpoint lengths.
+- Proved one actual previous bank determines the next original bank at a Jordan
+  hinge. Its selected face and original fan are derived, not supplied separately.
+- Inducted over a whole actual original bank chain: one initial selected face,
+  the initial edge on the curve and local two-ray geometry construct the full
+  Jordan traversal with exactly equal unreduced headings and normalized roll.
+- Verification: cache retrieval and full `lake build` passed 5,835 jobs;
+  15,555 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. The radial closure must still supply the geometric
+  two-ray conditions and initial side; physical graft transport remains open.
+
 ### 2026-11-15 — physical bank rays determine original germs
 
 - Proved positive rescaling preserves open corner cones and that corners on the
