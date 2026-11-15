@@ -600,3 +600,17 @@ identifies actual unreduced parent-bank holonomy minus immediate-child
 holonomies with the original junction curvature. Any distinct list of these
 actual residuals spends at most total cap curvature. The remaining geometric
 fan-surgery proof must identify the saved-frontier updates with these residuals.
+
+## Complete two-bank Jordan regions
+
+[`exists_positive_opening_trace_gap`](../Unfoldings/Geometry/PositiveOpeningTraceGap.lean)
+constructs a geometric polygonal Jordan region between the exact original and
+final banks of a trace whose first positive opening is at the source. It proves
+the whole frontier identity, source-only bank contact, nonempty interior,
+regular closedness, a finite convex-cell cover, intrinsic completeness and
+contractibility. The intrinsic region is homeomorphic to a closed sector.
+
+The remaining grafting step must identify the local gap corner angles as the
+complements of the actual incident surface fans, then construct the saved
+frontier surgery and the complete flat gluing. These are additional conclusions;
+they are not included in the geometric Jordan-region theorem.

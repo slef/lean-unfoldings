@@ -868,6 +868,9 @@ selection and Euler counting follow.
   including the tail, with a mesh-independent common-halfplane threshold.
 - [x] Construct nonoverlapping actual finite positive opening traces from original
   subhistory bounds, deriving every intermediate bank and suffix radial test.
+- [x] Construct geometric two-bank Jordan regions for positive source-opening
+  traces, with finite convex cells, complete intrinsic metrics and sector topology.
+- [ ] Prove exact complementary bank-corner charts for grafting these regions.
 - [ ] Positive Jordan gaps from radially monotone polygonal banks.
 - [ ] Complete one-ended forest cuts and intrinsic polygonal-gap insertion.
 - [ ] Completeness for finite noncompact complexes with controlled ends.

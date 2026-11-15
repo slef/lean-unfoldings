@@ -1671,3 +1671,13 @@ public import Unfoldings.Geometry.OpeningGapNonoverlap
 public import Unfoldings.Topology.SubtreeResidualWeights
 public import Unfoldings.Complex.SubtreeResidualHeading
 public import Unfoldings.Cap.SubtreeResidualBudget
+public import Unfoldings.Geometry.RadialLinearHomeomorph
+public import Unfoldings.Geometry.VariableSectorHomeomorph
+public import Unfoldings.Geometry.VariableSectorBanks
+public import Unfoldings.Geometry.TwoBankAngle
+public import Unfoldings.Geometry.TwoBankGap
+public import Unfoldings.Geometry.TwoBankGapCells
+public import Unfoldings.Geometry.TwoBankGapMetric
+public import Unfoldings.Geometry.OpeningTracePositivePhase
+public import Unfoldings.Geometry.OpeningTraceControl
+public import Unfoldings.Geometry.PositiveOpeningTraceGap

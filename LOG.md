@@ -2,6 +2,22 @@
 
 ## Session Log
 
+### 2026-11-14 — complete actual two-bank Jordan gaps
+
+- Constructed radius-dependent ambient linear direction changes preserving
+  every circle, including when the opening tends to zero at the source.
+- Constructed a genuine ambient sector image whose exact frontier is the
+  original and final polygonal bank pair; the banks meet only at their source.
+- Constructed finite full-dimensional closed convex gap cells from the actual
+  bank supports. Proved intrinsic completeness, exact sector topology,
+  contractibility and metric-ball charts at all interior points.
+- A positive first opening at the source now constructs this geometric Jordan
+  region from the original trace's uniform subhistory estimates and budgets.
+- Verification: cache retrieval and full `lake build` passed 5,614 jobs; all
+  14,219 unfolding declarations passed the standard-axiom audit, along with both
+  abstract independence checks. Exact complementary bank-corner charts,
+  saved-frontier fan surgery and the full intrinsic graft remain open.
+
 ### 2026-11-14 — exact local residual of actual branching bank headings
 
 - Subtracted all immediate-child subtree weights from their parent's descendant

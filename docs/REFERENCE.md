@@ -2480,3 +2480,15 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [`Topology/SubtreeResidualWeights`](../Unfoldings/Topology/SubtreeResidualWeights.lean) | Subtracting immediate-child subtree weights leaves the original junction weight |
 | [`Complex/SubtreeResidualHeading`](../Unfoldings/Complex/SubtreeResidualHeading.lean) | Actual unreduced opposite-bank holonomies have residual exactly the local angular defect |
 | [`Cap/SubtreeResidualBudget`](../Unfoldings/Cap/SubtreeResidualBudget.lean) | Actual junction residuals are nonnegative and spend original cap curvature once |
+
+| [`Geometry/RadialLinearHomeomorph`](../Unfoldings/Geometry/RadialLinearHomeomorph.lean) | Radius-dependent invertible linear direction changes yield ambient sphere-preserving homeomorphisms |
+| [`Geometry/VariableSectorHomeomorph`](../Unfoldings/Geometry/VariableSectorHomeomorph.lean) | An ambient homeomorphism realizes a continuously varying sector width |
+| [`Geometry/VariableSectorBanks`](../Unfoldings/Geometry/VariableSectorBanks.lean) | Exact geometric frontier banks of variable-opening sectors |
+| [`Geometry/TwoBankAngle`](../Unfoldings/Geometry/TwoBankAngle.lean) | Continuous positive relative angular coordinates of actual radial bank contacts |
+| [`Geometry/TwoBankGap`](../Unfoldings/Geometry/TwoBankGap.lean) | Construct an actual Jordan gap whose whole frontier is the two original polygonal banks |
+| [`Geometry/TwoBankGapCells`](../Unfoldings/Geometry/TwoBankGapCells.lean) | Construct finite full-dimensional closed convex cells from the two actual bank supports |
+| [`Geometry/TwoBankGapMetric`](../Unfoldings/Geometry/TwoBankGapMetric.lean) | Complete actual intrinsic Jordan-gap metrics with sector topology and interior Euclidean charts |
+
+| [`Geometry/OpeningTracePositivePhase`](../Unfoldings/Geometry/OpeningTracePositivePhase.lean) | A positive source opening strictly separates actual original and final contacts on every circle |
+| [`Geometry/OpeningTraceControl`](../Unfoldings/Geometry/OpeningTraceControl.lean) | Construct all whole-bank and suffix radial tests for an actual trace from original estimates |
+| [`Geometry/PositiveOpeningTraceGap`](../Unfoldings/Geometry/PositiveOpeningTraceGap.lean) | Construct complete polygonal Jordan gaps from actual positive source-opening traces |
