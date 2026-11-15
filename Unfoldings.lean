@@ -1725,3 +1725,6 @@ public import Unfoldings.Geometry.TwoBankGapSourceSector
 public import Unfoldings.Geometry.TwoBankGapSourceChart
 public import Unfoldings.Geometry.OpeningSourceAngle
 public import Unfoldings.Cap.LeafGapSector
+public import Unfoldings.Cone.AngularClosure
+public import Unfoldings.Cone.AppendSector
+public import Unfoldings.Cap.LeafCompletedFan

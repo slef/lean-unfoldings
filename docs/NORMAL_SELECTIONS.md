@@ -738,3 +738,9 @@ corner charts and their saved-frontier fan complements remain open.
 computes the actual leaf bank-vector gap angle as its original curvature. The
 retained corner fan plus this geometric gap has total angle exactly a full turn.
 The completed local metric model and its attachment to the graft remain next.
+
+[`exists_childless_completed_plane`](../Unfoldings/Cap/LeafCompletedFan.lean)
+now completes that actual retained fan by its geometric bank-gap sector and
+constructs a plane isometry. Every original sector keeps its placement, and the
+added sector has the complementary placement. This is the completed tangent
+model; its neighborhood in the full graft still needs to be identified.

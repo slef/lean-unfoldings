@@ -2,6 +2,21 @@
 
 ## Session Log
 
+### 2026-11-15 — exact completed leaf fan plane metric
+
+- Constructed the quotient closing only the two outer banks of a full-turn
+  angular fan and proved it is isometric to the whole Euclidean plane.
+- Appended an arbitrary genuine complementary sector while preserving every
+  original cell coordinate and its developed placement.
+- Applied this construction to the actual childless cut fan and the angle of
+  its named geometric bank vectors. The resulting plane isometry has explicit
+  placement formulas for both original cells and the added gap sector.
+- Verification: cache retrieval and full `lake build` passed 5,661 jobs; all
+  14,628 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. This proves the completed leaf tangent model; identifying
+  its neighborhood in the assembled graft, internal bank corners, saved-frontier
+  surgery and global nonoverlap remain open.
+
 ### 2026-11-15 — actual leaf bank angle complements the retained fan
 
 - Computed the genuine initial bank-vector angle of a positive source opening;

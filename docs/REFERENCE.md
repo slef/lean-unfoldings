@@ -2557,3 +2557,7 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 
 | [`Geometry/OpeningSourceAngle`](../Unfoldings/Geometry/OpeningSourceAngle.lean) | The original positive source opening is the exact geometric sector angle and later hinges spend no source turn |
 | [`Cap/LeafGapSector`](../Unfoldings/Cap/LeafGapSector.lean) | Actual named leaf bank vectors give precisely the sector complementary to the retained original corner fan |
+
+| [`Cone/AngularClosure`](../Unfoldings/Cone/AngularClosure.lean) | Closing only the two outer banks of a full-turn fan yields the exact Euclidean plane metric |
+| [`Cone/AppendSector`](../Unfoldings/Cone/AppendSector.lean) | Complete a slit fan by its genuine complementary sector, preserving all original cell placements |
+| [`Cap/LeafCompletedFan`](../Unfoldings/Cap/LeafCompletedFan.lean) | The actual leaf corner completed by its geometric bank-gap sector is isometric to the plane |
