@@ -2528,3 +2528,6 @@ is retained. Comparator challenge files and upstream build caches are excluded.
 | [`Geometry/PolygonalRayInequalities`](../Unfoldings/Geometry/PolygonalRayInequalities.lean) | Exact finite affine-cell representation of every original polygonal ray and its whole terminal tail |
 
 | [`Geometry/PolygonalRayGerm`](../Unfoldings/Geometry/PolygonalRayGerm.lean) | Exact original cut germs and retained-attachment tests on the actual unit direction circle |
+
+| [`Geometry/HomogeneousGerm`](../Unfoldings/Geometry/HomogeneousGerm.lean) | Uniqueness of exact positively homogeneous local direction models |
+| [`Geometry/SegmentEndpointGerm`](../Unfoldings/Geometry/SegmentEndpointGerm.lean) | Actual original outgoing and incoming endpoint directions for segment and ray cut germs |

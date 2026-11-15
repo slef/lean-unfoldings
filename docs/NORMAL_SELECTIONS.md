@@ -693,3 +693,8 @@ apply to the original geometry without substituting a proxy cut set.
 tests actual retained attachments at polygonal cut points on the unit direction
 circle. It uses the exact original edges and whole terminal rays, including
 finite branching families. Cyclic ordering of the resulting bank fans remains open.
+
+[`segment_cellGerm_start`](../Unfoldings/Geometry/SegmentEndpointGerm.lean) and
+its terminal-endpoint counterpart identify the actual incident edge vectors in
+the affine cut models. The terminal-ray source has the same exact outgoing-ray
+model. These identifications retain the original geometric directions.

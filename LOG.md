@@ -2,6 +2,16 @@
 
 ## Session Log
 
+### 2026-11-15 — original endpoint vectors in the actual local cut models
+
+- Proved uniqueness of exact positively homogeneous local direction models.
+- Identified the affine-cell germs of original segment endpoints with their
+  actual outgoing or reversed incoming edge rays. Degenerate segments remain
+  included, and the original terminal ray has its exact outgoing direction.
+- Verification: cache retrieval and full `lake build` passed 5,640 jobs; all
+  14,512 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Cyclic forest-bank ordering and complementary graft corners remain open.
+
 ### 2026-11-15 — exact direction-circle attachments for original polygonal cuts
 
 - Constructed exact local cut germs from the original finite bends and whole

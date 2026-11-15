@@ -1705,3 +1705,5 @@ public import Unfoldings.Geometry.AffineArrangementGerm
 public import Unfoldings.Geometry.SegmentInequalities
 public import Unfoldings.Geometry.PolygonalRayInequalities
 public import Unfoldings.Geometry.PolygonalRayGerm
+public import Unfoldings.Geometry.HomogeneousGerm
+public import Unfoldings.Geometry.SegmentEndpointGerm
