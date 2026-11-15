@@ -893,3 +893,13 @@ constructs the complementary remainder after keeping an untouched original side.
 derives its angle increment as the actual original cap curvature, with a global
 budget bound. This is an exact local metric surgery model; matching it to the
 physical saved-frontier update and its untouched original side remains open.
+
+[`SelectedJunctionCopies`](../Unfoldings/Complex/SelectedJunctionCopies.lean)
+derives a distinct original cut copy from actual selected parent-child incidence.
+[`SelectedJunctionModels`](../Unfoldings/Cap/SelectedJunctionModels.lean)
+uses that split for the actual cut-cap corner chart and local remainder model.
+[`ParentFrontierContact`](../Unfoldings/Topology/ParentFrontierContact.lean)
+constructs the genuinely fresh incoming predecessor at first contact, and
+[`ContactJunctionModels`](../Unfoldings/Cap/ContactJunctionModels.lean)
+applies the selected-junction models without an incoming-child certificate.
+The actual geometric untouched-side and saved-frontier matching remain open.

@@ -1807,3 +1807,7 @@ public import Unfoldings.Cone.ConsecutiveSectors
 public import Unfoldings.Cone.ConsecutiveSectorMetric
 public import Unfoldings.Cone.CompletedCornerRemainder
 public import Unfoldings.Cap.JunctionRemainderModel
+public import Unfoldings.Complex.SelectedJunctionCopies
+public import Unfoldings.Cap.SelectedJunctionModels
+public import Unfoldings.Topology.ParentFrontierContact
+public import Unfoldings.Cap.ContactJunctionModels

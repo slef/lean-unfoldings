@@ -2,6 +2,22 @@
 
 ## Session Log
 
+### 2026-11-15 — actual selected junction copies and first-contact model applications
+
+- Derived distinct sibling cut copies at a nonroot with a selected incoming
+  child from exact original selected-edge incidence, without a supplied degree
+  or vertex-splitting certificate.
+- Used that derived split to construct actual retained-junction sector charts
+  and the local complementary remainder model, including flat junctions.
+- Identified the original selected edge from the last fresh vertex into the
+  constructed first processed contact. The predecessor is genuinely fresh and
+  nonroot; the contact's junction theorems therefore need no incoming-child
+  certificate from their caller.
+- Verification: cache retrieval and full `lake build` passed 5,744 jobs; all
+  15,185 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks. Selecting the actual untouched original fan and matching
+  the physical saved-frontier update, bank comparison and full graft remain open.
+
 ### 2026-11-15 — exact first-contact reach and metric junction-remainder surgery
 
 - Characterized first-contact histories exactly: processing adds the original

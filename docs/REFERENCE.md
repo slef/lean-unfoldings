@@ -2679,3 +2679,12 @@ corners and does not yet identify their widths with the actual retained cap fan.
   metric surgery remainder complementary to a retained untouched side.
 - [`JunctionRemainderModel`](../Unfoldings/Cap/JunctionRemainderModel.lean):
   local cap remainder model with actual curvature increment and total-budget bound.
+
+- [`SelectedJunctionCopies`](../Unfoldings/Complex/SelectedJunctionCopies.lean):
+  actual selected parent-child incidence forces distinct sibling cut copies.
+- [`SelectedJunctionModels`](../Unfoldings/Cap/SelectedJunctionModels.lean):
+  actual selected junction sector charts and local curvature-charged remainder models.
+- [`ParentFrontierContact`](../Unfoldings/Topology/ParentFrontierContact.lean):
+  the original last fresh edge into the first processed ancestor.
+- [`ContactJunctionModels`](../Unfoldings/Cap/ContactJunctionModels.lean):
+  constructed contact histories supply the selected-junction hypotheses themselves.
