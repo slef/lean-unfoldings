@@ -2,6 +2,26 @@
 
 ## Session Log
 
+### 2026-11-16 — constructed original finite terminal banks
+
+- Proved whole-fiber injectivity of actual cut subfamilies retaining all incident
+  cells. Strict-interior window and paired-mesh inclusions inherit this property.
+- Constructed the unique actual finite preimage of every original whole-cut copy
+  below the completion level. Canonical lifts preserve Lipschitz bounds on convex
+  parameter domains, using constructed whole-ball charts and entire-fiber uniqueness.
+- Constructed both finite terminal banks directly from their named whole banks,
+  completing the missing truncation endpoint in the actual finite cut metric.
+  No supplied finite-curve certificate is assumed.
+- Proved equality with the original whole bank on the entire closed interval,
+  exact pairwise distances, closed embedded dilations, original spatial folding
+  and separation of opposite copies at every positive parameter.
+- Factored metric parameter restriction and exact lifted-dilation construction
+  into small generic lemmas, avoiding specialized normalization timeouts.
+- Verification: actual cache retrieval and full `lake build` passed 6,045 jobs;
+  16,974 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks passed. Original endpoint-vertex and comparison-chain joins,
+  admissible radial closures, saved-frontier transport and the full graft remain next.
+
 ### 2026-11-16 — finite terminal banks match named whole-bank copies
 
 - Derived every incident original cell's support from the actual one-sided affine

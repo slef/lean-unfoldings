@@ -2102,3 +2102,12 @@ public import Unfoldings.Geometry.SpatialEnvelopeIncidentSupport
 public import Unfoldings.Roof.CompatibleTerminalFiberBanks
 public import Unfoldings.Roof.CompatibleMeshTerminalMatching
 public import Unfoldings.Roof.CompatibleTerminalBankIntervals
+public import Unfoldings.Metric.CutSubfamilyFiber
+public import Unfoldings.Geometry.SpatialEnvelopeWindowFiber
+public import Unfoldings.Roof.CompatibleWindowPairedFiber
+public import Unfoldings.Roof.CompatibleMeshInteriorFiber
+public import Unfoldings.Roof.CompatibleMeshCurveLift
+public import Unfoldings.Metric.HalfOpenIntervalExtension
+public import Unfoldings.Roof.TerminalRayLevelInterval
+public import Unfoldings.Roof.ConstructedFiniteTerminalBanks
+public import Unfoldings.Roof.ConstructedFiniteTerminalBankMetric

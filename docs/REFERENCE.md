@@ -3339,3 +3339,24 @@ corners and does not yet identify their widths with the actual retained cap fan.
   continuous finite terminal banks agree with the restrictions of named whole banks
   on closed intervals. Continuity retains the actual original parameter-zero copy;
   the finite-mesh specialization also includes the original truncation endpoint.
+
+- [`CutSubfamilyFiber`](../Unfoldings/Metric/CutSubfamilyFiber.lean),
+  [`SpatialEnvelopeWindowFiber`](../Unfoldings/Geometry/SpatialEnvelopeWindowFiber.lean),
+  [`CompatibleWindowPairedFiber`](../Unfoldings/Roof/CompatibleWindowPairedFiber.lean):
+  keeping every original incident cell preserves the entire metric fiber above
+  a strict-interior point, ruling out competing copies outside any local chart.
+- [`CompatibleMeshInteriorFiber`](../Unfoldings/Roof/CompatibleMeshInteriorFiber.lean),
+  [`CompatibleMeshCurveLift`](../Unfoldings/Roof/CompatibleMeshCurveLift.lean):
+  every original whole-cut copy below the level has a unique actual finite copy.
+  Canonical lifts of curves on convex parameter domains retain their Lipschitz bounds.
+- [`HalfOpenIntervalExtension`](../Unfoldings/Metric/HalfOpenIntervalExtension.lean),
+  [`TerminalRayLevelInterval`](../Unfoldings/Roof/TerminalRayLevelInterval.lean):
+  complete original finite bank intervals at the missing endpoint, retaining all
+  earlier values and continuous physical identities; strict height bounds are derived
+  from the actual original terminal time.
+- [`ConstructedFiniteTerminalBanks`](../Unfoldings/Roof/ConstructedFiniteTerminalBanks.lean),
+  [`ConstructedFiniteTerminalBankMetric`](../Unfoldings/Roof/ConstructedFiniteTerminalBankMetric.lean):
+  construct both finite terminal banks directly from the named whole banks, with no
+  supplied finite-curve certificate. Both original endpoints, every pairwise distance
+  and spatial roof point survive. These are closed embedded interval dilations;
+  opposite banks retain distinct copies at every positive parameter.

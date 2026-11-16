@@ -84,6 +84,10 @@ nonoverlap and counting remain to be proved.
   across subdivision vertices, with equality of the actual original cut copies.
   Closed finite terminal intervals retain their parameter-zero copies and finite
   truncation endpoints by continuity.
+- [x] Construct canonical unique finite-mesh lifts below the completion level and
+  preserve whole-curve Lipschitz bounds. Complete both finite terminal banks from
+  the named whole banks themselves, retaining both original endpoints, all pairwise
+  distances and spatial folds, with closed embeddings and opposite-bank separation.
 - [ ] Identify the full unbounded comparison banks, including terminal rays and
   completion fans, and supply their admissible respected radial closure geometry.
 - [ ] Carry physical saved-frontier curves and their untouched original sides through
