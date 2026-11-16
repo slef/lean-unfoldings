@@ -3360,3 +3360,12 @@ corners and does not yet identify their widths with the actual retained cap fan.
   supplied finite-curve certificate. Both original endpoints, every pairwise distance
   and spatial roof point survive. These are closed embedded interval dilations;
   opposite banks retain distinct copies at every positive parameter.
+
+- [`SpatialEnvelopeVertexFibers`](../Unfoldings/Roof/SpatialEnvelopeVertexFibers.lean):
+  every retained metric copy above an original mesh vertex is an original cut
+  vertex. Whole-edge coverage preserves every copy at a prescribed segment endpoint.
+- [`ConstructedFiniteTerminalVertices`](../Unfoldings/Roof/ConstructedFiniteTerminalVertices.lean):
+  construct named original finite source and truncation vertices, with exact
+  whole-bank endpoint identities and projected positions. Each source is a fine
+  forest nonroot and each finish a rim root. Opposite finish copies are distinct
+  but restore to the same original vertex; each bank joins distinct endpoint vertices.

@@ -2111,3 +2111,5 @@ public import Unfoldings.Metric.HalfOpenIntervalExtension
 public import Unfoldings.Roof.TerminalRayLevelInterval
 public import Unfoldings.Roof.ConstructedFiniteTerminalBanks
 public import Unfoldings.Roof.ConstructedFiniteTerminalBankMetric
+public import Unfoldings.Roof.SpatialEnvelopeVertexFibers
+public import Unfoldings.Roof.ConstructedFiniteTerminalVertices

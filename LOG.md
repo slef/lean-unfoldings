@@ -2,6 +2,21 @@
 
 ## Session Log
 
+### 2026-11-16 — original finite-bank endpoint vertices and forest labels
+
+- Proved every retained metric copy over an original full mesh vertex is an
+  original cut vertex, including every copy at a preserved segment endpoint.
+- Constructed named finite terminal-bank source and truncation vertices, with
+  exact original whole-bank endpoint identities and projected coordinates.
+- Proved each original source is a nonroot of the fine forest and each finish
+  is an original rim root. Each bank joins distinct original endpoint vertices.
+- Opposite finish copies are distinct cut vertices but restore to the same
+  original rim vertex; opposite sources also restore to one original full vertex.
+- Verification: actual cache retrieval and full `lake build` passed 6,047 jobs;
+  17,012 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks passed. Actual directed-bank/parent-chain assembly, radial
+  closure geometry, saved-frontier transport and the full graft remain open.
+
 ### 2026-11-16 — constructed original finite terminal banks
 
 - Proved whole-fiber injectivity of actual cut subfamilies retaining all incident

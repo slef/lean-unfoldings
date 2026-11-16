@@ -88,6 +88,10 @@ nonoverlap and counting remain to be proved.
   preserve whole-curve Lipschitz bounds. Complete both finite terminal banks from
   the named whole banks themselves, retaining both original endpoints, all pairwise
   distances and spatial folds, with closed embeddings and opposite-bank separation.
+- [x] Identify both finite terminal-bank endpoints as named original cut vertices
+  with exact whole-bank copies and projected positions. Sources are fine nonroots,
+  finishes are rim roots, and distinct finish copies restore to the same original
+  vertex. Each finite terminal bank joins distinct endpoint vertices.
 - [ ] Identify the full unbounded comparison banks, including terminal rays and
   completion fans, and supply their admissible respected radial closure geometry.
 - [ ] Carry physical saved-frontier curves and their untouched original sides through
