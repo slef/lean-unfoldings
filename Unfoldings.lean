@@ -2084,3 +2084,12 @@ public import Unfoldings.Complex.RemovedSeamCarrier
 public import Unfoldings.Metric.PolygonalCutCongr
 public import Unfoldings.Geometry.SpatialEnvelopePhysicalCut
 public import Unfoldings.Roof.CompatibleWindowPairedMesh
+public import Unfoldings.Geometry.SpatialEnvelopeOpenSeams
+public import Unfoldings.Geometry.PrescribedCutMetric
+public import Unfoldings.Roof.TruncatedWholeCarrier
+public import Unfoldings.Metric.PolygonalCutEqOn
+public import Unfoldings.Geometry.SpatialGraphCutRestriction
+public import Unfoldings.Geometry.SpatialEnvelopeLevelWindow
+public import Unfoldings.Roof.CompatibleLevelWindow
+public import Unfoldings.Roof.CompatibleMeshPhysicalCut
+public import Unfoldings.Roof.CompatibleMeshWindowCharts

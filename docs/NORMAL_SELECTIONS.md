@@ -69,6 +69,13 @@ nonoverlap and counting remain to be proved.
 - [x] Identify original window cuts with actual finite triangular physical cuts
   from domain, height and cut-line geometry. The inclusion preserves whole metric
   neighborhoods of every original interior bank copy and its spatial folding.
+- [x] Identify actual physical cuts with their original retained triangle complexes,
+  preserving every face copy, endpoint bank and corner class. Derive all geometric
+  seam conditions from the prescribed segment constraints of the constructed mesh.
+- [x] Identify the truncated forest with the whole cut inside the closed completion
+  sublevel. Construct canonical level windows and whole finite-complex metric-ball
+  charts at every original bank copy strictly below that level, preserving the
+  spatial fold and nonexpanding inclusion without comparison certificates.
 - [ ] Identify the full unbounded comparison banks, including terminal rays and
   completion fans, and supply their admissible respected radial closure geometry.
 - [ ] Carry physical saved-frontier curves and their untouched original sides through

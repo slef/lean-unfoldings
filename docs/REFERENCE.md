@@ -3285,3 +3285,27 @@ corners and does not yet identify their widths with the actual retained cap fan.
   every original interior forest-cut bank copy has a whole intrinsic neighborhood
   in the actual retained triangle complex, with the same original spatial fold and
   nonexpanding inclusion. No metric or corner-fan comparison is supplied as input.
+
+- [`SpatialEnvelopeOpenSeams`](../Unfoldings/Geometry/SpatialEnvelopeOpenSeams.lean),
+  [`PrescribedCutMetric`](../Unfoldings/Geometry/PrescribedCutMetric.lean):
+  prescribed segment support and endpoint lines derive all geometric retained-edge
+  avoidance and removed-edge containment. The actual original triangle cut metric
+  follows, retaining all endpoint and corner copies.
+- [`TruncatedWholeCarrier`](../Unfoldings/Roof/TruncatedWholeCarrier.lean):
+  the truncated forest is exactly the whole original cut intersected with the closed
+  height sublevel, including all terminal-ray truncation endpoints.
+- [`PolygonalCutEqOn`](../Unfoldings/Metric/PolygonalCutEqOn.lean),
+  [`SpatialGraphCutRestriction`](../Unfoldings/Geometry/SpatialGraphCutRestriction.lean):
+  changing cuts outside the actual covered patch preserves its complete intrinsic
+  metric, each original cell copy and the physical fold.
+- [`SpatialEnvelopeLevelWindow`](../Unfoldings/Geometry/SpatialEnvelopeLevelWindow.lean),
+  [`CompatibleLevelWindow`](../Unfoldings/Roof/CompatibleLevelWindow.lean):
+  construct proper canonical polygonal window equations and an actual retained
+  window model at the chosen finite completion height.
+- [`CompatibleMeshPhysicalCut`](../Unfoldings/Roof/CompatibleMeshPhysicalCut.lean),
+  [`CompatibleMeshWindowCharts`](../Unfoldings/Roof/CompatibleMeshWindowCharts.lean):
+  the constructed finite compatible forest has the actual whole-forest triangular
+  cut metric. Every original bank copy strictly below the completion level has a
+  whole intrinsic-ball chart in this original retained triangle complex, preserving
+  its spatial folding and nonexpanding inclusion. All window, mesh, metric and
+  seam-placement data follow from the original construction.

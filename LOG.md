@@ -2,6 +2,25 @@
 
 ## Session Log
 
+### 2026-11-16 — constructed finite forest charts in the original whole cut
+
+- Derived exact retained and removed physical seam placement from the prescribed
+  support and endpoint constraints of the actual compatible mesh. Original triangle
+  interiors avoid the full cut, including the original infinite terminal rays.
+- Identified the truncated cut with the whole forest intersected with the closed
+  height sublevel, including every actual terminal truncation endpoint.
+- Constructed canonical proper polygonal level-window equations and an actual
+  retained window model from the existing completion level and finite slope model.
+- Constructed whole metric-ball charts at every original bank copy strictly below
+  the level, now using the actual original retained finite forest complex. All window,
+  mesh, seam placement and metric data are derived; folding and nonexpansion survive.
+- Added metric equivalences for cuts agreeing on the actual patch, preserving each
+  original physical cell copy and its fold.
+- Verification: actual cache retrieval and full `lake build` passed 6,027 jobs;
+  16,871 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks passed. Named finite-copy centers, original fan and terminal
+  bank joins, saved-frontier transport and the complete graft remain next.
+
 ### 2026-11-16 — original paired triangles identified with actual physical cuts
 
 - Constructed exact inverse maps between retained original triangle pairings and
