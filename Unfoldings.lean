@@ -2120,3 +2120,8 @@ public import Unfoldings.Roof.CompatibleTerminalDenseBankMatching
 public import Unfoldings.Roof.CompatibleMeshDirectedTerminalBanks
 public import Unfoldings.Roof.SpatialEnvelopeCutBoundaryFibers
 public import Unfoldings.Roof.ConstructedFiniteTerminalBoundary
+public import Unfoldings.Complex.DirectedBoundaryPathReversal
+public import Unfoldings.Geometry.SpatialEnvelopeDirectedBanks
+public import Unfoldings.Roof.CompatibleMeshTerminalAlignment
+public import Unfoldings.Topology.ClosedIntervalFiniteExceptions
+public import Unfoldings.Roof.ConstructedFiniteTerminalBankEdges

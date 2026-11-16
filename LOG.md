@@ -2,6 +2,22 @@
 
 ## Session Log
 
+### 2026-11-16 — exact whole terminal banks covered by original forward fine banks
+
+- Proved exact directed-path reversal and original endpoint identities. Projection
+  preserves whole original fine banks, injectivity and intrinsic nonvertex points.
+- One nonvertex contact now identifies the entire fine bank with a single named
+  terminal segment, deriving its forward orientation and original bounded ray times.
+- Recovered each chosen intrinsic side from the actual original contact copy and
+  proved every resulting fine path is its exact terminal-bank restriction.
+- Extended finite fine-bank coverage across all subdivision vertices and both
+  endpoints using continuity, closedness and finitely many exceptional parameters.
+- Verification: actual cache retrieval and corrected full `lake build` passed 6,059
+  jobs; 17,088 unfolding declarations passed the standard-axiom audit and both
+  abstract independence checks passed. The standalone build caught and fixed missing
+  imports in the generic finite-exception lemma. Actual chain ordering and successors
+  are next; radial closure, saved-frontier transport and full graft assembly remain open.
+
 ### 2026-11-16 — original finite terminal banks cover intrinsic boundary banks
 
 - Proved every original retained metric copy over a removed fine seam lies on

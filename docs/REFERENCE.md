@@ -3390,3 +3390,18 @@ corners and does not yet identify their widths with the actual retained cap fan.
   both constructed finite terminal banks lie on the original intrinsic boundary,
   including their source and rim copies. Construct the boundary contour from the
   actual cut disk and locate every terminal-bank point on an original directed bank.
+
+- [`DirectedBoundaryPathReversal`](../Unfoldings/Complex/DirectedBoundaryPathReversal.lean),
+  [`SpatialEnvelopeDirectedBanks`](../Unfoldings/Geometry/SpatialEnvelopeDirectedBanks.lean):
+  reversal retains the original bank copies, endpoints are actual cut vertices,
+  and projection preserves whole edges, injectivity and intrinsic nonvertex points.
+- [`CompatibleMeshTerminalAlignment`](../Unfoldings/Roof/CompatibleMeshTerminalAlignment.lean):
+  one nonvertex contact identifies an entire original fine bank with a single named
+  terminal segment. Construct its forward direction and actual bounded ray parameters.
+- [`ClosedIntervalFiniteExceptions`](../Unfoldings/Topology/ClosedIntervalFiniteExceptions.lean):
+  a continuous genuine closed interval lies in a closed set if only finitely many
+  parameters could fail; both endpoints are included.
+- [`ConstructedFiniteTerminalBankEdges`](../Unfoldings/Roof/ConstructedFiniteTerminalBankEdges.lean):
+  construct original forward fine-bank restrictions on each chosen intrinsic side,
+  then prove their finite union covers that whole terminal bank exactly, including
+  all subdivision vertices and both source and truncation copies.

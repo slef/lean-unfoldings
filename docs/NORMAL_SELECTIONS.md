@@ -98,6 +98,10 @@ nonoverlap and counting remain to be proved.
 - [x] Put both constructed finite terminal banks on the actual intrinsic cut boundary,
   including their endpoints, and locate every point on the constructed original contour.
 
+- [x] Recover original forward fine banks from nonvertex terminal contacts, derive
+  their exact chosen-side restrictions, and cover each entire terminal bank by their
+  finite union, including subdivision vertices and both endpoints.
+
 - [ ] Identify the full unbounded comparison banks, including terminal rays and
   completion fans, and supply their admissible respected radial closure geometry.
 - [ ] Carry physical saved-frontier curves and their untouched original sides through
