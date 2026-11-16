@@ -2066,3 +2066,7 @@ public import Unfoldings.Geometry.SpatialEnvelopeWindowCut
 public import Unfoldings.Geometry.SpatialEnvelopeWindowCompact
 public import Unfoldings.Roof.CompatibleWindowModel
 public import Unfoldings.Roof.CompatibleWindowPatch
+public import Unfoldings.Geometry.SpatialGraphPartition
+public import Unfoldings.Geometry.SpatialGraphRefinement
+public import Unfoldings.Geometry.SpatialGraphCommonRefinement
+public import Unfoldings.Geometry.SpatialGraphCutIndependence

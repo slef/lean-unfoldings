@@ -3240,3 +3240,13 @@ corners and does not yet identify their widths with the actual retained cap fan.
   constructs one retained model aligned to the actual forest and independent window
   lines. Its compact window patch preserves whole neighborhoods of every interior
   original-model copy, with nonexpansion and exact physical folding.
+
+- [`SpatialGraphPartition`](../Unfoldings/Geometry/SpatialGraphPartition.lean),
+  [`SpatialGraphRefinement`](../Unfoldings/Geometry/SpatialGraphRefinement.lean):
+  actual rigid graph-patch cells with bounded or unbounded footprint, and geometric
+  refinements preserving the complete cut metric and all original physical bank copies.
+- [`SpatialGraphCommonRefinement`](../Unfoldings/Geometry/SpatialGraphCommonRefinement.lean),
+  [`SpatialGraphCutIndependence`](../Unfoldings/Geometry/SpatialGraphCutIndependence.lean):
+  two finite meshes of the same physical patch have isometric cuts even with different
+  support families and frames. Only agreement of graph height on the patch is required;
+  each original cell-bank copy retains an actual matching copy and the same spatial point.

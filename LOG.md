@@ -2,6 +2,21 @@
 
 ## Session Log
 
+### 2026-11-16 — physical graph-patch cuts independent of support families and meshes
+
+- Introduced actual rigid partitions of a specified graph over a covered patch,
+  allowing bounded regions and different supporting-plane families and frames.
+- Constructed common full-dimensional physical refinements without losing any
+  original region or boundary point. Extended the convex cover lemma to subsets.
+- Derived global cut-metric isometries from geometric subdivisions, preserving
+  physical folding and every specified parent-cell bank copy.
+- Proved two finite meshes of the same graph patch have identical complete cut
+  metrics and matching literal original cell copies. Height agreement is needed
+  only on the covered patch, with no metric or corner-fan certificate input.
+- Verification: actual cache retrieval and full `lake build` passed 6,004 jobs;
+  the standard-axiom audit and both abstract independence checks passed. Actual
+  completion/window specialization and original corner-fan matching remain next.
+
 ### 2026-11-15 — constructed compact original forest-cut window patches
 
 - Constructed actual whole-roof models aligned simultaneously to the original

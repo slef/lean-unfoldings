@@ -13,18 +13,18 @@ variable {E I : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [Finite I]
 
 /-- Discarding lower-dimensional intersections loses no point of a closed full convex region.
 The finite covering pieces may be unbounded or redundant. -/
-theorem full_convex_intersections_cover (s : Set E) (closed_s : IsClosed s)
+theorem full_convex_intersections_cover_of_subset (s : Set E) (closed_s : IsClosed s)
     (convex_s : Convex ℝ s) (full_s : (interior s).Nonempty)
     (cells : I → Set E) (closed : ∀ i, IsClosed (cells i))
     (convex : ∀ i, Convex ℝ (cells i)) (full : ∀ i, (interior (cells i)).Nonempty)
-    (cover : (⋃ i, cells i) = Set.univ) :
+    (cover : s ⊆ ⋃ i, cells i) :
     s = ⋃ i : {i // (interior (s ∩ cells i)).Nonempty}, s ∩ cells i.val := by
   let selected := ⋃ i : {i // (interior (s ∩ cells i)).Nonempty}, s ∩ cells i.val
   have closed_selected : IsClosed selected :=
     isClosed_iUnion_of_finite (fun i => closed_s.inter (closed i.val))
   have interior_covered : interior s ⊆ selected := by
     intro x inside
-    have covered : x ∈ ⋃ i, cells i := cover.symm ▸ Set.mem_univ x
+    have covered : x ∈ ⋃ i, cells i := cover (interior_subset inside)
     obtain ⟨i, member⟩ := Set.mem_iUnion.mp covered
     have approached : x ∈ closure (interior (cells i)) := by
       rw [(convex i).closure_interior_eq_closure_of_nonempty_interior (full i),
@@ -45,5 +45,17 @@ theorem full_convex_intersections_cover (s : Set E) (closed_s : IsClosed s)
   · intro x member
     obtain ⟨i, hi⟩ := Set.mem_iUnion.mp member
     exact hi.1
+
+
+/-- Discarding lower-dimensional intersections loses no point of a closed full convex region.
+The finite covering pieces may be unbounded or redundant. -/
+theorem full_convex_intersections_cover (s : Set E) (closed_s : IsClosed s)
+    (convex_s : Convex ℝ s) (full_s : (interior s).Nonempty)
+    (cells : I → Set E) (closed : ∀ i, IsClosed (cells i))
+    (convex : ∀ i, Convex ℝ (cells i)) (full : ∀ i, (interior (cells i)).Nonempty)
+    (cover : (⋃ i, cells i) = Set.univ) :
+    s = ⋃ i : {i // (interior (s ∩ cells i)).Nonempty}, s ∩ cells i.val :=
+  full_convex_intersections_cover_of_subset s closed_s convex_s full_s cells closed convex full
+    (fun x _ => cover.symm ▸ Set.mem_univ x)
 
 end Unfoldings
