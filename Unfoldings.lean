@@ -2070,3 +2070,9 @@ public import Unfoldings.Geometry.SpatialGraphPartition
 public import Unfoldings.Geometry.SpatialGraphRefinement
 public import Unfoldings.Geometry.SpatialGraphCommonRefinement
 public import Unfoldings.Geometry.SpatialGraphCutIndependence
+public import Unfoldings.Geometry.SpatialGraphPresentations
+public import Unfoldings.Geometry.SpatialEnvelopeGraphTriangulation
+public import Unfoldings.Geometry.SpatialEnvelopeWindowPartition
+public import Unfoldings.Roof.CompatibleWindowMesh
+public import Unfoldings.Metric.LocalChartSourceTransport
+public import Unfoldings.Roof.CompatibleWindowMeshCharts

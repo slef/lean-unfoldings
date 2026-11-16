@@ -2,6 +2,22 @@
 
 ## Session Log
 
+### 2026-11-16 — actual finite triangular cuts identified with original window patches
+
+- Proved selected cells cover the entire closed polygonal window, including every
+  boundary point. Its graph-patch cut is the literal original window-cut metric.
+- Presented finite completion triangles on common domains and height formulas,
+  retaining their original placed spatial triangles and rigid coordinates.
+- Constructed a global isometry from the original window cut to the actual finite
+  triangular physical cut using only domain, height and cut-line geometry.
+- Carried whole intrinsic neighborhoods of every original interior bank copy
+  into that triangular cut, with the exact original inclusion, physical folding
+  and nonexpansion. No metric or corner-fan matching certificate is assumed.
+- Verification: cache retrieval and the corrected full `lake build` passed 6,010
+  jobs; 16,733 unfolding declarations passed the standard-axiom audit and both
+  abstract independence checks. The pairing-based triangle-complex bridge and
+  original corner-fan identification remain next; the full graft is still open.
+
 ### 2026-11-16 — physical graph-patch cuts independent of support families and meshes
 
 - Introduced actual rigid partitions of a specified graph over a covered patch,

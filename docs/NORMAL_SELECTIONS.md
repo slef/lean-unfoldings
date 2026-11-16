@@ -66,6 +66,9 @@ nonoverlap and counting remain to be proved.
 - [x] Construct actual finite window-aligned retained models and compact intrinsic
   cut patches in compact polygonal windows. Every original interior bank copy has
   a whole exact patch-ball chart, with nonexpansion and original spatial folding.
+- [x] Identify original window cuts with actual finite triangular physical cuts
+  from domain, height and cut-line geometry. The inclusion preserves whole metric
+  neighborhoods of every original interior bank copy and its spatial folding.
 - [ ] Identify the full unbounded comparison banks, including terminal rays and
   completion fans, and supply their admissible respected radial closure geometry.
 - [ ] Carry physical saved-frontier curves and their untouched original sides through

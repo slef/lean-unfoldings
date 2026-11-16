@@ -3250,3 +3250,18 @@ corners and does not yet identify their widths with the actual retained cap fan.
   two finite meshes of the same physical patch have isometric cuts even with different
   support families and frames. Only agreement of graph height on the patch is required;
   each original cell-bank copy retains an actual matching copy and the same spatial point.
+
+- [`SpatialGraphPresentations`](../Unfoldings/Geometry/SpatialGraphPresentations.lean),
+  [`SpatialEnvelopeGraphTriangulation`](../Unfoldings/Geometry/SpatialEnvelopeGraphTriangulation.lean):
+  restrict actual graph cells and present finite completion triangles on a common
+  covered region and height formula, retaining their original rigid spatial triangles.
+- [`SpatialEnvelopeWindowPartition`](../Unfoldings/Geometry/SpatialEnvelopeWindowPartition.lean):
+  selected cells cover the entire closed polygonal window, including every boundary
+  point; its graph-patch cut is exactly the already constructed original window cut.
+- [`CompatibleWindowMesh`](../Unfoldings/Roof/CompatibleWindowMesh.lean),
+  [`CompatibleWindowMeshCharts`](../Unfoldings/Roof/CompatibleWindowMeshCharts.lean):
+  actual finite triangular cuts and original window cuts are globally isometric from
+  domain, height and cut-line geometry. Every original interior bank copy retains a
+  whole small triangular-cut neighborhood, the same spatial point and nonexpansion.
+- [`LocalChartSourceTransport`](../Unfoldings/Metric/LocalChartSourceTransport.lean):
+  replacing a patch by an isometric mesh preserves whole-ball coverage and its inclusion.
