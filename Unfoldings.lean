@@ -2113,3 +2113,8 @@ public import Unfoldings.Roof.ConstructedFiniteTerminalBanks
 public import Unfoldings.Roof.ConstructedFiniteTerminalBankMetric
 public import Unfoldings.Roof.SpatialEnvelopeVertexFibers
 public import Unfoldings.Roof.ConstructedFiniteTerminalVertices
+public import Unfoldings.Metric.PositiveClosedInterval
+public import Unfoldings.Complex.DirectedBoundaryPathGeometry
+public import Unfoldings.Geometry.SpatialEnvelopeCutDomain
+public import Unfoldings.Roof.CompatibleTerminalDenseBankMatching
+public import Unfoldings.Roof.CompatibleMeshDirectedTerminalBanks

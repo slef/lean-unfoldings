@@ -2,6 +2,24 @@
 
 ## Session Log
 
+### 2026-11-16 — actual directed fine banks are exact terminal restrictions
+
+- Proved continuity and original projected interpolation for directed bank paths,
+  together with connected dense positive interval and exact closed-parameter coverage.
+- A connected dense positive portion determines the named whole bank and retains
+  all original endpoint copies by continuity.
+- Derived terminal endpoint bounds from the actual finite clipping domain. Forward
+  geometric endpoints now construct the original directed bank's exact finite and
+  whole-terminal restrictions, with every original parameter unchanged.
+- Proved equality of the entire closed intrinsic fine-bank trace with its named
+  finite terminal-bank subinterval, including both actual endpoint copies.
+- Verification: actual cache retrieval and corrected full `lake build` passed 6,052
+  jobs; 17,038 unfolding declarations passed the standard-axiom audit and both
+  abstract independence checks passed. The build caught and fixed a missing
+  noncomputable annotation in a new standalone module. Intrinsic boundary coverage
+  and actual comparison-chain assembly remain next, followed by radial closure,
+  saved-frontier transport and full graft assembly.
+
 ### 2026-11-16 — original finite-bank endpoint vertices and forest labels
 
 - Proved every retained metric copy over an original full mesh vertex is an

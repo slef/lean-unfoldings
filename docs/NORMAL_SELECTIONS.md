@@ -92,6 +92,9 @@ nonoverlap and counting remain to be proved.
   with exact whole-bank copies and projected positions. Sources are fine nonroots,
   finishes are rim roots, and distinct finish copies restore to the same original
   vertex. Each finite terminal bank joins distinct endpoint vertices.
+- [x] Identify every actual forward directed terminal bank with its canonical finite
+  and whole-bank restrictions from geometric endpoints alone. Preserve every bank
+  parameter and its entire closed intrinsic trace, including original endpoint copies.
 - [ ] Identify the full unbounded comparison banks, including terminal rays and
   completion fans, and supply their admissible respected radial closure geometry.
 - [ ] Carry physical saved-frontier curves and their untouched original sides through

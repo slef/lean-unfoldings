@@ -3369,3 +3369,16 @@ corners and does not yet identify their widths with the actual retained cap fan.
   whole-bank endpoint identities and projected positions. Each source is a fine
   forest nonroot and each finish a rim root. Opposite finish copies are distinct
   but restore to the same original vertex; each bank joins distinct endpoint vertices.
+
+- [`PositiveClosedInterval`](../Unfoldings/Metric/PositiveClosedInterval.lean),
+  [`DirectedBoundaryPathGeometry`](../Unfoldings/Complex/DirectedBoundaryPathGeometry.lean),
+  [`SpatialEnvelopeCutDomain`](../Unfoldings/Geometry/SpatialEnvelopeCutDomain.lean):
+  original directed-bank interpolation is continuous and preserves projected endpoint
+  coordinates; every retained mesh copy lies in the original clipping domain.
+- [`CompatibleTerminalDenseBankMatching`](../Unfoldings/Roof/CompatibleTerminalDenseBankMatching.lean):
+  matching a connected dense positive bank portion fixes all original endpoint copies.
+- [`CompatibleMeshDirectedTerminalBanks`](../Unfoldings/Roof/CompatibleMeshDirectedTerminalBanks.lean):
+  forward geometric endpoints identify an actual directed fine bank with a named
+  whole terminal bank and its constructed finite restriction. Every original parameter
+  and the entire closed intrinsic trace agree, including both endpoint copies. The
+  truncation bound follows from the actual mesh geometry.
