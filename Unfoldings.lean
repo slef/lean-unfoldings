@@ -2093,3 +2093,8 @@ public import Unfoldings.Geometry.SpatialEnvelopeLevelWindow
 public import Unfoldings.Roof.CompatibleLevelWindow
 public import Unfoldings.Roof.CompatibleMeshPhysicalCut
 public import Unfoldings.Roof.CompatibleMeshWindowCharts
+public import Unfoldings.Metric.CenteredChartTransport
+public import Unfoldings.Geometry.SpatialEnvelopeWindowCenters
+public import Unfoldings.Roof.CompatibleWindowPairedCenters
+public import Unfoldings.Cone.TransportedCharts
+public import Unfoldings.Roof.CompatibleMeshCornerCharts

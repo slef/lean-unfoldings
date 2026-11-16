@@ -3309,3 +3309,17 @@ corners and does not yet identify their widths with the actual retained cap fan.
   whole intrinsic-ball chart in this original retained triangle complex, preserving
   its spatial folding and nonexpanding inclusion. All window, mesh, metric and
   seam-placement data follow from the original construction.
+
+- [`CenteredChartTransport`](../Unfoldings/Metric/CenteredChartTransport.lean),
+  [`SpatialEnvelopeWindowCenters`](../Unfoldings/Geometry/SpatialEnvelopeWindowCenters.lean),
+  [`CompatibleWindowPairedCenters`](../Unfoldings/Roof/CompatibleWindowPairedCenters.lean):
+  whole neighborhoods centered at the specified original finite-patch copy, preserving
+  its exact inclusion through both source and target metric identifications.
+- [`TransportedCharts`](../Unfoldings/Cone/TransportedCharts.lean):
+  whole-ball metric inclusions carry the actual original tangent fan into their
+  target, retaining all original tagged wedge coordinates at a common smaller radius.
+- [`CompatibleMeshCornerCharts`](../Unfoldings/Roof/CompatibleMeshCornerCharts.lean):
+  every specified retained finite-mesh corner strictly below the completion level
+  has its actual original tangent-fan chart in the whole forest cut. The original
+  retained corner classes, original face coordinates and fan angles are constructed;
+  no fan or angle comparison certificate is an input.

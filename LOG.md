@@ -2,6 +2,21 @@
 
 ## Session Log
 
+### 2026-11-16 — original retained corner fans in the complete forest cut
+
+- Constructed whole window-ball charts centered at the specified original patch
+  copy, then transported them to specified original retained triangle-complex copies.
+- Proved whole-ball inclusions carry the actual original tangent fan into their
+  target, preserving all tagged wedge and original face coordinates at a common
+  smaller radius. Arbitrary retained seam sets are allowed.
+- Specialized to the constructed compatible mesh: every specified retained corner
+  strictly below the completion level has its original tangent-fan neighborhood in
+  the whole cut. Fan and angle comparison certificates are no longer needed here.
+- Verification: actual cache retrieval and full `lake build` passed 6,032 jobs;
+  16,885 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks passed. Finite-to-whole terminal-bank matching, admissible
+  radial closure, saved-frontier transport and full graft assembly remain open.
+
 ### 2026-11-16 — constructed finite forest charts in the original whole cut
 
 - Derived exact retained and removed physical seam placement from the prescribed

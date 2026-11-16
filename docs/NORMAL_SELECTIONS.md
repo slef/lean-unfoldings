@@ -76,6 +76,9 @@ nonoverlap and counting remain to be proved.
   sublevel. Construct canonical level windows and whole finite-complex metric-ball
   charts at every original bank copy strictly below that level, preserving the
   spatial fold and nonexpanding inclusion without comparison certificates.
+- [x] Construct whole original-cut neighborhoods at specified finite-mesh copies,
+  then transport each original retained corner's actual tangent fan and tagged
+  face coordinates into the whole cut. This derives the local fan identification.
 - [ ] Identify the full unbounded comparison banks, including terminal rays and
   completion fans, and supply their admissible respected radial closure geometry.
 - [ ] Carry physical saved-frontier curves and their untouched original sides through
