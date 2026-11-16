@@ -3323,3 +3323,19 @@ corners and does not yet identify their widths with the actual retained cap fan.
   has its actual original tangent-fan chart in the whole forest cut. The original
   retained corner classes, original face coordinates and fan angles are constructed;
   no fan or angle comparison certificate is an input.
+
+- [`SpatialEnvelopeIncidentSupport`](../Unfoldings/Geometry/SpatialEnvelopeIncidentSupport.lean):
+  a one-sided affine roof germ determines the supporting height of every incident
+  original full-dimensional cell on the same cut side.
+- [`CompatibleTerminalFiberBanks`](../Unfoldings/Roof/CompatibleTerminalFiberBanks.lean):
+  every actual positive terminal-ray copy belongs to exactly one named whole bank.
+  A continuous connected curve of positive terminal copies keeps one fixed bank
+  label, deriving copy equality from the original cut geometry and closed bank ranges.
+- [`CompatibleMeshTerminalMatching`](../Unfoldings/Roof/CompatibleMeshTerminalMatching.lean):
+  original finite comparison copies and continuous connected terminal-bank portions
+  match the named whole banks as actual metric copies, including finite truncation
+  endpoints. Bank labels cannot switch at fine subdivision vertices.
+- [`CompatibleTerminalBankIntervals`](../Unfoldings/Roof/CompatibleTerminalBankIntervals.lean):
+  continuous finite terminal banks agree with the restrictions of named whole banks
+  on closed intervals. Continuity retains the actual original parameter-zero copy;
+  the finite-mesh specialization also includes the original truncation endpoint.

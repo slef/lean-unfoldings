@@ -2098,3 +2098,7 @@ public import Unfoldings.Geometry.SpatialEnvelopeWindowCenters
 public import Unfoldings.Roof.CompatibleWindowPairedCenters
 public import Unfoldings.Cone.TransportedCharts
 public import Unfoldings.Roof.CompatibleMeshCornerCharts
+public import Unfoldings.Geometry.SpatialEnvelopeIncidentSupport
+public import Unfoldings.Roof.CompatibleTerminalFiberBanks
+public import Unfoldings.Roof.CompatibleMeshTerminalMatching
+public import Unfoldings.Roof.CompatibleTerminalBankIntervals

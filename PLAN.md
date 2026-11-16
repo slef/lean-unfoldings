@@ -851,6 +851,14 @@ The [construction guide](docs/NORMAL_SELECTIONS.md) records the completed bridge
 - [x] Construct global planar isometries of simply connected flat boundary gluings
   of finite closed convex cells, including unbounded cells.
 
+- [x] Construct actual finite completion neighborhoods in the original whole cut,
+  deriving window, mesh and retained-edge data from the original geometric construction.
+- [x] Preserve specified original retained corner fans and every tagged face coordinate
+  in those whole-cut neighborhoods, without fan or metric comparison certificates.
+- [x] Classify positive terminal copies by their unique named whole bank. Continuous
+  finite terminal-bank portions match the same whole bank across mesh vertices and
+  on closed intervals, retaining both original endpoints.
+
 Next: match the physical saved-frontier paths to the original comparison banks,
 identify their untouched original fan sides, and assemble the complete flat graft.
 Actual Jordan gaps, intrinsic corner charts and local junction-surgery models are

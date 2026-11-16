@@ -2,6 +2,24 @@
 
 ## Session Log
 
+### 2026-11-16 — finite terminal banks match named whole-bank copies
+
+- Derived every incident original cell's support from the actual one-sided affine
+  roof germ. This identifies all original metric copies at positive terminal points.
+- Proved every positive full-forest terminal copy belongs to exactly one constructed
+  named whole bank. Membership in a bank's range gives its exact actual parameter copy.
+- Proved continuous connected curves of positive terminal copies follow one fixed
+  named bank, so labels cannot switch at finite mesh or subdivision vertices.
+- Extended continuous finite terminal intervals through parameter zero by closure,
+  retaining the actual original source copy and the finite truncation endpoint.
+- Specialized these results to the actual constructed finite forest-cut inclusion.
+  Equality is of original cut-metric copies, not just spatial traces.
+- Verification: actual cache retrieval and the final full `lake build` passed 6,036
+  jobs; 16,902 unfolding declarations passed the standard-axiom audit and both
+  abstract independence checks passed. Assemble the complete comparison rays and
+  admissible radial closures, transport the saved frontier and assemble the flat
+  graft next; the full graft theorem remains open.
+
 ### 2026-11-16 — original retained corner fans in the complete forest cut
 
 - Constructed whole window-ball charts centered at the specified original patch

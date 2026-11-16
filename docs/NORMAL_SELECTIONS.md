@@ -79,6 +79,11 @@ nonoverlap and counting remain to be proved.
 - [x] Construct whole original-cut neighborhoods at specified finite-mesh copies,
   then transport each original retained corner's actual tangent fan and tagged
   face coordinates into the whole cut. This derives the local fan identification.
+- [x] Classify every positive terminal-ray metric copy by its unique named whole
+  bank. Continuous connected finite terminal-bank portions keep one fixed label
+  across subdivision vertices, with equality of the actual original cut copies.
+  Closed finite terminal intervals retain their parameter-zero copies and finite
+  truncation endpoints by continuity.
 - [ ] Identify the full unbounded comparison banks, including terminal rays and
   completion fans, and supply their admissible respected radial closure geometry.
 - [ ] Carry physical saved-frontier curves and their untouched original sides through
