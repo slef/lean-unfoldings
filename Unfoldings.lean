@@ -2076,3 +2076,11 @@ public import Unfoldings.Geometry.SpatialEnvelopeWindowPartition
 public import Unfoldings.Roof.CompatibleWindowMesh
 public import Unfoldings.Metric.LocalChartSourceTransport
 public import Unfoldings.Roof.CompatibleWindowMeshCharts
+public import Unfoldings.Complex.PhysicalCutClasses
+public import Unfoldings.Complex.PhysicalCutMap
+public import Unfoldings.Complex.PhysicalCutForward
+public import Unfoldings.Complex.PhysicalCutEquiv
+public import Unfoldings.Complex.RemovedSeamCarrier
+public import Unfoldings.Metric.PolygonalCutCongr
+public import Unfoldings.Geometry.SpatialEnvelopePhysicalCut
+public import Unfoldings.Roof.CompatibleWindowPairedMesh

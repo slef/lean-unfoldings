@@ -3265,3 +3265,23 @@ corners and does not yet identify their widths with the actual retained cap fan.
   whole small triangular-cut neighborhood, the same spatial point and nonexpansion.
 - [`LocalChartSourceTransport`](../Unfoldings/Metric/LocalChartSourceTransport.lean):
   replacing a patch by an isometric mesh preserves whole-ball coverage and its inclusion.
+
+- [`PhysicalCutClasses`](../Unfoldings/Complex/PhysicalCutClasses.lean),
+  [`PhysicalCutMap`](../Unfoldings/Complex/PhysicalCutMap.lean),
+  [`PhysicalCutForward`](../Unfoldings/Complex/PhysicalCutForward.lean),
+  [`PhysicalCutEquiv`](../Unfoldings/Complex/PhysicalCutEquiv.lean):
+  original retained triangle pairings and the actual closed physical cut have the
+  same complete intrinsic metric. Both inverse maps keep every original face copy,
+  endpoint bank and corner class, together with its original spatial fold point.
+- [`RemovedSeamCarrier`](../Unfoldings/Complex/RemovedSeamCarrier.lean):
+  for an embedded folding, deleting arbitrary original pairings is exactly cutting
+  their literal closed spatial edge carrier. Retained open edges automatically
+  avoid that carrier, including vertices of the removed seams.
+- [`PolygonalCutCongr`](../Unfoldings/Metric/PolygonalCutCongr.lean),
+  [`SpatialEnvelopePhysicalCut`](../Unfoldings/Geometry/SpatialEnvelopePhysicalCut.lean):
+  identify the actual finite graph-patch cut with its original paired triangle
+  complex from conformity and geometric seam containment and avoidance.
+- [`CompatibleWindowPairedMesh`](../Unfoldings/Roof/CompatibleWindowPairedMesh.lean):
+  every original interior forest-cut bank copy has a whole intrinsic neighborhood
+  in the actual retained triangle complex, with the same original spatial fold and
+  nonexpanding inclusion. No metric or corner-fan comparison is supplied as input.

@@ -2,6 +2,24 @@
 
 ## Session Log
 
+### 2026-11-16 — original paired triangles identified with actual physical cuts
+
+- Constructed exact inverse maps between retained original triangle pairings and
+  physical cuts, preserving literal face copies, original corner classes and folds.
+- For every embedded folding, cutting the closed spatial carrier of arbitrary
+  removed original seams gives precisely the retained triangle metric. Embeddedness
+  derives avoidance of removed edges by all retained open edges, including endpoints
+  that are vertices of a removed seam.
+- Identified conforming finite roof graph cuts with their original paired triangle
+  complexes, then carried whole original interior bank neighborhoods into them with
+  exact spatial folding and nonexpansion. Geometric seam containment and avoidance
+  suffice; metric and corner-fan comparison certificates are not inputs.
+- Verification: actual cache retrieval and corrected full `lake build` passed 6,018
+  jobs; 16,804 unfolding declarations passed the standard-axiom audit, and both
+  abstract independence checks passed. The complete graft remains open. Deriving
+  seam placement from the constructed mesh and matching finite and whole-ray banks
+  are next.
+
 ### 2026-11-16 — actual finite triangular cuts identified with original window patches
 
 - Proved selected cells cover the entire closed polygonal window, including every
