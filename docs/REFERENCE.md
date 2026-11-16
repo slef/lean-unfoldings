@@ -3382,3 +3382,11 @@ corners and does not yet identify their widths with the actual retained cap fan.
   whole terminal bank and its constructed finite restriction. Every original parameter
   and the entire closed intrinsic trace agree, including both endpoint copies. The
   truncation bound follows from the actual mesh geometry.
+
+- [`SpatialEnvelopeCutBoundaryFibers`](../Unfoldings/Roof/SpatialEnvelopeCutBoundaryFibers.lean):
+  every original retained metric copy over a removed fine seam lies on the actual
+  intrinsic cut boundary, including copies represented in other incident faces.
+- [`ConstructedFiniteTerminalBoundary`](../Unfoldings/Roof/ConstructedFiniteTerminalBoundary.lean):
+  both constructed finite terminal banks lie on the original intrinsic boundary,
+  including their source and rim copies. Construct the boundary contour from the
+  actual cut disk and locate every terminal-bank point on an original directed bank.

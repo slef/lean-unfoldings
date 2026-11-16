@@ -2118,3 +2118,5 @@ public import Unfoldings.Complex.DirectedBoundaryPathGeometry
 public import Unfoldings.Geometry.SpatialEnvelopeCutDomain
 public import Unfoldings.Roof.CompatibleTerminalDenseBankMatching
 public import Unfoldings.Roof.CompatibleMeshDirectedTerminalBanks
+public import Unfoldings.Roof.SpatialEnvelopeCutBoundaryFibers
+public import Unfoldings.Roof.ConstructedFiniteTerminalBoundary

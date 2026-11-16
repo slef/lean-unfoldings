@@ -95,6 +95,9 @@ nonoverlap and counting remain to be proved.
 - [x] Identify every actual forward directed terminal bank with its canonical finite
   and whole-bank restrictions from geometric endpoints alone. Preserve every bank
   parameter and its entire closed intrinsic trace, including original endpoint copies.
+- [x] Put both constructed finite terminal banks on the actual intrinsic cut boundary,
+  including their endpoints, and locate every point on the constructed original contour.
+
 - [ ] Identify the full unbounded comparison banks, including terminal rays and
   completion fans, and supply their admissible respected radial closure geometry.
 - [ ] Carry physical saved-frontier curves and their untouched original sides through

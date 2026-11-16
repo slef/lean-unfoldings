@@ -2,6 +2,19 @@
 
 ## Session Log
 
+### 2026-11-16 — original finite terminal banks cover intrinsic boundary banks
+
+- Proved every original retained metric copy over a removed fine seam lies on
+  the actual intrinsic cut boundary, including other incident face representations.
+- Both constructed finite terminal banks lie on that boundary at every parameter,
+  including their source and truncation copies.
+- Constructed the original boundary contour from the actual finite cut disk and
+  located every terminal-bank point on an original directed contour bank.
+- Verification: actual cache retrieval and full `lake build` passed 6,054 jobs;
+  17,050 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks passed. Ordered comparison-chain assembly, radial closures,
+  saved-frontier transport and the full graft theorem remain open.
+
 ### 2026-11-16 — actual directed fine banks are exact terminal restrictions
 
 - Proved continuity and original projected interpolation for directed bank paths,
