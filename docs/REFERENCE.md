@@ -3788,3 +3788,14 @@ corners and does not yet identify their widths with the actual retained cap fan.
   A nonvertex contact forces whole-edge alignment and forward parameter order.
   Both lifted original removed banks keep their original segments and endpoint
   vertices; their nonvertex contacts select forward banks with literal contact copies.
+- [`ClosedUnitIntervalLineMap`](../Unfoldings/Metric/ClosedUnitIntervalLineMap.lean),
+  [`DirectedBankSubinterval`](../Unfoldings/Polyhedron/DirectedBankSubinterval.lean):
+  exact original interval clocks and affine spatial bank restrictions, retaining
+  both endpoints and strict interior times.
+- [`CompatibleProcessedBankInterior`](../Unfoldings/Roof/CompatibleProcessedBankInterior.lean),
+  [`CompatibleComparisonFiniteMatching`](../Unfoldings/Roof/CompatibleComparisonFiniteMatching.lean):
+  regular original removed-edge points lie strictly below the old rim, with no
+  supplied height bound. One regular contact fixes the original side of a whole
+  continuous bank, including endpoints. A forward comparison bank with original
+  spatial endpoints is its literal original finite-bank restriction once that
+  contact is fixed; all actual intrinsic point copies agree.

@@ -954,8 +954,10 @@ copies. Every lifted removed-bank point lies on the actual finite cut boundary,
 including both endpoints, with a directed fine-bank representation. Those original
 endpoint copies are actual fine vertices. Nonvertex contacts select whole forward
 fine banks in the original edge order while retaining their exact intrinsic copies.
-Matching these chains and charts
-to completed corner fans and rolling comparisons,
+Regular removed-edge points lie strictly below the old rim. Original spatial
+endpoint positions and one regular contact now fix the exact whole forward fine
+bank on its original side, retaining every intrinsic point and both endpoints.
+Matching these chains and charts to completed corner fans and rolling comparisons,
 admissible comparison windows, saved-frontier transport
 and the complete flat graft remain open.
 See the [gap-grafting checklist](docs/NORMAL_SELECTIONS.md#gap-grafting-status). The finite-cell route to

@@ -2259,3 +2259,7 @@ public import Unfoldings.Polyhedron.CutBankParameters
 public import Unfoldings.Geometry.SpatialEnvelopeCutBankParameters
 public import Unfoldings.Roof.CompatibleComparisonPrescribedGeometry
 public import Unfoldings.Roof.CompatibleComparisonFiniteVertices
+public import Unfoldings.Metric.ClosedUnitIntervalLineMap
+public import Unfoldings.Polyhedron.DirectedBankSubinterval
+public import Unfoldings.Roof.CompatibleProcessedBankInterior
+public import Unfoldings.Roof.CompatibleComparisonFiniteMatching

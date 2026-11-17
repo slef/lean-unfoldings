@@ -2,6 +2,22 @@
 
 ## Session Log
 
+### 2026-11-17 — whole forward fine banks retain their original intrinsic side
+
+- Derived strict old-rim interiority of every regular removed-edge point from the
+  original open-seam geometry; no separate height bound is assumed.
+- One named regular contact now fixes the side of a whole continuous original-bank
+  curve, including both endpoint copies. Forward interval clocks preserve strict
+  interior times and the exact full spatial affine subsegment.
+- A comparison bank with original spatial endpoints and one regular intrinsic
+  contact equals its entire original finite-bank restriction, point by point.
+  Larger-window fiber uniqueness keeps both literal endpoint copies.
+- Verification: actual cache retrieval followed by full `lake build` passed 6,197
+  jobs; 18,250 unfolding declarations passed the standard-axiom audit, and both
+  abstract independence checks passed. Existing theorem statements are unchanged.
+- Constructing complete ordered stem refinements and rolling comparisons,
+  saved-frontier transport and complete graft nonoverlap remain open.
+
 ### 2026-11-17 — original finite-bank endpoint vertices and forward fine pieces
 
 - Both labeled original cut banks now have a common left-edge coordinate API,

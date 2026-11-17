@@ -244,6 +244,10 @@ nonoverlap and counting remain to be proved.
   both bank sides and in either orientation. Derive whole fine-edge alignment and
   forward original parameter order from nonvertex contacts, keeping actual copies.
 
+- [x] Derive strict old-rim interiority of regular removed-edge points. Prove that
+  original spatial endpoint positions and one regular intrinsic contact fix every
+  point of a whole forward fine bank, retaining both original endpoint copies.
+
 - [ ] Match fine boundary chains and completion fans along the full rootward stem
   and terminal ray. Apply the constructed respected short-window comparisons to
   their actual real rolling headings, uniformly over the outer cutoff.
