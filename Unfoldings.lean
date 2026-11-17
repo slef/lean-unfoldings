@@ -2192,3 +2192,7 @@ public import Unfoldings.Roof.CompatibleRootwardJunctionGerm
 public import Unfoldings.Roof.CompatibleRootwardJunctionChart
 public import Unfoldings.Metric.PlacedBallCenterTransport
 public import Unfoldings.Roof.CompatibleRootwardJunctionVectors
+public import Unfoldings.Topology.FinitePathRange
+public import Unfoldings.Complex.BoundaryChainPath
+public import Unfoldings.Metric.DilationIntervalPath
+public import Unfoldings.Roof.CompatibleRootwardIntrinsicPath

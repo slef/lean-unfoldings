@@ -905,7 +905,9 @@ and all pairwise distances. Positive outer tails avoid all finite mesh copies, a
 opposite restored banks stay distinct past truncation. Original whole halfplane charts
 now survive on every intermediate outer bank and at each actual intrinsic rootward
 terminal join. The last incoming bank and fixed outer tail derive the unchanged cut
-germ there; the artificial truncation creates no new geometric corner. Matching these
+germ there; the artificial truncation creates no new geometric corner. Continuous
+actual intrinsic rootward traversals now append arbitrary original terminal intervals,
+with the exact original carriers meeting only at their joined endpoint. Matching these
 charts to completed corner fans, admissible comparison windows, saved-frontier transport
 and the complete flat graft remain open.
 See the [gap-grafting checklist](docs/NORMAL_SELECTIONS.md#gap-grafting-status). The finite-cell route to

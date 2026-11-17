@@ -2,6 +2,23 @@
 
 ## Session Log
 
+### 2026-11-17 — continuous intrinsic rootward paths and exact terminal intersections
+
+- Constructed continuous traversals of actual boundary chains, preserving every original
+  endpoint copy and precisely the entire intrinsic bank trace. The construction supports
+  continuous maps into arbitrary physical cut models.
+- Constructed exact closed-interval traversals of whole terminal dilations and joined
+  them to paths at their equal actual intrinsic endpoints, including zero-length tails.
+- Constructed actual continuous rootward paths in each intermediate whole cut and appended
+  arbitrary finite original terminal intervals. Their carriers are exactly the original
+  stem and tail, meeting only at their common original intrinsic endpoint.
+- Verification: actual cache retrieval and full `lake build` passed 6,130 jobs;
+  17,628 unfolding declarations passed the standard-axiom audit, and both abstract
+  independence checks passed. Existing public theorem statements are unchanged.
+- Completion fan matching, saved-frontier placement, admissible comparison windows and
+  complete graft nonoverlap remain open. These results concern actual intrinsic paths,
+  and do not assume or prove planar development nonoverlap.
+
 ### 2026-11-17 — whole original halfplanes at actual rootward terminal junctions
 
 - Derived whole-ball restoration charts at arbitrary original cut copies and transported

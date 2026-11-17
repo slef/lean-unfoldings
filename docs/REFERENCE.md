@@ -3610,3 +3610,18 @@ corners and does not yet identify their widths with the actual retained cap fan.
   equal named centers retain their original physically placed charts. The actual last
   rootward edge is a positive multiple of the exact terminal direction, simultaneously
   in projected and full spatial coordinates, with one common positive duration.
+
+- [`FinitePathRange`](../Unfoldings/Topology/FinitePathRange.lean),
+  [`BoundaryChainPath`](../Unfoldings/Complex/BoundaryChainPath.lean):
+  finite concatenation constructs a continuous intrinsic traversal of every actual
+  boundary chain, with its original endpoint copies and exactly its entire bank trace.
+  The traversal can be mapped continuously into any physical cut model.
+- [`DilationIntervalPath`](../Unfoldings/Metric/DilationIntervalPath.lean):
+  follow exact closed time intervals of an original half-line dilation and append them
+  to a path at an equal intrinsic endpoint. Carrier identities retain all original
+  times; separation of the positive tail gives exactly one intersection point.
+- [`CompatibleRootwardIntrinsicPath`](../Unfoldings/Roof/CompatibleRootwardIntrinsicPath.lean):
+  construct continuous actual intrinsic rootward paths in their intermediate whole
+  cuts. Append any finite original terminal interval, retaining the exact original
+  stem and tail carriers. The two closed pieces meet at precisely their joined
+  intrinsic endpoint. This makes no claim about planar development nonoverlap.

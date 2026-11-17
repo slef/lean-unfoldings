@@ -59,6 +59,9 @@ nonoverlap and counting remain to be proved.
   Derive the actual last incoming terminal segment, the unchanged cut germ at its
   junction and a whole halfplane neighborhood of the actual intrinsic rootward
   endpoint. The artificial truncation join adds no geometric corner.
+- [x] Construct continuous actual intrinsic rootward traversals and append arbitrary
+  finite original terminal-bank intervals. Their carriers are exactly the original
+  stem and tail, meeting only at the joined intrinsic endpoint.
 - [x] Construct complete physical fine paths, preserving exact metric copies and traces,
   old fan angles, all ordered real headings, arclength and every radial margin.
 - [x] Construct entire actual Jordan traversals from radial closure geometry, deriving
