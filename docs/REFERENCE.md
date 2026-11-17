@@ -3631,3 +3631,13 @@ corners and does not yet identify their widths with the actual retained cap fan.
   The continuous half-line traversal retains the exact original stem and all original
   terminal times. Its carrier is closed and path connected, and the two pieces meet
   only at their joined intrinsic endpoint. Planar development nonoverlap remains open.
+- [`SupportedWindowRolling`](../Unfoldings/Roof/SupportedWindowRolling.lean),
+  [`CompatibleRootwardWindowCompletion`](../Unfoldings/Roof/CompatibleRootwardWindowCompletion.lean):
+  construct supported physical comparisons for short windows of actual rootward
+  banks and arbitrary positive terminal continuations, including the truncation
+  junction. Sources move arbitrarily little and closing links avoid old vertices.
+  The same mesh respects all prescribed cut, original face and marked closure lines.
+  One tilt controls rolling independently of window size and duration; preserved
+  heights match the entire original whole roof throughout the comparison domain,
+  including points outside the finite clip. Matching these comparison banks to the
+  whole intrinsic fans and transporting the saved frontier remain separate steps.

@@ -2,6 +2,24 @@
 
 ## Session Log
 
+### 2026-11-17 — physical comparisons for actual continued rootward windows
+
+- Constructed regular supported short-window comparison caps with arbitrarily small
+  source motion and closing links avoiding every prescribed original vertex.
+  The same physical mesh respects all original face, prescribed cut and marked
+  closure lines, retaining the original metric subdivision and corner fans.
+- Applied the uniform rolling comparison to actual rootward banks with arbitrary
+  positive terminal durations, including windows crossing the original truncation
+  junction. All original vertices stay away from the fresh source, and each
+  continued edge is genuine.
+- Comparison domains preserve the entire original whole roof, including outside
+  the finite clip. The tilt bound is independent of the window and tail duration.
+- Verification: actual cache retrieval and full `lake build` passed 6,134 jobs;
+  17,661 unfolding declarations passed the standard-axiom audit, and both abstract
+  independence checks passed. Existing public theorem statements are unchanged.
+- Whole intrinsic fan matching, selection of enough short comparison windows,
+  saved-frontier placement and complete graft nonoverlap remain open.
+
 ### 2026-11-17 — whole continuous intrinsic rootward banks
 
 - Extended finite paths continuously along joined original half-line dilations,

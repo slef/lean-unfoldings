@@ -2198,3 +2198,5 @@ public import Unfoldings.Metric.DilationIntervalPath
 public import Unfoldings.Roof.CompatibleRootwardIntrinsicPath
 public import Unfoldings.Topology.PathRayExtension
 public import Unfoldings.Roof.CompatibleRootwardWholePath
+public import Unfoldings.Roof.SupportedWindowRolling
+public import Unfoldings.Roof.CompatibleRootwardWindowCompletion

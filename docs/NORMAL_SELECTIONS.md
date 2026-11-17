@@ -164,6 +164,13 @@ nonoverlap and counting remain to be proved.
   banks, preserving intrinsic traces and deriving strict radial progress, linear support,
   outward links and controlled incidences with all original fine vertices and cut lines.
 
+- [x] Construct physical comparison caps for short windows of actual rootward stems
+  with arbitrary positive terminal continuations, including windows crossing the
+  truncation junction. Closing links avoid original vertices, all prescribed cut
+  and original face lines survive, and the entire original whole roof is preserved
+  on the comparison domain even outside the finite clip. A single tilt controls
+  the actual rolling error independently of the window and terminal duration.
+
 - [ ] Identify the full unbounded comparison banks, including terminal rays and
   completion fans, and supply their admissible respected radial closure geometry.
 - [ ] Carry physical saved-frontier curves and their untouched original sides through

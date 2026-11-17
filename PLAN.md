@@ -909,7 +909,11 @@ germ there; the artificial truncation creates no new geometric corner. Continuou
 actual intrinsic rootward traversals now append arbitrary original terminal intervals,
 with the exact original carriers meeting only at their joined endpoint. These now
 extend continuously along the whole unbounded terminal tail, with a closed, path-connected
-carrier and no additional intersections at the join. Matching these
+carrier and no additional intersections at the join. Short windows of arbitrary
+positive terminal continuations now construct supported physical comparison caps,
+including windows across the truncation junction. They preserve the entire original
+whole roof on the comparison domain, respect all original face and cut lines, and
+have uniformly small actual rolling error. Matching these
 charts to completed corner fans, admissible comparison windows, saved-frontier transport
 and the complete flat graft remain open.
 See the [gap-grafting checklist](docs/NORMAL_SELECTIONS.md#gap-grafting-status). The finite-cell route to
