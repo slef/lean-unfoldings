@@ -3697,3 +3697,10 @@ corners and does not yet identify their widths with the actual retained cap fan.
   literally with their named individual bank copies. Every pairwise original distance,
   endpoint time and full spatial ray coordinate is preserved. The interval endpoint
   stays strictly inside the new comparison window.
+- [`BoundaryPointPath`](../Unfoldings/Complex/BoundaryPointPath.lean),
+  [`CompatibleComparisonTerminalBoundary`](../Unfoldings/Roof/CompatibleComparisonTerminalBoundary.lean):
+  original outer terminal contacts force genuine removed seams in the constructed
+  larger mesh. Every actual metric copy over such a point is a cut-boundary copy,
+  even at vertices. Entire closed terminal intervals, with both endpoints, have
+  actual directed fine-bank point representations without a global contour premise.
+  Ordering these pieces into the complete fine bank chain remains separate.

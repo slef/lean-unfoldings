@@ -2,6 +2,22 @@
 
 ## Session Log
 
+### 2026-11-17 — actual comparison cut-boundary copies of closed terminal intervals
+
+- Derived genuine removed comparison seams through every original outer terminal
+  point, including old truncation endpoints and fine subdivision vertices.
+  Canonical finite segment coverage supplies all seam and interior conditions.
+- Every intrinsic comparison-mesh copy over an outer terminal point lies on the
+  actual cut boundary, even when it has a different physical face tag.
+- Entire closed terminal intervals retain both endpoint copies on that boundary.
+  Each point has an actual directed fine-bank representation without assuming a
+  single global boundary contour or a fan certificate.
+- Verification: actual cache retrieval and full `lake build` passed 6,160 jobs;
+  17,903 unfolding declarations passed the standard-axiom audit, and both abstract
+  independence checks passed. Existing public theorem statements are unchanged.
+- Complete ordered bank-chain assembly, rolling estimates on those chains,
+  saved-frontier transport and full graft nonoverlap remain open.
+
 ### 2026-11-17 — original outer-bank fans and complete metric terminal intervals
 
 - Constructed original terminal-bank copies in larger intermediate-cut comparison

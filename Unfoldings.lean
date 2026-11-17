@@ -2224,3 +2224,5 @@ public import Unfoldings.Roof.CompatibleComparisonJunctionFan
 public import Unfoldings.Roof.CompatibleComparisonTerminalCharts
 public import Unfoldings.Metric.NonnegativeIntervalCopy
 public import Unfoldings.Roof.CompatibleComparisonTerminalIntervals
+public import Unfoldings.Complex.BoundaryPointPath
+public import Unfoldings.Roof.CompatibleComparisonTerminalBoundary

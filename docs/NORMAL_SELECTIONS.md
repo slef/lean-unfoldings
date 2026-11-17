@@ -197,6 +197,11 @@ nonoverlap and counting remain to be proved.
   Entire closed terminal intervals lift as closed embedded dilations, retaining
   original endpoint times, every pairwise distance and full spatial coordinates.
 
+- [x] Put every original outer terminal-interval copy on the actual intrinsic cut
+  boundary of the larger comparison mesh, including old junctions and interval
+  endpoints. Construct directed fine-bank point representations without a supplied
+  global contour. Full ordered fine-chain assembly remains separate.
+
 - [ ] Identify the full unbounded comparison banks, including terminal rays and
   completion fans, and supply their admissible respected radial closure geometry.
 - [ ] Carry physical saved-frontier curves and their untouched original sides through
