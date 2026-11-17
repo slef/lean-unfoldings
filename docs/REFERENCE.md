@@ -3770,3 +3770,11 @@ corners and does not yet identify their widths with the actual retained cap fan.
   intermediate whole cuts, including both endpoint copies. Regular removed-edge
   fibers consist of the two named original banks. Connected curves keep one side,
   and matching on a dense interior portion retains their literal endpoint copies.
+- [`DirectedBoundaryPathBank`](../Unfoldings/Complex/DirectedBoundaryPathBank.lean),
+  [`CompatibleComparisonFiniteBanks`](../Unfoldings/Roof/CompatibleComparisonFiniteBanks.lean),
+  [`CompatibleComparisonCutBoundary`](../Unfoldings/Roof/CompatibleComparisonCutBoundary.lean):
+  lift every entire original finite bank into every larger comparison mesh as an
+  exact embedded dilation, keeping its literal whole-cut copy and spatial position.
+  Every interior point of the original cut lies on a genuine removed comparison
+  seam. All lifted removed-bank points lie on the actual cut boundary and have
+  directed fine-bank representations, including both original endpoints.

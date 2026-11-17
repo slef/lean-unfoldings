@@ -59,4 +59,7 @@ def directedBankDilation (p : C.BoundaryEnd retain) : unitInterval →ᵈ C.Real
   dilationOfIsometricLift (F.directedBankSpatialDilation p) id isometry_id
     (C.directedBoundaryPath p) (F.edist_directedBoundaryPath_eq_spatial p)
 
+@[simp] theorem directedBankDilation_apply (p : C.BoundaryEnd retain) (t : unitInterval) :
+    F.directedBankDilation p t = C.directedBoundaryPath p t := rfl
+
 end Unfoldings.SpatialFolding

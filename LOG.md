@@ -2,6 +2,24 @@
 
 ## Session Log
 
+### 2026-11-17 — whole original finite banks on actual comparison cut boundaries
+
+- Lifted every complete original finite bank into every larger comparison mesh as
+  an exact embedded dilation, preserving its literal whole-cut image, spatial
+  coordinates, all pairwise distances and both original endpoint copies.
+- Derived genuine removed comparison seams over every original cut point strictly
+  inside the window. Every intrinsic copy there lies on the actual cut boundary,
+  including copies at subdivision vertices and with other face tags.
+- Both labeled original removed banks now lie entirely on that boundary and have
+  directed fine-bank representations. No boundary or fiber certificate is assumed.
+- Added cached pointwise dilation identities to avoid expensive concrete kernel
+  reduction; the proofs pass with the default checking limits.
+- Verification: actual cache retrieval and full `lake build` passed 6,189 jobs;
+  18,197 unfolding declarations passed the standard-axiom audit, and both abstract
+  independence checks passed. Existing public theorem statements are unchanged.
+- Ordered full stem refinements, saved-frontier transport and complete graft
+  nonoverlap remain open.
+
 ### 2026-11-17 — exact original finite banks and their whole-cut side matching
 
 - Constructed exact intrinsic and spatial dilations for every original directed

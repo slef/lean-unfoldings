@@ -24,4 +24,13 @@ def dilationOfNonexpandingTransport {A X Y Z : Type*} [PseudoEMetricSpace A]
         ((congrArg₂ edist (same s) (same t)).symm.trans_le
           ((bounded_place (f (g s)) (f (g t))).trans_eq (one_mul _))))
 
+@[simp] theorem dilationOfNonexpandingTransport_apply {A X Y Z : Type*}
+    [PseudoEMetricSpace A] [PseudoEMetricSpace X] [PseudoEMetricSpace Y] [PseudoEMetricSpace Z]
+    (g : A →ᵈ X) (f : X → Y) (bounded_f : LipschitzWith 1 f)
+    (place : Y → Z) (bounded_place : LipschitzWith 1 place) (original : A → Z)
+    (source_distance : ∀ s t, edist (original s) (original t) = edist (g s) (g t))
+    (same : ∀ t, place (f (g t)) = original t) (t : A) :
+    dilationOfNonexpandingTransport g f bounded_f place bounded_place original
+      source_distance same t = f (g t) := rfl
+
 end Unfoldings

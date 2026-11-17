@@ -2252,3 +2252,6 @@ public import Unfoldings.Metric.DilationNonexpandingTransport
 public import Unfoldings.Polyhedron.CutEdgeFibers
 public import Unfoldings.Polyhedron.DirectedBankMetric
 public import Unfoldings.Roof.CompatibleProcessedBankMetric
+public import Unfoldings.Complex.DirectedBoundaryPathBank
+public import Unfoldings.Roof.CompatibleComparisonFiniteBanks
+public import Unfoldings.Roof.CompatibleComparisonCutBoundary

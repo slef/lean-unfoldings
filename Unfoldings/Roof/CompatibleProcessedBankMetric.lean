@@ -96,10 +96,20 @@ def compatibleMeshProcessedBankDilation (S : (Fcut).parents.ParentFrontier)
       have bound := (PolygonalPoint.ambient_lipschitz.comp
         (W.partition.restoreCut_lipschitz CutsAt[S])) x y
       simpa only [Function.comp_apply, ENNReal.coe_one, one_mul, edist_dist] using bound)
-    (fun u => (T).pairedFolding.toSpace RetainAt[S] ((T).pairedComplex.directedBoundaryPath p u))
+    (fun u => (T).pairedFolding.toSpace RetainAt[S]
+      ((T).pairedComplex.directedBoundaryPath p u))
     (fun s t => ((T).pairedFolding.edist_directedBoundaryPath_eq_spatial p s t).symm)
     (fun u => K.restore_compatibleMeshProcessedWholeMap compact nonempty R no_boundary level
       higher M positive inner_disk beta acute W S ((T).pairedComplex.directedBoundaryPath p u))
+
+@[simp] theorem compatibleMeshProcessedBankDilation_apply (S : (Fcut).parents.ParentFrontier)
+    (p : (T).pairedComplex.BoundaryEnd RetainAt[S]) (u : unitInterval) :
+    K.compatibleMeshProcessedBankDilation compact nonempty R no_boundary level higher M positive
+      inner_disk beta acute W S p u = MapAt[S] ((T).pairedComplex.directedBoundaryPath p u) := by
+  calc
+    _ = MapAt[S] ((T).pairedFolding.directedBankDilation p u) :=
+      dilationOfNonexpandingTransport_apply _ _ _ _ _ _ _ _ u
+    _ = _ := congrArg MapAt[S] ((T).pairedFolding.directedBankDilation_apply p u)
 
 /-- The original entire bank remains closed and embedded in the actual whole intermediate cut. -/
 theorem compatibleMeshProcessedBank_isClosedEmbedding (S : (Fcut).parents.ParentFrontier)

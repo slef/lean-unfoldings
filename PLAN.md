@@ -948,7 +948,10 @@ its original time and full spatial speed; the whole image is exactly the closed
 arclength interval with strict vertex order. Original finite banks also retain
 exact whole-cut distances and both endpoint copies. Regular removed-edge fibers
 are exactly the two original banks, with fixed-side matching for connected curves
-and dense interior portions. Matching these chains and charts
+and dense interior portions. Entire finite banks now lift into every larger
+comparison mesh with unchanged distances, spatial positions and literal whole-cut
+copies. Every lifted removed-bank point lies on the actual finite cut boundary,
+including both endpoints, with a directed fine-bank representation. Matching these chains and charts
 to completed corner fans and rolling comparisons,
 admissible comparison windows, saved-frontier transport
 and the complete flat graft remain open.

@@ -235,6 +235,11 @@ nonoverlap and counting remain to be proved.
   intermediate whole cut. Classify both regular removed-edge copies and derive
   fixed-side matching for connected curves, with endpoint copies kept by continuity.
 
+- [x] Lift whole original finite banks into every larger comparison mesh with all
+  distances and both endpoint copies unchanged. Derive actual removed seams over
+  every original cut point inside the window, and actual cut-boundary membership
+  and directed fine-bank representations for both original removed-bank sides.
+
 - [ ] Match fine boundary chains and completion fans along the full rootward stem
   and terminal ray. Apply the constructed respected short-window comparisons to
   their actual real rolling headings, uniformly over the outer cutoff.
@@ -249,7 +254,8 @@ point, real heading, intrinsic length and quantitative radial margin. For an adm
 respected radial closure, the real-heading error is bounded by twice total curvature
 plus the closing-link and corner-error terms; one tilt works uniformly for all meshes.
 
-The terminal tails and finite banks now have exact original cut-metric copies. Each
+The terminal tails and finite banks now have exact original cut-metric copies in
+every larger comparison window. Each
 finite bank has a complete ordered original boundary chain with its named endpoint
 vertices. Original starting-hinge fans now have actual whole-cut charts under physical
 completion. Matching complete terminal comparison banks, selecting enough short
