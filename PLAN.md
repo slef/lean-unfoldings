@@ -968,7 +968,10 @@ strict vertex order. Distinct original bank labels now derive fine-block separat
 and actual successors. Complete original cut-bank paths assemble in order, and the
 whole rootward stem is an actual comparison chain ending at the literal terminal
 junction in every larger window, with its entire original carrier unchanged.
-Matching these chains and charts to completed corner fans and rolling comparisons,
+The actual stem and terminal chains now concatenate through the new rim, with
+height-derived bank separation, the original spatial endpoint and exact closed
+whole-cut carrier. Every bank starts strictly inside the larger roof. Matching
+these chains and charts to completed corner fans and rolling comparisons,
 admissible comparison windows, saved-frontier transport
 and the complete flat graft remain open.
 See the [gap-grafting checklist](docs/NORMAL_SELECTIONS.md#gap-grafting-status). The finite-cell route to

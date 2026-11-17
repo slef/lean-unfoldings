@@ -2278,3 +2278,5 @@ public import Unfoldings.Roof.CompatibleComparisonFiniteBlockJoins
 public import Unfoldings.Roof.CompatibleComparisonFinitePathAssembly
 public import Unfoldings.Roof.CompatibleComparisonChainRefinement
 public import Unfoldings.Roof.CompatibleRootwardComparisonChain
+public import Unfoldings.Roof.CompatibleComparisonTerminalStemJoins
+public import Unfoldings.Roof.CompatibleRootwardComparisonRimChain

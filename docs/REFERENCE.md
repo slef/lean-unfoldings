@@ -3839,3 +3839,9 @@ corners and does not yet identify their widths with the actual retained cap fan.
   construct the complete actual rootward stem chain in every larger comparison
   window. Strict original corner heights derive its cut labels. Its final vertex is
   the literal named terminal junction and its entire original carrier is unchanged.
+- [`CompatibleComparisonTerminalStemJoins`](../Unfoldings/Roof/CompatibleComparisonTerminalStemJoins.lean),
+  [`CompatibleRootwardComparisonRimChain`](../Unfoldings/Roof/CompatibleRootwardComparisonRimChain.lean):
+  original roof height separates every stem bank from every terminal bank, including
+  reversals. The literal junction determines their actual successor. The complete
+  constructed chain reaches the new rim with the exact original spatial endpoint
+  and whole-cut carrier. Every bank starts strictly inside the larger roof.

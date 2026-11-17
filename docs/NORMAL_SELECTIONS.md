@@ -262,8 +262,13 @@ nonoverlap and counting remain to be proved.
   joins derive actual successors, and both endpoint copies and the whole original
   carrier are unchanged. The last vertex is the literal named terminal junction.
 
-- [ ] Match fine boundary chains and completion fans along the full rootward stem
-  and terminal ray. Apply the constructed respected short-window comparisons to
+- [x] Join complete actual stem and terminal chains through the new rim. Original
+  height derives bank separation and the literal junction derives the successor.
+  Preserve the complete original closed carrier, both intrinsic endpoint copies
+  and the full spatial new-rim endpoint. Every bank starts strictly inside the roof.
+
+- [ ] Match the constructed complete rootward chains to physical completion fans.
+  Apply the constructed respected short-window comparisons to
   their actual real rolling headings, uniformly over the outer cutoff.
 - [ ] Carry physical saved-frontier curves and their untouched original sides through
   actual prior gap attachments. Apply the local metric remainder models to those updates.

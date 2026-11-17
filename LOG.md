@@ -2,6 +2,22 @@
 
 ## Session Log
 
+### 2026-11-17 — complete actual rootward chains through the new rim
+
+- Original roof height separates every stem bank from every terminal bank in both
+  orientations. The literal terminal junction determines the actual successor;
+  neither fine-bank separation nor the joined successor is supplied.
+- Constructed the entire actual rootward comparison chain through every larger
+  rim. Both intrinsic endpoint copies, the original full spatial new-rim point,
+  and the complete closed stem-plus-outer-bank carrier are retained.
+- Every bank starts strictly inside the larger roof. This supplies the original cut
+  labels needed when refining the chain into a physical cap completion.
+- Verification: actual cache retrieval followed by full `lake build` passed 6,214
+  jobs; 18,414 unfolding declarations passed the standard-axiom audit, and both
+  abstract independence checks passed. Existing theorem statements are unchanged.
+- Physical completion fan and rolling comparisons, saved-frontier transport and
+  complete graft nonoverlap remain open.
+
 ### 2026-11-17 — complete actual rootward comparison stem chains
 
 - Distinct original bank labels derive fine-block separation in both orientations;
