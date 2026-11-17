@@ -3474,3 +3474,17 @@ corners and does not yet identify their widths with the actual retained cap fan.
 - [`SupportedCompletionRootwardChain`](../Unfoldings/Roof/SupportedCompletionRootwardChain.lean):
   physical completion refines actual current rootward stems with unused isolated roots,
   preserving original reference roll traces, radial order and full intrinsic length.
+
+- [`SupportedVertexAvoidingClosure`](../Unfoldings/Geometry/SupportedVertexAvoidingClosure.lean):
+  generic vertex-avoiding Jordan closures retain strict radial progress, an actual
+  supporting linear height and an outward terminal link, with all original incidences
+  controlled. These supply the geometric inputs to physical bank comparison.
+- [`OrderedRayClosure`](../Unfoldings/Geometry/OrderedRayClosure.lean):
+  exact increasing ray subdivisions derive strict radial sources, endpoint progress
+  and a pointed supporting wedge from sources behind their original ray origin.
+- [`ConstructedFiniteTerminalClosure`](../Unfoldings/Roof/ConstructedFiniteTerminalClosure.lean):
+  construct supported generic Jordan closures of entire original finite terminal banks,
+  preserving their intrinsic traces. Avoid every original fine vertex on the closing
+  links except permitted endpoints, and avoid all original cut-constraint lines at both
+  new corners. Sources can be arbitrarily close to the named original source vertex.
+  The actual chain, source perturbation and closing geometry are derived.

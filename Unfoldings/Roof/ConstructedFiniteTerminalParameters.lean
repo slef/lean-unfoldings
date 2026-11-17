@@ -67,11 +67,21 @@ variable (r : {v // v ∈ R.parents.roots}) (side : Bool)
 local notation "τ" => R.terminalTime level r
 local notation "bank" => K.wholeTerminalBank compact nonempty R no_boundary W r side
 
-/-- Construct an entire terminal chain with its strictly increasing original ray times.
-Every directed bank point and both original endpoint times are retained exactly. -/
-theorem exists_compatibleMeshTerminalBank_parameterized_chain :
-    ∃ n : ℕ, ∃ chain : ((T).pairedComplex.boundarySystem (Fcut).retain).Chain n,
-      ∃ time : Fin (n + 2) → Set.Icc (0 : ℝ) τ, ∃ increasing : StrictMono time,
+/-- Recover exact increasing terminal times for a specified original chain on the chosen
+bank, retaining both named original endpoint copies. -/
+theorem parameterize_compatibleMeshTerminalBank_chain {n : ℕ}
+    (chain : ((T).pairedComplex.boundarySystem (Fcut).retain).Chain n)
+    (selected : ∀ i, chain.point i ∈
+      K.compatibleMeshTerminalBankEnds compact nonempty R no_boundary level higher M positive
+        inner_disk beta acute W r side)
+    (source : (T).pairedComplex.boundaryEndVertex (Fcut).retain chain.first =
+      K.compatibleMeshTerminalStartVertex compact nonempty R no_boundary level higher M positive
+        inner_disk beta acute W r side)
+    (finish : (T).pairedComplex.boundaryEndVertex (Fcut).retain
+      ((T).pairedComplex.boundaryTurn (Fcut).retain chain.last) =
+        K.compatibleMeshTerminalFinishVertex compact nonempty R no_boundary level higher M positive
+          inner_disk beta acute W r side) :
+    ∃ time : Fin (n + 2) → Set.Icc (0 : ℝ) τ, ∃ increasing : StrictMono time,
       (time 0).val = 0 ∧ (time (Fin.last (n + 1))).val = τ ∧
       ∀ (i : Fin (n + 1)) (u : unitInterval),
         (T).pairedComplex.directedBoundaryPath (chain.point i) u =
@@ -82,21 +92,17 @@ theorem exists_compatibleMeshTerminalBank_parameterized_chain :
               (increasing (show i.castSucc < i.succ from Fin.castSucc_lt_succ)).le
               (time i.succ).property.2 u) := by
   classical
-  obtain ⟨n, chain, index, named, _, source, finish⟩ :=
-    K.exists_compatibleMeshTerminalBank_chain compact nonempty R no_boundary level higher M positive
-      inner_disk beta acute W r side
   let curve := K.compatibleMeshTerminalBank compact nonempty R no_boundary level higher M positive
     inner_disk beta acute W r side
   have injective : Function.Injective curve :=
     (K.compatibleMeshTerminalBank_isClosedEmbedding compact nonempty R no_boundary level higher M
       positive inner_disk beta acute W r side).injective
-  have choices (i : Fin (n + 1)) := (index i).property
+  have choices (i : Fin (n + 1)) := selected i
   choose lower upper forward first last matching using choices
   have exact_match (i) (u) : (T).pairedComplex.directedBoundaryPath (chain.point i) u = curve
       (closedNonnegativeIntervalLineMap (lower i).val (upper i).val τ
-        (lower i).property.1 (forward i).le (upper i).property.2 u) := by
-    rw [named]
-    exact matching i u
+        (lower i).property.1 (forward i).le (upper i).property.2 u) :=
+    matching i u
   let time := TriangleComplex.boundaryChainIntervalTime lower upper
   have increasing : StrictMono time := (T).pairedComplex.strictMono_boundaryChainIntervalTime
     chain lower upper forward curve injective exact_match
@@ -122,9 +128,36 @@ theorem exists_compatibleMeshTerminalBank_parameterized_chain :
     have final := injective (terminal.symm.trans point)
     exact (congrArg Subtype.val (TriangleComplex.boundaryChainIntervalTime_last lower upper)).trans
       (congrArg Subtype.val final)
-  refine ⟨n, chain, time, increasing, zero_time, final_time, ?_⟩
+  refine ⟨time, increasing, zero_time, final_time, ?_⟩
   intro i u
   simpa only [edge_start, edge_finish] using exact_match i u
+
+/-- Construct an entire terminal chain with its strictly increasing original ray times.
+Every directed bank point and both original endpoint times are retained exactly. -/
+theorem exists_compatibleMeshTerminalBank_parameterized_chain :
+    ∃ n : ℕ, ∃ chain : ((T).pairedComplex.boundarySystem (Fcut).retain).Chain n,
+      ∃ time : Fin (n + 2) → Set.Icc (0 : ℝ) τ, ∃ increasing : StrictMono time,
+      (time 0).val = 0 ∧ (time (Fin.last (n + 1))).val = τ ∧
+      ∀ (i : Fin (n + 1)) (u : unitInterval),
+        (T).pairedComplex.directedBoundaryPath (chain.point i) u =
+          K.compatibleMeshTerminalBank compact nonempty R no_boundary level higher M positive
+            inner_disk beta acute W r side
+            (closedNonnegativeIntervalLineMap (time i.castSucc).val (time i.succ).val τ
+              (time i.castSucc).property.1
+              (increasing (show i.castSucc < i.succ from Fin.castSucc_lt_succ)).le
+              (time i.succ).property.2 u) := by
+  obtain ⟨n, chain, index, named, _, source, finish⟩ :=
+    K.exists_compatibleMeshTerminalBank_chain compact nonempty R no_boundary level higher M positive
+      inner_disk beta acute W r side
+  have selected (i : Fin (n + 1)) : chain.point i ∈
+      K.compatibleMeshTerminalBankEnds compact nonempty R no_boundary level higher M positive
+        inner_disk beta acute W r side := by
+    rw [named]
+    exact (index i).property
+  obtain ⟨time, increasing, initial, terminal, matching⟩ :=
+    K.parameterize_compatibleMeshTerminalBank_chain compact nonempty R no_boundary level higher M
+      positive inner_disk beta acute W r side chain selected source finish
+  exact ⟨n, chain, time, increasing, initial, terminal, matching⟩
 
 include W side in
 /-- The actual whole spatial chain retains the original strictly increasing terminal-ray

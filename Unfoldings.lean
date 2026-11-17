@@ -2148,3 +2148,6 @@ public import Unfoldings.Complex.SupportedRootwardFans
 public import Unfoldings.Complex.SupportedRootwardReference
 public import Unfoldings.Roof.CompatibleMeshRootwardChain
 public import Unfoldings.Roof.SupportedCompletionRootwardChain
+public import Unfoldings.Geometry.SupportedVertexAvoidingClosure
+public import Unfoldings.Geometry.OrderedRayClosure
+public import Unfoldings.Roof.ConstructedFiniteTerminalClosure

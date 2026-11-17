@@ -121,6 +121,10 @@ nonoverlap and counting remain to be proved.
   original ancestor-path fans, tangent metrics and complete rolls; physical completion
   retains the reference trace, radial order and intrinsic length.
 
+- [x] Construct supported generic Jordan closures of entire original finite terminal
+  banks, preserving intrinsic traces and deriving strict radial progress, linear support,
+  outward links and controlled incidences with all original fine vertices and cut lines.
+
 - [ ] Identify the full unbounded comparison banks, including terminal rays and
   completion fans, and supply their admissible respected radial closure geometry.
 - [ ] Carry physical saved-frontier curves and their untouched original sides through

@@ -2,6 +2,25 @@
 
 ## Session Log
 
+### 2026-11-16 — supported generic closures of whole original finite terminal banks
+
+- Retained strict radial progress, a supporting linear height and an outward terminal
+  link in the generic vertex-avoiding Jordan closure construction.
+- Derived actual strict radial sources and pointed supporting wedges for every
+  ordered original ray subdivision, including arbitrary fine endpoint times.
+- Constructed supported generic Jordan closures of entire actual finite terminal
+  banks, preserving their original intrinsic traces and controlling incidences with
+  every original fine vertex and cut-constraint line. New radial sources can be
+  arbitrarily close to the named original source vertex.
+- Factored exact parameter recovery for a specified original terminal chain, reusing
+  it in the existing existence proof. Both committed public theorem statements stayed
+  unchanged; no original bank, endpoint or geometric assumption was weakened.
+- Verification: actual cache retrieval and full `lake build` passed 6,085 jobs;
+  17,269 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks passed. These closures concern the complete finite terminal
+  portions; full unbounded comparison joins, rootward closures, saved-frontier transport
+  and complete graft nonoverlap remain open.
+
 ### 2026-11-16 — supported rootward stems, reference fans and physical completion
 
 - Extended named depth-first subtree intervals and completed-subtree exits to

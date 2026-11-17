@@ -879,8 +879,10 @@ Actual compatible-mesh contour histories now allow unused isolated flat roots wh
 retaining complete processing, singleton fresh steps and exact curvature charges.
 Supported depth-first subtree intervals now construct actual current rootward stems
 and original ancestor-path references in the compatible finite mesh, preserving whole
-fan metrics, real headings and complete rolls through physical completion. Joining the
-unbounded comparison banks to their terminal continuations, completion fans at the
+fan metrics, real headings and complete rolls through physical completion. Entire
+finite terminal banks now have constructed supported generic Jordan closures with
+original traces, strict radial progress and controlled original vertex incidences.
+Joining the unbounded comparison banks to their terminal continuations, completion fans at the
 truncation, admissible radial closures, saved-frontier transport and the complete flat
 graft remain open.
 See the [gap-grafting checklist](docs/NORMAL_SELECTIONS.md#gap-grafting-status). The finite-cell route to
