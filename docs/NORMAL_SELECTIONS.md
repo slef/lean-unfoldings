@@ -272,6 +272,11 @@ nonoverlap and counting remain to be proved.
   every comparison-chain one-sided fan angle and all unreduced real rolling
   headings. Strict starting heights derive cut labels; fan matching is not supplied.
 
+- [x] Construct support-capturing larger roofs and respected comparison caps for
+  actual short rootward windows. Derive a cutoff beyond the requested terminal
+  segment, preserve the original whole roof over the Jordan region, and obtain
+  the actual small bank-rolling estimate with one tilt for all durations.
+
 - [ ] Match physical rootward completion banks to the respected Jordan-window fans.
   Apply the constructed short-window comparisons to their actual real rolling
   headings, uniformly over the outer cutoff.

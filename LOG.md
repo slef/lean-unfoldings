@@ -2,6 +2,20 @@
 
 ## Session Log
 
+### 2026-11-17 — larger respected windows preserving the whole roof
+
+- Chose comparison cutoffs beyond every requested terminal segment and far enough
+  to capture every whole support cell. The resulting comparison roof has exactly
+  the original whole-roof height everywhere.
+- Constructed uniformly tilted physical cap completions that respect each trimmed
+  Jordan window and the original cut constraints. They preserve the original roof
+  throughout the closed Jordan region and satisfy the radial-bank rolling bound.
+- Verification: actual cache retrieval followed by full `lake build` passed 6,219
+  jobs; 18,470 unfolding declarations passed the standard-axiom audit, and both
+  abstract independence checks passed. Existing theorem statements are unchanged.
+- Matching the actual rootward banks to these Jordan-window fans, saved-frontier
+  transport and complete graft nonoverlap remain open.
+
 ### 2026-11-17 — actual physical completion fans and full real heading preservation
 
 - Added a triangulation-independent strict-height criterion for actual cut banks.

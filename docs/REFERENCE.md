@@ -3855,3 +3855,15 @@ corners and does not yet identify their widths with the actual retained cap fan.
   comparison-chain hinge keeps its complete one-sided fan angle, and the entire
   set of unreduced real rolling headings is unchanged. Fine cut labels and fan
   matching are derived from the constructed original chain and strict heights.
+- [`CompatibleComparisonWholeEnvelope`](../Unfoldings/Roof/CompatibleComparisonWholeEnvelope.lean):
+  choose a common larger window capturing every original whole support cell,
+  independently of the intermediate frontier. The comparison roof then has exactly
+  the original unbounded height function. Physical completions can respect both
+  original face sides and arbitrary additional lines while preserving that height
+  on the requested compact region.
+- [`CompatibleRootwardLargerWindow`](../Unfoldings/Roof/CompatibleRootwardLargerWindow.lean):
+  each actual short rootward window chooses a support-capturing cutoff beyond its
+  requested terminal segment. A single tilt controls all durations. The constructed
+  cap respects original comparison faces, cut equations and marked closure lines,
+  preserves the original roof throughout the Jordan region, and supplies the actual
+  small bank-rolling estimate. No initial support-capture certificate is required.

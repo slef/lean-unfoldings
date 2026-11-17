@@ -2283,3 +2283,5 @@ public import Unfoldings.Roof.CompatibleRootwardComparisonRimChain
 public import Unfoldings.Roof.SpatialEnvelopeInteriorBanks
 public import Unfoldings.Roof.CompatibleComparisonPhysicalCompletion
 public import Unfoldings.Roof.CompatibleRootwardPhysicalCompletion
+public import Unfoldings.Roof.CompatibleComparisonWholeEnvelope
+public import Unfoldings.Roof.CompatibleRootwardLargerWindow

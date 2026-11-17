@@ -973,9 +973,12 @@ height-derived bank separation, the original spatial endpoint and exact closed
 whole-cut carrier. Every bank starts strictly inside the larger roof. Physical
 refinements of these complete chains now preserve their original
 whole-cut carriers, spatial new-rim endpoints, all comparison-chain one-sided fan
-angles and the entire sets of unreduced real rolling headings. Matching those
-physical banks to respected Jordan-window fans and rolling comparisons,
-admissible comparison windows, saved-frontier transport
+angles and the entire sets of unreduced real rolling headings. Actual short
+rootward windows now construct support-capturing larger cutoffs beyond their
+requested terminal segments and respected physical comparison caps. One tilt
+controls all durations, with original graph height preserved over each Jordan
+region and an actual small bank-rolling estimate. Matching the physical banks
+to those Jordan-window fans, selecting enough admissible windows, saved-frontier transport
 and the complete flat graft remain open.
 See the [gap-grafting checklist](docs/NORMAL_SELECTIONS.md#gap-grafting-status). The finite-cell route to
 global isometry does not require a separate end-height certificate. Normal-cover
