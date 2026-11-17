@@ -8,6 +8,13 @@ nonoverlap and counting remain to be proved.
 
 ## Gap-grafting status
 
+- [x] Preserve every projected radial margin in complete larger-mesh refinements,
+  with the exact whole projected path and both original endpoint copies. The
+  constructed actual rootward comparison stem keeps its positive source margin,
+  strict progress and the literal terminal junction.
+- [x] Transfer the physical completion estimate to the original bank's unreduced
+  real terminal heading, deriving the complete fine chain and retaining the
+  same-side/opposite-side alternative. Its radial closure geometry is still required.
 - [x] Choose compatible truncations capturing every whole supporting plane. Their
   finite roofs retain the exact whole envelope, so subsequent physical completions
   preserve comparison regions even outside the original finite footprint.

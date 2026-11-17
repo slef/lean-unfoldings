@@ -3867,3 +3867,17 @@ corners and does not yet identify their widths with the actual retained cap fan.
   cap respects original comparison faces, cut equations and marked closure lines,
   preserves the original roof throughout the Jordan region, and supplies the actual
   small bank-rolling estimate. No initial support-capture certificate is required.
+
+- [`ProjectedBoundaryChain`](../Unfoldings/Polyhedron/ProjectedBoundaryChain.lean):
+  Actual folded boundary chains in horizontal coordinates, with exact directed
+  vectors, whole-bank parameters and complete intrinsic trace images.
+- [`CompatibleComparisonChainRadial`](../Unfoldings/Roof/CompatibleComparisonChainRadial.lean):
+  Complete larger-mesh refinements preserve every projected radial margin without
+  loss, their entire original projected carriers and both intrinsic endpoint copies.
+- [`CompatibleRootwardComparisonRadial`](../Unfoldings/Roof/CompatibleRootwardComparisonRadial.lean):
+  Actual rootward comparison stems retain the original positive source margin,
+  radial order, nonzero source distance and the literal terminal junction.
+- [`CompletionOriginalBankComparison`](../Unfoldings/Roof/CompletionOriginalBankComparison.lean):
+  A uniform tilt compares the actual original bank's unreduced terminal heading
+  with the physical cap's projected fans. Either side is allowed; the geometric
+  radial closure is still a hypothesis.

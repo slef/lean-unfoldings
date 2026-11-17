@@ -2,6 +2,24 @@
 
 ## Session Log
 
+### 2026-11-17 — actual comparison stem radial margins and original-heading estimates
+
+- Added a common horizontal projection API for actual folded boundary chains,
+  preserving every directed spatial vector, parameter and whole intrinsic trace.
+- Complete larger-mesh refinements preserve every original dimensionless radial
+  margin without loss, both actual endpoint copies and the entire projected path.
+  Actual rootward comparison stems retain the original positive source margin,
+  radial order, nonzero initial distance and the literal terminal junction.
+- Transferred the uniform physical cap comparison to the original cut bank's
+  unreduced real terminal heading. Completion derives every fine bank and exact
+  heading preservation; no orientation or selected-side certificate is assumed.
+  The required actual radial closure geometry remains a hypothesis.
+- Verification: actual cache retrieval followed by full `lake build` passed 6,223
+  jobs; 18,498 unfolding declarations passed the standard-axiom audit, and both
+  abstract independence checks passed. Existing theorem statements are unchanged.
+- Actual bank-window geometry, saved-frontier transport and complete graft
+  nonoverlap remain open.
+
 ### 2026-11-17 — larger respected windows preserving the whole roof
 
 - Chose comparison cutoffs beyond every requested terminal segment and far enough

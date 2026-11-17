@@ -977,9 +977,14 @@ angles and the entire sets of unreduced real rolling headings. Actual short
 rootward windows now construct support-capturing larger cutoffs beyond their
 requested terminal segments and respected physical comparison caps. One tilt
 controls all durations, with original graph height preserved over each Jordan
-region and an actual small bank-rolling estimate. Matching the physical banks
-to those Jordan-window fans, selecting enough admissible windows, saved-frontier transport
-and the complete flat graft remain open.
+region and an actual small bank-rolling estimate. Complete larger-mesh comparison
+refinements now preserve every projected radial margin without loss, both endpoint
+copies and the entire projected path. Actual rootward comparison stems retain the
+original positive source margin, radial order, nonzero source distance and literal
+terminal junction. The uniform physical completion estimate now controls the
+original bank's unreduced real terminal heading; its radial closure geometry is
+still a hypothesis. Constructing the required actual bank windows, selecting enough
+admissible windows, saved-frontier transport and the complete flat graft remain open.
 See the [gap-grafting checklist](docs/NORMAL_SELECTIONS.md#gap-grafting-status). The finite-cell route to
 global isometry does not require a separate end-height certificate. Normal-cover
 selection and Euler counting follow.

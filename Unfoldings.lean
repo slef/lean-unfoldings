@@ -2285,3 +2285,7 @@ public import Unfoldings.Roof.CompatibleComparisonPhysicalCompletion
 public import Unfoldings.Roof.CompatibleRootwardPhysicalCompletion
 public import Unfoldings.Roof.CompatibleComparisonWholeEnvelope
 public import Unfoldings.Roof.CompatibleRootwardLargerWindow
+public import Unfoldings.Polyhedron.ProjectedBoundaryChain
+public import Unfoldings.Roof.CompatibleComparisonChainRadial
+public import Unfoldings.Roof.CompatibleRootwardComparisonRadial
+public import Unfoldings.Roof.CompletionOriginalBankComparison
