@@ -3424,3 +3424,27 @@ corners and does not yet identify their widths with the actual retained cap fan.
   every positive finite terminal-bank point below truncation has its whole original
   halfplane neighborhood, with exact supporting-plane coordinates and center. Original
   subdivision vertices inherit halfplane models of their actual retained tangent fans.
+
+- [`ClosedIntervalLineMapEndpoints`](../Unfoldings/Metric/ClosedIntervalLineMapEndpoints.lean),
+  [`IntervalBoundaryChainParameters`](../Unfoldings/Complex/IntervalBoundaryChainParameters.lean):
+  original boundary successors force exact interval joins and strictly increasing
+  original times, including every fine bank's actual endpoint parameters.
+- [`BoundaryChainGeometry`](../Unfoldings/Polyhedron/BoundaryChainGeometry.lean):
+  construct the complete physical polygonal chain of actual directed banks, preserving
+  every affine bank point, full spatial edge vector and the entire original trace.
+- [`ConstructedFiniteTerminalParameters`](../Unfoldings/Roof/ConstructedFiniteTerminalParameters.lean):
+  terminal chains have strictly increasing original ray times from zero to the actual
+  terminal time, retaining every directed bank point and full spatial roof coordinate.
+- [`SupportedContourHistory`](../Unfoldings/Complex/SupportedContourHistory.lean),
+  [`SupportedContourNeighbors`](../Unfoldings/Complex/SupportedContourNeighbors.lean):
+  contour histories visit and charge every nonroot once even with unused isolated roots.
+  Original neighbors, singleton fresh steps and exact processed sets require only that
+  original rim vertices are roots; weights vanish at all marked roots.
+- [`PotentialContourHistory`](../Unfoldings/Roof/PotentialContourHistory.lean):
+  potential-selected curvature-covering forests have zero curvature at unused roots,
+  complete original processing histories and exact total original curvature charges.
+- [`BoundaryContourAnchor`](../Unfoldings/Complex/BoundaryContourAnchor.lean),
+  [`CompatibleMeshContourHistory`](../Unfoldings/Roof/CompatibleMeshContourHistory.lean):
+  anchor the actual compatible-cut contour at a named original terminal rim copy.
+  Derive its starting root, complete processing, curvature charges and singleton steps
+  without additional cuts through flat unused vertices or a supplied schedule.

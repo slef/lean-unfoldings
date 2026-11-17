@@ -2,6 +2,24 @@
 
 ## Session Log
 
+### 2026-11-16 — exact terminal parameters and actual supported contour histories
+
+- Derived exact interval joins from original boundary successors and constructed
+  strictly increasing original terminal times, from zero to the truncation time.
+- Constructed complete physical bank chains, retaining every bank point, full
+  spatial edge vector, original trace and literal terminal roof coordinates.
+- Removed the all-roots-on-rim requirement from original history, neighbor and
+  singleton-step arguments: unused isolated roots start processed and need no visit.
+- Proved zero curvature at every marked root of a curvature-covering potential
+  forest, then exact total curvature accounting for its complete original history.
+- Anchored the actual compatible-mesh contour at the named original terminal rim
+  copy. Its starting root, complete processing, exact curvature charges and singleton
+  fresh steps are derived without padding cuts or a supplied processing schedule.
+- Verification: actual cache retrieval and full `lake build` passed 6,073 jobs;
+  17,172 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks passed. Supported depth-first subtree intervals and rootward
+  joins, radial closures, saved-frontier transport and the complete graft remain open.
+
 ### 2026-11-16 — actual ordered terminal chains and original halfplane fans
 
 - Ordered genuine finite interval partitions without changing their original times.

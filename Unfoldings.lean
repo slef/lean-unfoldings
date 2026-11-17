@@ -2130,3 +2130,12 @@ public import Unfoldings.Complex.IntervalBoundaryChain
 public import Unfoldings.Roof.ConstructedFiniteTerminalBankChains
 public import Unfoldings.Cone.PlacedTangentCharts
 public import Unfoldings.Roof.ConstructedFiniteTerminalHalfplane
+public import Unfoldings.Metric.ClosedIntervalLineMapEndpoints
+public import Unfoldings.Complex.IntervalBoundaryChainParameters
+public import Unfoldings.Polyhedron.BoundaryChainGeometry
+public import Unfoldings.Roof.ConstructedFiniteTerminalParameters
+public import Unfoldings.Complex.SupportedContourHistory
+public import Unfoldings.Complex.SupportedContourNeighbors
+public import Unfoldings.Roof.PotentialContourHistory
+public import Unfoldings.Complex.BoundaryContourAnchor
+public import Unfoldings.Roof.CompatibleMeshContourHistory

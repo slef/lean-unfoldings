@@ -110,6 +110,12 @@ nonoverlap and counting remain to be proved.
   original halfplane, including whole retained tangent-fan neighborhoods at subdivision
   vertices, preserving support coordinates, centers and spatial placements.
 
+- [x] Recover strictly increasing original terminal times on actual fine-bank chains,
+  preserving every affine bank point, full spatial edge vector and roof coordinate.
+- [x] Extend original contour histories to unused isolated roots. Construct a rim-started
+  compatible-mesh contour, exact curvature charges and singleton fresh steps without
+  adding cuts through unused flat vertices or assuming a processing schedule.
+
 - [ ] Identify the full unbounded comparison banks, including terminal rays and
   completion fans, and supply their admissible respected radial closure geometry.
 - [ ] Carry physical saved-frontier curves and their untouched original sides through

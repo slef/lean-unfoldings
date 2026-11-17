@@ -872,10 +872,13 @@ including its initial side. Consistent bank-side alternatives and complete origi
 fan partitions give a uniform unreduced real-heading bound with no side certificate.
 Whole physical fine paths preserve metric and spatial traces, every ordered point,
 old fan angle, real heading, intrinsic length and quantitative radial margin.
-Each actual compatible terminal ray now has two disjoint complete metric bank tails,
-with exact folding and spatial distances. Joining finite banks to these tails, the
-completion fans and admissible closure geometry, physical saved-frontier transport
-through prior gaps and the complete flat graft remain open.
+Each compatible terminal ray has two exact whole metric banks and original finite
+bank chains, with strictly increasing original times and full spatial coordinates.
+Positive finite-bank copies and retained tangent fans have exact halfplane models.
+Actual compatible-mesh contour histories now allow unused isolated flat roots while
+retaining complete processing, singleton fresh steps and exact curvature charges.
+Rootward comparison joins, completion fans at the truncation, admissible radial
+closures, saved-frontier transport and the complete flat graft remain open.
 See the [gap-grafting checklist](docs/NORMAL_SELECTIONS.md#gap-grafting-status). The finite-cell route to
 global isometry does not require a separate end-height certificate. Normal-cover
 selection and Euler counting follow.
