@@ -2,6 +2,22 @@
 
 ## Session Log
 
+### 2026-11-17 — exact zero real turns of actual comparison terminal chains
+
+- Restored actual cut-copy boundary links into their original vertex links to
+  bound the absolute intrinsic exterior turn by the actual spatial bend.
+  This general lemma needs no supplied cut-fan order or angle agreement.
+- Derived original vertex interiority and nonnegative curvature for every actual
+  terminal-chain hinge. Its spatial bend is zero, so its complete intrinsic angle
+  is exactly pi and every unreduced real rolling heading is zero.
+- Every actual rolled terminal edge is its original positive intrinsic length
+  on the real axis. The conclusion has no angle or heading certificate premise.
+- Verification: actual cache retrieval and full `lake build` passed 6,181 jobs;
+  18,114 unfolding declarations passed the standard-axiom audit, and both abstract
+  independence checks passed. Existing public theorem statements are unchanged.
+- Complete rootward-stem comparison refinements, physical saved-frontier updates
+  and full graft nonoverlap remain open.
+
 ### 2026-11-17 — whole rootward stems and actual terminal paths through every larger rim
 
 - Derived the original height bound for every whole intrinsic rootward stem point.

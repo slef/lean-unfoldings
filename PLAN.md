@@ -940,7 +940,10 @@ halfplane fans and tagged spatial coordinates. Their literal start copies now
 match the actual old rootward junctions, with derived side labels and exact whole-cut
 images. The whole original stem now lifts into every larger window and joins the
 constructed terminal chain through the new rim, preserving every original stem
-point and exactly the complete stem-plus-outer-bank carrier. Matching these chains and charts
+point and exactly the complete stem-plus-outer-bank carrier. Each actual terminal
+chain hinge now has angle exactly pi, with zero unreduced rolling heading and the
+original positive real edge length. This follows from the restored convex vertex
+link and zero spatial bend. Matching these chains and charts
 to completed corner fans and rolling comparisons,
 admissible comparison windows, saved-frontier transport
 and the complete flat graft remain open.

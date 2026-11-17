@@ -223,6 +223,10 @@ nonoverlap and counting remain to be proved.
   actual endpoint to the constructed terminal chain through the new rim. Preserve
   every original stem point and the exact whole stem-plus-outer-bank carrier.
 
+- [x] Prove exact straightness of every actual terminal-chain hinge and zero real
+  rolling headings. The cut-copy link restores into the original convex vertex link;
+  zero spatial bend forces zero intrinsic turn, with no angle certificate.
+
 - [ ] Match fine boundary chains and completion fans along the full rootward stem
   and terminal ray. Apply the constructed respected short-window comparisons to
   their actual real rolling headings, uniformly over the outer cutoff.

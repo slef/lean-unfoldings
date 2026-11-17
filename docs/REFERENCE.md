@@ -3751,3 +3751,10 @@ corners and does not yet identify their widths with the actual retained cap fan.
   Joining the constructed terminal chain gives an actual path through the new rim,
   whose whole-cut carrier is exactly the original stem and closed outer bank. Generic
   endpoint transport keeps this proof within the default checking limits.
+- [`BoundaryFanAngle`](../Unfoldings/Polyhedron/BoundaryFanAngle.lean),
+  [`CompatibleComparisonTerminalChainTurns`](../Unfoldings/Roof/CompatibleComparisonTerminalChainTurns.lean):
+  restore the actual cut-copy link into the original convex vertex link to bound its
+  intrinsic exterior turn by its spatial bend. Every constructed terminal-chain
+  hinge has angle exactly pi, every unreduced rolling heading is zero, and every
+  rolled edge is its original positive length on the real axis. Original vertex
+  interiority and nonnegative curvature are derived in the constructed larger roof.

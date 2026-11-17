@@ -2245,3 +2245,5 @@ public import Unfoldings.Roof.CompatibleRootwardComparisonTerminalChain
 public import Unfoldings.Topology.PathFiberEndpoint
 public import Unfoldings.Roof.CompatibleRootwardComparisonStem
 public import Unfoldings.Roof.CompatibleRootwardComparisonRimPath
+public import Unfoldings.Polyhedron.BoundaryFanAngle
+public import Unfoldings.Roof.CompatibleComparisonTerminalChainTurns
