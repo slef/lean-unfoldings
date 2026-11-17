@@ -2159,3 +2159,12 @@ public import Unfoldings.Roof.SpatialEnvelopeSupportRecovery
 public import Unfoldings.Roof.CompatibleMeshWholeEnvelope
 public import Unfoldings.Geometry.SupportedRayWindowClosure
 public import Unfoldings.Roof.CompatibleMeshRootwardWindows
+public import Unfoldings.Roof.PotentialCutOrbit
+public import Unfoldings.Roof.TruncatedBoundaryRoots
+public import Unfoldings.Roof.CompatibleMeshTerminalRoot
+public import Unfoldings.Roof.CompatibleTerminalHistory
+public import Unfoldings.Roof.CompatibleMeshTerminalContinuation
+public import Unfoldings.Roof.SpatialEnvelopeFoldingGraph
+public import Unfoldings.Roof.CompatibleMeshRootwardTerminal
+public import Unfoldings.Geometry.ChainAppendInterval
+public import Unfoldings.Roof.CompatibleMeshRootwardContinuation

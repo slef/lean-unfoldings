@@ -3513,3 +3513,27 @@ corners and does not yet identify their widths with the actual retained cap fan.
   generic Jordan closures, preserving every internal corner. The perturbed source can
   be arbitrarily close to the original fresh source; all closing incidences with
   original fine vertices and constraint lines are controlled.
+
+- [`PotentialCutOrbit`](../Unfoldings/Roof/PotentialCutOrbit.lean):
+  nonempty selected parent orbits reach used rim roots. Unused isolated flat roots
+  cannot be endpoints of actual selected paths.
+- [`TruncatedBoundaryRoots`](../Unfoldings/Roof/TruncatedBoundaryRoots.lean),
+  [`CompatibleMeshTerminalRoot`](../Unfoldings/Roof/CompatibleMeshTerminalRoot.lean):
+  cuts meet the actual section rim at uniquely named original terminal points.
+  Each nonempty fine history derives its original terminal ray and exact join coordinate.
+- [`SpatialEnvelopeFoldingGraph`](../Unfoldings/Roof/SpatialEnvelopeFoldingGraph.lean),
+  [`CompatibleMeshRootwardTerminal`](../Unfoldings/Roof/CompatibleMeshRootwardTerminal.lean):
+  every retained bank point is the original whole roof graph point. Actual rootward
+  stems join their derived terminal rays at exact projected and spatial coordinates;
+  that terminal ray can differ from the contour's anchoring ray.
+- [`CompatibleTerminalHistory`](../Unfoldings/Roof/CompatibleTerminalHistory.lean),
+  [`CompatibleMeshTerminalContinuation`](../Unfoldings/Roof/CompatibleMeshTerminalContinuation.lean):
+  append arbitrary finite original terminal durations to actual fine histories,
+  retaining the exact source, routing, length bounds and whole-point radial estimates.
+- [`ChainAppendInterval`](../Unfoldings/Geometry/ChainAppendInterval.lean),
+  [`CompatibleMeshRootwardContinuation`](../Unfoldings/Roof/CompatibleMeshRootwardContinuation.lean):
+  continue the actual current rootward bank along its derived original terminal ray.
+  Preserve every original bank point and the exact appended vector. All finite
+  durations inherit length bounds, positive source margins, strict radial sources
+  and radial order from every earlier point. These are projected continuations;
+  identifying their intrinsic whole-cut bank copies remains separate work.

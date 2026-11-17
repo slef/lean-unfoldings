@@ -891,9 +891,12 @@ completions preserve requested comparison regions even outside the finite footpr
 Every short source-ray window of the actual rootward stem now has constructed
 supported generic Jordan closing geometry, preserving internal corners and controlling
 all original fine-vertex and cut-line incidences, with arbitrarily small source motion.
-Joining the unbounded comparison banks to their terminal continuations, completion fans at the
-truncation, admissible radial closures, saved-frontier transport and the complete flat
-graft remain open.
+Every nonempty fine history now derives its unique original terminal ray. Actual
+rootward stems join it at exact projected and spatial coordinates, and their projected
+continuations retain every original bank point and all radial and length bounds for
+arbitrary finite terminal durations. Identifying the intrinsic whole-cut bank copies
+at these joins, completion fans at the truncation, admissible comparison windows,
+saved-frontier transport and the complete flat graft remain open.
 See the [gap-grafting checklist](docs/NORMAL_SELECTIONS.md#gap-grafting-status). The finite-cell route to
 global isometry does not require a separate end-height certificate. Normal-cover
 selection and Euler counting follow.

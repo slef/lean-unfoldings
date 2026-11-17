@@ -35,6 +35,12 @@ nonoverlap and counting remain to be proved.
 - [x] Construct supported generic Jordan closures for every short source-ray window
   of the actual rootward stem, retaining all internal corners and controlling every
   original fine-vertex and cut-line incidence on the closing links.
+- [x] Derive used rim roots for all nonempty fine parent orbits, identify their
+  uniquely named original terminal rays, and prove exact projected and spatial joins
+  for actual current rootward stems.
+- [x] Continue those actual projected stems for arbitrary finite terminal durations,
+  preserving every original bank point, the exact appended ray vector, routing,
+  length bounds, positive source margins and strict radial progress.
 - [x] Construct complete physical fine paths, preserving exact metric copies and traces,
   old fan angles, all ordered real headings, arclength and every radial margin.
 - [x] Construct entire actual Jordan traversals from radial closure geometry, deriving

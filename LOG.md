@@ -2,6 +2,25 @@
 
 ## Session Log
 
+### 2026-11-16 — derived terminal joins and arbitrary finite rootward continuations
+
+- Proved that nonempty selected parent orbits reach used rim roots, excluding unused
+  isolated flat roots. The truncated carrier meets the actual rim exactly at uniquely
+  named original terminal points.
+- Constructed the original terminal ray of every nonempty fine history and identified
+  actual rootward endpoints in all three spatial coordinates, without a supplied join.
+  The derived ray need not equal the contour's anchoring ray.
+- Continued actual projected fine histories and current rootward stems for arbitrary
+  finite terminal durations. Every original bank point stays fixed; the appended vector
+  is exactly the original ray direction times its duration. Original routing, length
+  bounds, positive source margins, strict radial sources and whole-point radial order
+  persist uniformly, with no upper truncation on the duration.
+- Verification: actual cache retrieval and full `lake build` passed 6,102 jobs;
+  17,396 unfolding declarations passed the standard-axiom audit, and both abstract
+  independence checks passed. Identifying the intrinsic whole-cut bank copies at these
+  spatial joins, completion fans, saved-frontier transport and full graft nonoverlap
+  remain open. No original public theorem statement was changed.
+
 ### 2026-11-16 — supported rootward windows and recovery of the whole roof envelope
 
 - Constructed supported generic Jordan closures for every short source-ray window of
