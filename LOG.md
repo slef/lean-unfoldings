@@ -2,6 +2,22 @@
 
 ## Session Log
 
+### 2026-11-16 — supported rootward windows and recovery of the whole roof envelope
+
+- Constructed supported generic Jordan closures for every short source-ray window of
+  the actual rootward stem, deriving both trims and an arbitrarily close regular source.
+  Every internal corner survives; original vertex and cut-line incidences are controlled.
+- Proved that sufficiently large clips meet every whole support cell in an open patch.
+  Finite affine avoidance recovers those supporting planes in the actual finite mesh.
+  The finite roof's supporting envelope therefore agrees with the entire original roof.
+- Chose actual compatible truncations with this property and proved that subsequent
+  physical completions preserve requested compact comparison regions, including Jordan
+  fillings and connectors lying outside the finite footprint.
+- Verification: actual cache retrieval and full `lake build` passed 6,093 jobs;
+  17,323 unfolding declarations passed the standard-axiom audit, and both abstract
+  independence checks passed. Full unbounded bank joins, saved-frontier transport and
+  complete graft nonoverlap remain open.
+
 ### 2026-11-16 — exact physical rootward geometry and strict original-source margins
 
 - Identified both endpoints and the entire projected trace of actual rootward banks.

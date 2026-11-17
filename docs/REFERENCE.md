@@ -3497,3 +3497,19 @@ corners and does not yet identify their widths with the actual retained cap fan.
   the entire actual rootward stem is exactly the original fine history after its fresh
   first edge. Derive routing, length, positive radial margins from the actual source,
   strict radial progress, genuine edges and radial order from every earlier point.
+
+- [`SpatialEnvelopeSupportRecovery`](../Unfoldings/Roof/SpatialEnvelopeSupportRecovery.lean):
+  large clips capture an open patch of every whole support cell. Finite avoidance
+  recovers its affine plane in any covering triangulation, proving global equality
+  of the finite roof's supporting envelope with the original whole roof.
+- [`CompatibleMeshWholeEnvelope`](../Unfoldings/Roof/CompatibleMeshWholeEnvelope.lean):
+  choose actual compatible truncation levels retaining every original whole support.
+  Physical completions preserve the entire original roof on requested compact regions,
+  including comparison connectors and Jordan fillings outside the finite footprint.
+
+- [`SupportedRayWindowClosure`](../Unfoldings/Geometry/SupportedRayWindowClosure.lean),
+  [`CompatibleMeshRootwardWindows`](../Unfoldings/Roof/CompatibleMeshRootwardWindows.lean):
+  short windows of the actual current rootward stems have constructed supported
+  generic Jordan closures, preserving every internal corner. The perturbed source can
+  be arbitrarily close to the original fresh source; all closing incidences with
+  original fine vertices and constraint lines are controlled.

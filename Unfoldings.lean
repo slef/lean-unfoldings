@@ -2155,3 +2155,7 @@ public import Unfoldings.Complex.SupportedRootwardGeometry
 public import Unfoldings.Roof.SpatialEnvelopeBoundaryChains
 public import Unfoldings.Roof.CompatibleMeshHistoryGeometry
 public import Unfoldings.Roof.CompatibleMeshRootwardGeometry
+public import Unfoldings.Roof.SpatialEnvelopeSupportRecovery
+public import Unfoldings.Roof.CompatibleMeshWholeEnvelope
+public import Unfoldings.Geometry.SupportedRayWindowClosure
+public import Unfoldings.Roof.CompatibleMeshRootwardWindows

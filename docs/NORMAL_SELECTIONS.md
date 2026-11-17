@@ -8,6 +8,9 @@ nonoverlap and counting remain to be proved.
 
 ## Gap-grafting status
 
+- [x] Choose compatible truncations capturing every whole supporting plane. Their
+  finite roofs retain the exact whole envelope, so subsequent physical completions
+  preserve comparison regions even outside the original finite footprint.
 - [x] Construct actual gap corner charts at the source, internal bends, finite
   edge interiors, the last finite bend, and all positive infinite-tail points.
 - [x] Compute complementary angles from original bank vectors and construct
@@ -29,6 +32,9 @@ nonoverlap and counting remain to be proved.
 - [x] Identify actual current rootward paths with their original fine histories,
   including the final rim endpoint. Derive strict radial sources, genuine edges,
   whole-path length bounds and quantitative progress from the actual fresh source.
+- [x] Construct supported generic Jordan closures for every short source-ray window
+  of the actual rootward stem, retaining all internal corners and controlling every
+  original fine-vertex and cut-line incidence on the closing links.
 - [x] Construct complete physical fine paths, preserving exact metric copies and traces,
   old fan angles, all ordered real headings, arclength and every radial margin.
 - [x] Construct entire actual Jordan traversals from radial closure geometry, deriving

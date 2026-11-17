@@ -885,6 +885,12 @@ original traces, strict radial progress and controlled original vertex incidence
 Actual current rootward paths now equal their original compatible fine histories after
 one fresh edge, deriving genuine banks, strict radial sources, whole-point radial order
 and quantitative length and source margins directly from the original cut geometry.
+Compatible truncations can be chosen to retain every whole support plane. Their
+supporting envelopes equal the original whole roof everywhere; subsequent physical
+completions preserve requested comparison regions even outside the finite footprint.
+Every short source-ray window of the actual rootward stem now has constructed
+supported generic Jordan closing geometry, preserving internal corners and controlling
+all original fine-vertex and cut-line incidences, with arbitrarily small source motion.
 Joining the unbounded comparison banks to their terminal continuations, completion fans at the
 truncation, admissible radial closures, saved-frontier transport and the complete flat
 graft remain open.
