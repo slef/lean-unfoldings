@@ -2,6 +2,21 @@
 
 ## Session Log
 
+### 2026-11-17 — whole continuous intrinsic rootward banks
+
+- Extended finite paths continuously along joined original half-line dilations,
+  preserving exact stem and terminal parameters with no outer truncation.
+- Constructed whole continuous actual rootward banks in their intermediate cuts.
+  Their carriers are closed and path connected and consist exactly of the original
+  stem and entire original terminal tail. These pieces meet only at the actual
+  joined intrinsic endpoint.
+- Verification: actual cache retrieval and full `lake build` passed 6,132 jobs;
+  17,645 unfolding declarations passed the standard-axiom audit, and both abstract
+  independence checks passed. Existing public theorem statements are unchanged.
+- Completion fan matching, admissible comparison windows, saved-frontier placement
+  and complete graft nonoverlap remain open. These intrinsic carrier results do
+  not establish planar development nonoverlap.
+
 ### 2026-11-17 — continuous intrinsic rootward paths and exact terminal intersections
 
 - Constructed continuous traversals of actual boundary chains, preserving every original

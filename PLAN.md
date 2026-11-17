@@ -907,7 +907,9 @@ now survive on every intermediate outer bank and at each actual intrinsic rootwa
 terminal join. The last incoming bank and fixed outer tail derive the unchanged cut
 germ there; the artificial truncation creates no new geometric corner. Continuous
 actual intrinsic rootward traversals now append arbitrary original terminal intervals,
-with the exact original carriers meeting only at their joined endpoint. Matching these
+with the exact original carriers meeting only at their joined endpoint. These now
+extend continuously along the whole unbounded terminal tail, with a closed, path-connected
+carrier and no additional intersections at the join. Matching these
 charts to completed corner fans, admissible comparison windows, saved-frontier transport
 and the complete flat graft remain open.
 See the [gap-grafting checklist](docs/NORMAL_SELECTIONS.md#gap-grafting-status). The finite-cell route to

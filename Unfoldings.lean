@@ -2196,3 +2196,5 @@ public import Unfoldings.Topology.FinitePathRange
 public import Unfoldings.Complex.BoundaryChainPath
 public import Unfoldings.Metric.DilationIntervalPath
 public import Unfoldings.Roof.CompatibleRootwardIntrinsicPath
+public import Unfoldings.Topology.PathRayExtension
+public import Unfoldings.Roof.CompatibleRootwardWholePath

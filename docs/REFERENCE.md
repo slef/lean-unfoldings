@@ -3625,3 +3625,9 @@ corners and does not yet identify their widths with the actual retained cap fan.
   cuts. Append any finite original terminal interval, retaining the exact original
   stem and tail carriers. The two closed pieces meet at precisely their joined
   intrinsic endpoint. This makes no claim about planar development nonoverlap.
+- [`PathRayExtension`](../Unfoldings/Topology/PathRayExtension.lean),
+  [`CompatibleRootwardWholePath`](../Unfoldings/Roof/CompatibleRootwardWholePath.lean):
+  continue the actual intrinsic rootward bank along its entire original terminal tail.
+  The continuous half-line traversal retains the exact original stem and all original
+  terminal times. Its carrier is closed and path connected, and the two pieces meet
+  only at their joined intrinsic endpoint. Planar development nonoverlap remains open.

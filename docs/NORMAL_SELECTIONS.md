@@ -62,6 +62,9 @@ nonoverlap and counting remain to be proved.
 - [x] Construct continuous actual intrinsic rootward traversals and append arbitrary
   finite original terminal-bank intervals. Their carriers are exactly the original
   stem and tail, meeting only at the joined intrinsic endpoint.
+- [x] Continue those actual intrinsic traversals along the entire unbounded original
+  terminal tail, preserving all original times and exact carriers. Their union is
+  closed and path connected; stem and tail intersect only at their joined endpoint.
 - [x] Construct complete physical fine paths, preserving exact metric copies and traces,
   old fan angles, all ordered real headings, arclength and every radial margin.
 - [x] Construct entire actual Jordan traversals from radial closure geometry, deriving
