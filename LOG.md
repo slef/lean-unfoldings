@@ -2,6 +2,25 @@
 
 ## Session Log
 
+### 2026-11-17 — exact terminal-chain times, spatial lengths and actual hinge fans
+
+- Constructed the actual comparison terminal chain with its original time partition.
+  Starts are strictly ordered, adjacent intervals share literal times and every
+  internal hinge lies strictly between the old and new rims.
+- Each fine edge retains its full spatial velocity and intrinsic length, including
+  the vertical roof component. Its time increments cover the whole interval once,
+  and the entire rolled chain has the exact original spatial arclength.
+- Every actual internal chain hinge has its complete original halfplane fan with
+  the same side, support frame and tagged spatial coordinates. Hinge interiority,
+  vertex-copy equality and fan matching are derived.
+- Reused the existing interval successor-join theorem after the full import build
+  exposed a duplicate helper. No committed theorem statement was changed.
+- Verification: actual cache retrieval and full `lake build` passed 6,174 jobs;
+  18,061 unfolding declarations passed the standard-axiom audit, and both abstract
+  independence checks passed.
+- Full rootward rolling comparisons, saved-frontier transport and complete graft
+  nonoverlap remain open.
+
 ### 2026-11-17 — ordered actual terminal-bank chains in larger comparison meshes
 
 - Connected outer curves in intermediate cuts keep one original side; continuity

@@ -934,7 +934,10 @@ Every interval copy now lies on the actual intrinsic comparison cut boundary and
 has a directed fine-bank point representation, including at original endpoints.
 Whole forward fine banks now assemble into the complete ordered terminal chain,
 with exact original side labels, actual successor joins and both endpoint copies.
-Matching these chains and charts to completed corner fans and rolling comparisons,
+Their exact original time partitions, full spatial edge vectors and intrinsic
+arclength are preserved. All actual internal hinges retain complete original
+halfplane fans and tagged spatial coordinates. Matching these chains and charts
+to completed corner fans and rolling comparisons,
 admissible comparison windows, saved-frontier transport
 and the complete flat graft remain open.
 See the [gap-grafting checklist](docs/NORMAL_SELECTIONS.md#gap-grafting-status). The finite-cell route to

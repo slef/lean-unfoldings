@@ -3726,3 +3726,15 @@ corners and does not yet identify their widths with the actual retained cap fan.
   new rim. Their exact coverage constructs an ordered boundary chain, using each
   forward bank once with literal intrinsic successor joins and both endpoint copies.
   No chain order, successor, bank-side or fan-matching certificate is assumed.
+- [`BoundaryChainIntervalParameters`](../Unfoldings/Complex/BoundaryChainIntervalParameters.lean):
+  endpoint-copy identities and strict internal parameter bounds for exact interval
+  banks, reusing the existing successor-join theorem.
+- [`SpatialEnvelopeTerminalVectors`](../Unfoldings/Roof/SpatialEnvelopeTerminalVectors.lean),
+  [`CompatibleComparisonTerminalChainModel`](../Unfoldings/Roof/CompatibleComparisonTerminalChainModel.lean):
+  construct the actual terminal chain with its exact original time partition. Adjacent
+  times agree, starts are strictly ordered, and every spatial edge vector and intrinsic
+  length has its original full spatial speed. The rolled chain's total arclength is exact.
+- [`CompatibleComparisonTerminalChainFans`](../Unfoldings/Roof/CompatibleComparisonTerminalChainFans.lean):
+  derive complete original halfplane fans at the actual internal chain hinges. The
+  original side, support frame, bank copy and tagged spatial coordinates survive;
+  neither hinge-interiority nor vertex-copy or fan matching is supplied as a premise.

@@ -2236,3 +2236,7 @@ public import Unfoldings.Roof.CompatibleComparisonTerminalAlignment
 public import Unfoldings.Roof.CompatibleComparisonTerminalMatching
 public import Unfoldings.Roof.CompatibleComparisonTerminalPieces
 public import Unfoldings.Roof.CompatibleComparisonTerminalChains
+public import Unfoldings.Complex.BoundaryChainIntervalParameters
+public import Unfoldings.Roof.SpatialEnvelopeTerminalVectors
+public import Unfoldings.Roof.CompatibleComparisonTerminalChainModel
+public import Unfoldings.Roof.CompatibleComparisonTerminalChainFans

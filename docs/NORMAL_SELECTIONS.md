@@ -211,6 +211,10 @@ nonoverlap and counting remain to be proved.
   both endpoint copies are literal intrinsic copies. Direction, coverage and order
   are derived without a chain or fan-matching certificate.
 
+- [x] Recover exact original time partitions, spatial edge vectors and total intrinsic
+  arclength of the constructed terminal chains. Derive their strictly internal hinge
+  locations and complete original halfplane fans with all tagged spatial coordinates.
+
 - [ ] Identify the full unbounded comparison banks, including terminal rays and
   completion fans, and supply their admissible respected radial closure geometry.
 - [ ] Carry physical saved-frontier curves and their untouched original sides through
