@@ -257,6 +257,11 @@ nonoverlap and counting remain to be proved.
   has angle exactly pi and zero real turn. Every rolled point retains its original
   arclength coordinate, with the exact closed image and strictly ordered vertices.
 
+- [x] Assemble the complete actual rootward stem chain in every larger window.
+  Distinct original bank labels derive fine-block separation, original endpoint
+  joins derive actual successors, and both endpoint copies and the whole original
+  carrier are unchanged. The last vertex is the literal named terminal junction.
+
 - [ ] Match fine boundary chains and completion fans along the full rootward stem
   and terminal ray. Apply the constructed respected short-window comparisons to
   their actual real rolling headings, uniformly over the outer cutoff.

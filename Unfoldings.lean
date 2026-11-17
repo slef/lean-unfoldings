@@ -2272,3 +2272,9 @@ public import Unfoldings.Polyhedron.SubintervalBankVectors
 public import Unfoldings.Roof.CompatibleComparisonFiniteChainModel
 public import Unfoldings.Roof.CompatibleComparisonFiniteChainTurns
 public import Unfoldings.Roof.CompatibleComparisonFiniteRollPositions
+public import Unfoldings.Complex.BoundaryChainConcatenation
+public import Unfoldings.Roof.CompatibleProcessedCutBankInterior
+public import Unfoldings.Roof.CompatibleComparisonFiniteBlockJoins
+public import Unfoldings.Roof.CompatibleComparisonFinitePathAssembly
+public import Unfoldings.Roof.CompatibleComparisonChainRefinement
+public import Unfoldings.Roof.CompatibleRootwardComparisonChain

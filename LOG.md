@@ -2,6 +2,23 @@
 
 ## Session Log
 
+### 2026-11-17 — complete actual rootward comparison stem chains
+
+- Distinct original bank labels derive fine-block separation in both orientations;
+  original intrinsic endpoint joins derive their actual boundary successors.
+  Concatenation preserves both entire bank traces and literal endpoint copies.
+- Assembled complete actual refinements of nonrepeating original cut-bank paths.
+  Every actual original cut-bank chain supplies its own labels and joins, retaining
+  both endpoints and exactly the original whole-cut carrier.
+- Applied the construction to the actual rootward stem in every larger comparison
+  window. Strict original corner heights derive its cut labels. The final actual
+  vertex is the literal named terminal junction; no fine-chain certificate is assumed.
+- Verification: actual cache retrieval followed by full `lake build` passed 6,212
+  jobs; 18,396 unfolding declarations passed the standard-axiom audit, and both
+  abstract independence checks passed. Existing theorem statements are unchanged.
+- Full stem-to-terminal chain joins and completion fan comparisons, saved-frontier
+  transport and complete graft nonoverlap remain open.
+
 ### 2026-11-17 — exact finite-bank rolls and zero inserted turns
 
 - Constructed original time partitions for the complete actual finite-bank chains.

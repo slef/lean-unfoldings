@@ -3824,3 +3824,18 @@ corners and does not yet identify their widths with the actual retained cap fan.
   interval, with both endpoints and strictly ordered fine vertices. The shared
   complex interpolation identity lives in
   [`ComplexAffineInterpolation`](../Unfoldings/Geometry/ComplexAffineInterpolation.lean).
+- [`BoundaryChainConcatenation`](../Unfoldings/Complex/BoundaryChainConcatenation.lean),
+  [`CompatibleProcessedCutBankInterior`](../Unfoldings/Roof/CompatibleProcessedCutBankInterior.lean),
+  [`CompatibleComparisonFiniteBlockJoins`](../Unfoldings/Roof/CompatibleComparisonFiniteBlockJoins.lean):
+  distinct original cut banks force disjoint actual fine-bank labels. Original
+  intrinsic endpoint joins determine actual fine successors. Concatenation keeps
+  both complete original traces and endpoint copies.
+- [`CompatibleComparisonFinitePathAssembly`](../Unfoldings/Roof/CompatibleComparisonFinitePathAssembly.lean),
+  [`CompatibleComparisonChainRefinement`](../Unfoldings/Roof/CompatibleComparisonChainRefinement.lean):
+  construct complete refinements of any nonrepeating original directed cut-bank
+  path, including every original bank point. Actual original cut-bank chains supply
+  all needed labels and joins; the whole-cut carrier and endpoint copies are exact.
+- [`CompatibleRootwardComparisonChain`](../Unfoldings/Roof/CompatibleRootwardComparisonChain.lean):
+  construct the complete actual rootward stem chain in every larger comparison
+  window. Strict original corner heights derive its cut labels. Its final vertex is
+  the literal named terminal junction and its entire original carrier is unchanged.

@@ -964,7 +964,11 @@ side matching are derived. Their exact original time partitions, full spatial
 vectors and intrinsic lengths are preserved. Every inserted finite-bank hinge
 has angle exactly pi and zero real turn. All rolled vertices and bank points
 retain their original arclength coordinates, with the exact closed image and
-strict vertex order. Matching these chains and charts to completed corner fans and rolling comparisons,
+strict vertex order. Distinct original bank labels now derive fine-block separation
+and actual successors. Complete original cut-bank paths assemble in order, and the
+whole rootward stem is an actual comparison chain ending at the literal terminal
+junction in every larger window, with its entire original carrier unchanged.
+Matching these chains and charts to completed corner fans and rolling comparisons,
 admissible comparison windows, saved-frontier transport
 and the complete flat graft remain open.
 See the [gap-grafting checklist](docs/NORMAL_SELECTIONS.md#gap-grafting-status). The finite-cell route to
