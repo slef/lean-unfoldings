@@ -2267,3 +2267,8 @@ public import Unfoldings.Geometry.SpatialEnvelopeBankOrientation
 public import Unfoldings.Geometry.SpatialEnvelopeCutBankSegments
 public import Unfoldings.Roof.CompatibleComparisonFinitePieces
 public import Unfoldings.Roof.CompatibleComparisonFiniteChains
+public import Unfoldings.Geometry.ComplexAffineInterpolation
+public import Unfoldings.Polyhedron.SubintervalBankVectors
+public import Unfoldings.Roof.CompatibleComparisonFiniteChainModel
+public import Unfoldings.Roof.CompatibleComparisonFiniteChainTurns
+public import Unfoldings.Roof.CompatibleComparisonFiniteRollPositions

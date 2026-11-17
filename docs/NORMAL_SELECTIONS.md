@@ -252,6 +252,11 @@ nonoverlap and counting remain to be proved.
   sides in either orientation. Derive fine-bank spatial endpoints and whole original
   side matching, exact coverage, actual successor joins and both endpoint copies.
 
+- [x] Preserve exact original time partitions, spatial edge vectors and intrinsic
+  lengths of the complete finite-bank chains. Every internal subdivision hinge
+  has angle exactly pi and zero real turn. Every rolled point retains its original
+  arclength coordinate, with the exact closed image and strictly ordered vertices.
+
 - [ ] Match fine boundary chains and completion fans along the full rootward stem
   and terminal ray. Apply the constructed respected short-window comparisons to
   their actual real rolling headings, uniformly over the outer cutoff.

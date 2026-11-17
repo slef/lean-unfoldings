@@ -3811,3 +3811,16 @@ corners and does not yet identify their widths with the actual retained cap fan.
   original bank side and in either orientation. Every forward fine bank occurs once,
   with actual intrinsic successor joins and both original endpoint copies. No chain
   order, side matching, spatial endpoint or successor certificate is supplied.
+- [`SubintervalBankVectors`](../Unfoldings/Polyhedron/SubintervalBankVectors.lean),
+  [`CompatibleComparisonFiniteChainModel`](../Unfoldings/Roof/CompatibleComparisonFiniteChainModel.lean):
+  construct exact original time partitions for the actual finite-bank chains.
+  Adjacent times agree, all fine vertices occur in strict original order, and each
+  spatial vector and intrinsic length retains its original full spatial speed.
+- [`CompatibleComparisonFiniteChainTurns`](../Unfoldings/Roof/CompatibleComparisonFiniteChainTurns.lean),
+  [`CompatibleComparisonFiniteRollPositions`](../Unfoldings/Roof/CompatibleComparisonFiniteRollPositions.lean):
+  every internal subdivision hinge has intrinsic angle exactly pi and zero real
+  rolling turn. Every rolled vertex and bank point retains its original arclength
+  coordinate. The entire rolled image is exactly the original closed arclength
+  interval, with both endpoints and strictly ordered fine vertices. The shared
+  complex interpolation identity lives in
+  [`ComplexAffineInterpolation`](../Unfoldings/Geometry/ComplexAffineInterpolation.lean).

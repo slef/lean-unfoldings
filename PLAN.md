@@ -960,7 +960,11 @@ bank on its original side, retaining every intrinsic point and both endpoints.
 The complete ordered fine chain is now constructed for either original finite-bank
 side in either orientation, with all forward fine banks used once, actual successor
 joins and both literal endpoint copies. Its spatial endpoint and whole original
-side matching are derived. Matching these chains and charts to completed corner fans and rolling comparisons,
+side matching are derived. Their exact original time partitions, full spatial
+vectors and intrinsic lengths are preserved. Every inserted finite-bank hinge
+has angle exactly pi and zero real turn. All rolled vertices and bank points
+retain their original arclength coordinates, with the exact closed image and
+strict vertex order. Matching these chains and charts to completed corner fans and rolling comparisons,
 admissible comparison windows, saved-frontier transport
 and the complete flat graft remain open.
 See the [gap-grafting checklist](docs/NORMAL_SELECTIONS.md#gap-grafting-status). The finite-cell route to

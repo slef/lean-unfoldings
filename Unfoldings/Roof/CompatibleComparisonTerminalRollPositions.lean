@@ -3,6 +3,7 @@ module
 public import Unfoldings.Roof.CompatibleComparisonTerminalChainTurns
 public import Unfoldings.Geometry.ChainPaths
 public import Unfoldings.Geometry.FiniteInterpolation
+public import Unfoldings.Geometry.ComplexAffineInterpolation
 
 /-! Ordered pointwise positions of actual rolled comparison terminal banks. -/
 
@@ -11,17 +12,6 @@ public import Unfoldings.Geometry.FiniteInterpolation
 noncomputable section
 
 open scoped NNReal ENNReal
-
-namespace Unfoldings
-
-theorem complex_lineMap_real_mul (s t u c : ℝ) :
-    AffineMap.lineMap (((s * c : ℝ) : ℂ)) (((t * c : ℝ) : ℂ)) u =
-      (((AffineMap.lineMap s t u) * c : ℝ) : ℂ) := by
-  simp only [AffineMap.lineMap_apply_module', smul_eq_mul, Complex.real_smul, Complex.ofReal_add,
-    Complex.ofReal_mul, Complex.ofReal_sub]
-  ring
-
-end Unfoldings
 
 namespace Unfoldings.ConvexRoof
 

@@ -2,6 +2,23 @@
 
 ## Session Log
 
+### 2026-11-17 — exact finite-bank rolls and zero inserted turns
+
+- Constructed original time partitions for the complete actual finite-bank chains.
+  Adjacent parameters agree, all fine vertices have strict original order, and each
+  full spatial edge vector and intrinsic length has its original spatial speed.
+- Derived larger-roof interiority and exact angle pi at every inserted hinge from
+  the restored convex link and zero spatial bend. Every real rolling heading is zero.
+- Every rolled vertex and bank point retains its exact original arclength coordinate;
+  the whole image is the original closed interval, with strict fine-vertex order.
+- Moved the existing complex interpolation identity to a shared geometry module,
+  preserving its public name and statement for both finite and terminal rolls.
+- Verification: actual cache retrieval followed by full `lake build` passed 6,206
+  jobs; 18,347 unfolding declarations passed the standard-axiom audit, and both
+  abstract independence checks passed. Existing theorem statements are unchanged.
+- Full rootward-stem joins and completion fan comparisons, saved-frontier transport
+  and complete graft nonoverlap remain open.
+
 ### 2026-11-17 — complete ordered fine chains for original finite banks
 
 - Derived complete matching forward fine-bank pieces from nonvertex contacts on
