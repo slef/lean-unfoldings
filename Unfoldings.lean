@@ -2181,3 +2181,14 @@ public import Unfoldings.Roof.CompatibleProcessedMeshCharts
 public import Unfoldings.Roof.RestoredWholeTerminalBanks
 public import Unfoldings.Roof.CompatibleRootwardTerminalJoin
 public import Unfoldings.Roof.CompatibleProcessedTerminalBanks
+public import Unfoldings.Geometry.SpatialEnvelopeCutBall
+public import Unfoldings.Metric.RestoredPlacedBall
+public import Unfoldings.Roof.RestoredTerminalHalfplane
+public import Unfoldings.Roof.CompatibleProcessedTerminalCharts
+public import Unfoldings.Roof.TerminalArrival
+public import Unfoldings.Roof.ProcessedParentSegments
+public import Unfoldings.Roof.TerminalJunctionGerm
+public import Unfoldings.Roof.CompatibleRootwardJunctionGerm
+public import Unfoldings.Roof.CompatibleRootwardJunctionChart
+public import Unfoldings.Metric.PlacedBallCenterTransport
+public import Unfoldings.Roof.CompatibleRootwardJunctionVectors

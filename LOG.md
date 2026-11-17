@@ -2,6 +2,25 @@
 
 ## Session Log
 
+### 2026-11-17 — whole original halfplanes at actual rootward terminal junctions
+
+- Derived whole-ball restoration charts at arbitrary original cut copies and transported
+  physically placed model charts in either direction through restoration.
+- Preserved original whole halfplane neighborhoods on every intermediate outer bank.
+- Proved the actual final fine routing step arrives along its uniquely derived original
+  terminal ray. Its processed parent segment and fixed outer tail retain the complete
+  original cut germ at the truncation junction itself.
+- Constructed a whole original halfplane neighborhood at the actual intrinsic current
+  rootward endpoint, deriving its bank side, supporting frame and spatial placement.
+  The final projected and spatial bank vectors are positive multiples of their original
+  terminal directions with one common duration. Truncation adds no physical corner.
+- Factored center transport into an abstract lemma after a direct proof exceeded the
+  kernel checking limit; the final proof checks with the existing limits.
+- Verification: actual cache retrieval and full `lake build` passed 6,126 jobs;
+  17,571 unfolding declarations passed the standard-axiom audit, and both abstract
+  independence checks passed. Matching completion fans, saved-frontier placement,
+  admissible comparison windows and the complete flat graft remain open.
+
 ### 2026-11-16 — actual intrinsic terminal joins and restored whole-bank dilations
 
 - Restoring arbitrary subsets of the original forest cuts retains each named terminal

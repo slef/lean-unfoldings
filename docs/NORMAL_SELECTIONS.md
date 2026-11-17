@@ -55,6 +55,10 @@ nonoverlap and counting remain to be proved.
   intrinsic current rootward endpoints to their derived original terminal banks.
 - [x] Separate the positive outer terminal tails from all current finite-mesh copies
   intrinsically. Opposite restored banks remain distinct past the truncation.
+- [x] Construct original whole halfplane charts on every intermediate outer bank.
+  Derive the actual last incoming terminal segment, the unchanged cut germ at its
+  junction and a whole halfplane neighborhood of the actual intrinsic rootward
+  endpoint. The artificial truncation join adds no geometric corner.
 - [x] Construct complete physical fine paths, preserving exact metric copies and traces,
   old fan angles, all ordered real headings, arclength and every radial margin.
 - [x] Construct entire actual Jordan traversals from radial closure geometry, deriving

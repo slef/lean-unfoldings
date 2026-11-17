@@ -3580,3 +3580,33 @@ corners and does not yet identify their widths with the actual retained cap fan.
   cuts have the exact original whole-cut germ outside the finite window, so opposite
   restored banks remain distinct there. These are intrinsic separation statements;
   development nonoverlap still requires the graft argument.
+
+- [`SpatialEnvelopeCutBall`](../Unfoldings/Geometry/SpatialEnvelopeCutBall.lean),
+  [`RestoredPlacedBall`](../Unfoldings/Metric/RestoredPlacedBall.lean):
+  local cut equality gives whole intrinsic ball charts at arbitrary original copies.
+  Physical model charts transport through restoration in either direction, retaining
+  actual centers, injective supporting placements and the canonical fold.
+- [`RestoredTerminalHalfplane`](../Unfoldings/Roof/RestoredTerminalHalfplane.lean),
+  [`CompatibleProcessedTerminalCharts`](../Unfoldings/Roof/CompatibleProcessedTerminalCharts.lean):
+  original terminal banks retain whole halfplane neighborhoods under locally unchanged
+  partial cuts. All intermediate outer-bank points have these charts in their original
+  supporting frames and literal spatial placement.
+- [`TerminalArrival`](../Unfoldings/Roof/TerminalArrival.lean),
+  [`ProcessedParentSegments`](../Unfoldings/Roof/ProcessedParentSegments.lean):
+  the genuine final fine step reaches its uniquely named original ray from a strictly
+  earlier parameter. Processing its selector retains the entire original parent segment.
+- [`TerminalJunctionGerm`](../Unfoldings/Roof/TerminalJunctionGerm.lean),
+  [`CompatibleRootwardJunctionGerm`](../Unfoldings/Roof/CompatibleRootwardJunctionGerm.lean):
+  the actual incoming final parent segment and fixed outer tail retain the full original
+  cut germ at each rootward terminal join. Whole-ball restoration charts include the
+  original endpoint itself, with no cut-germ certificate supplied by the caller.
+- [`CompatibleRootwardJunctionChart`](../Unfoldings/Roof/CompatibleRootwardJunctionChart.lean):
+  construct a whole original halfplane neighborhood at the actual intrinsic current
+  rootward endpoint, deriving both its terminal side and physical supporting frame.
+  The artificial truncation join creates no additional geometric corner.
+
+- [`PlacedBallCenterTransport`](../Unfoldings/Metric/PlacedBallCenterTransport.lean),
+  [`CompatibleRootwardJunctionVectors`](../Unfoldings/Roof/CompatibleRootwardJunctionVectors.lean):
+  equal named centers retain their original physically placed charts. The actual last
+  rootward edge is a positive multiple of the exact terminal direction, simultaneously
+  in projected and full spatial coordinates, with one common positive duration.

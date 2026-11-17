@@ -902,9 +902,12 @@ whole-cut bank copy strictly below truncation now has a whole intrinsic neighbor
 in its actual current finite retained mesh. Actual intrinsic rootward endpoints now
 join constructed original terminal half-line dilations, retaining exact spatial speed
 and all pairwise distances. Positive outer tails avoid all finite mesh copies, and
-opposite restored banks stay distinct past truncation. Terminal junction fan charts,
-completion fans at the truncation, admissible comparison windows, saved-frontier
-transport and the complete flat graft remain open.
+opposite restored banks stay distinct past truncation. Original whole halfplane charts
+now survive on every intermediate outer bank and at each actual intrinsic rootward
+terminal join. The last incoming bank and fixed outer tail derive the unchanged cut
+germ there; the artificial truncation creates no new geometric corner. Matching these
+charts to completed corner fans, admissible comparison windows, saved-frontier transport
+and the complete flat graft remain open.
 See the [gap-grafting checklist](docs/NORMAL_SELECTIONS.md#gap-grafting-status). The finite-cell route to
 global isometry does not require a separate end-height certificate. Normal-cover
 selection and Euler counting follow.
