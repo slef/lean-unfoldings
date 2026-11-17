@@ -2151,3 +2151,7 @@ public import Unfoldings.Roof.SupportedCompletionRootwardChain
 public import Unfoldings.Geometry.SupportedVertexAvoidingClosure
 public import Unfoldings.Geometry.OrderedRayClosure
 public import Unfoldings.Roof.ConstructedFiniteTerminalClosure
+public import Unfoldings.Complex.SupportedRootwardGeometry
+public import Unfoldings.Roof.SpatialEnvelopeBoundaryChains
+public import Unfoldings.Roof.CompatibleMeshHistoryGeometry
+public import Unfoldings.Roof.CompatibleMeshRootwardGeometry

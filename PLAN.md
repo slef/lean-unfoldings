@@ -882,6 +882,9 @@ and original ancestor-path references in the compatible finite mesh, preserving 
 fan metrics, real headings and complete rolls through physical completion. Entire
 finite terminal banks now have constructed supported generic Jordan closures with
 original traces, strict radial progress and controlled original vertex incidences.
+Actual current rootward paths now equal their original compatible fine histories after
+one fresh edge, deriving genuine banks, strict radial sources, whole-point radial order
+and quantitative length and source margins directly from the original cut geometry.
 Joining the unbounded comparison banks to their terminal continuations, completion fans at the
 truncation, admissible radial closures, saved-frontier transport and the complete flat
 graft remain open.

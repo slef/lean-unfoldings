@@ -3488,3 +3488,12 @@ corners and does not yet identify their widths with the actual retained cap fan.
   links except permitted endpoints, and avoid all original cut-constraint lines at both
   new corners. Sources can be arbitrarily close to the named original source vertex.
   The actual chain, source perturbation and closing geometry are derived.
+
+- [`SupportedRootwardGeometry`](../Unfoldings/Complex/SupportedRootwardGeometry.lean),
+  [`SpatialEnvelopeBoundaryChains`](../Unfoldings/Roof/SpatialEnvelopeBoundaryChains.lean):
+  identify both original endpoints and the full projected trace of actual current banks.
+- [`CompatibleMeshHistoryGeometry`](../Unfoldings/Roof/CompatibleMeshHistoryGeometry.lean),
+  [`CompatibleMeshRootwardGeometry`](../Unfoldings/Roof/CompatibleMeshRootwardGeometry.lean):
+  the entire actual rootward stem is exactly the original fine history after its fresh
+  first edge. Derive routing, length, positive radial margins from the actual source,
+  strict radial progress, genuine edges and radial order from every earlier point.

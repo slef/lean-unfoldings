@@ -2,6 +2,20 @@
 
 ## Session Log
 
+### 2026-11-16 — exact physical rootward geometry and strict original-source margins
+
+- Identified both endpoints and the entire projected trace of actual rootward banks.
+  The current stem equals the original compatible fine history after its fresh edge,
+  including the final rim copy, without supplied vertex or source correspondences.
+- Derived original routing, length bounds, quantitative source margins, strict radial
+  progress, genuine edges and radial order from every earlier actual bank point.
+- Proved projected fine histories injective up to their actual first root, keeping
+  unused flat roots and all existing public theorem statements unchanged.
+- Verification: actual cache retrieval and full `lake build` passed 6,089 jobs;
+  17,305 unfolding declarations passed the standard-axiom audit, and both abstract
+  independence checks passed. Comparison closures, unbounded joins, saved-frontier
+  transport and the complete flat graft remain open.
+
 ### 2026-11-16 — supported generic closures of whole original finite terminal banks
 
 - Retained strict radial progress, a supporting linear height and an outward terminal

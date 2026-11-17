@@ -26,6 +26,9 @@ nonoverlap and counting remain to be proved.
 
 - [x] Construct actual surviving rootward chains and identify their original reference
   fans, tangent metrics, projected parent segments and full rolls.
+- [x] Identify actual current rootward paths with their original fine histories,
+  including the final rim endpoint. Derive strict radial sources, genuine edges,
+  whole-path length bounds and quantitative progress from the actual fresh source.
 - [x] Construct complete physical fine paths, preserving exact metric copies and traces,
   old fan angles, all ordered real headings, arclength and every radial margin.
 - [x] Construct entire actual Jordan traversals from radial closure geometry, deriving
