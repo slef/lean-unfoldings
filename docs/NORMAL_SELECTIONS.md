@@ -187,6 +187,11 @@ nonoverlap and counting remain to be proved.
   lifts point for point. In particular, every actual rootward stem with any finite
   terminal interval has its entire original carrier in a constructed larger mesh.
 
+- [x] Construct the old truncation junction as an actual retained vertex in every
+  larger comparison mesh. Derive its complete original halfplane neighborhood and
+  tagged tangent fan, with the original bank copy, center, supporting frame and
+  full spatial placement. Its physical model has no artificial rim corner.
+
 - [ ] Identify the full unbounded comparison banks, including terminal rays and
   completion fans, and supply their admissible respected radial closure geometry.
 - [ ] Carry physical saved-frontier curves and their untouched original sides through

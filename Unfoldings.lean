@@ -2217,3 +2217,7 @@ public import Unfoldings.Roof.CompatibleProcessedComparisonMesh
 public import Unfoldings.Roof.CompatibleProcessedComparisonCharts
 public import Unfoldings.Roof.CompatibleProcessedComparisonPaths
 public import Unfoldings.Roof.CompatibleRootwardComparisonLift
+public import Unfoldings.Roof.CompatibleComparisonPlacedCharts
+public import Unfoldings.Roof.CompatibleComparisonJunctionChart
+public import Unfoldings.Cone.PlacedTangentCenterTransport
+public import Unfoldings.Roof.CompatibleComparisonJunctionFan

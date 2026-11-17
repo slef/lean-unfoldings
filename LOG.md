@@ -2,6 +2,23 @@
 
 ## Session Log
 
+### 2026-11-17 — original junction halfplanes and actual fine comparison fans
+
+- Constructed whole local charts at specified larger comparison-mesh copies and
+  pulled original physically placed models back to their canonical fine copies,
+  retaining centers, supporting frames and spatial points.
+- Derived the old rootward endpoint's exact height and its canonical larger-mesh
+  junction. Its original halfplane survives in every strictly larger window.
+- Original terminal endpoint constraints force the junction to be an actual fine
+  vertex. Its retained vertex copy and complete tagged halfplane tangent fan are
+  constructed from the original geometry, without a vertex or fan certificate.
+- Verification: actual cache retrieval and full `lake build` passed 6,155 jobs;
+  17,851 unfolding declarations passed the standard-axiom audit, and both abstract
+  independence checks passed. A standalone missing helper import was corrected
+  before final verification. Existing public theorem statements are unchanged.
+- Fine terminal-bank chain assembly and rolling, saved-frontier placement and the
+  complete flat graft/nonoverlap theorem remain open.
+
 ### 2026-11-17 — larger actual comparison meshes retain complete finite rootward banks
 
 - Extended unique finite-mesh lifting to arbitrary intermediate partial forest cuts.

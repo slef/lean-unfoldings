@@ -922,7 +922,10 @@ meshes: its old processed segments stay fixed, and its outer tails become exact
 original terminal segments between levels. Whole metric balls and unique original
 bank copies survive, and every finite path chooses a sufficient comparison height.
 Every rootward stem with an arbitrary finite terminal tail lifts continuously into
-such a mesh with its entire original carrier. Matching fine terminal comparison
+such a mesh with its entire original carrier. The old truncation junction is now
+an actual retained vertex of every larger comparison mesh, with its full original
+halfplane and tagged tangent fan, preserving its center and physical frame.
+Matching fine terminal comparison
 chains and these
 charts to completed corner fans, admissible comparison windows, saved-frontier transport
 and the complete flat graft remain open.

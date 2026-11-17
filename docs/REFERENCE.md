@@ -3677,3 +3677,13 @@ corners and does not yet identify their widths with the actual retained cap fan.
   preserving every point in order. Actual rootward stems and arbitrary finite tails
   retain their entire original intrinsic carrier in these constructed larger meshes.
   This does not yet identify their fine boundary-chain rolls or prove graft nonoverlap.
+- [`CompatibleComparisonPlacedCharts`](../Unfoldings/Roof/CompatibleComparisonPlacedCharts.lean),
+  [`CompatibleComparisonJunctionChart`](../Unfoldings/Roof/CompatibleComparisonJunctionChart.lean),
+  [`CompatibleComparisonJunctionFan`](../Unfoldings/Roof/CompatibleComparisonJunctionFan.lean):
+  pull physically placed whole-cut charts back to their canonical larger-mesh copies.
+  The actual rootward truncation junction is a retained fine vertex, with its full
+  original halfplane and tagged tangent fan. The supporting frame, center, bank
+  label and all spatial coordinates are retained without a supplied fan match.
+- [`PlacedTangentCenterTransport`](../Unfoldings/Cone/PlacedTangentCenterTransport.lean):
+  a named point equal to an actual vertex carries the same physically placed model
+  into its complete tagged tangent fan.
