@@ -913,7 +913,11 @@ carrier and no additional intersections at the join. Short windows of arbitrary
 positive terminal continuations now construct supported physical comparison caps,
 including windows across the truncation junction. They preserve the entire original
 whole roof on the comparison domain, respect all original face and cut lines, and
-have uniformly small actual rolling error. Matching these
+have uniformly small actual rolling error. Specified current and physically refined
+corner copies now retain whole-cut balls and complete tagged tangent fans. Every
+original rootward starting hinge derives strict containment; the actual physical
+refinement retains its whole-cut trace and full old angles, with only straight
+inserted hinges. Matching the entire terminal comparison banks and these
 charts to completed corner fans, admissible comparison windows, saved-frontier transport
 and the complete flat graft remain open.
 See the [gap-grafting checklist](docs/NORMAL_SELECTIONS.md#gap-grafting-status). The finite-cell route to

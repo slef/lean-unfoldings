@@ -212,4 +212,3 @@ theorem exists_uniform_compatibleRootwardWindow_comparison {η : ℝ} (error_pos
     no_boundary M positive inner_disk W level higher captured p)
 
 end Unfoldings.ConvexRoof
-

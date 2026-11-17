@@ -171,6 +171,12 @@ nonoverlap and counting remain to be proved.
   on the comparison domain even outside the finite clip. A single tilt controls
   the actual rolling error independently of the window and terminal duration.
 
+- [x] Match specified current cut copies, and their physical completion subdivisions,
+  to whole original-cut balls and complete tagged tangent fans. Derive strict
+  containment for every original rootward starting hinge from its selected parent.
+  The actual completed rootward refinement has the exact whole-cut stem trace,
+  preserves every old one-sided angle and inserts only straight hinges.
+
 - [ ] Identify the full unbounded comparison banks, including terminal rays and
   completion fans, and supply their admissible respected radial closure geometry.
 - [ ] Carry physical saved-frontier curves and their untouched original sides through
@@ -186,9 +192,10 @@ plus the closing-link and corner-error terms; one tilt works uniformly for all m
 
 The terminal tails and finite banks now have exact original cut-metric copies. Each
 finite bank has a complete ordered original boundary chain with its named endpoint
-vertices. Identifying completion fans, constructing radial closures and carrying the
-saved frontier through already inserted gaps still need proof. The geometric closure hypotheses are explicit; the finite-path
-comparison alone does not construct the complete flat graft.
+vertices. Original starting-hinge fans now have actual whole-cut charts under physical
+completion. Matching complete terminal comparison banks, selecting enough short
+radial windows and carrying the saved frontier through already inserted gaps still
+need proof. The finite-path comparison does not construct the complete flat graft.
 
 The completed local models and combinatorial histories do not assume these
 remaining geometric identifications. The paper's sharp numerical constants and

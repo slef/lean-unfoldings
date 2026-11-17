@@ -2200,3 +2200,8 @@ public import Unfoldings.Topology.PathRayExtension
 public import Unfoldings.Roof.CompatibleRootwardWholePath
 public import Unfoldings.Roof.SupportedWindowRolling
 public import Unfoldings.Roof.CompatibleRootwardWindowCompletion
+public import Unfoldings.Metric.IsometricChartSource
+public import Unfoldings.Roof.CompatiblePartialWindowPairedCenters
+public import Unfoldings.Roof.CompatibleProcessedCornerCharts
+public import Unfoldings.Roof.CompatibleCompletionCornerCharts
+public import Unfoldings.Roof.CompatibleCompletionRootwardFans

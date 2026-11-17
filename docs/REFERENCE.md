@@ -3641,3 +3641,15 @@ corners and does not yet identify their widths with the actual retained cap fan.
   heights match the entire original whole roof throughout the comparison domain,
   including points outside the finite clip. Matching these comparison banks to the
   whole intrinsic fans and transporting the saved frontier remain separate steps.
+- [`CompatiblePartialWindowPairedCenters`](../Unfoldings/Roof/CompatiblePartialWindowPairedCenters.lean),
+  [`CompatibleProcessedCornerCharts`](../Unfoldings/Roof/CompatibleProcessedCornerCharts.lean),
+  [`CompatibleCompletionCornerCharts`](../Unfoldings/Roof/CompatibleCompletionCornerCharts.lean):
+  specified intermediate cut copies retain whole balls and full tagged tangent fans.
+  Physical completion subdivisions map into the same whole cut with their exact
+  original spatial points. Both local metric maps and fan identifications are derived.
+- [`CompatibleCompletionRootwardFans`](../Unfoldings/Roof/CompatibleCompletionRootwardFans.lean):
+  derive strict containment below truncation for each used fine parent and every
+  original starting hinge of the current rootward stem. Construct its physical
+  completion refinement with the exact whole-cut stem trace, old one-sided angles,
+  straight inserted hinges and whole original-cut fan charts at every old hinge.
+  The final rim endpoint is handled by the separate whole terminal-junction charts.

@@ -2,6 +2,24 @@
 
 ## Session Log
 
+### 2026-11-17 — actual whole-cut fans under physical rootward completion
+
+- Constructed whole-ball charts at specified finite copies in every intermediate
+  partial forest cut. The center remains the selected original copy, including at
+  vertices. Derived full tagged tangent-fan charts from these local inclusions.
+- Transported the actual physical completion subdivision into the same whole cut,
+  preserving original spatial points and full fine tangent fans below truncation.
+- Derived strict containment for every used fine parent and every original starting
+  hinge of the current rootward stem. Constructed its actual completed refinement
+  with the exact whole-cut trace, every old one-sided angle, straight inserted
+  hinges and whole original-cut fan charts at each old hinge. The final rim endpoint
+  uses the separate terminal-junction charts.
+- Verification: actual cache retrieval and full `lake build` passed 6,139 jobs;
+  17,702 unfolding declarations passed the standard-axiom audit, and both abstract
+  independence checks passed. Existing public theorem statements are unchanged.
+- Complete terminal comparison-bank matching, enough admissible short windows,
+  saved-frontier transport and complete graft nonoverlap remain open.
+
 ### 2026-11-17 — physical comparisons for actual continued rootward windows
 
 - Constructed regular supported short-window comparison caps with arbitrarily small
