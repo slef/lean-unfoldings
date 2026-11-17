@@ -2,6 +2,22 @@
 
 ## Session Log
 
+### 2026-11-17 — original finite-bank endpoint vertices and forward fine pieces
+
+- Both labeled original cut banks now have a common left-edge coordinate API,
+  preserving full spatial points and exactly the original endpoint status.
+- Every intrinsic copy over a canonical segment endpoint is an actual comparison
+  vertex. A nonvertex contact forces whole-edge alignment, including endpoints,
+  and determines a forward bank with strictly ordered original parameters.
+- Applied these facts to both lifted original finite banks in either orientation:
+  every endpoint copy is an actual fine vertex and every nonvertex contact selects
+  a forward fine bank retaining that literal contact copy.
+- Verification: actual cache retrieval followed by full `lake build` passed 6,193
+  jobs; 18,223 unfolding declarations passed the standard-axiom audit, and both
+  abstract independence checks passed. Existing theorem statements are unchanged.
+- Whole stem-chain assembly and rolling comparisons, saved-frontier transport and
+  complete graft nonoverlap remain open.
+
 ### 2026-11-17 — whole original finite banks on actual comparison cut boundaries
 
 - Lifted every complete original finite bank into every larger comparison mesh as

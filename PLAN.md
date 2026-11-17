@@ -951,7 +951,10 @@ are exactly the two original banks, with fixed-side matching for connected curve
 and dense interior portions. Entire finite banks now lift into every larger
 comparison mesh with unchanged distances, spatial positions and literal whole-cut
 copies. Every lifted removed-bank point lies on the actual finite cut boundary,
-including both endpoints, with a directed fine-bank representation. Matching these chains and charts
+including both endpoints, with a directed fine-bank representation. Those original
+endpoint copies are actual fine vertices. Nonvertex contacts select whole forward
+fine banks in the original edge order while retaining their exact intrinsic copies.
+Matching these chains and charts
 to completed corner fans and rolling comparisons,
 admissible comparison windows, saved-frontier transport
 and the complete flat graft remain open.

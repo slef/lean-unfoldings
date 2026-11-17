@@ -2255,3 +2255,7 @@ public import Unfoldings.Roof.CompatibleProcessedBankMetric
 public import Unfoldings.Complex.DirectedBoundaryPathBank
 public import Unfoldings.Roof.CompatibleComparisonFiniteBanks
 public import Unfoldings.Roof.CompatibleComparisonCutBoundary
+public import Unfoldings.Polyhedron.CutBankParameters
+public import Unfoldings.Geometry.SpatialEnvelopeCutBankParameters
+public import Unfoldings.Roof.CompatibleComparisonPrescribedGeometry
+public import Unfoldings.Roof.CompatibleComparisonFiniteVertices

@@ -240,6 +240,10 @@ nonoverlap and counting remain to be proved.
   every original cut point inside the window, and actual cut-boundary membership
   and directed fine-bank representations for both original removed-bank sides.
 
+- [x] Preserve original finite-bank endpoints as actual comparison vertices on
+  both bank sides and in either orientation. Derive whole fine-edge alignment and
+  forward original parameter order from nonvertex contacts, keeping actual copies.
+
 - [ ] Match fine boundary chains and completion fans along the full rootward stem
   and terminal ray. Apply the constructed respected short-window comparisons to
   their actual real rolling headings, uniformly over the outer cutoff.

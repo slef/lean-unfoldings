@@ -3778,3 +3778,13 @@ corners and does not yet identify their widths with the actual retained cap fan.
   Every interior point of the original cut lies on a genuine removed comparison
   seam. All lifted removed-bank points lie on the actual cut boundary and have
   directed fine-bank representations, including both original endpoints.
+- [`CutBankParameters`](../Unfoldings/Polyhedron/CutBankParameters.lean),
+  [`SpatialEnvelopeCutBankParameters`](../Unfoldings/Geometry/SpatialEnvelopeCutBankParameters.lean):
+  read either labeled cut bank in the original left-edge coordinates, preserving
+  the full spatial point and precisely the original endpoint status.
+- [`CompatibleComparisonPrescribedGeometry`](../Unfoldings/Roof/CompatibleComparisonPrescribedGeometry.lean),
+  [`CompatibleComparisonFiniteVertices`](../Unfoldings/Roof/CompatibleComparisonFiniteVertices.lean):
+  every copy over either canonical segment endpoint is an actual fine vertex.
+  A nonvertex contact forces whole-edge alignment and forward parameter order.
+  Both lifted original removed banks keep their original segments and endpoint
+  vertices; their nonvertex contacts select forward banks with literal contact copies.
