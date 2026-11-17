@@ -2240,3 +2240,5 @@ public import Unfoldings.Complex.BoundaryChainIntervalParameters
 public import Unfoldings.Roof.SpatialEnvelopeTerminalVectors
 public import Unfoldings.Roof.CompatibleComparisonTerminalChainModel
 public import Unfoldings.Roof.CompatibleComparisonTerminalChainFans
+public import Unfoldings.Roof.CompatibleProcessedComparisonFiber
+public import Unfoldings.Roof.CompatibleRootwardComparisonTerminalChain

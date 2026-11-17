@@ -2,6 +2,19 @@
 
 ## Session Log
 
+### 2026-11-17 — join actual comparison terminal chains at the old rootward copy
+
+- Derived the original terminal side from the actual current rootward endpoint.
+  The constructed terminal chain begins at the literal same intrinsic larger-mesh
+  junction, using unique original fibers rather than projected position alone.
+- Its entire whole-cut image is exactly the original outer bank with its original
+  time offset. Both the side label and the starting vertex-copy match are derived.
+- Verification: actual cache retrieval and full `lake build` passed 6,176 jobs;
+  18,078 unfolding declarations passed the standard-axiom audit, and both abstract
+  independence checks passed. Existing public theorem statements are unchanged.
+- Full rootward rolling comparisons, saved-frontier transport through actual gap
+  attachments and complete graft nonoverlap remain open.
+
 ### 2026-11-17 — exact terminal-chain times, spatial lengths and actual hinge fans
 
 - Constructed the actual comparison terminal chain with its original time partition.

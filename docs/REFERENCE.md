@@ -3738,3 +3738,8 @@ corners and does not yet identify their widths with the actual retained cap fan.
   derive complete original halfplane fans at the actual internal chain hinges. The
   original side, support frame, bank copy and tagged spatial coordinates survive;
   neither hinge-interiority nor vertex-copy or fan matching is supplied as a premise.
+- [`CompatibleProcessedComparisonFiber`](../Unfoldings/Roof/CompatibleProcessedComparisonFiber.lean),
+  [`CompatibleRootwardComparisonTerminalChain`](../Unfoldings/Roof/CompatibleRootwardComparisonTerminalChain.lean):
+  unique interior fibers match a constructed terminal chain's literal starting cut
+  copy to the actual old rootward junction. Its original side is derived from the
+  old endpoint, and its entire whole-cut image is exactly the original outer bank.

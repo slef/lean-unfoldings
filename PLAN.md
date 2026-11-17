@@ -936,7 +936,9 @@ Whole forward fine banks now assemble into the complete ordered terminal chain,
 with exact original side labels, actual successor joins and both endpoint copies.
 Their exact original time partitions, full spatial edge vectors and intrinsic
 arclength are preserved. All actual internal hinges retain complete original
-halfplane fans and tagged spatial coordinates. Matching these chains and charts
+halfplane fans and tagged spatial coordinates. Their literal start copies now
+match the actual old rootward junctions, with derived side labels and exact whole-cut
+images. Matching these chains and charts
 to completed corner fans and rolling comparisons,
 admissible comparison windows, saved-frontier transport
 and the complete flat graft remain open.

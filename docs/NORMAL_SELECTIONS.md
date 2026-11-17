@@ -215,6 +215,10 @@ nonoverlap and counting remain to be proved.
   arclength of the constructed terminal chains. Derive their strictly internal hinge
   locations and complete original halfplane fans with all tagged spatial coordinates.
 
+- [x] Match the constructed terminal chain to the actual old rootward junction.
+  Its side and starting intrinsic copy are derived from the original endpoint;
+  the whole chain image is exactly the original terminal bank.
+
 - [ ] Identify the full unbounded comparison banks, including terminal rays and
   completion fans, and supply their admissible respected radial closure geometry.
 - [ ] Carry physical saved-frontier curves and their untouched original sides through
