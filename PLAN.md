@@ -877,8 +877,12 @@ bank chains, with strictly increasing original times and full spatial coordinate
 Positive finite-bank copies and retained tangent fans have exact halfplane models.
 Actual compatible-mesh contour histories now allow unused isolated flat roots while
 retaining complete processing, singleton fresh steps and exact curvature charges.
-Rootward comparison joins, completion fans at the truncation, admissible radial
-closures, saved-frontier transport and the complete flat graft remain open.
+Supported depth-first subtree intervals now construct actual current rootward stems
+and original ancestor-path references in the compatible finite mesh, preserving whole
+fan metrics, real headings and complete rolls through physical completion. Joining the
+unbounded comparison banks to their terminal continuations, completion fans at the
+truncation, admissible radial closures, saved-frontier transport and the complete flat
+graft remain open.
 See the [gap-grafting checklist](docs/NORMAL_SELECTIONS.md#gap-grafting-status). The finite-cell route to
 global isometry does not require a separate end-height certificate. Normal-cover
 selection and Euler counting follow.

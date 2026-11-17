@@ -116,6 +116,11 @@ nonoverlap and counting remain to be proved.
   compatible-mesh contour, exact curvature charges and singleton fresh steps without
   adding cuts through unused flat vertices or assuming a processing schedule.
 
+- [x] Construct supported depth-first subtree intervals and actual surviving rootward
+  stems in the compatible finite mesh, allowing unused isolated roots. Restore exact
+  original ancestor-path fans, tangent metrics and complete rolls; physical completion
+  retains the reference trace, radial order and intrinsic length.
+
 - [ ] Identify the full unbounded comparison banks, including terminal rays and
   completion fans, and supply their admissible respected radial closure geometry.
 - [ ] Carry physical saved-frontier curves and their untouched original sides through

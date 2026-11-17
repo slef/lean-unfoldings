@@ -2,6 +2,24 @@
 
 ## Session Log
 
+### 2026-11-16 — supported rootward stems, reference fans and physical completion
+
+- Extended named depth-first subtree intervals and completed-subtree exits to
+  forests whose unused isolated flat vertices are also marked roots.
+- Enumerated surviving future banks by actual processed ancestors, deriving strict
+  rootward order and the absence of intervening surviving side-subtree banks.
+- Restored entire original excursions intrinsically and derived actual current
+  boundary successors. Constructed whole original rootward chains with exact parents.
+- Preserved original one-sided corner fans, angles, whole tangent metrics and every
+  tagged supporting-wedge point under canonical ancestor-path restoration. Complete
+  current and reference rolls agree, including all unreduced real headings.
+- Constructed current stems and references directly in the actual compatible mesh.
+  Physical completion preserves the original reference trace, radial order and length.
+- Verification: actual cache retrieval and full `lake build` passed 6,082 jobs;
+  17,260 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks passed. Unbounded terminal continuation joins, admissible radial
+  closures, saved-frontier transport and full graft assembly remain open.
+
 ### 2026-11-16 — exact terminal parameters and actual supported contour histories
 
 - Derived exact interval joins from original boundary successors and constructed

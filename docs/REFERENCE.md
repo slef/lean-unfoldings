@@ -3448,3 +3448,29 @@ corners and does not yet identify their widths with the actual retained cap fan.
   anchor the actual compatible-cut contour at a named original terminal rim copy.
   Derive its starting root, complete processing, curvature charges and singleton steps
   without additional cuts through flat unused vertices or a supplied schedule.
+
+- [`SupportedSubtreeContour`](../Unfoldings/Complex/SupportedSubtreeContour.lean):
+  actual original subtrees occupy one depth-first contour interval even with unused
+  isolated roots. Construct both distinctly named parent-bank exits and exact completion
+  of every original descendant at the unique exit.
+- [`SupportedRootwardBanks`](../Unfoldings/Complex/SupportedRootwardBanks.lean),
+  [`SupportedRootwardOrder`](../Unfoldings/Complex/SupportedRootwardOrder.lean):
+  surviving future banks enumerate exactly processed original ancestors in their strict
+  rootward order; completed side subtrees leave no intervening surviving bank.
+- [`SupportedRestoredContour`](../Unfoldings/Complex/SupportedRestoredContour.lean),
+  [`SupportedRootwardChain`](../Unfoldings/Complex/SupportedRootwardChain.lean):
+  restoring entire original excursions preserves their actual intrinsic endpoints and
+  derives current boundary successors. Construct whole surviving rootward chains with
+  every original parent iterate and bank orientation retained, allowing unused roots.
+- [`SupportedRootwardFans`](../Unfoldings/Complex/SupportedRootwardFans.lean),
+  [`SupportedRootwardReference`](../Unfoldings/Complex/SupportedRootwardReference.lean):
+  restore actual current rootward fans to their original ancestor-path references,
+  preserving original corners, angles, whole tangent metrics, every tagged wedge point,
+  all unreduced headings and complete original rolls.
+- [`CompatibleMeshRootwardChain`](../Unfoldings/Roof/CompatibleMeshRootwardChain.lean):
+  construct surviving rootward stems and original ancestor references directly in the
+  compatible finite mesh. The actual rim-started contour derives each fresh singleton
+  and every original parent bank; complete current and reference rolls agree exactly.
+- [`SupportedCompletionRootwardChain`](../Unfoldings/Roof/SupportedCompletionRootwardChain.lean):
+  physical completion refines actual current rootward stems with unused isolated roots,
+  preserving original reference roll traces, radial order and full intrinsic length.

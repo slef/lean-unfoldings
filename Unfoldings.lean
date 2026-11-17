@@ -2139,3 +2139,12 @@ public import Unfoldings.Complex.SupportedContourNeighbors
 public import Unfoldings.Roof.PotentialContourHistory
 public import Unfoldings.Complex.BoundaryContourAnchor
 public import Unfoldings.Roof.CompatibleMeshContourHistory
+public import Unfoldings.Complex.SupportedSubtreeContour
+public import Unfoldings.Complex.SupportedRootwardBanks
+public import Unfoldings.Complex.SupportedRootwardOrder
+public import Unfoldings.Complex.SupportedRestoredContour
+public import Unfoldings.Complex.SupportedRootwardChain
+public import Unfoldings.Complex.SupportedRootwardFans
+public import Unfoldings.Complex.SupportedRootwardReference
+public import Unfoldings.Roof.CompatibleMeshRootwardChain
+public import Unfoldings.Roof.SupportedCompletionRootwardChain
