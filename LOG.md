@@ -2,6 +2,22 @@
 
 ## Session Log
 
+### 2026-11-17 — original outer-bank fans and complete metric terminal intervals
+
+- Constructed original terminal-bank copies in larger intermediate-cut comparison
+  meshes, with exact whole-cut images and original time parameters.
+- Preserved the whole original halfplane at every positive outer point strictly
+  inside the new window, with its support frame, center and full spatial placement.
+  Actual fine vertices carry their complete tagged original halfplane tangent fans.
+- Lifted entire closed terminal intervals as closed embedded dilations, including
+  both original endpoints. Each interval point is its individually named bank copy;
+  every pairwise original distance and full spatial ray coordinate survives.
+- Verification: actual cache retrieval and full `lake build` passed 6,158 jobs;
+  17,890 unfolding declarations passed the standard-axiom audit, and both abstract
+  independence checks passed. Existing public theorem statements are unchanged.
+- Fine bank-chain assembly and rolling comparisons, saved-frontier transport and
+  complete graft nonoverlap remain open.
+
 ### 2026-11-17 — original junction halfplanes and actual fine comparison fans
 
 - Constructed whole local charts at specified larger comparison-mesh copies and

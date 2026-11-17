@@ -192,6 +192,11 @@ nonoverlap and counting remain to be proved.
   tagged tangent fan, with the original bank copy, center, supporting frame and
   full spatial placement. Its physical model has no artificial rim corner.
 
+- [x] Preserve whole original halfplanes on all positive outer terminal banks inside
+  larger comparison windows, including full tagged fans at their actual fine vertices.
+  Entire closed terminal intervals lift as closed embedded dilations, retaining
+  original endpoint times, every pairwise distance and full spatial coordinates.
+
 - [ ] Identify the full unbounded comparison banks, including terminal rays and
   completion fans, and supply their admissible respected radial closure geometry.
 - [ ] Carry physical saved-frontier curves and their untouched original sides through

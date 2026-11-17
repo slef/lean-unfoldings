@@ -3687,3 +3687,13 @@ corners and does not yet identify their widths with the actual retained cap fan.
 - [`PlacedTangentCenterTransport`](../Unfoldings/Cone/PlacedTangentCenterTransport.lean):
   a named point equal to an actual vertex carries the same physically placed model
   into its complete tagged tangent fan.
+- [`CompatibleComparisonTerminalCharts`](../Unfoldings/Roof/CompatibleComparisonTerminalCharts.lean):
+  every positive outer terminal-bank copy strictly inside a larger comparison window
+  retains its complete original halfplane. Original support frames, centers and spatial
+  coordinates survive, and actual fine vertices carry their full tagged halfplane fans.
+- [`NonnegativeIntervalCopy`](../Unfoldings/Metric/NonnegativeIntervalCopy.lean),
+  [`CompatibleComparisonTerminalIntervals`](../Unfoldings/Roof/CompatibleComparisonTerminalIntervals.lean):
+  entire closed terminal intervals lift as actual closed embedded dilations, agreeing
+  literally with their named individual bank copies. Every pairwise original distance,
+  endpoint time and full spatial ray coordinate is preserved. The interval endpoint
+  stays strictly inside the new comparison window.

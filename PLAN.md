@@ -925,6 +925,9 @@ Every rootward stem with an arbitrary finite terminal tail lifts continuously in
 such a mesh with its entire original carrier. The old truncation junction is now
 an actual retained vertex of every larger comparison mesh, with its full original
 halfplane and tagged tangent fan, preserving its center and physical frame.
+Positive outer terminal banks in these larger meshes now retain their whole original
+halfplanes and fine vertex fans. Entire closed terminal intervals are closed embedded
+dilations with exact original distances, endpoint times and spatial coordinates.
 Matching fine terminal comparison
 chains and these
 charts to completed corner fans, admissible comparison windows, saved-frontier transport
