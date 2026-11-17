@@ -2,6 +2,25 @@
 
 ## Session Log
 
+### 2026-11-17 — respected physical comparisons from original bank geometry
+
+- Equality with a Euclidean chord length now fixes every directed polygonal edge
+  and vertex's exact cumulative arclength, including zero edges.
+- Applied this to whole physical bank blocks. Every fine spatial and projected
+  bank retains its original ordered arclength parameters, with both endpoints.
+  Radial order passes to the actual comparison cap; its vertical normalization
+  preserves the entire projected carrier and exact geometric Jordan closure.
+- Original supported radial closure geometry on an actual cut-bank chain now
+  constructs a respected physical cap preserving the roof throughout the closed
+  Jordan region, with a small original unreduced terminal-heading error. One tilt
+  works for all meshes and paths, with either incident side. Fine geometry, fan
+  matches and selected-side certificates are conclusions, not premises.
+- Verification: actual cache retrieval followed by full `lake build` passed 6,229
+  jobs; 18,534 unfolding declarations passed the standard-axiom audit, and both
+  abstract independence checks passed. Existing theorem statements are unchanged.
+- Required actual bank windows, saved-frontier transport and complete graft
+  nonoverlap remain open.
+
 ### 2026-11-17 — actual comparison stem radial margins and original-heading estimates
 
 - Added a common horizontal projection API for actual folded boundary chains,

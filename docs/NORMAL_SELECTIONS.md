@@ -8,6 +8,11 @@ nonoverlap and counting remain to be proved.
 
 ## Gap-grafting status
 
+- [x] Derive exact spatial arclength parameters for every physical cap bank piece.
+  The actual cap retains radial order, the complete projected carrier, both
+  endpoints and the original Jordan closure. Original supported radial cut-bank
+  closure geometry now constructs a respected physical cap and a small original
+  real-heading error, with one mesh-independent tilt and either incident side.
 - [x] Preserve every projected radial margin in complete larger-mesh refinements,
   with the exact whole projected path and both original endpoint copies. The
   constructed actual rootward comparison stem keeps its positive source margin,

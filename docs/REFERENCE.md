@@ -3881,3 +3881,23 @@ corners and does not yet identify their widths with the actual retained cap fan.
   A uniform tilt compares the actual original bank's unreduced terminal heading
   with the physical cap's projected fans. Either side is allowed; the geometric
   radial closure is still a hypothesis.
+
+- [`ShortestPolygonalChain`](../Unfoldings/Geometry/ShortestPolygonalChain.lean):
+  Equality with the Euclidean chord length fixes every directed edge and every
+  vertex's exact cumulative arclength, including zero edges.
+- [`ProjectedBoundaryChainFolding`](../Unfoldings/Cap/ProjectedBoundaryChainFolding.lean):
+  identifies the cap bank-comparison projection with its actual physical folding.
+- [`CompletionChainSpatialParameters`](../Unfoldings/Roof/CompletionChainSpatialParameters.lean):
+  whole physical bank blocks attain their original spatial chord lengths; every
+  inserted vertex keeps its exact original directed arclength parameter.
+- [`CompletionChainProjectedParameters`](../Unfoldings/Roof/CompletionChainProjectedParameters.lean):
+  each entire fine bank retains its original ordered spatial and projected parameter.
+  Radial order passes to the actual comparison cap, including its vertical normalization.
+- [`CompletionChainClosure`](../Unfoldings/Roof/CompletionChainClosure.lean):
+  the actual cap preserves the entire projected carrier, both original endpoints
+  and the exact geometric three-segment Jordan closure.
+- [`OriginalBankComparisonCompletion`](../Unfoldings/Roof/OriginalBankComparisonCompletion.lean):
+  original cut-bank radial closure geometry constructs a respected physical cap,
+  preserving roof height over the closed Jordan region and giving a uniform small
+  error for the original unreduced real terminal heading. No fine-chain geometry,
+  orientation, selected incident side or fan-angle correspondence is assumed.

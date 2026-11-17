@@ -2289,3 +2289,9 @@ public import Unfoldings.Polyhedron.ProjectedBoundaryChain
 public import Unfoldings.Roof.CompatibleComparisonChainRadial
 public import Unfoldings.Roof.CompatibleRootwardComparisonRadial
 public import Unfoldings.Roof.CompletionOriginalBankComparison
+public import Unfoldings.Geometry.ShortestPolygonalChain
+public import Unfoldings.Cap.ProjectedBoundaryChainFolding
+public import Unfoldings.Roof.CompletionChainSpatialParameters
+public import Unfoldings.Roof.CompletionChainProjectedParameters
+public import Unfoldings.Roof.CompletionChainClosure
+public import Unfoldings.Roof.OriginalBankComparisonCompletion

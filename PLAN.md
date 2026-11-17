@@ -983,8 +983,15 @@ copies and the entire projected path. Actual rootward comparison stems retain th
 original positive source margin, radial order, nonzero source distance and literal
 terminal junction. The uniform physical completion estimate now controls the
 original bank's unreduced real terminal heading; its radial closure geometry is
-still a hypothesis. Constructing the required actual bank windows, selecting enough
-admissible windows, saved-frontier transport and the complete flat graft remain open.
+still a hypothesis. Physical cap bank subdivisions now retain exact original
+spatial and projected arclength parameters, radial order, the whole projected
+carrier, both endpoints and the same geometric Jordan closure. A supported radial
+closure on any actual original cut-bank chain now constructs a respected physical
+cap and a small error for that original bank's real terminal heading. Fine geometry,
+incident-side choices and fan-angle correspondences are derived, with one uniform
+tilt and roof height preserved throughout the closed Jordan region. Constructing
+the required actual bank windows, selecting enough admissible windows,
+saved-frontier transport and the complete flat graft remain open.
 See the [gap-grafting checklist](docs/NORMAL_SELECTIONS.md#gap-grafting-status). The finite-cell route to
 global isometry does not require a separate end-height certificate. Normal-cover
 selection and Euler counting follow.
