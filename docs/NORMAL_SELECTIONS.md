@@ -231,6 +231,10 @@ nonoverlap and counting remain to be proved.
   time order. Derive strict vertex order on the real axis and the exact whole
   rolled path image, including both original arclength endpoints.
 
+- [x] Preserve entire original finite banks as closed embedded dilations in the
+  intermediate whole cut. Classify both regular removed-edge copies and derive
+  fixed-side matching for connected curves, with endpoint copies kept by continuity.
+
 - [ ] Match fine boundary chains and completion fans along the full rootward stem
   and terminal ray. Apply the constructed respected short-window comparisons to
   their actual real rolling headings, uniformly over the outer cutoff.

@@ -2248,3 +2248,7 @@ public import Unfoldings.Roof.CompatibleRootwardComparisonRimPath
 public import Unfoldings.Polyhedron.BoundaryFanAngle
 public import Unfoldings.Roof.CompatibleComparisonTerminalChainTurns
 public import Unfoldings.Roof.CompatibleComparisonTerminalRollPositions
+public import Unfoldings.Metric.DilationNonexpandingTransport
+public import Unfoldings.Polyhedron.CutEdgeFibers
+public import Unfoldings.Polyhedron.DirectedBankMetric
+public import Unfoldings.Roof.CompatibleProcessedBankMetric

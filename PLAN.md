@@ -945,7 +945,10 @@ chain hinge now has angle exactly pi, with zero unreduced rolling heading and th
 original positive real edge length. This follows from the restored convex vertex
 link and zero spatial bend. Every rolled terminal vertex and bank point retains
 its original time and full spatial speed; the whole image is exactly the closed
-arclength interval with strict vertex order. Matching these chains and charts
+arclength interval with strict vertex order. Original finite banks also retain
+exact whole-cut distances and both endpoint copies. Regular removed-edge fibers
+are exactly the two original banks, with fixed-side matching for connected curves
+and dense interior portions. Matching these chains and charts
 to completed corner fans and rolling comparisons,
 admissible comparison windows, saved-frontier transport
 and the complete flat graft remain open.

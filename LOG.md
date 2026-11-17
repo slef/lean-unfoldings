@@ -2,6 +2,23 @@
 
 ## Session Log
 
+### 2026-11-17 — exact original finite banks and their whole-cut side matching
+
+- Constructed exact intrinsic and spatial dilations for every original directed
+  finite bank, retaining its full original speed and both endpoint copies.
+- Nonexpanding whole-cut transport preserves every original bank distance. The
+  complete image remains a closed embedded interval in the intermediate whole cut.
+- Classified every regular removed-edge fiber as its two named original banks.
+  These copies stay distinct below the old level. Connected curves cannot switch
+  sides, and dense interior matching fixes all original endpoint copies too.
+- Used explicit folding identities to avoid an expensive quotient reduction;
+  all final proofs pass with the default checking limits.
+- Verification: actual cache retrieval and full `lake build` passed 6,186 jobs;
+  18,159 unfolding declarations passed the standard-axiom audit, and both abstract
+  independence checks passed. Existing public theorem statements are unchanged.
+- Full rootward-stem comparison refinements, saved-frontier transport and complete
+  graft nonoverlap remain open.
+
 ### 2026-11-17 — exact pointwise terminal rolls and their full ordered images
 
 - Every actual rolled terminal-chain vertex has its exact original time times

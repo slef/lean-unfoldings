@@ -3762,3 +3762,11 @@ corners and does not yet identify their widths with the actual retained cap fan.
   every actual rolled fine vertex and bank point keeps its original time multiplied
   by the fixed full spatial speed. Rolled vertices are strictly ordered on the real
   axis, and the whole path image is exactly the original closed arclength interval.
+- [`CutEdgeFibers`](../Unfoldings/Polyhedron/CutEdgeFibers.lean),
+  [`DirectedBankMetric`](../Unfoldings/Polyhedron/DirectedBankMetric.lean),
+  [`DilationNonexpandingTransport`](../Unfoldings/Metric/DilationNonexpandingTransport.lean),
+  [`CompatibleProcessedBankMetric`](../Unfoldings/Roof/CompatibleProcessedBankMetric.lean):
+  entire original finite banks retain their exact spatial and intrinsic distances in
+  intermediate whole cuts, including both endpoint copies. Regular removed-edge
+  fibers consist of the two named original banks. Connected curves keep one side,
+  and matching on a dense interior portion retains their literal endpoint copies.
