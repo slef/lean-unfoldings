@@ -2247,3 +2247,4 @@ public import Unfoldings.Roof.CompatibleRootwardComparisonStem
 public import Unfoldings.Roof.CompatibleRootwardComparisonRimPath
 public import Unfoldings.Polyhedron.BoundaryFanAngle
 public import Unfoldings.Roof.CompatibleComparisonTerminalChainTurns
+public import Unfoldings.Roof.CompatibleComparisonTerminalRollPositions

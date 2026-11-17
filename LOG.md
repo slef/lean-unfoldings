@@ -2,6 +2,19 @@
 
 ## Session Log
 
+### 2026-11-17 — exact pointwise terminal rolls and their full ordered images
+
+- Every actual rolled terminal-chain vertex has its exact original time times
+  full spatial speed. Fine vertices occur in strict original order on the real axis.
+- Every point of every rolled fine bank retains its original interpolation time.
+  The entire rolled path image is exactly the original closed arclength interval,
+  including both endpoints; no heading or pointwise comparison certificate is assumed.
+- Verification: actual cache retrieval and full `lake build` passed 6,182 jobs;
+  18,131 unfolding declarations passed the standard-axiom audit, and both abstract
+  independence checks passed. Existing public theorem statements are unchanged.
+- Full rootward-stem comparison refinements, saved-frontier transport and complete
+  graft nonoverlap remain open.
+
 ### 2026-11-17 — exact zero real turns of actual comparison terminal chains
 
 - Restored actual cut-copy boundary links into their original vertex links to

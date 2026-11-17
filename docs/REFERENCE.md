@@ -3758,3 +3758,7 @@ corners and does not yet identify their widths with the actual retained cap fan.
   hinge has angle exactly pi, every unreduced rolling heading is zero, and every
   rolled edge is its original positive length on the real axis. Original vertex
   interiority and nonnegative curvature are derived in the constructed larger roof.
+- [`CompatibleComparisonTerminalRollPositions`](../Unfoldings/Roof/CompatibleComparisonTerminalRollPositions.lean):
+  every actual rolled fine vertex and bank point keeps its original time multiplied
+  by the fixed full spatial speed. Rolled vertices are strictly ordered on the real
+  axis, and the whole path image is exactly the original closed arclength interval.

@@ -227,6 +227,10 @@ nonoverlap and counting remain to be proved.
   rolling headings. The cut-copy link restores into the original convex vertex link;
   zero spatial bend forces zero intrinsic turn, with no angle certificate.
 
+- [x] Preserve every actual rolled terminal-bank vertex and point in its original
+  time order. Derive strict vertex order on the real axis and the exact whole
+  rolled path image, including both original arclength endpoints.
+
 - [ ] Match fine boundary chains and completion fans along the full rootward stem
   and terminal ray. Apply the constructed respected short-window comparisons to
   their actual real rolling headings, uniformly over the outer cutoff.

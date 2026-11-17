@@ -943,7 +943,9 @@ constructed terminal chain through the new rim, preserving every original stem
 point and exactly the complete stem-plus-outer-bank carrier. Each actual terminal
 chain hinge now has angle exactly pi, with zero unreduced rolling heading and the
 original positive real edge length. This follows from the restored convex vertex
-link and zero spatial bend. Matching these chains and charts
+link and zero spatial bend. Every rolled terminal vertex and bank point retains
+its original time and full spatial speed; the whole image is exactly the closed
+arclength interval with strict vertex order. Matching these chains and charts
 to completed corner fans and rolling comparisons,
 admissible comparison windows, saved-frontier transport
 and the complete flat graft remain open.
