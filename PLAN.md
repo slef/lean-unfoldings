@@ -928,6 +928,8 @@ halfplane and tagged tangent fan, preserving its center and physical frame.
 Positive outer terminal banks in these larger meshes now retain their whole original
 halfplanes and fine vertex fans. Entire closed terminal intervals are closed embedded
 dilations with exact original distances, endpoint times and spatial coordinates.
+Metric completion also retains the new rim endpoint of the entire outer bank,
+with exact original cut copies, spatial coordinates and pairwise distances.
 Every interval copy now lies on the actual intrinsic comparison cut boundary and
 has a directed fine-bank point representation, including at original endpoints.
 Matching fine terminal comparison

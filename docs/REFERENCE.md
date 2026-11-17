@@ -3704,3 +3704,9 @@ corners and does not yet identify their widths with the actual retained cap fan.
   even at vertices. Entire closed terminal intervals, with both endpoints, have
   actual directed fine-bank point representations without a global contour premise.
   Ordering these pieces into the complete fine bank chain remains separate.
+- [`OffsetIntervalTime`](../Unfoldings/Metric/OffsetIntervalTime.lean),
+  [`CompatibleComparisonTerminalCompletion`](../Unfoldings/Roof/CompatibleComparisonTerminalCompletion.lean):
+  complete the actual outer bank at the larger window's rim by intrinsic metric
+  continuity. Both endpoints keep their literal original cut copies, full spatial
+  coordinates and all pairwise distances. The resulting closed embedded dilation
+  lies entirely on the actual finite cut boundary and keeps every earlier canonical copy.

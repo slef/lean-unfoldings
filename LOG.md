@@ -2,6 +2,19 @@
 
 ## Session Log
 
+### 2026-11-17 — complete actual comparison terminal banks at their new rim
+
+- Completed each original outer bank at the larger comparison window's rim using
+  the intrinsic metric. Its original time offset, both literal cut copies, full
+  spatial placement and every pairwise distance are retained.
+- The closed bank is a closed embedded dilation, agrees with every earlier
+  canonical copy and lies entirely on the actual finite cut boundary.
+- Verification: actual cache retrieval and full `lake build` passed 6,162 jobs;
+  17,943 unfolding declarations passed the standard-axiom audit, and both abstract
+  independence checks passed. Existing public theorem statements are unchanged.
+- Ordered fine-bank chains and rolling estimates, saved-frontier transport and
+  full graft nonoverlap remain open.
+
 ### 2026-11-17 — actual comparison cut-boundary copies of closed terminal intervals
 
 - Derived genuine removed comparison seams through every original outer terminal

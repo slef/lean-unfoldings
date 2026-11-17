@@ -202,6 +202,10 @@ nonoverlap and counting remain to be proved.
   endpoints. Construct directed fine-bank point representations without a supplied
   global contour. Full ordered fine-chain assembly remains separate.
 
+- [x] Complete each actual outer bank at the larger comparison rim. Preserve its
+  original time offset, both cut copies, every pairwise distance and full spatial
+  placement. The entire closed embedded bank lies on the actual finite cut boundary.
+
 - [ ] Identify the full unbounded comparison banks, including terminal rays and
   completion fans, and supply their admissible respected radial closure geometry.
 - [ ] Carry physical saved-frontier curves and their untouched original sides through

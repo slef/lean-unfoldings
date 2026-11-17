@@ -2226,3 +2226,5 @@ public import Unfoldings.Metric.NonnegativeIntervalCopy
 public import Unfoldings.Roof.CompatibleComparisonTerminalIntervals
 public import Unfoldings.Complex.BoundaryPointPath
 public import Unfoldings.Roof.CompatibleComparisonTerminalBoundary
+public import Unfoldings.Metric.OffsetIntervalTime
+public import Unfoldings.Roof.CompatibleComparisonTerminalCompletion

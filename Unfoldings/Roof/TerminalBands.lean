@@ -34,6 +34,13 @@ theorem terminal_ray_interval (r : {v // v ∈ R.parents.roots}) (s t : ℝ) (or
 
 variable (level : ℝ) (higher : ∀ v, G.height (K.projectedVertex v) < level)
 
+/-- Original terminal time strictly increases with the geometric truncation level. -/
+theorem terminalTime_strictMono (r : {v // v ∈ R.parents.roots}) :
+    StrictMono (fun height : ℝ => R.terminalTime height r) := by
+  intro first last ordered
+  unfold terminalTime
+  exact div_lt_div_of_pos_right (sub_lt_sub_right ordered _) (R.exterior.positive _)
+
 include higher in
 /-- The original terminal parameter orders the entire outer tail by actual roof height. -/
 theorem terminal_ray_superlevel_iff (r : {v // v ∈ R.parents.roots}) {t : ℝ}
