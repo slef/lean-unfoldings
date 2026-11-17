@@ -3405,3 +3405,22 @@ corners and does not yet identify their widths with the actual retained cap fan.
   construct original forward fine-bank restrictions on each chosen intrinsic side,
   then prove their finite union covers that whole terminal bank exactly, including
   all subdivision vertices and both source and truncation copies.
+
+- [`PositiveIntervalPartition`](../Unfoldings/Topology/PositiveIntervalPartition.lean):
+  order every original piece of any positive closed interval, keeping actual parameters
+  and exact endpoint joins.
+- [`IntervalBoundaryChain`](../Unfoldings/Complex/IntervalBoundaryChain.lean):
+  exact forward bank coverage of an embedded interval constructs its whole actual
+  boundary chain. Derive disjoint parameter interiors, original successors, exact
+  intrinsic trace and endpoint copies; no bank is repeated in either orientation.
+- [`ConstructedFiniteTerminalBankChains`](../Unfoldings/Roof/ConstructedFiniteTerminalBankChains.lean):
+  both actual finite terminal banks construct original ordered chains, with a bijection
+  to all their forward fine banks, exact whole trace, and the named source and rim vertices.
+
+- [`PlacedTangentCharts`](../Unfoldings/Cone/PlacedTangentCharts.lean):
+  transport physically placed local metric models to original retained tangent fans,
+  keeping each original tagged cell and its literal spatial placement.
+- [`ConstructedFiniteTerminalHalfplane`](../Unfoldings/Roof/ConstructedFiniteTerminalHalfplane.lean):
+  every positive finite terminal-bank point below truncation has its whole original
+  halfplane neighborhood, with exact supporting-plane coordinates and center. Original
+  subdivision vertices inherit halfplane models of their actual retained tangent fans.

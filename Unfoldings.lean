@@ -2125,3 +2125,8 @@ public import Unfoldings.Geometry.SpatialEnvelopeDirectedBanks
 public import Unfoldings.Roof.CompatibleMeshTerminalAlignment
 public import Unfoldings.Topology.ClosedIntervalFiniteExceptions
 public import Unfoldings.Roof.ConstructedFiniteTerminalBankEdges
+public import Unfoldings.Topology.PositiveIntervalPartition
+public import Unfoldings.Complex.IntervalBoundaryChain
+public import Unfoldings.Roof.ConstructedFiniteTerminalBankChains
+public import Unfoldings.Cone.PlacedTangentCharts
+public import Unfoldings.Roof.ConstructedFiniteTerminalHalfplane

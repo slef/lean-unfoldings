@@ -102,6 +102,14 @@ nonoverlap and counting remain to be proved.
   their exact chosen-side restrictions, and cover each entire terminal bank by their
   finite union, including subdivision vertices and both endpoints.
 
+- [x] Construct entire original terminal-bank chains with each fine bank occurring
+  once, derive their actual successors, and preserve the whole intrinsic trace and
+  named source and truncation vertices.
+
+- [x] Model every positive finite terminal-bank point below truncation by its exact
+  original halfplane, including whole retained tangent-fan neighborhoods at subdivision
+  vertices, preserving support coordinates, centers and spatial placements.
+
 - [ ] Identify the full unbounded comparison banks, including terminal rays and
   completion fans, and supply their admissible respected radial closure geometry.
 - [ ] Carry physical saved-frontier curves and their untouched original sides through
@@ -115,9 +123,10 @@ point, real heading, intrinsic length and quantitative radial margin. For an adm
 respected radial closure, the real-heading error is bounded by twice total curvature
 plus the closing-link and corner-error terms; one tilt works uniformly for all meshes.
 
-The terminal tails now have two disjoint actual cut-metric copies. Joining the finite
-banks to those tails, identifying completion fans, and carrying the saved frontier
-through already inserted gaps still need proof. The geometric closure hypotheses are explicit; the finite-path
+The terminal tails and finite banks now have exact original cut-metric copies. Each
+finite bank has a complete ordered original boundary chain with its named endpoint
+vertices. Identifying completion fans, constructing radial closures and carrying the
+saved frontier through already inserted gaps still need proof. The geometric closure hypotheses are explicit; the finite-path
 comparison alone does not construct the complete flat graft.
 
 The completed local models and combinatorial histories do not assume these

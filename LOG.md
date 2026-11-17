@@ -2,6 +2,23 @@
 
 ## Session Log
 
+### 2026-11-16 — actual ordered terminal chains and original halfplane fans
+
+- Ordered genuine finite interval partitions without changing their original times.
+- Exact forward coverage of any embedded interval constructs its whole original
+  boundary chain. Derived disjoint parameter interiors, no repeated bank in either
+  orientation, actual boundary successors, exact trace and both endpoint copies.
+- Applied this construction to both finite terminal banks, with a bijection to all
+  their original forward fine banks and the named original source and rim vertices.
+- Constructed exact centered halfplane neighborhoods at every positive finite-bank
+  point before truncation, including original subdivision vertices. Their retained
+  tangent fans have whole halfplane metric models preserving every original tagged
+  cell, support coordinate and literal spatial placement.
+- Verification: actual cache retrieval and full `lake build` passed 6,064 jobs;
+  17,114 unfolding declarations passed the standard-axiom audit and both abstract
+  independence checks passed. Complete rootward comparison joins, admissible radial
+  closures, saved-frontier transport and the full graft theorem remain open.
+
 ### 2026-11-16 — exact whole terminal banks covered by original forward fine banks
 
 - Proved exact directed-path reversal and original endpoint identities. Projection
