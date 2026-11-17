@@ -3799,3 +3799,15 @@ corners and does not yet identify their widths with the actual retained cap fan.
   continuous bank, including endpoints. A forward comparison bank with original
   spatial endpoints is its literal original finite-bank restriction once that
   contact is fixed; all actual intrinsic point copies agree.
+- [`SpatialEnvelopeBankOrientation`](../Unfoldings/Geometry/SpatialEnvelopeBankOrientation.lean),
+  [`SpatialEnvelopeCutBankSegments`](../Unfoldings/Geometry/SpatialEnvelopeCutBankSegments.lean):
+  either original bank orientation spans exactly its projected seam segment. Segment
+  endpoint membership determines a strictly forward fine-bank orientation, and every
+  nonvertex intrinsic contact has a strictly interior bank time.
+- [`CompatibleComparisonFinitePieces`](../Unfoldings/Roof/CompatibleComparisonFinitePieces.lean),
+  [`CompatibleComparisonFiniteChains`](../Unfoldings/Roof/CompatibleComparisonFiniteChains.lean):
+  derive whole matching fine-bank restrictions from nonvertex original-bank contacts.
+  Their exact coverage constructs the complete ordered comparison chain on either
+  original bank side and in either orientation. Every forward fine bank occurs once,
+  with actual intrinsic successor joins and both original endpoint copies. No chain
+  order, side matching, spatial endpoint or successor certificate is supplied.

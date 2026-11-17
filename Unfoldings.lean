@@ -2263,3 +2263,7 @@ public import Unfoldings.Metric.ClosedUnitIntervalLineMap
 public import Unfoldings.Polyhedron.DirectedBankSubinterval
 public import Unfoldings.Roof.CompatibleProcessedBankInterior
 public import Unfoldings.Roof.CompatibleComparisonFiniteMatching
+public import Unfoldings.Geometry.SpatialEnvelopeBankOrientation
+public import Unfoldings.Geometry.SpatialEnvelopeCutBankSegments
+public import Unfoldings.Roof.CompatibleComparisonFinitePieces
+public import Unfoldings.Roof.CompatibleComparisonFiniteChains

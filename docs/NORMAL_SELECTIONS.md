@@ -248,6 +248,10 @@ nonoverlap and counting remain to be proved.
   original spatial endpoint positions and one regular intrinsic contact fix every
   point of a whole forward fine bank, retaining both original endpoint copies.
 
+- [x] Construct complete ordered comparison chains for both original finite-bank
+  sides in either orientation. Derive fine-bank spatial endpoints and whole original
+  side matching, exact coverage, actual successor joins and both endpoint copies.
+
 - [ ] Match fine boundary chains and completion fans along the full rootward stem
   and terminal ray. Apply the constructed respected short-window comparisons to
   their actual real rolling headings, uniformly over the outer cutoff.

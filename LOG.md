@@ -2,6 +2,23 @@
 
 ## Session Log
 
+### 2026-11-17 — complete ordered fine chains for original finite banks
+
+- Derived complete matching forward fine-bank pieces from nonvertex contacts on
+  either original finite-bank side and in either starting orientation. Their spatial
+  endpoints and original side matching are consequences of the construction.
+- Whole fine banks cover the complete original bank, including all subdivision
+  vertices and both original endpoint copies; finite vertex exceptions disappear
+  by continuity and closedness.
+- Constructed the complete ordered actual comparison chain. Every forward bank
+  occurs exactly once, with literal intrinsic successor joins and both original
+  endpoint copies. No order, side-matching or endpoint certificate is supplied.
+- Verification: actual cache retrieval followed by full `lake build` passed 6,201
+  jobs; 18,274 unfolding declarations passed the standard-axiom audit, and both
+  abstract independence checks passed. Existing theorem statements are unchanged.
+- Full stem-chain joins, completion fans and rolling comparisons, saved-frontier
+  transport and complete graft nonoverlap remain open.
+
 ### 2026-11-17 — whole forward fine banks retain their original intrinsic side
 
 - Derived strict old-rim interiority of every regular removed-edge point from the

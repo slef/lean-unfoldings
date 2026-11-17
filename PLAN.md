@@ -957,7 +957,10 @@ fine banks in the original edge order while retaining their exact intrinsic copi
 Regular removed-edge points lie strictly below the old rim. Original spatial
 endpoint positions and one regular contact now fix the exact whole forward fine
 bank on its original side, retaining every intrinsic point and both endpoints.
-Matching these chains and charts to completed corner fans and rolling comparisons,
+The complete ordered fine chain is now constructed for either original finite-bank
+side in either orientation, with all forward fine banks used once, actual successor
+joins and both literal endpoint copies. Its spatial endpoint and whole original
+side matching are derived. Matching these chains and charts to completed corner fans and rolling comparisons,
 admissible comparison windows, saved-frontier transport
 and the complete flat graft remain open.
 See the [gap-grafting checklist](docs/NORMAL_SELECTIONS.md#gap-grafting-status). The finite-cell route to
