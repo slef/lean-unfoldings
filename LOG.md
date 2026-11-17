@@ -2,6 +2,23 @@
 
 ## Session Log
 
+### 2026-11-17 — whole rootward stems and actual terminal paths through every larger rim
+
+- Derived the original height bound for every whole intrinsic rootward stem point.
+  Every larger comparison window lifts the entire stem point for point, ending at
+  the literal original junction with its exact whole-cut carrier.
+- Joined that actual stem to the constructed terminal chain through the new rim.
+  The resulting path's whole-cut carrier is exactly the original stem and closed
+  outer bank, including both joined endpoint copies.
+- Factored unique endpoint transport and exact carrier-preserving joins into
+  generic path lemmas after a direct concrete proof hit elaboration limits.
+  The final proofs use the default checking limits.
+- Verification: actual cache retrieval and full `lake build` passed 6,179 jobs;
+  18,098 unfolding declarations passed the standard-axiom audit, and both abstract
+  independence checks passed. Existing public theorem statements are unchanged.
+- Fine chains and rolling comparisons along the entire rootward stem, physical
+  saved-frontier transport and complete graft nonoverlap remain open.
+
 ### 2026-11-17 — join actual comparison terminal chains at the old rootward copy
 
 - Derived the original terminal side from the actual current rootward endpoint.

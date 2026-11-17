@@ -219,8 +219,13 @@ nonoverlap and counting remain to be proved.
   Its side and starting intrinsic copy are derived from the original endpoint;
   the whole chain image is exactly the original terminal bank.
 
-- [ ] Identify the full unbounded comparison banks, including terminal rays and
-  completion fans, and supply their admissible respected radial closure geometry.
+- [x] Lift the whole original rootward stem into every larger window and join its
+  actual endpoint to the constructed terminal chain through the new rim. Preserve
+  every original stem point and the exact whole stem-plus-outer-bank carrier.
+
+- [ ] Match fine boundary chains and completion fans along the full rootward stem
+  and terminal ray. Apply the constructed respected short-window comparisons to
+  their actual real rolling headings, uniformly over the outer cutoff.
 - [ ] Carry physical saved-frontier curves and their untouched original sides through
   actual prior gap attachments. Apply the local metric remainder models to those updates.
 - [ ] Assemble the complete graft and prove completeness, simple connectivity and local

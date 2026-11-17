@@ -3743,3 +3743,11 @@ corners and does not yet identify their widths with the actual retained cap fan.
   unique interior fibers match a constructed terminal chain's literal starting cut
   copy to the actual old rootward junction. Its original side is derived from the
   old endpoint, and its entire whole-cut image is exactly the original outer bank.
+- [`PathFiberEndpoint`](../Unfoldings/Topology/PathFiberEndpoint.lean),
+  [`CompatibleRootwardComparisonStem`](../Unfoldings/Roof/CompatibleRootwardComparisonStem.lean),
+  [`CompatibleRootwardComparisonRimPath`](../Unfoldings/Roof/CompatibleRootwardComparisonRimPath.lean):
+  derive a uniform original height bound for the whole rootward stem. In every larger
+  window its lift preserves every point and ends at the literal original junction.
+  Joining the constructed terminal chain gives an actual path through the new rim,
+  whose whole-cut carrier is exactly the original stem and closed outer bank. Generic
+  endpoint transport keeps this proof within the default checking limits.

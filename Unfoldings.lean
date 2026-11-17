@@ -2242,3 +2242,6 @@ public import Unfoldings.Roof.CompatibleComparisonTerminalChainModel
 public import Unfoldings.Roof.CompatibleComparisonTerminalChainFans
 public import Unfoldings.Roof.CompatibleProcessedComparisonFiber
 public import Unfoldings.Roof.CompatibleRootwardComparisonTerminalChain
+public import Unfoldings.Topology.PathFiberEndpoint
+public import Unfoldings.Roof.CompatibleRootwardComparisonStem
+public import Unfoldings.Roof.CompatibleRootwardComparisonRimPath
