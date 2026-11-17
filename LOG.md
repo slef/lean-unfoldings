@@ -2,6 +2,24 @@
 
 ## Session Log
 
+### 2026-11-17 — actual trimmed intrinsic bank windows and complete original turns
+
+- Added exact consecutive paired-involution chain intervals. Every actual bank
+  window retains its original labels, projected points, true endpoint and radial
+  order; its real headings are differences of original unreduced prefixes.
+- A projected full-mesh vertex can contact an actual bank only at an endpoint.
+  Marked closing coordinates therefore locate both trims at exact recorded fine
+  parameters, in derived original block order.
+- Constructed the actual trimmed intrinsic bank interval from these marked lines.
+  Both projected endpoints and literal intrinsic cut-side endpoint copies are
+  retained. Positive final trims preserve the full original real terminal heading,
+  including every original internal turn and every full rotation.
+- Verification: actual cache retrieval followed by full `lake build` passed 6,237
+  jobs; 18,614 unfolding declarations passed the standard-axiom audit, and both
+  abstract independence checks passed. Existing theorem statements are unchanged.
+- Matching the whole trimmed projected carrier, sufficient comparison windows,
+  saved-frontier transport and complete graft nonoverlap remain open.
+
 ### 2026-11-17 — respected physical comparisons from original bank geometry
 
 - Equality with a Euclidean chord length now fixes every directed polygonal edge

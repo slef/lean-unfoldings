@@ -2295,3 +2295,11 @@ public import Unfoldings.Roof.CompletionChainSpatialParameters
 public import Unfoldings.Roof.CompletionChainProjectedParameters
 public import Unfoldings.Roof.CompletionChainClosure
 public import Unfoldings.Roof.OriginalBankComparisonCompletion
+public import Unfoldings.Topology.ChainInterval
+public import Unfoldings.Complex.BoundaryChainIntervalHeading
+public import Unfoldings.Cap.ProjectedBankVertexParameters
+public import Unfoldings.Cap.ProjectedBoundaryChainInterval
+public import Unfoldings.Roof.CompletionBankVertexParameters
+public import Unfoldings.Roof.MarkedOriginalBankWindows
+public import Unfoldings.Roof.CompletionOriginalBankWindow
+public import Unfoldings.Roof.CompletionOriginalBankWindowGeometry

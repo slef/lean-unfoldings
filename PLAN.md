@@ -989,9 +989,13 @@ carrier, both endpoints and the same geometric Jordan closure. A supported radia
 closure on any actual original cut-bank chain now constructs a respected physical
 cap and a small error for that original bank's real terminal heading. Fine geometry,
 incident-side choices and fan-angle correspondences are derived, with one uniform
-tilt and roof height preserved throughout the closed Jordan region. Constructing
-the required actual bank windows, selecting enough admissible windows,
-saved-frontier transport and the complete flat graft remain open.
+tilt and roof height preserved throughout the closed Jordan region. Marked trim
+endpoints now derive their actual fine-bank indices in the correct original
+order. The extracted intrinsic interval retains both literal cut-side endpoints,
+the exact projected trim points and the complete original real terminal heading.
+Equality of this actual window's whole projected carrier with the geometric
+trimmed path, sufficient admissible windows, saved-frontier transport and the
+complete flat graft remain open.
 See the [gap-grafting checklist](docs/NORMAL_SELECTIONS.md#gap-grafting-status). The finite-cell route to
 global isometry does not require a separate end-height certificate. Normal-cover
 selection and Euler counting follow.

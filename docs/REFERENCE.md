@@ -3901,3 +3901,24 @@ corners and does not yet identify their widths with the actual retained cap fan.
   preserving roof height over the closed Jordan region and giving a uniform small
   error for the original unreduced real terminal heading. No fine-chain geometry,
   orientation, selected incident side or fan-angle correspondence is assumed.
+
+- [`ChainInterval`](../Unfoldings/Topology/ChainInterval.lean):
+  exact consecutive intervals in paired-involution chains, retaining original labels and successors.
+- [`BoundaryChainIntervalHeading`](../Unfoldings/Complex/BoundaryChainIntervalHeading.lean):
+  real heading on each bank window is exactly the difference of the original real prefixes.
+- [`ProjectedBankVertexParameters`](../Unfoldings/Cap/ProjectedBankVertexParameters.lean):
+  full-mesh vertex contacts on actual banks occur only at their actual endpoints,
+  also for independent cuts and face restrictions.
+- [`ProjectedBoundaryChainInterval`](../Unfoldings/Cap/ProjectedBoundaryChainInterval.lean):
+  actual bank intervals keep every projected point, the true final endpoint and radial order.
+- [`CompletionBankVertexParameters`](../Unfoldings/Roof/CompletionBankVertexParameters.lean):
+  marked physical vertex contacts give exact fine-bank parameters and indices;
+  every piece of an earlier original bank precedes every piece of a later bank.
+- [`MarkedOriginalBankWindows`](../Unfoldings/Roof/MarkedOriginalBankWindows.lean):
+  original marked closure lines derive ordered actual indices for both geometric trims.
+- [`CompletionOriginalBankWindow`](../Unfoldings/Roof/CompletionOriginalBankWindow.lean):
+  constructs the actual trimmed intrinsic bank interval and proves its real terminal
+  heading equals the complete original heading, with no inserted turns.
+- [`CompletionOriginalBankWindowGeometry`](../Unfoldings/Roof/CompletionOriginalBankWindowGeometry.lean):
+  trimmed physical windows retain both original projected endpoints and their
+  literal intrinsic cut-side endpoint copies.
