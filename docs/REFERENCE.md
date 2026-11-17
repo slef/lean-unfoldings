@@ -3710,3 +3710,19 @@ corners and does not yet identify their widths with the actual retained cap fan.
   continuity. Both endpoints keep their literal original cut copies, full spatial
   coordinates and all pairwise distances. The resulting closed embedded dilation
   lies entirely on the actual finite cut boundary and keeps every earlier canonical copy.
+- [`TwoClosedLifts`](../Unfoldings/Topology/TwoClosedLifts.lean),
+  [`CompatibleProcessedTerminalMatching`](../Unfoldings/Roof/CompatibleProcessedTerminalMatching.lean):
+  connected outer curves retain a fixed original bank side in intermediate cuts;
+  continuity keeps their endpoint copies even where earlier restoration merges banks.
+- [`TerminalBandParameters`](../Unfoldings/Roof/TerminalBandParameters.lean),
+  [`CompatibleComparisonTerminalVertices`](../Unfoldings/Roof/CompatibleComparisonTerminalVertices.lean),
+  [`CompatibleComparisonTerminalAlignment`](../Unfoldings/Roof/CompatibleComparisonTerminalAlignment.lean):
+  derive actual endpoint vertices, original relative times, whole-edge alignment and
+  forward orientation from the canonical terminal constraints and a nonvertex contact.
+- [`CompatibleComparisonTerminalMatching`](../Unfoldings/Roof/CompatibleComparisonTerminalMatching.lean),
+  [`CompatibleComparisonTerminalPieces`](../Unfoldings/Roof/CompatibleComparisonTerminalPieces.lean),
+  [`CompatibleComparisonTerminalChains`](../Unfoldings/Roof/CompatibleComparisonTerminalChains.lean):
+  whole directed fine banks match their named original terminal copies through the
+  new rim. Their exact coverage constructs an ordered boundary chain, using each
+  forward bank once with literal intrinsic successor joins and both endpoint copies.
+  No chain order, successor, bank-side or fan-matching certificate is assumed.

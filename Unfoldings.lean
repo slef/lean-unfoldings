@@ -2228,3 +2228,11 @@ public import Unfoldings.Complex.BoundaryPointPath
 public import Unfoldings.Roof.CompatibleComparisonTerminalBoundary
 public import Unfoldings.Metric.OffsetIntervalTime
 public import Unfoldings.Roof.CompatibleComparisonTerminalCompletion
+public import Unfoldings.Topology.TwoClosedLifts
+public import Unfoldings.Roof.CompatibleProcessedTerminalMatching
+public import Unfoldings.Roof.TerminalBandParameters
+public import Unfoldings.Roof.CompatibleComparisonTerminalVertices
+public import Unfoldings.Roof.CompatibleComparisonTerminalAlignment
+public import Unfoldings.Roof.CompatibleComparisonTerminalMatching
+public import Unfoldings.Roof.CompatibleComparisonTerminalPieces
+public import Unfoldings.Roof.CompatibleComparisonTerminalChains

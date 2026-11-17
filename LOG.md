@@ -2,6 +2,22 @@
 
 ## Session Log
 
+### 2026-11-17 — ordered actual terminal-bank chains in larger comparison meshes
+
+- Connected outer curves in intermediate cuts keep one original side; continuity
+  retains earlier endpoint copies even when restored cuts merge the banks there.
+- Derived both actual endpoint vertices, original time offsets, whole fine-edge
+  alignment and forward orientation from the canonical terminal constraints.
+- Whole fine banks match their original cut copies through the new rim. Exact
+  coverage constructs the entire ordered chain, using each forward bank once with
+  literal intrinsic successor joins and both named endpoint copies. No ordering,
+  successor or bank-side certificate is assumed.
+- Verification: actual cache retrieval and full `lake build` passed 6,170 jobs;
+  18,001 unfolding declarations passed the standard-axiom audit, and both abstract
+  independence checks passed. Existing public theorem statements are unchanged.
+- Matching these chains to full rootward rolling comparisons, saved-frontier
+  transport and complete graft nonoverlap remain open.
+
 ### 2026-11-17 — complete actual comparison terminal banks at their new rim
 
 - Completed each original outer bank at the larger comparison window's rim using

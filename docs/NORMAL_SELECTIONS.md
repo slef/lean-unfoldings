@@ -200,11 +200,16 @@ nonoverlap and counting remain to be proved.
 - [x] Put every original outer terminal-interval copy on the actual intrinsic cut
   boundary of the larger comparison mesh, including old junctions and interval
   endpoints. Construct directed fine-bank point representations without a supplied
-  global contour. Full ordered fine-chain assembly remains separate.
+  global contour.
 
 - [x] Complete each actual outer bank at the larger comparison rim. Preserve its
   original time offset, both cut copies, every pairwise distance and full spatial
   placement. The entire closed embedded bank lies on the actual finite cut boundary.
+
+- [x] Assemble complete ordered terminal-bank chains in larger comparison meshes.
+  Whole forward fine banks cover the chosen side, each occurs once, and joins and
+  both endpoint copies are literal intrinsic copies. Direction, coverage and order
+  are derived without a chain or fan-matching certificate.
 
 - [ ] Identify the full unbounded comparison banks, including terminal rays and
   completion fans, and supply their admissible respected radial closure geometry.

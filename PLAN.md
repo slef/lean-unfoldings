@@ -932,9 +932,10 @@ Metric completion also retains the new rim endpoint of the entire outer bank,
 with exact original cut copies, spatial coordinates and pairwise distances.
 Every interval copy now lies on the actual intrinsic comparison cut boundary and
 has a directed fine-bank point representation, including at original endpoints.
-Matching fine terminal comparison
-chains and these
-charts to completed corner fans, admissible comparison windows, saved-frontier transport
+Whole forward fine banks now assemble into the complete ordered terminal chain,
+with exact original side labels, actual successor joins and both endpoint copies.
+Matching these chains and charts to completed corner fans and rolling comparisons,
+admissible comparison windows, saved-frontier transport
 and the complete flat graft remain open.
 See the [gap-grafting checklist](docs/NORMAL_SELECTIONS.md#gap-grafting-status). The finite-cell route to
 global isometry does not require a separate end-height certificate. Normal-cover
