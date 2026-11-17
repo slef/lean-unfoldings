@@ -267,9 +267,14 @@ nonoverlap and counting remain to be proved.
   Preserve the complete original closed carrier, both intrinsic endpoint copies
   and the full spatial new-rim endpoint. Every bank starts strictly inside the roof.
 
-- [ ] Match the constructed complete rootward chains to physical completion fans.
-  Apply the constructed respected short-window comparisons to
-  their actual real rolling headings, uniformly over the outer cutoff.
+- [x] Refine complete actual rootward comparison chains into physical cap
+  completions. Preserve their whole original cut carrier, spatial new-rim point,
+  every comparison-chain one-sided fan angle and all unreduced real rolling
+  headings. Strict starting heights derive cut labels; fan matching is not supplied.
+
+- [ ] Match physical rootward completion banks to the respected Jordan-window fans.
+  Apply the constructed short-window comparisons to their actual real rolling
+  headings, uniformly over the outer cutoff.
 - [ ] Carry physical saved-frontier curves and their untouched original sides through
   actual prior gap attachments. Apply the local metric remainder models to those updates.
 - [ ] Assemble the complete graft and prove completeness, simple connectivity and local
@@ -282,12 +287,13 @@ respected radial closure, the real-heading error is bounded by twice total curva
 plus the closing-link and corner-error terms; one tilt works uniformly for all meshes.
 
 The terminal tails and finite banks now have exact original cut-metric copies in
-every larger comparison window. Each
-finite bank has a complete ordered original boundary chain with its named endpoint
+every larger comparison window. Each finite bank has a complete ordered original boundary chain with its named endpoint
 vertices. Original starting-hinge fans now have actual whole-cut charts under physical
-completion. Matching complete terminal comparison banks, selecting enough short
-radial windows and carrying the saved frontier through already inserted gaps still
-need proof. The finite-path comparison does not construct the complete flat graft.
+completion. Complete rootward chains through each new rim now have actual physical
+completion refinements, with exact carriers, endpoint copies, one-sided fan angles
+and real heading sets. Matching these banks to respected Jordan-window fans,
+selecting enough short radial windows and carrying the saved frontier through
+already inserted gaps still need proof. The complete flat graft remains open.
 
 The completed local models and combinatorial histories do not assume these
 remaining geometric identifications. The paper's sharp numerical constants and

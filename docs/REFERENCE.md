@@ -3845,3 +3845,13 @@ corners and does not yet identify their widths with the actual retained cap fan.
   reversals. The literal junction determines their actual successor. The complete
   constructed chain reaches the new rim with the exact original spatial endpoint
   and whole-cut carrier. Every bank starts strictly inside the larger roof.
+- [`SpatialEnvelopeInteriorBanks`](../Unfoldings/Roof/SpatialEnvelopeInteriorBanks.lean):
+  strict spatial-envelope height proves that an actual bank was created by a cut,
+  independently of any particular compatible triangulation or parent forest.
+- [`CompatibleComparisonPhysicalCompletion`](../Unfoldings/Roof/CompatibleComparisonPhysicalCompletion.lean),
+  [`CompatibleRootwardPhysicalCompletion`](../Unfoldings/Roof/CompatibleRootwardPhysicalCompletion.lean):
+  construct physical completion refinements of the complete actual rootward chain.
+  The same whole-cut carrier and spatial new-rim endpoint are retained. Every
+  comparison-chain hinge keeps its complete one-sided fan angle, and the entire
+  set of unreduced real rolling headings is unchanged. Fine cut labels and fan
+  matching are derived from the constructed original chain and strict heights.

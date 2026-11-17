@@ -2280,3 +2280,6 @@ public import Unfoldings.Roof.CompatibleComparisonChainRefinement
 public import Unfoldings.Roof.CompatibleRootwardComparisonChain
 public import Unfoldings.Roof.CompatibleComparisonTerminalStemJoins
 public import Unfoldings.Roof.CompatibleRootwardComparisonRimChain
+public import Unfoldings.Roof.SpatialEnvelopeInteriorBanks
+public import Unfoldings.Roof.CompatibleComparisonPhysicalCompletion
+public import Unfoldings.Roof.CompatibleRootwardPhysicalCompletion

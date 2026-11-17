@@ -2,6 +2,22 @@
 
 ## Session Log
 
+### 2026-11-17 — actual physical completion fans and full real heading preservation
+
+- Added a triangulation-independent strict-height criterion for actual cut banks.
+  It constructs all cut labels needed for the complete comparison chain's physical
+  refinement, with no supplied boundary or angle correspondence.
+- Constructed physical cap refinements of complete rootward comparison chains.
+  Every original whole-cut copy and the full spatial new-rim endpoint are retained.
+- Every comparison-chain hinge keeps its complete one-sided fan angle. The whole
+  set of unreduced real rolling headings is unchanged, including full rotations;
+  these are conclusions of the constructed physical refinement.
+- Verification: actual cache retrieval followed by full `lake build` passed 6,217
+  jobs; 18,447 unfolding declarations passed the standard-axiom audit, and both
+  abstract independence checks passed. Existing theorem statements are unchanged.
+- Matching these banks to respected Jordan-window fans and selecting enough windows,
+  saved-frontier transport and complete graft nonoverlap remain open.
+
 ### 2026-11-17 — complete actual rootward chains through the new rim
 
 - Original roof height separates every stem bank from every terminal bank in both
