@@ -50,6 +50,11 @@ nonoverlap and counting remain to be proved.
   current finite retained mesh and its complete intermediate whole cut, at every
   point strictly below the truncation. Derive all cut and mesh geometry from the
   original processing stage, allowing arbitrary original whole-roof partitions.
+- [x] Construct whole terminal half-line dilations in every partial forest cut,
+  preserving exact spatial coordinates and all pairwise distances. Join actual
+  intrinsic current rootward endpoints to their derived original terminal banks.
+- [x] Separate the positive outer terminal tails from all current finite-mesh copies
+  intrinsically. Opposite restored banks remain distinct past the truncation.
 - [x] Construct complete physical fine paths, preserving exact metric copies and traces,
   old fan angles, all ordered real headings, arclength and every radial margin.
 - [x] Construct entire actual Jordan traversals from radial closure geometry, deriving

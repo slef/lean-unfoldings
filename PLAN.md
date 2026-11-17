@@ -899,9 +899,12 @@ fixed outer tails to the complete original forest. They have complete, partition
 metrics and nonexpanding restoration maps preserving spatial points; the finite retained
 complexes have the exact corresponding graph-patch cut metrics. Every intermediate
 whole-cut bank copy strictly below truncation now has a whole intrinsic neighborhood
-in its actual current finite retained mesh. Whole-neighborhood bank identifications
-at the terminal joins, completion fans at the truncation, admissible comparison
-windows, saved-frontier transport and the complete flat graft remain open.
+in its actual current finite retained mesh. Actual intrinsic rootward endpoints now
+join constructed original terminal half-line dilations, retaining exact spatial speed
+and all pairwise distances. Positive outer tails avoid all finite mesh copies, and
+opposite restored banks stay distinct past truncation. Terminal junction fan charts,
+completion fans at the truncation, admissible comparison windows, saved-frontier
+transport and the complete flat graft remain open.
 See the [gap-grafting checklist](docs/NORMAL_SELECTIONS.md#gap-grafting-status). The finite-cell route to
 global isometry does not require a separate end-height certificate. Normal-cover
 selection and Euler counting follow.

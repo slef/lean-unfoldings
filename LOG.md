@@ -2,6 +2,26 @@
 
 ## Session Log
 
+### 2026-11-16 — actual intrinsic terminal joins and restored whole-bank dilations
+
+- Restoring arbitrary subsets of the original forest cuts retains each named terminal
+  bank as a closed embedded half-line dilation, preserving its full spatial speed and
+  every pairwise distance. Every positive partial-cut terminal copy comes from a named
+  original bank; restored sides are allowed to meet at earlier endpoint copies.
+- Constructed the actual intrinsic last endpoint of each current rootward stem and
+  joined it to an entire original terminal-bank dilation at its derived terminal time.
+  The equality is in the intermediate whole-cut metric, rather than only in space.
+- Proved that positive outer terminal tails avoid every current finite-mesh copy.
+  Original cut germs agree outside truncation, so opposite restored banks remain
+  distinct there, independently of earlier restored endpoint identifications.
+- Verification: actual cache retrieval and full `lake build` passed 6,115 jobs;
+  17,531 unfolding declarations passed the standard-axiom audit, and both abstract
+  independence checks passed. A missing local `NNReal` notation scope found by the
+  standalone build was fixed before final verification. Existing public theorem
+  statements remain unchanged; no placeholders or additional axioms were introduced.
+- Terminal junction fan charts, completion fan compatibility, saved-frontier placement
+  and complete graft nonoverlap remain open.
+
 ### 2026-11-16 — whole intrinsic neighborhoods at every intermediate processing stage
 
 - Extended actual polygonal windows, physical finite mesh equivalences and paired

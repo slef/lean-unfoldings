@@ -2178,3 +2178,6 @@ public import Unfoldings.Roof.CompatiblePartialWindowMesh
 public import Unfoldings.Roof.CompatiblePartialWindowMeshCharts
 public import Unfoldings.Roof.CompatiblePartialWindowPairedMesh
 public import Unfoldings.Roof.CompatibleProcessedMeshCharts
+public import Unfoldings.Roof.RestoredWholeTerminalBanks
+public import Unfoldings.Roof.CompatibleRootwardTerminalJoin
+public import Unfoldings.Roof.CompatibleProcessedTerminalBanks

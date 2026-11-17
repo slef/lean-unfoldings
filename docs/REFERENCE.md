@@ -3566,3 +3566,17 @@ corners and does not yet identify their widths with the actual retained cap fan.
   every actual intermediate whole-cut bank copy strictly below the truncation has a
   whole intrinsic neighborhood in its constructed current finite retained mesh.
   All physical mesh, cut and retained-seam data are derived from the processing stage.
+
+- [`RestoredWholeTerminalBanks`](../Unfoldings/Roof/RestoredWholeTerminalBanks.lean):
+  restoring any subset of forest cuts retains each original terminal bank as a closed
+  half-line dilation with its exact full spatial speed and every pairwise distance.
+  Every positive partial-cut terminal copy belongs to one of these named banks.
+- [`CompatibleRootwardTerminalJoin`](../Unfoldings/Roof/CompatibleRootwardTerminalJoin.lean):
+  the actual intrinsic endpoint of every current rootward stem equals a restored
+  original whole-bank copy at its derived terminal time. Construct a whole terminal
+  dilation joined at that actual point in the intermediate cut metric.
+- [`CompatibleProcessedTerminalBanks`](../Unfoldings/Roof/CompatibleProcessedTerminalBanks.lean):
+  positive outer terminal tails avoid every current finite-mesh copy. Intermediate
+  cuts have the exact original whole-cut germ outside the finite window, so opposite
+  restored banks remain distinct there. These are intrinsic separation statements;
+  development nonoverlap still requires the graft argument.
