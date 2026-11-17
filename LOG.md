@@ -2,6 +2,28 @@
 
 ## Session Log
 
+### 2026-11-17 — larger actual comparison meshes retain complete finite rootward banks
+
+- Extended unique finite-mesh lifting to arbitrary intermediate partial forest cuts.
+  Constructed continuity from whole local charts and unique fibers, common Lipschitz
+  bounds on convex parameter domains, and exact pairwise distances for dilations.
+- Proved that the original cut in a closed band between truncation levels consists
+  exactly of the original terminal segments. Each intermediate cut in a larger
+  window has its old processed edges and these exact finite outer segments.
+- Constructed canonical proper segment constraints and the actual larger conforming
+  mesh of the same intermediate cut, deriving all cut alignment and face avoidance.
+  Original spatial points, cut copies, whole metric balls and nonexpansion survive.
+- Every finite whole-cut path now derives a sufficient comparison height and lifts
+  continuously, point for point. Actual rootward stems with any finite terminal
+  interval retain their entire original carrier in these constructed larger meshes.
+- Factored whole-carrier transport into an abstract lemma after concrete rewriting
+  exceeded the kernel limit. Final verification uses the existing checking limits.
+- Verification: actual cache retrieval and full `lake build` passed 6,151 jobs;
+  17,815 unfolding declarations passed the standard-axiom audit, and both abstract
+  independence checks passed. Existing public theorem statements are unchanged.
+- Fine terminal comparison chains and fans, enough admissible short rolling windows,
+  saved-frontier placement and complete graft nonoverlap remain open.
+
 ### 2026-11-17 — actual whole-cut fans under physical rootward completion
 
 - Constructed whole-ball charts at specified finite copies in every intermediate

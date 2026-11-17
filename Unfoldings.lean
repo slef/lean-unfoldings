@@ -2205,3 +2205,15 @@ public import Unfoldings.Roof.CompatiblePartialWindowPairedCenters
 public import Unfoldings.Roof.CompatibleProcessedCornerCharts
 public import Unfoldings.Roof.CompatibleCompletionCornerCharts
 public import Unfoldings.Roof.CompatibleCompletionRootwardFans
+public import Unfoldings.Topology.ImageRange
+public import Unfoldings.Metric.ContinuousChartLift
+public import Unfoldings.Roof.CompatiblePartialWindowPairedFiber
+public import Unfoldings.Roof.CompatiblePartialWindowLift
+public import Unfoldings.Roof.TerminalBands
+public import Unfoldings.Roof.ProjectedRemovedSegments
+public import Unfoldings.Roof.CompatibleProcessedWindowCarrier
+public import Unfoldings.Roof.CompatibleProcessedWindowSegments
+public import Unfoldings.Roof.CompatibleProcessedComparisonMesh
+public import Unfoldings.Roof.CompatibleProcessedComparisonCharts
+public import Unfoldings.Roof.CompatibleProcessedComparisonPaths
+public import Unfoldings.Roof.CompatibleRootwardComparisonLift

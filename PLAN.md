@@ -917,7 +917,13 @@ have uniformly small actual rolling error. Specified current and physically refi
 corner copies now retain whole-cut balls and complete tagged tangent fans. Every
 original rootward starting hinge derives strict containment; the actual physical
 refinement retains its whole-cut trace and full old angles, with only straight
-inserted hinges. Matching the entire terminal comparison banks and these
+inserted hinges. The same intermediate cut now has constructed larger comparison
+meshes: its old processed segments stay fixed, and its outer tails become exact
+original terminal segments between levels. Whole metric balls and unique original
+bank copies survive, and every finite path chooses a sufficient comparison height.
+Every rootward stem with an arbitrary finite terminal tail lifts continuously into
+such a mesh with its entire original carrier. Matching fine terminal comparison
+chains and these
 charts to completed corner fans, admissible comparison windows, saved-frontier transport
 and the complete flat graft remain open.
 See the [gap-grafting checklist](docs/NORMAL_SELECTIONS.md#gap-grafting-status). The finite-cell route to

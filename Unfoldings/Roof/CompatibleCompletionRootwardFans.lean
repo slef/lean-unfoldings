@@ -207,4 +207,3 @@ theorem compatibleMeshCompletedRootwardRefinement_old_fan_chart
     higher M positive inner_disk beta acute W r side i fresh m length j
 
 end Unfoldings.ConvexRoof
-

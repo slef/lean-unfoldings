@@ -3653,3 +3653,27 @@ corners and does not yet identify their widths with the actual retained cap fan.
   completion refinement with the exact whole-cut stem trace, old one-sided angles,
   straight inserted hinges and whole original-cut fan charts at every old hinge.
   The final rim endpoint is handled by the separate whole terminal-junction charts.
+- [`ContinuousChartLift`](../Unfoldings/Metric/ContinuousChartLift.lean),
+  [`CompatiblePartialWindowPairedFiber`](../Unfoldings/Roof/CompatiblePartialWindowPairedFiber.lean),
+  [`CompatiblePartialWindowLift`](../Unfoldings/Roof/CompatiblePartialWindowLift.lean):
+  canonical lifts retain complete original partial-cut fibers and spatial points.
+  Whole charts and fiber uniqueness preserve continuity and common Lipschitz bounds;
+  original dilations retain every pairwise intrinsic distance in the finite mesh.
+- [`TerminalBands`](../Unfoldings/Roof/TerminalBands.lean),
+  [`ProjectedRemovedSegments`](../Unfoldings/Roof/ProjectedRemovedSegments.lean),
+  [`CompatibleProcessedWindowCarrier`](../Unfoldings/Roof/CompatibleProcessedWindowCarrier.lean),
+  [`CompatibleProcessedWindowSegments`](../Unfoldings/Roof/CompatibleProcessedWindowSegments.lean):
+  describe the same intermediate cut in any larger level window by exact finite
+  original segments. Every old processed edge stays fixed; outer tails become the
+  segments between their two original truncation endpoints. Canonical proper line
+  constraints retain all endpoints and the exact original cut throughout the window.
+- [`CompatibleProcessedComparisonMesh`](../Unfoldings/Roof/CompatibleProcessedComparisonMesh.lean),
+  [`CompatibleProcessedComparisonCharts`](../Unfoldings/Roof/CompatibleProcessedComparisonCharts.lean),
+  [`CompatibleProcessedComparisonPaths`](../Unfoldings/Roof/CompatibleProcessedComparisonPaths.lean),
+  [`CompatibleRootwardComparisonLift`](../Unfoldings/Roof/CompatibleRootwardComparisonLift.lean):
+  construct larger actual conforming meshes for the same original processing stage,
+  with the original whole-cut metric balls, folding and nonexpanding inclusions.
+  Every finite original path derives a sufficient height and lifts continuously,
+  preserving every point in order. Actual rootward stems and arbitrary finite tails
+  retain their entire original intrinsic carrier in these constructed larger meshes.
+  This does not yet identify their fine boundary-chain rolls or prove graft nonoverlap.

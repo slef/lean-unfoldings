@@ -177,6 +177,16 @@ nonoverlap and counting remain to be proved.
   The actual completed rootward refinement has the exact whole-cut stem trace,
   preserves every old one-sided angle and inserts only straight hinges.
 
+- [x] Enlarge comparison windows without changing the original processing stage or
+  whole cut. Between truncation levels the outer cut is exactly a finite union of
+  original terminal segments. Construct the larger conforming mesh directly from
+  these segments and old processed edges, with its exact retained cut metric.
+- [x] Construct unique finite-mesh lifts for partial-cut copies and curves. Preserve
+  continuity, common Lipschitz constants and every dilation distance. Any finite
+  original whole-cut path chooses its own sufficiently large comparison level and
+  lifts point for point. In particular, every actual rootward stem with any finite
+  terminal interval has its entire original carrier in a constructed larger mesh.
+
 - [ ] Identify the full unbounded comparison banks, including terminal rays and
   completion fans, and supply their admissible respected radial closure geometry.
 - [ ] Carry physical saved-frontier curves and their untouched original sides through
