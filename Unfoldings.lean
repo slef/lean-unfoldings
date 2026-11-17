@@ -2168,3 +2168,8 @@ public import Unfoldings.Roof.SpatialEnvelopeFoldingGraph
 public import Unfoldings.Roof.CompatibleMeshRootwardTerminal
 public import Unfoldings.Geometry.ChainAppendInterval
 public import Unfoldings.Roof.CompatibleMeshRootwardContinuation
+public import Unfoldings.Roof.ProjectedRemovedSeams
+public import Unfoldings.Roof.SpatialEnvelopeProjectedRemovedSeams
+public import Unfoldings.Roof.OpenSeamInterior
+public import Unfoldings.Roof.TruncatedCutEnds
+public import Unfoldings.Roof.CompatibleProcessedCarrier

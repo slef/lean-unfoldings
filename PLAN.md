@@ -894,9 +894,12 @@ all original fine-vertex and cut-line incidences, with arbitrarily small source 
 Every nonempty fine history now derives its unique original terminal ray. Actual
 rootward stems join it at exact projected and spatial coordinates, and their projected
 continuations retain every original bank point and all radial and length bounds for
-arbitrary finite terminal durations. Identifying the intrinsic whole-cut bank copies
-at these joins, completion fans at the truncation, admissible comparison windows,
-saved-frontier transport and the complete flat graft remain open.
+arbitrary finite terminal durations. Actual intermediate whole-roof cuts now run from
+fixed outer tails to the complete original forest. They have complete, partition-independent
+metrics and nonexpanding restoration maps preserving spatial points; the finite retained
+complexes have the exact corresponding graph-patch cut metrics. Whole-neighborhood bank
+identifications at the joins, completion fans at the truncation, admissible comparison
+windows, saved-frontier transport and the complete flat graft remain open.
 See the [gap-grafting checklist](docs/NORMAL_SELECTIONS.md#gap-grafting-status). The finite-cell route to
 global isometry does not require a separate end-height certificate. Normal-cover
 selection and Euler counting follow.

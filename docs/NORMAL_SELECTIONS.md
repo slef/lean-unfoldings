@@ -41,6 +41,11 @@ nonoverlap and counting remain to be proved.
 - [x] Continue those actual projected stems for arbitrary finite terminal durations,
   preserving every original bank point, the exact appended ray vector, routing,
   length bounds, positive source margins and strict radial progress.
+- [x] Construct actual closed whole-roof cuts at every processing stage, from the
+  initial outer tails to the final original forest. Match each finite retained
+  complex to its actual graph-patch cut metric. Whole metrics are complete and
+  partition independent; restoration preserves spatial points and commutes with
+  changing partitions.
 - [x] Construct complete physical fine paths, preserving exact metric copies and traces,
   old fan angles, all ordered real headings, arclength and every radial margin.
 - [x] Construct entire actual Jordan traversals from radial closure geometry, deriving

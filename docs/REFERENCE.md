@@ -3537,3 +3537,19 @@ corners and does not yet identify their widths with the actual retained cap fan.
   durations inherit length bounds, positive source margins, strict radial sources
   and radial order from every earlier point. These are projected continuations;
   identifying their intrinsic whole-cut bank copies remains separate work.
+
+- [`ProjectedRemovedSeams`](../Unfoldings/Roof/ProjectedRemovedSeams.lean),
+  [`SpatialEnvelopeProjectedRemovedSeams`](../Unfoldings/Roof/SpatialEnvelopeProjectedRemovedSeams.lean):
+  any original retained-seam complex has exactly the physical cut metric of its
+  removed projected edges, preserving original face tags, endpoint copies and folds.
+- [`OpenSeamInterior`](../Unfoldings/Roof/OpenSeamInterior.lean),
+  [`TruncatedCutEnds`](../Unfoldings/Roof/TruncatedCutEnds.lean):
+  whole incident-face neighborhoods put every open paired seam inside the footprint.
+  Nonterminal original cut points lie strictly below the truncation level.
+- [`CompatibleProcessedCarrier`](../Unfoldings/Roof/CompatibleProcessedCarrier.lean):
+  construct every intermediate whole-roof cut from fixed outer tails and processed
+  original seams. These are closed subsets of the original forest, initially only
+  outer tails and finally the full forest. Actual finite retained complexes have the
+  exact corresponding graph-patch cut metrics. Whole metrics are complete and
+  partition independent; nonexpanding restoration maps retain spatial points and
+  commute with changing partitions.

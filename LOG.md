@@ -2,6 +2,24 @@
 
 ## Session Log
 
+### 2026-11-16 — actual intermediate whole-roof cut metrics
+
+- Constructed exact projected physical cuts for arbitrary original retained-seam sets,
+  preserving original face tags, endpoint copies and spatial folds.
+- Proved that every open paired seam lies inside the footprint and avoids the fixed
+  outer tails. Actual current finite retained complexes therefore have exactly the
+  graph-patch metrics of their intermediate whole-roof cuts.
+- Constructed each closed intermediate whole carrier from outer tails and processed
+  original seams. The initial carrier consists only of outer tails; complete processing
+  gives the entire original forest. No padding cuts are added at unused flat roots.
+- Derived complete, partition-independent whole cut metrics and nonexpanding stage
+  restoration maps. Spatial points are preserved, and restoration commutes with changing
+  the original whole-roof partition.
+- Verification: actual cache retrieval and full `lake build` passed 6,107 jobs;
+  17,448 unfolding declarations passed the standard-axiom audit, and both abstract
+  independence checks passed. Whole-ball identifications at intermediate joins,
+  completion fans, saved-frontier placement and complete graft nonoverlap remain open.
+
 ### 2026-11-16 — derived terminal joins and arbitrary finite rootward continuations
 
 - Proved that nonempty selected parent orbits reach used rim roots, excluding unused
