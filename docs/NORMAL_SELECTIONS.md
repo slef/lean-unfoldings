@@ -46,6 +46,10 @@ nonoverlap and counting remain to be proved.
   complex to its actual graph-patch cut metric. Whole metrics are complete and
   partition independent; restoration preserves spatial points and commutes with
   changing partitions.
+- [x] Preserve whole intrinsic balls and original bank copies between the actual
+  current finite retained mesh and its complete intermediate whole cut, at every
+  point strictly below the truncation. Derive all cut and mesh geometry from the
+  original processing stage, allowing arbitrary original whole-roof partitions.
 - [x] Construct complete physical fine paths, preserving exact metric copies and traces,
   old fan angles, all ordered real headings, arclength and every radial margin.
 - [x] Construct entire actual Jordan traversals from radial closure geometry, deriving

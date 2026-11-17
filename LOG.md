@@ -2,6 +2,21 @@
 
 ## Session Log
 
+### 2026-11-16 — whole intrinsic neighborhoods at every intermediate processing stage
+
+- Extended actual polygonal windows, physical finite mesh equivalences and paired
+  triangle charts to every closed partial original forest cut.
+- Constructed nonexpanding current-mesh inclusions into the actual complete intermediate
+  whole-roof cuts. They preserve every spatial point and give a whole intrinsic ball
+  around every original intermediate bank copy strictly below the truncation level.
+- All cut, mesh and retained-seam geometry is derived from the original processing
+  stage; the whole-roof partition is arbitrary. Existing public theorem statements
+  remain unchanged.
+- Verification: actual cache retrieval and full `lake build` passed 6,112 jobs;
+  17,503 unfolding declarations passed the standard-axiom audit, and both abstract
+  independence checks passed. Intrinsic terminal joins, completion fans, saved-frontier
+  placement and complete graft nonoverlap remain open.
+
 ### 2026-11-16 — actual intermediate whole-roof cut metrics
 
 - Constructed exact projected physical cuts for arbitrary original retained-seam sets,

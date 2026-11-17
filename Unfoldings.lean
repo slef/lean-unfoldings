@@ -2173,3 +2173,8 @@ public import Unfoldings.Roof.SpatialEnvelopeProjectedRemovedSeams
 public import Unfoldings.Roof.OpenSeamInterior
 public import Unfoldings.Roof.TruncatedCutEnds
 public import Unfoldings.Roof.CompatibleProcessedCarrier
+public import Unfoldings.Roof.CompatiblePartialWindowPatch
+public import Unfoldings.Roof.CompatiblePartialWindowMesh
+public import Unfoldings.Roof.CompatiblePartialWindowMeshCharts
+public import Unfoldings.Roof.CompatiblePartialWindowPairedMesh
+public import Unfoldings.Roof.CompatibleProcessedMeshCharts

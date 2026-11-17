@@ -897,8 +897,10 @@ continuations retain every original bank point and all radial and length bounds 
 arbitrary finite terminal durations. Actual intermediate whole-roof cuts now run from
 fixed outer tails to the complete original forest. They have complete, partition-independent
 metrics and nonexpanding restoration maps preserving spatial points; the finite retained
-complexes have the exact corresponding graph-patch cut metrics. Whole-neighborhood bank
-identifications at the joins, completion fans at the truncation, admissible comparison
+complexes have the exact corresponding graph-patch cut metrics. Every intermediate
+whole-cut bank copy strictly below truncation now has a whole intrinsic neighborhood
+in its actual current finite retained mesh. Whole-neighborhood bank identifications
+at the terminal joins, completion fans at the truncation, admissible comparison
 windows, saved-frontier transport and the complete flat graft remain open.
 See the [gap-grafting checklist](docs/NORMAL_SELECTIONS.md#gap-grafting-status). The finite-cell route to
 global isometry does not require a separate end-height certificate. Normal-cover

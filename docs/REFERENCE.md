@@ -3553,3 +3553,16 @@ corners and does not yet identify their widths with the actual retained cap fan.
   exact corresponding graph-patch cut metrics. Whole metrics are complete and
   partition independent; nonexpanding restoration maps retain spatial points and
   commute with changing partitions.
+
+- [`CompatiblePartialWindowPatch`](../Unfoldings/Roof/CompatiblePartialWindowPatch.lean),
+  [`CompatiblePartialWindowMesh`](../Unfoldings/Roof/CompatiblePartialWindowMesh.lean):
+  polygonal windows retain actual original copies for every closed partial forest cut.
+  Their physical meshes have exactly the same cut metrics, preserving spatial points.
+- [`CompatiblePartialWindowMeshCharts`](../Unfoldings/Roof/CompatiblePartialWindowMeshCharts.lean),
+  [`CompatiblePartialWindowPairedMesh`](../Unfoldings/Roof/CompatiblePartialWindowPairedMesh.lean):
+  partial-cut finite mesh inclusions preserve whole intrinsic balls of original bank
+  copies, including their actual original retained corner classes and spatial folds.
+- [`CompatibleProcessedMeshCharts`](../Unfoldings/Roof/CompatibleProcessedMeshCharts.lean):
+  every actual intermediate whole-cut bank copy strictly below the truncation has a
+  whole intrinsic neighborhood in its constructed current finite retained mesh.
+  All physical mesh, cut and retained-seam data are derived from the processing stage.
