@@ -2,6 +2,21 @@
 
 ## Session Log
 
+### 2026-11-17 — uniform small-loss accuracy for actual complete rootward banks
+
+- Chose a local heading budget and normal-tilt threshold before every mesh,
+  retained cut set, source, bank and later rim. All smaller positive tilts work.
+- Every eligible actual radial mesh bank now has the prescribed aligned chord
+  error and intrinsic length constant, derived entirely from physical geometry.
+- Applied the uniform construction to complete actual rootward banks through every
+  later rim. The same chain retains original endpoint copies, full stem-plus-tail
+  carrier, physical comparison/radial data and the requested quantitative accuracy.
+- Verification: actual cache retrieval followed by full `lake build` passed 6,311
+  jobs; 19,145 unfolding declarations passed the standard-axiom audit, and both
+  abstract independence checks passed. Existing theorem statements are unchanged.
+- Matching physical saved-frontier curves and untouched original sides through
+  successive gap attachments, and the complete flat graft, remain open.
+
 ### 2026-11-17 — complete actual rootward weighted rolling data
 
 - Actual edge radial gains telescope to total and prefix length bounds. A positive

@@ -1037,8 +1037,10 @@ physical and intrinsic rolling coordinates. Weighted chord, intrinsic length and
 radial-margin estimates follow from the original physical path estimates, allowing
 arbitrary winding. Physical radial gains now derive all prefix and total length
 estimates, and one complete actual rootward chain has both the constructed
-comparisons and every required radial datum. Uniform numerical small-loss choices,
-saved-frontier transport and the complete flat graft remain open.
+comparisons and every required radial datum. Uniform numerical small-loss choices
+now precede every mesh and cut stage, producing the requested chord accuracy and
+intrinsic length bound on complete actual banks through every later rim. Matching
+physical saved-frontier updates and the complete flat graft remain open.
 See the [gap-grafting checklist](docs/NORMAL_SELECTIONS.md#gap-grafting-status). The finite-cell route to
 global isometry does not require a separate end-height certificate. Normal-cover
 selection and Euler counting follow.

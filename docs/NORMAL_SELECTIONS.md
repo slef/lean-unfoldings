@@ -337,7 +337,9 @@ nonoverlap and counting remain to be proved.
   estimates for the entire bank, allowing arbitrary winding. One actual complete
   chain now has both the comparisons and physical radial data; radial progress
   derives all prefix and total length hypotheses.
-- [ ] Choose uniform numerical small-loss thresholds for the actual complete chains.
+- [x] Choose uniform numerical small-loss thresholds for actual complete chains.
+  The prescribed chord accuracy and intrinsic length bound hold on the same
+  constructed rootward bank through every later rim, at every smaller normal tilt.
 - [ ] Carry physical saved-frontier curves and their untouched original sides through
   actual prior gap attachments. Apply the local metric remainder models to those updates.
 - [ ] Assemble the complete graft and prove completeness, simple connectivity and local
@@ -360,8 +362,10 @@ uniformly small heading error. Complete source-to-new-rim chains now carry the s
 physical comparison windows and quantitative radial data, including the whole outer
 tail. Exact projected real headings give the genuine local polar-window bound.
 Weighted chord, intrinsic length and radial-margin estimates follow; radial progress
-derives all input length bounds. Uniform numerical small-loss choices and carrying
-the saved frontier through inserted gaps remain open, along with the complete flat graft.
+derives all input length bounds. Uniform numerical small-loss choices now give the
+requested chord accuracy and intrinsic length bound on complete actual banks through
+every later rim. Carrying the saved frontier through inserted gaps and assembling
+the complete flat graft remain open.
 
 The completed local models and combinatorial histories do not assume these
 remaining geometric identifications. The paper's sharp numerical constants and

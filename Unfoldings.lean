@@ -2374,3 +2374,6 @@ public import Unfoldings.Geometry.RadialChainLength
 public import Unfoldings.Roof.SupportedRadialBankRolling
 public import Unfoldings.Roof.RadialBankComparisons
 public import Unfoldings.Roof.CompatibleRootwardRimRolling
+public import Unfoldings.Roof.BankRollAccuracy
+public import Unfoldings.Roof.UniformRadialBankRolling
+public import Unfoldings.Roof.CompatibleRootwardRimAccuracy
