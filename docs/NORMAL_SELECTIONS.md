@@ -380,6 +380,9 @@ nonoverlap and counting remain to be proved.
   untouched parent stem, deriving successors after restored contour excursions.
   Both fresh contour directions now construct the complete source-inclusive chain,
   with original parent labels and the true root endpoint; isolated unused roots are allowed.
+- [x] Preserve each chosen source bank's literal original oriented contour tag.
+  Its position in the named contour is unique and follows the actual source step;
+  endpoint labels are not used to choose a cut side.
 - [x] Identify the complete actual compatible source bank's projected parent history.
   Derive its routing and interior bank starts, then uniform intrinsic whole-point
   radial order, including the original source edge and one-edge rim returns.

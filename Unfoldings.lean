@@ -2455,3 +2455,4 @@ public import Unfoldings.Complex.RootwardChainLabels
 public import Unfoldings.Complex.RootwardBankRestoration
 public import Unfoldings.Complex.CompleteSourceReference
 public import Unfoldings.Roof.CompatibleFreshSourceReference
+public import Unfoldings.Complex.FreshSourceContourBanks

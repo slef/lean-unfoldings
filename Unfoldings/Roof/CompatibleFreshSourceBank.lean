@@ -1,6 +1,7 @@
 module
 
 public import Unfoldings.Roof.CompatibleSourceBankGeometry
+public import Unfoldings.Complex.FreshSourceContourBanks
 public import Unfoldings.Roof.UniformSourceStartRoutedBankRolling
 
 /-! Construct actual source-inclusive compatible banks and derive their intrinsic radial order. -/
@@ -66,7 +67,7 @@ def compatibleMeshFreshSourceBankChain
     (span : (Fcut).parents.distanceToRoot
       ((T).pairedComplex.contourOriginalVertex (Fcut).selection contour j.castSucc) = m + 1) :
     ((T).pairedComplex.boundarySystem RetainAt[contour,j.succ]).Chain m :=
-  ((T).pairedFolding.exists_freshSourceBankChain (Fcut).selection (Fcut).boundary_roots contour
+  ((T).pairedFolding.exists_contourSourceBankChain (Fcut).selection (Fcut).boundary_roots contour
     starts j fresh m span).choose
 
 local notation "ChainAt[" q "," h "," i "," hf "," n "," hn "]" =>
@@ -89,8 +90,47 @@ theorem compatibleMeshFreshSourceBankChain_original
     (T).pairedComplex.vertexForgetCuts (Set.subset_univ _)
       ((T).pairedComplex.boundaryEndVertex _ ((ChainAt[contour,starts,j,fresh,m,span]).point k)) =
         (Fcut).parents.parent^[k.val] SourceAt[contour,j.castSucc] :=
-  ((T).pairedFolding.exists_freshSourceBankChain (Fcut).selection (Fcut).boundary_roots contour
+  ((T).pairedFolding.exists_contourSourceBankChain (Fcut).selection (Fcut).boundary_roots contour
     starts j fresh m span).choose_spec.1 k
+
+/-- Every chosen bank keeps its literal oriented contour tag at or after the source step. -/
+theorem compatibleMeshFreshSourceBankChain_contour
+    (contour : (T).pairedComplex.BoundaryContour
+      ((T).pairedComplex.selectedRetain (Fcut).selection))
+    (starts : (T).pairedComplex.contourOriginalVertex (Fcut).selection contour 0 ∈
+      (Fcut).parents.roots)
+    (j : Fin contour.length)
+    (fresh : (T).pairedComplex.contourOriginalVertex (Fcut).selection contour j.castSucc ∉
+      ((T).pairedComplex.contourFrontier (Fcut).selection contour j.castSucc).processed)
+    (m : ℕ)
+    (span : (Fcut).parents.distanceToRoot
+      ((T).pairedComplex.contourOriginalVertex (Fcut).selection contour j.castSucc) = m + 1)
+    (k : Fin (m + 1)) :
+    ∃ i : Fin (contour.length + 1), j.val ≤ i.val ∧
+      ((ChainAt[contour,starts,j,fresh,m,span]).point k).val = (contour.cycle.point i).val :=
+  ((T).pairedFolding.exists_contourSourceBankChain (Fcut).selection (Fcut).boundary_roots contour
+    starts j fresh m span).choose_spec.2.2 k
+
+/-- The named contour position of each actual chosen bank is unique. -/
+theorem compatibleMeshFreshSourceBankChain_contour_unique
+    (contour : (T).pairedComplex.BoundaryContour
+      ((T).pairedComplex.selectedRetain (Fcut).selection))
+    (starts : (T).pairedComplex.contourOriginalVertex (Fcut).selection contour 0 ∈
+      (Fcut).parents.roots)
+    (j : Fin contour.length)
+    (fresh : (T).pairedComplex.contourOriginalVertex (Fcut).selection contour j.castSucc ∉
+      ((T).pairedComplex.contourFrontier (Fcut).selection contour j.castSucc).processed)
+    (m : ℕ)
+    (span : (Fcut).parents.distanceToRoot
+      ((T).pairedComplex.contourOriginalVertex (Fcut).selection contour j.castSucc) = m + 1)
+    (k : Fin (m + 1)) :
+    ∃! i : Fin (contour.length + 1), j.val ≤ i.val ∧
+      ((ChainAt[contour,starts,j,fresh,m,span]).point k).val = (contour.cycle.point i).val := by
+  obtain ⟨i, future, named⟩ := K.compatibleMeshFreshSourceBankChain_contour compact nonempty R
+    no_boundary level higher M positive inner_disk beta acute contour starts j fresh m span k
+  refine ⟨i, ⟨future, named⟩, ?_⟩
+  intro l other
+  exact contour.cycle.injective (Subtype.ext (other.2.symm.trans named))
 
 /-- The actual last bank reaches the original root of the source. -/
 theorem compatibleMeshFreshSourceBankChain_terminal_original
@@ -108,8 +148,8 @@ theorem compatibleMeshFreshSourceBankChain_terminal_original
       ((T).pairedComplex.boundaryEndVertex _ ((T).pairedComplex.boundaryTurn _
         (ChainAt[contour,starts,j,fresh,m,span]).last)) =
         (Fcut).parents.root SourceAt[contour,j.castSucc] :=
-  ((T).pairedFolding.exists_freshSourceBankChain (Fcut).selection (Fcut).boundary_roots contour
-    starts j fresh m span).choose_spec.2
+  ((T).pairedFolding.exists_contourSourceBankChain (Fcut).selection (Fcut).boundary_roots contour
+    starts j fresh m span).choose_spec.2.1
 
 /-- Actual routing is derived for the entire source-starting bank. -/
 theorem compatibleMeshFreshSourceBankChain_follows

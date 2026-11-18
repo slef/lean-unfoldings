@@ -2,6 +2,22 @@
 
 ## Session Log
 
+### 2026-11-18 — preserve source-bank contour sides through construction
+
+- Strengthened the fresh-source existence witness with the literal original
+  oriented contour tag of every bank, at or after its actual source step.
+  Return-source and processed parent-stem constructions provide those tags.
+- Tightened the compatible mesh constructor to choose from this stronger witness.
+  Original endpoint labels alone do not select a cut side. Existing theorem
+  statements and all geometric conclusions are preserved; each bank now has a
+  proved unique position in the named contour.
+- Verification: actual cache retrieval and final full `lake build` passed 6,391
+  jobs. All 19,530 unfolding declarations passed the standard-axiom audit; both
+  abstract independence checks passed. Existing declaration signatures were checked
+  against the previous commit and are unchanged.
+- Marked saved-frontier transport through attached gaps, physical terminal-tail
+  identification, and the complete flat graft with global nonoverlap remain open.
+
 ### 2026-11-18 — uniform canonical gaps on complete actual source banks
 
 - Strengthened source-starting rolling to retain a fixed positive all-anchor

@@ -4074,3 +4074,6 @@ corners and does not yet identify their widths with the actual retained cap fan.
   [`CompatibleFreshSourceReference`](../Unfoldings/Roof/CompatibleFreshSourceReference.lean):
   restore complete actual source banks to their original ancestor-path cuts,
   retaining every closed bank point, true endpoint, real heading and intrinsic roll.
+- [`FreshSourceContourBanks`](../Unfoldings/Complex/FreshSourceContourBanks.lean):
+  construct complete source banks with their literal original oriented contour
+  tags. The compatible mesh constructor retains these tags and their unique indices.
