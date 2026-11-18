@@ -2,6 +2,21 @@
 
 ## Session Log
 
+### 2026-11-17 — complete actual rootward weighted rolling data
+
+- Actual edge radial gains telescope to total and prefix length bounds. A positive
+  margin gives reciprocal-margin length-to-chord control on every physical chain.
+- Removed supplied prefix and total length estimates from the weighted rolling
+  corollaries: they now follow from the original physical radial margin.
+- One complete actual source-to-new-rim chain now carries both its constructed cap
+  windows and the radial data needed for those rolling estimates, together with
+  exact original endpoint copies and its full projected stem-plus-tail carrier.
+- Verification: actual cache retrieval followed by full `lake build` passed 6,308
+  jobs; 19,126 unfolding declarations passed the standard-axiom audit, and both
+  abstract independence checks passed. Existing theorem statements are unchanged.
+- Uniform numerical small-loss choices for these actual chains, saved-frontier
+  transport and full graft nonoverlap remain open.
+
 ### 2026-11-17 — weighted rolling from actual physical bank comparisons
 
 - Eliminated auxiliary meshes and trims from local phase bounds. The original

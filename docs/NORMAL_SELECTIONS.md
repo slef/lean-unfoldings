@@ -332,9 +332,12 @@ nonoverlap and counting remain to be proved.
   segment, preserve the original whole roof over the Jordan region, and obtain
   the actual small bank-rolling estimate with one tilt for all durations.
 
-- [ ] Extend the actual rootward bank-window comparisons through arbitrary outer
-  terminal portions. Assemble enough windows with a uniform weighted polar-block
-  estimate for the entire developed bank.
+- [x] Extend actual rootward bank-window comparisons through arbitrary outer
+  terminal portions. Derive weighted polar-block chord, intrinsic length and radial
+  estimates for the entire bank, allowing arbitrary winding. One actual complete
+  chain now has both the comparisons and physical radial data; radial progress
+  derives all prefix and total length hypotheses.
+- [ ] Choose uniform numerical small-loss thresholds for the actual complete chains.
 - [ ] Carry physical saved-frontier curves and their untouched original sides through
   actual prior gap attachments. Apply the local metric remainder models to those updates.
 - [ ] Assemble the complete graft and prove completeness, simple connectivity and local
@@ -353,9 +356,12 @@ completion. Complete rootward chains through each new rim now have actual physic
 completion refinements, with exact carriers, endpoint copies, one-sided fan angles
 and real heading sets. Actual short intervals of current rootward stems now
 construct respected physical windows with their complete original real turns and
-uniformly small heading error. Extending this comparison through arbitrary outer
-terminal portions, proving the weighted polar-block estimate and carrying the saved
-frontier through already inserted gaps still need proof. The complete flat graft remains open.
+uniformly small heading error. Complete source-to-new-rim chains now carry the same
+physical comparison windows and quantitative radial data, including the whole outer
+tail. Exact projected real headings give the genuine local polar-window bound.
+Weighted chord, intrinsic length and radial-margin estimates follow; radial progress
+derives all input length bounds. Uniform numerical small-loss choices and carrying
+the saved frontier through inserted gaps remain open, along with the complete flat graft.
 
 The completed local models and combinatorial histories do not assume these
 remaining geometric identifications. The paper's sharp numerical constants and

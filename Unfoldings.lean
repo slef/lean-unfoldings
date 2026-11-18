@@ -2370,3 +2370,7 @@ public import Unfoldings.Roof.SupportedBankPolarErrors
 public import Unfoldings.Roof.ProjectedBankFrames
 public import Unfoldings.Roof.SupportedBankWeightedRolling
 public import Unfoldings.Roof.SupportedBankWeightedConsequences
+public import Unfoldings.Geometry.RadialChainLength
+public import Unfoldings.Roof.SupportedRadialBankRolling
+public import Unfoldings.Roof.RadialBankComparisons
+public import Unfoldings.Roof.CompatibleRootwardRimRolling
