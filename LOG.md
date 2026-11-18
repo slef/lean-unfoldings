@@ -2,6 +2,23 @@
 
 ## Session Log
 
+### 2026-11-17 — actual intrinsic rootward banks are radially monotone
+
+- Local heading comparisons now align every prefix with its next outgoing edge,
+  without charging the outgoing edge's length or variation to that prefix.
+- Preserved exact polar windows on every consecutive subhistory. Weighted rolling
+  transports all physical anchor-to-edge margins to the original intrinsic roll.
+- Actual compatible routing supplies all those physical margins. Complete actual
+  rootward banks now have whole-point intrinsic radial order through every later
+  rim, simultaneously with exact endpoint copies, carriers and uniform accuracy.
+- Replaced arithmetic proofs embedded in the new interval hypotheses by a named
+  public bound after the full build exposed a module-export failure.
+- Verification: actual cache retrieval followed by full `lake build` passed 6,337
+  jobs; 19,264 unfolding declarations passed the standard-axiom audit, and both
+  abstract independence checks passed. Existing theorem statements are unchanged.
+- Matching the physical saved frontier through actual attached gaps and assembling
+  the complete flat graft remain open.
+
 ### 2026-11-17 — simultaneous routing and accuracy on complete rootward banks
 
 - Actual finite stems retain their original compatible routing while preserving

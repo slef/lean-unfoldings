@@ -2394,3 +2394,12 @@ public import Unfoldings.Roof.CompatibleComparisonFollowsRefinement
 public import Unfoldings.Roof.CompatibleRootwardFollowsHeading
 public import Unfoldings.Roof.CompatibleRootwardRimFollows
 public import Unfoldings.Roof.CompatibleRootwardRimRoutedAccuracy
+public import Unfoldings.Geometry.ComplexFrameSubhistories
+public import Unfoldings.Geometry.EndpointHeadingBudget
+public import Unfoldings.Geometry.HeadingBudgetInterval
+public import Unfoldings.Geometry.NextEdgeRadialBlocks
+public import Unfoldings.Geometry.RadialBlockSubhistories
+public import Unfoldings.Roof.CompatibleRootwardRimRadialRolling
+public import Unfoldings.Roof.CompatibleRoutedBankRolling
+public import Unfoldings.Roof.RadialBankSubhistoryRolling
+public import Unfoldings.Roof.SupportedBankNextEdge

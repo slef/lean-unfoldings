@@ -343,6 +343,10 @@ nonoverlap and counting remain to be proved.
 - [x] Construct the untouched passed original contour side at each later cut stage.
   Its closed metric trace, physical projection, real phase error, intrinsic roll
   and quantitative accuracy bounds are preserved exactly under restoration.
+- [x] Preserve actual compatible routing on complete rootward banks and transfer
+  every physical subhistory margin to the original intrinsic roll. Local windows
+  align prefixes with their next outgoing edge without charging that edge's length.
+  The complete rolled bank has whole-point radial order through every later rim.
 - [ ] Carry physical saved-frontier curves and their untouched original sides through
   actual prior gap attachments. Apply the local metric remainder models to those updates.
 - [ ] Assemble the complete graft and prove completeness, simple connectivity and local
@@ -367,7 +371,9 @@ tail. Exact projected real headings give the genuine local polar-window bound.
 Weighted chord, intrinsic length and radial-margin estimates follow; radial progress
 derives all input length bounds. Uniform numerical small-loss choices now give the
 requested chord accuracy and intrinsic length bound on complete actual banks through
-every later rim. Carrying the saved frontier through inserted gaps and assembling
+every later rim. The same actual routed banks now retain explicit intrinsic
+subhistory margins and radial order from all earlier points inside edges.
+Carrying the saved frontier through inserted gaps and assembling
 the complete flat graft remain open.
 
 The completed local models and combinatorial histories do not assume these
