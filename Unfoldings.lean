@@ -2355,3 +2355,11 @@ public import Unfoldings.Roof.CompletionProjectedFaceAngles
 public import Unfoldings.Roof.CompletionProjectedSubdivision
 public import Unfoldings.Roof.CompletionProjectedSubdivisionAngles
 public import Unfoldings.Complex.AffineProjectionSubdivisionVertices
+public import Unfoldings.Complex.AffineProjectionSubdivisionPoints
+public import Unfoldings.Roof.CompletionProjectedFaceStraightAngles
+public import Unfoldings.Roof.CompletionProjectedInsertedAngles
+public import Unfoldings.Roof.CompletionProjectedBankFans
+public import Unfoldings.Roof.CompletionProjectedChainFans
+public import Unfoldings.Roof.CompletionProjectedChainHeading
+public import Unfoldings.Roof.CompletionProjectedCapHeading
+public import Unfoldings.Roof.CompletionProjectedBankWindow

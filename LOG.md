@@ -2,6 +2,22 @@
 
 ## Session Log
 
+### 2026-11-17 — complete original real projected headings through physical windows
+
+- Proved exact projected full-plane and half-plane fans at inserted vertices in
+  old faces and open cut banks, with their actual retained copies.
+- Original arclength parameters place every inserted physical bank hinge strictly
+  inside its old bank. It contributes zero projected turn. Every fine heading
+  prefix equals its original projected prefix as a real number.
+- Vertical cap normalization preserves these same real headings. A constructed
+  trimmed physical window has exactly its untrimmed original projected terminal
+  heading, and its complete real phase error is the original chain's error.
+- Verification: actual cache retrieval followed by full `lake build` passed 6,297
+  jobs; 19,060 unfolding declarations passed the standard-axiom audit, and both
+  abstract independence checks passed. Existing theorem statements are unchanged.
+- Applying this identity to weighted local rolling, saved-frontier transport and
+  full graft nonoverlap remain open.
+
 ### 2026-11-17 — exact original projected fan angles in physical completions
 
 - Embedded physical face patches in their actual projected metric, covering each
