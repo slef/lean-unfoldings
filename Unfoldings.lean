@@ -2403,3 +2403,8 @@ public import Unfoldings.Roof.CompatibleRootwardRimRadialRolling
 public import Unfoldings.Roof.CompatibleRoutedBankRolling
 public import Unfoldings.Roof.RadialBankSubhistoryRolling
 public import Unfoldings.Roof.SupportedBankNextEdge
+public import Unfoldings.Geometry.OutgoingBankRay
+public import Unfoldings.Geometry.PositiveOpeningMarginGap
+public import Unfoldings.Geometry.RadialSubhistoryLength
+public import Unfoldings.Roof.CompatibleRoutedBankGap
+public import Unfoldings.Roof.RadialBankOpeningGap

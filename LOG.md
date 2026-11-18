@@ -2,6 +2,23 @@
 
 ## Session Log
 
+### 2026-11-17 — complete opening gaps from actual routed intrinsic banks
+
+- All-anchor radial margins derive the finite and terminal subhistory length
+  bounds required for opening traces. The final actual outgoing edge constructs
+  an unbounded bank retaining every original finite bank point.
+- One small total opening budget implies both radial and circle-control budgets
+  and every individual angle bound; these are no longer separate supplied inputs.
+- Actual compatible routing and physical cap comparisons now construct complete,
+  contractible Jordan gaps between the continued original intrinsic bank and its
+  positively opened bank. The construction includes nonempty regular-closed
+  regions and finite convex-cell decompositions with disjoint interiors.
+- Verification: actual cache retrieval followed by full `lake build` passed 6,343
+  jobs; 19,285 unfolding declarations passed the standard-axiom audit, and both
+  abstract independence checks passed. Existing theorem statements are unchanged.
+- The opening list is still supplied. Its identification with the physical saved
+  frontier, attachment of gap cells and the complete flat graft remain open.
+
 ### 2026-11-17 — actual intrinsic rootward banks are radially monotone
 
 - Local heading comparisons now align every prefix with its next outgoing edge,

@@ -347,6 +347,10 @@ nonoverlap and counting remain to be proved.
   every physical subhistory margin to the original intrinsic roll. Local windows
   align prefixes with their next outgoing edge without charging that edge's length.
   The complete rolled bank has whole-point radial order through every later rim.
+- [x] Construct complete Jordan opening gaps from actual routed intrinsic banks,
+  including the last outgoing edge's infinite continuation and finite convex cells.
+  One small total opening budget derives all length, radial and angle hypotheses.
+  The opening list is supplied; its physical saved-frontier identification remains open.
 - [ ] Carry physical saved-frontier curves and their untouched original sides through
   actual prior gap attachments. Apply the local metric remainder models to those updates.
 - [ ] Assemble the complete graft and prove completeness, simple connectivity and local

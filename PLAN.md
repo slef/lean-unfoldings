@@ -1052,7 +1052,11 @@ together with its uniform rolling accuracy and physical comparison data. Existin
 subhistory margins now transfer to the original intrinsic roll, with a positive
 explicit remaining margin against every outgoing edge. The complete intrinsic
 bank is radially monotone from all earlier points, including points inside edges,
-uniformly through every later rim. Transport through attached gap cells remains open.
+uniformly through every later rim. Actual routed intrinsic banks now construct
+complete positive opening gaps with finite convex-cell decompositions; one total
+opening budget derives all required length, radial and angle bounds. The opening
+list is still supplied. Identifying it with the saved frontier and transporting
+through attached gap cells remain open.
 See the [gap-grafting checklist](docs/NORMAL_SELECTIONS.md#gap-grafting-status). The finite-cell route to
 global isometry does not require a separate end-height certificate. Normal-cover
 selection and Euler counting follow.
