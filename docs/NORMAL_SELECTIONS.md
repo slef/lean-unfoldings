@@ -8,11 +8,15 @@ nonoverlap and counting remain to be proved.
 
 ## Gap-grafting status
 
+- [x] Identify the entire actual trimmed physical bank carrier and its closing curve
+  with the original geometric trims. Transfer radial order for perturbed sources.
+  Every short source-ray window on an actual original cut-bank chain now constructs
+  a respected physical cap and a uniformly small original real-heading error,
+  deriving the trims, generic source, supported Jordan closure and all fine geometry.
 - [x] Marked trim endpoints now derive ordered actual fine-bank starting indices.
   Extract their intrinsic bank interval with both exact projected trim points and
   literal cut-side endpoint copies. Its real terminal heading equals the original
-  chain's full heading, with every original internal turn retained. Equality with
-  the entire geometric trimmed carrier is still to be proved.
+  chain's full heading, with every original internal turn retained.
 - [x] Derive exact spatial arclength parameters for every physical cap bank piece.
   The actual cap retains radial order, the complete projected carrier, both
   endpoints and the original Jordan closure. Original supported radial cut-bank

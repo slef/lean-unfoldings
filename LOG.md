@@ -2,6 +2,25 @@
 
 ## Session Log
 
+### 2026-11-17 — whole actual trimmed carriers and uniform original bank comparisons
+
+- Radial coordinates now identify complete subpath carriers with matching endpoints,
+  even with different subdivisions and flat repetitions. Other radial sources
+  respect this order on actual points.
+- The actual trimmed cap bank equals the entire geometric trimmed path and its
+  full closing curve. Radial geometry transfers for a perturbed comparison source,
+  independently of the original controlling source.
+- Original supported radial trim geometry now constructs a respected physical cap
+  and controls the complete original real terminal heading on the actual window.
+  Short source-ray geometry constructs the generic trims, arbitrarily close source,
+  supported Jordan closure and every physical window datum. One tilt controls all
+  meshes and paths without fine-chain, side or fan correspondence certificates.
+- Verification: actual cache retrieval followed by full `lake build` passed 6,242
+  jobs; 18,638 unfolding declarations passed the standard-axiom audit, and both
+  abstract independence checks passed. Existing theorem statements are unchanged.
+- Applying the bounds to sufficient actual rootward windows, saved-frontier transport
+  and complete graft nonoverlap remain open.
+
 ### 2026-11-17 — actual trimmed intrinsic bank windows and complete original turns
 
 - Added exact consecutive paired-involution chain intervals. Every actual bank

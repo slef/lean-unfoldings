@@ -3922,3 +3922,20 @@ corners and does not yet identify their widths with the actual retained cap fan.
 - [`CompletionOriginalBankWindowGeometry`](../Unfoldings/Roof/CompletionOriginalBankWindowGeometry.lean):
   trimmed physical windows retain both original projected endpoints and their
   literal intrinsic cut-side endpoint copies.
+
+- [`RadialTraceComparison`](../Unfoldings/Geometry/RadialTraceComparison.lean):
+  radial subpaths in one ambient carrier agree exactly when their endpoints agree;
+  a second radial source respects the controlling radial order on actual points.
+- [`CompletionOriginalBankWindowTrace`](../Unfoldings/Roof/CompletionOriginalBankWindowTrace.lean):
+  the actual physical bank window has exactly the whole geometric trimmed carrier
+  and closing curve, retaining radial order even for a perturbed comparison source.
+- [`TrimmedOriginalBankComparison`](../Unfoldings/Roof/TrimmedOriginalBankComparison.lean):
+  original radial trim geometry constructs a respected cap and a uniformly small
+  original real terminal-heading error, deriving the full actual bank window.
+- [`ProjectedBankDirections`](../Unfoldings/Roof/ProjectedBankDirections.lean):
+  every spatial roof-edge germ and every actual projected bank edge is nonzero.
+- [`SupportedOriginalBankWindow`](../Unfoldings/Roof/SupportedOriginalBankWindow.lean):
+  short source-ray geometry on an actual original cut-bank chain constructs its
+  generic trims, arbitrarily close regular source, supported Jordan closure,
+  respected cap and uniformly small original real-heading error. No proposed
+  fine-chain, closure, side or fan matching certificate is supplied.

@@ -993,9 +993,13 @@ tilt and roof height preserved throughout the closed Jordan region. Marked trim
 endpoints now derive their actual fine-bank indices in the correct original
 order. The extracted intrinsic interval retains both literal cut-side endpoints,
 the exact projected trim points and the complete original real terminal heading.
-Equality of this actual window's whole projected carrier with the geometric
-trimmed path, sufficient admissible windows, saved-frontier transport and the
-complete flat graft remain open.
+The actual trimmed physical carrier and its closing curve now equal the whole
+geometric trims. Radial order transfers even for perturbed comparison sources.
+Short source-ray geometry on any actual original cut-bank chain now constructs
+its generic trims, supported Jordan closure, respected physical cap and a small
+original real terminal-heading error, deriving all fine geometry and incident sides
+with one uniform tilt. Applying these bounds to enough actual rootward windows,
+saved-frontier transport and the complete flat graft remain open.
 See the [gap-grafting checklist](docs/NORMAL_SELECTIONS.md#gap-grafting-status). The finite-cell route to
 global isometry does not require a separate end-height certificate. Normal-cover
 selection and Euler counting follow.

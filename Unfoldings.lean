@@ -2303,3 +2303,8 @@ public import Unfoldings.Roof.CompletionBankVertexParameters
 public import Unfoldings.Roof.MarkedOriginalBankWindows
 public import Unfoldings.Roof.CompletionOriginalBankWindow
 public import Unfoldings.Roof.CompletionOriginalBankWindowGeometry
+public import Unfoldings.Geometry.RadialTraceComparison
+public import Unfoldings.Roof.CompletionOriginalBankWindowTrace
+public import Unfoldings.Roof.TrimmedOriginalBankComparison
+public import Unfoldings.Roof.ProjectedBankDirections
+public import Unfoldings.Roof.SupportedOriginalBankWindow
