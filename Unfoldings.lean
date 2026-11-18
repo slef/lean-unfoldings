@@ -2408,3 +2408,10 @@ public import Unfoldings.Geometry.PositiveOpeningMarginGap
 public import Unfoldings.Geometry.RadialSubhistoryLength
 public import Unfoldings.Roof.CompatibleRoutedBankGap
 public import Unfoldings.Roof.RadialBankOpeningGap
+public import Unfoldings.Cap.ProcessedBankOpeningHistory
+public import Unfoldings.Geometry.AncestorOpeningHistory
+public import Unfoldings.Geometry.CanonicalAncestorOpenings
+public import Unfoldings.Geometry.FrontierOpeningHistory
+public import Unfoldings.Geometry.OpeningFilterZero
+public import Unfoldings.Topology.FirstAncestorIndex
+public import Unfoldings.Topology.ParentHistorySources

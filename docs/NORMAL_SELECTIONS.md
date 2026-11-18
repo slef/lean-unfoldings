@@ -351,6 +351,10 @@ nonoverlap and counting remain to be proved.
   including the last outgoing edge's infinite continuation and finite convex cells.
   One small total opening budget derives all length, radial and angle hypotheses.
   The opening list is supplied; its physical saved-frontier identification remains open.
+- [x] Construct canonical original-source opening lists from first-contact history.
+  First shared-ancestor hinges recover exact measured intermediate parent-bank
+  phases, with derived original labels, coverage, distinctness and curvature budget.
+  Removing flat events preserves the entire opened bank and its infinite tail.
 - [ ] Carry physical saved-frontier curves and their untouched original sides through
   actual prior gap attachments. Apply the local metric remainder models to those updates.
 - [ ] Assemble the complete graft and prove completeness, simple connectivity and local

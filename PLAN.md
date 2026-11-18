@@ -1055,8 +1055,12 @@ bank is radially monotone from all earlier points, including points inside edges
 uniformly through every later rim. Actual routed intrinsic banks now construct
 complete positive opening gaps with finite convex-cell decompositions; one total
 opening budget derives all required length, radial and angle bounds. The opening
-list is still supplied. Identifying it with the saved frontier and transporting
-through attached gap cells remain open.
+list also has a canonical construction from original first-contact source order:
+first shared-ancestor hinges recover actual measured intermediate parent-bank
+phases, with derived source coverage, distinctness and the total original
+curvature budget. Removing flat events preserves the entire opened geometry.
+Identifying the resulting bank with the physical saved frontier through attached
+gap cells, and assembling the complete flat graft, remain open.
 See the [gap-grafting checklist](docs/NORMAL_SELECTIONS.md#gap-grafting-status). The finite-cell route to
 global isometry does not require a separate end-height certificate. Normal-cover
 selection and Euler counting follow.

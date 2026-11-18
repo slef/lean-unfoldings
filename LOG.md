@@ -2,6 +2,24 @@
 
 ## Session Log
 
+### 2026-11-17 — canonical original-source opening histories
+
+- Constructed the first shared-ancestor index on every ordered finite parent path.
+  A source affects exactly the suffix beginning at that index.
+- Canonical source events retain first-contact order. Their unreduced bank phases
+  equal actual processed descendant weights, and their budget counts original
+  curvature once. Repeated input seeds require no distinctness certificate.
+- The actual first-contact history supplies each rooted component's original
+  source labels, with derived coverage and no duplicates. Flat events can be
+  removed without changing any phase, budget, opened vertex or infinite tail.
+- Identified these canonical phases with the actual measured intermediate
+  original parent-bank headings. All remaining curvature events are positive.
+- Verification: actual cache retrieval followed by full `lake build` passed 6,350
+  jobs; 19,325 unfolding declarations passed the standard-axiom audit, and both
+  abstract independence checks passed. Existing theorem statements are unchanged.
+- These are exact original-cut phase identifications. Physical saved-frontier
+  placement through prior gap attachments and the complete flat graft remain open.
+
 ### 2026-11-17 — complete opening gaps from actual routed intrinsic banks
 
 - All-anchor radial margins derive the finite and terminal subhistory length
