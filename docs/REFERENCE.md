@@ -4061,3 +4061,16 @@ corners and does not yet identify their widths with the actual retained cap fan.
 - [`CompatibleFreshSourceBank`](../Unfoldings/Roof/CompatibleFreshSourceBank.lean):
   construct these chains on actual compatible meshes and derive their uniform
   intrinsic whole-point radial order, including the original source edge.
+- [`UniformSourceStartBankMargin`](../Unfoldings/Roof/UniformSourceStartBankMargin.lean):
+  one positive tilt preserves a fixed positive fraction of every original
+  all-anchor radial margin on complete intrinsic source-starting banks.
+- [`SourceBankOpeningGap`](../Unfoldings/Cap/SourceBankOpeningGap.lean):
+  finite-bank margins construct canonical next-history gaps with all original
+  vertices and the last-edge tail. Tail budgets and original charges are derived.
+- [`CompatibleFreshSourceGap`](../Unfoldings/Roof/CompatibleFreshSourceGap.lean):
+  one tilt constructs complete canonical local gaps on the actual fresh-source
+  banks, deriving curvature, margins, opening histories and finite convex cells.
+- [`CompleteSourceReference`](../Unfoldings/Complex/CompleteSourceReference.lean) and
+  [`CompatibleFreshSourceReference`](../Unfoldings/Roof/CompatibleFreshSourceReference.lean):
+  restore complete actual source banks to their original ancestor-path cuts,
+  retaining every closed bank point, true endpoint, real heading and intrinsic roll.

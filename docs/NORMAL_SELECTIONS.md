@@ -384,8 +384,17 @@ nonoverlap and counting remain to be proved.
   Derive its routing and interior bank starts, then uniform intrinsic whole-point
   radial order, including the original source edge and one-edge rim returns.
   See [`CompatibleFreshSourceBank`](../Unfoldings/Roof/CompatibleFreshSourceBank.lean).
-- [ ] Identify this complete finite bank and its actual terminal continuation with
-  the marked whole-cut reference curve and canonical opening-history bank.
+- [x] Derive a fixed positive all-anchor margin on every actual complete source
+  bank, then construct its complete canonical local Jordan gap. One uniform tilt
+  supplies the curvature budget, every opening charge and both finite/tail margins.
+  The gap is complete and contractible, with finite closed convex cells; see
+  [`CompatibleFreshSourceGap`](../Unfoldings/Roof/CompatibleFreshSourceGap.lean).
+- [x] Restore the complete actual source bank to its original ancestor-path cut.
+  Every original closed bank point, source/root endpoint and unreduced heading
+  survives, with the same entire intrinsic roll. See
+  [`CompatibleFreshSourceReference`](../Unfoldings/Roof/CompatibleFreshSourceReference.lean).
+- [ ] Identify the actual terminal continuation and the opened bank with
+  the marked whole-cut curves and saved frontier through the attached gap cells.
 - [ ] Carry physical saved-frontier curves and their untouched original sides through
   actual prior gap attachments. Apply the local metric remainder models to those updates.
 - [ ] Assemble the complete graft and prove completeness, simple connectivity and local

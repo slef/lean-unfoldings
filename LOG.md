@@ -2,6 +2,27 @@
 
 ## Session Log
 
+### 2026-11-18 — uniform canonical gaps on complete actual source banks
+
+- Strengthened source-starting rolling to retain a fixed positive all-anchor
+  margin, one quarter of the physical annular margin, uniformly over all meshes.
+  Applied it to the constructed actual source banks, including the first edge.
+- Preserved every opening charge and complete unbounded bank under finite-index
+  transport. Canonical fresh-source updates now allow unused isolated roots.
+- Constructed complete canonical Jordan gaps on the actual source-bank rolls and
+  their last-edge continuations. A single tilt derives the original curvature
+  budget, all radial and tail margins, every opening label and the total charge.
+  The gaps are contractible and have finite closed convex-cell decompositions.
+- Restored each complete source bank to the original cut along just its parent
+  path. Every closed bank point, original endpoint, unreduced real heading and
+  full intrinsic roll is preserved, including the source edge.
+- Verification: actual cache retrieval and final full `lake build` passed 6,390
+  jobs. All 19,523 unfolding declarations passed the standard-axiom audit, and
+  both abstract independence checks passed. Existing theorem statements are unchanged.
+- The saved frontier in the attached-gap metric surface still needs to be matched
+  to these canonical banks. Complete flat graft assembly and global nonoverlap
+  remain open.
+
 ### 2026-11-18 — complete fresh-source banks on actual compatible meshes
 
 - Constructed the literal returning source edge and its actual successor after

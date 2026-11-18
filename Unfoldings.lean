@@ -2444,3 +2444,14 @@ public import Unfoldings.Complex.ReturnSourceChain
 public import Unfoldings.Complex.FreshSourceBankChain
 public import Unfoldings.Roof.CompatibleSourceBankGeometry
 public import Unfoldings.Roof.CompatibleFreshSourceBank
+public import Unfoldings.Geometry.OpeningCast
+public import Unfoldings.Cap.SupportedContourOpeningUpdate
+public import Unfoldings.Cap.SourceBankOpeningGap
+public import Unfoldings.Roof.SourceStartRoutedBankMargin
+public import Unfoldings.Roof.UniformSourceStartBankMargin
+public import Unfoldings.Roof.CompatibleFreshSourceMargin
+public import Unfoldings.Roof.CompatibleFreshSourceGap
+public import Unfoldings.Complex.RootwardChainLabels
+public import Unfoldings.Complex.RootwardBankRestoration
+public import Unfoldings.Complex.CompleteSourceReference
+public import Unfoldings.Roof.CompatibleFreshSourceReference
