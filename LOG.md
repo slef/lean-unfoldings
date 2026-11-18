@@ -2,6 +2,20 @@
 
 ## Session Log
 
+### 2026-11-17 — physical comparisons include the actual source-starting edge
+
+- A bank beginning at its source admits arbitrarily close strict radial comparison
+  sources. Moving behind the first genuine edge preserves all later strict tests
+  and every prescribed open condition, including a short internal-ray angle sum.
+- Constructed uniform physical cap comparisons for every source-starting mesh bank
+  window, including its first edge. The actual source edge and geometry are retained;
+  the earlier positive initial-distance assumption is unnecessary for this new API.
+- Verification: actual cache retrieval followed by full `lake build` passed 6,361
+  jobs; 19,360 unfolding declarations passed the standard-axiom audit, and both
+  abstract independence checks passed. Existing theorem statements are unchanged.
+- Transport to the full original intrinsic source bank, physical saved-frontier
+  identification through attached gaps and the complete flat graft remain open.
+
 ### 2026-11-17 — complete source gaps from the actual contour history
 
 - The next source's original defect and prior canonical contour history spend

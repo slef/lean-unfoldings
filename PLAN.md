@@ -1067,7 +1067,10 @@ physical saved frontier through attached gap cells, transporting between origina
 and comparison bank subdivisions, and assembling the flat graft remain open. Given
 a radially controlled reference bank, the actual next contour source now constructs
 a complete Jordan gap to its next canonical opened bank; no opening-list or charge
-assignment certificate is supplied. The full reference-bank identification remains open.
+assignment certificate is supplied. Physical cap-window comparisons now also
+include banks whose first vertex is the source itself, preserving the whole first
+edge by arbitrarily small strict-source perturbations. The full reference-bank
+identification remains open.
 See the [gap-grafting checklist](docs/NORMAL_SELECTIONS.md#gap-grafting-status). The finite-cell route to
 global isometry does not require a separate end-height certificate. Normal-cover
 selection and Euler counting follow.

@@ -2423,3 +2423,6 @@ public import Unfoldings.Geometry.OpeningPermutation
 public import Unfoldings.Topology.ParentOrbitPath
 public import Unfoldings.Cap.ContourSourceOpeningBudget
 public import Unfoldings.Cap.ContourSourceOpeningGap
+public import Unfoldings.Geometry.SourceStartRadialPerturbation
+public import Unfoldings.Geometry.SourceRayWindowContinuity
+public import Unfoldings.Roof.SourceStartMeshBankWindows

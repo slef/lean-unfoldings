@@ -363,6 +363,9 @@ nonoverlap and counting remain to be proved.
   contour history and total original curvature, given a radial reference bank.
   Its opening list, source charges, angle bounds and length budgets are derived.
   Identifying the complete source-starting reference bank remains separate.
+- [x] Construct uniform physical comparisons for banks beginning at their original
+  source, including windows on the first edge. Strict comparison sources can be
+  chosen arbitrarily close while preserving the actual short internal-ray bound.
 - [ ] Carry physical saved-frontier curves and their untouched original sides through
   actual prior gap attachments. Apply the local metric remainder models to those updates.
 - [ ] Assemble the complete graft and prove completeness, simple connectivity and local
