@@ -8,6 +8,10 @@ nonoverlap and counting remain to be proved.
 
 ## Gap-grafting status
 
+- [x] Extend the original annular source margin through every actual outer terminal
+  bank and the complete concatenated rootward chain to the new rim. Preserve its
+  whole projected stem-plus-ray carrier, actual endpoint copies, strict starting
+  height bounds, radial order and positive initial source distance.
 - [x] Preserve the quantitative projected radial margin and the unreduced real
   terminal heading in one complete actual comparison refinement. Applied this
   simultaneously to each current rootward stem, retaining its whole projected

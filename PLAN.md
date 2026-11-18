@@ -1018,9 +1018,11 @@ heading, both endpoint copies and the entire whole-cut carrier. Every old starti
 turn is counted once and inserted straight hinges contribute zero. One complete actual comparison refinement now preserves both the quantitative
 radial margin and the original unreduced real terminal heading. For every actual
 current rootward stem this also retains the full projected carrier, literal
-terminal junction and positive initial source distance. Outer terminal portions,
-weighted polar blocks, saved-frontier transport and the complete flat graft remain
-open.
+terminal junction and positive initial source distance. The same annular source
+margin now holds on every actual outer terminal bank and on the complete chain to
+the new rim, retaining its exact projected stem-plus-ray carrier and strict bank
+starting heights. Physical comparison windows on these complete chains, weighted
+polar blocks, saved-frontier transport and the complete flat graft remain open.
 See the [gap-grafting checklist](docs/NORMAL_SELECTIONS.md#gap-grafting-status). The finite-cell route to
 global isometry does not require a separate end-height certificate. Normal-cover
 selection and Euler counting follow.

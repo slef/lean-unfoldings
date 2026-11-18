@@ -2,6 +2,22 @@
 
 ## Session Log
 
+### 2026-11-17 — actual source radial margins through the new rim
+
+- The initial ray margin survives every constructed actual terminal bank without
+  loss. Its complete projection is the original closed ray interval.
+- Derived that margin from each current original source and its continued history,
+  then constructed the complete actual rootward chain through the new rim. Its
+  exact projected stem-plus-ray carrier, endpoint copies, strict bank starting
+  heights, annular margin, radial order and positive initial distance are preserved.
+- Added a general footprint-interior test for actual cut banks, preserving the
+  existing strict-height test and all existing theorem statements.
+- Verification: actual cache retrieval followed by full `lake build` passed 6,276
+  jobs; 18,905 unfolding declarations passed the standard-axiom audit, and both
+  abstract independence checks passed.
+- Physical comparison windows on these complete chains, weighted polar blocks,
+  saved-frontier transport and complete graft nonoverlap remain open.
+
 ### 2026-11-17 — simultaneous actual rootward radial margins and real headings
 
 - One complete actual larger-mesh comparison refinement now retains both the

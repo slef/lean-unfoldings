@@ -44,4 +44,25 @@ theorem boundaryEnd_is_cut_of_strict_height (retain : Set T.pairedComplex.Seam)
   simpa only [vertex, TriangleComplex.boundaryEndVertex,
     TriangleComplex.vertexForgetCuts_vertexOfCorner] using original
 
+include conforming inside in
+/-- A bank starting in the true footprint interior cannot be an original mesh boundary edge. -/
+theorem boundaryEnd_is_cut_of_projected_mem_interior
+    (retain : Set T.pairedComplex.Seam)
+    (p : T.pairedComplex.BoundaryEnd retain)
+    (member : Cap.horizontal (T.pairedFolding.boundaryPosition p) ∈ interior (clip family Z)) :
+    ¬ T.pairedComplex.IsBoundaryEdge Set.univ (T.pairedComplex.germEdge p.val) := by
+  let vertex := T.pairedComplex.vertexForgetCuts (Set.subset_univ retain)
+    (T.pairedComplex.boundaryEndVertex retain p)
+  have internal : ¬ T.pairedComplex.IsBoundaryVertex Set.univ vertex := by
+    apply ((T.roof conforming inside).projectedVertex_mem_interior_iff vertex).mp
+    rw [T.roof_footprint]
+    exact Eq.mpr (congrArg (fun q : Plane => q ∈ interior (clip family Z))
+      (T.roof_projectedVertex_vertexForgetCuts conforming inside retain
+        (T.pairedComplex.boundaryEndVertex retain p))) member
+  intro boundary
+  apply internal
+  have original := T.pairedComplex.isBoundaryVertex_of_boundary_germ Set.univ p.val boundary
+  simpa only [vertex, TriangleComplex.boundaryEndVertex,
+    TriangleComplex.vertexForgetCuts_vertexOfCorner] using original
+
 end Unfoldings.SpatialEnvelope.Triangulation

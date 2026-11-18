@@ -2339,3 +2339,6 @@ public import Unfoldings.Roof.CompatibleComparisonFiniteTurnSum
 public import Unfoldings.Roof.CompatibleComparisonChainHeading
 public import Unfoldings.Roof.CompatibleComparisonRadialHeading
 public import Unfoldings.Roof.CompatibleRootwardRadialHeading
+public import Unfoldings.Roof.CompatibleComparisonTerminalChainRadial
+public import Unfoldings.Roof.CompatibleRootwardTerminalRadial
+public import Unfoldings.Roof.CompatibleRootwardRimRadial

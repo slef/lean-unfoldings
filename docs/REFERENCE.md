@@ -4027,3 +4027,13 @@ corners and does not yet identify their widths with the actual retained cap fan.
 - [`CompatibleRootwardRadialHeading`](../Unfoldings/Roof/CompatibleRootwardRadialHeading.lean):
   each current rootward stem has this simultaneous refinement, retaining its
   literal junction, full projected path and positive initial source distance.
+
+- [`CompatibleComparisonTerminalChainRadial`](../Unfoldings/Roof/CompatibleComparisonTerminalChainRadial.lean):
+  an initial ray margin survives every actual terminal bank; its full projected
+  trace is exactly the original closed ray interval.
+- [`CompatibleRootwardTerminalRadial`](../Unfoldings/Roof/CompatibleRootwardTerminalRadial.lean):
+  derive this margin from the current original source and its continued history.
+- [`CompatibleRootwardRimRadial`](../Unfoldings/Roof/CompatibleRootwardRimRadial.lean):
+  construct the full actual source-to-rim chain, preserving the original annular
+  margin, strict starting heights, radial order, initial distance and exact
+  projected union of the stem with the closed terminal segment.
