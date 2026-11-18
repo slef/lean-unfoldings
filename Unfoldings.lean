@@ -2502,3 +2502,11 @@ public import Unfoldings.Roof.CompatibleContourGraftCells
 public import Unfoldings.Roof.CompatibleContourGraftBoundary
 
 public import Unfoldings.Metric.BoundaryCellInteriorChart
+
+public import Unfoldings.Geometry.SpatialEnvelopeCutCellIsometry
+public import Unfoldings.Geometry.BankGapClosedEmbeddings
+public import Unfoldings.Metric.PairedBankCells
+public import Unfoldings.Roof.CompatibleContourCellEmbeddings
+
+public import Unfoldings.Metric.ClosedBankCellSeams
+public import Unfoldings.Roof.CompatibleContourBankEmbeddings

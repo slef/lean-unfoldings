@@ -1145,6 +1145,8 @@ selection and Euler counting follow.
 - [x] Preserve canonical gap-side orientation from the actual uniform opening controls.
 - [x] Identify the complete graft's exact finite planar-cell metric, derive boundary-only
   primitive seams, and construct whole planar balls at every actual cell interior.
+- [x] Prove actual cell and bank embeddings closed, with exact intrinsic metrics,
+  and construct closed isometric seam domains for paired original cell representatives.
 - [ ] Match saved-frontier curves to the comparison fans and local surgery models.
 - [x] Construct complete unbounded roof cut metrics with actual planar cells,
   boundary-only seams and exact metric-ball restoration away from closed cuts.

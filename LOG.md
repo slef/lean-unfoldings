@@ -2,6 +2,26 @@
 
 ## Session Log
 
+### 2026-11-18 — closed original bank and cell embeddings
+
+- Proved exact isometric, closed inclusions of every original whole-roof and gap
+  cell into its actual intrinsic piece. Original spatial coordinates rule out
+  shortcuts inside the cells.
+- Constructed gap-edge and whole-tail dilations and derived genuine directions on
+  both actual canonical source banks. Every actual roof and gap attachment curve
+  is a closed embedding on its full original interval or half-line domain.
+- Constructed literal paired-cell seam domains at common bank parameters. Their
+  two coordinate projections are isometries, and both images are closed. Empty
+  intersections and all finite/infinite endpoint cases are included.
+- A finite family of those pairs now constructs `ClosedSeams` with exactly the
+  named original bank relation, without supplied seam domains or closedness data.
+- Verification: actual cache retrieval and final full `lake build` passed 6,439
+  jobs. All 20,059 unfolding declarations passed the standard-axiom audit; both
+  abstract independence checks passed. Existing theorem statements are unchanged.
+- Remaining: assemble these closed domains for the actual stacks and internal
+  seams, prove finite seam classes, identify actual local saved-frontier seam/vertex
+  fans, derive simple connectivity and prove global planar isometry/nonoverlap.
+
 ### 2026-11-18 — actual graft planar cells and boundary-only seams
 
 - Put every original gap cell in common rigid real-plane coordinates, retaining

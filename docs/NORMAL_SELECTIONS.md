@@ -432,8 +432,13 @@ nonoverlap and counting remain to be proved.
   actual cell boundaries; no global separation assumption is supplied. See
   [`CompatibleContourGraftBoundary`](../Unfoldings/Roof/CompatibleContourGraftBoundary.lean).
   Every original cell interior has a whole planar metric ball in the actual graft.
-- [ ] Construct closed seam domains and finite seam classes for the actual graft,
-  identifying its route-metric topology with the intended bank gluing.
+- [x] Prove every original graft-cell inclusion is isometric and closed in its
+  actual intrinsic piece, and every finite/infinite bank attachment curve is a
+  closed embedding. All genuine directions and positive speeds are derived.
+- [x] Construct isometric closed cell-pair seam domains from equally paced closed
+  bank curves, including empty intersections, finite endpoints and whole tails.
+- [ ] Assemble these domains for the actual bank stacks and original internal seams.
+  Prove finite seam classes and identify the route-metric topology with that gluing.
 - [ ] Identify the actual local saved-frontier fan at each seam/vertex class and
   prove its whole metric-ball chart; cell interiors are already covered.
 - [ ] Derive simple connectivity from the actual slit/gap attachments and apply the

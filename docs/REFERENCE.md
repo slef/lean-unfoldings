@@ -4154,3 +4154,17 @@ corners and does not yet identify their widths with the actual retained cap fan.
 - [`BoundaryCellInteriorChart`](../Unfoldings/Metric/BoundaryCellInteriorChart.lean):
   boundary-only gluing gives whole ambient metric-ball charts at cell interiors,
   without finiteness, convexity or global separation premises.
+
+- [`BankGapClosedEmbeddings`](../Unfoldings/Geometry/BankGapClosedEmbeddings.lean) and
+  [`SpatialEnvelopeCutCellIsometry`](../Unfoldings/Geometry/SpatialEnvelopeCutCellIsometry.lean):
+  every original roof/gap cell has a closed isometric inclusion into its actual
+  intrinsic piece. Genuine gap edges and whole tails are closed dilations.
+- [`CompatibleContourCellEmbeddings`](../Unfoldings/Roof/CompatibleContourCellEmbeddings.lean)
+  and [`CompatibleContourBankEmbeddings`](../Unfoldings/Roof/CompatibleContourBankEmbeddings.lean):
+  derive these properties for every actual graft cell and attachment curve, including
+  positive original speeds and genuine directions on both canonical gap banks.
+- [`PairedBankCells`](../Unfoldings/Metric/PairedBankCells.lean) and
+  [`ClosedBankCellSeams`](../Unfoldings/Metric/ClosedBankCellSeams.lean):
+  literal pairs of original cell points at a common bank parameter form isometric
+  closed seam domains. A finite family constructs `ClosedSeams` with exactly the
+  original bank relation. Actual stack assembly and finite seam classes remain.
