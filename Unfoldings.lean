@@ -2377,3 +2377,10 @@ public import Unfoldings.Roof.CompatibleRootwardRimRolling
 public import Unfoldings.Roof.BankRollAccuracy
 public import Unfoldings.Roof.UniformRadialBankRolling
 public import Unfoldings.Roof.CompatibleRootwardRimAccuracy
+public import Unfoldings.Complex.AffineProjectionRestoration
+public import Unfoldings.Complex.SurvivingBoundaryTrace
+public import Unfoldings.Polyhedron.SurvivingBankGeometry
+public import Unfoldings.Roof.SurvivingBankMetric
+public import Unfoldings.Roof.SurvivingBankAccuracy
+public import Unfoldings.Complex.ProcessedContourPrefix
+public import Unfoldings.Roof.ProcessedContourPrefixMetric

@@ -2,6 +2,22 @@
 
 ## Session Log
 
+### 2026-11-17 — exact transport of untouched original sides between cut stages
+
+- Projection commutes with restoring seams along surviving actual bank chains.
+  Intrinsic rolls, every unreduced projected phase prefix, the common frame and
+  all quantitative bank accuracy bounds remain identical.
+- Preserved entire closed metric traces under the restoration map and every
+  literal physical projected point, including both true endpoint copies.
+- Already passed original contour banks now construct an actual chain in each
+  later intermediate cut. Its closed trace, intrinsic roll, projected phase and
+  quantitative bounds are those of the original untouched prefix.
+- Verification: actual cache retrieval followed by full `lake build` passed 6,318
+  jobs; 19,169 unfolding declarations passed the standard-axiom audit, and both
+  abstract independence checks passed. Existing theorem statements are unchanged.
+- These identifications concern original cut surfaces. Transport through attached
+  gap cells, the geometric saved-frontier update and the complete flat graft remain open.
+
 ### 2026-11-17 — uniform small-loss accuracy for actual complete rootward banks
 
 - Chose a local heading budget and normal-tilt threshold before every mesh,

@@ -340,6 +340,9 @@ nonoverlap and counting remain to be proved.
 - [x] Choose uniform numerical small-loss thresholds for actual complete chains.
   The prescribed chord accuracy and intrinsic length bound hold on the same
   constructed rootward bank through every later rim, at every smaller normal tilt.
+- [x] Construct the untouched passed original contour side at each later cut stage.
+  Its closed metric trace, physical projection, real phase error, intrinsic roll
+  and quantitative accuracy bounds are preserved exactly under restoration.
 - [ ] Carry physical saved-frontier curves and their untouched original sides through
   actual prior gap attachments. Apply the local metric remainder models to those updates.
 - [ ] Assemble the complete graft and prove completeness, simple connectivity and local
