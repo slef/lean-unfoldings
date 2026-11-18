@@ -3964,5 +3964,17 @@ corners and does not yet identify their widths with the actual retained cap fan.
   triangle and exact conservation of every original corner angle.
 - [`CompatibleComparisonSubdivision`](../Unfoldings/Roof/CompatibleComparisonSubdivision.lean):
   actual larger comparison meshes retain all original face boundaries, subdivide
-  the old physical faces and conserve their original corner angles. Retained
-  cut-side fan correspondence is a subsequent step.
+  the old physical faces and conserve their original corner angles.
+
+- [`SubdivisionPhysicalCut`](../Unfoldings/Complex/SubdivisionPhysicalCut.lean) and
+  [`SubdivisionPhysicalConforming`](../Unfoldings/Complex/SubdivisionPhysicalConforming.lean):
+  rigid subdivisions and actual physical edge cuts derive exact cut metric
+  equivalences and retained seam correspondence, preserving original parent copies.
+- [`NestedMeshCutGeometry`](../Unfoldings/Roof/NestedMeshCutGeometry.lean) and
+  [`NestedCutSubdivision`](../Unfoldings/Roof/NestedCutSubdivision.lean):
+  the complete old-face subcomplex is embedded and its actual original cut
+  corresponds exactly to the old retained seam classes.
+- [`CompatibleComparisonCutSubdivision`](../Unfoldings/Roof/CompatibleComparisonCutSubdivision.lean):
+  the actual larger mesh's old-face subcomplex has exactly the original intermediate
+  cut metric, unique corresponding original cut-side vertices and unchanged fan
+  angles. Full larger-mesh fan agreement is a subsequent step.

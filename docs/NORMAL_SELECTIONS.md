@@ -8,10 +8,13 @@ nonoverlap and counting remain to be proved.
 
 ## Gap-grafting status
 
+- [x] Derive retained seam correspondence and an exact cut metric equivalence for
+  the complete old-face subdivision. Every old cut-side vertex has one fine copy
+  with exactly its original fan angle. Agreement with full larger-mesh fans at
+  the actual chain junctions remains to be established.
 - [x] Construct larger meshes respecting every old face boundary and prescribed cut.
   The contained physical triangles subdivide each whole old face isometrically,
-  and their corner angles sum to each original corner angle exactly. Transport
-  to individual retained cut-side fans remains to be established.
+  and their corner angles sum to each original corner angle exactly.
 - [x] Apply the actual bank-window comparison to every admissible short interval
   of each constructed current rootward stem. Derive its cut labels, original
   projection, strict radial source and positive initial distance from the compatible

@@ -1004,9 +1004,11 @@ original projection, strict radial source and positive initial distance from the
 compatible forest. One tilt controls the original real heading at all contour
 stages. Larger comparison meshes now also respect every old face boundary.
 Their contained physical triangles form actual isometric subdivisions, conserving
-every original Euclidean corner angle exactly. Retained cut-side fan correspondence,
-arbitrary outer terminal portions, the weighted polar-block estimate, saved-frontier
-transport and the complete flat graft remain open.
+every original Euclidean corner angle exactly. Their complete old-face subcomplex
+now has an exact original cut metric equivalence, with unique corresponding
+cut-side vertices and unchanged one-sided fan angles. Agreement with full larger-mesh
+fans at actual chain junctions, arbitrary outer terminal portions, the weighted
+polar-block estimate, saved-frontier transport and the complete flat graft remain open.
 See the [gap-grafting checklist](docs/NORMAL_SELECTIONS.md#gap-grafting-status). The finite-cell route to
 global isometry does not require a separate end-height certificate. Normal-cover
 selection and Euler counting follow.

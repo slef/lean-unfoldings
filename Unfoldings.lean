@@ -2317,3 +2317,8 @@ public import Unfoldings.Roof.CompatibleComparisonSubdivision
 public import Unfoldings.Roof.NestedFacePatch
 public import Unfoldings.Roof.NestedFaceAngles
 public import Unfoldings.Roof.NestedSubdivisionAngles
+public import Unfoldings.Complex.SubdivisionPhysicalCut
+public import Unfoldings.Complex.SubdivisionPhysicalConforming
+public import Unfoldings.Roof.NestedMeshCutGeometry
+public import Unfoldings.Roof.NestedCutSubdivision
+public import Unfoldings.Roof.CompatibleComparisonCutSubdivision

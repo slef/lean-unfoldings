@@ -2,6 +2,24 @@
 
 ## Session Log
 
+### 2026-11-17 — exact retained cut metrics and fans in the old-face subdivision
+
+- A general rigid geometric subdivision now constructs a physical cut refinement
+  and an exact intrinsic cut equivalence, preserving each specified parent-face
+  copy. Original geometric edge cuts derive retained seam correspondence in both
+  directions; no seam-chain or metric matching certificate is assumed.
+- The larger mesh's complete old-face subcomplex is embedded, covers exactly the
+  old footprint and inherits the original geometric cuts. Applied the general
+  correspondence to every actual intermediate compatible processing stage.
+- Every original cut-side vertex has a unique corresponding fine vertex in this
+  subcomplex, with exactly its original one-sided fan angle.
+- Verification: actual cache retrieval followed by full `lake build` passed 6,256
+  jobs; 18,773 unfolding declarations passed the standard-axiom audit, and both
+  abstract independence checks passed. Existing theorem statements are unchanged.
+- Full larger-mesh fan agreement at actual chain junctions, arbitrary outer terminal
+  portions, the weighted polar-block estimate, saved-frontier transport and complete
+  graft nonoverlap remain open.
+
 ### 2026-11-17 — old-face subdivisions in larger comparison meshes
 
 - Larger comparison meshes now respect all old physical face sides as well as
