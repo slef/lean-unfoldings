@@ -1147,6 +1147,8 @@ selection and Euler counting follow.
   primitive seams, and construct whole planar balls at every actual cell interior.
 - [x] Prove actual cell and bank embeddings closed, with exact intrinsic metrics,
   and construct closed isometric seam domains for paired original cell representatives.
+- [x] Construct the finite closed-seam system for all actual bank-stack attachments
+  and prove its relation equals the original marked-bank relation on raw cell points.
 - [ ] Match saved-frontier curves to the comparison fans and local surgery models.
 - [x] Construct complete unbounded roof cut metrics with actual planar cells,
   boundary-only seams and exact metric-ball restoration away from closed cuts.

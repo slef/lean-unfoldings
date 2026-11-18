@@ -437,8 +437,12 @@ nonoverlap and counting remain to be proved.
   closed embedding. All genuine directions and positive speeds are derived.
 - [x] Construct isometric closed cell-pair seam domains from equally paced closed
   bank curves, including empty intersections, finite endpoints and whole tails.
-- [ ] Assemble these domains for the actual bank stacks and original internal seams.
-  Prove finite seam classes and identify the route-metric topology with that gluing.
+- [x] Assemble closed domains for every consecutive attachment of the actual bank
+  stacks. Their closed-seam relation is exactly the original marked-bank relation,
+  in both directions and for all original cell representatives; see
+  [`CompatibleContourBankClosedSeams`](../Unfoldings/Roof/CompatibleContourBankClosedSeams.lean).
+- [ ] Combine the actual bank domains with original internal seams. Prove finite
+  seam classes and identify the route-metric topology with the resulting gluing.
 - [ ] Identify the actual local saved-frontier fan at each seam/vertex class and
   prove its whole metric-ball chart; cell interiors are already covered.
 - [ ] Derive simple connectivity from the actual slit/gap attachments and apply the

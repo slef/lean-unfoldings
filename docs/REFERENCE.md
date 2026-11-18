@@ -4168,3 +4168,12 @@ corners and does not yet identify their widths with the actual retained cap fan.
   literal pairs of original cell points at a common bank parameter form isometric
   closed seam domains. A finite family constructs `ClosedSeams` with exactly the
   original bank relation. Actual stack assembly and finite seam classes remain.
+
+- [`BankStackCurves`](../Unfoldings/Metric/BankStackCurves.lean) and
+  [`BankStackCurveMetric`](../Unfoldings/Metric/BankStackCurveMetric.lean):
+  typed consecutive curves retain their actual original piece indices, literal
+  marked points, closed embeddings and exact common bank metric.
+- [`CompatibleContourBankClosedSeams`](../Unfoldings/Roof/CompatibleContourBankClosedSeams.lean):
+  constructs finite closed isometric seams for every actual bank attachment and
+  every pair of its original cell representatives. The relation equals the original
+  marked-bank attachment exactly. Internal-seam combination and finite classes remain.

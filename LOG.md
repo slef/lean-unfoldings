@@ -2,6 +2,25 @@
 
 ## Session Log
 
+### 2026-11-18 — assemble actual closed bank-stack seams
+
+- Selected each consecutive bank curve together with its original intrinsic piece
+  index, eliminating parameter-dependent casts. Literal marks, closed embeddings
+  and the exact common bank metric are retained.
+- Derived common whole-domain metrics for both original roof sides and all actual
+  gap attachments, uniformly over finite edges and infinite terminal tails.
+- Constructed the original geometric cell-pair data for every consecutive actual
+  bank attachment, using the proved original cell and bank embeddings.
+- Assembled these into a finite `ClosedSeams` structure on the actual original
+  planar cells. Proved its relation equals the original marked-bank attachment
+  relation in both directions, retaining every cell representative and parameter.
+- Verification: actual cache retrieval and full `lake build` passed 6,442 jobs.
+  All 20,095 unfolding declarations passed the standard-axiom audit; both abstract
+  independence checks passed. Existing theorem statements are unchanged.
+- Remaining: combine actual bank seams with original internal seams, prove finite
+  seam classes, identify actual local saved-frontier seam/vertex fans, derive
+  simple connectivity, and prove global planar isometry/nonoverlap.
+
 ### 2026-11-18 — closed original bank and cell embeddings
 
 - Proved exact isometric, closed inclusions of every original whole-roof and gap

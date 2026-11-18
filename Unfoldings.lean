@@ -2510,3 +2510,7 @@ public import Unfoldings.Roof.CompatibleContourCellEmbeddings
 
 public import Unfoldings.Metric.ClosedBankCellSeams
 public import Unfoldings.Roof.CompatibleContourBankEmbeddings
+
+public import Unfoldings.Metric.BankStackCurves
+public import Unfoldings.Metric.BankStackCurveMetric
+public import Unfoldings.Roof.CompatibleContourBankClosedSeams
