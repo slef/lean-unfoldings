@@ -366,6 +366,9 @@ nonoverlap and counting remain to be proved.
 - [x] Construct uniform physical comparisons for banks beginning at their original
   source, including windows on the first edge. Strict comparison sources can be
   chosen arbitrarily close while preserving the actual short internal-ray bound.
+- [x] Transport source-starting comparisons to the full original intrinsic roll.
+  Internal polar windows omit the initial vertex, and routing derives every
+  subhistory margin and whole-point radial order including the first edge.
 - [ ] Carry physical saved-frontier curves and their untouched original sides through
   actual prior gap attachments. Apply the local metric remainder models to those updates.
 - [ ] Assemble the complete graft and prove completeness, simple connectivity and local

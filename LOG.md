@@ -2,6 +2,21 @@
 
 ## Session Log
 
+### 2026-11-17 — complete source-starting intrinsic radial rolling
+
+- Exact polar-window identities need only positive-index vertices to avoid the
+  source. The actual initial vertex is omitted from every internal-angle sum.
+- Physical source-starting comparisons now give the full original unreduced
+  phase-window bound in any orthonormal frame, including reflection.
+- Weighted rolling preserves quantitative margins on every intrinsic subhistory,
+  including the original first edge. Actual compatible routing derives whole-point
+  radial order on the full original bank without any positive initial-distance input.
+- Verification: actual cache retrieval followed by full `lake build` passed 6,365
+  jobs; 19,367 unfolding declarations passed the standard-axiom audit, and both
+  abstract independence checks passed. Existing theorem statements are unchanged.
+- The subdivision/reference-bank identification, physical saved-frontier metric
+  update through attached gap cells and complete flat graft remain open.
+
 ### 2026-11-17 — physical comparisons include the actual source-starting edge
 
 - A bank beginning at its source admits arbitrarily close strict radial comparison

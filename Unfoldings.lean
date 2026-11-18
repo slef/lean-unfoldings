@@ -2426,3 +2426,7 @@ public import Unfoldings.Cap.ContourSourceOpeningGap
 public import Unfoldings.Geometry.SourceStartRadialPerturbation
 public import Unfoldings.Geometry.SourceRayWindowContinuity
 public import Unfoldings.Roof.SourceStartMeshBankWindows
+public import Unfoldings.Geometry.SourceStartPolarWindow
+public import Unfoldings.Roof.SourceStartBankPolarErrors
+public import Unfoldings.Roof.SourceStartBankRolling
+public import Unfoldings.Roof.SourceStartRoutedBankRolling

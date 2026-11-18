@@ -1070,7 +1070,9 @@ a complete Jordan gap to its next canonical opened bank; no opening-list or char
 assignment certificate is supplied. Physical cap-window comparisons now also
 include banks whose first vertex is the source itself, preserving the whole first
 edge by arbitrarily small strict-source perturbations. The full reference-bank
-identification remains open.
+identification remains open. The resulting genuine source-starting comparisons
+now preserve all intrinsic subhistory margins and whole-point radial order on the
+complete original bank, including the first edge, without an initial-distance input.
 See the [gap-grafting checklist](docs/NORMAL_SELECTIONS.md#gap-grafting-status). The finite-cell route to
 global isometry does not require a separate end-height certificate. Normal-cover
 selection and Euler counting follow.
