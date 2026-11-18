@@ -2,6 +2,23 @@
 
 ## Session Log
 
+### 2026-11-17 — exact contour-stage rootward opening updates
+
+- Constructed the original finite parent path through its first actual root,
+  deriving every ordered ancestor label, nonroot bank and processed-path witness.
+- Every actual contour prefix now constructs its canonical rootward opening list,
+  exact measured intermediate bank phases, positivity and total-curvature budget.
+- Reordering planar suffix rotations preserves all final vertices and the complete
+  unbounded tail, including hinge translations. A fresh singleton contour source
+  updates the whole normalized source-to-root bank by its own original defect
+  followed by the prior canonical history; flat source defects are included.
+- Verification: actual cache retrieval followed by full `lake build` passed 6,356
+  jobs; 19,351 unfolding declarations passed the standard-axiom audit, and both
+  abstract independence checks passed. Existing theorem statements are unchanged.
+- These are exact normalized original-bank identities. Identifying them with the
+  physical saved frontier in the attached-gap metric surface, transferring between
+  original and comparison bank subdivisions, and assembling the flat graft remain open.
+
 ### 2026-11-17 — canonical original-source opening histories
 
 - Constructed the first shared-ancestor index on every ordered finite parent path.

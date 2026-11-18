@@ -2415,3 +2415,9 @@ public import Unfoldings.Geometry.FrontierOpeningHistory
 public import Unfoldings.Geometry.OpeningFilterZero
 public import Unfoldings.Topology.FirstAncestorIndex
 public import Unfoldings.Topology.ParentHistorySources
+public import Unfoldings.Cap.ContourRootwardOpeningUpdate
+public import Unfoldings.Cap.ContourRootwardOpenings
+public import Unfoldings.Geometry.CanonicalOpeningUpdate
+public import Unfoldings.Geometry.ChainExt
+public import Unfoldings.Geometry.OpeningPermutation
+public import Unfoldings.Topology.ParentOrbitPath

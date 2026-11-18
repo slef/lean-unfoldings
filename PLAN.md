@@ -1059,8 +1059,12 @@ list also has a canonical construction from original first-contact source order:
 first shared-ancestor hinges recover actual measured intermediate parent-bank
 phases, with derived source coverage, distinctness and the total original
 curvature budget. Removing flat events preserves the entire opened geometry.
-Identifying the resulting bank with the physical saved frontier through attached
-gap cells, and assembling the complete flat graft, remain open.
+Actual contour stages now construct the original rootward paths and opening
+lists directly. Each fresh contour step has the exact complete normalized bank
+update by its own defect, including every point and the unbounded tail. Reordering
+actual suffix rotations preserves the final bank. Identifying this bank with the
+physical saved frontier through attached gap cells, transporting between original
+and comparison bank subdivisions, and assembling the flat graft remain open.
 See the [gap-grafting checklist](docs/NORMAL_SELECTIONS.md#gap-grafting-status). The finite-cell route to
 global isometry does not require a separate end-height certificate. Normal-cover
 selection and Euler counting follow.

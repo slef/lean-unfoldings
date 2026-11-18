@@ -355,6 +355,10 @@ nonoverlap and counting remain to be proved.
   First shared-ancestor hinges recover exact measured intermediate parent-bank
   phases, with derived original labels, coverage, distinctness and curvature budget.
   Removing flat events preserves the entire opened bank and its infinite tail.
+- [x] Construct canonical original rootward histories at every actual contour stage.
+  Derive the exact whole normalized bank update by a fresh source's own defect,
+  retaining all vertices and the complete infinite tail. Final bank geometry is
+  unchanged by reordering the actual translated suffix rotations.
 - [ ] Carry physical saved-frontier curves and their untouched original sides through
   actual prior gap attachments. Apply the local metric remainder models to those updates.
 - [ ] Assemble the complete graft and prove completeness, simple connectivity and local
