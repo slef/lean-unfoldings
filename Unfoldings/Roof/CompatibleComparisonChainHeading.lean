@@ -184,8 +184,8 @@ theorem compatibleMeshProcessedComparison_chain_terminal_heading
     (NewAt[S,later,ordered]).pairedComplex.boundaryChainRollHeading fine (Fin.last n) =
       (T).pairedComplex.boundaryChainRollHeading original (Fin.last m) := by
   have all := K.compatibleMeshProcessedComparison_chain_starting_turns compact nonempty R
-    no_boundary level higher M positive inner_disk beta acute W S later ordered original label named different
-    fine covered below
+    no_boundary level higher M positive inner_disk beta acute W S later ordered original label named
+    different fine covered below
   have angle := K.compatibleMeshProcessedComparisonFiniteBank_original_totalAngle compact nonempty R
     no_boundary level higher M positive inner_disk beta acute W S later ordered original.first 0
     ((T).pairedComplex.boundaryEndVertex RetainAt[S] original.first)

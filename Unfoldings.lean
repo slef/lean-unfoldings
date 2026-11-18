@@ -2337,3 +2337,5 @@ public import Unfoldings.Topology.ChainBlockSum
 public import Unfoldings.Complex.BoundaryChainHeadingSum
 public import Unfoldings.Roof.CompatibleComparisonFiniteTurnSum
 public import Unfoldings.Roof.CompatibleComparisonChainHeading
+public import Unfoldings.Roof.CompatibleComparisonRadialHeading
+public import Unfoldings.Roof.CompatibleRootwardRadialHeading

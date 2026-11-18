@@ -8,6 +8,10 @@ nonoverlap and counting remain to be proved.
 
 ## Gap-grafting status
 
+- [x] Preserve the quantitative projected radial margin and the unreduced real
+  terminal heading in one complete actual comparison refinement. Applied this
+  simultaneously to each current rootward stem, retaining its whole projected
+  carrier, literal terminal junction and positive initial source distance.
 - [x] Construct complete larger-mesh refinements of actual original cut-bank chains
   with identical unreduced real terminal headings, exact endpoint copies and the
   same whole-cut carrier. Original starts below the old rim supply all angle

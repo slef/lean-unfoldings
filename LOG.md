@@ -2,6 +2,20 @@
 
 ## Session Log
 
+### 2026-11-17 — simultaneous actual rootward radial margins and real headings
+
+- One complete actual larger-mesh comparison refinement now retains both the
+  original dimensionless projected radial margin and unreduced real terminal
+  heading, together with exact endpoint copies and the whole projected path.
+- Applied the simultaneous construction to every current rootward stem. All cut
+  labels and old vertex height bounds are derived from the original compatible
+  forest; the literal terminal junction and positive source distance survive.
+- Verification: actual cache retrieval followed by full `lake build` passed 6,273
+  jobs; 18,874 unfolding declarations passed the standard-axiom audit, and both
+  abstract independence checks passed. Existing theorem statements are unchanged.
+- Outer terminal portions, weighted polar blocks, saved-frontier transport and
+  complete graft nonoverlap remain open.
+
 ### 2026-11-17 — complete original real headings in larger comparison refinements
 
 - Complete finite disjoint block coverage now counts every actual directed interval

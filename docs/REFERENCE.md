@@ -4020,3 +4020,10 @@ corners and does not yet identify their widths with the actual retained cap fan.
 - [`CompatibleComparisonChainHeading`](../Unfoldings/Roof/CompatibleComparisonChainHeading.lean):
   complete actual larger-mesh refinements retain original unreduced terminal
   headings, both literal endpoint copies and the same whole-cut carrier.
+
+- [`CompatibleComparisonRadialHeading`](../Unfoldings/Roof/CompatibleComparisonRadialHeading.lean):
+  one complete actual refinement preserves both the original quantitative radial
+  margin and unreduced real terminal heading, with the exact projected carrier.
+- [`CompatibleRootwardRadialHeading`](../Unfoldings/Roof/CompatibleRootwardRadialHeading.lean):
+  each current rootward stem has this simultaneous refinement, retaining its
+  literal junction, full projected path and positive initial source distance.

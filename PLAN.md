@@ -1015,10 +1015,12 @@ copies. Both endpoints of every constructed finite comparison block are the exac
 corresponding original vertices, with unchanged angles below the old rim.
 Complete actual cut-bank refinements now preserve the unreduced real terminal
 heading, both endpoint copies and the entire whole-cut carrier. Every old starting
-turn is counted once and inserted straight hinges contribute zero. Combining this
-with the quantitative radial refinements, arbitrary outer terminal portions, the
-weighted polar-block estimate, saved-frontier transport and the complete flat graft
-remain open.
+turn is counted once and inserted straight hinges contribute zero. One complete actual comparison refinement now preserves both the quantitative
+radial margin and the original unreduced real terminal heading. For every actual
+current rootward stem this also retains the full projected carrier, literal
+terminal junction and positive initial source distance. Outer terminal portions,
+weighted polar blocks, saved-frontier transport and the complete flat graft remain
+open.
 See the [gap-grafting checklist](docs/NORMAL_SELECTIONS.md#gap-grafting-status). The finite-cell route to
 global isometry does not require a separate end-height certificate. Normal-cover
 selection and Euler counting follow.
