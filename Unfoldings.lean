@@ -2342,3 +2342,6 @@ public import Unfoldings.Roof.CompatibleRootwardRadialHeading
 public import Unfoldings.Roof.CompatibleComparisonTerminalChainRadial
 public import Unfoldings.Roof.CompatibleRootwardTerminalRadial
 public import Unfoldings.Roof.CompatibleRootwardRimRadial
+public import Unfoldings.Roof.SupportedBankWindows
+public import Unfoldings.Roof.SpatialMeshBankWindows
+public import Unfoldings.Roof.CompatibleRootwardRimWindows

@@ -4037,3 +4037,16 @@ corners and does not yet identify their widths with the actual retained cap fan.
   construct the full actual source-to-rim chain, preserving the original annular
   margin, strict starting heights, radial order, initial distance and exact
   projected union of the stem with the closed terminal segment.
+
+- [`SupportedBankWindows`](../Unfoldings/Roof/SupportedBankWindows.lean):
+  all short actual intervals have constructed trims, generic supported Jordan
+  closures, respected physical caps, preserved original finite-roof heights and
+  uniformly small unreduced real-heading errors.
+- [`SpatialMeshBankWindows`](../Unfoldings/Roof/SpatialMeshBankWindows.lean):
+  one tilt controls every actual radial mesh chain with interior starting banks;
+  original cuts and all window geometry are derived for each interval.
+- [`CompatibleRootwardRimWindows`](../Unfoldings/Roof/CompatibleRootwardRimWindows.lean):
+  construct a complete actual rootward chain to the new rim and uniform physical
+  comparisons on all its admissible short intervals, including junction and tail
+  portions. Its original initial copy, far spatial endpoint and complete projected
+  stem-plus-ray carrier are preserved.

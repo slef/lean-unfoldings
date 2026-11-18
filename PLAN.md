@@ -1021,8 +1021,12 @@ current rootward stem this also retains the full projected carrier, literal
 terminal junction and positive initial source distance. The same annular source
 margin now holds on every actual outer terminal bank and on the complete chain to
 the new rim, retaining its exact projected stem-plus-ray carrier and strict bank
-starting heights. Physical comparison windows on these complete chains, weighted
-polar blocks, saved-frontier transport and the complete flat graft remain open.
+starting heights. One uniform tilt now constructs respected physical comparisons
+on every admissible short interval of the complete chain, including windows
+through the old junction and along the outer tail. All cut labels and physical
+window geometry are derived. Connecting these actual comparisons to the existing
+weighted polar-block estimates, saved-frontier transport and the complete flat
+graft remain open.
 See the [gap-grafting checklist](docs/NORMAL_SELECTIONS.md#gap-grafting-status). The finite-cell route to
 global isometry does not require a separate end-height certificate. Normal-cover
 selection and Euler counting follow.

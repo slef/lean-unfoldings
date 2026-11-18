@@ -2,6 +2,24 @@
 
 ## Session Log
 
+### 2026-11-17 — uniform actual physical windows through the complete new rim
+
+- Packaged all admissible short intervals of an actual radial bank chain as
+  constructed respected physical comparisons, with original finite-roof heights
+  and uniformly small unreduced real-heading errors.
+- One tilt works across every spatial roof mesh and every eligible interval.
+  Interior starting points derive all actual cut labels; strict source tests and
+  initial distances transfer to each interval. Trims, generic sources, supported
+  Jordan closures, cap completions and every fine datum are constructed.
+- Applied this to complete actual rootward chains through the new rim, including
+  windows crossing the old junction and windows entirely along outer terminal
+  portions. The original first copy, far endpoint and full projected carrier survive.
+- Verification: actual cache retrieval followed by full `lake build` passed 6,279
+  jobs; 18,924 unfolding declarations passed the standard-axiom audit, and both
+  abstract independence checks passed. Existing theorem statements are unchanged.
+- Connecting actual projected heading errors to the existing weighted polar-block
+  estimates, saved-frontier transport and complete graft nonoverlap remain open.
+
 ### 2026-11-17 — actual source radial margins through the new rim
 
 - The initial ray margin survives every constructed actual terminal bank without

@@ -8,6 +8,10 @@ nonoverlap and counting remain to be proved.
 
 ## Gap-grafting status
 
+- [x] Construct uniform respected physical comparisons on every admissible short
+  interval of a complete actual source-to-rim chain, including intervals crossing
+  the old junction and intervals wholly on the terminal tail. Derive all cuts,
+  trims, generic sources, supported Jordan closures, caps and real-heading bounds.
 - [x] Extend the original annular source margin through every actual outer terminal
   bank and the complete concatenated rootward chain to the new rim. Preserve its
   whole projected stem-plus-ray carrier, actual endpoint copies, strict starting
