@@ -2,6 +2,24 @@
 
 ## Session Log
 
+### 2026-11-18 — complete terminal attachments and actual roof-plus-gap metric
+
+- Identified each terminal stack's actual last fine edge and exact final index
+  in every source gap, retaining the original child and root labels.
+- Constructed infinite continuations of the actual two roof endpoint copies.
+  Each endpoint determines its original whole-terminal side uniquely; the genuine
+  last fine edge supplies a common positive spatial speed.
+- Proved exact gap-tail/roof-tail metric agreement and literal finite/tail endpoint
+  joins. Openings preserve the original last-edge parameter on both sides.
+- Defined the complete roof-plus-gap route-metric graft with every actual finite
+  and infinite bank seam. No global injectivity or flatness premise is used.
+- Verification: actual cache retrieval and full `lake build` passed 6,420 jobs.
+  All 19,866 unfolding declarations passed the standard-axiom audit; both abstract
+  independence checks passed. Existing theorem statements are unchanged.
+- Remaining: preserve canonical occupied gap sides in the geometric construction,
+  identify actual local saved-frontier fans, prove local flatness and simple
+  connectivity, and obtain global nonoverlap.
+
 ### 2026-11-18 — actual contour gap stacks and finite-edge metric graft
 
 - Indexed the actual positive fresh contour sources once, derived each parent

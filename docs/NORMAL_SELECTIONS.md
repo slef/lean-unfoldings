@@ -415,11 +415,17 @@ nonoverlap and counting remain to be proved.
   parent banks with their route metric. Both gap sides have exactly the original
   roof edge metric, derived without side, index or speed certificates; see
   [`CompatibleContourBankAgreement`](../Unfoldings/Roof/CompatibleContourBankAgreement.lean).
-- [ ] Extend the actual attachment construction over every complete terminal tail.
+- [x] Extend the actual attachment construction over every complete terminal tail.
+  The last fine edge fixes every affected gap's final index and a common positive
+  physical speed. Each actual roof endpoint determines its original whole-ray side;
+  both gap-tail metrics and every endpoint attachment match exactly. The complete
+  route-metric graft is
+  [`CompatibleContourGraft`](../Unfoldings/Roof/CompatibleContourGraft.lean).
 - [ ] Carry physical saved-frontier curves and their untouched original sides through
   actual prior gap attachments. Apply the local metric remainder models to those updates.
-- [ ] Assemble the complete graft and prove completeness, simple connectivity and local
-  Euclidean charts. Apply the global planar-isometry theorem for nonoverlap.
+- [ ] Retain the constructed gaps' canonical occupied side and identify the actual
+  local graft fans. Prove completeness, simple connectivity and local Euclidean
+  charts, then apply the global planar-isometry theorem for nonoverlap.
 
 The finite-path comparison now constructs its actual Jordan traversal and derives
 all original fan alternatives. Complete physical refinements preserve every ordered
@@ -442,8 +448,9 @@ derives all input length bounds. Uniform numerical small-loss choices now give t
 requested chord accuracy and intrinsic length bound on complete actual banks through
 every later rim. The same actual routed banks now retain explicit intrinsic
 subhistory margins and radial order from all earlier points inside edges.
-Carrying the saved frontier through inserted gaps and assembling
-the complete flat graft remain open.
+The complete bank-attached route metric is constructed. Identifying its local
+saved-frontier fans, proving flatness and topology, and obtaining the global
+planar isometry remain open.
 
 The completed local models and combinatorial histories do not assume these
 remaining geometric identifications. The paper's sharp numerical constants and

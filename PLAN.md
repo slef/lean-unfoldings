@@ -1140,8 +1140,10 @@ selection and Euler counting follow.
   parent edge's ordered stack and its exact gap-bank index.
 - [x] Identify literal rootward contour sides and assemble the finite-edge metric
   graft with exact original roof/gap bank distances, including endpoint copies.
-- [ ] Complete terminal-tail attachments and match saved-frontier curves to the
-  comparison fans and local surgery models.
+- [x] Complete all terminal-tail attachments with actual original endpoint sides
+  and exact common physical speeds, yielding the whole roof-plus-gap route metric.
+- [ ] Preserve canonical gap-side orientation and match saved-frontier curves to
+  the comparison fans and local surgery models.
 - [x] Construct complete unbounded roof cut metrics with actual planar cells,
   boundary-only seams and exact metric-ball restoration away from closed cuts.
 - [x] Construct complete unbounded cuts aligned to the actual compatible forest

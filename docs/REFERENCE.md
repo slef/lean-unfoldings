@@ -4115,4 +4115,19 @@ corners and does not yet identify their widths with the actual retained cap fan.
   [`CompatibleContourBankAgreement`](../Unfoldings/Roof/CompatibleContourBankAgreement.lean):
   the actual roof-plus-gap route metric is assembled along finite original parent
   banks. Every gap edge attaches with exactly the original roof bank's distances.
-  Terminal attachments and global flatness are not yet established.
+  Global flatness is not yet established.
+
+- [`ContourGapTerminalIndex`](../Unfoldings/Complex/ContourGapTerminalIndex.lean):
+  each terminal stack uses the exact same original last fine edge in every gap.
+- [`WholeTerminalContinuation`](../Unfoldings/Roof/WholeTerminalContinuation.lean) and
+  [`CompatibleContourTerminalMarks`](../Unfoldings/Roof/CompatibleContourTerminalMarks.lean):
+  actual rim endpoint copies determine their original infinite-bank sides and the
+  common positive physical speed, with exact endpoint and spatial identities.
+- [`BankGapTailJoin`](../Unfoldings/Geometry/BankGapTailJoin.lean) and
+  [`CompatibleContourTailAgreement`](../Unfoldings/Roof/CompatibleContourTailAgreement.lean):
+  every gap tail has exactly its last-edge speed and joins its actual finite-bank
+  endpoint. Whole gap and roof tails have identical intrinsic distance formulas.
+- [`CompatibleContourGraft`](../Unfoldings/Roof/CompatibleContourGraft.lean):
+  the complete original roof-plus-gap route metric includes all finite and infinite
+  bank attachments. Their endpoint parameters agree. Local flatness, topology and
+  global nonoverlap remain to be proved.

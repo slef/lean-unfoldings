@@ -2477,3 +2477,12 @@ public import Unfoldings.Polyhedron.ContourParentBankMetric
 public import Unfoldings.Geometry.BankGapParameters
 public import Unfoldings.Roof.CompatibleContourFiniteGraft
 public import Unfoldings.Roof.CompatibleContourBankAgreement
+
+public import Unfoldings.Complex.ContourGapTerminalIndex
+public import Unfoldings.Metric.ForwardBankParameter
+public import Unfoldings.Geometry.BankGapTailJoin
+public import Unfoldings.Roof.WholeTerminalContinuation
+public import Unfoldings.Roof.CompatibleContourTerminalGeometry
+public import Unfoldings.Roof.CompatibleContourTerminalMarks
+public import Unfoldings.Roof.CompatibleContourTailAgreement
+public import Unfoldings.Roof.CompatibleContourGraft
