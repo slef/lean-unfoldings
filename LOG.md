@@ -2,6 +2,22 @@
 
 ## Session Log
 
+### 2026-11-18 — retain canonical occupied gap regions
+
+- Added oriented two-bank geometry that selects the canonical positive region,
+  retaining both actual radial banks, the positive phase and the common source.
+  Its complete finite-cell model keeps that literal region and sector topology.
+- Derived this geometry from original opening controls, all-anchor margins,
+  terminal-edge continuations and actual fresh-source contour histories. The
+  existing uniform tilt assumptions supply it for every positive contour source.
+- Defined the canonical complete graft using those constructed positive-side
+  regions. The general metric-graft API remains valid for arbitrary gap models.
+- Verification: actual cache retrieval and full `lake build` passed 6,425 jobs.
+  All 19,920 unfolding declarations passed the standard-axiom audit; both abstract
+  independence checks passed. Existing theorem statements are unchanged.
+- Remaining: identify actual local graft fans, prove local flatness and simple
+  connectivity, and obtain global nonoverlap.
+
 ### 2026-11-18 — complete terminal attachments and actual roof-plus-gap metric
 
 - Identified each terminal stack's actual last fine edge and exact final index

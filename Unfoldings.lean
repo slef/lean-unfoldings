@@ -2486,3 +2486,9 @@ public import Unfoldings.Roof.CompatibleContourTerminalGeometry
 public import Unfoldings.Roof.CompatibleContourTerminalMarks
 public import Unfoldings.Roof.CompatibleContourTailAgreement
 public import Unfoldings.Roof.CompatibleContourGraft
+
+public import Unfoldings.Geometry.OrientedBankGap
+public import Unfoldings.Geometry.PositiveOpeningGapGeometry
+public import Unfoldings.Cap.SourceBankGapGeometry
+public import Unfoldings.Roof.CompatibleFreshSourceGapGeometry
+public import Unfoldings.Roof.CompatibleCanonicalContourGraft

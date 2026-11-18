@@ -4131,3 +4131,13 @@ corners and does not yet identify their widths with the actual retained cap fan.
   the complete original roof-plus-gap route metric includes all finite and infinite
   bank attachments. Their endpoint parameters agree. Local flatness, topology and
   global nonoverlap remain to be proved.
+
+- [`OrientedBankGap`](../Unfoldings/Geometry/OrientedBankGap.lean) and
+  [`PositiveOpeningGapGeometry`](../Unfoldings/Geometry/PositiveOpeningGapGeometry.lean):
+  original opening estimates derive the canonical positive occupied region, both
+  radial banks and their exact phase. Its metric model keeps this literal region,
+  so its intrinsic sector topology and local geometric charts are retained.
+- [`CompatibleFreshSourceGapGeometry`](../Unfoldings/Roof/CompatibleFreshSourceGapGeometry.lean)
+  and [`CompatibleCanonicalContourGraft`](../Unfoldings/Roof/CompatibleCanonicalContourGraft.lean):
+  one tilt derives the canonical geometry for every actual positive source gap.
+  Their literal occupied regions form the complete bank-attached metric graft.

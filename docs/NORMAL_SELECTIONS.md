@@ -423,9 +423,12 @@ nonoverlap and counting remain to be proved.
   [`CompatibleContourGraft`](../Unfoldings/Roof/CompatibleContourGraft.lean).
 - [ ] Carry physical saved-frontier curves and their untouched original sides through
   actual prior gap attachments. Apply the local metric remainder models to those updates.
-- [ ] Retain the constructed gaps' canonical occupied side and identify the actual
-  local graft fans. Prove completeness, simple connectivity and local Euclidean
-  charts, then apply the global planar-isometry theorem for nonoverlap.
+- [x] Retain the constructed gaps' canonical occupied side. The actual opening
+  controls derive both radial banks and their positive phase, and the complete
+  canonical graft uses these literal regions; see
+  [`CompatibleCanonicalContourGraft`](../Unfoldings/Roof/CompatibleCanonicalContourGraft.lean).
+- [ ] Identify the actual local graft fans. Prove completeness, simple connectivity
+  and local Euclidean charts, then apply the global planar-isometry theorem for nonoverlap.
 
 The finite-path comparison now constructs its actual Jordan traversal and derives
 all original fan alternatives. Complete physical refinements preserve every ordered
