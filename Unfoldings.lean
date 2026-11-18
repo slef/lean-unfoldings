@@ -2431,3 +2431,7 @@ public import Unfoldings.Roof.SourceStartBankPolarErrors
 public import Unfoldings.Roof.SourceStartBankRolling
 public import Unfoldings.Roof.SourceStartRoutedBankRolling
 public import Unfoldings.Roof.UniformSourceStartRoutedBankRolling
+public import Unfoldings.Complex.ProcessedRootwardChain
+public import Unfoldings.Geometry.GlobalRadialChainTests
+public import Unfoldings.Geometry.TerminalEdgeOpeningGap
+public import Unfoldings.Geometry.TerminalEdgeRay

@@ -372,7 +372,11 @@ nonoverlap and counting remain to be proved.
 - [x] Choose the source-starting rolling tilt before every target mesh and cut.
   All smaller positive tilts give radial order on the full actual intrinsic bank,
   directly from compatible routing and interior bank placement.
-- [ ] Construct the actual full source-starting reference chain by joining the newly
+- [x] Construct actual source-inclusive current chains from processed ancestors,
+  with original parent-orbit labels and their true endpoint at the named root.
+  This includes the contour-descent source case. Continuing the last edge retains
+  all original vertices and derives every required terminal radial margin.
+- [ ] Construct the leaf-return source case and identify the actual full source-starting reference chain by joining the newly
   exposed source seam to the untouched original rootward stem and its terminal ray.
 - [ ] Carry physical saved-frontier curves and their untouched original sides through
   actual prior gap attachments. Apply the local metric remainder models to those updates.

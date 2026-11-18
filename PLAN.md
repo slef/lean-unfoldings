@@ -1077,6 +1077,11 @@ A single positive tilt threshold now precedes all target meshes and retained cut
 every smaller tilt gives the complete source-starting bank's whole-point radial
 order directly from routing and interior bank placement. The next construction
 is the newly exposed source bank joined to the actual untouched rootward stem.
+Actual source-inclusive chains are now constructed for processed ancestor bases,
+with exact original labels and a derived root endpoint. This covers contour
+descents into a child; the leaf return case remains open. Continuing the last
+edge preserves every original vertex and all quantitative tail margins, so finite
+bank estimates also construct complete terminal opening gaps.
 See the [gap-grafting checklist](docs/NORMAL_SELECTIONS.md#gap-grafting-status). The finite-cell route to
 global isometry does not require a separate end-height certificate. Normal-cover
 selection and Euler counting follow.

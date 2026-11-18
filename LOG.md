@@ -2,6 +2,26 @@
 
 ## Session Log
 
+### 2026-11-18 — actual processed-source chains and complete terminal banks
+
+- Constructed actual current boundary-bank chains from any processed ancestor,
+  including its own first parent edge. Every bank retains its original parent-orbit
+  label, and the true far endpoint of the last bank is the named original root.
+- Specialized this construction to contour descents into a child, giving the
+  source-inclusive reference chain in that case. The leaf return case remains open.
+- Continued a finite bank beyond its actual final endpoint in its last edge's
+  direction, retaining all original vertices. Quantitative all-anchor margins
+  persist to the tail without loss, and every original hinge suffix stays outward.
+- Proved equivalence between whole-point radial order and finite outward tests.
+  Finite-bank margins now construct complete terminal opening gaps without
+  separately supplied tail-margin or length certificates.
+- Verification: actual cache retrieval followed by full `lake build` passed 6,370
+  jobs; 19,400 unfolding declarations passed the standard-axiom audit, and both
+  abstract independence checks passed. Existing theorem statements are unchanged.
+- Remaining: construct the leaf source bank, identify the complete reference bank
+  with the physical marked curve, transport the saved frontier through attached
+  gap cells, and assemble the complete flat graft with global nonoverlap.
+
 ### 2026-11-17 — uniform complete source-starting routed bank rolling
 
 - Chose one positive normal-tilt threshold before every target mesh, retained cut
