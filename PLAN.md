@@ -1064,7 +1064,10 @@ lists directly. Each fresh contour step has the exact complete normalized bank
 update by its own defect, including every point and the unbounded tail. Reordering
 actual suffix rotations preserves the final bank. Identifying this bank with the
 physical saved frontier through attached gap cells, transporting between original
-and comparison bank subdivisions, and assembling the flat graft remain open.
+and comparison bank subdivisions, and assembling the flat graft remain open. Given
+a radially controlled reference bank, the actual next contour source now constructs
+a complete Jordan gap to its next canonical opened bank; no opening-list or charge
+assignment certificate is supplied. The full reference-bank identification remains open.
 See the [gap-grafting checklist](docs/NORMAL_SELECTIONS.md#gap-grafting-status). The finite-cell route to
 global isometry does not require a separate end-height certificate. Normal-cover
 selection and Euler counting follow.

@@ -2,6 +2,21 @@
 
 ## Session Log
 
+### 2026-11-17 — complete source gaps from the actual contour history
+
+- The next source's original defect and prior canonical contour history spend
+  total original curvature only once; distinctness follows from freshness.
+- A positive fresh source now constructs a complete contractible Jordan gap to
+  the next canonical opened bank, including both infinite tails and finite convex
+  cells. Its opening word, angle bounds and all length budgets are derived.
+- The theorem takes a radially controlled reference bank as input. Identifying
+  this reference with the complete original source-starting intrinsic bank and
+  then with the saved frontier in the attached-gap metric surface is still separate.
+- Verification: actual cache retrieval followed by full `lake build` passed 6,358
+  jobs; 19,353 unfolding declarations passed the standard-axiom audit, and both
+  abstract independence checks passed. Existing theorem statements are unchanged.
+- The complete physical flat graft and its global nonoverlap theorem remain open.
+
 ### 2026-11-17 — exact contour-stage rootward opening updates
 
 - Constructed the original finite parent path through its first actual root,

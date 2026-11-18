@@ -359,6 +359,10 @@ nonoverlap and counting remain to be proved.
   Derive the exact whole normalized bank update by a fresh source's own defect,
   retaining all vertices and the complete infinite tail. Final bank geometry is
   unchanged by reordering the actual translated suffix rotations.
+- [x] Construct the next positive source's complete Jordan gap from its actual
+  contour history and total original curvature, given a radial reference bank.
+  Its opening list, source charges, angle bounds and length budgets are derived.
+  Identifying the complete source-starting reference bank remains separate.
 - [ ] Carry physical saved-frontier curves and their untouched original sides through
   actual prior gap attachments. Apply the local metric remainder models to those updates.
 - [ ] Assemble the complete graft and prove completeness, simple connectivity and local

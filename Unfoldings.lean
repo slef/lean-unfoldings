@@ -2421,3 +2421,5 @@ public import Unfoldings.Geometry.CanonicalOpeningUpdate
 public import Unfoldings.Geometry.ChainExt
 public import Unfoldings.Geometry.OpeningPermutation
 public import Unfoldings.Topology.ParentOrbitPath
+public import Unfoldings.Cap.ContourSourceOpeningBudget
+public import Unfoldings.Cap.ContourSourceOpeningGap
