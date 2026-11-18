@@ -1047,8 +1047,10 @@ quantitative bounds survive. Passed original contour prefixes construct these
 current chains directly from the processing history. Transport through attached
 gap cells still requires proof. Constructed finite and terminal comparison banks
 now follow the original compatible routing, preserving each original ordered
-step. Existing subhistory margin estimates can therefore apply once that routing
-witness is retained on the complete assembled chain.
+step. The complete assembled source-to-rim chain now retains that routing witness
+together with its uniform rolling accuracy and physical comparison data. Existing
+subhistory margins can apply to the same actual chain. Outgoing-tangent control
+and transport through attached gap cells remain open.
 See the [gap-grafting checklist](docs/NORMAL_SELECTIONS.md#gap-grafting-status). The finite-cell route to
 global isometry does not require a separate end-height certificate. Normal-cover
 selection and Euler counting follow.

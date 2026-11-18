@@ -2,6 +2,19 @@
 
 ## Session Log
 
+### 2026-11-17 — simultaneous routing and accuracy on complete rootward banks
+
+- Actual finite stems retain their original compatible routing while preserving
+  original endpoint copies, projected carriers and unreduced terminal headings.
+- Concatenated stems and terminal banks follow the same routing through every
+  later rim. The same full chain carries physical radial comparison data and
+  uniformly prescribed chord and intrinsic-length accuracy.
+- Verification: actual cache retrieval followed by full `lake build` passed 6,328
+  jobs; 19,231 unfolding declarations passed the standard-axiom audit, and both
+  abstract independence checks passed. Existing theorem statements are unchanged.
+- Outgoing-tangent control, transport through attached gap cells, physical
+  saved-frontier updates and the complete flat graft remain open.
+
 ### 2026-11-17 — actual comparison banks follow the original compatible routing
 
 - Compatible steps survive every ordered closed forward subsegment. Their actual

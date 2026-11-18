@@ -2389,3 +2389,8 @@ public import Unfoldings.Polyhedron.ProjectedBankInterpolation
 public import Unfoldings.Roof.CompatibleComparisonFiniteFollows
 public import Unfoldings.Roof.CompatibleComparisonTerminalFollows
 public import Unfoldings.Roof.CompatibleComparisonChainFollows
+public import Unfoldings.Roof.CompatibleBoundaryChainSteps
+public import Unfoldings.Roof.CompatibleComparisonFollowsRefinement
+public import Unfoldings.Roof.CompatibleRootwardFollowsHeading
+public import Unfoldings.Roof.CompatibleRootwardRimFollows
+public import Unfoldings.Roof.CompatibleRootwardRimRoutedAccuracy
