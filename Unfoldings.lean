@@ -2363,3 +2363,10 @@ public import Unfoldings.Roof.CompletionProjectedChainFans
 public import Unfoldings.Roof.CompletionProjectedChainHeading
 public import Unfoldings.Roof.CompletionProjectedCapHeading
 public import Unfoldings.Roof.CompletionProjectedBankWindow
+public import Unfoldings.Geometry.PlanePolarWindow
+public import Unfoldings.Geometry.ComplexFrameLength
+public import Unfoldings.Roof.SupportedBankWindowErrors
+public import Unfoldings.Roof.SupportedBankPolarErrors
+public import Unfoldings.Roof.ProjectedBankFrames
+public import Unfoldings.Roof.SupportedBankWeightedRolling
+public import Unfoldings.Roof.SupportedBankWeightedConsequences

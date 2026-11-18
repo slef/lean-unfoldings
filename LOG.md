@@ -2,6 +2,23 @@
 
 ## Session Log
 
+### 2026-11-17 — weighted rolling from actual physical bank comparisons
+
+- Eliminated auxiliary meshes and trims from local phase bounds. The original
+  chain's real phase differences satisfy the exact short polar-window hypothesis
+  in any orthonormal complex frame, including a reflected frame.
+- Constructed common physical projected coordinates and the original intrinsic
+  roll with exact edge factors; framing preserves intrinsic length and chord norm.
+- Constructed local comparisons now imply weighted aligned chord error, intrinsic
+  length-to-chord bounds and radial-margin bounds, using original physical radial,
+  prefix and total length estimates. No global winding bound or supplied local
+  phase-error certificate is assumed.
+- Verification: actual cache retrieval followed by full `lake build` passed 6,304
+  jobs; 19,093 unfolding declarations passed the standard-axiom audit, and both
+  abstract independence checks passed. Existing theorem statements are unchanged.
+- Deriving all input estimates on complete actual rootward chains, saved-frontier
+  transport and full graft nonoverlap remain open.
+
 ### 2026-11-17 — complete original real projected headings through physical windows
 
 - Proved exact projected full-plane and half-plane fans at inserted vertices in

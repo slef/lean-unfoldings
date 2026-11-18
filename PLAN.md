@@ -1031,7 +1031,11 @@ patches now preserve every original projected corner angle and corresponding
 one-sided cut fan exactly. Inserted bank hinges now have projected angle π, and
 every actual fine prefix retains its original unreduced projected heading. The
 trimmed physical comparison cap has exactly its untrimmed original projected
-terminal heading and real phase error. Applying this identity to weighted rolling,
+terminal heading and real phase error. Actual physical comparisons now supply the
+short polar-window hypothesis in either orthonormal orientation, with exact common
+physical and intrinsic rolling coordinates. Weighted chord, intrinsic length and
+radial-margin estimates follow from the original physical path estimates, allowing
+arbitrary winding. Deriving all inputs on complete actual rootward chains,
 saved-frontier transport and the complete flat graft remain open.
 See the [gap-grafting checklist](docs/NORMAL_SELECTIONS.md#gap-grafting-status). The finite-cell route to
 global isometry does not require a separate end-height certificate. Normal-cover
