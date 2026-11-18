@@ -2,6 +2,21 @@
 
 ## Session Log
 
+### 2026-11-17 — actual comparison banks follow the original compatible routing
+
+- Compatible steps survive every ordered closed forward subsegment. Their actual
+  horizontal interpolation retains both literal spatial endpoint copies.
+- Every constructed finite comparison bank follows its original routing step;
+  every constructed terminal bank follows the original root ray with ordered
+  nonnegative time. Complete finite-bank coverage transfers routing to assembled chains.
+- Reused the existing general subhistory radial-margin theorem; no duplicate
+  subhistory theory is added. The new work supplies its actual comparison-bank input.
+- Verification: actual cache retrieval followed by full `lake build` passed 6,323
+  jobs; 19,195 unfolding declarations passed the standard-axiom audit, and both
+  abstract independence checks passed. Existing theorem statements are unchanged.
+- Simultaneous routing on complete source-to-rim chains, transport through attached
+  gap cells, physical saved-frontier updates and the complete flat graft remain open.
+
 ### 2026-11-17 — exact transport of untouched original sides between cut stages
 
 - Projection commutes with restoring seams along surviving actual bank chains.

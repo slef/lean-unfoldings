@@ -1045,7 +1045,10 @@ original sides now have exact transport between intermediate cut surfaces: all
 closed metric points, physical projections, intrinsic rolls, real phase errors and
 quantitative bounds survive. Passed original contour prefixes construct these
 current chains directly from the processing history. Transport through attached
-gap cells still requires proof.
+gap cells still requires proof. Constructed finite and terminal comparison banks
+now follow the original compatible routing, preserving each original ordered
+step. Existing subhistory margin estimates can therefore apply once that routing
+witness is retained on the complete assembled chain.
 See the [gap-grafting checklist](docs/NORMAL_SELECTIONS.md#gap-grafting-status). The finite-cell route to
 global isometry does not require a separate end-height certificate. Normal-cover
 selection and Euler counting follow.

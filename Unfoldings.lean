@@ -2384,3 +2384,8 @@ public import Unfoldings.Roof.SurvivingBankMetric
 public import Unfoldings.Roof.SurvivingBankAccuracy
 public import Unfoldings.Complex.ProcessedContourPrefix
 public import Unfoldings.Roof.ProcessedContourPrefixMetric
+public import Unfoldings.Roof.CompatibleStepSubsegments
+public import Unfoldings.Polyhedron.ProjectedBankInterpolation
+public import Unfoldings.Roof.CompatibleComparisonFiniteFollows
+public import Unfoldings.Roof.CompatibleComparisonTerminalFollows
+public import Unfoldings.Roof.CompatibleComparisonChainFollows
