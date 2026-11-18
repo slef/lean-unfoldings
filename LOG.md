@@ -2,6 +2,24 @@
 
 ## Session Log
 
+### 2026-11-17 — uniform complete source-starting routed bank rolling
+
+- Chose one positive normal-tilt threshold before every target mesh, retained cut
+  and complete actual bank. Every smaller positive tilt works.
+- Actual routing and interior bank placement now derive whole-point radial order
+  on the complete original intrinsic roll, including its first source-starting
+  edge. No initial-distance, length, phase or radial-margin certificate is supplied.
+- Verification: actual cache retrieval followed by full `lake build` passed 6,366
+  jobs; 19,369 unfolding declarations passed the standard-axiom audit, and both
+  abstract independence checks passed. Existing theorem statements are unchanged.
+- Next geometric connection: construct the source-starting reference bank after
+  its singleton cut by joining the newly exposed source bank to the untouched
+  rootward stem. The original last incoming bank already has the terminal-ray
+  direction, so the new uniform theorem may avoid a separate comparison-bank
+  subdivision transport for this reference-bank estimate.
+- Physical saved-frontier placement through attached gaps and the complete flat
+  graft with global nonoverlap remain open.
+
 ### 2026-11-17 — complete source-starting intrinsic radial rolling
 
 - Exact polar-window identities need only positive-index vertices to avoid the

@@ -1073,6 +1073,10 @@ edge by arbitrarily small strict-source perturbations. The full reference-bank
 identification remains open. The resulting genuine source-starting comparisons
 now preserve all intrinsic subhistory margins and whole-point radial order on the
 complete original bank, including the first edge, without an initial-distance input.
+A single positive tilt threshold now precedes all target meshes and retained cuts;
+every smaller tilt gives the complete source-starting bank's whole-point radial
+order directly from routing and interior bank placement. The next construction
+is the newly exposed source bank joined to the actual untouched rootward stem.
 See the [gap-grafting checklist](docs/NORMAL_SELECTIONS.md#gap-grafting-status). The finite-cell route to
 global isometry does not require a separate end-height certificate. Normal-cover
 selection and Euler counting follow.

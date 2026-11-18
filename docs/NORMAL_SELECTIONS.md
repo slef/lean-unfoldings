@@ -369,6 +369,11 @@ nonoverlap and counting remain to be proved.
 - [x] Transport source-starting comparisons to the full original intrinsic roll.
   Internal polar windows omit the initial vertex, and routing derives every
   subhistory margin and whole-point radial order including the first edge.
+- [x] Choose the source-starting rolling tilt before every target mesh and cut.
+  All smaller positive tilts give radial order on the full actual intrinsic bank,
+  directly from compatible routing and interior bank placement.
+- [ ] Construct the actual full source-starting reference chain by joining the newly
+  exposed source seam to the untouched original rootward stem and its terminal ray.
 - [ ] Carry physical saved-frontier curves and their untouched original sides through
   actual prior gap attachments. Apply the local metric remainder models to those updates.
 - [ ] Assemble the complete graft and prove completeness, simple connectivity and local
