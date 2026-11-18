@@ -1006,8 +1006,11 @@ stages. Larger comparison meshes now also respect every old face boundary.
 Their contained physical triangles form actual isometric subdivisions, conserving
 every original Euclidean corner angle exactly. Their complete old-face subcomplex
 now has an exact original cut metric equivalence, with unique corresponding
-cut-side vertices and unchanged one-sided fan angles. Agreement with full larger-mesh
-fans at actual chain junctions, arbitrary outer terminal portions, the weighted
+cut-side vertices and unchanged one-sided fan angles. The corresponding vertices
+in the full larger mesh now retain their literal spatial positions and exact fan
+angles strictly below the old rim. Face restriction there preserves every corner
+weight without splitting retained copies. Matching the chosen comparison-chain
+junctions to these vertices, arbitrary outer terminal portions, the weighted
 polar-block estimate, saved-frontier transport and the complete flat graft remain open.
 See the [gap-grafting checklist](docs/NORMAL_SELECTIONS.md#gap-grafting-status). The finite-cell route to
 global isometry does not require a separate end-height certificate. Normal-cover

@@ -8,10 +8,14 @@ nonoverlap and counting remain to be proved.
 
 ## Gap-grafting status
 
+- [x] Include the corresponding old cut-side vertices in the full larger mesh.
+  Every vertex strictly below the old rim retains its literal spatial position
+  and exact full-mesh fan angle. Fully incident face restrictions preserve all
+  corner weights and cannot split the original retained vertex class.
 - [x] Derive retained seam correspondence and an exact cut metric equivalence for
   the complete old-face subdivision. Every old cut-side vertex has one fine copy
-  with exactly its original fan angle. Agreement with full larger-mesh fans at
-  the actual chain junctions remains to be established.
+  with exactly its original fan angle. Matching these copies to the chosen actual
+  comparison-chain junctions remains to be established.
 - [x] Construct larger meshes respecting every old face boundary and prescribed cut.
   The contained physical triangles subdivide each whole old face isometrically,
   and their corner angles sum to each original corner angle exactly.

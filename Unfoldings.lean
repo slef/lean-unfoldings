@@ -2322,3 +2322,8 @@ public import Unfoldings.Complex.SubdivisionPhysicalConforming
 public import Unfoldings.Roof.NestedMeshCutGeometry
 public import Unfoldings.Roof.NestedCutSubdivision
 public import Unfoldings.Roof.CompatibleComparisonCutSubdivision
+public import Unfoldings.Geometry.NestedMeshInterior
+public import Unfoldings.Complex.RestrictedIncidentCopies
+public import Unfoldings.Complex.RestrictedIncidentAngles
+public import Unfoldings.Roof.NestedInteriorFans
+public import Unfoldings.Roof.CompatibleComparisonOriginalFans

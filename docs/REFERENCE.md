@@ -3977,4 +3977,18 @@ corners and does not yet identify their widths with the actual retained cap fan.
 - [`CompatibleComparisonCutSubdivision`](../Unfoldings/Roof/CompatibleComparisonCutSubdivision.lean):
   the actual larger mesh's old-face subcomplex has exactly the original intermediate
   cut metric, unique corresponding original cut-side vertices and unchanged fan
-  angles. Full larger-mesh fan agreement is a subsequent step.
+  angles.
+
+- [`NestedMeshInterior`](../Unfoldings/Geometry/NestedMeshInterior.lean):
+  every full new triangle incident strictly inside the old footprint belongs to
+  the original-face subdivision.
+- [`RestrictedIncidentCopies`](../Unfoldings/Complex/RestrictedIncidentCopies.lean) and
+  [`RestrictedIncidentAngles`](../Unfoldings/Complex/RestrictedIncidentAngles.lean):
+  keeping every face incident to a physical point preserves retained vertex
+  classes, every original corner weight and exact one-sided total angles.
+- [`NestedInteriorFans`](../Unfoldings/Roof/NestedInteriorFans.lean):
+  complete full-mesh fans agree with old-face subcomplex fans inside the old
+  footprint, and the exact subdivision cut equivalence preserves spatial folds.
+- [`CompatibleComparisonOriginalFans`](../Unfoldings/Roof/CompatibleComparisonOriginalFans.lean):
+  construct corresponding actual full comparison-mesh vertices with literal
+  original spatial positions and unchanged one-sided fan angles below the old rim.

@@ -2,6 +2,23 @@
 
 ## Session Log
 
+### 2026-11-17 — original interior cut-side fans in the full larger mesh
+
+- Every fine triangle incident strictly inside an old footprint belongs to its
+  complete old-face subdivision; only genuine geometric containment is used.
+- Keeping every incident physical face preserves retained attachment chains and
+  cannot split a retained vertex class. All original corner weights, and hence
+  exact one-sided total angles, survive this restriction.
+- Constructed the corresponding original cut-side vertices in the full larger
+  comparison mesh. Their literal spatial positions agree with the originals, and
+  every vertex strictly below the old rim has exactly its original full-mesh fan.
+- Verification: actual cache retrieval followed by full `lake build` passed 6,261
+  jobs; 18,797 unfolding declarations passed the standard-axiom audit, and both
+  abstract independence checks passed. Existing theorem statements are unchanged.
+- Matching these vertices to the chosen actual comparison-chain junctions,
+  arbitrary outer terminal portions, weighted polar blocks, saved-frontier transport
+  and complete graft nonoverlap remain open.
+
 ### 2026-11-17 — exact retained cut metrics and fans in the old-face subdivision
 
 - A general rigid geometric subdivision now constructs a physical cut refinement
