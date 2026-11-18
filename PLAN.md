@@ -1078,8 +1078,13 @@ every smaller tilt gives the complete source-starting bank's whole-point radial
 order directly from routing and interior bank placement. The next construction
 is the newly exposed source bank joined to the actual untouched rootward stem.
 Actual source-inclusive chains are now constructed for processed ancestor bases,
-with exact original labels and a derived root endpoint. This covers contour
-descents into a child; the leaf return case remains open. Continuing the last
+with exact original labels and a derived root endpoint. Both descents and returns
+now construct the complete source-inclusive current chain, including one-edge
+returns to the rim and unused isolated roots. On the actual compatible mesh,
+the complete projected chain equals the original parent history, derives routing
+and interior bank starts, and has uniform intrinsic whole-point radial order.
+Matching its terminal continuation to the whole-cut marked curve remains open.
+Continuing the last
 edge preserves every original vertex and all quantitative tail margins, so finite
 bank estimates also construct complete terminal opening gaps.
 See the [gap-grafting checklist](docs/NORMAL_SELECTIONS.md#gap-grafting-status). The finite-cell route to

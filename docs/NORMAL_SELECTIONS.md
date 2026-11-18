@@ -376,8 +376,16 @@ nonoverlap and counting remain to be proved.
   with original parent-orbit labels and their true endpoint at the named root.
   This includes the contour-descent source case. Continuing the last edge retains
   all original vertices and derives every required terminal radial margin.
-- [ ] Construct the leaf-return source case and identify the actual full source-starting reference chain by joining the newly
-  exposed source seam to the untouched original rootward stem and its terminal ray.
+- [x] Construct the leaf-return source bank and join its literal edge to the actual
+  untouched parent stem, deriving successors after restored contour excursions.
+  Both fresh contour directions now construct the complete source-inclusive chain,
+  with original parent labels and the true root endpoint; isolated unused roots are allowed.
+- [x] Identify the complete actual compatible source bank's projected parent history.
+  Derive its routing and interior bank starts, then uniform intrinsic whole-point
+  radial order, including the original source edge and one-edge rim returns.
+  See [`CompatibleFreshSourceBank`](../Unfoldings/Roof/CompatibleFreshSourceBank.lean).
+- [ ] Identify this complete finite bank and its actual terminal continuation with
+  the marked whole-cut reference curve and canonical opening-history bank.
 - [ ] Carry physical saved-frontier curves and their untouched original sides through
   actual prior gap attachments. Apply the local metric remainder models to those updates.
 - [ ] Assemble the complete graft and prove completeness, simple connectivity and local

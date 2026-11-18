@@ -4050,3 +4050,14 @@ corners and does not yet identify their widths with the actual retained cap fan.
   comparisons on all its admissible short intervals, including junction and tail
   portions. Its original initial copy, far spatial endpoint and complete projected
   stem-plus-ray carrier are preserved.
+
+- [`FreshSourceBankChain`](../Unfoldings/Complex/FreshSourceBankChain.lean):
+  every fresh descent or return constructs the complete actual source-to-root bank
+  chain with exact parent-orbit labels and the true original root endpoint.
+  Unused isolated roots and one-edge rim returns are included.
+- [`CompatibleSourceBankGeometry`](../Unfoldings/Roof/CompatibleSourceBankGeometry.lean):
+  complete original endpoint labels identify the actual projected parent history,
+  derive compatible routing, and place every bank start inside the physical roof.
+- [`CompatibleFreshSourceBank`](../Unfoldings/Roof/CompatibleFreshSourceBank.lean):
+  construct these chains on actual compatible meshes and derive their uniform
+  intrinsic whole-point radial order, including the original source edge.

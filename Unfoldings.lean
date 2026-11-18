@@ -2435,3 +2435,12 @@ public import Unfoldings.Complex.ProcessedRootwardChain
 public import Unfoldings.Geometry.GlobalRadialChainTests
 public import Unfoldings.Geometry.TerminalEdgeOpeningGap
 public import Unfoldings.Geometry.TerminalEdgeRay
+public import Unfoldings.Topology.ChainCast
+public import Unfoldings.Topology.ParentDistanceStep
+public import Unfoldings.Complex.SupportedProcessedRootwardChain
+public import Unfoldings.Complex.ReturnSourceBank
+public import Unfoldings.Complex.ReturnSourceBoundaryStep
+public import Unfoldings.Complex.ReturnSourceChain
+public import Unfoldings.Complex.FreshSourceBankChain
+public import Unfoldings.Roof.CompatibleSourceBankGeometry
+public import Unfoldings.Roof.CompatibleFreshSourceBank

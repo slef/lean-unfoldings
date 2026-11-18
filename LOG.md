@@ -2,6 +2,25 @@
 
 ## Session Log
 
+### 2026-11-18 — complete fresh-source banks on actual compatible meshes
+
+- Constructed the literal returning source edge and its actual successor after
+  restored contour excursions. Joined it to the untouched parent stem, including
+  the one-edge return directly to a root. Every bank keeps its original parent
+  label, and the far endpoint is the true original root.
+- Unified fresh descents and returns into a source-inclusive chain constructor.
+  The construction allows unused isolated roots, as required by physical meshes.
+- Identified the complete compatible mesh bank with its original projected parent
+  history. Routing and strict interior placement of every bank start are derived.
+  One positive tilt controls intrinsic whole-point radial order for all constructed
+  fresh-source banks, including their first edge.
+- Verification: actual cache retrieval followed by full `lake build` passed 6,379
+  jobs; the standard-axiom audit and both abstract independence checks passed.
+  Existing theorem statements are unchanged.
+- Remaining: identify the whole-cut marked reference bank and terminal continuation,
+  transport saved frontiers through attached gap cells, and assemble the complete
+  flat graft with global nonoverlap. The global gap-grafting theorem remains open.
+
 ### 2026-11-18 — actual processed-source chains and complete terminal banks
 
 - Constructed actual current boundary-bank chains from any processed ancestor,
