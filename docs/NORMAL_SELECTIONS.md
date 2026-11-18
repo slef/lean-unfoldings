@@ -396,8 +396,15 @@ nonoverlap and counting remain to be proved.
   Every original closed bank point, source/root endpoint and unreduced heading
   survives, with the same entire intrinsic roll. See
   [`CompatibleFreshSourceReference`](../Unfoldings/Roof/CompatibleFreshSourceReference.lean).
-- [ ] Identify the actual terminal continuation and the opened bank with
-  the marked whole-cut curves and saved frontier through the attached gap cells.
+- [x] Identify complete source banks' true terminal continuations, including one-edge
+  banks. The exact original spatial ray, speed, carrier and intrinsic dilation are
+  derived. Local cut equality fixes the original side and gives its actual whole
+  half-plane metric chart; see
+  [`CompatibleSourceTerminalChart`](../Unfoldings/Roof/CompatibleSourceTerminalChart.lean).
+- [x] Construct marked-bank metric grafts and prove equivalence to the underlying
+  cell gluing, fixing all original points. Local bank-boundary placement derives
+  boundary-only seams; see [`BankGraft`](../Unfoldings/Metric/BankGraft.lean).
+- [ ] Construct the actual saved-frontier attachment marks in the roof-plus-gap graft.
 - [ ] Carry physical saved-frontier curves and their untouched original sides through
   actual prior gap attachments. Apply the local metric remainder models to those updates.
 - [ ] Assemble the complete graft and prove completeness, simple connectivity and local

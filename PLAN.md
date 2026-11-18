@@ -1086,10 +1086,14 @@ and interior bank starts, and has uniform intrinsic whole-point radial order.
 A fixed positive all-anchor margin now follows uniformly for these complete
 actual banks. One smaller tilt also derives total curvature and constructs their
 canonical complete local Jordan gaps, with actual source labels, complete tails
-and finite closed convex cells. Matching the terminal continuation and opened
-bank to the whole-cut marked curves remains open. The complete finite bank now
-also restores to its actual original ancestor-path cut, preserving all closed
-bank points, original endpoints and the full unreduced intrinsic roll.
+and finite closed convex cells. The terminal continuation now matches the exact
+original spatial ray and an actual intrinsic whole-bank dilation, including
+one-edge banks. Its cut germ determines a unique original side and whole half-plane
+metric neighborhood. The complete finite bank also restores to its original
+ancestor-path cut, preserving all closed bank points, endpoints and the full
+unreduced intrinsic roll. Marked-bank metric grafts now have an exact equivalent
+single-cell model with derived boundary-only seams from local placement data.
+The actual saved-frontier attachment marks and global flat graft remain open.
 Continuing the last
 edge preserves every original vertex and all quantitative tail margins, so finite
 bank estimates also construct complete terminal opening gaps.

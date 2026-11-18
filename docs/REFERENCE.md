@@ -4077,3 +4077,19 @@ corners and does not yet identify their widths with the actual retained cap fan.
 - [`FreshSourceContourBanks`](../Unfoldings/Complex/FreshSourceContourBanks.lean):
   construct complete source banks with their literal original oriented contour
   tags. The compatible mesh constructor retains these tags and their unique indices.
+- [`CompatibleMeshHistoryTerminal`](../Unfoldings/Roof/CompatibleMeshHistoryTerminal.lean)
+  and [`CompatibleSourceBankTerminal`](../Unfoldings/Roof/CompatibleSourceBankTerminal.lean):
+  every nonempty source-inclusive bank continues on the exact original terminal
+  ray, with common positive projected/spatial speed and the complete carrier.
+- [`CompatibleSourceBankTerminalJoin`](../Unfoldings/Roof/CompatibleSourceBankTerminalJoin.lean)
+  and [`CompatibleSourceBankTerminalGerm`](../Unfoldings/Roof/CompatibleSourceBankTerminalGerm.lean):
+  actual source endpoints join original metric terminal dilations and retain
+  the exact whole-cut germ, including the one-edge case.
+- [`RestoredTerminalSide`](../Unfoldings/Roof/RestoredTerminalSide.lean) and
+  [`CompatibleSourceTerminalChart`](../Unfoldings/Roof/CompatibleSourceTerminalChart.lean):
+  unchanged terminal cut germs fix original side labels and give actual half-plane
+  ball charts at the source bank's true terminal endpoint.
+- [`IteratedGluing`](../Unfoldings/Metric/IteratedGluing.lean) and
+  [`BankGraft`](../Unfoldings/Metric/BankGraft.lean):
+  marked-bank route-metric grafts are isometric to one gluing of all original cells.
+  Every original point is fixed, and local boundary placement derives boundary-only seams.

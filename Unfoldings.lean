@@ -2456,3 +2456,12 @@ public import Unfoldings.Complex.RootwardBankRestoration
 public import Unfoldings.Complex.CompleteSourceReference
 public import Unfoldings.Roof.CompatibleFreshSourceReference
 public import Unfoldings.Complex.FreshSourceContourBanks
+public import Unfoldings.Roof.CompatibleMeshHistoryTerminal
+public import Unfoldings.Roof.CompatibleSourceBankTerminal
+public import Unfoldings.Roof.CompatibleSourceBankTerminalJoin
+public import Unfoldings.Roof.CompatibleSourceBankTerminalGerm
+public import Unfoldings.Metric.IteratedGluing
+public import Unfoldings.Metric.BankGraft
+public import Unfoldings.Roof.RestoredTerminalSide
+public import Unfoldings.Roof.CompatibleSourceTerminalSide
+public import Unfoldings.Roof.CompatibleSourceTerminalChart

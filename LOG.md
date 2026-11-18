@@ -2,6 +2,28 @@
 
 ## Session Log
 
+### 2026-11-18 — complete source terminal identification and metric graft operations
+
+- Extended actual terminal-arrival geometry to every nonempty fine parent history,
+  including a one-edge source-to-rim bank. The entire last-edge continuation has
+  the original ray's exact parameter and carrier.
+- Proved common positive projected/spatial terminal speeds for complete actual
+  source banks. Their true endpoint copies join entire original whole-cut terminal
+  dilations, retaining all spatial coordinates and intrinsic distances.
+- Derived the exact original cut germ at these joins. The endpoint copy recovers
+  a unique original side and a whole half-plane ball chart in its actual support
+  frame; no terminal-side or chart certificate is supplied.
+- Added metric associativity for gluing already glued pieces: the iterated and
+  single-cell constructions are isometric and fix every original cell point.
+- Added marked-bank grafts with actual route metrics, exact bank identifications,
+  and the equivalent underlying cell model. Local boundary placement derives
+  boundary-only seams; global flatness or nonoverlap is not assumed.
+- Verification: actual cache retrieval and final full `lake build` passed 6,400
+  jobs. All 19,604 unfolding declarations passed the standard-axiom audit; both
+  abstract independence checks passed. Existing theorem statements are unchanged.
+- Remaining: construct the actual saved-frontier attachment marks and the resulting
+  roof-plus-gap graft; prove its local flatness, topology and global nonoverlap.
+
 ### 2026-11-18 — preserve source-bank contour sides through construction
 
 - Strengthened the fresh-source existence witness with the literal original
