@@ -427,8 +427,18 @@ nonoverlap and counting remain to be proved.
   controls derive both radial banks and their positive phase, and the complete
   canonical graft uses these literal regions; see
   [`CompatibleCanonicalContourGraft`](../Unfoldings/Roof/CompatibleCanonicalContourGraft.lean).
-- [ ] Identify the actual local graft fans. Prove completeness, simple connectivity
-  and local Euclidean charts, then apply the global planar-isometry theorem for nonoverlap.
+- [x] Identify the complete graft with one finite gluing of original closed, convex,
+  full-dimensional planar cells. Every primitive internal and bank seam lies on
+  actual cell boundaries; no global separation assumption is supplied. See
+  [`CompatibleContourGraftBoundary`](../Unfoldings/Roof/CompatibleContourGraftBoundary.lean).
+  Every original cell interior has a whole planar metric ball in the actual graft.
+- [ ] Construct closed seam domains and finite seam classes for the actual graft,
+  identifying its route-metric topology with the intended bank gluing.
+- [ ] Identify the actual local saved-frontier fan at each seam/vertex class and
+  prove its whole metric-ball chart; cell interiors are already covered.
+- [ ] Derive simple connectivity from the actual slit/gap attachments and apply the
+  global planar-isometry theorem. Its finite closed-cell argument supplies the
+  needed global completeness; a separate end-height certificate is unnecessary.
 
 The finite-path comparison now constructs its actual Jordan traversal and derives
 all original fan alternatives. Complete physical refinements preserve every ordered

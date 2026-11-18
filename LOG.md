@@ -2,6 +2,28 @@
 
 ## Session Log
 
+### 2026-11-18 — actual graft planar cells and boundary-only seams
+
+- Put every original gap cell in common rigid real-plane coordinates, retaining
+  exact intrinsic metrics and omitting same-cell identity seams. Every bank mark's
+  cell representatives lie on their actual cell boundaries.
+- Proved metric gluing associativity with isometric piece coordinates and the
+  corresponding boundary-only seam criterion for ordered gap stacks.
+- Identified the complete actual roof-plus-gap graft with one finite gluing of
+  original closed, convex, full-dimensional planar cells, including unbounded cells.
+  All original cell points retain their literal intrinsic piece copies.
+- Derived every actual roof bank mark's physical forest-cut placement. Combined
+  it with the original gap frontiers to prove that every primitive seam of the
+  complete graft lies on actual original cell boundaries.
+- Constructed whole ambient metric-ball charts at cell interiors for arbitrary
+  boundary-only gluings, then applied them to every actual graft cell interior.
+- Verification: actual cache retrieval and final full `lake build` passed 6,433
+  jobs. All 19,980 unfolding declarations passed the standard-axiom audit; both
+  abstract independence checks passed. Existing theorem statements are unchanged.
+- Remaining: closed seam domains and finite seam classes for the actual graft,
+  its local saved-frontier seam/vertex fan charts, simple connectivity, and the
+  resulting global planar isometry/nonoverlap theorem.
+
 ### 2026-11-18 — retain canonical occupied gap regions
 
 - Added oriented two-bank geometry that selects the canonical positive region,

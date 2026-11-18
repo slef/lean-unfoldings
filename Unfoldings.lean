@@ -2492,3 +2492,13 @@ public import Unfoldings.Geometry.PositiveOpeningGapGeometry
 public import Unfoldings.Cap.SourceBankGapGeometry
 public import Unfoldings.Roof.CompatibleFreshSourceGapGeometry
 public import Unfoldings.Roof.CompatibleCanonicalContourGraft
+
+public import Unfoldings.Geometry.BankGapPlanarCells
+public import Unfoldings.Metric.MappedBankGraft
+public import Unfoldings.Metric.BankStackCellBoundary
+public import Unfoldings.Roof.WholeCutMarkBoundary
+public import Unfoldings.Roof.CompatibleContourMarkCarrier
+public import Unfoldings.Roof.CompatibleContourGraftCells
+public import Unfoldings.Roof.CompatibleContourGraftBoundary
+
+public import Unfoldings.Metric.BoundaryCellInteriorChart

@@ -1143,6 +1143,8 @@ selection and Euler counting follow.
 - [x] Complete all terminal-tail attachments with actual original endpoint sides
   and exact common physical speeds, yielding the whole roof-plus-gap route metric.
 - [x] Preserve canonical gap-side orientation from the actual uniform opening controls.
+- [x] Identify the complete graft's exact finite planar-cell metric, derive boundary-only
+  primitive seams, and construct whole planar balls at every actual cell interior.
 - [ ] Match saved-frontier curves to the comparison fans and local surgery models.
 - [x] Construct complete unbounded roof cut metrics with actual planar cells,
   boundary-only seams and exact metric-ball restoration away from closed cuts.

@@ -4141,3 +4141,16 @@ corners and does not yet identify their widths with the actual retained cap fan.
   and [`CompatibleCanonicalContourGraft`](../Unfoldings/Roof/CompatibleCanonicalContourGraft.lean):
   one tilt derives the canonical geometry for every actual positive source gap.
   Their literal occupied regions form the complete bank-attached metric graft.
+
+- [`BankGapPlanarCells`](../Unfoldings/Geometry/BankGapPlanarCells.lean) and
+  [`MappedBankGraft`](../Unfoldings/Metric/MappedBankGraft.lean):
+  literal rigid gap coordinates and isometric piece models give one exact planar-cell
+  metric for the graft, omitting identity seams and preserving all original points.
+- [`CompatibleContourGraftCells`](../Unfoldings/Roof/CompatibleContourGraftCells.lean) and
+  [`CompatibleContourGraftBoundary`](../Unfoldings/Roof/CompatibleContourGraftBoundary.lean):
+  the complete actual graft has finite closed, convex, full-dimensional planar cells.
+  All primitive seams lie on actual cell boundaries. Every cell interior already
+  has a whole planar metric-ball chart in the actual graft.
+- [`BoundaryCellInteriorChart`](../Unfoldings/Metric/BoundaryCellInteriorChart.lean):
+  boundary-only gluing gives whole ambient metric-ball charts at cell interiors,
+  without finiteness, convexity or global separation premises.
