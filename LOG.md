@@ -2,6 +2,23 @@
 
 ## Session Log
 
+### 2026-11-17 — original fans at actual finite comparison-block junctions
+
+- Continuous lifts of whole physical faces into one original cut now agree from
+  their spatial folds and uncut interiors. Equality extends to every closed bank
+  and vertex copy. Added canonical nonexpanding retained face inclusions.
+- The comparison subdivision commutes exactly with the existing original whole-cut
+  maps, identifying every corresponding original cut-side vertex copy.
+- Every lifted old-bank vertex is that exact corresponding full-mesh vertex. Both
+  endpoints of each constructed actual finite comparison block therefore retain
+  their original cut-side copies and, below the old rim, their exact original fans.
+- Verification: actual cache retrieval followed by full `lake build` passed 6,267
+  jobs; 18,838 unfolding declarations passed the standard-axiom audit, and both
+  abstract independence checks passed. Existing theorem statements are unchanged.
+- Assembling unreduced real-heading comparisons, arbitrary outer terminal portions,
+  weighted polar blocks, saved-frontier transport and complete graft nonoverlap
+  remain open.
+
 ### 2026-11-17 — original interior cut-side fans in the full larger mesh
 
 - Every fine triangle incident strictly inside an old footprint belongs to its

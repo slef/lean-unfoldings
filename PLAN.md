@@ -1009,9 +1009,13 @@ now has an exact original cut metric equivalence, with unique corresponding
 cut-side vertices and unchanged one-sided fan angles. The corresponding vertices
 in the full larger mesh now retain their literal spatial positions and exact fan
 angles strictly below the old rim. Face restriction there preserves every corner
-weight without splitting retained copies. Matching the chosen comparison-chain
-junctions to these vertices, arbitrary outer terminal portions, the weighted
-polar-block estimate, saved-frontier transport and the complete flat graft remain open.
+weight without splitting retained copies. Continuous physical face lifts now
+identify the subdivision and original whole-cut maps, including all bank endpoint
+copies. Both endpoints of every constructed finite comparison block are the exact
+corresponding original vertices, with unchanged angles below the old rim.
+Assembling unreduced real-heading comparisons, arbitrary outer terminal portions,
+the weighted polar-block estimate, saved-frontier transport and the complete flat
+graft remain open.
 See the [gap-grafting checklist](docs/NORMAL_SELECTIONS.md#gap-grafting-status). The finite-cell route to
 global isometry does not require a separate end-height certificate. Normal-cover
 selection and Euler counting follow.

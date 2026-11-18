@@ -2327,3 +2327,9 @@ public import Unfoldings.Complex.RestrictedIncidentCopies
 public import Unfoldings.Complex.RestrictedIncidentAngles
 public import Unfoldings.Roof.NestedInteriorFans
 public import Unfoldings.Roof.CompatibleComparisonOriginalFans
+public import Unfoldings.Complex.FaceRestrictionMap
+public import Unfoldings.Geometry.TriangleContinuousExt
+public import Unfoldings.Geometry.SpatialEnvelopeCutLiftUnique
+public import Unfoldings.Roof.CompatibleComparisonSubdivisionMap
+public import Unfoldings.Roof.CompatibleComparisonBankOriginalFans
+public import Unfoldings.Roof.CompatibleComparisonFiniteOriginalTurns

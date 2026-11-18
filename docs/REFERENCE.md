@@ -3992,3 +3992,18 @@ corners and does not yet identify their widths with the actual retained cap fan.
 - [`CompatibleComparisonOriginalFans`](../Unfoldings/Roof/CompatibleComparisonOriginalFans.lean):
   construct corresponding actual full comparison-mesh vertices with literal
   original spatial positions and unchanged one-sided fan angles below the old rim.
+
+- [`FaceRestrictionMap`](../Unfoldings/Complex/FaceRestrictionMap.lean):
+  canonical nonexpanding retained face inclusions, preserving actual face points,
+  spatial folds and included cut-vertex copies.
+- [`TriangleContinuousExt`](../Unfoldings/Geometry/TriangleContinuousExt.lean) and
+  [`SpatialEnvelopeCutLiftUnique`](../Unfoldings/Geometry/SpatialEnvelopeCutLiftUnique.lean):
+  continuous physical face lifts into a fixed whole cut are uniquely determined
+  by their actual folds and uncut interiors, including all closed boundary copies.
+- [`CompatibleComparisonSubdivisionMap`](../Unfoldings/Roof/CompatibleComparisonSubdivisionMap.lean):
+  comparison subdivision and original whole-cut maps retain the identical metric
+  copies, including every corresponding original cut-side vertex.
+- [`CompatibleComparisonBankOriginalFans`](../Unfoldings/Roof/CompatibleComparisonBankOriginalFans.lean)
+  and [`CompatibleComparisonFiniteOriginalTurns`](../Unfoldings/Roof/CompatibleComparisonFiniteOriginalTurns.lean):
+  lifted original bank vertices and both endpoints of each actual finite comparison
+  block have their exact original cut-side copies and fan angles below the old rim.
