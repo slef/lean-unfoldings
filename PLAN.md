@@ -1026,8 +1026,10 @@ on every admissible short interval of the complete chain, including windows
 through the old junction and along the outer tail. All cut labels and physical
 window geometry are derived. Actual projected metric bank chains now retain the
 original labels and successors, with exact stretch and real phase factors and
-interval errors equal to differences of global real prefixes. Projected heading
-preservation through physical completions, the weighted polar-block bridge,
+interval errors equal to differences of global real prefixes. Physical completion
+patches now preserve every original projected corner angle and corresponding
+one-sided cut fan exactly. Inserted projected hinges, complete real heading
+transfer through physical completions, the weighted polar-block bridge,
 saved-frontier transport and the complete flat graft remain open.
 See the [gap-grafting checklist](docs/NORMAL_SELECTIONS.md#gap-grafting-status). The finite-cell route to
 global isometry does not require a separate end-height certificate. Normal-cover

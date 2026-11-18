@@ -2,6 +2,21 @@
 
 ## Session Log
 
+### 2026-11-17 — exact original projected fan angles in physical completions
+
+- Embedded physical face patches in their actual projected metric, covering each
+  old projected triangle exactly. Their projected corner-angle sums are exact.
+- Compatible affine projections now give actual geometric subdivisions preserving
+  both directions of retained seam correspondence. Corresponding vertex copies
+  commute with the change of face metric.
+- Applied this to the original physical completion: every old retained cut-side
+  fan has precisely its original projected angle, including branching cuts.
+- Verification: actual cache retrieval followed by full `lake build` passed 6,289
+  jobs; 19,008 unfolding declarations passed the standard-axiom audit, and both
+  abstract independence checks passed. Existing theorem statements are unchanged.
+- Inserted projected hinges, complete real heading transfer, weighted rolling,
+  saved-frontier transport and full graft nonoverlap remain open.
+
 ### 2026-11-17 — original projected metric bank rolls
 
 - Constructed projected metric chains with the same original faces, cut labels,

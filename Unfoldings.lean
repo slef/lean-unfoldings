@@ -2348,3 +2348,10 @@ public import Unfoldings.Roof.CompatibleRootwardRimWindows
 public import Unfoldings.Complex.AffineProjectionChains
 public import Unfoldings.Cap.ProjectedCutMetric
 public import Unfoldings.Roof.ProjectedBankMetric
+public import Unfoldings.Development.AffineProjectionEmbedding
+public import Unfoldings.Complex.AffineProjectionSubdivision
+public import Unfoldings.Roof.CompletionProjectedFacePatch
+public import Unfoldings.Roof.CompletionProjectedFaceAngles
+public import Unfoldings.Roof.CompletionProjectedSubdivision
+public import Unfoldings.Roof.CompletionProjectedSubdivisionAngles
+public import Unfoldings.Complex.AffineProjectionSubdivisionVertices
