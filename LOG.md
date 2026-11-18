@@ -2,6 +2,23 @@
 
 ## Session Log
 
+### 2026-11-17 — complete original real headings in larger comparison refinements
+
+- Complete finite disjoint block coverage now counts every actual directed interval
+  weight once, for arbitrary additive weights and varying block lengths.
+- Actual finite comparison blocks contribute exactly their original starting turns;
+  inserted straight hinges contribute zero. The full unreduced terminal heading
+  is the starting-turn sum minus the initial starting turn.
+- Constructed complete larger-mesh refinements of every actual original cut-bank
+  chain whose starting vertices lie below the old rim. Both exact endpoint copies,
+  the whole-cut carrier and the unreduced real terminal heading are preserved.
+- Verification: actual cache retrieval followed by full `lake build` passed 6,271
+  jobs; 18,858 unfolding declarations passed the standard-axiom audit, and both
+  abstract independence checks passed. Existing theorem statements are unchanged.
+- Combining heading preservation with quantitative radial refinements, arbitrary
+  outer terminal portions, weighted polar blocks, saved-frontier transport and
+  complete graft nonoverlap remain open.
+
 ### 2026-11-17 — original fans at actual finite comparison-block junctions
 
 - Continuous lifts of whole physical faces into one original cut now agree from

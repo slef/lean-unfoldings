@@ -4007,3 +4007,16 @@ corners and does not yet identify their widths with the actual retained cap fan.
   and [`CompatibleComparisonFiniteOriginalTurns`](../Unfoldings/Roof/CompatibleComparisonFiniteOriginalTurns.lean):
   lifted original bank vertices and both endpoints of each actual finite comparison
   block have their exact original cut-side copies and fan angles below the old rim.
+
+- [`ChainBlockSum`](../Unfoldings/Topology/ChainBlockSum.lean):
+  complete finite disjoint block coverage counts each actual directed interval's
+  additive weight exactly once, independently of block lengths.
+- [`BoundaryChainHeadingSum`](../Unfoldings/Complex/BoundaryChainHeadingSum.lean):
+  the terminal unreduced real heading is the total starting-turn sum minus the
+  first starting turn.
+- [`CompatibleComparisonFiniteTurnSum`](../Unfoldings/Roof/CompatibleComparisonFiniteTurnSum.lean):
+  each actual fine comparison block contributes exactly its original starting turn;
+  inserted straight hinges contribute zero.
+- [`CompatibleComparisonChainHeading`](../Unfoldings/Roof/CompatibleComparisonChainHeading.lean):
+  complete actual larger-mesh refinements retain original unreduced terminal
+  headings, both literal endpoint copies and the same whole-cut carrier.

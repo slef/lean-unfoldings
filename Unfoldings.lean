@@ -2333,3 +2333,7 @@ public import Unfoldings.Geometry.SpatialEnvelopeCutLiftUnique
 public import Unfoldings.Roof.CompatibleComparisonSubdivisionMap
 public import Unfoldings.Roof.CompatibleComparisonBankOriginalFans
 public import Unfoldings.Roof.CompatibleComparisonFiniteOriginalTurns
+public import Unfoldings.Topology.ChainBlockSum
+public import Unfoldings.Complex.BoundaryChainHeadingSum
+public import Unfoldings.Roof.CompatibleComparisonFiniteTurnSum
+public import Unfoldings.Roof.CompatibleComparisonChainHeading

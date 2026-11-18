@@ -8,6 +8,10 @@ nonoverlap and counting remain to be proved.
 
 ## Gap-grafting status
 
+- [x] Construct complete larger-mesh refinements of actual original cut-bank chains
+  with identical unreduced real terminal headings, exact endpoint copies and the
+  same whole-cut carrier. Original starts below the old rim supply all angle
+  comparisons; finite block assembly counts each old turn once and inserts zeros.
 - [x] Match the subdivision to the original whole-cut maps on every physical
   face, retaining all closed bank and vertex copies. Both endpoints of every
   constructed finite-bank block are the corresponding original full-mesh cut-side

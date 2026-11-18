@@ -139,7 +139,8 @@ theorem compatibleMeshProcessedComparisonFiniteBank_original_totalAngle
   have same := (NewAt[S,later,ordered]).pairedComplex.vertexPoint_injective
     NewRetainAt[S,later,ordered] (matched.trans
       (K.compatibleMeshProcessedComparisonFiniteBank_eq_originalVertex compact nonempty R
-        no_boundary level higher M positive inner_disk beta acute W S later ordered p u coarse at_vertex))
+        no_boundary level higher M positive inner_disk beta acute W S later ordered p u coarse
+        at_vertex))
   exact (congrArg ((NewAt[S,later,ordered]).pairedComplex.totalAngle
     NewRetainAt[S,later,ordered]) same).trans
       (K.compatibleMeshProcessedComparisonOriginalVertex_totalAngle_eq compact nonempty R

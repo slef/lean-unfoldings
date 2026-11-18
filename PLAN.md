@@ -1013,9 +1013,12 @@ weight without splitting retained copies. Continuous physical face lifts now
 identify the subdivision and original whole-cut maps, including all bank endpoint
 copies. Both endpoints of every constructed finite comparison block are the exact
 corresponding original vertices, with unchanged angles below the old rim.
-Assembling unreduced real-heading comparisons, arbitrary outer terminal portions,
-the weighted polar-block estimate, saved-frontier transport and the complete flat
-graft remain open.
+Complete actual cut-bank refinements now preserve the unreduced real terminal
+heading, both endpoint copies and the entire whole-cut carrier. Every old starting
+turn is counted once and inserted straight hinges contribute zero. Combining this
+with the quantitative radial refinements, arbitrary outer terminal portions, the
+weighted polar-block estimate, saved-frontier transport and the complete flat graft
+remain open.
 See the [gap-grafting checklist](docs/NORMAL_SELECTIONS.md#gap-grafting-status). The finite-cell route to
 global isometry does not require a separate end-height certificate. Normal-cover
 selection and Euler counting follow.
