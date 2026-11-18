@@ -2465,3 +2465,15 @@ public import Unfoldings.Metric.BankGraft
 public import Unfoldings.Roof.RestoredTerminalSide
 public import Unfoldings.Roof.CompatibleSourceTerminalSide
 public import Unfoldings.Roof.CompatibleSourceTerminalChart
+public import Unfoldings.Complex.ContourGapStacks
+public import Unfoldings.Complex.ContourGapBankIndex
+public import Unfoldings.Geometry.BankGapModel
+public import Unfoldings.Metric.BankStackGraft
+public import Unfoldings.Roof.CompatibleContourGapModels
+
+public import Unfoldings.Complex.ContourParentBanks
+public import Unfoldings.Complex.ContourSourceBankSides
+public import Unfoldings.Polyhedron.ContourParentBankMetric
+public import Unfoldings.Geometry.BankGapParameters
+public import Unfoldings.Roof.CompatibleContourFiniteGraft
+public import Unfoldings.Roof.CompatibleContourBankAgreement

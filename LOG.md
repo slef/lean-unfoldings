@@ -2,6 +2,27 @@
 
 ## Session Log
 
+### 2026-11-18 — actual contour gap stacks and finite-edge metric graft
+
+- Indexed the actual positive fresh contour sources once, derived each parent
+  edge's descendant stack and exact gap-bank index, and constructed all complete
+  canonical gap models at one uniform tilt.
+- Recovered both actual original rootward bank copies from the named contour.
+  Proved every constructed source-bank tag is the exit side; restoration preserves
+  its entire closed-edge path and both endpoint copies.
+- Constructed actual intrinsic gap boundary marks and proved exact closed-edge
+  and whole-tail distances. Openings preserve both sides' speeds. Every cell
+  representative of a marked gap point lies on its actual cell boundary.
+- Defined ordered marked-bank stack gluing, including empty stacks and closed
+  endpoints, then instantiated it with the actual whole roof cut and canonical
+  positive gaps along all finite parent edges. Both sides of every gap edge have
+  exactly the corresponding original whole-roof bank distances.
+- Verification: actual cache retrieval and final full `lake build` passed 6,412
+  jobs. All 19,789 unfolding declarations passed the standard-axiom audit; both
+  abstract independence checks passed. Existing theorem statements are unchanged.
+- Remaining: complete terminal-tail attachments, saved-frontier local fan
+  identification, local flatness, simple connectivity and global nonoverlap.
+
 ### 2026-11-18 — complete source terminal identification and metric graft operations
 
 - Extended actual terminal-arrival geometry to every nonempty fine parent history,

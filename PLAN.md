@@ -1136,8 +1136,12 @@ selection and Euler counting follow.
 - [x] Derive actual intermediate original parent-bank holonomies, their exact
   singleton curvature increments, monotonicity and total-curvature oscillation bound.
 - [x] Positive Jordan gaps from controlled radially monotone polygonal banks.
-- [ ] Match physical saved-frontier banks and untouched original sides to those
-  histories, comparison fans and local surgery models.
+- [x] Construct all positive contour gaps uniformly and derive each actual original
+  parent edge's ordered stack and its exact gap-bank index.
+- [x] Identify literal rootward contour sides and assemble the finite-edge metric
+  graft with exact original roof/gap bank distances, including endpoint copies.
+- [ ] Complete terminal-tail attachments and match saved-frontier curves to the
+  comparison fans and local surgery models.
 - [x] Construct complete unbounded roof cut metrics with actual planar cells,
   boundary-only seams and exact metric-ball restoration away from closed cuts.
 - [x] Construct complete unbounded cuts aligned to the actual compatible forest

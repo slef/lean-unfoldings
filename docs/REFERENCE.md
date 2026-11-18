@@ -4093,3 +4093,26 @@ corners and does not yet identify their widths with the actual retained cap fan.
   [`BankGraft`](../Unfoldings/Metric/BankGraft.lean):
   marked-bank route-metric grafts are isometric to one gluing of all original cells.
   Every original point is fixed, and local boundary placement derives boundary-only seams.
+
+- [`ContourGapStacks`](../Unfoldings/Complex/ContourGapStacks.lean) and
+  [`ContourGapBankIndex`](../Unfoldings/Complex/ContourGapBankIndex.lean):
+  actual positive sources determine each parent edge's ordered gap stack and the
+  exact index of that edge in every complete source bank.
+- [`ContourParentBanks`](../Unfoldings/Complex/ContourParentBanks.lean) and
+  [`ContourSourceBankSides`](../Unfoldings/Complex/ContourSourceBankSides.lean):
+  the original contour fixes both rootward cut sides. Constructed source banks
+  are the literal exit-side tags and restore exactly on every closed edge.
+- [`BankGapModel`](../Unfoldings/Geometry/BankGapModel.lean) and
+  [`BankGapParameters`](../Unfoldings/Geometry/BankGapParameters.lean):
+  complete intrinsic gaps retain finite convex cells and actual boundary marks.
+  Both banks have identical exact closed-edge and whole-tail speeds after openings.
+- [`BankStackGraft`](../Unfoldings/Metric/BankStackGraft.lean):
+  ordered intrinsic attachments include empty stacks and all closed endpoints.
+- [`CompatibleContourGapModels`](../Unfoldings/Roof/CompatibleContourGapModels.lean):
+  one tilt constructs the entire family of actual positive contour gaps, including
+  their source labels, lengths, openings, complete metrics and finite cells.
+- [`CompatibleContourFiniteGraft`](../Unfoldings/Roof/CompatibleContourFiniteGraft.lean) and
+  [`CompatibleContourBankAgreement`](../Unfoldings/Roof/CompatibleContourBankAgreement.lean):
+  the actual roof-plus-gap route metric is assembled along finite original parent
+  banks. Every gap edge attaches with exactly the original roof bank's distances.
+  Terminal attachments and global flatness are not yet established.

@@ -404,7 +404,18 @@ nonoverlap and counting remain to be proved.
 - [x] Construct marked-bank metric grafts and prove equivalence to the underlying
   cell gluing, fixing all original points. Local bank-boundary placement derives
   boundary-only seams; see [`BankGraft`](../Unfoldings/Metric/BankGraft.lean).
-- [ ] Construct the actual saved-frontier attachment marks in the roof-plus-gap graft.
+- [x] Index every actual positive source once, construct its complete gap at one
+  uniform tilt, and derive each original parent edge's ordered descendant-gap stack.
+  Its inverse parent-orbit enumeration gives the exact edge index in every gap.
+- [x] Recover both actual original parent-bank sides from the literal contour.
+  Every constructed source bank is its exit side, including all closed-edge points
+  and endpoint copies after cut restoration; see
+  [`ContourSourceBankSides`](../Unfoldings/Complex/ContourSourceBankSides.lean).
+- [x] Assemble the actual roof and canonical gap pieces along all finite original
+  parent banks with their route metric. Both gap sides have exactly the original
+  roof edge metric, derived without side, index or speed certificates; see
+  [`CompatibleContourBankAgreement`](../Unfoldings/Roof/CompatibleContourBankAgreement.lean).
+- [ ] Extend the actual attachment construction over every complete terminal tail.
 - [ ] Carry physical saved-frontier curves and their untouched original sides through
   actual prior gap attachments. Apply the local metric remainder models to those updates.
 - [ ] Assemble the complete graft and prove completeness, simple connectivity and local
