@@ -1024,9 +1024,11 @@ the new rim, retaining its exact projected stem-plus-ray carrier and strict bank
 starting heights. One uniform tilt now constructs respected physical comparisons
 on every admissible short interval of the complete chain, including windows
 through the old junction and along the outer tail. All cut labels and physical
-window geometry are derived. Connecting these actual comparisons to the existing
-weighted polar-block estimates, saved-frontier transport and the complete flat
-graft remain open.
+window geometry are derived. Actual projected metric bank chains now retain the
+original labels and successors, with exact stretch and real phase factors and
+interval errors equal to differences of global real prefixes. Projected heading
+preservation through physical completions, the weighted polar-block bridge,
+saved-frontier transport and the complete flat graft remain open.
 See the [gap-grafting checklist](docs/NORMAL_SELECTIONS.md#gap-grafting-status). The finite-cell route to
 global isometry does not require a separate end-height certificate. Normal-cover
 selection and Euler counting follow.

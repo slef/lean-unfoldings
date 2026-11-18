@@ -2,6 +2,19 @@
 
 ## Session Log
 
+### 2026-11-17 — original projected metric bank rolls
+
+- Constructed projected metric chains with the same original faces, cut labels,
+  successors and consecutive intervals, both for roofs and cap face restrictions.
+- The original intrinsic roll has exact projected speed and unreduced real phase
+  factors. Stretch lies between one and the reciprocal normal-height bound.
+  Every interval phase error is exactly the difference of global error prefixes.
+- Verification: actual cache retrieval followed by full `lake build` passed 6,282
+  jobs; 18,956 unfolding declarations passed the standard-axiom audit, and both
+  abstract independence checks passed. Existing theorem statements are unchanged.
+- Projected heading preservation through physical completions, the weighted rolling
+  bridge, saved-frontier transport and full graft nonoverlap remain open.
+
 ### 2026-11-17 — uniform actual physical windows through the complete new rim
 
 - Packaged all admissible short intervals of an actual radial bank chain as

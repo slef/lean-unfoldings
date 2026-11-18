@@ -2345,3 +2345,6 @@ public import Unfoldings.Roof.CompatibleRootwardRimRadial
 public import Unfoldings.Roof.SupportedBankWindows
 public import Unfoldings.Roof.SpatialMeshBankWindows
 public import Unfoldings.Roof.CompatibleRootwardRimWindows
+public import Unfoldings.Complex.AffineProjectionChains
+public import Unfoldings.Cap.ProjectedCutMetric
+public import Unfoldings.Roof.ProjectedBankMetric
