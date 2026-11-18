@@ -8,6 +8,10 @@ nonoverlap and counting remain to be proved.
 
 ## Gap-grafting status
 
+- [x] Construct larger meshes respecting every old face boundary and prescribed cut.
+  The contained physical triangles subdivide each whole old face isometrically,
+  and their corner angles sum to each original corner angle exactly. Transport
+  to individual retained cut-side fans remains to be established.
 - [x] Apply the actual bank-window comparison to every admissible short interval
   of each constructed current rootward stem. Derive its cut labels, original
   projection, strict radial source and positive initial distance from the compatible

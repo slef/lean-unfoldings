@@ -3949,3 +3949,20 @@ corners and does not yet identify their widths with the actual retained cap fan.
   respected physical cap controlling that original interval's real heading.
   One tilt works for every contour stage and stem window; the cap preserves the
   original finite roof height over the comparison region.
+
+- [`ConstrainedTriangulationSelection`](../Unfoldings/Geometry/ConstrainedTriangulationSelection.lean):
+  select prescribed-line certificates without changing the physical mesh.
+- [`NestedSpatialPieces`](../Unfoldings/Geometry/NestedSpatialPieces.lean) and
+  [`NestedSpatialSubdivision`](../Unfoldings/Geometry/NestedSpatialSubdivision.lean):
+  exact original rigid coordinates, unique parents and isometric subdivisions for
+  contained triangles in two meshes of the same roof. Old side constraints derive
+  whole-face coverage, including boundaries.
+- [`NestedFacePatch`](../Unfoldings/Roof/NestedFacePatch.lean),
+  [`NestedFaceAngles`](../Unfoldings/Roof/NestedFaceAngles.lean) and
+  [`NestedSubdivisionAngles`](../Unfoldings/Roof/NestedSubdivisionAngles.lean):
+  injective development of each complete old face patch into its original metric
+  triangle and exact conservation of every original corner angle.
+- [`CompatibleComparisonSubdivision`](../Unfoldings/Roof/CompatibleComparisonSubdivision.lean):
+  actual larger comparison meshes retain all original face boundaries, subdivide
+  the old physical faces and conserve their original corner angles. Retained
+  cut-side fan correspondence is a subsequent step.

@@ -2,6 +2,24 @@
 
 ## Session Log
 
+### 2026-11-17 — old-face subdivisions in larger comparison meshes
+
+- Larger comparison meshes now respect all old physical face sides as well as
+  prescribed cut segments, retaining the existing public constructor type and all
+  existing theorem statements. Constraint selection preserves the physical mesh.
+- Constructed generic unique-parent rigid coordinate maps and actual isometric
+  subdivisions for nested triangulations of one affine roof. Side constraints
+  derive coverage of each complete old closed face.
+- Each old face patch develops injectively onto its original metric triangle;
+  the fine corner angles sum exactly to every old Euclidean corner angle.
+  Applied these results to the actual larger comparison meshes.
+- Verification: actual cache retrieval followed by full `lake build` passed 6,251
+  jobs; 18,731 unfolding declarations passed the standard-axiom audit, and both
+  abstract independence checks passed.
+- Retained cut-side fan correspondence, arbitrary outer terminal portions, the
+  weighted polar-block estimate, saved-frontier transport and full graft nonoverlap
+  remain open.
+
 ### 2026-11-17 — uniform actual current-rootward bank-window comparisons
 
 - Consecutive bank windows now preserve their exact projected polygonal intervals

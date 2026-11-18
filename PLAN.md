@@ -1002,8 +1002,11 @@ with one uniform tilt. Every admissible short interval of the actual current
 rootward stems now constructs these physical comparisons, deriving its cut labels,
 original projection, strict radial source and positive initial distance from the
 compatible forest. One tilt controls the original real heading at all contour
-stages. Arbitrary outer terminal portions, the weighted polar-block estimate,
-saved-frontier transport and the complete flat graft remain open.
+stages. Larger comparison meshes now also respect every old face boundary.
+Their contained physical triangles form actual isometric subdivisions, conserving
+every original Euclidean corner angle exactly. Retained cut-side fan correspondence,
+arbitrary outer terminal portions, the weighted polar-block estimate, saved-frontier
+transport and the complete flat graft remain open.
 See the [gap-grafting checklist](docs/NORMAL_SELECTIONS.md#gap-grafting-status). The finite-cell route to
 global isometry does not require a separate end-height certificate. Normal-cover
 selection and Euler counting follow.

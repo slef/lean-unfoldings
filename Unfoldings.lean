@@ -2310,3 +2310,10 @@ public import Unfoldings.Roof.ProjectedBankDirections
 public import Unfoldings.Roof.SupportedOriginalBankWindow
 public import Unfoldings.Polyhedron.ProjectedBoundaryChainInterval
 public import Unfoldings.Roof.CompatibleRootwardActualWindow
+public import Unfoldings.Geometry.ConstrainedTriangulationSelection
+public import Unfoldings.Geometry.NestedSpatialPieces
+public import Unfoldings.Geometry.NestedSpatialSubdivision
+public import Unfoldings.Roof.CompatibleComparisonSubdivision
+public import Unfoldings.Roof.NestedFacePatch
+public import Unfoldings.Roof.NestedFaceAngles
+public import Unfoldings.Roof.NestedSubdivisionAngles

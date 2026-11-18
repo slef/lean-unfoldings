@@ -3,6 +3,8 @@ module
 public import Unfoldings.Roof.CompatibleProcessedWindowSegments
 public import Unfoldings.Roof.CompatiblePartialWindowLift
 public import Unfoldings.Roof.CompatibleLevelWindow
+public import Unfoldings.Roof.CompletionOriginalPieces
+public import Unfoldings.Geometry.ConstrainedTriangulationSelection
 
 /-! Construct actual larger meshes of the same intermediate original whole cut. -/
 
@@ -71,15 +73,45 @@ theorem compatibleMeshProcessedComparisonEquations_ne_zero (S : (Fcut).parents.P
   segmentEquations_ne_zero _ _ _ j
 
 open Classical in
-/-- Construct the larger actual conforming mesh of the same original whole roof. -/
-def compatibleMeshProcessedComparisonMesh (S : (Fcut).parents.ParentFrontier)
+/-- Keep the original whole-face boundaries together with every prescribed cut segment. -/
+def compatibleMeshProcessedComparisonFullEquations (S : (Fcut).parents.ParentFrontier)
     (later : ℝ) (ordered : level < later) :
-    SpatialEnvelope.ConstrainedTriangulation M.plane EquationsAt[S,later,ordered] (-later) :=
-  M.mesh _ (K.compatibleMeshProcessedComparisonEquations_ne_zero compact nonempty R no_boundary
+    (({p // p ∈ PairsAt[S,later]} × Fin 3) ⊕ ((T).Index × Fin 3)) → Plane →ᵃ[ℝ] ℝ :=
+  Sum.elim EquationsAt[S,later,ordered] (Q).originalEdgeEquations
+
+local notation "FullEquationsAt[" S "," L "," h "]" =>
+  K.compatibleMeshProcessedComparisonFullEquations compact nonempty R no_boundary level higher M
+    positive inner_disk beta acute S L h
+
+open Classical in
+theorem compatibleMeshProcessedComparisonFullEquations_ne_zero
+    (S : (Fcut).parents.ParentFrontier) (later : ℝ) (ordered : level < later) (j) :
+    FullEquationsAt[S,later,ordered] j ≠ 0 := by
+  cases j with
+  | inl j =>
+      exact K.compatibleMeshProcessedComparisonEquations_ne_zero compact nonempty R
+        no_boundary level higher M positive inner_disk beta acute S later ordered j
+  | inr j => exact (Q).originalEdgeEquations_ne_zero j
+
+open Classical in
+/-- Construct the full physical refinement, preserving every original face boundary. -/
+def compatibleMeshProcessedComparisonRefinementMesh (S : (Fcut).parents.ParentFrontier)
+    (later : ℝ) (ordered : level < later) :
+    SpatialEnvelope.ConstrainedTriangulation M.plane FullEquationsAt[S,later,ordered] (-later) :=
+  M.mesh _ (K.compatibleMeshProcessedComparisonFullEquations_ne_zero compact nonempty R no_boundary
     level higher M positive inner_disk beta acute S later ordered) positive inner_disk
     (q := R.cutInteriorPoint) (by
       have bound := R.cutInteriorPoint_height level higher
       linarith)
+
+open Classical in
+/-- Construct the larger actual conforming mesh of the same original whole roof. -/
+def compatibleMeshProcessedComparisonMesh (S : (Fcut).parents.ParentFrontier)
+    (later : ℝ) (ordered : level < later) :
+    SpatialEnvelope.ConstrainedTriangulation M.plane EquationsAt[S,later,ordered] (-later) :=
+  (K.compatibleMeshProcessedComparisonRefinementMesh compact nonempty R no_boundary level higher M
+    positive inner_disk beta acute S later ordered).selectConstraints
+      EquationsAt[S,later,ordered] Sum.inl (fun _ => rfl)
 
 local notation "NewAt[" S "," L "," h "]" =>
   K.compatibleMeshProcessedComparisonMesh compact nonempty R no_boundary level higher M positive
@@ -95,9 +127,11 @@ open Classical in
 theorem compatibleMeshProcessedComparisonMesh_conforming (S : (Fcut).parents.ParentFrontier)
     (later : ℝ) (ordered : level < later) :
     TriangleFamily.Conforming (NewAt[S,later,ordered]).projectedTriangle :=
-  M.mesh_conforming _ (K.compatibleMeshProcessedComparisonEquations_ne_zero compact nonempty R
+  M.mesh_conforming _ (K.compatibleMeshProcessedComparisonFullEquations_ne_zero compact nonempty R
     no_boundary level higher M positive inner_disk beta acute S later ordered)
-    positive inner_disk _
+    positive inner_disk (by
+      have bound := R.cutInteriorPoint_height level higher
+      linarith)
 
 open Classical in
 /-- Touching the original partial cut at a regular new edge point cuts that whole new edge.
