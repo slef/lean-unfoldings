@@ -8,6 +8,10 @@ nonoverlap and counting remain to be proved.
 
 ## Gap-grafting status
 
+- [x] Apply the actual bank-window comparison to every admissible short interval
+  of each constructed current rootward stem. Derive its cut labels, original
+  projection, strict radial source and positive initial distance from the compatible
+  forest. One tilt controls the original real heading at all contour stages.
 - [x] Identify the entire actual trimmed physical bank carrier and its closing curve
   with the original geometric trims. Transfer radial order for perturbed sources.
   Every short source-ray window on an actual original cut-bank chain now constructs
@@ -298,9 +302,9 @@ nonoverlap and counting remain to be proved.
   segment, preserve the original whole roof over the Jordan region, and obtain
   the actual small bank-rolling estimate with one tilt for all durations.
 
-- [ ] Match physical rootward completion banks to the respected Jordan-window fans.
-  Apply the constructed short-window comparisons to their actual real rolling
-  headings, uniformly over the outer cutoff.
+- [ ] Extend the actual rootward bank-window comparisons through arbitrary outer
+  terminal portions. Assemble enough windows with a uniform weighted polar-block
+  estimate for the entire developed bank.
 - [ ] Carry physical saved-frontier curves and their untouched original sides through
   actual prior gap attachments. Apply the local metric remainder models to those updates.
 - [ ] Assemble the complete graft and prove completeness, simple connectivity and local
@@ -317,9 +321,11 @@ every larger comparison window. Each finite bank has a complete ordered original
 vertices. Original starting-hinge fans now have actual whole-cut charts under physical
 completion. Complete rootward chains through each new rim now have actual physical
 completion refinements, with exact carriers, endpoint copies, one-sided fan angles
-and real heading sets. Matching these banks to respected Jordan-window fans,
-selecting enough short radial windows and carrying the saved frontier through
-already inserted gaps still need proof. The complete flat graft remains open.
+and real heading sets. Actual short intervals of current rootward stems now
+construct respected physical windows with their complete original real turns and
+uniformly small heading error. Extending this comparison through arbitrary outer
+terminal portions, proving the weighted polar-block estimate and carrying the saved
+frontier through already inserted gaps still need proof. The complete flat graft remains open.
 
 The completed local models and combinatorial histories do not assume these
 remaining geometric identifications. The paper's sharp numerical constants and
@@ -818,9 +824,9 @@ the original bank image, including endpoints. It reuses the general constrained
 whole-edge subdivision theorem. `SubdivisionWeightedAngles` also preserves
 arbitrary original face weights, hence every regional old-corner angle sum.
 
-A traversal matching these banks to the reference Jordan contour and the
-saved-frontier construction is still required; the gap-grafting nonoverlap
-conclusion remains open.
+Actual radial bank windows now construct their reference Jordan traversal and
+all fan alternatives. The saved-frontier construction and the complete gap-grafting
+nonoverlap conclusion remain open.
 
 ## Actual directed refinements and real bank rolling
 

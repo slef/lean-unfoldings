@@ -998,7 +998,11 @@ geometric trims. Radial order transfers even for perturbed comparison sources.
 Short source-ray geometry on any actual original cut-bank chain now constructs
 its generic trims, supported Jordan closure, respected physical cap and a small
 original real terminal-heading error, deriving all fine geometry and incident sides
-with one uniform tilt. Applying these bounds to enough actual rootward windows,
+with one uniform tilt. Every admissible short interval of the actual current
+rootward stems now constructs these physical comparisons, deriving its cut labels,
+original projection, strict radial source and positive initial distance from the
+compatible forest. One tilt controls the original real heading at all contour
+stages. Arbitrary outer terminal portions, the weighted polar-block estimate,
 saved-frontier transport and the complete flat graft remain open.
 See the [gap-grafting checklist](docs/NORMAL_SELECTIONS.md#gap-grafting-status). The finite-cell route to
 global isometry does not require a separate end-height certificate. Normal-cover

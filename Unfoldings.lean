@@ -2308,3 +2308,5 @@ public import Unfoldings.Roof.CompletionOriginalBankWindowTrace
 public import Unfoldings.Roof.TrimmedOriginalBankComparison
 public import Unfoldings.Roof.ProjectedBankDirections
 public import Unfoldings.Roof.SupportedOriginalBankWindow
+public import Unfoldings.Polyhedron.ProjectedBoundaryChainInterval
+public import Unfoldings.Roof.CompatibleRootwardActualWindow

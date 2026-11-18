@@ -3939,3 +3939,13 @@ corners and does not yet identify their widths with the actual retained cap fan.
   generic trims, arbitrarily close regular source, supported Jordan closure,
   respected cap and uniformly small original real-heading error. No proposed
   fine-chain, closure, side or fan matching certificate is supplied.
+
+- [`Polyhedron/ProjectedBoundaryChainInterval`](../Unfoldings/Polyhedron/ProjectedBoundaryChainInterval.lean):
+  consecutive actual bank intervals preserve exact projected points, polygonal
+  vertices, true endpoints and radial order for any spatial folding.
+- [`CompatibleRootwardActualWindow`](../Unfoldings/Roof/CompatibleRootwardActualWindow.lean):
+  every admissible short interval of the constructed current rootward stem derives
+  its cut labels and constructs generic trims, a supported Jordan closure and a
+  respected physical cap controlling that original interval's real heading.
+  One tilt works for every contour stage and stem window; the cap preserves the
+  original finite roof height over the comparison region.

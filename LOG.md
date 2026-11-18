@@ -2,6 +2,23 @@
 
 ## Session Log
 
+### 2026-11-17 — uniform actual current-rootward bank-window comparisons
+
+- Consecutive bank windows now preserve their exact projected polygonal intervals
+  for arbitrary spatial foldings, including every endpoint and radial test.
+- Applied the physical real-heading comparison to every admissible short interval
+  of each actual current rootward stem. Its original projection, strict radial
+  source, positive initial distance and cut labels are derived from the compatible
+  forest. The original contour stage and all actual bank successors are retained.
+- One tilt constructs generic trims, a supported Jordan closure and a respected
+  physical cap controlling the actual original interval's real heading. The cap
+  preserves the original finite roof height over the closed comparison region.
+- Verification: actual cache retrieval followed by full `lake build` passed 6,244
+  jobs; 18,651 unfolding declarations passed the standard-axiom audit, and both
+  abstract independence checks passed. Existing theorem statements are unchanged.
+- Arbitrary outer terminal portions, the weighted polar-block estimate,
+  saved-frontier transport and complete graft nonoverlap remain open.
+
 ### 2026-11-17 — whole actual trimmed carriers and uniform original bank comparisons
 
 - Radial coordinates now identify complete subpath carriers with matching endpoints,
