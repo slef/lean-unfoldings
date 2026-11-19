@@ -2,6 +2,17 @@
 
 ## Session Log
 
+### 2026-11-19 — identify final roof wedges in saved parent fans
+
+- Characterized consecutive parent visits as child excursions and recovered
+  exactly which original seam is restored between any two final copies.
+- Proved the saved fan consists of the remaining suffix of parent visits.
+  The angle loss is the sum of final roof wedges in the intervening interval.
+- Proved a whole planar-ball criterion for a finite convex cover of centered
+  intrinsic sectors, allowing multiple center copies in the same original piece.
+- Full `lake build` passed (6,605 jobs). Only standard axioms occur in
+  21,364 unfolding and 7,243 pinned planar-topology declarations.
+
 ### 2026-11-19 — prove planar balls at the source-only terminal joins
 
 - Identified each finite-to-tail class by its two literal seam slots. Both

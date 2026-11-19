@@ -600,6 +600,11 @@ nonoverlap and counting remain to be proved.
   [source-only terminal joins](../Unfoldings/Roof/CompatibleContourSourceOnlyTerminalJoinBall.lean).
   Relate changes in saved fan angles to the
   [final roof copies removed from the fan](../Unfoldings/Roof/CompatibleContourSourceOnlyFanDifferences.lean).
+- [x] Identify the [saved parent fan](../Unfoldings/Complex/ContourSavedParentFan.lean)
+  as a suffix of the final contour visits and sum
+  [the wedges between two processing times](../Unfoldings/Complex/ContourSavedFanAngles.lean).
+  The [finite sector cover chart](../Unfoldings/Cone/SectorCoverBall.lean)
+  allows several copies of the same original piece.
 - [ ] Identify actual cyclic fans in the source-only graft and prove whole
   metric-ball charts. Reuse the generic strip and sector charts with the
   source-only attachment maps.

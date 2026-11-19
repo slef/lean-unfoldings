@@ -2672,3 +2672,9 @@ public import Unfoldings.Roof.CompatibleContourSourceOnlyTerminalJoinMarks
 public import Unfoldings.Roof.CompatibleContourSourceOnlyTerminalJoinClasses
 public import Unfoldings.Roof.CompatibleContourSourceOnlyTerminalJoinCharts
 public import Unfoldings.Roof.CompatibleContourSourceOnlyTerminalJoinBall
+public import Unfoldings.Complex.ContourChildVisits
+public import Unfoldings.Complex.RestoredVertexSeams
+public import Unfoldings.Complex.ContourRestoredChildSeams
+public import Unfoldings.Complex.ContourSavedParentFan
+public import Unfoldings.Complex.ContourSavedFanAngles
+public import Unfoldings.Cone.SectorCoverBall
