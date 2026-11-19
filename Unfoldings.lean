@@ -2629,3 +2629,7 @@ public import Unfoldings.Roof.CompatibleContourTerminalJoinGluing
 public import Unfoldings.Roof.CompatibleContourGapSourceSector
 public import Unfoldings.Roof.CompatibleContourGapBends
 public import Unfoldings.Geometry.OrientedBankGapBendChart
+public import Unfoldings.Geometry.BankGapBendAddresses
+public import Unfoldings.Roof.CompatibleContourSourceOnlyGaps
+public import Unfoldings.Complex.ContourGapStackSteps
+public import Unfoldings.Roof.CompatibleContourSourceOnlyGraft

@@ -2,6 +2,26 @@
 
 ## Session Log
 
+### 2026-11-19 — derive source-only graft banks for the saved frontier
+
+- Identified an extra processed subtree charge in the former cumulative-opening
+  model. At a stem bend its two gap apertures sum to a full turn plus that
+  charge difference. The paper spends curvature at first contact, so an
+  already processed stem requires the same turn on both new gap banks.
+- Proved that each positive contour step processes exactly its one fresh
+  vertex. A rigid rotation through its defect creates a positive gap on the
+  original radial bank. At every bend the actual retained fan and its
+  full-turn complement are the exact new gap apertures.
+- Constructed the source-only graft with the complement facing the contour
+  exit. The closed finite edge and whole tail distances agree with the original
+  roof banks. The stack prefix changes by insertion at its head precisely on
+  the source's ancestor path.
+- Full `lake build` passed (6,546 jobs), including the standard-axiom
+  audit and both abstract-independence checks.
+- The remaining proof must identify the incident sectors of the source-only
+  graft in cyclic order and establish the metric and topology of the completed
+  surface.
+
 ### 2026-11-19 — compute the actual finite gap sector angles
 
 - Derived the canonical source sector and its exact original defect angle from

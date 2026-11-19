@@ -147,12 +147,11 @@ private theorem initial_edge_segment {n : ℕ} (B : PolygonalRay ℂ (n + 1)) :
   rintro _ ⟨s, bounds, rfl⟩
   exact Or.inl (B.chain.point_mem_path_range 0 (⟨s, bounds⟩ : unitInterval))
 
-/-- The actual source gap sector has the original angular defect, including its
-unreduced value, and keeps the original initial edge frame. -/
-theorem compatibleContourGap_source_angle
+/-- The physical source has its unreduced original defect and it is below a half-turn. -/
+theorem compatibleContourGap_source_angle_and_lt_pi
     (event : Event) (G : OrientedBankGap (BankAt[event]) (OpenedAt[event])) :
     initialGapAngle ((BankAt[event]).chain.edge 0) ((OpenedAt[event]).chain.edge 0) =
-      Defect[event] := by
+      Defect[event] ∧ Defect[event] < Real.pi := by
   let κ := Defect[event]
   let first := BankAt[event]
   let second := OpenedAt[event]
@@ -202,9 +201,19 @@ theorem compatibleContourGap_source_angle
       (show -Real.pi ≤ κ - 2 * Real.pi by linarith [le_of_not_gt h])
     rw [Real.sin_sub_two_pi] at nonpos
     exact (not_lt_of_ge nonpos) sin_pos
+  refine ⟨?_, acute_defect⟩
   change initialGapAngle d e = κ
   rw [rotation]
   exact initialGapAngle_rotated d hd κpos acute_defect
+
+/-- The actual source gap sector has the original angular defect, including its
+unreduced value, and keeps the original initial edge frame. -/
+theorem compatibleContourGap_source_angle
+    (event : Event) (G : OrientedBankGap (BankAt[event]) (OpenedAt[event])) :
+    initialGapAngle ((BankAt[event]).chain.edge 0) ((OpenedAt[event]).chain.edge 0) =
+      Defect[event] := by
+  exact (K.compatibleContourGap_source_angle_and_lt_pi compact nonempty R no_boundary level higher
+    M positive inner_disk beta acute contour starts event G).1
 
 /-- The canonical gap's actual source has a whole sector ball of exactly the original
 source defect angle, with its original first edge as the initial axis. -/

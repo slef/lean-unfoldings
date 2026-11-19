@@ -550,12 +550,21 @@ nonoverlap and counting remain to be proved.
   [source sectors](../Unfoldings/Roof/CompatibleContourGapSourceSector.lean),
   [bend apertures](../Unfoldings/Roof/CompatibleContourGapBends.lean), and
   [bend charts](../Unfoldings/Geometry/OrientedBankGapBendChart.lean).
-- [ ] Identify actual saved-frontier fans at finite forest vertices and prove their
-  whole metric-ball charts. Cell interiors, gap interiors, roof points outside the
-  forest, and all seams away from finite forest vertices are covered.
-- [ ] Derive simple connectivity from the actual slit/gap attachments and apply the
-  global planar-isometry theorem. Its finite closed-cell argument supplies the
-  needed global completeness; a separate end-height certificate is unnecessary.
+- [x] Relate the bend apertures to the actual saved-frontier angle and
+  identify the extra accumulated subtree charge in the cumulative-opening model.
+  That model's local charts along smooth seams and the rim remain valid.
+  The paper's saved-frontier argument uses a source-only opening.
+- [x] Build the [source-only gaps](../Unfoldings/Roof/CompatibleContourSourceOnlyGaps.lean)
+  with the exact complementary angles. Attach their original finite edge and
+  whole tail arclengths in the [source-only graft](../Unfoldings/Roof/CompatibleContourSourceOnlyGraft.lean).
+  The [prefix stacks](../Unfoldings/Complex/ContourGapStackSteps.lean)
+  record the new head insertion on exactly the source's ancestor path.
+- [ ] Identify actual cyclic fans in the source-only graft and prove whole
+  metric-ball charts. Reuse the generic strip and sector charts with the
+  source-only attachment maps.
+- [ ] Derive simple connectivity from the actual slit and gap attachments and
+  apply the global planar-isometry theorem. Its finite closed-cell argument
+  supplies the needed global completeness.
 
 The finite-path comparison now constructs its actual Jordan traversal and derives
 all original fan alternatives. Complete physical refinements preserve every ordered
