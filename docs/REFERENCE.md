@@ -4358,3 +4358,14 @@ corners and does not yet identify their widths with the actual retained cap fan.
   constructs centered whole occupied half-plane charts at literal strict finite
   roof-bank marks. The model keeps the original supporting face coordinates and
   physical placement. Every nearby original bank parameter is retained exactly.
+
+- [`HalfPlaneFilling`](../Unfoldings/Metric/HalfPlaneFilling.lean):
+  a plane-ball filling that is nonexpanding on both original closed half-disks
+  is nonexpanding across their common diameter. Uses the existing extended-metric convex-cover theorem;
+  no image-finiteness or connected-target certificate is supplied.
+- [`BallFromLocalSteps`](../Unfoldings/Metric/BallFromLocalSteps.lean):
+  constructs an entire intrinsic ball isometry from a geometric filling, original
+  representatives, whole-ball coverage and local route-step bounds in a larger ball.
+  Short-route localization proves the distance lower bound; no isometry is assumed
+  of the filling. Includes the two-half-plane specialization. Application to the
+  actual bank attachments remains open.

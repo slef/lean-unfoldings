@@ -2580,3 +2580,6 @@ public import Unfoldings.Geometry.OrientedBankGapEdgeParameters
 public import Unfoldings.Geometry.EdgeHalfPlaneMetric
 public import Unfoldings.Boundary.HalfPlaneMetric
 public import Unfoldings.Roof.CompatibleContourParentMarkCharts
+
+public import Unfoldings.Metric.HalfPlaneFilling
+public import Unfoldings.Metric.BallFromLocalSteps

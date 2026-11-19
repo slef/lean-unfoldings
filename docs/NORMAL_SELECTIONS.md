@@ -517,6 +517,11 @@ nonoverlap and counting remain to be proved.
   literal whole-roof parent-bank marks below the rim, retaining centers and every
   nearby original bank parameter; see
   [`CompatibleContourParentMarkCharts`](../Unfoldings/Roof/CompatibleContourParentMarkCharts.lean).
+- [x] Prove that two closed half-disk filling bounds combine without distance loss
+  in the extended metric target. Together with original representatives, actual-ball
+  coverage and local route-step estimates, a geometric filling constructs a whole
+  planar ball isometry. These general hypotheses are not yet discharged for the
+  actual attachments; see [`BallFromLocalSteps`](../Unfoldings/Metric/BallFromLocalSteps.lean).
 - [ ] Glue the matched ordinary bank half-plane charts in the actual single-slot
   graft and transfer the resulting planar ball to the full graft. Both banks may
   belong to the same roof piece; individual charts and a ball comparison are proved,

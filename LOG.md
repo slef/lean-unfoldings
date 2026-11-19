@@ -2,6 +2,27 @@
 
 ## Session Log
 
+### 2026-11-19 — construct planar balls from half-plane fillings and local route steps
+
+- Proved that a geometric filling gives a whole intrinsic ball isometry when it
+  preserves original coordinates, covers the actual ball, is nonexpanding, and
+  original route steps obey the coordinate bound within the larger radius `4*r`.
+  The distance lower bound uses the short-route budget, rather than assuming an
+  isometry or a global development of the original gluing.
+- Proved the two-closed-half-disk filling bound and combined it with that ball
+  construction. No global target metric or image-finiteness certificate is supplied;
+  the existing extended-metric convex-cover theorem supplies the needed bound.
+- An initial full build exposed a duplicate of that older convex-cover theorem.
+  Removed the duplicate implementation and reused the stronger existing library API.
+- Verification: actual `lake exe cache get` exited 0; final full `lake build` exited 0
+  (6,496 jobs). Standard-axiom audit: 20,513 unfolding and 7,243 pinned planar-topology
+  declarations. Both abstract-independence checks passed. New modules have no warnings.
+- Existing theorem statements and proof limits are unchanged. No temporary worktrees.
+  Application to the actual single-bank attachments is still open: their geometric
+  filling, whole-ball coverage and local route-step compatibility must be constructed
+  from the proved original bank charts. Terminal/vertex fans, simple connectivity
+  and the global nonoverlap theorem also remain open.
+
 ### 2026-11-19 — construct actual whole-roof bank half-plane charts
 
 - Expressed each original triangle edge half-ball as a whole metric ball of its

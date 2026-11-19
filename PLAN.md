@@ -1181,6 +1181,8 @@ selection and Euler counting follow.
   occupied sides, original edge frames, speed and opposite bank-parameter directions.
 - [x] Give actual strict finite roof-bank marks centered whole occupied half-plane
   charts preserving original face coordinates, spatial placement and bank parameters.
+- [x] Construct a general whole-ball isometry from a geometric filling and local
+  route-step bounds, with a two-half-disk specialization for extended metric targets.
 - [ ] Glue the matched ordinary bank half-plane charts in the actual single-slot
   graft, including two banks of one roof piece, and transfer its planar ball to the full graft.
 - [ ] Classify positive terminal bank classes and construct their whole planar balls.
