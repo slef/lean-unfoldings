@@ -101,23 +101,36 @@ def JoinBankChart {X : Type*} [EMetricSpace X] (bank : BankJoinTime → X)
     (∀ s, edist (bank Zero) (bank s) = ENNReal.ofReal (|s.val| * speed)) ∧
     ∃ r, Nonempty (BankHalfPlaneChart bank Zero occupied (fun s => s.val * speed) r)
 
-private theorem compatibleContourRoofJoin_chart
+local notation "Original" => K.compatibleContourOriginalBankMark compact nonempty R no_boundary
+  level higher M positive inner_disk beta acute contour starts W
+
+/-- The original roof bank across the rim join keeps its full normalized half-plane chart. -/
+theorem compatibleContourOriginalRoofJoin_chart
     (edge : Edge) (side occupied : Bool) :
-    JoinBankChart (joinedBank (Base (.inl Child[edge]) side) (Base (.inr edge) side)) occupied := by
+    JoinBankChart (joinedBank (Original (.inl Child[edge]) side) (Original (.inr edge) side)) occupied := by
   let bank := (D).contourParentBank Selection contour (Fcut).boundary_roots starts edge.val
     edge.property.1 false
-  have closed := K.compatibleContourBaseMark_isClosedEmbedding compact nonempty R no_boundary
-    level higher M positive inner_disk beta acute contour starts W Models
-  have join := K.compatibleContourBaseMark_join compact nonempty R no_boundary level higher M
-    positive inner_disk beta acute contour starts W Models edge side
+  have finite : Topology.IsClosedEmbedding (Original (.inl Child[edge]) side) :=
+    Dilation.isClosedEmbedding (K.compatibleContourParentDilation compact nonempty R no_boundary
+      level higher M positive inner_disk beta acute contour starts W edge.val edge.property.1 side)
+  have tail : Topology.IsClosedEmbedding (Original (.inr edge) side) :=
+    Dilation.isClosedEmbedding (K.compatibleContourTailDilation compact nonempty R no_boundary
+      level higher M positive inner_disk beta acute contour starts W edge side)
+  have join : Original (.inl Child[edge]) side 1 = Original (.inr edge) side 0 :=
+    (K.compatibleContourTerminalMark_zero compact nonempty R no_boundary level higher M positive
+      inner_disk beta acute contour starts W edge side).symm
   refine ⟨?_, (D).boundaryBankLength bank, (D).boundaryBankLength_pos bank, ?_, ?_⟩
-  · rw [joinedBank_range _ _ join.symm]
-    exact (closed (.inl Child[edge]) side).isClosed_range.union
-      (closed (.inr edge) side).isClosed_range
+  · exact (joinedBank_range _ _ join).symm ▸ (finite.isClosed_range.union tail.isClosed_range)
   · exact K.edist_compatibleContourRoofJoinBank compact nonempty R no_boundary level higher M
       positive inner_disk beta acute contour starts W edge side
   · exact K.compatibleContourRoofJoinBank_normalized_chart compact nonempty R no_boundary level
       higher M positive inner_disk beta acute contour starts W edge side occupied
+
+private theorem compatibleContourRoofJoin_chart
+    (edge : Edge) (side occupied : Bool) :
+    JoinBankChart (joinedBank (Base (.inl Child[edge]) side) (Base (.inr edge) side)) occupied :=
+  K.compatibleContourOriginalRoofJoin_chart compact nonempty R no_boundary level higher M
+    positive inner_disk beta acute contour starts W edge side occupied
 
 private theorem compatibleContourGapJoin_chart (edge : Edge) (event : Event)
     (member : event ∈ Stack (.inr edge)) (side occupied : Bool) :

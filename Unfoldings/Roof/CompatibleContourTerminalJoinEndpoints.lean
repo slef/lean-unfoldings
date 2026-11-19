@@ -105,7 +105,8 @@ local notation "LastSlot[" e "," i "]" => (Sigma.mk (Sum.inl Child[e]) i : BankS
 local notation "Endpoint" => bankStackEndpoint Stack Pieces Base Gap
 local notation "Address" => bankStackEndpointAddress (Parameter := ParamAt) Stack
 
-private theorem compatibleContourTerminalJoin_address_shift
+/-- The finite and tail slots of one original terminal edge use the same piece and side. -/
+theorem compatibleContourTerminalJoin_address_shift
     (edge : Edge) (i : Fin ((Stack (.inr edge)).length + 1)) (side : Bool) :
     let a := Address side TailSlot[edge,i] 0
     Address side LastSlot[edge,i] 1 = ⟨.inl Child[edge], a.2.1, a.2.2.1, 1⟩ := by

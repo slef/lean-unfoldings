@@ -2,6 +2,18 @@
 
 ## Session Log
 
+### 2026-11-19 — prove planar balls at the source-only terminal joins
+
+- Identified each finite-to-tail class by its two literal seam slots. Both
+  normalized banks retain their signed arclength and occupy opposite
+  half-planes, including when both banks belong to the original roof.
+- Proved that the angle difference between two saved fans on the same
+  outgoing bank is carried exactly by the final roof copies that leave
+  that fan between the two events.
+- Full `lake build` passed (6,599 jobs). Both abstract audits passed. Only
+  standard axioms occur in 21,318 unfolding and 7,243 pinned planar-topology
+  declarations.
+
 ### 2026-11-19 — prove whole planar balls inside child blocks
 
 - At two consecutive gaps in the same incoming child block, classified the

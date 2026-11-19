@@ -96,16 +96,27 @@ local notation "Child[" e "]" => (Subtype.mk (Subtype.val e) (And.left (Subtype.
 local notation "LastPair[" e "]" => (Sigma.mk (Sum.inl Child[e]) 1 : Σ b : Attachment, ParamAt b)
 local notation "TailPair[" e "]" => (Sigma.mk (Sum.inr e) 0 : Σ b : Attachment, ParamAt b)
 
+/-- The original roof mark is common to all choices of inserted gaps. -/
+def compatibleContourOriginalBankMark : ∀ bank : Attachment, Bool → ParamAt bank → W.Cut
+  | .inl vertex, side, t => K.compatibleContourParentMark compact nonempty R no_boundary
+      level higher M positive inner_disk beta acute contour starts W vertex.val vertex.property
+      side t
+  | .inr edge, side, t => K.compatibleContourTerminalMark compact nonempty R no_boundary
+      level higher M positive inner_disk beta acute contour starts W edge side t
+
+local notation "Original" => K.compatibleContourOriginalBankMark compact nonempty R no_boundary
+  level higher M positive inner_disk beta acute contour starts W
+
 /-- At the actual join, roof marks recover the precise original side and the two
 allowed original addresses, including the coincident finite endpoint. -/
-theorem compatibleContourBaseMark_eq_terminal_join
+theorem compatibleContourOriginalBankMark_eq_terminal_join
     (edge : Edge) (other : Attachment) (side other_side : Bool) (s : ParamAt other)
-    (equal : Base other other_side s = Base (.inr edge) side 0) :
+    (equal : Original other other_side s = Original (.inr edge) side 0) :
     other_side = side ∧
       ((⟨other, s⟩ : Σ b, ParamAt b) = TailPair[edge] ∨
         (⟨other, s⟩ : Σ b, ParamAt b) = LastPair[edge]) := by
   have label (e : Edge) (t : ℝ≥0)
-      (eq : Base (.inr e) other_side t = Base (.inr edge) side 0) :
+      (eq : Original (.inr e) other_side t = Original (.inr edge) side 0) :
       (e, other_side, t) = (edge, side, 0) :=
     K.compatibleContourTerminalMark_eq compact nonempty R no_boundary level higher M
       positive inner_disk beta acute contour starts W edge e side other_side 0 t eq
@@ -124,7 +135,7 @@ theorem compatibleContourBaseMark_eq_terminal_join
       higher M positive inner_disk beta acute contour starts W edge side 0
     let height (x : W.Cut) := (K.clippedExtension slopes compact nonempty).height
       (Cap.horizontal (W.partition.restoreCut R.carrier x).val)
-    have height_bound : level ≤ height (Base (.inl vertex) other_side s) :=
+    have height_bound : level ≤ height (Original (.inl vertex) other_side s) :=
       lower.trans_eq (congrArg height equal.symm)
     have time : s = 1 := by
       apply Subtype.ext
@@ -149,7 +160,7 @@ theorem compatibleContourBaseMark_eq_terminal_join
           ((D).directedBoundaryPath bank 1) =
             (T).pairedFolding.toSpace Set.univ ((D).vertexPoint Set.univ parent) :=
         position.trans (AffineMap.lineMap_apply_one _ _)
-      have height_eq : height (Base (.inl vertex) other_side 1) =
+      have height_eq : height (Original (.inl vertex) other_side 1) =
           (K.clippedExtension slopes compact nonempty).height
             (Cap.horizontal ((T).pairedFolding.toSpace Set.univ
               ((D).vertexPoint Set.univ parent))) :=
@@ -157,7 +168,7 @@ theorem compatibleContourBaseMark_eq_terminal_join
           (restore.trans at_end)
       exact (not_lt_of_ge (height_bound.trans_eq height_eq)) below
     let e : Edge := ⟨vertex.val, vertex.property, parent_root⟩
-    have eq : Base (.inr e) other_side 0 = Base (.inr edge) side 0 :=
+    have eq : Original (.inr e) other_side 0 = Original (.inr edge) side 0 :=
       (K.compatibleContourTerminalMark_zero compact nonempty R no_boundary level higher M
         positive inner_disk beta acute contour starts W e other_side).trans equal
     have named := label e 0 eq
@@ -166,6 +177,18 @@ theorem compatibleContourBaseMark_eq_terminal_join
       (congrArg (fun p => p.1.val) named)
     subst vertex
     exact ⟨flag, Or.inr rfl⟩
+
+/-- At the actual join, roof marks recover the precise original side and the two
+allowed original addresses, including the coincident finite endpoint. -/
+theorem compatibleContourBaseMark_eq_terminal_join
+    (edge : Edge) (other : Attachment) (side other_side : Bool) (s : ParamAt other)
+    (equal : Base other other_side s = Base (.inr edge) side 0) :
+    other_side = side ∧
+      ((⟨other, s⟩ : Σ b, ParamAt b) = TailPair[edge] ∨
+        (⟨other, s⟩ : Σ b, ParamAt b) = LastPair[edge]) :=
+  K.compatibleContourOriginalBankMark_eq_terminal_join compact nonempty R no_boundary
+    level higher M positive inner_disk beta acute contour starts W edge other side other_side s
+    equal
 
 local notation "Event" => TriangleComplex.PositiveContourSource D Selection contour
 local notation "AddressAt[" b "," e "," h "," t "]" => K.compatibleContourGapAddress compact

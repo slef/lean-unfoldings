@@ -596,6 +596,10 @@ nonoverlap and counting remain to be proved.
   within each child block, and use their two original arclengths to
   [glue a whole planar ball](../Unfoldings/Roof/CompatibleContourSourceOnlyChildPairBall.lean).
   The physical collapse projects properly and surjectively onto the plane.
+- [x] Glue whole balls at the
+  [source-only terminal joins](../Unfoldings/Roof/CompatibleContourSourceOnlyTerminalJoinBall.lean).
+  Relate changes in saved fan angles to the
+  [final roof copies removed from the fan](../Unfoldings/Roof/CompatibleContourSourceOnlyFanDifferences.lean).
 - [ ] Identify actual cyclic fans in the source-only graft and prove whole
   metric-ball charts. Reuse the generic strip and sector charts with the
   source-only attachment maps.
