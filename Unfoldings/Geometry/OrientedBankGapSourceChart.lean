@@ -99,3 +99,58 @@ theorem exists_model_source_chart (first_edge : first.chain.edge 0 ≠ 0)
   exact (congrArg (fun z => z.val.val) coords).trans (physical y)
 
 end Unfoldings.OrientedBankGap
+
+namespace Unfoldings.OrientedBankGap
+
+variable {n : ℕ} {first second : PolygonalRay ℂ (n + 1)} (G : OrientedBankGap first second)
+
+/-- Both literal source banks are the bounding rays of the normalized chart, at
+their original closed-edge arclength. -/
+theorem source_chart_bank_coordinates (same_start : second.start = first.start)
+    (first_edge : first.chain.edge 0 ≠ 0) (second_edge : second.chain.edge 0 ≠ 0)
+    {r : ℝ}
+    (A : Metric.eball (G.model.edgePoint false 0 0) (ENNReal.ofReal r) ≃ᵢ
+      Metric.ball (initialGapSectorOrigin (first.chain.edge 0) (second.chain.edge 0)) r)
+    (physical : ∀ y, first.start + (first.chain.edge 0 / (‖first.chain.edge 0‖ : ℂ)) *
+      (A y).val.val = y.val.val)
+    (side : Bool) (t : unitInterval)
+    (near : edist (G.model.edgePoint side 0 t) (G.model.edgePoint false 0 0) <
+      ENNReal.ofReal r) :
+    (A ⟨G.model.edgePoint side 0 t, near⟩).val.val =
+      if side then
+        (t.val * ‖second.chain.edge 0‖) •
+          polarRay (initialGapAngle (first.chain.edge 0) (second.chain.edge 0))
+      else (t.val * ‖first.chain.edge 0‖ : ℝ) := by
+  let d := first.chain.edge 0
+  let e := second.chain.edge 0
+  let dnorm : ℂ := ‖d‖
+  let enorm : ℂ := ‖e‖
+  have dn : dnorm ≠ 0 := Complex.ofReal_ne_zero.mpr (norm_ne_zero_iff.mpr first_edge)
+  have en : enorm ≠ 0 := Complex.ofReal_ne_zero.mpr (norm_ne_zero_iff.mpr second_edge)
+  have unit_ne : d / dnorm ≠ 0 := div_ne_zero first_edge dn
+  have along (P : PolygonalRay ℂ (n + 1)) :
+      P.chain.point 0 t = P.start + t.val • P.chain.edge 0 := by
+    change AffineMap.lineMap P.start (P.chain.vertex (0 : Fin (n + 1)).succ) t.val = _
+    rw [AffineMap.lineMap_apply_module', add_comm]
+    rfl
+  have coordinates := physical ⟨G.model.edgePoint side 0 t, near⟩
+  apply mul_left_cancel₀ unit_ne
+  apply add_left_cancel (a := first.start)
+  rw [coordinates]
+  cases side
+  · change first.chain.point 0 t = first.start + (d / dnorm) * ((t.val * ‖d‖ : ℝ) : ℂ)
+    rw [along, Complex.real_smul, Complex.ofReal_mul]
+    apply congrArg (first.start + ·)
+    change (t.val : ℂ) * d = (d / dnorm) * ((t.val : ℂ) * dnorm)
+    field_simp
+  · change second.chain.point 0 t = first.start + (d / dnorm) *
+      ((t.val * ‖e‖) • polarRay (initialGapAngle d e))
+    rw [along, same_start, polarRay_initialGapAngle d e first_edge second_edge,
+      Complex.real_smul, Complex.real_smul, Complex.ofReal_mul]
+    apply congrArg (first.start + ·)
+    change (t.val : ℂ) * e = (d / dnorm) *
+      (((t.val : ℂ) * enorm) * ((e / enorm) / (d / dnorm)))
+    field_simp [first_edge]
+    exact (mul_div_cancel_right₀ _ (show d ≠ 0 from first_edge)).symm
+
+end Unfoldings.OrientedBankGap

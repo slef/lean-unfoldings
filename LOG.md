@@ -2,6 +2,16 @@
 
 ## Session Log
 
+### 2026-11-19 — calibrate the original leaf sector rays
+
+- Ordered the retained fan by its two literal boundary banks and proved the
+  exact original arclength coordinates in the whole roof sector chart.
+- Calibrated both literal source edges in the gap's normalized chart. The exit
+  roof bank starts the roof interval and the entrance bank ends it.
+- Full `lake build` passed (6,564 jobs). The standard-axiom audit covered
+  21,063 unfolding and 7,243 pinned planar-topology declarations.
+  Both abstract-independence checks passed.
+
 ### 2026-11-19 — classify the original source-only leaf neighborhoods
 
 - Each child's gap stack is a contiguous block of its parent's stack.

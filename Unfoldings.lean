@@ -2640,4 +2640,5 @@ public import Unfoldings.Complex.ContourChildGapStacks
 public import Unfoldings.Roof.CompatibleContourSourceOnlyGapVertexMarks
 public import Unfoldings.Roof.CompatibleContourSourceOnlyLeaf
 public import Unfoldings.Roof.CompatibleContourSourceOnlyLeafClasses
+public import Unfoldings.Roof.CompatibleContourSourceOnlyLeafRoofChart
 public import Unfoldings.Roof.CompatibleContourSourceOnlySourceChart
