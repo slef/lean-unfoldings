@@ -4167,7 +4167,7 @@ corners and does not yet identify their widths with the actual retained cap fan.
   [`ClosedBankCellSeams`](../Unfoldings/Metric/ClosedBankCellSeams.lean):
   literal pairs of original cell points at a common bank parameter form isometric
   closed seam domains. A finite family constructs `ClosedSeams` with exactly the
-  original bank relation. Actual stack assembly and finite seam classes remain.
+  original bank relation. These domains are assembled for the actual stacks below.
 
 - [`BankStackCurves`](../Unfoldings/Metric/BankStackCurves.lean) and
   [`BankStackCurveMetric`](../Unfoldings/Metric/BankStackCurveMetric.lean):
@@ -4176,4 +4176,12 @@ corners and does not yet identify their widths with the actual retained cap fan.
 - [`CompatibleContourBankClosedSeams`](../Unfoldings/Roof/CompatibleContourBankClosedSeams.lean):
   constructs finite closed isometric seams for every actual bank attachment and
   every pair of its original cell representatives. The relation equals the original
-  marked-bank attachment exactly. Internal-seam combination and finite classes remain.
+  marked-bank attachment exactly.
+- [`ClosedSeamOperations`](../Unfoldings/Metric/ClosedSeamOperations.lean) and
+  [`ClosedCoincidentSeams`](../Unfoldings/Metric/ClosedCoincidentSeams.lean):
+  coordinate changes, finite unions, flattened families and distinct physical
+  intersections retain their closed isometric domains and exact oriented relations.
+- [`CompatibleContourClosedSeams`](../Unfoldings/Roof/CompatibleContourClosedSeams.lean):
+  combines the actual bank domains with all original retained roof and internal gap
+  seams. The full relation is exactly the original graft relation, and the isometry
+  preserves every original cell point. Finite classes and global topology remain.

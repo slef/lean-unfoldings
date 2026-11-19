@@ -2514,3 +2514,7 @@ public import Unfoldings.Roof.CompatibleContourBankEmbeddings
 public import Unfoldings.Metric.BankStackCurves
 public import Unfoldings.Metric.BankStackCurveMetric
 public import Unfoldings.Roof.CompatibleContourBankClosedSeams
+
+public import Unfoldings.Metric.ClosedSeamOperations
+public import Unfoldings.Metric.ClosedCoincidentSeams
+public import Unfoldings.Roof.CompatibleContourClosedSeams

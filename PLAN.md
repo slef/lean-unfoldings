@@ -1149,6 +1149,9 @@ selection and Euler counting follow.
   and construct closed isometric seam domains for paired original cell representatives.
 - [x] Construct the finite closed-seam system for all actual bank-stack attachments
   and prove its relation equals the original marked-bank relation on raw cell points.
+- [x] Combine actual bank domains and original internal roof/gap seams into one
+  finite closed-seam presentation, preserving the full original relation and metric.
+- [ ] Prove finite seam classes and identify the actual graft quotient topology.
 - [ ] Match saved-frontier curves to the comparison fans and local surgery models.
 - [x] Construct complete unbounded roof cut metrics with actual planar cells,
   boundary-only seams and exact metric-ball restoration away from closed cuts.

@@ -441,8 +441,12 @@ nonoverlap and counting remain to be proved.
   stacks. Their closed-seam relation is exactly the original marked-bank relation,
   in both directions and for all original cell representatives; see
   [`CompatibleContourBankClosedSeams`](../Unfoldings/Roof/CompatibleContourBankClosedSeams.lean).
-- [ ] Combine the actual bank domains with original internal seams. Prove finite
-  seam classes and identify the route-metric topology with the resulting gluing.
+- [x] Combine the actual bank domains with original internal roof and gap seams.
+  The full finite closed-seam relation equals the original graft relation, and its
+  metric isometry preserves every original cell point; see
+  [`CompatibleContourClosedSeams`](../Unfoldings/Roof/CompatibleContourClosedSeams.lean).
+- [ ] Prove finite seam classes and identify the route-metric topology with the
+  resulting gluing.
 - [ ] Identify the actual local saved-frontier fan at each seam/vertex class and
   prove its whole metric-ball chart; cell interiors are already covered.
 - [ ] Derive simple connectivity from the actual slit/gap attachments and apply the

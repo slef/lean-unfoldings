@@ -2,6 +2,23 @@
 
 ## Session Log
 
+### 2026-11-18 — full actual closed-seam presentation
+
+- Added closed-seam operations for rigid cell coordinate changes, finite unions and
+  flattening finite families, with exact relation characterizations.
+- Constructed literal closed intersection domains for distinct coincident cells.
+  Used these for gap interiors and the original transported retained spatial seams
+  for the roof, preserving its actual cuts and their separate sides.
+- Combined every internal seam and actual finite/infinite bank attachment into one
+  finite closed isometric seam system. Proved its relation equals the complete
+  original graft relation in both directions. The metric isometry fixes every
+  original intrinsic cell point; no finite-class or flatness assumption is used.
+- Verification: actual cache retrieval and full `lake build` passed 6,445 jobs.
+  All 20,143 unfolding declarations passed the standard-axiom audit; both abstract
+  independence checks passed. Existing theorem statements are unchanged.
+- Remaining: prove finite seam classes, identify the actual graft topology and local
+  saved-frontier seam/vertex fans, derive simple connectivity and global nonoverlap.
+
 ### 2026-11-18 — assemble actual closed bank-stack seams
 
 - Selected each consecutive bank curve together with its original intrinsic piece
