@@ -2,6 +2,18 @@
 
 ## Session Log
 
+### 2026-11-19 — glue two directed half-plane charts across a finite bank
+
+- Constructed a planar ball in the intrinsic route metric when two closed finite
+  banks have matching arclength charts on opposite sides. The two banks may belong
+  to the same piece. Closedness and distinct cross-bank representatives give the
+  local separation, and the proof constructs both the coordinates and the filling.
+- Verification: actual cache retrieval and full `lake build` passed (6,504 jobs).
+  The standard-axiom audit covered 20,615 unfolding and 7,243 pinned planar-topology
+  declarations. Both abstract-independence checks passed.
+- Applying the gluing result to the actual roof and gap banks still requires
+  normalized forward arclength charts.
+
 ### 2026-11-19 — construct planar balls from half-plane fillings and local route steps
 
 - Proved that a geometric filling gives a whole intrinsic ball isometry when it
