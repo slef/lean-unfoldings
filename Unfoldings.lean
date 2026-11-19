@@ -2614,3 +2614,6 @@ public import Unfoldings.Geometry.OpeningStraightTail
 public import Unfoldings.Roof.CompatibleContourGapStraightTail
 public import Unfoldings.Geometry.OrientedBankGapJoinChart
 public import Unfoldings.Geometry.StraightGapJoinBank
+public import Unfoldings.Geometry.BankGapJoinAddresses
+public import Unfoldings.Roof.CompatibleContourRoofJoinChart
+public import Unfoldings.Roof.CompatibleContourTerminalJoinMarks

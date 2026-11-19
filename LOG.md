@@ -2,6 +2,17 @@
 
 ## Session Log
 
+### 2026-11-19 — match original charts and addresses across the rim
+
+- The last finite roof bank and its entire tail use one signed arclength
+  coordinate in an actual centered half-plane chart. Continuity along a
+  positive-time part of the finite bank fixes the original whole-roof side.
+- At a join, the roof height and the gap radial order each recover the original
+  side and the two addresses, the last finite endpoint and the start of its tail.
+- Full `lake build` passed (6,526 jobs), including the standard-axiom audit and
+  both abstract-independence checks. The excision and planar chart across the
+  actual glued join remain open.
+
 ### 2026-11-19 — derive straight canonical gap joins at the rim
 
 - Proved that nonroot sources reaching the same fine-mesh root share its last
