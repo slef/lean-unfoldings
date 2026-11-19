@@ -2,6 +2,26 @@
 
 ## Session Log
 
+### 2026-11-19 — separate actual nonvertex bank attachment labels
+
+- Proved unique original addresses on genuine outward polygonal banks at strict
+  edge interiors and positive true-tail parameters. Original endpoints deliberately
+  retain multiple addresses; the source is excluded from every positive tail.
+- Used the two banks' exact common-source intersection to prove unique sides and
+  intrinsic edge/tail parameters, including exclusion of finite/tail collisions.
+- Constructed actual gap attachment addresses. Parent iteration recovers each
+  finite forest-edge label; the actual last-child identity recovers terminal labels.
+  Equality with a nonvertex actual gap mark now fixes attachment, side, and parameter.
+- Proved injectivity of original contour parent-bank tags, including after forgetting
+  endpoint orientation. A reversed tag would give a two-cycle in the ascending forest.
+  Strict path equality fixes all original labels and the parameter.
+- Verification: actual `lake exe cache get` and full `lake build` passed (6,473 jobs).
+  Standard-axiom audit: 20,356 unfolding and 7,243 pinned planar-topology declarations;
+  both abstract-independence checks passed. No committed theorem statements or proof
+  limits changed. No temporary worktrees were created.
+- Remaining: actual bank/vertex fan charts, simple connectivity and global planar
+  nonoverlap. Unique original marks do not yet classify complete graft seam classes.
+
 ### 2026-11-19 — derive actual roof regularity everywhere outside the forest
 
 - Proved that a cut-bank point outside the physical removed edges belongs to an

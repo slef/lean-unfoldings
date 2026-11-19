@@ -480,6 +480,12 @@ nonoverlap and counting remain to be proved.
   whole-roof point. Apply chart transfer to obtain actual graft planar charts without
   any supplied local chart, including unbounded points; see
   [`CompatibleContourRoofRegularity`](../Unfoldings/Roof/CompatibleContourRoofRegularity.lean).
+- [x] Prove unique original gap attachment labels, sides, and parameters at strict
+  finite-edge interiors and positive tail times. Original bank addresses intentionally
+  retain multiple representatives at vertices and the terminal join. Separate the
+  original directed roof parent-bank labels using ascending parent geometry; see
+  [`CompatibleContourGapMarkUniqueness`](../Unfoldings/Roof/CompatibleContourGapMarkUniqueness.lean)
+  and [`ContourParentBankUniqueness`](../Unfoldings/Complex/ContourParentBankUniqueness.lean).
 - [ ] Identify the actual local saved-frontier fan at each bank-seam/vertex class and
   prove its whole metric-ball chart; cell interiors, gap interiors and roof points
   outside the forest are covered.

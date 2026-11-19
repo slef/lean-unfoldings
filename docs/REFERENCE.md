@@ -4262,3 +4262,17 @@ corners and does not yet identify their widths with the actual retained cap fan.
   charts away from the forest. Both cell-representative and intrinsic-point APIs
   include unbounded cells. Unlike the chart-transfer lemma, these theorems derive
   intrinsic regularity from convex slope geometry rather than requiring a chart.
+
+- [`PolygonalRayAddressUniqueness`](../Unfoldings/Geometry/PolygonalRayAddressUniqueness.lean):
+  strict edge interiors and positive true-tail points have unique original addresses
+  on genuine outward banks. Closed endpoints keep their intentional duplicates.
+- [`BankGapAddressUniqueness`](../Unfoldings/Geometry/BankGapAddressUniqueness.lean):
+  away from the common source, bank equality fixes the side as well as the original
+  address. Intrinsic edge/tail mark APIs exclude cross-bank and finite/tail collisions.
+- [`ContourParentBankUniqueness`](../Unfoldings/Complex/ContourParentBankUniqueness.lean):
+  original directed parent-bank tags retain their child and side even after forgetting
+  endpoint orientation. Equality with a strict path point also fixes its parameter.
+- [`CompatibleContourGapMarkUniqueness`](../Unfoldings/Roof/CompatibleContourGapMarkUniqueness.lean):
+  actual gap addresses retain their original forest attachment labels. At strict
+  finite-edge interiors or positive tail times, equality of intrinsic gap marks fixes
+  the attachment, side, and parameter before forming the metric quotient.

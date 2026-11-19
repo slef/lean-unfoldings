@@ -2548,3 +2548,8 @@ public import Unfoldings.Roof.CompatibleContourRoofChartTransfer
 public import Unfoldings.Polyhedron.BoundaryAwayFromCuts
 public import Unfoldings.Roof.CompatibleWholeCutRegularity
 public import Unfoldings.Roof.CompatibleContourRoofRegularity
+
+public import Unfoldings.Geometry.PolygonalRayAddressUniqueness
+public import Unfoldings.Geometry.BankGapAddressUniqueness
+public import Unfoldings.Complex.ContourParentBankUniqueness
+public import Unfoldings.Roof.CompatibleContourGapMarkUniqueness

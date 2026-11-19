@@ -1167,6 +1167,8 @@ selection and Euler counting follow.
 - [x] Derive intrinsic roof regularity outside the forest from the constructed finite
   flat cut disks. Increase the completion level to cover unbounded points and apply
   chart transfer to obtain actual graft roof charts without supplied regularity data.
+- [x] Separate nonvertex actual gap-bank marks by original forest edge or terminal
+  ray, side, and parameter. Separate original directed roof parent-bank labels.
 - [ ] Match saved-frontier curves to the comparison fans and local surgery models.
 - [x] Construct complete unbounded roof cut metrics with actual planar cells,
   boundary-only seams and exact metric-ball restoration away from closed cuts.
