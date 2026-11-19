@@ -4220,3 +4220,12 @@ corners and does not yet identify their widths with the actual retained cap fan.
   actual bank attachments have physical labels. Gap interior classes retain their
   original gap tag and coordinate, so all bank attachments can be removed locally
   without changing a whole metric ball. Internal cell seams remain included.
+
+- [`InternalFamilyBalls`](../Unfoldings/Metric/InternalFamilyBalls.lean):
+  internally glued original cells are isometric to the disjoint metric union of
+  their intrinsic pieces. Every whole finite ball stays in its original piece.
+- [`CompatibleContourGapInteriorCharts`](../Unfoldings/Roof/CompatibleContourGapInteriorCharts.lean):
+  constructs the exact original piece-ball identifications and combines them with
+  actual bank excision and local convex geometry. Every actual gap interior point
+  has a whole planar metric ball in the full graft, including points on internal
+  cell seams. The final API accepts an intrinsic gap point without a representative.

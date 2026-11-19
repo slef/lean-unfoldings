@@ -1158,6 +1158,8 @@ selection and Euler counting follow.
 - [x] Classify actual gap-interior seam representatives by their original gap and
   coordinate, and remove all bank attachments on a whole local metric ball.
   Internal cell seams are included.
+- [x] Identify whole internal-piece balls with their original intrinsic metrics and
+  derive whole planar charts at actual gap interior points, including internal seams.
 - [ ] Match saved-frontier curves to the comparison fans and local surgery models.
 - [x] Construct complete unbounded roof cut metrics with actual planar cells,
   boundary-only seams and exact metric-ball restoration away from closed cuts.

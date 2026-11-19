@@ -2,6 +2,28 @@
 
 ## Session Log
 
+### 2026-11-19 — whole planar charts at actual gap interior points
+
+- Constructed exact whole-ball identifications for internally glued original pieces.
+  Flattened internal seams recover the disjoint route-metric union of the intrinsic
+  pieces, and every finite ball stays in its original piece.
+- Identified each actual internally glued roof/gap piece with its original metric.
+  Composed the gap piece-ball map with the proved bank-excision isometry and a local
+  convex gap chart, then transported the model into the real Euclidean plane.
+- Proved whole planar metric-ball charts at all actual gap interior points, including
+  points on internal cell seams. Added a theorem accepting an original intrinsic
+  gap point directly, without choosing a cell representative.
+- Replaced an expensive definitional point comparison in the representative-free
+  proof with the existing explicit point-preservation theorem after a kernel timeout.
+  The theorem statement and proof limits were unchanged.
+- Verification: actual cache retrieval and final full `lake build` passed (6,462 jobs).
+  The audit checked 20,284 unfolding and 7,243 pinned planar-topology declarations
+  with standard axioms only; both abstract independence checks passed. No existing
+  theorem statements were changed; the working tree has no temporary worktrees.
+- Remaining: actual roof points away from attachments, actual bank-seam and vertex
+  fan charts, simple connectivity, and global planar isometry/nonoverlap. Gap interiors
+  and original cell interiors now have actual whole planar charts in the graft.
+
 ### 2026-11-19 — actual gap-interior metric excision
 
 - Proved a general closed-seam excision criterion using conserved labels. If the

@@ -457,8 +457,13 @@ nonoverlap and counting remain to be proved.
   same original gap and coordinate. Removing all bank attachments leaves a whole
   small metric ball unchanged, including points on internal cell seams; see
   [`CompatibleContourInteriorExcision`](../Unfoldings/Roof/CompatibleContourInteriorExcision.lean).
-- [ ] Identify the actual local saved-frontier fan at each seam/vertex class and
-  prove its whole metric-ball chart; cell interiors are already covered.
+- [x] Identify every whole finite ball of an internally glued piece with its original
+  intrinsic metric. Compose this with bank excision and local convex gap geometry
+  to prove whole planar charts at actual gap interior points, including internal
+  cell seams. The API also accepts an intrinsic gap point directly; see
+  [`CompatibleContourGapInteriorCharts`](../Unfoldings/Roof/CompatibleContourGapInteriorCharts.lean).
+- [ ] Identify the actual local saved-frontier fan at each bank-seam/vertex class and
+  prove its whole metric-ball chart; cell interiors and gap interiors are covered.
 - [ ] Derive simple connectivity from the actual slit/gap attachments and apply the
   global planar-isometry theorem. Its finite closed-cell argument supplies the
   needed global completeness; a separate end-height certificate is unnecessary.

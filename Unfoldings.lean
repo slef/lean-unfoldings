@@ -2535,3 +2535,6 @@ public import Unfoldings.Roof.CompatibleContourFiniteClasses
 
 public import Unfoldings.Metric.ClosedSeamLabelExcision
 public import Unfoldings.Roof.CompatibleContourInteriorExcision
+
+public import Unfoldings.Metric.InternalFamilyBalls
+public import Unfoldings.Roof.CompatibleContourGapInteriorCharts
