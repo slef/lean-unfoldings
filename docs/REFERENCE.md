@@ -4229,3 +4229,11 @@ corners and does not yet identify their widths with the actual retained cap fan.
   actual bank excision and local convex geometry. Every actual gap interior point
   has a whole planar metric ball in the full graft, including points on internal
   cell seams. The final API accepts an intrinsic gap point without a representative.
+
+- [`CompatibleContourRoofExcision`](../Unfoldings/Roof/CompatibleContourRoofExcision.lean):
+  every actual bank seam has an original spatial label on the physical forest.
+  Removing bank attachments preserves a whole roof ball at each point outside that
+  forest. Composing the original piece-ball and graft identifications gives a whole
+  ball isometry from the original roof cut to its graft image at original cell
+  representatives. Unbounded cells need no completion-level bound. This comparison does not
+  itself assert planar regularity of the original roof.

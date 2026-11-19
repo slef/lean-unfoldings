@@ -2,6 +2,30 @@
 
 ## Session Log
 
+### 2026-11-19 — whole roof-ball comparison away from the physical forest
+
+- Strengthened the actual bank-label result: every bank attachment has its original
+  spatial label on the actual physical forest carrier. Finite edges and complete
+  terminal rays are both covered by the original carrier theorems.
+- Used these labels and proved finite seam classes to remove every bank attachment
+  on a whole small metric ball at original roof cell representatives outside the
+  forest. Original internal roof/gap seams remain intact.
+- Composed this excision chart with the exact internal-piece ball identification and
+  actual graft isometry. The resulting whole roof ball is isometric to its full graft
+  image ball, including representatives on roof cell seams and unbounded roof cells.
+  There is no completion-level bound or supplied local manifold certificate.
+- Added an explicit point-preservation theorem for the internal piece coordinates.
+  A representative-free convenience wrapper was deferred after expensive checking;
+  the verified API uses original cell representatives. The attempts are preserved
+  in ignored research files, and proof limits were not increased.
+- Verification: actual `lake exe cache get` and final full `lake build` passed
+  (6,463 jobs). All 20,292 unfolding declarations and 7,243 pinned planar-topology
+  declarations passed the standard-axiom audit; both abstract independence checks
+  passed. Existing theorem statements are unchanged; only the main worktree exists.
+- Remaining: transfer intrinsic roof planar charts through this metric comparison,
+  prove actual bank-seam and vertex fan charts, derive simple connectivity, and prove
+  global planar isometry/nonoverlap. This metric comparison alone is not a flatness proof.
+
 ### 2026-11-19 — whole planar charts at actual gap interior points
 
 - Constructed exact whole-ball identifications for internally glued original pieces.

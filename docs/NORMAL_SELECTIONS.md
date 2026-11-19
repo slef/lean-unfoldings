@@ -462,6 +462,11 @@ nonoverlap and counting remain to be proved.
   to prove whole planar charts at actual gap interior points, including internal
   cell seams. The API also accepts an intrinsic gap point directly; see
   [`CompatibleContourGapInteriorCharts`](../Unfoldings/Roof/CompatibleContourGapInteriorCharts.lean).
+- [x] Derive that every bank seam has a physical label on the actual forest. At
+  every whole-cut roof point outside this carrier, remove all bank attachments
+  locally and identify a whole graft ball with the original roof ball. This includes
+  roof cell seams and points beyond the chosen completion level; see
+  [`CompatibleContourRoofExcision`](../Unfoldings/Roof/CompatibleContourRoofExcision.lean).
 - [ ] Identify the actual local saved-frontier fan at each bank-seam/vertex class and
   prove its whole metric-ball chart; cell interiors and gap interiors are covered.
 - [ ] Derive simple connectivity from the actual slit/gap attachments and apply the
