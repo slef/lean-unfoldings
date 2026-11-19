@@ -1162,6 +1162,10 @@ selection and Euler counting follow.
   derive whole planar charts at actual gap interior points, including internal seams.
 - [x] Derive original-carrier labels for all bank seams and whole roof-ball
   comparisons away from the forest, including cell seams and unbounded roof points.
+- [x] Transfer intrinsic roof planar charts through the actual centered roof-ball
+  comparison, allowing unnormalized original model charts.
+- [ ] Derive intrinsic roof regularity outside the forest from the constructed finite
+  cut meshes, then apply chart transfer.
 - [ ] Match saved-frontier curves to the comparison fans and local surgery models.
 - [x] Construct complete unbounded roof cut metrics with actual planar cells,
   boundary-only seams and exact metric-ball restoration away from closed cuts.

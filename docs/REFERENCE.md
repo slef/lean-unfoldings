@@ -4237,3 +4237,14 @@ corners and does not yet identify their widths with the actual retained cap fan.
   ball isometry from the original roof cut to its graft image at original cell
   representatives. Unbounded cells need no completion-level bound. This comparison does not
   itself assert planar regularity of the original roof.
+
+- [`LocalBallRegularity`](../Unfoldings/Metric/LocalBallRegularity.lean):
+  recenter and restrict an arbitrary whole-ball model chart, then transport metric
+  regularity through a centered local ball isometry. Only the comparison is assumed
+  centered; the model chart may have arbitrary coordinates.
+- [`InternalFamilyBallCenters`](../Unfoldings/Metric/InternalFamilyBallCenters.lean):
+  the original internal piece-ball maps preserve their named cell centers.
+- [`CompatibleContourRoofChartTransfer`](../Unfoldings/Roof/CompatibleContourRoofChartTransfer.lean):
+  proves the actual internal piece-ball center identities and transfers existing
+  intrinsic roof planar charts into the actual graft away from the physical forest.
+  Intrinsic roof regularity is an explicit input, not a conclusion of this module.

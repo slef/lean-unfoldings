@@ -2,6 +2,31 @@
 
 ## Session Log
 
+### 2026-11-19 — transfer intrinsic roof regularity through actual graft balls
+
+- Proved a general recentering and restriction construction for whole-ball model
+  charts. The supplied model chart need not send the original point to the model
+  ball's named center; its actual image is used as the new center.
+- Derived transfer of metric regularity through a centered whole local ball isometry
+  for extended metric spaces, without requiring a global metric or global chart.
+- Proved that the internal family cell-ball identifications and actual internal
+  piece-ball identifications preserve their named original centers.
+- Applied these facts to the actual roof excision map. Every existing intrinsic
+  planar roof chart outside the physical forest transfers to a whole planar chart
+  in the graft. Intrinsic roof regularity is an explicit premise; this module does
+  not claim to derive it everywhere outside the forest.
+- Verification: actual `lake exe cache get` and full `lake build` passed (6,466 jobs).
+  All 20,307 unfolding declarations and 7,243 pinned planar-topology declarations
+  passed the standard-axiom audit; both abstract-independence checks passed. No
+  existing theorem statements or proof limits were changed. Only the main worktree exists.
+- Next roof argument: use `exists_compatibleMesh_ball_chart` below a sufficiently
+  large completion level. Exclude the finite cut boundary using the original rim
+  height and the physical support of removed edges. Apply the existing flat-disk
+  regularity theorem and the new whole-ball chart transfer. Enlarging the completion
+  level should cover every original whole-roof point outside the forest.
+- Remaining globally: derive that intrinsic roof regularity, identify actual bank-seam
+  and vertex fans, prove simple connectivity, and prove global nonoverlap.
+
 ### 2026-11-19 — whole roof-ball comparison away from the physical forest
 
 - Strengthened the actual bank-label result: every bank attachment has its original

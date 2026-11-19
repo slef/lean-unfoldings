@@ -2540,3 +2540,7 @@ public import Unfoldings.Metric.InternalFamilyBalls
 public import Unfoldings.Roof.CompatibleContourGapInteriorCharts
 
 public import Unfoldings.Roof.CompatibleContourRoofExcision
+
+public import Unfoldings.Metric.LocalBallRegularity
+public import Unfoldings.Metric.InternalFamilyBallCenters
+public import Unfoldings.Roof.CompatibleContourRoofChartTransfer

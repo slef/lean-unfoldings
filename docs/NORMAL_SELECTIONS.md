@@ -467,6 +467,14 @@ nonoverlap and counting remain to be proved.
   locally and identify a whole graft ball with the original roof ball. This includes
   roof cell seams and points beyond the chosen completion level; see
   [`CompatibleContourRoofExcision`](../Unfoldings/Roof/CompatibleContourRoofExcision.lean).
+- [x] Prove that the internal piece-ball identifications preserve their original
+  centers and transport intrinsic roof planar charts through the actual roof-ball
+  comparison. Original model charts need not preserve centers; they are recentered
+  and restricted. Intrinsic roof regularity is an explicit input to this transport
+  theorem; see
+  [`CompatibleContourRoofChartTransfer`](../Unfoldings/Roof/CompatibleContourRoofChartTransfer.lean).
+- [ ] Derive intrinsic roof regularity outside the forest from the constructed finite
+  cut meshes, and apply this transport theorem.
 - [ ] Identify the actual local saved-frontier fan at each bank-seam/vertex class and
   prove its whole metric-ball chart; cell interiors and gap interiors are covered.
 - [ ] Derive simple connectivity from the actual slit/gap attachments and apply the
