@@ -2659,3 +2659,11 @@ public import Unfoldings.Metric.BankStackSeamExcision
 public import Unfoldings.Roof.CompatibleContourSourceOnlySmoothMarks
 public import Unfoldings.Roof.CompatibleContourSourceOnlySmoothSeams
 public import Unfoldings.Roof.CompatibleContourSourceOnlyLeafBall
+public import Unfoldings.Complex.ContourGapBankSurjectivity
+public import Unfoldings.Complex.NestedFanAngles
+public import Unfoldings.Cone.SectorPairOriginalClass
+public import Unfoldings.Cone.SectorPairBankStack
+public import Unfoldings.Metric.BankStackAdjacentGaps
+public import Unfoldings.Roof.CompatibleContourSourceOnlyBendMarks
+public import Unfoldings.Roof.CompatibleContourSourceOnlyChildPairClasses
+public import Unfoldings.Roof.CompatibleContourSourceOnlyChildPairBall

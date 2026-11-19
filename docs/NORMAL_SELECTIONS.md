@@ -591,6 +591,11 @@ nonoverlap and counting remain to be proved.
   [ordinary attachment times](../Unfoldings/Roof/CompatibleContourSourceOnlySmoothSeams.lean)
   and [original positive leaves](../Unfoldings/Roof/CompatibleContourSourceOnlyLeafBall.lean).
   An empty stack uses both sides of the original cut roof.
+- [x] Classify the
+  [exact two-gap bend classes](../Unfoldings/Roof/CompatibleContourSourceOnlyChildPairClasses.lean)
+  within each child block, and use their two original arclengths to
+  [glue a whole planar ball](../Unfoldings/Roof/CompatibleContourSourceOnlyChildPairBall.lean).
+  The physical collapse projects properly and surjectively onto the plane.
 - [ ] Identify actual cyclic fans in the source-only graft and prove whole
   metric-ball charts. Reuse the generic strip and sector charts with the
   source-only attachment maps.

@@ -83,4 +83,54 @@ theorem bend_chart_bank_coordinates (radial_ne : d ≠ 0) (in_ne : inEdge ≠ 0)
       · exact right
     exact along.trans (congrArg (p + ·) calibrated.symm)
 
+/-- A genuine bend has a whole marked angular chart with its original arclength
+parameters along both incident finite edges. -/
+theorem exists_model_bend_marked_chart (genuine : ∀ i, (B).chain.edge i ≠ 0)
+    (radial : 0 < inner ℝ d outEdge) :
+    ∃ (pos : 0 < width) (r : ℝ) (rpos : 0 < r)
+      (A : Metric.eball tip (ENNReal.ofReal r) ≃ᵢ
+        Metric.eball (closedAngularSectorOrigin pos.le) (ENNReal.ofReal r)),
+      (A ⟨tip, Metric.mem_eball_self (ENNReal.ofReal_pos.mpr rpos)⟩).val =
+        closedAngularSectorOrigin pos.le ∧
+      (∀ (t : unitInterval)
+        (near : edist (G.model.edgePoint side k.castSucc t) tip < ENNReal.ofReal r),
+        (A ⟨G.model.edgePoint side k.castSucc t, near⟩).val.val =
+          if side then (((1 - t.val) * ‖inEdge‖ : ℝ) : ℂ)
+          else ((1 - t.val) * ‖inEdge‖) • polarRay width) ∧
+      ∀ (t : unitInterval)
+        (near : edist (G.model.edgePoint side k.succ t) tip < ENNReal.ofReal r),
+        (A ⟨G.model.edgePoint side k.succ t, near⟩).val.val =
+          if side then (t.val * ‖outEdge‖) • polarRay width
+          else (((t.val * ‖outEdge‖ : ℝ) : ℂ)) := by
+  obtain ⟨pos, small, r, rpos, geometric, centered, physical⟩ :=
+    G.exists_model_bend_chart side k genuine radial
+  let oldWidth := if side then radialRightCornerWidth d inEdge outEdge
+    else radialLeftCornerWidth d inEdge outEdge
+  have same : oldWidth = width := (Bool.cond_eq_ite _ _ _).symm
+  let F := bisectedSectorFan oldWidth pos small
+  have angle : F.totalAngle = width := (bisectedSectorFan_totalAngle _ _ _).trans same
+  have positive : 0 < width := same ▸ pos
+  let E := (F.intrinsicAngularSectorIsometryEquiv
+      ((bisectedSectorFan_totalAngle _ _ _).trans_lt small)).trans
+    (PolygonalPoint.congrIsometryEquiv (congrArg closedAngularSector angle))
+  have E_center : E F.origin = closedAngularSectorOrigin positive.le := by
+    apply PolygonalPoint.ext
+    rw [IsometryEquiv.trans_apply, PolygonalPoint.congrIsometryEquiv_val,
+      AngularFan.intrinsicAngularSectorIsometryEquiv_val, AngularFan.develop_origin]
+    rfl
+  let A := geometric.trans (basedEBallIsometry E F.origin _ E_center (ENNReal.ofReal r))
+  have trace (y : Metric.eball tip (ENNReal.ofReal r)) :
+      p + frame (A y).val.val = y.val.val := by
+    change p + frame (E (geometric y).val).val = _
+    rw [IsometryEquiv.trans_apply, PolygonalPoint.congrIsometryEquiv_val,
+      AngularFan.intrinsicAngularSectorIsometryEquiv_val]
+    simpa only [Bool.cond_eq_ite] using physical y
+  have radial_ne : d ≠ 0 := by
+    intro zero
+    rw [zero, inner_zero_left] at radial
+    exact (lt_irrefl 0 radial)
+  refine ⟨positive, r, rpos, A, ?_, G.bend_chart_bank_coordinates side k radial_ne
+    (genuine k.castSucc) (genuine k.succ) positive.le A trace⟩
+  exact (congrArg E centered).trans E_center
+
 end Unfoldings.OrientedBankGap

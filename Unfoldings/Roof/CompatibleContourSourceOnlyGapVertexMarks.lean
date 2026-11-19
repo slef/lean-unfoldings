@@ -155,6 +155,56 @@ theorem compatibleContourSourceOnlyGapMark_parent_join
     ((models event).bank (!side)).chain.point j 0
   rw [PolygonalChain.point_one, PolygonalChain.point_zero, vertex]
 
+/-- An interior parent bend has exactly its incoming and outgoing parameters
+on the same original bank side. -/
+theorem compatibleContourSourceOnlyGapMark_parent_bend_address
+    (v : (D).Vertex Set.univ) (nonroot : v ∉ (Fcut).parents.roots)
+    (parent_nonroot : (Fcut).parents.parent v ∉ (Fcut).parents.roots) (event : Event)
+    (g : OrientedBankGap BankAt[event] MovedAt[event])
+    (here : event ∈ Stack FiniteBank[v,nonroot])
+    (above : event ∈ Stack FiniteBank[(Fcut).parents.parent v,parent_nonroot])
+    (side : Bool) (bank : Attachment) (member : event ∈ Stack bank)
+    (other : Bool) (t : ParamAt bank)
+    (same : Gap bank event member other t =
+      Gap FiniteBank[(Fcut).parents.parent v,parent_nonroot] event above side 0) :
+    other = side ∧ ((⟨bank, t⟩ : Σ b : Attachment, ParamAt b) = ⟨FiniteBank[v,nonroot], 1⟩ ∨
+      (⟨bank, t⟩ : Σ b : Attachment, ParamAt b) =
+        ⟨FiniteBank[(Fcut).parents.parent v,parent_nonroot], 0⟩) := by
+  let parent := (Fcut).parents.parent v
+  let child_bank := FiniteBank[v,nonroot]
+  let parent_bank := FiniteBank[parent,parent_nonroot]
+  let edge_member (u : (D).Vertex Set.univ) (h : u ∉ (Fcut).parents.roots)
+      (mem : event ∈ Stack FiniteBank[u,h]) : event ∈ (D).contourEdgeGapStack Selection contour u :=
+    ((D).mem_contourEdgeGapStack Selection contour u event).mpr
+      (((D).mem_contourSavedGapStack Selection contour u event).mp mem)
+  let i := (D).contourGapBankIndex Selection contour v nonroot event (edge_member v nonroot here)
+  let j := (D).contourGapBankIndex Selection contour parent parent_nonroot event
+    (edge_member parent parent_nonroot above)
+  have next : j.val = i.val + 1 :=
+    (D).contourGapBankIndex_parent Selection contour v nonroot parent_nonroot event
+      (edge_member v nonroot here) (edge_member parent parent_nonroot above)
+  let k : Fin LengthAt[event] := ⟨i.val, by have top := j.isLt; omega⟩
+  have first : k.castSucc = i := Fin.ext rfl
+  have last : k.succ = j := Fin.ext next.symm
+  have bind : Gap bank event member other t = (models event).edgePoint (!side) k.succ 0 :=
+    same.trans (congrArg (fun l => (models event).edgePoint (!side) l 0) last.symm)
+  have named := K.compatibleContourSourceOnlyGapMark_eq_bend compact nonempty R no_boundary
+    level higher M positive inner_disk beta acute contour starts models event g k (!side)
+    bank member other t bind
+  refine ⟨?_, ?_⟩
+  · simpa only [Bool.not_not] using congrArg Bool.not named.1
+  rcases named.2 with h | h
+  · have addr : AddressAt[child_bank,event,here,1] = .inl (k.castSucc, 1) :=
+      congrArg (fun l => Sum.inl (l, (1 : unitInterval))) first.symm
+    exact Or.inl (K.compatibleContourGapAddress_eq compact nonempty R no_boundary level higher M
+      positive inner_disk beta acute contour event child_bank bank here member 1 t
+      (h.trans addr.symm))
+  · have addr : AddressAt[parent_bank,event,above,0] = .inl (k.succ, 0) :=
+      congrArg (fun l => Sum.inl (l, (0 : unitInterval))) last.symm
+    exact Or.inr (K.compatibleContourGapAddress_eq compact nonempty R no_boundary level higher M
+      positive inner_disk beta acute contour event parent_bank bank above member 0 t
+      (h.trans addr.symm))
+
 local notation "SourceAt[" e "]" => TriangleComplex.positiveContourVertex D Selection contour e
 local notation "FirstEdge[" e "]" => (Sum.inl
   (Subtype.mk SourceAt[e] (TriangleComplex.positiveContourVertex_nonroot D Selection contour e)) :

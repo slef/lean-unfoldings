@@ -1,5 +1,7 @@
 module
 
+public import Unfoldings.Complex.ContourGapBankSurjectivity
+
 public import Unfoldings.Geometry.SourceGapPhysicalCollapse
 public import Unfoldings.Geometry.BankGapClosedEmbeddings
 public import Unfoldings.Metric.ClosedSeamsContinuousLift
@@ -112,12 +114,48 @@ local notation "L" => MetricGluing.bankStackLeft Pieces Stack Base Gap
 local notation "Rgt" => MetricGluing.bankStackRight Pieces Stack Base Gap
 local notation "Banks" => MetricGluing.bankSeams L Rgt
 
-/-- Collapsing the attached gaps descends to a proper map on the entire intrinsic graft.
-It agrees with the original spatial folding on the whole roof and its named bank marks. -/
-theorem compatibleContourSourceOnlyGraft_exists_proper_collapse
+local notation "Surface" => SpatialEnvelope.wholeSurface M.plane
+
+include W in
+/-- The physical reference bank of any gap is entirely on the original full roof. -/
+theorem compatibleContourPhysicalBank_subset_wholeSurface (e : Event) :
+    (SpatialAt[e]).carrier ⊆ Surface := by
+  intro x mem
+  obtain ⟨address, position⟩ := (SpatialAt[e]).exists_address mem
+  cases address with
+  | inl q =>
+    obtain ⟨i, t⟩ := q
+    obtain ⟨v, nonroot, member, eq⟩ := (D).exists_contourGapBankIndex_eq Selection contour e i
+    let bank : Attachment := .inl ⟨v, nonroot⟩
+    let physical := W.partition.restoreCut R.carrier (Base bank false t)
+    have named_member : e ∈ Stack bank :=
+      ((D).mem_contourSavedGapStack Selection contour v e).mpr
+        (((D).mem_contourEdgeGapStack Selection contour v e).mp member)
+    have named := K.compatibleContourPhysicalBank_parent_point compact nonempty R no_boundary
+      level higher M positive inner_disk beta acute contour starts v nonroot e named_member t
+    have restored := K.restore_compatibleContourParentMark_position compact nonempty R no_boundary
+      level higher M positive inner_disk beta acute contour starts W v nonroot false t
+    have step : (SpatialAt[e]).chain.point i t = physical.val :=
+      (congrArg (fun j => (SpatialAt[e]).chain.point j t) eq).symm.trans
+        (named.trans restored.symm)
+    exact (step.symm.trans position) ▸ physical.property
+  | inr t =>
+    obtain ⟨edge, member⟩ := (D).exists_contourTerminalEdge_mem_gapStack Selection contour e
+    let bank : Attachment := .inr edge
+    let physical := W.partition.restoreCut R.carrier (Base bank false t)
+    have named := K.compatibleContourPhysicalBank_tail_parent compact nonempty R no_boundary
+      level higher M positive inner_disk beta acute contour starts W edge e member t
+    have restored := K.restore_compatibleContourTerminalMark_affine compact nonempty R no_boundary
+      level higher M positive inner_disk beta acute contour starts W edge false t
+    have step : (SpatialAt[e]).tail t = physical.val := named.trans restored.symm
+    exact (step.symm.trans position) ▸ physical.property
+
+/-- The proper spatial collapse has image exactly the original full roof and
+preserves every original bank mark. -/
+theorem compatibleContourSourceOnlyGraft_exists_proper_collapse_range
     (geometry : ∀ e : Event, OrientedBankGap BankAt[e] MovedAt[e])
     (matched : ∀ e, models e = (geometry e).model) :
-    ∃ f : Graft → Space, IsProperMap f ∧
+    ∃ f : Graft → Space, IsProperMap f ∧ Set.range f = Surface ∧
       (∀ x : W.Cut, f (MetricGluing.point Pieces Banks ⟨none, x⟩) =
         (W.partition.restoreCut R.carrier x).val) ∧
       ∀ (e : Event) (x : PolygonalPoint (models e).region)
@@ -127,12 +165,12 @@ theorem compatibleContourSourceOnlyGraft_exists_proper_collapse
   classical
   have gap_exists (e : Event) :
       ∃ f : PolygonalPoint (models e).region → Space, IsProperMap f ∧
-        ∀ (x : PolygonalPoint (models e).region) (h : x.val ∈ frontier (models e).region),
+        Set.range f ⊆ (SpatialAt[e]).carrier ∧ ∀ (x : PolygonalPoint (models e).region) (h : x.val ∈ frontier (models e).region),
           f x = (FoldAt[e] ⟨x.val, h⟩).val := by
     let g := geometry e
     let predicate (model : BankGapModel BankAt[e] MovedAt[e]) : Prop :=
       ∃ f : PolygonalPoint model.region → Space, IsProperMap f ∧
-        ∀ (x : PolygonalPoint model.region) (h : x.val ∈ frontier model.region),
+        Set.range f ⊆ (SpatialAt[e]).carrier ∧ ∀ (x : PolygonalPoint model.region) (h : x.val ∈ frontier model.region),
           f x = (model.frontierMap SpatialAt[e] ⟨x.val, h⟩).val
     have genuine (side : Bool) (i : Fin (LengthAt[e] + 1)) :
         ((models e).bank side).chain.edge i ≠ 0 :=
@@ -146,11 +184,12 @@ theorem compatibleContourSourceOnlyGraft_exists_proper_collapse
       ⟨fun x => (g.collapseTo SpatialAt[e] x).val,
         closedEmbedding.isProperMap.comp
           (g.isProperMap_collapseTo SpatialAt[e] (genuine false) target_ne),
+        (by rintro _ ⟨x, rfl⟩; exact (g.collapseTo SpatialAt[e] x).property),
         fun x boundary => congrArg Subtype.val
           (g.collapseTo_eq_frontierMap SpatialAt[e] (genuine false) (genuine true) x boundary)⟩
     change predicate (models e)
     exact Eq.mpr (congrArg predicate (matched e)) proof
-  choose fold fold_proper fold_boundary using gap_exists
+  choose fold fold_proper fold_range fold_boundary using gap_exists
   let piece : ∀ i, Pieces i → Space
     | none => fun x => (W.partition.restoreCut R.carrier x).val
     | some e => fold e
@@ -221,9 +260,41 @@ theorem compatibleContourSourceOnlyGraft_exists_proper_collapse
     change (Seams).continuousLift finite maps compatible
       (E.symm (MetricGluing.point Pieces Banks (original x))) = _
     rw [pre, MetricGluing.ClosedSeams.continuousLift_point]
+  have onto : Set.range f = Surface := by
+    apply Set.Subset.antisymm
+    · rintro x ⟨q, rfl⟩
+      obtain ⟨⟨i, y⟩, rfl⟩ := MetricGluing.point_surjective Pieces Banks q
+      have equal := on_piece ⟨i, y⟩
+      cases i with
+      | none => exact equal.symm ▸ (W.partition.restoreCut R.carrier y).property
+      | some e =>
+        have in_path := fold_range e (Set.mem_range_self y)
+        exact equal.symm ▸ K.compatibleContourPhysicalBank_subset_wholeSurface compact nonempty R
+          no_boundary level higher M positive inner_disk beta acute contour starts W e in_path
+    · intro x inside
+      obtain ⟨y, eq⟩ := W.partition.restoreCut_surjective R.carrier ⟨x, inside⟩
+      exact ⟨MetricGluing.point Pieces Banks ⟨none, y⟩,
+        (on_piece ⟨none, y⟩).trans (congrArg PolygonalPoint.val eq)⟩
   exact ⟨f, ((Seams).isProperMap_continuousLift finite maps compatible maps_proper).comp
-    E.symm.toHomeomorph.isProperMap, fun x => on_piece ⟨none, x⟩,
+    E.symm.toHomeomorph.isProperMap, onto, fun x => on_piece ⟨none, x⟩,
     fun e x boundary => (on_piece ⟨some e, x⟩).trans (fold_boundary e x boundary)⟩
+
+/-- The original spatial restoration and all named gap banks agree with a proper
+map on the entire intrinsic graft. -/
+theorem compatibleContourSourceOnlyGraft_exists_proper_collapse
+    (geometry : ∀ e : Event, OrientedBankGap BankAt[e] MovedAt[e])
+    (matched : ∀ e, models e = (geometry e).model) :
+    ∃ f : Graft → Space, IsProperMap f ∧
+      (∀ x : W.Cut, f (MetricGluing.point Pieces Banks ⟨none, x⟩) =
+        (W.partition.restoreCut R.carrier x).val) ∧
+      ∀ (e : Event) (x : PolygonalPoint (models e).region)
+        (boundary : x.val ∈ frontier (models e).region),
+        f (MetricGluing.point Pieces Banks ⟨some e, x⟩) =
+          (FoldAt[e] ⟨x.val, boundary⟩).val := by
+  obtain ⟨f, proper, _, roof, gap⟩ := K.compatibleContourSourceOnlyGraft_exists_proper_collapse_range
+    compact nonempty R no_boundary level higher M positive inner_disk beta acute contour starts
+    W models geometry matched
+  exact ⟨f, proper, roof, gap⟩
 
 /-- The same physical collapse is continuous on the whole graft, with every original bank. -/
 theorem compatibleContourSourceOnlyGraft_exists_continuous_collapse
@@ -240,5 +311,33 @@ theorem compatibleContourSourceOnlyGraft_exists_continuous_collapse
     compact nonempty R no_boundary level higher M positive inner_disk beta acute contour starts
     W models geometry matched
   exact ⟨f, proper.continuous, roof, gap⟩
+
+/-- Horizontal projection of the physical collapse is a proper surjection to the
+original projected plane, with the prescribed values on the original roof and gap banks. -/
+theorem compatibleContourSourceOnlyGraft_exists_proper_planar_collapse
+    (geometry : ∀ e : Event, OrientedBankGap BankAt[e] MovedAt[e])
+    (matched : ∀ e, models e = (geometry e).model) :
+    ∃ f : Graft → Plane, IsProperMap f ∧ Function.Surjective f ∧
+      (∀ x : W.Cut, f (MetricGluing.point Pieces Banks ⟨none, x⟩) =
+        Cap.horizontal (W.partition.restoreCut R.carrier x).val) ∧
+      ∀ (e : Event) (x : PolygonalPoint (models e).region)
+        (boundary : x.val ∈ frontier (models e).region),
+        f (MetricGluing.point Pieces Banks ⟨some e, x⟩) =
+          Cap.horizontal (FoldAt[e] ⟨x.val, boundary⟩).val := by
+  obtain ⟨f, proper, range_eq, roof, gaps⟩ :=
+    K.compatibleContourSourceOnlyGraft_exists_proper_collapse_range compact nonempty R
+      no_boundary level higher M positive inner_disk beta acute contour starts W models
+      geometry matched
+  let spatial (z : Graft) : Surface := ⟨f z, range_eq ▸ Set.mem_range_self z⟩
+  have spatial_proper : IsProperMap spatial :=
+    isProperMap_of_comp_of_inj (proper.continuous.subtype_mk _)
+      continuous_subtype_val proper Subtype.val_injective
+  have onto (p : Surface) : ∃ z, spatial z = p := by
+    obtain ⟨z, exact_val⟩ : p.val ∈ Set.range f := range_eq.symm ▸ p.property
+    exact ⟨z, Subtype.ext exact_val⟩
+  let H := SpatialEnvelope.wholeSurfaceHomeomorph M.plane
+  exact ⟨H ∘ spatial, H.isProperMap.comp spatial_proper, H.surjective.comp onto,
+    fun x => congrArg Cap.horizontal (roof x),
+    fun e x boundary => congrArg Cap.horizontal (gaps e x boundary)⟩
 
 end Unfoldings.ConvexRoof

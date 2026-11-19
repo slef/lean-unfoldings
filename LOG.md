@@ -2,6 +2,19 @@
 
 ## Session Log
 
+### 2026-11-19 — prove whole planar balls inside child blocks
+
+- At two consecutive gaps in the same incoming child block, classified the
+  exact two bend copies and both original incident slots.
+- Aligned the saved fan angles and calibrated the incoming and outgoing rays
+  with their separate original arclengths. The two sectors give a whole
+  planar ball in the actual graft.
+- Proved that the proper collapse has image exactly the original spatial
+  roof. Horizontal projection gives a proper surjection onto the plane.
+- Full `lake build` passed (6,594 jobs). Both abstract audits passed. Only
+  standard axioms occur in 21,259 unfolding and 7,243 pinned planar-topology
+  declarations.
+
 ### 2026-11-19 — prove planar balls at ordinary seams and positive leaves
 
 - The actual source-only graft has a whole planar metric ball at every strict
