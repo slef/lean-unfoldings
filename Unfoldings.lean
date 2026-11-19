@@ -2567,3 +2567,7 @@ public import Unfoldings.Roof.CompatibleContourGraftExactness
 
 public import Unfoldings.Metric.ClosedSeamRestriction
 public import Unfoldings.Roof.CompatibleContourFiniteSeamExcision
+
+public import Unfoldings.Metric.ForgetChartTransport
+public import Unfoldings.Roof.CompatibleContourSingleSlotGraft
+public import Unfoldings.Roof.CompatibleContourFiniteSeamBalls

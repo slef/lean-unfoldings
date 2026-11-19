@@ -4321,3 +4321,15 @@ corners and does not yet identify their widths with the actual retained cap fan.
   every bank domain incident to an ordinary finite graft class belongs to its named
   original consecutive slot. Retaining that slot and all internal seams preserves
   a whole local metric ball, including every raw-cell representative of the class.
+
+- [`ForgetChartTransport`](../Unfoldings/Metric/ForgetChartTransport.lean):
+  expresses a canonical whole excision ball through source and target metric
+  isometries with named centers. Proves preservation of the original center.
+- [`CompatibleContourSingleSlotGraft`](../Unfoldings/Roof/CompatibleContourSingleSlotGraft.lean):
+  the restricted original cell relation is exactly the graft of the original
+  intrinsic pieces along one whole bank pair. The constructed metric isometry
+  preserves every original cell point, including all closed bank endpoints.
+- [`CompatibleContourFiniteSeamBalls`](../Unfoldings/Roof/CompatibleContourFiniteSeamBalls.lean):
+  every ordinary finite graft point has a centered whole metric ball isometric to
+  a ball of its original single-bank-pair graft. The API has no cell representative
+  premise and also covers empty stacks and two banks of the same original roof.

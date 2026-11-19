@@ -2,6 +2,24 @@
 
 ## Session Log
 
+### 2026-11-19 — identify actual finite seam balls with the single-bank graft
+
+- Proved that restricting original cell seams to all internal attachments and one
+  consecutive bank slot gives exactly the original intrinsic-piece graft along
+  that whole bank pair. Constructed the metric isometry and literal point formula.
+  The two bank curves may belong to the same original roof piece.
+- Added a general transport of canonical excision balls through named source and
+  target metric isometries, with an explicit proof of center preservation.
+- Derived centered whole-ball comparisons from the actual full graft to the original
+  single-bank-pair graft at every strict finite edge time. The final API needs no
+  original cell representative, incidence data, supplied chart or nonoverlap premise.
+- Verification: actual cache retrieval succeeded earlier this session; full
+  `lake build` passed (6,487 jobs). Standard-axiom audit: 20,475 unfolding and 7,243
+  pinned planar-topology declarations. Both abstract-independence checks passed.
+- No committed statements, proof limits or dependencies changed; no temporary
+  worktrees. Remaining: identify these single-bank balls with planar fans, handle
+  vertices and terminal joins, then simple connectivity and global nonoverlap.
+
 ### 2026-11-19 — excise other bank attachments at ordinary finite seams
 
 - Added a general restriction of finite closed seams to any selected subfamily,

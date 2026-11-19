@@ -1175,6 +1175,8 @@ selection and Euler counting follow.
   marks, including equality in the actual graft metric and recovery of its seam parameter.
 - [x] At ordinary finite seam classes, classify incident original closed bank domains
   and preserve a whole metric ball after removing every other bank attachment.
+- [x] Identify the reduced cell model with the original one-bank-pair graft and
+  derive centered whole-ball comparisons at ordinary finite seams without a cell choice.
 - [ ] Match saved-frontier curves to the comparison fans and local surgery models.
 - [x] Construct complete unbounded roof cut metrics with actual planar cells,
   boundary-only seams and exact metric-ball restoration away from closed cuts.

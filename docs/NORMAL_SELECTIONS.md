@@ -501,6 +501,11 @@ nonoverlap and counting remain to be proved.
   removing every other bank attachment preserves a whole small metric ball. The
   statement covers every original raw-cell representative; see
   [`CompatibleContourFiniteSeamExcision`](../Unfoldings/Roof/CompatibleContourFiniteSeamExcision.lean).
+- [x] Identify the restricted original cell model with the graft along one whole
+  original bank pair, preserving every cell point. Transport the excision ball and
+  its center into that intrinsic model. The whole-ball API requires no cell choice
+  and includes empty stacks with two banks of the same roof; see
+  [`CompatibleContourFiniteSeamBalls`](../Unfoldings/Roof/CompatibleContourFiniteSeamBalls.lean).
 - [ ] Identify the actual local saved-frontier fan at each bank-seam/vertex class and
   prove its whole metric-ball chart; cell interiors, gap interiors and roof points
   outside the forest are covered.
