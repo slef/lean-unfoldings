@@ -473,10 +473,16 @@ nonoverlap and counting remain to be proved.
   and restricted. Intrinsic roof regularity is an explicit input to this transport
   theorem; see
   [`CompatibleContourRoofChartTransfer`](../Unfoldings/Roof/CompatibleContourRoofChartTransfer.lean).
-- [ ] Derive intrinsic roof regularity outside the forest from the constructed finite
-  cut meshes, and apply this transport theorem.
+- [x] For convex slope regions, derive intrinsic roof regularity outside the forest
+  from the constructed finite flat cut disks. Newly created banks lie over physical
+  cuts and original banks lie at the completion rim, so off-cut points strictly below
+  the rim are interior regular points. Increasing the completion level covers every
+  whole-roof point. Apply chart transfer to obtain actual graft planar charts without
+  any supplied local chart, including unbounded points; see
+  [`CompatibleContourRoofRegularity`](../Unfoldings/Roof/CompatibleContourRoofRegularity.lean).
 - [ ] Identify the actual local saved-frontier fan at each bank-seam/vertex class and
-  prove its whole metric-ball chart; cell interiors and gap interiors are covered.
+  prove its whole metric-ball chart; cell interiors, gap interiors and roof points
+  outside the forest are covered.
 - [ ] Derive simple connectivity from the actual slit/gap attachments and apply the
   global planar-isometry theorem. Its finite closed-cell argument supplies the
   needed global completeness; a separate end-height certificate is unnecessary.

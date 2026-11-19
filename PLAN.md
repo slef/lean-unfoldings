@@ -1164,8 +1164,9 @@ selection and Euler counting follow.
   comparisons away from the forest, including cell seams and unbounded roof points.
 - [x] Transfer intrinsic roof planar charts through the actual centered roof-ball
   comparison, allowing unnormalized original model charts.
-- [ ] Derive intrinsic roof regularity outside the forest from the constructed finite
-  cut meshes, then apply chart transfer.
+- [x] Derive intrinsic roof regularity outside the forest from the constructed finite
+  flat cut disks. Increase the completion level to cover unbounded points and apply
+  chart transfer to obtain actual graft roof charts without supplied regularity data.
 - [ ] Match saved-frontier curves to the comparison fans and local surgery models.
 - [x] Construct complete unbounded roof cut metrics with actual planar cells,
   boundary-only seams and exact metric-ball restoration away from closed cuts.

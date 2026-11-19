@@ -4248,3 +4248,17 @@ corners and does not yet identify their widths with the actual retained cap fan.
   proves the actual internal piece-ball center identities and transfers existing
   intrinsic roof planar charts into the actual graft away from the physical forest.
   Intrinsic roof regularity is an explicit input, not a conclusion of this module.
+
+- [`BoundaryAwayFromCuts`](../Unfoldings/Polyhedron/BoundaryAwayFromCuts.lean):
+  a bank point outside the physical removed edges was already an original boundary
+  bank. Spatial folding compatibility handles either original seam side.
+- [`CompatibleWholeCutRegularity`](../Unfoldings/Roof/CompatibleWholeCutRegularity.lean):
+  below the actual rim, off-cut mesh copies cannot lie on the cut boundary. Convex
+  slope geometry and the constructed flat cut disk give intrinsic planar regularity.
+  Whole-ball inclusion transfers it to the original whole roof; increasing the
+  completion level covers every whole-roof point outside the forest.
+- [`CompatibleContourRoofRegularity`](../Unfoldings/Roof/CompatibleContourRoofRegularity.lean):
+  identifies the original roof piece metric and derives actual graft roof planar
+  charts away from the forest. Both cell-representative and intrinsic-point APIs
+  include unbounded cells. Unlike the chart-transfer lemma, these theorems derive
+  intrinsic regularity from convex slope geometry rather than requiring a chart.

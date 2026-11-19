@@ -2544,3 +2544,7 @@ public import Unfoldings.Roof.CompatibleContourRoofExcision
 public import Unfoldings.Metric.LocalBallRegularity
 public import Unfoldings.Metric.InternalFamilyBallCenters
 public import Unfoldings.Roof.CompatibleContourRoofChartTransfer
+
+public import Unfoldings.Polyhedron.BoundaryAwayFromCuts
+public import Unfoldings.Roof.CompatibleWholeCutRegularity
+public import Unfoldings.Roof.CompatibleContourRoofRegularity

@@ -2,6 +2,33 @@
 
 ## Session Log
 
+### 2026-11-19 — derive actual roof regularity everywhere outside the forest
+
+- Proved that a cut-bank point outside the physical removed edges belongs to an
+  original boundary bank. Spatial folding compatibility covers both seam sides.
+- Applied this to the actual compatible finite mesh: an off-cut point strictly below
+  the completion rim cannot lie on a newly created bank or an original rim bank.
+  Its copy is therefore an interior point of the constructed flat cut disk.
+- Used the existing flat-disk regularity theorem to derive genuine whole planar
+  charts, including flat interior vertices and points on retained mesh seams.
+- Transferred these charts through the actual whole-ball finite-to-whole inclusion.
+  Increasing the completion level covers every original whole-roof point outside
+  the forest, including all unbounded cells. Convexity of the slope region is explicit.
+- Identified the original roof-piece metric and applied the existing graft transfer
+  theorem. Actual graft roof charts now require no supplied local regularity data.
+  Added both cell-representative and intrinsic-point versions; the latter has no
+  cell-choice or completion-level hypothesis.
+- Verification: actual cache retrieval and final full `lake build` passed (6,469 jobs).
+  All 20,326 unfolding declarations and 7,243 pinned planar-topology declarations
+  passed the standard-axiom audit; both abstract-independence checks passed. An
+  initial dependency lookup failed despite the pinned Aesop revision being present;
+  preferring `C:/Program Files/Cygshim` on the build process PATH resolved it without
+  changing any dependency revision or repository configuration.
+- Existing theorem statements and proof limits are unchanged. No temporary worktrees
+  were created. Remaining: actual bank-seam and vertex fan charts, simple connectivity,
+  and global planar isometry/nonoverlap. Gap interiors and roof points outside the
+  forest now have actual whole planar charts derived from original geometry.
+
 ### 2026-11-19 — transfer intrinsic roof regularity through actual graft balls
 
 - Proved a general recentering and restriction construction for whole-ball model
