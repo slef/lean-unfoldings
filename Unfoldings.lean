@@ -2635,3 +2635,9 @@ public import Unfoldings.Complex.ContourGapStackSteps
 public import Unfoldings.Roof.CompatibleContourSourceOnlyGraft
 public import Unfoldings.Roof.CompatibleContourSourceOnlyGraftCells
 public import Unfoldings.Roof.CompatibleContourSourceOnlyLabels
+public import Unfoldings.Metric.PlacedCellBall
+public import Unfoldings.Complex.ContourChildGapStacks
+public import Unfoldings.Roof.CompatibleContourSourceOnlyGapVertexMarks
+public import Unfoldings.Roof.CompatibleContourSourceOnlyLeaf
+public import Unfoldings.Roof.CompatibleContourSourceOnlyLeafClasses
+public import Unfoldings.Roof.CompatibleContourSourceOnlySourceChart

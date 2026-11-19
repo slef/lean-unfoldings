@@ -2,6 +2,21 @@
 
 ## Session Log
 
+### 2026-11-19 — classify the original source-only leaf neighborhoods
+
+- Each child's gap stack is a contiguous block of its parent's stack.
+  Classified the exact roof and gap attachment marks at original vertices
+  below the rim.
+- At a childless positive source, the exact class consists of one roof
+  copy and its own gap tip. A sufficiently small neighborhood uses only
+  these two original pieces and their two incident source-edge slots.
+  The retained roof angle plus the gap defect is a full turn.
+- Constructed the source gap's intrinsic sector chart and a general
+  metric-ball theorem for compatible rigid placements of local cells.
+- Full `lake build` passed (6,561 jobs). The standard-axiom audit covered
+  21,047 unfolding and 7,243 pinned planar-topology declarations.
+  Both abstract-independence checks passed.
+
 ### 2026-11-19 — prove exact closed seams for the source-only graft
 
 - Built the closed-cell seam presentation with the original roof cells,

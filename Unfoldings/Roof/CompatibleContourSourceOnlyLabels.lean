@@ -6,6 +6,7 @@ public import Unfoldings.Metric.BankStackLabels
 public import Unfoldings.Metric.FiniteLabelClasses
 public import Unfoldings.Metric.FinitePartialLabels
 public import Unfoldings.Metric.ClosedSeamsTopology
+public import Unfoldings.Metric.MappedBankGraftBallCover
 public import Mathlib.Analysis.Convex.Topology
 
 /-! The source-only bank seams preserve exact original labels with finite fibers. -/
@@ -284,6 +285,43 @@ theorem compatibleContourSourceOnlyClosedSeams_exact
   (Seams).exact_of_finite_classes
     (K.compatibleContourSourceOnlyClosedSeams_finite_classes compact nonempty R no_boundary level
       higher M positive inner_disk beta acute contour starts W models geometry)
+
+local notation "L" => MetricGluing.bankStackLeft Pieces Stack Base Gap
+local notation "Rgt" => MetricGluing.bankStackRight Pieces Stack Base Gap
+
+/-- The whole-piece source-only route metric has exactly its declared bank identifications. -/
+theorem compatibleContourSourceOnlyGraft_exact
+    (geometry : ∀ event : Event, OrientedBankGap BankAt[event] MovedAt[event]) :
+    MetricGluing.Exact Pieces (MetricGluing.bankSeams L Rgt) := by
+  apply MetricGluing.exact_of_presentation Raw Pieces (Seams).relation
+    (MetricGluing.bankSeams L Rgt) (MetricGluing.mappedNestedPoint Cells Inner Coordinates)
+    (MetricGluing.mappedNestedPoint_surjective Cells Inner Coordinates)
+    (K.compatibleContourSourceOnlyClosedSeamsIsometry compact nonempty R no_boundary level
+      higher M positive inner_disk beta acute contour starts W models)
+    (fun _ => rfl)
+    (K.compatibleContourSourceOnlyClosedSeams_exact compact nonempty R no_boundary level
+      higher M positive inner_disk beta acute contour starts W models geometry)
+  intro x y joined
+  exact MetricGluing.mappedBankGraftCells_eqvGen_image Cells Inner Coordinates L Rgt x y
+    ((K.compatibleContourSourceOnlyClosedSeams_relation compact nonempty R no_boundary level
+      higher M positive inner_disk beta acute contour starts W models x y).mp joined)
+
+/-- Near an actual source-only class, every original marked piece is already near
+one of its own literal representatives of the center. -/
+theorem compatibleContourSourceOnlyGraft_piece_ball_cover
+    (geometry : ∀ event : Event, OrientedBankGap BankAt[event] MovedAt[event])
+    (x : MetricGluing.Total Pieces) :
+    let banks := MetricGluing.bankSeams L Rgt
+    ∃ ε > 0, ∀ r, 0 < r → r ≤ ε → ∀ b : MetricGluing.Total Pieces,
+      edist (MetricGluing.point Pieces banks x) (MetricGluing.point Pieces banks b) <
+        ENNReal.ofReal r →
+      ∃ c : Pieces b.1, Relation.EqvGen banks x ⟨b.1, c⟩ ∧ edist c b.2 < ENNReal.ofReal r := by
+  obtain ⟨a, rfl⟩ := MetricGluing.mappedNestedPoint_surjective Cells Inner Coordinates x
+  exact MetricGluing.exists_mappedBankGraft_piece_cover Cells Inner Coordinates L Rgt Seams
+    (K.compatibleContourSourceOnlyClosedSeams_relation compact nonempty R no_boundary level
+      higher M positive inner_disk beta acute contour starts W models) a
+    (K.compatibleContourSourceOnlyClosedSeams_finite_classes compact nonempty R no_boundary level
+      higher M positive inner_disk beta acute contour starts W models geometry a)
 
 local notation "Graft" => K.compatibleContourSourceOnlyGraft compact nonempty R no_boundary
   level higher M positive inner_disk beta acute contour starts W models

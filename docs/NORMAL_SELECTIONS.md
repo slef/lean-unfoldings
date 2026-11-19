@@ -564,6 +564,11 @@ nonoverlap and counting remain to be proved.
   The [original physical labels](../Unfoldings/Roof/CompatibleContourSourceOnlyLabels.lean)
   prove exactness and local path connectivity. Every original cell interior
   has a whole planar metric ball.
+- [x] Prove [contiguous child stacks](../Unfoldings/Complex/ContourChildGapStacks.lean)
+  and classify the [actual leaf class and incident slots](../Unfoldings/Roof/CompatibleContourSourceOnlyLeafClasses.lean).
+  At a positive leaf the [retained roof angle](../Unfoldings/Roof/CompatibleContourSourceOnlyLeaf.lean)
+  and the [source gap sector](../Unfoldings/Roof/CompatibleContourSourceOnlySourceChart.lean)
+  complete a full turn. The two original pieces cover a neighborhood.
 - [ ] Identify actual cyclic fans in the source-only graft and prove whole
   metric-ball charts. Reuse the generic strip and sector charts with the
   source-only attachment maps.
