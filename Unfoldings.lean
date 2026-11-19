@@ -2642,3 +2642,6 @@ public import Unfoldings.Roof.CompatibleContourSourceOnlyLeaf
 public import Unfoldings.Roof.CompatibleContourSourceOnlyLeafClasses
 public import Unfoldings.Roof.CompatibleContourSourceOnlyLeafRoofChart
 public import Unfoldings.Roof.CompatibleContourSourceOnlySourceChart
+public import Unfoldings.Cone.SectorPairBall
+public import Unfoldings.Geometry.SourceGapBankRetraction
+public import Unfoldings.Metric.BankStackSingleton

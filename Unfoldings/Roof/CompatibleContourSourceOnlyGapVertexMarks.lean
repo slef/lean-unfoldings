@@ -130,11 +130,10 @@ local notation "FirstEdge[" e "]" => (Sum.inl
   (Subtype.mk SourceAt[e] (TriangleComplex.positiveContourVertex_nonroot D Selection contour e)) :
     Attachment)
 
-/-- Both literal source attachment sides give the same intrinsic tip of the actual gap. -/
-theorem compatibleContourSourceOnlyGapMark_at_source (event : Event)
-    (g : OrientedBankGap BankAt[event] MovedAt[event])
-    (member : event ∈ Stack FirstEdge[event]) (side : Bool) :
-    Gap FirstEdge[event] event member side 0 = (models event).edgePoint false 0 0 := by
+/-- The literal source attachment uses the first finite edge for its entire parameter interval. -/
+theorem compatibleContourSourceOnlyGapMark_source_edge (event : Event)
+    (member : event ∈ Stack FirstEdge[event]) (side : Bool) (t : unitInterval) :
+    Gap FirstEdge[event] event member side t = (models event).edgePoint (!side) 0 t := by
   let v := SourceAt[event]
   let nonroot := (D).positiveContourVertex_nonroot Selection contour event
   have at_edge : event ∈ (D).contourEdgeGapStack Selection contour v :=
@@ -142,8 +141,16 @@ theorem compatibleContourSourceOnlyGapMark_at_source (event : Event)
       (((D).mem_contourSavedGapStack Selection contour v event).mp member)
   have index := (D).contourGapBankIndex_source Selection contour event at_edge
   change (models event).edgePoint (!side)
-    ((D).contourGapBankIndex Selection contour v nonroot event at_edge) 0 = _
-  refine (congrArg (fun i => (models event).edgePoint (!side) i 0) index).trans ?_
+    ((D).contourGapBankIndex Selection contour v nonroot event at_edge) t = _
+  exact congrArg (fun i => (models event).edgePoint (!side) i t) index
+
+/-- Both literal source attachment sides give the same intrinsic tip of the actual gap. -/
+theorem compatibleContourSourceOnlyGapMark_at_source (event : Event)
+    (g : OrientedBankGap BankAt[event] MovedAt[event])
+    (member : event ∈ Stack FirstEdge[event]) (side : Bool) :
+    Gap FirstEdge[event] event member side 0 = (models event).edgePoint false 0 0 := by
+  refine (K.compatibleContourSourceOnlyGapMark_source_edge compact nonempty R no_boundary level
+    higher M positive inner_disk beta acute contour starts models event member side 0).trans ?_
   cases side
   · apply PolygonalPoint.ext
     have tip : ((models event).edgePoint true 0 0).val = (MovedAt[event]).start := by

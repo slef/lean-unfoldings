@@ -569,6 +569,11 @@ nonoverlap and counting remain to be proved.
   At a positive leaf the [retained roof angle](../Unfoldings/Roof/CompatibleContourSourceOnlyLeaf.lean)
   and the [source gap sector](../Unfoldings/Roof/CompatibleContourSourceOnlySourceChart.lean)
   complete a full turn. The two original pieces cover a neighborhood.
+- [x] Fix the two original bank arclengths in the
+  [roof](../Unfoldings/Roof/CompatibleContourSourceOnlyLeafRoofChart.lean)
+  and [gap](../Unfoldings/Roof/CompatibleContourSourceOnlySourceChart.lean)
+  sector charts. Prove the
+  [whole-ball gluing theorem for complementary sectors](../Unfoldings/Cone/SectorPairBall.lean).
 - [ ] Identify actual cyclic fans in the source-only graft and prove whole
   metric-ball charts. Reuse the generic strip and sector charts with the
   source-only attachment maps.

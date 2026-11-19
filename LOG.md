@@ -2,6 +2,17 @@
 
 ## Session Log
 
+### 2026-11-19 — compare local grafts with complementary sectors
+
+- Proved a whole metric-ball comparison for two original complementary sector
+  charts. It uses local route bounds and the exact two common rays, including
+  when one sector is reentrant.
+- Classified the two literal slots of singleton gap stacks and retained the
+  complete finite source-edge parameters in the revised gap's angular chart.
+- Constructed continuous radial projection from a source-only gap to its first
+  bank and proved it preserves both banks' original finite and tail addresses.
+- Full `lake build` passed (6,568 jobs), including the axiom and abstract audits.
+
 ### 2026-11-19 — calibrate the original leaf sector rays
 
 - Ordered the retained fan by its two literal boundary banks and proved the

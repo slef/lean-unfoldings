@@ -2,6 +2,8 @@ module
 
 public import Unfoldings.Roof.CompatibleContourSourceOnlyGaps
 public import Unfoldings.Geometry.OrientedBankGapSourceChart
+public import Unfoldings.Cone.ComplementarySectorRadial
+public import Unfoldings.Metric.CenteredBallChartRestriction
 public import Unfoldings.Roof.CompatibleContourBankAgreement
 
 /-! The revised gap has its original source defect as a physical metric sector. -/
@@ -100,5 +102,65 @@ theorem compatibleContourSourceOnlyGap_source_sector_chart
     (rotated ▸ bounds)
   exact ⟨positive, (congrArg (initialGapAngle d) rotated).trans exact_angle.1,
     exact_angle.2, chart⟩
+
+/-- The two original gap banks give exact arclengths in the intrinsic angular sector,
+using the original source defect for its width. -/
+theorem compatibleContourSourceOnlyGap_source_angular_chart
+    (contour : (T).pairedComplex.BoundaryContour
+      ((T).pairedComplex.selectedRetain (Fcut).selection))
+    (starts : SourceAt[contour,0] ∈ (Fcut).parents.roots)
+    (event : Event[contour])
+    (G : OrientedBankGap BankAt[contour,starts,event] MovedAt[contour,starts,event]) :
+    let d := (BankAt[contour,starts,event]).chain.edge 0
+    let κ := Defect[contour,event]
+    let x := G.model.edgePoint false 0 0
+    0 < ‖d‖ ∧ ∃ chart : Metric.eball x (ENNReal.ofReal ‖d‖) ≃ᵢ
+      Metric.eball (closedAngularSectorOrigin (le_of_lt event.property.2)) (ENNReal.ofReal ‖d‖),
+      ∀ (side : Bool) (t : unitInterval)
+        (near : edist (G.model.edgePoint side 0 t) x < ENNReal.ofReal ‖d‖),
+        (chart ⟨G.model.edgePoint side 0 t, near⟩).val.val =
+          if side then (t.val * ‖d‖) • polarRay κ else (t.val * ‖d‖ : ℝ) := by
+  let first := BankAt[contour,starts,event]
+  let second := MovedAt[contour,starts,event]
+  let d := first.chain.edge 0
+  let e := second.chain.edge 0
+  let κ := Defect[contour,event]
+  have same_start : second.start = first.start := first.rotateSuffix_start 0 κ
+  have rotated : e = complexRotation κ d := first.rotateSuffix_zero_edge κ 0
+  have length : ‖e‖ = ‖d‖ := (congrArg norm rotated).trans ((complexRotation κ).norm_map d)
+  have radius : min ‖d‖ ‖e‖ = ‖d‖ := min_eq_left length.ge
+  have result := K.compatibleContourSourceOnlyGap_source_sector_chart compact nonempty R
+    no_boundary level higher M positive inner_disk beta acute contour starts event G
+  change 0 < min ‖d‖ ‖e‖ ∧ initialGapAngle d e = κ ∧ κ < Real.pi ∧ _ at result
+  rw [radius] at result
+  obtain ⟨rpos, angle, small, chart, physical⟩ := result
+  have d_ne : d ≠ 0 := norm_pos_iff.mp rpos
+  have e_ne : e ≠ 0 := norm_pos_iff.mp (length.trans_gt rpos)
+  let X := planarSector (initialGapAngle d e)
+  have convex : Convex ℝ X := convex_planarSector _
+  let E : X ≃ᵢ PolygonalPoint X :=
+    ⟨⟨PolygonalPoint.includeConvex X (Set.Subset.refl X),
+      fun z => ⟨z.val, z.property⟩, fun _ => rfl, fun _ => rfl⟩,
+      PolygonalPoint.includeConvex_isometry X convex (Set.Subset.refl X)⟩
+  let B := E.trans (PolygonalPoint.congrIsometryEquiv
+    (show X = closedAngularSector κ by
+      change planarSector (initialGapAngle d e) = _
+      rw [angle]
+      exact planarSector_eq_closedAngularSector event.property.2 small))
+  have center : B (initialGapSectorOrigin d e) =
+      closedAngularSectorOrigin (le_of_lt event.property.2) := by
+    apply PolygonalPoint.ext
+    rw [IsometryEquiv.trans_apply, PolygonalPoint.congrIsometryEquiv_val]
+    rfl
+  let balls := basedEBallIsometry B (initialGapSectorOrigin d e) _ center (ENNReal.ofReal ‖d‖)
+  let charts := chart.trans ((metricBallEBallEquiv (initialGapSectorOrigin d e) ‖d‖).trans balls)
+  refine ⟨rpos, charts, ?_⟩
+  intro side t near
+  have image := G.source_chart_bank_coordinates same_start d_ne e_ne chart physical side t near
+  change (chart ⟨G.model.edgePoint side 0 t, near⟩).val.val = _ at image
+  change (B (chart ⟨G.model.edgePoint side 0 t, near⟩).val).val = _
+  rw [IsometryEquiv.trans_apply, PolygonalPoint.congrIsometryEquiv_val]
+  change (chart ⟨G.model.edgePoint side 0 t, near⟩).val.val = _
+  rw [image, angle, length]
 
 end Unfoldings.ConvexRoof
