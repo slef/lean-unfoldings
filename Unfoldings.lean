@@ -2678,3 +2678,14 @@ public import Unfoldings.Complex.ContourRestoredChildSeams
 public import Unfoldings.Complex.ContourSavedParentFan
 public import Unfoldings.Complex.ContourSavedFanAngles
 public import Unfoldings.Cone.SectorCoverBall
+public import Unfoldings.Complex.ContourBetweenChildBlocks
+public import Unfoldings.Complex.ContourParentWedgeRun
+public import Unfoldings.Complex.ContourChildBlockWedgeRun
+public import Unfoldings.Cone.AngularSectorCycle
+public import Unfoldings.Metric.BankStackEndpointExistence
+public import Unfoldings.Metric.BankStackCyclicClass
+public import Unfoldings.Roof.CompatibleContourSourceOnlyFanInterval
+public import Unfoldings.Roof.CompatibleContourSourceOnlyRoofWedgeMarks
+public import Unfoldings.Roof.CompatibleContourSourceOnlyRoofWedgeChart
+public import Unfoldings.Roof.CompatibleContourSourceOnlyWedgeEndpoints
+public import Unfoldings.Roof.CompatibleContourSourceOnlyCrossBlockClasses

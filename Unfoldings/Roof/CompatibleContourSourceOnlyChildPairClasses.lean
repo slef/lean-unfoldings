@@ -159,8 +159,8 @@ private theorem recover_bend_address
     let tagged (x : Σ b : Attachment, ParamAt b) : Addr := ⟨x.1, some e, side, x.2⟩
     exact parameter.imp (congrArg tagged) (congrArg tagged)
 
--- Relate the two literal endpoint names and recover every competing name.
-private theorem bend_endpoint_transfer
+/-- The two literal endpoint names of a finite bend agree and exhaust its incident slots. -/
+theorem compatibleContourSourceOnlyGapBend_endpoint_transfer
     (v : (D).Vertex Set.univ) (nonroot : v ∉ (Fcut).parents.roots)
     (parent_nonroot : (Fcut).parents.parent v ∉ (Fcut).parents.roots)
     (e : Event) (g : OrientedBankGap BankAt[e] MovedAt[e])
@@ -238,10 +238,10 @@ theorem compatibleContourSourceOnlyChildPair_class
     starts v nonroot parent_nonroot e f before after consecutive
   let first : Time := ⟨⟨FiniteBank[(Fcut).parents.parent v,parent_nonroot], i⟩, 0⟩
   let second : Time := ⟨⟨FiniteBank[v,nonroot], j⟩, 1⟩
-  obtain ⟨linkL, recoverL⟩ := bend_endpoint_transfer K compact nonempty R no_boundary
+  obtain ⟨linkL, recoverL⟩ := compatibleContourSourceOnlyGapBend_endpoint_transfer K compact nonempty R no_boundary
     level higher M positive inner_disk beta acute contour starts W models v nonroot
     parent_nonroot e g i j false true le le'
-  obtain ⟨linkR, recoverR⟩ := bend_endpoint_transfer K compact nonempty R no_boundary
+  obtain ⟨linkR, recoverR⟩ := compatibleContourSourceOnlyGapBend_endpoint_transfer K compact nonempty R no_boundary
     level higher M positive inner_disk beta acute contour starts W models v nonroot
     parent_nonroot f h i j true false rf rf'
   have link (side : Bool) : EndAt side first.1 first.2 = EndAt side second.1 second.2 := by

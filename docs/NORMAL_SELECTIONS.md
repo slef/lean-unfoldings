@@ -605,7 +605,10 @@ nonoverlap and counting remain to be proved.
   [the wedges between two processing times](../Unfoldings/Complex/ContourSavedFanAngles.lean).
   The [finite sector cover chart](../Unfoldings/Cone/SectorCoverBall.lean)
   allows several copies of the same original piece.
-- [ ] Identify actual cyclic fans in the source-only graft and prove whole
+- [x] Identify the [cyclic seam classes between child blocks](../Unfoldings/Roof/CompatibleContourSourceOnlyCrossBlockClasses.lean).
+  The [ordered roof wedges](../Unfoldings/Complex/ContourChildBlockWedgeRun.lean)
+  have [normalized original charts](../Unfoldings/Roof/CompatibleContourSourceOnlyRoofWedgeChart.lean).
+- [ ] Glue the actual cyclic fans in the source-only graft into whole
   metric-ball charts. Reuse the generic strip and sector charts with the
   source-only attachment maps.
 - [ ] Derive simple connectivity from the actual slit and gap attachments and

@@ -2,6 +2,21 @@
 
 ## Session Log
 
+### 2026-11-19 — identify cyclic seam classes between child blocks
+
+- Proved that the intervening original roof wedges are exactly the visits
+  between the older child’s return and the newer child’s entrance. All
+  intervening child stacks are empty.
+- Constructed normalized whole-roof sector charts for these wedges with
+  the original signed bank arclengths.
+- Identified the literal cyclic seam class at a cross-block join. The two
+  gap bends and the ordered roof wedges are its only original centers.
+- Proved that placed angular sectors in a full cycle cover the plane with
+  only the specified ray and apex contacts, including reentrant sectors.
+- Full `lake build` passed (6,616 jobs). Both abstract audits passed.
+  Only standard axioms occur in 21,489 unfolding and 7,243 planar-topology
+  declarations.
+
 ### 2026-11-19 — identify final roof wedges in saved parent fans
 
 - Characterized consecutive parent visits as child excursions and recovered
