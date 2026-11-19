@@ -2655,3 +2655,7 @@ public import Unfoldings.Roof.CompatibleContourSourceOnlyChildFans
 public import Unfoldings.Geometry.OrientedBankGapBendParameters
 public import Unfoldings.Roof.CompatibleContourSourceOnlyGraftCollapse
 public import Unfoldings.Cone.SectorPairConstruction
+public import Unfoldings.Metric.BankStackSeamExcision
+public import Unfoldings.Roof.CompatibleContourSourceOnlySmoothMarks
+public import Unfoldings.Roof.CompatibleContourSourceOnlySmoothSeams
+public import Unfoldings.Roof.CompatibleContourSourceOnlyLeafBall

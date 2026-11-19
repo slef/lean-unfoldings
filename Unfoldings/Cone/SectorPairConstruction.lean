@@ -31,7 +31,8 @@ def complementaryPlacement :
     (complementaryPlacement balance x).val = (U) x.val := rfl
 
 @[simp] theorem complementaryPlacement_center :
-    complementaryPlacement balance (closedAngularSectorOrigin gap_pos.le) = (complementarySectorOrigin positive small true) :=
+    complementaryPlacement balance (closedAngularSectorOrigin gap_pos.le) =
+      complementarySectorOrigin positive small true :=
   PolygonalPoint.ext ((U).map_zero)
 
 variable {r₀ r₁ r : ℝ}
@@ -56,10 +57,11 @@ def fromSectors : SectorPairChart X a positive small r := by
   let secondChart := (restrictCenteredEBallEquiv (ENNReal.ofReal_pos.mpr second_pos)
       (ENNReal.ofReal_le_ofReal second_fit) second second_center).trans
     (basedEBallIsometry (complementaryPlacement balance)
-      (closedAngularSectorOrigin gap_pos.le) ((complementarySectorOrigin positive small true))
+      (closedAngularSectorOrigin gap_pos.le) (complementarySectorOrigin positive small true)
       (complementaryPlacement_center positive small gap_pos balance) (ENNReal.ofReal r))
   let chart := @Bool.rec (fun b =>
-    Metric.eball (a b).2 (ENNReal.ofReal r) ≃ᵢ Metric.eball ((complementarySectorOrigin positive small b)) (ENNReal.ofReal r))
+    Metric.eball (a b).2 (ENNReal.ofReal r) ≃ᵢ
+      Metric.eball (complementarySectorOrigin positive small b) (ENNReal.ofReal r))
     firstChart secondChart
   have centerFirst : (firstChart
       ⟨(a false).2, Metric.mem_eball_self (ENNReal.ofReal_pos.mpr radius_pos)⟩).val =

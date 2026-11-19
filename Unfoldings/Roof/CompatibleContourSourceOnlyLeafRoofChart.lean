@@ -1,5 +1,7 @@
 module
 
+public import Unfoldings.Cone.SectorPairBankRays
+
 public import Unfoldings.Cone.DirectedIntervalChart
 public import Unfoldings.Roof.CompatibleContourSourceOnlyLeaf
 public import Unfoldings.Roof.CompatibleMeshCornerCharts
@@ -148,5 +150,149 @@ theorem compatibleContourSourceOnlyLeaf_roof_sector_chart (event : Event)
   have finish := last
   rw [mate] at finish
   exact finish
+
+local notation "Attachment" => K.compatibleContourBankAttachment compact nonempty R no_boundary
+  level higher M positive inner_disk beta acute
+local notation "FirstEdge[" e "]" => (Sum.inl
+  (Subtype.mk SourceOf[e] (TriangleComplex.positiveContourVertex_nonroot D Selection contour e)) :
+    Attachment)
+
+local notation "Parent[" v "," h "," side "]" => TriangleComplex.contourParentBank D Selection
+  contour (PotentialCutForest.boundary_roots Fcut) starts v h side
+
+private theorem leaf_parent_bank_speed (v : (D).Vertex Set.univ) (nonroot : v ∉ (Fcut).parents.roots)
+    (side : Bool) :
+    (D).boundaryBankLength Parent[v,nonroot,side] =
+      (D).boundaryBankLength Parent[v,nonroot,false] := by
+  let F := (T).pairedFolding
+  let bank (b : Bool) := Parent[v,nonroot,b]
+  have same := (F.contourParentBank_direction Selection contour (Fcut).boundary_roots starts
+    v nonroot side).trans
+      (F.contourParentBank_direction Selection contour (Fcut).boundary_roots starts
+        v nonroot false).symm
+  exact (F.boundaryBankLength_eq_germDirection_norm (bank side)).trans
+    ((congrArg norm same).trans (F.boundaryBankLength_eq_germDirection_norm (bank false)).symm)
+
+private theorem leaf_roof_mark_distance (event : Event)
+    (other_start : Base FirstEdge[event] true 0 = (Base FirstEdge[event] false 0)) :
+    let v := SourceOf[event]
+    let p := Parent[v,(D).positiveContourVertex_nonroot Selection contour event,false]
+    ∀ side (t : unitInterval), edist (Base FirstEdge[event] side t) (Base FirstEdge[event] false 0) =
+      ENNReal.ofReal (t.val * (D).boundaryBankLength p) := by
+  let v := SourceOf[event]
+  let nonroot := (D).positiveContourVertex_nonroot Selection contour event
+  let edge := FirstEdge[event]
+  let p (side : Bool) := Parent[v,nonroot,side]
+  let ell := (D).boundaryBankLength (p false)
+  have ellpos : 0 < ell := (D).boundaryBankLength_pos (p false)
+  have roof_speed (side : Bool) : (D).boundaryBankLength (p side) = ell :=
+    leaf_parent_bank_speed K compact nonempty R no_boundary level higher M
+      positive inner_disk beta acute contour starts v nonroot side
+  have time_dist (t : unitInterval) : edist t (0 : unitInterval) = ENNReal.ofReal t.val := by
+    rw [edist_dist]
+    apply congrArg ENNReal.ofReal
+    change dist t.val 0 = t.val
+    rw [Real.dist_eq, sub_zero, abs_of_nonneg t.property.1]
+  have distance_roof (side : Bool) (t : unitInterval) :
+      edist (Base edge side t) (Base FirstEdge[event] false 0) = ENNReal.ofReal (t.val * ell) := by
+    have start (b : Bool) : Base edge b 0 = (Base FirstEdge[event] false 0) := by
+      cases b
+      · rfl
+      · exact other_start
+    let begin := (D).directedBoundaryPath (p side) (0 : unitInterval)
+    let finish := (D).directedBoundaryPath (p side) t
+    calc
+      _ = edist (Base edge side t) (Base edge side 0) :=
+        congrArg (edist (Base edge side t)) (start side).symm
+      _ = edist finish begin :=
+        K.compatibleWholeMap_edist_bank compact nonempty R no_boundary level higher M
+          positive inner_disk beta acute W (p side) t 0
+      _ = ENNReal.ofReal ((D).boundaryBankLength (p side)) * edist t (0 : unitInterval) :=
+        (T).pairedFolding.edist_directedBoundaryPath_eq_length (p side) t 0
+      _ = _ := by rw [roof_speed, time_dist, mul_comm t.val ell, ENNReal.ofReal_mul ellpos.le]
+  exact distance_roof
+
+-- Transport the marked chart without reducing the intrinsic whole-cut construction.
+omit beta acute in
+private theorem exists_centered_chart_of_mark_coordinates
+    {X : Type*} [EMetricSpace X] {p : X} {θ r : ℝ} (angle : 0 ≤ θ) (rpos : 0 < r)
+    (mark : Bool → unitInterval → X) (h : mark false 0 = p)
+    (coord : Bool → unitInterval → ℂ) (zero : coord false 0 = 0)
+    (chart : Metric.eball p (ENNReal.ofReal r) ≃ᵢ
+      Metric.eball (closedAngularSectorOrigin angle) (ENNReal.ofReal r))
+    (ray : ∀ (b : Bool) (t : unitInterval)
+      (near : edist (mark b t) p < ENNReal.ofReal r),
+      (chart ⟨mark b t, near⟩).val.val = coord b t) :
+    ∃ A : Metric.eball (mark false 0) (ENNReal.ofReal r) ≃ᵢ
+        Metric.eball (closedAngularSectorOrigin angle) (ENNReal.ofReal r),
+      (A ⟨mark false 0, Metric.mem_eball_self (ENNReal.ofReal_pos.mpr rpos)⟩).val =
+        closedAngularSectorOrigin angle ∧
+      ∀ (b : Bool) (t : unitInterval) (near : edist (mark b t) (mark false 0) < ENNReal.ofReal r),
+        (A ⟨mark b t, near⟩).val.val = coord b t := by
+  subst p
+  refine ⟨chart, PolygonalPoint.ext ?_, ray⟩
+  exact (ray false 0 (Metric.mem_eball_self (ENNReal.ofReal_pos.mpr rpos))).trans zero
+
+set_option maxHeartbeats 180000 in
+-- The original whole-cut metric appears in the marked bank transport.
+/-- The positive leaf chart is centered on its outgoing mark and calibrated on both banks. -/
+theorem compatibleContourSourceOnlyLeaf_roof_marked_chart
+    (event : Event)
+    (childless : ∀ v ∉ (Fcut).parents.roots, (Fcut).parents.parent v ≠ SourceOf[event]) :
+    let edge := FirstEdge[event]
+    let v := SourceOf[event]
+    let p := Parent[v,(D).positiveContourVertex_nonroot Selection contour event,false]
+    let w := (D).boundaryEndVertex Retain p
+    let θ := (D).totalAngle Retain w
+    let ell := (D).boundaryBankLength p
+    ∃ (θpos : 0 < θ) (r : ℝ) (rpos : 0 < r)
+      (chart : Metric.eball (Base FirstEdge[event] false 0) (ENNReal.ofReal r) ≃ᵢ
+        Metric.eball (closedAngularSectorOrigin θpos.le) (ENNReal.ofReal r)),
+      θ + (D).interiorAngularDefect Set.univ v = 2 * Real.pi ∧
+      (chart ⟨(Base FirstEdge[event] false 0),
+        Metric.mem_eball_self (ENNReal.ofReal_pos.mpr rpos)⟩).val =
+          closedAngularSectorOrigin θpos.le ∧
+      (∀ side (t : unitInterval),
+        edist (Base edge side t) (Base FirstEdge[event] false 0) = ENNReal.ofReal (t.val * ell)) ∧
+      ∀ side (t : unitInterval)
+        (near : edist (Base edge side t) (Base FirstEdge[event] false 0) < ENNReal.ofReal r),
+        (chart ⟨Base edge side t, near⟩).val.val =
+          MetricGluing.SectorPairChart.bankRay θ side (t.val * ell) := by
+  let v := SourceOf[event]
+  let nonroot := (D).positiveContourVertex_nonroot Selection contour event
+  let edge := FirstEdge[event]
+  let p (side : Bool) := Parent[v,nonroot,side]
+  let w := (D).boundaryEndVertex Retain (p false)
+  let θ := (D).totalAngle Retain w
+  let ell := (D).boundaryBankLength (p false)
+  have roof_speed (side : Bool) : (D).boundaryBankLength (p side) = ell :=
+    leaf_parent_bank_speed K compact nonempty R no_boundary level higher M
+      positive inner_disk beta acute contour starts v nonroot side
+  have θpos : 0 < θ := (D).totalAngle_pos Retain w
+  obtain ⟨complement, roof_start, roof_end, rRoof, roof_pos, roof, roof_first, roof_last⟩ :=
+    K.compatibleContourSourceOnlyLeaf_roof_sector_chart compact nonempty R no_boundary level
+      higher M positive inner_disk beta acute contour starts W event nonroot childless
+  let xRoof := Map VertexAt[w]
+  have hRoof : (Base FirstEdge[event] false 0) = xRoof := roof_start
+  have hRoofEnd : Base edge true 0 = (Base FirstEdge[event] false 0) := roof_end.trans hRoof.symm
+  let marks := Base edge
+  let ray (side : Bool) (t : unitInterval) :=
+    MetricGluing.SectorPairChart.bankRay θ side (t.val * ell)
+  have coords (side : Bool) (t : unitInterval)
+      (near : edist (marks side t) xRoof < ENNReal.ofReal rRoof) :
+      (roof ⟨marks side t, near⟩).val.val = ray side t := by
+    cases side
+    · exact roof_first t near
+    · calc
+        _ = (t.val * (D).boundaryBankLength (p true)) • polarRay θ := roof_last t near
+        _ = (t.val * ell) • polarRay θ :=
+          congrArg (fun d : ℝ => (t.val * d) • polarRay θ) (roof_speed true)
+        _ = ray true t := Complex.real_smul
+  have zero : ray false 0 = 0 := by simp [ray, MetricGluing.SectorPairChart.bankRay]
+  obtain ⟨chart, centered, coordinates⟩ :=
+    exists_centered_chart_of_mark_coordinates θpos.le roof_pos marks hRoof ray zero roof coords
+  have distance_roof := leaf_roof_mark_distance K compact nonempty R no_boundary level higher M
+    positive inner_disk beta acute contour starts W event hRoofEnd
+  exact ⟨θpos, rRoof, roof_pos, chart, complement, centered, distance_roof, coordinates⟩
 
 end Unfoldings.ConvexRoof

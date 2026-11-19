@@ -31,27 +31,27 @@ local notation "markAt[" b "," side "," t "]" => (Sigma.mk (Sigma.fst (a b)) (ma
 
 /-- Exact closed-interval arclengths give every common point of the two local charts
 a genuine originally glued pair of marks. -/
-theorem shared_of_bankRays (length_bound : R ≤ length)
+theorem shared_of_bankRays_lengths (len : Bool → ℝ) (length_bound : ∀ side, R ≤ len side)
     (distance : ∀ (b side : Bool) (t : unitInterval),
-      edist (mark b side t) (a b).2 = ENNReal.ofReal (t.val * length))
+      edist (mark b side t) (a b).2 = ENNReal.ofReal (t.val * len side))
     (coordinates : ∀ (b side : Bool) (t : unitInterval) (near : edist (mark b side t) (a b).2 < ρ),
-      (A.chart b ⟨mark b side t, near⟩).val.val = bankRay θ side (t.val * length))
+      (A.chart b ⟨mark b side t, near⟩).val.val = bankRay θ side (t.val * len side))
     (joined : ∀ (side : Bool) (t : unitInterval),
       point X glue markAt[false,side,t] = point X glue markAt[true,side,t]) :
     ∀ (b c : Bool) (x : Metric.eball (origin b) ρ) (y : Metric.eball (origin c) ρ),
       x.val.val = y.val.val →
         point X glue (A.inverseTag b x) = point X glue (A.inverseTag c y) := by
-  have length_positive : 0 < length := A.positive.trans_le length_bound
+  have length_positive (side : Bool) : 0 < len side := A.positive.trans_le (length_bound side)
   have realize_ray (side : Bool) (s : ℝ≥0) (bound : (s : ℝ) < R)
       (x : Metric.eball (origin false) ρ) (y : Metric.eball (origin true) ρ)
       (hx : x.val.val = bankRay θ side s) (hy : y.val.val = bankRay θ side s) :
       point X glue (A.inverseTag false x) = point X glue (A.inverseTag true y) := by
-    let t : unitInterval := ⟨(s : ℝ) / length, div_nonneg s.property length_positive.le,
-      (div_le_one length_positive).mpr (bound.le.trans length_bound)⟩
-    have product : t.val * length = (s : ℝ) := div_mul_cancel₀ _ length_positive.ne'
+    let t : unitInterval := ⟨(s : ℝ) / len side, div_nonneg s.property (length_positive side).le,
+      (div_le_one (length_positive side)).mpr (bound.le.trans (length_bound side))⟩
+    have product : t.val * len side = (s : ℝ) := div_mul_cancel₀ _ (length_positive side).ne'
     have fit (b : Bool) : edist (mark b side t) (a b).2 < ρ :=
       (distance b side t).trans_lt
-        ((ENNReal.ofReal_lt_ofReal_iff_of_nonneg (mul_nonneg t.property.1 length_positive.le)).mpr
+        ((ENNReal.ofReal_lt_ofReal_iff_of_nonneg (mul_nonneg t.property.1 (length_positive side).le)).mpr
           (product.trans_lt bound))
     let u (b : Bool) : Metric.eball (a b).2 ρ := ⟨mark b side t, fit b⟩
     have at_ray (b : Bool) : (A.chart b (u b)).val.val = bankRay θ side s :=
@@ -88,5 +88,20 @@ theorem shared_of_bankRays (length_bound : R ≤ length)
   · exact (cross y x equal.symm).symm
   · obtain rfl : x = y := Subtype.ext (PolygonalPoint.ext equal)
     rfl
+
+/-- Exact closed-interval arclengths give every common point of the two local charts
+a genuine originally glued pair of marks. -/
+theorem shared_of_bankRays (length_bound : R ≤ length)
+    (distance : ∀ (b side : Bool) (t : unitInterval),
+      edist (mark b side t) (a b).2 = ENNReal.ofReal (t.val * length))
+    (coordinates : ∀ (b side : Bool) (t : unitInterval) (near : edist (mark b side t) (a b).2 < ρ),
+      (A.chart b ⟨mark b side t, near⟩).val.val = bankRay θ side (t.val * length))
+    (joined : ∀ (side : Bool) (t : unitInterval),
+      point X glue markAt[false,side,t] = point X glue markAt[true,side,t]) :
+    ∀ (b c : Bool) (x : Metric.eball (origin b) ρ) (y : Metric.eball (origin c) ρ),
+      x.val.val = y.val.val →
+        point X glue (A.inverseTag b x) = point X glue (A.inverseTag c y) :=
+  A.shared_of_bankRays_lengths mark (fun _ => length) (fun _ => length_bound)
+    distance coordinates joined
 
 end Unfoldings.MetricGluing.SectorPairChart

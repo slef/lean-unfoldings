@@ -98,9 +98,11 @@ def FiniteBankChart {X : Type*} [EMetricSpace X]
     (∀ s u, edist (bank s) (bank u) = ENNReal.ofReal speed * edist s u) ∧
     ∃ r, Nonempty (BankHalfPlaneChart bank t occupied (fun s => (s.val - t.val) * speed) r)
 
-private theorem compatibleContourFiniteBase_chart
+/-- The original roof parent mark carries its normalized half-plane chart. -/
+theorem compatibleContourParentMark_finiteBankChart
     (vertex : Vertex) (side occupied : Bool) (t : unitInterval) (bounds : 0 < t ∧ t < 1) :
-    FiniteBankChart (Base (.inl vertex) side) t occupied := by
+    FiniteBankChart (K.compatibleContourParentMark compact nonempty R no_boundary
+        level higher M positive inner_disk beta acute contour starts W vertex.val vertex.property side) t occupied := by
   let bank := BankAt[vertex,side]
   refine ⟨(D).boundaryBankLength bank, (D).boundaryBankLength_pos bank, ?_, ?_⟩
   · intro s u
@@ -110,6 +112,12 @@ private theorem compatibleContourFiniteBase_chart
   · exact K.compatibleContourParentMark_normalized_chart compact nonempty R no_boundary level
       higher M positive inner_disk beta acute contour starts W vertex.val vertex.property side
       occupied t bounds
+
+private theorem compatibleContourFiniteBase_chart
+    (vertex : Vertex) (side occupied : Bool) (t : unitInterval) (bounds : 0 < t ∧ t < 1) :
+    FiniteBankChart (Base (.inl vertex) side) t occupied :=
+  K.compatibleContourParentMark_finiteBankChart compact nonempty R no_boundary level higher M positive
+    inner_disk beta acute contour starts W vertex side occupied t bounds
 
 private theorem compatibleContourFiniteGap_chart
     (vertex : Vertex) (event : Event) (member : event ∈ Stack (.inl vertex))

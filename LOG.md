@@ -2,6 +2,19 @@
 
 ## Session Log
 
+### 2026-11-19 — prove planar balls at ordinary seams and positive leaves
+
+- The actual source-only graft has a whole planar metric ball at every strict
+  finite-edge and positive tail attachment parameter, including empty stacks.
+  Restricting to the nearby original slot preserves the whole ball metric.
+- Glued the calibrated retained roof fan and its own defect sector into a whole
+  planar ball at each original positive leaf.
+- Generalized the complementary-sector comparison to distinct lengths on its
+  two rays for use at bends.
+- Full `lake build` passed (6,586 jobs). Both abstract audits passed. The
+  standard-axiom audit covered 21,224 unfolding declarations and 7,243 pinned
+  planar-topology declarations.
+
 ### 2026-11-19 — collapse the complete source-only graft to its physical roof
 
 - The proper continuous collapse on the entire intrinsic graft agrees with

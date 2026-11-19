@@ -587,6 +587,10 @@ nonoverlap and counting remain to be proved.
   [proper collapse of the whole graft](../Unfoldings/Roof/CompatibleContourSourceOnlyGraftCollapse.lean).
   The [bend charts](../Unfoldings/Geometry/OrientedBankGapBendParameters.lean)
   retain both original arclength parameters.
+- [x] Prove whole planar balls at
+  [ordinary attachment times](../Unfoldings/Roof/CompatibleContourSourceOnlySmoothSeams.lean)
+  and [original positive leaves](../Unfoldings/Roof/CompatibleContourSourceOnlyLeafBall.lean).
+  An empty stack uses both sides of the original cut roof.
 - [ ] Identify actual cyclic fans in the source-only graft and prove whole
   metric-ball charts. Reuse the generic strip and sector charts with the
   source-only attachment maps.

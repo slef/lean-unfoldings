@@ -94,9 +94,11 @@ def TerminalBankChart {X : Type*} [EMetricSpace X]
     (∀ s u, edist (bank s) (bank u) = ENNReal.ofReal speed * edist s u) ∧
     ∃ r, Nonempty (BankHalfPlaneChart bank t occupied (fun s => (s.val - t.val) * speed) r)
 
-private theorem compatibleContourTerminalBase_chart
+/-- The original roof terminal mark carries its normalized half-plane chart. -/
+theorem compatibleContourTerminalMark_terminalBankChart
     (edge : Edge) (side occupied : Bool) (t : ℝ≥0) :
-    TerminalBankChart (Base (.inr edge) side) t occupied := by
+    TerminalBankChart (K.compatibleContourTerminalMark compact nonempty R no_boundary
+        level higher M positive inner_disk beta acute contour starts W edge side) t occupied := by
   let root := K.compatibleMeshTerminalRoot compact nonempty R no_boundary level higher M
     positive inner_disk beta acute edge.val ((D).contourTerminalEdge_positive Selection edge)
   let τ : ℝ≥0 := ⟨R.terminalTime level root, (R.terminalTime_pos level higher root).le⟩
@@ -110,7 +112,8 @@ private theorem compatibleContourTerminalBase_chart
   obtain ⟨label, same⟩ := K.compatibleContourTerminalMark_wholeBank compact nonempty R
     no_boundary level higher M positive inner_disk beta acute contour starts W edge side
   let bank := K.wholeTerminalBank compact nonempty R no_boundary W root label
-  have agrees : Base (.inr edge) side = bank ∘ p := funext same
+  have agrees : (K.compatibleContourTerminalMark compact nonempty R no_boundary
+      level higher M positive inner_disk beta acute contour starts W edge side) = bank ∘ p := funext same
   have ray_positive : 0 < (p t).val := (R.terminalTime_pos level higher root).trans_le
     (le_add_of_nonneg_right (mul_nonneg d.property t.property))
   obtain ⟨radius, ⟨C⟩⟩ := K.exists_wholeTerminalBank_normalized_chart compact nonempty R
@@ -133,6 +136,12 @@ private theorem compatibleContourTerminalBase_chart
     change ((τ.val + d.val * s.val) - (τ.val + d.val * t.val)) * c =
       (s.val - t.val) * (d.val * c)
     ring
+
+private theorem compatibleContourTerminalBase_chart
+    (edge : Edge) (side occupied : Bool) (t : ℝ≥0) :
+    TerminalBankChart (Base (.inr edge) side) t occupied :=
+  K.compatibleContourTerminalMark_terminalBankChart compact nonempty R no_boundary level higher M positive
+    inner_disk beta acute contour starts W edge side occupied t
 
 private theorem compatibleContourTerminalGap_chart
     (edge : Edge) (event : Event) (member : event ∈ Stack (.inr edge))
