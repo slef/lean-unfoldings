@@ -2557,3 +2557,10 @@ public import Unfoldings.Roof.CompatibleContourGapMarkUniqueness
 public import Unfoldings.Roof.CompatibleContourParentMarkUniqueness
 public import Unfoldings.Roof.CompatibleContourRoofMarkSeparation
 public import Unfoldings.Roof.CompatibleContourFiniteMarkUniqueness
+
+public import Unfoldings.Metric.BankStackAddresses
+public import Unfoldings.Metric.BankStackAddressRecovery
+public import Unfoldings.Metric.BankStackLocalClasses
+public import Unfoldings.Metric.MappedBankGraftExactness
+public import Unfoldings.Roof.CompatibleContourFiniteSeamClasses
+public import Unfoldings.Roof.CompatibleContourGraftExactness

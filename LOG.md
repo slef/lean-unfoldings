@@ -2,6 +2,28 @@
 
 ## Session Log
 
+### 2026-11-19 — classify actual ordinary finite metric seam classes
+
+- Separated original bank-stack addresses combinatorially. Stacks without repeated
+  sources have injective left/right address maps with disjoint ranges, including
+  empty stacks and terminal continuations.
+- Interpreted valid addresses in the original intrinsic pieces and proved recovery
+  from unique original marks. The class at any such consecutive seam consists of
+  exactly its two original endpoints.
+- Instantiated this at every strict finite forest-edge time using the actual roof
+  and gap mark uniqueness theorems. The two original marks are distinct before
+  grafting; other stack copies are outside this declared seam class.
+- Proved that exactness descends from a surjective original-cell metric presentation.
+  Applied the actual finite closed-seam exactness theorem to obtain piece-level
+  exactness of the full graft. The two-point classification now holds for actual
+  metric equality, and every competing endpoint recovers the original slot and time.
+- Verification: actual cache retrieval succeeded earlier this session; full
+  `lake build` passed (6,482 jobs). The standard-axiom audit passed for 20,437
+  unfolding and 7,243 pinned planar-topology declarations; abstract checks passed.
+- No committed theorem statements, proof limits or dependency revisions changed.
+  No temporary worktrees. Remaining: whole bank/vertex fan charts, simple connectivity
+  and global planar isometry/nonoverlap. A classified seam class is not yet its chart.
+
 ### 2026-11-19 — recover actual finite roof-bank attachment labels
 
 - Derived strict completion-height bounds on every finite parent bank before its

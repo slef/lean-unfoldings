@@ -4288,3 +4288,27 @@ corners and does not yet identify their widths with the actual retained cap fan.
 - [`CompatibleContourFiniteMarkUniqueness`](../Unfoldings/Roof/CompatibleContourFiniteMarkUniqueness.lean):
   equality with a strict actual finite roof mark fixes its attachment, side and
   parameter among all finite and terminal marks, matching the existing gap-mark API.
+
+- [`BankStackAddresses`](../Unfoldings/Metric/BankStackAddresses.lean):
+  consecutive seam endpoints keep their attachment, piece, side and parameter.
+  Each endpoint-address map is injective for stacks without repeated sources;
+  left and right address ranges are disjoint, including empty stacks.
+- [`BankStackAddressRecovery`](../Unfoldings/Metric/BankStackAddressRecovery.lean):
+  interprets original addresses as literal intrinsic piece points. Unique original
+  marks recover the full address of an equal piece point.
+- [`BankStackLocalClasses`](../Unfoldings/Metric/BankStackLocalClasses.lean):
+  unique marks at one original parameter imply its consecutive bank class consists
+  of exactly two points. In an exact graft, equality of endpoint metric images
+  also recovers the original seam slot and parameter.
+- [`MappedBankGraftExactness`](../Unfoldings/Metric/MappedBankGraftExactness.lean):
+  exactness descends from any surjective original-cell metric presentation that
+  maps seams to intrinsic-piece seam chains. Supplies representative and seam-image
+  lemmas for the constructed bank-graft presentation.
+- [`CompatibleContourFiniteSeamClasses`](../Unfoldings/Roof/CompatibleContourFiniteSeamClasses.lean):
+  derives unique marks and stacks without repeated sources from actual geometry.
+  Each strict finite seam has exactly its two distinct consecutive original marks
+  in its declared bank-equivalence class.
+- [`CompatibleContourGraftExactness`](../Unfoldings/Roof/CompatibleContourGraftExactness.lean):
+  derives piece-level exactness of the actual full metric graft. Ordinary finite
+  seam classes have exactly two original intrinsic representatives even for metric
+  equality, and competing bank endpoints recover the original slot and time.

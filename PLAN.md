@@ -1171,6 +1171,8 @@ selection and Euler counting follow.
   ray, side, and parameter. Separate original directed roof parent-bank labels.
 - [x] Recover actual finite roof-bank attachment labels, sides, and parameters.
   Separate all strict finite marks from terminal tails by the original completion height.
+- [x] Classify each ordinary finite bank seam as exactly two consecutive intrinsic
+  marks, including equality in the actual graft metric and recovery of its seam parameter.
 - [ ] Match saved-frontier curves to the comparison fans and local surgery models.
 - [x] Construct complete unbounded roof cut metrics with actual planar cells,
   boundary-only seams and exact metric-ball restoration away from closed cuts.

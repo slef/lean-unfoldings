@@ -491,6 +491,11 @@ nonoverlap and counting remain to be proved.
   finite/tail collisions away from the terminal join by height. The actual roof and
   gap APIs now both recover attachment, side and parameter at finite-edge interiors;
   see [`CompatibleContourFiniteMarkUniqueness`](../Unfoldings/Roof/CompatibleContourFiniteMarkUniqueness.lean).
+- [x] Classify ordinary finite bank-seam classes as exactly their two consecutive
+  original intrinsic marks. Descend original cell exactness to the actual piece-level
+  graft, so the classification holds for metric equality as well as declared seam
+  chains. Every competing bank endpoint recovers the same original slot and time;
+  see [`CompatibleContourGraftExactness`](../Unfoldings/Roof/CompatibleContourGraftExactness.lean).
 - [ ] Identify the actual local saved-frontier fan at each bank-seam/vertex class and
   prove its whole metric-ball chart; cell interiors, gap interiors and roof points
   outside the forest are covered.
