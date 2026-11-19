@@ -583,6 +583,10 @@ nonoverlap and counting remain to be proved.
   [original spatial bank](../Unfoldings/Roof/CompatibleContourSourceOnlyCollapse.lean).
   The [radial fibers](../Unfoldings/Geometry/SourceGapFibers.lean) are path connected,
   and both banks keep their original finite and unbounded parameters.
+- [x] Extend these maps to the
+  [proper collapse of the whole graft](../Unfoldings/Roof/CompatibleContourSourceOnlyGraftCollapse.lean).
+  The [bend charts](../Unfoldings/Geometry/OrientedBankGapBendParameters.lean)
+  retain both original arclength parameters.
 - [ ] Identify actual cyclic fans in the source-only graft and prove whole
   metric-ball charts. Reuse the generic strip and sector charts with the
   source-only attachment maps.

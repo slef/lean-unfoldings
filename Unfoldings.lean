@@ -2652,3 +2652,6 @@ public import Unfoldings.Metric.ClosedSeamsContinuousLift
 public import Unfoldings.Roof.CompatibleContourSourceOnlyCollapse
 public import Unfoldings.Roof.CompatibleContourSourceOnlyBendChart
 public import Unfoldings.Roof.CompatibleContourSourceOnlyChildFans
+public import Unfoldings.Geometry.OrientedBankGapBendParameters
+public import Unfoldings.Roof.CompatibleContourSourceOnlyGraftCollapse
+public import Unfoldings.Cone.SectorPairConstruction

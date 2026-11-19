@@ -2,6 +2,17 @@
 
 ## Session Log
 
+### 2026-11-19 — collapse the complete source-only graft to its physical roof
+
+- The proper continuous collapse on the entire intrinsic graft agrees with
+  restoration on each original roof cell and with the prescribed spatial maps
+  on the entire frontier of each gap.
+- Computed the literal incoming and outgoing arclength coordinates in each
+  bend chart. Added a common-radius constructor for complementary sector charts.
+- The library build and both abstract audits passed, with 21,195 unfolding
+  declarations and 7,243 pinned planar-topology declarations using only standard
+  Lean axioms.
+
 ### 2026-11-19 — identify the saved fan within each child block
 
 - Located the first visit of each nonroot at its original parent-bank entrance.

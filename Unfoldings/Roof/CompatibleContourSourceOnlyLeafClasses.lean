@@ -333,4 +333,21 @@ theorem compatibleContourSourceOnlyLeaf_near_slot
     event (geometry event) childless false slot u
   exact ⟨u, endpoint.mp ((members _).mp original), close⟩
 
+/-- Every seam sufficiently close to a positive leaf uses its original outgoing edge. -/
+theorem compatibleContourSourceOnlyLeaf_near_attachment
+    (geometry : ∀ event : Event, OrientedBankGap BankAt[event] MovedAt[event])
+    (event : Event)
+    (childless : ∀ v ∉ (Fcut).parents.roots, (Fcut).parents.parent v ≠ SourceOf[event]) :
+    ∃ r > 0, ∀ slot : MetricGluing.BankStackSlot Stack, ∀ t : ParamAt slot.1,
+      edist (MetricGluing.point Pieces Banks RoofPoint[event])
+        (MetricGluing.point Pieces Banks (L slot t)) < ENNReal.ofReal r →
+      slot.1 = FirstEdge[event] := by
+  obtain ⟨r, rpos, slots⟩ := K.compatibleContourSourceOnlyLeaf_near_slot compact nonempty R
+    no_boundary level higher M positive inner_disk beta acute contour starts W models geometry
+    event childless
+  refine ⟨r, rpos, ?_⟩
+  intro slot t near
+  obtain ⟨_, at_start, _⟩ := slots slot t near
+  exact congrArg Sigma.fst at_start
+
 end Unfoldings.ConvexRoof
