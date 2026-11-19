@@ -54,6 +54,13 @@ theorem continuous_projectFirstBank : Continuous G.projectFirstBank :=
   (B.radialHomeomorph G.first_outward G.first_nonzero).symm.continuous.comp
     (continuous_const.nndist (continuous_subtype_val.comp PolygonalPoint.continuous_toSubtype))
 
+/-- Bounded pieces of the rolled first bank have compact inverse image in the gap. -/
+theorem isProperMap_projectFirstBank : IsProperMap G.projectFirstBank :=
+  (B.radialHomeomorph G.first_outward G.first_nonzero).symm.isProperMap.comp
+    ((isProperMap_nndist B.start).comp (G.model.closed.isClosedEmbedding_subtypeVal.isProperMap.comp
+      (B.twoBankGapIntrinsicHomeomorph (B.rotateSuffix 0 θ) G.first_outward G.first_nonzero
+        G.second_outward G.second_nonzero G.phase G.common).isProperMap))
+
 @[simp] theorem projectFirstBank_edgePoint (side : Bool) (i : Fin n) (t : unitInterval) :
     G.projectFirstBank (G.model.edgePoint side i t) =
       ⟨B.addressPoint (.inl (i, t)), B.addressPoint_mem (.inl (i, t))⟩ := by

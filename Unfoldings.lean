@@ -2645,3 +2645,10 @@ public import Unfoldings.Roof.CompatibleContourSourceOnlySourceChart
 public import Unfoldings.Cone.SectorPairBall
 public import Unfoldings.Geometry.SourceGapBankRetraction
 public import Unfoldings.Metric.BankStackSingleton
+public import Unfoldings.Complex.ContourFirstVisit
+public import Unfoldings.Cone.SectorPairBankRays
+public import Unfoldings.Geometry.SourceGapFibers
+public import Unfoldings.Metric.ClosedSeamsContinuousLift
+public import Unfoldings.Roof.CompatibleContourSourceOnlyCollapse
+public import Unfoldings.Roof.CompatibleContourSourceOnlyBendChart
+public import Unfoldings.Roof.CompatibleContourSourceOnlyChildFans

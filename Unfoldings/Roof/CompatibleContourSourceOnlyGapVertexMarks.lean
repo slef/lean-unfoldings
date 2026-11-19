@@ -125,6 +125,36 @@ theorem compatibleContourSourceOnlyGapMark_eq_source (event : Event)
     (K.compatibleContourSourceOnlyBank_edge_ne_zero compact nonempty R no_boundary level higher M
       positive inner_disk beta acute contour starts models event) (!side) _ coordinate
 
+local notation "FiniteBank[" v "," h "]" => (Sum.inl (Subtype.mk v h) : Attachment)
+
+/-- On a single gap side, the child edge's endpoint and its parent edge's start are
+the same actual bend. Both parameters keep their original attachment labels. -/
+theorem compatibleContourSourceOnlyGapMark_parent_join
+    (v : (D).Vertex Set.univ) (nonroot : v ∉ (Fcut).parents.roots)
+    (parent_nonroot : (Fcut).parents.parent v ∉ (Fcut).parents.roots) (event : Event)
+    (here : event ∈ Stack FiniteBank[v,nonroot])
+    (above : event ∈ Stack FiniteBank[(Fcut).parents.parent v,parent_nonroot])
+    (side : Bool) :
+    Gap FiniteBank[v,nonroot] event here side 1 =
+      Gap FiniteBank[(Fcut).parents.parent v,parent_nonroot] event above side 0 := by
+  let parent := (Fcut).parents.parent v
+  have edge_member (u : (D).Vertex Set.univ) (h : u ∉ (Fcut).parents.roots)
+      (member : event ∈ Stack FiniteBank[u,h]) :
+      event ∈ (D).contourEdgeGapStack Selection contour u :=
+    ((D).mem_contourEdgeGapStack Selection contour u event).mpr
+      (((D).mem_contourSavedGapStack Selection contour u event).mp member)
+  let i := (D).contourGapBankIndex Selection contour v nonroot event (edge_member v nonroot here)
+  let j := (D).contourGapBankIndex Selection contour parent parent_nonroot event
+    (edge_member parent parent_nonroot above)
+  have next : j.val = i.val + 1 :=
+    (D).contourGapBankIndex_parent Selection contour v nonroot parent_nonroot event
+      (edge_member v nonroot here) (edge_member parent parent_nonroot above)
+  have vertex : i.succ = j.castSucc := Fin.ext next.symm
+  apply PolygonalPoint.ext
+  change ((models event).bank (!side)).chain.point i 1 =
+    ((models event).bank (!side)).chain.point j 0
+  rw [PolygonalChain.point_one, PolygonalChain.point_zero, vertex]
+
 local notation "SourceAt[" e "]" => TriangleComplex.positiveContourVertex D Selection contour e
 local notation "FirstEdge[" e "]" => (Sum.inl
   (Subtype.mk SourceAt[e] (TriangleComplex.positiveContourVertex_nonroot D Selection contour e)) :

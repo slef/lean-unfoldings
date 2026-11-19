@@ -2,6 +2,22 @@
 
 ## Session Log
 
+### 2026-11-19 — identify the saved fan within each child block
+
+- Located the first visit of each nonroot at its original parent-bank entrance.
+  Its own positive gap occurs last in the newest-first stack.
+- Proved that the original cut status at a child's parent is constant through
+  that child's block. The actual rolled banks use the same exit germ and see
+  the same retained fan angle. Adjacent original finite parameters give the
+  same source-only bend, and its actual two sector apertures are complementary.
+- Proved proper transport of the whole gap to its original physical path and
+  path connectivity of its radial fibers. Added a continuous and proper
+  descent theorem for finite closed-seam presentations.
+- Full `lake build` passed (6,579 jobs), including the standard-axiom audit and
+  the independence checks for both abstracts.
+- Whole-graft charts at the original vertex classes and the global topology
+  remain in progress.
+
 ### 2026-11-19 — compare local grafts with complementary sectors
 
 - Proved a whole metric-ball comparison for two original complementary sector

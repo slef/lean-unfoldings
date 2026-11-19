@@ -56,4 +56,33 @@ theorem contourGapBankIndex_original (vertex : C.Vertex Set.univ) (nonroot : ver
     ((P.nonrootAncestorEquiv (C.positiveContourVertex S Q source)).apply_symm_apply
     ⟨vertex, nonroot, (C.mem_contourEdgeGapStack S Q vertex source).mp member⟩)
 
+/-- Following one original parent edge advances the same gap's finite bank index by one. -/
+theorem contourGapBankIndex_parent (v : C.Vertex Set.univ) (nonroot : v ∉ P.roots)
+    (parent_nonroot : P.parent v ∉ P.roots)
+    (source : C.PositiveContourSource S Q)
+    (here : source ∈ C.contourEdgeGapStack S Q v)
+    (above : source ∈ C.contourEdgeGapStack S Q (P.parent v)) :
+    (C.contourGapBankIndex S Q (P.parent v) parent_nonroot source above).val =
+      (C.contourGapBankIndex S Q v nonroot source here).val + 1 := by
+  let rootSource := C.positiveContourVertex S Q source
+  let i := C.contourGapBankIndex S Q v nonroot source here
+  let j := C.contourGapBankIndex S Q (P.parent v) parent_nonroot source above
+  have next : P.parent^[i.val + 1] rootSource = P.parent v := by
+    rw [Function.iterate_succ_apply', C.contourGapBankIndex_original]
+  have before : i.val + 1 < P.distanceToRoot rootSource := by
+    by_contra! at_root
+    have reached : P.parent^[i.val + 1] rootSource ∈ P.roots := by
+      rw [← Nat.sub_add_cancel at_root, Function.iterate_add_apply,
+        Function.iterate_fixed (P.fixed_root _ (P.iterate_distanceToRoot_mem rootSource))]
+      exact P.iterate_distanceToRoot_mem rootSource
+    exact parent_nonroot (next ▸ reached)
+  have dj : j.val < P.distanceToRoot rootSource :=
+    (C.positiveContourBank_span S Q source).symm ▸ j.isLt
+  let E := P.nonrootAncestorEquiv rootSource
+  have eq : E ⟨j.val, dj⟩ = E ⟨i.val + 1, before⟩ := by
+    apply Subtype.ext
+    exact (C.contourGapBankIndex_original S Q (P.parent v) parent_nonroot source above).trans
+      next.symm
+  exact congrArg Fin.val (E.injective eq)
+
 end Unfoldings.TriangleComplex

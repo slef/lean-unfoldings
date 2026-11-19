@@ -107,21 +107,19 @@ local instance compatibleContourBankAgreementWholeFintype : Fintype W.Index := W
 local notation "Map" => K.compatibleMeshWholeMap compact nonempty R no_boundary level higher M
   positive inner_disk beta acute W
 
-/-- Every edge of the complete source bank has the length of its literal original exit bank. -/
-theorem compatibleContourSourceBank_edge_length
+/-- Each rolled bank edge uses the literal final rootward germ of its original parent edge. -/
+theorem compatibleContourSourceBank_germ
     (event : (T).pairedComplex.PositiveContourSource (Fcut).selection contour)
     (k : Fin (LengthAt[contour,event] + 1)) :
-    ‖(BankAt[contour,starts,event]).chain.edge k‖ =
-      (T).pairedComplex.boundaryBankLength
-        ((T).pairedComplex.contourParentBank (Fcut).selection contour (Fcut).boundary_roots starts
-          ((Fcut).parents.parent^[k.val] VertexAt[contour,event])
-          ((Fcut).parents.iterate_lt_distanceToRoot_not_mem VertexAt[contour,event]
-            (by rw [SpanAt[contour,event]]; exact k.isLt)) false) := by
+    let chain := ChainAt[contour,starts,event.val,event.property.1,LengthAt[contour,event],
+      SpanAt[contour,event]]
+    (chain.point k).val = ((T).pairedComplex.contourParentBank (Fcut).selection contour
+      (Fcut).boundary_roots starts ((Fcut).parents.parent^[k.val] VertexAt[contour,event])
+      ((Fcut).parents.iterate_lt_distanceToRoot_not_mem VertexAt[contour,event]
+        (by rw [SpanAt[contour,event]]; exact k.isLt)) false).val := by
   let chain := ChainAt[contour,starts,event.val,event.property.1,LengthAt[contour,event],
     SpanAt[contour,event]]
-  change ‖((T).pairedComplex.boundaryChainRoll chain).edge k‖ = _
-  rw [(T).pairedComplex.boundaryChainRoll_edge_length]
-  apply (T).pairedComplex.sourceBank_original_exit_length (Fcut).selection contour
+  apply (T).pairedComplex.sourceBank_original_exit (Fcut).selection contour
     (Fcut).boundary_roots starts
     ((T).pairedComplex.selectedRetain_subset_processed (Fcut).selection
       ((T).pairedComplex.contourFrontier (Fcut).selection contour event.val.succ))
@@ -145,6 +143,27 @@ local notation "ParentMark[" v "," h "," side "," t "]" =>
 local notation "GapMark[" v "," h "," e "," he "," side "," t "]" =>
   K.compatibleContourGapEdgeMark compact nonempty R no_boundary level higher M positive inner_disk
     beta acute contour starts models v h e he side t
+
+/-- Every edge of the complete source bank has the length of its literal original exit bank. -/
+theorem compatibleContourSourceBank_edge_length
+    (event : (T).pairedComplex.PositiveContourSource (Fcut).selection contour)
+    (k : Fin (LengthAt[contour,event] + 1)) :
+    ‖(BankAt[contour,starts,event]).chain.edge k‖ =
+      (T).pairedComplex.boundaryBankLength
+        ((T).pairedComplex.contourParentBank (Fcut).selection contour (Fcut).boundary_roots starts
+          ((Fcut).parents.parent^[k.val] VertexAt[contour,event])
+          ((Fcut).parents.iterate_lt_distanceToRoot_not_mem VertexAt[contour,event]
+            (by rw [SpanAt[contour,event]]; exact k.isLt)) false) := by
+  let chain := ChainAt[contour,starts,event.val,event.property.1,LengthAt[contour,event],
+    SpanAt[contour,event]]
+  change ‖((T).pairedComplex.boundaryChainRoll chain).edge k‖ = _
+  rw [(T).pairedComplex.boundaryChainRoll_edge_length]
+  exact congrArg (fun germ : (T).pairedComplex.Germ =>
+    dist (((T).pairedComplex.triangle germ.1.1).vertex
+      ((T).pairedComplex.germFarCorner germ).2)
+      (((T).pairedComplex.triangle germ.1.1).vertex germ.1.2))
+    (K.compatibleContourSourceBank_germ compact nonempty R no_boundary level higher M
+      positive inner_disk beta acute contour starts event k)
 
 /-- Both sides of every constructed gap have exactly the original closed parent-edge metric.
 All bank labels, path indices and lengths are derived from the named contour and routing. -/

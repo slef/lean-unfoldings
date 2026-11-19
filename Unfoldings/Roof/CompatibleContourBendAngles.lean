@@ -71,12 +71,12 @@ local notation "RetainAt[" q "," i "]" => TriangleComplex.processedParentRetain 
   FrontierAt[q,i]
 /-- The first occupied bend aperture is the actual saved-frontier fan angle. The original
 uncut total-angle bound applies because each bend comes strictly before the root. -/
-theorem compatibleContourGap_first_bend_aperture
+theorem compatibleContourSourceBank_first_bend_aperture
     (contour : (T).pairedComplex.BoundaryContour
       ((T).pairedComplex.selectedRetain (Fcut).selection))
     (starts : SourceAt[contour,0] ∈ (Fcut).parents.roots)
     (event : Event[contour]) (k : Fin (LengthAt[contour,event]))
-    (gap : OrientedBankGap BankAt[contour,starts,event] OpenedAt[contour,starts,event])
+    (outward : (BankAt[contour,starts,event]).Outward)
     (outgoing_radial : let bank := BankAt[contour,starts,event]
       0 < inner ℝ (bank.chain.vertex k.succ.castSucc - bank.start) (bank.chain.edge k.succ)) :
     let bank := BankAt[contour,starts,event]
@@ -97,7 +97,7 @@ theorem compatibleContourGap_first_bend_aperture
     have genuine : bank.chain.vertex k.castSucc.castSucc ≠ bank.chain.vertex k.castSucc.succ :=
       Ne.symm (sub_ne_zero.mp ((D).boundaryChainRoll_edge_ne_zero chain k.castSucc))
     simpa only [PolygonalChain.edge, Fin.succ_castSucc] using
-      bank.inner_terminal_edge_pos gap.first_outward k.castSucc genuine
+      bank.inner_terminal_edge_pos outward k.castSucc genuine
   have original : (D).vertexForgetCuts (Set.subset_univ retain) w =
       (P).parent^[k.succ.val] v :=
     K.compatibleMeshFreshSourceBankChain_original compact nonempty R no_boundary level higher M
@@ -116,6 +116,25 @@ theorem compatibleContourGap_first_bend_aperture
     le_trans ((D).totalAngle_le_forgetCuts (Set.subset_univ retain) w)
       (cap.totalAngle_le_two_pi _ internal)
   exact (D).boundaryChainRoll_left_aperture chain k _ incoming outgoing_radial small
+
+/-- The original cumulative model uses the same first bank and its exact retained aperture. -/
+theorem compatibleContourGap_first_bend_aperture
+    (contour : (T).pairedComplex.BoundaryContour
+      ((T).pairedComplex.selectedRetain (Fcut).selection))
+    (starts : SourceAt[contour,0] ∈ (Fcut).parents.roots)
+    (event : Event[contour]) (k : Fin (LengthAt[contour,event]))
+    (gap : OrientedBankGap BankAt[contour,starts,event] OpenedAt[contour,starts,event])
+    (outgoing_radial : let bank := BankAt[contour,starts,event]
+      0 < inner ℝ (bank.chain.vertex k.succ.castSucc - bank.start) (bank.chain.edge k.succ)) :
+    let bank := BankAt[contour,starts,event]
+    let retain := RetainAt[contour,event.val.succ]
+    let chain := ChainAt[contour,starts,event.val,event.property.1,LengthAt[contour,event],
+      SpanAt[contour,event]]
+    radialLeftCornerWidth (bank.chain.vertex k.succ.castSucc - bank.start)
+      (bank.chain.edge k.castSucc) (bank.chain.edge k.succ) =
+        (D).totalAngle retain ((D).boundaryEndVertex retain (chain.point k.succ)) :=
+  K.compatibleContourSourceBank_first_bend_aperture compact nonempty R no_boundary level higher M
+    positive inner_disk beta acute contour starts event k gap.first_outward outgoing_radial
 
 local notation "WeightAt[" F "," v "]" =>
   AscendingParents.ParentFrontier.processedDescendantWeight F

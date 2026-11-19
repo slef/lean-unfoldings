@@ -574,6 +574,15 @@ nonoverlap and counting remain to be proved.
   and [gap](../Unfoldings/Roof/CompatibleContourSourceOnlySourceChart.lean)
   sector charts. Prove the
   [whole-ball gluing theorem for complementary sectors](../Unfoldings/Cone/SectorPairBall.lean).
+- [x] Locate the [first visit of each positive source](../Unfoldings/Complex/ContourFirstVisit.lean)
+  and place its own gap at the last end of the newest-first stack. Prove that
+  [the saved fan angle is constant within one child block](../Unfoldings/Roof/CompatibleContourSourceOnlyChildFans.lean)
+  and construct the
+  [actual bend sector charts](../Unfoldings/Roof/CompatibleContourSourceOnlyBendChart.lean).
+- [x] Map each source-only gap continuously to its
+  [original spatial bank](../Unfoldings/Roof/CompatibleContourSourceOnlyCollapse.lean).
+  The [radial fibers](../Unfoldings/Geometry/SourceGapFibers.lean) are path connected,
+  and both banks keep their original finite and unbounded parameters.
 - [ ] Identify actual cyclic fans in the source-only graft and prove whole
   metric-ball charts. Reuse the generic strip and sector charts with the
   source-only attachment maps.
