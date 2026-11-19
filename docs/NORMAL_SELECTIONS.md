@@ -445,8 +445,14 @@ nonoverlap and counting remain to be proved.
   The full finite closed-seam relation equals the original graft relation, and its
   metric isometry preserves every original cell point; see
   [`CompatibleContourClosedSeams`](../Unfoldings/Roof/CompatibleContourClosedSeams.lean).
-- [ ] Prove finite seam classes and identify the route-metric topology with the
-  resulting gluing.
+- [x] Map each actual gap frontier to its original spatial bank path, preserving all
+  finite-edge and whole-tail parameters and deriving finite fibers. The physical
+  target path may overlap itself; no final planar development is assumed.
+- [x] Prove finite seam classes from conserved original labels. The actual metric
+  identifies exactly the declared seam classes, and its topology is exactly the
+  original cell quotient. Local path connectivity follows from the convex cells.
+  These use the radial gap geometry already constructed uniformly above; see
+  [`CompatibleContourFiniteClasses`](../Unfoldings/Roof/CompatibleContourFiniteClasses.lean).
 - [ ] Identify the actual local saved-frontier fan at each seam/vertex class and
   prove its whole metric-ball chart; cell interiors are already covered.
 - [ ] Derive simple connectivity from the actual slit/gap attachments and apply the

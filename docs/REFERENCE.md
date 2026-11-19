@@ -4184,4 +4184,31 @@ corners and does not yet identify their widths with the actual retained cap fan.
 - [`CompatibleContourClosedSeams`](../Unfoldings/Roof/CompatibleContourClosedSeams.lean):
   combines the actual bank domains with all original retained roof and internal gap
   seams. The full relation is exactly the original graft relation, and the isometry
-  preserves every original cell point. Finite classes and global topology remain.
+  preserves every original cell point.
+- [`RadialChainTransfer`](../Unfoldings/Geometry/RadialChainTransfer.lean),
+  [`PolygonalRayTransfer`](../Unfoldings/Geometry/PolygonalRayTransfer.lean) and
+  [`PolygonalRayFibers`](../Unfoldings/Geometry/PolygonalRayFibers.lean):
+  genuine radial bank addresses transfer to arbitrary physical chains without
+  introducing false identifications. Every finite edge and true-tail parameter is
+  preserved; genuine physical target paths have finite fibers even when overlapping.
+- [`BankGapBoundaryMap`](../Unfoldings/Geometry/BankGapBoundaryMap.lean):
+  both gap banks collapse to the same physical path. Their common source gives a
+  well-defined frontier map, with derived finite fibers.
+- [`RootwardSpatialChain`](../Unfoldings/Polyhedron/RootwardSpatialChain.lean),
+  [`CompatibleContourPhysicalBanks`](../Unfoldings/Roof/CompatibleContourPhysicalBanks.lean),
+  [`CompatibleContourPhysicalAgreement`](../Unfoldings/Roof/CompatibleContourPhysicalAgreement.lean)
+  and [`CompatibleContourPhysicalTails`](../Unfoldings/Roof/CompatibleContourPhysicalTails.lean):
+  original source-parent labels identify the actual spatial bank paths. Finite gap
+  edges and whole tails agree with their literal original roof-bank positions.
+- [`FiniteLabelClasses`](../Unfoldings/Metric/FiniteLabelClasses.lean),
+  [`FinitePartialLabels`](../Unfoldings/Metric/FinitePartialLabels.lean) and
+  [`BankStackLabels`](../Unfoldings/Metric/BankStackLabels.lean):
+  conserved labels with finite cell fibers give finite seam classes. Extending
+  physical frontier labels by original interior tags preserves finite fibers, and
+  consecutive stack attachments preserve their common original bank labels.
+- [`CompatibleContourLabels`](../Unfoldings/Roof/CompatibleContourLabels.lean) and
+  [`CompatibleContourFiniteClasses`](../Unfoldings/Roof/CompatibleContourFiniteClasses.lean):
+  the actual graft has derived finite seam classes, exact metric identifications,
+  the original seam-quotient topology and local path connectivity. The input radial
+  geometry is derived by the uniform canonical contour-gap construction. Actual
+  local seam/vertex flatness, simple connectivity and global nonoverlap remain.

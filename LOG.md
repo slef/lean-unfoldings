@@ -2,6 +2,33 @@
 
 ## Session Log
 
+### 2026-11-18 — finite actual graft classes and exact quotient topology
+
+- Proved that genuine radial bank addresses transfer to arbitrary physical chains
+  without false identifications. Every original closed-edge and whole-tail parameter
+  is retained, including the common source and all shared endpoints.
+- Proved finite address and transport fibers for genuine physical target paths,
+  allowing those paths to overlap. Combined both gap banks into a well-defined
+  finite-fiber map from the whole actual frontier to its original spatial path.
+- Identified the actual spatial source-parent paths. Proved that each finite gap
+  attachment and each complete terminal tail has the original roof bank's spatial
+  label, on both sides and at every parameter.
+- Extended physical boundary labels by original interior coordinates and gap tags.
+  Proved these labels have finite fibers in every original cell and are conserved
+  by all internal seams and every consecutive actual bank-stack attachment.
+- Derived finite actual seam classes from these labels. The full graft has no
+  extra zero-distance identifications, and its route-metric topology is exactly the
+  original seam quotient. The homeomorphism fixes all original cell points; local
+  path connectivity follows from the original convex cells. The radial geometry
+  used here is already derived uniformly by the canonical contour-gap construction.
+- Verification: actual cache retrieval succeeded earlier in this session; the final
+  actual full `lake build` passed 6,458 jobs. All 20,248 unfolding declarations passed
+  the standard-axiom audit; both abstract independence checks passed. No existing
+  theorem statements were changed. Only the main worktree exists.
+- Remaining: identify the actual local saved-frontier seam/vertex fans and prove
+  their whole-ball flat charts, derive simple connectivity, and apply the global
+  planar-isometry theorem to obtain nonoverlap.
+
 ### 2026-11-18 — full actual closed-seam presentation
 
 - Added closed-seam operations for rigid cell coordinate changes, finite unions and

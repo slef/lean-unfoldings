@@ -2518,3 +2518,17 @@ public import Unfoldings.Roof.CompatibleContourBankClosedSeams
 public import Unfoldings.Metric.ClosedSeamOperations
 public import Unfoldings.Metric.ClosedCoincidentSeams
 public import Unfoldings.Roof.CompatibleContourClosedSeams
+
+public import Unfoldings.Geometry.RadialChainTransfer
+public import Unfoldings.Geometry.PolygonalRayTransfer
+public import Unfoldings.Geometry.PolygonalRayFibers
+public import Unfoldings.Geometry.BankGapBoundaryMap
+public import Unfoldings.Polyhedron.RootwardSpatialChain
+public import Unfoldings.Metric.FiniteLabelClasses
+public import Unfoldings.Metric.FinitePartialLabels
+public import Unfoldings.Metric.BankStackLabels
+public import Unfoldings.Roof.CompatibleContourPhysicalBanks
+public import Unfoldings.Roof.CompatibleContourPhysicalAgreement
+public import Unfoldings.Roof.CompatibleContourPhysicalTails
+public import Unfoldings.Roof.CompatibleContourLabels
+public import Unfoldings.Roof.CompatibleContourFiniteClasses
