@@ -3,7 +3,7 @@ module
 public import Unfoldings.Roof.CompatibleContourGraftExactness
 public import Unfoldings.Metric.ClosedSeamRestriction
 
-/-! Ordinary finite graft balls retain just their original consecutive bank attachment. -/
+/-! Unique-mark graft balls retain just their original consecutive bank attachment. -/
 
 @[expose] public section
 
@@ -116,17 +116,19 @@ def compatibleContourKeepBankSlot (slot : MetricGluing.BankStackSlot Stack) :
 local notation "KeepAt[" slot "]" => K.compatibleContourKeepBankSlot compact nonempty R no_boundary
   level higher M positive inner_disk beta acute contour starts W models slot
 
-/-- Every actual bank domain incident to an ordinary finite seam class belongs to its
+/-- Every actual bank domain incident to a unique-mark seam class belongs to its
 original consecutive slot. The classification includes all original cell representatives. -/
-theorem compatibleContourFiniteSeam_incident_bank_slot
+theorem compatibleContourBankSlot_incident_bank_slot
     (geometry : ∀ event : Event,
       OrientedBankGap (BankAt[contour,starts,event]) (OpenedAt[contour,starts,event]))
-    (vertex : {v : (D).Vertex Set.univ // v ∉ (Fcut).parents.roots})
-    (i : Fin ((Stack (.inl vertex)).length + 1)) (t : unitInterval) (bounds : 0 < t ∧ t < 1)
+    (slot : MetricGluing.BankStackSlot Stack)
+    (t : K.compatibleContourBankParameter compact nonempty R no_boundary level higher M
+      positive inner_disk beta acute slot.1)
+    (unique : MetricGluing.BankStackUniqueMarksAt Stack Pieces Base Gap slot.1 t)
     (a : MetricGluing.Total Raw)
-    (center : Original a = MetricGluing.bankStackLeft Pieces Stack Base Gap ⟨.inl vertex, i⟩ t)
+    (center : Original a = MetricGluing.bankStackLeft Pieces Stack Base Gap slot t)
     (b : (BankSeams).Seam) (incident : (Seams).Incident a (.inr b)) :
-    b.1 = ⟨.inl vertex, i⟩ := by
+    b.1 = slot := by
   obtain ⟨p, related, u, equal⟩ := incident
   obtain ⟨s, first, _last⟩ := u.property
   have bank_point : Original ⟨(BankSeams).left b, p⟩ =
@@ -143,13 +145,55 @@ theorem compatibleContourFiniteSeam_incident_bank_slot
   have metric_equal : MetricGluing.point Pieces Banks
       (MetricGluing.bankStackEndpoint Stack Pieces Base Gap false b.1 s) =
         MetricGluing.point Pieces Banks
-          (MetricGluing.bankStackLeft Pieces Stack Base Gap ⟨.inl vertex, i⟩ t) :=
+          (MetricGluing.bankStackLeft Pieces Stack Base Gap slot t) :=
     (congrArg (MetricGluing.point Pieces Banks) bank_point).symm.trans
       (points.symm.trans (congrArg (MetricGluing.point Pieces Banks) center))
-  have named := K.compatibleContourFiniteSeam_endpoint_parameter_eq compact nonempty R no_boundary
-    level higher M positive inner_disk beta acute contour starts W models geometry vertex i t
-      bounds false b.1 s metric_equal
+  have named := MetricGluing.bankStackEndpoint_parameter_eq_of_point_eq Stack Pieces Base Gap
+    (K.compatibleContourBankStack_nodup compact nonempty R no_boundary level higher M positive
+      inner_disk beta acute contour)
+    (K.compatibleContourGraft_exact compact nonempty R no_boundary level higher M positive
+      inner_disk beta acute contour starts W models geometry) slot t unique false b.1 s metric_equal
   exact congrArg Sigma.fst named
+
+/-- Removing all other bank attachments preserves a whole small metric ball at every
+unique-mark seam time. Original internal seams and every cell representative are retained. -/
+theorem compatibleContourBankSlot_forgetChart
+    (geometry : ∀ event : Event,
+      OrientedBankGap (BankAt[contour,starts,event]) (OpenedAt[contour,starts,event]))
+    (slot : MetricGluing.BankStackSlot Stack)
+    (t : K.compatibleContourBankParameter compact nonempty R no_boundary level higher M
+      positive inner_disk beta acute slot.1)
+    (unique : MetricGluing.BankStackUniqueMarksAt Stack Pieces Base Gap slot.1 t)
+    (a : MetricGluing.Total Raw)
+    (center : Original a = MetricGluing.bankStackLeft Pieces Stack Base Gap slot t) :
+    Nonempty (MetricGluing.ForgetChart Raw
+      ((Seams).restrict_relation_included KeepAt[slot]) a) := by
+  apply (Seams).exists_forgetChart_restrict KeepAt[slot] a
+    (K.compatibleContourClosedSeams_finite_classes compact nonempty R no_boundary level higher M
+      positive inner_disk beta acute contour starts W models geometry a)
+  intro s incident
+  cases s with
+  | inl internal => trivial
+  | inr bank =>
+    exact K.compatibleContourBankSlot_incident_bank_slot compact nonempty R no_boundary level
+      higher M positive inner_disk beta acute contour starts W models geometry slot t unique
+      a center bank incident
+
+/-- Every actual bank domain incident to an ordinary finite seam class belongs to its
+original consecutive slot. The classification includes all original cell representatives. -/
+theorem compatibleContourFiniteSeam_incident_bank_slot
+    (geometry : ∀ event : Event,
+      OrientedBankGap (BankAt[contour,starts,event]) (OpenedAt[contour,starts,event]))
+    (vertex : {v : (D).Vertex Set.univ // v ∉ (Fcut).parents.roots})
+    (i : Fin ((Stack (.inl vertex)).length + 1)) (t : unitInterval) (bounds : 0 < t ∧ t < 1)
+    (a : MetricGluing.Total Raw)
+    (center : Original a = MetricGluing.bankStackLeft Pieces Stack Base Gap ⟨.inl vertex, i⟩ t)
+    (b : (BankSeams).Seam) (incident : (Seams).Incident a (.inr b)) :
+    b.1 = ⟨.inl vertex, i⟩ :=
+  K.compatibleContourBankSlot_incident_bank_slot compact nonempty R no_boundary level higher M
+    positive inner_disk beta acute contour starts W models geometry ⟨.inl vertex, i⟩ t
+    (K.compatibleContourFiniteMarks_unique compact nonempty R no_boundary level higher M positive
+      inner_disk beta acute contour starts W models geometry vertex t bounds) a center b incident
 
 /-- Removing all other bank attachments preserves a whole small metric ball at every
 strict finite seam time. Original internal seams and every cell representative are retained. -/
@@ -161,16 +205,10 @@ theorem compatibleContourFiniteSeam_forgetChart
     (a : MetricGluing.Total Raw)
     (center : Original a = MetricGluing.bankStackLeft Pieces Stack Base Gap ⟨.inl vertex, i⟩ t) :
     Nonempty (MetricGluing.ForgetChart Raw
-      ((Seams).restrict_relation_included KeepAt[⟨.inl vertex, i⟩]) a) := by
-  apply (Seams).exists_forgetChart_restrict KeepAt[⟨.inl vertex, i⟩] a
-    (K.compatibleContourClosedSeams_finite_classes compact nonempty R no_boundary level higher M
-      positive inner_disk beta acute contour starts W models geometry a)
-  intro s incident
-  cases s with
-  | inl internal => trivial
-  | inr bank =>
-    exact K.compatibleContourFiniteSeam_incident_bank_slot compact nonempty R no_boundary level
-      higher M positive inner_disk beta acute contour starts W models geometry vertex i t bounds
-      a center bank incident
+      ((Seams).restrict_relation_included KeepAt[⟨.inl vertex, i⟩]) a) :=
+  K.compatibleContourBankSlot_forgetChart compact nonempty R no_boundary level higher M
+    positive inner_disk beta acute contour starts W models geometry ⟨.inl vertex, i⟩ t
+    (K.compatibleContourFiniteMarks_unique compact nonempty R no_boundary level higher M positive
+      inner_disk beta acute contour starts W models geometry vertex t bounds) a center
 
 end Unfoldings.ConvexRoof

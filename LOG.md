@@ -2,6 +2,19 @@
 
 ## Session Log
 
+### 2026-11-19 — prove planar balls across actual positive terminal seams
+
+- Identified the last finite edge of each original ray from the conforming mesh.
+  A connected part of each final finite bank fixes its whole-roof side at the rim.
+  The original ray, side, and affine time recover the complete tail label.
+- Classified the metric seam classes at positive tail times and used the same
+  single-slot comparison as for finite seams. Normalized both original half-plane
+  charts and glued them with their common forward arclength.
+- Cache retrieval and full `lake build` passed (6,519 jobs). The standard-axiom
+  audit covered 20,713 unfolding and 7,243 pinned planar-topology declarations.
+  Both abstract-independence checks passed.
+- Terminal joins, saved-frontier vertex fans, and simple connectivity remain open.
+
 ### 2026-11-19 — prove planar balls across all actual strict finite seams
 
 - Normalized the roof and canonical gap charts to forward original arclength on

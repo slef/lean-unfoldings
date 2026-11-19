@@ -130,27 +130,26 @@ local notation "SlotPoint[" slot "]" => MetricGluing.point Pieces
   (MetricGluing.bankSeams SlotLeft[slot] SlotRight[slot])
 local notation "LeftAt[" slot "," t "]" => MetricGluing.bankStackLeft Pieces Stack Base Gap slot t
 
-/-- Every ordinary finite graft point has a whole centered ball identical to the graft
-along just its original bank pair. No original-cell representative, local chart or
+/-- Every graft point with unique original bank marks has a whole centered ball identical to
+the graft along just its original bank pair. No original-cell representative, local chart or
 nonoverlap premise is required. Empty stacks and two banks of the same roof are included. -/
-theorem compatibleContourFiniteSeam_singleSlot_ball
+theorem compatibleContourBankSlot_ball
     (geometry : ∀ event : Event,
       OrientedBankGap (BankAt[contour,starts,event]) (OpenedAt[contour,starts,event]))
-    (vertex : {v : (D).Vertex Set.univ // v ∉ (Fcut).parents.roots})
-    (i : Fin ((Stack (.inl vertex)).length + 1)) (t : unitInterval) (bounds : 0 < t ∧ t < 1) :
+    (slot : MetricGluing.BankStackSlot Stack) (t : ParamAt[slot.1])
+    (unique : MetricGluing.BankStackUniqueMarksAt Stack Pieces Base Gap slot.1 t) :
     ∃ (r : ℝ) (positive_radius : 0 < r),
       ∃ A : ↥(Metric.eball
-          (SlotPoint[⟨.inl vertex,i⟩] LeftAt[⟨.inl vertex,i⟩,t]) (ENNReal.ofReal r)) ≃ᵢ
-        ↥(Metric.eball (MetricGluing.point Pieces Banks LeftAt[⟨.inl vertex,i⟩,t])
+          (SlotPoint[slot] LeftAt[slot,t]) (ENNReal.ofReal r)) ≃ᵢ
+        ↥(Metric.eball (MetricGluing.point Pieces Banks LeftAt[slot,t])
           (ENNReal.ofReal r)),
-        (A ⟨SlotPoint[⟨.inl vertex,i⟩] LeftAt[⟨.inl vertex,i⟩,t],
+        (A ⟨SlotPoint[slot] LeftAt[slot,t],
           Metric.mem_eball_self (ENNReal.ofReal_pos.mpr positive_radius)⟩).val =
-            MetricGluing.point Pieces Banks LeftAt[⟨.inl vertex,i⟩,t] := by
-  let slot : MetricGluing.BankStackSlot Stack := ⟨.inl vertex, i⟩
+            MetricGluing.point Pieces Banks LeftAt[slot,t] := by
   obtain ⟨a, center⟩ := MetricGluing.mappedNestedPoint_surjective Cells Inner Coordinates
     LeftAt[slot,t]
-  obtain ⟨C⟩ := K.compatibleContourFiniteSeam_forgetChart compact nonempty R no_boundary level
-    higher M positive inner_disk beta acute contour starts W models geometry vertex i t bounds
+  obtain ⟨C⟩ := K.compatibleContourBankSlot_forgetChart compact nonempty R no_boundary level
+    higher M positive inner_disk beta acute contour starts W models geometry slot t unique
       a center
   let first := K.compatibleContourSingleSlotIsometry compact nonempty R no_boundary level higher M
     positive inner_disk beta acute contour starts W models slot
@@ -169,5 +168,26 @@ theorem compatibleContourFiniteSeam_singleSlot_ball
   exact ⟨C.radius, C.positive,
     C.transportBall first last _ _ first_center last_center,
     C.transportBall_center first last _ _ first_center last_center⟩
+
+/-- Every ordinary finite graft point has a whole centered ball identical to
+the graft along just its original bank pair. No original-cell representative, local chart or
+nonoverlap premise is required. Empty stacks and two banks of the same roof are included. -/
+theorem compatibleContourFiniteSeam_singleSlot_ball
+    (geometry : ∀ event : Event,
+      OrientedBankGap (BankAt[contour,starts,event]) (OpenedAt[contour,starts,event]))
+    (vertex : {v : (D).Vertex Set.univ // v ∉ (Fcut).parents.roots})
+    (i : Fin ((Stack (.inl vertex)).length + 1)) (t : unitInterval) (bounds : 0 < t ∧ t < 1) :
+    ∃ (r : ℝ) (positive_radius : 0 < r),
+      ∃ A : ↥(Metric.eball
+          (SlotPoint[⟨.inl vertex,i⟩] LeftAt[⟨.inl vertex,i⟩,t]) (ENNReal.ofReal r)) ≃ᵢ
+        ↥(Metric.eball (MetricGluing.point Pieces Banks LeftAt[⟨.inl vertex,i⟩,t])
+          (ENNReal.ofReal r)),
+        (A ⟨SlotPoint[⟨.inl vertex,i⟩] LeftAt[⟨.inl vertex,i⟩,t],
+          Metric.mem_eball_self (ENNReal.ofReal_pos.mpr positive_radius)⟩).val =
+            MetricGluing.point Pieces Banks LeftAt[⟨.inl vertex,i⟩,t] :=
+  K.compatibleContourBankSlot_ball compact nonempty R no_boundary level higher M positive inner_disk
+    beta acute contour starts W models geometry ⟨.inl vertex, i⟩ t
+    (K.compatibleContourFiniteMarks_unique compact nonempty R no_boundary level higher M positive
+      inner_disk beta acute contour starts W models geometry vertex t bounds)
 
 end Unfoldings.ConvexRoof

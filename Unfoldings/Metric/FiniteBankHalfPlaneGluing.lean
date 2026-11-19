@@ -11,18 +11,22 @@ open scoped ENNReal
 
 namespace Unfoldings.MetricGluing
 
-variable {I : Type*} (X : I → Type*) [∀ i, EMetricSpace (X i)] {i j : I}
-  (left : unitInterval → X i) (right : unitInterval → X j) (t : unitInterval)
+section Affine
+
+variable {I A : Type*} (X : I → Type*) [∀ i, EMetricSpace (X i)] {i j : I}
+  (left : A → X i) (right : A → X j) (t : A)
+
+variable (param : A → ℝ)
 
 /-- Whole closed banks with a common arclength parameter and matching centered charts
 give a plane ball after gluing. Distinct nearby banks may be in one original piece. -/
-theorem finiteBankPair_planarBall_of_charts {R₁ R₂ speed : ℝ}
-    (L : BankHalfPlaneChart left t false (fun s => (s.val - t.val) * speed) R₁)
-    (D : BankHalfPlaneChart right t true (fun s => (s.val - t.val) * speed) R₂)
-    (speed_pos : 0 < speed) (bounds : 0 < t ∧ t < 1)
-    (left_metric : ∀ s, edist (left t) (left s) = ENNReal.ofReal (|(s : ℝ) - t| * speed))
+theorem bankPair_planarBall_of_charts {R₁ R₂ speed : ℝ}
+    (L : BankHalfPlaneChart left t false (fun s => (param s - param t) * speed) R₁)
+    (D : BankHalfPlaneChart right t true (fun s => (param s - param t) * speed) R₂)
+    (speed_pos : 0 < speed) (interior_time : param t ∈ interior (Set.range param))
+    (left_metric : ∀ s, edist (left t) (left s) = ENNReal.ofReal (|param s - param t| * speed))
     (right_metric : ∀ s, edist (right t) (right s) =
-      ENNReal.ofReal (|(s : ℝ) - t| * speed))
+      ENNReal.ofReal (|param s - param t| * speed))
     (left_closed : IsClosed (Set.range left)) (right_closed : IsClosed (Set.range right))
     (different_left : ∀ s, (⟨j, right t⟩ : Total X) ≠ ⟨i, left s⟩)
     (different_right : ∀ s, (⟨i, left t⟩ : Total X) ≠ ⟨j, right s⟩) :
@@ -59,11 +63,41 @@ theorem finiteBankPair_planarBall_of_charts {R₁ R₂ speed : ℝ}
         cases side
         · exact congrArg Subtype.val L'.centered
         · exact congrArg Subtype.val D'.centered }
-  apply finiteBankPair_planarBall X left right t C speed_pos bounds left_metric right_metric
+  apply bankPair_planarBall_of_affine_coordinates X left right t param C speed_pos interior_time
+    left_metric right_metric
     (fun s => small.trans (clear_left s)) (fun s => small.trans (clear_right s))
   · intro s near
     exact (C.coordinates_near false _ near).trans (L'.parameter s _)
   · intro s near
     exact (C.coordinates_near true _ near).trans (D'.parameter s _)
 
+
+end Affine
+
+section Finite
+
+variable {I : Type*} (X : I → Type*) [∀ i, EMetricSpace (X i)] {i j : I}
+  (left : unitInterval → X i) (right : unitInterval → X j) (t : unitInterval)
+
+/-- Whole closed banks with a common arclength parameter and matching centered charts
+give a plane ball after gluing. Distinct nearby banks may be in one original piece. -/
+theorem finiteBankPair_planarBall_of_charts {R₁ R₂ speed : ℝ}
+    (L : BankHalfPlaneChart left t false (fun s => (s.val - t.val) * speed) R₁)
+    (D : BankHalfPlaneChart right t true (fun s => (s.val - t.val) * speed) R₂)
+    (speed_pos : 0 < speed) (bounds : 0 < t ∧ t < 1)
+    (left_metric : ∀ s, edist (left t) (left s) = ENNReal.ofReal (|(s : ℝ) - t| * speed))
+    (right_metric : ∀ s, edist (right t) (right s) =
+      ENNReal.ofReal (|(s : ℝ) - t| * speed))
+    (left_closed : IsClosed (Set.range left)) (right_closed : IsClosed (Set.range right))
+    (different_left : ∀ s, (⟨j, right t⟩ : Total X) ≠ ⟨i, left s⟩)
+    (different_right : ∀ s, (⟨i, left t⟩ : Total X) ≠ ⟨j, right s⟩) :
+    HasMetricBallChart ℂ (point X (bankPairGlue X left right) ⟨i, left t⟩) := by
+  apply bankPair_planarBall_of_charts X left right t Subtype.val L D speed_pos _
+    left_metric right_metric left_closed right_closed different_left different_right
+  rw [Subtype.range_coe]
+  change t.val ∈ interior (Set.Icc (0 : ℝ) 1)
+  rw [interior_Icc]
+  exact bounds
+
+end Finite
 end Unfoldings.MetricGluing

@@ -2600,3 +2600,12 @@ public import Unfoldings.Geometry.DirectedEdgeHalfPlaneFrame
 public import Unfoldings.Roof.CompatibleContourParentMarkHalfPlane
 public import Unfoldings.Roof.CompatibleContourFiniteBankCharts
 public import Unfoldings.Roof.CompatibleContourFiniteSeamPlanar
+
+public import Unfoldings.Roof.CompatibleContourTerminalEdgeLabels
+public import Unfoldings.Roof.CompatibleContourTerminalSideLabels
+public import Unfoldings.Roof.CompatibleContourTerminalSeamClasses
+public import Unfoldings.Geometry.AffineBankHalfPlaneFrame
+public import Unfoldings.Geometry.OrientedBankGapTailHalfPlane
+public import Unfoldings.Roof.CompatibleTerminalNormalizedChart
+public import Unfoldings.Roof.CompatibleContourTerminalBankCharts
+public import Unfoldings.Roof.CompatibleContourTerminalSeamPlanar

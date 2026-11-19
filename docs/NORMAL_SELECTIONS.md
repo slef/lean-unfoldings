@@ -529,9 +529,15 @@ nonoverlap and counting remain to be proved.
   attachment. Transfer the planar ball from the single slot to the full graft, including
   slots where both banks lie in the roof; see
   [`CompatibleContourFiniteSeamPlanar`](../Unfoldings/Roof/CompatibleContourFiniteSeamPlanar.lean).
-- [ ] Classify positive terminal bank classes and their planar balls, then identify
-  actual saved-frontier vertex and terminal-join fans and prove their whole metric-ball
-  charts. Cell interiors, gap interiors and roof points outside the forest are covered.
+- [x] Recover the original terminal edge, side and parameter at positive tail times.
+  At each consecutive terminal seam the metric class has exactly its two original
+  bank marks. The whole roof and canonical gap half-plane charts have matching
+  forward arclength, so the single-slot ball gives a planar ball in the full graft;
+  see [`CompatibleContourTerminalSeamClasses`](../Unfoldings/Roof/CompatibleContourTerminalSeamClasses.lean)
+  and [`CompatibleContourTerminalSeamPlanar`](../Unfoldings/Roof/CompatibleContourTerminalSeamPlanar.lean).
+- [ ] Identify actual saved-frontier vertex and terminal-join fans and prove their
+  whole metric-ball charts. Cell interiors, gap interiors, roof points outside the
+  forest, and the open finite and infinite seams are covered.
 - [ ] Derive simple connectivity from the actual slit/gap attachments and apply the
   global planar-isometry theorem. Its finite closed-cell argument supplies the
   needed global completeness; a separate end-height certificate is unnecessary.

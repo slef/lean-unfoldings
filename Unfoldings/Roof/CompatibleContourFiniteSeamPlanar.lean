@@ -92,6 +92,75 @@ local notation "LeftAt" => bankStackLeft Pieces Stack Base Gap
 local notation "RightAt" => bankStackRight Pieces Stack Base Gap
 local notation "Banks" => bankSeams LeftAt RightAt
 
+local notation "ParamAt[" b "]" => K.compatibleContourBankParameter compact nonempty R no_boundary
+  level higher M positive inner_disk beta acute b
+local notation "LC" => bankStackLeftCurve Stack Pieces Base Gap
+local notation "RC" => bankStackRightCurve Stack Pieces Base Gap
+
+/-- Two normalized original bank charts give a planar ball in the full graft at a
+unique-mark parameter, provided their common speed is valid on the whole curves. -/
+theorem compatibleContourBankSlot_planarBall
+    (slot : BankStackSlot Stack) (t : ParamAt[slot.1]) (param : ParamAt[slot.1] → ℝ)
+    {r₁ r₂ speed : ℝ}
+    (L : BankHalfPlaneChart (LC slot) t false (fun s => (param s - param t) * speed) r₁)
+    (B : BankHalfPlaneChart (RC slot) t true (fun s => (param s - param t) * speed) r₂)
+    (speed_pos : 0 < speed) (inside_time : param t ∈ interior (Set.range param))
+    (lm : ∀ s, edist (LC slot t) (LC slot s) = ENNReal.ofReal (|param s - param t| * speed))
+    (rm : ∀ s, edist (RC slot t) (RC slot s) = ENNReal.ofReal (|param s - param t| * speed))
+    (unique : BankStackUniqueMarksAt Stack Pieces Base Gap slot.1 t) :
+    HasMetricBallChart ℂ (point Pieces Banks (LeftAt slot t)) := by
+  let left := bankStackLeftCurve Stack Pieces Base Gap slot
+  let right := bankStackRightCurve Stack Pieces Base Gap slot
+  let pair := bankPairGlue Pieces left right
+  let single := bankSeams (fun (_ : Unit) (s : ParamAt[slot.1]) => LeftAt slot s)
+    (fun (_ : Unit) (s : ParamAt[slot.1]) => RightAt slot s)
+  let x := point Pieces pair ⟨_, left t⟩
+  have left_label (s : ParamAt[slot.1]) := bankStackLeft_curve Stack Pieces Base Gap slot s
+  have right_label (s : ParamAt[slot.1]) := bankStackRight_curve Stack Pieces Base Gap slot s
+  have base_closed := K.compatibleContourBaseMark_isClosedEmbedding compact nonempty R no_boundary
+    level higher M positive inner_disk beta acute contour starts W Models
+  have gap_closed := K.compatibleContourGapMark_isClosedEmbedding compact nonempty R no_boundary
+    level higher M positive inner_disk beta acute contour starts W Models
+  have nodup := K.compatibleContourBankStack_nodup compact nonempty R no_boundary level higher M
+    positive inner_disk beta acute contour
+  have wrong_left (s : ParamAt[slot.1]) : (⟨_, right t⟩ : Total Pieces) ≠ ⟨_, left s⟩ := by
+    intro eq
+    have equal : LeftAt slot s = RightAt slot t :=
+      (left_label s).trans (eq.symm.trans (right_label t).symm)
+    have sides := bankStackEndpoint_eq_of_unique Stack Pieces Base Gap nodup slot t unique
+      true false slot s equal
+    cases congrArg Prod.fst sides
+  have wrong_right (s : ParamAt[slot.1]) : (⟨_, left t⟩ : Total Pieces) ≠ ⟨_, right s⟩ := by
+    intro eq
+    have equal : RightAt slot s = LeftAt slot t :=
+      (right_label s).trans (eq.symm.trans (left_label t).symm)
+    have sides := bankStackEndpoint_eq_of_unique Stack Pieces Base Gap nodup slot t unique
+      false true slot s equal
+    cases congrArg Prod.fst sides
+  have planar : HasMetricBallChart ℂ x :=
+    bankPair_planarBall_of_charts Pieces left right t param L B speed_pos inside_time lm rm
+      (bankStackLeftCurve_closed Stack Pieces Base Gap base_closed gap_closed slot).isClosed_range
+      (bankStackRightCurve_closed Stack Pieces Base Gap base_closed gap_closed slot).isClosed_range
+      wrong_left wrong_right
+  have seams (p q : Total Pieces) : pair p q ↔ single p q := by
+    constructor
+    · rintro ⟨s, hp, hq⟩
+      exact ⟨(), s, hp.trans (left_label s).symm, hq.trans (right_label s).symm⟩
+    · rintro ⟨_, s, hp, hq⟩
+      exact ⟨s, hp.trans (left_label s), hq.trans (right_label s)⟩
+  let E := changeSeamsIsometryEquiv Pieces (R := pair) (S := single)
+    (fun p q h => point_eq_of_glue Pieces ((seams p q).mp h))
+    (fun p q h => point_eq_of_glue Pieces ((seams p q).mpr h))
+  have center : E x = point Pieces single (LeftAt slot t) :=
+    congrArg (point Pieces single) (left_label t).symm
+  obtain ⟨r, rpos, A, based⟩ := K.compatibleContourBankSlot_ball compact nonempty R
+    no_boundary level higher M positive inner_disk beta acute contour starts W Models geometry
+      slot t unique
+  have core : HasMetricBallChart ℂ (point Pieces single (LeftAt slot t)) := by
+    rw [← center]
+    exact planar.isometryEquiv E
+  exact core.of_centered_ball_equiv rpos A based
+
 /-- A point in the strict interior of any original finite attachment has a whole
 planar metric ball in the canonical full graft. This includes an empty gap stack. -/
 theorem compatibleContourFiniteSeam_planarBall
@@ -99,14 +168,6 @@ theorem compatibleContourFiniteSeam_planarBall
     (bounds : 0 < t ∧ t < 1) :
     HasMetricBallChart ℂ (point Pieces Banks (LeftAt SlotAt[vertex,i] t)) := by
   let slot := SlotAt[vertex,i]
-  let left := bankStackLeftCurve Stack Pieces Base Gap slot
-  let right := bankStackRightCurve Stack Pieces Base Gap slot
-  let pair := bankPairGlue Pieces left right
-  let single := bankSeams (fun (_ : Unit) (s : unitInterval) => LeftAt slot s)
-    (fun (_ : Unit) (s : unitInterval) => RightAt slot s)
-  let x := point Pieces pair ⟨_, left t⟩
-  have left_label (s : unitInterval) := bankStackLeft_curve Stack Pieces Base Gap slot s
-  have right_label (s : unitInterval) := bankStackRight_curve Stack Pieces Base Gap slot s
   obtain ⟨⟨speed, speed_pos, lm, r₁, ⟨L⟩⟩, ⟨b, bpos, rm, r₂, ⟨B⟩⟩⟩ :=
     K.compatibleContourFiniteSlot_charts compact nonempty R no_boundary level higher M positive
       inner_disk beta acute contour starts W geometry vertex i t bounds
@@ -129,51 +190,15 @@ theorem compatibleContourFiniteSeam_planarBall
     rw [edist_dist, ENNReal.ofReal_mul (abs_nonneg _), mul_comm]
     change ENNReal.ofReal (dist t.val s.val) * _ = _
     rw [Real.dist_eq, abs_sub_comm]
-  have base_closed := K.compatibleContourBaseMark_isClosedEmbedding compact nonempty R no_boundary
-    level higher M positive inner_disk beta acute contour starts W Models
-  have gap_closed := K.compatibleContourGapMark_isClosedEmbedding compact nonempty R no_boundary
-    level higher M positive inner_disk beta acute contour starts W Models
   have unique := K.compatibleContourFiniteMarks_unique compact nonempty R no_boundary level
     higher M positive inner_disk beta acute contour starts W Models geometry vertex t bounds
-  have nodup := K.compatibleContourBankStack_nodup compact nonempty R no_boundary level higher M
-    positive inner_disk beta acute contour
-  have wrong_left (s : unitInterval) : (⟨_, right t⟩ : Total Pieces) ≠ ⟨_, left s⟩ := by
-    intro eq
-    have equal : LeftAt slot s = RightAt slot t :=
-      (left_label s).trans (eq.symm.trans (right_label t).symm)
-    have sides := bankStackEndpoint_eq_of_unique Stack Pieces Base Gap nodup slot t unique
-      true false slot s equal
-    cases congrArg Prod.fst sides
-  have wrong_right (s : unitInterval) : (⟨_, left t⟩ : Total Pieces) ≠ ⟨_, right s⟩ := by
-    intro eq
-    have equal : RightAt slot s = LeftAt slot t :=
-      (right_label s).trans (eq.symm.trans (left_label t).symm)
-    have sides := bankStackEndpoint_eq_of_unique Stack Pieces Base Gap nodup slot t unique
-      false true slot s equal
-    cases congrArg Prod.fst sides
-  have planar : HasMetricBallChart ℂ x :=
-    finiteBankPair_planarBall_of_charts Pieces left right t L B speed_pos bounds
-      (fun s => (lm t s).trans (arclength s)) (fun s => (rm t s).trans (arclength s))
-      (bankStackLeftCurve_closed Stack Pieces Base Gap base_closed gap_closed slot).isClosed_range
-      (bankStackRightCurve_closed Stack Pieces Base Gap base_closed gap_closed slot).isClosed_range
-      wrong_left wrong_right
-  have seams (p q : Total Pieces) : pair p q ↔ single p q := by
-    constructor
-    · rintro ⟨s, hp, hq⟩
-      exact ⟨(), s, hp.trans (left_label s).symm, hq.trans (right_label s).symm⟩
-    · rintro ⟨_, s, hp, hq⟩
-      exact ⟨s, hp.trans (left_label s), hq.trans (right_label s)⟩
-  let E := changeSeamsIsometryEquiv Pieces (R := pair) (S := single)
-    (fun p q h => point_eq_of_glue Pieces ((seams p q).mp h))
-    (fun p q h => point_eq_of_glue Pieces ((seams p q).mpr h))
-  have center : E x = point Pieces single (LeftAt slot t) :=
-    congrArg (point Pieces single) (left_label t).symm
-  obtain ⟨r, rpos, A, based⟩ := K.compatibleContourFiniteSeam_singleSlot_ball compact nonempty R
-    no_boundary level higher M positive inner_disk beta acute contour starts W Models geometry
-      vertex i t bounds
-  have core : HasMetricBallChart ℂ (point Pieces single (LeftAt slot t)) := by
-    rw [← center]
-    exact planar.isometryEquiv E
-  exact core.of_centered_ball_equiv rpos A based
+  have interior_time : t.val ∈ interior (Set.range (Subtype.val : unitInterval → ℝ)) := by
+    rw [Subtype.range_coe]
+    change t.val ∈ interior (Set.Icc (0 : ℝ) 1)
+    rwa [interior_Icc]
+  exact K.compatibleContourBankSlot_planarBall compact nonempty R no_boundary level higher M
+    positive inner_disk beta acute contour starts W geometry slot t Subtype.val L B speed_pos
+    interior_time (fun s => (lm t s).trans (arclength s))
+    (fun s => (rm t s).trans (arclength s)) unique
 
 end Unfoldings.ConvexRoof

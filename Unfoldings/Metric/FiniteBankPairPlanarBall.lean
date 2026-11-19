@@ -2,7 +2,7 @@ module
 
 public import Unfoldings.Metric.BankPairPlanarBall
 
-/-! Affine original finite-bank parameters match the two charts and fill the common diameter. -/
+/-! Affine bank parameters match two charts and fill the common diameter. -/
 
 @[expose] public section
 
@@ -10,38 +10,41 @@ open scoped ENNReal
 
 namespace Unfoldings.MetricGluing
 
-variable {I : Type*} (X : I → Type*) [∀ i, EMetricSpace (X i)] {i j : I}
-  (left : unitInterval → X i) (right : unitInterval → X j) (t : unitInterval)
+section Affine
+
+variable {I A : Type*} (X : I → Type*) [∀ i, EMetricSpace (X i)] {i j : I}
+  (left : A → X i) (right : A → X j) (t : A)
 
 local notation "Glue" => bankPairGlue X left right
 local notation "Center" => fun side : Bool =>
   Bool.rec (Sigma.mk i (left t)) (Sigma.mk j (right t)) side
 
-/-- Near a strict finite parameter, common signed arclength matches both chart sides
-and covers the entire short diameter. -/
-theorem finiteBankPair_planarBall {R speed : ℝ} (C : BankPairChart X Center R)
-    (speed_pos : 0 < speed) (bounds : 0 < t ∧ t < 1)
-    (left_metric : ∀ s, edist (left t) (left s) = ENNReal.ofReal (|(s : ℝ) - t| * speed))
+variable (param : A → ℝ)
+
+/-- At an interior parameter, common signed arclength matches both chart sides and covers
+the entire short diameter. -/
+theorem bankPair_planarBall_of_affine_coordinates {R speed : ℝ} (C : BankPairChart X Center R)
+    (speed_pos : 0 < speed) (interior_time : param t ∈ interior (Set.range param))
+    (left_metric : ∀ s, edist (left t) (left s) = ENNReal.ofReal (|param s - param t| * speed))
     (right_metric : ∀ s, edist (right t) (right s) =
-      ENNReal.ofReal (|(s : ℝ) - t| * speed))
+      ENNReal.ofReal (|param s - param t| * speed))
     (clear_left : ∀ s, ENNReal.ofReal R ≤ faceCost X ⟨j, right t⟩ ⟨i, left s⟩)
     (clear_right : ∀ s, ENNReal.ofReal R ≤ faceCost X ⟨i, left t⟩ ⟨j, right s⟩)
     (left_coord : ∀ s (_near : C.Near false ⟨i, left s⟩),
-      C.coordinates ⟨i, left s⟩ = ((((s : ℝ) - t) * speed : ℝ) : ℂ))
+      C.coordinates ⟨i, left s⟩ = (((param s - param t) * speed : ℝ) : ℂ))
     (right_coord : ∀ s (_near : C.Near true ⟨j, right s⟩),
-      C.coordinates ⟨j, right s⟩ = ((((s : ℝ) - t) * speed : ℝ) : ℂ)) :
+      C.coordinates ⟨j, right s⟩ = (((param s - param t) * speed : ℝ) : ℂ)) :
     HasMetricBallChart ℂ (point X Glue ⟨i, left t⟩) := by
-  let r := min (R / 4) (min (t.val * speed) ((1 - t.val) * speed))
-  have rpos : 0 < r :=
-    lt_min (div_pos C.positive (by norm_num))
-      (lt_min (mul_pos bounds.1 speed_pos) (mul_pos (sub_pos.mpr bounds.2) speed_pos))
+  obtain ⟨ε, εpos, interval⟩ := Metric.mem_nhds_iff.mp (mem_interior_iff_mem_nhds.mp interior_time)
+  let r := min (R / 4) (ε * speed)
+  have rpos : 0 < r := lt_min (div_pos C.positive (by norm_num)) (mul_pos εpos speed_pos)
   have small : 4 * r ≤ R := by
     have le : r ≤ R / 4 := min_le_left _ _
     linarith
   have included : r ≤ R := by linarith
-  have same (s : unitInterval) : edist (left t) (left s) = edist (right t) (right s) :=
+  have same (s : A) : edist (left t) (left s) = edist (right t) (right s) :=
     (left_metric s).trans (right_metric s).symm
-  have matched (s : unitInterval) (near : C.Near false ⟨i, left s⟩) :
+  have matched (s : A) (near : C.Near false ⟨i, left s⟩) :
       C.coordinates ⟨i, left s⟩ = C.coordinates ⟨j, right s⟩ := by
     have other : C.Near true ⟨j, right s⟩ := by
       change faceCost X ⟨j, right t⟩ ⟨j, right s⟩ < ENNReal.ofReal R
@@ -52,20 +55,18 @@ theorem finiteBankPair_planarBall {R speed : ℝ} (C : BankPairChart X Center R)
   intro z axis
   have radius : ‖z.val‖ < r := by simpa only [Metric.mem_ball, dist_zero_right] using z.property
   have real_radius : |z.val.re| < r := (Complex.abs_re_le_norm _).trans_lt radius
-  have first : r ≤ t.val * speed := (min_le_right _ _).trans (min_le_left _ _)
-  have last : r ≤ (1 - t.val) * speed := (min_le_right _ _).trans (min_le_right _ _)
-  have after : -t.val ≤ z.val.re / speed :=
-    (le_div_iff₀ speed_pos).mpr (by linarith [(abs_lt.mp real_radius).1])
-  have before : z.val.re / speed ≤ 1 - t.val :=
-    (div_le_iff₀ speed_pos).mpr (by linarith [(abs_lt.mp real_radius).2])
-  let s : unitInterval := ⟨t.val + z.val.re / speed, by linarith, by linarith⟩
-  have displacement : (s.val - t.val) * speed = z.val.re := by
-    dsimp [s]
-    rw [add_sub_cancel_left, div_mul_cancel₀ _ speed_pos.ne']
-  have named : (((s.val - t.val) * speed : ℝ) : ℂ) = z.val := by
+  have small_real : |z.val.re| < ε * speed := real_radius.trans_le (min_le_right _ _)
+  have time_near : param t + z.val.re / speed ∈ Metric.ball (param t) ε := by
+    rw [Metric.mem_ball, Real.dist_eq, add_sub_cancel_left, abs_div, abs_of_pos speed_pos,
+      div_lt_iff₀ speed_pos]
+    exact small_real
+  obtain ⟨s, time⟩ := interval time_near
+  have displacement : (param s - param t) * speed = z.val.re := by
+    rw [time, add_sub_cancel_left, div_mul_cancel₀ _ speed_pos.ne']
+  have named : (((param s - param t) * speed : ℝ) : ℂ) = z.val := by
     rw [displacement]
     exact Complex.ext (by simp) (by simpa only [Complex.ofReal_im] using axis.symm)
-  have radial : ENNReal.ofReal (|s.val - t.val| * speed) < ENNReal.ofReal R := by
+  have radial : ENNReal.ofReal (|param s - param t| * speed) < ENNReal.ofReal R := by
     rw [← abs_of_pos speed_pos, ← abs_mul, displacement]
     exact ENNReal.ofReal_lt_ofReal_iff_of_nonneg (abs_nonneg _)
       |>.mpr (real_radius.trans_le included)
@@ -89,5 +90,40 @@ theorem finiteBankPair_planarBall {R speed : ℝ} (C : BankPairChart X Center R)
   rw [patch_eq false _ lnear ((left_coord s lnear).trans named) _ rfl,
     patch_eq true _ rnear ((right_coord s rnear).trans named) _ rfl]
   exact point_eq_of_glue X ⟨s, rfl, rfl⟩
+
+
+end Affine
+
+section Finite
+
+variable {I : Type*} (X : I → Type*) [∀ i, EMetricSpace (X i)] {i j : I}
+  (left : unitInterval → X i) (right : unitInterval → X j) (t : unitInterval)
+
+local notation "Glue" => bankPairGlue X left right
+local notation "Center" => fun side : Bool =>
+  Bool.rec (Sigma.mk i (left t)) (Sigma.mk j (right t)) side
+
+/-- Near a strict finite parameter, common signed arclength matches both chart sides
+and covers the entire short diameter. -/
+theorem finiteBankPair_planarBall {R speed : ℝ} (C : BankPairChart X Center R)
+    (speed_pos : 0 < speed) (bounds : 0 < t ∧ t < 1)
+    (left_metric : ∀ s, edist (left t) (left s) = ENNReal.ofReal (|(s : ℝ) - t| * speed))
+    (right_metric : ∀ s, edist (right t) (right s) =
+      ENNReal.ofReal (|(s : ℝ) - t| * speed))
+    (clear_left : ∀ s, ENNReal.ofReal R ≤ faceCost X ⟨j, right t⟩ ⟨i, left s⟩)
+    (clear_right : ∀ s, ENNReal.ofReal R ≤ faceCost X ⟨i, left t⟩ ⟨j, right s⟩)
+    (left_coord : ∀ s (_near : C.Near false ⟨i, left s⟩),
+      C.coordinates ⟨i, left s⟩ = ((((s : ℝ) - t) * speed : ℝ) : ℂ))
+    (right_coord : ∀ s (_near : C.Near true ⟨j, right s⟩),
+      C.coordinates ⟨j, right s⟩ = ((((s : ℝ) - t) * speed : ℝ) : ℂ)) :
+    HasMetricBallChart ℂ (point X Glue ⟨i, left t⟩) := by
+  apply bankPair_planarBall_of_affine_coordinates X left right t Subtype.val C speed_pos
+    _ left_metric right_metric clear_left clear_right left_coord right_coord
+  rw [Subtype.range_coe]
+  change t.val ∈ interior (Set.Icc (0 : ℝ) 1)
+  rw [interior_Icc]
+  exact bounds
+
+end Finite
 
 end Unfoldings.MetricGluing
