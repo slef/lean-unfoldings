@@ -496,6 +496,11 @@ nonoverlap and counting remain to be proved.
   graft, so the classification holds for metric equality as well as declared seam
   chains. Every competing bank endpoint recovers the same original slot and time;
   see [`CompatibleContourGraftExactness`](../Unfoldings/Roof/CompatibleContourGraftExactness.lean).
+- [x] Prove that every closed bank domain incident to an ordinary finite class has
+  its original consecutive slot. Retain that whole attachment and all internal seams;
+  removing every other bank attachment preserves a whole small metric ball. The
+  statement covers every original raw-cell representative; see
+  [`CompatibleContourFiniteSeamExcision`](../Unfoldings/Roof/CompatibleContourFiniteSeamExcision.lean).
 - [ ] Identify the actual local saved-frontier fan at each bank-seam/vertex class and
   prove its whole metric-ball chart; cell interiors, gap interiors and roof points
   outside the forest are covered.

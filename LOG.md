@@ -2,6 +2,24 @@
 
 ## Session Log
 
+### 2026-11-19 — excise other bank attachments at ordinary finite seams
+
+- Added a general restriction of finite closed seams to any selected subfamily,
+  retaining literal original domains, maps and closed isometric embeddings.
+  Keeping all incident domains gives a canonical whole-ball forget isometry.
+- At an actual ordinary finite graft class, extracted the original parameter from
+  each incident bank-cell domain and used metric endpoint recovery to prove its
+  original consecutive slot is exactly the named slot.
+- Retaining all internal seams and just that whole bank attachment therefore leaves
+  a whole sufficiently small metric ball unchanged. Every original raw-cell
+  representative is included; no incidence certificate is assumed.
+- Verification: successful actual cache retrieval earlier this session and final
+  full `lake build` (6,484 jobs). Standard-axiom audit: 20,456 unfolding and 7,243
+  pinned planar-topology declarations; both abstract-independence checks passed.
+- Existing theorem statements and proof limits are unchanged; no temporary worktrees.
+  Remaining: identify the reduced ball with its planar fan, handle vertices/terminal
+  joins, and derive simple connectivity and the global nonoverlap theorem.
+
 ### 2026-11-19 — classify actual ordinary finite metric seam classes
 
 - Separated original bank-stack addresses combinatorially. Stacks without repeated

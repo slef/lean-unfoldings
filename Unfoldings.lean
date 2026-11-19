@@ -2564,3 +2564,6 @@ public import Unfoldings.Metric.BankStackLocalClasses
 public import Unfoldings.Metric.MappedBankGraftExactness
 public import Unfoldings.Roof.CompatibleContourFiniteSeamClasses
 public import Unfoldings.Roof.CompatibleContourGraftExactness
+
+public import Unfoldings.Metric.ClosedSeamRestriction
+public import Unfoldings.Roof.CompatibleContourFiniteSeamExcision

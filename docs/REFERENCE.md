@@ -4312,3 +4312,12 @@ corners and does not yet identify their widths with the actual retained cap fan.
   derives piece-level exactness of the actual full metric graft. Ordinary finite
   seam classes have exactly two original intrinsic representatives even for metric
   equality, and competing bank endpoints recover the original slot and time.
+
+- [`ClosedSeamRestriction`](../Unfoldings/Metric/ClosedSeamRestriction.lean):
+  a selected subfamily keeps the original closed domains and isometries literally.
+  If every incident seam is retained, restoring all other seams preserves a whole
+  sufficiently small metric ball through the canonical forget map.
+- [`CompatibleContourFiniteSeamExcision`](../Unfoldings/Roof/CompatibleContourFiniteSeamExcision.lean):
+  every bank domain incident to an ordinary finite graft class belongs to its named
+  original consecutive slot. Retaining that slot and all internal seams preserves
+  a whole local metric ball, including every raw-cell representative of the class.

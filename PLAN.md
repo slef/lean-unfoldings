@@ -1173,6 +1173,8 @@ selection and Euler counting follow.
   Separate all strict finite marks from terminal tails by the original completion height.
 - [x] Classify each ordinary finite bank seam as exactly two consecutive intrinsic
   marks, including equality in the actual graft metric and recovery of its seam parameter.
+- [x] At ordinary finite seam classes, classify incident original closed bank domains
+  and preserve a whole metric ball after removing every other bank attachment.
 - [ ] Match saved-frontier curves to the comparison fans and local surgery models.
 - [x] Construct complete unbounded roof cut metrics with actual planar cells,
   boundary-only seams and exact metric-ball restoration away from closed cuts.
