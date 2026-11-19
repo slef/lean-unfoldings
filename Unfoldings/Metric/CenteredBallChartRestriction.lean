@@ -41,4 +41,13 @@ def restrictCenteredBallChart {x : X} {a : Y} {R r : ℝ}
     (restrictCenteredBallChart positive small B center z).val =
       (B ⟨z.val, z.property.trans_le (ENNReal.ofReal_le_ofReal small)⟩).val := rfl
 
+/-- An isometry of model spaces also carries the complete metric-ball chart. -/
+theorem HasMetricBallChart.modelIsometryEquiv {F H : Type*} [MetricSpace F] [MetricSpace H]
+    {x : X} (regular : HasMetricBallChart F x) (A : F ≃ᵢ H) :
+    HasMetricBallChart H x := by
+  obtain ⟨r, positive, y, ⟨chart⟩⟩ := regular
+  let target := (metricBallEBallEquiv y r).trans
+    ((isometryEquivEBall A y (ENNReal.ofReal r)).trans (metricBallEBallEquiv (A y) r).symm)
+  exact ⟨r, positive, A y, ⟨chart.trans target⟩⟩
+
 end Unfoldings

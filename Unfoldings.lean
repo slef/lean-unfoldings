@@ -2625,3 +2625,7 @@ public import Unfoldings.Metric.JoinedBankParameters
 public import Unfoldings.Roof.CompatibleContourJoinBankData
 public import Unfoldings.Roof.CompatibleContourJoinedBankCharts
 public import Unfoldings.Roof.CompatibleContourTerminalJoinGluing
+
+public import Unfoldings.Roof.CompatibleContourGapSourceSector
+public import Unfoldings.Roof.CompatibleContourGapBends
+public import Unfoldings.Geometry.OrientedBankGapBendChart

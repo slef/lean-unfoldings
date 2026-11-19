@@ -68,8 +68,8 @@ local notation "RollAt[" q "," h "," i "," hf "," n "," hn "]" => TriangleComple
     (SpatialEnvelope.ConstrainedTriangulation.toTriangulation T)) ChainAt[q,h,i,hf,n,hn]
 
 /-- No bank, margin, opening list, tail bound or curvature budget is supplied: a single
-positive tilt constructs the complete local gap for every actual positive fresh source. -/
-theorem exists_uniform_freshSource_gap_geometry {b : ℝ} (bpos : 0 < b) (ratio : a ≤ b)
+positive tilt constructs the complete local gap and retains its quantitative bank controls. -/
+theorem exists_uniform_freshSource_gap_geometry_with_controls {b : ℝ} (bpos : 0 < b) (ratio : a ≤ b)
     (upper : ∀ p ∈ slopes, ‖p‖ ≤ b)
     (small : 2 * annularHistoryAngle (a / b) β < Real.pi / 2) :
     ∃ θ ∈ Set.Ioo (0 : ℝ) (Real.pi / 2), ∀ ψ ∈ Set.Ioc (0 : ℝ) θ,
@@ -84,10 +84,16 @@ theorem exists_uniform_freshSource_gap_geometry {b : ℝ} (bpos : 0 < b) (ratio 
         (_curved : 0 < (T).pairedComplex.interiorAngularDefect Set.univ
           SourceAt[contour,j.castSucc]),
         let bank := (RollAt[contour,starts,j,fresh,m,span]).terminalEdgeRay
-        let opened := bank.openings (PolygonalChain.castOpenings span
+        let events := PolygonalChain.castOpenings span
           ((T).pairedComplex.contourRootwardOpenings (Fcut).selection contour j.succ
-            SourceAt[contour,j.castSucc]))
-        OrientedBankGap bank opened := by
+            SourceAt[contour,j.castSucc])
+        OrientedBankGap bank (bank.openings events) ∧ ∃ γ : ℝ, 0 < γ ∧ γ ≤ 1 ∧
+          3 * PolygonalChain.openingBudget events < γ ^ 2 ∧
+            ∀ (p : Fin (m + 2)) (i : Fin (m + 1)), p.val ≤ i.val →
+              γ * (‖bank.chain.vertex i.castSucc - bank.chain.vertex p‖ *
+                  ‖bank.chain.edge i‖) ≤
+                inner ℝ (bank.chain.vertex i.castSucc - bank.chain.vertex p)
+                  (bank.chain.edge i) := by
   let γ := Real.cos (2 * annularHistoryAngle (a / b) β) / 4
   have gamma_positive : 0 < γ := div_pos (fine_annular_radial_margin_pos small) (by norm_num)
   have cosine := Real.cos_le_one (2 * annularHistoryAngle (a / b) β)
@@ -110,11 +116,43 @@ theorem exists_uniform_freshSource_gap_geometry {b : ℝ} (bpos : 0 < b) (ratio 
   have budget : 3 * (T).pairedComplex.totalInteriorAngularDefect Set.univ < γ ^ 2 := by
     linarith [total.trans_lt curvature]
   let gamma_nn : ℝ≥0 := ⟨γ, gamma_positive.le⟩
-  exact (cap).sourceBank_orientedGap (Fcut).selection (Fcut).boundary_roots contour starts
+  have original_margin := margin ψ ⟨psi_bounds.1, psi_phi⟩ normal contour starts j fresh m span
+  refine ⟨(cap).sourceBank_orientedGap (Fcut).selection (Fcut).boundary_roots contour starts
     j fresh curved m span RollAt[contour,starts,j,fresh,m,span]
     ((T).pairedComplex.boundaryChainRoll_edge_ne_zero
       ChainAt[contour,starts,j,fresh,m,span] (Fin.last m))
-    gamma_nn gamma_positive gamma_small budget
-    (margin ψ ⟨psi_bounds.1, psi_phi⟩ normal contour starts j fresh m span)
+    gamma_nn gamma_positive gamma_small budget original_margin, ?_⟩
+  refine ⟨γ, gamma_positive, gamma_small, ?_, original_margin⟩
+  rw [PolygonalChain.castOpenings_budget]
+  exact (mul_le_mul_of_nonneg_left
+    ((cap).contourRootwardOpenings_budget_le (Fcut).selection contour j.succ
+      SourceAt[contour,j.castSucc]) (by norm_num)).trans_lt budget
+
+/-- No bank, margin, opening list, tail bound or curvature budget is supplied: a single
+positive tilt constructs the complete local gap for every actual positive fresh source. -/
+theorem exists_uniform_freshSource_gap_geometry {b : ℝ} (bpos : 0 < b) (ratio : a ≤ b)
+    (upper : ∀ p ∈ slopes, ‖p‖ ≤ b)
+    (small : 2 * annularHistoryAngle (a / b) β < Real.pi / 2) :
+    ∃ θ ∈ Set.Ioo (0 : ℝ) (Real.pi / 2), ∀ ψ ∈ Set.Ioc (0 : ℝ) θ,
+      (∀ i, Real.cos ψ ≤ (M.plane i).normal 2) →
+      ∀ (contour : (T).pairedComplex.BoundaryContour
+          ((T).pairedComplex.selectedRetain (Fcut).selection))
+        (starts : (T).pairedComplex.contourOriginalVertex (Fcut).selection contour 0 ∈
+          (Fcut).parents.roots) (j : Fin contour.length)
+        (fresh : SourceAt[contour,j.castSucc] ∉
+          ((T).pairedComplex.contourFrontier (Fcut).selection contour j.castSucc).processed)
+        (m : ℕ) (span : (Fcut).parents.distanceToRoot SourceAt[contour,j.castSucc] = m + 1)
+        (_curved : 0 < (T).pairedComplex.interiorAngularDefect Set.univ
+          SourceAt[contour,j.castSucc]),
+        let bank := (RollAt[contour,starts,j,fresh,m,span]).terminalEdgeRay
+        let opened := bank.openings (PolygonalChain.castOpenings span
+          ((T).pairedComplex.contourRootwardOpenings (Fcut).selection contour j.succ
+            SourceAt[contour,j.castSucc]))
+        OrientedBankGap bank opened := by
+  obtain ⟨θ, bounds, gaps⟩ := K.exists_uniform_freshSource_gap_geometry_with_controls compact
+    nonempty R no_boundary level higher M positive inner_disk beta acute bpos ratio upper small
+  refine ⟨θ, bounds, ?_⟩
+  intro ψ psi_bounds normal contour starts j fresh m span curved
+  exact (gaps ψ psi_bounds normal contour starts j fresh m span curved).1
 
 end Unfoldings.ConvexRoof

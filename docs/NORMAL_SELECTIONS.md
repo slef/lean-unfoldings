@@ -543,6 +543,13 @@ nonoverlap and counting remain to be proved.
   Excise every other bank seam and glue the opposite signed half-plane charts
   to obtain a whole planar ball in the actual graft; see
   [`CompatibleContourTerminalJoinGluing`](../Unfoldings/Roof/CompatibleContourTerminalJoinGluing.lean).
+- [x] Compute the original defect of each canonical gap's source sector and
+  the exact real turn change at every interior bend. Under one uniform tilt,
+  derive the two occupied bend apertures and their intrinsic centered charts
+  at named edge marks. See
+  [source sectors](../Unfoldings/Roof/CompatibleContourGapSourceSector.lean),
+  [bend apertures](../Unfoldings/Roof/CompatibleContourGapBends.lean), and
+  [bend charts](../Unfoldings/Geometry/OrientedBankGapBendChart.lean).
 - [ ] Identify actual saved-frontier fans at finite forest vertices and prove their
   whole metric-ball charts. Cell interiors, gap interiors, roof points outside the
   forest, and all seams away from finite forest vertices are covered.

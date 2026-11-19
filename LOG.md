@@ -2,6 +2,20 @@
 
 ## Session Log
 
+### 2026-11-19 — compute the actual finite gap sector angles
+
+- Derived the canonical source sector and its exact original defect angle from
+  the contour opening history and the gap's occupied orientation.
+- Proved that scaling the opening list through the whole unit interval keeps
+  the incident edge bearings strictly radial. This fixes the real turn lift
+  and gives the exact sum of the two occupied bend apertures.
+- Retained the original all-anchor margin and curvature budget under one
+  uniform tilt. Derived the aperture formula for every canonical gap bend and
+  centered intrinsic sector charts at the named finite gap marks.
+- Full `lake build` passed (6,539 jobs). The standard-axiom audit covered
+  20,864 unfolding and 7,243 pinned planar-topology declarations.
+  Both abstract-independence checks passed.
+
 ### 2026-11-19 — prove planar balls at all actual terminal joins
 
 - Classified the joined rim class as its exact pair of intrinsic marks, each
