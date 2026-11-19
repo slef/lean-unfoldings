@@ -1179,7 +1179,13 @@ selection and Euler counting follow.
   derive centered whole-ball comparisons at ordinary finite seams without a cell choice.
 - [x] Give literal canonical gap edge marks centered whole half-plane charts, retaining
   occupied sides, original edge frames, speed and opposite bank-parameter directions.
-- [ ] Match saved-frontier curves to the comparison fans and local surgery models.
+- [x] Give actual strict finite roof-bank marks centered whole occupied half-plane
+  charts preserving original face coordinates, spatial placement and bank parameters.
+- [ ] Glue the matched ordinary bank half-plane charts in the actual single-slot
+  graft, including two banks of one roof piece, and transfer its planar ball to the full graft.
+- [ ] Classify positive terminal bank classes and construct their whole planar balls.
+- [ ] Identify actual saved-frontier vertex and terminal-join fans with their
+  original comparison/surgery models and prove the remaining local planar charts.
 - [x] Construct complete unbounded roof cut metrics with actual planar cells,
   boundary-only seams and exact metric-ball restoration away from closed cuts.
 - [x] Construct complete unbounded cuts aligned to the actual compatible forest

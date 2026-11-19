@@ -512,9 +512,18 @@ nonoverlap and counting remain to be proved.
   is negative real in its occupied frame; see
   [`OrientedBankGapEdgeCharts`](../Unfoldings/Geometry/OrientedBankGapEdgeCharts.lean) and
   [`OrientedBankGapEdgeParameters`](../Unfoldings/Geometry/OrientedBankGapEdgeParameters.lean).
-- [ ] Identify the actual local saved-frontier fan at each bank-seam/vertex class and
-  prove its whole metric-ball chart; cell interiors, gap interiors and roof points
-  outside the forest are covered.
+- [x] Give original triangle-bank half-balls their whole occupied half-plane metrics,
+  preserving centers, bank points and spatial placements. Transport these charts to
+  literal whole-roof parent-bank marks below the rim, retaining centers and every
+  nearby original bank parameter; see
+  [`CompatibleContourParentMarkCharts`](../Unfoldings/Roof/CompatibleContourParentMarkCharts.lean).
+- [ ] Glue the matched ordinary bank half-plane charts in the actual single-slot
+  graft and transfer the resulting planar ball to the full graft. Both banks may
+  belong to the same roof piece; individual charts and a ball comparison are proved,
+  but the chart across their attachment is still open.
+- [ ] Classify positive terminal bank classes and their planar balls, then identify
+  actual saved-frontier vertex and terminal-join fans and prove their whole metric-ball
+  charts. Cell interiors, gap interiors and roof points outside the forest are covered.
 - [ ] Derive simple connectivity from the actual slit/gap attachments and apply the
   global planar-isometry theorem. Its finite closed-cell argument supplies the
   needed global completeness; a separate end-height certificate is unnecessary.

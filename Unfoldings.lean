@@ -2576,3 +2576,7 @@ public import Unfoldings.Cone.PhysicalSectorChart
 public import Unfoldings.Geometry.RadialCornerFrameParameters
 public import Unfoldings.Geometry.OrientedBankGapEdgeCharts
 public import Unfoldings.Geometry.OrientedBankGapEdgeParameters
+
+public import Unfoldings.Geometry.EdgeHalfPlaneMetric
+public import Unfoldings.Boundary.HalfPlaneMetric
+public import Unfoldings.Roof.CompatibleContourParentMarkCharts

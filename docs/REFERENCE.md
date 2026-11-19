@@ -4347,3 +4347,14 @@ corners and does not yet identify their widths with the actual retained cap fan.
   physical charts keep every nearby original edge parameter. The first bank has
   real displacement `(s-t)*length`; the second has `(t-s)*length`. No chart
   normalization or parameter-matching certificate is assumed.
+
+- [`EdgeHalfPlaneMetric`](../Unfoldings/Geometry/EdgeHalfPlaneMetric.lean):
+  an original triangle edge half-ball is literally a whole metric ball of its
+  occupied closed supporting half-plane, with the original edge point as center.
+- [`Boundary/HalfPlaneMetric`](../Unfoldings/Boundary/HalfPlaneMetric.lean):
+  original bank charts preserve whole half-plane balls, centers, regular bank-point
+  coordinates, and the exact original spatial face placement.
+- [`CompatibleContourParentMarkCharts`](../Unfoldings/Roof/CompatibleContourParentMarkCharts.lean):
+  constructs centered whole occupied half-plane charts at literal strict finite
+  roof-bank marks. The model keeps the original supporting face coordinates and
+  physical placement. Every nearby original bank parameter is retained exactly.

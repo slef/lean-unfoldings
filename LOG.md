@@ -2,6 +2,29 @@
 
 ## Session Log
 
+### 2026-11-19 — construct actual whole-roof bank half-plane charts
+
+- Expressed each original triangle edge half-ball as a whole metric ball of its
+  actual occupied supporting half-plane. Original boundary charts retain centers,
+  regular bank-point coordinates and the exact spatial face placement.
+- Derived centered whole half-plane charts at literal strict finite parent-bank
+  marks in the original whole roof cut. The existing strict height bound supplies
+  the actual finite-to-whole neighborhood; no regularity certificate is assumed.
+- Proved that every nearby original finite-bank parameter keeps its literal original
+  face coordinates in any such physical chart, including closed endpoint parameters.
+- Updated the remaining checklist to distinguish the still-open gluing of ordinary
+  bank charts from positive terminal classes and vertex/terminal-join fan charts.
+  The individual roof/gap charts and centered single-bank ball comparison are proved;
+  the planar chart across the attachment remains open.
+- Verification: actual cache retrieval succeeded earlier this session. The first
+  final build session became unavailable before an exit result was returned; reran
+  the actual full build and observed exit 0 (6,494 jobs). Standard-axiom audit:
+  20,510 unfolding and 7,243 pinned planar-topology declarations; both independent
+  abstract checks passed. Only existing warnings were replayed.
+- No committed theorem statements, proof limits or dependency revisions changed.
+  No temporary worktrees were created. Global graft/nonoverlap remains unfinished:
+  attachment charts, terminal/vertex fans, and simple connectivity are still required.
+
 ### 2026-11-19 — retain actual canonical bank edge charts and parameters
 
 - Identified both literal canonical gap edge marks with their actual source-radius
