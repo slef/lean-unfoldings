@@ -559,6 +559,11 @@ nonoverlap and counting remain to be proved.
   whole tail arclengths in the [source-only graft](../Unfoldings/Roof/CompatibleContourSourceOnlyGraft.lean).
   The [prefix stacks](../Unfoldings/Complex/ContourGapStackSteps.lean)
   record the new head insertion on exactly the source's ancestor path.
+- [x] Give the revised graft its
+  [closed-cell seam presentation](../Unfoldings/Roof/CompatibleContourSourceOnlyGraftCells.lean).
+  The [original physical labels](../Unfoldings/Roof/CompatibleContourSourceOnlyLabels.lean)
+  prove exactness and local path connectivity. Every original cell interior
+  has a whole planar metric ball.
 - [ ] Identify actual cyclic fans in the source-only graft and prove whole
   metric-ball charts. Reuse the generic strip and sector charts with the
   source-only attachment maps.

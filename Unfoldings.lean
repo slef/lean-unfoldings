@@ -2633,3 +2633,5 @@ public import Unfoldings.Geometry.BankGapBendAddresses
 public import Unfoldings.Roof.CompatibleContourSourceOnlyGaps
 public import Unfoldings.Complex.ContourGapStackSteps
 public import Unfoldings.Roof.CompatibleContourSourceOnlyGraft
+public import Unfoldings.Roof.CompatibleContourSourceOnlyGraftCells
+public import Unfoldings.Roof.CompatibleContourSourceOnlyLabels

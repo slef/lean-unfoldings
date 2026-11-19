@@ -2,6 +2,18 @@
 
 ## Session Log
 
+### 2026-11-19 — prove exact closed seams for the source-only graft
+
+- Built the closed-cell seam presentation with the original roof cells,
+  canonical gap cells, finite interval banks, and whole half-line banks.
+  It has the same route metric and attaches only at original cell boundaries.
+- Physical labels agree across every seam and have finite fibers in each
+  original cell. Derived exactness, quotient topology, local path connectivity,
+  and whole planar metric balls in original cell interiors.
+- Full `lake build` passed (6,549 jobs). The standard-axiom audit covered
+  20,998 unfolding and 7,243 pinned planar-topology declarations.
+  Both abstract-independence checks passed.
+
 ### 2026-11-19 — derive source-only graft banks for the saved frontier
 
 - Identified an extra processed subtree charge in the former cumulative-opening
