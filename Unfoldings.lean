@@ -2609,3 +2609,8 @@ public import Unfoldings.Geometry.OrientedBankGapTailHalfPlane
 public import Unfoldings.Roof.CompatibleTerminalNormalizedChart
 public import Unfoldings.Roof.CompatibleContourTerminalBankCharts
 public import Unfoldings.Roof.CompatibleContourTerminalSeamPlanar
+
+public import Unfoldings.Geometry.OpeningStraightTail
+public import Unfoldings.Roof.CompatibleContourGapStraightTail
+public import Unfoldings.Geometry.OrientedBankGapJoinChart
+public import Unfoldings.Geometry.StraightGapJoinBank

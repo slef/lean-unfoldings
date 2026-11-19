@@ -535,6 +535,10 @@ nonoverlap and counting remain to be proved.
   forward arclength, so the single-slot ball gives a planar ball in the full graft;
   see [`CompatibleContourTerminalSeamClasses`](../Unfoldings/Roof/CompatibleContourTerminalSeamClasses.lean)
   and [`CompatibleContourTerminalSeamPlanar`](../Unfoldings/Roof/CompatibleContourTerminalSeamPlanar.lean).
+- [x] Derive that the last finite edge and true tail of each canonical gap bank
+  continue straight through the rim. Their centered half-plane charts keep one
+  signed arclength parameter across the join; see
+  [`StraightGapJoinBank`](../Unfoldings/Geometry/StraightGapJoinBank.lean).
 - [ ] Identify actual saved-frontier vertex and terminal-join fans and prove their
   whole metric-ball charts. Cell interiors, gap interiors, roof points outside the
   forest, and the open finite and infinite seams are covered.

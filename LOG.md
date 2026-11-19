@@ -2,6 +2,18 @@
 
 ## Session Log
 
+### 2026-11-19 — derive straight canonical gap joins at the rim
+
+- Proved that nonroot sources reaching the same fine-mesh root share its last
+  child. The rim root has zero interior defect, so every positive opening
+  rotates the last finite bank edge and its entire tail together.
+- The straight join has an actual centered half-plane ball. A single signed
+  parameter runs through the finite edge and the tail, with the same original
+  arclength in the intrinsic metric and in the chart.
+- Full `lake build` passed (6,523 jobs). The standard-axiom audit covered
+  20,736 unfolding and 7,243 pinned planar-topology declarations.
+  Both abstract-independence checks passed.
+
 ### 2026-11-19 — prove planar balls across actual positive terminal seams
 
 - Identified the last finite edge of each original ray from the conforming mesh.
