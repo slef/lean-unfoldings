@@ -2,6 +2,21 @@
 
 ## Session Log
 
+### 2026-11-19 — prove planar balls at all actual terminal joins
+
+- Classified the joined rim class as its exact pair of intrinsic marks, each
+  with its finite endpoint and tail-start address. Every incident bank domain
+  belongs to one of those two consecutive slots.
+- Kept the two slots and all original internal seams, and proved the small ball
+  isometrically agrees with the metric of the single signed bank pair.
+  Oppositely occupied half-plane charts give a whole planar ball there and
+  hence in the actual full graft.
+- Full `lake build` passed (6,534 jobs). The standard-axiom audit covered
+  20,835 unfolding and 7,243 pinned planar-topology declarations.
+  Both abstract-independence checks passed.
+- Remaining: saved-frontier fans at finite forest vertices, simple connectivity,
+  and the global planar isometry.
+
 ### 2026-11-19 — match original charts and addresses across the rim
 
 - The last finite roof bank and its entire tail use one signed arclength

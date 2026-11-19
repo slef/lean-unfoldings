@@ -539,9 +539,13 @@ nonoverlap and counting remain to be proved.
   continue straight through the rim. Their centered half-plane charts keep one
   signed arclength parameter across the join; see
   [`StraightGapJoinBank`](../Unfoldings/Geometry/StraightGapJoinBank.lean).
-- [ ] Identify actual saved-frontier vertex and terminal-join fans and prove their
+- [x] Classify each terminal join by its last finite slot and its tail slot.
+  Excise every other bank seam and glue the opposite signed half-plane charts
+  to obtain a whole planar ball in the actual graft; see
+  [`CompatibleContourTerminalJoinGluing`](../Unfoldings/Roof/CompatibleContourTerminalJoinGluing.lean).
+- [ ] Identify actual saved-frontier fans at finite forest vertices and prove their
   whole metric-ball charts. Cell interiors, gap interiors, roof points outside the
-  forest, and the open finite and infinite seams are covered.
+  forest, and all seams away from finite forest vertices are covered.
 - [ ] Derive simple connectivity from the actual slit/gap attachments and apply the
   global planar-isometry theorem. Its finite closed-cell argument supplies the
   needed global completeness; a separate end-height certificate is unnecessary.

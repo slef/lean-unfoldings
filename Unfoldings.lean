@@ -2617,3 +2617,11 @@ public import Unfoldings.Geometry.StraightGapJoinBank
 public import Unfoldings.Geometry.BankGapJoinAddresses
 public import Unfoldings.Roof.CompatibleContourRoofJoinChart
 public import Unfoldings.Roof.CompatibleContourTerminalJoinMarks
+public import Unfoldings.Metric.BankStackAddressPredicate
+public import Unfoldings.Roof.CompatibleContourTerminalJoinEndpoints
+public import Unfoldings.Roof.CompatibleContourSelectedSlotsGraft
+public import Unfoldings.Roof.CompatibleContourTerminalJoinExcision
+public import Unfoldings.Metric.JoinedBankParameters
+public import Unfoldings.Roof.CompatibleContourJoinBankData
+public import Unfoldings.Roof.CompatibleContourJoinedBankCharts
+public import Unfoldings.Roof.CompatibleContourTerminalJoinGluing
