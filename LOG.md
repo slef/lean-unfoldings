@@ -2,6 +2,19 @@
 
 ## Session Log
 
+### 2026-11-19 — prove planar balls across all actual strict finite seams
+
+- Normalized the roof and canonical gap charts to forward original arclength on
+  the real axis. Either occupied half-plane is available on each bank.
+- Used the original mark labels, closed embeddings, and exact common bank metric
+  to put consecutive banks on opposite sides and glue their charts. The centered
+  single-slot comparison gives a whole planar metric ball in the full graft.
+- Full `lake build` passed (6,511 jobs), following successful cache retrieval.
+  The standard-axiom audit covered 20,669 unfolding and 7,243 pinned planar-topology
+  declarations. Both abstract-independence checks passed.
+- The remaining points on the graft are positive tails and the vertex and
+  terminal joins. Simple connectivity and global nonoverlap also remain open.
+
 ### 2026-11-19 — glue two directed half-plane charts across a finite bank
 
 - Constructed a planar ball in the intrinsic route metric when two closed finite

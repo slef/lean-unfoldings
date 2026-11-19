@@ -2592,3 +2592,11 @@ public import Unfoldings.Metric.BankPairPlanarBall
 public import Unfoldings.Metric.FiniteBankPairPlanarBall
 public import Unfoldings.Metric.BankHalfPlaneChart
 public import Unfoldings.Metric.FiniteBankHalfPlaneGluing
+
+public import Unfoldings.Metric.BankHalfPlaneFrames
+public import Unfoldings.Cone.HalfTurnMetric
+public import Unfoldings.Geometry.OrientedBankGapHalfPlane
+public import Unfoldings.Geometry.DirectedEdgeHalfPlaneFrame
+public import Unfoldings.Roof.CompatibleContourParentMarkHalfPlane
+public import Unfoldings.Roof.CompatibleContourFiniteBankCharts
+public import Unfoldings.Roof.CompatibleContourFiniteSeamPlanar

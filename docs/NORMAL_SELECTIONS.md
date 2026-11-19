@@ -525,10 +525,10 @@ nonoverlap and counting remain to be proved.
 - [x] Construct a planar ball across any two closed finite banks with equal forward
   arclength and opposite occupied half-planes, allowing both banks in one piece; see
   [`FiniteBankHalfPlaneGluing`](../Unfoldings/Metric/FiniteBankHalfPlaneGluing.lean).
-- [ ] Glue the matched ordinary bank half-plane charts in the actual single-slot
-  graft and transfer the resulting planar ball to the full graft. Both banks may
-  belong to the same roof piece; individual charts and a ball comparison are proved,
-  but the chart across their attachment is still open.
+- [x] Glue the actual canonical gap and roof charts across every strict finite bank
+  attachment. Transfer the planar ball from the single slot to the full graft, including
+  slots where both banks lie in the roof; see
+  [`CompatibleContourFiniteSeamPlanar`](../Unfoldings/Roof/CompatibleContourFiniteSeamPlanar.lean).
 - [ ] Classify positive terminal bank classes and their planar balls, then identify
   actual saved-frontier vertex and terminal-join fans and prove their whole metric-ball
   charts. Cell interiors, gap interiors and roof points outside the forest are covered.
