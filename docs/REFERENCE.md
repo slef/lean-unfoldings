@@ -4333,3 +4333,17 @@ corners and does not yet identify their widths with the actual retained cap fan.
   every ordinary finite graft point has a centered whole metric ball isometric to
   a ball of its original single-bank-pair graft. The API has no cell representative
   premise and also covers empty stacks and two banks of the same original roof.
+
+- [`PhysicalSectorChart`](../Unfoldings/Cone/PhysicalSectorChart.lean):
+  whole physical charts of genuine angular fans preserve their original centers.
+  Applies to convex, half-plane and reentrant corner models below a full turn.
+- [`RadialCornerFrameParameters`](../Unfoldings/Geometry/RadialCornerFrameParameters.lean):
+  real arclength in the original left/right frames follows the forward/reversed
+  original bank vector exactly, at either sign of the parameter.
+- [`OrientedBankGapEdgeCharts`](../Unfoldings/Geometry/OrientedBankGapEdgeCharts.lean):
+  literal canonical bank marks equal their original source-radius points and have
+  centered whole half-plane charts in their original occupied edge frames.
+- [`OrientedBankGapEdgeParameters`](../Unfoldings/Geometry/OrientedBankGapEdgeParameters.lean):
+  physical charts keep every nearby original edge parameter. The first bank has
+  real displacement `(s-t)*length`; the second has `(t-s)*length`. No chart
+  normalization or parameter-matching certificate is assumed.

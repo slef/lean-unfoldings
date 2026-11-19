@@ -2,6 +2,24 @@
 
 ## Session Log
 
+### 2026-11-19 — retain actual canonical bank edge charts and parameters
+
+- Identified both literal canonical gap edge marks with their actual source-radius
+  bank points and transferred the constructed occupied-side half-plane charts.
+- Proved that a physical whole sector chart preserves its actual center whenever
+  the angular width is below a full turn. Both canonical bank charts are now
+  explicitly centered while retaining their original physical edge frames.
+- Proved the exact real arclength formulas for those frames. Every original bank
+  parameter within the chart has displacement `(s-t)*length` on the first bank and
+  `(t-s)*length` on the second. The reversal records its actual occupied right side;
+  no parameter or orientation compatibility certificate is supplied.
+- Verification: successful actual cache retrieval earlier in the session and full
+  `lake build` (6,491 jobs). Standard-axiom audit: 20,487 unfolding and 7,243 pinned
+  planar-topology declarations; both abstract-independence checks passed.
+- Committed statements, proof limits and dependencies are unchanged; no temporary
+  worktrees. Remaining: glue these local bank charts to the actual single-bank ball,
+  handle vertex/terminal fans, and prove simple connectivity and global nonoverlap.
+
 ### 2026-11-19 — identify actual finite seam balls with the single-bank graft
 
 - Proved that restricting original cell seams to all internal attachments and one

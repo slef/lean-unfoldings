@@ -1177,6 +1177,8 @@ selection and Euler counting follow.
   and preserve a whole metric ball after removing every other bank attachment.
 - [x] Identify the reduced cell model with the original one-bank-pair graft and
   derive centered whole-ball comparisons at ordinary finite seams without a cell choice.
+- [x] Give literal canonical gap edge marks centered whole half-plane charts, retaining
+  occupied sides, original edge frames, speed and opposite bank-parameter directions.
 - [ ] Match saved-frontier curves to the comparison fans and local surgery models.
 - [x] Construct complete unbounded roof cut metrics with actual planar cells,
   boundary-only seams and exact metric-ball restoration away from closed cuts.

@@ -506,6 +506,12 @@ nonoverlap and counting remain to be proved.
   its center into that intrinsic model. The whole-ball API requires no cell choice
   and includes empty stacks with two banks of the same roof; see
   [`CompatibleContourFiniteSeamBalls`](../Unfoldings/Roof/CompatibleContourFiniteSeamBalls.lean).
+- [x] Transfer the constructed half-plane charts to literal canonical gap edge marks
+  and prove their centers are preserved. Physical charts retain original bank speed:
+  forward first-bank displacement is positive real, forward second-bank displacement
+  is negative real in its occupied frame; see
+  [`OrientedBankGapEdgeCharts`](../Unfoldings/Geometry/OrientedBankGapEdgeCharts.lean) and
+  [`OrientedBankGapEdgeParameters`](../Unfoldings/Geometry/OrientedBankGapEdgeParameters.lean).
 - [ ] Identify the actual local saved-frontier fan at each bank-seam/vertex class and
   prove its whole metric-ball chart; cell interiors, gap interiors and roof points
   outside the forest are covered.
