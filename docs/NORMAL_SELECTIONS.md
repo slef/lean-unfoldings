@@ -486,6 +486,11 @@ nonoverlap and counting remain to be proved.
   original directed roof parent-bank labels using ascending parent geometry; see
   [`CompatibleContourGapMarkUniqueness`](../Unfoldings/Roof/CompatibleContourGapMarkUniqueness.lean)
   and [`ContourParentBankUniqueness`](../Unfoldings/Complex/ContourParentBankUniqueness.lean).
+- [x] Transfer original parent-bank uniqueness into the actual whole roof cut. Derive
+  the strict finite-bank height bound, including the final fine edge, and exclude all
+  finite/tail collisions away from the terminal join by height. The actual roof and
+  gap APIs now both recover attachment, side and parameter at finite-edge interiors;
+  see [`CompatibleContourFiniteMarkUniqueness`](../Unfoldings/Roof/CompatibleContourFiniteMarkUniqueness.lean).
 - [ ] Identify the actual local saved-frontier fan at each bank-seam/vertex class and
   prove its whole metric-ball chart; cell interiors, gap interiors and roof points
   outside the forest are covered.

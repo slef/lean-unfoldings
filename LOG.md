@@ -2,6 +2,25 @@
 
 ## Session Log
 
+### 2026-11-19 — recover actual finite roof-bank attachment labels
+
+- Derived strict completion-height bounds on every finite parent bank before its
+  far endpoint, including the final fine edge leading to the rim. The original
+  convex potential is the negative of the physical roof's third coordinate.
+- Used exact finite-to-whole fibers to transfer the original parent-bank label,
+  side and parameter uniqueness into the actual whole roof cut.
+- Proved weak/strict height bounds on original terminal tails from their actual
+  terminal times and positive speeds. Closed tails cannot meet strict finite marks;
+  positive tails cannot meet any closed finite mark. The zero-time join is retained.
+- Added an actual roof-mark API fixing attachment, side and parameter among all
+  finite and terminal attachments. It complements the gap-mark API.
+- Verification: cache retrieval was successful earlier in this session; the final
+  full `lake build` passed (6,476 jobs). All 20,381 unfolding and 7,243 pinned planar
+  topology declarations passed the standard-axiom audit; both abstract checks passed.
+- Committed statements and proof limits are unchanged; no temporary worktrees.
+  Remaining: full bank/vertex seam-class charts, simple connectivity and global
+  planar isometry/nonoverlap. Individual mark uniqueness is not a seam-class chart.
+
 ### 2026-11-19 — separate actual nonvertex bank attachment labels
 
 - Proved unique original addresses on genuine outward polygonal banks at strict

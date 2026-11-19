@@ -4276,3 +4276,15 @@ corners and does not yet identify their widths with the actual retained cap fan.
   actual gap addresses retain their original forest attachment labels. At strict
   finite-edge interiors or positive tail times, equality of intrinsic gap marks fixes
   the attachment, side, and parameter before forming the metric quotient.
+
+- [`CompatibleContourParentMarkUniqueness`](../Unfoldings/Roof/CompatibleContourParentMarkUniqueness.lean):
+  the original convex potential is minus the actual roof height. Strict finite bank
+  parameters lie below the rim, including on the final fine edge. The exact mesh
+  fiber theorem transfers original child/side/parameter uniqueness to the whole cut.
+- [`CompatibleContourRoofMarkSeparation`](../Unfoldings/Roof/CompatibleContourRoofMarkSeparation.lean):
+  closed finite marks have height at most the completion level; terminal marks have
+  height at least that level, strictly greater at positive times. These bounds
+  exclude finite/tail collisions while retaining the original zero-time endpoint.
+- [`CompatibleContourFiniteMarkUniqueness`](../Unfoldings/Roof/CompatibleContourFiniteMarkUniqueness.lean):
+  equality with a strict actual finite roof mark fixes its attachment, side and
+  parameter among all finite and terminal marks, matching the existing gap-mark API.

@@ -2553,3 +2553,7 @@ public import Unfoldings.Geometry.PolygonalRayAddressUniqueness
 public import Unfoldings.Geometry.BankGapAddressUniqueness
 public import Unfoldings.Complex.ContourParentBankUniqueness
 public import Unfoldings.Roof.CompatibleContourGapMarkUniqueness
+
+public import Unfoldings.Roof.CompatibleContourParentMarkUniqueness
+public import Unfoldings.Roof.CompatibleContourRoofMarkSeparation
+public import Unfoldings.Roof.CompatibleContourFiniteMarkUniqueness
