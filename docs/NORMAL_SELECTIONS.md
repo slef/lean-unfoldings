@@ -453,6 +453,10 @@ nonoverlap and counting remain to be proved.
   original cell quotient. Local path connectivity follows from the convex cells.
   These use the radial gap geometry already constructed uniformly above; see
   [`CompatibleContourFiniteClasses`](../Unfoldings/Roof/CompatibleContourFiniteClasses.lean).
+- [x] At every actual gap interior point, classify all seam representatives as the
+  same original gap and coordinate. Removing all bank attachments leaves a whole
+  small metric ball unchanged, including points on internal cell seams; see
+  [`CompatibleContourInteriorExcision`](../Unfoldings/Roof/CompatibleContourInteriorExcision.lean).
 - [ ] Identify the actual local saved-frontier fan at each seam/vertex class and
   prove its whole metric-ball chart; cell interiors are already covered.
 - [ ] Derive simple connectivity from the actual slit/gap attachments and apply the

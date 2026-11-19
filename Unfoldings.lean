@@ -2532,3 +2532,6 @@ public import Unfoldings.Roof.CompatibleContourPhysicalAgreement
 public import Unfoldings.Roof.CompatibleContourPhysicalTails
 public import Unfoldings.Roof.CompatibleContourLabels
 public import Unfoldings.Roof.CompatibleContourFiniteClasses
+
+public import Unfoldings.Metric.ClosedSeamLabelExcision
+public import Unfoldings.Roof.CompatibleContourInteriorExcision

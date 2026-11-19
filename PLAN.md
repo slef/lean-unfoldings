@@ -1155,6 +1155,9 @@ selection and Euler counting follow.
   parameter, including shared endpoints and the complete terminal tails.
 - [x] Prove finite actual seam classes, exact metric identifications, the actual graft
   quotient topology and local path connectivity from original geometry.
+- [x] Classify actual gap-interior seam representatives by their original gap and
+  coordinate, and remove all bank attachments on a whole local metric ball.
+  Internal cell seams are included.
 - [ ] Match saved-frontier curves to the comparison fans and local surgery models.
 - [x] Construct complete unbounded roof cut metrics with actual planar cells,
   boundary-only seams and exact metric-ball restoration away from closed cuts.

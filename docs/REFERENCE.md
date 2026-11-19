@@ -4212,3 +4212,11 @@ corners and does not yet identify their widths with the actual retained cap fan.
   the original seam-quotient topology and local path connectivity. The input radial
   geometry is derived by the uniform canonical contour-gap construction. Actual
   local seam/vertex flatness, simple connectivity and global nonoverlap remain.
+
+- [`ClosedSeamLabelExcision`](../Unfoldings/Metric/ClosedSeamLabelExcision.lean):
+  a conserved label excludes an added seam family at a chosen class. Removing
+  that family preserves a whole small metric ball by the canonical restoration map.
+- [`CompatibleContourInteriorExcision`](../Unfoldings/Roof/CompatibleContourInteriorExcision.lean):
+  actual bank attachments have physical labels. Gap interior classes retain their
+  original gap tag and coordinate, so all bank attachments can be removed locally
+  without changing a whole metric ball. Internal cell seams remain included.

@@ -2,6 +2,27 @@
 
 ## Session Log
 
+### 2026-11-19 — actual gap-interior metric excision
+
+- Proved a general closed-seam excision criterion using conserved labels. If the
+  center lacks every label carried by an added seam family, removing that entire
+  family preserves a whole small metric ball under the canonical restoration map.
+- Derived physical spatial labels for every actual bank attachment from the original
+  bank curves and the uniform radial gap geometry.
+- Applied excision to every actual gap interior point. All bank attachments may be
+  removed locally while retaining original internal roof/gap seams. This includes
+  centers on internal cell seams, beyond the previous cell-interior charts.
+- Classified all seam representatives of such a point: each stays in the same
+  original gap at the same original complex coordinate. No final development,
+  nonoverlap assumption or supplied local topology certificate is used.
+- Verification: actual `lake exe cache get` and full `lake build` passed (6,460 jobs).
+  The audit checked 20,262 unfolding declarations and 7,243 pinned planar-topology
+  declarations using only standard axioms; both abstract-independence checks passed.
+  Existing theorem statements are unchanged; no temporary worktrees were created.
+- Remaining: identify internal piece balls with the original gap metric and transfer
+  its planar charts, identify actual bank-seam/vertex fans, derive simple connectivity,
+  and apply the global planar-isometry theorem. The global theorem remains open.
+
 ### 2026-11-18 — finite actual graft classes and exact quotient topology
 
 - Proved that genuine radial bank addresses transfer to arbitrary physical chains
