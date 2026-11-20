@@ -642,6 +642,8 @@ nonoverlap and counting remain to be proved.
   Prove contractibility when a full fiber has the [consecutive stack seams](../Unfoldings/Metric/BankStackArcFiber.lean).
 - [x] Prove the [global planar isometry from contractible collapse fibers](../Unfoldings/Metric/FlatPlanarCollapse.lean).
   The finite closed-cell argument supplies global completeness.
+- [x] Verify full collapse fibers [off the original cuts](../Unfoldings/Roof/CompatibleContourSourceOnlyOffCutFiber.lean)
+  and [at strict bank addresses](../Unfoldings/Roof/CompatibleContourSourceOnlyStrictFiber.lean).
 - [ ] Verify contractibility for the actual full collapse fibers, including the original vertices,
   and apply the global isometry to the Fewest Nets construction.
 

@@ -2,6 +2,17 @@
 
 ## Session Log
 
+### 2026-11-19 — classify strict cut addresses and off-cut collapse fibers
+
+- A physical point in the interior of a finite cut edge or on a positive
+  tail has a unique bank time. At a fine vertex or a terminal join, the
+  physical addresses are precisely restricted to the incident original banks.
+- Proved that the full collapse fiber off the cut is a singleton and that
+  a strict bank address gives the full chain of marked gap arcs.
+- Identified the outgoing seam slot of every on-vertex roof copy. Incoming
+  nonempty gap bends also agree with outgoing seam slots.
+- Full `lake build` passed (6,683 jobs). All three axiom audits passed.
+
 ### 2026-11-19 — descend rigid frames and retain marked collapse arcs
 
 - Proved that a proper collapse to a contractible space with contractible

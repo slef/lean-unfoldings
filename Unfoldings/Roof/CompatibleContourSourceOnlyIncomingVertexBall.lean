@@ -180,17 +180,15 @@ theorem compatibleContourSourceOnlyTerminalFinite_planarBall
 
 set_option maxHeartbeats 1600000 in
 -- The original lower and upper attachments carry dependent stack index types.
-/-- At a nonterminal incoming bank with a gap, each end slot reaches the parent
-through that gap's literal bend. The whole chart comes from the outgoing bank. -/
-theorem compatibleContourSourceOnlyFiniteEnd_nonempty_planarBall
-    (ends : (D).contourOriginalVertex Selection contour (Fin.last contour.length) ∈
-      (Fcut).parents.roots)
+/-- At a nonterminal incoming bank with a gap, each end slot reaches a named
+outgoing slot through that gap's literal bend. -/
+theorem compatibleContourSourceOnlyFiniteEnd_nonempty_eq_outgoing
     (child : Edge) (hp : (Fcut).parents.parent child.val ∉ (Fcut).parents.roots)
     (nonempty_stack : Stack FiniteBank[child.val,child.property] ≠ [])
-    (strict : ∀ (e : Event) (k : Fin LengthAt[e]), let B := BankAt[e]
-      0 < inner ℝ (B.chain.vertex k.succ.castSucc - B.start) (B.chain.edge k.succ))
     (i : Fin ((Stack FiniteBank[child.val,child.property]).length + 1)) :
-    HasMetricBallChart ℂ (Point (L ⟨FiniteBank[child.val,child.property], i⟩ 1)) := by
+    let b := FiniteBank[(Fcut).parents.parent child.val,hp]
+    ∃ j : Fin ((Stack b).length + 1),
+      Point (L ⟨FiniteBank[child.val,child.property], i⟩ 1) = Point (EndAt true ⟨b, j⟩ 0) := by
   let parent : Edge := ⟨(Fcut).parents.parent child.val, hp⟩
   let b := FiniteBank[child.val,child.property]
   let p := FiniteBank[parent.val,parent.property]
@@ -226,8 +224,24 @@ theorem compatibleContourSourceOnlyFiniteEnd_nonempty_planarBall
       ((congrArg Point same).trans
         ((point_endpoint_eq_left Pieces Stack Base Gap other_side ⟨p, j⟩ 0).trans
           (point_endpoint_eq_left Pieces Stack Base Gap true ⟨p, j⟩ 0).symm))
+  exact ⟨j, label⟩
+
+/-- At a nonterminal incoming bank with a gap, each end slot reaches the parent
+through that gap's literal bend. The whole chart comes from the outgoing bank. -/
+theorem compatibleContourSourceOnlyFiniteEnd_nonempty_planarBall
+    (ends : (D).contourOriginalVertex Selection contour (Fin.last contour.length) ∈
+      (Fcut).parents.roots)
+    (child : Edge) (hp : (Fcut).parents.parent child.val ∉ (Fcut).parents.roots)
+    (nonempty_stack : Stack FiniteBank[child.val,child.property] ≠ [])
+    (strict : ∀ (e : Event) (k : Fin LengthAt[e]), let B := BankAt[e]
+      0 < inner ℝ (B.chain.vertex k.succ.castSucc - B.start) (B.chain.edge k.succ))
+    (i : Fin ((Stack FiniteBank[child.val,child.property]).length + 1)) :
+    HasMetricBallChart ℂ (Point (L ⟨FiniteBank[child.val,child.property], i⟩ 1)) := by
+  obtain ⟨j, label⟩ := K.compatibleContourSourceOnlyFiniteEnd_nonempty_eq_outgoing
+    compact nonempty R no_boundary level higher M positive inner_disk beta acute contour starts
+    W geometry child hp nonempty_stack i
   exact Eq.mpr (congrArg (HasMetricBallChart ℂ) label)
     (K.compatibleContourSourceOnly_outgoingVertex_planarBall compact nonempty R no_boundary level
-      higher M positive inner_disk beta acute contour starts W geometry ends parent strict j)
+      higher M positive inner_disk beta acute contour starts W geometry ends ⟨(Fcut).parents.parent child.val, hp⟩ strict j)
 
 end Unfoldings.ConvexRoof

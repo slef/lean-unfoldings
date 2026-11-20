@@ -2750,3 +2750,9 @@ public import Unfoldings.Metric.RigidFrameActions
 public import Unfoldings.Metric.RigidFrameDescent
 public import Unfoldings.Metric.FlatPlanarCollapse
 public import Unfoldings.Metric.BankStackArcFiber
+public import Unfoldings.Metric.BankStackClassTimes
+public import Unfoldings.Roof.CompatibleContourPhysicalAttachments
+public import Unfoldings.Roof.CompatibleContourPhysicalVertexAttachments
+public import Unfoldings.Roof.CompatibleContourSourceOnlyCollapseNames
+public import Unfoldings.Roof.CompatibleContourSourceOnlyOffCutFiber
+public import Unfoldings.Roof.CompatibleContourSourceOnlyStrictFiber

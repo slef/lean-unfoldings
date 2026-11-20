@@ -123,15 +123,12 @@ local notation "SiteTime" => K.contourRoofSiteTime compact nonempty R no_boundar
 
 set_option maxHeartbeats 2400000 in
 -- The original roof wedge carries two dependent addresses, one on each adjacent child excursion.
-/-- The entire contour run at a nonroot vertex is planar after grafting. Empty
-children transport the chart across their restored seams, and nonempty children
-supply it from their adjoining gaps. -/
-theorem compatibleContourSourceOnlyRoofVertex_planarBall
-    (ends : Visit[Fin.last contour.length] ∈ (Fcut).parents.roots)
-    (strict : ∀ (e : Event) (k : Fin LengthAt[e]), let B := BankAt[e]
-      0 < inner ℝ (B.chain.vertex k.succ.castSucc - B.start) (B.chain.edge k.succ))
+/-- Every original roof copy at a nonroot vertex reaches a named outgoing slot.
+Empty children restore their seams and nonempty children reach it through a gap. -/
+theorem compatibleContourSourceOnlyRoofVertex_eq_outgoing
     (j : Fin (contour.length + 1)) (nonroot : Visit[j] ∉ (Fcut).parents.roots) :
-    HasMetricBallChart ℂ (Point RoofPoint[j]) := by
+    let b := FiniteBank[Visit[j],nonroot]
+    ∃ k : Fin ((Stack b).length + 1), Point RoofPoint[j] = Point (EndAt true ⟨b, k⟩ 0) := by
   let parent : Edge := ⟨Visit[j], nonroot⟩
   let A := (D).contourFullParentWedgeRun Selection contour (Fcut).boundary_roots starts parent
   let b := FiniteBank[parent.val,parent.property]
@@ -156,17 +153,15 @@ theorem compatibleContourSourceOnlyRoofVertex_planarBall
   obtain ⟨_, endpoints⟩ := K.compatibleContourSourceOnlyRoofRun_endpoints compact nonempty R
     no_boundary level higher M positive inner_disk beta acute contour starts W models parent A
     (parent, true, false) (parent, false, false) first_germ last_germ
-  have every (i : Fin (A.length + 1)) : HasMetricBallChart ℂ (Point RoofPoint[A.visit i]) := by
+  let outgoing (z : MetricGluing.Realization Pieces Banks) : Prop :=
+    ∃ k : Fin ((Stack b).length + 1), z = Point (EndAt true ⟨b, k⟩ 0)
+  have every (i : Fin (A.length + 1)) : outgoing (Point RoofPoint[A.visit i]) := by
     induction i using Fin.inductionOn with
     | zero =>
       let s : Time := ⟨⟨b, Fin.last (Stack b).length⟩, 0⟩
       have label : EndAt true s.1 s.2 = RoofPoint[A.visit 0] :=
         (endpoints 0 true s).mpr (Or.inl ⟨rfl, rfl⟩)
-      have chart := K.compatibleContourSourceOnly_outgoingVertex_planarBall compact nonempty R
-        no_boundary level higher M positive inner_disk beta acute contour starts W geometry ends
-        parent strict (Fin.last (Stack b).length)
-      exact Eq.mp (congrArg (fun z : MetricGluing.Total Pieces => HasMetricBallChart ℂ (Point z))
-        label) chart
+      exact ⟨Fin.last (Stack b).length, congrArg Point label.symm⟩
     | succ i ih =>
       let child := A.child i
       let a := FiniteBank[child.val,child.property]
@@ -176,7 +171,7 @@ theorem compatibleContourSourceOnlyRoofVertex_planarBall
         refine Or.inl ⟨rfl, ?_⟩
         change s = ⟨⟨a, 0⟩, unitInterval.symm 0⟩
         rw [unitInterval.symm_zero]
-      have chart : HasMetricBallChart ℂ (Point (L s.1 s.2)) := by
+      have held : outgoing (Point (L s.1 s.2)) := by
         by_cases empty : Stack a = []
         · have same_slot : Fin.last (Stack a).length = 0 := by
             apply Fin.ext
@@ -199,16 +194,39 @@ theorem compatibleContourSourceOnlyRoofVertex_planarBall
             rw [same_slot, unitInterval.symm_zero]
           have glued : Point (L s.1 s.2) = Point (Rgt s.1 s.2) :=
             MetricGluing.point_eq_of_glue Pieces (glue := Banks) ⟨s.1, s.2, rfl, rfl⟩
-          exact Eq.mpr (congrArg (HasMetricBallChart ℂ)
-            (glued.trans (congrArg Point prev_label))) ih
+          obtain ⟨k, h⟩ := ih
+          exact ⟨k, glued.trans ((congrArg Point prev_label).trans h)⟩
         · have hp : (Fcut).parents.parent child.val ∉ (Fcut).parents.roots :=
             (A.child_parent i).symm ▸ nonroot
-          exact K.compatibleContourSourceOnlyFiniteEnd_nonempty_planarBall compact nonempty R
-            no_boundary level higher M positive inner_disk beta acute contour starts W geometry
-            ends child hp empty strict 0
-      exact Eq.mp (congrArg (fun z : MetricGluing.Total Pieces => HasMetricBallChart ℂ (Point z))
-        label) chart
-  exact Eq.mp (congrArg (fun i => HasMetricBallChart ℂ (Point RoofPoint[i])) at_j) (every v)
+          obtain ⟨k, witness⟩ := K.compatibleContourSourceOnlyFiniteEnd_nonempty_eq_outgoing
+            compact nonempty R no_boundary level higher M positive inner_disk beta acute contour
+            starts W geometry child hp empty 0
+          let atParent (p : Edge) : Prop :=
+            let a := FiniteBank[p.val,p.property]
+            ∃ k : Fin ((Stack a).length + 1), Point (L s.1 s.2) = Point (EndAt true ⟨a, k⟩ 0)
+          have with_child : atParent ⟨(Fcut).parents.parent child.val, hp⟩ := ⟨k, witness⟩
+          have same : (⟨(Fcut).parents.parent child.val, hp⟩ : Edge) = parent :=
+            Subtype.ext (A.child_parent i)
+          exact Eq.mp (congrArg atParent same) with_child
+      obtain ⟨k, h⟩ := held
+      exact ⟨k, (congrArg Point label).symm.trans h⟩
+  exact Eq.mp (congrArg (fun i => outgoing (Point RoofPoint[i])) at_j) (every v)
+
+/-- The entire contour run at a nonroot vertex is planar after grafting. Empty
+children transport the chart across their restored seams, and nonempty children
+supply it from their adjoining gaps. -/
+theorem compatibleContourSourceOnlyRoofVertex_planarBall
+    (ends : Visit[Fin.last contour.length] ∈ (Fcut).parents.roots)
+    (strict : ∀ (e : Event) (k : Fin LengthAt[e]), let B := BankAt[e]
+      0 < inner ℝ (B.chain.vertex k.succ.castSucc - B.start) (B.chain.edge k.succ))
+    (j : Fin (contour.length + 1)) (nonroot : Visit[j] ∉ (Fcut).parents.roots) :
+    HasMetricBallChart ℂ (Point RoofPoint[j]) := by
+  obtain ⟨k, named⟩ := K.compatibleContourSourceOnlyRoofVertex_eq_outgoing compact nonempty R
+    no_boundary level higher M positive inner_disk beta acute contour starts W geometry j nonroot
+  have chart := K.compatibleContourSourceOnly_outgoingVertex_planarBall compact nonempty R
+    no_boundary level higher M positive inner_disk beta acute contour starts W geometry ends
+    ⟨Visit[j], nonroot⟩ strict k
+  exact Eq.mpr (congrArg (HasMetricBallChart ℂ) named) chart
 
 set_option maxHeartbeats 1500000 in
 -- The reversed child entrance retains its original tagged roof copy.
