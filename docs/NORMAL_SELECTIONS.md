@@ -692,8 +692,10 @@ proves that the original polyhedron’s corner normal cones total `4π`. The
 [numerical substitutions](../Unfoldings/FewestNets/CountConstants.lean) check
 the two published endpoints. The [finite-arc Crofton formula](../Unfoldings/Geometry/FiniteArcCrofton.lean)
 proves the length-product crossing probability under Haar rotation.
-The Gaussian Euler identities, two-side area bounds, and their application
-to the actual network remain open.
+The [centered chart estimates](../Unfoldings/Geometry/StereographicTwoSide.lean)
+derive both two-side constants from separated headings of projected side chords.
+The proof of heading separation for Gaussian cells, the Gaussian Euler identities,
+and the crossing witnesses in the actual network remain open.
 
 The [adaptive routing](../Unfoldings/Roof/CompatibleAdaptiveRouting.lean)
 constructs both parent forests given angle and outward-direction bounds.

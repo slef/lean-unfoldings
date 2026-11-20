@@ -2809,3 +2809,9 @@ public import Unfoldings.Geometry.StereographicHemisphere
 public import Unfoldings.Geometry.StereographicChord
 public import Unfoldings.Geometry.StereographicJacobian
 public import Unfoldings.Geometry.StereographicArea
+public import Unfoldings.Geometry.StereographicAngularDistance
+public import Unfoldings.Geometry.StereographicAreaExpansion
+public import Unfoldings.Geometry.StereographicConformal
+public import Unfoldings.Geometry.PlanarWidthArea
+public import Unfoldings.Geometry.TwoSideChordBound
+public import Unfoldings.Geometry.StereographicTwoSide

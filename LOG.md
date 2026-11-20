@@ -2,6 +2,17 @@
 
 ## Session Log
 
+### 2026-11-20 — verify the two-side constants in the centered chart
+
+- Proved conformality, the exact tangent length scale, and the global angular
+  distance bound on the chart disk.
+- Obtained both spherical area factors from a radial planar map with exactly
+  the spherical area density as Jacobian.
+- Proved the planar width-area and two-omitted-chord estimates. Transferred both
+  constants to spherical side lengths for a projected chord chain with
+  separated headings. The geometric proof of heading separation and its
+  application to the Gaussian fan remain open.
+
 ### 2026-11-20 — count arc families and compute stereographic solid angle
 
 - Proved Crofton for finite crossing multiplicities under a shared rotation.
