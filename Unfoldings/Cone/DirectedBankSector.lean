@@ -74,25 +74,27 @@ variable {n : ℕ} (c : (C.linkSystem retain w).Chain n) (covers : ∀ p, c.Visi
 
 local notation "Iso" => C.intervalSectorIsometryEquiv retain w c covers start finish small
 
-private theorem intervalSector_directedBankTangentTag_at (i : Fin (n + 1))
+private theorem directedBankTangentTag_at (i : Fin (n + 1))
     (p : C.BoundaryEnd retain) (at_vertex : C.boundaryEndVertex retain p = w)
     (corner : p.val.1 = (c.point i).val.1) (t : unitInterval)
     (x : (C.linkAngularFan retain w c).Cell i)
     (frame : C.germFrame (c.point i).val (C.directedBankCell retain p t).val = x.val) :
-    (Iso (C.tangentPoint retain w (C.directedBankTangentTag retain w p at_vertex t))).val =
-      (C.linkAngularFan retain w c).place i x := by
-  have equal := C.linkCellToTangent_of_coordinates retain w c i x ⟨p.val.1, at_vertex⟩
-    (C.tangentInclude retain w ⟨p.val.1, at_vertex⟩ (C.directedBankCell retain p t)) corner frame
-  rw [show C.tangentPoint retain w (C.directedBankTangentTag retain w p at_vertex t) =
-      C.linkCellToTangent retain w c i x from equal.symm, ← C.angularToTangent_faceMap,
-    C.intervalSectorIsometryEquiv_angularToTangent, AngularFan.develop_faceMap]
+    C.tangentPoint retain w (C.directedBankTangentTag retain w p at_vertex t) =
+      C.angularToTangent retain w c ((C.linkAngularFan retain w c).faceMap i x) := by
+  rw [C.angularToTangent_faceMap]
+  exact (C.linkCellToTangent_of_coordinates retain w c i x ⟨p.val.1, at_vertex⟩
+    (C.tangentInclude retain w ⟨p.val.1, at_vertex⟩ (C.directedBankCell retain p t))
+    corner frame).symm
 
-/-- The first literal directed bank has its original arclength on the positive axis. -/
-theorem intervalSector_directedBankTangentTag_first
-    (p : C.BoundaryEnd retain) (at_vertex : C.boundaryEndVertex retain p = w)
+/-- The first marked ray in the slit fan retains its literal bank tag. -/
+theorem directedBankTangentTag_first (p : C.BoundaryEnd retain)
+    (at_vertex : C.boundaryEndVertex retain p = w)
     (first : c.first.val = p.val) (t : unitInterval) :
-    (Iso (C.tangentPoint retain w (C.directedBankTangentTag retain w p at_vertex t))).val =
-      (t.val * C.boundaryBankLength p : ℝ) := by
+    let A := C.linkAngularFan retain w c
+    let r : ℝ≥0 := ⟨t.val * C.boundaryBankLength p,
+      mul_nonneg t.property.1 (C.boundaryBankLength_pos p).le⟩
+    C.tangentPoint retain w (C.directedBankTangentTag retain w p at_vertex t) =
+      C.angularToTangent retain w c (A.faceMap 0 (A.start 0 r)) := by
   let A := C.linkAngularFan retain w c
   let r : ℝ≥0 := ⟨t.val * C.boundaryBankLength p,
     mul_nonneg t.property.1 (C.boundaryBankLength_pos p).le⟩
@@ -105,17 +107,18 @@ theorem intervalSector_directedBankTangentTag_first
       (C.directedBankCell_coord retain p t)
     change C.germFrame p.val (C.directedBankCell retain p t).val = _ at image
     exact image.trans (congrArg (fun a : ℝ => (a : ℂ)) (C.directedBankCell_radius retain p t))
-  rw [C.intervalSector_directedBankTangentTag_at retain w c covers start finish small 0 p
-    at_vertex (congrArg Prod.fst first.symm) t (A.start 0 r) coordinates, A.place_start]
-  rw [show (0 : Fin (n + 1)).castSucc = 0 from rfl, A.heading_zero, polarRay_zero, mul_one]
-  rfl
+  exact C.directedBankTangentTag_at retain w c 0 p
+    at_vertex (congrArg Prod.fst first.symm) t (A.start 0 r) coordinates
 
-/-- The last literal directed bank has the same arclength on the terminal ray. -/
-theorem intervalSector_directedBankTangentTag_last
-    (p : C.BoundaryEnd retain) (at_vertex : C.boundaryEndVertex retain p = w)
+/-- The last marked ray in the slit fan retains its literal bank tag. -/
+theorem directedBankTangentTag_last (p : C.BoundaryEnd retain)
+    (at_vertex : C.boundaryEndVertex retain p = w)
     (last : (C.linkTurn retain w c.last).val = p.val) (t : unitInterval) :
-    (Iso (C.tangentPoint retain w (C.directedBankTangentTag retain w p at_vertex t))).val =
-      (t.val * C.boundaryBankLength p) • polarRay (C.totalAngle retain w) := by
+    let A := C.linkAngularFan retain w c
+    let r : ℝ≥0 := ⟨t.val * C.boundaryBankLength p,
+      mul_nonneg t.property.1 (C.boundaryBankLength_pos p).le⟩
+    C.tangentPoint retain w (C.directedBankTangentTag retain w p at_vertex t) =
+      C.angularToTangent retain w c (A.faceMap (Fin.last n) (A.finish (Fin.last n) r)) := by
   let A := C.linkAngularFan retain w c
   let r : ℝ≥0 := ⟨t.val * C.boundaryBankLength p,
     mul_nonneg t.property.1 (C.boundaryBankLength_pos p).le⟩
@@ -147,9 +150,40 @@ theorem intervalSector_directedBankTangentTag_last
     change p.val.1 = c.last.val.1
     rw [previous]
     rfl
-  rw [C.intervalSector_directedBankTangentTag_at retain w c covers start finish small
-    (Fin.last n) p at_vertex corner t (A.finish (Fin.last n) r) coordinates,
-    A.place_finish, Fin.succ_last, A.heading_last, C.linkAngularFan_totalAngle retain w c covers]
+  exact C.directedBankTangentTag_at retain w c (Fin.last n) p
+    at_vertex corner t (A.finish (Fin.last n) r) coordinates
+
+/-- The first literal directed bank has its original arclength on the positive axis. -/
+theorem intervalSector_directedBankTangentTag_first
+    (p : C.BoundaryEnd retain) (at_vertex : C.boundaryEndVertex retain p = w)
+    (first : c.first.val = p.val) (t : unitInterval) :
+    (Iso (C.tangentPoint retain w (C.directedBankTangentTag retain w p at_vertex t))).val =
+      (t.val * C.boundaryBankLength p : ℝ) := by
+  rw [C.directedBankTangentTag_first retain w c p at_vertex first t,
+    C.intervalSectorIsometryEquiv_angularToTangent, AngularFan.develop_faceMap]
+  let r : ℝ≥0 := ⟨t.val * C.boundaryBankLength p,
+    mul_nonneg t.property.1 (C.boundaryBankLength_pos p).le⟩
+  let A := C.linkAngularFan retain w c
+  change A.place 0 (A.start 0 r) = _
+  rw [A.place_start]
+  rw [show (0 : Fin (n + 1)).castSucc = 0 from rfl,
+    AngularFan.heading_zero, polarRay_zero, mul_one]
+  rfl
+
+/-- The last literal directed bank has the same arclength on the terminal ray. -/
+theorem intervalSector_directedBankTangentTag_last
+    (p : C.BoundaryEnd retain) (at_vertex : C.boundaryEndVertex retain p = w)
+    (last : (C.linkTurn retain w c.last).val = p.val) (t : unitInterval) :
+    (Iso (C.tangentPoint retain w (C.directedBankTangentTag retain w p at_vertex t))).val =
+      (t.val * C.boundaryBankLength p) • polarRay (C.totalAngle retain w) := by
+  rw [C.directedBankTangentTag_last retain w c p at_vertex last t,
+    C.intervalSectorIsometryEquiv_angularToTangent, AngularFan.develop_faceMap]
+  let r : ℝ≥0 := ⟨t.val * C.boundaryBankLength p,
+    mul_nonneg t.property.1 (C.boundaryBankLength_pos p).le⟩
+  let A := C.linkAngularFan retain w c
+  change A.place (Fin.last n) (A.finish (Fin.last n) r) = _
+  rw [A.place_finish, Fin.succ_last, A.heading_last,
+    C.linkAngularFan_totalAngle retain w c covers]
   exact Complex.real_smul.symm
 
 end Unfoldings.TriangleComplex

@@ -2731,3 +2731,9 @@ public import Unfoldings.Topology.FiniteArcConcat
 public import Unfoldings.Metric.BankStackRoofCycle
 public import Unfoldings.Roof.CompatibleContourSourceOnlyEmptyStackClass
 public import Unfoldings.Roof.CompatibleContourSourceOnlyEmptyStackBall
+public import Unfoldings.Cone.SlitFanRestorationBall
+public import Unfoldings.Cone.DirectedSlitChart
+public import Unfoldings.Cone.MarkedSlitRestoration
+public import Unfoldings.Metric.BankStackUnmarkedBall
+public import Unfoldings.Roof.CompatibleContourSourceOnlyEmptyStackLeafBall
+public import Unfoldings.Roof.CompatibleContourSourceOnlyUnmarkedBall

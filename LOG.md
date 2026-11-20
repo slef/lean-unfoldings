@@ -2,6 +2,17 @@
 
 ## Session Log
 
+### 2026-11-19 — close flat leaf slits and cover unmarked interiors
+
+- Preserved both directed arclength marks in the full-turn slit fan of a
+  flat leaf, and proved that restoring them gives a whole planar metric ball.
+- Proved that an unmarked point retains a whole ball from its own piece.
+  Applied this to the roof away from the physical cuts and all gap interiors,
+  including their internal cell seams.
+- Full `lake build` passed (6,664 jobs). Both abstract audits passed.
+  Only standard axioms occur in 21,902 unfolding and 7,243 planar-topology
+  declarations.
+
 ### 2026-11-19 — restore empty stacks and join positive source tips to their children
 
 - Proved the exact planar ball where a positive source tip, the leading roof
