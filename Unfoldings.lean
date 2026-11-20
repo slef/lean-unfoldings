@@ -2778,3 +2778,15 @@ public import Unfoldings.FewestNets.RoofPartition
 public import Unfoldings.Development.NetPartitionRestriction
 public import Unfoldings.FewestNets.SphericalPartition
 public import Unfoldings.FewestNets.ComponentAveraging
+public import Unfoldings.Convex.HistoryCone
+public import Unfoldings.Convex.VisualHistoryCone
+public import Unfoldings.Convex.AdaptiveExteriorProgress
+public import Unfoldings.Roof.AdaptivePotentialStep
+public import Unfoldings.Roof.AdaptivePotentialForest
+public import Unfoldings.Roof.CompatibleAdaptiveRouting
+public import Unfoldings.Geometry.RadialBlockLimit
+public import Unfoldings.Geometry.SphericalEndpointLocality
+public import Unfoldings.FewestNets.ComponentCountBudget
+public import Unfoldings.FewestNets.VisualCertificate
+public import Unfoldings.Convex.FiniteNormalFan
+public import Unfoldings.Polyhedron.GaussianAreaPartition

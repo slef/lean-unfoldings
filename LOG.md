@@ -2,6 +2,19 @@
 
 ## Session Log
 
+### 2026-11-20 — develop adaptive routing and the fixed-network count estimates
+
+- Constructed the boundary-rooted adaptive original-edge forest and attached
+  exterior rays using consistent outward assignments. The history invariant
+  gives progress on partial links and the path-length bound after mergers.
+- Proved the exact aperture of the polar of two extremal viewing rays and
+  the soundness of signed visual pair tests over whole side subintervals.
+- Proved incident-edge endpoint localization, the area-weighted charge bound,
+  and the radial-block error at the limiting angular width.
+- Proved that the actual spatial corner normal cones have total solid
+  angle `4π`. Coincident sites are deduplicated and measure-zero ties
+  do not affect the sum.
+
 ### 2026-11-20 — assemble and count labeled net partitions
 
 - Defined a partition into nonempty, nonoverlapping original-edge nets.

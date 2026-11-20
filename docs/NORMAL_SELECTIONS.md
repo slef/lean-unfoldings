@@ -681,8 +681,24 @@ requested chord accuracy and intrinsic length bound on complete actual banks thr
 every later rim. The same actual routed banks now retain explicit intrinsic
 subhistory margins and radial order from all earlier points inside edges.
 The source-only construction gives the global nonoverlapping layout for the
-compatible roof under the stated angle and tilt hypotheses. The paper's sharp
-numerical constants and final net-counting theorem remain open.
+compatible roof under the stated angle and tilt hypotheses.
+
+The [whole-surface partition](../Unfoldings/FewestNets/SphericalPartition.lean)
+assembles the original-face nets of compatible spherical normal selections.
+The [component count](../Unfoldings/FewestNets/ComponentCountBudget.lean)
+combines expected crossing and area estimates. The
+[Gaussian area partition](../Unfoldings/Polyhedron/GaussianAreaPartition.lean)
+proves that the original polyhedron’s corner normal cones total `4π`. The
+[numerical substitutions](../Unfoldings/FewestNets/CountConstants.lean) check
+the two published endpoints. The Gaussian Euler and spherical crossing
+estimates for the actual network remain open.
+
+The [adaptive routing](../Unfoldings/Roof/CompatibleAdaptiveRouting.lean)
+constructs both parent forests given angle and outward-direction bounds.
+The [visual pair tests](../Unfoldings/FewestNets/VisualCertificate.lean)
+justify the signed polynomial check on a whole side interval.
+The quantitative global graft for these adaptive paths and the Lean replay
+of the two complete finite certificate families remain open.
 
 ## Start here
 

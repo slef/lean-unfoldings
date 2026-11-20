@@ -1,8 +1,7 @@
 module
 
 public import Unfoldings.Geometry.LocalHeadingBudget
-public import Unfoldings.Geometry.ChainPolarVariation
-public import Unfoldings.Geometry.RadialBlockBounds
+public import Unfoldings.Geometry.NextEdgeRadialBlocks
 
 /-!
 # Radial estimates from genuine local bank comparisons
@@ -24,8 +23,9 @@ variable {n : ℕ} (P Q : PolygonalChain ℂ (n + 1)) (source : ℂ)
   (gamma_nonnegative : 0 ≤ γ) (gamma_small : γ ≤ 1)
   (margin : ∀ i, γ * (‖P.vertex i.castSucc - source‖ * ‖P.edge i‖) ≤
     inner ℝ (P.vertex i.castSucc - source) (P.edge i))
-  (prefix_bound : ∀ j : Fin (n + 1), (P.interval 0 j.val (by omega)).projectedLength ≤
-    C * ‖P.vertex j.castSucc - source‖)
+  (prefix_bound : ∀ j : Fin (n + 1),
+    (P.interval 0 j.val (initial_interval_fits j.castSucc)).projectedLength ≤
+      C * ‖P.vertex j.castSucc - source‖)
   (window : ∀ i j, i ≤ j → interiorVariation (P.polarVariation source) i j < δ →
     |error i - error j| ≤ B)
   (length_bound : P.projectedLength ≤ C * ‖P.vertex (Fin.last (n + 1)) - P.vertex 0‖)
