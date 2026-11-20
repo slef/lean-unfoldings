@@ -703,8 +703,11 @@ A [wall cover](../Unfoldings/FewestNets/VoronoiCrossings.lean) by actual
 minor arcs now supplies generic changed-side crossings. The
 [Jordan filling theorem](../Unfoldings/Topology/JordanCellFilling.lean)
 fills cycles by complete cells of a planar decomposition.
-Cyclic heading separation for the actual Gaussian cells, Gaussian Euler
-counting, and the localized crossing budget remain open.
+[Triangulation Euler](../Unfoldings/Polyhedron/TriangulationEuler.lean)
+derives Euler's formula for the original closed convex triangulation from
+the total Gaussian area. Cyclic heading separation for actual Gaussian cells,
+the Euler count after coarsening and restricting by label, and the localized
+crossing budget remain open.
 
 The [adaptive routing](../Unfoldings/Roof/CompatibleAdaptiveRouting.lean)
 constructs both parent forests given angle and outward-direction bounds.

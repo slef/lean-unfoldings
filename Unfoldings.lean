@@ -2829,3 +2829,7 @@ public import Unfoldings.Geometry.EquatorialMinorArc
 public import Unfoldings.FewestNets.NormalVoronoi
 public import Unfoldings.FewestNets.VoronoiCrossings
 public import Unfoldings.Topology.JordanCellFilling
+public import Unfoldings.Geometry.MinorArcSupportIntersections
+public import Unfoldings.Polyhedron.UpperRoofNormalCone
+public import Unfoldings.Polyhedron.GaussianVertexAngles
+public import Unfoldings.Polyhedron.TriangulationEuler

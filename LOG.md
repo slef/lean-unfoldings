@@ -2,6 +2,16 @@
 
 ## Session Log
 
+### 2026-11-20 — prove Euler's formula for the original convex triangulation
+
+- Aligned a view from the interior at each original vertex. Its entire star
+  survives in the upper roof with the same intrinsic angle sum.
+- Identified the roof's spherical normal polygon with the rotated Gaussian
+  cell. The area identity gives total angular defect `4π`, and seam incidence
+  then gives Euler's formula for the original triangulation.
+- Proved that a transverse minor arc through a convex spherical cell has at
+  most two boundary hits.
+
 ### 2026-11-20 — connect rotated Voronoi labels, minor arcs, and Jordan fillings
 
 - Represented every genuine spherical minor arc in the exact Crofton phase
