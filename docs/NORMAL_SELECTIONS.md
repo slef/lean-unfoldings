@@ -694,8 +694,11 @@ the two published endpoints. The [finite-arc Crofton formula](../Unfoldings/Geom
 proves the length-product crossing probability under Haar rotation.
 The [centered chart estimates](../Unfoldings/Geometry/StereographicTwoSide.lean)
 derive both two-side constants from separated headings of projected side chords.
-The proof of heading separation for Gaussian cells, the Gaussian Euler identities,
-and the crossing witnesses in the actual network remain open.
+Each [Gaussian cell](../Unfoldings/Polyhedron/GaussianChart.lean) has its
+own centered compact convex chart. The [corner estimate](../Unfoldings/Geometry/StereographicSupport.lean)
+bounds the projected chord turn by the spherical exterior angle from below.
+Cyclic heading separation for the actual Gaussian cells, the Gaussian Euler
+identities, and the crossing witnesses in the actual network remain open.
 
 The [adaptive routing](../Unfoldings/Roof/CompatibleAdaptiveRouting.lean)
 constructs both parent forests given angle and outward-direction bounds.

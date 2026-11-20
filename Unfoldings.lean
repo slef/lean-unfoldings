@@ -2815,3 +2815,6 @@ public import Unfoldings.Geometry.StereographicConformal
 public import Unfoldings.Geometry.PlanarWidthArea
 public import Unfoldings.Geometry.TwoSideChordBound
 public import Unfoldings.Geometry.StereographicTwoSide
+public import Unfoldings.Geometry.PlanarWedgeAngle
+public import Unfoldings.Geometry.StereographicSupport
+public import Unfoldings.Polyhedron.GaussianChart

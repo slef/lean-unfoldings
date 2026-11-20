@@ -2,6 +2,15 @@
 
 ## Session Log
 
+### 2026-11-20 — center actual Gaussian cells and compare projected corners
+
+- Constructed a compact convex stereographic chart for every nonempty Gaussian
+  cell of the original triangulation, with its center in the cell and its
+  inverse image equal to the rotated cell.
+- Proved that supporting hemispheres become inward tangent inequalities and
+  that two projected chords have exterior angle at least the angle between the
+  corresponding spherical support normals.
+
 ### 2026-11-20 — verify the two-side constants in the centered chart
 
 - Proved conformality, the exact tangent length scale, and the global angular
