@@ -638,9 +638,12 @@ nonoverlap and counting remain to be proved.
 - [x] Prove that a [finite chain of attached arcs](../Unfoldings/Topology/FiniteArcConcat.lean)
   has contractible union, and extend a covering section to a neighborhood of
   a [proper contractible fiber](../Unfoldings/Topology/CoveringNearFiber.lean).
-- [ ] Identify the full collapse fibers and derive a global development from
-  the actual slit and gap attachments. The finite closed-cell argument
-  then supplies the needed global completeness.
+- [x] Retain [the marked arcs of each gap fiber](../Unfoldings/Geometry/SourceGapFibers.lean).
+  Prove contractibility when a full fiber has the [consecutive stack seams](../Unfoldings/Metric/BankStackArcFiber.lean).
+- [x] Prove the [global planar isometry from contractible collapse fibers](../Unfoldings/Metric/FlatPlanarCollapse.lean).
+  The finite closed-cell argument supplies global completeness.
+- [ ] Verify contractibility for the actual full collapse fibers, including the original vertices,
+  and apply the global isometry to the Fewest Nets construction.
 
 The finite-path comparison now constructs its actual Jordan traversal and derives
 all original fan alternatives. Complete physical refinements preserve every ordered

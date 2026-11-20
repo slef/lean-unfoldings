@@ -2746,3 +2746,7 @@ public import Unfoldings.Roof.CompatibleContourSourceOnlyBankSlotBall
 public import Unfoldings.Roof.CompatibleContourSourceOnlyRoofAddressCoverage
 public import Unfoldings.Roof.CompatibleContourSourceOnlyTailAddressCoverage
 public import Unfoldings.Roof.CompatibleContourSourceOnlyGraftFlatness
+public import Unfoldings.Metric.RigidFrameActions
+public import Unfoldings.Metric.RigidFrameDescent
+public import Unfoldings.Metric.FlatPlanarCollapse
+public import Unfoldings.Metric.BankStackArcFiber

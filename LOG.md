@@ -2,6 +2,19 @@
 
 ## Session Log
 
+### 2026-11-19 — descend rigid frames and retain marked collapse arcs
+
+- Proved that a proper collapse to a contractible space with contractible
+  fibers supplies a global rigid frame. On a regular finite planar-cell
+  gluing its evaluation is a surjective planar isometry.
+- Strengthened the actual physical collapse with the complete radial arcs
+  inside each original gap and the exact two frontier points of each arc.
+- Proved contractibility for a whole stack fiber when its seam classes are
+  the original consecutive endpoint pairs, including an empty stack.
+- Full `lake build` passed (6,677 jobs). Both abstract audits passed.
+  Only standard axioms occur in 21,973 unfolding and 7,243 planar-topology
+  declarations.
+
 ### 2026-11-19 — prove local Euclidean regularity throughout the source-only graft
 
 - Exhausted outgoing and incoming finite stack slots, terminal joins, and

@@ -153,9 +153,9 @@ theorem compatibleContourPhysicalBank_subset_wholeSurface (e : Event) :
     exact (step.symm.trans position) ▸ physical.property
 
 /-- The proper spatial collapse has image exactly the original full roof and
-preserves every original bank mark. Each nonempty restriction of a fiber to an
-individual gap is contractible. -/
-theorem compatibleContourSourceOnlyGraft_exists_proper_collapse_range_with_gap_fibers
+preserves every original bank mark. Each gap fiber is the explicit marked arc
+from one bank to the other, with no other frontier points. -/
+theorem compatibleContourSourceOnlyGraft_exists_proper_collapse_with_marked_fibers
     (geometry : ∀ e : Event, OrientedBankGap BankAt[e] MovedAt[e])
     (matched : ∀ e, models e = (geometry e).model) :
     ∃ f : Graft → Space, IsProperMap f ∧ Set.range f = Surface ∧
@@ -165,23 +165,27 @@ theorem compatibleContourSourceOnlyGraft_exists_proper_collapse_range_with_gap_f
         (boundary : x.val ∈ frontier (models e).region),
         f (MetricGluing.point Pieces Banks ⟨some e, x⟩) =
           (FoldAt[e] ⟨x.val, boundary⟩).val) ∧
-      ∀ (e : Event) (x : PolygonalPoint (models e).region),
+      (∀ (e : Event) (x : PolygonalPoint (models e).region),
         ContractibleSpace {y | f (MetricGluing.point Pieces Banks ⟨some e, y⟩) =
-          f (MetricGluing.point Pieces Banks ⟨some e, x⟩)} := by
+          f (MetricGluing.point Pieces Banks ⟨some e, x⟩)}) ∧
+      ∀ e : Event, (models e).HasMarkedCollapseFibers (SpatialAt[e])
+        (fun y => f (MetricGluing.point Pieces Banks ⟨some e, y⟩)) := by
   classical
   have gap_exists (e : Event) :
       ∃ f : PolygonalPoint (models e).region → Space, IsProperMap f ∧
         Set.range f ⊆ (SpatialAt[e]).carrier ∧
         (∀ (x : PolygonalPoint (models e).region) (h : x.val ∈ frontier (models e).region),
           f x = (FoldAt[e] ⟨x.val, h⟩).val) ∧
-        ∀ x, ContractibleSpace {y | f y = f x} := by
+        (∀ x, ContractibleSpace {y | f y = f x}) ∧
+        (models e).HasMarkedCollapseFibers (SpatialAt[e]) f := by
     let g := geometry e
     let predicate (model : BankGapModel BankAt[e] MovedAt[e]) : Prop :=
       ∃ f : PolygonalPoint model.region → Space, IsProperMap f ∧
         Set.range f ⊆ (SpatialAt[e]).carrier ∧
         (∀ (x : PolygonalPoint model.region) (h : x.val ∈ frontier model.region),
           f x = (model.frontierMap SpatialAt[e] ⟨x.val, h⟩).val) ∧
-        ∀ x, ContractibleSpace {y | f y = f x}
+        (∀ x, ContractibleSpace {y | f y = f x}) ∧
+        model.HasMarkedCollapseFibers (SpatialAt[e]) f
     have genuine (side : Bool) (i : Fin (LengthAt[e] + 1)) :
         ((models e).bank side).chain.edge i ≠ 0 :=
       K.compatibleContourSourceOnlyBank_edge_ne_zero compact nonempty R no_boundary level
@@ -200,10 +204,11 @@ theorem compatibleContourSourceOnlyGraft_exists_proper_collapse_range_with_gap_f
         (by rintro _ ⟨x, rfl⟩; exact (g.collapseTo SpatialAt[e] x).property),
         fun x boundary => congrArg Subtype.val
           (g.collapseTo_eq_frontierMap SpatialAt[e] (genuine false) (genuine true) x boundary),
-        fun x => g.contractibleSpace_collapseTo_fiber SpatialAt[e] faithful x⟩
+        fun x => g.contractibleSpace_collapseTo_fiber SpatialAt[e] faithful x,
+        g.hasMarkedCollapseFibers_collapseTo SpatialAt[e] (genuine false) faithful⟩
     change predicate (models e)
     exact Eq.mpr (congrArg predicate (matched e)) proof
-  choose fold fold_proper fold_range fold_boundary fold_fiber using gap_exists
+  choose fold fold_proper fold_range fold_boundary fold_fiber fold_marked using gap_exists
   let piece : ∀ i, Pieces i → Space
     | none => fun x => (W.partition.restoreCut R.carrier x).val
     | some e => fold e
@@ -291,18 +296,45 @@ theorem compatibleContourSourceOnlyGraft_exists_proper_collapse_range_with_gap_f
         (on_piece ⟨none, y⟩).trans (congrArg PolygonalPoint.val eq)⟩
   refine ⟨f, ((Seams).isProperMap_continuousLift finite maps compatible maps_proper).comp
     E.symm.toHomeomorph.isProperMap, onto, fun x => on_piece ⟨none, x⟩,
-    fun e x boundary => (on_piece ⟨some e, x⟩).trans (fold_boundary e x boundary), ?_⟩
-  intro e x
-  have named (y : PolygonalPoint (models e).region) :
-      f (MetricGluing.point Pieces Banks ⟨some e, y⟩) = fold e y := on_piece ⟨some e, y⟩
-  have equal : {y | f (MetricGluing.point Pieces Banks ⟨some e, y⟩) =
-      f (MetricGluing.point Pieces Banks ⟨some e, x⟩)} = {y | fold e y = fold e x} := by
-    ext y
-    change f (MetricGluing.point Pieces Banks ⟨some e, y⟩) =
-      f (MetricGluing.point Pieces Banks ⟨some e, x⟩) ↔ fold e y = fold e x
-    rw [named x, named y]
-  rw [equal]
-  exact fold_fiber e x
+    fun e x boundary => (on_piece ⟨some e, x⟩).trans (fold_boundary e x boundary), ?_, ?_⟩
+  · intro e x
+    have named (y : PolygonalPoint (models e).region) :
+        f (MetricGluing.point Pieces Banks ⟨some e, y⟩) = fold e y := on_piece ⟨some e, y⟩
+    have equal : {y | f (MetricGluing.point Pieces Banks ⟨some e, y⟩) =
+        f (MetricGluing.point Pieces Banks ⟨some e, x⟩)} = {y | fold e y = fold e x} := by
+      ext y
+      change f (MetricGluing.point Pieces Banks ⟨some e, y⟩) =
+        f (MetricGluing.point Pieces Banks ⟨some e, x⟩) ↔ fold e y = fold e x
+      rw [named x, named y]
+    rw [equal]
+    exact fold_fiber e x
+  · intro e
+    have restrict_eq : (fun y : PolygonalPoint (models e).region =>
+        f (MetricGluing.point Pieces Banks ⟨some e, y⟩)) = fold e :=
+      funext (fun y => on_piece ⟨some e, y⟩)
+    rw [restrict_eq]
+    exact fold_marked e
+
+/-- The proper spatial collapse has image exactly the original full roof and
+preserves every original bank mark. Each nonempty restriction of a fiber to an
+individual gap is contractible. -/
+theorem compatibleContourSourceOnlyGraft_exists_proper_collapse_range_with_gap_fibers
+    (geometry : ∀ e : Event, OrientedBankGap BankAt[e] MovedAt[e])
+    (matched : ∀ e, models e = (geometry e).model) :
+    ∃ f : Graft → Space, IsProperMap f ∧ Set.range f = Surface ∧
+      (∀ x : W.Cut, f (MetricGluing.point Pieces Banks ⟨none, x⟩) =
+        (W.partition.restoreCut R.carrier x).val) ∧
+      (∀ (e : Event) (x : PolygonalPoint (models e).region)
+        (boundary : x.val ∈ frontier (models e).region),
+        f (MetricGluing.point Pieces Banks ⟨some e, x⟩) =
+          (FoldAt[e] ⟨x.val, boundary⟩).val) ∧
+      ∀ (e : Event) (x : PolygonalPoint (models e).region),
+        ContractibleSpace {y | f (MetricGluing.point Pieces Banks ⟨some e, y⟩) =
+          f (MetricGluing.point Pieces Banks ⟨some e, x⟩)} := by
+  obtain ⟨f, proper, image, roof, edge, fibers, _⟩ :=
+    K.compatibleContourSourceOnlyGraft_exists_proper_collapse_with_marked_fibers compact nonempty
+      R no_boundary level higher M positive inner_disk beta acute contour starts W models geometry matched
+  exact ⟨f, proper, image, roof, edge, fibers⟩
 
 /-- The proper spatial collapse has image exactly the original full roof and
 preserves every original bank mark. -/

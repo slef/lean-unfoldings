@@ -108,4 +108,39 @@ theorem contractibleSpace_iUnion_arcs [T2Space X] {n : ℕ} (vertex : Fin (n + 2
     ⟨0, le_rfl, zero_le_one⟩
   exact H.symm.contractibleSpace
 
+/-- A finite chain includes its named vertices. In particular, a chain with
+no arcs is its single initial vertex. -/
+theorem contractibleSpace_vertices_union_arcs [T2Space X] {n : ℕ} (vertex : Fin (n + 1) → X)
+    (arc : ∀ i : Fin n, Path (vertex i.castSucc) (vertex i.succ))
+    (injective : ∀ i, Function.Injective (arc i))
+    (meet : ∀ i j : Fin n, i < j →
+      Set.range (arc i) ∩ Set.range (arc j) ⊆ {vertex j.castSucc}) :
+    ContractibleSpace ↥(Set.range vertex ∪ (⋃ i, Set.range (arc i))) := by
+  cases n with
+  | zero =>
+    have singleton : Set.range vertex ∪ (⋃ i, Set.range (arc i)) = {vertex 0} := by
+      ext x
+      constructor
+      · rintro (⟨i, rfl⟩ | member)
+        · have hi : i = 0 := by
+            apply Fin.ext
+            change i.val = 0
+            have bound : i.val < 1 := i.isLt
+            omega
+          exact Set.mem_singleton_iff.mpr (congrArg vertex hi)
+        · obtain ⟨i, _⟩ := Set.mem_iUnion.mp member
+          exact Fin.elim0 i
+      · intro member
+        exact Or.inl ⟨0, (Set.mem_singleton_iff.mp member).symm⟩
+    rw [singleton]
+    infer_instance
+  | succ n =>
+    have contains : Set.range vertex ⊆ ⋃ i, Set.range (arc i) := by
+      rintro _ ⟨i, rfl⟩
+      refine Fin.lastCases ?_ (fun j => ?_) i
+      · exact Set.mem_iUnion.mpr ⟨Fin.last n, 1, (arc (Fin.last n)).target⟩
+      · exact Set.mem_iUnion.mpr ⟨j, 0, (arc j).source⟩
+    rw [Set.union_eq_right.mpr contains]
+    exact contractibleSpace_iUnion_arcs vertex arc injective meet
+
 end Unfoldings

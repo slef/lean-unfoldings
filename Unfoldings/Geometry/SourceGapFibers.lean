@@ -35,16 +35,43 @@ theorem nndist_start_twoBankFrame (z : ℂ) :
 
 end Unfoldings.PolygonalRay
 
+namespace Unfoldings.BankGapModel
+
+variable {n : ℕ} {B Q : PolygonalRay ℂ n}
+
+/-- An original bank address as a point of the intrinsic gap piece. -/
+def intrinsicAddressPoint (M : BankGapModel B Q) (side : Bool) (a : PolygonalRay.Address n) :
+    PolygonalPoint M.region :=
+  ⟨(M.addressFrontier side a).val, M.closed.frontier_subset (M.addressFrontier side a).property⟩
+
+/-- The fibers of a physical collapse are marked arcs with the two exact bank
+endpoints. Only the common source may give a constant arc. -/
+def HasMarkedCollapseFibers {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℝ F]
+    (M : BankGapModel B Q) (target : PolygonalRay F n) (collapse : PolygonalPoint M.region → F) :
+    Prop :=
+  Set.range collapse ⊆ target.carrier ∧
+    ∀ a : PolygonalRay.Address n,
+      (∃ P : Path (M.intrinsicAddressPoint false a) (M.intrinsicAddressPoint true a),
+        {x | collapse x = target.addressPoint a} = Set.range P ∧
+        (B.addressPoint a ≠ B.start → Function.Injective P) ∧
+        (B.addressPoint a = B.start → ∀ s t, P s = P t)) ∧
+      ∀ x : PolygonalPoint M.region, x.val ∈ frontier M.region →
+        collapse x = target.addressPoint a → ∃ side, x = M.intrinsicAddressPoint side a
+
+end Unfoldings.BankGapModel
+
 namespace Unfoldings.OrientedBankGap
 
 variable {n : ℕ} {B : PolygonalRay ℂ n} {θ : ℝ} (G : OrientedBankGap B (B.rotateSuffix 0 θ))
 
-theorem exists_radialFiber_parameterization (x : B.carrier) :
+private theorem exists_radialFiber_parameterization_with_coordinates (x : B.carrier) :
     let arc := Set.Icc (0 : ℝ) (Real.pi / 2)
     ∃ f : arc → PolygonalPoint G.model.region,
       Continuous f ∧ {y | G.projectFirstBank y = x} = Set.range f ∧
         (x.val ≠ B.start → Function.Injective f) ∧
-        (x.val = B.start → ∀ s t, f s = f t) := by
+        (x.val = B.start → ∀ s t, f s = f t) ∧
+        ∀ t, (f t).val = B.twoBankFrame (B.rotateSuffix 0 θ) G.first_outward G.first_nonzero
+          G.second_outward G.second_nonzero G.phase ((nndist B.start x.val : ℂ) * polarRay t.val) := by
   let R := nndist B.start x.val
   let S := planarSector (Real.pi / 2)
   let parameter := Set.Icc (0 : ℝ) (Real.pi / 2)
@@ -96,7 +123,7 @@ theorem exists_radialFiber_parameterization (x : B.carrier) :
         (G.projectFirstBank (h.symm (fromAngle t))) = R
       rw [projectFirstBank, Homeomorph.apply_symm_apply, on_radius]
       exact norm_radius R t.val
-  refine ⟨h.symm ∘ fromAngle, h.symm.continuous.comp cont, fiber_eq, ?_, ?_⟩
+  refine ⟨h.symm ∘ fromAngle, h.symm.continuous.comp cont, fiber_eq, ?_, ?_, fun _ => rfl⟩
   · intro distinct t u equal
     have positive : 0 < R := NNReal.coe_pos.mp (dist_pos.mpr distinct.symm)
     have same : (R : ℂ) * polarRay t.val = (R : ℂ) * polarRay u.val :=
@@ -119,6 +146,137 @@ theorem exists_radialFiber_parameterization (x : B.carrier) :
     apply Subtype.ext
     change (R : ℂ) * polarRay t.val = (R : ℂ) * polarRay u.val
     simp [zero]
+
+theorem exists_radialFiber_parameterization (x : B.carrier) :
+    let arc := Set.Icc (0 : ℝ) (Real.pi / 2)
+    ∃ f : arc → PolygonalPoint G.model.region,
+      Continuous f ∧ {y | G.projectFirstBank y = x} = Set.range f ∧
+        (x.val ≠ B.start → Function.Injective f) ∧
+        (x.val = B.start → ∀ s t, f s = f t) := by
+  obtain ⟨f, cont, range_eq, injective, constant, _⟩ :=
+    G.exists_radialFiber_parameterization_with_coordinates x
+  exact ⟨f, cont, range_eq, injective, constant⟩
+
+/-- The complete radial fiber is the path between its two literal bank marks.
+Away from the source this path is injective, and at the source it is constant. -/
+theorem exists_projectFirstBank_fiber_path (a : PolygonalRay.Address n) :
+    let x : B.carrier := ⟨B.addressPoint a, B.addressPoint_mem a⟩
+    ∃ P : Path (G.model.intrinsicAddressPoint false a) (G.model.intrinsicAddressPoint true a),
+      {y | G.projectFirstBank y = x} = Set.range P ∧
+      (x.val ≠ B.start → Function.Injective P) ∧
+      (x.val = B.start → ∀ s t, P s = P t) := by
+  let x : B.carrier := ⟨B.addressPoint a, B.addressPoint_mem a⟩
+  let Q := B.rotateSuffix 0 θ
+  let r := nndist B.start x.val
+  let half := Real.pi / 2
+  have hp : 0 < half := half_pos Real.pi_pos
+  obtain ⟨f, cont, image, inj, constant, coords⟩ :=
+    G.exists_radialFiber_parameterization_with_coordinates x
+  let scale (t : unitInterval) : Set.Icc (0 : ℝ) half :=
+    ⟨t.val * half,
+      mul_nonneg t.property.1 hp.le, (mul_le_mul_of_nonneg_right t.property.2 hp.le).trans_eq (one_mul _)⟩
+  have continuous_scale : Continuous scale := (continuous_subtype_val.mul continuous_const).subtype_mk _
+  have injective_scale : Function.Injective scale := by
+    intro t u eq
+    exact Subtype.ext (mul_right_cancel₀ hp.ne' (congrArg Subtype.val eq))
+  have onto_scale : Function.Surjective scale := by
+    intro t
+    refine ⟨⟨t.val / half, div_nonneg t.property.1 hp.le,
+      (div_le_one hp).mpr t.property.2⟩, Subtype.ext (div_mul_cancel₀ _ hp.ne')⟩
+  have left : f (scale 0) = G.model.intrinsicAddressPoint false a := by
+    apply PolygonalPoint.ext
+    have zero : (scale 0).val = 0 := zero_mul _
+    rw [coords, zero, polarRay_zero, mul_one, B.twoBankFrame_real]
+    exact congrArg Subtype.val ((B.radialHomeomorph G.first_outward G.first_nonzero).symm_apply_apply x)
+  have right : f (scale 1) = G.model.intrinsicAddressPoint true a := by
+    apply PolygonalPoint.ext
+    have last : (scale 1).val = Real.pi / 2 := one_mul _
+    rw [coords, last, mul_comm, B.twoBankFrame_upper _ _ _ _ _ _ G.common]
+    let y : Q.carrier := ⟨Q.addressPoint a, Q.addressPoint_mem a⟩
+    have match_radius : (Q.radialHomeomorph G.second_outward G.second_nonzero) y = r := by
+      change nndist Q.start (Q.addressPoint a) = nndist B.start (B.addressPoint a)
+      rw [G.common]
+      exact B.rotateSuffix_zero_addressPoint_nndist θ a
+    exact congrArg Subtype.val ((congrArg (Q.radialHomeomorph G.second_outward G.second_nonzero
+      ).symm match_radius.symm).trans ((Q.radialHomeomorph G.second_outward G.second_nonzero
+      ).symm_apply_apply y))
+  let P : Path (G.model.intrinsicAddressPoint false a) (G.model.intrinsicAddressPoint true a) :=
+    ⟨⟨fun t => f (scale t), cont.comp continuous_scale⟩, left, right⟩
+  refine ⟨P, ?_, fun h => (inj h).comp injective_scale, fun h s t => constant h _ _⟩
+  rw [image]
+  apply Set.Subset.antisymm
+  · rintro _ ⟨t, rfl⟩
+    obtain ⟨u, rfl⟩ := onto_scale t
+    exact ⟨u, rfl⟩
+  · rintro _ ⟨t, rfl⟩
+    exact ⟨scale t, rfl⟩
+
+/-- The physical transfer of a source-only open gap has exactly the same marked fiber
+when its original bank is embedded in the physical surface. -/
+theorem exists_collapseTo_fiber_path {F : Type*} [NormedAddCommGroup F]
+    [InnerProductSpace ℝ F] (Q : PolygonalRay F n) (genuine : ∀ i, B.chain.edge i ≠ 0)
+    (faithful : Function.Injective (B.mapCarrier Q)) (a : PolygonalRay.Address n) :
+    ∃ P : Path (G.model.intrinsicAddressPoint false a) (G.model.intrinsicAddressPoint true a),
+      {y | (G.collapseTo Q y).val = Q.addressPoint a} = Set.range P ∧
+      (B.addressPoint a ≠ B.start → Function.Injective P) ∧
+      (B.addressPoint a = B.start → ∀ s t, P s = P t) := by
+  obtain ⟨P, image, injective, constant⟩ := G.exists_projectFirstBank_fiber_path a
+  refine ⟨P, ?_, injective, constant⟩
+  let x : B.carrier := ⟨B.addressPoint a, B.addressPoint_mem a⟩
+  have physical : (B.mapCarrier Q x).val = Q.addressPoint a :=
+    congrArg Subtype.val (B.mapCarrier_address G.first_outward genuine G.first_nonzero Q a)
+  rw [← image]
+  ext y
+  exact ⟨fun h => faithful (Subtype.ext (h.trans physical.symm)),
+    fun h => (congrArg (fun p => (B.mapCarrier Q p).val) h).trans physical⟩
+
+/-- In a source-only fiber, the only frontier points are its two original bank marks. -/
+theorem projectFirstBank_fiber_frontier_points (a : PolygonalRay.Address n)
+    (x : PolygonalPoint G.model.region) (boundary : x.val ∈ frontier G.model.region)
+    (fiber : G.projectFirstBank x = ⟨B.addressPoint a, B.addressPoint_mem a⟩) :
+    ∃ side : Bool, x = G.model.intrinsicAddressPoint side a := by
+  let Q := B.rotateSuffix 0 θ
+  let b : B.carrier := ⟨B.addressPoint a, B.addressPoint_mem a⟩
+  have level : nndist B.start x.val = nndist B.start (B.addressPoint a) := by
+    have h := congrArg (B.radialHomeomorph G.first_outward G.first_nonzero) fiber
+    rw [projectFirstBank, Homeomorph.apply_symm_apply] at h
+    exact h
+  rw [G.model.frontier_eq] at boundary
+  rcases boundary with first | second
+  · refine ⟨false, PolygonalPoint.ext ?_⟩
+    have named : (⟨x.val, first⟩ : B.carrier) = b :=
+      (B.radialHomeomorph G.first_outward G.first_nonzero).injective level
+    exact congrArg Subtype.val named
+  · refine ⟨true, PolygonalPoint.ext ?_⟩
+    have radius : nndist Q.start x.val = nndist Q.start (Q.addressPoint a) := by
+      rw [G.common]
+      exact level.trans (B.rotateSuffix_zero_addressPoint_nndist θ a).symm
+    have named : (⟨x.val, second⟩ : Q.carrier) = ⟨Q.addressPoint a, Q.addressPoint_mem a⟩ :=
+      (Q.radialHomeomorph G.second_outward G.second_nonzero).injective radius
+    exact congrArg Subtype.val named
+
+/-- The physical transfer has only these same two frontier marks in the fiber. -/
+theorem collapseTo_fiber_frontier_points {F : Type*} [NormedAddCommGroup F]
+    [InnerProductSpace ℝ F] (Q : PolygonalRay F n) (genuine : ∀ i, B.chain.edge i ≠ 0)
+    (faithful : Function.Injective (B.mapCarrier Q)) (a : PolygonalRay.Address n)
+    (x : PolygonalPoint G.model.region) (boundary : x.val ∈ frontier G.model.region)
+    (fiber : (G.collapseTo Q x).val = Q.addressPoint a) :
+    ∃ side : Bool, x = G.model.intrinsicAddressPoint side a := by
+  let b : B.carrier := ⟨B.addressPoint a, B.addressPoint_mem a⟩
+  have target : (B.mapCarrier Q b).val = Q.addressPoint a :=
+    congrArg Subtype.val (B.mapCarrier_address G.first_outward genuine G.first_nonzero Q a)
+  exact G.projectFirstBank_fiber_frontier_points a x boundary
+    (faithful (Subtype.ext (fiber.trans target.symm)))
+
+/-- Radial fibers preserve the complete marked arc description under an injective transfer. -/
+theorem hasMarkedCollapseFibers_collapseTo {F : Type*} [NormedAddCommGroup F]
+    [InnerProductSpace ℝ F] (Q : PolygonalRay F n) (genuine : ∀ i, B.chain.edge i ≠ 0)
+    (faithful : Function.Injective (B.mapCarrier Q)) :
+    G.model.HasMarkedCollapseFibers Q (fun x => (G.collapseTo Q x).val) := by
+  refine ⟨?_, fun a => ⟨G.exists_collapseTo_fiber_path Q genuine faithful a, ?_⟩⟩
+  · rintro _ ⟨x, rfl⟩
+    exact (G.collapseTo Q x).property
+  · exact fun x hx eq => G.collapseTo_fiber_frontier_points Q genuine faithful a x hx eq
 
 /-- Every radial fiber is path connected from one bank to the other, including the
 degenerate fiber at the common source. -/
