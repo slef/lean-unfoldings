@@ -2798,3 +2798,6 @@ public import Unfoldings.Geometry.SpatialRotationMeasure
 public import Unfoldings.Geometry.SpatialRotationAction
 public import Unfoldings.Geometry.SpatialRotationSphere
 public import Unfoldings.Geometry.MinorArcCrofton
+public import Unfoldings.Geometry.EquatorPhase
+public import Unfoldings.Geometry.FiniteArcCrofton
+public import Unfoldings.Roof.CompatibleAdaptivePaths

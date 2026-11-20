@@ -690,8 +690,10 @@ combines expected crossing and area estimates. The
 [Gaussian area partition](../Unfoldings/Polyhedron/GaussianAreaPartition.lean)
 proves that the original polyhedron’s corner normal cones total `4π`. The
 [numerical substitutions](../Unfoldings/FewestNets/CountConstants.lean) check
-the two published endpoints. The Gaussian Euler and spherical crossing
-estimates for the actual network remain open.
+the two published endpoints. The [finite-arc Crofton formula](../Unfoldings/Geometry/FiniteArcCrofton.lean)
+proves the length-product crossing probability under Haar rotation.
+The Gaussian Euler identities, two-side area bounds, and their application
+to the actual network remain open.
 
 The [adaptive routing](../Unfoldings/Roof/CompatibleAdaptiveRouting.lean)
 constructs both parent forests given angle and outward-direction bounds.

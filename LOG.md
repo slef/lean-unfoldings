@@ -2,6 +2,16 @@
 
 ## Session Log
 
+### 2026-11-20 — prove the finite-arc spherical crossing formula
+
+- Parameterized a moving great-circle arc by uniform angular phase and used
+  Haar right invariance to average its intersections with a fixed minor arc.
+- Proved the exact length-product factor `1 / (2π²)` for any initial frame.
+  The formula counts unique intersections away from null endpoint incidences.
+- Verified that every link of the attached adaptive forest follows an actual
+  original edge or an exterior ray to its first contact. Progress composes
+  along its complete directed histories.
+
 ### 2026-11-20 — verify the rotation law and local certificate inequalities
 
 - Constructed normalized Haar probability on spatial rotations. A rotated

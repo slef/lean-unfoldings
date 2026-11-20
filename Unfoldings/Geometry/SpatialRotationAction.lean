@@ -24,6 +24,14 @@ def linear (g : SpatialRotation) : Space →ₗ[ℝ] Space := toEuclideanLin g.v
     linear (g * h) = (linear g).comp (linear h) :=
   Matrix.toLpLin_mul_same 2 _ _
 
+@[simp] theorem linear_inv_apply (g : SpatialRotation) (x : Space) :
+    linear g⁻¹ (linear g x) = x := by
+  rw [← LinearMap.comp_apply, ← linear_mul, inv_mul_cancel, linear_one, LinearMap.id_apply]
+
+@[simp] theorem linear_apply_inv (g : SpatialRotation) (x : Space) :
+    linear g (linear g⁻¹ x) = x := by
+  rw [← LinearMap.comp_apply, ← linear_mul, mul_inv_cancel, linear_one, LinearMap.id_apply]
+
 theorem inner_linear (g : SpatialRotation) (x y : Space) :
     inner ℝ (linear g x) (linear g y) = inner ℝ x y := by
   have orthogonal := (Matrix.mem_orthogonalGroup_iff' (Fin 3) ℝ).mp
