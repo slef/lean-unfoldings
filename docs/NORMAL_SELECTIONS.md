@@ -3,8 +3,8 @@
 The normal-selection, clipped-extension, and compatible-forest constructions are
 implemented, including bounded embedded cut forests. They prepare the geometric
 input for the Fewest Nets development argument. Supported fine-edge forests now
-give flat intrinsic cut disks and local isometric developments. Gap-grafting
-nonoverlap and counting remain to be proved.
+give flat intrinsic cut disks. The [small-tilt development theorem](../Unfoldings/Roof/CompatibleContourSourceOnlyRoofDevelopment.lean)
+gives global nonoverlap for the compatible cut roof. The net count remains open.
 
 ## Gap-grafting status
 
@@ -644,8 +644,14 @@ nonoverlap and counting remain to be proved.
   The finite closed-cell argument supplies global completeness.
 - [x] Verify full collapse fibers [off the original cuts](../Unfoldings/Roof/CompatibleContourSourceOnlyOffCutFiber.lean)
   and [at strict bank addresses](../Unfoldings/Roof/CompatibleContourSourceOnlyStrictFiber.lean).
-- [ ] Verify contractibility for the actual full collapse fibers, including the original vertices,
-  and apply the global isometry to the Fewest Nets construction.
+- [x] Verify the actual full collapse fibers at [terminal joins](../Unfoldings/Roof/CompatibleContourSourceOnlyTerminalFiber.lean)
+  and [fine vertices](../Unfoldings/Roof/CompatibleContourSourceOnlyVertexFiber.lean).
+  At a source vertex the final gap arc contracts to the common tip.
+- [x] Develop the [whole source-only graft](../Unfoldings/Roof/CompatibleContourSourceOnlyGraftDevelopment.lean)
+  isometrically onto the plane using the proper collapse and its contractible fibers.
+- [x] Restrict to the [original cut roof cells](../Unfoldings/Roof/CompatibleContourSourceOnlyRoofDevelopment.lean)
+  and prove disjoint developed interiors. Construct the contour and gap geometry
+  under the uniform small-tilt bound.
 
 The finite-path comparison now constructs its actual Jordan traversal and derives
 all original fan alternatives. Complete physical refinements preserve every ordered
@@ -668,13 +674,9 @@ derives all input length bounds. Uniform numerical small-loss choices now give t
 requested chord accuracy and intrinsic length bound on complete actual banks through
 every later rim. The same actual routed banks now retain explicit intrinsic
 subhistory margins and radial order from all earlier points inside edges.
-The complete bank-attached route metric is constructed. Identifying its local
-saved-frontier fans, proving flatness and topology, and obtaining the global
-planar isometry remain open.
-
-The completed local models and combinatorial histories do not assume these
-remaining geometric identifications. The paper's sharp numerical constants and
-the final net-counting theorem remain open too.
+The source-only construction gives the global nonoverlapping layout for the
+compatible roof under the stated angle and tilt hypotheses. The paper's sharp
+numerical constants and final net-counting theorem remain open.
 
 ## Start here
 
@@ -684,6 +686,7 @@ the final net-counting theorem remain open too.
 | Exact finite extension preserving original faces | [`ConvexRoof.clippedPhysicalModel`](../Unfoldings/Roof/ClippedPhysicalCurvature.lean) |
 | Strict region equals selected component interiors | [`ConvexRoof.clippedExtension_strict_region_iff_component`](../Unfoldings/Roof/SelectedStrictRegion.lean) |
 | Construct compatible original-edge and exterior routing | [`ConvexRoof.exists_compatiblePotentialRouting`](../Unfoldings/Roof/CompatiblePotentialRouting.lean) |
+| Global nonoverlap of the compatible cut roof | [`ConvexRoof.exists_uniform_compatibleRoof_nonoverlapping_development`](../Unfoldings/Roof/CompatibleContourSourceOnlyRoofDevelopment.lean) |
 | One boundary root per component tree | [`CommonPotentialRouting.component_rootedForest`](../Unfoldings/Roof/ComponentPotentialForest.lean) |
 | Uniform bounds on whole paths and subpaths | [`CompatiblePotentialRouting.follows_length_bound`](../Unfoldings/Roof/CompatiblePotentialPaths.lean), [`follows_radial_margin_along_outgoing`](../Unfoldings/Roof/CompatiblePotentialWholePaths.lean) |
 
@@ -1169,9 +1172,9 @@ the original bank image, including endpoints. It reuses the general constrained
 whole-edge subdivision theorem. `SubdivisionWeightedAngles` also preserves
 arbitrary original face weights, hence every regional old-corner angle sum.
 
-Actual radial bank windows now construct their reference Jordan traversal and
-all fan alternatives. The saved-frontier construction and the complete gap-grafting
-nonoverlap conclusion remain open.
+Actual radial bank windows construct their reference Jordan traversal and all
+fan alternatives. The source-only development uses these results through the
+[uniform gap geometry](../Unfoldings/Roof/CompatibleContourSourceOnlyGaps.lean).
 
 ## Actual directed refinements and real bank rolling
 

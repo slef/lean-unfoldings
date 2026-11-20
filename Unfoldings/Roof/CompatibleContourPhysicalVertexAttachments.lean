@@ -61,11 +61,6 @@ local instance sourceOnlyPhysicalVertexAttachmentsWholeFintype : Fintype W.Index
 
 local notation "Edge" => {v : TriangleComplex.Vertex D Set.univ //
   v ∉ AscendingParents.roots (PotentialCutForest.parents Fcut)}
-local notation "Interval[" v "," h "]" => TriangleComplex.contourParentInterval
-  D Selection contour (PotentialCutForest.boundary_roots Fcut) starts v h
-local notation "Map" => K.compatibleMeshWholeMap compact nonempty R no_boundary level higher M
-  positive inner_disk beta acute W
-local notation "Retain" => PotentialCutForest.retain Fcut
 local notation "Height" => SlopeEnvelope.height (K.clippedExtension slopes compact nonempty)
 local notation "Conforming" => K.compatibleCutMesh_conforming compact nonempty R no_boundary
   level higher M positive inner_disk
@@ -77,8 +72,6 @@ local notation "Terminal" => TriangleComplex.ContourTerminalEdge D Selection
 local notation "RootAt[" e "]" => K.compatibleMeshTerminalRoot compact nonempty R no_boundary
   level higher M positive inner_disk beta acute (Subtype.val e)
   (TriangleComplex.contourTerminalEdge_positive D Selection e)
-local notation "TailAt[" e "," side "," t "]" => K.compatibleContourTerminalMark compact nonempty R
-  no_boundary level higher M positive inner_disk beta acute contour starts W e side t
 local notation "SpeedAt[" e "]" => K.compatibleContourTerminalSpeed compact nonempty R no_boundary
   level higher M positive inner_disk beta acute contour starts W e
 
@@ -86,8 +79,6 @@ local notation "Attachment" => K.compatibleContourBankAttachment compact nonempt
   level higher M positive inner_disk beta acute
 local notation "ParamAt" => K.compatibleContourBankParameter compact nonempty R no_boundary
   level higher M positive inner_disk beta acute
-local notation "Base" => K.compatibleContourSourceOnlyBaseMark compact nonempty R no_boundary
-  level higher M positive inner_disk beta acute contour starts W
 local notation "VertexAt[" v "]" => ConvexRoof.projectedVertex Q v
 
 local notation "Phys" => K.compatibleContourPhysicalAttachmentPoint compact nonempty R no_boundary

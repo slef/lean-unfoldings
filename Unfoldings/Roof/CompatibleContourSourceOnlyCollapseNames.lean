@@ -88,32 +88,16 @@ local notation "BankAt[" e "]" => K.compatibleContourSourceBank compact nonempty
   level higher M positive inner_disk beta acute contour starts e
 local notation "MovedAt[" e "]" => K.compatibleContourSourceOnlyBank compact nonempty R no_boundary
   level higher M positive inner_disk beta acute contour starts e
-local notation "SpatialAt[" e "]" => K.compatibleContourPhysicalBank compact nonempty R no_boundary
-  level higher M positive inner_disk beta acute contour starts e
 local notation "Index" => K.compatibleContourSourceOnlyCellIndex compact nonempty R no_boundary
-  level higher M positive inner_disk beta acute contour starts W models
-local notation "Cells" => K.compatibleContourSourceOnlyCells compact nonempty R no_boundary level
-  higher M positive inner_disk beta acute contour starts W models
-local notation "Inner" => K.compatibleContourSourceOnlyCellInner compact nonempty R no_boundary
-  level higher M positive inner_disk beta acute contour starts W models
-local notation "Coordinates" => K.compatibleContourSourceOnlyCellCoordinates compact nonempty R
-  no_boundary level higher M positive inner_disk beta acute contour starts W models
-local notation "Raw" => MetricGluing.NestedCell (fun i j => Cells i j)
-local notation "Seams" => K.compatibleContourSourceOnlyClosedSeams compact nonempty R no_boundary
   level higher M positive inner_disk beta acute contour starts W models
 
 local notation "Graft" => K.compatibleContourSourceOnlyGraft compact nonempty R no_boundary
-  level higher M positive inner_disk beta acute contour starts W models
-local notation "Label" => Space ⊕ (Event × ℂ)
-local notation "CellLabel" => K.compatibleContourSourceOnlyCellLabel compact nonempty R no_boundary
   level higher M positive inner_disk beta acute contour starts W models
 local notation "FoldAt[" e "]" => K.compatibleContourSourceOnlyFrontierMap compact nonempty R
   no_boundary level higher M positive inner_disk beta acute contour starts models e
 local notation "L" => MetricGluing.bankStackLeft Pieces Stack Base Gap
 local notation "Rgt" => MetricGluing.bankStackRight Pieces Stack Base Gap
 local notation "Banks" => MetricGluing.bankSeams L Rgt
-
-local notation "Surface" => SpatialEnvelope.wholeSurface M.plane
 
 local notation "Point" => MetricGluing.point Pieces Banks
 local notation "Phys" => K.compatibleContourPhysicalAttachmentPoint compact nonempty R no_boundary

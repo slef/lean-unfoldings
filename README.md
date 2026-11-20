@@ -131,10 +131,11 @@ cover all incoming histories, partial edges, and terminal rays. See the
 [normal-selection guide](docs/NORMAL_SELECTIONS.md) for the main APIs and hypotheses.
 The cuts now form embedded straight forests and can be truncated at a common
 envelope level with exactly one boundary root per tree. Supported cuts on a
-constructed conforming mesh give flat intrinsic cut disks and local isometric
-developments. The [whole gap graft](Unfoldings/Roof/CompatibleContourFiniteClasses.lean)
-now has proved finite seam classes and its exact metric quotient topology. Local
-seam/vertex flatness, simple connectivity and global nonoverlap remain.
+constructed conforming mesh give flat intrinsic cut disks. The
+[source-only gap graft](Unfoldings/Roof/CompatibleContourSourceOnlyGraftDevelopment.lean)
+develops isometrically onto the plane. Under the annular history-angle bound,
+the [small-tilt roof theorem](Unfoldings/Roof/CompatibleContourSourceOnlyRoofDevelopment.lean)
+gives rigid placements of the original cut roof cells with disjoint interiors.
 
 Remaining work includes:
 

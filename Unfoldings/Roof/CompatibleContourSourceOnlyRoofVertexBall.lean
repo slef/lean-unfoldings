@@ -228,18 +228,15 @@ theorem compatibleContourSourceOnlyRoofVertex_planarBall
     ⟨Visit[j], nonroot⟩ strict k
   exact Eq.mpr (congrArg (HasMetricBallChart ℂ) named) chart
 
-set_option maxHeartbeats 1500000 in
--- The reversed child entrance retains its original tagged roof copy.
-/-- An empty stack at the upper end of a nonterminal child is glued at an
-original roof wedge of its parent. -/
-theorem compatibleContourSourceOnlyFiniteEnd_empty_planarBall
-    (ends : Visit[Fin.last contour.length] ∈ (Fcut).parents.roots)
-    (strict : ∀ (e : Event) (k : Fin LengthAt[e]), let B := BankAt[e]
-      0 < inner ℝ (B.chain.vertex k.succ.castSucc - B.start) (B.chain.edge k.succ))
+set_option maxHeartbeats 1750000 in
+/-- The restored end of an empty child stack lies at an outgoing slot of its parent. -/
+theorem compatibleContourSourceOnlyFiniteEnd_empty_eq_outgoing
     (child : Edge) (hp : (Fcut).parents.parent child.val ∉ (Fcut).parents.roots)
     (empty : Stack FiniteBank[child.val,child.property] = [])
     (i : Fin ((Stack FiniteBank[child.val,child.property]).length + 1)) :
-    HasMetricBallChart ℂ (Point (L ⟨FiniteBank[child.val,child.property], i⟩ 1)) := by
+    let b := FiniteBank[(Fcut).parents.parent child.val,hp]
+    ∃ k : Fin ((Stack b).length + 1),
+      Point (L ⟨FiniteBank[child.val,child.property], i⟩ 1) = Point (EndAt true ⟨b, k⟩ 0) := by
   let a := FiniteBank[child.val,child.property]
   let data := Interval[child.val,child.property]
   have at_parent : Visit[data.enter] = (Fcut).parents.parent child.val :=
@@ -267,10 +264,34 @@ theorem compatibleContourSourceOnlyFiniteEnd_empty_planarBall
     have glue : Point (L ⟨a, 0⟩ 1) = Point (Rgt ⟨a, 0⟩ 1) :=
       MetricGluing.point_eq_of_glue Pieces (glue := Banks) ⟨⟨a, 0⟩, 1, rfl, rfl⟩
     exact glue.trans (congrArg Point (mark.trans (congrArg (Sigma.mk none) roof_mark)))
-  rw [i0]
-  exact Eq.mpr (congrArg (HasMetricBallChart ℂ) same)
-    (K.compatibleContourSourceOnlyRoofVertex_planarBall compact nonempty R no_boundary level
-      higher M positive inner_disk beta acute contour starts W geometry ends strict data.enter
-      (at_parent.symm ▸ hp))
+  obtain ⟨k, hk⟩ := K.compatibleContourSourceOnlyRoofVertex_eq_outgoing compact nonempty R
+    no_boundary level higher M positive inner_disk beta acute contour starts W geometry data.enter
+    (at_parent.symm ▸ hp)
+  let P (v : Edge) := ∃ k : Fin ((Stack (.inl v)).length + 1),
+    Point (L ⟨a, i⟩ 1) = Point (EndAt true ⟨.inl v, k⟩ 0)
+  have at_visit : P ⟨Visit[data.enter], at_parent.symm ▸ hp⟩ := by
+    refine ⟨k, ?_⟩
+    rw [i0]
+    exact same.trans hk
+  exact Eq.mp (congrArg P (Subtype.ext at_parent)) at_visit
+
+set_option maxHeartbeats 1500000 in
+-- The reversed child entrance retains its original tagged roof copy.
+/-- An empty stack at the upper end of a nonterminal child is glued at an
+original roof wedge of its parent. -/
+theorem compatibleContourSourceOnlyFiniteEnd_empty_planarBall
+    (ends : Visit[Fin.last contour.length] ∈ (Fcut).parents.roots)
+    (strict : ∀ (e : Event) (k : Fin LengthAt[e]), let B := BankAt[e]
+      0 < inner ℝ (B.chain.vertex k.succ.castSucc - B.start) (B.chain.edge k.succ))
+    (child : Edge) (hp : (Fcut).parents.parent child.val ∉ (Fcut).parents.roots)
+    (empty : Stack FiniteBank[child.val,child.property] = [])
+    (i : Fin ((Stack FiniteBank[child.val,child.property]).length + 1)) :
+    HasMetricBallChart ℂ (Point (L ⟨FiniteBank[child.val,child.property], i⟩ 1)) := by
+  obtain ⟨k, hk⟩ := K.compatibleContourSourceOnlyFiniteEnd_empty_eq_outgoing compact nonempty R
+    no_boundary level higher M positive inner_disk beta acute contour starts W geometry child hp empty i
+  exact Eq.mpr (congrArg (HasMetricBallChart ℂ) hk)
+    (K.compatibleContourSourceOnly_outgoingVertex_planarBall compact nonempty R no_boundary
+      level higher M positive inner_disk beta acute contour starts W geometry ends
+      ⟨(Fcut).parents.parent child.val, hp⟩ strict k)
 
 end Unfoldings.ConvexRoof

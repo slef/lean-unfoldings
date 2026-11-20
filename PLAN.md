@@ -1092,14 +1092,11 @@ one-edge banks. Its cut germ determines a unique original side and whole half-pl
 metric neighborhood. The complete finite bank also restores to its original
 ancestor-path cut, preserving all closed bank points, endpoints and the full
 unreduced intrinsic roll. Marked-bank metric grafts now have an exact equivalent
-single-cell model with derived boundary-only seams from local placement data.
-The actual saved-frontier attachment marks and global flat graft remain open.
-Continuing the last
-edge preserves every original vertex and all quantitative tail margins, so finite
-bank estimates also construct complete terminal opening gaps.
-See the [gap-grafting checklist](docs/NORMAL_SELECTIONS.md#gap-grafting-status). The finite-cell route to
-global isometry does not require a separate end-height certificate. Normal-cover
-selection and Euler counting follow.
+finite-cell model with boundary-only seams. Continuing the last edge preserves
+every original vertex and all quantitative tail margins. The source-only graft
+develops isometrically onto the plane, yielding nonoverlap of the original cut
+roof cells. See the [gap-grafting checklist](docs/NORMAL_SELECTIONS.md#gap-grafting-status).
+Normal-cover selection and Euler counting remain downstream.
 
 ## Later targets and Fewest Nets
 
@@ -1183,16 +1180,20 @@ selection and Euler counting follow.
   charts preserving original face coordinates, spatial placement and bank parameters.
 - [x] Construct a general whole-ball isometry from a geometric filling and local
   route-step bounds, with a two-half-disk specialization for extended metric targets.
-- [ ] Glue the matched ordinary bank half-plane charts in the actual single-slot
-  graft, including two banks of one roof piece, and transfer its planar ball to the full graft.
-- [ ] Classify positive terminal bank classes and construct their whole planar balls.
-- [ ] Identify actual saved-frontier vertex and terminal-join fans with their
-  original comparison/surgery models and prove the remaining local planar charts.
+- [x] Glue the matched ordinary bank half-plane charts in the source-only graft
+  and transfer their whole planar balls to the full graft.
+- [x] Classify positive terminal bank classes and construct their whole planar balls.
+- [x] Identify the saved-frontier vertex and terminal-join fans and prove the
+  remaining local planar charts.
 - [x] Construct complete unbounded roof cut metrics with actual planar cells,
   boundary-only seams and exact metric-ball restoration away from closed cuts.
 - [x] Construct complete unbounded cuts aligned to the actual compatible forest
   and every whole terminal ray; retain the exact seam-quotient topology.
-- [ ] Identify the actual one-ended forest bank fans and insert intrinsic polygonal gaps.
+- [x] Identify the one-ended forest bank fans and insert intrinsic polygonal gaps.
+- [x] Prove contractibility of every full source-only collapse fiber, including at
+  fine roof vertices and truncation joins.
+- [x] Develop the actual source-only graft isometrically onto the plane and restrict
+  to rigid placements of the original cut roof cells with disjoint interiors.
 - [x] Completeness for finite noncompact complexes with compatible coercive cell heights.
 - [x] Local-isometry and covering arguments for complete simply connected flat planar-cell gluings.
 - [x] Original-edge restriction to a disk with one boundary root per tree.

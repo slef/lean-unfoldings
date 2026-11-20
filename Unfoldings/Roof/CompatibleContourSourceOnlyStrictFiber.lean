@@ -83,7 +83,6 @@ local notation "Attachment" => K.compatibleContourBankAttachment compact nonempt
   level higher M positive inner_disk beta acute
 local notation "ParamAt" => K.compatibleContourBankParameter compact nonempty R no_boundary
   level higher M positive inner_disk beta acute
-local notation "LengthAt[" e "]" => TriangleComplex.positiveContourBankLength D Selection contour e
 local notation "BankAt[" e "]" => K.compatibleContourSourceBank compact nonempty R no_boundary
   level higher M positive inner_disk beta acute contour starts e
 local notation "MovedAt[" e "]" => K.compatibleContourSourceOnlyBank compact nonempty R no_boundary
@@ -92,20 +91,8 @@ local notation "SpatialAt[" e "]" => K.compatibleContourPhysicalBank compact non
   level higher M positive inner_disk beta acute contour starts e
 local notation "Index" => K.compatibleContourSourceOnlyCellIndex compact nonempty R no_boundary
   level higher M positive inner_disk beta acute contour starts W models
-local notation "Cells" => K.compatibleContourSourceOnlyCells compact nonempty R no_boundary level
-  higher M positive inner_disk beta acute contour starts W models
-local notation "Inner" => K.compatibleContourSourceOnlyCellInner compact nonempty R no_boundary
-  level higher M positive inner_disk beta acute contour starts W models
-local notation "Coordinates" => K.compatibleContourSourceOnlyCellCoordinates compact nonempty R
-  no_boundary level higher M positive inner_disk beta acute contour starts W models
-local notation "Raw" => MetricGluing.NestedCell (fun i j => Cells i j)
-local notation "Seams" => K.compatibleContourSourceOnlyClosedSeams compact nonempty R no_boundary
-  level higher M positive inner_disk beta acute contour starts W models
 
 local notation "Graft" => K.compatibleContourSourceOnlyGraft compact nonempty R no_boundary
-  level higher M positive inner_disk beta acute contour starts W models
-local notation "Label" => Space ⊕ (Event × ℂ)
-local notation "CellLabel" => K.compatibleContourSourceOnlyCellLabel compact nonempty R no_boundary
   level higher M positive inner_disk beta acute contour starts W models
 local notation "FoldAt[" e "]" => K.compatibleContourSourceOnlyFrontierMap compact nonempty R
   no_boundary level higher M positive inner_disk beta acute contour starts models e
@@ -131,9 +118,9 @@ local notation "Regular" => K.compatibleContourBankParameterInterior compact non
 
 set_option maxHeartbeats 2950000 in
 -- The arc endpoints and the marked seam coordinates belong to dependent original bank types.
-/-- A single strict physical bank address gives the whole collapse fiber, with
-the two roof copies and all the original gap arcs in their original order. -/
-theorem compatibleContourSourceOnlyCollapse_fiber_of_strict_address
+/-- A canonical stack represents the full fiber if all physical addresses reduce
+to its roof marks, gap list and consecutive seam pairs. -/
+theorem compatibleContourSourceOnlyCollapse_fiber_of_address_pairs
     (geometry : ∀ e : Event, OrientedBankGap BankAt[e] MovedAt[e])
     (f : Graft → Space) (image : Set.range f ⊆ Surface)
     (roof : ∀ x : W.Cut, f (Point ⟨none, x⟩) = (W.partition.restoreCut R.carrier x).val)
@@ -142,9 +129,17 @@ theorem compatibleContourSourceOnlyCollapse_fiber_of_strict_address
       f (Point ⟨some e, x⟩) = (FoldAt[e] ⟨x.val, h⟩).val)
     (marked : ∀ e : Event, (models e).HasMarkedCollapseFibers (SpatialAt[e])
       (fun y => f (Point ⟨some e, y⟩)))
-    (b : Attachment) (t : ParamAt b) (regular : Regular b t)
-    (unique : ∀ a (u : ParamAt a), Phys a u = Phys b t →
-      (⟨a, u⟩ : Σ a : Attachment, ParamAt a) = ⟨b, t⟩)
+    (b : Attachment) (t : ParamAt b)
+    (stack_at : ∀ a (u : ParamAt a), Phys a u = Phys b t → Stack a = Stack b)
+    (base_at : ∀ a (u : ParamAt a), Phys a u = Phys b t →
+      ∀ side, Base a side u = Base b side t)
+    (seam_at : ∀ (slot : MetricGluing.BankStackSlot Stack) (u : ParamAt slot.1),
+      Phys slot.1 u = Phys b t → ∃ i : Fin ((Stack b).length + 1),
+        L slot u = L ⟨b, i⟩ t ∧ Rgt slot u = Rgt ⟨b, i⟩ t)
+    (pair_class : ∀ (i : Fin ((Stack b).length + 1)) (x : MetricGluing.Total Pieces),
+      Relation.EqvGen Banks (L ⟨b, i⟩ t) x ↔ x = L ⟨b, i⟩ t ∨ x = Rgt ⟨b, i⟩ t)
+    (avoids_source : ∀ (e : Event) (mem : e ∈ Stack b),
+      AddressAt[b,e,mem,t] ≠ .inl (0, 0))
     (p : Space) (hp : p ∈ Surface) (position : Cap.horizontal p = Phys b t) :
     ContractibleSpace {x : Graft | f x = p} := by
   let tag (e : Event) (x : PolygonalPoint (models e).region) : MetricGluing.Total Pieces :=
@@ -196,9 +191,7 @@ theorem compatibleContourSourceOnlyCollapse_fiber_of_strict_address
     have a_phys : Phys a u = Phys b t := (marked_phys ⟨a, none, flag, u⟩ trivial).symm.trans
       ((congrArg (fun x => Cap.horizontal (f (Point ⟨none, x⟩))) eq).trans
         ((congrArg Cap.horizontal h).trans position))
-    have address := unique a u a_phys
-    let mark (w : Σ a : Attachment, ParamAt a) := Base w.1 flag w.2
-    exact ⟨flag, eq.symm.trans (congrArg mark address)⟩
+    exact ⟨flag, eq.symm.trans (base_at a u a_phys flag)⟩
   have address_value (a : Attachment) (e : Event) (h : e ∈ Stack a) (u : ParamAt a) :
       f (Point (tag e (Gap a e h true u))) = (SpatialAt[e]).addressPoint AddressAt[a,e,h,u] := by
     let y := Gap a e h true u
@@ -223,8 +216,7 @@ theorem compatibleContourSourceOnlyCollapse_fiber_of_strict_address
       no_boundary level higher M positive inner_disk beta acute contour e addr
     have at_p := (address_value a e ha u).trans ((congrArg ((SpatialAt[e]).addressPoint) named).trans located)
     have spatial := (tag_phys a e ha true u).symm.trans ((congrArg Cap.horizontal at_p).trans position)
-    have bank_eq : a = b := congrArg Sigma.fst (unique a u spatial)
-    exact bank_eq ▸ ha
+    exact stack_at a u spatial ▸ ha
   have non_source (e : Event) (mem : e ∈ Stack b) :
       (BankAt[e]).addressPoint AddressAt[b,e,mem,t] ≠ (BankAt[e]).start := by
     intro at_start
@@ -238,13 +230,7 @@ theorem compatibleContourSourceOnlyCollapse_fiber_of_strict_address
     have genuine := K.compatibleContourSourceOnlyBank_edge_ne_zero compact nonempty R no_boundary
       level higher M positive inner_disk beta acute contour starts models e
     have is_source := (models e).address_eq_source (geometry e) genuine false a source_mark
-    cases b with
-    | inl v =>
-      have zero : t = 0 := congrArg Prod.snd (Sum.inl.inj is_source)
-      exact regular.1.ne' zero
-    | inr v =>
-      change Sum.inr t = Sum.inl (0, 0) at is_source
-      cases is_source
+    exact avoids_source e mem is_source
   have fiber_arc (i : Fin (Stack b).length) :
       let e := (Stack b).get i
       let mem := List.get_mem (Stack b) i
@@ -269,16 +255,65 @@ theorem compatibleContourSourceOnlyCollapse_fiber_of_strict_address
     refine ⟨P, ?_, ?_⟩
     · exact (injective (non_source e mem)).comp unitInterval.symm_involutive.injective
     · rw [path_range, ← values, value]
-  exact MetricGluing.contractibleSpace_fiber_of_single_bank_stack Pieces Stack Base Gap b t f p
+  exact MetricGluing.contractibleSpace_fiber_of_bank_stack_pairs Pieces Stack Base Gap b t f p
     (K.compatibleContourSourceOnlyGraft_exact compact nonempty R no_boundary level higher M
       positive inner_disk beta acute contour starts W models geometry)
     (K.compatibleContourBankStack_nodup compact nonempty R no_boundary level higher M
       positive inner_disk beta acute contour)
-    (K.compatibleContourSourceOnlyMarks_unique compact nonempty R no_boundary level higher M
-      positive inner_disk beta acute contour starts W models geometry b t regular)
-    (fun slot u h => unique _ _ ((physical_slot slot u).symm.trans
-      ((congrArg Cap.horizontal h).trans position)))
+    pair_class
+    (by
+      intro x y joined inside
+      obtain ⟨slot, u, rfl, rfl⟩ := joined
+      exact seam_at slot u ((physical_slot slot u).symm.trans
+        ((congrArg Cap.horizontal inside).trans position)))
     (fun i => physical_injective _ ((physical_slot ⟨b, i⟩ t).trans position.symm))
     roof_names gap_names fiber_arc
+
+set_option maxHeartbeats 2950000 in
+-- The arc endpoints and the marked seam coordinates belong to dependent original bank types.
+/-- A single strict physical bank address gives the whole collapse fiber, with
+the two roof copies and all the original gap arcs in their original order. -/
+theorem compatibleContourSourceOnlyCollapse_fiber_of_strict_address
+    (geometry : ∀ e : Event, OrientedBankGap BankAt[e] MovedAt[e])
+    (f : Graft → Space) (image : Set.range f ⊆ Surface)
+    (roof : ∀ x : W.Cut, f (Point ⟨none, x⟩) = (W.partition.restoreCut R.carrier x).val)
+    (boundary_gap : ∀ (e : Event) (x : PolygonalPoint (models e).region)
+      (h : x.val ∈ frontier (models e).region),
+      f (Point ⟨some e, x⟩) = (FoldAt[e] ⟨x.val, h⟩).val)
+    (marked : ∀ e : Event, (models e).HasMarkedCollapseFibers (SpatialAt[e])
+      (fun y => f (Point ⟨some e, y⟩)))
+    (b : Attachment) (t : ParamAt b) (regular : Regular b t)
+    (unique : ∀ a (u : ParamAt a), Phys a u = Phys b t →
+      (⟨a, u⟩ : Σ a : Attachment, ParamAt a) = ⟨b, t⟩)
+    (p : Space) (hp : p ∈ Surface) (position : Cap.horizontal p = Phys b t) :
+    ContractibleSpace {x : Graft | f x = p} := by
+  have nodup := K.compatibleContourBankStack_nodup compact nonempty R no_boundary level higher M
+    positive inner_disk beta acute contour
+  have named := K.compatibleContourSourceOnlyMarks_unique compact nonempty R no_boundary level
+    higher M positive inner_disk beta acute contour starts W models geometry b t regular
+  apply K.compatibleContourSourceOnlyCollapse_fiber_of_address_pairs compact nonempty R no_boundary
+    level higher M positive inner_disk beta acute contour starts W models geometry f image roof
+    boundary_gap marked b t ?_ ?_ ?_ ?_ ?_ p hp position
+  · intro a u h
+    exact congrArg (fun q : Σ a : Attachment, ParamAt a => Stack q.1) (unique a u h)
+  · intro a u h side
+    exact congrArg (fun q : Σ a : Attachment, ParamAt a => Base q.1 side q.2) (unique a u h)
+  · rintro ⟨a, i⟩ u h
+    have address := unique a u h
+    have bank : a = b := congrArg Sigma.fst address
+    subst a
+    have time : u = t := eq_of_heq (Sigma.mk.inj address).2
+    subst u
+    exact ⟨i, rfl, rfl⟩
+  · intro i
+    exact MetricGluing.bankStack_eqvGen_pair_iff Stack Pieces Base Gap nodup ⟨b, i⟩ t named
+  · intro e mem is_source
+    cases b with
+    | inl v =>
+      have zero : t = 0 := congrArg Prod.snd (Sum.inl.inj is_source)
+      exact regular.1.ne' zero
+    | inr v =>
+      change Sum.inr t = Sum.inl (0, 0) at is_source
+      cases is_source
 
 end Unfoldings.ConvexRoof
