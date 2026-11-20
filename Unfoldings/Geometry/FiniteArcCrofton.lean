@@ -171,6 +171,49 @@ private theorem minorArc_equatorialArc_crossing_iff {u v : Space} {r : ℝ} {g :
     have unique := (minorArc_greatCircle_crossing_iff hu hv not_antipodal first last).mpr cross
     exact unique.unique ⟨arc, rotated_equatorialArc_on_greatCircle other⟩ ⟨hit, orthogonal⟩
 
+/-- The event that the two arcs have a unique common point. -/
+def arcCrossingEvent (u v : Space) (frame : SpatialRotation) (r : ℝ) : Set SpatialRotation :=
+  {g | ∃! x ∈ openMinorArc u v, x ∈ linear g '' (linear frame '' equatorialArc r)}
+
+private theorem arcCrossingEvent_preimage (u v : Space) (frame : SpatialRotation) (r : ℝ) :
+    arcCrossingEvent u v frame r =
+      (fun g => g * frame) ⁻¹'
+        {g | ∃! x ∈ openMinorArc u v, x ∈ linear g '' equatorialArc r} := by
+  ext g
+  simp only [arcCrossingEvent, Set.mem_ofPred_eq, Set.mem_preimage, Set.image_image, linear_mul,
+    LinearMap.coe_comp, Function.comp_apply]
+
+private theorem crossingEvent_ae_eq {u v : Space} {r : ℝ}
+    (hu : ‖u‖ = 1) (hv : ‖v‖ = 1) (not_antipodal : u + v ≠ 0) :
+    {g | ∃! x ∈ openMinorArc u v, x ∈ linear g '' equatorialArc r} =ᵐ[probability]
+      crossingRots u v ∩ crossingPhase u v ⁻¹' Metric.closedBall (0 : EquatorPhase) r := by
+  have generic (w : Space) (hw : ‖w‖ = 1) :
+      ∀ᵐ g ∂probability, inner ℝ (linear g equatorPole) w ≠ 0 := by
+    have nonzero : innerSL ℝ w ≠ 0 := by
+      intro zero
+      have equal := congrArg (fun f : Space →L[ℝ] ℝ => f w) zero
+      change inner ℝ w w = 0 at equal
+      rw [real_inner_self_eq_norm_sq, hw] at equal
+      norm_num at equal
+    have null := probability_linear_hyperplane equatorPole_unit (innerSL ℝ w) nonzero
+    change probability {g | inner ℝ w (linear g equatorPole) = 0} = 0 at null
+    simpa only [ae_iff, not_not, real_inner_comm _ w] using null
+  filter_upwards [generic u hu, generic v hv] with g first last
+  exact propext (minorArc_equatorialArc_crossing_iff hu hv not_antipodal first last)
+
+/-- The geometric crossing event is measurable up to the null endpoint incidences. -/
+theorem nullMeasurableSet_arcCrossingEvent {u v : Space} (hu : ‖u‖ = 1) (hv : ‖v‖ = 1)
+    (not_antipodal : u + v ≠ 0) (frame : SpatialRotation) (r : ℝ) :
+    NullMeasurableSet (arcCrossingEvent u v frame r) probability := by
+  have measurable : MeasurableSet
+      (crossingRots u v ∩ crossingPhase u v ⁻¹' Metric.closedBall (0 : EquatorPhase) r) :=
+    (crossingRots_measurable u v).inter
+      (measurableSet_closedBall.preimage (crossingPhase_measurable u v))
+  rw [arcCrossingEvent_preimage]
+  exact (measurable.nullMeasurableSet.congr
+    (crossingEvent_ae_eq hu hv not_antipodal).symm).preimage
+      (measurePreserving_mul_right probability frame).quasiMeasurePreserving
+
 /-- Finite-arc spherical Crofton. The expected crossing count of a fixed
 minor arc and a uniformly rotated arc of length (2r) is their length
 product divided by (2π^2). Outside the null endpoint incidences the count
@@ -185,20 +228,7 @@ theorem probability_minorArc_equatorialArc {u v : Space} {r : ℝ}
   have measurable : MeasurableSet E :=
     (crossingRots_measurable u v).inter
       (measurableSet_closedBall.preimage (crossingPhase_measurable u v))
-  have generic (w : Space) (hw : ‖w‖ = 1) :
-      ∀ᵐ g ∂probability, inner ℝ (linear g equatorPole) w ≠ 0 := by
-    have nonzero : innerSL ℝ w ≠ 0 := by
-      intro zero
-      have equal := congrArg (fun f : Space →L[ℝ] ℝ => f w) zero
-      change inner ℝ w w = 0 at equal
-      rw [real_inner_self_eq_norm_sq, hw] at equal
-      norm_num at equal
-    have null := probability_linear_hyperplane equatorPole_unit (innerSL ℝ w) nonzero
-    change probability {g | inner ℝ w (linear g equatorPole) = 0} = 0 at null
-    simpa only [ae_iff, not_not, real_inner_comm _ w] using null
-  have ae_equal : {g | ∃! x ∈ openMinorArc u v, x ∈ linear g '' equatorialArc r} =ᵐ[probability] E := by
-    filter_upwards [generic u hu, generic v hv] with g first last
-    exact propext (minorArc_equatorialArc_crossing_iff hu hv not_antipodal first last)
+  have ae_equal := crossingEvent_ae_eq (r := r) hu hv not_antipodal
   have flag : arcCrossing u v r = E.indicator (fun _ => 1) := by
     funext g
     by_cases cross : g ∈ crossingRots u v <;>
@@ -214,13 +244,8 @@ theorem probability_minorArc_rotated_equatorialArc {u v : Space} {r : ℝ}
     (nonnegative : 0 ≤ r) (small : r ≤ Real.pi) (frame : SpatialRotation) :
     probability {g | ∃! x ∈ openMinorArc u v, x ∈ linear g '' (linear frame '' equatorialArc r)} =
       ENNReal.ofReal (angle u v * (2 * r) / (2 * Real.pi ^ 2)) := by
-  let E : Set SpatialRotation := {g | ∃! x ∈ openMinorArc u v, x ∈ linear g '' equatorialArc r}
-  have translated : {g | ∃! x ∈ openMinorArc u v, x ∈ linear g '' (linear frame '' equatorialArc r)} =
-      (fun g => g * frame) ⁻¹' E := by
-    ext g
-    simp only [E, Set.mem_ofPred_eq, Set.mem_preimage, Set.image_image, linear_mul,
-      LinearMap.coe_comp, Function.comp_apply]
-  rw [translated, measure_preimage_mul_right probability frame]
+  change probability (arcCrossingEvent u v frame r) = _
+  rw [arcCrossingEvent_preimage, measure_preimage_mul_right probability frame]
   exact probability_minorArc_equatorialArc hu hv not_antipodal nonnegative small
 
 end Unfoldings.SpatialRotation

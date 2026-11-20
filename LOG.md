@@ -2,6 +2,17 @@
 
 ## Session Log
 
+### 2026-11-20 — count arc families and compute stereographic solid angle
+
+- Proved Crofton for finite crossing multiplicities under a shared rotation.
+  A crossing witness for every changed residual side bounds the expected
+  charge, with no witnesses needed at charges of zero.
+- Constructed an internal hemisphere center by projecting the origin onto
+  the finite Euclidean hull. Verified convexity and chord distortion in
+  its centered stereographic chart.
+- Computed the exact Jacobian of the radial chart extension and integrated
+  the radial parameter to obtain the spherical area density.
+
 ### 2026-11-20 — prove the finite-arc spherical crossing formula
 
 - Parameterized a moving great-circle arc by uniform angular phase and used

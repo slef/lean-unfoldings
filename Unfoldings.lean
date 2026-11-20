@@ -2801,3 +2801,11 @@ public import Unfoldings.Geometry.MinorArcCrofton
 public import Unfoldings.Geometry.EquatorPhase
 public import Unfoldings.Geometry.FiniteArcCrofton
 public import Unfoldings.Roof.CompatibleAdaptivePaths
+public import Unfoldings.Geometry.ArcFamilyCrofton
+public import Unfoldings.FewestNets.CrossingChargeBound
+public import Unfoldings.Geometry.SphericalHullCenter
+public import Unfoldings.Geometry.StereographicConvex
+public import Unfoldings.Geometry.StereographicHemisphere
+public import Unfoldings.Geometry.StereographicChord
+public import Unfoldings.Geometry.StereographicJacobian
+public import Unfoldings.Geometry.StereographicArea
