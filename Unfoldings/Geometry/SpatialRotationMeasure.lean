@@ -102,6 +102,16 @@ instance : probability.IsMulRightInvariant := by
     ENNReal.coe_injective (by simpa using equal.symm)
   exact scale.trans (by rw [factor, one_smul])
 
+instance : probability.IsInvInvariant := by
+  constructor
+  let : IsProbabilityMeasure probability.inv := ⟨by simp⟩
+  have scale := isMulInvariant_eq_smul_of_compactSpace probability.inv probability
+  have equal := congrArg (fun m : Measure SpatialRotation => m Set.univ) scale
+  simp only [measure_univ, Measure.smul_apply, ENNReal.smul_def, smul_eq_mul, mul_one] at equal
+  have factor : probability.inv.haarScalarFactor probability = 1 :=
+    ENNReal.coe_injective (by simpa using equal.symm)
+  exact scale.trans (by rw [factor, one_smul])
+
 /-- Independent left and right angular shifts preserve the mean of a measurable
 rotation statistic. The phase space can be a product of two uniform circles. -/
 theorem lintegral_eq_average_shifts {Phase : Type*} [MeasurableSpace Phase]

@@ -699,8 +699,12 @@ own centered compact convex chart. The [corner estimate](../Unfoldings/Geometry/
 bounds the projected chord turn by the spherical exterior angle from below.
 The [extreme-site cells](../Unfoldings/Polyhedron/GaussianExtremeCells.lean)
 account for all spherical area and admit strictly convex charts.
-Cyclic heading separation for the actual Gaussian cells, the Gaussian Euler
-identities, and the crossing witnesses in the actual network remain open.
+A [wall cover](../Unfoldings/FewestNets/VoronoiCrossings.lean) by actual
+minor arcs now supplies generic changed-side crossings. The
+[Jordan filling theorem](../Unfoldings/Topology/JordanCellFilling.lean)
+fills cycles by complete cells of a planar decomposition.
+Cyclic heading separation for the actual Gaussian cells, Gaussian Euler
+counting, and the localized crossing budget remain open.
 
 The [adaptive routing](../Unfoldings/Roof/CompatibleAdaptiveRouting.lean)
 constructs both parent forests given angle and outward-direction bounds.

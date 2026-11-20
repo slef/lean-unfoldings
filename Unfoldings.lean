@@ -2824,3 +2824,8 @@ public import Unfoldings.Geometry.StereographicSupportDisks
 public import Unfoldings.Polyhedron.GaussianExtremeCells
 public import Unfoldings.Geometry.MinorArcConnectivity
 public import Unfoldings.FewestNets.NetworkCrossings
+public import Unfoldings.Geometry.SphericalArcFrame
+public import Unfoldings.Geometry.EquatorialMinorArc
+public import Unfoldings.FewestNets.NormalVoronoi
+public import Unfoldings.FewestNets.VoronoiCrossings
+public import Unfoldings.Topology.JordanCellFilling

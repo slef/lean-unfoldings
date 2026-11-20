@@ -14,6 +14,17 @@ namespace Unfoldings
 def closedMinorArc (u v : Space) : Set Space :=
   insert u (insert v (openMinorArc u v))
 
+theorem closedMinorArc_subset_sphere {u v : Space} (hu : ‖u‖ = 1) (hv : ‖v‖ = 1)
+    (not_antipodal : u + v ≠ 0) : closedMinorArc u v ⊆ Metric.sphere 0 1 := by
+  intro x hx
+  rw [Metric.mem_sphere, dist_zero_right]
+  rcases Set.mem_insert_iff.mp hx with rfl | hx
+  · exact hu
+  · rcases Set.mem_insert_iff.mp hx with rfl | hx
+    · exact hv
+    · obtain ⟨t, ht, rfl⟩ := hx
+      exact NormedSpace.norm_normalize (minorArc_chord_ne_zero hu hv not_antipodal ht)
+
 theorem isPreconnected_closedMinorArc {u v : Space} (hu : ‖u‖ = 1) (hv : ‖v‖ = 1)
     (not_antipodal : u + v ≠ 0) : IsPreconnected (closedMinorArc u v) := by
   let chord (t : ℝ) := (1 - t) • u + t • v

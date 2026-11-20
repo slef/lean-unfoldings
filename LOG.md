@@ -2,6 +2,16 @@
 
 ## Session Log
 
+### 2026-11-20 — connect rotated Voronoi labels, minor arcs, and Jordan fillings
+
+- Represented every genuine spherical minor arc in the exact Crofton phase
+  coordinates by a proper spatial rotation.
+- Proved generic uniqueness of rotated Voronoi labels and obtained Crofton
+  witnesses for changed sides from any minor-arc cover of the Voronoi walls.
+- Proved a Jordan cycle in a planar cellular skeleton encloses a union of
+  complete cells. A compact convex region containing the cycle also contains
+  each of those cells.
+
 ### 2026-11-20 — get Crofton witnesses from changes of cell label
 
 - Proved closed minor arcs are connected and sides whose endpoints lie in
