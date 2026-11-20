@@ -2833,3 +2833,16 @@ public import Unfoldings.Geometry.MinorArcSupportIntersections
 public import Unfoldings.Polyhedron.UpperRoofNormalCone
 public import Unfoldings.Polyhedron.GaussianVertexAngles
 public import Unfoldings.Polyhedron.TriangulationEuler
+public import Unfoldings.Geometry.HingeCircleSpeed
+public import Unfoldings.Geometry.HingeCircleAngleDerivative
+public import Unfoldings.Geometry.CircleLineContact
+public import Unfoldings.Geometry.RotatedLineContact
+public import Unfoldings.Geometry.RightSlopeBound
+public import Unfoldings.Geometry.CircleLiftSpeed
+public import Unfoldings.Geometry.HingeCircleLiftBound
+public import Unfoldings.Geometry.HingeCircleVertexMargin
+public import Unfoldings.Geometry.OpeningPhaseSum
+public import Unfoldings.Geometry.OpeningTraceSharpPhase
+public import Unfoldings.Geometry.SavedOpeningTraceGap
+public import Unfoldings.Geometry.SharpDevelopmentMargin
+public import Unfoldings.Geometry.SharpDevelopmentThreshold

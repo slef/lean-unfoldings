@@ -45,11 +45,15 @@ theorem openings_chain_outward : (R.openings events).chain.Outward := by
     (openingHeading events) (R.chain.openings_edge events) (openingBudget_nonneg events)
     constant small (openingHeading_oscillation events) length_bound margin
 
-include constant small tail_length tail_margin in
-/-- The actual infinite tail points away from every retained current hinge. -/
-theorem openings_tail_outward_from (j : Fin (n + 1)) :
-    0 ≤ inner ℝ ((R.openings events).chain.vertex (Fin.last n) -
-      (R.openings events).chain.vertex j) (R.openings events).direction := by
+include constant tail_length tail_margin in
+/-- A uniform heading budget bounds the quantitative margin of the current tail from any hinge. -/
+theorem openings_tail_radial_margin {ε : ℝ} (budget : openingBudget events ≤ ε)
+    (good : D * ε < d) (j : Fin (n + 1)) :
+    ((d - D * ε) / (1 + D * ε)) *
+      (‖(R.openings events).chain.vertex (Fin.last n) - (R.openings events).chain.vertex j‖ *
+        ‖(R.openings events).direction‖) ≤
+      inner ℝ ((R.openings events).chain.vertex (Fin.last n) -
+        (R.openings events).chain.vertex j) (R.openings events).direction := by
   let A := R.chain.interval j.val (n - j.val) (by omega)
   let B := (R.openings events).chain.interval j.val (n - j.val) (by omega)
   let correction (i : Fin (n - j.val)) := openingHeading events ⟨j.val + i.val, by omega⟩
@@ -76,10 +80,20 @@ theorem openings_tail_outward_from (j : Fin (n + 1)) :
       inner ℝ (A.vertex (Fin.last _) - A.vertex 0) R.direction := by
     rw [endpointA]
     exact tail_margin j
-  have estimate := A.heading_radial_margin B correction edges (openingBudget_nonneg events)
-    constant (fun i => openingHeading_tail_error events ⟨j.val + i.val, by omega⟩)
-    small lengthA R.direction marginA
+  have estimate := A.heading_radial_margin B correction edges
+    ((openingBudget_nonneg events).trans budget) constant
+    (fun i => (openingHeading_tail_error events ⟨j.val + i.val, by omega⟩).trans budget)
+    good lengthA R.direction marginA
   rw [endpointB, ← R.openings_direction] at estimate
+  exact estimate
+
+include constant small tail_length tail_margin in
+/-- The actual infinite tail points away from every retained current hinge. -/
+theorem openings_tail_outward_from (j : Fin (n + 1)) :
+    0 ≤ inner ℝ ((R.openings events).chain.vertex (Fin.last n) -
+      (R.openings events).chain.vertex j) (R.openings events).direction := by
+  have estimate := R.openings_tail_radial_margin events constant tail_length tail_margin
+    le_rfl small j
   have coefficient : 0 ≤ (d - D * openingBudget events) / (1 + D * openingBudget events) :=
     div_nonneg (sub_pos.mpr small).le
       (by nlinarith [mul_nonneg constant (openingBudget_nonneg events)])

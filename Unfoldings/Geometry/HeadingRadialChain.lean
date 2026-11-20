@@ -1,8 +1,6 @@
 module
 
-public import Unfoldings.Geometry.ChainInterval
-public import Unfoldings.Geometry.HeadingPerturbation
-public import Unfoldings.Geometry.RadialChainPoints
+public import Unfoldings.Geometry.HeadingSubhistoryMargin
 
 /-! Uniform heading errors preserve radial monotonicity of every actual subchain. -/
 
@@ -24,33 +22,8 @@ theorem outward_of_heading_oscillation {ε D d : ℝ} (epsilon : 0 ≤ ε) (cons
       d * (‖P.vertex i.castSucc - P.vertex j‖ * ‖P.edge i‖) ≤
         inner ℝ (P.vertex i.castSucc - P.vertex j) (P.edge i)) : Q.Outward := by
   intro j i earlier
-  let fits : j.val + (i.val - j.val) ≤ n := by omega
-  let A := P.interval j.val (i.val - j.val) fits
-  let B := Q.interval j.val (i.val - j.val) fits
-  let correction (k : Fin (i.val - j.val)) := error ⟨j.val + k.val, by omega⟩
-  have edges (k : Fin (i.val - j.val)) :
-      B.edge k = polarRay (correction k) * A.edge k := rotated ⟨j.val + k.val, by omega⟩
-  have first : (⟨j.val, by omega⟩ : Fin (n + 1)) = j := Fin.ext rfl
-  have last : (⟨j.val + (i.val - j.val), by omega⟩ : Fin (n + 1)) = i.castSucc :=
-    Fin.ext (by simp only [Fin.val_castSucc]; omega)
-  have endpointP : A.vertex (Fin.last (i.val - j.val)) - A.vertex 0 =
-      P.vertex i.castSucc - P.vertex j := by
-    change P.vertex ⟨j.val + (i.val - j.val), by omega⟩ - P.vertex ⟨j.val, by omega⟩ = _
-    rw [first, last]
-  have endpointQ : B.vertex (Fin.last (i.val - j.val)) - B.vertex 0 =
-      Q.vertex i.castSucc - Q.vertex j := by
-    change Q.vertex ⟨j.val + (i.val - j.val), by omega⟩ - Q.vertex ⟨j.val, by omega⟩ = _
-    rw [first, last]
-  have lengthA : A.projectedLength ≤ D * ‖A.vertex (Fin.last _) - A.vertex 0‖ := by
-    rw [endpointP]
-    exact length_bound j i earlier
-  have marginA : d * (‖A.vertex (Fin.last _) - A.vertex 0‖ * ‖P.edge i‖) ≤
-      inner ℝ (A.vertex (Fin.last _) - A.vertex 0) (P.edge i) := by
-    rw [endpointP]
-    exact margin j i earlier
-  have estimate := A.heading_radial_margin B correction edges epsilon constant
-    (fun k => oscillation ⟨j.val + k.val, by omega⟩ i) small lengthA (P.edge i) marginA
-  rw [endpointQ, ← rotated i] at estimate
+  have estimate := P.radial_margin_of_heading_oscillation Q error rotated epsilon constant
+    small oscillation length_bound margin j i earlier
   have coefficient : 0 ≤ (d - D * ε) / (1 + D * ε) :=
     div_nonneg (sub_pos.mpr small).le (by nlinarith [mul_nonneg constant epsilon])
   exact (mul_nonneg coefficient (mul_nonneg (norm_nonneg _) (norm_nonneg _))).trans estimate

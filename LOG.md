@@ -2,6 +2,19 @@
 
 ## Session Log
 
+### 2026-11-20 — verify the sharp fixed-radius saved-bank gap
+
+- Proved the exact fixed-radius rate for a point sliding along a rotated link.
+  A common radial margin `m` bounds the rate by `2 / m`, including transitions
+  between links and onto the infinite tail.
+- Summed the real angular increments of the fresh trace to obtain a complete
+  geometric gap between the actual saved and final banks under the sharp
+  angular budget. The original subhistory tests cover the combined heading
+  budget throughout every partial sweep.
+- Proved all three numerical sufficient conditions from the paper's
+  square-root flatness threshold, including the twenty rational intervals
+  and the trigonometric bounds.
+
 ### 2026-11-20 — prove Euler's formula for the original convex triangulation
 
 - Aligned a view from the interior at each original vertex. Its entire star

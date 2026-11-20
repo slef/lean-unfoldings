@@ -1321,6 +1321,13 @@ the whole frontier identity, source-only bank contact, nonempty interior,
 regular closedness, a finite convex-cell cover, intrinsic completeness and
 contractibility. The intrinsic region is homeomorphic to a closed sector.
 
+[`exists_saved_opening_trace_gap`](../Unfoldings/Geometry/SavedOpeningTraceGap.lean)
+uses the sharp bound for a saved history followed by a fresh opening. A saved
+budget of `2 * Ω` and a fresh budget of `Ω` give
+`m = (d - 3 * Ω * D) / (1 + 3 * Ω * D)`. Each positive hinge sweep contributes
+at most twice its angle divided by `m` at every fixed radius. The theorem
+yields the same geometric gap under `2 * Ω / m < π`.
+
 The remaining grafting step must identify the local gap corner angles as the
 complements of the actual incident surface fans, then construct the saved
 frontier surgery and the complete flat gluing. These are additional conclusions;
