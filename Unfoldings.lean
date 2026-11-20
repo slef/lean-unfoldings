@@ -2762,3 +2762,7 @@ public import Unfoldings.Roof.CompatibleContourSourceOnlyVertexSeparation
 public import Unfoldings.Roof.CompatibleContourSourceOnlyVertexFiber
 public import Unfoldings.Roof.CompatibleContourSourceOnlyGraftDevelopment
 public import Unfoldings.Roof.CompatibleContourSourceOnlyRoofDevelopment
+public import Unfoldings.Metric.ConvexPatchLift
+public import Unfoldings.Geometry.SpatialEnvelopeFaceLift
+public import Unfoldings.Roof.CompatibleOriginalFaceLift
+public import Unfoldings.Roof.CompatibleOriginalSeamLift
