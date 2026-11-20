@@ -2,6 +2,18 @@
 
 ## Session Log
 
+### 2026-11-19 — prove local Euclidean regularity throughout the source-only graft
+
+- Exhausted outgoing and incoming finite stack slots, terminal joins, and
+  positive tail points, including the roof copies separated by empty stacks.
+- Located every point of a gap frontier and every roof copy on a physical cut
+  by a literal bank address. Each original terminal ray has a last fine edge.
+- Proved that every point of the assembled source-only graft has a whole
+  planar metric ball.
+- Full `lake build` passed (6,673 jobs). Both abstract audits passed.
+  Only standard axioms occur in 21,949 unfolding and 7,243 planar-topology
+  declarations.
+
 ### 2026-11-19 — close flat leaf slits and cover unmarked interiors
 
 - Preserved both directed arclength marks in the full-turn slit fan of a

@@ -630,7 +630,8 @@ nonoverlap and counting remain to be proved.
 - [x] Restore [the full-turn slit at an empty-stack leaf](../Unfoldings/Roof/CompatibleContourSourceOnlyEmptyStackLeafBall.lean).
 - [x] Cover [the roof off the cut and gap interiors](../Unfoldings/Roof/CompatibleContourSourceOnlyUnmarkedBall.lean),
   including original cell seams away from the bank marks.
-- [ ] Assemble a whole chart at every point by exhausting the original bank marks and endpoint cases.
+- [x] Prove [local Euclidean regularity throughout the graft](../Unfoldings/Roof/CompatibleContourSourceOnlyGraftFlatness.lean).
+  The original bank addresses cover all gap frontiers and every roof copy over the cut.
 - [x] Prove that [physical bank parameters are injective](../Unfoldings/Roof/CompatibleContourPhysicalOrder.lean).
   The [proper collapse](../Unfoldings/Roof/CompatibleContourSourceOnlyGraftCollapse.lean)
   has contractible nonempty fibers on each individual gap.
