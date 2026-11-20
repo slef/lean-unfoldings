@@ -1,5 +1,6 @@
 module
 
+public import Unfoldings.Cone.MarkedSectorGerm
 public import Unfoldings.Cone.SectorPairBankRays
 public import Unfoldings.Cone.SectorPairConstruction
 public import Unfoldings.Metric.BankStackSingleton
@@ -210,6 +211,37 @@ private theorem exists_leaf_gap_marked_chart
 
 set_option maxHeartbeats 340000 in
 -- The constructor compares the elaborated whole-cut chart and the dependent gap chart.
+/-- The actual source tip gives a calibrated sector even when the source has children. -/
+theorem compatibleContourSourceOnlyTip_markedSectorGerm
+    (event : Event) (g : OrientedBankGap BankAt[event] MovedAt[event])
+    (matched : models event = g.model) (member : event ∈ Stack FirstEdge[event]) :
+    let vertex := SourceOf[event]
+    let nonroot := (D).positiveContourVertex_nonroot Selection contour event
+    let ell := (D).boundaryBankLength Parent[vertex,nonroot,false]
+    Nonempty (MarkedSectorGerm ((models event).edgePoint false 0 0)
+      ((D).interiorAngularDefect Set.univ vertex)
+      (fun side t => Gap FirstEdge[event] event member (!side) t) (fun _ => ell)) := by
+  let v := SourceOf[event]
+  let nonroot := (D).positiveContourVertex_nonroot Selection contour event
+  let ell := (D).boundaryBankLength Parent[v,nonroot,false]
+  have ellpos : 0 < ell := (D).boundaryBankLength_pos _
+  have speed : ‖(BankAt[event]).chain.edge 0‖ = ell :=
+    K.compatibleContourSourceBank_edge_length compact nonempty R no_boundary level higher M
+      positive inner_disk beta acute contour starts event 0
+  obtain ⟨chart, center, distance, ray⟩ := exists_leaf_gap_marked_chart K compact nonempty R
+    no_boundary level higher M positive inner_disk beta acute contour starts models event g
+    matched member ellpos speed
+  change Nonempty (MarkedSectorGerm ((models event).edgePoint false 0 0)
+    ((D).interiorAngularDefect Set.univ v)
+    (fun side t => Gap FirstEdge[event] event member (!side) t) (fun _ => ell))
+  refine ⟨⟨⟨event.property.2, ell, ellpos, chart, center⟩, fun b t => distance (!b) t, ?_⟩⟩
+  intro b t near
+  cases b
+  · change (chart ⟨Gap FirstEdge[event] event member true t, near⟩).val.val =
+      (t.val * ell) • polarRay 0
+    simpa only [ite_true, polarRay_zero, Complex.real_smul, mul_one] using ray true t near
+  · exact ray false t near
+
 private theorem exists_leaf_sector_pair
     (geometry : ∀ event : Event, OrientedBankGap BankAt[event] MovedAt[event])
     (matched : ∀ event, models event = (geometry event).model)

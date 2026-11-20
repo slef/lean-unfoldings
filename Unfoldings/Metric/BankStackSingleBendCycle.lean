@@ -64,43 +64,59 @@ theorem singleCenter_injective (roof_unique : Function.Injective roof)
   · exact fun equal => (bend_roof i equal.symm).elim
   · exact fun equal => congrArg Fin.succ (roof_unique equal)
 
-/-- Construct the exact cyclic class of a final child gap bend and the roof run that
-returns to its outgoing side. -/
-def ofSingleBendRun
-    (entry_bend : At true entrance = bend) (entry_roof : At false entrance = roof 0)
+/-- The interior slots retain the contour orientation and the two exterior slots are signed. -/
+def singleSideWith (entrySide exitSide : Bool) (i : Fin (n + 2)) : Bool :=
+  Fin.cases entrySide (Fin.lastCases exitSide (fun _ => true)) i
+
+@[simp] theorem singleSideWith_zero (entrySide exitSide : Bool) :
+    singleSideWith entrySide exitSide (0 : Fin (n + 2)) = entrySide := rfl
+
+@[simp] theorem singleSideWith_last (entrySide exitSide : Bool) :
+    singleSideWith entrySide exitSide (Fin.last n).succ = exitSide := by
+  change Fin.lastCases (motive := fun _ => Bool) exitSide (fun _ => true) (Fin.last n) = exitSide
+  exact Fin.lastCases_last
+
+@[simp] theorem singleSideWith_between (entrySide exitSide : Bool) (i : Fin n) :
+    singleSideWith entrySide exitSide i.castSucc.succ = true := by
+  change Fin.lastCases (motive := fun _ => Bool) exitSide (fun _ => true) i.castSucc = true
+  exact Fin.lastCases_castSucc i
+
+/-- Construct the exact cycle with either registered orientation of its two exterior slots. -/
+def ofSingleBendRunWithSides (entrySide exitSide : Bool)
+    (entry_bend : At entrySide entrance = bend) (entry_roof : At (!entrySide) entrance = roof 0)
     (step_left : ∀ i, At true (between i) = roof i.castSucc)
     (step_right : ∀ i, At false (between i) = roof i.succ)
-    (closing_roof : At false closure = roof (Fin.last n)) (closing_bend : At true closure = bend)
+    (closing_roof : At exitSide closure = roof (Fin.last n)) (closing_bend : At (!exitSide) closure = bend)
     (bend_incident : ∀ flag (s : Time), At flag s = bend → s = entrance ∨ s = closure)
     (roof_incident : ∀ i flag (s : Time), At flag s = roof i →
       s = entrance ∨ s = closure ∨ ∃ k, s = between k) :
     BankStackCyclicClass X stack base gap (n + 1) where
   center := singleCenter bend roof
   time := singleTime entrance closure between
-  side := singleSide
+  side := singleSideWith entrySide exitSide
   first := fun i => by
-    change At (singleSide i) (singleTime entrance closure between i) = singleCenter bend roof i
+    change At (singleSideWith entrySide exitSide i) (singleTime entrance closure between i) = singleCenter bend roof i
     refine Fin.cases ?_ (fun j => ?_) i
     · exact entry_bend
     · refine Fin.lastCases ?_ (fun k => ?_) j
-      · simpa only [singleSide_last, singleTime_last, singleCenter_roof] using closing_roof
-      · simpa only [singleSide_between, singleTime_between, singleCenter_roof] using step_left k
+      · simpa only [singleSideWith_last, singleTime_last, singleCenter_roof] using closing_roof
+      · simpa only [singleSideWith_between, singleTime_between, singleCenter_roof] using step_left k
   next := fun i => by
-    change At (!(singleSide i)) (singleTime entrance closure between i) =
+    change At (!(singleSideWith entrySide exitSide i)) (singleTime entrance closure between i) =
       singleCenter bend roof (finRotate _ i)
     refine Fin.cases ?_ (fun j => ?_) i
     · have next : finRotate (n + 2) (0 : Fin (n + 2)) = (0 : Fin (n + 1)).succ :=
         finRotate_of_lt (Nat.zero_lt_succ n)
-      rw [next, singleCenter_roof, singleSide_zero, singleTime_zero, Bool.not_true]
+      rw [next, singleCenter_roof, singleSideWith_zero, singleTime_zero]
       exact entry_roof
     · refine Fin.lastCases ?_ (fun k => ?_) j
       · have wrap : finRotate (n + 2) (Fin.last n).succ = 0 :=
           (congrArg (finRotate (n + 2)) (Fin.succ_last n)).trans finRotate_last
-        rw [wrap, singleCenter_zero, singleSide_last, singleTime_last, Bool.not_false]
+        rw [wrap, singleCenter_zero, singleSideWith_last, singleTime_last]
         exact closing_bend
       · have advance : finRotate (n + 2) k.castSucc.succ = k.succ.succ :=
           finRotate_of_lt (Nat.succ_lt_succ k.isLt)
-        rw [advance, singleCenter_roof, singleSide_between, singleTime_between, Bool.not_true]
+        rw [advance, singleCenter_roof, singleSideWith_between, singleTime_between, Bool.not_true]
         exact step_right k
   incident := fun i flag s equal => by
     change At flag s = singleCenter bend roof i at equal
@@ -116,5 +132,19 @@ def ofSingleBendRun
       · exact entrance_mem a
       · exact closure_mem b
       · exact ⟨k.castSucc.succ, (singleTime_between entrance closure between k).symm ▸ c⟩
+
+/-- Construct the exact cyclic class of a final child gap bend and the roof run that
+returns to its outgoing side. -/
+def ofSingleBendRun
+    (entry_bend : At true entrance = bend) (entry_roof : At false entrance = roof 0)
+    (step_left : ∀ i, At true (between i) = roof i.castSucc)
+    (step_right : ∀ i, At false (between i) = roof i.succ)
+    (closing_roof : At false closure = roof (Fin.last n)) (closing_bend : At true closure = bend)
+    (bend_incident : ∀ flag (s : Time), At flag s = bend → s = entrance ∨ s = closure)
+    (roof_incident : ∀ i flag (s : Time), At flag s = roof i →
+      s = entrance ∨ s = closure ∨ ∃ k, s = between k) :
+    BankStackCyclicClass X stack base gap (n + 1) :=
+  ofSingleBendRunWithSides bend roof entrance closure between true false entry_bend entry_roof
+    step_left step_right closing_roof closing_bend bend_incident roof_incident
 
 end Unfoldings.MetricGluing.BankStackCyclicClass

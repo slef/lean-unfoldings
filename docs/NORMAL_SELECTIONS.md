@@ -619,7 +619,11 @@ nonoverlap and counting remain to be proved.
   to give a whole planar ball at the parent’s outgoing exit bank.
 - [x] Choose an [original rim anchor](../Unfoldings/Roof/CompatibleMeshCompleteSourceContour.lean)
   so every positive roof defect has an event before the contour wraps.
-- [ ] Complete the first-child, internal-source and empty-stack vertex classes,
+- [x] Give a [whole planar ball at the first child block](../Unfoldings/Roof/CompatibleContourSourceOnlyFirstChildBall.lean)
+  when the oldest outgoing gap is from a child. The complete contour implies the parent is flat.
+- [x] Glue the [source tip and its original roof wedges](../Unfoldings/Roof/CompatibleContourSourceOnlySingleTipBall.lean)
+  when none of its child stacks have a positive gap.
+- [ ] Complete source tips with positive child gaps and empty-stack vertex classes,
   and derive a whole chart at every point.
 - [x] Prove that [physical bank parameters are injective](../Unfoldings/Roof/CompatibleContourPhysicalOrder.lean).
   The [proper collapse](../Unfoldings/Roof/CompatibleContourSourceOnlyGraftCollapse.lean)
