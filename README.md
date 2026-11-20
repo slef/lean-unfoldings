@@ -136,6 +136,9 @@ constructed conforming mesh give flat intrinsic cut disks. The
 develops isometrically onto the plane. Under the annular history-angle bound,
 the [small-tilt roof theorem](Unfoldings/Roof/CompatibleContourSourceOnlyRoofDevelopment.lean)
 gives rigid placements of the original cut roof cells with disjoint interiors.
+The [component development theorem](Unfoldings/Roof/CompatibleComponentDevelopment.lean)
+recovers a single disk cut along original edges and nonoverlapping placements
+of the original input triangles in each selected normal component.
 
 Remaining work includes:
 

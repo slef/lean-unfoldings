@@ -4,7 +4,9 @@ The normal-selection, clipped-extension, and compatible-forest constructions are
 implemented, including bounded embedded cut forests. They prepare the geometric
 input for the Fewest Nets development argument. Supported fine-edge forests now
 give flat intrinsic cut disks. The [small-tilt development theorem](../Unfoldings/Roof/CompatibleContourSourceOnlyRoofDevelopment.lean)
-gives global nonoverlap for the compatible cut roof. The net count remains open.
+gives global nonoverlap for the compatible cut roof. Each selected normal
+component has a [nonoverlapping original-edge development](../Unfoldings/Roof/CompatibleComponentDevelopment.lean)
+on an intrinsic cut disk. The net count remains open.
 
 ## Gap-grafting status
 
@@ -652,6 +654,10 @@ gives global nonoverlap for the compatible cut roof. The net count remains open.
 - [x] Restrict to the [original cut roof cells](../Unfoldings/Roof/CompatibleContourSourceOnlyRoofDevelopment.lean)
   and prove disjoint developed interiors. Construct the contour and gap geometry
   under the uniform small-tilt bound.
+- [x] Restrict the layout to the original input triangles of each selected
+  component. Their retained original seams agree, distinct triangle interiors
+  are disjoint, and the selected cuts give one intrinsic disk.
+  See [the uniform component development](../Unfoldings/Roof/CompatibleComponentDevelopment.lean).
 
 The finite-path comparison now constructs its actual Jordan traversal and derives
 all original fan alternatives. Complete physical refinements preserve every ordered

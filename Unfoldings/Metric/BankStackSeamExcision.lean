@@ -1,6 +1,7 @@
 module
 
 public import Unfoldings.Metric.LocalMap
+public import Unfoldings.Metric.Unglued
 public import Unfoldings.Metric.FiniteBankHalfPlaneGluing
 public import Unfoldings.Metric.LocalBallRegularity
 public import Unfoldings.Metric.ChangeSeams
@@ -41,6 +42,48 @@ private theorem map_edist_le_edist_of_route_budget (glue : Total E → Total E �
     lt_tsub_iff_left.mp (short.trans_le (min_le_right _ _))
   have bound := map_edist_le_length_of_short_route E glue f center r local_step route fits
   exact (not_lt_of_ge bound) (short.trans_le (min_le_left _ _))
+
+
+/-- If a neighborhood contains no seam endpoint, its original piece preserves distances there. -/
+theorem of_isometry_on_ball_of_no_seams (glue : Total E → Total E → Prop)
+    (i : I) (x : E i) {δ : ℝ} (positive : 0 < δ)
+    (outside : ∀ a b, glue a b → edist (of E glue i x) (point E glue a) ≥ ENNReal.ofReal δ) :
+    Isometry (fun p : Metric.eball x (ENNReal.ofReal (δ / 3)) => of E glue i p.val) := by
+  classical
+  let empty : Total E → Total E → Prop := fun _ _ => False
+  let center := of E glue i x
+  let r := δ / 3
+  have rpos : 0 < r := div_pos positive (by norm_num)
+  have step (a b : Total E) (ha : edist center (point E glue a) < ENNReal.ofReal δ)
+      (hb : edist center (point E glue b) < ENNReal.ofReal δ) :
+      edist (point E empty a) (point E empty b) ≤ stepCost E glue a b := by
+    have unjoined : ¬ (glue a b ∨ glue b a) := fun h =>
+      h.elim (fun h => (not_lt_of_ge (outside a b h)) ha)
+        (fun h => (not_lt_of_ge (outside b a h)) hb)
+    rw [stepCost, if_neg unjoined]
+    exact (Route.distance_le_cost (stepCost E empty) a b).trans (stepCost_le_faceCost E empty a b)
+  intro p q
+  let ap : Total E := ⟨i, p.val⟩
+  let aq : Total E := ⟨i, q.val⟩
+  change edist (point E glue ap) (point E glue aq) = edist p.val q.val
+  apply le_antisymm (edist_of_le E glue i p.val q.val)
+  have near (w : Metric.eball x (ENNReal.ofReal r)) :
+      edist center (of E glue i w.val) < ENNReal.ofReal r := by
+    rw [edist_comm]
+    exact (edist_of_le E glue i w.val x).trans_lt w.property
+  have chord : edist (point E glue ap) (point E glue aq) <
+      ENNReal.ofReal r + ENNReal.ofReal r :=
+    (edist_triangle _ center _).trans_lt
+      (ENNReal.add_lt_add ((edist_comm _ _).trans_lt (near p)) (near q))
+  have sum : ENNReal.ofReal r + (ENNReal.ofReal r + ENNReal.ofReal r) = ENNReal.ofReal δ := by
+    rw [← ENNReal.ofReal_add rpos.le rpos.le, ← ENNReal.ofReal_add rpos.le (by positivity)]
+    congr 1
+    dsimp [r]
+    ring
+  have budget := (ENNReal.add_lt_add (near p) chord).trans_le sum.le
+  have lower := map_edist_le_edist_of_route_budget E glue (point E empty)
+    center (ENNReal.ofReal δ) step ap aq budget
+  exact ((of_empty_isometry E i).edist_eq p.val q.val).symm.le.trans lower
 
 end
 

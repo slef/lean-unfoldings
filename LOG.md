@@ -2,6 +2,19 @@
 
 ## Session Log
 
+### 2026-11-20 — develop each selected normal component along original edges
+
+- Lifted each selected input triangle into the whole cut roof. The closed
+  lifts agree across retained input edges, including their endpoints.
+- Recovered rigid placements of the input triangles from the global graft.
+  Spatial labels separate distinct face interiors, and retained faces
+  occupy opposite sides of their common edge.
+- Identified the exact original cut forest of each selected component and
+  proved its intrinsic cut is one disk. The uniform theorem combines the
+  disk and the nonoverlapping original-triangle development.
+- Full `lake build` passed (6,697 jobs). The library and both formal
+  abstract audits passed.
+
 ### 2026-11-19 — develop the compatible cut roof without overlap
 
 - Proved contractibility of the complete collapse fibers at terminal joins

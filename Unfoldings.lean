@@ -2766,3 +2766,7 @@ public import Unfoldings.Metric.ConvexPatchLift
 public import Unfoldings.Geometry.SpatialEnvelopeFaceLift
 public import Unfoldings.Roof.CompatibleOriginalFaceLift
 public import Unfoldings.Roof.CompatibleOriginalSeamLift
+public import Unfoldings.Roof.CompatibleContourSourceOnlyRoofLayout
+public import Unfoldings.Roof.CompatibleOriginalDevelopment
+public import Unfoldings.Roof.CompatibleComponentCutDisk
+public import Unfoldings.Roof.CompatibleComponentDevelopment
