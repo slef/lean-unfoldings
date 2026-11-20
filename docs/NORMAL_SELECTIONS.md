@@ -697,6 +697,8 @@ derive both two-side constants from separated headings of projected side chords.
 Each [Gaussian cell](../Unfoldings/Polyhedron/GaussianChart.lean) has its
 own centered compact convex chart. The [corner estimate](../Unfoldings/Geometry/StereographicSupport.lean)
 bounds the projected chord turn by the spherical exterior angle from below.
+The [extreme-site cells](../Unfoldings/Polyhedron/GaussianExtremeCells.lean)
+account for all spherical area and admit strictly convex charts.
 Cyclic heading separation for the actual Gaussian cells, the Gaussian Euler
 identities, and the crossing witnesses in the actual network remain open.
 

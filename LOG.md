@@ -2,6 +2,15 @@
 
 ## Session Log
 
+### 2026-11-20 — identify genuine Gaussian two-cells and convex chord turns
+
+- Characterized full-dimensional normal cones at extreme sites. Subdivision
+  sites have zero solid angle, so the genuine cells alone account for `4π`.
+- Constructed strict internal centers for extreme Gaussian cells. In their
+  centered charts the proper supports are disks and the region is strictly convex.
+- Proved that a cyclic planar chord chain with supporting side lines and positive
+  consecutive turns makes exactly one full turn.
+
 ### 2026-11-20 — center actual Gaussian cells and compare projected corners
 
 - Constructed a compact convex stereographic chart for every nonempty Gaussian

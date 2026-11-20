@@ -2818,3 +2818,7 @@ public import Unfoldings.Geometry.StereographicTwoSide
 public import Unfoldings.Geometry.PlanarWedgeAngle
 public import Unfoldings.Geometry.StereographicSupport
 public import Unfoldings.Polyhedron.GaussianChart
+public import Unfoldings.Convex.FiniteNormalFanInterior
+public import Unfoldings.Geometry.ConvexChordTurns
+public import Unfoldings.Geometry.StereographicSupportDisks
+public import Unfoldings.Polyhedron.GaussianExtremeCells

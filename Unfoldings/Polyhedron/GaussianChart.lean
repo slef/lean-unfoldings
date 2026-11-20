@@ -118,18 +118,23 @@ theorem exists_gaussianCell_center (P : F.ConvexBoundary) (i : F.hullSites)
   rw [NormedSpace.normalize, real_inner_smul_left]
   exact mul_pos (inv_pos.mpr (norm_pos_iff.mpr x_ne)) pos
 
-/-- A nonempty Gaussian cell admits a compact convex stereographic chart
-containing zero. Its inverse image recovers the rotated cell exactly. -/
-theorem exists_gaussianCell_stereographic_chart (P : F.ConvexBoundary) (i : F.hullSites)
-    (ne : (F.gaussianCell i).Nonempty) :
-    ∃ q ∈ F.gaussianCell i, ∃ K : Set Plane,
-      IsCompact K ∧ Convex ℝ K ∧ (0 : Plane) ∈ K ∧ K ⊆ Metric.ball 0 1 ∧
-      inverseStereographic '' K = northFrame q '' F.gaussianCell i := by
-  obtain ⟨q, hq, hemisphere⟩ := F.exists_gaussianCell_center P i ne
+/-- The planar region cut out by a Gaussian cell's rotated supporting hemispheres. -/
+def gaussianChartRegion (i : F.hullSites) (q : Space) : Set Plane :=
+  {x | ∀ j : F.hullSites,
+    0 ≤ inner ℝ (northFrame q ((i : Space) - j)) (inverseStereographic x)}
+
+/-- A Gaussian cell in its own open hemisphere has a compact convex chart
+containing zero. The inverse chart recovers the rotated cell exactly. -/
+theorem gaussianChartRegion_properties (i : F.hullSites) {q : Space}
+    (hq : q ∈ F.gaussianCell i) (hemisphere : ∀ z ∈ F.gaussianCell i, 0 < inner ℝ q z) :
+    IsCompact (F.gaussianChartRegion i q) ∧ Convex ℝ (F.gaussianChartRegion i q) ∧
+      (0 : Plane) ∈ F.gaussianChartRegion i q ∧
+      F.gaussianChartRegion i q ⊆ Metric.ball 0 1 ∧
+      inverseStereographic '' F.gaussianChartRegion i q = northFrame q '' F.gaussianCell i := by
   have q_unit : ‖q‖ = 1 := by simpa only [Metric.mem_sphere, dist_zero_right] using hq.2
   let L := northFrame q
   let normal (j : F.hullSites) := L ((i : Space) - j)
-  let K := {x | ∀ j, 0 ≤ inner ℝ (normal j) (inverseStereographic x)}
+  let K := F.gaussianChartRegion i q
   have normal_up (j : F.hullSites) : 0 ≤ normal j 2 := by
     change 0 ≤ northFrame q ((i : Space) - j) 2
     rw [northFrame_height q q_unit, real_inner_comm]
@@ -177,15 +182,24 @@ theorem exists_gaussianCell_stereographic_chart (P : F.ConvexBoundary) (i : F.hu
   have K_closed : IsClosed K := by
     rw [show K = ⋂ j : F.hullSites, {x | 0 ≤ inner ℝ (normal j) (inverseStereographic x)} by
       ext x
-      simp [K]]
+      simp [K, gaussianChartRegion, normal, L]]
     exact isClosed_iInter (fun j => isClosed_le continuous_const
       (continuous_const.inner continuous_inverseStereographic))
-  refine ⟨q, hq, K, (isCompact_closedBall (0 : Plane) 1).of_isClosed_subset K_closed
+  refine ⟨(isCompact_closedBall (0 : Plane) 1).of_isClosed_subset K_closed
     (K_disk.trans Metric.ball_subset_closedBall), convex_inverseStereographic_region normal
     normal_up, ?_, K_disk, exact_cell⟩
   intro j
   rw [inverseStereographic_origin, horizontal_inner, northLift_horizontal,
     northLift_height, inner_zero_right, mul_one, zero_add]
   exact normal_up j
+
+/-- Every nonempty Gaussian cell has a centered compact convex chart. -/
+theorem exists_gaussianCell_stereographic_chart (P : F.ConvexBoundary) (i : F.hullSites)
+    (ne : (F.gaussianCell i).Nonempty) :
+    ∃ q ∈ F.gaussianCell i, ∃ K : Set Plane,
+      IsCompact K ∧ Convex ℝ K ∧ (0 : Plane) ∈ K ∧ K ⊆ Metric.ball 0 1 ∧
+      inverseStereographic '' K = northFrame q '' F.gaussianCell i := by
+  obtain ⟨q, hq, hemisphere⟩ := F.exists_gaussianCell_center P i ne
+  exact ⟨q, hq, F.gaussianChartRegion i q, F.gaussianChartRegion_properties i hq hemisphere⟩
 
 end Unfoldings.SpatialFolding
