@@ -3,10 +3,13 @@ module
 public import Unfoldings.Metric.BankStackEndpointExistence
 public import Unfoldings.Metric.BankStackIncidentSlots
 public import Mathlib.Logic.Equiv.Fin.Rotate
+public import Mathlib.Topology.UnitInterval
 
 /-! Exact center classes and incident attachments of a cyclic fan of bank-stack pieces. -/
 
 @[expose] public section
+
+open scoped ENNReal
 
 namespace Unfoldings.MetricGluing
 
@@ -100,6 +103,28 @@ def runTime (i : Fin (n + 3)) : Time :=
   change Fin.lastCases new roof i.castSucc = roof i
   exact Fin.lastCases_castSucc i
 
+theorem runCenter_injective (roof_unique : Function.Injective roof)
+    (different : old ≠ new) (old_roof : ∀ i, old ≠ roof i) (new_roof : ∀ i, new ≠ roof i) :
+    Function.Injective (runCenter old new roof) := by
+  have cases' (i : Fin (n + 3)) :
+      i = 0 ∨ i = (Fin.last (n + 1)).succ ∨ ∃ j : Fin (n + 1), i = j.castSucc.succ := by
+    refine Fin.cases (Or.inl rfl) (fun k => ?_) i
+    refine Fin.lastCases (Or.inr (Or.inl rfl)) (fun l => ?_) k
+    exact Or.inr (Or.inr ⟨l, rfl⟩)
+  intro i j h
+  rcases cases' i with rfl | rfl | ⟨i', rfl⟩ <;>
+    rcases cases' j with rfl | rfl | ⟨j', rfl⟩
+  · rfl
+  · exact (different (by simpa only [runCenter_zero, runCenter_last] using h)).elim
+  · exact (old_roof j' (by simpa only [runCenter_zero, runCenter_roof] using h)).elim
+  · exact (different (by simpa only [runCenter_zero, runCenter_last] using h.symm)).elim
+  · rfl
+  · exact (new_roof j' (by simpa only [runCenter_last, runCenter_roof] using h)).elim
+  · exact (old_roof i' (by simpa only [runCenter_zero, runCenter_roof] using h.symm)).elim
+  · exact (new_roof i' (by simpa only [runCenter_last, runCenter_roof] using h.symm)).elim
+  · have same := roof_unique (by simpa only [runCenter_roof] using h)
+    exact congrArg (fun k : Fin (n + 1) => k.castSucc.succ) same
+
 @[simp] theorem runTime_zero : runTime entrance exit closure between 0 = entrance := rfl
 
 @[simp] theorem runTime_closure :
@@ -123,13 +148,13 @@ private theorem runTime_roof (i : Fin (n + 1)) :
 def runSide (i : Fin (n + 3)) : Bool :=
   Fin.cases true (Fin.lastCases false (fun _ => true)) i
 
-@[simp] private theorem runSide_zero : runSide (0 : Fin (n + 3)) = true := rfl
+@[simp] theorem runSide_zero : runSide (0 : Fin (n + 3)) = true := rfl
 
-@[simp] private theorem runSide_last : runSide (Fin.last (n + 1)).succ = false := by
+@[simp] theorem runSide_last : runSide (Fin.last (n + 1)).succ = false := by
   change Fin.lastCases (motive := fun _ => Bool) false (fun _ => true) (Fin.last (n + 1)) = false
   exact Fin.lastCases_last
 
-@[simp] private theorem runSide_roof (i : Fin (n + 1)) : runSide i.castSucc.succ = true := by
+@[simp] theorem runSide_roof (i : Fin (n + 1)) : runSide i.castSucc.succ = true := by
   change Fin.lastCases (motive := fun _ => Bool) false (fun _ => true) i.castSucc = true
   exact Fin.lastCases_castSucc i
 
@@ -217,6 +242,51 @@ def ofRoofRun
         · exact at_entrance a
         · exact at_exit b
         · exact ⟨l.castSucc.castSucc.succ, by simpa only [runTime_between] using c⟩
+
+/-- Every sufficiently near seam in an exact cyclic class has one of its marked
+slot parameters, within the same arclength radius in the underlying original piece. -/
+theorem exists_near_marked_slot [∀ i, EMetricSpace (X i)]
+    (parameterize : ∀ j, unitInterval ≃ Parameter (A.time j).1.1)
+    (at_zero : ∀ j, parameterize j 0 = (A.time j).2)
+    (length : Fin (n + 1) → ℝ) (length_nonneg : ∀ j, 0 ≤ length j)
+    (metric : ∀ j (t : unitInterval),
+      edist (bankStackLeftCurve stack X base gap (A.time j).1 (parameterize j 0))
+        (bankStackLeftCurve stack X base gap (A.time j).1 (parameterize j t)) =
+          ENNReal.ofReal (t.val * length j))
+    {ρ : ℝ}
+    (clearance : ∀ s : Time,
+      edist (point X Banks (A.center 0))
+        (point X Banks (bankStackLeft X stack base gap s.1 s.2)) < ENNReal.ofReal ρ →
+      ∃ u : Parameter s.1.1, Relation.EqvGen Banks (A.center 0)
+        (bankStackLeft X stack base gap s.1 u) ∧
+        edist (bankStackLeftCurve stack X base gap s.1 u)
+          (bankStackLeftCurve stack X base gap s.1 s.2) < ENNReal.ofReal ρ)
+    (s : Time) (near : edist (point X Banks (A.center 0))
+      (point X Banks (bankStackLeft X stack base gap s.1 s.2)) < ENNReal.ofReal ρ) :
+    ∃ (j : Fin (n + 1)) (t : unitInterval), s = ⟨(A.time j).1, parameterize j t⟩ ∧ t.val * length j < ρ := by
+  obtain ⟨u, related, distance⟩ := clearance s near
+  obtain ⟨i, eq⟩ := (A.eqvGen_iff _).mp related
+  obtain ⟨j, named⟩ := A.incident i false ⟨s.1, u⟩ eq
+  let Curve := bankStackLeftCurve stack X base gap
+  have transport (x : Time) (at_origin : x = A.time j) (other : Parameter x.1.1)
+      (bound : edist (Curve x.1 x.2) (Curve x.1 other) < ENNReal.ofReal ρ) :
+      ∃ t : unitInterval, (⟨x.1, other⟩ : Time) = ⟨(A.time j).1, parameterize j t⟩ ∧
+        t.val * length j < ρ := by
+    -- Retain both dependent parameters by transporting the entire two-point assertion.
+    let P (z : Time) := ∀ v : Parameter z.1.1,
+      edist (Curve z.1 z.2) (Curve z.1 v) < ENNReal.ofReal ρ →
+      ∃ t : unitInterval, (⟨z.1, v⟩ : Time) = ⟨(A.time j).1, parameterize j t⟩ ∧
+        t.val * length j < ρ
+    have valid : P (A.time j) := by
+      intro v hv
+      obtain ⟨t, rfl⟩ := (parameterize j).surjective v
+      refine ⟨t, rfl, ?_⟩
+      have close := (metric j t).symm.trans_lt ((at_zero j).symm ▸ hv)
+      exact (ENNReal.ofReal_lt_ofReal_iff_of_nonneg (mul_nonneg t.property.1
+        (length_nonneg j))).mp close
+    exact (at_origin.symm ▸ valid) other bound
+  obtain ⟨t, same, bound⟩ := transport ⟨s.1, u⟩ named s.2 distance
+  exact ⟨j, t, (Sigma.eta s).symm.trans same, bound⟩
 
 end BankStackCyclicClass
 

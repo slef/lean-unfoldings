@@ -2,6 +2,21 @@
 
 ## Session Log
 
+### 2026-11-19 — place the full-turn cross-block sector family
+
+- Proved the exact cross-block aperture balance. Both original gap bends
+  and every intervening roof wedge supply a centered whole-sector chart.
+- Reflected the two gap charts and placed the whole family at a common
+  radius. Distinct copies in the same piece have separated original balls.
+- Proved the whole-ball gluing theorem for a cyclic bank stack once its
+  adjacent charts agree at the calibrated marks. Nearby slots retain the
+  same arclength radius, including slots on originally empty stacks.
+- Recorded both calibrated original bank rays for every cross-block roof
+  wedge and every gap bend.
+- Full `lake build` passed (6,626 jobs). Both abstract audits passed.
+  Only standard axioms occur in 21,627 unfolding and 7,243 planar-topology
+  declarations.
+
 ### 2026-11-19 — identify cyclic seam classes between child blocks
 
 - Proved that the intervening original roof wedges are exactly the visits

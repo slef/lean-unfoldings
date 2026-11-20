@@ -119,7 +119,7 @@ private theorem coordinate_step
         exact (bound.trans_eq scale).trans (A.separated j k same tags x y)
       · simp [patchTag, faceCost, tags]
 
-private theorem modelTag_origin (j : J) :
+theorem modelTag_origin (j : J) :
     A.modelTag j ⟨origin j, Metric.mem_eball_self (ENNReal.ofReal_pos.mpr A.positive)⟩ =
       center j := by
   let x : Ball[j] := ⟨(center j).2, Metric.mem_eball_self (ENNReal.ofReal_pos.mpr A.positive)⟩

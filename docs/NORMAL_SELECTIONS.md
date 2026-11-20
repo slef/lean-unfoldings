@@ -608,7 +608,11 @@ nonoverlap and counting remain to be proved.
 - [x] Identify the [cyclic seam classes between child blocks](../Unfoldings/Roof/CompatibleContourSourceOnlyCrossBlockClasses.lean).
   The [ordered roof wedges](../Unfoldings/Complex/ContourChildBlockWedgeRun.lean)
   have [normalized original charts](../Unfoldings/Roof/CompatibleContourSourceOnlyRoofWedgeChart.lean).
-- [ ] Glue the actual cyclic fans in the source-only graft into whole
+- [x] Place the [cross-block sector family](../Unfoldings/Roof/CompatibleContourSourceOnlyCrossBlockSectors.lean)
+  at a common radius. The [sum of its original angles](../Unfoldings/Roof/CompatibleContourSourceOnlyCrossBlockAngles.lean)
+  is exactly a full turn.
+- [ ] Match the placed charts on the literal bank slots and glue the
+  source-only cyclic fans into whole
   metric-ball charts. Reuse the generic strip and sector charts with the
   source-only attachment maps.
 - [ ] Derive simple connectivity from the actual slit and gap attachments and

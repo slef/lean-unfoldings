@@ -2689,3 +2689,13 @@ public import Unfoldings.Roof.CompatibleContourSourceOnlyRoofWedgeMarks
 public import Unfoldings.Roof.CompatibleContourSourceOnlyRoofWedgeChart
 public import Unfoldings.Roof.CompatibleContourSourceOnlyWedgeEndpoints
 public import Unfoldings.Roof.CompatibleContourSourceOnlyCrossBlockClasses
+public import Unfoldings.Cone.SectorCoverRadius
+public import Unfoldings.Cone.PlacedAngularSectorChart
+public import Unfoldings.Cone.SectorCycleBall
+public import Unfoldings.Cone.SectorCycleBankStack
+public import Unfoldings.Roof.CompatibleContourSourceOnlyCrossBlockAngles
+public import Unfoldings.Roof.CompatibleContourSourceOnlyCrossBlockSectors
+public import Unfoldings.Roof.CompatibleContourSourceOnlyFiniteSlotRadii
+public import Unfoldings.Cone.MarkedSectorGerm
+public import Unfoldings.Cone.MarkedSectorBankStack
+public import Unfoldings.Roof.CompatibleContourSourceOnlySectorTraces

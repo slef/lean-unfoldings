@@ -54,6 +54,40 @@ local notation "Curve" => bankStackLeftCurve stack X base gap
 
 /-- In a small whole graft ball, a seam point is near a center representative on
 that same original slot. No change of its arclength or bank addresses is needed. -/
+theorem exists_bankStack_incident_slot_radius_le (a : Total X)
+    (finite : ∀ i, {c : X i | Relation.EqvGen Banks a ⟨i, c⟩}.Finite)
+    (base_closed : ∀ e side, Topology.IsClosedEmbedding (base e side))
+    (gap_closed : ∀ e g h side, Topology.IsClosedEmbedding (gap e g h side))
+    {R : ℝ} (Rpos : 0 < R)
+    (cover : ∀ r, 0 < r → r ≤ R → ∀ b : Total X,
+      edist (point X Banks a) (point X Banks b) < ENNReal.ofReal r →
+      ∃ c : X b.1, Relation.EqvGen Banks a ⟨b.1, c⟩ ∧ edist c b.2 < ENNReal.ofReal r) :
+    ∃ r > 0, r ≤ R ∧ ∀ ρ, 0 < ρ → ρ ≤ r →
+      ∀ slot : BankStackSlot stack, ∀ t : Parameter slot.1,
+        edist (point X Banks a) (point X Banks (Left slot t)) < ENNReal.ofReal ρ →
+        ∃ u : Parameter slot.1, Relation.EqvGen Banks a (Left slot u) ∧
+          edist (Curve slot u) (Curve slot t) < ENNReal.ofReal ρ := by
+  have slot_clearance (slot : BankStackSlot stack) :=
+    MetricBarrier.exists_emetric_radius_near_closed (finite (Index slot))
+      (bankStackLeftCurve_closed stack X base gap base_closed gap_closed slot).isClosed_range
+  choose δ δpos clear using slot_clearance
+  obtain ⟨ε, εpos, bounds⟩ := MetricBarrier.exists_pos_le_of_finite δ δpos
+  let r := min R ε
+  have rpos : 0 < r := lt_min Rpos εpos
+  refine ⟨r, rpos, min_le_left _ _, ?_⟩
+  intro ρ ρpos small slot t near
+  have eq := bankStackLeft_curve stack X base gap slot t
+  have near' : edist (point X Banks a) (point X Banks ⟨Index slot, Curve slot t⟩) <
+      ENNReal.ofReal ρ := eq ▸ near
+  obtain ⟨c, hc, close⟩ := cover ρ ρpos (small.trans (min_le_left _ _)) _ near'
+  have member : c ∈ Set.range (Curve slot) :=
+    clear slot (Curve slot t) (Set.mem_range_self t) c hc
+      (close.trans_le (ENNReal.ofReal_le_ofReal
+        (small.trans ((min_le_right _ _).trans (bounds slot)))))
+  obtain ⟨u, rfl⟩ := member
+  exact ⟨u, (bankStackLeft_curve stack X base gap slot u).symm ▸ hc, close⟩
+
+/-- A whole seam slot near the chosen class contains an original center copy. -/
 theorem exists_bankStack_incident_slot_radius (a : Total X)
     (finite : ∀ i, {c : X i | Relation.EqvGen Banks a ⟨i, c⟩}.Finite)
     (base_closed : ∀ e side, Topology.IsClosedEmbedding (base e side))
@@ -66,23 +100,8 @@ theorem exists_bankStack_incident_slot_radius (a : Total X)
       edist (point X Banks a) (point X Banks (Left slot t)) < ENNReal.ofReal r →
       ∃ u : Parameter slot.1, Relation.EqvGen Banks a (Left slot u) ∧
         edist (Curve slot u) (Curve slot t) < ENNReal.ofReal r := by
-  have slot_clearance (slot : BankStackSlot stack) :=
-    MetricBarrier.exists_emetric_radius_near_closed (finite (Index slot))
-      (bankStackLeftCurve_closed stack X base gap base_closed gap_closed slot).isClosed_range
-  choose δ δpos clear using slot_clearance
-  obtain ⟨ε, εpos, bounds⟩ := MetricBarrier.exists_pos_le_of_finite δ δpos
-  let r := min R ε
-  have rpos : 0 < r := lt_min Rpos εpos
-  refine ⟨r, rpos, ?_⟩
-  intro slot t near
-  have eq := bankStackLeft_curve stack X base gap slot t
-  have near' : edist (point X Banks a) (point X Banks ⟨Index slot, Curve slot t⟩) <
-      ENNReal.ofReal r := eq ▸ near
-  obtain ⟨c, hc, close⟩ := cover r rpos (min_le_left _ _) _ near'
-  have member : c ∈ Set.range (Curve slot) :=
-    clear slot (Curve slot t) (Set.mem_range_self t) c hc
-      (close.trans_le (ENNReal.ofReal_le_ofReal ((min_le_right _ _).trans (bounds slot))))
-  obtain ⟨u, rfl⟩ := member
-  exact ⟨u, (bankStackLeft_curve stack X base gap slot u).symm ▸ hc, close⟩
+  obtain ⟨r, rpos, _, near⟩ := exists_bankStack_incident_slot_radius_le X stack base gap a
+    finite base_closed gap_closed Rpos cover
+  exact ⟨r, rpos, near r rpos le_rfl⟩
 
 end Unfoldings.MetricGluing

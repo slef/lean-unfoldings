@@ -135,7 +135,7 @@ private theorem source_only_bend_transfer_at_parent
 
 /-- At a cross-block adjacency, two gap bends and the intervening original roof wedges
 form precisely one cyclic seam class, in the original contour order. -/
-theorem exists_compatibleContourSourceOnlyCrossBlockClass
+theorem exists_compatibleContourSourceOnlyCrossBlockData
     (parent old_child new_child : Edge)
     (old_parent : (Fcut).parents.parent old_child.val = parent.val)
     (new_parent : (Fcut).parents.parent new_child.val = parent.val)
@@ -157,8 +157,21 @@ theorem exists_compatibleContourSourceOnlyCrossBlockClass
       Named true ⟨above, slot⟩ 0 = ⟨above, some old, false, 0⟩ ∧
       H.center 0 = EndAt true ⟨above, slot⟩ 0 ∧
       H.center (Fin.last (A.length + 2)) = EndAt false ⟨above, slot⟩ 0 ∧
-      ∀ i : Fin (A.length + 1), H.center i.castSucc.succ = RoofPoint[A.visit i] := by
-  obtain ⟨A, ⟨older, old_shape⟩, ⟨newer, new_shape⟩, empty, _⟩ :=
+      (∀ i : Fin (A.length + 1), H.center i.castSucc.succ = RoofPoint[A.visit i]) ∧
+      H.time = MetricGluing.BankStackCyclicClass.runTime
+        (⟨⟨FiniteBank[old_child.val,old_child.property], 0⟩, 1⟩ : Time)
+        ⟨⟨FiniteBank[new_child.val,new_child.property],
+          Fin.last (Stack FiniteBank[new_child.val,new_child.property]).length⟩, 1⟩
+        ⟨⟨above, slot⟩, 0⟩
+        (fun j => ⟨⟨FiniteBank[(A.child j).val,(A.child j).property], 0⟩, 1⟩) ∧
+      H.side = MetricGluing.BankStackCyclicClass.runSide ∧
+      (∀ i, Stack FiniteBank[(A.child i).val,(A.child i).property] = []) ∧
+      (∀ j : Fin (contour.length + 1), (∃ i, A.visit i = j) ↔
+        (D).contourOriginalVertex Selection contour j = parent.val ∧
+          j ≠ (Interval[parent.val,parent.property]).leave ∧
+            old.val.val ≤ j.val ∧ j.val < new.val.val) ∧
+      Function.Injective H.center := by
+  obtain ⟨A, ⟨older, old_shape⟩, ⟨newer, new_shape⟩, empty, interval⟩ :=
     (D).exists_contourChildBlockWedgeRun Selection contour (Fcut).boundary_roots starts
       parent.val parent.property old_child new_child old_parent new_parent different old new
       old_in new_in pre post adjacent
@@ -234,10 +247,55 @@ theorem exists_compatibleContourSourceOnlyCrossBlockClass
       · intro eq
         rw [A.following_castSucc, end_at_zero] at eq
         exact Or.inr (Or.inr ⟨j, eq⟩)
+  have roof_unique : Function.Injective roof := by
+    intro i j same
+    let copy (k : Fin (A.length + 1)) := (D).boundaryEndVertex Retain
+      (contour.cycle.point (A.visit k))
+    have value : Map ((D).vertexPoint Retain (copy i)) = Map ((D).vertexPoint Retain (copy j)) :=
+      eq_of_heq (Sigma.mk.inj same).2
+    have nonroot : (D).contourOriginalVertex Selection contour (A.visit i) ∉ (Fcut).parents.roots :=
+      (A.at_visit i).1.symm ▸ parent.property
+    have below := K.compatibleContourRoofVertex_height_lt_of_nonroot compact nonempty R no_boundary
+      level higher M positive inner_disk beta acute (copy i) nonroot
+    have equal := K.compatibleMeshWholeMap_injective_at compact nonempty R no_boundary level higher
+      M positive inner_disk beta acute W ((D).vertexPoint Retain (copy i)) below
+      ((D).vertexPoint Retain (copy j)) value
+    exact A.visit.injective ((D).boundaryCycle_vertices_injective Retain contour.cycle contour.closes
+      ((D).vertexPoint_injective Retain equal))
+  have old_member : old ∈ Stack above := show Valid ⟨above, some old, false, 0⟩ from
+    old_out ▸ MetricGluing.bankStackEndpointAddress_valid Stack true closing.1 closing.2
+  have new_member : new ∈ Stack above := show Valid ⟨above, some new, true, 0⟩ from
+    new_out ▸ MetricGluing.bankStackEndpointAddress_valid Stack false closing.1 closing.2
+  have old_tag : old_center.1 = some old :=
+    congrArg Sigma.fst (MetricGluing.bankStackEndpoint_eq_of_gap_address Stack Pieces Base Gap
+      true closing above old old_member false 0 old_out)
+  have new_tag : new_center.1 = some new :=
+    congrArg Sigma.fst (MetricGluing.bankStackEndpoint_eq_of_gap_address Stack Pieces Base Gap
+      false closing above new new_member true 0 new_out)
+  have different_events : old ≠ new := by
+    have sorted : (Stack above).Pairwise (fun a b => b.val.val < a.val.val) :=
+      ((D).contourEdgeGapStack_ordered Selection contour parent.val).reverse
+    rw [adjacent] at sorted
+    have ranked := (List.pairwise_cons.mp (List.pairwise_append.mp sorted).2.1).1 old
+      List.mem_cons_self
+    exact fun h => lt_irrefl _ (h ▸ ranked)
+  have center_unique := MetricGluing.BankStackCyclicClass.runCenter_injective
+    old_center new_center roof roof_unique (by
+      intro eq
+      exact different_events (Option.some.inj (old_tag.symm.trans
+        ((congrArg Sigma.fst eq).trans new_tag)))) (by
+      intro i eq
+      have tag_eq : some old = (none : Option Event) := old_tag.symm.trans
+        (congrArg (fun x : MetricGluing.Total Pieces => x.1) eq)
+      cases tag_eq) (by
+      intro i eq
+      have tag_eq : some new = (none : Option Event) := new_tag.symm.trans
+        (congrArg (fun x : MetricGluing.Total Pieces => x.1) eq)
+      cases tag_eq)
   let H := MetricGluing.BankStackCyclicClass.ofRoofRun old_center new_center roof first_time
     last_time closing times hold.symm first_roof left right last_roof hnew.symm rfl rfl
     no_other_old no_other_new no_other_roof
-  refine ⟨A, H, slot, new_out, old_out, rfl, ?_, ?_⟩
+  refine ⟨A, H, slot, new_out, old_out, rfl, ?_, ?_, rfl, rfl, empty, interval, center_unique⟩
   · have eq : Fin.last (A.length + 2) = (Fin.last (A.length + 1)).succ := (Fin.succ_last (A.length + 1)).symm
     rw [eq]
     change MetricGluing.BankStackCyclicClass.runCenter old_center new_center roof
@@ -246,5 +304,36 @@ theorem exists_compatibleContourSourceOnlyCrossBlockClass
   · intro i
     simp only [H, MetricGluing.BankStackCyclicClass.ofRoofRun,
       MetricGluing.BankStackCyclicClass.runCenter_roof, roof]
+
+/-- At a cross-block adjacency, the original roof wedges and the two gap bends
+are precisely the centers in the cyclic seam class. -/
+theorem exists_compatibleContourSourceOnlyCrossBlockClass
+    (parent old_child new_child : Edge)
+    (old_parent : (Fcut).parents.parent old_child.val = parent.val)
+    (new_parent : (Fcut).parents.parent new_child.val = parent.val)
+    (different : old_child.val ≠ new_child.val) (old new : Event)
+    (old_in : (Fcut).parents.Ancestor SourceOf[old] old_child.val)
+    (new_in : (Fcut).parents.Ancestor SourceOf[new] new_child.val)
+    (old_gap : OrientedBankGap BankAt[old] MovedAt[old])
+    (new_gap : OrientedBankGap BankAt[new] MovedAt[new])
+    (pre post : List Event)
+    (adjacent : Stack FiniteBank[parent.val,parent.property] = pre ++ new :: old :: post) :
+    let initial := finRotate (contour.length + 1) (Interval[old_child.val,old_child.property]).leave
+    let final := (Interval[new_child.val,new_child.property]).enter
+    let above := FiniteBank[parent.val,parent.property]
+    ∃ (A : (D).ContourParentWedgeRun Selection contour (Fcut).boundary_roots starts
+        parent.val initial final)
+      (H : MetricGluing.BankStackCyclicClass Pieces Stack Base Gap (A.length + 2))
+      (slot : Fin ((Stack above).length + 1)),
+      Named false ⟨above, slot⟩ 0 = ⟨above, some new, true, 0⟩ ∧
+      Named true ⟨above, slot⟩ 0 = ⟨above, some old, false, 0⟩ ∧
+      H.center 0 = EndAt true ⟨above, slot⟩ 0 ∧
+      H.center (Fin.last (A.length + 2)) = EndAt false ⟨above, slot⟩ 0 ∧
+      ∀ i : Fin (A.length + 1), H.center i.castSucc.succ = RoofPoint[A.visit i] := by
+  obtain ⟨A, H, slot, new_out, old_out, first, last, roof, _⟩ :=
+    K.exists_compatibleContourSourceOnlyCrossBlockData compact nonempty R no_boundary level higher
+      M positive inner_disk beta acute contour starts W models parent old_child new_child old_parent
+      new_parent different old new old_in new_in old_gap new_gap pre post adjacent
+  exact ⟨A, H, slot, new_out, old_out, first, last, roof⟩
 
 end Unfoldings.ConvexRoof
