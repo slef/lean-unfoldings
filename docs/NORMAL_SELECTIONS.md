@@ -699,15 +699,18 @@ own centered compact convex chart. The [corner estimate](../Unfoldings/Geometry/
 bounds the projected chord turn by the spherical exterior angle from below.
 The [extreme-site cells](../Unfoldings/Polyhedron/GaussianExtremeCells.lean)
 account for all spherical area and admit strictly convex charts.
-A [wall cover](../Unfoldings/FewestNets/VoronoiCrossings.lean) by actual
-minor arcs now supplies generic changed-side crossings. The
+A [wall cover](../Unfoldings/FewestNets/VoronoiOpenCrossings.lean) by actual
+minor arcs supplies generic changed-side intersections in network edge interiors.
+The [localized charge theorem](../Unfoldings/FewestNets/LocalizedCharge.lean)
+bounds the expectation by Crofton crossings of short endpoint portions when
+the Gaussian diameter is below the nonincident separation scale. The
 [Jordan filling theorem](../Unfoldings/Topology/JordanCellFilling.lean)
 fills cycles by complete cells of a planar decomposition.
 [Triangulation Euler](../Unfoldings/Polyhedron/TriangulationEuler.lean)
 derives Euler's formula for the original closed convex triangulation from
-the total Gaussian area. Cyclic heading separation for actual Gaussian cells,
-the Euler count after coarsening and restricting by label, and the localized
-crossing budget remain open.
+the total Gaussian area. [Subdivision vertices](../Unfoldings/FewestNets/SubdivisionCharge.lean)
+have zero component-count charge. Cyclic heading separation for the actual
+Gaussian cells and Euler accounting after restricting by label remain open.
 
 The [adaptive routing](../Unfoldings/Roof/CompatibleAdaptiveRouting.lean)
 constructs both parent forests given angle and outward-direction bounds.

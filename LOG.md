@@ -2,6 +2,19 @@
 
 ## Session Log
 
+### 2026-11-20 — localize the Crofton charge and remove subdivision charges
+
+- Proved the two-hit bound for transverse arcs in convex spherical cells.
+  Three changed sides force at least two edges of the moving network to meet
+  the cell.
+- Constructed Crofton frames for the actual endpoint portions. For diameter
+  below the prescribed nonincident separation, the expected charge is bounded
+  by the residual perimeter times the diameter and the paper's local coefficient.
+- Proved that actual Voronoi network intersections of changed sides avoid edge
+  endpoints almost surely.
+- Used the original vertex links to prove that subdivision vertices contribute
+  zero charge, and verified the cycle-rank formula for finite indexed graphs.
+
 ### 2026-11-20 — verify the sharp fixed-radius saved-bank gap
 
 - Proved the exact fixed-radius rate for a point sliding along a rotated link.

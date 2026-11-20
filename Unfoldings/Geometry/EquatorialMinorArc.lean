@@ -15,7 +15,7 @@ namespace Unfoldings.SpatialRotation
 
 open InnerProductGeometry
 
-private theorem equatorPoint_mem_arc_iff {r θ : ℝ}
+theorem equatorPhase_mem_closedBall_iff {r θ : ℝ}
     (hθ : |θ| ≤ Real.pi) :
     (θ : EquatorPhase) ∈ Metric.closedBall 0 r ↔ θ ∈ Set.Icc (-r) r := by
   have period : 0 < (2 * Real.pi : ℝ) := by positivity
@@ -32,13 +32,25 @@ private theorem eq_polar_of_equatorialArc {r : ℝ} {x : Space}
   let θ := AddCircle.equivIco (2 * Real.pi) (-Real.pi) phase
   have representative : ((θ : ℝ) : EquatorPhase) = phase := AddCircle.coe_equivIco
   have bound : |(θ : ℝ)| ≤ Real.pi := abs_le.mpr ⟨θ.property.1, by linarith [θ.property.2]⟩
-  refine ⟨θ, (equatorPoint_mem_arc_iff bound).mp (representative.symm ▸ present), ?_⟩
+  refine ⟨θ, (equatorPhase_mem_closedBall_iff bound).mp (representative.symm ▸ present), ?_⟩
   rw [← representative, equatorPoint_coe_eq_complexLift]
 
 private theorem complexLift_polarRay_mem_equatorialArc {r θ : ℝ} (hr : r ≤ Real.pi)
     (hθ : θ ∈ Set.Icc (-r) r) : complexLift (polarRay θ) ∈ equatorialArc r := by
   have bound := (abs_le.mpr hθ).trans hr
-  exact ⟨θ, (equatorPoint_mem_arc_iff bound).mpr hθ, equatorPoint_coe_eq_complexLift θ⟩
+  exact ⟨θ, (equatorPhase_mem_closedBall_iff bound).mpr hθ, equatorPoint_coe_eq_complexLift θ⟩
+
+/-- The equatorial phase ball has real representatives in the corresponding
+closed interval up to a half-turn. -/
+theorem equatorialArc_eq_image_complexLift {r : ℝ} (small : r ≤ Real.pi) :
+    equatorialArc r = (fun t : ℝ => complexLift (polarRay t)) '' Set.Icc (-r) r := by
+  ext x
+  constructor
+  · intro member
+    obtain ⟨t, ht, rfl⟩ := eq_polar_of_equatorialArc member
+    exact ⟨t, ht, rfl⟩
+  · rintro ⟨t, ht, rfl⟩
+    exact complexLift_polarRay_mem_equatorialArc small ht
 
 theorem equatorialArc_eq_closedMinorArc {r : ℝ} (r_pos : 0 < r) (r_small : 2 * r < Real.pi) :
     equatorialArc r = closedMinorArc

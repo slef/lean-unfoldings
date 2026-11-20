@@ -2846,3 +2846,12 @@ public import Unfoldings.Geometry.OpeningTraceSharpPhase
 public import Unfoldings.Geometry.SavedOpeningTraceGap
 public import Unfoldings.Geometry.SharpDevelopmentMargin
 public import Unfoldings.Geometry.SharpDevelopmentThreshold
+public import Unfoldings.Combinatorics.GraphCycleRank
+public import Unfoldings.Geometry.MinorArcBoundaryCount
+public import Unfoldings.Geometry.MinorArcArclength
+public import Unfoldings.Geometry.SphericalArcEndpointClip
+public import Unfoldings.FewestNets.EndpointCrossingLocality
+public import Unfoldings.FewestNets.EndpointCrossingBudget
+public import Unfoldings.FewestNets.LocalizedCharge
+public import Unfoldings.FewestNets.VoronoiOpenCrossings
+public import Unfoldings.FewestNets.SubdivisionCharge
