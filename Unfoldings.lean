@@ -2790,3 +2790,11 @@ public import Unfoldings.FewestNets.ComponentCountBudget
 public import Unfoldings.FewestNets.VisualCertificate
 public import Unfoldings.Convex.FiniteNormalFan
 public import Unfoldings.Polyhedron.GaussianAreaPartition
+public import Unfoldings.Cap.SharpAngleProjection
+public import Unfoldings.Roof.SharpAngleProjection
+public import Unfoldings.FewestNets.VisualLensSupport
+public import Unfoldings.FewestNets.ExteriorCertificate
+public import Unfoldings.Geometry.SpatialRotationMeasure
+public import Unfoldings.Geometry.SpatialRotationAction
+public import Unfoldings.Geometry.SpatialRotationSphere
+public import Unfoldings.Geometry.MinorArcCrofton

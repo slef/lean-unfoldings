@@ -2,6 +2,16 @@
 
 ## Session Log
 
+### 2026-11-20 — verify the rotation law and local certificate inequalities
+
+- Constructed normalized Haar probability on spatial rotations. A rotated
+  unit vector has uniform solid-angle distribution, so finite boundary
+  great-circle incidences have probability zero.
+- Proved the minor-arc crossing formula for a whole randomly rotated great
+  circle, and proved that angular phase shifts preserve rotation averages.
+- Proved the sharp projected corner-angle correction and sound bounds for
+  the forbidden-lens supports and the exterior polar witnesses.
+
 ### 2026-11-20 — develop adaptive routing and the fixed-network count estimates
 
 - Constructed the boundary-rooted adaptive original-edge forest and attached
