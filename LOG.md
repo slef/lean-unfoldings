@@ -2,6 +2,17 @@
 
 ## Session Log
 
+### 2026-11-20 — assemble and count labeled net partitions
+
+- Defined a partition into nonempty, nonoverlapping original-edge nets.
+  The hemisphere assembly identifies the local selected components with
+  the labeled seam components of the entire input surface.
+- Proved the component charge identity from spherical and monochromatic
+  Euler identities, and passed from expected charges to a rotation with
+  a bounded number of nets.
+- Checked the strict numerical substitutions for the 81° and 83.2067°
+  bounds using Lean's real-number inequalities.
+
 ### 2026-11-20 — develop each selected normal component along original edges
 
 - Lifted each selected input triangle into the whole cut roof. The closed

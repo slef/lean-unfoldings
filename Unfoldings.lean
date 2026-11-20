@@ -2775,3 +2775,6 @@ public import Unfoldings.Combinatorics.LabelChanges
 public import Unfoldings.Combinatorics.ComponentEulerAccounting
 public import Unfoldings.FewestNets.CountConstants
 public import Unfoldings.FewestNets.RoofPartition
+public import Unfoldings.Development.NetPartitionRestriction
+public import Unfoldings.FewestNets.SphericalPartition
+public import Unfoldings.FewestNets.ComponentAveraging
