@@ -615,11 +615,15 @@ nonoverlap and counting remain to be proved.
   [whole planar ball between distinct child blocks](../Unfoldings/Roof/CompatibleContourSourceOnlyCrossBlockBall.lean).
 - [x] Identify the [roof wedges outside the extreme child blocks](../Unfoldings/Complex/ContourExtremeChildWedgeRun.lean).
   Every interposed child stack is empty.
-- [ ] Complete the remaining source-only vertex classes, including the first
-  and last child blocks at their parent, and derive a whole chart at every point.
+- [x] Use the [last child block and the trailing roof wedges](../Unfoldings/Roof/CompatibleContourSourceOnlyLastChildBall.lean)
+  to give a whole planar ball at the parent’s outgoing exit bank.
+- [x] Choose an [original rim anchor](../Unfoldings/Roof/CompatibleMeshCompleteSourceContour.lean)
+  so every positive roof defect has an event before the contour wraps.
+- [ ] Complete the first-child, internal-source and empty-stack vertex classes,
+  and derive a whole chart at every point.
 - [x] Prove that [physical bank parameters are injective](../Unfoldings/Roof/CompatibleContourPhysicalOrder.lean).
-  Each [nonempty fiber in one attached gap](../Unfoldings/Geometry/SourceGapFibers.lean)
-  is contractible.
+  The [proper collapse](../Unfoldings/Roof/CompatibleContourSourceOnlyGraftCollapse.lean)
+  has contractible nonempty fibers on each individual gap.
 - [ ] Derive simple connectivity from the actual slit and gap attachments and
   apply the global planar-isometry theorem. Its finite closed-cell argument
   supplies the needed global completeness.

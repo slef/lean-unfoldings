@@ -181,4 +181,41 @@ theorem compatibleContourSourceBankFanAngle_sub_eq_wedge_run
   rw [← cover, Finset.sum_map]
   rfl
 
+open scoped Classical in
+/-- The actual saved gap fan equals the sum of its final named roof wedges. -/
+theorem compatibleContourSourceBankFanAngle_eq_wedge_run
+    (e : Event[contour]) (i : Fin (LengthAt[contour,e] + 1))
+    (v : (D).Vertex Set.univ) (nonroot : v ∉ (Parent).roots)
+    (point : (Parent).parent^[i.val] VertexAt[contour,e] = v)
+    (first last : Fin (contour.length + 1))
+    (A : (D).ContourParentWedgeRun Selection contour (Fcut).boundary_roots starts v first last)
+    (names : ∀ t : Fin (contour.length + 1), (∃ k, A.visit k = t) ↔
+      Visit[t] = v ∧ (t = (Interval[v,nonroot]).leave ∨ e.val.val ≤ t.val)) :
+    K.compatibleContourSourceBankFanAngle compact nonempty R no_boundary level higher M positive
+      inner_disk beta acute contour starts e i =
+      ∑ k : Fin (A.length + 1), (D).totalAngle (Fcut).retain
+        ((D).boundaryEndVertex (Fcut).retain (contour.cycle.point (A.visit k))) := by
+  classical
+  obtain ⟨cut, saved⟩ := actual_bank_fan_saved_copy K compact nonempty R no_boundary level higher
+    M positive inner_disk beta acute contour starts e i v nonroot point
+  let indices := Finset.univ.filter (fun t : Fin (contour.length + 1) =>
+    Visit[t] = v ∧ (t = (Interval[v,nonroot]).leave ∨ e.val.val ≤ t.val))
+  let angle (t : Fin (contour.length + 1)) :=
+    (D).totalAngle (Fcut).retain ((D).boundaryEndVertex (Fcut).retain (contour.cycle.point t))
+  have cover : Finset.univ.map A.visit.toEmbedding = indices := by
+    ext t
+    simp only [indices, Finset.mem_map, Finset.mem_univ, true_and, Finset.mem_filter]
+    exact names t
+  have formula := (D).contourSavedParentFan_angle_eq_sum Selection contour
+    (Fcut).boundary_roots starts v nonroot e.val.succ cut
+  simp only [compatibleContourSourceBankFanAngle]
+  rw [saved]
+  calc
+    _ = ∑ t ∈ indices, angle t := by
+      simpa only [indices, angle, PotentialCutForest.retain, Fin.val_succ,
+        Nat.add_le_add_iff_right] using formula
+    _ = ∑ k, angle (A.visit k) := by
+      rw [← cover, Finset.sum_map]
+      rfl
+
 end Unfoldings.ConvexRoof

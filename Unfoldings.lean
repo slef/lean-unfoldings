@@ -2704,3 +2704,13 @@ public import Unfoldings.Complex.ContourExtremeChildWedgeRun
 public import Unfoldings.Geometry.PolygonalRayOrderedTransfer
 public import Unfoldings.Roof.CompatibleMeshOrderedParents
 public import Unfoldings.Roof.CompatibleContourPhysicalOrder
+public import Unfoldings.Cone.MarkedSectorAngleAtlas
+public import Unfoldings.Metric.BankStackSingleBendCycle
+public import Unfoldings.Roof.CompatibleMeshDirectedRoofSector
+public import Unfoldings.Roof.CompatibleContourFiniteRoofEndpoints
+public import Unfoldings.Roof.CompatibleContourCalibratedRoofEndpoints
+public import Unfoldings.Roof.CompatibleContourSourceOnlyLastChildClass
+public import Unfoldings.Roof.CompatibleContourSourceOnlyLastChildAngles
+public import Unfoldings.Roof.CompatibleContourSourceOnlyLastChildBall
+public import Unfoldings.Complex.ContourSourceCoverage
+public import Unfoldings.Roof.CompatibleMeshCompleteSourceContour

@@ -132,4 +132,34 @@ theorem exists_contourLastChildWedgeRun (parent : Edge) (child : Edge)
   change first.val ≤ d.enter.val at lower
   exact (not_le_of_gt (show e.val.val < other.val.val by omega)) (newest other at_stack)
 
+/-- At an event in a child, the remaining parent fan starts at that child's return. -/
+theorem contour_parent_visit_in_saved_suffix_iff
+    (parent child : Edge) (at_parent : P.parent child.val = parent.val) (e : Event)
+    (inside : P.Ancestor Source[e] child.val) (j : Fin (Q.length + 1))
+    (here : Visit[j] = parent.val) :
+    let c := Interval[child.val,child.property]
+    let p := Interval[parent.val,parent.property]
+    let first := finRotate (Q.length + 1) c.leave
+    (j = p.leave ∨ e.val.val ≤ j.val) ↔ first ≤ j ∧ j ≤ p.leave := by
+  let c := Interval[child.val,child.property]
+  let p := Interval[parent.val,parent.property]
+  let first := finRotate (Q.length + 1) c.leave
+  obtain ⟨offset, _, at_first, excluded⟩ := C.contourChild_consecutive_parent_visits S Q
+    roots starts child.val child.property (at_parent.symm ▸ parent.property)
+  have upper : first ≤ p.leave :=
+    ((p.subtree first).mp ((at_first.trans at_parent).symm ▸ P.ancestor_refl parent.val)).2
+  have before_exit : j ≤ p.leave :=
+    ((p.subtree j).mp (here.symm ▸ P.ancestor_refl parent.val)).2
+  have rank : c.enter.val < e.val.val ∧ e.val.val ≤ c.leave.val := (c.subtree _).mp inside
+  change first.val = c.leave.val + 1 at offset
+  change (j = p.leave ∨ e.val.val ≤ j.val) ↔ first.val ≤ j.val ∧ j ≤ p.leave
+  constructor
+  · rintro (rfl | after)
+    · exact ⟨upper, le_rfl⟩
+    · refine ⟨?_, before_exit⟩
+      by_contra! early
+      exact excluded j (rank.1.trans_le after) early (here.trans at_parent.symm)
+  · intro h
+    exact Or.inr (by omega)
+
 end Unfoldings.TriangleComplex
