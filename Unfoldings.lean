@@ -2770,3 +2770,8 @@ public import Unfoldings.Roof.CompatibleContourSourceOnlyRoofLayout
 public import Unfoldings.Roof.CompatibleOriginalDevelopment
 public import Unfoldings.Roof.CompatibleComponentCutDisk
 public import Unfoldings.Roof.CompatibleComponentDevelopment
+public import Unfoldings.Development.NetPartition
+public import Unfoldings.Combinatorics.LabelChanges
+public import Unfoldings.Combinatorics.ComponentEulerAccounting
+public import Unfoldings.FewestNets.CountConstants
+public import Unfoldings.FewestNets.RoofPartition
