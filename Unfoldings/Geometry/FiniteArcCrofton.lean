@@ -183,22 +183,50 @@ private theorem arcCrossingEvent_preimage (u v : Space) (frame : SpatialRotation
   simp only [arcCrossingEvent, Set.mem_ofPred_eq, Set.mem_preimage, Set.image_image, linear_mul,
     LinearMap.coe_comp, Function.comp_apply]
 
+/-- With both fixed endpoints off the moving great circle, any common point
+of the two arcs is their unique intersection. -/
+theorem mem_arcCrossingEvent_of_hit {u v x : Space} {g frame : SpatialRotation} {r : ℝ}
+    (hu : ‖u‖ = 1) (hv : ‖v‖ = 1) (not_antipodal : u + v ≠ 0)
+    (first : inner ℝ (linear (g * frame) equatorPole) u ≠ 0)
+    (last : inner ℝ (linear (g * frame) equatorPole) v ≠ 0)
+    (arc : x ∈ openMinorArc u v) (hit : x ∈ linear g '' (linear frame '' equatorialArc r)) :
+    g ∈ arcCrossingEvent u v frame r := by
+  have images : linear g '' (linear frame '' equatorialArc r) =
+      linear (g * frame) '' equatorialArc r := by
+    rw [Set.image_image]
+    rw [linear_mul, LinearMap.coe_comp]
+    rfl
+  have on_plane := rotated_equatorialArc_on_greatCircle (images ▸ hit)
+  have sign := spatialSignChange_of_minorArc_on_greatCircle hu hv not_antipodal
+    first last arc on_plane
+  have unique := (minorArc_greatCircle_crossing_iff hu hv not_antipodal first last).mpr sign
+  exact ⟨x, ⟨arc, hit⟩, fun _ h =>
+    unique.unique ⟨h.1, rotated_equatorialArc_on_greatCircle (images ▸ h.2)⟩ ⟨arc, on_plane⟩⟩
+
+/-- A fixed unit point is almost surely off the great circle of any framed rotating arc. -/
+theorem ae_not_on_moving_arc_circle {w : Space} (unit : ‖w‖ = 1) (frame : SpatialRotation) :
+    ∀ᵐ g ∂probability, inner ℝ (linear (g * frame) equatorPole) w ≠ 0 := by
+  have nonzero : innerSL ℝ w ≠ 0 := by
+    intro zero
+    have equal := DFunLike.congr_fun zero w
+    change inner ℝ w w = 0 at equal
+    rw [real_inner_self_eq_norm_sq, unit] at equal
+    norm_num at equal
+  have unit_pole : ‖linear frame equatorPole‖ = 1 :=
+    ((isometry frame).norm_map equatorPole).trans equatorPole_unit
+  have null := probability_linear_hyperplane unit_pole (innerSL ℝ w) nonzero
+  change probability {g | inner ℝ w (linear g (linear frame equatorPole)) = 0} = 0 at null
+  simp only [ae_iff, not_not, linear_mul, LinearMap.comp_apply, real_inner_comm w _]
+  exact null
+
 private theorem crossingEvent_ae_eq {u v : Space} {r : ℝ}
     (hu : ‖u‖ = 1) (hv : ‖v‖ = 1) (not_antipodal : u + v ≠ 0) :
     {g | ∃! x ∈ openMinorArc u v, x ∈ linear g '' equatorialArc r} =ᵐ[probability]
       crossingRots u v ∩ crossingPhase u v ⁻¹' Metric.closedBall (0 : EquatorPhase) r := by
-  have generic (w : Space) (hw : ‖w‖ = 1) :
+  have generic {w : Space} (hw : ‖w‖ = 1) :
       ∀ᵐ g ∂probability, inner ℝ (linear g equatorPole) w ≠ 0 := by
-    have nonzero : innerSL ℝ w ≠ 0 := by
-      intro zero
-      have equal := congrArg (fun f : Space →L[ℝ] ℝ => f w) zero
-      change inner ℝ w w = 0 at equal
-      rw [real_inner_self_eq_norm_sq, hw] at equal
-      norm_num at equal
-    have null := probability_linear_hyperplane equatorPole_unit (innerSL ℝ w) nonzero
-    change probability {g | inner ℝ w (linear g equatorPole) = 0} = 0 at null
-    simpa only [ae_iff, not_not, real_inner_comm _ w] using null
-  filter_upwards [generic u hu, generic v hv] with g first last
+    simpa only [mul_one] using ae_not_on_moving_arc_circle hw 1
+  filter_upwards [generic hu, generic hv] with g first last
   exact propext (minorArc_equatorialArc_crossing_iff hu hv not_antipodal first last)
 
 /-- The geometric crossing event is measurable up to the null endpoint incidences. -/

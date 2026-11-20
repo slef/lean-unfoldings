@@ -2822,3 +2822,5 @@ public import Unfoldings.Convex.FiniteNormalFanInterior
 public import Unfoldings.Geometry.ConvexChordTurns
 public import Unfoldings.Geometry.StereographicSupportDisks
 public import Unfoldings.Polyhedron.GaussianExtremeCells
+public import Unfoldings.Geometry.MinorArcConnectivity
+public import Unfoldings.FewestNets.NetworkCrossings

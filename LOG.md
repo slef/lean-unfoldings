@@ -2,6 +2,13 @@
 
 ## Session Log
 
+### 2026-11-20 — get Crofton witnesses from changes of cell label
+
+- Proved closed minor arcs are connected and sides whose endpoints lie in
+  distinct open cells must hit the covering network in their interiors.
+- Upgraded every such hit to a unique arc intersection almost surely, using
+  the null endpoint incidences for every finite family of moving circles.
+
 ### 2026-11-20 — identify genuine Gaussian two-cells and convex chord turns
 
 - Characterized full-dimensional normal cones at extreme sites. Subdivision

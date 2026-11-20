@@ -18,7 +18,7 @@ open scoped ENNReal
 def openMinorArc (u v : Space) : Set Space :=
   {x | ∃ t ∈ Set.Ioo (0 : ℝ) 1, NormedSpace.normalize ((1 - t) • u + t • v) = x}
 
-private theorem chord_ne_zero {u v : Space} (hu : ‖u‖ = 1) (hv : ‖v‖ = 1)
+theorem minorArc_chord_ne_zero {u v : Space} (hu : ‖u‖ = 1) (hv : ‖v‖ = 1)
     (not_antipodal : u + v ≠ 0) {t : ℝ} (ht : t ∈ Set.Ioo (0 : ℝ) 1) :
     (1 - t) • u + t • v ≠ 0 := by
   intro zero
@@ -77,7 +77,7 @@ theorem minorArcCrossingPoint_spec {n u v : Space} (hu : ‖u‖ = 1) (hv : ‖v
       exact ⟨div_pos apos denom, (div_lt_one denom).mpr (by linarith)⟩
     · have denom : a - b < 0 := by linarith
       exact ⟨div_pos_of_neg_of_neg aneg denom, (div_lt_iff_of_neg denom).mpr (by linarith)⟩
-  have nonzero := chord_ne_zero hu hv not_antipodal ht
+  have nonzero := minorArc_chord_ne_zero hu hv not_antipodal ht
   have equal : (1 - t) * a + t * b = 0 := by
     dsimp [t]
     field_simp [different]
@@ -94,7 +94,7 @@ theorem spatialSignChange_of_minorArc_on_greatCircle {n u v x : Space}
   change a * b < 0
   obtain ⟨t, ht, rfl⟩ := arc
   have zero : (1 - t) * a + t * b = 0 :=
-    (chord_equator_iff (chord_ne_zero hu hv not_antipodal ht)).mp orthogonal
+    (chord_equator_iff (minorArc_chord_ne_zero hu hv not_antipodal ht)).mp orthogonal
   by_contra not_change
   have h := le_of_not_gt not_change
   rcases mul_nonneg_iff.mp h with ⟨ha, hb⟩ | ⟨ha, hb⟩
@@ -130,11 +130,11 @@ theorem minorArc_greatCircle_crossing_iff {n u v : Space} (hu : ‖u‖ = 1) (hv
     have in_plane_t : inner ℝ n (NormedSpace.normalize ((1 - t) • u + t • v)) = 0 := by
       rwa [point]
     have equal : (1 - t) * a + t * b = 0 :=
-      (chord_equator_iff (chord_ne_zero hu hv not_antipodal ht)).mp in_plane_t
+      (chord_equator_iff (minorArc_chord_ne_zero hu hv not_antipodal ht)).mp in_plane_t
     refine ⟨x, ⟨arc, equator⟩, ?_⟩
     rintro _ ⟨⟨s, hs, rfl⟩, in_plane⟩
     have other : (1 - s) * a + s * b = 0 :=
-      (chord_equator_iff (chord_ne_zero hu hv not_antipodal hs)).mp in_plane
+      (chord_equator_iff (minorArc_chord_ne_zero hu hv not_antipodal hs)).mp in_plane
     have product : (s - t) * (a - b) = 0 := by nlinarith only [equal, other]
     rw [sub_eq_zero.mp ((mul_eq_zero.mp product).resolve_right different)]
     exact point
