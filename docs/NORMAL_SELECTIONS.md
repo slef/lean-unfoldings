@@ -611,10 +611,15 @@ nonoverlap and counting remain to be proved.
 - [x] Place the [cross-block sector family](../Unfoldings/Roof/CompatibleContourSourceOnlyCrossBlockSectors.lean)
   at a common radius. The [sum of its original angles](../Unfoldings/Roof/CompatibleContourSourceOnlyCrossBlockAngles.lean)
   is exactly a full turn.
-- [ ] Match the placed charts on the literal bank slots and glue the
-  source-only cyclic fans into whole
-  metric-ball charts. Reuse the generic strip and sector charts with the
-  source-only attachment maps.
+- [x] Match the placed sectors along their literal bank slots to give a
+  [whole planar ball between distinct child blocks](../Unfoldings/Roof/CompatibleContourSourceOnlyCrossBlockBall.lean).
+- [x] Identify the [roof wedges outside the extreme child blocks](../Unfoldings/Complex/ContourExtremeChildWedgeRun.lean).
+  Every interposed child stack is empty.
+- [ ] Complete the remaining source-only vertex classes, including the first
+  and last child blocks at their parent, and derive a whole chart at every point.
+- [x] Prove that [physical bank parameters are injective](../Unfoldings/Roof/CompatibleContourPhysicalOrder.lean).
+  Each [nonempty fiber in one attached gap](../Unfoldings/Geometry/SourceGapFibers.lean)
+  is contractible.
 - [ ] Derive simple connectivity from the actual slit and gap attachments and
   apply the global planar-isometry theorem. Its finite closed-cell argument
   supplies the needed global completeness.

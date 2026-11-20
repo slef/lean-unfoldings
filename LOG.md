@@ -2,6 +2,18 @@
 
 ## Session Log
 
+### 2026-11-19 — glue whole balls between child blocks
+
+- Matched the cross-block sector charts along the exact normalized arclength
+  of every original slot, giving a whole planar ball in the actual graft.
+- Enumerated the original roof wedges outside the first and last positive
+  child blocks. Their interposed child stacks are empty.
+- Proved that original physical banks retain distinct parameters and that
+  every nonempty fiber of a single gap collapse is contractible.
+- Full `lake build` passed (6,631 jobs). Both abstract audits passed.
+  Only standard axioms occur in 21,661 unfolding and 7,243 planar-topology
+  declarations.
+
 ### 2026-11-19 — place the full-turn cross-block sector family
 
 - Proved the exact cross-block aperture balance. Both original gap bends

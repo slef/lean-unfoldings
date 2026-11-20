@@ -2699,3 +2699,8 @@ public import Unfoldings.Roof.CompatibleContourSourceOnlyFiniteSlotRadii
 public import Unfoldings.Cone.MarkedSectorGerm
 public import Unfoldings.Cone.MarkedSectorBankStack
 public import Unfoldings.Roof.CompatibleContourSourceOnlySectorTraces
+public import Unfoldings.Roof.CompatibleContourSourceOnlyCrossBlockBall
+public import Unfoldings.Complex.ContourExtremeChildWedgeRun
+public import Unfoldings.Geometry.PolygonalRayOrderedTransfer
+public import Unfoldings.Roof.CompatibleMeshOrderedParents
+public import Unfoldings.Roof.CompatibleContourPhysicalOrder
