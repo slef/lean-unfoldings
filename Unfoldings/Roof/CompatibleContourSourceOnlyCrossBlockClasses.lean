@@ -112,7 +112,8 @@ local notation "RoofPoint[" j "]" => (Sigma.mk none (Map
     (PairedInvolutions.System.Chain.point (TriangleComplex.BoundaryContour.cycle contour) j)))) :
       MetricGluing.Total Pieces)
 
-private theorem source_only_bend_transfer_at_parent
+/-- A named bend keeps both original slot incidences under a different parent label. -/
+theorem compatibleContourSourceOnlyGapBend_endpoint_transfer_of_parent
     (child parent : Edge) (parent_eq : (Fcut).parents.parent child.val = parent.val)
     (e : Event) (g : OrientedBankGap BankAt[e] MovedAt[e])
     (i : Fin ((Stack FiniteBank[parent.val,parent.property]).length + 1))
@@ -195,11 +196,11 @@ theorem exists_compatibleContourSourceOnlyCrossBlockData
     Stack a 1 old older old_shape').2
   have new_entry := (MetricGluing.bankStack_last_gap_addresses (Parameter := ParamAt)
     Stack b 1 new newer new_shape').1
-  obtain ⟨hold, iold⟩ := source_only_bend_transfer_at_parent K compact nonempty R no_boundary
-    level higher M positive inner_disk beta acute contour starts W models old_child parent
+  obtain ⟨hold, iold⟩ := compatibleContourSourceOnlyGapBend_endpoint_transfer_of_parent K compact nonempty R
+    no_boundary level higher M positive inner_disk beta acute contour starts W models old_child parent
     old_parent old old_gap slot 0 true false old_out old_entry
-  obtain ⟨hnew, inew⟩ := source_only_bend_transfer_at_parent K compact nonempty R no_boundary
-    level higher M positive inner_disk beta acute contour starts W models new_child parent
+  obtain ⟨hnew, inew⟩ := compatibleContourSourceOnlyGapBend_endpoint_transfer_of_parent K compact nonempty R
+    no_boundary level higher M positive inner_disk beta acute contour starts W models new_child parent
     new_parent new new_gap slot last false true new_out new_entry
   have no_other_old (flag : Bool) (t : Time) (h : EndAt flag t.1 t.2 = old_center) :
       t = first_time ∨ t = closing := (iold flag t h).2.symm
@@ -302,8 +303,9 @@ theorem exists_compatibleContourSourceOnlyCrossBlockData
       (Fin.last (A.length + 1)).succ = new_center
     exact MetricGluing.BankStackCyclicClass.runCenter_last old_center new_center roof
   · intro i
-    simp only [H, MetricGluing.BankStackCyclicClass.ofRoofRun,
-      MetricGluing.BankStackCyclicClass.runCenter_roof, roof]
+    change MetricGluing.BankStackCyclicClass.runCenter old_center new_center roof
+      i.castSucc.succ = roof i
+    exact MetricGluing.BankStackCyclicClass.runCenter_roof old_center new_center roof i
 
 /-- At a cross-block adjacency, the original roof wedges and the two gap bends
 are precisely the centers in the cyclic seam class. -/

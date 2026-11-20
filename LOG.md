@@ -2,6 +2,19 @@
 
 ## Session Log
 
+### 2026-11-19 — restore empty stacks and join positive source tips to their children
+
+- Proved the exact planar ball where a positive source tip, the leading roof
+  wedges, and the first descendant gap meet.
+- Built the exact seam cycle for an empty outgoing stack. When the cycle
+  contains multiple roof wedges, its full turn gives an actual planar ball.
+- Proved that a finite chain of arcs meeting only at consecutive endpoints
+  is contractible, and that a covering section over a compact proper-map
+  fiber extends over the preimage of a neighborhood.
+- Full `lake build` passed (6,658 jobs). Both abstract audits passed.
+  Only standard axioms occur in 21,854 unfolding and 7,243 planar-topology
+  declarations.
+
 ### 2026-11-19 — glue the leading child fan and the isolated positive source
 
 - Proved that a child excursion partitions the parent’s original angle

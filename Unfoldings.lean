@@ -2724,3 +2724,10 @@ public import Unfoldings.Roof.CompatibleContourSourceOnlyFirstChildBall
 public import Unfoldings.Roof.CompatibleContourSourceOnlyTipIncidence
 public import Unfoldings.Roof.CompatibleContourSourceOnlySingleTipClass
 public import Unfoldings.Roof.CompatibleContourSourceOnlySingleTipBall
+public import Unfoldings.Roof.CompatibleContourSourceOnlyTipAndChildClass
+public import Unfoldings.Roof.CompatibleContourSourceOnlyTipAndChildBall
+public import Unfoldings.Topology.CoveringNearFiber
+public import Unfoldings.Topology.FiniteArcConcat
+public import Unfoldings.Metric.BankStackRoofCycle
+public import Unfoldings.Roof.CompatibleContourSourceOnlyEmptyStackClass
+public import Unfoldings.Roof.CompatibleContourSourceOnlyEmptyStackBall

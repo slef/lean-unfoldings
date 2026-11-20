@@ -162,11 +162,27 @@ def runSide (i : Fin (n + 3)) : Bool :=
 def endpointAtTime (flag : Bool) (s : Σ slot : BankStackSlot stack, Parameter slot.1) :
     Total X := EndAt flag s.1 s.2
 
-/-- Make a cyclic seam class from the linear run of roof wedges between two gap bends.
-The outgoing attachment closes the cycle by joining those two bends. -/
-def ofRoofRun
-    (first_old : EndAt true entrance.1 entrance.2 = old)
-    (first_roof : EndAt false entrance.1 entrance.2 = roof 0)
+/-- The first signed slot can come from the opposite side of an original source tip. -/
+def runSideWithEntry (entrySide : Bool) (i : Fin (n + 3)) : Bool :=
+  Fin.cases entrySide (Fin.lastCases false (fun _ => true)) i
+
+@[simp] theorem runSideWithEntry_zero (entrySide : Bool) :
+    runSideWithEntry entrySide (0 : Fin (n + 3)) = entrySide := rfl
+
+@[simp] theorem runSideWithEntry_last (entrySide : Bool) :
+    runSideWithEntry entrySide (Fin.last (n + 1)).succ = false := by
+  change Fin.lastCases (motive := fun _ => Bool) false (fun _ => true) (Fin.last (n + 1)) = false
+  exact Fin.lastCases_last
+
+@[simp] theorem runSideWithEntry_roof (entrySide : Bool) (i : Fin (n + 1)) :
+    runSideWithEntry entrySide i.castSucc.succ = true := by
+  change Fin.lastCases (motive := fun _ => Bool) false (fun _ => true) i.castSucc = true
+  exact Fin.lastCases_castSucc i
+
+/-- A roof run with its first exterior slot signed by the adjoining original piece. -/
+def ofRoofRunWithEntrySide (entrySide : Bool)
+    (first_old : EndAt entrySide entrance.1 entrance.2 = old)
+    (first_roof : EndAt (!entrySide) entrance.1 entrance.2 = roof 0)
     (step_left : ∀ j, EndAt true (between j).1 (between j).2 = roof j.castSucc)
     (step_right : ∀ j, EndAt false (between j).1 (between j).2 = roof j.succ)
     (last_roof : EndAt true exit.1 exit.2 = roof (Fin.last n))
@@ -180,22 +196,22 @@ def ofRoofRun
     BankStackCyclicClass X stack base gap (n + 2) where
   center := runCenter old new roof
   time := runTime entrance exit closure between
-  side := runSide
+  side := runSideWithEntry entrySide
   first := fun i => by
-    change endpointAtTime (X := X) (stack := stack) (base := base) (gap := gap) (runSide i)
+    change endpointAtTime (X := X) (stack := stack) (base := base) (gap := gap) (runSideWithEntry entrySide i)
       (runTime entrance exit closure between i) = runCenter old new roof i
     refine Fin.cases ?_ (fun j => ?_) i
     · exact first_old
     · refine Fin.lastCases ?_ (fun k => ?_) j
-      · rw [runSide_last, runTime_closure, runCenter_last]
+      · rw [runSideWithEntry_last, runTime_closure, runCenter_last]
         exact closing_new
       · refine Fin.lastCases ?_ (fun l => ?_) k
-        · rw [runSide_roof, runTime_exit, runCenter_roof]
+        · rw [runSideWithEntry_roof, runTime_exit, runCenter_roof]
           exact last_roof
-        · rw [runSide_roof, runTime_between, runCenter_roof]
+        · rw [runSideWithEntry_roof, runTime_between, runCenter_roof]
           exact step_left l
   next := fun i => by
-    change endpointAtTime (X := X) (stack := stack) (base := base) (gap := gap) (!(runSide i))
+    change endpointAtTime (X := X) (stack := stack) (base := base) (gap := gap) (!(runSideWithEntry entrySide i))
       (runTime entrance exit closure between i) = runCenter old new roof (finRotate _ i)
     have one : finRotate (n + 3) (0 : Fin (n + 3)) = (0 : Fin (n + 2)).succ :=
       finRotate_of_lt (Nat.zero_lt_succ _)
@@ -203,13 +219,13 @@ def ofRoofRun
     · rw [one]
       have index : (0 : Fin (n + 2)).succ = (0 : Fin (n + 1)).castSucc.succ := Fin.ext rfl
       rw [index]
-      rw [runSide_zero, Bool.not_true, runTime_zero, runCenter_roof]
+      rw [runSideWithEntry_zero, runTime_zero, runCenter_roof]
       exact first_roof
     · refine Fin.lastCases ?_ (fun k => ?_) j
       · have wrap : finRotate (n + 3) (Fin.last (n + 1)).succ = 0 :=
           (congrArg (finRotate (n + 3)) (Fin.succ_last (n + 1))).trans finRotate_last
         rw [wrap]
-        rw [runSide_last, Bool.not_false, runTime_closure, runCenter_zero]
+        rw [runSideWithEntry_last, Bool.not_false, runTime_closure, runCenter_zero]
         exact closing_old
       · have advance : finRotate (n + 3) k.castSucc.succ = k.succ.succ :=
           finRotate_of_lt (Nat.succ_lt_succ k.isLt)
@@ -217,11 +233,11 @@ def ofRoofRun
         refine Fin.lastCases ?_ (fun l => ?_) k
         · have same : (Fin.last n).succ = Fin.last (n + 1) := Fin.succ_last n
           rw [same]
-          rw [runSide_roof, Bool.not_true, runTime_exit, runCenter_last]
+          rw [runSideWithEntry_roof, Bool.not_true, runTime_exit, runCenter_last]
           exact last_new
         · have same : l.castSucc.succ.succ = l.succ.castSucc.succ := Fin.ext rfl
           rw [same]
-          rw [runSide_roof, Bool.not_true, runTime_between, runCenter_roof]
+          rw [runSideWithEntry_roof, Bool.not_true, runTime_between, runCenter_roof]
           exact step_right l
   incident := fun i flag s equal => by
     have at_entrance (h : s = entrance) : ∃ k, s = runTime entrance exit closure between k :=
@@ -242,6 +258,26 @@ def ofRoofRun
         · exact at_entrance a
         · exact at_exit b
         · exact ⟨l.castSucc.castSucc.succ, by simpa only [runTime_between] using c⟩
+
+/-- Make a cyclic seam class from the linear run of roof wedges between two gap bends.
+The outgoing attachment closes the cycle by joining those two bends. -/
+def ofRoofRun
+    (first_old : EndAt true entrance.1 entrance.2 = old)
+    (first_roof : EndAt false entrance.1 entrance.2 = roof 0)
+    (step_left : ∀ j, EndAt true (between j).1 (between j).2 = roof j.castSucc)
+    (step_right : ∀ j, EndAt false (between j).1 (between j).2 = roof j.succ)
+    (last_roof : EndAt true exit.1 exit.2 = roof (Fin.last n))
+    (last_new : EndAt false exit.1 exit.2 = new)
+    (closing_old : EndAt true closure.1 closure.2 = old)
+    (closing_new : EndAt false closure.1 closure.2 = new)
+    (old_incident : ∀ flag (s : Time), EndAt flag s.1 s.2 = old → s = entrance ∨ s = closure)
+    (new_incident : ∀ flag (s : Time), EndAt flag s.1 s.2 = new → s = exit ∨ s = closure)
+    (roof_incident : ∀ (j : Fin (n + 1)) flag (s : Time), EndAt flag s.1 s.2 = roof j →
+      s = entrance ∨ s = exit ∨ ∃ k, s = between k) :
+    BankStackCyclicClass X stack base gap (n + 2) :=
+  ofRoofRunWithEntrySide old new roof entrance exit closure between true first_old first_roof
+    step_left step_right last_roof last_new closing_old closing_new old_incident new_incident
+    roof_incident
 
 /-- Every sufficiently near seam in an exact cyclic class has one of its marked
 slot parameters, within the same arclength radius in the underlying original piece. -/

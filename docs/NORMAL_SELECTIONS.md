@@ -623,14 +623,20 @@ nonoverlap and counting remain to be proved.
   when the oldest outgoing gap is from a child. The complete contour implies the parent is flat.
 - [x] Glue the [source tip and its original roof wedges](../Unfoldings/Roof/CompatibleContourSourceOnlySingleTipBall.lean)
   when none of its child stacks have a positive gap.
-- [ ] Complete source tips with positive child gaps and empty-stack vertex classes,
-  and derive a whole chart at every point.
+- [x] Glue the [source tip, leading roof wedges and first descendant bend](../Unfoldings/Roof/CompatibleContourSourceOnlyTipAndChildBall.lean)
+  when the source has a positive child gap.
+- [x] Restore [empty outgoing stacks with multiple roof wedges](../Unfoldings/Roof/CompatibleContourSourceOnlyEmptyStackBall.lean).
+  The complete contour gives a full turn and the original wedge charts agree on the restored banks.
+- [ ] Restore the full-turn slit at an empty-stack leaf and assemble a whole chart at every point.
 - [x] Prove that [physical bank parameters are injective](../Unfoldings/Roof/CompatibleContourPhysicalOrder.lean).
   The [proper collapse](../Unfoldings/Roof/CompatibleContourSourceOnlyGraftCollapse.lean)
   has contractible nonempty fibers on each individual gap.
-- [ ] Derive simple connectivity from the actual slit and gap attachments and
-  apply the global planar-isometry theorem. Its finite closed-cell argument
-  supplies the needed global completeness.
+- [x] Prove that a [finite chain of attached arcs](../Unfoldings/Topology/FiniteArcConcat.lean)
+  has contractible union, and extend a covering section to a neighborhood of
+  a [proper contractible fiber](../Unfoldings/Topology/CoveringNearFiber.lean).
+- [ ] Identify the full collapse fibers and derive a global development from
+  the actual slit and gap attachments. The finite closed-cell argument
+  then supplies the needed global completeness.
 
 The finite-path comparison now constructs its actual Jordan traversal and derives
 all original fan alternatives. Complete physical refinements preserve every ordered

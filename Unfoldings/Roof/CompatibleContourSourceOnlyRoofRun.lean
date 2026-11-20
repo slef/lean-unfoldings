@@ -209,4 +209,61 @@ theorem compatibleContourSourceOnlyRoofRun_endpoints
     (.inl (p i).1) (.inl (q i).1) (p i).2.1 (q i).2.1
     (finiteSlotParameterize (p i).2.2 0) (finiteSlotParameterize (q i).2.2 0) names flag s
 
+set_option maxHeartbeats 700000 in
+-- The empty child's first and last slots agree as dependent marked times.
+/-- Empty intervening stacks give one common slot between each pair of roof wedges. -/
+theorem contourRoofRun_site_times_of_empty
+    (parent : Edge) {first last : Fin (contour.length + 1)}
+    (A : (D).ContourParentWedgeRun Selection contour (Fcut).boundary_roots starts
+      parent.val first last) (initial terminal : RoofSite)
+    (empty : ∀ j, Stack FiniteBank[(A.child j).val,(A.child j).property] = []) :
+    let p := K.contourRoofRunIncoming compact nonempty R no_boundary level higher M positive
+      inner_disk beta acute contour starts A initial
+    let q := K.contourRoofRunOutgoing compact nonempty R no_boundary level higher M positive
+      inner_disk beta acute contour starts A terminal
+    let time (j : Fin A.length) : Time := ⟨⟨.inl (A.child j), 0⟩, 1⟩
+    ∀ i, SiteTime (p i) = Fin.cases (SiteTime initial) time i ∧
+      SiteTime (q i) = Fin.lastCases (SiteTime terminal) time i ∧
+      (p i).2.1 = Fin.cases initial.2.1 (fun _ => false) i ∧
+      (q i).2.1 = Fin.lastCases terminal.2.1 (fun _ => true) i := by
+  let p := K.contourRoofRunIncoming compact nonempty R no_boundary level higher M positive
+    inner_disk beta acute contour starts A initial
+  let q := K.contourRoofRunOutgoing compact nonempty R no_boundary level higher M positive
+    inner_disk beta acute contour starts A terminal
+  let time (j : Fin A.length) : Time := ⟨⟨.inl (A.child j), 0⟩, 1⟩
+  have first (i : Fin (A.length + 1)) : SiteTime (p i) = Fin.cases (SiteTime initial) time i ∧
+      (p i).2.1 = Fin.cases initial.2.1 (fun _ => false) i := by
+    refine Fin.cases ⟨rfl, rfl⟩ (fun j => ⟨?_, rfl⟩) i
+    change RoofTime FiniteBank[(A.child j).val,(A.child j).property] false
+      (unitInterval.symm 0) = time j
+    rw [unitInterval.symm_zero]
+    rfl
+  have last (i : Fin (A.length + 1)) :
+      SiteTime (q i) = Fin.lastCases (SiteTime terminal) time i ∧
+      (q i).2.1 = Fin.lastCases terminal.2.1 (fun _ => true) i := by
+    refine Fin.lastCases ?_ (fun j => ?_) i
+    · have label : q (Fin.last A.length) = terminal := by
+        change Fin.lastCases (motive := fun _ => RoofSite) terminal
+          (fun j => (A.child j, true, true)) (Fin.last A.length) = terminal
+        exact Fin.lastCases_last
+      rw [label, Fin.lastCases_last, Fin.lastCases_last]
+      exact ⟨rfl, rfl⟩
+    · have label : q j.castSucc = (A.child j, true, true) := by
+        change Fin.lastCases (motive := fun _ => RoofSite) terminal
+          (fun j => (A.child j, true, true)) j.castSucc = _
+        exact Fin.lastCases_castSucc j
+      rw [label, Fin.lastCases_castSucc, Fin.lastCases_castSucc]
+      refine ⟨?_, rfl⟩
+      let b := FiniteBank[(A.child j).val,(A.child j).property]
+      let at_slot (k : Fin ((Stack b).length + 1)) : Time := ⟨⟨b, k⟩, 1⟩
+      have same : Fin.last (Stack b).length = 0 := by
+        apply Fin.ext
+        change (Stack b).length = 0
+        rw [show Stack b = [] from empty j]
+        rfl
+      change RoofTime b true (unitInterval.symm 0) = time j
+      rw [unitInterval.symm_zero]
+      exact congrArg at_slot same
+  exact fun i => ⟨(first i).1, (last i).1, (first i).2, (last i).2⟩
+
 end Unfoldings.ConvexRoof
