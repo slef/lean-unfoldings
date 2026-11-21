@@ -2,6 +2,15 @@
 
 ## Session Log
 
+### 2026-11-20 — certify all six side records of the first cell
+
+- Reused certified fixed-point side coordinates to replay the upper
+  visual-angle checks on all six supporting lines.
+- Verified all twelve saved exterior witnesses along the closed sides.
+  The exterior-margin theorem uses the unit normals and exterior cone.
+- Proved convexity and the supporting-plane property for a finite
+  radial mesh from its cone cover, adjacency, and linear hinge tests.
+
 ### 2026-11-20 — check the first finite progress-body record
 
 - Proved Taylor enclosures for sine and cosine and a small-argument

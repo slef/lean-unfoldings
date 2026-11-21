@@ -2795,6 +2795,12 @@ public import Unfoldings.Geometry.RadialBlockLimit
 public import Unfoldings.Geometry.SphericalEndpointLocality
 public import Unfoldings.Geometry.SphericalAngleChord
 public import Unfoldings.Geometry.AcuteSphericalHinge
+public import Unfoldings.Geometry.GenericRadialLines
+public import Unfoldings.Geometry.LinearCoverTraceConvex
+public import Unfoldings.Geometry.RadialLinearCoverConvex
+public import Unfoldings.Geometry.RadialTriangleHull
+public import Unfoldings.Geometry.RadialConeCoordinates
+public import Unfoldings.Geometry.RadialHullSupport
 public import Unfoldings.Geometry.PiecewiseAffineConvex
 public import Unfoldings.Geometry.SphericalPathAngle
 public import Unfoldings.Geometry.LinearAngleDistortion
@@ -2824,6 +2830,10 @@ public import Unfoldings.FewestNets.CheckedVisualSide
 public import Unfoldings.FewestNets.CheckedVisualLens
 public import Unfoldings.FewestNets.FiniteVisualExample
 public import Unfoldings.FewestNets.FiniteVisualUpperExample
+public import Unfoldings.FewestNets.FiniteVisualSideBounds
+public import Unfoldings.FewestNets.CheckedExteriorSide
+public import Unfoldings.FewestNets.FiniteExteriorExample
+public import Unfoldings.FewestNets.MeshCornerGeometry
 public import Unfoldings.FewestNets.MeshHingeSupport
 public import Unfoldings.FewestNets.VisualCertificate
 public import Unfoldings.Convex.FiniteNormalFan
