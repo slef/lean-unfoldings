@@ -2841,6 +2841,12 @@ public import Unfoldings.Polyhedron.LabeledCutConnectivity
 public import Unfoldings.Polyhedron.LabeledComponentCount
 public import Unfoldings.Polyhedron.LinkSeams
 public import Unfoldings.Polyhedron.GaussianOrderedArcs
+public import Unfoldings.Polyhedron.GaussianArcSupport
+public import Unfoldings.Polyhedron.GaussianArcValence
+public import Unfoldings.Polyhedron.GaussianNondegenerate
+public import Unfoldings.Polyhedron.FigureSupportChordAngle
+public import Unfoldings.Polyhedron.GaussianCornerAngle
+public import Unfoldings.Polyhedron.GaussianBoundaryCycle
 public import Unfoldings.Geometry.HingeCircleSpeed
 public import Unfoldings.Geometry.HingeCircleAngleDerivative
 public import Unfoldings.Geometry.CircleLineContact
@@ -2859,6 +2865,9 @@ public import Unfoldings.Combinatorics.CoordinateCycles
 public import Unfoldings.Combinatorics.DualComponentCount
 public import Unfoldings.Combinatorics.ActiveGraphComponents
 public import Unfoldings.Combinatorics.CyclicRunCompression
+public import Unfoldings.Geometry.PlanarExposedRays
+public import Unfoldings.Geometry.PositiveSpanAngle
+public import Unfoldings.Geometry.SegmentCoverFirstEdge
 public import Unfoldings.Geometry.MinorArcBoundaryCount
 public import Unfoldings.Geometry.MinorArcArclength
 public import Unfoldings.Geometry.SphericalArcEndpointClip

@@ -2,6 +2,15 @@
 
 ## Session Log
 
+### 2026-11-20 — verify the genuine Gaussian corner angles
+
+- Used the vertex figure to find an original triangle sector inside any
+  straight boundary chord between its original link rays. This bounds
+  the Gaussian exterior angle at a compressed corner from below.
+- Proved that every genuine side has an exposing gnomonic linear form,
+  that at most two sides meet at an incident normal, and that an extreme
+  vertex gives a simple compressed cycle with at least three sides.
+
 ### 2026-11-20 — order the Gaussian arcs by the original link
 
 - Compressed the cyclic link at changes of outward normal.
