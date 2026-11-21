@@ -2,6 +2,13 @@
 
 ## Session Log
 
+### 2026-11-21 — verify all frequency-400 scalar and tilt records
+
+- Checked the 13,534 published scalar records in bounded kernel batches.
+  Verified exact coverage of the canonical face, seam, and vertex keys.
+- Used the uniform cover or a model gnomonic radius check for each
+  record tilt. Transferred the selected bound to the entire actual cell.
+
 ### 2026-11-21 — certify development scalars and sharpen the cap estimates
 
 - Validated all 884 frequency-100 record keys and scalar inequalities
