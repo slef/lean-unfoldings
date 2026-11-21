@@ -95,16 +95,21 @@ For development priorities, use the [feature checklist](PLAN.md); the
 
 ## Fewest Nets
 
-The [81° theorem](Unfoldings/FewestNets/PaperFrequency100.lean) partitions the
-original triangles of a convex polyhedron into fewer than 11,300,000
-original-edge nets when every input angle is at most 81°. Every triangle
-belongs to exactly one piece.
+The finite-certificate theorems partition a triangulated convex polyhedron
+into original-edge nets. Every input triangle belongs to exactly one piece.
 
-After the standard build, check the 884 exact routing certificates and
-audit the theorem's axioms with Python.
+| Maximum input angle | Number of nets is less than | Lean theorem |
+|---|---:|---|
+| 81° | 11,300,000 | [`exists_netPartition_lt_q100`](Unfoldings/FewestNets/PaperFrequency100.lean) |
+| 83.2067° | 200,700,000 | [`exists_netPartition_lt_q400`](Unfoldings/FewestNets/PaperFrequency400.lean) |
+
+Import `Unfoldings.FewestNets.PaperEndpoints` for both theorems. After the
+standard build, check the exact routing certificates and audit the
+theorems' axioms with Python.
 
 ```sh
 python scripts/check-routing-tables.py 100
+python scripts/check-routing-tables.py 400
 ```
 
 The script checks the certificate modules in bounded batches. Use

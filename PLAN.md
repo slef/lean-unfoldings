@@ -1202,7 +1202,7 @@ The Fewest Nets application lives in `Unfoldings/FewestNets`.
 
 - [x] Derive original-edge nets for normal components from verified routing records.
 - [x] Verify all 884 frequency-100 records and the 81° partition theorem.
-- [ ] Verify all 13,534 frequency-400 records and the 83.2067° partition theorem.
+- [x] Verify all 13,534 frequency-400 records and the 83.2067° partition theorem.
 
 ## Upstream research and reuse
 
