@@ -2832,6 +2832,7 @@ public import Unfoldings.FewestNets.MeshStarLengths
 public import Unfoldings.FewestNets.MeshArcLength
 public import Unfoldings.FewestNets.MeshFaceGeometry
 public import Unfoldings.FewestNets.FiniteMeshExample
+public import Unfoldings.FewestNets.FiniteMeshPerimeterBounds
 public import Unfoldings.FewestNets.CheckedPlane
 public import Unfoldings.FewestNets.MeshChartFrame
 public import Unfoldings.FewestNets.MeshChartSupport
@@ -2891,6 +2892,12 @@ public import Unfoldings.Geometry.ShortMinorArcDiameter
 public import Unfoldings.FewestNets.IcosahedronMultipleTies
 public import Unfoldings.FewestNets.IcosahedronArcIntersections
 public import Unfoldings.FewestNets.IcosahedronArcSeparation
+public import Unfoldings.Geometry.GnomonicRadius
+public import Unfoldings.Geometry.CornerHalfplanes
+public import Unfoldings.FewestNets.IcosahedronAdjacentFace
+public import Unfoldings.FewestNets.IcosahedronCornerCoordinates
+public import Unfoldings.FewestNets.IcosahedronVertexGuard
+public import Unfoldings.FewestNets.IcosahedronGuardedSeparation
 public import Unfoldings.FewestNets.IcosahedronDualEdges
 public import Unfoldings.FewestNets.MeshStarFacetNormal
 public import Unfoldings.FewestNets.IcosahedronInteriorStar

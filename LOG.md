@@ -2,6 +2,23 @@
 
 ## Session Log
 
+### 2026-11-20 — prove the local vertex guard for the actual arcs
+
+- Identified the two competing site comparisons with the bounding
+  halfplanes at each Voronoi corner.
+- Proved that a wall inside the local altitude disk must lie on an
+  incident arc, before its other endpoint.
+- Derived the global nonincident-arc separation from the local altitude
+  inequalities and the gnomonic distortion bound.
+
+### 2026-11-20 — certify the frequency-100 model-star perimeter
+
+- Split the weighted perimeter into twelve-key blocks to bound memory.
+  Verified every block by kernel reduction and combined their bounds
+  to obtain the strict upper bound 2084.
+- The perimeter here is for the canonical model stars. Transfer to the
+  actual network requires the complete star realization and counting.
+
 ### 2026-11-20 — reduce dual-edge separation to a local endpoint bound
 
 - Proved that distinct Voronoi arcs meet only at shared endpoints.
