@@ -2855,3 +2855,8 @@ public import Unfoldings.FewestNets.EndpointCrossingBudget
 public import Unfoldings.FewestNets.LocalizedCharge
 public import Unfoldings.FewestNets.VoronoiOpenCrossings
 public import Unfoldings.FewestNets.SubdivisionCharge
+public import Unfoldings.Geometry.GnomonicMinorArc
+public import Unfoldings.Roof.SphericalPrimalCell
+public import Unfoldings.Roof.SeamNormalCell
+public import Unfoldings.Polyhedron.GaussianIncidentHull
+public import Unfoldings.Polyhedron.GaussianSeam

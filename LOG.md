@@ -2,6 +2,16 @@
 
 ## Session Log
 
+### 2026-11-20 — identify Gaussian cells and dual seam arcs
+
+- Identified the actual Gaussian cell in gnomonic coordinates as the convex
+  hull of the slopes of the original incident face normals.
+- At an open original seam in a roof, only its two incident triangles supply
+  normal slopes. Their segment is the entire full normal cell there.
+- Proved that the Gaussian cells at the endpoints of every original seam
+  intersect in exactly the minor arc between the original incident face normals.
+  A coplanar seam gives a single direction.
+
 ### 2026-11-20 — localize the Crofton charge and remove subdivision charges
 
 - Proved the two-hit bound for transverse arcs in convex spherical cells.

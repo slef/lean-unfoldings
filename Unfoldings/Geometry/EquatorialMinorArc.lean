@@ -122,16 +122,16 @@ theorem equatorialArc_eq_closedMinorArc {r : ℝ} (r_pos : 0 < r) (r_small : 2 *
         exact complexLift_polarRay_mem_equatorialArc r_le
           ⟨by linarith [hθ.1], by linarith [hθ.2]⟩
 
-theorem image_closedMinorArc (g : SpatialRotation) (u v : Space) :
-    linear g '' closedMinorArc u v = closedMinorArc (linear g u) (linear g v) := by
-  have map_arc : linear g '' openMinorArc u v = openMinorArc (linear g u) (linear g v) := by
+theorem image_closedMinorArc_linearIsometry (L : Space ≃ₗᵢ[ℝ] Space) (u v : Space) :
+    L '' closedMinorArc u v = closedMinorArc (L u) (L v) := by
+  have map_arc : L '' openMinorArc u v = openMinorArc (L u) (L v) := by
     have map_point (t : ℝ) :
-        linear g (NormedSpace.normalize ((1 - t) • u + t • v)) =
-          NormedSpace.normalize ((1 - t) • linear g u + t • linear g v) := by
-      have mapped : (1 - t) • linear g u + t • linear g v =
-          linear g ((1 - t) • u + t • v) := by simp only [map_add, map_smul]
-      have mapped_norm := (isometry g).norm_map ((1 - t) • u + t • v)
-      change ‖linear g ((1 - t) • u + t • v)‖ = _ at mapped_norm
+        L (NormedSpace.normalize ((1 - t) • u + t • v)) =
+          NormedSpace.normalize ((1 - t) • L u + t • L v) := by
+      have mapped : (1 - t) • L u + t • L v =
+          L ((1 - t) • u + t • v) := by simp only [map_add, map_smul]
+      have mapped_norm := L.norm_map ((1 - t) • u + t • v)
+      change ‖L ((1 - t) • u + t • v)‖ = _ at mapped_norm
       rw [NormedSpace.normalize, NormedSpace.normalize, mapped, mapped_norm, map_smul]
     ext x
     constructor
@@ -141,6 +141,10 @@ theorem image_closedMinorArc (g : SpatialRotation) (u v : Space) :
       exact ⟨_, ⟨t, ht, rfl⟩, map_point t⟩
   rw [closedMinorArc, Set.image_insert_eq, Set.image_insert_eq, map_arc]
   rfl
+
+theorem image_closedMinorArc (g : SpatialRotation) (u v : Space) :
+    linear g '' closedMinorArc u v = closedMinorArc (linear g u) (linear g v) :=
+  image_closedMinorArc_linearIsometry (isometry g) u v
 
 /-- Every genuine minor arc can be used as a moving side in finite-arc
 Crofton. The interval radius is half the spherical angular length. -/

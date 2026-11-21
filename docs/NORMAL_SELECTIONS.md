@@ -699,6 +699,11 @@ own centered compact convex chart. The [corner estimate](../Unfoldings/Geometry/
 bounds the projected chord turn by the spherical exterior angle from below.
 The [extreme-site cells](../Unfoldings/Polyhedron/GaussianExtremeCells.lean)
 account for all spherical area and admit strictly convex charts.
+The [incident normal hull](../Unfoldings/Polyhedron/GaussianIncidentHull.lean)
+identifies the finite gnomonic polygon of each actual vertex. The
+[original seam theorem](../Unfoldings/Polyhedron/GaussianSeam.lean) identifies
+the intersection of its two endpoint Gaussian cells with the complete minor arc
+between the normals of the incident triangles.
 A [wall cover](../Unfoldings/FewestNets/VoronoiOpenCrossings.lean) by actual
 minor arcs supplies generic changed-side intersections in network edge interiors.
 The [localized charge theorem](../Unfoldings/FewestNets/LocalizedCharge.lean)

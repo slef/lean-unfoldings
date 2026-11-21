@@ -102,7 +102,8 @@ theorem exists_upperRoof_with_full_vertex_star (v : C.Vertex Set.univ) :
   have positive (n : Space) (hn : n ∈ cell) : 0 < inner ℝ q n := by
     change 0 < inner ℝ (NormedSpace.normalize (z - c)) n
     rw [NormedSpace.normalize, real_inner_smul_left]
-    exact mul_pos (inv_pos.mpr (norm_pos_iff.mpr diff)) (F.inner_pos_of_mem_gaussianCell (i := i) hc hn)
+    exact mul_pos (inv_pos.mpr (norm_pos_iff.mpr diff))
+      (F.inner_pos_of_mem_gaussianCell (i := i) hc hn)
   let L := Cap.northFrame q
   let M := N.rotate L
   let U : Set Face := {f | 0 < M.normal f 2}
@@ -174,7 +175,50 @@ theorem exists_upperRoof_with_full_vertex_star (v : C.Vertex Set.univ) :
   exact ⟨q, w, q_unit, positive, w_internal, at_site, angles⟩
 
 set_option maxHeartbeats 1000000 in
--- Comparing the rotated cone and the roof polygon unfolds the rotated support data.
+-- Comparing the two spatial cones unfolds the dependent upper-roof coordinates.
+include P N in
+/-- An upper-roof vertex with the same physical site has exactly the rotated
+Gaussian cell when every normal in that cell is upward. -/
+theorem sphericalNormalPolygon_eq_image_gaussianCell (v : C.Vertex Set.univ) (q : Space)
+    (w : (N.rotate (Cap.northFrame q)).upperComplex.Vertex Set.univ)
+    (unit : ‖q‖ = 1)
+    (hemisphere : ∀ n ∈ F.gaussianCell (F.gaussianSiteOfVertex v), 0 < inner ℝ q n)
+    (internal : ¬ (N.rotate (Cap.northFrame q)).upperComplex.IsBoundaryVertex Set.univ w)
+    (site : (N.rotate (Cap.northFrame q)).upperFolding.toSpace Set.univ
+      ((N.rotate (Cap.northFrame q)).upperComplex.vertexPoint Set.univ w) =
+        Cap.northFrame q (F.toSpace Set.univ (C.vertexPoint Set.univ v))) :
+    ((P.rotate (Cap.northFrame q)).upperRoof
+      (N.rotate (Cap.northFrame q))).sphericalNormalPolygon w =
+      Cap.northFrame q '' F.gaussianCell (F.gaussianSiteOfVertex v) := by
+  let L := Cap.northFrame q
+  let M := N.rotate L
+  let PR := P.rotate L
+  let cell := F.gaussianCell (F.gaussianSiteOfVertex v)
+  change (PR.upperRoof M).sphericalNormalPolygon w = L '' cell
+  rw [PR.upperRoof_sphericalNormalPolygon_eq_body_supports M w internal, site,
+    F.rotate_vertexHull]
+  ext n
+  constructor
+  · rintro ⟨n_unit, n_up, support⟩
+    let m := L.symm n
+    have lm : L m = n := L.apply_symm_apply _
+    have local_norm : ‖m‖ = 1 := (L.symm.norm_map n).trans n_unit
+    refine ⟨m, ⟨F.mem_gaussianCone_iff.mpr (fun x hx => ?_), ?_⟩, lm⟩
+    · have hx' := support (L x) (Set.mem_image_of_mem _ hx)
+      rw [← lm, L.inner_map_map, L.inner_map_map] at hx'
+      exact hx'
+    · simpa only [Metric.mem_sphere, dist_zero_right] using local_norm
+  · rintro ⟨m, hm, rfl⟩
+    have m_unit : ‖m‖ = 1 := by simpa only [Metric.mem_sphere, dist_zero_right] using hm.2
+    have up : 0 < L m 2 := by
+      change 0 < Cap.northFrame q m 2
+      rw [Cap.northFrame_height q unit]
+      exact hemisphere _ hm
+    refine ⟨(L.norm_map m).trans m_unit, up, ?_⟩
+    rintro _ ⟨x, hx, rfl⟩
+    rw [L.inner_map_map, L.inner_map_map]
+    exact F.mem_gaussianCone_iff.mp hm.1 x hx
+
 include P N in
 /-- The intrinsic angle defect of an actual convex-polyhedron vertex
 equals the solid angle of its Gaussian cell, including flat subdivisions. -/
@@ -184,37 +228,11 @@ theorem gaussianCell_eq_angular_defect (v : C.Vertex Set.univ) :
   obtain ⟨q, w, unit, hemisphere, internal, site, angles⟩ :=
     P.exists_upperRoof_with_full_vertex_star N v
   let L := Cap.northFrame q
-  let M := N.rotate L
-  let PR := P.rotate L
   let cell := F.gaussianCell (F.gaussianSiteOfVertex v)
-  let z := F.toSpace Set.univ (C.vertexPoint Set.univ v)
-  have equal : (PR.upperRoof M).sphericalNormalPolygon w = L '' cell := by
-    rw [PR.upperRoof_sphericalNormalPolygon_eq_body_supports M w internal, site,
-      F.rotate_vertexHull]
-    ext n
-    constructor
-    · rintro ⟨n_unit, n_up, support⟩
-      let m := L.symm n
-      have lm : L m = n := L.apply_symm_apply _
-      have local_norm : ‖m‖ = 1 := (L.symm.norm_map n).trans n_unit
-      refine ⟨m, ⟨F.mem_gaussianCone_iff.mpr (fun x hx => ?_), ?_⟩, lm⟩
-      · have hx' := support (L x) (Set.mem_image_of_mem _ hx)
-        rw [← lm, L.inner_map_map, L.inner_map_map] at hx'
-        exact hx'
-      · simpa only [Metric.mem_sphere, dist_zero_right] using local_norm
-    · rintro ⟨m, hm, rfl⟩
-      have m_unit : ‖m‖ = 1 := by simpa only [Metric.mem_sphere, dist_zero_right] using hm.2
-      have up : 0 < L m 2 := by
-        change 0 < Cap.northFrame q m 2
-        rw [Cap.northFrame_height q unit]
-        exact hemisphere _ hm
-      refine ⟨(L.norm_map m).trans m_unit, up, ?_⟩
-      rintro _ ⟨x, hx, rfl⟩
-      rw [L.inner_map_map, L.inner_map_map]
-      exact F.mem_gaussianCone_iff.mp hm.1 x hx
+  have equal := P.sphericalNormalPolygon_eq_image_gaussianCell N v q w unit hemisphere internal site
   have same_area := solidAngleMeasure_image L
     (F.isCompact_gaussianCell (F.gaussianSiteOfVertex v)).measurableSet Set.inter_subset_right
-  have defect := (PR.upperRoof M).angular_defect_eq_solid_normal w internal
+  have defect := ((P.rotate L).upperRoof (N.rotate L)).angular_defect_eq_solid_normal w internal
   rw [angles, equal, same_area] at defect
   exact defect.symm
 
