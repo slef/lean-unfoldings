@@ -65,7 +65,7 @@ theorem abs_two_plane_fan_turn_le_sin_tilt {phi : ℝ}
     congr 1
     ring
 
-private theorem cos_ratio_eq_tan_half_sq {φ : ℝ} (positive : 0 < cos φ) :
+theorem cos_ratio_eq_tan_half_sq {φ : ℝ} (positive : 0 < cos φ) :
     (1 - cos φ) / (1 + cos φ) = tan (φ / 2) ^ 2 := by
   have cp : 0 < 1 + cos φ := by positivity
   have ct : 0 < 1 + tan (φ / 2) ^ 2 := by positivity

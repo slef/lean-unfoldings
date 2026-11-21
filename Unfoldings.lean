@@ -1074,6 +1074,7 @@ public import Unfoldings.Roof.CompletionRadialCurvature
 public import Unfoldings.Roof.CompletionRadialMesh
 public import Unfoldings.Roof.CompletionRefinement
 public import Unfoldings.Roof.CompletionRefinementCurvature
+public import Unfoldings.Roof.CompletionSharpRadialBudget
 public import Unfoldings.Roof.CompletionSectorQuadrants
 public import Unfoldings.Roof.CompletionSkirtSeeds
 public import Unfoldings.Roof.ExtendedComponentWedges
@@ -1605,6 +1606,7 @@ public import Unfoldings.Cap.GeometricBankTurnComparison
 public import Unfoldings.Geometry.RadialClosingLinks
 public import Unfoldings.Cap.RadialBankTurnComparison
 public import Unfoldings.Cap.RadialSharpBankBudget
+public import Unfoldings.Cap.SharpOriginalRadialTurns
 public import Unfoldings.Cap.SharpRestrictedCorners
 public import Unfoldings.Cap.SharpJordanCorner
 public import Unfoldings.Cap.SharpCreaseLink
@@ -2949,6 +2951,8 @@ public import Unfoldings.FewestNets.IcosahedronRealizedCellTilt
 public import Unfoldings.FewestNets.IcosahedronSelectedRoof
 public import Unfoldings.FewestNets.IcosahedronRotatedUpperRoof
 public import Unfoldings.FewestNets.FiniteProgressCone100Actual
+public import Unfoldings.FewestNets.FiniteProgressRotated100
+public import Unfoldings.FewestNets.CheckedRoutingCell
 public import Unfoldings.FewestNets.IcosahedronDualEdges
 public import Unfoldings.FewestNets.MeshStarFacetNormal
 public import Unfoldings.FewestNets.IcosahedronInteriorStar
@@ -2971,6 +2975,8 @@ public import Unfoldings.Geometry.MinorArcCrofton
 public import Unfoldings.Geometry.EquatorPhase
 public import Unfoldings.Geometry.FiniteArcCrofton
 public import Unfoldings.Roof.CompatibleAdaptivePaths
+public import Unfoldings.Roof.ScaledAdaptiveRouting
+public import Unfoldings.Roof.AdaptiveComponentCutDisk
 public import Unfoldings.Geometry.ArcFamilyCrofton
 public import Unfoldings.FewestNets.CrossingChargeBound
 public import Unfoldings.Geometry.SphericalHullCenter

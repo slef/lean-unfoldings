@@ -2,6 +2,18 @@
 
 ## Session Log
 
+### 2026-11-21 — construct the first actual adaptive forest
+
+- Combined the finite body, inradius, radius ratio, visual and exterior
+  tests in a reusable cell checker. Validated the first record with
+  constant-size panel tests and the exact minimum of each angle quadratic.
+- Rescaled the certificate to the actual rotated upper roof and used
+  its projected input angle bound to construct the adaptive forest.
+  The shared component cut theorem keeps the original seam names.
+- Derived the sharp corner and connector terms on the line-aligned
+  completion under old-mesh regularity. The sharp contour budget
+  transfers to either actual original cut bank.
+
 ### 2026-11-21 — prove the first rim routing margins and refined crease estimates
 
 - Validated the first progress body's inscribed disk and the cell

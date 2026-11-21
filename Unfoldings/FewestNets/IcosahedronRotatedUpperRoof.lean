@@ -15,7 +15,7 @@ noncomputable section
 
 namespace Unfoldings.FewestNets.Icosahedron.MeshStarRealization
 
-open MeshStar SpatialRotation
+open MeshStar SpatialRotation InnerProductGeometry Real
 
 universe u v
 
@@ -101,5 +101,74 @@ theorem upperRoof_exists_of_strictVoronoiCone (qbig : 100 ≤ q)
     exact inner_pos_of_mem_meshSphericalCell hq a sphere
   refine ⟨⟨f, positive⟩, rfl, ?_⟩
   exact R.certificateNorthFrame_slope_mem_interior hq qbig outward genuine unit original
+
+/-- An admissible global labeling selects exactly its original face class
+in the upper roof. All its slopes are in the interior of the cell polygon. -/
+theorem upperRoof_admissible_label (qbig : 100 ≤ q)
+    (outward : ∀ k, 0 < inner ℝ M.direction (M.dual k))
+    (label : Face → meshSites q)
+    (chosen : ∀ f,
+      N.normal f ∈ strictVoronoiCone (fun b : meshSites q => linear g (b : Space)) (label f)) :
+    let frame := R.rotatedCertificateNorthFrame hq genuine g
+    let normals := N.rotate frame
+    let roof := (P.rotate frame).upperRoof normals
+    let polygon := convexHull ℝ (Set.range M.physicalVertex)
+    (∀ f : normals.UpperFace, roof.normalSlope f ∈ polygon ↔ label f.val = a) ∧
+      ∀ f : normals.UpperFace, roof.normalSlope f ∉ frontier polygon := by
+  let frame := R.rotatedCertificateNorthFrame hq genuine g
+  let normals := N.rotate frame
+  let roof := (P.rotate frame).upperRoof normals
+  let polygon := convexHull ℝ (Set.range M.physicalVertex)
+  have weak := R.upperRoof_normalSlope_mem_iff hq genuine g P N qbig outward
+  have chosen_up (f : normals.UpperFace) (same : label f.val = a) :
+      roof.normalSlope f ∈ interior polygon := by
+    obtain ⟨u, orig, interior_mem⟩ :=
+      R.upperRoof_exists_of_strictVoronoiCone hq genuine g P N qbig outward f.val
+        (same ▸ chosen f.val)
+    exact (Subtype.ext orig : u = f) ▸ interior_mem
+  have mem_iff (f : normals.UpperFace) : roof.normalSlope f ∈ polygon ↔ label f.val = a := by
+    constructor
+    · intro mem
+      have weak_a := (weak f).mp mem
+      by_contra different
+      have inj : Function.Injective (fun b : meshSites q => linear g (b : Space)) :=
+        (SpatialRotation.isometry g).injective.comp (fun _ _ h => Subtype.ext h)
+      have strict := (mem_interior_finiteHullNormalCone_iff inj (label f.val)).mp (chosen f.val)
+        a (Ne.symm different)
+      exact (not_lt_of_ge (weak_a (label f.val))) strict
+    · intro same
+      exact interior_subset (chosen_up f same)
+  refine ⟨mem_iff, ?_⟩
+  intro f on_rim
+  have closed : IsClosed polygon := ((Set.finite_range _).isCompact_convexHull ℝ).isClosed
+  exact on_rim.2 (chosen_up f ((mem_iff f).mp (closed.frontier_subset on_rim)))
+
+/-- A cell's spherical tilt estimate gives the same normal height on each
+selected original triangle in the physical upper roof. -/
+theorem upperRoof_selected_normalHeight (qbig : 100 ≤ q)
+    (outward : ∀ k, 0 < inner ℝ M.direction (M.dual k))
+    {φ : ℝ} (small : φ ≤ π)
+    (tilt : ∀ x ∈ sphericalVoronoiCell (fun b : meshSites q => (b : Space)) a,
+      angle (a : Space) x ≤ φ) :
+    let frame := R.rotatedCertificateNorthFrame hq genuine g
+    let normals := N.rotate frame
+    let roof := (P.rotate frame).upperRoof normals
+    ∀ f : normals.UpperFace, roof.normalSlope f ∈ convexHull ℝ (Set.range M.physicalVertex) →
+      cos φ ≤ roof.normal f 2 := by
+  let frame := R.rotatedCertificateNorthFrame hq genuine g
+  let normals := N.rotate frame
+  let roof := (P.rotate frame).upperRoof normals
+  exact fun f selected => by
+    let x := linear g⁻¹ (N.normal f.val)
+    have unit : ‖x‖ = 1 := (norm_unrotate g _).trans (N.unit f.val)
+    have weak := (R.upperRoof_normalSlope_mem_iff hq genuine g P N qbig outward f).mp selected
+    have cone : x ∈ finiteHullNormalCone (fun b : meshSites q => (b : Space)) a :=
+      (unrotate_mem_VoronoiCone g false _).mpr weak
+    have sphere : x ∈ sphericalVoronoiCell (fun b : meshSites q => (b : Space)) a :=
+      ⟨cone, by simpa only [Metric.mem_sphere, dist_zero_right] using unit⟩
+    change cos φ ≤ R.certificateNorthFrame hq genuine x 2
+    rw [R.certificateNorthFrame_height hq genuine,
+      inner_eq_cos_angle_of_norm_eq_one unit (meshSites_unit hq a), angle_comm]
+    exact cos_le_cos_of_nonneg_of_le_pi (angle_nonneg _ _) small (tilt x sphere)
 
 end Unfoldings.FewestNets.Icosahedron.MeshStarRealization

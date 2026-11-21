@@ -89,21 +89,21 @@ private def componentVertexEquiv : (P).Vertex Set.univ ≃ VertexIn :=
         rw [C.includeRestrictedVertex_ofCorner_univ]
         exact K.projectedVertex_injective ((K.projectedVertex_ofCorner f.val j).trans equal)
 
-variable {E : SlopeEnvelope} {a β : ℝ}
-  (I : K.CommonPotentialRouting {f | K.normalSlope f ∈ slopes} E a β)
-
 include convex closed selected
 
 open Classical in
 set_option maxHeartbeats 1900000 in
 -- The transported parent selection uses dependent original edge and restricted vertex types.
 /-- The actual restriction of the original selected seam cuts is a disk. -/
-theorem exists_compatible_component_cut_disk :
-    Nonempty ((P).Realization (C.restrictRetain U (C.selectedRetain I.selection)) ≃ₜ
+theorem exists_selected_component_cut_disk
+    (parents : AscendingParents (C.Vertex Set.univ))
+    (roots_eq : parents.roots = {v | K.projectedVertex v ∉ interior (K.selectedCarrier slopes)})
+    (edges : parents.EdgeSelection C.seamGraph) :
+    Nonempty ((P).Realization (C.restrictRetain U (C.selectedRetain edges)) ≃ₜ
       Metric.closedBall (0 : Plane) 1) := by
   classical
   let V := K.componentVertexEquiv convex closed seed selected
-  let A := I.componentParents seed
+  let A := K.componentParents_of_seam_selection parents roots_eq edges seed
   let parent : AscendingParents ((P).Vertex Set.univ) := {
     roots := V ⁻¹' A.roots
     parent := fun w => V.symm (A.parent (V w))
@@ -115,17 +115,17 @@ theorem exists_compatible_component_cut_disk :
       exact A.ascending (V w) nonroot }
   have roots : parent.roots = (P).relativeCutRoots Set.univ := by
     ext w
-    change (V w).val ∈ I.parents.roots ↔ (P).IsBoundaryVertex Set.univ w
+    change (V w).val ∈ parents.roots ↔ (P).IsBoundaryVertex Set.univ w
     have front := K.component_vertex_boundary_iff convex closed seed selected w
     change (P).IsBoundaryVertex Set.univ w ↔ K.projectedVertex (V w).val ∈ frontier S at front
     rw [front]
     constructor
     · intro root
       refine ⟨subset_closure (V w).property, fun inside => ?_⟩
-      exact ((Set.ext_iff.mp I.roots_eq (V w).val).mp root)
+      exact ((Set.ext_iff.mp roots_eq (V w).val).mp root)
         (interior_mono (K.selectionComponent_carrier_subset selected) inside)
     · intro boundary
-      apply (Set.ext_iff.mp I.roots_eq (V w).val).mpr
+      apply (Set.ext_iff.mp roots_eq (V w).val).mpr
       intro inside
       exact boundary.2 (K.interior_component_of_interior_selectedCarrier inside seed (V w).property)
   have ends (e : C.Seam) {w z : C.Vertex Set.univ} (link : C.seamGraph.IsLink e w z) :
@@ -134,11 +134,11 @@ theorem exists_compatible_component_cut_disk :
     exact left_mem_segment ℝ _ _
   let edge (w : {w // w ∉ parent.roots}) : (P).Seam := by
     let v := V w.val
-    let t : {z // z ∉ I.parents.roots} := ⟨v.val, w.property⟩
-    let e := I.selection.edge t
+    let t : {z // z ∉ parents.roots} := ⟨v.val, w.property⟩
+    let e := edges.edge t
     have inside : K.projectedVertex v.val ∈ interior (K.selectedCarrier slopes) :=
-      not_not.mp (fun h => w.property ((Set.ext_iff.mp I.roots_eq v.val).mpr h))
-    have on_e := ends e (I.selection.link t)
+      not_not.mp (fun h => w.property ((Set.ext_iff.mp roots_eq v.val).mpr h))
+    have on_e := ends e (edges.link t)
     have on_r : K.projectedVertex v.val ∈
         (K.projectedTriangle (C.right e).face).edge (C.right e).edge :=
       (K.projected_seam_edges_eq e).subset on_e
@@ -156,8 +156,8 @@ theorem exists_compatible_component_cut_disk :
   let selection : parent.EdgeSelection (P).seamGraph := {
     edge := edge
     link := fun w => by
-      let t : {z // z ∉ I.parents.roots} := ⟨(V w.val).val, w.property⟩
-      have h := I.selection.link t
+      let t : {z // z ∉ parents.roots} := ⟨(V w.val).val, w.property⟩
+      have h := edges.link t
       change C.seamGraph.IsLink (edge w).val (V w.val).val (A.parent (V w.val)).val at h
       have step : V (parent.parent w.val) = A.parent (V w.val) := V.apply_symm_apply _
       have injective (p q : (P).Vertex Set.univ)
@@ -168,28 +168,28 @@ theorem exists_compatible_component_cut_disk :
       · exact Or.inr ⟨injective _ _ (first.trans (tagged _ _).symm),
           injective _ _ ((congrArg Subtype.val step).trans (last.trans (tagged _ _).symm))⟩ }
   have retain : (P).selectedRetain selection =
-      C.restrictRetain U (C.selectedRetain I.selection) := by
+      C.restrictRetain U (C.selectedRetain edges) := by
     ext s
-    change s ∉ Set.range edge ↔ s.val ∉ Set.range I.selection.edge
+    change s ∉ Set.range edge ↔ s.val ∉ Set.range edges.edge
     constructor
     · intro absent
       rintro ⟨v, hv⟩
-      have original := ends s.val (hv ▸ I.selection.link v)
+      have original := ends s.val (hv ▸ edges.link v)
       have present : K.projectedVertex v.val ∈ S := Set.mem_iUnion.mpr
         ⟨(P).left s |>.face, (K.projectedTriangle _).edge_subset _ original⟩
       let w := V.symm ⟨v.val, present⟩
       have same : V w = ⟨v.val, present⟩ := V.apply_symm_apply _
       have hn : w ∉ parent.roots := by
-        change ¬ (V w).val ∈ I.parents.roots
+        change ¬ (V w).val ∈ parents.roots
         rw [same]
         exact v.property
       apply absent
       refine ⟨⟨w, hn⟩, Subtype.ext ?_⟩
-      have event_eq : (⟨(V w).val, hn⟩ : {z // z ∉ I.parents.roots}) = v := by
+      have event_eq : (⟨(V w).val, hn⟩ : {z // z ∉ parents.roots}) = v := by
         apply Subtype.ext
         exact congrArg (fun p : VertexIn => p.val) same
-      change I.selection.edge ⟨(V w).val, hn⟩ = s.val
-      exact (congrArg I.selection.edge event_eq).trans hv
+      change edges.edge ⟨(V w).val, hn⟩ = s.val
+      exact (congrArg edges.edge event_eq).trans hv
     · intro absent h
       obtain ⟨v, hv⟩ := h
       refine absent ⟨⟨(V v.val).val, v.property⟩, ?_⟩
@@ -197,5 +197,16 @@ theorem exists_compatible_component_cut_disk :
   obtain ⟨disk⟩ := K.exists_selectionComponent_intrinsic_disk convex closed seed selected
   rw [← retain]
   exact ⟨(P).selectedCutDisk selection roots F disk⟩
+
+variable {E : SlopeEnvelope} {a β : ℝ}
+  (I : K.CommonPotentialRouting {f | K.normalSlope f ∈ slopes} E a β)
+
+open Classical in
+/-- The common-potential forest cuts the selected component to the disk with
+its original seam names. -/
+theorem exists_compatible_component_cut_disk :
+    Nonempty ((P).Realization (C.restrictRetain U (C.selectedRetain I.selection)) ≃ₜ
+      Metric.closedBall (0 : Plane) 1) :=
+  K.exists_selected_component_cut_disk convex closed seed selected I.parents I.roots_eq I.selection
 
 end Unfoldings.ConvexRoof

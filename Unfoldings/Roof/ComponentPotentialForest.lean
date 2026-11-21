@@ -46,6 +46,38 @@ theorem seam_link_endpoints {v w : C.Vertex Set.univ} {s : C.Seam}
   · exact ⟨f, first.symm ▸ endpoint false, last.symm ▸ endpoint true⟩
   · exact ⟨f, first.symm ▸ endpoint true, last.symm ▸ endpoint false⟩
 
+open Classical in
+theorem parent_stays_component_of_seam_selection {slopes : Set Plane}
+    (parents : AscendingParents (C.Vertex Set.univ))
+    (roots_eq : parents.roots = {v | K.projectedVertex v ∉ interior (K.selectedCarrier slopes)})
+    (edges : parents.EdgeSelection C.seamGraph) (seed : Face) {v : C.Vertex Set.univ}
+    (member : K.projectedVertex v ∈ K.restrictedCarrier (K.selectionComponent slopes seed)) :
+    K.projectedVertex (parents.parent v) ∈
+      K.restrictedCarrier (K.selectionComponent slopes seed) := by
+  by_cases root : v ∈ parents.roots
+  · rwa [parents.fixed_root v root]
+  · have inside : K.projectedVertex v ∈ interior (K.selectedCarrier slopes) := by
+      by_contra outside
+      exact root ((Set.ext_iff.mp roots_eq v).mpr outside)
+    obtain ⟨f, first, last⟩ := K.seam_link_endpoints (edges.link ⟨v, root⟩)
+    obtain ⟨g, hg⟩ := Set.mem_iUnion.mp member
+    have labels := K.selection_label_eq_at_interior inside first hg
+    have selected : f ∈ K.selectionComponent slopes seed := labels.trans g.property
+    exact Set.mem_iUnion.mpr ⟨⟨f, selected⟩, last⟩
+
+open Classical in
+def componentParents_of_seam_selection {slopes : Set Plane}
+    (parents : AscendingParents (C.Vertex Set.univ))
+    (roots_eq : parents.roots = {v | K.projectedVertex v ∉ interior (K.selectedCarrier slopes)})
+    (edges : parents.EdgeSelection C.seamGraph) (seed : Face) :
+    AscendingParents {v : C.Vertex Set.univ //
+      K.projectedVertex v ∈ K.restrictedCarrier (K.selectionComponent slopes seed)} where
+  roots := {v | v.val ∈ parents.roots}
+  parent v := ⟨parents.parent v.val, K.parent_stays_component_of_seam_selection parents roots_eq edges seed v.property⟩
+  height v := parents.height v.val
+  fixed_root v root := Subtype.ext (parents.fixed_root v.val root)
+  ascending v nonroot := parents.ascending v.val nonroot
+
 namespace CommonPotentialRouting
 
 variable {K} {slopes : Set Plane} {E : SlopeEnvelope} {a β : ℝ}
@@ -55,27 +87,14 @@ open Classical in
 theorem parent_stays_component (seed : Face) {v : C.Vertex Set.univ}
     (member : K.projectedVertex v ∈ K.restrictedCarrier (K.selectionComponent slopes seed)) :
     K.projectedVertex (I.parents.parent v) ∈
-      K.restrictedCarrier (K.selectionComponent slopes seed) := by
-  by_cases root : v ∈ I.parents.roots
-  · rwa [I.parents.fixed_root v root]
-  · have inside : K.projectedVertex v ∈ interior (K.selectedCarrier slopes) := by
-      by_contra outside
-      exact root ((Set.ext_iff.mp I.roots_eq v).mpr outside)
-    obtain ⟨f, first, last⟩ := K.seam_link_endpoints (I.selection.link ⟨v, root⟩)
-    obtain ⟨g, hg⟩ := Set.mem_iUnion.mp member
-    have labels := K.selection_label_eq_at_interior inside first hg
-    have selected : f ∈ K.selectionComponent slopes seed := labels.trans g.property
-    exact Set.mem_iUnion.mpr ⟨⟨f, selected⟩, last⟩
+      K.restrictedCarrier (K.selectionComponent slopes seed) :=
+  K.parent_stays_component_of_seam_selection I.parents I.roots_eq I.selection seed member
 
 open Classical in
 def componentParents (seed : Face) :
     AscendingParents {v : C.Vertex Set.univ //
-      K.projectedVertex v ∈ K.restrictedCarrier (K.selectionComponent slopes seed)} where
-  roots := {v | v.val ∈ I.parents.roots}
-  parent v := ⟨I.parents.parent v.val, I.parent_stays_component seed v.property⟩
-  height v := I.parents.height v.val
-  fixed_root v root := Subtype.ext (I.parents.fixed_root v.val root)
-  ascending v nonroot := I.parents.ascending v.val nonroot
+      K.projectedVertex v ∈ K.restrictedCarrier (K.selectionComponent slopes seed)} :=
+  K.componentParents_of_seam_selection I.parents I.roots_eq I.selection seed
 
 open Classical in
 /-- Each restriction is itself a forest rooted exactly once on that component's own frontier,
