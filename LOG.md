@@ -2,6 +2,14 @@
 
 ## Session Log
 
+### 2026-11-20 — prove exact Gaussian frontiers and disjoint sides
+
+- Proved the converse frontier inclusion for strictly centered stereographic
+  charts. The frontier is exactly the union of the incident original dual arcs.
+- At an extreme vertex, different crease sides have disjoint open arcs.
+  An original incident face normal can occur on a genuine side only at an
+  endpoint.
+
 ### 2026-11-20 — cover Gaussian frontiers by original seam arcs
 
 - Expressed the gnomonic normal polygon by the actual incident-germ

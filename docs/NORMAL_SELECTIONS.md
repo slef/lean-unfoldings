@@ -704,8 +704,11 @@ identifies the finite gnomonic polygon of each actual vertex. The
 [original seam theorem](../Unfoldings/Polyhedron/GaussianSeam.lean) identifies
 the intersection of its two endpoint Gaussian cells with the complete minor arc
 between the normals of the incident triangles.
-The [Gaussian frontier theorem](../Unfoldings/Polyhedron/GaussianChartBoundary.lean)
-covers the boundary in the stereographic chart by these original incident arcs.
+The [Gaussian frontier theorem](../Unfoldings/Polyhedron/GaussianExactFrontier.lean)
+identifies the boundary in the strictly centered stereographic chart with the
+union of these arcs. At an extreme vertex the genuine
+[dual sides](../Unfoldings/Polyhedron/GaussianSideDisjoint.lean) have disjoint
+relative interiors.
 A [wall cover](../Unfoldings/FewestNets/VoronoiOpenCrossings.lean) by actual
 minor arcs supplies generic changed-side intersections in network edge interiors.
 The [localized charge theorem](../Unfoldings/FewestNets/LocalizedCharge.lean)

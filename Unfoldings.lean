@@ -2863,3 +2863,5 @@ public import Unfoldings.Polyhedron.GaussianSeam
 public import Unfoldings.Roof.GermNormalSides
 public import Unfoldings.Polyhedron.GaussianBoundaryCover
 public import Unfoldings.Polyhedron.GaussianChartBoundary
+public import Unfoldings.Polyhedron.GaussianSideDisjoint
+public import Unfoldings.Polyhedron.GaussianExactFrontier
