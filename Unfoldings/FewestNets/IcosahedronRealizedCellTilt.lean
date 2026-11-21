@@ -88,5 +88,38 @@ theorem angle_le_of_physicalVertex_radius (qbig : 100 ≤ q) (hq : 0 < q)
   exact (not_lt_of_ge bound) (Real.tan_lt_tan_of_nonneg_of_lt_pi_div_two nonnegative
     (angle_eq ▸ short) greater)
 
+include R in
+/-- A spatial gnomonic radius check also suffices, with no choice of tangent coordinates. -/
+theorem angle_le_of_gnomonicVertex_radius (qbig : 100 ≤ q) (hq : 0 < q)
+    (outward : ∀ k, 0 < inner ℝ M.direction (M.dual k))
+    {φ : ℝ} (nonnegative : 0 ≤ φ) (radius : ∀ k, ‖M.gnomonicVertex k‖ ≤ tan φ)
+    {N : Space} (mem : N ∈ sphericalVoronoiCell (fun s : meshSites q => (s : Space)) a) :
+    angle (a : Space) N ≤ φ := by
+  have unit := meshSites_unit hq a
+  have Nu : ‖N‖ = 1 := by
+    simpa only [Metric.mem_sphere, dist_zero_right] using mem.2
+  have pos := inner_pos_of_mem_meshSphericalCell hq a mem
+  have short : angle (a : Space) N < π / 2 := by
+    rw [angle, Real.arccos_lt_pi_div_two, unit, Nu, one_mul, div_one, real_inner_comm]
+    exact pos
+  have on_slice := (mem_normalCone_iff_mem_siteIncidentNormalSlice qbig hq a N pos).mp mem.1
+  have contained : convexHull ℝ (siteIncidentNormalSlice hq a) ⊆
+      Metric.closedBall (a : Space) (tan φ) := by
+    apply convexHull_min _ (convex_closedBall _ _)
+    rintro _ ⟨⟨t, present⟩, rfl⟩
+    obtain ⟨k, rfl⟩ := R.complete t present
+    have eq : R.frame (M.gnomonicVertex k) = rawFacetNormal hq (R.face k) - (a : Space) := by
+      rw [M.gnomonicVertex_eq_meshGnomonic_dualDirection k (outward k), ← meshGnomonic_map,
+        R.center, ← R.facetNormal_eq hq k (outward k), meshGnomonic,
+        ← real_inner_comm (a : Space),
+        heightOne_facetNormal_eq_rawFacetNormal qbig hq a _ present]
+    simpa only [Metric.mem_closedBall, dist_eq_norm, ← eq, R.frame.norm_map] using radius k
+  have bound : ‖meshGnomonic (a : Space) N‖ ≤ tan φ := by
+    rw [meshGnomonic, ← real_inner_comm (a : Space)]
+    simpa only [Metric.mem_closedBall, dist_eq_norm] using contained on_slice
+  rw [norm_meshGnomonic_eq_tan_angle unit Nu short] at bound
+  by_contra! greater
+  exact not_lt_of_ge bound (Real.tan_lt_tan_of_nonneg_of_lt_pi_div_two nonnegative short greater)
+
 end MeshStarRealization
 end Unfoldings.FewestNets.Icosahedron

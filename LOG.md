@@ -2,6 +2,19 @@
 
 ## Session Log
 
+### 2026-11-21 — certify development scalars and sharpen the cap estimates
+
+- Validated all 884 frequency-100 record keys and scalar inequalities
+  in the kernel. Every actual cell realizes a model for one checked
+  record, and its record tilt covers the whole cell.
+- Proved the sharp curvature bound from the solid angle of the north
+  cap. The sharp radial bank budget combines this with local corner
+  and closing-link bounds.
+- Proved sharp single-face distortion for a flat subdivided corner.
+  Its actual link stays in a halfplane when its projected angle sum
+  is at most a half-turn. Two such blocks give the sharp turn at a
+  transverse crease of a straight bank.
+
 ### 2026-11-21 — verify the actual frequency-400 network and count
 
 - Checked all frequency-400 model corner altitudes and incident angles

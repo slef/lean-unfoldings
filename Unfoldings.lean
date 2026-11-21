@@ -1604,6 +1604,9 @@ public import Unfoldings.Cap.JordanBankPositions
 public import Unfoldings.Cap.GeometricBankTurnComparison
 public import Unfoldings.Geometry.RadialClosingLinks
 public import Unfoldings.Cap.RadialBankTurnComparison
+public import Unfoldings.Cap.RadialSharpBankBudget
+public import Unfoldings.Cap.SharpRestrictedCorners
+public import Unfoldings.Cap.SharpCreaseLink
 public import Unfoldings.Cap.RadialBankThreshold
 public import Unfoldings.Roof.ClosureBankComparison
 public import Unfoldings.Geometry.LocalHeadingBudget
@@ -2933,6 +2936,7 @@ public import Unfoldings.FewestNets.IcosahedronRealizedPerimeter
 public import Unfoldings.FewestNets.IcosahedronNetworkPerimeter
 public import Unfoldings.FewestNets.IcosahedronEndpointBounds
 public import Unfoldings.FewestNets.IcosahedronFrequency400Endpoint
+public import Unfoldings.FewestNets.IcosahedronFrequency100Scalars
 public import Unfoldings.FewestNets.IcosahedronRealizedCellSupport
 public import Unfoldings.FewestNets.IcosahedronRealizedCellTilt
 public import Unfoldings.FewestNets.IcosahedronDualEdges
