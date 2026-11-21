@@ -25,6 +25,15 @@ def jordanBankPosition (i : Fin ((K.jordanContour jordan contains avoids).length
 
 include jordan contains avoids in
 open Classical in
+theorem jordanBankPosition_eq_projectedVertex
+    (i : Fin ((K.jordanContour jordan contains avoids).length + 1)) :
+    K.jordanBankPosition jordan contains avoids i =
+      K.projectedVertex ((K.jordanContourVertexEquiv jordan contains avoids) i).val := by
+  exact (K.projected_restricted_boundaryPosition (K.jordanFaces J)
+    ((K.jordanContour jordan contains avoids).cycle.point i)).symm
+
+include jordan contains avoids in
+open Classical in
 theorem jordanBankPosition_mem_curve
     (i : Fin ((K.jordanContour jordan contains avoids).length + 1)) :
     K.jordanBankPosition jordan contains avoids i ∈ J := by

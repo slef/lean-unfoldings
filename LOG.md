@@ -2,6 +2,24 @@
 
 ## Session Log
 
+### 2026-11-21 — prove the first rim routing margins and refined crease estimates
+
+- Validated the first progress body's inscribed disk and the cell
+  radius-to-inradius ratio. Transferred its visual-angle and exterior
+  margins to the whole exact normalized rim.
+- Identified the model chart with a physical north frame and showed
+  that strictly labeled normals project into the selected slope polygon.
+- Derived the two supporting slopes at a generic refined contact.
+  The actual straight fan has at most one crease transition. Both
+  ordered banks obey the sharp contour budget with their geometric
+  corner bounds. A crease-aligned corner uses its shorter fan,
+  including when the actual selected fan is reflex.
+- Transported the weak and strict labels to the actual rotated upper
+  roof. Added exact maximum-radius scaling for mesh certificates.
+- Checked the hybrid upper visual-angle certificate on the six sides
+  of the first saved record. Proved that convexity reduces extreme-pair
+  tests to the two neighbors of each extreme vertex.
+
 ### 2026-11-21 — verify all frequency-400 scalar and tilt records
 
 - Checked the 13,534 published scalar records in bounded kernel batches.

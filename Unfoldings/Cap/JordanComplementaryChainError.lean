@@ -1,6 +1,7 @@
 module
 
 public import Unfoldings.Cap.JordanChainErrorBound
+public import Unfoldings.Cap.SharpCurvatureBudget
 public import Unfoldings.Cap.ComplementaryBankTurns
 public import Unfoldings.Complex.BoundaryChainVertices
 public import Unfoldings.Cap.RadialBankThreshold
@@ -103,6 +104,43 @@ theorem abs_sum_complementary_jordan_chain_error_le_radial
     (∑ k : Fin n, K.restrictedBoundaryTurnError (K.jordanFaces J) (d.point k.succ))
   rw [sub_add_cancel] at triangle
   linarith
+
+include jordan contains avoids in
+/-- Transfer the sharp contour estimate to both actual ordered banks. The
+complementary bank adds at most the sharp total curvature of the cap. -/
+theorem abs_sum_jordan_chain_banks_le_sharp
+    (source closing : Plane) (inside : J ⊆ interior K.footprint)
+    (radial : (P).RadialFrom source 0) (initial : 0 < dist source ((P).vertex 0))
+    (height : Plane →ₗ[ℝ] ℝ) (supported : ∀ z ∈ Set.range (P).path, 0 ≤ height (z - source))
+    (excluded : height (closing - source) < 0)
+    {φ : ℝ} (nonnegative : 0 ≤ φ) (small : φ < Real.pi / 2) (tilt : K.TiltBound φ)
+    (bank_bound :
+      |∑ j ∈ K.jordanGeometricBankIndices jordan contains avoids (Set.range (P).path)
+          (radialClosingCorners source ((P).vertex 0) ((P).vertex (Fin.last (n + 1))) closing),
+        K.jordanContourTurnError jordan contains avoids j| ≤
+        shallowDevelopmentHeading φ - shallowDevelopmentCurvature φ) :
+    |∑ k : Fin n, K.restrictedBoundaryTurnError (K.jordanFaces J) (d.point k.succ)| ≤
+        shallowDevelopmentHeading φ - shallowDevelopmentCurvature φ ∧
+      |∑ k : Fin n, K.regionalAngleExcess (K.jordanFaces J)ᶜ
+        (C.includeRestrictedVertexUniv (K.jordanFaces J)
+          ((C.restrictFaces (K.jordanFaces J)).boundaryEndVertex Set.univ (d.point k.succ)))| ≤
+        shallowDevelopmentHeading φ := by
+  rw [K.sum_jordanGeometricBankIndices_eq_chain jordan contains avoids d source closing radial
+    initial height supported excluded] at bank_bound
+  refine ⟨bank_bound, ?_⟩
+  let original : ℝ := ∑ k : Fin n,
+    K.restrictedBoundaryTurnError (K.jordanFaces J) (d.point k.succ)
+  let complement : ℝ := ∑ k : Fin n, K.regionalAngleExcess (K.jordanFaces J)ᶜ
+    (C.includeRestrictedVertexUniv (K.jordanFaces J)
+      ((C.restrictFaces (K.jordanFaces J)).boundaryEndVertex Set.univ (d.point k.succ)))
+  have difference : |complement - original| ≤ C.totalInteriorAngularDefect Set.univ :=
+    K.abs_sum_jordan_chain_complement_difference_le_curvature jordan contains avoids d inside
+  have curvature := K.totalCurvature_le_shallowDevelopmentCurvature nonnegative small tilt
+  have sum := abs_add_le (complement - original) original
+  rw [sub_add_cancel] at sum
+  change |original| ≤ _ at bank_bound
+  change |complement| ≤ _
+  linarith only [difference, curvature, sum, bank_bound]
 
 end Unfoldings.ConvexCap
 

@@ -1606,7 +1606,9 @@ public import Unfoldings.Geometry.RadialClosingLinks
 public import Unfoldings.Cap.RadialBankTurnComparison
 public import Unfoldings.Cap.RadialSharpBankBudget
 public import Unfoldings.Cap.SharpRestrictedCorners
+public import Unfoldings.Cap.SharpJordanCorner
 public import Unfoldings.Cap.SharpCreaseLink
+public import Unfoldings.Cap.TransverseRefinementSlopes
 public import Unfoldings.Cap.RadialBankThreshold
 public import Unfoldings.Roof.ClosureBankComparison
 public import Unfoldings.Geometry.LocalHeadingBudget
@@ -2827,6 +2829,7 @@ public import Unfoldings.FewestNets.NormalComponentCharges
 public import Unfoldings.FewestNets.FiniteMeshKeys
 public import Unfoldings.FewestNets.FixedPointInterval
 public import Unfoldings.FewestNets.CheckedReal
+public import Unfoldings.FewestNets.CheckedEnclosureReuse
 public import Unfoldings.FewestNets.CheckedSpace
 public import Unfoldings.FewestNets.MeshStar
 public import Unfoldings.FewestNets.CheckedMeshStar
@@ -2841,12 +2844,15 @@ public import Unfoldings.FewestNets.CheckedPlane
 public import Unfoldings.FewestNets.MeshChartFrame
 public import Unfoldings.FewestNets.MeshChartSupport
 public import Unfoldings.FewestNets.CheckedMeshChart
+public import Unfoldings.FewestNets.CheckedMeshNormalization
 public import Unfoldings.FewestNets.TaylorEnclosures
 public import Unfoldings.FewestNets.CheckedTrigonometry
 public import Unfoldings.FewestNets.CheckedInverseTrig
 public import Unfoldings.FewestNets.CheckedDevelopment
 public import Unfoldings.FewestNets.FiniteDevelopmentExample
 public import Unfoldings.FewestNets.CheckedVisualSide
+public import Unfoldings.FewestNets.CheckedVisualUpperPanel
+public import Unfoldings.FewestNets.CheckedQuadraticPanel
 public import Unfoldings.FewestNets.CheckedVisualLens
 public import Unfoldings.FewestNets.FiniteVisualExample
 public import Unfoldings.FewestNets.FiniteVisualUpperExample
@@ -2940,6 +2946,9 @@ public import Unfoldings.FewestNets.IcosahedronFrequency100Scalars
 public import Unfoldings.FewestNets.IcosahedronFrequency400Scalars
 public import Unfoldings.FewestNets.IcosahedronRealizedCellSupport
 public import Unfoldings.FewestNets.IcosahedronRealizedCellTilt
+public import Unfoldings.FewestNets.IcosahedronSelectedRoof
+public import Unfoldings.FewestNets.IcosahedronRotatedUpperRoof
+public import Unfoldings.FewestNets.FiniteProgressCone100Actual
 public import Unfoldings.FewestNets.IcosahedronDualEdges
 public import Unfoldings.FewestNets.MeshStarFacetNormal
 public import Unfoldings.FewestNets.IcosahedronInteriorStar

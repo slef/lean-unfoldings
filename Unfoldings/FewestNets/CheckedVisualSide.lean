@@ -38,26 +38,50 @@ structure SideVisualWitness (V : ℕ) where
   positiveSign : Bool
 
 /-- A contiguous rational cover of the remainder of the unit interval. -/
-def SideVisualWitness.coversFrom {V : ℕ} (cursor : ℚ) : List (SideVisualWitness V) → Bool
+def coversRationalPanels {W : Type*} (endpoints : W → ℚ × ℚ) (cursor : ℚ) :
+    List W → Bool
   | [] => decide (cursor = 1)
-  | w :: ws => decide (w.left = cursor) && decide (w.left < w.right) && coversFrom w.right ws
+  | w :: ws =>
+    decide ((endpoints w).1 = cursor) && decide ((endpoints w).1 < (endpoints w).2) &&
+      coversRationalPanels endpoints (endpoints w).2 ws
+
+theorem mem_cover_of_rationalPanels {W : Type*} (endpoints : W → ℚ × ℚ) (ws : List W)
+    (nonempty : ws ≠ []) {cursor : ℚ} (check : coversRationalPanels endpoints cursor ws = true)
+    {t : ℝ} (ht : t ∈ Set.Icc (cursor : ℝ) 1) :
+    ∃ w ∈ ws, (endpoints w).1 < (endpoints w).2 ∧
+      t ∈ Set.Icc ((endpoints w).1 : ℝ) ((endpoints w).2 : ℝ) := by
+  induction ws generalizing cursor with
+  | nil => exact (nonempty rfl).elim
+  | cons w ws ih =>
+    simp only [coversRationalPanels, Bool.and_eq_true, decide_eq_true_eq] at check
+    have left : (endpoints w).1 = cursor := check.1.1
+    by_cases right : t ≤ ((endpoints w).2 : ℝ)
+    · exact ⟨w, List.mem_cons_self, check.1.2, by rw [left]; exact ⟨ht.1, right⟩⟩
+    · by_cases empty : ws = []
+      · have eq : (endpoints w).2 = 1 := by simpa [empty, coversRationalPanels] using check.2
+        exact (right (by simpa [eq] using ht.2)).elim
+      · obtain ⟨v, hv, ordered, htv⟩ := ih empty check.2 ⟨le_of_not_ge right, ht.2⟩
+        exact ⟨v, List.mem_cons_of_mem _ hv, ordered, htv⟩
+
+def SideVisualWitness.coversFrom {V : ℕ} :=
+  coversRationalPanels (fun w : SideVisualWitness V => (w.left, w.right))
 
 theorem SideVisualWitness.mem_cover_of_check {V : ℕ} (ws : List (SideVisualWitness V))
     (nonempty : ws ≠ []) {cursor : ℚ} (check : coversFrom cursor ws = true) {t : ℝ}
     (ht : t ∈ Set.Icc (cursor : ℝ) 1) :
-    ∃ w ∈ ws, w.left < w.right ∧ t ∈ Set.Icc (w.left : ℝ) (w.right : ℝ) := by
-  induction ws generalizing cursor with
-  | nil => exact (nonempty rfl).elim
-  | cons w ws ih =>
-    simp only [coversFrom, Bool.and_eq_true, decide_eq_true_eq] at check
-    have left : w.left = cursor := check.1.1
-    by_cases right : t ≤ (w.right : ℝ)
-    · exact ⟨w, List.mem_cons_self, check.1.2, by rw [left]; exact ⟨ht.1, right⟩⟩
-    · by_cases empty : ws = []
-      · have eq : w.right = 1 := by simpa [empty, coversFrom] using check.2
-        exact (right (by simpa [eq] using ht.2)).elim
-      · obtain ⟨v, hv, ordered, htv⟩ := ih empty check.2 ⟨le_of_not_ge right, ht.2⟩
-        exact ⟨v, List.mem_cons_of_mem _ hv, ordered, htv⟩
+    ∃ w ∈ ws, w.left < w.right ∧ t ∈ Set.Icc (w.left : ℝ) (w.right : ℝ) :=
+  mem_cover_of_rationalPanels (fun w : SideVisualWitness V => (w.left, w.right))
+    ws nonempty (cursor := cursor) check ht
+
+/-- Checked interpolation of the side coordinates at an exact rational parameter. -/
+def checkSidePoint {D : ℕ} (hD : 0 < D) {p q : Plane}
+    (cp : CheckedPlane D p) (cq : CheckedPlane D q) (t : ℚ) :
+    CheckedPlane D (AffineMap.lineMap p q (t : ℝ)) :=
+  let ct := CheckedReal.rat D t
+  let one : CheckedReal D (1 : ℝ) := (CheckedReal.rat D 1).convert (by simp)
+  let point := CheckedPlane.add (CheckedPlane.smul hD (one.sub ct) cp)
+    (CheckedPlane.smul hD ct cq)
+  fun i => (point i).convert (by rw [AffineMap.lineMap_apply_module])
 
 /-- Checked enclosure of the signed pair test at one exact rational parameter. -/
 def checkVisualEndpoint {D : ℕ} (hD : 0 < D) {u v p q : Plane} {c : ℝ}
@@ -65,14 +89,11 @@ def checkVisualEndpoint {D : ℕ} (hD : 0 < D) {u v p q : Plane} {c : ℝ}
     (cp : CheckedPlane D p) (cq : CheckedPlane D q) (t : ℚ) :
     CheckedReal D (visualPairPolynomial certificateOrientation c
       (AffineMap.lineMap p q (t : ℝ)) u v) :=
-  let ct := CheckedReal.rat D t
-  let one : CheckedReal D (1 : ℝ) := (CheckedReal.rat D 1).convert (by simp)
-  let point := CheckedPlane.add (CheckedPlane.smul hD (one.sub ct) cp)
-    (CheckedPlane.smul hD ct cq)
+  let point := checkSidePoint hD cp cq t
   let a := CheckedPlane.sub point cu
   let b := CheckedPlane.sub point cv
   ((CheckedPlane.dot hD a b).add (cx.mul hD (CheckedPlane.det hD a b))).convert (by
-    rw [AffineMap.lineMap_apply_module, visualPairPolynomial, areaForm_certificateOrientation])
+    rw [visualPairPolynomial, areaForm_certificateOrientation])
 
 /-- Endpoint signs for one saved panel imply its desired angle at every
 point of the panel. The original certificate uses either witness sign. -/

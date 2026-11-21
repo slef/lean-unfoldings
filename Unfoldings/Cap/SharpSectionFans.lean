@@ -4,7 +4,7 @@ public import Unfoldings.Cap.SharpSectionHinge
 public import Unfoldings.Cap.SharpAngleProjection
 public import Mathlib.Analysis.SpecialFunctions.Trigonometric.Complex
 public import Unfoldings.Cap.ProjectedInterval
-public import Unfoldings.Cap.RestrictedSectionDirections
+public import Unfoldings.Cap.CreaseLinkSupport
 public import Unfoldings.Geometry.LinearHalfplaneFan
 public import Unfoldings.Geometry.ShortOrientedFan
 
@@ -130,6 +130,106 @@ theorem projectedInterval_halfplane_of_sum_le_pi
     nonzero (interval_cone_orient_sign ray nonzero (K.planar_arc_cones_disjoint c)) (by
       simpa only [ray, K.projectedIntervalRay_castSucc, K.projectedIntervalRay_succ,
         K.projectedGermRay_angle] using short)
+
+/-- At a regular transverse connector contact the ordered fan can switch
+between its two supporting planes at most once. -/
+theorem slope_change_index_unique {a b : Plane}
+    (slopes : ∀ i, K.normalSlope (c.point i).val.1.1 = a ∨
+      K.normalSlope (c.point i).val.1.1 = b)
+    (transverse : inner ℝ (a - b) (K.projectedIntervalRay c 0) ≠ 0)
+    (short : (∑ i : Fin (n + 1), (K.projectedTriangle (c.point i).val.1.1).cornerAngle
+      (c.point i).val.1.2) ≤ π)
+    {i j : Fin n}
+    (i_change : K.normalSlope (c.point i.castSucc).val.1.1 ≠
+      K.normalSlope (c.point i.succ).val.1.1)
+    (j_change : K.normalSlope (c.point j.castSucc).val.1.1 ≠
+      K.normalSlope (c.point j.succ).val.1.1) : i = j := by
+  let ray := K.projectedIntervalRay c
+  have nonzero (i : Fin (n + 1)) : orient 0 (ray i.castSucc) (ray i.succ) ≠ 0 := by
+    simp only [ray, K.projectedIntervalRay_castSucc, K.projectedIntervalRay_succ]
+    exact K.projectedGermRay_orient_ne_zero (c.point i)
+  have tie (k : Fin n)
+      (changes : K.normalSlope (c.point k.castSucc).val.1.1 ≠
+        K.normalSlope (c.point k.succ).val.1.1) :
+      inner ℝ (a - b) (ray k.castSucc.succ) = 0 := by
+    have h := K.projectedIntervalRay_normalSlope_tie c k
+    rcases slopes k.castSucc with la | lb <;> rcases slopes k.succ with ra | rb
+    · exact (changes (la.trans ra.symm)).elim
+    · simpa only [la, rb] using h
+    · rw [lb, ra, inner_sub_left] at h
+      rw [inner_sub_left]
+      linarith only [h]
+    · exact (changes (lb.trans rb.symm)).elim
+  have equal := eq_indices_of_inner_zero_short_fan ray (K.projectedIntervalRay_ne_zero c) nonzero
+    (interval_cone_orient_sign ray nonzero (K.planar_arc_cones_disjoint c)) (by
+      simpa only [ray, K.projectedIntervalRay_castSucc, K.projectedIntervalRay_succ,
+        K.projectedGermRay_angle] using short) transverse (tie i i_change) (tie j j_change)
+  apply Fin.ext
+  have values := congrArg Fin.val equal
+  simp only [Fin.val_succ, Fin.val_castSucc] at values
+  omega
+
+/-- A short corner fan with an initial ray along the crease stays in its first
+supporting plane. Any change would revisit the crease line at an interior ray. -/
+theorem slope_constant_of_crease_first_short_fan {a b : Plane}
+    (slopes : ∀ i, K.normalSlope (c.point i).val.1.1 = a ∨
+      K.normalSlope (c.point i).val.1.1 = b)
+    (tangent : inner ℝ (a - b) (K.projectedIntervalRay c 0) = 0)
+    (short : (∑ i : Fin (n + 1), (K.projectedTriangle (c.point i).val.1.1).cornerAngle
+      (c.point i).val.1.2) ≤ π) :
+    ∀ i, K.normalSlope (c.point i).val.1.1 = K.normalSlope c.first.val.1.1 := by
+  let ray := K.projectedIntervalRay c
+  let f (i : Fin (n + 1)) := K.normalSlope (c.point i).val.1.1
+  have genuine := K.projectedIntervalRay_ne_zero c
+  have nonzero (i : Fin (n + 1)) : orient 0 (ray i.castSucc) (ray i.succ) ≠ 0 := by
+    simp only [ray, K.projectedIntervalRay_castSucc, K.projectedIntervalRay_succ]
+    exact K.projectedGermRay_orient_ne_zero (c.point i)
+  have order := strictMono_angle_first_of_short_fan ray genuine nonzero
+    (interval_cone_orient_sign ray nonzero (K.planar_arc_cones_disjoint c)) (by
+      simpa only [ray, K.projectedIntervalRay_castSucc, K.projectedIntervalRay_succ,
+        K.projectedGermRay_angle] using short)
+  have adjacent (k : Fin n) : f k.castSucc = f k.succ := by
+    by_contra different
+    have ab : a ≠ b := by
+      intro same
+      have all (j : Fin (n + 1)) : f j = b := (slopes j).elim (fun h => h.trans same) id
+      exact different ((all _).trans (all _).symm)
+    let j := k.castSucc.succ
+    have tied : inner ℝ (a - b) (ray j) = 0 := by
+      have h := K.projectedIntervalRay_normalSlope_tie c k
+      rcases slopes k.castSucc with lp | lp <;> rcases slopes k.succ with rp | rp
+      · exact (different (lp.trans rp.symm)).elim
+      · simpa only [lp, rp] using h
+      · rw [lp, rp, inner_sub_left] at h
+        rw [inner_sub_left]
+        linarith only [h]
+      · exact (different (lp.trans rp.symm)).elim
+    have cross := orient_zero_of_orthogonal_pair (sub_ne_zero.mpr ab) tangent tied
+    obtain ⟨t, position⟩ := exists_lineMap_of_orient_eq_zero (genuine 0).symm cross
+    rw [AffineMap.lineMap_apply_module'] at position
+    simp only [sub_zero, add_zero] at position
+    change ray j = t • ray 0 at position
+    have tn : t ≠ 0 := by
+      intro zero
+      apply genuine j
+      change ray j = 0
+      rw [position, zero, zero_smul]
+    have after : 0 < j := by change 0 < k.val + 1; omega
+    have before : j < Fin.last (n + 1) := by
+      change k.val + 1 < n + 1
+      have h := k.isLt
+      omega
+    have positive : angle (ray 0) (ray 0) < angle (ray 0) (ray j) := order after
+    have small : angle (ray 0) (ray j) < π := (order before).trans_le (angle_le_pi _ _)
+    rcases lt_or_gt_of_ne tn with negative | positive_t
+    · rw [position, angle_smul_right_of_neg _ _ negative, angle_neg_right,
+        angle_self (genuine 0), sub_zero] at small
+      exact lt_irrefl _ small
+    · rw [position, angle_smul_right_of_pos _ _ positive_t,
+        angle_self (genuine 0)] at positive
+      exact lt_irrefl _ positive
+  intro i
+  exact Fin.induction rfl (fun k prev => (adjacent k).symm.trans prev) i
 
 /-- In one supporting plane, the actual link's halfplane block has exactly the
 spatial endpoint angle, independently of how the block was subdivided. -/

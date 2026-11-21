@@ -12,29 +12,51 @@ namespace Unfoldings.FewestNets.MeshStar
 
 open NormedSpace
 
+def chartAxes (s : Space) : Fin 3 → Space := ![chartFirst s, chartSecond s, s]
+
+theorem chartAxes_orthonormal {s : Space} (unit : ‖s‖ = 1)
+    (genuine : bisectorTangent s (WithLp.toLp 2 ![1, 0, 0]) ≠ 0) :
+    Orthonormal ℝ (chartAxes s) := by
+  obtain ⟨u, v, su, sv, uv⟩ := chartFrame_orthonormal unit genuine
+  have us : inner ℝ (chartFirst s) s = 0 := (real_inner_comm s _).trans su
+  have vs : inner ℝ (chartSecond s) s = 0 := (real_inner_comm s _).trans sv
+  have vu : inner ℝ (chartSecond s) (chartFirst s) = 0 := (real_inner_comm _ _).trans uv
+  apply orthonormal_iff_ite.mpr
+  intro i j
+  fin_cases i <;> fin_cases j <;> simp [chartAxes, u, v, unit, su, sv, uv, us, vs, vu]
+
+/-- The two certificate axes and the site direction form a full orthonormal frame. -/
+def chartOrthonormalBasis {s : Space} (unit : ‖s‖ = 1)
+    (genuine : bisectorTangent s (WithLp.toLp 2 ![1, 0, 0]) ≠ 0) :
+    OrthonormalBasis (Fin 3) ℝ Space :=
+  let ortho := chartAxes_orthonormal unit genuine
+  let base := basisOfOrthonormalOfCardEqFinrank ortho (by simp [Space])
+  let repr : (base : Fin 3 → Space) = chartAxes s := coe_basisOfOrthonormalOfCardEqFinrank _ _
+  base.toOrthonormalBasis (repr.symm ▸ ortho)
+
+theorem chartOrthonormalBasis_apply {s : Space} (unit : ‖s‖ = 1)
+    (genuine : bisectorTangent s (WithLp.toLp 2 ![1, 0, 0]) ≠ 0) (i : Fin 3) :
+    chartOrthonormalBasis unit genuine i = (![chartFirst s, chartSecond s, s] : Fin 3 → Space) i := by
+  let ortho := chartAxes_orthonormal unit genuine
+  let card : Fintype.card (Fin 3) = Module.finrank ℝ Space := by simp [Space]
+  let base := basisOfOrthonormalOfCardEqFinrank ortho card
+  have axes : (base : Fin 3 → Space) = chartAxes s :=
+    coe_basisOfOrthonormalOfCardEqFinrank ortho card
+  have orthonormal : Orthonormal ℝ base := axes.symm ▸ ortho
+  have coe : (base.toOrthonormalBasis orthonormal : Fin 3 → Space) = chartAxes s :=
+    (Module.Basis.coe_toOrthonormalBasis _ _).trans axes
+  exact congrFun coe i
+
 /-- Coordinates in the tangent frame preserve the inner product there. -/
 theorem chartPoint_inner {s x y : Space} (unit : ‖s‖ = 1)
     (genuine : bisectorTangent s (WithLp.toLp 2 ![1, 0, 0]) ≠ 0)
     (ty : inner ℝ s y = 0) :
     inner ℝ (chartPoint s x) (chartPoint s y) = inner ℝ x y := by
-  obtain ⟨u, v, su, sv, uv⟩ := chartFrame_orthonormal unit genuine
-  have us : inner ℝ (chartFirst s) s = 0 := (real_inner_comm s _).trans su
-  have vs : inner ℝ (chartSecond s) s = 0 := (real_inner_comm s _).trans sv
-  have vu : inner ℝ (chartSecond s) (chartFirst s) = 0 := (real_inner_comm _ _).trans uv
-  let e : Fin 3 → Space := ![chartFirst s, chartSecond s, s]
-  have ortho : Orthonormal ℝ e := by
-    apply orthonormal_iff_ite.mpr
-    intro i j
-    fin_cases i <;> fin_cases j <;>
-      simp [e, u, v, unit, su, sv, uv, us, vs, vu]
-  let B₀ := basisOfOrthonormalOfCardEqFinrank ortho (by simp [Space])
-  have repr : (B₀ : Fin 3 → Space) = e := coe_basisOfOrthonormalOfCardEqFinrank _ _
-  let B := B₀.toOrthonormalBasis (repr.symm ▸ ortho)
-  have coe_B : (B : Fin 3 → Space) = e := by simpa [B] using repr
+  let B := chartOrthonormalBasis unit genuine
   have sum := B.sum_inner_mul_inner x y
-  have b0 : B 0 = chartFirst s := congrFun coe_B 0
-  have b1 : B 1 = chartSecond s := congrFun coe_B 1
-  have b2 : B 2 = s := congrFun coe_B 2
+  have b0 : B 0 = chartFirst s := chartOrthonormalBasis_apply unit genuine 0
+  have b1 : B 1 = chartSecond s := chartOrthonormalBasis_apply unit genuine 1
+  have b2 : B 2 = s := chartOrthonormalBasis_apply unit genuine 2
   rw [Fin.sum_univ_three, b0, b1, b2, ty, mul_zero, add_zero] at sum
   conv_lhs => rw [PiLp.inner_apply, Fin.sum_univ_two]
   change inner ℝ y (chartFirst s) * inner ℝ x (chartFirst s) +

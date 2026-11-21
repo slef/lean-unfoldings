@@ -29,6 +29,30 @@ variable {n : ℕ}
 local notation "P" => K.projectedBoundaryChain (K.jordanFaces J) d
 
 include jordan contains avoids in
+/-- The contour sum away from the four closing corners is exactly the
+ordered intrinsic sum of the internal bank turns. -/
+theorem sum_jordanGeometricBankIndices_eq_chain
+    (source closing : Plane) (radial : (P).RadialFrom source 0)
+    (initial : 0 < dist source ((P).vertex 0)) (height : Plane →ₗ[ℝ] ℝ)
+    (supported : ∀ z ∈ Set.range (P).path, 0 ≤ height (z - source))
+    (excluded : height (closing - source) < 0) :
+    (∑ j ∈ K.jordanGeometricBankIndices jordan contains avoids (Set.range (P).path)
+        (radialClosingCorners source ((P).vertex 0) ((P).vertex (Fin.last (n + 1))) closing),
+      K.jordanContourTurnError jordan contains avoids j) =
+    ∑ k : Fin n, K.restrictedBoundaryTurnError (K.jordanFaces J) (d.point k.succ) := by
+  have genuine := K.projectedBoundaryChain_edge_ne_zero (K.jordanFaces J) d
+  have ordered := (P).vertex_radius_strictMono_of_radial source radial genuine
+  have injective : Function.Injective (P).vertex := fun _ _ same =>
+    ordered.injective (congrArg (dist source) same)
+  have corners := K.jordanGeometricBankIndices_congr_corners jordan contains avoids
+    (Set.range (P).path)
+    (radialClosingCorners source ((P).vertex 0) ((P).vertex (Fin.last (n + 1))) closing)
+    {(P).vertex 0, (P).vertex (Fin.last (n + 1))}
+    (fun _ member => (P).radialClosingCorners_on_bank source closing radial initial height
+      supported excluded member)
+  rw [corners, ← K.sum_jordan_chain_turnError_eq_geometric_bank jordan contains avoids d injective]
+
+include jordan contains avoids in
 /-- The actual bank chain pays total curvature plus the three closing links and four
 geometric corners. No index matching, fan-error sum equality or closing budget is supplied. -/
 theorem abs_sum_jordan_chain_turnError_le_radial
@@ -45,8 +69,6 @@ theorem abs_sum_jordan_chain_turnError_le_radial
       C.totalInteriorAngularDefect Set.univ + 6 * φ + 8 * Real.pi * ε := by
   have genuine := K.projectedBoundaryChain_edge_ne_zero (K.jordanFaces J) d
   have ordered := (P).vertex_radius_strictMono_of_radial source radial genuine
-  have injective : Function.Injective (P).vertex := fun _ _ same =>
-    ordered.injective (congrArg (dist source) same)
   have progress : dist source ((P).vertex 0) <
       dist source ((P).vertex (Fin.last (n + 1))) :=
     ordered (by change 0 < n + 1; omega)
@@ -78,14 +100,8 @@ theorem abs_sum_jordan_chain_turnError_le_radial
     subst L
     exact estimate
   have matched := transport J curve jordan contains avoids
-  have corners := K.jordanGeometricBankIndices_congr_corners jordan contains avoids
-    (Set.range (P).path)
-    (radialClosingCorners source ((P).vertex 0) ((P).vertex (Fin.last (n + 1))) closing)
-    {(P).vertex 0, (P).vertex (Fin.last (n + 1))}
-    (fun _ member => (P).radialClosingCorners_on_bank source closing radial initial height
-      supported excluded member)
-  rw [corners, ← K.sum_jordan_chain_turnError_eq_geometric_bank jordan contains avoids d injective]
-    at matched
+  rw [K.sum_jordanGeometricBankIndices_eq_chain jordan contains avoids d source closing radial
+    initial height supported excluded] at matched
   exact matched
 
 end Unfoldings.ConvexCap

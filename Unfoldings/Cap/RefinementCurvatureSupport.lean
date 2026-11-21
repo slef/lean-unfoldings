@@ -23,11 +23,11 @@ variable {Face : Type u} [Fintype Face] {C : TriangleComplex.{u, v} Face} (K : C
   (normal_eq : ∀ f, K.normalSlope f = slope (parent f))
 
 include conforming separated inside normal_eq in
-/-- Every new vertex away from old corners is a planar or crease subdivision and is flat. -/
-theorem interiorCurvature_eq_zero_off_parent_corners
-    (height : ∀ f, (3 : ℝ) / 4 ≤ K.normal f 2) (v : C.Vertex Set.univ)
+/-- A refined vertex away from the coarse vertices meets at most two supporting planes. -/
+theorem exists_two_incidentSlopes_off_parent_corners (v : C.Vertex Set.univ)
     (away : ∀ i, ¬ (original i).IsVertex (K.projectedVertex v)) :
-    C.interiorAngularDefect Set.univ v = 0 := by
+    ∃ a b : Plane, ∀ f i, C.vertexOfCorner Set.univ (f, i) = v →
+      K.normalSlope f = a ∨ K.normalSlope f = b := by
   have point_member (f : Face) (i : Fin 3) (at_vertex : C.vertexOfCorner Set.univ (f, i) = v) :
       K.projectedVertex v ∈ (original (parent f)).carrier := by
     have corner := (K.projectedTriangle f).vertex_mem i
@@ -37,11 +37,21 @@ theorem interiorCurvature_eq_zero_off_parent_corners
   obtain ⟨⟨f, i⟩, at_vertex⟩ := C.vertexOfCorner_surjective Set.univ v
   obtain ⟨other, only_two⟩ := TriangleFamily.atMostTwo_faces_of_nonvertex original conforming
     separated (parent f) (point_member f i at_vertex) (away (parent f))
-  apply K.interiorCurvature_eq_zero_of_two_incidentSlopes height v (slope (parent f)) (slope other)
-  intro g j at_vertex_g
+  refine ⟨slope (parent f), slope other, fun g j at_vertex_g => ?_⟩
   rw [normal_eq]
   exact (only_two (parent g) (point_member g j at_vertex_g)).imp
     (congrArg slope) (congrArg slope)
+
+include conforming separated inside normal_eq in
+/-- Every new vertex away from old corners is a planar or crease subdivision and is flat. -/
+theorem interiorCurvature_eq_zero_off_parent_corners
+    (height : ∀ f, (3 : ℝ) / 4 ≤ K.normal f 2) (v : C.Vertex Set.univ)
+    (away : ∀ i, ¬ (original i).IsVertex (K.projectedVertex v)) :
+    C.interiorAngularDefect Set.univ v = 0 := by
+  obtain ⟨a, b, slopes⟩ :=
+    K.exists_two_incidentSlopes_off_parent_corners original conforming separated slope parent
+      inside normal_eq v away
+  exact K.interiorCurvature_eq_zero_of_two_incidentSlopes height v a b slopes
 
 include conforming separated inside normal_eq in
 /-- Positive refined curvature is supported on actual old triangle corners. -/

@@ -33,10 +33,12 @@ interval. Either witness sign is represented by the sign of the coefficient. -/
 def visualPairPolynomial (coefficient : ℝ) (p x y : E) : ℝ :=
   inner ℝ (p - x) (p - y) + coefficient * o.areaForm (p - x) (p - y)
 
-theorem visualPairPolynomial_segment_lt_zero {c t : ℝ} {p q x y : E}
-    (first : visualPairPolynomial o c p x y < 0)
-    (last : visualPairPolynomial o c q x y < 0) (start : 0 ≤ t) (finish : t ≤ 1) :
-    visualPairPolynomial o c (p + t • (q - p)) x y < 0 := by
+/-- Along a segment the pair polynomial has squared side length as its quadratic
+coefficient. -/
+theorem visualPairPolynomial_segment {c t : ℝ} {p q x y : E} :
+    visualPairPolynomial o c (p + t • (q - p)) x y =
+      (1 - t) * visualPairPolynomial o c p x y + t * visualPairPolynomial o c q x y -
+        t * (1 - t) * ‖q - p‖ ^ 2 := by
   let d := q - p
   let slope := inner ℝ (p - x) d + inner ℝ d (p - y) +
     c * (o.areaForm (p - x) d + o.areaForm d (p - y))
@@ -54,14 +56,15 @@ theorem visualPairPolynomial_segment_lt_zero {c t : ℝ} {p q x y : E}
   have end_eq : p + (1 : ℝ) • d = q := by rw [one_smul]; dsimp [d]; abel
   have at_end := expansion 1
   rw [end_eq] at at_end
-  have interpolation :
-      visualPairPolynomial o c (p + t • d) x y =
-        (1 - t) * visualPairPolynomial o c p x y + t * visualPairPolynomial o c q x y -
-          t * (1 - t) * ‖d‖ ^ 2 := by
-    rw [expansion t]
-    linear_combination -t * at_end
-  rw [interpolation]
-  have error_nonneg := mul_nonneg (mul_nonneg start (sub_nonneg.mpr finish)) (sq_nonneg ‖d‖)
+  rw [expansion t]
+  linear_combination -t * at_end
+
+theorem visualPairPolynomial_segment_lt_zero {c t : ℝ} {p q x y : E}
+    (first : visualPairPolynomial o c p x y < 0)
+    (last : visualPairPolynomial o c q x y < 0) (start : 0 ≤ t) (finish : t ≤ 1) :
+    visualPairPolynomial o c (p + t • (q - p)) x y < 0 := by
+  rw [visualPairPolynomial_segment]
+  have error_nonneg := mul_nonneg (mul_nonneg start (sub_nonneg.mpr finish)) (sq_nonneg ‖q - p‖)
   have strict : (1 - t) * visualPairPolynomial o c p x y +
       t * visualPairPolynomial o c q x y < 0 := by
     by_cases ht : t = 0
