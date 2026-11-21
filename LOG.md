@@ -2,6 +2,18 @@
 
 ## Session Log
 
+### 2026-11-21 — prove non-overlap for quantitatively certified adaptive roofs
+
+- Fixed a compact comparison region before constructing the old mesh.
+  This lets the three closure lines avoid every old vertex while retaining
+  both original bank headings and their sharp turn discrepancy.
+- Proved the exact radial-block margin and length constant for every
+  intrinsic bank subinterval. Directed cut pieces give the certified
+  projected margin from every earlier vertex, including subdivision vertices.
+- Applied the sharp margin to the actual retained bank at each positive
+  source. Its rotated copy bounds the source gap. The gluing construction
+  gives a nonoverlapping original-edge net on each selected component.
+
 ### 2026-11-21 — close half-turn windows and construct adaptive source contours
 
 - A radial window with polar variation below a half-turn fits in a linear
