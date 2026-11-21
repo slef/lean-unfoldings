@@ -36,6 +36,22 @@ theorem developedDirection_seam_sides (s : C.Seam) (kept : s ∈ retain)
     (sq_pos_of_ne_zero transverse)
   nlinarith only [positive]
 
+/-- Opening a retained cap seam gives the absolute difference of the
+two true section angles to the crease. -/
+theorem retained_section_angle_eq_abs_sub (s : C.Seam) (kept : s ∈ retain)
+    (direction : Plane) (transverse : orient 0 (K.projectedSeamVector s) direction ≠ 0) :
+    InnerProductGeometry.angle (D.developedDirection K (C.left s).face direction)
+        (D.developedDirection K (C.right s).face direction) =
+      let e := K.spatialDirection (C.left s).face (K.projectedSeamVector s)
+      |InnerProductGeometry.angle e (K.spatialDirection (C.left s).face direction) -
+        InnerProductGeometry.angle e (K.spatialDirection (C.right s).face direction)| := by
+  apply hinge_section_angle_eq_abs_sub_of_product_pos
+    (D.developedDirection_seam_sides K s kept direction transverse)
+    (K.spatialDirection (C.left s).face (K.projectedSeamVector s))
+  · exact D.developedDirection_angle K _ _ _
+  · rw [D.developedDirection_seam K s kept, K.spatialDirection_seam]
+    exact D.developedDirection_angle K _ _ _
+
 /-- For actual retained cap hinges, rigid planar opening contracts section turning. -/
 theorem retained_section_angle_le (s : C.Seam) (kept : s ∈ retain)
     (direction : Plane) (transverse : orient 0 (K.projectedSeamVector s) direction ≠ 0) :
@@ -43,11 +59,7 @@ theorem retained_section_angle_le (s : C.Seam) (kept : s ∈ retain)
         (D.developedDirection K (C.right s).face direction) ≤
       InnerProductGeometry.angle (K.spatialDirection (C.left s).face direction)
         (K.spatialDirection (C.right s).face direction) := by
-  apply hinge_section_angle_le_of_product_pos
-    (D.developedDirection_seam_sides K s kept direction transverse)
-    (K.spatialDirection (C.left s).face (K.projectedSeamVector s))
-  · exact D.developedDirection_angle K _ _ _
-  · rw [D.developedDirection_seam K s kept, K.spatialDirection_seam]
-    exact D.developedDirection_angle K _ _ _
+  rw [D.retained_section_angle_eq_abs_sub K s kept direction transverse]
+  exact abs_angle_sub_angle_le _ _ _
 
 end Unfoldings.FacewiseDevelopment

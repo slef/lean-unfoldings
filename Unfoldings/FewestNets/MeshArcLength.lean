@@ -1,6 +1,7 @@
 module
 
 public import Unfoldings.FewestNets.MeshStarLengths
+public import Unfoldings.Geometry.SphericalAngleChord
 
 /-! Transfer checked chord bounds to spherical arc lengths. -/
 
@@ -14,29 +15,11 @@ open InnerProductGeometry Real
 
 variable {n : ℕ} {star : MeshStar (n + 1)}
 
-/-- The chord expression is twice the tangent of half the side angle. -/
+/-- The chord expression bounds the spherical angle. -/
 theorem angle_le_chord_arcUpper {x y : Space} (unit_x : ‖x‖ = 1) (unit_y : ‖y‖ = 1)
     (small : angle x y < π) :
-    angle x y ≤ ‖y - x‖ / sqrt (1 - ‖y - x‖ ^ 2 / 4) := by
-  let t := angle x y / 2
-  have nonnegative : 0 ≤ t := div_nonneg (angle_nonneg _ _) (by norm_num)
-  have half_lt : t < π / 2 := by dsimp [t]; linarith
-  have sin_pos : 0 ≤ sin t := sin_nonneg_of_nonneg_of_le_pi nonnegative (by linarith [pi_pos])
-  have cos_pos : 0 < cos t := cos_pos_of_mem_Ioo ⟨by linarith [pi_pos], half_lt⟩
-  have angle_eq : angle x y = 2 * t := by dsimp [t]; ring
-  have chord := norm_sub_pow_two_real y x
-  rw [unit_x, unit_y, inner_eq_cos_angle_of_norm_eq_one unit_y unit_x, angle_comm y x,
-    angle_eq, cos_two_mul] at chord
-  have root : sqrt (1 - ‖y - x‖ ^ 2 / 4) = cos t := by
-    rw [show 1 - ‖y - x‖ ^ 2 / 4 = cos t ^ 2 by linarith only [chord],
-      sqrt_sq cos_pos.le]
-  have length : ‖y - x‖ = 2 * sin t :=
-    (sq_eq_sq₀ (norm_nonneg _) (by positivity)).mp (by
-      nlinarith only [chord, sin_sq_add_cos_sq t])
-  rw [root, length, mul_div_assoc, ← tan_eq_sin_div_cos]
-  have tan := le_tan nonnegative half_lt
-  dsimp [t] at tan
-  linarith only [tan]
+    angle x y ≤ ‖y - x‖ / sqrt (1 - ‖y - x‖ ^ 2 / 4) :=
+  angle_le_chord_arcUpper_of_unit unit_x unit_y small
 
 /-- Consecutive outward normals lie in a common open hemisphere. The checked
 chord bound therefore bounds the length of their unique minor arc. -/

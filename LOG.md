@@ -2,6 +2,21 @@
 
 ## Session Log
 
+### 2026-11-20 — prove the sharp straight-section turn bound
+
+- Computed the hinge-angle derivative in the directional slope and used
+  the arctangent to bound the local turn by the sine of the tilt times
+  the actual extrinsic bend.
+- Identified this angle difference with the genuine one-sided development
+  at an original seam. Summed over the constructed original-face trace
+  to get the `2Φ sin Φ` budget.
+- Proved the secant factor for face angles and the generic closure
+  for every strict half-turn polar window.
+- Identified the Voronoi walls of an origin-containing inscribed convex
+  triangulation with its original dual seams. Passed the two numerical
+  endpoint counts to original-edge net partitions given the corresponding
+  network geometry and local nonoverlap developments.
+
 ### 2026-11-20 — verify the fixed-point mesh certificate arithmetic
 
 - Proved enclosure soundness for real operations using integer rounding,

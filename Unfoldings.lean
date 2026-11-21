@@ -178,8 +178,12 @@ public import Unfoldings.Cap.SectorCrossings
 public import Unfoldings.Cap.SectorFrameCrossings
 public import Unfoldings.Cap.AnchorTrace
 public import Unfoldings.Geometry.HingeTurnBound
+public import Unfoldings.Geometry.StraightHingeAngle
+public import Unfoldings.Geometry.StraightHingeTurn
 public import Unfoldings.Cap.SectionSeams
 public import Unfoldings.Cap.AlignedSectionTurn
+public import Unfoldings.Cap.SharpSectionHinge
+public import Unfoldings.Cap.SharpAlignedSection
 public import Unfoldings.Cap.PhaseSectionTurn
 public import Unfoldings.Cap.TracePhaseTransport
 public import Unfoldings.Cap.SectionInteriors
@@ -1539,6 +1543,7 @@ public import Unfoldings.Cap.JordanBankStretch
 public import Unfoldings.Geometry.GenericRadialSource
 public import Unfoldings.Geometry.LinearPathBounds
 public import Unfoldings.Geometry.GenericWedgeClosure
+public import Unfoldings.Geometry.PolarWindowClosure
 public import Unfoldings.Geometry.SegmentLineAvoidance
 public import Unfoldings.Geometry.VertexAvoidingWedgeClosure
 
@@ -1553,6 +1558,7 @@ public import Unfoldings.Geometry.GenericBankClosure
 
 public import Unfoldings.Development.SingleSeam
 public import Unfoldings.Cap.IntrinsicSectionTurns
+public import Unfoldings.Cap.SharpSectionTrace
 public import Unfoldings.Cap.IntrinsicSectionTurnAgreement
 
 public import Unfoldings.Topology.PairedInvolutionExtension
@@ -2786,6 +2792,9 @@ public import Unfoldings.Roof.AdaptivePotentialForest
 public import Unfoldings.Roof.CompatibleAdaptiveRouting
 public import Unfoldings.Geometry.RadialBlockLimit
 public import Unfoldings.Geometry.SphericalEndpointLocality
+public import Unfoldings.Geometry.SphericalAngleChord
+public import Unfoldings.Geometry.SphericalPathAngle
+public import Unfoldings.Geometry.LinearAngleDistortion
 public import Unfoldings.FewestNets.ComponentCountBudget
 public import Unfoldings.FewestNets.NormalComponentCharges
 public import Unfoldings.FewestNets.FiniteMeshKeys
@@ -2803,6 +2812,7 @@ public import Unfoldings.FewestNets.VisualCertificate
 public import Unfoldings.Convex.FiniteNormalFan
 public import Unfoldings.Polyhedron.GaussianAreaPartition
 public import Unfoldings.Cap.SharpAngleProjection
+public import Unfoldings.Cap.SharpRelativeAngleProjection
 public import Unfoldings.Roof.SharpAngleProjection
 public import Unfoldings.FewestNets.VisualLensSupport
 public import Unfoldings.FewestNets.ExteriorCertificate
@@ -2901,6 +2911,9 @@ public import Unfoldings.FewestNets.VoronoiNetwork
 public import Unfoldings.FewestNets.ExpectedNetworkCharge
 public import Unfoldings.FewestNets.GaussianExpectedCharge
 public import Unfoldings.FewestNets.VoronoiComponentCount
+public import Unfoldings.FewestNets.VoronoiNetBound
+public import Unfoldings.FewestNets.EndpointNetBounds
+public import Unfoldings.FewestNets.VoronoiWallSeams
 public import Unfoldings.FewestNets.SubdivisionCharge
 public import Unfoldings.Geometry.GnomonicMinorArc
 public import Unfoldings.Roof.SphericalPrimalCell

@@ -72,6 +72,29 @@ theorem hinge_section_angle_le {E : Type*} [NormedAddCommGroup E] [InnerProductS
   rw [angle_eq_abs_sub_of_same_halfplane first last, first_angle, last_angle]
   exact abs_angle_sub_angle_le edge a b
 
+/-- A transverse turn after aligned opening is the absolute difference of
+the two original angles to the hinge. Either common strict halfplane works. -/
+theorem hinge_section_angle_eq_abs_sub_of_product_pos
+    {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
+    {r x y : Plane} (sides : 0 < orient 0 r x * orient 0 r y)
+    (edge a b : E)
+    (first_angle : InnerProductGeometry.angle r x = InnerProductGeometry.angle edge a)
+    (last_angle : InnerProductGeometry.angle r y = InnerProductGeometry.angle edge b) :
+    InnerProductGeometry.angle x y =
+      |InnerProductGeometry.angle edge a - InnerProductGeometry.angle edge b| := by
+  rcases mul_pos_iff.mp sides with positive | negative
+  · rw [angle_eq_abs_sub_of_same_halfplane positive.1 positive.2, first_angle, last_angle]
+  · have reverse (v : Plane) : orient 0 (-r) v = -orient 0 r v := by
+      simp only [orient, PiLp.neg_apply, PiLp.zero_apply, sub_zero]
+      ring
+    have first : 0 < orient 0 (-r) x := by rw [reverse]; exact neg_pos.mpr negative.1
+    have last : 0 < orient 0 (-r) y := by rw [reverse]; exact neg_pos.mpr negative.2
+    rw [angle_eq_abs_sub_of_same_halfplane first last, InnerProductGeometry.angle_neg_left,
+      InnerProductGeometry.angle_neg_left, first_angle, last_angle]
+    rw [show (Real.pi - InnerProductGeometry.angle edge a) -
+        (Real.pi - InnerProductGeometry.angle edge b) =
+      -(InnerProductGeometry.angle edge a - InnerProductGeometry.angle edge b) by ring, abs_neg]
+
 /-- Either common strict halfplane suffices; the boundary ray's orientation is immaterial. -/
 theorem hinge_section_angle_le_of_product_pos
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
@@ -80,15 +103,7 @@ theorem hinge_section_angle_le_of_product_pos
     (first_angle : InnerProductGeometry.angle r x = InnerProductGeometry.angle edge a)
     (last_angle : InnerProductGeometry.angle r y = InnerProductGeometry.angle edge b) :
     InnerProductGeometry.angle x y ≤ InnerProductGeometry.angle a b := by
-  rcases mul_pos_iff.mp sides with positive | negative
-  · exact hinge_section_angle_le positive.1 positive.2 edge a b first_angle last_angle
-  · have reverse (v : Plane) : orient 0 (-r) v = -orient 0 r v := by
-      simp only [orient, PiLp.neg_apply, PiLp.zero_apply, sub_zero]
-      ring
-    apply hinge_section_angle_le (r := -r)
-      (by rw [reverse]; exact neg_pos.mpr negative.1)
-      (by rw [reverse]; exact neg_pos.mpr negative.2) (-edge) a b
-    · rw [InnerProductGeometry.angle_neg_left, InnerProductGeometry.angle_neg_left, first_angle]
-    · rw [InnerProductGeometry.angle_neg_left, InnerProductGeometry.angle_neg_left, last_angle]
+  rw [hinge_section_angle_eq_abs_sub_of_product_pos sides edge a b first_angle last_angle]
+  exact abs_angle_sub_angle_le edge a b
 
 end Unfoldings
