@@ -2,6 +2,15 @@
 
 ## Session Log
 
+### 2026-11-20 — realize complete interior stars and transfer corner checks
+
+- Proved that the six cyclic model triangles exhaust the actual
+  triangles at an interior lattice site.
+- Verified the symmetries between ordered macrofaces and that they
+  transport fine cells by permuting the integer barycentric weights.
+- Verified the corner altitude and incident-angle checks for the first
+  frequency-100 interior star in every macroface of the actual mesh.
+
 ### 2026-11-20 — prove the local vertex guard for the actual arcs
 
 - Identified the two competing site comparisons with the bounding

@@ -2898,6 +2898,16 @@ public import Unfoldings.FewestNets.IcosahedronAdjacentFace
 public import Unfoldings.FewestNets.IcosahedronCornerCoordinates
 public import Unfoldings.FewestNets.IcosahedronVertexGuard
 public import Unfoldings.FewestNets.IcosahedronGuardedSeparation
+public import Unfoldings.FewestNets.IcosahedronSymmetries
+public import Unfoldings.FewestNets.IcosahedronGridPermutation
+public import Unfoldings.FewestNets.CheckedMeshCorner
+public import Unfoldings.FewestNets.MeshCornerTransport
+public import Unfoldings.FewestNets.FiniteMeshCornerExample
+public import Unfoldings.FewestNets.IcosahedronInteriorStarCoverage
+public import Unfoldings.FewestNets.IcosahedronRealizedStar
+public import Unfoldings.FewestNets.IcosahedronRealizedInteriorStar
+public import Unfoldings.FewestNets.IcosahedronRealizedCorner
+public import Unfoldings.FewestNets.IcosahedronActualCornerExample
 public import Unfoldings.FewestNets.IcosahedronDualEdges
 public import Unfoldings.FewestNets.MeshStarFacetNormal
 public import Unfoldings.FewestNets.IcosahedronInteriorStar
