@@ -2850,6 +2850,7 @@ public import Unfoldings.Polyhedron.GaussianBoundaryCycle
 public import Unfoldings.Polyhedron.GaussianChartArcs
 public import Unfoldings.Polyhedron.GaussianChartTurns
 public import Unfoldings.Polyhedron.GaussianChartOrientation
+public import Unfoldings.Polyhedron.GaussianTwoSideBound
 public import Unfoldings.Geometry.HingeCircleSpeed
 public import Unfoldings.Geometry.HingeCircleAngleDerivative
 public import Unfoldings.Geometry.CircleLineContact
@@ -2869,8 +2870,12 @@ public import Unfoldings.Combinatorics.DualComponentCount
 public import Unfoldings.Combinatorics.ActiveGraphComponents
 public import Unfoldings.Combinatorics.CyclicRunCompression
 public import Unfoldings.Combinatorics.CyclicAdjacentRemoval
+public import Unfoldings.Combinatorics.CyclicHeadingReindex
 public import Unfoldings.Geometry.StrictConvexChordOrder
 public import Unfoldings.Geometry.ConvexArcChordOrder
+public import Unfoldings.Geometry.CyclicSeparatedHeadings
+public import Unfoldings.Geometry.StereographicFrameInvariance
+public import Unfoldings.Geometry.FramedSphericalChordPerimeter
 public import Unfoldings.Geometry.PlanarExposedRays
 public import Unfoldings.Geometry.PositiveSpanAngle
 public import Unfoldings.Geometry.SegmentCoverFirstEdge
@@ -2881,6 +2886,11 @@ public import Unfoldings.FewestNets.EndpointCrossingLocality
 public import Unfoldings.FewestNets.EndpointCrossingBudget
 public import Unfoldings.FewestNets.LocalizedCharge
 public import Unfoldings.FewestNets.VoronoiOpenCrossings
+public import Unfoldings.FewestNets.VoronoiLabel
+public import Unfoldings.FewestNets.VoronoiNetwork
+public import Unfoldings.FewestNets.ExpectedNetworkCharge
+public import Unfoldings.FewestNets.GaussianExpectedCharge
+public import Unfoldings.FewestNets.VoronoiComponentCount
 public import Unfoldings.FewestNets.SubdivisionCharge
 public import Unfoldings.Geometry.GnomonicMinorArc
 public import Unfoldings.Roof.SphericalPrimalCell

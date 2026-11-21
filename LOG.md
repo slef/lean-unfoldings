@@ -2,6 +2,16 @@
 
 ## Session Log
 
+### 2026-11-20 — prove the rotation bound for a fixed Voronoi network
+
+- Verified both perimeter bounds for actual Gaussian cells, with the same
+  two sides omitted, and confined the localized diameter to unit normals.
+- Proved measurability of Voronoi labels and integrated the actual
+  original-seam charges. Their sum gives a rotation with the component
+  bound, with each selected component an intrinsic disk.
+- The finite icosahedral network certificates and the sharp adaptive
+  nonoverlap argument are still needed for the two net-count bounds.
+
 ### 2026-11-20 — verify the stereographic Gaussian chord turns
 
 - Projected the actual genuine arcs to connected arcs of the strictly

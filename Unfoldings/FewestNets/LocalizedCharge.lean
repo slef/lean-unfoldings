@@ -31,7 +31,8 @@ theorem integral_componentCharge_le_of_small_diameter
       Disjoint (openMinorArc (p a) (q a)) (openMinorArc (p b) (q b)))
     {d separation ψ : ℝ} (d_nonneg : 0 ≤ d) (small : d < separation)
     (ψ_pos : 0 < ψ) (ψ_le : ψ ≤ π)
-    (diameter : ∀ x, (∀ k, 0 ≤ f k x) → ∀ y, (∀ k, 0 ≤ f k y) → angle x y ≤ d)
+    (diameter : ∀ x, ‖x‖ = 1 → (∀ k, 0 ≤ f k x) →
+      ∀ y, ‖y‖ = 1 → (∀ k, 0 ≤ f k y) → angle x y ≤ d)
     (endpoint : J → Bool → Space) (unit : ∀ j b, ‖endpoint j b‖ = 1)
     (positive : ∀ j, 0 < angle (endpoint j false) (endpoint j true))
     (short : ∀ j, angle (endpoint j false) (endpoint j true) ≤ π / 2)
@@ -95,7 +96,8 @@ theorem integral_componentCharge_le_of_small_diameter
   filter_upwards [hits, generic] with g at_g trans_g
   intro many i changed_i
   let moved (j : J) (b : Bool) := linear g (endpoint j b)
-  let cell : Set Space := {x | ∀ k, 0 ≤ f k x}
+  let cone : Set Space := {x | ∀ k, 0 ≤ f k x}
+  let cell : Set Space := {x | ‖x‖ = 1 ∧ x ∈ cone}
   have rotate_angle (x y : Space) : angle (linear g x) (linear g y) = angle x y :=
     (isometry g).toLinearIsometry.angle_map x y
   have moved_carrier (j : J) : networkEdge moved j = linear g '' networkEdge endpoint j :=
@@ -129,8 +131,13 @@ theorem integral_componentCharge_le_of_small_diameter
         (minorArcTangent (moved k b) (moved k (!b))) := by
     rw [move_tangent, move_tangent, rotate_angle]
     exact incident distinct ((isometry g).injective shared)
-  have two_edges : ∃ j k, j ≠ k ∧ (networkEdge moved j ∩ cell).Nonempty ∧
-      (networkEdge moved k ∩ cell).Nonempty := by
+  have unit_on_edge (j : J) (z : Space) (on_edge : z ∈ networkEdge moved j) :
+      ‖z‖ = 1 := by
+    have in_sphere := closedMinorArc_subset_sphere (moved_unit j false) (moved_unit j true)
+      (moved_apart j) on_edge
+    simpa only [Metric.mem_sphere, dist_zero_right] using in_sphere
+  have two_cone_edges : ∃ j k, j ≠ k ∧ (networkEdge moved j ∩ cone).Nonempty ∧
+      (networkEdge moved k ∩ cone).Nonempty := by
     apply exists_two_network_hits_of_three_boundary_hits moved moved_unit moved_apart
       (fun i => (f i).toLinearMap) (fun j k => Or.inl (trans_g j k))
       (s.filter (changed g)) many p q
@@ -140,14 +147,20 @@ theorem integral_componentCharge_le_of_small_diameter
       obtain ⟨mem, changed_a⟩ := Finset.mem_filter.mp ha
       obtain ⟨j, x, on_a, on_j⟩ := at_g many a mem changed_a
       exact ⟨j, x, on_j, on_a, boundary a mem x on_a⟩
+  have two_edges : ∃ j k, j ≠ k ∧ (networkEdge moved j ∩ cell).Nonempty ∧
+      (networkEdge moved k ∩ cell).Nonempty := by
+    obtain ⟨j, k, distinct, ⟨x, x_edge, x_cone⟩, ⟨y, y_edge, y_cone⟩⟩ := two_cone_edges
+    exact ⟨j, k, distinct, ⟨x, x_edge, unit_on_edge j x x_edge, x_cone⟩,
+      ⟨y, y_edge, unit_on_edge k y y_edge, y_cone⟩⟩
   obtain ⟨j, x, on_i, on_j⟩ := at_g many i.val (residual i) changed_i
   have on_edge : x ∈ networkEdge moved j :=
     Set.mem_insert_of_mem _ (Set.mem_insert_of_mem _ on_j)
   have localized := exists_endpoint_angle_le_of_two_network_hits moved moved_unit
     (fun j => by simpa only [moved, rotate_angle] using positive j)
     (fun j => by simpa only [moved, rotate_angle] using short j)
-    small ψ_pos moved_separation moved_incidence cell diameter two_edges on_edge
-    (boundary i.val (residual i) x on_i).1
+    small ψ_pos moved_separation moved_incidence cell
+    (fun a ha b hb => diameter a ha.1 ha.2 b hb.1 hb.2) two_edges on_edge
+    ⟨unit_on_edge j x on_edge, (boundary i.val (residual i) x on_i).1⟩
   obtain ⟨b, near⟩ := localized
   refine ⟨j, b, x, on_i, ?_, ?_⟩
   · rwa [framed, ← moved_carrier]
