@@ -12,7 +12,7 @@ noncomputable section
 namespace Unfoldings.FewestNets.Icosahedron
 
 /-- A nonzero supporting functional attains its maximum only at frontier points. -/
-private theorem frontier_of_inner_max {S : Set Space} (closed : IsClosed S)
+theorem frontier_of_inner_max {S : Set Space} (closed : IsClosed S)
     {n x : Space} (nonzero : n ≠ 0) (member : x ∈ S)
     (bound : ∀ y ∈ S, inner ℝ n y ≤ inner ℝ n x) : x ∈ frontier S := by
   rw [frontier, closed.closure_eq, Set.mem_sdiff]

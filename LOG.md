@@ -2,6 +2,14 @@
 
 ## Session Log
 
+### 2026-11-20 — reduce dual-edge separation to a local endpoint bound
+
+- Proved that distinct Voronoi arcs meet only at shared endpoints.
+- Proved a closest-endpoint theorem for disjoint planar segments and
+  quantified the angular distortion of a gnomonic chart.
+- Reduced separation of nonincident mesh arcs to excluding points on
+  such arcs within 1.01 times the separation distance of an endpoint.
+
 ### 2026-11-20 — certify the uniform tilt and realize interior star sides
 
 - Matched the six triangles of an interior face star to the fine mesh

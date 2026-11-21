@@ -2883,6 +2883,14 @@ public import Unfoldings.FewestNets.IcosahedronNormalIdentity
 public import Unfoldings.FewestNets.IcosahedronEdgeIncidence
 public import Unfoldings.FewestNets.IcosahedronFaceIncidence
 public import Unfoldings.FewestNets.IcosahedronEdgeCount
+public import Unfoldings.Geometry.SegmentClosestEndpoint
+public import Unfoldings.Geometry.TriangleCornerGuard
+public import Unfoldings.Geometry.GnomonicDistanceBounds
+public import Unfoldings.Geometry.GnomonicArcSeparation
+public import Unfoldings.Geometry.ShortMinorArcDiameter
+public import Unfoldings.FewestNets.IcosahedronMultipleTies
+public import Unfoldings.FewestNets.IcosahedronArcIntersections
+public import Unfoldings.FewestNets.IcosahedronArcSeparation
 public import Unfoldings.FewestNets.IcosahedronDualEdges
 public import Unfoldings.FewestNets.MeshStarFacetNormal
 public import Unfoldings.FewestNets.IcosahedronInteriorStar
