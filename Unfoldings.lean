@@ -2789,6 +2789,16 @@ public import Unfoldings.Geometry.SphericalEndpointLocality
 public import Unfoldings.FewestNets.ComponentCountBudget
 public import Unfoldings.FewestNets.NormalComponentCharges
 public import Unfoldings.FewestNets.FiniteMeshKeys
+public import Unfoldings.FewestNets.FixedPointInterval
+public import Unfoldings.FewestNets.CheckedReal
+public import Unfoldings.FewestNets.CheckedSpace
+public import Unfoldings.FewestNets.MeshStar
+public import Unfoldings.FewestNets.CheckedMeshStar
+public import Unfoldings.FewestNets.MeshBisectors
+public import Unfoldings.FewestNets.MeshStarLengths
+public import Unfoldings.FewestNets.MeshArcLength
+public import Unfoldings.FewestNets.MeshFaceGeometry
+public import Unfoldings.FewestNets.FiniteMeshExample
 public import Unfoldings.FewestNets.VisualCertificate
 public import Unfoldings.Convex.FiniteNormalFan
 public import Unfoldings.Polyhedron.GaussianAreaPartition

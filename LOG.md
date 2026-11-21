@@ -2,6 +2,15 @@
 
 ## Session Log
 
+### 2026-11-20 — verify the fixed-point mesh certificate arithmetic
+
+- Proved enclosure soundness for real operations using integer rounding,
+  including reciprocals and square roots with explicit failure conditions.
+- Encoded the three representative icosahedral site-star formulas and their
+  gnomonic bisector identities. Verified the unit macroface and its edge length.
+- Kernel-checked the outward dual normals and all six candidate arc lengths
+  at the first frequency-100 face key.
+
 ### 2026-11-20 — prove the rotation bound for a fixed Voronoi network
 
 - Verified both perimeter bounds for actual Gaussian cells, with the same
