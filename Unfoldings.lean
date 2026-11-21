@@ -2918,6 +2918,14 @@ public import Unfoldings.FewestNets.IcosahedronReferenceSeamStar
 public import Unfoldings.FewestNets.IcosahedronRealizedSeamStar
 public import Unfoldings.FewestNets.MeshPentagonRotation
 public import Unfoldings.FewestNets.IcosahedronPerimeterCounting
+public import Unfoldings.FewestNets.IcosahedronSiteWeights
+public import Unfoldings.FewestNets.IcosahedronVertexFrame
+public import Unfoldings.FewestNets.IcosahedronReferenceVertexStar
+public import Unfoldings.FewestNets.IcosahedronRealizedVertexStar
+public import Unfoldings.FewestNets.IcosahedronStarClassification
+public import Unfoldings.FewestNets.IcosahedronNetworkOfCornerBounds
+public import Unfoldings.FewestNets.IcosahedronNetworkFromStars
+public import Unfoldings.FewestNets.IcosahedronFrequency100Network
 public import Unfoldings.FewestNets.IcosahedronDualEdges
 public import Unfoldings.FewestNets.MeshStarFacetNormal
 public import Unfoldings.FewestNets.IcosahedronInteriorStar

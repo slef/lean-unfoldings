@@ -2,6 +2,16 @@
 
 ## Session Log
 
+### 2026-11-21 — verify the geometry of the actual frequency-100 network
+
+- Realized the pentagon model at the original vertices and classified
+  every mesh site by the sorted nonzero barycentric weights.
+- Checked the outward normals, corner altitudes, and incident angles of
+  every frequency-100 model star and transferred the checks to all actual
+  Voronoi corners.
+- Proved that the actual frequency-100 arcs satisfy the separation
+  and incident-angle hypotheses of the randomized counting theorem.
+
 ### 2026-11-21 — certify the frequency-400 perimeter and realize the reference seam
 
 - Checked all 278 interior perimeter blocks and the seam and pentagon
