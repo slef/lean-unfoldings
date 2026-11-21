@@ -2,6 +2,17 @@
 
 ## Session Log
 
+### 2026-11-20 — certify the uniform tilt and realize interior star sides
+
+- Matched the six triangles of an interior face star to the fine mesh
+  and identified its outward cross-product normals with the actual
+  facet normals in the model frame.
+- Transported the six checked length bounds for the first frequency-100
+  record to actual Voronoi arcs.
+- Proved the uniform covering radius `(3 - √5) / q` by combining the
+  equilateral covering radius with the angular speed of radial projection.
+  All actual network arcs satisfy the uniform shortness bound.
+
 ### 2026-11-20 — count the actual dual arcs
 
 - Proved that fine triangle labels are determined by their geometric

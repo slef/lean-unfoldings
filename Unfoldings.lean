@@ -2814,6 +2814,8 @@ public import Unfoldings.Geometry.MinorArcEndpoints
 public import Unfoldings.Geometry.SupportingHingeNormalCone
 public import Unfoldings.Geometry.RadialChordBounds
 public import Unfoldings.Geometry.RadialEquilateralAcute
+public import Unfoldings.Geometry.EquilateralTriangleCoveringRadius
+public import Unfoldings.Geometry.RadialPlaneAngle
 public import Unfoldings.Geometry.PiecewiseAffineConvex
 public import Unfoldings.Geometry.SphericalPathAngle
 public import Unfoldings.Geometry.LinearAngleDistortion
@@ -2882,6 +2884,11 @@ public import Unfoldings.FewestNets.IcosahedronEdgeIncidence
 public import Unfoldings.FewestNets.IcosahedronFaceIncidence
 public import Unfoldings.FewestNets.IcosahedronEdgeCount
 public import Unfoldings.FewestNets.IcosahedronDualEdges
+public import Unfoldings.FewestNets.MeshStarFacetNormal
+public import Unfoldings.FewestNets.IcosahedronInteriorStar
+public import Unfoldings.FewestNets.IcosahedronInteriorDualEdges
+public import Unfoldings.FewestNets.FiniteMeshRealizationExample
+public import Unfoldings.FewestNets.IcosahedronMeshTilt
 public import Unfoldings.FewestNets.MeshHingeSupport
 public import Unfoldings.FewestNets.VisualCertificate
 public import Unfoldings.Convex.FiniteNormalFan

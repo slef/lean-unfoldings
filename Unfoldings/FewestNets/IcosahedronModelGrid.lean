@@ -67,25 +67,32 @@ theorem norm_sub_modelGridCorners {q : ℕ} (t : GridCell q) {k l : Fin 3} (ne :
     rw [← smul_sub, sub_sub_sub_cancel_right, norm_smul, eqD, ← norm_smul, eu]
   exact TriangleGrid.norm_cellCorners_sub cornerA cornerB cornerC q _ _ _ eu ev ed k l ne
 
-/-- Radial normalization commutes with the isometric identification of any
-fine triangle with its model triangle. -/
+theorem map_modelGridCorners {q : ℕ} (t : MeshFace q) (e : Space ≃ₗᵢ[ℝ] Space)
+    (he : ∀ k, e (modelCorners k) = unitFaceCorners t.1 k) (k : Fin 3) :
+    e (modelGridCorners t.2 k) = radius⁻¹ • chordCorners t k := by
+  simp only [modelGridCorners, chordCorners, TriangleGrid.cellCorners, TriangleGrid.point,
+    map_add, map_smul, map_sub]
+  have h₀ : e cornerA = radius⁻¹ • faceCorners t.1 0 := he 0
+  have h₁ : e cornerB = radius⁻¹ • faceCorners t.1 1 := he 1
+  have h₂ : e cornerC = radius⁻¹ • faceCorners t.1 2 := he 2
+  rw [h₀, h₁, h₂]
+  module
+
+/-- Radial normalization commutes with the chosen isometry of a macroface. -/
+theorem map_normalize_modelGridCorners {q : ℕ} (t : MeshFace q) (e : Space ≃ₗᵢ[ℝ] Space)
+    (he : ∀ k, e (modelCorners k) = unitFaceCorners t.1 k) (k : Fin 3) :
+    e (normalize (modelGridCorners t.2 k)) = inscribedCorners t k := by
+  have mapped : e (normalize (modelGridCorners t.2 k)) =
+      normalize (e (modelGridCorners t.2 k)) := by
+    simp only [NormedSpace.normalize, map_smul, LinearIsometryEquiv.norm_map]
+  rw [mapped, map_modelGridCorners t e he, normalize_smul_of_pos (inv_pos.mpr radius_pos)]
+  rfl
+
+/-- Every fine grid triangle has its normalized model triangle as an isometric copy. -/
 theorem exists_modelGrid_isometry {q : ℕ} (t : MeshFace q) :
     ∃ e : Space ≃ₗᵢ[ℝ] Space,
       ∀ k, e (normalize (modelGridCorners t.2 k)) = inscribedCorners t k := by
   obtain ⟨e, he⟩ := exists_modelFace_isometry t.1
-  refine ⟨e, fun k => ?_⟩
-  have position : e (modelGridCorners t.2 k) = radius⁻¹ • chordCorners t k := by
-    simp only [modelGridCorners, chordCorners, TriangleGrid.cellCorners, TriangleGrid.point,
-      map_add, map_smul, map_sub]
-    have h₀ : e cornerA = radius⁻¹ • faceCorners t.1 0 := he 0
-    have h₁ : e cornerB = radius⁻¹ • faceCorners t.1 1 := he 1
-    have h₂ : e cornerC = radius⁻¹ • faceCorners t.1 2 := he 2
-    rw [h₀, h₁, h₂]
-    module
-  have mapped : e (normalize (modelGridCorners t.2 k)) =
-      normalize (e (modelGridCorners t.2 k)) := by
-    simp only [NormedSpace.normalize, map_smul, LinearIsometryEquiv.norm_map]
-  rw [mapped, position, normalize_smul_of_pos (inv_pos.mpr radius_pos)]
-  rfl
+  exact ⟨e, map_normalize_modelGridCorners t e he⟩
 
 end Unfoldings.FewestNets.Icosahedron
