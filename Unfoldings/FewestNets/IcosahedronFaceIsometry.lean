@@ -84,6 +84,15 @@ private theorem linearIndependent_of_faceGram (v : Fin 3 → Space)
   rw [det]
   exact (mul_pos (pow_pos (sub_pos.mpr c_lt) 2) (by linarith only [c_nonnegative])).ne'
 
+theorem linearIndependent_faceCorners (f : Fin 20) : LinearIndependent ℝ (faceCorners f) := by
+  let u := Units.mk0 radius radius_pos.ne'
+  have independent := (linearIndependent_of_faceGram (unitFaceCorners f)
+    (inner_unitFaceCorners f)).units_smul (fun _ => u)
+  convert independent using 1
+  funext k
+  change faceCorners f k = radius • (radius⁻¹ • faceCorners f k)
+  rw [smul_smul, mul_inv_cancel₀ radius_pos.ne', one_smul]
+
 /-- Every macroface is carried to the standard face by a linear isometry of the
 unit-circumsphere coordinates, with the specified corner correspondence. -/
 theorem exists_modelFace_isometry (f : Fin 20) :

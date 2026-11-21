@@ -2,6 +2,14 @@
 
 ## Session Log
 
+### 2026-11-20 — identify exact intersections of the fine mesh triangles
+
+- Extended the grid's integer barycentric data to the twelve original
+  icosahedral vertices, with agreement across macroface boundaries.
+- Proved that two fine triangles intersect in the hull of their shared
+  corners. Their radial cones have the corresponding shared-corner
+  expansions, and their normalized corners are linearly independent.
+
 ### 2026-11-20 — prove the fine icosahedral triangles are acute
 
 - Derived both normalized chord bounds from the height of the original
