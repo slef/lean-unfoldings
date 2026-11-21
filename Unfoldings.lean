@@ -2840,6 +2840,7 @@ public import Unfoldings.Polyhedron.SelectedFaceBoundary
 public import Unfoldings.Polyhedron.LabeledCutConnectivity
 public import Unfoldings.Polyhedron.LabeledComponentCount
 public import Unfoldings.Polyhedron.LinkSeams
+public import Unfoldings.Polyhedron.GaussianOrderedArcs
 public import Unfoldings.Geometry.HingeCircleSpeed
 public import Unfoldings.Geometry.HingeCircleAngleDerivative
 public import Unfoldings.Geometry.CircleLineContact
@@ -2857,6 +2858,7 @@ public import Unfoldings.Combinatorics.GraphCycleRank
 public import Unfoldings.Combinatorics.CoordinateCycles
 public import Unfoldings.Combinatorics.DualComponentCount
 public import Unfoldings.Combinatorics.ActiveGraphComponents
+public import Unfoldings.Combinatorics.CyclicRunCompression
 public import Unfoldings.Geometry.MinorArcBoundaryCount
 public import Unfoldings.Geometry.MinorArcArclength
 public import Unfoldings.Geometry.SphericalArcEndpointClip

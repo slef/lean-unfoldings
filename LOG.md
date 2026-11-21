@@ -2,6 +2,13 @@
 
 ## Session Log
 
+### 2026-11-20 — order the Gaussian arcs by the original link
+
+- Compressed the cyclic link at changes of outward normal.
+- Identified the run starts with the genuine original seams at the vertex
+  and each successive compressed pair with the corresponding dual arc.
+  The compressed list preserves every original incident normal.
+
 ### 2026-11-20 — prove the exact Gaussian component charge
 
 - Used the connected bank boundaries of the disk components to show that
