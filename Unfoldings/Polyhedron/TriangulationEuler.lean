@@ -20,22 +20,24 @@ universe u v
 variable {Face : Type u} [Fintype Face] {C : TriangleComplex.{u, v} Face}
   {F : SpatialFolding C} (P : F.ConvexBoundary)
 
-include P in
-/-- Each local edge is incident to exactly one seam, and every seam contributes two local edges. -/
-theorem two_mul_card_seam_eq_three_mul_card_face :
-    2 * Fintype.card C.Seam = 3 * Fintype.card Face := by
-  let e : C.Seam × Bool ≃ Face × Fin 3 :=
-    Equiv.ofBijective (fun p =>
-      let s := C.seamSide p.1 p.2
-      (s.face, s.edge)) ⟨?_, ?_⟩
-  · have card := Fintype.card_congr e
-    simpa only [Fintype.card_prod, Fintype.card_bool, Fintype.card_fin, mul_comm] using card
+/-- Each local edge is incident to exactly one seam and one side of it. -/
+def seamSideEquiv : C.Seam × Bool ≃ Face × Fin 3 := by
+  refine Equiv.ofBijective (fun p =>
+    let s := C.seamSide p.1 p.2
+    (s.face, s.edge)) ⟨?_, ?_⟩
   · intro a b equal
     apply C.seamSide_injective
     exact congrArg (fun p : Face × Fin 3 => EdgeRef.mk p.1 p.2) equal
   · rintro ⟨f, j⟩
     obtain ⟨s, b, h⟩ := P.exists_seam_at_edge ⟨f, j⟩
     exact ⟨(s, b), congrArg (fun a : EdgeRef Face => (a.face, a.edge)) h⟩
+
+include P in
+/-- Each seam contributes two local edges, and each triangle contributes three. -/
+theorem two_mul_card_seam_eq_three_mul_card_face :
+    2 * Fintype.card C.Seam = 3 * Fintype.card Face := by
+  have card := Fintype.card_congr P.seamSideEquiv
+  simpa only [Fintype.card_prod, Fintype.card_bool, Fintype.card_fin, mul_comm] using card
 
 include P in
 /-- The actual sum of intrinsic angular defects is the area of the unit sphere. -/
@@ -57,7 +59,7 @@ theorem sum_angular_defect_eq_four_pi :
   exact reindex.trans (F.sum_gaussianArea P)
 
 include P in
-/-- The vertex, seam, and triangle counts of a closed convex triangulation satisfy Euler's formula. -/
+/-- Euler's formula for the vertex, seam, and triangle counts of a closed convex triangulation. -/
 theorem triangulation_euler :
     (Fintype.card (C.Vertex Set.univ) : ℤ) - Fintype.card C.Seam + Fintype.card Face = 2 := by
   have area := P.sum_angular_defect_eq_four_pi

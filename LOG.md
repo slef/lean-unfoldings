@@ -2,6 +2,15 @@
 
 ## Session Log
 
+### 2026-11-20 — count face components by original cut cycles
+
+- Represented finite edge cycles in coordinates, with extension by zero
+  an equivalence onto the cycles supported on a selected edge set.
+- Proved that on a convex triangulated sphere the primal cycles over
+  the field of two elements are exactly the boundaries of triangle chains.
+  Derived the count of same-label triangle components from the cycle rank
+  of the graph of differently labeled original seams.
+
 ### 2026-11-20 — verify the finite normal-mesh key counts
 
 - Identified the sorted barycentric keys with the orbits of positive face

@@ -2834,6 +2834,7 @@ public import Unfoldings.Geometry.MinorArcSupportIntersections
 public import Unfoldings.Polyhedron.UpperRoofNormalCone
 public import Unfoldings.Polyhedron.GaussianVertexAngles
 public import Unfoldings.Polyhedron.TriangulationEuler
+public import Unfoldings.Polyhedron.TriangulationDuality
 public import Unfoldings.Geometry.HingeCircleSpeed
 public import Unfoldings.Geometry.HingeCircleAngleDerivative
 public import Unfoldings.Geometry.CircleLineContact
@@ -2848,6 +2849,8 @@ public import Unfoldings.Geometry.SavedOpeningTraceGap
 public import Unfoldings.Geometry.SharpDevelopmentMargin
 public import Unfoldings.Geometry.SharpDevelopmentThreshold
 public import Unfoldings.Combinatorics.GraphCycleRank
+public import Unfoldings.Combinatorics.CoordinateCycles
+public import Unfoldings.Combinatorics.DualComponentCount
 public import Unfoldings.Geometry.MinorArcBoundaryCount
 public import Unfoldings.Geometry.MinorArcArclength
 public import Unfoldings.Geometry.SphericalArcEndpointClip
