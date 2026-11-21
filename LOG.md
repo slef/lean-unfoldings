@@ -2,6 +2,17 @@
 
 ## Session Log
 
+### 2026-11-21 — certify the frequency-400 perimeter and realize the reference seam
+
+- Checked all 278 interior perimeter blocks and the seam and pentagon
+  blocks with kernel reduction. Reconstructed the exact key lists and
+  proved the weighted model perimeter is less than 8336.
+- Proved that macroface symmetries induce fine-face and site permutations.
+  Realized the six cyclic triangles at each reference macroedge site.
+- Proved the rotation recurrence around the model original vertex and
+  the identity between actual network length and half the sum of actual
+  site perimeters.
+
 ### 2026-11-20 — realize complete interior stars and transfer corner checks
 
 - Proved that the six cyclic model triangles exhaust the actual

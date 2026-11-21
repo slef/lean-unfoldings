@@ -2833,6 +2833,7 @@ public import Unfoldings.FewestNets.MeshArcLength
 public import Unfoldings.FewestNets.MeshFaceGeometry
 public import Unfoldings.FewestNets.FiniteMeshExample
 public import Unfoldings.FewestNets.FiniteMeshPerimeterBounds
+public import Unfoldings.FewestNets.FiniteMeshPerimeter400Bounds
 public import Unfoldings.FewestNets.CheckedPlane
 public import Unfoldings.FewestNets.MeshChartFrame
 public import Unfoldings.FewestNets.MeshChartSupport
@@ -2908,6 +2909,15 @@ public import Unfoldings.FewestNets.IcosahedronRealizedStar
 public import Unfoldings.FewestNets.IcosahedronRealizedInteriorStar
 public import Unfoldings.FewestNets.IcosahedronRealizedCorner
 public import Unfoldings.FewestNets.IcosahedronActualCornerExample
+public import Unfoldings.FewestNets.IcosahedronMacroSymmetry
+public import Unfoldings.FewestNets.IcosahedronFineSymmetry
+public import Unfoldings.FewestNets.MeshSeamReflection
+public import Unfoldings.FewestNets.IcosahedronSeamFrame
+public import Unfoldings.FewestNets.IcosahedronSeamStarGrid
+public import Unfoldings.FewestNets.IcosahedronReferenceSeamStar
+public import Unfoldings.FewestNets.IcosahedronRealizedSeamStar
+public import Unfoldings.FewestNets.MeshPentagonRotation
+public import Unfoldings.FewestNets.IcosahedronPerimeterCounting
 public import Unfoldings.FewestNets.IcosahedronDualEdges
 public import Unfoldings.FewestNets.MeshStarFacetNormal
 public import Unfoldings.FewestNets.IcosahedronInteriorStar
