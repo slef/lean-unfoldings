@@ -2,6 +2,16 @@
 
 ## Session Log
 
+### 2026-11-20 — count the actual dual arcs
+
+- Proved that fine triangle labels are determined by their geometric
+  corners and that outward normals distinguish the fine facets.
+- Proved that every edge lies in two faces and every face has three
+  incident edges. Counted the grid faces by a bijection with square grid
+  indices.
+- Counted exactly 300,000 and 4,800,000 indexed dual arcs, respectively,
+  and verified every arc has positive length.
+
 ### 2026-11-20 — identify the exact dual Voronoi arcs
 
 - Proved that every fine primal edge has an incident triangle across it,

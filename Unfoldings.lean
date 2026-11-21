@@ -2810,6 +2810,7 @@ public import Unfoldings.Geometry.RadialTriangleGauge
 public import Unfoldings.Geometry.RadialTriangleReindex
 public import Unfoldings.Geometry.RadialCommonEdge
 public import Unfoldings.Geometry.MinorArcCone
+public import Unfoldings.Geometry.MinorArcEndpoints
 public import Unfoldings.Geometry.SupportingHingeNormalCone
 public import Unfoldings.Geometry.RadialChordBounds
 public import Unfoldings.Geometry.RadialEquilateralAcute
@@ -2873,6 +2874,14 @@ public import Unfoldings.FewestNets.IcosahedronVoronoiTies
 public import Unfoldings.FewestNets.IcosahedronSharedEdges
 public import Unfoldings.FewestNets.IcosahedronDualArc
 public import Unfoldings.FewestNets.IcosahedronVoronoiWalls
+public import Unfoldings.FewestNets.IcosahedronFaceCount
+public import Unfoldings.FewestNets.IcosahedronMeshCornerIdentity
+public import Unfoldings.FewestNets.IcosahedronMeshFaceIdentity
+public import Unfoldings.FewestNets.IcosahedronNormalIdentity
+public import Unfoldings.FewestNets.IcosahedronEdgeIncidence
+public import Unfoldings.FewestNets.IcosahedronFaceIncidence
+public import Unfoldings.FewestNets.IcosahedronEdgeCount
+public import Unfoldings.FewestNets.IcosahedronDualEdges
 public import Unfoldings.FewestNets.MeshHingeSupport
 public import Unfoldings.FewestNets.VisualCertificate
 public import Unfoldings.Convex.FiniteNormalFan

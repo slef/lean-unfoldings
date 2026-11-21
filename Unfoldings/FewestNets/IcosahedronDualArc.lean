@@ -15,7 +15,7 @@ namespace Unfoldings.FewestNets.Icosahedron
 
 open NormedSpace
 
-private theorem range_eq_of_subset {v w : Fin 3 → Space}
+theorem fin_three_range_eq_of_subset {v w : Fin 3 → Space}
     (inj : Function.Injective v) (sub : Set.range v ⊆ Set.range w) :
     Set.range v = Set.range w := by
   choose label same using (fun k => sub (Set.mem_range_self k))
@@ -30,7 +30,7 @@ private theorem range_eq_of_subset {v w : Fin 3 → Space}
 private theorem meshSite_of_corner {q : ℕ} (t : MeshFace q) (k : Fin 3) :
     inscribedCorners t k ∈ meshSites q := ⟨(t, k), rfl⟩
 
-private theorem bound_facetNormal_of_corner {q : ℕ} (qbig : 100 ≤ q) (hq : 0 < q)
+theorem bound_facetNormal_of_corner {q : ℕ} (qbig : 100 ≤ q) (hq : 0 < q)
     (t : MeshFace q) (a : meshSites q) (corner : (a : Space) ∈ Set.range (inscribedCorners t))
     (z : meshSites q) : inner ℝ (facetNormal hq t) (z : Space) ≤
       inner ℝ (facetNormal hq t) (a : Space) := by
@@ -82,7 +82,8 @@ theorem tie_iff_mem_dualArc {q : ℕ} (qbig : 100 ≤ q) (hq : 0 < q) (t s : Mes
         · rw [hj]
           exact at_right_b
         · exact present
-      exact hd ((range_eq_of_subset (linearIndependent_inscribedCorners hq t).injective sub).ge
+      exact hd ((fin_three_range_eq_of_subset
+        (linearIndependent_inscribedCorners hq t).injective sub).ge
         (Set.mem_range_self d))
     have independent := (permuted_triangle_corners (linearIndependent_inscribedCorners hq t)
       ij ik jk).1
