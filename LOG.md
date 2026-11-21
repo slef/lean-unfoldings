@@ -2,6 +2,15 @@
 
 ## Session Log
 
+### 2026-11-20 — cover Gaussian frontiers by original seam arcs
+
+- Expressed the gnomonic normal polygon by the actual incident-germ
+  halfspaces. A tight germ test exposes the intersection of its two endpoint
+  normal cells.
+- Proved every frontier point belongs to the dual arc of an original seam
+  incident to the vertex. Transferred the cover to the stereographic chart
+  used for the two-side bound.
+
 ### 2026-11-20 — identify Gaussian cells and dual seam arcs
 
 - Identified the actual Gaussian cell in gnomonic coordinates as the convex

@@ -2860,3 +2860,6 @@ public import Unfoldings.Roof.SphericalPrimalCell
 public import Unfoldings.Roof.SeamNormalCell
 public import Unfoldings.Polyhedron.GaussianIncidentHull
 public import Unfoldings.Polyhedron.GaussianSeam
+public import Unfoldings.Roof.GermNormalSides
+public import Unfoldings.Polyhedron.GaussianBoundaryCover
+public import Unfoldings.Polyhedron.GaussianChartBoundary
