@@ -2,6 +2,14 @@
 
 ## Session Log
 
+### 2026-11-21 — verify the actual frequency-400 network and count
+
+- Checked all frequency-400 model corner altitudes and incident angles
+  and transferred the checks to the actual mesh.
+- Verified geometric separation and total arc length less than 8336.
+  The second partition count now uses that actual network and requires
+  only the component development hypothesis beyond the input conditions.
+
 ### 2026-11-21 — identify the actual Voronoi polygons
 
 - Proved that height-one gnomonic projection sends each closed cell to

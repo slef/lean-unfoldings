@@ -2932,6 +2932,7 @@ public import Unfoldings.FewestNets.IcosahedronLabeledStars
 public import Unfoldings.FewestNets.IcosahedronRealizedPerimeter
 public import Unfoldings.FewestNets.IcosahedronNetworkPerimeter
 public import Unfoldings.FewestNets.IcosahedronEndpointBounds
+public import Unfoldings.FewestNets.IcosahedronFrequency400Endpoint
 public import Unfoldings.FewestNets.IcosahedronRealizedCellSupport
 public import Unfoldings.FewestNets.IcosahedronRealizedCellTilt
 public import Unfoldings.FewestNets.IcosahedronDualEdges
