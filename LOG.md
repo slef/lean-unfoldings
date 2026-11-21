@@ -2,6 +2,17 @@
 
 ## Session Log
 
+### 2026-11-21 — verify the first frequency-400 routing geometry
+
+- Checked the first maximum-radius record's whole geometric certificate
+  and instantiated the adaptive forest for its actual rotated roof.
+- Proved the exact developed chord margins using strict angular windows
+  and their half-turn limit. Both kinds of actual adaptive parent links
+  have radial progress with the certified margin.
+- Connected a bank ray on the old edge skeleton with a literal old
+  seam direction. An off-edge closing point lies in an old face.
+  Transferred the radial contour budget to the actual cyclic roll.
+
 ### 2026-11-21 — construct the first actual adaptive forest
 
 - Combined the finite body, inradius, radius ratio, visual and exterior

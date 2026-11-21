@@ -1075,6 +1075,7 @@ public import Unfoldings.Roof.CompletionRadialMesh
 public import Unfoldings.Roof.CompletionRefinement
 public import Unfoldings.Roof.CompletionRefinementCurvature
 public import Unfoldings.Roof.CompletionSharpRadialBudget
+public import Unfoldings.Roof.CompletionRegularCorners
 public import Unfoldings.Roof.CompletionSectorQuadrants
 public import Unfoldings.Roof.CompletionSkirtSeeds
 public import Unfoldings.Roof.ExtendedComponentWedges
@@ -2799,6 +2800,7 @@ public import Unfoldings.Roof.AdaptivePotentialStep
 public import Unfoldings.Roof.AdaptivePotentialForest
 public import Unfoldings.Roof.CompatibleAdaptiveRouting
 public import Unfoldings.Geometry.RadialBlockLimit
+public import Unfoldings.Geometry.SharpRadialD4
 public import Unfoldings.Geometry.SphericalEndpointLocality
 public import Unfoldings.Geometry.SphericalAngleChord
 public import Unfoldings.Geometry.AcuteSphericalHinge
@@ -2953,6 +2955,7 @@ public import Unfoldings.FewestNets.IcosahedronRotatedUpperRoof
 public import Unfoldings.FewestNets.FiniteProgressCone100Actual
 public import Unfoldings.FewestNets.FiniteProgressRotated100
 public import Unfoldings.FewestNets.CheckedRoutingCell
+public import Unfoldings.FewestNets.FiniteRouting400First
 public import Unfoldings.FewestNets.IcosahedronDualEdges
 public import Unfoldings.FewestNets.MeshStarFacetNormal
 public import Unfoldings.FewestNets.IcosahedronInteriorStar
@@ -2977,6 +2980,7 @@ public import Unfoldings.Geometry.FiniteArcCrofton
 public import Unfoldings.Roof.CompatibleAdaptivePaths
 public import Unfoldings.Roof.ScaledAdaptiveRouting
 public import Unfoldings.Roof.AdaptiveComponentCutDisk
+public import Unfoldings.Roof.AdaptiveParentRadial
 public import Unfoldings.Geometry.ArcFamilyCrofton
 public import Unfoldings.FewestNets.CrossingChargeBound
 public import Unfoldings.Geometry.SphericalHullCenter

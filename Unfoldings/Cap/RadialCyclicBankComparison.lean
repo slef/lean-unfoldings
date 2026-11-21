@@ -24,8 +24,7 @@ include jordan contains avoids in
 open Classical in
 /-- The actual endpoint copies determine an oriented rolling span and its real heading bound.
 Traversal direction and the internal bank interval are derived from radial closure geometry. -/
-theorem exists_radial_bank_rolling_comparison
-    (inside : P.threeSegmentClosure q c ⊆ interior K.footprint)
+theorem exists_radial_bank_rolling_comparison_of_geometric_budget
     (radial : P.RadialFrom q 0) (initial : 0 < dist q (P.vertex 0))
     (progress : dist q (P.vertex 0) < dist q (P.vertex (Fin.last n)))
     (height : Plane →ₗ[ℝ] ℝ) (supported : ∀ z ∈ Set.range P.path, 0 ≤ height (z - q))
@@ -33,8 +32,10 @@ theorem exists_radial_bank_rolling_comparison
     (outward : 0 < inner ℝ (P.vertex (Fin.last n) - q) (c - P.vertex (Fin.last n)))
     (first_occurs : ∃ i, K.jordanBankPosition jordan contains avoids i = P.vertex 0)
     (last_occurs : ∃ i, K.jordanBankPosition jordan contains avoids i = P.vertex (Fin.last n))
-    {ε φ : ℝ} (error_nonnegative : 0 ≤ ε) (error : K.RelativeCornerAngleError ε)
-    (nonnegative : 0 ≤ φ) (small : φ < Real.pi / 2) (tilt : K.TiltBound φ) :
+    {B : ℝ}
+    (budget : |∑ i ∈ K.jordanGeometricBankIndices jordan contains avoids (Set.range P.path)
+        (radialClosingCorners q (P.vertex 0) (P.vertex (Fin.last n)) c),
+      K.jordanContourTurnError jordan contains avoids i| ≤ B) :
     ∃ first last : Fin ((K.jordanContour jordan contains avoids).length + 1),
       ({K.jordanBankPosition jordan contains avoids first,
         K.jordanBankPosition jordan contains avoids last} : Finset Plane) =
@@ -43,7 +44,7 @@ theorem exists_radial_bank_rolling_comparison
       ¬ K.jordanContourBankOn jordan contains avoids (Set.range P.path) last ∧
       |K.jordanCyclicRollHeadingError jordan contains avoids first
         ⟨((finCycle first).symm last).val - 1, by omega⟩| ≤
-          C.totalInteriorAngularDefect Set.univ + 6 * φ + 8 * Real.pi * ε := by
+          B := by
   let bank := Set.range P.path
   let rest := P.radialClosingArc q c
   let pos := K.jordanBankPosition jordan contains avoids
@@ -70,7 +71,7 @@ theorem exists_radial_bank_rolling_comparison
       (off_last : ¬ K.jordanContourBankOn jordan contains avoids bank last) :
       |K.jordanCyclicRollHeadingError jordan contains avoids first
         ⟨((finCycle first).symm last).val - 1, by omega⟩| ≤
-          C.totalInteriorAngularDefect Set.univ + 6 * φ + 8 * Real.pi * ε := by
+          B := by
     have span_contacts : bank ∩ rest ⊆ {pos first, pos last} := by
       intro z member
       have endpoint := contacts.subset member
@@ -89,10 +90,7 @@ theorem exists_radial_bank_rolling_comparison
       {P.vertex 0, P.vertex (Fin.last n)}
       (fun z member => P.radialClosingCorners_on_bank q c radial initial height supported outside
         member)]
-    exact K.abs_radial_bank_turn_error_le P q c jordan contains avoids inside initial progress
-      height
-      (supported _ ⟨0, P.path.source⟩) (supported _ ⟨1, P.path.target⟩) outside outward
-      error_nonnegative error nonnegative small tilt
+    exact budget
   by_cases on_a : K.jordanContourBankOn jordan contains avoids bank a
   · have off_b := opposite.mp on_a
     have ends_eq : ({pos a, pos b} : Finset Plane) = {P.vertex 0, P.vertex (Fin.last n)} := by
@@ -104,5 +102,35 @@ theorem exists_radial_bank_rolling_comparison
     have ends_eq : ({pos b, pos a} : Finset Plane) = {P.vertex 0, P.vertex (Fin.last n)} := by
       rw [at_a, at_b, Finset.pair_comm]
     exact ⟨b, a, ends_eq, on_b, on_a, bound_for b a ends_eq on_b on_a⟩
+
+include jordan contains avoids in
+open Classical in
+/-- The actual endpoint copies determine an oriented rolling span and its real heading bound.
+Traversal direction and the internal bank interval are derived from radial closure geometry. -/
+theorem exists_radial_bank_rolling_comparison
+    (inside : P.threeSegmentClosure q c ⊆ interior K.footprint)
+    (radial : P.RadialFrom q 0) (initial : 0 < dist q (P.vertex 0))
+    (progress : dist q (P.vertex 0) < dist q (P.vertex (Fin.last n)))
+    (height : Plane →ₗ[ℝ] ℝ) (supported : ∀ z ∈ Set.range P.path, 0 ≤ height (z - q))
+    (outside : height (c - q) < 0)
+    (outward : 0 < inner ℝ (P.vertex (Fin.last n) - q) (c - P.vertex (Fin.last n)))
+    (first_occurs : ∃ i, K.jordanBankPosition jordan contains avoids i = P.vertex 0)
+    (last_occurs : ∃ i, K.jordanBankPosition jordan contains avoids i = P.vertex (Fin.last n))
+    {ε φ : ℝ} (error_nonnegative : 0 ≤ ε) (error : K.RelativeCornerAngleError ε)
+    (nonnegative : 0 ≤ φ) (small : φ < Real.pi / 2) (tilt : K.TiltBound φ) :
+    ∃ first last : Fin ((K.jordanContour jordan contains avoids).length + 1),
+      ({K.jordanBankPosition jordan contains avoids first,
+        K.jordanBankPosition jordan contains avoids last} : Finset Plane) =
+          {P.vertex 0, P.vertex (Fin.last n)} ∧
+      K.jordanContourBankOn jordan contains avoids (Set.range P.path) first ∧
+      ¬ K.jordanContourBankOn jordan contains avoids (Set.range P.path) last ∧
+      |K.jordanCyclicRollHeadingError jordan contains avoids first
+        ⟨((finCycle first).symm last).val - 1, by omega⟩| ≤
+          C.totalInteriorAngularDefect Set.univ + 6 * φ + 8 * Real.pi * ε := by
+  apply K.exists_radial_bank_rolling_comparison_of_geometric_budget P q c jordan contains avoids
+    radial initial progress height supported outside outward first_occurs last_occurs
+  exact K.abs_radial_bank_turn_error_le P q c jordan contains avoids inside initial progress height
+    (supported _ ⟨0, P.path.source⟩) (supported _ ⟨1, P.path.target⟩) outside outward
+    error_nonnegative error nonnegative small tilt
 
 end Unfoldings.ConvexCap
