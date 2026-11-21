@@ -2,6 +2,18 @@
 
 ## Session Log
 
+### 2026-11-20 — check the first finite progress-body record
+
+- Proved Taylor enclosures for sine and cosine and a small-argument
+  inverse-sine enclosure. Checked the first record's cotangent inequality
+  and all three sharp development inequalities by kernel reduction.
+- Verified the gnomonic frame and bisector formulas. Checked the complete
+  lower visual-angle covers of all six candidate sides and the upper
+  lens bound for every distinct body pair on the first supporting line.
+- Proved the strict convex hinge inequality for adjacent acute spherical
+  chord triangles. Verified strict radial progress after trimming a block
+  that starts at its comparison source.
+
 ### 2026-11-20 — prove the sharp straight-section turn bound
 
 - Computed the hinge-angle derivative in the directional slope and used

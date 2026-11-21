@@ -1553,6 +1553,7 @@ public import Unfoldings.Geometry.ChainEndTrimTurns
 public import Unfoldings.Geometry.GenericEndTrimming
 
 public import Unfoldings.Geometry.StrictRadialTrimming
+public import Unfoldings.Geometry.SourceStartRadialTrim
 public import Unfoldings.Geometry.SegmentExtendedAvoidance
 public import Unfoldings.Geometry.GenericBankClosure
 
@@ -2793,6 +2794,8 @@ public import Unfoldings.Roof.CompatibleAdaptiveRouting
 public import Unfoldings.Geometry.RadialBlockLimit
 public import Unfoldings.Geometry.SphericalEndpointLocality
 public import Unfoldings.Geometry.SphericalAngleChord
+public import Unfoldings.Geometry.AcuteSphericalHinge
+public import Unfoldings.Geometry.PiecewiseAffineConvex
 public import Unfoldings.Geometry.SphericalPathAngle
 public import Unfoldings.Geometry.LinearAngleDistortion
 public import Unfoldings.FewestNets.ComponentCountBudget
@@ -2808,6 +2811,20 @@ public import Unfoldings.FewestNets.MeshStarLengths
 public import Unfoldings.FewestNets.MeshArcLength
 public import Unfoldings.FewestNets.MeshFaceGeometry
 public import Unfoldings.FewestNets.FiniteMeshExample
+public import Unfoldings.FewestNets.CheckedPlane
+public import Unfoldings.FewestNets.MeshChartFrame
+public import Unfoldings.FewestNets.MeshChartSupport
+public import Unfoldings.FewestNets.CheckedMeshChart
+public import Unfoldings.FewestNets.TaylorEnclosures
+public import Unfoldings.FewestNets.CheckedTrigonometry
+public import Unfoldings.FewestNets.CheckedInverseTrig
+public import Unfoldings.FewestNets.CheckedDevelopment
+public import Unfoldings.FewestNets.FiniteDevelopmentExample
+public import Unfoldings.FewestNets.CheckedVisualSide
+public import Unfoldings.FewestNets.CheckedVisualLens
+public import Unfoldings.FewestNets.FiniteVisualExample
+public import Unfoldings.FewestNets.FiniteVisualUpperExample
+public import Unfoldings.FewestNets.MeshHingeSupport
 public import Unfoldings.FewestNets.VisualCertificate
 public import Unfoldings.Convex.FiniteNormalFan
 public import Unfoldings.Polyhedron.GaussianAreaPartition
