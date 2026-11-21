@@ -2807,6 +2807,8 @@ public import Unfoldings.Geometry.TriangleGridEdges
 public import Unfoldings.Geometry.TriangleGridBarycentric
 public import Unfoldings.Geometry.IntegerCoordinateWeights
 public import Unfoldings.Geometry.RadialTriangleGauge
+public import Unfoldings.Geometry.RadialTriangleReindex
+public import Unfoldings.Geometry.RadialCommonEdge
 public import Unfoldings.Geometry.RadialChordBounds
 public import Unfoldings.Geometry.RadialEquilateralAcute
 public import Unfoldings.Geometry.PiecewiseAffineConvex
@@ -2858,6 +2860,13 @@ public import Unfoldings.FewestNets.IcosahedronGridAverages
 public import Unfoldings.FewestNets.IcosahedronGridIndependence
 public import Unfoldings.FewestNets.IcosahedronFineIntersections
 public import Unfoldings.FewestNets.IcosahedronRadialIntersections
+public import Unfoldings.FewestNets.IcosahedronMeshGauge
+public import Unfoldings.FewestNets.IcosahedronMeshHinges
+public import Unfoldings.FewestNets.IcosahedronConvexMesh
+public import Unfoldings.FewestNets.IcosahedronMeshFrontier
+public import Unfoldings.FewestNets.IcosahedronMeshSites
+public import Unfoldings.FewestNets.IcosahedronExactFacets
+public import Unfoldings.FewestNets.IcosahedronFacetNormals
 public import Unfoldings.FewestNets.MeshHingeSupport
 public import Unfoldings.FewestNets.VisualCertificate
 public import Unfoldings.Convex.FiniteNormalFan

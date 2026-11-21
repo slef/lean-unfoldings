@@ -2,6 +2,16 @@
 
 ## Session Log
 
+### 2026-11-20 — prove the fine mesh is an inscribed convex hull
+
+- Derived the strict adjacent hinge comparisons from shared cone edges
+  and acuteness, and glued the cone gauges into a convex function.
+- Identified the hull and its boundary with the gauge sublevel and level
+  sets. Its frontier is exactly the union of the normalized fine triangles.
+- Proved that each fine plane exposes precisely its triangle, with strict
+  support at all other unit sites. The distinct sites meet every open
+  hemisphere.
+
 ### 2026-11-20 — identify exact intersections of the fine mesh triangles
 
 - Extended the grid's integer barycentric data to the twelve original
