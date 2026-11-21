@@ -2787,6 +2787,7 @@ public import Unfoldings.Roof.CompatibleAdaptiveRouting
 public import Unfoldings.Geometry.RadialBlockLimit
 public import Unfoldings.Geometry.SphericalEndpointLocality
 public import Unfoldings.FewestNets.ComponentCountBudget
+public import Unfoldings.FewestNets.FiniteMeshKeys
 public import Unfoldings.FewestNets.VisualCertificate
 public import Unfoldings.Convex.FiniteNormalFan
 public import Unfoldings.Polyhedron.GaussianAreaPartition

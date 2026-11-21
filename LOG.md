@@ -2,6 +2,14 @@
 
 ## Session Log
 
+### 2026-11-20 — verify the finite normal-mesh key counts
+
+- Identified the sorted barycentric keys with the orbits of positive face
+  triples and seam pairs. Proved the symmetry weights are the orbit sizes.
+- Kernel-checked the canonical per-face and per-seam counts and their weighted
+  totals for both subdivisions. The geometric certificate inequalities are
+  separate from these combinatorial counts.
+
 ### 2026-11-20 — prove exact Gaussian frontiers and disjoint sides
 
 - Proved the converse frontier inclusion for strictly centered stereographic
