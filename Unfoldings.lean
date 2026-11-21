@@ -2801,6 +2801,8 @@ public import Unfoldings.Geometry.RadialLinearCoverConvex
 public import Unfoldings.Geometry.RadialTriangleHull
 public import Unfoldings.Geometry.RadialConeCoordinates
 public import Unfoldings.Geometry.RadialHullSupport
+public import Unfoldings.Geometry.TriangleGrid
+public import Unfoldings.Geometry.TriangleGridCover
 public import Unfoldings.Geometry.PiecewiseAffineConvex
 public import Unfoldings.Geometry.SphericalPathAngle
 public import Unfoldings.Geometry.LinearAngleDistortion
@@ -2834,6 +2836,12 @@ public import Unfoldings.FewestNets.FiniteVisualSideBounds
 public import Unfoldings.FewestNets.CheckedExteriorSide
 public import Unfoldings.FewestNets.FiniteExteriorExample
 public import Unfoldings.FewestNets.MeshCornerGeometry
+public import Unfoldings.FewestNets.IcosahedronCoordinates
+public import Unfoldings.FewestNets.IcosahedronIncidence
+public import Unfoldings.FewestNets.IcosahedronHull
+public import Unfoldings.FewestNets.IcosahedronFacets
+public import Unfoldings.FewestNets.IcosahedronFaceIsometry
+public import Unfoldings.FewestNets.IcosahedronSubdivision
 public import Unfoldings.FewestNets.MeshHingeSupport
 public import Unfoldings.FewestNets.VisualCertificate
 public import Unfoldings.Convex.FiniteNormalFan

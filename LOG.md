@@ -2,6 +2,17 @@
 
 ## Session Log
 
+### 2026-11-20 — construct the radial icosahedral mesh cover
+
+- Verified the exact golden-ratio corner data and the twenty supporting
+  triangles of the regular icosahedron. Proved that those triangles cover
+  the frontier and that the origin lies in the interior.
+- Identified every macroface isometrically with the normalized model face.
+  Proved that the regular triangular grid covers each closed face, including
+  the integer points on its boundary.
+- Proved that the cones of the normalized fine triangles cover all directions
+  for every positive subdivision frequency.
+
 ### 2026-11-20 — certify all six side records of the first cell
 
 - Reused certified fixed-point side coordinates to replay the upper
