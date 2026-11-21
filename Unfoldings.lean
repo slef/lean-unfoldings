@@ -2847,6 +2847,9 @@ public import Unfoldings.Polyhedron.GaussianNondegenerate
 public import Unfoldings.Polyhedron.FigureSupportChordAngle
 public import Unfoldings.Polyhedron.GaussianCornerAngle
 public import Unfoldings.Polyhedron.GaussianBoundaryCycle
+public import Unfoldings.Polyhedron.GaussianChartArcs
+public import Unfoldings.Polyhedron.GaussianChartTurns
+public import Unfoldings.Polyhedron.GaussianChartOrientation
 public import Unfoldings.Geometry.HingeCircleSpeed
 public import Unfoldings.Geometry.HingeCircleAngleDerivative
 public import Unfoldings.Geometry.CircleLineContact
@@ -2865,6 +2868,9 @@ public import Unfoldings.Combinatorics.CoordinateCycles
 public import Unfoldings.Combinatorics.DualComponentCount
 public import Unfoldings.Combinatorics.ActiveGraphComponents
 public import Unfoldings.Combinatorics.CyclicRunCompression
+public import Unfoldings.Combinatorics.CyclicAdjacentRemoval
+public import Unfoldings.Geometry.StrictConvexChordOrder
+public import Unfoldings.Geometry.ConvexArcChordOrder
 public import Unfoldings.Geometry.PlanarExposedRays
 public import Unfoldings.Geometry.PositiveSpanAngle
 public import Unfoldings.Geometry.SegmentCoverFirstEdge

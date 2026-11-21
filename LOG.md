@@ -2,6 +2,14 @@
 
 ## Session Log
 
+### 2026-11-20 — verify the stereographic Gaussian chord turns
+
+- Projected the actual genuine arcs to connected arcs of the strictly
+  convex chart frontier, with exact endpoint incidence.
+- Proved consistency of chord orientation using the connected path away
+  from two consecutive vertices. The actual unsigned chord turns retain
+  the lower bound from the original triangle angles.
+
 ### 2026-11-20 — verify the genuine Gaussian corner angles
 
 - Used the vertex figure to find an original triangle sector inside any
