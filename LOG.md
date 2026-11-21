@@ -2,6 +2,15 @@
 
 ## Session Log
 
+### 2026-11-20 — prove the fine icosahedral triangles are acute
+
+- Derived both normalized chord bounds from the height of the original
+  plane and the unnormalized distance.
+- Proved that every angle in every fine chord triangle is acute for
+  subdivision frequency at least 100, including both endpoint meshes.
+- Identified each pairwise macroface intersection as the convex hull of its
+  common corners.
+
 ### 2026-11-20 — construct the radial icosahedral mesh cover
 
 - Verified the exact golden-ratio corner data and the twenty supporting
