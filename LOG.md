@@ -2,6 +2,13 @@
 
 ## Session Log
 
+### 2026-11-21 — prove the 81° Fewest Nets bound
+
+- Checked geometric coverage for all 884 frequency-100 routing records.
+- The theorem partitions the input into fewer than 11,300,000 original-edge
+  nets and derives its supporting normals directly from convexity.
+- Added a bounded certificate build with a dedicated axiom audit.
+
 ### 2026-11-21 — connect verified routing records to the original polyhedron
 
 - A checked record constructs a finite model of the actual clipped roof

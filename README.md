@@ -93,6 +93,23 @@ For a specific lemma, use the [module index](docs/REFERENCE.md#module-index).
 For development priorities, use the [feature checklist](PLAN.md); the
 [session log](LOG.md) records how the proofs were built.
 
+## Fewest Nets
+
+The [81° theorem](Unfoldings/FewestNets/PaperFrequency100.lean) partitions the
+original triangles of a convex polyhedron into fewer than 11,300,000
+original-edge nets when every input angle is at most 81°. Every triangle
+belongs to exactly one piece.
+
+After the standard build, check the 884 exact routing certificates and
+audit the theorem's axioms with Python.
+
+```sh
+python scripts/check-routing-tables.py 100
+```
+
+The script checks the certificate modules in bounded batches. Use
+`--workers` to set the number of concurrent builds.
+
 ## Scope and next steps
 
 The regular-source theorem and the finite embedded tree structure of its cut
@@ -144,7 +161,7 @@ Remaining work includes:
 
 - Sources at genuine cone vertices, which need sector-valued source frames.
 - Automatic refinement construction for supplied polygonal arcs.
-- Star unfolding and the downstream tools needed for the Fewest Nets paper.
+- Star unfolding.
 
 The [graph and cellulation layer](Unfoldings/Topology/README.md) is intended for
 eventual Mathlib upstreaming. The current source-unfolding theorem does not
