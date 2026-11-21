@@ -2,6 +2,14 @@
 
 ## Session Log
 
+### 2026-11-21 — identify the actual Voronoi polygons
+
+- Proved that height-one gnomonic projection sends each closed cell to
+  its model polygon and sends its cyclic sides to the model segments.
+- Derived the complete cell from the model side inequalities and
+  transferred physical vertex radius estimates to cell-wide tilt bounds.
+- Verified unit normals for the first saved exterior-margin certificate.
+
 ### 2026-11-21 — transfer the perimeter bound to the actual frequency-100 mesh
 
 - Proved that the cyclic model sides count the actual arcs at each site

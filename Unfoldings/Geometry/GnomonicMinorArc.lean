@@ -77,6 +77,46 @@ private theorem normalize_image_segment_smul_eq {u v : Space} {s t : ℝ}
   simpa only [smul_smul, inv_mul_cancel₀ s_pos.ne', inv_mul_cancel₀ t_pos.ne', one_smul]
     using reverse
 
+/-- Rescaling a minor arc to an affine height-one plane yields the closed
+segment joining its rescaled endpoints. -/
+theorem image_heightOne_closedMinorArc {u v a : Space} (uu : ‖u‖ = 1) (vu : ‖v‖ = 1)
+    (up : 0 < inner ℝ u a) (vp : 0 < inner ℝ v a) :
+    (fun n : Space => (inner ℝ n a)⁻¹ • n) '' closedMinorArc u v =
+      segment ℝ ((inner ℝ u a)⁻¹ • u) ((inner ℝ v a)⁻¹ • v) := by
+  let x := (inner ℝ u a)⁻¹ • u
+  let y := (inner ℝ v a)⁻¹ • v
+  have x_height : inner ℝ x a = 1 := by
+    dsimp only [x]
+    rw [real_inner_smul_left, inv_mul_cancel₀ up.ne']
+  have y_height : inner ℝ y a = 1 := by
+    dsimp only [y]
+    rw [real_inner_smul_left, inv_mul_cancel₀ vp.ne']
+  have arc : NormedSpace.normalize '' segment ℝ x y = closedMinorArc u v :=
+    (normalize_image_segment_smul_eq (inv_pos.mpr up) (inv_pos.mpr vp)).trans
+      (normalize_image_segment_eq_closedMinorArc uu vu)
+  have recover {z : Space} (mem : z ∈ segment ℝ x y) :
+      (inner ℝ (NormedSpace.normalize z) a)⁻¹ • NormedSpace.normalize z = z := by
+    have height : inner ℝ z a = 1 := by
+      obtain ⟨s, t, _, _, sum, rfl⟩ := mem
+      have hs : inner ℝ (s • x) a = s := by
+        rw [real_inner_smul_left, x_height, mul_one]
+      have ht : inner ℝ (t • y) a = t := by
+        rw [real_inner_smul_left, y_height, mul_one]
+      rw [inner_add_left, hs, ht]
+      exact sum
+    have hs : inner ℝ (NormedSpace.normalize z) a = ‖z‖⁻¹ := by
+      rw [NormedSpace.normalize, real_inner_smul_left, height, mul_one]
+    rw [hs, inv_inv, NormedSpace.norm_smul_normalize]
+  change (fun n : Space => (inner ℝ n a)⁻¹ • n) '' closedMinorArc u v = segment ℝ x y
+  rw [← arc, Set.image_image]
+  ext p
+  constructor
+  · rintro ⟨z, h, rfl⟩
+    change (inner ℝ (NormedSpace.normalize z) a)⁻¹ • NormedSpace.normalize z ∈ segment ℝ x y
+    rwa [recover h]
+  · intro h
+    exact ⟨p, h, recover h⟩
+
 namespace Cap
 
 /-- Normalizing the upward affine lift of a straight segment preserves precisely

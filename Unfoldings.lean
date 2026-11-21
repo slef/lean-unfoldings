@@ -2850,6 +2850,7 @@ public import Unfoldings.FewestNets.FiniteVisualUpperExample
 public import Unfoldings.FewestNets.FiniteVisualSideBounds
 public import Unfoldings.FewestNets.CheckedExteriorSide
 public import Unfoldings.FewestNets.FiniteExteriorExample
+public import Unfoldings.FewestNets.FiniteExteriorUnitNormal
 public import Unfoldings.FewestNets.MeshCornerGeometry
 public import Unfoldings.FewestNets.IcosahedronCoordinates
 public import Unfoldings.FewestNets.IcosahedronIncidence
@@ -2931,6 +2932,8 @@ public import Unfoldings.FewestNets.IcosahedronLabeledStars
 public import Unfoldings.FewestNets.IcosahedronRealizedPerimeter
 public import Unfoldings.FewestNets.IcosahedronNetworkPerimeter
 public import Unfoldings.FewestNets.IcosahedronEndpointBounds
+public import Unfoldings.FewestNets.IcosahedronRealizedCellSupport
+public import Unfoldings.FewestNets.IcosahedronRealizedCellTilt
 public import Unfoldings.FewestNets.IcosahedronDualEdges
 public import Unfoldings.FewestNets.MeshStarFacetNormal
 public import Unfoldings.FewestNets.IcosahedronInteriorStar
