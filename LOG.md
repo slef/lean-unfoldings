@@ -2,6 +2,15 @@
 
 ## Session Log
 
+### 2026-11-20 — identify the exact dual Voronoi arcs
+
+- Proved that every fine primal edge has an incident triangle across it,
+  and that any Voronoi tie has a common fine triangle at its two sites.
+- Identified the normal tie cone of an edge as the nonnegative span of
+  its incident face normals. On the sphere this is their closed minor arc.
+- Constructed the finite family indexed by unordered primal site pairs
+  and proved that its minor arcs cover exactly the Voronoi walls.
+
 ### 2026-11-20 — prove the fine mesh is an inscribed convex hull
 
 - Derived the strict adjacent hinge comparisons from shared cone edges

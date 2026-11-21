@@ -13,7 +13,7 @@ namespace Unfoldings.FewestNets.Icosahedron
 open Set Filter
 open scoped BigOperators Topology
 
-private theorem eventually_meshCones_contain_base {q : ℕ} (hq : 0 < q) (y : Space) :
+theorem eventually_meshCones_contain_base {q : ℕ} (hq : 0 < q) (y : Space) :
     ∀ᶠ z in 𝓝 y, ∀ s : MeshFace q,
       z ∈ radialTriangleCone (inscribedCorners s) →
         y ∈ radialTriangleCone (inscribedCorners s) := by
