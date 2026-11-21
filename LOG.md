@@ -2,6 +2,16 @@
 
 ## Session Log
 
+### 2026-11-21 — connect verified routing records to the original polyhedron
+
+- A checked record constructs a finite model of the actual clipped roof
+  and a nonoverlapping development of each selected component.
+- The certificate's spherical tilt controls the entire slope polygon.
+  The rotated upper-roof component maps to the original same-label
+  component, preserving its original seams and net.
+- Both numerical bounds now follow from coverage of their canonical
+  routing keys by kernel-verified records.
+
 ### 2026-11-21 — prove non-overlap for quantitatively certified adaptive roofs
 
 - Fixed a compact comparison region before constructing the old mesh.

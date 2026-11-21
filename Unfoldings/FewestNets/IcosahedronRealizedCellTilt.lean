@@ -12,7 +12,8 @@ namespace Unfoldings.FewestNets.Icosahedron
 
 open InnerProductGeometry Real Cap
 
-private theorem norm_meshGnomonic_eq_tan_angle {u v : Space} (uu : ‖u‖ = 1) (vu : ‖v‖ = 1)
+/-- Gnomonic distance from the north site has radius given by the tangent of the angle. -/
+theorem norm_meshGnomonic_eq_tan_angle {u v : Space} (uu : ‖u‖ = 1) (vu : ‖v‖ = 1)
     (short : angle u v < π / 2) : ‖meshGnomonic u v‖ = tan (angle u v) := by
   let L := Cap.northFrame u
   let z := L (meshGnomonic u v)

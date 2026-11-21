@@ -2963,6 +2963,7 @@ public import Unfoldings.FewestNets.FiniteProgressRotated100
 public import Unfoldings.FewestNets.CheckedRoutingCell
 public import Unfoldings.FewestNets.CheckedRoutingChartCache
 public import Unfoldings.FewestNets.FiniteRouting400First
+public import Unfoldings.FewestNets.VerifiedRoutingEndpoints
 public import Unfoldings.FewestNets.IcosahedronDualEdges
 public import Unfoldings.FewestNets.MeshStarFacetNormal
 public import Unfoldings.FewestNets.IcosahedronInteriorStar
