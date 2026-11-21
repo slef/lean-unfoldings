@@ -20,6 +20,9 @@ variable {Face : Type u} [Fintype Face] (C : TriangleComplex.{u, v} Face)
 local notation "Flat" => C.restrictFaces (Subtype.val '' V)
 local notation "Nested" => TriangleComplex.restrictFaces (TriangleComplex.restrictFaces C U) V
 
+open Classical in
+local instance : Fintype ↑(Subtype.val '' V) := Subtype.fintype _
+
 private def nestedFace (f : Subtype.val '' V) : V :=
   ⟨⟨f.val, by obtain ⟨g, _, h⟩ := f.property; exact h ▸ g.property⟩, by
     obtain ⟨g, hg, h⟩ := f.property
@@ -29,23 +32,24 @@ private def flatFace (f : V) : Subtype.val '' V :=
   ⟨f.val.val, f.val, f.property, rfl⟩
 
 open Classical in
-/-- Flattening the two nested face subtypes preserves all literal original seam
-names, the cut disk and the nonoverlap of the placements. -/
-theorem hasOriginalEdgeNet_of_restrictFaces
-    (net : (C.restrictFaces U).HasOriginalEdgeNet V) :
-    C.HasOriginalEdgeNet (Subtype.val '' V) := by
-  let : Fintype ↑(Subtype.val '' V) := Subtype.fintype _
-  obtain ⟨retain, ⟨disk⟩, D, disjoint⟩ := net
+private def nestedSeam (s : (Flat).Seam) : (Nested).Seam :=
+  ⟨⟨s.val, (nestedFace U V ((Flat).left s).face).val.property,
+    (nestedFace U V ((Flat).right s).face).val.property⟩,
+    (nestedFace U V ((Flat).left s).face).property, (nestedFace U V ((Flat).right s).face).property⟩
+
+open Classical in
+private def flatSeam (s : (Nested).Seam) : (Flat).Seam :=
+  ⟨s.val.val, (flatFace U V ((Nested).left s).face).property,
+    (flatFace U V ((Nested).right s).face).property⟩
+
+open Classical in
+private def flatRealizationIsometry (retain : Set (Nested).Seam) :
+    (Flat).Realization (nestedSeam C U V ⁻¹' retain) ≃ᵢ (Nested).Realization retain := by
   let toNested := nestedFace U V
   let toFlat := flatFace U V
-  let sn (s : (Flat).Seam) : (Nested).Seam :=
-    ⟨⟨s.val, (toNested ((Flat).left s).face).val.property,
-      (toNested ((Flat).right s).face).val.property⟩,
-      (toNested ((Flat).left s).face).property, (toNested ((Flat).right s).face).property⟩
-  let sf (s : (Nested).Seam) : (Flat).Seam :=
-    ⟨s.val.val, (toFlat ((Nested).left s).face).property,
-      (toFlat ((Nested).right s).face).property⟩
-  let keep : Set (Flat).Seam := sn ⁻¹' retain
+  let sn := nestedSeam C U V
+  let sf := flatSeam C U V
+  let keep := sn ⁻¹' retain
   have sn_sf (s : (Nested).Seam) : sn (sf s) = s :=
     Subtype.ext (Subtype.ext rfl)
   have sn_keep (s : (Flat).Seam) (kept : s ∈ keep) : sn s ∈ retain := kept
@@ -83,12 +87,31 @@ theorem hasOriginalEdgeNet_of_restrictFaces
     rw [left, left] at last
     simp only [ENNReal.coe_one, one_mul] at first last
     exact le_antisymm first last
-  let I : (Flat).Realization keep ≃ᵢ (Nested).Realization retain :=
-    ⟨⟨forward, reverse, left, right⟩, iso⟩
+  exact ⟨⟨forward, reverse, left, right⟩, iso⟩
+
+open Classical in
+/-- Flattening whole-face restrictions preserves the uncut intrinsic realization. -/
+theorem nonempty_restrictFacesImageHomeomorph :
+    Nonempty ((C.restrictFaces (Subtype.val '' V)).Realization Set.univ ≃ₜ
+      ((C.restrictFaces U).restrictFaces V).Realization Set.univ) :=
+  ⟨(flatRealizationIsometry C U V Set.univ).toHomeomorph⟩
+
+open Classical in
+/-- Flattening the two nested face subtypes preserves all literal original seam
+names, the cut disk and the nonoverlap of the placements. -/
+theorem hasOriginalEdgeNet_of_restrictFaces
+    (net : (C.restrictFaces U).HasOriginalEdgeNet V) :
+    C.HasOriginalEdgeNet (Subtype.val '' V) := by
+  obtain ⟨retain, ⟨disk⟩, D, disjoint⟩ := net
+  let toNested := nestedFace U V
+  let toFlat := flatFace U V
+  let sn := nestedSeam C U V
+  let keep := sn ⁻¹' retain
+  let I := flatRealizationIsometry C U V retain
   let development : FacewiseDevelopment (Flat) keep :=
     { place := fun f => D.place (toNested f)
-      joined := fun s kept x => D.joined (sn s) (sn_keep s kept) x
-      opposite := fun s kept => D.opposite (sn s) (sn_keep s kept) }
+      joined := fun s kept x => D.joined (sn s) kept x
+      opposite := fun s kept => D.opposite (sn s) kept }
   refine ⟨keep, ⟨I.toHomeomorph.trans disk⟩, development, ?_⟩
   intro f g different
   exact disjoint (toNested f) (toNested g) (fun h => different (congrArg toFlat h))

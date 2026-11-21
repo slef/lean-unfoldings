@@ -2,6 +2,15 @@
 
 ## Session Log
 
+### 2026-11-20 — prove the exact Gaussian component charge
+
+- Used the connected bank boundaries of the disk components to show that
+  the original cut graph has one component on its nonisolated vertices.
+- Combined this with the original-seam cycle count to derive the charge
+  formula for convex spherical labels on the input triangulation.
+- Reindexed the incident seams by the original cyclic link, ruled out a
+  single label change, and removed the zero charges at nonextreme sites.
+
 ### 2026-11-20 — count face components by original cut cycles
 
 - Represented finite edge cycles in coordinates, with extension by zero

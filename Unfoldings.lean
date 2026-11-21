@@ -2787,6 +2787,7 @@ public import Unfoldings.Roof.CompatibleAdaptiveRouting
 public import Unfoldings.Geometry.RadialBlockLimit
 public import Unfoldings.Geometry.SphericalEndpointLocality
 public import Unfoldings.FewestNets.ComponentCountBudget
+public import Unfoldings.FewestNets.NormalComponentCharges
 public import Unfoldings.FewestNets.FiniteMeshKeys
 public import Unfoldings.FewestNets.VisualCertificate
 public import Unfoldings.Convex.FiniteNormalFan
@@ -2835,6 +2836,10 @@ public import Unfoldings.Polyhedron.UpperRoofNormalCone
 public import Unfoldings.Polyhedron.GaussianVertexAngles
 public import Unfoldings.Polyhedron.TriangulationEuler
 public import Unfoldings.Polyhedron.TriangulationDuality
+public import Unfoldings.Polyhedron.SelectedFaceBoundary
+public import Unfoldings.Polyhedron.LabeledCutConnectivity
+public import Unfoldings.Polyhedron.LabeledComponentCount
+public import Unfoldings.Polyhedron.LinkSeams
 public import Unfoldings.Geometry.HingeCircleSpeed
 public import Unfoldings.Geometry.HingeCircleAngleDerivative
 public import Unfoldings.Geometry.CircleLineContact
@@ -2851,6 +2856,7 @@ public import Unfoldings.Geometry.SharpDevelopmentThreshold
 public import Unfoldings.Combinatorics.GraphCycleRank
 public import Unfoldings.Combinatorics.CoordinateCycles
 public import Unfoldings.Combinatorics.DualComponentCount
+public import Unfoldings.Combinatorics.ActiveGraphComponents
 public import Unfoldings.Geometry.MinorArcBoundaryCount
 public import Unfoldings.Geometry.MinorArcArclength
 public import Unfoldings.Geometry.SphericalArcEndpointClip
