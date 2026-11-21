@@ -2164,6 +2164,12 @@ public import Unfoldings.Complex.SupportedRootwardReference
 public import Unfoldings.Roof.CompatibleMeshRootwardChain
 public import Unfoldings.Roof.SupportedCompletionRootwardChain
 public import Unfoldings.Geometry.SupportedVertexAvoidingClosure
+public import Unfoldings.Geometry.FullLineAvoidance
+public import Unfoldings.Geometry.HalfTurnQuadrant
+public import Unfoldings.Geometry.HalfTurnRadialClosure
+public import Unfoldings.Geometry.RegularHalfTurnClosure
+public import Unfoldings.Geometry.ShortPolarWindow
+public import Unfoldings.Geometry.TrimmedEndpointAvoidance
 public import Unfoldings.Geometry.OrderedRayClosure
 public import Unfoldings.Roof.ConstructedFiniteTerminalClosure
 public import Unfoldings.Complex.SupportedRootwardGeometry
@@ -2955,6 +2961,7 @@ public import Unfoldings.FewestNets.IcosahedronRotatedUpperRoof
 public import Unfoldings.FewestNets.FiniteProgressCone100Actual
 public import Unfoldings.FewestNets.FiniteProgressRotated100
 public import Unfoldings.FewestNets.CheckedRoutingCell
+public import Unfoldings.FewestNets.CheckedRoutingChartCache
 public import Unfoldings.FewestNets.FiniteRouting400First
 public import Unfoldings.FewestNets.IcosahedronDualEdges
 public import Unfoldings.FewestNets.MeshStarFacetNormal
@@ -2981,6 +2988,10 @@ public import Unfoldings.Roof.CompatibleAdaptivePaths
 public import Unfoldings.Roof.ScaledAdaptiveRouting
 public import Unfoldings.Roof.AdaptiveComponentCutDisk
 public import Unfoldings.Roof.AdaptiveParentRadial
+public import Unfoldings.Convex.ActiveForwardGain
+public import Unfoldings.Roof.AdaptiveCommonForest
+public import Unfoldings.Roof.AdaptiveCompleteSourceContour
+public import Unfoldings.Roof.AdaptiveGeometricHistories
 public import Unfoldings.Geometry.ArcFamilyCrofton
 public import Unfoldings.FewestNets.CrossingChargeBound
 public import Unfoldings.Geometry.SphericalHullCenter

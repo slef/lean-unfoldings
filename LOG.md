@@ -2,6 +2,17 @@
 
 ## Session Log
 
+### 2026-11-21 — close half-turn windows and construct adaptive source contours
+
+- A radial window with polar variation below a half-turn fits in a linear
+  quadrant. Trim both endpoints and choose a Jordan closure whose three
+  entire connector lines avoid every old vertex.
+- The common-potential construction uses the original adaptive parent map
+  and outward directions. Its physical cut mesh has a contour containing
+  every positive defect. Each ordered bank keeps the adaptive length bound.
+- Added a shared interval cache for exact chart coordinates. Checked face,
+  seam, and pentagon pilot geometry at both mesh frequencies.
+
 ### 2026-11-21 — verify the first frequency-400 routing geometry
 
 - Checked the first maximum-radius record's whole geometric certificate
