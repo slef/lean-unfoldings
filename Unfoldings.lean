@@ -2926,6 +2926,11 @@ public import Unfoldings.FewestNets.IcosahedronStarClassification
 public import Unfoldings.FewestNets.IcosahedronNetworkOfCornerBounds
 public import Unfoldings.FewestNets.IcosahedronNetworkFromStars
 public import Unfoldings.FewestNets.IcosahedronFrequency100Network
+public import Unfoldings.FewestNets.IcosahedronPerimeterIndex
+public import Unfoldings.FewestNets.IcosahedronLabeledStars
+public import Unfoldings.FewestNets.IcosahedronRealizedPerimeter
+public import Unfoldings.FewestNets.IcosahedronNetworkPerimeter
+public import Unfoldings.FewestNets.IcosahedronEndpointBounds
 public import Unfoldings.FewestNets.IcosahedronDualEdges
 public import Unfoldings.FewestNets.MeshStarFacetNormal
 public import Unfoldings.FewestNets.IcosahedronInteriorStar

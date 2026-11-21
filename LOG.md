@@ -2,6 +2,15 @@
 
 ## Session Log
 
+### 2026-11-21 — transfer the perimeter bound to the actual frequency-100 mesh
+
+- Proved that the cyclic model sides count the actual arcs at each site
+  exactly once. Used the unique global barycentric coordinates to bound
+  their sum by the weighted face, seam, and vertex orbit sums.
+- Derived actual network length less than 2084 and instantiated the
+  first endpoint count with the actual network. The resulting
+  partition theorem requires the component development hypothesis.
+
 ### 2026-11-21 — verify the geometry of the actual frequency-100 network
 
 - Realized the pentagon model at the original vertices and classified
