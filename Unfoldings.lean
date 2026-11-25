@@ -2993,6 +2993,11 @@ public import Unfoldings.FewestNets.ThreeExitGraftAddressCoverage
 public import Unfoldings.FewestNets.ThreeExitGraftPhysicalAddresses
 public import Unfoldings.FewestNets.ThreeExitGraftStrictFiber
 public import Unfoldings.FewestNets.ThreeExitGraftUnmarkedCharts
+public import Unfoldings.FewestNets.ThreeExitGraftFiniteBankCharts
+public import Unfoldings.FewestNets.ThreeExitGraftFiniteSeamCharts
+public import Unfoldings.Roof.ActiveClosingVariation
+public import Unfoldings.Roof.GraphLensFaceAngles
+public import Unfoldings.Geometry.GraphRegionSides
 public import Unfoldings.FewestNets.LatitudeRowSupportTies
 public import Unfoldings.Roof.PotentialContourPhysicalLabels
 public import Unfoldings.Geometry.RadialTriangleEdges

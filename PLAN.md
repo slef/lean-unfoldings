@@ -1221,13 +1221,14 @@ statement will produce an original-edge `HasNetPartition`.
   and verify principal-turn addition at a transverse intersection.
 - [x] Bound each finite roof's intrinsic curvature by the area of its selector.
 - [x] Construct regular near-chord connectors. Identify the exact lens interiors, their
-  signed indicator sum, and the common curvature budget.
+  signed indicator sum, and the common curvature budget on an arbitrary-rim roof.
 - [ ] Prove the sharp closing-path turn bound and construct all actual gaps in a common acute cone.
 - [x] Present the entire graft by exact closed cell seams and descend its proper spatial collapse.
 - [x] Name all cut copies of the unbounded roof on the finite banks or the continued tails.
   Verify uniqueness of strict physical addresses and the exact endpoints of all gap fibers.
 - [x] Prove contractibility of the full graft fibers off the cut and along open cut edges
   and tails. Construct planar charts throughout the interiors of the gap pieces.
+- [x] Glue the two actual banks at each open finite seam into a centered planar chart.
 - [ ] Prove the remaining seam and junction charts and fibers, then recover original-edge nets.
 - [ ] Verify the crossing estimates and the uniform placement bound for both cell types.
 - [ ] Assemble the partition theorem and audit its dependencies.

@@ -155,13 +155,11 @@ private theorem contourGraft_fiberArc_at_mark (f : Graft → Space)
       (covers.trans P.symm_range.symm)
 
 set_option maxHeartbeats 2400000 in
-/-- The entire graft has a contractible collapse fiber over every point
-strictly inside a finite cut edge or strictly past a terminal join. -/
-theorem contourGraftCollapse_fiber_strict (f : Graft → Space)
-    (on_piece : ∀ y : MetricGluing.Total Pieces, f (Point y) = Fold y.1 y.2)
-    (b : Attachment) (t : Param b) (strict : Strict b t) :
-    ContractibleSpace {z : Graft | f z = (restore (Base b false t)).val} := by
-  let p := (restore (Base b false t)).val
+/-- At a strict attachment parameter every equal marked point recovers its
+original slot, side, and parameter before taking the metric quotient. -/
+theorem contourGraft_strictMarks_unique (b : Attachment) (t : Param b) (strict : Strict b t) :
+    MetricGluing.BankStackUniqueMarksAt Stack Pieces Base Gap b t := by
+  obtain ⟨f, _, _, on_piece⟩ := L.exists_contourGraftProperCollapse S
   have canonical (a : Attachment) (s : Param a) (equal : Phys a s = Phys b t) :
       (⟨a, s⟩ : Σ a : Attachment, Param a) = ⟨b, t⟩ :=
     L.strictContourParameter_unique S b t strict a s equal
@@ -173,40 +171,59 @@ theorem contourGraftCollapse_fiber_strict (f : Graft → Space)
     intro same
     obtain ⟨P, injective, _⟩ := arcs e saved
     exact zero_ne_one (injective (P.source.trans (same.trans P.target.symm)))
-  have unique : MetricGluing.BankStackUniqueMarksAt Stack Pieces Base Gap b t := by
-    constructor
-    · intro side a flag s same
-      have position : Phys a s = Phys b t :=
-        (L.contourPhysicalAddress_side S a flag s).symm.trans
-          ((congrArg (fun x : L.whole.Cut => Cap.horizontal (restore x).val) same).trans
-            (L.contourPhysicalAddress_side S b side t))
-      have address := canonical a s position
-      have at_b : a = b := congrArg Sigma.fst address
-      subst a
-      have time : s = t := eq_of_heq (Sigma.mk.inj address).2
-      subst s
-      refine ⟨?_, rfl⟩
-      cases side <;> cases flag
-      · rfl
-      · exact (roof_sides same.symm).elim
-      · exact (roof_sides same).elim
-      · rfl
-    · intro e saved side a another flag s same
-      have position : Phys a s = Phys b t :=
-        (L.contourGraftGapMark_horizontal S a e another flag s).symm.trans
-          ((congrArg (fun x => Cap.horizontal (Fold (some e) x)) same).trans
-            (L.contourGraftGapMark_horizontal S b e saved side t))
-      have address := canonical a s position
-      have at_b : a = b := congrArg Sigma.fst address
-      subst a
-      have time : s = t := eq_of_heq (Sigma.mk.inj address).2
-      subst s
-      refine ⟨?_, rfl⟩
-      cases side <;> cases flag
-      · rfl
-      · exact (gap_sides e saved same.symm).elim
-      · exact (gap_sides e saved same).elim
-      · rfl
+  constructor
+  · intro side a flag s same
+    have position : Phys a s = Phys b t :=
+      (L.contourPhysicalAddress_side S a flag s).symm.trans
+        ((congrArg (fun x : L.whole.Cut => Cap.horizontal (restore x).val) same).trans
+          (L.contourPhysicalAddress_side S b side t))
+    have address := canonical a s position
+    have at_b : a = b := congrArg Sigma.fst address
+    subst a
+    have time : s = t := eq_of_heq (Sigma.mk.inj address).2
+    subst s
+    refine ⟨?_, rfl⟩
+    cases side <;> cases flag
+    · rfl
+    · exact (roof_sides same.symm).elim
+    · exact (roof_sides same).elim
+    · rfl
+  · intro e saved side a another flag s same
+    have position : Phys a s = Phys b t :=
+      (L.contourGraftGapMark_horizontal S a e another flag s).symm.trans
+        ((congrArg (fun x => Cap.horizontal (Fold (some e) x)) same).trans
+          (L.contourGraftGapMark_horizontal S b e saved side t))
+    have address := canonical a s position
+    have at_b : a = b := congrArg Sigma.fst address
+    subst a
+    have time : s = t := eq_of_heq (Sigma.mk.inj address).2
+    subst s
+    refine ⟨?_, rfl⟩
+    cases side <;> cases flag
+    · rfl
+    · exact (gap_sides e saved same.symm).elim
+    · exact (gap_sides e saved same).elim
+    · rfl
+
+/-- The saved events on every original attachment are distinct. -/
+theorem contourGraft_stack_nodup (a : Attachment) : (Stack a).Nodup := by
+  cases a with
+  | inl a => exact (D).contourSavedGapStack_nodup Selection S.contour a.val
+  | inr a => exact (D).contourSavedGapStack_nodup Selection S.contour a.val
+
+set_option maxHeartbeats 2400000 in
+/-- The entire graft has a contractible collapse fiber over every point
+strictly inside a finite cut edge or strictly past a terminal join. -/
+theorem contourGraftCollapse_fiber_strict (f : Graft → Space)
+    (on_piece : ∀ y : MetricGluing.Total Pieces, f (Point y) = Fold y.1 y.2)
+    (b : Attachment) (t : Param b) (strict : Strict b t) :
+    ContractibleSpace {z : Graft | f z = (restore (Base b false t)).val} := by
+  let p := (restore (Base b false t)).val
+  have canonical (a : Attachment) (s : Param a) (equal : Phys a s = Phys b t) :
+      (⟨a, s⟩ : Σ a : Attachment, Param a) = ⟨b, t⟩ :=
+    L.strictContourParameter_unique S b t strict a s equal
+  have arcs (e : Event) (saved : e ∈ Stack b) :=
+    L.contourGraft_fiberArc_at_mark S f on_piece b t strict e saved
   have then_at (slot : MetricGluing.BankStackSlot Stack) (s : Param slot.1) :
       f (Point (Left slot s)) = (restore (Base slot.1 false s)).val :=
     (on_piece _).trans (L.contourGraft_left_physical S slot s)
@@ -242,12 +259,9 @@ theorem contourGraftCollapse_fiber_strict (f : Graft → Space)
     have address := canonical a s (congrArg Cap.horizontal there)
     have bank : a = b := congrArg Sigma.fst address
     exact bank ▸ saved
-  have nodup (a : Attachment) : (Stack a).Nodup := by
-    cases a with
-    | inl a => exact (D).contourSavedGapStack_nodup Selection S.contour a.val
-    | inr a => exact (D).contourSavedGapStack_nodup Selection S.contour a.val
   exact MetricGluing.contractibleSpace_fiber_of_single_bank_stack Pieces Stack Base Gap b t f p
-    (L.contourGraft_exact S) nodup unique on_slot (fun k => then_at ⟨b, k⟩ t)
+    (L.contourGraft_exact S) (contourGraft_stack_nodup S)
+    (L.contourGraft_strictMarks_unique S b t strict) on_slot (fun k => then_at ⟨b, k⟩ t)
     roof_fiber gap_fiber (fun i => arcs ((Stack b).get i) (List.get_mem _ _))
 
 end Unfoldings.ConvexRoof.ThreeExitComponentRouting.FloorWindowModel

@@ -114,6 +114,13 @@ private theorem norm_gap_chain_edge_eq_spatial (e : Event) (i : Fin (Length[e] +
     rw [physical]
     exact (D).boundaryChainRoll_edge_length Bank[e] i
 
+/-- Every developed gap edge has its nonzero original physical length. -/
+theorem contourGap_edge_ne_zero (e : Event) (side : Bool) (i : Fin (Length[e] + 1)) :
+    (Model[e].bank side).chain.edge i ≠ 0 := by
+  apply norm_ne_zero_iff.mp
+  rw [norm_gap_chain_edge_eq_spatial S]
+  exact norm_ne_zero_iff.mpr ((Fcut).contourSourceSpatialRay_edge_ne_zero S.contour S.starts e i)
+
 private theorem edist_source_path_finite (e : Event) (i : Fin (Length[e] + 1))
     (s t : unitInterval) :
     edist ((Path[e]).chain.point i s) ((Path[e]).chain.point i t) =

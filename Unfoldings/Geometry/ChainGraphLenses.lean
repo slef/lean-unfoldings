@@ -75,9 +75,11 @@ theorem exists_chain_graphLenses {m : ℕ} (Q : PolygonalChain Plane m)
     let a := P.vertex 0 0
     let b := P.vertex (Fin.last n) 0
     ∃ (f g : ℝ → ℝ) (k : ℕ) (crossing : Fin (k + 2) ↪o ℝ),
+      Continuous f ∧ Continuous g ∧
       graphPoint f '' Set.Icc a b = Set.range P.path ∧
       graphPoint g '' Set.Icc a b = Set.range Q.path ∧
       crossing 0 = a ∧ crossing (Fin.last (k + 1)) = b ∧
+      Set.range crossing = {t ∈ Set.Icc a b | f t = g t} ∧
       Set.range crossing = x '' (Set.range P.path ∩ Set.range Q.path) ∧
       (∀ i : Fin (k + 1), Schoenflies.IsJordanCurve
         (graphLens f g (crossing i.castSucc) (crossing i.succ))) ∧
@@ -116,7 +118,7 @@ theorem exists_chain_graphLenses {m : ℕ} (Q : PolygonalChain Plane m)
       exact ⟨hs, (congrArg y equal).symm⟩
   obtain ⟨k, crossing, lo, hi, all_times, simple, separated, avoid⟩ :=
     exists_ordered_graphLenses f g hf hg ordered first last (all_contacts.symm ▸ finite.image x)
-  refine ⟨f, g, k, crossing, range_f, aligned_g, lo, hi, all_times.trans all_contacts,
+  refine ⟨f, g, k, crossing, hf, hg, range_f, aligned_g, lo, hi, all_times, all_times.trans all_contacts,
     simple, separated, fun i => (avoid i).mono_right ?_⟩
   exact Set.union_subset_union (range_f.symm.subset.trans (Set.image_subset_range _ _))
     (aligned_g.symm.subset.trans (Set.image_subset_range _ _))
