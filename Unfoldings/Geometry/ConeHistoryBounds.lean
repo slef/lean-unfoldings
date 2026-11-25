@@ -1,7 +1,7 @@
 module
 
 public import Unfoldings.Geometry.AngleConeBound
-public import Unfoldings.Geometry.PolygonalLength
+public import Unfoldings.Geometry.ChainInterval
 
 /-! Quantitative length and radial margins when every heading lies in a narrow cone. -/
 
@@ -88,5 +88,35 @@ theorem cone_chord_margin (nonnegative : 0 ≤ halfAngle)
     _ = ∑ i, cos (2 * halfAngle) * (‖P.edge i‖ * ‖direction‖) := by
       simp only [Finset.sum_mul, Finset.mul_sum]
     _ ≤ _ := Finset.sum_le_sum fun i _ => pair i
+
+/-- The same axis gives the sharp length constant and radial margin on every
+contiguous subpath, including those beginning at a subdivision vertex. -/
+theorem cone_subpath_bounds (axis_unit : ‖axis‖ = 1)
+    (nonnegative : 0 ≤ halfAngle) (bound : halfAngle ≤ π / 4)
+    (headings : ∀ i, P.edge i ≠ 0 → angle axis (P.edge i) ≤ halfAngle)
+    (j : Fin (n + 1)) (i : Fin n) (earlier : j.val ≤ i.val) :
+    let L := (P.interval j.val (i.val - j.val) (by omega)).projectedLength
+    let chord := P.vertex i.castSucc - P.vertex j
+    L ≤ √2 * ‖chord‖ ∧
+      cos (2 * halfAngle) * (‖chord‖ * ‖P.edge i‖) ≤ inner ℝ chord (P.edge i) := by
+  let A := P.interval j.val (i.val - j.val) (by omega)
+  have ends : A.vertex (Fin.last (i.val - j.val)) - A.vertex 0 =
+      P.vertex i.castSucc - P.vertex j := by
+    simp only [A, interval_start, interval_last, Nat.add_sub_cancel' earlier]
+    rfl
+  have directions (k : Fin (i.val - j.val)) (genuine : A.edge k ≠ 0) :
+      angle axis (A.edge k) ≤ halfAngle :=
+    headings ⟨j.val + k.val, by have := k.isLt; omega⟩ genuine
+  have radial (genuine : P.edge i ≠ 0) :
+      cos (2 * halfAngle) * (‖P.vertex i.castSucc - P.vertex j‖ * ‖P.edge i‖) ≤
+        inner ℝ (P.vertex i.castSucc - P.vertex j) (P.edge i) := by
+    rw [← ends]
+    exact A.cone_chord_margin nonnegative (by linarith only [bound])
+      directions (headings i genuine)
+  refine ⟨?_, ?_⟩
+  · simpa only [ends] using A.cone_length_bound_sqrt_two axis_unit nonnegative bound directions
+  · by_cases genuine : P.edge i = 0
+    · simp [genuine]
+    · exact radial genuine
 
 end Unfoldings.PolygonalChain

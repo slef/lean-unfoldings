@@ -2,6 +2,14 @@
 
 ## Session Log
 
+### 2026-11-25 — route actual three-exit components
+
+- Identified active frontier contacts and chose one support side per slope, consistently at corners.
+- Constructed the northeast and northwest parents among the original seams and paired each
+  selected tree with an available exit.
+- Proved the length and radial bounds on every contiguous same-sign path and meshed arbitrary
+  prescribed segments of the physical extension.
+
 ### 2026-11-25 — start the general acute-angle proof
 
 - Preserved the appendix's audited numerical bounds and removed superseded finite-cell pilots.

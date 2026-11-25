@@ -1214,9 +1214,12 @@ The Fewest Nets application lives in `Unfoldings/FewestNets`.
   inequalities at the three-exit scale.
 - [x] Prove the signed single-cell charge bound and cancellation under right rotation. Construct
   the side flip that reverses the supporting normal.
-- [ ] Construct all side-interior contacts and calibrate the three-exit parents from the selector's
-  triangle angle bounds.
-- [ ] Refine and develop the compatible forest from its directed geometrical histories.
+- [x] Construct active frontier contacts, assign polygon sides consistently at corners, and choose
+  the three-exit parents from the actual projected triangle angles.
+- [x] Bound every contiguous block of a same-sign history and align the physical roof mesh
+  with a prescribed finite family of straight cuts.
+- [ ] Truncate the actual forest, prove fine parent histories inherit the coarse directions,
+  and develop their source gaps on the clipped extension.
 - [ ] Construct the latitude grid and polar selectors with quantitative side bounds.
 - [ ] Localize single-cell crossings after cancellation, assemble the rotation estimate, and
   prove the uniform `O(α⁻⁴)` partition theorem.
