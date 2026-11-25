@@ -1231,6 +1231,9 @@ statement will produce an original-edge `HasNetPartition`.
 - [x] Bound the intrinsic turns of the regular contacts on both straight links by one
   sine-scaled tilt allowance. Identify those turns with the two actual closing-graph
   sums, and make the connector mismatch and one-face bend error arbitrarily small.
+- [x] Account for both trimmed endpoint errors using the actual lens boundary fans.
+  Track the physical comparison mesh by its parent triangles and change its horizontal
+  chart without changing the intrinsic complex.
 - [ ] Prove the sharp closing-path turn bound and construct all actual gaps in a common acute cone.
 - [x] Present the entire graft by exact closed cell seams and descend its proper spatial collapse.
 - [x] Name all cut copies of the unbounded roof on the finite banks or the continued tails.

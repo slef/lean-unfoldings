@@ -297,6 +297,27 @@ theorem sum_flat_link_corner_angles (f : Face)
     recover (c.point i) (slope i), recover (C.linkTurn Set.univ w (c.point i)) (slope i)]
   exact (K.folding.germDirection_angle (c.point i).val).symm
 
+/-- In a projected halfplane block, the exact sum is the angle between
+its two actual boundary rays. -/
+theorem sum_projected_link_corner_angles
+    (halfplane : ∀ i, 0 ≤ orient 0 (K.projectedIntervalRay c 0) (K.projectedIntervalRay c i) *
+      orient 0 (K.projectedIntervalRay c (0 : Fin (n + 1)).castSucc)
+        (K.projectedIntervalRay c (0 : Fin (n + 1)).succ)) :
+    (∑ i : Fin (n + 1), (K.projectedTriangle (c.point i).val.1.1).cornerAngle
+      (c.point i).val.1.2) =
+      angle (K.projectedIntervalRay c 0) (K.projectedIntervalRay c (Fin.last (n + 1))) := by
+  let ray := K.projectedIntervalRay c
+  have genuine := K.projectedIntervalRay_ne_zero c
+  have nonzero (i : Fin (n + 1)) : orient 0 (ray i.castSucc) (ray i.succ) ≠ 0 := by
+    dsimp only [ray]
+    rw [K.projectedIntervalRay_castSucc, K.projectedIntervalRay_succ]
+    exact K.projectedGermRay_orient_ne_zero (c.point i)
+  have flat := sum_ray_angles_eq_endpoint ray (K.projectedIntervalRay_ne_zero c) nonzero
+    (interval_cone_orient_sign ray nonzero (K.planar_arc_cones_disjoint c)) halfplane
+  simp only [ray, K.projectedIntervalRay_castSucc, K.projectedIntervalRay_succ,
+    K.projectedGermRay_angle] at flat
+  exact flat
+
 /-- The actual spatial and projected angles of a flat link block differ by
 one sharp face error, however many triangles meet at the vertex. -/
 theorem abs_flat_link_projection_error_le_sharp {φ : ℝ}
@@ -308,19 +329,9 @@ theorem abs_flat_link_projection_error_le_sharp {φ : ℝ}
     |(∑ i : Fin (n + 1), (C.triangle (c.point i).val.1.1).cornerAngle (c.point i).val.1.2) -
       ∑ i : Fin (n + 1), (K.projectedTriangle (c.point i).val.1.1).cornerAngle
         (c.point i).val.1.2| ≤ 2 * arcsin (tan (φ / 2) ^ 2) := by
-  let ray := K.projectedIntervalRay c
-  have genuine := K.projectedIntervalRay_ne_zero c
-  have nonzero (i : Fin (n + 1)) : orient 0 (ray i.castSucc) (ray i.succ) ≠ 0 := by
-    dsimp only [ray]
-    rw [K.projectedIntervalRay_castSucc, K.projectedIntervalRay_succ]
-    exact K.projectedGermRay_orient_ne_zero (c.point i)
-  have flat := sum_ray_angles_eq_endpoint ray genuine nonzero
-    (interval_cone_orient_sign ray nonzero (K.planar_arc_cones_disjoint c)) halfplane
-  simp only [ray, K.projectedIntervalRay_castSucc, K.projectedIntervalRay_succ,
-    K.projectedGermRay_angle] at flat
-  rw [K.sum_flat_link_corner_angles c f slope halfplane, flat]
-  exact K.abs_sectionDirection_angle_error_le_sharp nonnegative small tilt f (genuine 0)
-    (genuine (Fin.last (n + 1)))
+  rw [K.sum_flat_link_corner_angles c f slope halfplane, K.sum_projected_link_corner_angles c halfplane]
+  exact K.abs_sectionDirection_angle_error_le_sharp nonnegative small tilt f
+    (K.projectedIntervalRay_ne_zero c 0) (K.projectedIntervalRay_ne_zero c (Fin.last (n + 1)))
 
 end FanAngles
 
