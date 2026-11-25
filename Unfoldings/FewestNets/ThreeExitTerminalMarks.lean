@@ -2,7 +2,7 @@ module
 
 public import Unfoldings.FewestNets.ThreeExitFiniteMarks
 public import Unfoldings.FewestNets.ThreeExitContourTails
-public import Unfoldings.FewestNets.ThreeExitTerminalBanks
+public import Unfoldings.FewestNets.ThreeExitTerminalNormalizedCharts
 public import Unfoldings.Complex.ContourGapTerminalIndex
 public import Unfoldings.Metric.ConnectedBankMatching
 public import Unfoldings.Metric.PositiveClosedInterval
@@ -16,6 +16,8 @@ noncomputable section
 open scoped NNReal ENNReal
 
 namespace Unfoldings.ConvexRoof.ThreeExitComponentRouting.FloorWindowModel
+
+open MetricGluing
 
 universe u v
 
@@ -71,7 +73,10 @@ theorem exists_contourTerminalBanks
         (∀ flag t, (restore (bank (side flag) t)).val =
           SpatialEnvelope.point M.plane (R.exits.ray (R.exitRoot r) t.val)) ∧
         (∀ flag, ∀ t : unitInterval, MarkAt[higher,contour,starts,edge] flag t =
-          bank (side flag) (nonnegativeIntervalLineMap first τ nonnegative before.le t)) := by
+          bank (side flag) (nonnegativeIntervalLineMap first τ nonnegative before.le t)) ∧
+        ∀ flag occupied (t : ℝ≥0), 0 < t.val → ∃ ε, Nonempty
+          (BankHalfPlaneChart (bank flag) t occupied
+            (fun s : ℝ≥0 => (s.val - t.val) * ‖R.physicalRayDirection r‖) ε) := by
   obtain ⟨r, first, nonnegative, before, at_first, at_last⟩ :=
     R.exists_exit_of_fineMesh_terminalParent level M higher edge.val edge.property.1 edge.property.2
   let τ := R.exits.timeAtLevel level (R.exitRoot r)
@@ -86,7 +91,8 @@ theorem exists_contourTerminalBanks
     module
   have pos (t : unitInterval) (u : 0 < t.val) : 0 < (time t).val :=
     add_pos_of_nonneg_of_pos nonnegative (mul_pos u (sub_pos.mpr before))
-  obtain ⟨bank, _, restores, metric, separated, exhaust, _⟩ := L.whole.exists_exit_banks_with_charts r
+  obtain ⟨bank, restores, metric, separated, exhaust, charts⟩ :=
+    L.whole.exists_exit_banks_with_normalized_charts r
   have assign (flag : Bool) : ∃ side : Bool, ∀ t : unitInterval, MarkAt[higher,contour,starts,edge] flag t = bank side (time t) :=
     MetricGluing.exists_bank_side_of_dense_positive bank separated (MarkAt[higher,contour,starts,edge] flag)
       (L.continuous_contourParentMark higher contour starts edge.val edge.property.1 flag) time
@@ -121,6 +127,6 @@ theorem exists_contourTerminalBanks
     · exact (distinct same.symm).elim
     · rfl
   exact ⟨r, first, nonnegative, before, bank, side, injective, metric, separated,
-    fun flag => restores (side flag), agrees⟩
+    fun flag => restores (side flag), agrees, charts⟩
 
 end Unfoldings.ConvexRoof.ThreeExitComponentRouting.FloorWindowModel

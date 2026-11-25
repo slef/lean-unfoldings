@@ -174,7 +174,7 @@ theorem exists_contourTailMark_of_cut_above (x : L.whole.Cut)
   obtain ⟨s, nonnegative, loc⟩ := member
   change p = R.exits.ray (R.exitRoot r) s at loc
   obtain ⟨e, end_eq⟩ := L.exists_contourTerminalEdge_at_exit S r
-  obtain ⟨r', first, first_nonneg, before, banks, sides, _, _, _, restores, agrees⟩ :=
+  obtain ⟨r', first, first_nonneg, before, banks, sides, _, _, _, restores, agrees, _⟩ :=
     L.exists_contourTerminalBanks S.higher S.contour S.starts e
   let τ' := R.exits.timeAtLevel level (R.exitRoot r')
   let endTime : ℝ≥0 := ⟨τ', first_nonneg.trans before.le⟩

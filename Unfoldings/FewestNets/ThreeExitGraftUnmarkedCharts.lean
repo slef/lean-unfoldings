@@ -2,6 +2,7 @@ module
 
 public import Unfoldings.FewestNets.ThreeExitGraftAddressCoverage
 public import Unfoldings.FewestNets.ThreeExitGraftMarkMetrics
+public import Unfoldings.FewestNets.ThreeExitWholeCutRegularity
 public import Unfoldings.Metric.BankStackUnmarkedBall
 
 /-! A point away from all attachment banks retains its original local metric ball. -/
@@ -121,5 +122,11 @@ theorem contourGraft_roof_off_cut_chart (x : L.whole.Cut)
   | none =>
     have same : Base a side t = x := eq_of_heq (Sigma.mk.inj equal).2
     exact outside (same ▸ L.contourGraftBaseMark_horizontal_mem_cut S a side t)
+
+/-- Every original roof point outside the cut has a planar ball in the actual graft. -/
+theorem contourGraft_roof_off_cut_regular (x : L.whole.Cut)
+    (outside : Cap.horizontal (restore x).val ∉ R.wholeCarrier) :
+    HasMetricBallChart Plane (Point ⟨none, x⟩) :=
+  L.contourGraft_roof_off_cut_chart S x outside (L.wholeCut_off_cut_regular S.higher x outside)
 
 end Unfoldings.ConvexRoof.ThreeExitComponentRouting.FloorWindowModel

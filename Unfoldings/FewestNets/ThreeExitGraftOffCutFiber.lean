@@ -98,7 +98,7 @@ theorem contourGraftBaseMark_horizontal_mem_cut (a : Attachment) (side : Bool) (
   | inr edge =>
     let c := L.contourTerminalContinuation S.higher S.contour S.starts edge
     change Cap.horizontal (restore (c.mark side t)).val ∈ _
-    obtain ⟨r, first, nonnegative, before, bank, label, _, _, _, restores, agrees⟩ :=
+    obtain ⟨r, first, nonnegative, before, bank, label, _, _, _, restores, agrees, _⟩ :=
       L.exists_contourTerminalBanks S.higher S.contour S.starts edge
     let τ := R.exits.timeAtLevel level (R.exitRoot r)
     have τ_nonneg : 0 ≤ τ := nonnegative.trans (le_of_lt before)

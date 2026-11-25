@@ -13,6 +13,8 @@ open scoped NNReal ENNReal
 
 namespace Unfoldings.ConvexRoof.ThreeExitComponentRouting.FloorWindowModel
 
+open MetricGluing
+
 universe u v
 
 variable {Face : Type u} [Fintype Face] {C : TriangleComplex.{u, v} Face}
@@ -63,6 +65,9 @@ structure ContourTerminalContinuation
   same_length (s t : ℝ≥0) : edist (mark false s) (mark false t) = edist (mark true s) (mark true t)
   disjoint (side other : Bool) (different : side ≠ other) (s t : ℝ≥0) :
     mark side s ≠ mark other t
+  normalized_chart (side occupied : Bool) (t : ℝ≥0) :
+    ∃ ε, Nonempty (BankHalfPlaneChart (mark side) t occupied
+      (fun s : ℝ≥0 => (s.val - t.val) * (Dilation.ratio (mark side)).val) ε)
 
 set_option maxHeartbeats 1400000 in
 -- Both affinely parameterized tracks refer to the exact whole banks.
@@ -72,7 +77,7 @@ theorem exists_contourTerminalContinuation
     (starts : (D[higher]).contourOriginalVertex Sel[higher] contour 0 ∈ (F[higher]).parents.roots)
     (edge : (D[higher]).ContourTerminalEdge Sel[higher]) :
     Nonempty (L.ContourTerminalContinuation higher contour starts edge) := by
-  obtain ⟨r, first, nonnegative, before, bank, label, injective, metric, distinct, restores, agrees⟩ :=
+  obtain ⟨r, first, nonnegative, before, bank, label, injective, metric, distinct, restores, agrees, charts⟩ :=
     L.exists_contourTerminalBanks higher contour starts edge
   let τ := R.exits.timeAtLevel level (R.exitRoot r)
   have τ_pos : 0 < τ := nonnegative.trans_lt before
@@ -97,7 +102,7 @@ theorem exists_contourTerminalContinuation
     Subtype.ext (by simp [nonnegativeIntervalLineMap])
   have at_one : nonnegativeIntervalLineMap first τ nonnegative before.le 1 = start :=
     Subtype.ext (by simp [nonnegativeIntervalLineMap, start])
-  refine ⟨⟨mark, ?_, ?_, ?_, ?_, ?_⟩⟩
+  refine ⟨⟨mark, ?_, ?_, ?_, ?_, ?_, ?_⟩⟩
   · intro side
     have h := agrees side 1
     rw [at_one] at h
@@ -128,6 +133,21 @@ theorem exists_contourTerminalContinuation
       add_pos_of_pos_of_nonneg τ_pos (mul_nonneg advance.property s.property)
     exact distinct (label side) (label other) (fun same => different (injective same))
       (time s) (time t) positive
+
+  · intro side occupied t
+    have ray_positive : 0 < (time t).val :=
+      add_pos_of_pos_of_nonneg τ_pos (mul_nonneg advance.property t.property)
+    obtain ⟨ε, ⟨chart⟩⟩ := charts (label side) occupied (time t) ray_positive
+    refine ⟨ε, ⟨⟨chart.positive, chart.chart, chart.centered, ?_⟩⟩⟩
+    intro s near
+    refine (chart.parameter (time s) near).trans (congrArg Complex.ofReal ?_)
+    have ratio : Dilation.ratio (mark side) = speed :=
+      (Dilation.ratio_unique (f := mark side) (x := (0 : ℝ≥0)) (y := 1)
+        (by simp) (edist_ne_top _ _) (norm_metric side 0 1)).symm
+    rw [ratio]
+    change ((τ + (τ - first) * s.val) - (τ + (τ - first) * t.val)) * ‖R.physicalRayDirection r‖ =
+      (s.val - t.val) * (‖R.physicalRayDirection r‖ * (τ - first))
+    ring
 
 /-- The full original tail data, chosen with its proved finite join. -/
 def contourTerminalContinuation

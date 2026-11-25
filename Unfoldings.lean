@@ -2996,6 +2996,7 @@ public import Unfoldings.FewestNets.ThreeExitGraftStrictFiber
 public import Unfoldings.FewestNets.ThreeExitGraftUnmarkedCharts
 public import Unfoldings.FewestNets.ThreeExitGraftFiniteBankCharts
 public import Unfoldings.FewestNets.ThreeExitGraftFiniteSeamCharts
+public import Unfoldings.FewestNets.ThreeExitGraftTailSeamCharts
 public import Unfoldings.FewestNets.ThreeExitGraftTerminalAddresses
 public import Unfoldings.FewestNets.ThreeExitGraftTerminalJoinClasses
 public import Unfoldings.FewestNets.ThreeExitGraftTerminalFiber

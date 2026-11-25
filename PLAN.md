@@ -1230,7 +1230,10 @@ statement will produce an original-edge `HasNetPartition`.
   Verify uniqueness of strict physical addresses and the exact endpoints of all gap fibers.
 - [x] Prove contractibility of the full graft fibers off the cut and along open cut edges
   and tails. Construct planar charts throughout the interiors of the gap pieces.
-- [x] Glue the two actual banks at each open finite seam into a centered planar chart.
+- [x] Derive intrinsic planar balls at every off-cut point of the original roof.
+  The whole metric and physical positions agree across affine floor windows.
+- [x] Glue the two actual banks at each open finite seam and positive exit seam into
+  a centered planar chart.
 - [x] Recover both literal parameter names at each affine-floor join and prove its full
   collapse fiber contractible.
 - [ ] Prove the remaining seam and junction charts and fibers, then recover original-edge nets.
