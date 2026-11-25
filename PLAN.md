@@ -1206,9 +1206,22 @@ The Fewest Nets application lives in `Unfoldings/FewestNets`.
 
 ### General acute-angle bound
 
-The current paper states the explicit bound of fewer than `13,000 * α⁻⁴` parts. The
-latitude cells use shifted northeast and northwest heading windows, with the acute-cone
-development bound at `φ² ≤ γ / 32`.
+The current manuscript states fewer than `1,440 * α⁻⁴` parts for the conforming
+acute triangle mesh of a convex polyhedron, with `0 < α ≤ π/6`. The final Lean
+statement will produce an original-edge `HasNetPartition`.
+
+- [x] Instantiate the revised latitude grid and its exact count below `476 / α²`.
+- [ ] Prove the chart size and angular bounds for each actual midpoint triangle and polar cell.
+- [ ] Straighten the parameter grid to a conforming spherical partition and verify its boundaries.
+- [ ] Bound each finite roof's intrinsic curvature by the area of its selector.
+- [ ] Prove the sharp closing-path turn bound and construct all actual gaps in a common acute cone.
+- [ ] Complete the unbounded graft and recover original-edge nets for every selected component.
+- [ ] Verify the crossing estimates and the uniform placement bound for both cell types.
+- [ ] Assemble the partition theorem and audit its dependencies.
+
+The milestones below record the existing geometry, grafting, and counting
+results from the earlier latitude scales. They provide the reusable inputs
+for the revised estimates above.
 
 - [x] Clip to the retained component's vertices, preserve its supporting contacts, and locate all
   positive curvature of the finite extension.
@@ -1297,7 +1310,7 @@ development bound at `φ² ≤ γ / 32`.
 - [ ] Prove complete frontier coverage and exact triangle intersections, then
   derive the spherical network and its quantitative side bounds.
 - [ ] Localize single-cell crossings after cancellation, assemble the rotation estimate, and
-  prove the explicit `13,000 * α⁻⁴` partition theorem.
+  prove the explicit partition theorem.
 
 ## Upstream research and reuse
 

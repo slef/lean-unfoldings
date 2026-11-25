@@ -2,6 +2,13 @@
 
 ## Session Log
 
+### 2026-11-25 — count the wider acute latitude grid
+
+- Added the current manuscript's row scales, polar radius, and exact sweep size.
+- Generalized the trapezoid sum and ceiling bound to arbitrary equally spaced rows.
+- Verified that the revised grid has fewer than `476 / α²` annular triangles.
+- Updated the remaining work to target fewer than `1,440 * α⁻⁴` original-edge nets.
+
 ### 2026-11-25 — collapse each actual gap to its original spatial path
 
 - Gave each full bank its normalized affine continuation, exact rim join,

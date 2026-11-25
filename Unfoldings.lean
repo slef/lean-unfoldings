@@ -2827,6 +2827,7 @@ public import Unfoldings.FewestNets.SingleCellReflections
 public import Unfoldings.FewestNets.SingleCellExpectation
 public import Unfoldings.FewestNets.OrthogonalSiteFlags
 public import Unfoldings.FewestNets.LatitudeRows
+public import Unfoldings.FewestNets.AcuteLatitudeRows
 public import Unfoldings.Polyhedron.LabeledSelectionCount
 public import Unfoldings.Convex.SlopeReference
 public import Unfoldings.Convex.AffineFloorSection

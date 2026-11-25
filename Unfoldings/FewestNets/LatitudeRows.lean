@@ -170,31 +170,17 @@ private theorem sum_differences (f : ℕ → ℝ) (m : ℕ) :
   | zero => simp
   | succ m ih => rw [Finset.sum_range_succ, ih]; ring
 
-include positive small in
-theorem latitude_sine_sum_le :
-    (∑ j ∈ Finset.range (latitudeStripCount a),
-      (sin (latitudeColatitude a j) + sin (latitudeColatitude a (j + 1)))) ≤
-        4 / latitudeRowStep a := by
-  let d := latitudeRowStep a
-  let r := latitudeRadius a
-  let J := latitudeStripCount a
-  let ℓ := latitudeColatitude a
-  have r_pos := latitudeRadius_pos positive
-  have d_pos : 0 < d :=
-    (mul_pos (by norm_num : 0 < (0.963 : ℝ)) r_pos).trans (latitudeRowStep_bounds positive small).1
-  have row_succ (j : ℕ) : ℓ (j + 1) = ℓ j + d := by
-    unfold ℓ latitudeColatitude
-    push_cast
-    ring
+/-- Telescoping the cosine drops bounds the sine sum for any equally spaced rows. -/
+theorem latitude_sine_sum_le_of_spacing {d : ℝ} {J : ℕ} (ℓ : ℕ → ℝ)
+    (d_pos : 0 < d) (row_succ : ∀ j, ℓ (j + 1) = ℓ j + d)
+    (rows : ∀ j ≤ J, ℓ j ∈ Set.Ico 0 π) :
+    (∑ j ∈ Finset.range J, (sin (ℓ j) + sin (ℓ (j + 1)))) ≤ 4 / d := by
   have strip (j : ℕ) (member : j ∈ Finset.range J) :
       d * (sin (ℓ j) + sin (ℓ (j + 1))) ≤ 2 * (cos (ℓ j) - cos (ℓ (j + 1))) := by
     have less := Finset.mem_range.mp member
-    have starts := (latitudeColatitude_bounds positive small less.le).1
-    have ends := (latitudeColatitude_bounds positive small (Nat.succ_le_of_lt less)).2
-    change ℓ (j + 1) ≤ π - r / 2 at ends
+    have ends := (rows (j + 1) (Nat.succ_le_of_lt less)).2
     rw [row_succ j] at ends ⊢
-    exact sine_trapezoid_le d_pos (by linarith only [starts, r_pos])
-      (by linarith only [ends, r_pos])
+    exact sine_trapezoid_le d_pos (rows j less.le).1 ends
   apply (le_div_iff₀ d_pos).mpr
   rw [mul_comm, Finset.mul_sum]
   calc
@@ -203,6 +189,55 @@ theorem latitude_sine_sum_le :
       rw [← Finset.mul_sum]
       exact congrArg (fun x : ℝ => 2 * x) (sum_differences (fun j => cos (ℓ j)) J)
     _ ≤ 4 := by linarith only [cos_le_one (ℓ 0), neg_one_le_cos (ℓ J)]
+
+include positive small in
+theorem latitude_sine_sum_le :
+    (∑ j ∈ Finset.range (latitudeStripCount a),
+      (sin (latitudeColatitude a j) + sin (latitudeColatitude a (j + 1)))) ≤
+        4 / latitudeRowStep a := by
+  let d := latitudeRowStep a
+  let r := latitudeRadius a
+  let ℓ := latitudeColatitude a
+  have r_pos := latitudeRadius_pos positive
+  have d_pos : 0 < d :=
+    (mul_pos (by norm_num : 0 < (0.963 : ℝ)) r_pos).trans (latitudeRowStep_bounds positive small).1
+  have row_succ (j : ℕ) : ℓ (j + 1) = ℓ j + d := by
+    unfold ℓ latitudeColatitude
+    push_cast
+    ring
+  apply latitude_sine_sum_le_of_spacing ℓ d_pos row_succ
+  intro j hj
+  obtain ⟨low, high⟩ := latitudeColatitude_bounds positive small hj
+  exact ⟨by linarith only [low, r_pos], by linarith only [high, r_pos]⟩
+
+/-- Bound the number of sweep triangles using the ceilings on both rows of each strip. -/
+theorem latitudeCeilingSum_le {b d : ℝ} {J : ℕ} (ℓ : ℕ → ℝ)
+    (b_pos : 0 < b) (d_pos : 0 < d) (row_succ : ∀ j, ℓ (j + 1) = ℓ j + d)
+    (rows : ∀ j ≤ J, ℓ j ∈ Set.Ico 0 π) :
+    ((∑ j ∈ Finset.range J, (⌈2 * π * sin (ℓ j) / b⌉₊ +
+      ⌈2 * π * sin (ℓ (j + 1)) / b⌉₊) : ℕ) : ℝ) ≤ 2 * J + 8 * π / (b * d) := by
+  have estimate (j : ℕ) (row : j ≤ J) :
+      ((⌈2 * π * sin (ℓ j) / b⌉₊ : ℕ) : ℝ) ≤ 2 * π * sin (ℓ j) / b + 1 := by
+    have sine := sin_nonneg_of_nonneg_of_le_pi (rows j row).1 (rows j row).2.le
+    exact (Nat.ceil_lt_add_one (div_nonneg
+      (mul_nonneg (by positivity : 0 ≤ 2 * π) sine) b_pos.le)).le
+  push_cast
+  calc
+    _ ≤ ∑ j ∈ Finset.range J, (2 + (2 * π / b) * (sin (ℓ j) + sin (ℓ (j + 1)))) := by
+      apply Finset.sum_le_sum
+      intro j member
+      have row := Finset.mem_range.mp member
+      convert add_le_add (estimate j row.le) (estimate (j + 1) (Nat.succ_le_of_lt row)) using 1
+      ring
+    _ = 2 * J + (2 * π / b) *
+        (∑ j ∈ Finset.range J, (sin (ℓ j) + sin (ℓ (j + 1)))) := by
+      rw [Finset.sum_add_distrib, ← Finset.mul_sum]
+      simp only [Finset.sum_const, Finset.card_range, nsmul_eq_mul]
+      ring
+    _ ≤ 2 * J + (2 * π / b) * (4 / d) := by
+      exact add_le_add_right (mul_le_mul_of_nonneg_left (latitude_sine_sum_le_of_spacing ℓ d_pos row_succ rows)
+        (div_nonneg (by positivity : 0 ≤ 2 * π) b_pos.le)) _
+    _ = _ := by field_simp <;> ring
 
 include positive small in
 /-- The paper's explicit triangle bound, before straightening the grid on the sphere. -/
@@ -218,32 +253,15 @@ theorem latitudeTriangleCount_lt : (latitudeTriangleCount a : ℝ) < 2283 / a ^ 
   have d_pos : 0 < d := (mul_pos (by norm_num : 0 < (0.963 : ℝ)) r_pos).trans d_lower
   have r_small : r < 0.116 := latitudeRadius_lt small
   have b_small : b < 0.236 * r := latitudeSpacing_lt positive small
-  have estimate (j : ℕ) (row : j ≤ J) :
-      (latitudeRowSize a j : ℝ) ≤ 2 * π * sin (ℓ j) / b + 1 := by
-    obtain ⟨low, up⟩ := latitudeColatitude_bounds positive small row
-    have sine := sin_nonneg_of_nonneg_of_le_pi
-      (by linarith only [low, r_pos] : 0 ≤ ℓ j) (by linarith only [up, r_pos] : ℓ j ≤ π)
-    exact (Nat.ceil_lt_add_one (div_nonneg
-      (mul_nonneg (by positivity : 0 ≤ 2 * π) sine) b_pos.le)).le
   have before : (latitudeTriangleCount a : ℝ) ≤ 2 * J + 8 * π / (b * d) := by
-    unfold latitudeTriangleCount
-    push_cast
-    calc
-      _ ≤ ∑ j ∈ Finset.range J, (2 + (2 * π / b) * (sin (ℓ j) + sin (ℓ (j + 1)))) := by
-        apply Finset.sum_le_sum
-        intro j member
-        have row := Finset.mem_range.mp member
-        convert add_le_add (estimate j row.le) (estimate (j + 1) (Nat.succ_le_of_lt row)) using 1
-        ring
-      _ = 2 * J + (2 * π / b) *
-          (∑ j ∈ Finset.range J, (sin (ℓ j) + sin (ℓ (j + 1)))) := by
-        rw [Finset.sum_add_distrib, ← Finset.mul_sum]
-        simp only [Finset.sum_const, Finset.card_range, nsmul_eq_mul]
-        ring
-      _ ≤ 2 * J + (2 * π / b) * (4 / d) := by
-        exact add_le_add_right (mul_le_mul_of_nonneg_left (latitude_sine_sum_le positive small)
-          (div_nonneg (by positivity : 0 ≤ 2 * π) b_pos.le)) _
-      _ = _ := by field_simp <;> ring
+    apply latitudeCeilingSum_le ℓ b_pos d_pos
+    · intro j
+      unfold ℓ latitudeColatitude
+      push_cast
+      ring
+    · intro j hj
+      obtain ⟨low, high⟩ := latitudeColatitude_bounds positive small hj
+      exact ⟨by linarith only [low, r_pos], by linarith only [high, r_pos]⟩
   have J_bound : (J : ℝ) * r < π :=
     (lt_div_iff₀ r_pos).mp (latitudeStripCount_lt positive small)
   have length : r / d < 1 / 0.963 := by
