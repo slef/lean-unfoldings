@@ -1248,6 +1248,9 @@ statement will produce an original-edge `HasNetPartition`.
   sine. Choose two genuine marks at extreme vertices and cover all changes at
   subdivision vertices. Express the expected component count in either orientation
   class using the common area marginal and the signed charges.
+- [x] Identify the complete boundary of each selector as its genuine spherical minor
+  arcs, including the wraparound sides of both polar polygons. Record the exact
+  inward plane forms and their supported arcs in the common spherical frame.
 - [ ] Verify the crossing estimates and the uniform placement bound for both cell types.
 - [ ] Assemble the partition theorem and audit its dependencies.
 
