@@ -2,6 +2,18 @@
 
 ## Session Log
 
+### 2026-11-25 — verify intrinsic acute histories and round routing
+
+- Integrated the uniform heading and speed errors over each actual bank
+  interval and obtained the sharp length and radial bounds on the original roll.
+- Identified the bank selected by the contour with its exact parent orbit,
+  including the last mesh endpoint, and packed all roof curvature into the tilt cap.
+- Constructed round progress-disk routing and exact outward margins from the
+  selector's circumradius and apothem. Finite support planes now follow directly
+  from either a centered or an off-center polygon half-plane presentation.
+- Checked the signed Crofton estimate on the remaining orientations with
+  individual reaches at both ends of each template side.
+
 ### 2026-11-25 — bound the actual original-bank heading and localize crossings
 
 - Aligned both regular closures in a single physical completion, chose the one

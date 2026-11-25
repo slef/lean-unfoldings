@@ -1243,8 +1243,13 @@ development bound at `φ² ≤ γ / 32`.
   turn budget to the resulting compact comparison.
 - [x] Prove the endpoint-specific cutoff for incident crossings and combine the
   small- and large-cell scalar area bounds.
-- [ ] Transfer the sharp heading estimate to developed subhistories and develop the
-  source gaps. Construct the polar development at its sharp threshold.
+- [x] Transfer the sharp heading estimate to every intrinsic subhistory and identify
+  the saved banks of the actual contour with their original directed histories.
+- [x] Verify the sharp total curvature on arbitrary-rim roofs and the explicit polar
+  routing margins. Construct a finite extension from the polygon's support lines.
+- [x] Bound the signed remaining charge by Crofton with different endpoint cutoffs.
+- [ ] Develop the source gaps and assemble the complete unbounded graft.
+  Construct the polar development at its sharp threshold.
 - [ ] Straighten the latitude grid and construct the polar selectors with quantitative side bounds.
 - [ ] Localize single-cell crossings after cancellation, assemble the rotation estimate, and
   prove the explicit `13,000 * α⁻⁴` partition theorem.

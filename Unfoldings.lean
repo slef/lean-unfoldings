@@ -2857,6 +2857,16 @@ public import Unfoldings.FewestNets.LatitudeVertexBounds
 public import Unfoldings.FewestNets.LatitudeStripPartition
 public import Unfoldings.FewestNets.SingleCellAreaBudget
 public import Unfoldings.FewestNets.SelectedCellAveraging
+public import Unfoldings.Roof.AcuteBankWindows
+public import Unfoldings.Roof.AcutePhysicalBankRoll
+public import Unfoldings.Roof.AcuteBankSubhistories
+public import Unfoldings.FewestNets.ThreeExitAcuteDevelopment
+public import Unfoldings.Roof.PotentialContourBanks
+public import Unfoldings.Roof.SharpCurvatureBudget
+public import Unfoldings.FewestNets.SingleCellCrofton
+public import Unfoldings.FewestNets.RoundSelectorScalars
+public import Unfoldings.FewestNets.RoundSelectorRouting
+public import Unfoldings.Roof.PolygonClippedModel
 public import Unfoldings.FewestNets.SingleCellCharge
 public import Unfoldings.FewestNets.SingleCellCancellation
 public import Unfoldings.FewestNets.AcuteSelectorThreshold
