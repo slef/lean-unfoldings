@@ -2,6 +2,19 @@
 
 ## Session Log
 
+### 2026-11-25 — count latitude triangles and separate the truncation reference
+
+- Verified the precise latitude step and the bound of fewer than 2,283 α⁻² triangles in
+  the flat parameter strips.
+- Averaged the single-cell linear Euler terms using the uniform site marginals in each
+  orientation class. Proved that the separate selected-component counts sum to the total.
+- Constructed compact affine-floor sections with the original physical support planes.
+  This lets the truncation use an interior slope even when the latitude chart origin is outside.
+- Constructed generic two-link connectors and proved their exterior escape rays.
+  Excluding the opposite initial face identifies the actual original bank along every hinge.
+- Replaced the unused half-turn with exact reflection and audited the integrated fine-cut
+  and single-cell results.
+
 ### 2026-11-25 — identify the exact fine cuts and count one normal cell
 
 - Proved that the fine parent cuts coincide with all complete seams of the prescribed forest.

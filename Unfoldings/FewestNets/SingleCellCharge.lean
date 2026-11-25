@@ -46,7 +46,7 @@ private theorem endpoints_complement (a b : Bool) :
     endpoints (a, b) + endpoints (!a, !b) = 2 := by
   cases a <;> cases b <;> norm_num [endpoints]
 
-/-- A half-turn reversing the labels of a mixed two-crossing polygon
+/-- Complementing all marked labels of a mixed two-crossing polygon
 pairs its charge with the opposite charge. -/
 theorem charge_complement (a b c d : Bool) :
     charge 2 (a, b) (c, d) false + charge 2 (!a, !b) (!c, !d) false = 0 := by

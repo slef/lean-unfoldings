@@ -1231,9 +1231,14 @@ development bound at `φ² ≤ γ / 32`.
   bounds with the enclosed curvature.
 - [x] Derive Euler's formula for one convex normal cell and linearize the pointwise count
   into site indicators and signed polygon charges.
-- [ ] Choose the regular connectors for each bank, transfer the sharp heading estimate to
-  its physical edges, and develop the source gaps on the clipped extension.
-- [ ] Construct and straighten the latitude grid and polar selectors with quantitative side bounds.
+- [x] Choose regular closing connectors and identify the original physical bank when the
+  opposite initial face is outside the Jordan disk.
+- [x] Count the latitude parameter triangles and average the linear Euler terms under
+  orthogonal placement.
+- [x] Mesh a compact affine-floor section in its original Euclidean support planes.
+- [ ] Use the affine-floor sections in the three-exit cutting mesh, transfer the sharp
+  heading estimate to each bank, and develop the source gaps.
+- [ ] Straighten the latitude grid and construct the polar selectors with quantitative side bounds.
 - [ ] Localize single-cell crossings after cancellation, assemble the rotation estimate, and
   prove the explicit `13,000 * α⁻⁴` partition theorem.
 
