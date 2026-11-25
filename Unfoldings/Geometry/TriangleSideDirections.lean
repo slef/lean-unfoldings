@@ -37,18 +37,21 @@ theorem coordGradient_ne_zero (i : Fin 3) : T.coordGradient i ≠ 0 := by
   rw [equal, inner_zero_left, coord_vertex, ite_eq_right different] at last
   linarith only [first, last]
 
-/-- Outward normals are indexed by the opposite corners. The origin is strictly
-inside when the triangle is used as a compact horizontal slope selector. -/
-def polygonSideDirections (origin : (0 : Plane) ∈ interior T.carrier) :
+/-- Outward normals are indexed by the opposite corners. An interior slope
+supplies the reference for compact clipping. -/
+def polygonSideDirectionsAt (reference : Plane) (inside : reference ∈ interior T.carrier) :
     PolygonSideDirections (Fin 3) T.carrier where
   normal i := -NormedSpace.normalize (T.coordGradient i)
   offset i := ‖T.coordGradient i‖⁻¹ * T.coord i 0
   unit i := by
     rw [norm_neg]
     exact NormedSpace.norm_normalize (T.coordGradient_ne_zero i)
-  positive i :=
-    mul_pos (inv_pos.mpr (norm_pos_iff.mpr (T.coordGradient_ne_zero i)))
-      (T.interior_eq_pos_coord.subset origin i)
+  reference := reference
+  strict i := by
+    change inner ℝ (-(‖T.coordGradient i‖⁻¹ • T.coordGradient i)) reference < _
+    rw [inner_neg_left, real_inner_smul_left, T.inner_coordGradient, ← mul_neg,
+      mul_lt_mul_iff_right₀ (inv_pos.mpr (norm_pos_iff.mpr (T.coordGradient_ne_zero i)))]
+    linarith only [T.interior_eq_pos_coord.subset inside i]
   carrier_eq := by
     rw [T.carrier_eq_nonneg_coord]
     ext p
@@ -61,5 +64,9 @@ def polygonSideDirections (origin : (0 : Plane) ∈ interior T.carrier) :
         mul_le_mul_iff_right₀ (inv_pos.mpr (norm_pos_iff.mpr (T.coordGradient_ne_zero i)))]
       constructor <;> intro h <;> linarith only [h]
     exact forall_congr' fun i => (side i).symm
+
+/-- Use the chart origin as the reference when it belongs to the interior. -/
+def polygonSideDirections (origin : (0 : Plane) ∈ interior T.carrier) :
+    PolygonSideDirections (Fin 3) T.carrier := T.polygonSideDirectionsAt 0 origin
 
 end Unfoldings.Triangle

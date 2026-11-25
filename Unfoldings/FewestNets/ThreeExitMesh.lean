@@ -2,7 +2,8 @@ module
 
 public import Unfoldings.FewestNets.ThreeExitEmbedding
 public import Unfoldings.Geometry.StraightGraphPotential
-public import Unfoldings.Roof.PrescribedSegmentMesh
+public import Unfoldings.Roof.AffineFloorSegments
+public import Unfoldings.Roof.AffineFloorNormalCells
 public import Unfoldings.Roof.PotentialCutDisk
 public import Unfoldings.Roof.PotentialContourHistory
 public import Unfoldings.Complex.ContourSourceCoverage
@@ -28,15 +29,16 @@ variable {Face : Type u} [Fintype Face] {C : TriangleComplex.{u, v} Face}
 local notation "U" => K.selectionComponent slopes seed
 local notation "S" => K.restrictedCarrier U
 local notation "V" => {v : C.Vertex Set.univ // K.projectedVertex v ∈ S}
-local notation "G" => K.componentClippedExtension
+local notation "G₀" => K.componentClippedExtension
   (Set.nonempty_of_mem (K.seed_mem_selectionComponent slopes seed)) compact nonempty
+local notation "G" => SlopeEnvelope.recenter (G₀) B.reference
 local notation "p" => (fun v : V => K.projectedVertex (Subtype.val v))
 
 variable (level : ℝ)
 variable (M : SlopeEnvelope.FiniteSlopeModel
   (K.componentClippedExtension
     (Set.nonempty_of_mem (K.seed_mem_selectionComponent slopes seed)) compact nonempty))
-variable {a : ℝ} (positive : 0 < a) (inner_disk : Metric.ball (0 : Plane) a ⊆ slopes)
+
 
 local instance threeExitMeshVertexFintype : Fintype V := Fintype.ofFinite V
 
@@ -75,30 +77,39 @@ local notation "terminal" => R.fineMeshCutLast level
 local notation "Distinct[" higher "]" => (fun i => R.fineMeshCutEndpoints_ne level i higher)
 local notation "sectionPoint" => p (meshInteriorVertex (K := K) (slopes := slopes) (seed := seed))
 
+local notation "floor" => SlopeEnvelope.FiniteSlopeModel.referenceFloor B.reference
+
 include M in
 theorem meshSection_nonempty (higher : ∀ v : V, (G).height (p v) < level) :
-    (interior (SpatialEnvelope.clip (SlopeEnvelope.FiniteSlopeModel.plane M) (-level))).Nonempty := by
-  rw [M.clip_eq_sublevel, neg_neg]
+    (interior (SpatialEnvelope.clipAbove (SlopeEnvelope.FiniteSlopeModel.plane M)
+      floor (-level))).Nonempty := by
+  rw [M.clipAbove_referenceFloor_eq]
   exact ⟨sectionPoint, (G).mem_interior_sublevel (higher _)⟩
 
+include M in
 theorem meshSection_point (higher : ∀ v : V, (G).height (p v) < level) :
-    -level < -(G).height sectionPoint := by linarith only [higher meshInteriorVertex]
+    -level + floor sectionPoint < SpatialEnvelope.height (SlopeEnvelope.FiniteSlopeModel.plane M)
+      sectionPoint := by
+  rw [M.height_eq, SlopeEnvelope.FiniteSlopeModel.referenceFloor_apply]
+  have strict := higher (meshInteriorVertex (K := K) (slopes := slopes) (seed := seed))
+  rw [SlopeEnvelope.recenter_height] at strict
+  linarith only [strict]
 
-/-- The actual finite physical roof section includes the cut supporting lines and endpoints. -/
-def fineMesh (higher : ∀ v : V, (G).height (p v) < level) : SpatialEnvelope.ConstrainedTriangulation (SlopeEnvelope.FiniteSlopeModel.plane M)
-    (Sum.elim (originalEquations K) (segmentEquations initial terminal (Distinct[higher]))) (-level) :=
-  M.prescribedSegmentMesh (originalEquations K) (originalEquations_ne_zero K) initial terminal (Distinct[higher])
-    positive inner_disk (meshSection_point (K := K) (slopes := slopes) (seed := seed) level higher)
+/-- The affine floor bounds the actual roof without changing its supporting planes. -/
+def fineMesh (higher : ∀ v : V, (G).height (p v) < level) :
+    SpatialEnvelope.FloorMesh (SlopeEnvelope.FiniteSlopeModel.plane M) floor
+      (Sum.elim (originalEquations K) (segmentEquations initial terminal (Distinct[higher]))) (-level) :=
+  SpatialEnvelope.floorMesh (SlopeEnvelope.FiniteSlopeModel.plane M) floor _
+    (Sum.rec (originalEquations_ne_zero K) (segmentEquations_ne_zero initial terminal (Distinct[higher])))
+    (M.compact_clipAbove_referenceFloor B.reference B.reference_mem_interior level)
+    (meshSection_point (K := K) (slopes := slopes) (seed := seed) level M higher)
 
-local notation "Mesh[" higher "]" => R.fineMesh level M positive inner_disk higher
+local notation "Mesh[" higher "]" => R.fineMesh level M higher
 
-theorem fineMesh_conforming (higher : ∀ v : V, (G).height (p v) < level) : TriangleFamily.Conforming (Mesh[higher]).projectedTriangle :=
-  M.prescribedSegmentMesh_conforming (originalEquations K) (originalEquations_ne_zero K)
-    initial terminal (Distinct[higher]) positive inner_disk (meshSection_point (K := K) (slopes := slopes) (seed := seed) level higher)
+theorem fineMesh_conforming (higher : ∀ v : V, (G).height (p v) < level) :
+    TriangleFamily.Conforming (Mesh[higher]).projectedTriangle := (Mesh[higher]).conforming
 
-local notation "Roof[" higher "]" => SpatialEnvelope.Triangulation.roof
-  (SpatialEnvelope.ConstrainedTriangulation.toTriangulation (Mesh[higher]))
-  (R.fineMesh_conforming level M positive inner_disk higher)
+local notation "Roof[" higher "]" => SpatialEnvelope.FloorMesh.roof (Mesh[higher])
   ((meshSection_nonempty (K := K) (slopes := slopes) (seed := seed) level M higher))
 
 local instance threeExitFineIndexFintype (higher : ∀ v : V, (G).height (p v) < level) : Fintype (Mesh[higher]).Index :=
@@ -117,7 +128,7 @@ theorem exists_fine_forward_seam (higher : ∀ v : V, (G).height (p v) < level) 
   let x := roof.projectedVertex v
   have x_in : x ∈ interior {z | (G).height z ≤ level} := by
     have member := (roof.projectedVertex_mem_interior_iff v).mpr internal
-    rw [(Mesh[higher]).toTriangulation.roof_footprint, M.clip_eq_sublevel, neg_neg] at member
+    rw [(Mesh[higher]).roof_footprint, M.clipAbove_referenceFloor_eq] at member
     exact member
   obtain ⟨u, along, before⟩ := R.exists_truncated_forward_piece level higher on_cut x_in
   let i := idx u
@@ -125,11 +136,10 @@ theorem exists_fine_forward_seam (higher : ∀ v : V, (G).height (p v) < level) 
   have last_eq : terminal i = R.cutLast level u :=
     congrArg (R.cutLast level) ((idx).symm_apply_apply u)
   obtain ⟨w, s, link, forward, different⟩ :=
-    M.prescribedSegmentMesh_forward_seam (originalEquations K) (originalEquations_ne_zero K)
-      initial terminal (Distinct[higher]) positive inner_disk (meshSection_point (K := K) (slopes := slopes) (seed := seed) level higher)
-      ((meshSection_nonempty (K := K) (slopes := slopes) (seed := seed) level M higher)) i
-      (by rw [start_eq, neg_neg]; exact (higher u).le)
-      (by rw [last_eq, neg_neg]; exact R.cutLast_height_le level higher u)
+    (Mesh[higher]).prescribed_forward_seam initial terminal (Distinct[higher])
+      (meshSection_nonempty (K := K) (slopes := slopes) (seed := seed) level M higher) i
+      (by rw [M.clipAbove_referenceFloor_eq, start_eq]; exact (higher u).le)
+      (by rw [M.clipAbove_referenceFloor_eq, last_eq]; exact R.cutLast_height_le level higher u)
       v internal (by rw [start_eq, last_eq]; exact along) (by rw [last_eq]; exact before)
   rw [last_eq] at forward
   let edge : {y // y ∉ (A).roots} := ⟨Sum.inl u,
@@ -151,16 +161,22 @@ theorem exists_fine_forward_seam (higher : ∀ v : V, (G).height (p v) < level) 
 /-- Fine parents follow the already oriented geometric cut carrier. -/
 def fineMeshForest (higher : ∀ v : V, (G).height (p v) < level) : (Roof[higher]).PotentialCutForest (CutRank[higher]) (Cuts[higher]) :=
   (Roof[higher]).potentialCutForest (CutRank[higher]) (Cuts[higher])
-    (R.exists_fine_forward_seam level M positive inner_disk higher)
+    (R.exists_fine_forward_seam level M higher)
 
 /-- All positive curvature of the finite extension lies on its prescribed mesh cuts. -/
 theorem fineMesh_curvature_covered (higher : ∀ v : V, (G).height (p v) < level) (v : (Mesh[higher]).pairedComplex.Vertex Set.univ)
     (curved : 0 < (Mesh[higher]).pairedComplex.interiorAngularDefect Set.univ v) :
     (Roof[higher]).projectedVertex v ∈ Cuts[higher] := by
-  obtain ⟨⟨f, j⟩, equal, _⟩ := K.componentClippedPhysical_positive_curvature_retained_corner
-    (Set.nonempty_of_mem (K.seed_mem_selectionComponent slopes seed)) compact nonempty M
-    (Mesh[higher]).toTriangulation (R.fineMesh_conforming level M positive inner_disk higher)
-    ((meshSection_nonempty (K := K) (slopes := slopes) (seed := seed) level M higher)) B.convex v curved
+  classical
+  let retained := Set.nonempty_of_mem (K.seed_mem_selectionComponent slopes seed)
+  letI : Nonempty U := retained.coe_sort
+  have full := M.active_cell_interior_of_floorRoof_positive_curvature (Mesh[higher])
+    (meshSection_nonempty (K := K) (slopes := slopes) (seed := seed) level M higher) B.convex
+    (FiniteDual.convex_cost (fun i : U × Fin 3 => K.componentDualPoint i)
+      (fun i : U × Fin 3 => K.componentDualLevel i))
+    v curved
+  obtain ⟨⟨f, j⟩, equal, _⟩ := K.componentClippedExtension_full_cell_retained_corner
+    retained compact nonempty _ full
   let w : V := ⟨C.vertexOfCorner Set.univ (f.val, j), by
     rw [K.projectedVertex_ofCorner]
     exact Set.mem_iUnion.mpr ⟨f, (K.projectedTriangle f.val).vertex_mem j⟩⟩
@@ -190,15 +206,12 @@ theorem fineMesh_seam_subsegment (higher : ∀ v : V, (G).height (p v) < level)
     ∃ i, (Roof[higher]).projectedVertex x ∈ segment ℝ (initial i) (terminal i) ∧
       (Roof[higher]).projectedVertex y ∈ segment ℝ (initial i) (terminal i) := by
   have same := (Roof[higher]).projected_link_segment link
-  have projected := (Mesh[higher]).toTriangulation.roof_projectedTriangle
-    (R.fineMesh_conforming level M positive inner_disk higher)
+  have projected := (Mesh[higher]).roof_projectedTriangle
     (meshSection_nonempty (K := K) (slopes := slopes) (seed := seed) level M higher)
     ((Mesh[higher]).pairedComplex.left s).face
   rw [projected, R.fineMesh_cuts_eq_segments level higher] at covered
   rw [projected] at same
-  obtain ⟨i, contained⟩ := M.prescribedSegmentMesh_subedge (originalEquations K)
-    (originalEquations_ne_zero K) initial terminal (Distinct[higher]) positive inner_disk
-    (meshSection_point (K := K) (slopes := slopes) (seed := seed) level higher)
+  obtain ⟨i, contained⟩ := (Mesh[higher]).prescribed_subedge initial terminal (Distinct[higher])
     ((Mesh[higher]).pairedComplex.left s) covered
   exact ⟨i, contained (same ▸ left_mem_segment ℝ _ _),
     contained (same ▸ right_mem_segment ℝ _ _)⟩
@@ -215,7 +228,7 @@ theorem fineMesh_edge_orientation (higher : ∀ v : V, (G).height (p v) < level)
     Nonempty ((Forest[higher]).OrientedSubsegment
       ((Roof[higher]).projectedVertex x) ((Roof[higher]).projectedVertex y)) := by
   obtain ⟨i, first, last⟩ :=
-    R.fineMesh_seam_subsegment level M positive inner_disk higher link covered
+    R.fineMesh_seam_subsegment level M higher link covered
   obtain ⟨α, α_mem, at_first⟩ := (segment_eq_image_lineMap ℝ _ _).subset first
   obtain ⟨β, β_mem, at_last⟩ := (segment_eq_image_lineMap ℝ _ _).subset last
   let u := (idx).symm i
@@ -232,10 +245,9 @@ theorem fineMesh_edge_orientation (higher : ∀ v : V, (G).height (p v) < level)
     exact increase.not_ge later
   exact ⟨⟨edge, α, β, α_mem, β_mem, ordered, at_first, at_last⟩⟩
 
-local notation "FineForest[" higher "]" => R.fineMeshForest level M positive inner_disk higher
+local notation "FineForest[" higher "]" => R.fineMeshForest level M higher
 local notation "FineComplex[" higher "]" =>
-  SpatialEnvelope.Triangulation.pairedComplex
-    (SpatialEnvelope.ConstrainedTriangulation.toTriangulation (Mesh[higher]))
+  SpatialEnvelope.FloorMesh.pairedComplex (Mesh[higher])
 
 
 /-- The actual selected parent seam follows the orientation of its coarse cut. -/
@@ -248,7 +260,7 @@ theorem fineMesh_parent_alignment (higher : ∀ v : V, (G).height (p v) < level)
   let v : {v // v ∉ F.parents.roots} := ⟨x, nonroot⟩
   have strict := F.parents.ascending x nonroot
   rw [F.height_eq] at strict
-  exact R.fineMesh_edge_orientation level M positive inner_disk higher
+  exact R.fineMesh_edge_orientation level M higher
     (F.selection.link v) (F.selected_subset v) strict
 
 /-- Distinct endpoints of a whole cut seam have distinct interpolated ranks. -/
@@ -259,7 +271,7 @@ theorem fineMesh_cut_rank_ne (higher : ∀ v : V, (G).height (p v) < level)
         ((FineComplex[higher]).left s).edge ⊆ Cuts[higher]) :
     CutRank[higher] ((Roof[higher]).projectedVertex x) ≠
       CutRank[higher] ((Roof[higher]).projectedVertex y) := by
-  obtain ⟨i, first, last⟩ := R.fineMesh_seam_subsegment level M positive inner_disk higher
+  obtain ⟨i, first, last⟩ := R.fineMesh_seam_subsegment level M higher
     link covered
   obtain ⟨s₀, s₀_mem, at_first⟩ := (segment_eq_image_lineMap ℝ _ _).subset first
   obtain ⟨s₁, s₁_mem, at_last⟩ := (segment_eq_image_lineMap ℝ _ _).subset last
@@ -288,7 +300,7 @@ theorem fineMesh_selected_of_forward (higher : ∀ v : V, (G).height (p v) < lev
     s ∈ Set.range (FineForest[higher]).selection.edge := by
   let Q := Roof[higher]
   let F := FineForest[higher]
-  obtain ⟨P⟩ := R.fineMesh_edge_orientation level M positive inner_disk higher link covered increase
+  obtain ⟨P⟩ := R.fineMesh_edge_orientation level M higher link covered increase
   have on_cut : Q.projectedVertex x ∈ Cuts[higher] :=
     covered ((Q.projected_link_segment link) ▸ left_mem_segment ℝ _ _)
   have strict : (G).height (Q.projectedVertex x) < level := by
@@ -303,7 +315,7 @@ theorem fineMesh_selected_of_forward (higher : ∀ v : V, (G).height (p v) < lev
           ⟨lt_of_le_of_ne s₀_mem.1 (Ne.symm zero), increasing.trans_le s₁_mem.2⟩
     · exact (member ⟨r, rfl⟩).elim
   have interior_point : Q.projectedVertex x ∈ interior Q.footprint := by
-    rw [(Mesh[higher]).toTriangulation.roof_footprint, M.clip_eq_sublevel, neg_neg]
+    rw [(Mesh[higher]).roof_footprint, M.clipAbove_referenceFloor_eq]
     exact (G).mem_interior_sublevel strict
   have nonroot : x ∉ F.parents.roots := by
     rw [F.roots_eq]
@@ -311,7 +323,7 @@ theorem fineMesh_selected_of_forward (higher : ∀ v : V, (G).height (p v) < lev
     · exact (Q.projectedVertex_mem_interior_iff x).mp interior_point boundary
     · exact outside on_cut
   let e : {v // v ∉ F.parents.roots} := ⟨x, nonroot⟩
-  obtain ⟨parent⟩ := R.fineMesh_parent_alignment level M positive inner_disk higher x nonroot
+  obtain ⟨parent⟩ := R.fineMesh_parent_alignment level M higher x nonroot
   have same := FiniteEmbeddedGraph.fine_forward_edge_unique (Forest[higher])
     (R.truncatedEmbedding_straight level higher) Subtype.val_injective
     Q.seamEmbedding_straight link (F.selection.link e) P parent
@@ -319,12 +331,12 @@ theorem fineMesh_selected_of_forward (higher : ∀ v : V, (G).height (p v) < lev
 
 /-- The retained fine seams are precisely those outside the prescribed cut carrier. -/
 theorem fineMesh_retain_eq_prescribed (higher : ∀ v : V, (G).height (p v) < level) :
-    (FineForest[higher]).retain = (Mesh[higher]).toTriangulation.retainOutside Cuts[higher] := by
-  let T := (Mesh[higher]).toTriangulation
+    (FineForest[higher]).retain = (Mesh[higher]).retainOutside Cuts[higher] := by
+  let T := Mesh[higher]
   let Q := Roof[higher]
   let F := FineForest[higher]
   have projection (f : T.Index) : Q.projectedTriangle f = T.projectedTriangle f :=
-    T.roof_projectedTriangle (R.fineMesh_conforming level M positive inner_disk higher)
+    T.roof_projectedTriangle
       (meshSection_nonempty (K := K) (slopes := slopes) (seed := seed) level M higher) f
   ext s
   constructor
@@ -336,11 +348,11 @@ theorem fineMesh_retain_eq_prescribed (higher : ∀ v : V, (G).height (p v) < le
       exact not_not.mp outside
     have link : T.pairedComplex.seamGraph.IsLink s (T.pairedComplex.seamVertex s false)
         (T.pairedComplex.seamVertex s true) := Or.inl ⟨rfl, rfl⟩
-    have distinct := R.fineMesh_cut_rank_ne level M positive inner_disk higher link covered
+    have distinct := R.fineMesh_cut_rank_ne level M higher link covered
     rcases lt_or_gt_of_ne distinct with increasing | increasing
-    · exact kept (R.fineMesh_selected_of_forward level M positive inner_disk higher
+    · exact kept (R.fineMesh_selected_of_forward level M higher
         link covered increasing)
-    · exact kept (R.fineMesh_selected_of_forward level M positive inner_disk higher
+    · exact kept (R.fineMesh_selected_of_forward level M higher
         (Or.inr ⟨rfl, rfl⟩) covered increasing)
   · intro kept selected
     obtain ⟨e, rfl⟩ := selected
@@ -357,14 +369,14 @@ def fineMeshHistory (higher : ∀ v : V, (G).height (p v) < level)
 theorem fineMeshHistory_aligned (higher : ∀ v : V, (G).height (p v) < level)
     (x : (FineComplex[higher]).Vertex Set.univ) (n : ℕ)
     (before : n ≤ (FineForest[higher]).parents.distanceToRoot x) (i : Fin n) :
-    let H := R.fineMeshHistory level M positive inner_disk higher x n
+    let H := R.fineMeshHistory level M higher x n
     Nonempty ((Forest[higher]).OrientedSubsegment (H.vertex i.castSucc) (H.vertex i.succ)) := by
   let F := FineForest[higher]
   change Nonempty ((Forest[higher]).OrientedSubsegment
     ((Roof[higher]).projectedVertex (F.parents.parent^[i.val] x))
     ((Roof[higher]).projectedVertex (F.parents.parent^[i.val + 1] x)))
   rw [Function.iterate_succ_apply']
-  exact R.fineMesh_parent_alignment level M positive inner_disk higher _
+  exact R.fineMesh_parent_alignment level M higher _
     (F.parents.iterate_lt_distanceToRoot_not_mem x (i.isLt.trans_le before))
 
 /-- A contour based at a genuine rim root processes every positive curvature
@@ -393,7 +405,7 @@ theorem exists_fineMesh_completeSourceContour (higher : ∀ v : V, (G).height (p
     rcases root with boundary | outside
     · simp only [TriangleComplex.interiorAngularDefect, ite_eq_left boundary] at curved
       exact (lt_irrefl _ curved)
-    · exact outside (R.fineMesh_curvature_covered level M positive inner_disk higher v curved)
+    · exact outside (R.fineMesh_curvature_covered level M higher v curved)
   exact D.exists_positiveContourSource_of_defect F.selection contour F.boundary_roots
     starts ends v nonroot curved
 

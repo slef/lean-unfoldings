@@ -1,6 +1,6 @@
 module
 
-public import Unfoldings.Convex.ExteriorPlan
+public import Unfoldings.Convex.SlopeReference
 
 /-! The given outward normals of a polygon supply consistent side directions. -/
 
@@ -10,13 +10,14 @@ noncomputable section
 
 namespace Unfoldings
 
-/-- A finite half-plane presentation with unit outward normals and the origin
-strictly on the inner side of each supporting line. -/
+/-- A finite half-plane presentation with unit outward normals and a reference
+slope strictly on the inner side of each supporting line. -/
 structure PolygonSideDirections (I : Type*) (slopes : Set Plane) where
   normal : I → Plane
   offset : I → ℝ
   unit : ∀ i, ‖normal i‖ = 1
-  positive : ∀ i, 0 < offset i
+  reference : Plane
+  strict : ∀ i, inner ℝ (normal i) reference < offset i
   carrier_eq : slopes = {p | ∀ i, inner ℝ (normal i) p ≤ offset i}
 
 namespace PolygonSideDirections
@@ -54,6 +55,16 @@ theorem exists_active_side {p : Plane} (h : p ∈ frontier slopes) :
   exact h.2 (open_set.subset_interior_iff.mpr (fun q hq =>
     B.carrier_eq.symm.subset fun i => (Set.mem_iInter.mp hq i).le) (Set.mem_iInter.mpr strict))
 
+include B in
+theorem reference_mem_interior : B.reference ∈ interior slopes := by
+  let strictSides := ⋂ i, {p : Plane | inner ℝ (B.normal i) p < B.offset i}
+  have opens : IsOpen strictSides := isOpen_iInter_of_finite fun i =>
+    isOpen_lt (continuous_const.inner continuous_id) continuous_const
+  have contained : strictSides ⊆ slopes := by
+    intro p member
+    exact B.carrier_eq.symm.subset fun i => (Set.mem_iInter.mp member i).le
+  exact opens.subset_interior_iff.mpr contained (Set.mem_iInter.mpr B.strict)
+
 variable [Nonempty I]
 
 open Classical in
@@ -73,17 +84,20 @@ every root's active slope. -/
 def exteriorPlan {E : SlopeEnvelope} (domain : E.slopes = slopes) {V : Type*}
     (point : V → Plane) (injective : Function.Injective point) (slope : V → Plane)
     (active : ∀ v, E.Active (point v) (slope v)) (boundary : ∀ v, slope v ∈ frontier slopes) :
-    E.ExteriorPlan V where
+    (E.recenter B.reference).ExteriorPlan V where
   point := point
   point_injective := injective
-  slope := slope
-  direction p := B.normal (B.sideIndex p)
-  active := active
-  unit v := B.unit (B.sideIndex (slope v))
+  slope v := slope v - B.reference
+  direction p := B.normal (B.sideIndex (p + B.reference))
+  active v := (E.recenter_active_iff B.reference).mpr (active v)
+  unit v := B.unit _
   positive v := by
-    rw [B.sideIndex_active (boundary v)]
-    exact B.positive _
-  support v q h := by
+    rw [sub_add_cancel, inner_sub_right, B.sideIndex_active (boundary v)]
+    exact sub_pos.mpr (B.strict _)
+  support v := by
+    rw [sub_add_cancel]
+    apply E.recenter_support B.reference
+    intro q h
     rw [B.sideIndex_active (boundary v)]
     exact B.side_bound (domain ▸ h) _
 

@@ -1235,9 +1235,11 @@ development bound at `φ² ≤ γ / 32`.
   opposite initial face is outside the Jordan disk.
 - [x] Count the latitude parameter triangles and average the linear Euler terms under
   orthogonal placement.
-- [x] Mesh a compact affine-floor section in its original Euclidean support planes.
-- [ ] Use the affine-floor sections in the three-exit cutting mesh, transfer the sharp
-  heading estimate to each bank, and develop the source gaps.
+- [x] Use compact affine-floor sections in the three-exit cutting mesh, keeping its
+  original Euclidean support planes. Bound the aperture at every compatible root.
+- [x] Verify the latitude chart formulas, longitude spacing, and polar row size.
+- [ ] Choose the closing disk for the original side of each bank, apply the sharp turn
+  budget to the resulting compact comparison, and develop the source gaps.
 - [ ] Straighten the latitude grid and construct the polar selectors with quantitative side bounds.
 - [ ] Localize single-cell crossings after cancellation, assemble the rotation estimate, and
   prove the explicit `13,000 * α⁻⁴` partition theorem.

@@ -2,6 +2,17 @@
 
 ## Session Log
 
+### 2026-11-25 — use slanted sections for three-exit routing
+
+- The three-exit construction now truncates its ascertained exit rays at the
+  recentered potential while meshing the unchanged physical extension.
+- Checked prescribed-cut coverage, positive curvature, the exact retained
+  seams, and the aperture for every actual compatible root.
+- Verified the latitude frame's exact gnomonic coordinates, the row longitude
+  spacings, and the polar row side count.
+- Transferred the regular two-link error to an actual matching original bank,
+  using just the curvature inside its closing disk.
+
 ### 2026-11-25 — count latitude triangles and separate the truncation reference
 
 - Verified the precise latitude step and the bound of fewer than 2,283 α⁻² triangles in

@@ -59,8 +59,8 @@ The open rays avoid the entire original component. -/
 theorem exists_component_polygon_exits
     (no_boundary : ∀ f, K.normalSlope f ∉ frontier slopes)
     (selected : K.normalSlope seed ∈ slopes) :
-    ∃ P : (G).ExteriorPlan BVertices, P.point = (fun v => K.projectedVertex v.val) ∧
-      (∀ v, P.direction (P.slope v) = B.normal (B.sideIndex (P.slope v))) ∧
+    ∃ P : ((G).recenter B.reference).ExteriorPlan BVertices, P.point = (fun v => K.projectedVertex v.val) ∧
+      (∀ v, P.direction (P.slope v) = B.normal (B.sideIndex (P.slope v + B.reference))) ∧
       (∀ v t, 0 < t → P.ray v t ∉ S) := by
   choose slope boundary active using (fun v => K.exists_component_frontier_active seed B.convex
     compact nonempty no_boundary selected v)
@@ -68,8 +68,12 @@ theorem exists_component_polygon_exits
     (fun _ _ h => Subtype.ext (K.projectedVertex_injective h)) slope active boundary
   refine ⟨P, rfl, fun _ => rfl, ?_⟩
   intro v t time
-  exact K.componentClippedExtension_ray_avoids retainedNonempty compact nonempty (P.active v)
-    rfl (P.support v) (fun h => by have := P.unit v; rw [h, norm_zero] at this; norm_num at this)
+  have original : (G).Active (P.point v) (P.slope v + B.reference) := by
+    apply ((G).recenter_active_iff B.reference).mp
+    simpa only [add_sub_cancel_right] using P.active v
+  exact K.componentClippedExtension_ray_avoids retainedNonempty compact nonempty original
+    rfl ((G).original_support_of_recenter B.reference (P.support v))
+    (fun h => by have := P.unit v; rw [h, norm_zero] at this; norm_num at this)
     time (fun f hf => by
       have member := K.selectionComponent_selected selected hf
       by_contra outside

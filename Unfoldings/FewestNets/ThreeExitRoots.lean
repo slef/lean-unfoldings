@@ -30,8 +30,9 @@ local notation "V" => {v : C.Vertex Set.univ // K.projectedVertex v ∈ S}
 local notation "A" => R.stems.choice.parents
 local notation "P" => R.truncatedParents
 local notation "Root" => {r : V // r ∈ AscendingParents.roots A}
-local notation "G" => K.componentClippedExtension
-  (Set.nonempty_of_mem (K.seed_mem_selectionComponent slopes seed)) compact nonempty
+local notation "G" => SlopeEnvelope.recenter
+  (K.componentClippedExtension
+    (Set.nonempty_of_mem (K.seed_mem_selectionComponent slopes seed)) compact nonempty) B.reference
 local notation "p" => (fun v : V => K.projectedVertex (Subtype.val v))
 
 /-- Name the original frontier root on both the stems and their added exits. -/

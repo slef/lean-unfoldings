@@ -33,12 +33,12 @@ local notation "p" => (fun v : V => K.projectedVertex (Subtype.val v))
 indices are east (0), west (1), and north (2). -/
 structure ThreeExitComponentRouting (H : ThreeExitStemWindows) where
   stems : K.ThreeExitComponentStems (slopes := slopes) seed H
-  exits : (G).ExteriorPlan BVertices
+  exits : ((G).recenter B.reference).ExteriorPlan BVertices
   point_eq : ∀ r, exits.point r = K.projectedVertex r.val
-  direction_eq : ∀ r, exits.direction (exits.slope r) = B.normal (B.sideIndex (exits.slope r))
+  direction_eq : ∀ r, exits.direction (exits.slope r) = B.normal (B.sideIndex (exits.slope r + B.reference))
   outside : ∀ r t, 0 < t → exits.ray r t ∉ S
   compatible : ∀ (r : V) (hr : p r ∈ frontier S),
-    let i := B.sideIndex (exits.slope ⟨r.val, hr⟩)
+    let i := B.sideIndex (exits.slope ⟨r.val, hr⟩ + B.reference)
     (stems.choice.choosesEast r → i ≠ 1) ∧ (¬ stems.choice.choosesEast r → i ≠ 0)
 
 open Classical in
@@ -66,7 +66,7 @@ theorem exists_threeExitComponentRouting (H : ThreeExitStemWindows)
     exact (lt_asymm positive negative)
   obtain ⟨P, point, direction, avoids⟩ :=
     K.exists_component_polygon_exits seed B compact nonempty no_boundary selected
-  let side (r : V) (h : p r ∈ frontier S) := B.sideIndex (P.slope ⟨r.val, h⟩)
+  let side (r : V) (h : p r ∈ frontier S) := B.sideIndex (P.slope ⟨r.val, h⟩ + B.reference)
   let canEast (r : V) := ∃ h : p r ∈ frontier S, side r h ≠ 1
   let canWest (r : V) := ∃ h : p r ∈ frontier S, side r h ≠ 0
   have available (r : V) (hr : p r ∈ frontier S) : canEast r ∨ canWest r := by

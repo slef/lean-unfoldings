@@ -106,6 +106,11 @@ def pairedFolding : SpatialFolding T.pairedComplex where
   place := T.placement
   joined s := T.edgeTransition_joined (TriangleFamily.seamPair T.projectedTriangle s).carrier_eq
 
+/-- Keep an actual physical seam unless its whole projection lies in the cuts. -/
+def retainOutside (cuts : Set Plane) : Set T.pairedComplex.Seam :=
+  {s | ¬ (T.projectedTriangle (T.pairedComplex.left s).face).edge
+    (T.pairedComplex.left s).edge ⊆ cuts}
+
 theorem paired_seam_projected_edge (s : T.pairedComplex.Seam) :
     (T.projectedTriangle (T.pairedComplex.left s).face).edge (T.pairedComplex.left s).edge =
       (T.projectedTriangle (T.pairedComplex.right s).face).edge (T.pairedComplex.right s).edge :=

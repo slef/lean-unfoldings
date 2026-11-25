@@ -2835,6 +2835,13 @@ public import Unfoldings.Roof.AffineFloorRoof
 public import Unfoldings.Geometry.AcuteChainExterior
 public import Unfoldings.Geometry.TwoLinkRegularApex
 public import Unfoldings.Cap.AcuteJordanPhysicalBank
+public import Unfoldings.Cap.AcuteOriginalBankBudget
+public import Unfoldings.FewestNets.LatitudeFrame
+public import Unfoldings.FewestNets.LatitudeMetricRows
+public import Unfoldings.FewestNets.ThreeExitRootSpan
+public import Unfoldings.Geometry.AcuteHeadingControls
+public import Unfoldings.Roof.AffineFloorNormalCells
+public import Unfoldings.Roof.AffineFloorSegments
 public import Unfoldings.FewestNets.SingleCellCharge
 public import Unfoldings.FewestNets.SingleCellCancellation
 public import Unfoldings.FewestNets.AcuteSelectorThreshold
