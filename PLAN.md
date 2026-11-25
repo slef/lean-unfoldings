@@ -1253,8 +1253,9 @@ statement will produce an original-edge `HasNetPartition`.
   inward plane forms and their supported arcs in the common spherical frame.
 - [x] Identify the actual endpoint incidences, including the polar wraparound.
   Verify the sharp localization hypotheses and both normalized crossing budgets.
-- [ ] Apply the two-coset crossing estimate to the actual Gaussian sides and sum
-  the resulting area bounds over the original vertices.
+- [x] Apply the two-coset crossing estimate to the actual Gaussian sides and sum
+  the resulting area bounds over the original vertices. Choose one generic
+  placement whose original-face component count is below the global bound.
 
 - [ ] Assemble the partition theorem and audit its dependencies.
 
