@@ -3,6 +3,7 @@ module
 public import Unfoldings.FewestNets.ThreeExitTerminalGerms
 public import Unfoldings.Geometry.SpatialEnvelopeCutBankLift
 public import Unfoldings.Geometry.SpatialEnvelopeFaceSideCopies
+public import Unfoldings.Geometry.SpatialEnvelopeFaceSideFiber
 public import Unfoldings.Geometry.SpatialEnvelopeHalfspaceChart
 public import Unfoldings.Metric.PlacedBallComposition
 
@@ -58,6 +59,10 @@ theorem exists_exit_banks_with_charts (r : Root) :
       (∀ side s t, edist (bank side s) (bank side t) =
         (‖R.physicalRayDirection r‖₊ : ℝ≥0∞) * edist s t) ∧
       (∀ side other : Bool, side ≠ other → ∀ s t, 0 < s.val → bank side s ≠ bank other t) ∧
+      (∀ (t : ℝ≥0), 0 < t.val → ∀ x : W.Cut,
+        Cap.horizontal (W.partition.restoreCut R.wholeCarrier x).val =
+          R.exits.ray (R.exitRoot r) t.val →
+          ∃ side, x = bank side t) ∧
       ∀ side (t : ℝ≥0), 0 < t.val → ∃ δ > 0,
         ∃ a : W.partition.faceSideHalfspace (anchor side) (orientMap (p r.val) (q r)) (W.exitSigns r),
           a.val = (M.plane (W.partition.support (anchor side))).project.symm
@@ -137,7 +142,7 @@ theorem exists_exit_banks_with_charts (r : Root) :
     have restored := W.partition.restoreCut_forgetCut R.wholeCarrier single included (bank side t)
     rw [agrees side t] at restored
     exact (congrArg PolygonalPoint.val restored).symm.trans (restores side t)
-  refine ⟨bank, anchor, restore_bank, fun side s t => (bank_metric side s t).trans (metric side s t), ?_, ?_⟩
+  refine ⟨bank, anchor, restore_bank, fun side s t => (bank_metric side s t).trans (metric side s t), ?_, ?_, ?_⟩
   · intro side other different s t positive equal
     have one_equal : oneRay side s = oneRay other t := by
       rw [← agrees side s, ← agrees other t, equal]
@@ -154,6 +159,24 @@ theorem exists_exit_banks_with_charts (r : Root) :
         exact lineMap_mem_rayForwardHalfspace (R.exit_endpoints_ne r) positive
       · simpa only [sides] using different
     exact separated one_equal
+
+  · intro t positive x position
+    let forget := W.partition.forgetCut R.wholeCarrier single included
+    have forgotten : Cap.horizontal (W.partition.restoreCut single (forget x)).val =
+        R.exits.ray (R.exitRoot r) t.val := by
+      rw [W.partition.restoreCut_forgetCut R.wholeCarrier single included, position]
+    obtain ⟨side, chosen⟩ := W.partition.exists_faceSideRegionMap_of_local_heights
+      f proper (W.exitSigns r) (W.exit_aligned r) single closed level anchor sides
+      (fun side => source side t)
+      (fun side => (M.plane (W.partition.support (anchor side))).project.apply_symm_apply _)
+      (fun side => by
+        obtain ⟨δ, δpos, local_face⟩ := face side t.val positive
+        exact ⟨δ, δpos, fun z near => (local_face z near).2⟩)
+      (forget x) forgotten
+    obtain ⟨ε, εpos, germ⟩ := R.exists_exit_rayCut_germ r positive
+    refine ⟨side, W.partition.forgetCut_injective_at_of_local_eq R.wholeCarrier single
+      included x εpos (fun z near => germ z (by rwa [position] at near)) (bank side t) ?_⟩
+    exact chosen.trans (agrees side t).symm
 
   · intro side t positive
     let Q := M.plane (W.partition.support (anchor side))

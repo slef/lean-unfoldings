@@ -1275,9 +1275,18 @@ development bound at `φ² ≤ γ / 32`.
   any rim-ending fine link with its original exit ray.
 - [x] Bound the cyclic count by its unmarked crossings and verify nearest-site
   and far-row bounds for the latitude supporting planes.
+- [x] Identify each contour source's last physical link and exact continued tail.
+  Verify exhaustion of the full positive exit fibers.
+- [x] Preserve both banks' spatial positions, intrinsic interval lengths, and
+  distinct interior copies in the complete cut. Construct their ordered gap marks.
+- [x] Check that the latitude contour processes every positive-curvature vertex
+  and produces an oriented gap there.
 - [ ] Identify the finite bank labels with both infinite continuations.
 - [ ] Assemble the complete unbounded graft and prove its faithful planar development.
-- [ ] Straighten the latitude grid and prove quantitative side bounds for its spherical network.
+- [x] Certify every swept latitude chord triangle and both polar fans on the
+  boundary of one finite sampled hull with an interior origin.
+- [ ] Prove complete frontier coverage and exact triangle intersections, then
+  derive the spherical network and its quantitative side bounds.
 - [ ] Localize single-cell crossings after cancellation, assemble the rotation estimate, and
   prove the explicit `13,000 * α⁻⁴` partition theorem.
 

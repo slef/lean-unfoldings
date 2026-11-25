@@ -2,6 +2,20 @@
 
 ## Session Log
 
+### 2026-11-25 — certify the swept chord triangles and continue the physical contour
+
+- Proved that each adjacent pair of nearest sites determines a small secant
+  tilt and a plane supporting all sampled sites. This gives supporting planes for
+  every triangle of the actual annular sweep and both polar fans.
+- Made periodic site indices finite and proved that the sampled convex hull is
+  compact and contains the origin in its interior.
+- Verified the complete positive-curvature contour and its source gaps at the
+  latitude-triangle bounds. Identified each physical continued tail with its
+  actual original exit and scale.
+- Preserved both banks' finite marks and their exact intrinsic lengths in the
+  complete cut. Verified the full positive exit fiber and constructed the
+  finite and continuing gap marks from the ordered saved stack.
+
 ### 2026-11-25 — transfer the finite cut window and isolate latitude support
 
 - Identified the finite patched metric with the same window in the complete
