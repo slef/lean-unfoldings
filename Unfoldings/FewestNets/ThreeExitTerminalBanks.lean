@@ -34,7 +34,8 @@ local notation "Root" => {r : V // r ∈ R.stems.choice.parents.roots}
 local notation "p" => (fun v : V => K.projectedVertex (Subtype.val v))
 local notation "q" => (fun (r : Root) => R.exits.ray (R.exitRoot r) 1)
 
-private theorem edist_exit (r : Root) (s t : ℝ≥0) :
+/-- The physical exit ray preserves its original constant spatial speed. -/
+theorem edist_exit (r : Root) (s t : ℝ≥0) :
     edist (SpatialEnvelope.point M.plane (R.exits.ray (R.exitRoot r) s.val))
       (SpatialEnvelope.point M.plane (R.exits.ray (R.exitRoot r) t.val)) =
         (‖R.physicalRayDirection r‖₊ : ℝ≥0∞) * edist s t := by

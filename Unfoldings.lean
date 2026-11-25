@@ -2923,6 +2923,7 @@ public import Unfoldings.FewestNets.ThreeExitTerminalMarks
 public import Unfoldings.FewestNets.ThreeExitTerminalContinuation
 public import Unfoldings.FewestNets.ThreeExitSourcePhysicalOrder
 public import Unfoldings.FewestNets.ThreeExitGapCollapse
+public import Unfoldings.FewestNets.ThreeExitContourGraft
 public import Unfoldings.Topology.SphereFiniteCoverage
 public import Unfoldings.FewestNets.LatitudeRowSupportTies
 public import Unfoldings.Roof.PotentialContourPhysicalLabels

@@ -58,6 +58,8 @@ structure ContourTerminalContinuation
   position (side : Bool) (t : ℝ≥0) :
     (restore (mark side t)).val = (restore (MarkAt[higher,contour,starts,edge] side 1)).val +
       t.val • ((restore (MarkAt[higher,contour,starts,edge] side 1)).val - (restore (MarkAt[higher,contour,starts,edge] side 0)).val)
+  spatial_edist (side : Bool) (s t : ℝ≥0) :
+    edist (mark side s) (mark side t) = edist (restore (mark side s)).val (restore (mark side t)).val
   same_length (s t : ℝ≥0) : edist (mark false s) (mark false t) = edist (mark true s) (mark true t)
   disjoint (side other : Bool) (different : side ≠ other) (s t : ℝ≥0) :
     mark side s ≠ mark other t
@@ -95,7 +97,7 @@ theorem exists_contourTerminalContinuation
     Subtype.ext (by simp [nonnegativeIntervalLineMap])
   have at_one : nonnegativeIntervalLineMap first τ nonnegative before.le 1 = start :=
     Subtype.ext (by simp [nonnegativeIntervalLineMap, start])
-  refine ⟨⟨mark, ?_, ?_, ?_, ?_⟩⟩
+  refine ⟨⟨mark, ?_, ?_, ?_, ?_, ?_⟩⟩
   · intro side
     have h := agrees side 1
     rw [at_one] at h
@@ -115,6 +117,10 @@ theorem exists_contourTerminalContinuation
       R.physical_point_ray M r nonnegative]
     change _ + (τ + (τ - first) * t.val) • R.physicalRayDirection r = _
     module
+  · intro side s t
+    change edist (bank (label side) (time s)) (bank (label side) (time t)) =
+      edist (restore (bank (label side) (time s))).val (restore (bank (label side) (time t))).val
+    rw [restores side (time s), restores side (time t), WholeCutModel.edist_exit (M := M), metric]
   · intro s t
     exact (norm_metric false s t).trans (norm_metric true s t).symm
   · intro side other different s t

@@ -2,6 +2,14 @@
 
 ## Session Log
 
+### 2026-11-25 — glue the marked gap banks to the complete three-exit cut
+
+- Constructed the metric graft from the actual compact contour and its continued
+  banks in the complete physical cut.
+- Verified that the two finite and terminal marks on every graft seam collapse
+  to the same original spatial point, including the rim joins.
+- Verified equality of the intrinsic and spatial distances along each affine continuation.
+
 ### 2026-11-25 — bound projection distortion and curvature at the revised scale
 
 - Bound solid angle by planar gnomonic area using vertical sections of the unit cone.

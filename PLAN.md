@@ -1301,7 +1301,7 @@ for the revised estimates above.
 - [x] Give each continued bank its exact terminal affine parametrization.
   Prove the actual spatial source path injective and collapse each gap properly
   onto it with its marked fibers.
-- [ ] Glue the continued banks and all source gaps along the ordered marks.
+- [x] Glue the continued banks and all source gaps along the ordered marks.
 - [ ] Assemble the complete unbounded graft and prove its faithful planar development.
 - [x] Certify every swept latitude chord triangle and both polar fans on the
   boundary of one finite sampled hull with an interior origin.
