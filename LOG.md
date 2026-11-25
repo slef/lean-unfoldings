@@ -2,6 +2,19 @@
 
 ## Session Log
 
+### 2026-11-25 — transfer the acute row charts and pair the cross-row edges
+
+- Verified the revised longitude spacing, polar side counts, gnomonic chart
+  bounds, and signed meridional height at the acute grid scale.
+- Indexed the actual annular and polar triangles and paired the annular
+  cross-row sides, including the seam at the repeated meridian.
+- Proved that a finite chord-triangle mesh with exact opposing edge pairings
+  has constant multiplicity on the sphere away from its vertices.
+- Transferred the selector area bound to the finite affine-floor roof
+  and verified the new Crofton coefficient arithmetic.
+- Represented the full three-exit graft by its named closed planar cells
+  and proved each cell's proper spatial collapse.
+
 ### 2026-11-25 — glue the marked gap banks to the complete three-exit cut
 
 - Constructed the metric graft from the actual compact contour and its continued

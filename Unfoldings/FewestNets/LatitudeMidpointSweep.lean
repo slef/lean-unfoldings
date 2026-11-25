@@ -37,7 +37,8 @@ theorem upperRank_strictMono : StrictMono (upperRank step) := by
   simp only [Function.comp_apply, upperRank, Equiv.apply_symm_apply]
   exact Prod.Lex.lt_iff.mpr (Or.inl (rowMidpoint_strictMono n before))
 
-private theorem rowProgress_at_rank {k total : ℕ} (rank : Fin k → Fin total)
+/-- A strictly ordered row has advanced exactly to the index of its next edge. -/
+theorem rowProgress_at_rank {k total : ℕ} (rank : Fin k → Fin total)
     (strict : StrictMono rank) (i : Fin k) : rowProgress rank (rank i).val = i.val := by
   have eq : (Finset.univ.filter fun j => (rank j).val < (rank i).val) = Finset.Iio i := by
     ext j

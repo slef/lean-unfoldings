@@ -2833,6 +2833,15 @@ public import Unfoldings.FewestNets.AcuteLatitudeRows
 public import Unfoldings.FewestNets.AcuteLatitudeTilt
 public import Unfoldings.FewestNets.AcuteLatitudeBudget
 public import Unfoldings.FewestNets.AcuteLatitudeVertexBounds
+public import Unfoldings.FewestNets.AcuteLatitudeMetricRows
+public import Unfoldings.FewestNets.AcuteLatitudeTriangleShape
+public import Unfoldings.FewestNets.LatitudeSweepEdges
+public import Unfoldings.FewestNets.LatitudeSweepPairing
+public import Unfoldings.FewestNets.AcuteLatitudeChartSites
+public import Unfoldings.FewestNets.LatitudeMeridionalOrientation
+public import Unfoldings.FewestNets.LatitudeFrameOrientation
+public import Unfoldings.FewestNets.LatitudeChordMesh
+public import Unfoldings.FewestNets.AcuteLatitudeCountScalars
 public import Unfoldings.Polyhedron.LabeledSelectionCount
 public import Unfoldings.Convex.SlopeReference
 public import Unfoldings.Convex.AffineFloorSection
@@ -2847,6 +2856,7 @@ public import Unfoldings.FewestNets.LatitudeMetricRows
 public import Unfoldings.FewestNets.ThreeExitRootSpan
 public import Unfoldings.Geometry.AcuteHeadingControls
 public import Unfoldings.Roof.AffineFloorNormalCells
+public import Unfoldings.Roof.AffineFloorSelectorCurvature
 public import Unfoldings.Roof.AffineFloorSegments
 public import Unfoldings.Geometry.AffineLevelInterior
 public import Unfoldings.Geometry.AcuteChainBankSide
@@ -2924,7 +2934,10 @@ public import Unfoldings.FewestNets.ThreeExitTerminalContinuation
 public import Unfoldings.FewestNets.ThreeExitSourcePhysicalOrder
 public import Unfoldings.FewestNets.ThreeExitGapCollapse
 public import Unfoldings.FewestNets.ThreeExitContourGraft
+public import Unfoldings.FewestNets.ThreeExitGraftCells
 public import Unfoldings.Topology.SphereFiniteCoverage
+public import Unfoldings.Geometry.RadialTriangleCoverage
+public import Unfoldings.Geometry.RadialTriangleMultiplicity
 public import Unfoldings.FewestNets.LatitudeRowSupportTies
 public import Unfoldings.Roof.PotentialContourPhysicalLabels
 public import Unfoldings.Geometry.RadialTriangleEdges
