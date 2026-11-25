@@ -2,6 +2,18 @@
 
 ## Session Log
 
+### 2026-11-25 — lift whole exit banks and verify projective weights
+
+- Derived the two actual rigid roof supports along each positive exit and
+  isolated the exit cut from every other piece in its full neighborhood.
+- Lifted both closed half-line banks to the complete cut by unique local
+  metric transfer and completion. Verified their exact spatial speeds and
+  their separation at positive parameters.
+- Checked that gnomonic interpolation rescales barycentric weights by positive
+  heights, preserving zero weights and admitting the inverse rescaling.
+- Counted the sign-changing Gaussian cycle sides using distinct witnesses
+  on one template arc and verified the paired charge cancellation.
+
 ### 2026-11-25 — develop the actual source gaps and identify the selector triangles
 
 - Developed each actual three-exit positive source gap with the true last

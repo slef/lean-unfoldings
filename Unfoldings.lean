@@ -2889,6 +2889,12 @@ public import Unfoldings.FewestNets.LatitudeExitAngles
 public import Unfoldings.FewestNets.LatitudeStripTriangles
 public import Unfoldings.FewestNets.LatitudeMidpointSweep
 public import Unfoldings.FewestNets.SingleCellAveragedCrossings
+public import Unfoldings.Geometry.SpatialEnvelopeRayGerms
+public import Unfoldings.Geometry.SpatialEnvelopeCutBankLift
+public import Unfoldings.Geometry.GnomonicBarycentric
+public import Unfoldings.FewestNets.ThreeExitTerminalGerms
+public import Unfoldings.FewestNets.ThreeExitTerminalBanks
+public import Unfoldings.FewestNets.SingleCellCyclicCharge
 public import Unfoldings.FewestNets.SingleCellCharge
 public import Unfoldings.FewestNets.SingleCellCancellation
 public import Unfoldings.FewestNets.AcuteSelectorThreshold

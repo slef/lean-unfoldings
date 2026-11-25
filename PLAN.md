@@ -1260,6 +1260,10 @@ development bound at `φ² ≤ γ / 32`.
 - [x] Identify the swept cells with the exact flat latitude triangles and the regular
   polar selectors with their chart fans. Bound the signed triangle exit angles.
 - [x] Combine cancellation on central regions and the residual Crofton estimate.
+- [x] Prove the exact two one-sided terminal roof germs and construct both complete
+  physical exit banks, including their finite endpoints.
+- [x] Verify the reversible gnomonic rescaling of positive barycentric weights
+  and the exact signed charge cancellation for a compressed boundary cycle.
 - [ ] Assemble the complete unbounded graft and prove its faithful planar development.
 - [ ] Straighten the latitude grid and prove quantitative side bounds for its spherical network.
 - [ ] Localize single-cell crossings after cancellation, assemble the rotation estimate, and
