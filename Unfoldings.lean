@@ -2942,6 +2942,13 @@ public import Unfoldings.FewestNets.LatitudeTriangleArea
 public import Unfoldings.FewestNets.LatitudeAnnularOrientation
 public import Unfoldings.FewestNets.LatitudeChordOrientation
 public import Unfoldings.FewestNets.AcuteLatitudeRingEdges
+public import Unfoldings.FewestNets.AcuteLatitudeRingPairing
+public import Unfoldings.FewestNets.AcuteLatitudeChordPairing
+public import Unfoldings.Geometry.RadialTrianglePartition
+public import Unfoldings.FewestNets.AcuteLatitudePoleNeighborhood
+public import Unfoldings.FewestNets.AcuteLatitudeNorthSector
+public import Unfoldings.FewestNets.ThreeExitGraftMarkMetrics
+public import Unfoldings.FewestNets.ThreeExitGraftClosedSeams
 public import Unfoldings.Geometry.GraphNormalTilt
 public import Unfoldings.Geometry.RadialTriangleOrientation
 public import Unfoldings.Geometry.AcuteBankCone

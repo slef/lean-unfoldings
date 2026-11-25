@@ -2,6 +2,17 @@
 
 ## Session Log
 
+### 2026-11-25 — pair all latitude sides and close the physical graft seams
+
+- Paired every side of the revised chord mesh by an explicit involution.
+- Verified that near the north pole only northern triangles can meet the
+  bisector of the first polar sector.
+- Showed that a weight-two witness certifies spherical coverage and
+  pairwise disjoint open triangle interiors.
+- Presented all the continued three-exit attachments as closed isometric
+  seams in the actual planar cells. Verified that this presentation
+  preserves the full intrinsic graft metric.
+
 ### 2026-11-25 — orient the revised grid and open banks in an acute cone
 
 - Verified the exact gnomonic selector area and the three-exit routing
