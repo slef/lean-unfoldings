@@ -1264,6 +1264,9 @@ development bound at `φ² ≤ γ / 32`.
   physical exit banks, including their finite endpoints.
 - [x] Verify the reversible gnomonic rescaling of positive barycentric weights
   and the exact signed charge cancellation for a compressed boundary cycle.
+- [x] Identify the exact signed exit normals of the latitude slope triangle.
+- [x] Transfer rigid halfplane charts to both positive terminal banks in the whole cut
+  and instantiate the central count on the seams of an actual extreme Gaussian cell.
 - [ ] Assemble the complete unbounded graft and prove its faithful planar development.
 - [ ] Straighten the latitude grid and prove quantitative side bounds for its spherical network.
 - [ ] Localize single-cell crossings after cancellation, assemble the rotation estimate, and

@@ -2895,6 +2895,10 @@ public import Unfoldings.Geometry.GnomonicBarycentric
 public import Unfoldings.FewestNets.ThreeExitTerminalGerms
 public import Unfoldings.FewestNets.ThreeExitTerminalBanks
 public import Unfoldings.FewestNets.SingleCellCyclicCharge
+public import Unfoldings.Geometry.MinorArcSupportBoundary
+public import Unfoldings.FewestNets.GaussianCentralCharge
+public import Unfoldings.FewestNets.LatitudeTriangleSelector
+public import Unfoldings.Roof.AffineFloorPhysicalCut
 public import Unfoldings.FewestNets.SingleCellCharge
 public import Unfoldings.FewestNets.SingleCellCancellation
 public import Unfoldings.FewestNets.AcuteSelectorThreshold

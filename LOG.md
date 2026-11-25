@@ -2,6 +2,16 @@
 
 ## Session Log
 
+### 2026-11-25 — identify the latitude side planes and Gaussian central crossings
+
+- Presented the actual slope triangle by its three unit outward normals and its
+  centroid reference, including the exact signed east, west, and north arguments.
+- Transferred whole isometric halfplane neighborhoods to both positive exit banks.
+- Instantiated the central crossing count with the original side arcs of an extreme
+  Gaussian polygon and constructed transverse boundary witnesses from changed memberships.
+- Identified the affine-floor paired-triangle metric cut with the same literal
+  graph patch cut, preserving its spatial folding.
+
 ### 2026-11-25 — lift whole exit banks and verify projective weights
 
 - Derived the two actual rigid roof supports along each positive exit and
