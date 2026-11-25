@@ -3004,6 +3004,8 @@ public import Unfoldings.Roof.ActiveClosingVariation
 public import Unfoldings.Roof.GraphLensFaceAngles
 public import Unfoldings.Roof.GraphRegionBalance
 public import Unfoldings.Roof.AboveGraphBankEnds
+public import Unfoldings.Roof.ClosingGraphTwoLinks
+public import Unfoldings.Roof.ClosingBendLimit
 public import Unfoldings.Roof.AffineFloorClosingMesh
 public import Unfoldings.Geometry.GraphRegionSides
 public import Unfoldings.FewestNets.LatitudeRowSupportTies

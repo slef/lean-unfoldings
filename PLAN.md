@@ -1227,7 +1227,8 @@ statement will produce an original-edge `HasNetPartition`.
 - [x] Align both graphs and the end lines in one physical subdivision of the affine-floor
   roof. Recover the actual upper fans and the fixed-bank regional-angle balance.
 - [x] Bound the intrinsic turns of the regular contacts on both straight links by one
-  sine-scaled tilt allowance.
+  sine-scaled tilt allowance. Identify those turns with the two actual closing-graph
+  sums, and make the connector mismatch and one-face bend error arbitrarily small.
 - [ ] Prove the sharp closing-path turn bound and construct all actual gaps in a common acute cone.
 - [x] Present the entire graft by exact closed cell seams and descend its proper spatial collapse.
 - [x] Name all cut copies of the unbounded roof on the finite banks or the continued tails.
