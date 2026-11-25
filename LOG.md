@@ -2,6 +2,16 @@
 
 ## Session Log
 
+### 2026-11-25 — bound the actual original-bank heading and localize crossings
+
+- Aligned both regular closures in a single physical completion, chose the one
+  excluding the opposite initial face, and bounded the actual original bank.
+- Checked the polar development threshold and the exact gnomonic vertex tilt
+  bound. A monotone sweep partitions each flat latitude strip.
+- Proved the endpoint-specific cutoff for multiple template-side intersections
+  and combined the two scalar area estimates. The final averaging step now
+  exposes the remaining per-cell expected count and development hypotheses.
+
 ### 2026-11-25 — use slanted sections for three-exit routing
 
 - The three-exit construction now truncates its ascertained exit rays at the

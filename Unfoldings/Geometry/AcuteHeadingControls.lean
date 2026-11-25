@@ -3,6 +3,7 @@ module
 public import Unfoldings.Geometry.TwoLinkRegularApex
 public import Unfoldings.Geometry.HeadingSpeedError
 public import Mathlib.Analysis.InnerProductSpace.Dual
+public import Mathlib.LinearAlgebra.FiniteDimensional.Lemmas
 
 /-! A heading window narrower than a right angle supplies the two independent
 coordinates for either regular two-link closure. -/
@@ -63,6 +64,17 @@ theorem headingControls_surjective (θ : ℝ) :
   · change inner ℝ f (x • e + y • f) = y
     rw [inner_add_right, real_inner_smul_right, real_inner_smul_right, reverse, fu]
     ring
+
+/-- The diagonal coordinates determine a point uniquely. -/
+theorem headingControls_bijective (θ : ℝ) :
+    Function.Bijective fun p =>
+      (headingControl frame (θ + π / 4) p, headingControl frame (θ - π / 4) p) := by
+  let L := (headingControl frame (θ + π / 4)).toLinearMap.prod
+    (headingControl frame (θ - π / 4)).toLinearMap
+  have dimension : Module.finrank ℝ Plane = Module.finrank ℝ (ℝ × ℝ) := by
+    simp [Plane, Module.finrank_prod, finrank_euclideanSpace_fin]
+  have onto : Function.Surjective L := headingControls_surjective frame θ
+  exact ⟨(LinearMap.injective_iff_surjective_of_finrank_eq_finrank dimension).mpr onto, onto⟩
 
 /-- Every nonzero direction in a strict acute interval advances both diagonal coordinates. -/
 theorem headingControls_pos {p : Plane} (nonzero : p ≠ 0) {lo hi : ℝ}

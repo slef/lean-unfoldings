@@ -2,6 +2,7 @@ module
 
 public import Unfoldings.Geometry.MinorArcArclength
 public import Unfoldings.Geometry.MinorArcBoundaryCount
+public import Unfoldings.Geometry.SphericalSideLocality
 
 /-! Small convex polygons with three changed sides only meet short endpoint portions. -/
 
@@ -26,23 +27,25 @@ theorem networkEdge_eq_from_endpoint (i : E) (b : Bool) :
   · rfl
   · exact closedMinorArc_comm _ _
 
-/-- Below the nonincident separation scale, a crossing on any edge lies close to
-an endpoint whenever the polygon meets at least two edges of the network. -/
-theorem exists_endpoint_angle_le_of_two_network_hits
+private theorem exists_incident_arclength_of_two_network_hits
     (unit : ∀ i b, ‖endpoint i b‖ = 1)
     (positive : ∀ i, 0 < angle (endpoint i false) (endpoint i true))
     (short : ∀ i, angle (endpoint i false) (endpoint i true) ≤ π / 2)
-    {d separation ψ : ℝ} (small : d < separation) (ψ_pos : 0 < ψ)
+    {d separation : ℝ} (small : d < separation)
     (separated : ∀ ⦃i j⦄, i ≠ j → (∀ a b, endpoint i a ≠ endpoint j b) →
       ∀ x ∈ networkEdge endpoint i, ∀ y ∈ networkEdge endpoint j, separation ≤ angle x y)
-    (incident : ∀ ⦃i j a b⦄, i ≠ j → endpoint i a = endpoint j b →
-      ψ ≤ angle (minorArcTangent (endpoint i a) (endpoint i (!a)))
-        (minorArcTangent (endpoint j b) (endpoint j (!b))))
     (cell : Set Space) (diameter : ∀ x ∈ cell, ∀ y ∈ cell, angle x y ≤ d)
     (two_edges : ∃ i j, i ≠ j ∧ (networkEdge endpoint i ∩ cell).Nonempty ∧
       (networkEdge endpoint j ∩ cell).Nonempty)
     {i : E} {x : Space} (on_edge : x ∈ networkEdge endpoint i) (in_cell : x ∈ cell) :
-    ∃ b, angle (endpoint i b) x ≤ (π / (2 * sin (ψ / 2))) * d := by
+    ∃ (j : E) (a b : Bool) (s t : ℝ), i ≠ j ∧ endpoint i a = endpoint j b ∧
+      s ∈ Set.Icc 0 (angle (endpoint i a) (endpoint i (!a))) ∧
+      t ∈ Set.Icc 0 (angle (endpoint j b) (endpoint j (!b))) ∧
+      let u := minorArcTangent (endpoint i a) (endpoint i (!a))
+      let v := minorArcTangent (endpoint j b) (endpoint j (!b))
+      ‖u‖ = 1 ∧ ‖v‖ = 1 ∧ inner ℝ (endpoint i a) u = 0 ∧
+      inner ℝ (endpoint i a) v = 0 ∧ angle (endpoint i a) x = s ∧
+      angle (greatCirclePoint (endpoint i a) u s) (greatCirclePoint (endpoint i a) v t) ≤ d := by
   classical
   obtain ⟨j, k, separate, j_hits, k_hits⟩ := two_edges
   have another : ∃ j, i ≠ j ∧ (networkEdge endpoint j ∩ cell).Nonempty := by
@@ -64,7 +67,6 @@ theorem exists_endpoint_angle_le_of_two_network_hits
   have arc (i : E) (side : Bool) :=
     closedMinorArc_arclength (unit i side) (unit i (!side)) (angles i side).1
       ((angles i side).2.trans_lt (by linarith [pi_pos]))
-  let v := minorArcTangent (endpoint i a) (endpoint i (!a))
   let w := minorArcTangent (endpoint j b) (endpoint j (!b))
   have at_i := arc i a
   have at_j := arc j b
@@ -80,15 +82,78 @@ theorem exists_endpoint_angle_le_of_two_network_hits
     rw [← px]
     exact angle_greatCirclePoint (unit i a) at_i.1 at_i.2.1 hs.1
       ((hs.2.trans (angles i a).2).trans (by linarith [pi_pos]))
-  have localized := greatCirclePoint_endpoint_distance_le (unit i a)
-    at_i.1 at_j.1 at_i.2.1 w_orthogonal hs.1 (hs.2.trans (angles i a).2)
-    ht.1 (ht.2.trans (angles j b).2) ψ_pos (incident different same_vertex)
-  rw [px, py'] at localized
-  have ψ_le := (incident different same_vertex).trans (angle_le_pi v w)
-  have sine_pos : 0 < sin (ψ / 2) :=
-    sin_pos_of_pos_of_lt_pi (by positivity) (by linarith [pi_pos])
-  exact ⟨a, hangle.trans_le (localized.trans
-    (mul_le_mul_of_nonneg_left (diameter x in_cell y other_in) (by positivity)))⟩
+  refine ⟨j, a, b, s, t, different, same_vertex, hs, ht, at_i.1, at_j.1,
+    at_i.2.1, w_orthogonal, hangle, ?_⟩
+  rw [px, py']
+  exact diameter x in_cell y other_in
+
+/-- Below the nonincident separation scale, a crossing on any edge lies close to
+an endpoint whenever the polygon meets at least two edges of the network. -/
+theorem exists_endpoint_angle_le_of_two_network_hits
+    (unit : ∀ i b, ‖endpoint i b‖ = 1)
+    (positive : ∀ i, 0 < angle (endpoint i false) (endpoint i true))
+    (short : ∀ i, angle (endpoint i false) (endpoint i true) ≤ π / 2)
+    {d separation ψ : ℝ} (small : d < separation) (ψ_pos : 0 < ψ)
+    (separated : ∀ ⦃i j⦄, i ≠ j → (∀ a b, endpoint i a ≠ endpoint j b) →
+      ∀ x ∈ networkEdge endpoint i, ∀ y ∈ networkEdge endpoint j, separation ≤ angle x y)
+    (incident : ∀ ⦃i j a b⦄, i ≠ j → endpoint i a = endpoint j b →
+      ψ ≤ angle (minorArcTangent (endpoint i a) (endpoint i (!a)))
+        (minorArcTangent (endpoint j b) (endpoint j (!b))))
+    (cell : Set Space) (diameter : ∀ x ∈ cell, ∀ y ∈ cell, angle x y ≤ d)
+    (two_edges : ∃ i j, i ≠ j ∧ (networkEdge endpoint i ∩ cell).Nonempty ∧
+      (networkEdge endpoint j ∩ cell).Nonempty)
+    {i : E} {x : Space} (on_edge : x ∈ networkEdge endpoint i) (in_cell : x ∈ cell) :
+    ∃ b, angle (endpoint i b) x ≤ (π / (2 * sin (ψ / 2))) * d := by
+  obtain ⟨j, a, b, s, t, distinct, shared, hs, ht, hu, hv, u_orth, v_orth, position, nearby⟩ :=
+    exists_incident_arclength_of_two_network_hits endpoint unit positive short small separated
+      cell diameter two_edges on_edge in_cell
+  have cap (j : E) (b : Bool) : angle (endpoint j b) (endpoint j (!b)) ≤ π / 2 := by
+    cases b
+    · exact short j
+    · simpa only [Bool.not_true, angle_comm (endpoint j true)] using short j
+  have corner := incident distinct shared
+  have sine_pos : 0 < sin (ψ / 2) := sin_pos_of_pos_of_lt_pi (by positivity)
+    (by linarith only [corner.trans (angle_le_pi _ _), pi_pos])
+  have localized := greatCirclePoint_endpoint_distance_le (unit i a) hu hv u_orth v_orth
+    hs.1 (hs.2.trans (cap i a)) ht.1 (ht.2.trans (cap j b)) ψ_pos corner
+  exact ⟨a, position.trans_le (localized.trans
+    (mul_le_mul_of_nonneg_left nearby (by positivity)))⟩
+
+/-- Each endpoint has its own cutoff. A point on any side of a polygon meeting
+another side is contained in one of its two endpoint portions. -/
+theorem exists_endpoint_angle_le_of_two_network_hits_sharp
+    (unit : ∀ i b, ‖endpoint i b‖ = 1)
+    (positive : ∀ i, 0 < angle (endpoint i false) (endpoint i true))
+    {L d separation : ℝ} (L_pos : 0 < L) (L_small : L ≤ π / 2)
+    (short : ∀ i, angle (endpoint i false) (endpoint i true) ≤ L) (small : d < separation)
+    (separated : ∀ ⦃i j⦄, i ≠ j → (∀ a b, endpoint i a ≠ endpoint j b) →
+      ∀ x ∈ networkEdge endpoint i, ∀ y ∈ networkEdge endpoint j, separation ≤ angle x y)
+    (ψ : E → Bool → ℝ) (ψ_pos : ∀ i a, 0 < ψ i a)
+    (incident : ∀ ⦃i j a b⦄, i ≠ j → endpoint i a = endpoint j b →
+      ψ i a ≤ angle (minorArcTangent (endpoint i a) (endpoint i (!a)))
+        (minorArcTangent (endpoint j b) (endpoint j (!b))))
+    (cell : Set Space) (diameter : ∀ x ∈ cell, ∀ y ∈ cell, angle x y ≤ d)
+    (two_edges : ∃ i j, i ≠ j ∧ (networkEdge endpoint i ∩ cell).Nonempty ∧
+      (networkEdge endpoint j ∩ cell).Nonempty)
+    {i : E} {x : Space} (on_edge : x ∈ networkEdge endpoint i) (in_cell : x ∈ cell) :
+    ∃ a, angle (endpoint i a) x ≤ L / (sin L * sin (min (ψ i a) (π / 2))) * d := by
+  obtain ⟨j, a, b, s, t, distinct, shared, hs, ht, hu, hv, u_orth, v_orth, position, nearby⟩ :=
+    exists_incident_arclength_of_two_network_hits endpoint unit positive
+      (fun i => (short i).trans L_small) small separated cell diameter two_edges on_edge in_cell
+  have cap (j : E) (b : Bool) : angle (endpoint j b) (endpoint j (!b)) ≤ L := by
+    cases b
+    · exact short j
+    · simpa only [Bool.not_true, angle_comm (endpoint j true)] using short j
+  have sineL : 0 < sin L :=
+    sin_pos_of_pos_of_lt_pi L_pos (by linarith only [L_small, pi_pos])
+  have sineψ : 0 < sin (min (ψ i a) (π / 2)) :=
+    sin_pos_of_pos_of_lt_pi (lt_min (ψ_pos i a) pi_div_two_pos)
+      ((min_le_right _ _).trans_lt (by linarith only [pi_pos]))
+  have localized := greatCirclePoint_incident_side_bound (unit i a) hu hv u_orth v_orth hs.1
+    (hs.2.trans (cap i a)) L_pos L_small ht.1 ((ht.2.trans (cap j b)).trans L_small)
+    (ψ_pos i a) (incident distinct shared)
+  exact ⟨a, position.trans_le (localized.trans
+    (mul_le_mul_of_nonneg_left nearby (by positivity)))⟩
 
 /-- With three changed sides and transverse hits on their disjoint relative interiors,
 a convex polygon must meet at least two distinct network edges. -/

@@ -290,4 +290,109 @@ theorem sharp_acuteCone_development_threshold {γ φ C : ℝ}
   change shallowDevelopmentHeading φ + 3 * Ω < 2 * arcsin γ
   linarith only [wide, Ω_le, pi_sq, flat, γ_pos, γ_arcsin]
 
+/-- The radial threshold used by the round polar selectors. Their stronger
+length constant lets the same development estimates reach squared tilt `γ/58`. -/
+theorem sharp_polar_development_threshold {γ φ C : ℝ}
+    (γ_pos : 0 < γ) (γ_small : γ ≤ 0.26) (φ_nonneg : 0 ≤ φ)
+    (flat : φ ^ 2 ≤ γ / 58) (C_nonneg : 0 ≤ C) (C_small : C ≤ √2) :
+    let Ω := shallowDevelopmentCurvature φ
+    let B := shallowDevelopmentHeading φ
+    let E := radialBlockError (cos φ)⁻¹ B C (√(1 - γ ^ 2)) π
+    let d := (γ - E) / (1 + E)
+    let D := C * (cos φ)⁻¹ / (1 - E)
+    E < γ ∧ 2 * Ω / π < (d - 3 * Ω * D) / (1 + 3 * Ω * D) ∧
+      B + 3 * Ω < 2 * arcsin γ := by
+  let Ω := shallowDevelopmentCurvature φ
+  let B := shallowDevelopmentHeading φ
+  let K := √(1 - γ ^ 2)
+  let E := radialBlockError (cos φ)⁻¹ B C K π
+  let d := (γ - E) / (1 + E)
+  let D := C * (cos φ)⁻¹ / (1 - E)
+  have φ_small : φ ≤ 0.1 := by
+    by_contra! above
+    have sq := pow_lt_pow_left₀ above (show (0 : ℝ) ≤ 0.1 by norm_num) (by decide : 2 ≠ 0)
+    linarith only [sq, flat, γ_small]
+  obtain ⟨sec_ge, sec_le, sec_error⟩ := shallowDevelopment_sec_bounds φ_nonneg φ_small
+  obtain ⟨triangle_nonneg, triangle_bound⟩ := shallowDevelopment_triangle_bound φ_nonneg φ_small
+  have Ω_nonneg : 0 ≤ Ω := mul_nonneg (by positivity) (sub_nonneg.mpr (cos_le_one φ))
+  have Ω_bound : Ω ≤ π * φ ^ 2 := by
+    have scaled := mul_le_mul_of_nonneg_left (one_sub_sq_div_two_le_cos (x := φ))
+      (by positivity : 0 ≤ 2 * π)
+    dsimp only [Ω, shallowDevelopmentCurvature]
+    linarith only [scaled]
+  have pi_upper : π ≤ 22 / 7 := by linarith only [pi_lt_d4]
+  have sine_nonneg := sin_nonneg_of_nonneg_of_le_pi φ_nonneg (by linarith only [φ_small, pi_gt_d2])
+  have sec_nonneg := zero_le_one.trans sec_ge
+  have B_nonneg : 0 ≤ B := by
+    change 0 ≤ 3 * (2 * arcsin (tan (φ / 2) ^ 2)) + 2 * π * ((cos φ)⁻¹ - 1) +
+      6 * φ * sin φ + 2 * Ω
+    positivity
+  have B_bound : B ≤ 17 * φ ^ 2 := by
+    have s := mul_le_mul_of_nonneg_left (Real.sin_le φ_nonneg) (by positivity : 0 ≤ 6 * φ)
+    have u := mul_le_mul_of_nonneg_left sec_error (by positivity : 0 ≤ 2 * π)
+    have v := mul_le_mul_of_nonneg_right pi_upper (sq_nonneg φ)
+    change 3 * (2 * arcsin (tan (φ / 2) ^ 2)) + 2 * π * ((cos φ)⁻¹ - 1) +
+      6 * φ * sin φ + 2 * Ω ≤ _
+    linarith only [triangle_bound, s, u, v, Ω_bound, sq_nonneg φ]
+  have C_bound : C ≤ 1.415 := C_small.trans (by
+    apply (Real.sqrt_le_iff).2
+    norm_num)
+  have K_nonneg : 0 ≤ K := sqrt_nonneg _
+  have K_le : K ≤ 1 := by
+    change √(1 - γ ^ 2) ≤ 1
+    apply (Real.sqrt_le_iff).2
+    constructor
+    · norm_num
+    · nlinarith only [sq_nonneg γ]
+  have window : C * K / π ≤ 0.451 := by
+    apply (div_le_iff₀ pi_pos).2
+    have upper := mul_le_mul C_bound K_le K_nonneg (by norm_num : 0 ≤ (1.415 : ℝ))
+    linarith only [upper, pi_gt_d2]
+  have E_nonneg : 0 ≤ E := radialBlockError_nonneg sec_ge B_nonneg C_nonneg K_nonneg pi_pos
+  have E_bound : E ≤ 36 * φ ^ 2 := by
+    have speed : C * ((cos φ)⁻¹ - 1) ≤ 1.415 * (0.503 * φ ^ 2) := by
+      gcongr
+    have turn : (cos φ)⁻¹ * B * C * (1 + C * K / π) ≤
+        1.006 * (17 * φ ^ 2) * 1.415 * (1 + 0.451) := by gcongr
+    change C * ((cos φ)⁻¹ - 1) + (cos φ)⁻¹ * B * C * (1 + C * K / π) ≤ _
+    linarith only [speed, turn, sq_nonneg φ]
+  have E_gamma : E ≤ (36 / 58) * γ := by linarith only [E_bound, flat]
+  have E_lt : E < γ := by linarith only [E_gamma, γ_pos]
+  have E_small : E ≤ 0.162 := by linarith only [E_gamma, γ_small]
+  have d_lower : 0.325 * γ ≤ d := by
+    apply (le_div_iff₀ (by positivity : 0 < 1 + E)).2
+    have scaled := mul_le_mul_of_nonneg_left E_small (by positivity : 0 ≤ 0.325 * γ)
+    linarith only [E_gamma, scaled, γ_pos]
+  have D_nonneg : 0 ≤ D := div_nonneg (mul_nonneg C_nonneg sec_nonneg)
+    (by linarith only [E_lt, γ_small])
+  have D_upper : D ≤ 1.7 := by
+    apply (div_le_iff₀ (by linarith only [E_small] : 0 < 1 - E)).2
+    have product := mul_le_mul C_bound sec_le sec_nonneg (by norm_num : 0 ≤ (1.415 : ℝ))
+    linarith only [product, E_small]
+  have Ω_gamma : Ω ≤ (22 / 7) * (γ / 58) :=
+    Ω_bound.trans ((mul_le_mul_of_nonneg_right pi_upper (sq_nonneg φ)).trans
+      (mul_le_mul_of_nonneg_left flat (by norm_num)))
+  let turn := 3 * Ω * D
+  have turn_nonneg : 0 ≤ turn := by dsimp only [turn]; positivity
+  have turn_upper : turn ≤ 0.277 * γ := by
+    have hyp := mul_le_mul (mul_le_mul_of_nonneg_left Ω_gamma (by norm_num : 0 ≤ (3 : ℝ)))
+      D_upper D_nonneg (by positivity)
+    dsimp only [turn]
+    linarith only [hyp, γ_pos]
+  have margin : 0.044 * γ ≤ (d - turn) / (1 + turn) := by
+    apply (le_div_iff₀ (by positivity : 0 < 1 + turn)).2
+    have turn_small : turn ≤ 0.073 := by linarith only [turn_upper, γ_small]
+    have scaled := mul_le_mul_of_nonneg_left turn_small (by positivity : 0 ≤ 0.044 * γ)
+    linarith only [scaled, d_lower, turn_upper, γ_pos]
+  have curvature_margin : 2 * Ω / π ≤ (2 / 58) * γ := by
+    apply (div_le_iff₀ pi_pos).2
+    have bound := Ω_bound.trans (mul_le_mul_of_nonneg_left flat pi_pos.le)
+    linarith only [bound]
+  have angle_ge : γ ≤ arcsin γ := (le_arcsin_iff_sin_le
+    ⟨by linarith only [pi_pos, γ_pos], by linarith only [pi_gt_d2, γ_small]⟩
+    ⟨γ_pos.le.trans' (by norm_num), by linarith only [γ_small]⟩).2 (Real.sin_le γ_pos.le)
+  change E < γ ∧ 2 * Ω / π < (d - turn) / (1 + turn) ∧ _
+  exact ⟨E_lt, by linarith only [curvature_margin, margin, γ_pos],
+    by linarith only [B_bound, flat, Ω_gamma, angle_ge, γ_pos]⟩
+
 end Unfoldings

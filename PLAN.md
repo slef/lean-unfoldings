@@ -1237,9 +1237,14 @@ development bound at `φ² ≤ γ / 32`.
   orthogonal placement.
 - [x] Use compact affine-floor sections in the three-exit cutting mesh, keeping its
   original Euclidean support planes. Bound the aperture at every compatible root.
-- [x] Verify the latitude chart formulas, longitude spacing, and polar row size.
-- [ ] Choose the closing disk for the original side of each bank, apply the sharp turn
-  budget to the resulting compact comparison, and develop the source gaps.
+- [x] Verify the latitude chart formulas, longitude spacing, vertex tilt bounds, and polar row size.
+- [x] Partition flat strips by consecutive cross-row edges.
+- [x] Choose the closing disk for the original side of each bank and apply the sharp
+  turn budget to the resulting compact comparison.
+- [x] Prove the endpoint-specific cutoff for incident crossings and combine the
+  small- and large-cell scalar area bounds.
+- [ ] Transfer the sharp heading estimate to developed subhistories and develop the
+  source gaps. Construct the polar development at its sharp threshold.
 - [ ] Straighten the latitude grid and construct the polar selectors with quantitative side bounds.
 - [ ] Localize single-cell crossings after cancellation, assemble the rotation estimate, and
   prove the explicit `13,000 * α⁻⁴` partition theorem.
