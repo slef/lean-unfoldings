@@ -2,6 +2,16 @@
 
 ## Session Log
 
+### 2026-11-25 — route the latitude selector and identify the finite forest metric
+
+- Derived three-exit routing for the actual signed latitude slope triangle,
+  using the original face-angle bound and the verified projection allowance.
+- Proved that the finite cut and the complete cut agree throughout the affine
+  section, and that each retained open fine seam avoids the complete cut.
+- Identified the original finite metric cut with its literal physical graph patch.
+- Kept the original physical contour-ray labels and checked quantitative
+  separation for the supporting planes of the latitude triangles.
+
 ### 2026-11-25 — identify the latitude side planes and Gaussian central crossings
 
 - Presented the actual slope triangle by its three unit outward normals and its

@@ -1,6 +1,7 @@
 module
 
 public import Unfoldings.Geometry.SpatialEnvelopeCutFiber
+public import Unfoldings.Geometry.SpatialEnvelopeCutBall
 public import Unfoldings.Metric.LocalIsometricLift
 public import Unfoldings.Metric.PositiveHalflineExtension
 public import Mathlib.Topology.MetricSpace.Dilation
@@ -20,18 +21,6 @@ universe u
 variable {I A : Type u} [Fintype I] [Nonempty I] {family : I → SpatialPlane}
   (P : WholePartition family A) [Finite A]
   {cuts single : Set Plane} (included : single ⊆ cuts)
-
-/-- Identical geometric cut germs give both a unique fiber and an isometric
-ball transfer at the corresponding original bank point. -/
-theorem exists_forgetCut_ball_chart_at (x : P.Cut cuts) {ε : ℝ} (positive : 0 < ε)
-    (same : ∀ z, dist z (Cap.horizontal (P.restoreCut cuts x).val) < ε →
-      (z ∈ cuts ↔ z ∈ single)) :
-    ∃ r > 0, ∃ B : Metric.eball x (ENNReal.ofReal r) ≃ᵢ
-        Metric.eball (P.forgetCut cuts single included x) (ENNReal.ofReal r),
-      ∀ y, (B y).val = P.forgetCut cuts single included y.val := by
-  obtain ⟨a, rfl⟩ := MetricGluing.point_surjective (fun a => P.planarCell a) (P.cutGlue cuts) x
-  obtain ⟨chart⟩ := P.exists_forgetCut_ball_chart cuts single included a positive same
-  exact ⟨chart.radius, chart.positive, chart.chart, chart.agrees⟩
 
 /-- Extra cuts that miss each open bank germ preserve its whole closed metric
 bank, including the endpoint obtained by completeness in the larger cut. -/
@@ -72,7 +61,7 @@ theorem exists_closedBank_lift (g : ℝ≥0 →ᵈ P.Cut single)
       exact (exists_unique t).choose_spec.2 x image
     · intro t
       obtain ⟨ε, positive, same⟩ := local_germ t (f t) (agrees t)
-      obtain ⟨r, r_pos, chart, chart_eq⟩ := P.exists_forgetCut_ball_chart_at included
+      obtain ⟨r, r_pos, chart, chart_eq⟩ := P.exists_forgetCut_ball_chart_at cuts single included
         (f t) positive same
       refine ⟨r, r_pos, ?_⟩
       change ∃ B : Metric.eball (f t) (ENNReal.ofReal r) ≃ᵢ

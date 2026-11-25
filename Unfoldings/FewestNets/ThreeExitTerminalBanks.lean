@@ -164,7 +164,8 @@ theorem exists_exit_banks_with_charts (r : Root) :
     have source_x : Cap.horizontal (Q.place (source side t).val) = x :=
       ((Q.horizontal_place _).trans (Q.project.apply_symm_apply _))
     obtain ⟨ε, εpos, germ⟩ := R.exists_exit_rayCut_germ r positive
-    obtain ⟨ρ, ρpos, transfer, agrees_transfer⟩ := W.partition.exists_forgetCut_ball_chart_at included
+    obtain ⟨ρ, ρpos, transfer, agrees_transfer⟩ := W.partition.exists_forgetCut_ball_chart_at
+      R.wholeCarrier single included
       (bank side t) εpos (fun z near => germ z (by rwa [position] at near))
     obtain ⟨δ, δpos, local_face⟩ := face side t.val positive
     have one_chart :

@@ -1267,6 +1267,10 @@ development bound at `φ² ≤ γ / 32`.
 - [x] Identify the exact signed exit normals of the latitude slope triangle.
 - [x] Transfer rigid halfplane charts to both positive terminal banks in the whole cut
   and instantiate the central count on the seams of an actual extreme Gaussian cell.
+- [x] Identify the three-exit finite mesh cut with its exact physical affine-floor graph patch.
+- [x] Construct original-edge three-exit routing for the latitude triangle at the verified
+  geometric margins and tilt, with the exact full root cone bound.
+- [ ] Transfer all finite contour charts to the same complete physical cut.
 - [ ] Assemble the complete unbounded graft and prove its faithful planar development.
 - [ ] Straighten the latitude grid and prove quantitative side bounds for its spherical network.
 - [ ] Localize single-cell crossings after cancellation, assemble the rotation estimate, and

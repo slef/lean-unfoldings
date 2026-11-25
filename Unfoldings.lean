@@ -2899,6 +2899,10 @@ public import Unfoldings.Geometry.MinorArcSupportBoundary
 public import Unfoldings.FewestNets.GaussianCentralCharge
 public import Unfoldings.FewestNets.LatitudeTriangleSelector
 public import Unfoldings.Roof.AffineFloorPhysicalCut
+public import Unfoldings.Roof.PotentialContourPhysical
+public import Unfoldings.FewestNets.ThreeExitFineCut
+public import Unfoldings.FewestNets.LatitudeTriangleRouting
+public import Unfoldings.FewestNets.LatitudeSupportingGap
 public import Unfoldings.FewestNets.SingleCellCharge
 public import Unfoldings.FewestNets.SingleCellCancellation
 public import Unfoldings.FewestNets.AcuteSelectorThreshold

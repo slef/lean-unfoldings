@@ -2,6 +2,7 @@ module
 
 public import Unfoldings.Roof.AffineFloorRoof
 public import Unfoldings.Geometry.PrescribedSegments
+public import Unfoldings.Geometry.AffineSupportBoundary
 public import Unfoldings.Geometry.PrescribedSubedge
 public import Unfoldings.Geometry.SegmentCoverForwardEdge
 public import Unfoldings.Roof.VertexProgress
@@ -50,6 +51,36 @@ theorem prescribed_subedge (e : EdgeRef T.Index)
   exact ⟨i, U.edge_subset_of_signed_coords (T.projectedTriangle e.face)
     (fun k => T.sign e.face (.inr (i, k)))
     (fun k p hp => T.alignment e.face p hp (.inr (i, k))) 0 e.edge x regular on_segment⟩
+
+/-- The supporting and endpoint lines make every prescribed cut a union of whole mesh edges
+at all nonvertex edge points. No metric or seam matching certificate is assumed. -/
+theorem prescribed_cut_aligned (f : T.Index) (e : Fin 3)
+    (x : (T.projectedTriangle f).Edge e) (regular : ¬ (T.projectedTriangle f).IsVertex x.val)
+    (member : x.val ∈ ⋃ a, segment ℝ (first a) (last a)) :
+    (T.projectedTriangle f).edge e ⊆ ⋃ a, segment ℝ (first a) (last a) := by
+  obtain ⟨a, on_segment⟩ := Set.mem_iUnion.mp member
+  let U := triangleWithEdge (first a) (last a) (different a)
+  have contained : (T.projectedTriangle f).edge e ⊆ U.edge 0 :=
+    U.edge_subset_of_signed_coords (T.projectedTriangle f) (fun k => T.sign f (.inr (a, k)))
+      (fun k p hp => T.alignment f p hp (.inr (a, k))) 0 e x regular on_segment
+  intro p hp
+  exact Set.mem_iUnion.mpr ⟨a, contained hp⟩
+
+/-- The actual prescribed segments avoid every original open triangle interior. -/
+theorem prescribed_cut_disjoint_interior (f : T.Index) :
+    Disjoint (interior (T.projectedTriangle f).carrier)
+      (⋃ a, segment ℝ (first a) (last a)) := by
+  apply Set.disjoint_left.mpr
+  intro p inside member
+  obtain ⟨a, on_segment⟩ := Set.mem_iUnion.mp member
+  let U := triangleWithEdge (first a) (last a) (different a)
+  have zero : segmentEquations first last different (a, 2) p = 0 :=
+    U.coord_edge_eq_zero 0 ⟨p, on_segment⟩
+  exact not_mem_interior_of_affine_lower_bound
+    (AffineArrangement.signed (segmentEquations first last different (a, 2)) (T.sign f (.inr (a, 2))))
+    (AffineArrangement.signed_ne_zero _ (segmentEquations_ne_zero first last different (a, 2)) _)
+    (fun z hz => T.alignment f z hz (.inr (a, 2)))
+    ((AffineArrangement.signed_eq_zero_iff _ _ _).mpr zero) inside
 
 variable (inside : (interior (clipAbove family floor Z)).Nonempty)
 
