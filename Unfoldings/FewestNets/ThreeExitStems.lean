@@ -26,53 +26,56 @@ local notation "p" => (fun v : V => K.projectedVertex (Subtype.val v))
 
 /-- The two possible parent seams have literal angle bounds in their respective
 charts and stay inside the selected component. -/
-structure ThreeExitComponentStems (δ : ℝ) extends K.ThreeExitComponentChoices
+structure ThreeExitComponentStems (H : ThreeExitStemWindows) extends K.ThreeExitComponentChoices
     (slopes := slopes) seed where
   east_segment : ∀ v ∉ choice.boundary, segment ℝ (p v) (p (choice.eastParent v)) ⊆ S
   west_segment : ∀ v ∉ choice.boundary, segment ℝ (p v) (p (choice.westParent v)) ⊆ S
   height_eq : ∀ v, choice.height v = p v 1
   east_heading : ∀ v ∉ choice.boundary,
-    (exitHeadingChart false (p (choice.eastParent v) - p v)).arg ∈ Set.Icc δ (π / 2 - δ)
+    (exitHeadingChart false (p (choice.eastParent v) - p v)).arg ∈ Set.Icc H.eastStart (H.eastStart + H.width)
   west_heading : ∀ v ∉ choice.boundary,
-    (exitHeadingChart true (p (choice.westParent v) - p v)).arg ∈ Set.Icc δ (π / 2 - δ)
+    (exitHeadingChart true (p (choice.westParent v) - p v)).arg ∈ Set.Icc H.westStart (H.westStart + H.width)
 
-/-- If the projected corners have margin `2 * δ` from a right angle,
-each interior vertex has both diagonal parent seams. The exits at the
+/-- If the projected corners fit the two heading windows, each interior
+vertex has both parent seams. The exits at the
 frontier can be assigned after the same two independent choices. -/
-theorem exists_threeExitComponentStems {δ : ℝ} (positive : 0 < δ)
-    (angles : ∀ f ∈ U, ∀ i, (K.projectedTriangle f).cornerAngle i ≤ π / 2 - 2 * δ)
+theorem exists_threeExitComponentStems (H : ThreeExitStemWindows)
+    (angles : ∀ f ∈ U, ∀ i, (K.projectedTriangle f).cornerAngle i ≤ H.width)
     (eastAvailable westAvailable : V → Prop)
     (available : ∀ v : V, p v ∈ frontier S → eastAvailable v ∨ westAvailable v) :
-    ∃ R : K.ThreeExitComponentStems (slopes := slopes) seed δ,
+    ∃ R : K.ThreeExitComponentStems (slopes := slopes) seed H,
       R.choice.eastAvailable = eastAvailable ∧ R.choice.westAvailable = westAvailable := by
   classical
   let roots : Set V := {v | p v ∈ frontier S}
-  have find (west : Bool) (v : {v : V // v ∉ roots}) :
+  have find (west : Bool) (lo : ℝ) (lower : 0 < lo) (upper : lo + H.width < π / 2)
+      (v : {v : V // v ∉ roots}) :
       ∃ (w : V) (e : C.Seam),
         C.seamGraph.IsLink e v.val.val w.val ∧
         segment ℝ (p v.val) (p w) ⊆ S ∧
         0 < (p w - p v.val) 1 ∧
-        (exitHeadingChart west (p w - p v.val)).arg ∈ Set.Icc δ (π / 2 - δ) := by
-    let d := (exitHeadingChart west).symm (polarRay (π / 4))
-    have d_ne : d ≠ 0 := by simpa [d] using polarRay_ne_zero (π / 4)
+        (exitHeadingChart west (p w - p v.val)).arg ∈ Set.Icc lo (lo + H.width) := by
+    let d := (exitHeadingChart west).symm (polarRay (lo + H.width / 2))
+    have d_ne : d ≠ 0 := by simpa [d] using polarRay_ne_zero (lo + H.width / 2)
     have inside : p v.val ∈ interior S := by
       by_contra outside
       exact v.property ((mem_frontier_iff_notMem_interior v.val.property).mpr outside)
     obtain ⟨w, e, link, different, near, in_carrier⟩ := K.exists_selected_seam_near_direction
-      U (β := π / 4 - δ) (fun f h i => by linarith only [angles f h i])
+      U (β := H.width / 2) (fun f h i => by linarith only [angles f h i])
       v.val.val inside d d_ne
     let next : V := ⟨w, in_carrier (right_mem_segment ℝ _ _)⟩
     have genuine : p next - p v.val ≠ 0 := fun same =>
       different (K.projectedVertex_injective (sub_eq_zero.mp same))
-    have heading := threeExit_heading_of_near_diagonal west genuine positive near
-    exact ⟨next, e, link, in_carrier, (threeExit_stem_advances west genuine positive heading).2,
+    have heading := threeExit_heading_of_near_midpoint west genuine lower upper near
+    have first_quadrant : (exitHeadingChart west (p next - p v.val)).arg ∈ Set.Ioo 0 (π / 2) :=
+      ⟨lower.trans_le heading.1, heading.2.trans_lt upper⟩
+    exact ⟨next, e, link, in_carrier, (threeExit_stem_advances west genuine first_quadrant).2,
       heading⟩
-  choose E Eedge Elink Esegment Eup Eheading using find false
-  choose W Wedge Wlink Wsegment Wup Wheading using find true
+  choose E Eedge Elink Esegment Eup Eheading using find false H.eastStart H.east_pos H.east_upper
+  choose W Wedge Wlink Wsegment Wup Wheading using find true H.westStart H.west_pos H.west_upper
   have applyE (v : V) (h : v ∉ roots) :
-      (if a : v ∉ roots then E ⟨v, a⟩ else v) = E ⟨v, h⟩ := dif_pos h
+      (if a : v ∉ roots then E ⟨v, a⟩ else v) = E ⟨v, h⟩ := dite_eq_left h
   have applyW (v : V) (h : v ∉ roots) :
-      (if a : v ∉ roots then W ⟨v, a⟩ else v) = W ⟨v, h⟩ := dif_pos h
+      (if a : v ∉ roots then W ⟨v, a⟩ else v) = W ⟨v, h⟩ := dite_eq_left h
   let choice : ThreeExitChoices V := {
     boundary := roots
     height := fun v => p v 1

@@ -27,60 +27,51 @@ private theorem deviation_from_interval_midpoint {z : ℂ} (nonzero : z ≠ 0)
       angle_polarRay_le_abs_sub ((lo + hi) / 2) z.arg
     _ ≤ _ := abs_le.mpr ⟨by linarith only [in_interval.1], by linarith only [in_interval.2]⟩
 
-/-- An east-assigned path uses northeast stems and one terminal direction
-near either east or north. Its full interval has width at most
-`π / 2 - δ + ε`. West-assigned paths use the reflected coordinates. -/
+/-- The bisector of the hull of a stem interval and its terminal direction
+controls every refined edge of the same-sign history. -/
 theorem exists_threeExit_history_axis {E : Type*} (headings : E → ℂ) (terminal : ℂ)
-    {δ ε : ℝ} (positive : 0 < δ) (δ_upper : δ ≤ π / 4)
-    (ε_nonneg : 0 ≤ ε) (ε_lt : ε < δ) (term_ne : terminal ≠ 0)
+    {lo hi A : ℝ} (term_ne : terminal ≠ 0)
+    (span : max hi terminal.arg - min lo terminal.arg ≤ A)
     (steps : ∀ i, headings i ≠ 0 →
-      (headings i).arg ∈ Set.Icc δ (π / 2 - δ) ∨ (headings i).arg = terminal.arg)
-    (exit : terminal.arg ∈ Set.Icc (-ε) ε ∨
-      terminal.arg ∈ Set.Icc (π / 2 - ε) (π / 2 + ε)) :
-    ∃ axis : ℂ, ‖axis‖ = 1 ∧ angle axis terminal ≤ (π / 2 - δ + ε) / 2 ∧
-      ∀ i, headings i ≠ 0 → angle axis (headings i) ≤ (π / 2 - δ + ε) / 2 := by
-  obtain ⟨lo, hi, width, terminal_mem, stems_mem⟩ :
-      ∃ lo hi : ℝ, hi - lo = π / 2 - δ + ε ∧ terminal.arg ∈ Set.Icc lo hi ∧
-        Set.Icc δ (π / 2 - δ) ⊆ Set.Icc lo hi := by
-    rcases exit with east | north
-    · refine ⟨-ε, π / 2 - δ, by ring,
-        ⟨east.1, east.2.trans (by linarith only [δ_upper, ε_lt])⟩, ?_⟩
-      exact Set.Icc_subset_Icc (by linarith only [positive, ε_nonneg]) le_rfl
-    · refine ⟨δ, π / 2 + ε, by ring,
-        ⟨(by linarith only [δ_upper, ε_lt] : δ ≤ π / 2 - ε).trans north.1, north.2⟩, ?_⟩
-      exact Set.Icc_subset_Icc le_rfl (by linarith only [positive, ε_nonneg])
-  refine ⟨polarRay ((lo + hi) / 2), norm_polarRay _, ?_, ?_⟩
-  · rw [← width]
-    exact deviation_from_interval_midpoint term_ne terminal_mem
-  · intro i genuine
-    rw [← width]
-    apply deviation_from_interval_midpoint genuine
-    rcases steps i genuine with stem | straight
-    · exact stems_mem stem
-    · rw [straight]
-      exact terminal_mem
+      (headings i).arg ∈ Set.Icc lo hi ∨ (headings i).arg = terminal.arg) :
+    ∃ axis : ℂ, ‖axis‖ = 1 ∧ angle axis terminal ≤ A / 2 ∧
+      ∀ i, headings i ≠ 0 → angle axis (headings i) ≤ A / 2 := by
+  let l := min lo terminal.arg
+  let h := max hi terminal.arg
+  have terminal_mem : terminal.arg ∈ Set.Icc l h :=
+    ⟨min_le_right _ _, le_max_right _ _⟩
+  have stems_mem : Set.Icc lo hi ⊆ Set.Icc l h :=
+    Set.Icc_subset_Icc (min_le_left _ _) (le_max_left _ _)
+  have halfSpan : (h - l) / 2 ≤ A / 2 :=
+    div_le_div_of_nonneg_right span (by norm_num)
+  refine ⟨polarRay ((l + h) / 2), norm_polarRay _,
+    (deviation_from_interval_midpoint term_ne terminal_mem).trans halfSpan, ?_⟩
+  intro i genuine
+  apply le_trans _ halfSpan
+  apply deviation_from_interval_midpoint genuine
+  rcases steps i genuine with stem | straight
+  · exact stems_mem stem
+  · exact straight.symm ▸ terminal_mem
 
 /-- Every block of a same-sign history satisfies the length and radial bounds.
 The terminal ray may account for any number of refined mesh edges. -/
 theorem threeExit_history_bounds {n : ℕ} (P : PolygonalChain ℂ n) (terminal : ℂ)
-    {δ ε : ℝ} (positive : 0 < δ) (δ_upper : δ ≤ π / 4)
-    (ε_nonneg : 0 ≤ ε) (ε_lt : ε < δ) (term_ne : terminal ≠ 0)
+    {lo hi A : ℝ} (aperture : A ≤ π / 2) (term_ne : terminal ≠ 0)
+    (span : max hi terminal.arg - min lo terminal.arg ≤ A)
     (steps : ∀ i, P.edge i ≠ 0 →
-      (P.edge i).arg ∈ Set.Icc δ (π / 2 - δ) ∨ (P.edge i).arg = terminal.arg)
-    (exit : terminal.arg ∈ Set.Icc (-ε) ε ∨
-      terminal.arg ∈ Set.Icc (π / 2 - ε) (π / 2 + ε))
+      (P.edge i).arg ∈ Set.Icc lo hi ∨ (P.edge i).arg = terminal.arg)
     (j : Fin (n + 1)) (i : Fin n) (earlier : j.val ≤ i.val) :
     let L := (P.interval j.val (i.val - j.val) (by omega)).projectedLength
     let chord := P.vertex i.castSucc - P.vertex j
     L ≤ √2 * ‖chord‖ ∧
-      cos (π / 2 - δ + ε) * (‖chord‖ * ‖P.edge i‖) ≤ inner ℝ chord (P.edge i) := by
+      cos A * (‖chord‖ * ‖P.edge i‖) ≤ inner ℝ chord (P.edge i) := by
   obtain ⟨axis, unit, _, heading⟩ :=
-    exists_threeExit_history_axis P.edge terminal positive δ_upper ε_nonneg ε_lt term_ne steps exit
-  have nonnegative : 0 ≤ (π / 2 - δ + ε) / 2 := by
-    linarith only [δ_upper, ε_nonneg, pi_pos]
-  have narrow : (π / 2 - δ + ε) / 2 ≤ π / 4 := by linarith only [ε_lt]
+    exists_threeExit_history_axis P.edge terminal term_ne span steps
+  have nonnegative : 0 ≤ A / 2 := by
+    linarith only [span, min_le_right lo terminal.arg, le_max_right hi terminal.arg]
+  have narrow : A / 2 ≤ π / 4 := by linarith only [aperture]
   have bounds := P.cone_subpath_bounds unit nonnegative narrow heading j i earlier
-  have width : 2 * ((π / 2 - δ + ε) / 2) = π / 2 - δ + ε := by ring
+  have width : 2 * (A / 2) = A := by ring
   simpa only [width] using bounds
 
 end Unfoldings.FewestNets

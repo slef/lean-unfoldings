@@ -44,38 +44,58 @@ theorem projection_allowance_le_sq {φ : ℝ} (nonneg : 0 ≤ φ) (small : φ �
   dsimp [t] at arcsine
   linarith only [arcsine]
 
-/-- At the latitude grid's tilt scale the projected input remains below the
-heading cutoff `π / 2 - a / 8`, and the radial margin permits development. -/
-theorem three_exit_tilt_bounds {a φ : ℝ} (positive : 0 < a) (small : a ≤ 1 / 10)
-    (tilt_nonneg : 0 ≤ φ) (tilt_bound : φ ^ 2 ≤ a / 100000) :
+/-- The current latitude grid has enough tilt clearance for both the
+projected input angle bound and the acute-cone development threshold. -/
+theorem latitude_three_exit_tilt_bounds {a φ : ℝ}
+    (positive : 0 < a) (small : a ≤ π / 6)
+    (tilt_nonneg : 0 ≤ φ) (tilt_bound : φ ≤ 0.0848 * √a) :
     0 < cos φ ∧
-      π / 2 - a + 2 * arcsin ((1 - cos φ) / (1 + cos φ)) < π / 2 - a / 8 ∧
-      0 < sin (a / 32) ∧ sin (a / 32) < 1 ∧ φ ≤ √(sin (a / 32)) / 10 := by
-  have tilt_small : φ ≤ 1 / 10 := by
+      π / 2 - a + 2 * arcsin ((1 - cos φ) / (1 + cos φ)) < π / 2 - 0.99 * a ∧
+      0.234 * a < sin (0.235 * a) ∧ sin (0.235 * a) ≤ 1 / 5 ∧
+      φ ^ 2 ≤ sin (0.235 * a) / 32 := by
+  have a_le : a ≤ 0.524 := by linarith only [small, pi_lt_d4]
+  have square := pow_le_pow_left₀ tilt_nonneg tilt_bound 2
+  rw [mul_pow, sq_sqrt positive.le] at square
+  have φ_small : φ ≤ 0.1 := by
     by_contra! above
-    have sq := pow_lt_pow_left₀ above (by norm_num : 0 ≤ (1 : ℝ) / 10) (by decide : (2 : ℕ) ≠ 0)
-    linarith only [sq, tilt_bound, small]
-  have cos_pos : 0 < cos φ :=
-    cos_pos_of_mem_Ioo ⟨by linarith only [tilt_nonneg, pi_pos], by
-      linarith only [tilt_small, pi_gt_three]⟩
-  have allowance := projection_allowance_le_sq tilt_nonneg tilt_small
-  have a32_pos : 0 < a / 32 := div_pos positive (by norm_num)
-  have a32_small : a / 32 ≤ 1 := by linarith only [small]
-  have power := pow_le_pow_left₀ a32_pos.le a32_small 2
-  have cube := mul_le_mul_of_nonneg_left power a32_pos.le
-  have sine_lower : a / 64 ≤ sin (a / 32) := by
-    have cube_le : (a / 32) ^ 3 ≤ a / 32 := by nlinarith only [cube]
-    linarith only [cube_le, sin_ge_sub_cube a32_pos.le, a32_pos]
-  have sine_pos : 0 < sin (a / 32) := (by linarith only [positive] : 0 < a / 64).trans_le sine_lower
-  have sine_lt : sin (a / 32) < 1 := (Real.sin_le a32_pos.le).trans_lt (by linarith only [small])
-  have square_bound : φ ^ 2 ≤ sin (a / 32) / 100 := by
-    linarith only [positive, tilt_bound, sine_lower]
-  refine ⟨cos_pos, by linarith only [allowance, tilt_bound, positive], sine_pos, sine_lt, ?_⟩
-  by_contra! above
-  have sq := pow_lt_pow_left₀ above (by positivity : 0 ≤ √(sin (a / 32)) / 10)
-    (by decide : (2 : ℕ) ≠ 0)
-  rw [div_pow, sq_sqrt sine_pos.le] at sq
-  norm_num at sq
-  exact sq.not_ge square_bound
+    have lower := pow_lt_pow_left₀ above (by norm_num : (0 : ℝ) ≤ 0.1)
+      (by decide : (2 : ℕ) ≠ 0)
+    linarith only [lower, square, a_le]
+  have cos_pos : 0 < cos φ := cos_pos_of_mem_Ioo
+    ⟨by linarith only [tilt_nonneg, pi_pos], by linarith only [φ_small, pi_gt_three]⟩
+  have allowance := projection_allowance_le_sq tilt_nonneg (by linarith only [φ_small])
+  have angle : π / 2 - a + 2 * arcsin ((1 - cos φ) / (1 + cos φ)) <
+      π / 2 - 0.99 * a := by linarith only [allowance, square, positive]
+  let σ := (0.235 : ℝ) * a
+  have σ_pos : 0 < σ := by dsimp [σ]; positivity
+  have σ_small : σ ≤ 0.124 := by dsimp [σ]; linarith only [a_le]
+  have σ_sq := pow_le_pow_left₀ σ_pos.le σ_small 2
+  have σ_cube := mul_le_mul_of_nonneg_left σ_sq σ_pos.le
+  have sine : 0.234 * a < sin σ := by
+    have bound := sin_ge_sub_cube σ_pos.le
+    have cube : σ ^ 3 ≤ (0.124 : ℝ) ^ 2 * σ := by nlinarith only [σ_cube]
+    linarith only [bound, cube, show σ = 0.235 * a from rfl, positive]
+  have sine_upper : sin σ ≤ 1 / 5 := (Real.sin_le σ_pos.le).trans
+    (by linarith only [σ_small])
+  refine ⟨cos_pos, angle, sine, sine_upper, ?_⟩
+  change φ ^ 2 ≤ sin σ / 32
+  linarith only [square, sine, positive]
+
+/-- The gnomonic long-side estimates imply the strict shifted-window margins. -/
+theorem latitude_three_exit_heading_margins {a e w : ℝ}
+    (positive : 0 < a) (small : a ≤ π / 6)
+    (east : |e| ≤ 0.486 * a) (west : |w| ≤ 0.486 * a)
+    (difference : w - e ≤ 0.49 * a) :
+    let δ := (0.495 : ℝ) * a
+    let σ := (0.235 : ℝ) * a
+    0 < σ ∧ σ ≤ δ ∧ δ ≤ π / 8 ∧ |e| < 2 * δ ∧ |w| < 2 * δ ∧
+      σ < δ + e / 2 ∧ σ < δ - w / 2 ∧ σ < 2 * δ + e - w := by
+  have ep := (abs_le.mp east).1
+  have wp := (abs_le.mp west).2
+  dsimp only
+  exact ⟨by positivity, by linarith only [positive], by linarith only [small, pi_pos],
+    by linarith only [east, positive], by linarith only [west, positive],
+    by linarith only [ep, positive], by linarith only [wp, positive],
+    by linarith only [difference, positive]⟩
 
 end Unfoldings.FewestNets

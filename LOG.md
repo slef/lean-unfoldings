@@ -2,6 +2,13 @@
 
 ## Session Log
 
+### 2026-11-25 — calibrate the shifted heading windows
+
+- Constructed the current paper's shifted windows and their span with each allowed exit.
+- Proved the latitude selector's numerical margins and the acute-cone squared-tilt threshold.
+- Truncated the routing to an embedded straight forest of original seams and exit segments.
+  Prescribed-segment subdivision supplies forward fine seams.
+
 ### 2026-11-25 — route actual three-exit components
 
 - Identified active frontier contacts and chose one support side per slope, consistently at corners.

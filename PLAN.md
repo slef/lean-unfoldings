@@ -1206,6 +1206,10 @@ The Fewest Nets application lives in `Unfoldings/FewestNets`.
 
 ### General acute-angle bound
 
+The current paper states the explicit bound of fewer than `13,000 * α⁻⁴` parts. The
+latitude cells use shifted northeast and northwest heading windows, with the acute-cone
+development bound at `φ² ≤ γ / 32`.
+
 - [x] Clip to the retained component's vertices, preserve its supporting contacts, and locate all
   positive curvature of the finite extension.
 - [x] Exclude conflicting east and west roots by disjoint exterior rays, choose compatible parents,
@@ -1218,11 +1222,14 @@ The Fewest Nets application lives in `Unfoldings/FewestNets`.
   the three-exit parents from the actual projected triangle angles.
 - [x] Bound every contiguous block of a same-sign history and align the physical roof mesh
   with a prescribed finite family of straight cuts.
-- [ ] Truncate the actual forest, prove fine parent histories inherit the coarse directions,
-  and develop their source gaps on the clipped extension.
+- [x] Construct the bounded embedded cut forest and choose a forward fine seam inside a
+  prescribed segment.
+- [x] Calibrate shifted stem windows and prove the acute-cone threshold inequalities.
+- [ ] Prove fine parent histories inherit the coarse directions, establish the acute-cone
+  one-sided heading estimate, and develop the source gaps on the clipped extension.
 - [ ] Construct the latitude grid and polar selectors with quantitative side bounds.
 - [ ] Localize single-cell crossings after cancellation, assemble the rotation estimate, and
-  prove the uniform `O(α⁻⁴)` partition theorem.
+  prove the explicit `13,000 * α⁻⁴` partition theorem.
 
 ## Upstream research and reuse
 

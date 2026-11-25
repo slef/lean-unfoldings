@@ -2807,6 +2807,9 @@ public import Unfoldings.FewestNets.ThreeExitHeadings
 public import Unfoldings.FewestNets.ThreeExitStems
 public import Unfoldings.FewestNets.ThreeExitAssignment
 public import Unfoldings.FewestNets.ThreeExitRouting
+public import Unfoldings.FewestNets.ThreeExitWindows
+public import Unfoldings.FewestNets.ThreeExitSegments
+public import Unfoldings.FewestNets.ThreeExitEmbedding
 public import Unfoldings.FewestNets.ThreeExitHistoryBounds
 public import Unfoldings.FewestNets.SingleCellCharge
 public import Unfoldings.FewestNets.SingleCellCancellation
@@ -2819,6 +2822,8 @@ public import Unfoldings.Roof.SelectedDirectionEdge
 public import Unfoldings.Roof.DirectedCutForest
 public import Unfoldings.Geometry.ConeHistoryBounds
 public import Unfoldings.Geometry.PolarHeadingInterval
+public import Unfoldings.Geometry.SegmentCoverForwardEdge
+public import Unfoldings.Geometry.StraightGraphPotential
 public import Unfoldings.Geometry.SphericalSideFlip
 public import Unfoldings.Convex.ProgressDiskCone
 public import Unfoldings.Convex.PolygonSideDirections
