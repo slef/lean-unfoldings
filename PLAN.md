@@ -1234,7 +1234,11 @@ statement will produce an original-edge `HasNetPartition`.
 - [x] Account for both trimmed endpoint errors using the actual lens boundary fans.
   Track the physical comparison mesh by its parent triangles and change its horizontal
   chart without changing the intrinsic complex.
-- [ ] Prove the sharp closing-path turn bound and construct all actual gaps in a common acute cone.
+- [x] Close a trimmed coarse bank along a nearby two-link graph on the same physical
+  roof. Bound the actual comparison mesh's fixed-bank angle sum on both sides,
+  with only the bend and heading mismatch costs tending to zero.
+- [ ] Transfer the sharp closing-path bound to the original saved bank and construct
+  all actual gaps in a common acute cone.
 - [x] Present the entire graft by exact closed cell seams and descend its proper spatial collapse.
 - [x] Name all cut copies of the unbounded roof on the finite banks or the continued tails.
   Verify uniqueness of strict physical addresses and the exact endpoints of all gap fibers.
