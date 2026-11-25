@@ -2,6 +2,17 @@
 
 ## Session Log
 
+### 2026-11-25 — collapse each actual gap to its original spatial path
+
+- Gave each full bank its normalized affine continuation, exact rim join,
+  and the same intrinsic speed on both sides.
+- Proved strict interpolated rank along the finite spatial bank and separated
+  the positive tail by the affine floor height. This makes the address transfer
+  to the literal original path injective.
+- Constructed each source gap's proper marked collapse onto that physical path.
+- Reduced coverage of a closed spherical patch to its open-edge neighborhoods
+  and classified all equal-support sites on a nonpolar row.
+
 ### 2026-11-25 — match the two finite banks to the physical exits
 
 - Matched each named finite bank to a fixed whole-ray side on the connected

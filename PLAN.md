@@ -1285,10 +1285,15 @@ development bound at `φ² ≤ γ / 32`.
   parameter. Keep both sides distinct as they reach the rim.
 - [x] Recover literal finite and terminal physical positions for all source-gap
   addresses.
+- [x] Give each continued bank its exact terminal affine parametrization.
+  Prove the actual spatial source path injective and collapse each gap properly
+  onto it with its marked fibers.
 - [ ] Glue the continued banks and all source gaps along the ordered marks.
 - [ ] Assemble the complete unbounded graft and prove its faithful planar development.
 - [x] Certify every swept latitude chord triangle and both polar fans on the
   boundary of one finite sampled hull with an interior origin.
+- [x] Reduce full spherical coverage to paired open-edge neighborhoods.
+  Classify equal-support sites on each row by meridional reflection.
 - [ ] Prove complete frontier coverage and exact triangle intersections, then
   derive the spherical network and its quantitative side bounds.
 - [ ] Localize single-cell crossings after cancellation, assemble the rotation estimate, and

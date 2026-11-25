@@ -2914,6 +2914,11 @@ public import Unfoldings.FewestNets.ThreeExitRimLinks
 public import Unfoldings.FewestNets.ThreeExitContourTails
 public import Unfoldings.FewestNets.ThreeExitFiniteMarks
 public import Unfoldings.FewestNets.ThreeExitTerminalMarks
+public import Unfoldings.FewestNets.ThreeExitTerminalContinuation
+public import Unfoldings.FewestNets.ThreeExitSourcePhysicalOrder
+public import Unfoldings.FewestNets.ThreeExitGapCollapse
+public import Unfoldings.Topology.SphereFiniteCoverage
+public import Unfoldings.FewestNets.LatitudeRowSupportTies
 public import Unfoldings.Roof.PotentialContourPhysicalLabels
 public import Unfoldings.Geometry.RadialTriangleEdges
 public import Unfoldings.Geometry.UnitChordTriangleBasis
