@@ -1270,7 +1270,12 @@ development bound at `φ² ≤ γ / 32`.
 - [x] Identify the three-exit finite mesh cut with its exact physical affine-floor graph patch.
 - [x] Construct original-edge three-exit routing for the latitude triangle at the verified
   geometric margins and tilt, with the exact full root cone bound.
-- [ ] Transfer all finite contour charts to the same complete physical cut.
+- [x] Transfer every finite contour chart inside the strict window to the same complete cut.
+- [x] Exhaust the one-ray positive fiber with both halfplane sides, and identify
+  any rim-ending fine link with its original exit ray.
+- [x] Bound the cyclic count by its unmarked crossings and verify nearest-site
+  and far-row bounds for the latitude supporting planes.
+- [ ] Identify the finite bank labels with both infinite continuations.
 - [ ] Assemble the complete unbounded graft and prove its faithful planar development.
 - [ ] Straighten the latitude grid and prove quantitative side bounds for its spherical network.
 - [ ] Localize single-cell crossings after cancellation, assemble the rotation estimate, and

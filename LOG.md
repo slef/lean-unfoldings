@@ -2,6 +2,19 @@
 
 ## Session Log
 
+### 2026-11-25 — transfer the finite cut window and isolate latitude support
+
+- Identified the finite patched metric with the same window in the complete
+  physical cut, including whole isometric charts at all strict-window points.
+- Recovered the exact original exit and terminal parameter of any fine cut
+  link that ends at the artificial rim.
+- Classified the full fiber of a two-sided single-ray cut by its two physical
+  support charts.
+- Verified nearest-row support across the periodic longitude seam and strict
+  exclusion of distant colatitudes. Identified the northern polar secant.
+- Bounded the signed cyclic charge by unmarked transitions, retaining the
+  multiplicities of shared endpoints.
+
 ### 2026-11-25 — route the latitude selector and identify the finite forest metric
 
 - Derived three-exit routing for the actual signed latitude slope triangle,

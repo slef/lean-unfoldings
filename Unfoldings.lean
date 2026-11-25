@@ -2903,6 +2903,16 @@ public import Unfoldings.Roof.PotentialContourPhysical
 public import Unfoldings.FewestNets.ThreeExitFineCut
 public import Unfoldings.FewestNets.LatitudeTriangleRouting
 public import Unfoldings.FewestNets.LatitudeSupportingGap
+public import Unfoldings.FewestNets.LatitudeSiteSupport
+public import Unfoldings.FewestNets.LatitudeNearestSupport
+public import Unfoldings.FewestNets.LatitudeChordSupport
+public import Unfoldings.FewestNets.LatitudeStripSupport
+public import Unfoldings.FewestNets.LatitudeChordBase
+public import Unfoldings.FewestNets.LatitudePolarSupport
+public import Unfoldings.FewestNets.ThreeExitMeshWindow
+public import Unfoldings.FewestNets.ThreeExitRimLinks
+public import Unfoldings.Geometry.SpatialEnvelopeFaceSideFiber
+public import Unfoldings.FewestNets.SingleCellUnmarkedCharge
 public import Unfoldings.FewestNets.SingleCellCharge
 public import Unfoldings.FewestNets.SingleCellCancellation
 public import Unfoldings.FewestNets.AcuteSelectorThreshold
