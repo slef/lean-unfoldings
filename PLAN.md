@@ -1255,8 +1255,13 @@ development bound at `φ² ≤ γ / 32`.
   gnomonic base, height, and long-side ratios of the latitude triangles.
 - [x] Prove measurability and reflection stability of the central crossing regions,
   and determine the two memberships at a unique central crossing.
-- [ ] Develop the source gaps and assemble the complete unbounded graft.
-- [ ] Straighten the latitude grid and construct the polar selectors with quantitative side bounds.
+- [x] Develop the source gaps at the actual contour events and lift each original face
+  to the complete physical cut. Recover the prescribed original-edge net from a faithful layout.
+- [x] Identify the swept cells with the exact flat latitude triangles and the regular
+  polar selectors with their chart fans. Bound the signed triangle exit angles.
+- [x] Combine cancellation on central regions and the residual Crofton estimate.
+- [ ] Assemble the complete unbounded graft and prove its faithful planar development.
+- [ ] Straighten the latitude grid and prove quantitative side bounds for its spherical network.
 - [ ] Localize single-cell crossings after cancellation, assemble the rotation estimate, and
   prove the explicit `13,000 * α⁻⁴` partition theorem.
 

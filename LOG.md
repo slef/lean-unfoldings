@@ -2,6 +2,17 @@
 
 ## Session Log
 
+### 2026-11-25 — develop the actual source gaps and identify the selector triangles
+
+- Developed each actual three-exit positive source gap with the true last
+  slope and the sharp intrinsic-chord and radial bounds.
+- Lifted the original selected faces isometrically to the complete physical
+  cut and verified the layout-to-net theorem on the exact original seams.
+- Identified the midpoint sweep with consecutive parameter triangles and
+  identified each regular polar selector with its exact fan in the chart.
+- Derived the signed charge bound by averaging the two orthogonal orientation
+  classes after central cancellation, with separate reaches at each endpoint.
+
 ### 2026-11-25 — construct polar nets and complete the physical cut
 
 - Constructed an original-edge net for each component selected by a regular

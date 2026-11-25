@@ -2879,6 +2879,16 @@ public import Unfoldings.FewestNets.LatitudeTriangleShape
 public import Unfoldings.FewestNets.ThreeExitWholeCut
 public import Unfoldings.FewestNets.SingleCellCentralMembership
 public import Unfoldings.FewestNets.SingleCellCentralSets
+public import Unfoldings.Geometry.RegularPolygonFan
+public import Unfoldings.Topology.CoveringHomotopicHomeomorph
+public import Unfoldings.Roof.LabeledCutLayout
+public import Unfoldings.FewestNets.ThreeExitSourceGaps
+public import Unfoldings.FewestNets.ThreeExitOriginalFaceLift
+public import Unfoldings.FewestNets.ThreeExitOriginalDevelopment
+public import Unfoldings.FewestNets.LatitudeExitAngles
+public import Unfoldings.FewestNets.LatitudeStripTriangles
+public import Unfoldings.FewestNets.LatitudeMidpointSweep
+public import Unfoldings.FewestNets.SingleCellAveragedCrossings
 public import Unfoldings.FewestNets.SingleCellCharge
 public import Unfoldings.FewestNets.SingleCellCancellation
 public import Unfoldings.FewestNets.AcuteSelectorThreshold
