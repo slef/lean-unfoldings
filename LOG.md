@@ -2,6 +2,15 @@
 
 ## Session Log
 
+### 2026-11-25 — cover the sphere and telescope two closing links
+
+- Constructed a unit point near the north pole with a single strict
+  northern triangle and zero weight from every other triangle.
+- Proved that all chord triangles of the revised latitude grid cover the
+  sphere, with disjoint strict interiors.
+- Bound the summed active-face bends of two closing links by a single
+  tilt budget and a directional error at their common support plane.
+
 ### 2026-11-25 — pair all latitude sides and close the physical graft seams
 
 - Paired every side of the revised chord mesh by an explicit involution.

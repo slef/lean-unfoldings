@@ -2947,6 +2947,8 @@ public import Unfoldings.FewestNets.AcuteLatitudeChordPairing
 public import Unfoldings.Geometry.RadialTrianglePartition
 public import Unfoldings.FewestNets.AcuteLatitudePoleNeighborhood
 public import Unfoldings.FewestNets.AcuteLatitudeNorthSector
+public import Unfoldings.FewestNets.AcuteLatitudePartition
+public import Unfoldings.Cap.ActiveClosingVariation
 public import Unfoldings.FewestNets.ThreeExitGraftMarkMetrics
 public import Unfoldings.FewestNets.ThreeExitGraftClosedSeams
 public import Unfoldings.Geometry.GraphNormalTilt
