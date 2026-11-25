@@ -22,8 +22,13 @@ theorem exists_annularRoutingChart {a : ℝ} (positive : 0 < a) (small : a ≤ �
       0.883 * radius a < H ∧ H < 1.052 * radius a ∧
       |latitudeEastRatio right apex H| < 1.144 * spacing a / radius a ∧
       |latitudeWestRatio left apex H| < 1.144 * spacing a / radius a ∧
-      ∀ p ∈ latitudeSlopeTriangle left right base apex H, ‖p‖ ≤ tan (0.568 * radius a) := by
-  obtain ⟨b, s, w, rows, apex_near, hull⟩ := exists_annularSlopeSelector_base positive small i
+      (∀ p ∈ latitudeSlopeTriangle left right base apex H, ‖p‖ ≤ tan (0.568 * radius a)) ∧
+      let vertex (k : Fin 3) := exitHeadingChart false (E (annularSlopeVertex positive small i k))
+      vertex 2 = ⟨apex, base - H⟩ ∧
+        ((vertex 0 = ⟨left, base⟩ ∧ vertex 1 = ⟨right, base⟩) ∨
+          (vertex 0 = ⟨right, base⟩ ∧ vertex 1 = ⟨left, base⟩)) := by
+  obtain ⟨b, s, w, rows, apex_near, hull, apex_label, base_labels⟩ :=
+    exists_annularSlopeSelector_base positive small i
   let j := i.1.val
   let ell := chartColatitude a j
   let d := longitudeStep a b / 2
@@ -91,6 +96,27 @@ theorem exists_annularRoutingChart {a : ℝ} (positive : 0 < a) (small : a ≤ �
   have at_im (p : Plane) : (exitHeadingChart false (E p)).im = ε * p 1 := by
     simp only [exitHeadingChart_im, E, ε]
     split_ifs <;> simp [planeConjugation_apply]
+  have minus_site : frame (E.toLinearEquiv.toLinearMap (annularSlopePoint a j b (-d))) =
+      ⟨-x, ε * y⟩ := by
+    apply Complex.ext
+    · rw [show frame (E.toLinearEquiv.toLinearMap (annularSlopePoint a j b (-d))) =
+        exitHeadingChart false (E (annularSlopePoint a j b (-d))) from rfl, at_re]
+      change chartX ell (colatitude a b) (-d) = -x
+      exact chartX_neg _ _ _
+    · rw [show frame (E.toLinearEquiv.toLinearMap (annularSlopePoint a j b (-d))) =
+        exitHeadingChart false (E (annularSlopePoint a j b (-d))) from rfl, at_im]
+      change ε * chartY ell (colatitude a b) (-d) = ε * y
+      rw [chartY_neg]
+  have plus_site : frame (E.toLinearEquiv.toLinearMap (annularSlopePoint a j b d)) =
+      ⟨x, ε * y⟩ := Complex.ext (at_re _) (at_im _)
+  have apex_site : frame (E.toLinearEquiv.toLinearMap (annularSlopePoint a j s w)) =
+      ⟨u, ε * y - H⟩ := by
+    apply Complex.ext (at_re _)
+    change (exitHeadingChart false (E (annularSlopePoint a j s w))).im = _
+    rw [at_im]
+    change ε * v = ε * y - H
+    unfold H
+    ring
   have reimage : E '' annularSlopeSelector positive small i = latitudeSlopeTriangle (-x) x (ε * y) u H := by
     have image : exitHeadingChart false '' (E '' annularSlopeSelector positive small i) =
         convexHull ℝ ({⟨u, ε * y - H⟩, ⟨-x, ε * y⟩, ⟨x, ε * y⟩} : Set ℂ) := by
@@ -98,34 +124,13 @@ theorem exists_annularRoutingChart {a : ℝ} (positive : 0 < a) (small : a ≤ �
       change frame '' (E.toLinearEquiv.toLinearMap '' convexHull ℝ _) = _
       rw [E.toLinearEquiv.toLinearMap.image_convexHull, frame.image_convexHull]
       simp only [Set.image_insert_eq, Set.image_singleton]
-      have minus_site : frame (E.toLinearEquiv.toLinearMap (annularSlopePoint a j b (-d))) =
-          ⟨-x, ε * y⟩ := by
-        apply Complex.ext
-        · rw [show frame (E.toLinearEquiv.toLinearMap (annularSlopePoint a j b (-d))) =
-            exitHeadingChart false (E (annularSlopePoint a j b (-d))) from rfl, at_re]
-          change chartX ell (colatitude a b) (-d) = -x
-          exact chartX_neg _ _ _
-        · rw [show frame (E.toLinearEquiv.toLinearMap (annularSlopePoint a j b (-d))) =
-            exitHeadingChart false (E (annularSlopePoint a j b (-d))) from rfl, at_im]
-          change ε * chartY ell (colatitude a b) (-d) = ε * y
-          rw [chartY_neg]
-      have plus_site : frame (E.toLinearEquiv.toLinearMap (annularSlopePoint a j b d)) =
-          ⟨x, ε * y⟩ := Complex.ext (at_re _) (at_im _)
-      have apex_site : frame (E.toLinearEquiv.toLinearMap (annularSlopePoint a j s w)) =
-          ⟨u, ε * y - H⟩ := by
-        apply Complex.ext (at_re _)
-        change (exitHeadingChart false (E (annularSlopePoint a j s w))).im = _
-        rw [at_im]
-        change ε * v = ε * y - H
-        unfold H
-        ring
       rw [minus_site, plus_site, apex_site]
       congr 1
       ext p
       simp only [Set.mem_insert_iff, Set.mem_singleton_iff]
       tauto
     rw [latitudeSlopeTriangle, ← image, Set.preimage_image_eq _ (exitHeadingChart false).injective]
-  refine ⟨E, -x, x, ε * y, u, H, reimage, ?_, ?_, altitude.1, altitude.2, ?_, ?_, ?_⟩
+  refine ⟨E, -x, x, ε * y, u, H, reimage, ?_, ?_, altitude.1, altitude.2, ?_, ?_, ?_, ?_⟩
   · linarith only [width.1]
   · linarith only [width.2]
   · rw [latitudeEastRatio, abs_div, abs_of_pos H_pos]
@@ -139,5 +144,12 @@ theorem exists_annularRoutingChart {a : ℝ} (positive : 0 < a) (small : a ≤ �
     obtain ⟨q, member, rfl⟩ := hp
     rw [E.norm_map]
     exact annularSlopeSelector_radius positive small i q member
+  · let F (p : Plane) := exitHeadingChart false (E p)
+    have at_apex : F (annularSlopeVertex positive small i 2) = ⟨u, ε * y - H⟩ :=
+      (congrArg F apex_label).trans apex_site
+    refine ⟨at_apex, ?_⟩
+    rcases base_labels with ⟨first, second⟩ | ⟨first, second⟩
+    · exact Or.inl ⟨(congrArg F first).trans minus_site, (congrArg F second).trans plus_site⟩
+    · exact Or.inr ⟨(congrArg F first).trans plus_site, (congrArg F second).trans minus_site⟩
 
 end Unfoldings.FewestNets.AcuteLatitudeGrid

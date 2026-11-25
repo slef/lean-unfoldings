@@ -2979,6 +2979,7 @@ public import Unfoldings.FewestNets.AcuteLatitudeAnnularShape
 public import Unfoldings.FewestNets.AcuteLatitudeOrientedChart
 public import Unfoldings.FewestNets.AcuteLatitudeSelectedRoofs
 public import Unfoldings.FewestNets.AcuteLatitudeAnnularRouting
+public import Unfoldings.FewestNets.AcuteLatitudeAnnularSides
 public import Unfoldings.FewestNets.ThreeExitGraftTerminalCoverage
 public import Unfoldings.Topology.OrderedGraphLenses
 public import Unfoldings.Geometry.TransverseTurns

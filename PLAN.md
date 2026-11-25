@@ -1211,7 +1211,9 @@ acute triangle mesh of a convex polyhedron, with `0 < α ≤ π/6`. The final Le
 statement will produce an original-edge `HasNetPartition`.
 
 - [x] Instantiate the revised latitude grid and its exact count below `476 / α²`.
-- [ ] Prove the chart size and angular bounds for each actual midpoint triangle and polar cell.
+- [x] Bound the side lengths, perimeter, and corner sines of every actual annular triangle.
+  Verify its cutoff sum and perimeter alternative are both below `2.462 / α`.
+- [ ] Prove the remaining angular and separation bounds for the actual polar cells.
 - [x] Prove coverage and disjoint strict interiors for the actual chord triangles.
 - [x] Group both polar fans into polygon selectors. Identify all labels away from the
   spherical edge planes and transfer both polar component nets to the original faces.

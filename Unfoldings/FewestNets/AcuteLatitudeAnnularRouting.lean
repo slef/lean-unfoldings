@@ -75,7 +75,7 @@ theorem exists_acuteLatitude_annular_label_routing {a : ℝ}
           let lo := R.rootWindowStart r
           max (lo + H.width) exit - min lo exit ≤ π / 2 - 0.170 * a := by
   obtain ⟨E, left, right, base, apex, height, reimage, width_low, width_high, height_low,
-    height_high, east, west, radius_bound⟩ := exists_annularRoutingChart positive small k
+    height_high, east, west, radius_bound, _⟩ := exists_annularRoutingChart positive small k
   let frame := (placement.trans (selectorFrame (.inr k))).trans (horizontalChartIsometry E)
   let normals := N.rotate frame
   let roof := (P.rotate frame).upperRoof normals

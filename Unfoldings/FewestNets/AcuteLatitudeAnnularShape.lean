@@ -28,6 +28,10 @@ private theorem annularChartVertex_at (i : AnnularTriangle a) (vertex : Fin 3) (
   rw [chordChartVertex, annularChartBasis_apply, site, annularChartFrame]
   exact latitude_gnomonic_site _ _ _ _
 
+/-- The exact planar vertex corresponding to one of the three ordered chord vertices. -/
+def annularSlopeVertex (i : AnnularTriangle a) (j : Fin 3) : Plane :=
+  chordChartVertex (annularChartBasis positive small i) j
+
 /-- The actual annular selector has symmetric base offsets and the prescribed nearest-row apex. -/
 theorem exists_annularSlopeSelector_base (i : AnnularTriangle a) :
     ∃ (baseRow apexRow : ℕ) (w : ℝ),
@@ -37,7 +41,12 @@ theorem exists_annularSlopeSelector_base (i : AnnularTriangle a) :
       annularSlopeSelector positive small i = convexHull ℝ
         {annularSlopePoint a i.1.val baseRow (-(longitudeStep a baseRow / 2)),
           annularSlopePoint a i.1.val baseRow (longitudeStep a baseRow / 2),
-          annularSlopePoint a i.1.val apexRow w} := by
+          annularSlopePoint a i.1.val apexRow w} ∧
+      let x := annularSlopePoint a i.1.val baseRow (-(longitudeStep a baseRow / 2))
+      let y := annularSlopePoint a i.1.val baseRow (longitudeStep a baseRow / 2)
+      let z := annularSlopePoint a i.1.val apexRow w
+      let v := annularSlopeVertex positive small i
+      v 2 = z ∧ ((v 0 = x ∧ v 1 = y) ∨ (v 0 = y ∧ v 1 = x)) := by
   obtain ⟨j, i⟩ := i
   let step := sweepOrder (rowSize a j.val) (rowSize a (j.val + 1))
   let u := annularChartLongitude a ⟨j, i⟩
@@ -114,7 +123,7 @@ theorem exists_annularSlopeSelector_base (i : AnnularTriangle a) :
         ((congrFun actual 1).trans (base_last b mid))
       have at₂ : vertex 2 = z := annularChartVertex_at positive small _ 2 _ _
         ((congrFun actual 2).trans (apex _ _))
-      exact hull x y z at₀ at₁ at₂
+      exact ⟨hull x y z at₀ at₁ at₂, at₂, Or.inl ⟨at₀, at₁⟩⟩
   · let n := rowProgress (lowerRank step) i.val
     let w := rowLongitude (rowSize a j.val) n - u
     let row := j.val + 1
@@ -140,7 +149,7 @@ theorem exists_annularSlopeSelector_base (i : AnnularTriangle a) :
       have at₂ : vertex 2 = z := annularChartVertex_at positive small _ 2 _ _
         ((congrFun actual 2).trans (apex _ _))
       rw [Set.insert_comm x y]
-      exact hull y x z at₀ at₁ at₂
+      exact ⟨hull y x z at₀ at₁ at₂, at₂, Or.inr ⟨at₀, at₁⟩⟩
 
 include positive small in
 /-- The two symmetric base vertices have the exact horizontal bounds at the revised scale. -/
