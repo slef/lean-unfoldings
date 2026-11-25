@@ -2,6 +2,15 @@
 
 ## Session Log
 
+### 2026-11-25 — identify the polar selector and name the finite cut copies
+
+- Identified the exact gnomonic image of each upward chord triangle,
+  and grouped the full north fan into its regular polygon.
+- Verified the whole collapse fiber off the prescribed cut is a singleton.
+- Verified each graft cell interior has a flat metric ball.
+- Named all roof copies of points on the cut below the affine truncation,
+  using the actual removed seam and correctly oriented parent contours.
+
 ### 2026-11-25 — descend the exact graft collapse and bound chart angles
 
 - Proved finite exact seam classes for the ordered three-exit graft, with

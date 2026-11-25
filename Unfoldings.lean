@@ -2954,6 +2954,13 @@ public import Unfoldings.Geometry.GnomonicCornerAngles
 public import Unfoldings.FewestNets.AcuteLatitudeCornerScalars
 public import Unfoldings.FewestNets.ThreeExitGraftLabels
 public import Unfoldings.FewestNets.ThreeExitGraftProperCollapse
+public import Unfoldings.Geometry.GnomonicChordTriangle
+public import Unfoldings.FewestNets.AcuteLatitudeNorthSelector
+public import Unfoldings.FewestNets.ThreeExitGraftOffCutFiber
+public import Unfoldings.FewestNets.ThreeExitGraftCellCharts
+public import Unfoldings.Roof.AffineFloorCutBoundary
+public import Unfoldings.Complex.ContourParentMarkCoverage
+public import Unfoldings.FewestNets.ThreeExitGraftFiniteCoverage
 public import Unfoldings.FewestNets.ThreeExitGraftMarkMetrics
 public import Unfoldings.FewestNets.ThreeExitGraftClosedSeams
 public import Unfoldings.Geometry.GraphNormalTilt
