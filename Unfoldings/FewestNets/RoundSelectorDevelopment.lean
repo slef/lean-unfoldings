@@ -26,11 +26,13 @@ set_option maxHeartbeats 1200000 in
 /-- A round polar polygon whose apothem is the circumradius times cos x
 unfolds all selected components on original seams. The rotation avoids
 putting an original face normal on the polygon boundary. -/
-theorem hasOriginalEdgeNet_of_roundSelector {I : Type} [Fintype I] [Nonempty I]
+theorem hasOriginalEdgeNet_of_roundSelector_of_aperture {I : Type} [Fintype I] [Nonempty I]
     {slopes : Set Plane} (B : PolygonSideDirections I slopes)
     {a phi x : ℝ} (positive : 0 < a) (small : a ≤ π / 6)
     (tilt_pos : 0 < phi) (tilt_sq : phi ^ 2 ≤ a / 144)
-    (x_nonneg : 0 ≤ x) (mesh : x ^ 2 ≤ a / 4)
+    (x_nonneg : 0 ≤ x) (x_upper : x ≤ π / 6)
+    (aperture : 1 / (√2 * cos x) < cos (π / 4 - 0.49 * a))
+    (exit_margin : 0.48 * a ≤ cos (π / 4 + x))
     (side_distance : ∀ i, B.offset i = tan phi * cos x)
     (radius_bound : ∀ p ∈ slopes, ‖p‖ ≤ tan phi)
     (no_boundary : ∀ f, K.normalSlope f ∉ frontier slopes)
@@ -73,8 +75,8 @@ theorem hasOriginalEdgeNet_of_roundSelector {I : Type} [Fintype I] [Nonempty I]
     have local_bound := K.projected_cornerAngle_le_of_normal_height cos_pos f height i (angles f i)
     have allowance := projection_allowance_le_sq tilt_pos.le phi_lower
     linarith only [local_bound, allowance, tilt_sq, positive]
-  obtain ⟨routing⟩ := K.exists_roundSelectorRouting B compact present boundary no_boundary
-    positive small x_nonneg mesh radius_pos side_distance radius_bound projected
+  obtain ⟨routing⟩ := K.exists_roundSelectorRouting_of_aperture B compact present boundary no_boundary
+    positive small x_nonneg x_upper aperture exit_margin radius_pos side_distance radius_bound projected
   let progress := tan phi / √(2 : ℝ)
   let gamma := 0.48 * a
   have root_pos : 0 < √(2 : ℝ) := by positivity
@@ -85,8 +87,11 @@ theorem hasOriginalEdgeNet_of_roundSelector {I : Type} [Fintype I] [Nonempty I]
     change tan phi / (tan phi / √(2 : ℝ)) ≤ _
     rw [div_div_eq_mul_div, mul_div_cancel_left₀ _ radius_pos.ne']
   have gamma_pos : 0 < gamma := by dsimp only [gamma]; positivity
+  have zero_mesh : (0 : ℝ) ^ 2 ≤ a / 4 := by
+    norm_num
+    positivity
   obtain ⟨inside_margin, _, gamma_bound⟩ :=
-    round_selector_margin positive small x_nonneg mesh
+    round_selector_margin (x := 0) positive small le_rfl zero_mesh
   have flat : phi ^ 2 ≤ gamma / 58 := by
     dsimp only [gamma]
     linarith only [tilt_sq, positive]
@@ -95,5 +100,20 @@ theorem hasOriginalEdgeNet_of_roundSelector {I : Type} [Fintype I] [Nonempty I]
   exact K.hasOriginalEdgeNet_of_adaptiveRouting B.convex compact present routing no_boundary M
     progression Set.Subset.rfl radius_pos ratio radius_bound tilt_pos phi_small cos_lower normal
     gamma_pos (gamma_bound.trans (by norm_num)) inside_margin le_rfl length E
+
+/-- The original small-step criterion for an original-edge net in each selected component. -/
+theorem hasOriginalEdgeNet_of_roundSelector {I : Type} [Fintype I] [Nonempty I]
+    {slopes : Set Plane} (B : PolygonSideDirections I slopes)
+    {a phi x : ℝ} (positive : 0 < a) (small : a ≤ π / 6)
+    (tilt_pos : 0 < phi) (tilt_sq : phi ^ 2 ≤ a / 144)
+    (x_nonneg : 0 ≤ x) (mesh : x ^ 2 ≤ a / 4)
+    (side_distance : ∀ i, B.offset i = tan phi * cos x)
+    (radius_bound : ∀ p ∈ slopes, ‖p‖ ≤ tan phi)
+    (no_boundary : ∀ f, K.normalSlope f ∉ frontier slopes)
+    (angles : ∀ f, ∀ i, (C.triangle f).cornerAngle i ≤ π / 2 - a) :
+    ∀ seed, K.normalSlope seed ∈ slopes → C.HasOriginalEdgeNet (K.selectionComponent slopes seed) := by
+  obtain ⟨x_upper, aperture, exit_margin⟩ := roundSelector_aperture_of_small_step positive small x_nonneg mesh
+  exact K.hasOriginalEdgeNet_of_roundSelector_of_aperture B positive small tilt_pos tilt_sq
+    x_nonneg x_upper aperture exit_margin side_distance radius_bound no_boundary angles
 
 end Unfoldings.ConvexRoof

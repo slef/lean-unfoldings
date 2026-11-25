@@ -2956,6 +2956,10 @@ public import Unfoldings.FewestNets.ThreeExitGraftLabels
 public import Unfoldings.FewestNets.ThreeExitGraftProperCollapse
 public import Unfoldings.Geometry.GnomonicChordTriangle
 public import Unfoldings.FewestNets.AcuteLatitudeNorthSelector
+public import Unfoldings.FewestNets.AcuteLatitudeSouthSelector
+public import Unfoldings.FewestNets.AcuteLatitudeAnnularChart
+public import Unfoldings.FewestNets.AcutePolarScalars
+public import Unfoldings.FewestNets.AcuteLatitudePolarNet
 public import Unfoldings.FewestNets.ThreeExitGraftOffCutFiber
 public import Unfoldings.FewestNets.ThreeExitGraftCellCharts
 public import Unfoldings.Roof.AffineFloorCutBoundary

@@ -2,6 +2,15 @@
 
 ## Session Log
 
+### 2026-11-25 — unfold both revised polar selectors
+
+- Identified the original southern fan with the reflected regular polygon
+  and represented each actual annular triangle in its upward midpoint chart.
+- Proved the wide polar side spacing meets the adaptive routing aperture
+  and radial margin at the revised tilt.
+- Obtained an original-edge net for each component of either revised
+  polar selector under a placement avoiding the selector boundaries.
+
 ### 2026-11-25 — identify the polar selector and name the finite cut copies
 
 - Identified the exact gnomonic image of each upward chord triangle,
