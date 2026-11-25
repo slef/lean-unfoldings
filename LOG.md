@@ -2,6 +2,17 @@
 
 ## Session Log
 
+### 2026-11-25 — descend the exact graft collapse and bound chart angles
+
+- Proved finite exact seam classes for the ordered three-exit graft, with
+  spatial labels on banks and coordinate labels inside gaps.
+- Proved the full graft's original piece maps descend to a proper map onto
+  the entire spatial roof.
+- Bounded spherical half-angle sine by the height times the planar value
+  using the literal projected great-circle tangents.
+- Verified the capped-sine conversion and the revised annular Crofton
+  coefficient and perimeter budgets.
+
 ### 2026-11-25 — cover the sphere and telescope two closing links
 
 - Constructed a unit point near the north pole with a single strict

@@ -1212,10 +1212,12 @@ statement will produce an original-edge `HasNetPartition`.
 
 - [x] Instantiate the revised latitude grid and its exact count below `476 / α²`.
 - [ ] Prove the chart size and angular bounds for each actual midpoint triangle and polar cell.
-- [ ] Straighten the parameter grid to a conforming spherical partition and verify its boundaries.
+- [x] Prove coverage and disjoint strict interiors for the actual chord triangles.
+- [ ] Group both polar fans into their polygon selectors and verify all cell boundaries.
 - [x] Bound each finite roof's intrinsic curvature by the area of its selector.
 - [ ] Prove the sharp closing-path turn bound and construct all actual gaps in a common acute cone.
-- [ ] Complete the unbounded graft and recover original-edge nets for every selected component.
+- [x] Present the entire graft by exact closed cell seams and descend its proper spatial collapse.
+- [ ] Prove flat local charts and contractibility of the cut fibers, then recover original-edge nets.
 - [ ] Verify the crossing estimates and the uniform placement bound for both cell types.
 - [ ] Assemble the partition theorem and audit its dependencies.
 
