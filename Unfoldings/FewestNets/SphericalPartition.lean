@@ -20,29 +20,29 @@ variable {Face : Type u} [Fintype Face] {C : TriangleComplex.{u, v} Face}
   (hemisphere : ∀ i, ∀ n ∈ cell i, 0 < inner ℝ (center i) n)
   (label : Face → Label) (assigned : ∀ f i, N.normal f ∈ cell i ↔ label f = i)
 
-include assigned in
-/-- The component developed in a local hemisphere contains exactly the
-original input faces reached along same-label original seams. -/
-theorem normalSelectionFaces_image_eq_labeled_component (seed : Face) :
-    Subtype.val '' P.normalSelectionFaces N (center (label seed)) (unit (label seed))
-      (cell (label seed)) (hemisphere (label seed)) seed ((assigned seed _).mpr rfl) =
+/-- A single normal cell only needs the membership equivalence for its own label. -/
+theorem normalSelectionFaces_image_eq_label (o : Space) (isUnit : ‖o‖ = 1)
+    (region : Set Space) (inside : ∀ n ∈ region, 0 < inner ℝ o n)
+    {i : Label} (membership : ∀ f, N.normal f ∈ region ↔ label f = i)
+    (seed : Face) (selected : label seed = i) :
+    Subtype.val '' P.normalSelectionFaces N o isUnit region inside seed
+      ((membership seed).mpr selected) =
       ((C.labeledSeamGraph label).connectedComponentMk seed).supp := by
-  let i := label seed
-  let Q := P.hemisphereRoof N (center i)
-  let region := Cap.northFrame (center i) '' cell i
+  let Q := P.hemisphereRoof N o
+  let selectedRegion := Cap.northFrame o '' region
   let upper (f : Face) (chosen : label f = i) :=
-    P.normalSelectionSeed N (center i) (unit i) (cell i) (hemisphere i) f ((assigned f i).mpr chosen)
-  let seedUp := upper seed rfl
-  let G := Q.selectionGraph (Cap.gnomonicRegion region)
+    P.normalSelectionSeed N o isUnit region inside f ((membership f).mpr chosen)
+  let seedUp := upper seed selected
+  let G := Q.selectionGraph (Cap.gnomonicRegion selectedRegion)
   let H := C.labeledSeamGraph label
   have to_original {a b} (edge : G.Adj a b) : H.Adj a.val b.val := by
     obtain ⟨ha, hb, diff, seam⟩ :=
-      (P.hemisphere_selectionGraph_adj_iff N (center i) (cell i) a b).mp edge
-    exact ⟨fun h => diff (Subtype.ext h), ((assigned _ i).mp ha).trans ((assigned _ i).mp hb).symm, seam⟩
+      (P.hemisphere_selectionGraph_adj_iff N o region a b).mp edge
+    exact ⟨fun h => diff (Subtype.ext h), ((membership _).mp ha).trans ((membership _).mp hb).symm, seam⟩
   have from_original {a b} (chosen : label a.val = i) (edge : H.Adj a.val b.val) :
       G.Adj a b := by
-    apply (P.hemisphere_selectionGraph_adj_iff N (center i) (cell i) a b).mpr
-    exact ⟨(assigned _ i).mpr chosen, (assigned _ i).mpr (edge.2.1.symm.trans chosen),
+    apply (P.hemisphere_selectionGraph_adj_iff N o region a b).mpr
+    exact ⟨(membership _).mpr chosen, (membership _).mpr (edge.2.1.symm.trans chosen),
       fun h => edge.1 (congrArg Subtype.val h), edge.2.2⟩
   ext f
   constructor
@@ -60,7 +60,7 @@ theorem normalSelectionFaces_image_eq_labeled_component (seed : Face) :
     clear member
     have preimage : ∃ chosen : label f = i, G.Reachable seedUp (upper f chosen) := by
       induction chain with
-      | refl => exact ⟨rfl, ⟨SimpleGraph.Walk.nil⟩⟩
+      | refl => exact ⟨selected, ⟨SimpleGraph.Walk.nil⟩⟩
       | tail _ edge ih =>
         obtain ⟨chosen, reach⟩ := ih
         have next := edge.2.1.symm.trans chosen
@@ -69,6 +69,16 @@ theorem normalSelectionFaces_image_eq_labeled_component (seed : Face) :
     refine ⟨upper f chosen, ?_, rfl⟩
     change G.connectedComponentMk (upper f chosen) = G.connectedComponentMk seedUp
     exact SimpleGraph.ConnectedComponent.eq.mpr reached.symm
+
+include assigned in
+/-- The component developed in a local hemisphere contains exactly the
+original input faces reached along same-label original seams. -/
+theorem normalSelectionFaces_image_eq_labeled_component (seed : Face) :
+    Subtype.val '' P.normalSelectionFaces N (center (label seed)) (unit (label seed))
+      (cell (label seed)) (hemisphere (label seed)) seed ((assigned seed _).mpr rfl) =
+      ((C.labeledSeamGraph label).connectedComponentMk seed).supp :=
+  P.normalSelectionFaces_image_eq_label N label (center (label seed)) (unit (label seed))
+    (cell (label seed)) (hemisphere (label seed)) (fun f => assigned f (label seed)) seed rfl
 
 include assigned in
 /-- The original polyhedral surface receives exactly one net per labeled component

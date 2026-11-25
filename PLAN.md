@@ -1216,8 +1216,8 @@ development bound at `φ² ≤ γ / 32`.
   and transport their original seams to the component cut disk.
 - [x] Prove the narrow-cone path bounds, the round progress-disk cone formula, and the flatness
   inequalities at the three-exit scale.
-- [x] Prove the signed single-cell charge bound and cancellation under right rotation. Construct
-  the side flip that reverses the supporting normal.
+- [x] Prove the signed single-cell charge bound and cancellation under pointwise reflection
+  in a side plane, averaging over both orthogonal orientation classes.
 - [x] Construct active frontier contacts, assign polygon sides consistently at corners, and choose
   the three-exit parents from the actual projected triangle angles.
 - [x] Bound every contiguous block of a same-sign history and align the physical roof mesh
@@ -1225,9 +1225,15 @@ development bound at `φ² ≤ γ / 32`.
 - [x] Construct the bounded embedded cut forest and choose a forward fine seam inside a
   prescribed segment.
 - [x] Calibrate shifted stem windows and prove the acute-cone threshold inequalities.
-- [ ] Prove fine parent histories inherit the coarse directions, establish the acute-cone
-  one-sided heading estimate, and develop the source gaps on the clipped extension.
-- [ ] Construct the latitude grid and polar selectors with quantitative side bounds.
+- [x] Identify the exact retained seams in the fine cut mesh and bound its actual parent
+  histories in the heading window of their common root.
+- [x] Construct the two-link Jordan closure and sum its regular-link and corner error
+  bounds with the enclosed curvature.
+- [x] Derive Euler's formula for one convex normal cell and linearize the pointwise count
+  into site indicators and signed polygon charges.
+- [ ] Choose the regular connectors for each bank, transfer the sharp heading estimate to
+  its physical edges, and develop the source gaps on the clipped extension.
+- [ ] Construct and straighten the latitude grid and polar selectors with quantitative side bounds.
 - [ ] Localize single-cell crossings after cancellation, assemble the rotation estimate, and
   prove the explicit `13,000 * α⁻⁴` partition theorem.
 

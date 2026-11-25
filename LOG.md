@@ -2,6 +2,18 @@
 
 ## Session Log
 
+### 2026-11-25 — identify the exact fine cuts and count one normal cell
+
+- Proved that the fine parent cuts coincide with all complete seams of the prescribed forest.
+  Every fine history stays in the common heading window of its actual root.
+- Built two-link Jordan closures with an open choice of apex. On a regular aligned closure,
+  two straight-link errors, three corner errors, and the enclosed curvature give the sharp
+  one-sided budget.
+- Counted the components of an actual convex normal cell by Euler characteristic, then
+  linearized its count into site indicators and signed vertex charges.
+- Proved pointwise plane reflection cancellation over both orthogonal orientation classes
+  and verified the final numerical sum for the explicit bound.
+
 ### 2026-11-25 — calibrate the shifted heading windows
 
 - Constructed the current paper's shifted windows and their span with each allowed exit.
@@ -19,7 +31,7 @@
 
 ### 2026-11-25 — start the general acute-angle proof
 
-- Preserved the appendix's audited numerical bounds and removed superseded finite-cell pilots.
+- Preserved the audited finite Voronoi numerical bounds and removed superseded finite-cell pilots.
 - Built the component-specific clipped extension, compatible parent selection, and local cut disk.
 - Proved signed single-cell cancellation, narrow-cone path bounds, and the selector tilt estimates.
 
