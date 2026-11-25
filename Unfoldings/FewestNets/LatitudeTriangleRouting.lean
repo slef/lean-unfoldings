@@ -9,17 +9,6 @@ public import Unfoldings.FewestNets.RoundSelectorDevelopment
 
 noncomputable section
 
-namespace Unfoldings.FewestNets
-
-/-- The slope selector is a compact triangle in its actual physical frame. -/
-theorem isCompact_latitudeSlopeTriangle (left right base apex height : ℝ) :
-    IsCompact (latitudeSlopeTriangle left right base apex height) := by
-  let frame := (exitHeadingChart false).toHomeomorph
-  have finite : ({⟨apex, base - height⟩, ⟨left, base⟩, ⟨right, base⟩} : Set ℂ).Finite := by simp
-  exact frame.isCompact_preimage.mpr (finite.isCompact_convexHull ℝ)
-
-end Unfoldings.FewestNets
-
 namespace Unfoldings.ConvexRoof
 
 open FewestNets Real

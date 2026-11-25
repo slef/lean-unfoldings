@@ -21,6 +21,13 @@ def latitudeSlopeTriangle : Set Plane :=
   exitHeadingChart false ⁻¹' convexHull ℝ
     ({⟨apex, base - height⟩, ⟨left, base⟩, ⟨right, base⟩} : Set ℂ)
 
+/-- The slope selector is a compact triangle in its actual physical frame. -/
+theorem isCompact_latitudeSlopeTriangle (left right base apex height : ℝ) :
+    IsCompact (latitudeSlopeTriangle left right base apex height) := by
+  let frame := (exitHeadingChart false).toHomeomorph
+  have finite : ({⟨apex, base - height⟩, ⟨left, base⟩, ⟨right, base⟩} : Set ℂ).Finite := by simp
+  exact frame.isCompact_preimage.mpr (finite.isCompact_convexHull ℝ)
+
 /-- Tangent of the signed angle of the outward east normal. -/
 def latitudeEastRatio : ℝ := (apex - right) / height
 

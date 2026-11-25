@@ -2,6 +2,18 @@
 
 ## Session Log
 
+### 2026-11-25 — orient the revised grid and open banks in an acute cone
+
+- Verified the exact gnomonic selector area and the three-exit routing
+  for every selected component at the revised annular chart margins.
+- Checked the orientation of each triangle, paired the actual latitude edges,
+  and proved opposite transverse signs from consistent face orientations.
+- Proved that positive suffix rotations within a common acute cone produce
+  a strict source gap. Verified simple disk boundaries between consecutive
+  intersections of two continuous graphs.
+- Removed the superseded conditional 13,000-bound assembly and retained
+  the generic averaging lemma.
+
 ### 2026-11-25 — transfer the acute row charts and pair the cross-row edges
 
 - Verified the revised longitude spacing, polar side counts, gnomonic chart

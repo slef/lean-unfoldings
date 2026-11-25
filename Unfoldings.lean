@@ -2815,7 +2815,6 @@ public import Unfoldings.FewestNets.ThreeExitEmbedding
 public import Unfoldings.FewestNets.ThreeExitHistoryBounds
 public import Unfoldings.FewestNets.ThreeExitMesh
 public import Unfoldings.FewestNets.ThreeExitRoots
-public import Unfoldings.FewestNets.LatitudeCount
 public import Unfoldings.Geometry.OrientedHistory
 public import Unfoldings.Geometry.TriangleSideDirections
 public import Unfoldings.Geometry.TwoLinkChainClosure
@@ -2938,6 +2937,17 @@ public import Unfoldings.FewestNets.ThreeExitGraftCells
 public import Unfoldings.Topology.SphereFiniteCoverage
 public import Unfoldings.Geometry.RadialTriangleCoverage
 public import Unfoldings.Geometry.RadialTriangleMultiplicity
+public import Unfoldings.FewestNets.AcuteLatitudeRouting
+public import Unfoldings.FewestNets.LatitudeTriangleArea
+public import Unfoldings.FewestNets.LatitudeAnnularOrientation
+public import Unfoldings.FewestNets.LatitudeChordOrientation
+public import Unfoldings.FewestNets.AcuteLatitudeRingEdges
+public import Unfoldings.Geometry.GraphNormalTilt
+public import Unfoldings.Geometry.RadialTriangleOrientation
+public import Unfoldings.Geometry.AcuteBankCone
+public import Unfoldings.Geometry.AcuteBankOpening
+public import Unfoldings.Roof.PotentialContourAcuteGap
+public import Unfoldings.Topology.TwoGraphJordan
 public import Unfoldings.FewestNets.LatitudeRowSupportTies
 public import Unfoldings.Roof.PotentialContourPhysicalLabels
 public import Unfoldings.Geometry.RadialTriangleEdges

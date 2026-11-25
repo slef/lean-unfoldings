@@ -1,8 +1,6 @@
 module
 
 public import Unfoldings.FewestNets.ComponentAveraging
-public import Unfoldings.FewestNets.LatitudeCount
-public import Unfoldings.FewestNets.LatitudeRows
 public import Unfoldings.Polyhedron.LabeledSelectionCount
 
 /-! Assemble independently counted selectors into one original-edge net partition. -/
@@ -51,36 +49,5 @@ theorem exists_net_partition_of_expected_selected_counts (bad : Set Rotation) (n
           exact eq]
     simp only [charge, Finset.sum_sub_distrib, ← Finset.mul_sum, total]
     ring
-
-/-- The explicit numerical assembly step once the latitude selectors have
-their local original-edge nets and the two kinds of cell-excess estimates. -/
-theorem exists_latitude_net_partition_of_expected_selected_counts
-    {a : ℝ} (positive : 0 < a) (small : a ≤ π / 6)
-    (label : Rotation → Face → (Fin 2 ⊕ Fin (latitudeTriangleCount a)))
-    (bad : Set Rotation) (null : μ bad = 0)
-    (mass : Fin 2 ⊕ Fin (latitudeTriangleCount a) → ℝ)
-    (total : ∑ i, mass i = 1)
-    (integrable : ∀ i, Integrable (selectedCount C label i) μ)
-    (expected : ∀ i, (∫ r, selectedCount C label i r ∂μ) ≤ 2 * mass i +
-      Sum.elim (fun _ : Fin 2 => 36 / a ^ 2)
-        (fun _ : Fin (latitudeTriangleCount a) => 5.6475 / a ^ 2) i)
-    (net : ∀ r ∉ bad, ∀ c : (C.labeledSeamGraph (label r)).ConnectedComponent,
-      C.HasOriginalEdgeNet c.supp) :
-    ∃ n : ℕ, (n : ℝ) < 13000 / a ^ 4 ∧ C.HasNetPartition n := by
-  obtain ⟨n, bound, net⟩ := exists_net_partition_of_expected_selected_counts
-    C μ label bad null mass _ total integrable expected net
-  have sum :
-      (∑ i : Fin 2 ⊕ Fin (latitudeTriangleCount a),
-        Sum.elim (fun _ => 36 / a ^ 2) (fun _ => 5.6475 / a ^ 2) i) =
-        72 / a ^ 2 + (latitudeTriangleCount a : ℝ) * (5.6475 / a ^ 2) := by
-    rw [Fintype.sum_sum_type]
-    simp only [Sum.elim_inl, Sum.elim_inr, Finset.sum_const, Finset.card_univ,
-      Fintype.card_fin, nsmul_eq_mul]
-    ring
-  rw [sum] at bound
-  have triangles := mul_le_mul_of_nonneg_right (latitudeTriangleCount_lt positive small).le
-    (by positivity : 0 ≤ 5.6475 / a ^ 2)
-  have entire := latitude_component_bound positive small
-  exact ⟨n, by linarith only [bound, triangles, entire], net⟩
 
 end Unfoldings.FewestNets

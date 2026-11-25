@@ -82,10 +82,16 @@ variable (suffixes : ∀ k : Fin events.length,
   (angles_positive : ∀ k : Fin events.length, 0 < events[k].angle)
   (angles_small : ∀ k : Fin events.length, events[k].angle < Real.pi)
 
-include outward nonzero states positive small budget margin tail_margin sweeps suffixes
-  angles_positive angles_small in
-/-- Consecutive actual banks are ordered in the same real angular coordinate. -/
-theorem prefixCircleHeading_step (r : ℝ≥0) (radius_positive : 0 < r) (k : Fin events.length) :
+include outward nonzero states sweeps suffixes angles_positive angles_small in
+/-- Consecutive banks are ordered when the entire opening stays in a common halfplane
+relative to the first bank's source-circle point. -/
+theorem prefixCircleHeading_step_of_halfplane (r : ℝ≥0) (radius_positive : 0 < r)
+    (halfplane : ∀ (k : Fin events.length) (θ : Set.Icc 0 events[k].angle),
+      0 < ((((R.openingPrefix events k.val).hingeSweepDirection events[k].hinge
+        (R.openingPrefix_direction_ne_zero events k.val nonzero) events[k].angle
+        (fun ψ bounds => sweeps k ⟨ψ, bounds⟩) r radius_positive θ /
+          R.circleDirection outward nonzero r radius_positive : Circle) : ℂ)).re)
+    (k : Fin events.length) :
     R.prefixCircleHeading events outward nonzero states r radius_positive k.val ≤
       R.prefixCircleHeading events outward nonzero states r radius_positive (k.val + 1) := by
   have ordered := (R.openingPrefix events k.val).monotone_hingeCommonHeading events[k].hinge
@@ -93,13 +99,23 @@ theorem prefixCircleHeading_step (r : ℝ≥0) (radius_positive : 0 < r) (k : Fi
     (fun ψ bounds => sweeps k ⟨ψ, bounds⟩) r radius_positive
     (R.circleDirection outward nonzero r radius_positive) (states k.val) (suffixes k)
     (angles_positive k) (angles_small k)
-    (R.openingPrefix_sweep_halfplane events outward nonzero γ positive small budget margin
-      tail_margin sweeps k r radius_positive)
+    (halfplane k)
   have bound := ordered (show
     (⟨0, le_rfl, (angles_positive k).le⟩ : Set.Icc 0 events[k].angle) ≤
       ⟨events[k].angle, (angles_positive k).le, le_rfl⟩ from (angles_positive k).le)
   simpa only [hingeCommonHeading, hingeSweepDirection, rotateSuffix_zero,
     prefixCircleHeading, Circle.coe_div, ← R.openingPrefix_succ events k] using bound
+
+include outward nonzero states positive small budget margin tail_margin sweeps suffixes
+  angles_positive angles_small in
+/-- Consecutive actual banks are ordered in the same real angular coordinate. -/
+theorem prefixCircleHeading_step (r : ℝ≥0) (radius_positive : 0 < r) (k : Fin events.length) :
+    R.prefixCircleHeading events outward nonzero states r radius_positive k.val ≤
+      R.prefixCircleHeading events outward nonzero states r radius_positive (k.val + 1) := by
+  exact R.prefixCircleHeading_step_of_halfplane events outward nonzero states sweeps suffixes
+    angles_positive angles_small r radius_positive
+    (fun j => R.openingPrefix_sweep_halfplane events outward nonzero γ positive small budget
+      margin tail_margin sweeps j r radius_positive) k
 
 include outward nonzero states positive small budget margin tail_margin sweeps suffixes
   angles_positive angles_small in

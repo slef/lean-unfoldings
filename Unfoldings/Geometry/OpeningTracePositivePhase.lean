@@ -45,11 +45,17 @@ variable (γ : ℝ≥0) (positive : 0 < γ) (small : γ ≤ 1)
   (angles_positive : ∀ k : Fin events.length, 0 < (events[k.val]'k.isLt).angle)
   (angles_small : ∀ k : Fin events.length, (events[k.val]'k.isLt).angle < Real.pi)
 
-include outward nonzero states positive small budget margin tail_margin sweeps suffixes
-  angles_positive angles_small in
-/-- The initial positive opening at the actual source makes every later circle heading positive. -/
-theorem prefixCircleHeading_final_pos (first : Fin events.length) (at_start : first.val = 0)
-    (source_hinge : (events[first.val]'first.isLt).hinge = 0) (r : ℝ≥0) (radius_positive : 0 < r) :
+include outward nonzero states sweeps suffixes angles_positive angles_small in
+/-- A positive source opening gives positive final relative phase when
+all later rotations remain in the common halfplane. -/
+theorem prefixCircleHeading_final_pos_of_halfplane (first : Fin events.length)
+    (at_start : first.val = 0) (source_hinge : (events[first.val]'first.isLt).hinge = 0)
+    (r : ℝ≥0) (radius_positive : 0 < r)
+    (halfplane : ∀ (k : Fin events.length) (θ : Set.Icc 0 events[k].angle),
+      0 < ((((R.openingPrefix events k.val).hingeSweepDirection events[k].hinge
+        (R.openingPrefix_direction_ne_zero events k.val nonzero) events[k].angle
+        (fun ψ bounds => sweeps k ⟨ψ, bounds⟩) r radius_positive θ /
+          R.circleDirection outward nonzero r radius_positive : Circle) : ℂ)).re) :
     0 < R.prefixCircleHeading events outward nonzero states r radius_positive events.length := by
   have above : dist (R.openingPrefix events first.val).start
       ((R.openingPrefix events first.val).chain.vertex
@@ -65,8 +71,7 @@ theorem prefixCircleHeading_final_pos (first : Fin events.length) (at_start : fi
     (fun ψ bounds => sweeps first ⟨ψ, bounds⟩) r radius_positive
     (R.circleDirection outward nonzero r radius_positive) (suffixes first)
     (angles_positive first) (angles_small first)
-    (R.openingPrefix_sweep_halfplane events outward nonzero γ positive small budget margin
-      tail_margin sweeps first r radius_positive) above
+    (halfplane first) above
   have strict_step := strict (show
     (⟨0, le_rfl, (angles_positive first).le⟩ : Set.Icc 0 (events[first.val]'first.isLt).angle) <
       ⟨(events[first.val]'first.isLt).angle, (angles_positive first).le, le_rfl⟩ from
@@ -81,13 +86,27 @@ theorem prefixCircleHeading_final_pos (first : Fin events.length) (at_start : fi
     simpa only [hingeCommonHeading, hingeSweepDirection, rotateSuffix_zero,
       prefixCircleHeading, Circle.coe_div, ← next] using strict_step
   rw [at_start, R.prefixCircleHeading_zero] at first_step
-  have later := R.monotone_prefixCircleHeading events outward nonzero states γ positive small
-    budget margin tail_margin sweeps suffixes angles_positive angles_small r radius_positive
-    (Fin.le_last first.succ)
+  have monotone : Monotone (fun k : Fin (events.length + 1) =>
+      R.prefixCircleHeading events outward nonzero states r radius_positive k.val) := by
+    apply Fin.monotone_iff_le_succ.mpr
+    exact R.prefixCircleHeading_step_of_halfplane events outward nonzero states sweeps suffixes
+      angles_positive angles_small r radius_positive halfplane
+  have later := monotone (Fin.le_last first.succ)
   change R.prefixCircleHeading events outward nonzero states r radius_positive (first.val + 1) ≤
     R.prefixCircleHeading events outward nonzero states r radius_positive events.length at later
   rw [at_start] at later
   exact first_step.trans_le later
+
+include outward nonzero states positive small budget margin tail_margin sweeps suffixes
+  angles_positive angles_small in
+/-- The initial positive opening at the actual source makes every later circle heading positive. -/
+theorem prefixCircleHeading_final_pos (first : Fin events.length) (at_start : first.val = 0)
+    (source_hinge : (events[first.val]'first.isLt).hinge = 0) (r : ℝ≥0) (radius_positive : 0 < r) :
+    0 < R.prefixCircleHeading events outward nonzero states r radius_positive events.length := by
+  exact R.prefixCircleHeading_final_pos_of_halfplane events outward nonzero states sweeps suffixes
+    angles_positive angles_small first at_start source_hinge r radius_positive
+    (fun j => R.openingPrefix_sweep_halfplane events outward nonzero γ positive small budget
+      margin tail_margin sweeps j r radius_positive)
 
 include outward nonzero states positive small budget margin tail_margin sweeps suffixes
   angles_positive angles_small in
