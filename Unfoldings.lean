@@ -165,6 +165,7 @@ public import Unfoldings.Cap.NormalAreaThreshold
 public import Unfoldings.Cap.NormalCone
 public import Unfoldings.Cap.ProjectedFlatness
 public import Unfoldings.Cap.SolidNormalArea
+public import Unfoldings.Cap.SharpGnomonicSolidAngle
 public import Unfoldings.Geometry.LuneMeasure
 public import Unfoldings.Cap.UniformCurvature
 public import Unfoldings.Cap.RimAngles
@@ -1326,6 +1327,7 @@ public import Unfoldings.Roof.SharedSeparatorCirclePrefix
 public import Unfoldings.Roof.SharedSeparatorCircleSeparation
 public import Unfoldings.Roof.SimpleEdgeUnfolding
 public import Unfoldings.Roof.SolidNormalArea
+public import Unfoldings.Roof.SelectorCurvatureBudget
 public import Unfoldings.Roof.SubtreeAngles
 public import Unfoldings.Roof.Tilt
 public import Unfoldings.Roof.UniformCurvature
@@ -2828,6 +2830,9 @@ public import Unfoldings.FewestNets.SingleCellExpectation
 public import Unfoldings.FewestNets.OrthogonalSiteFlags
 public import Unfoldings.FewestNets.LatitudeRows
 public import Unfoldings.FewestNets.AcuteLatitudeRows
+public import Unfoldings.FewestNets.AcuteLatitudeTilt
+public import Unfoldings.FewestNets.AcuteLatitudeBudget
+public import Unfoldings.FewestNets.AcuteLatitudeVertexBounds
 public import Unfoldings.Polyhedron.LabeledSelectionCount
 public import Unfoldings.Convex.SlopeReference
 public import Unfoldings.Convex.AffineFloorSection

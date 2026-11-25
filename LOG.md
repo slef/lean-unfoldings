@@ -2,6 +2,14 @@
 
 ## Session Log
 
+### 2026-11-25 — bound projection distortion and curvature at the revised scale
+
+- Bound solid angle by planar gnomonic area using vertical sections of the unit cone.
+- Packed the actual vertex normal polygons in their convex slope selector to bound
+  the original intrinsic curvature by the selector area.
+- Verified the revised vertex coordinates, tilt, and angular projection allowances.
+- Checked the strict 1,440 assembly from the two local expectations and exact triangle count.
+
 ### 2026-11-25 — count the wider acute latitude grid
 
 - Added the current manuscript's row scales, polar radius, and exact sweep size.
