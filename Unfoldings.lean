@@ -2913,6 +2913,10 @@ public import Unfoldings.FewestNets.ThreeExitMeshWindow
 public import Unfoldings.FewestNets.ThreeExitRimLinks
 public import Unfoldings.FewestNets.ThreeExitContourTails
 public import Unfoldings.FewestNets.ThreeExitFiniteMarks
+public import Unfoldings.FewestNets.ThreeExitTerminalMarks
+public import Unfoldings.Roof.PotentialContourPhysicalLabels
+public import Unfoldings.Geometry.RadialTriangleEdges
+public import Unfoldings.Geometry.UnitChordTriangleBasis
 public import Unfoldings.Roof.PotentialContourStack
 public import Unfoldings.Metric.ConnectedBankMatching
 public import Unfoldings.FewestNets.LatitudeTriangleSourceGaps

@@ -2,6 +2,17 @@
 
 ## Session Log
 
+### 2026-11-25 — match the two finite banks to the physical exits
+
+- Matched each named finite bank to a fixed whole-ray side on the connected
+  positive interval and transferred equality to the closed endpoint.
+- Kept the two side labels distinct using the strict-interior window fiber
+  and proved exact speed and restored spatial positions on the whole banks.
+- Resolved every finite and terminal source-gap mark to its original spatial
+  parent-edge address.
+- Characterized radial triangles by their nonnegative coordinates and
+  proved full local coverage at an edge shared by two opposing triangles.
+
 ### 2026-11-25 — certify the swept chord triangles and continue the physical contour
 
 - Proved that each adjacent pair of nearest sites determines a small secant

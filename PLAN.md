@@ -1281,7 +1281,11 @@ development bound at `φ² ≤ γ / 32`.
   distinct interior copies in the complete cut. Construct their ordered gap marks.
 - [x] Check that the latitude contour processes every positive-curvature vertex
   and produces an oriented gap there.
-- [ ] Identify the finite bank labels with both infinite continuations.
+- [x] Match each named finite bank to the corresponding whole ray at every
+  parameter. Keep both sides distinct as they reach the rim.
+- [x] Recover literal finite and terminal physical positions for all source-gap
+  addresses.
+- [ ] Glue the continued banks and all source gaps along the ordered marks.
 - [ ] Assemble the complete unbounded graft and prove its faithful planar development.
 - [x] Certify every swept latitude chord triangle and both polar fans on the
   boundary of one finite sampled hull with an interior origin.
