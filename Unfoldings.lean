@@ -3017,6 +3017,7 @@ public import Unfoldings.Roof.AffineFloorLineSubdivision
 public import Unfoldings.Roof.GraphEndpointBalance
 public import Unfoldings.Roof.AffineFloorSharpBank
 public import Unfoldings.Roof.GraphWindowBankFan
+public import Unfoldings.Roof.AffineFloorSharpHeading
 public import Unfoldings.Geometry.GraphRegionSides
 public import Unfoldings.FewestNets.LatitudeRowSupportTies
 public import Unfoldings.Roof.PotentialContourPhysicalLabels

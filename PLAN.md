@@ -1240,8 +1240,10 @@ statement will produce an original-edge `HasNetPartition`.
 - [x] Recover the exact original upper-side corner sum. Parent patches preserve old
   angles in both metrics, inserted open-edge corners have zero excess, and the
   sharp bound survives removal of the auxiliary connector.
-- [ ] Transfer the sharp closing-path bound to the original saved bank and construct
-  all actual gaps in a common acute cone.
+- [x] Identify the two original face sides of every trimmed link and recover the
+  actual untrimmed saved bank's real heading error in a forward positive chart.
+- [ ] Use the sharp allowance on all saved-bank windows and put the actual
+  source gaps in a common acute cone.
 - [x] Present the entire graft by exact closed cell seams and descend its proper spatial collapse.
 - [x] Name all cut copies of the unbounded roof on the finite banks or the continued tails.
   Verify uniqueness of strict physical addresses and the exact endpoints of all gap fibers.

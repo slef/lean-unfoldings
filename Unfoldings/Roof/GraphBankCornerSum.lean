@@ -17,14 +17,11 @@ universe u v
 variable {Face : Type u} [Fintype Face] {C : TriangleComplex.{u, v} Face} (K : ConvexRoof C)
 
 open Classical in
-/-- The upper-bank sum is precisely the fine corner discrepancy on that side. -/
-theorem graphBankAngleSum_upper_eq_cornerSum (f : ℝ → ℝ) (sample : Face → Plane) (a b : ℝ) :
-    K.graphBankAngleSum f sample a b false =
-    ∑ d : C.Corner, if (K.projectedTriangle d.1).vertex d.2 ∈ graphPoint f '' Set.Ioo a b ∧
-        d.1 ∈ facesAboveGraph sample f a b
+/-- Rewrite a regional angle sum along any trace as its incident original corner weights. -/
+theorem sum_regionalAngleExcess_on_trace_eq_cornerSum (upper : Set Face) (path : Set Plane) :
+    (∑ w : C.Vertex Set.univ, if K.projectedVertex w ∈ path then K.regionalAngleExcess upper w else 0) =
+    ∑ d : C.Corner, if (K.projectedTriangle d.1).vertex d.2 ∈ path ∧ d.1 ∈ upper
       then (C.triangle d.1).cornerAngle d.2 - (K.projectedTriangle d.1).cornerAngle d.2 else 0 := by
-  let path := graphPoint f '' Set.Ioo a b
-  let upper := facesAboveGraph sample f a b
   let term (d : C.Corner) :=
     if d.1 ∈ upper then (C.triangle d.1).cornerAngle d.2 - (K.projectedTriangle d.1).cornerAngle d.2 else 0
   let base := C.vertexOfCorner Set.univ
@@ -33,18 +30,16 @@ theorem graphBankAngleSum_upper_eq_cornerSum (f : ℝ → ℝ) (sample : Face �
   rw [Finset.sum_filter] at sum
   simp only [Finset.sum_filter] at sum
   refine Eq.trans ?_ (sum.trans ?_)
-  · unfold graphBankAngleSum regionalAngleExcess TriangleComplex.regionalCornerSum
+  · unfold regionalAngleExcess TriangleComplex.regionalCornerSum
     apply Finset.sum_congr rfl
     intro w _
-    change (if K.projectedVertex w ∈ path then _ + (if false = true then _ else 0) else 0) = _
-    simp only [Bool.false_eq_true, ite_false, add_zero]
     by_cases contact : K.projectedVertex w ∈ path
     · rw [ite_eq_left contact, ite_eq_left contact]
       apply Finset.sum_congr rfl
       intro d _
       change (if d.1 ∈ upper ∧ base d = w then _ else 0) = _
       by_cases at_w : base d = w <;> by_cases selected : d.1 ∈ upper <;>
-        simp only [term, at_w, selected, ite_true, ite_false, true_and, false_and, and_true, and_false]
+        simp only [term, at_w, selected, ite_true, ite_false, and_true, and_false]
     · rw [ite_eq_right contact, ite_eq_right contact]
   · apply Finset.sum_congr rfl
     intro d _
@@ -58,5 +53,17 @@ theorem graphBankAngleSum_upper_eq_cornerSum (f : ℝ → ℝ) (sample : Face �
       by_cases selected : d.1 ∈ upper <;>
       simp only [inside, member, selected, term, ite_true, ite_false, true_and, false_and,
         and_true, and_false]
+
+
+open Classical in
+/-- The upper-bank sum is precisely the fine corner discrepancy on that side. -/
+theorem graphBankAngleSum_upper_eq_cornerSum (f : ℝ → ℝ) (sample : Face → Plane) (a b : ℝ) :
+    K.graphBankAngleSum f sample a b false =
+    ∑ d : C.Corner, if (K.projectedTriangle d.1).vertex d.2 ∈ graphPoint f '' Set.Ioo a b ∧
+        d.1 ∈ facesAboveGraph sample f a b
+      then (C.triangle d.1).cornerAngle d.2 - (K.projectedTriangle d.1).cornerAngle d.2 else 0 := by
+  unfold graphBankAngleSum
+  simp only [Bool.false_eq_true, ite_false, add_zero]
+  exact K.sum_regionalAngleExcess_on_trace_eq_cornerSum _ _
 
 end Unfoldings.ConvexRoof
