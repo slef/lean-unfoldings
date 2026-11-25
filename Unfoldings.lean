@@ -2827,6 +2827,7 @@ public import Unfoldings.FewestNets.SingleCellEuler
 public import Unfoldings.FewestNets.SingleCellReflections
 public import Unfoldings.FewestNets.SingleCellExpectation
 public import Unfoldings.FewestNets.OrthogonalSiteFlags
+public import Unfoldings.FewestNets.GaussianSelectedExpectation
 public import Unfoldings.FewestNets.LatitudeRows
 public import Unfoldings.FewestNets.AcuteLatitudeRows
 public import Unfoldings.FewestNets.AcuteLatitudeTilt

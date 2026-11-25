@@ -1244,6 +1244,10 @@ statement will produce an original-edge `HasNetPartition`.
 - [x] Recover both literal parameter names at each affine-floor join and prove its full
   collapse fiber contractible.
 - [ ] Prove the remaining seam and junction charts and fibers, then recover original-edge nets.
+- [x] Bound the residual perimeter of each actual Gaussian cell with the full capped
+  sine. Choose two genuine marks at extreme vertices and cover all changes at
+  subdivision vertices. Express the expected component count in either orientation
+  class using the common area marginal and the signed charges.
 - [ ] Verify the crossing estimates and the uniform placement bound for both cell types.
 - [ ] Assemble the partition theorem and audit its dependencies.
 
