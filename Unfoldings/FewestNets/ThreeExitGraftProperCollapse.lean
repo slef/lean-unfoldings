@@ -1,7 +1,7 @@
 module
 
 public import Unfoldings.FewestNets.ThreeExitGraftLabels
-public import Unfoldings.Complex.ContourGapBankSurjectivity
+public import Unfoldings.Roof.PotentialContourGapAddress
 public import Unfoldings.Metric.ClosedSeamsContinuousLift
 
 /-! The entire unbounded ordered graft collapses properly to its original spatial roof. -/
@@ -81,36 +81,34 @@ local notation "Graft" => contourGraft L S
 local notation "Banks" => MetricGluing.bankSeams Left Right
 local notation "Surface" => SpatialEnvelope.wholeSurface M.plane
 
-/-- Every address of an actual gap is a literal physical point of a named original bank. -/
+/-- Both named gap endpoints keep the physical coordinates of their original address. -/
+theorem contourGraftGapMark_spatial_eq_address (a : Attachment) (e : Event)
+    (saved : e ∈ Stack a) (side : Bool) (t : Param a) :
+    Fold (some e) (Gap a e saved side t) =
+      (Path[e]).addressPoint (PotentialCutForest.contourGapAddress Fcut S.contour a e saved t) := by
+  cases a with
+  | inl v =>
+    apply R.contourSourceGapCollapse_edgePoint
+  | inr _ =>
+    apply R.contourSourceGapCollapse_tailPoint
+
+/-- Every point of the physical gap path is on an attachment whose saved
+stack contains this very gap. -/
+theorem exists_contourGraftSourcePath_attachment (e : Event) {x : Space}
+    (member : x ∈ (Path[e]).carrier) :
+    ∃ (a : Attachment) (t : Param a), e ∈ Stack a ∧ (restore (Base a false t)).val = x := by
+  obtain ⟨addr, at_x⟩ := (Path[e]).exists_address member
+  obtain ⟨a, saved, t, equal⟩ := PotentialCutForest.exists_contourGapAddress_eq Fcut S.contour e addr
+  refine ⟨a, t, saved, ?_⟩
+  rw [← L.contourGraftPieceCollapse_gap_eq S a e saved false t,
+    L.contourGraftGapMark_spatial_eq_address, equal, at_x]
+
+/-- Every point of the physical gap path is the original image of a named roof mark. -/
 theorem exists_contourGraftSourcePath_baseMark (e : Event) {x : Space}
     (member : x ∈ (Path[e]).carrier) :
     ∃ (a : Attachment) (t : Param a), (restore (Base a false t)).val = x := by
-  obtain ⟨a, at_x⟩ := (Path[e]).exists_address member
-  cases a with
-  | inl b =>
-    obtain ⟨i, t⟩ := b
-    obtain ⟨v, nonroot, edge_member, eq⟩ :=
-      (D).exists_contourGapBankIndex_eq Selection S.contour e i
-    let a : Attachment := .inl ⟨v, nonroot⟩
-    have saved : e ∈ Stack a :=
-      ((D).mem_contourSavedGapStack Selection S.contour v e).mpr
-        (((D).mem_contourEdgeGapStack Selection S.contour v e).mp edge_member)
-    have at_gap : Fold (some e) (Gap a e saved false t) = (Path[e]).chain.point i t := by
-      change (R.contourSourceGapCollapse level M S.higher S.contour S.starts e (S.gaps e)
-        (Model[e].edgePoint true
-          ((D).contourGapBankIndex Selection S.contour v nonroot e edge_member) t)).val = _
-      rw [R.contourSourceGapCollapse_edgePoint, eq]
-    have there := (L.contourGraftPieceCollapse_gap_eq S a e saved false t).symm.trans at_gap
-    exact ⟨a, t, there.trans at_x⟩
-  | inr t =>
-    obtain ⟨edge, saved⟩ := (D).exists_contourTerminalEdge_mem_gapStack Selection S.contour e
-    let a : Attachment := .inr edge
-    have at_gap : Fold (some e) (Gap a e saved false t) = (Path[e]).tail t := by
-      change (R.contourSourceGapCollapse level M S.higher S.contour S.starts e
-        (S.gaps e) (Model[e].tailPoint true t)).val = _
-      rw [R.contourSourceGapCollapse_tailPoint]
-    have there := (L.contourGraftPieceCollapse_gap_eq S a e saved false t).symm.trans at_gap
-    exact ⟨a, t, there.trans at_x⟩
+  obtain ⟨a, t, _, equal⟩ := L.exists_contourGraftSourcePath_attachment S e member
+  exact ⟨a, t, equal⟩
 
 include L in
 /-- Every actual physical gap address lands in the original whole roof. -/

@@ -59,7 +59,8 @@ local notation "Q" => SpatialEnvelope.FloorMesh.roof T
   (meshSection_nonempty (K := K) (slopes := slopes) (seed := seed) level M S.higher)
 local notation "Mark" => L.contourParentMark S.higher S.contour S.starts
 
-private theorem parentStart_below (e : Child) :
+/-- Every nonroot fine parent bank starts strictly inside the truncation. -/
+theorem contourParentStart_below (e : Child) :
     (G).height ((Q).projectedVertex e.val) < level := by
   obtain ⟨seg⟩ := R.fineMesh_parent_alignment level M S.higher e.val e.property
   obtain ⟨⟨v | r, valid⟩, s, t, s_mem, t_mem, advance, at_s, _⟩ := seg
@@ -73,7 +74,8 @@ private theorem parentStart_below (e : Child) :
         ⟨lt_of_le_of_ne s_mem.1 (Ne.symm start), advance.trans_le t_mem.2⟩
   · exact (valid ⟨r, rfl⟩).elim
 
-private theorem everyParentEnd_le (e : Child) :
+/-- Every fine parent bank ends at or below the truncation. -/
+theorem contourParentEnd_le (e : Child) :
     (G).height ((Q).projectedVertex ((Fcut).parents.parent e.val)) ≤ level := by
   have position := (Q).projectedVertex_mem_footprint ((Fcut).parents.parent e.val)
   rw [(T).roof_footprint, M.clipAbove_referenceFloor_eq] at position
@@ -136,15 +138,15 @@ theorem exists_contourTerminalEdge_at_exit (r : Root) :
     have lt : (G).height (ray τ) < level := by
       by_cases start : t = 0
       · rw [start, AffineMap.lineMap_apply_zero] at at_point
-        exact at_point ▸ parentStart_below S e
-      · refine (G).openSegment_height_lt (parentStart_below S e) (everyParentEnd_le S e) ?_
+        exact at_point ▸ contourParentStart_below S e
+      · refine (G).openSegment_height_lt (contourParentStart_below S e) (contourParentEnd_le S e) ?_
         rw [openSegment_eq_image_lineMap]
         exact ⟨t, ⟨lt_of_le_of_ne bounds.1 (Ne.symm start), lt_of_le_of_ne bounds.2 end_ne⟩, at_point⟩
     exact lt.ne height
   rw [at_end, AffineMap.lineMap_apply_one] at at_point
   have parent_root : (Fcut).parents.parent e.val ∈ (Fcut).parents.roots := by
     by_contra nonroot
-    have strict := parentStart_below S ⟨(Fcut).parents.parent e.val, nonroot⟩
+    have strict := contourParentStart_below S ⟨(Fcut).parents.parent e.val, nonroot⟩
     exact strict.ne ((congrArg (G).height at_point).trans height)
   exact ⟨⟨e.val, e.property, parent_root⟩, at_point⟩
 

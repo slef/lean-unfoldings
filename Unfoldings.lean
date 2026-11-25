@@ -2982,6 +2982,15 @@ public import Unfoldings.FewestNets.AcuteLatitudeAnnularRouting
 public import Unfoldings.FewestNets.ThreeExitGraftTerminalCoverage
 public import Unfoldings.Topology.OrderedGraphLenses
 public import Unfoldings.Geometry.TransverseTurns
+public import Unfoldings.Geometry.NearChordClosure
+public import Unfoldings.Geometry.ChainGraphLenses
+public import Unfoldings.Geometry.TwoLinkMonotoneChain
+public import Unfoldings.Topology.GraphLensInterior
+public import Unfoldings.Topology.SignedGraphLenses
+public import Unfoldings.Cap.DisjointJordanCurvature
+public import Unfoldings.Roof.PotentialContourGapAddress
+public import Unfoldings.FewestNets.ThreeExitGraftAddressCoverage
+public import Unfoldings.FewestNets.ThreeExitGraftPhysicalAddresses
 public import Unfoldings.FewestNets.LatitudeRowSupportTies
 public import Unfoldings.Roof.PotentialContourPhysicalLabels
 public import Unfoldings.Geometry.RadialTriangleEdges
