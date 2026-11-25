@@ -1237,6 +1237,9 @@ statement will produce an original-edge `HasNetPartition`.
 - [x] Close a trimmed coarse bank along a nearby two-link graph on the same physical
   roof. Bound the actual comparison mesh's fixed-bank angle sum on both sides,
   with only the bend and heading mismatch costs tending to zero.
+- [x] Recover the exact original upper-side corner sum. Parent patches preserve old
+  angles in both metrics, inserted open-edge corners have zero excess, and the
+  sharp bound survives removal of the auxiliary connector.
 - [ ] Transfer the sharp closing-path bound to the original saved bank and construct
   all actual gaps in a common acute cone.
 - [x] Present the entire graft by exact closed cell seams and descend its proper spatial collapse.
