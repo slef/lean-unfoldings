@@ -2991,6 +2991,8 @@ public import Unfoldings.Cap.DisjointJordanCurvature
 public import Unfoldings.Roof.PotentialContourGapAddress
 public import Unfoldings.FewestNets.ThreeExitGraftAddressCoverage
 public import Unfoldings.FewestNets.ThreeExitGraftPhysicalAddresses
+public import Unfoldings.FewestNets.ThreeExitGraftStrictFiber
+public import Unfoldings.FewestNets.ThreeExitGraftUnmarkedCharts
 public import Unfoldings.FewestNets.LatitudeRowSupportTies
 public import Unfoldings.Roof.PotentialContourPhysicalLabels
 public import Unfoldings.Geometry.RadialTriangleEdges

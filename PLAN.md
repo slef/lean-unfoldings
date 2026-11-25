@@ -1226,7 +1226,9 @@ statement will produce an original-edge `HasNetPartition`.
 - [x] Present the entire graft by exact closed cell seams and descend its proper spatial collapse.
 - [x] Name all cut copies of the unbounded roof on the finite banks or the continued tails.
   Verify uniqueness of strict physical addresses and the exact endpoints of all gap fibers.
-- [ ] Prove flat local charts and contractibility of the cut fibers, then recover original-edge nets.
+- [x] Prove contractibility of the full graft fibers off the cut and along open cut edges
+  and tails. Construct planar charts throughout the interiors of the gap pieces.
+- [ ] Prove the remaining seam and junction charts and fibers, then recover original-edge nets.
 - [ ] Verify the crossing estimates and the uniform placement bound for both cell types.
 - [ ] Assemble the partition theorem and audit its dependencies.
 
