@@ -120,7 +120,8 @@ private theorem contourGraftGapMark_horizontal (a : Attachment) (e : Event)
   (congrArg Cap.horizontal (L.contourGraftPieceCollapse_gap_eq S a e saved side t)).trans
     (L.contourPhysicalAddress_side S a side t)
 
-private theorem contourGraft_left_physical (slot : MetricGluing.BankStackSlot Stack) (t : Param slot.1) :
+/-- A left seam endpoint folds to its original physical attachment point. -/
+theorem contourGraft_left_physical (slot : MetricGluing.BankStackSlot Stack) (t : Param slot.1) :
     Fold (Left slot t).1 (Left slot t).2 = (restore (Base slot.1 false t)).val := by
   obtain ⟨a, k⟩ := slot
   cases k using Fin.cases with
@@ -133,16 +134,18 @@ private theorem contourGraft_left_physical (slot : MetricGluing.BankStackSlot St
     exact at_gap.trans ((L.contourGraftPieceCollapse_gap_eq S a _ _ true t).trans
       (L.restore_contourBaseMark_sides S a t).symm)
 
-private theorem contourGraft_fiberArc_at_mark (f : Graft → Space)
+/-- A marked gap fiber away from its source is the exact embedded arc between the two marks. -/
+theorem contourGraft_fiberArc_at_mark (f : Graft → Space)
     (on_piece : ∀ y : MetricGluing.Total Pieces, f (Point y) = Fold y.1 y.2)
-    (a : Attachment) (t : Param a) (strict : Strict a t) (e : Event) (saved : e ∈ Stack a) :
+    (a : Attachment) (t : Param a) (e : Event) (saved : e ∈ Stack a)
+    (away : Ray[e].addressPoint Addr[a,e,saved,t] ≠ Ray[e].start) :
     ∃ P : Path (Gap a e saved false t) (Gap a e saved true t),
       Function.Injective P ∧
       {x | f (Point ⟨some e, x⟩) = (restore (Base a false t)).val} = Set.range P := by
   let address := Addr[a,e,saved,t]
   have gap := L.hasMarkedCollapseFibers_contourGraft S f on_piece e
   obtain ⟨P, covers, injective, _⟩ := (gap.2 address).1
-  have geometry := injective (contourGap_strict_away S a t strict e saved)
+  have geometry := injective away
   have first := contourGraftGapMark_eq_intrinsicAddressPoint S a e saved false t
   have last := contourGraftGapMark_eq_intrinsicAddressPoint S a e saved true t
   let Q := P.symm.cast first last
@@ -165,7 +168,8 @@ theorem contourGraft_strictMarks_unique (b : Attachment) (t : Param b) (strict :
     L.strictContourParameter_unique S b t strict a s equal
   have roof_sides := L.strictContourParameter_roof_sides_ne S b t strict
   have arcs (e : Event) (saved : e ∈ Stack b) :=
-    L.contourGraft_fiberArc_at_mark S f on_piece b t strict e saved
+    L.contourGraft_fiberArc_at_mark S f on_piece b t e saved
+      (contourGap_strict_away S b t strict e saved)
   have gap_sides (e : Event) (saved : e ∈ Stack b) :
       Gap b e saved false t ≠ Gap b e saved true t := by
     intro same
@@ -223,7 +227,8 @@ theorem contourGraftCollapse_fiber_strict (f : Graft → Space)
       (⟨a, s⟩ : Σ a : Attachment, Param a) = ⟨b, t⟩ :=
     L.strictContourParameter_unique S b t strict a s equal
   have arcs (e : Event) (saved : e ∈ Stack b) :=
-    L.contourGraft_fiberArc_at_mark S f on_piece b t strict e saved
+    L.contourGraft_fiberArc_at_mark S f on_piece b t e saved
+      (contourGap_strict_away S b t strict e saved)
   have then_at (slot : MetricGluing.BankStackSlot Stack) (s : Param slot.1) :
       f (Point (Left slot s)) = (restore (Base slot.1 false s)).val :=
     (on_piece _).trans (L.contourGraft_left_physical S slot s)

@@ -1229,6 +1229,8 @@ statement will produce an original-edge `HasNetPartition`.
 - [x] Prove contractibility of the full graft fibers off the cut and along open cut edges
   and tails. Construct planar charts throughout the interiors of the gap pieces.
 - [x] Glue the two actual banks at each open finite seam into a centered planar chart.
+- [x] Recover both literal parameter names at each affine-floor join and prove its full
+  collapse fiber contractible.
 - [ ] Prove the remaining seam and junction charts and fibers, then recover original-edge nets.
 - [ ] Verify the crossing estimates and the uniform placement bound for both cell types.
 - [ ] Assemble the partition theorem and audit its dependencies.
