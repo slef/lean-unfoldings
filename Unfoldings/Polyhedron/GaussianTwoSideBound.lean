@@ -45,18 +45,19 @@ open Classical in
 include P in
 /-- A pair of omitted genuine sides works for both the global and the
 diameter-sensitive area bounds. All sides and sites belong to the input mesh. -/
-theorem exists_omit_two_gaussian_sides
+theorem exists_omit_two_gaussian_sides_of_small_minimum
     (a : C.Vertex Set.univ)
     (extreme : (F.gaussianSiteOfVertex a : Space) ∈ F.vertexHull.extremePoints ℝ)
-    {eta : ℝ} (eta_pos : 0 < eta) (min_angle : ∀ f i, eta ≤ (C.triangle f).cornerAngle i) :
+    {eta : ℝ} (eta_pos : 0 < eta) (eta_small : eta ≤ Real.pi / 2)
+    (min_angle : ∀ f i, eta ≤ (C.triangle f).cornerAngle i) :
     let cell := F.gaussianCell (F.gaussianSiteOfVertex a)
     ∃ (d : ℝ) (removed : Finset C.Seam), 0 ≤ d ∧
       (∀ u ∈ cell, ∀ v ∈ cell, angle u v ≤ d) ∧
       removed ⊆ gaussianArcSeams N a ∧ removed.card ≤ 2 ∧
       let S := ∑ s ∈ gaussianArcSeams N a \ removed,
         angle (N.normal (C.left s).face) (N.normal (C.right s).face)
-      S * d * Real.sin (eta / 2) ≤ 8 * solidAngleMeasure.real cell ∧
-      (d ≤ 1 → Real.cos (d / 2) ^ 2 * (S * d * Real.sin (eta / 2)) ≤
+      S * d * Real.sin eta ≤ 8 * solidAngleMeasure.real cell ∧
+      (d ≤ 1 → Real.cos (d / 2) ^ 2 * (S * d * Real.sin eta) ≤
         4 * solidAngleMeasure.real cell) := by
   classical
   let ai := F.gaussianSiteOfVertex a
@@ -107,8 +108,6 @@ theorem exists_omit_two_gaussian_sides
     apply compact.isClosed.frontier_subset
     apply in_frontier i
     exact Set.mem_image_of_mem _ (Set.mem_insert _ _)
-  have eta_small : eta ≤ Real.pi :=
-    (min_angle _ _).trans ((C.triangle c.first.val.1.1).cornerAngle_lt_pi c.first.val.1.2).le
   have minimum (i : Fin (m + 1)) :
       eta ≤ angle (p (next i) - p i) (p (next (next i)) - p (next i)) := by
     have h := P.min_angle_le_of_gaussian_chart_chords N c closes covers count extreme q hq strict
@@ -161,7 +160,7 @@ theorem exists_omit_two_gaussian_sides
         rw [reflect]
         exact neg_pos.mpr (turns i)
   obtain ⟨T, horizontal, support, turns⟩ := some_frame
-  obtain ⟨deleted, few, planar⟩ := exists_omit_two_cyclic_spherical_chords compact convex disk
+  obtain ⟨deleted, few, planar⟩ := exists_omit_two_cyclic_spherical_chords_of_small_minimum compact convex disk
     hx hy (angle_nonneg u v) base_length T horizontal p every_point pinj eta_pos eta_small minimum
     support (fun i => by rw [chord_turn_eq_chordSide]; exact turns i)
   let edge := next.trans s
@@ -214,10 +213,10 @@ theorem exists_omit_two_gaussian_sides
     exact angle_comm _ _
   let S := ∑ e ∈ gaussianArcSeams N a \ removed,
     angle (N.normal (C.left e).face) (N.normal (C.right e).face)
-  have planar_bound : S * d * Real.sin (eta / 2) ≤ 16 * (volume : Measure Plane).real K := by
+  have planar_bound : S * d * Real.sin eta ≤ 16 * (volume : Measure Plane).real K := by
     change (∑ e ∈ gaussianArcSeams N a \ removed,
       angle (N.normal (C.left e).face) (N.normal (C.right e).face)) *
-        d * Real.sin (eta / 2) ≤ _
+        d * Real.sin eta ≤ _
     rw [← map_remain, Finset.sum_map]
     simp only [arc_length]
     exact planar
@@ -241,5 +240,52 @@ theorem exists_omit_two_gaussian_sides
     have sharper := two_side_bound_of_angular_radius compact star
       (show d < Real.pi / 2 by linarith [Real.pi_gt_three]) radius planar_bound
     rwa [area] at sharper
+
+open Classical in
+include P in
+/-- The two-side perimeter bounds with the sine of the minimum turn capped at
+a right angle. The same omitted sides satisfy both bounds. -/
+theorem exists_omit_two_gaussian_sides_sharp
+    (a : C.Vertex Set.univ)
+    (extreme : (F.gaussianSiteOfVertex a : Space) ∈ F.vertexHull.extremePoints ℝ)
+    {eta : ℝ} (eta_pos : 0 < eta) (min_angle : ∀ f i, eta ≤ (C.triangle f).cornerAngle i) :
+    let cell := F.gaussianCell (F.gaussianSiteOfVertex a)
+    ∃ (d : ℝ) (removed : Finset C.Seam), 0 ≤ d ∧
+      (∀ u ∈ cell, ∀ v ∈ cell, angle u v ≤ d) ∧
+      removed ⊆ gaussianArcSeams N a ∧ removed.card ≤ 2 ∧
+      let S := ∑ s ∈ gaussianArcSeams N a \ removed,
+        angle (N.normal (C.left s).face) (N.normal (C.right s).face)
+      S * d * Real.sin (min eta (Real.pi / 2)) ≤ 8 * solidAngleMeasure.real cell ∧
+      (d ≤ 1 → Real.cos (d / 2) ^ 2 * (S * d * Real.sin (min eta (Real.pi / 2))) ≤
+        4 * solidAngleMeasure.real cell) :=
+  P.exists_omit_two_gaussian_sides_of_small_minimum N a extreme
+    (eta := min eta (Real.pi / 2))
+    (lt_min eta_pos (by linarith only [Real.pi_pos])) (min_le_right _ _)
+    (fun f i => (min_le_left _ _).trans (min_angle f i))
+
+open Classical in
+include P in
+/-- The half-angle form of the two-side bound for a general minimum corner angle. -/
+theorem exists_omit_two_gaussian_sides
+    (a : C.Vertex Set.univ)
+    (extreme : (F.gaussianSiteOfVertex a : Space) ∈ F.vertexHull.extremePoints ℝ)
+    {eta : ℝ} (eta_pos : 0 < eta) (min_angle : ∀ f i, eta ≤ (C.triangle f).cornerAngle i) :
+    let cell := F.gaussianCell (F.gaussianSiteOfVertex a)
+    ∃ (d : ℝ) (removed : Finset C.Seam), 0 ≤ d ∧
+      (∀ u ∈ cell, ∀ v ∈ cell, angle u v ≤ d) ∧
+      removed ⊆ gaussianArcSeams N a ∧ removed.card ≤ 2 ∧
+      let S := ∑ s ∈ gaussianArcSeams N a \ removed,
+        angle (N.normal (C.left s).face) (N.normal (C.right s).face)
+      S * d * Real.sin (eta / 2) ≤ 8 * solidAngleMeasure.real cell ∧
+      (d ≤ 1 → Real.cos (d / 2) ^ 2 * (S * d * Real.sin (eta / 2)) ≤
+        4 * solidAngleMeasure.real cell) :=
+  P.exists_omit_two_gaussian_sides_of_small_minimum N a extreme (eta := eta / 2)
+    (by linarith only [eta_pos])
+    (by
+      obtain ⟨n, c, _, _⟩ := P.exists_cyclic_link a
+      have bound := (min_angle _ _).trans
+        ((C.triangle c.first.val.1.1).cornerAngle_lt_pi c.first.val.1.2).le
+      linarith only [bound])
+    (fun f i => (by linarith only [eta_pos] : eta / 2 ≤ eta).trans (min_angle f i))
 
 end Unfoldings.SpatialFolding.ConvexBoundary

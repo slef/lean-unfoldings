@@ -20,12 +20,12 @@ open scoped BigOperators ENNReal
 The input headings are those of the projected chords, in cyclic order beginning
 at the positive horizontal direction. The horizontal chord bounds the
 spherical diameter after multiplying its length by two. -/
-theorem exists_omit_two_spherical_chords {s : Set Plane} (compact : IsCompact s)
+theorem exists_omit_two_spherical_chords_of_small_minimum {s : Set Plane} (compact : IsCompact s)
     (convex : Convex ℝ s) (unit_disk : ∀ x ∈ s, ‖x‖ ≤ 1)
     {a b : Plane} (ha : a ∈ s) (hb : b ∈ s) (horizontal_base : a 1 = b 1)
     {d : ℝ} (d_nonneg : 0 ≤ d) (d_le : d ≤ 2 * dist a b)
     (n : ℕ) (p : ℕ → Plane) (heading : ℕ → ℝ) (points : ∀ i ≤ n, p i ∈ s)
-    (closed : p n = p 0) {η : ℝ} (positive : 0 < η) (small : η ≤ Real.pi)
+    (closed : p n = p 0) {η : ℝ} (positive : 0 < η) (small : η ≤ Real.pi / 2)
     (head_in : ∀ i < n, 0 ≤ heading i ∧ heading i ≤ 2 * Real.pi)
     (gaps : ∀ i j, i < j → j < n →
       η ≤ heading j - heading i ∧ heading j - heading i ≤ 2 * Real.pi - η)
@@ -33,7 +33,7 @@ theorem exists_omit_two_spherical_chords {s : Set Plane} (compact : IsCompact s)
     ∃ omitted : Finset ℕ, omitted ⊆ Finset.range n ∧ omitted.card ≤ 2 ∧
       (∑ i ∈ Finset.range n \ omitted,
         angle (inverseStereographic (p i)) (inverseStereographic (p (i + 1)))) *
-        d * Real.sin (η / 2) ≤ 16 * (volume : Measure Plane).real s := by
+        d * Real.sin η ≤ 16 * (volume : Measure Plane).real s := by
   have ne : s.Nonempty := ⟨a, ha⟩
   have coord_cont : Continuous (fun x : Plane => x 1) :=
     (EuclideanSpace.proj (𝕜 := ℝ) (ι := Fin 2) 1).continuous
@@ -43,8 +43,8 @@ theorem exists_omit_two_spherical_chords {s : Set Plane} (compact : IsCompact s)
   have max := isMaxOn_iff.mp max
   have area := chord_mul_height_span_le_twice_area compact convex ha hb hlo hhi horizontal_base
     (min a ha) (max a ha)
-  obtain ⟨omitted, subset, size, length⟩ := exists_omit_two_chords n heading
-    (fun i => dist (p i) (p (i + 1))) (fun i => p i 1) positive small head_in gaps
+  obtain ⟨omitted, subset, size, length⟩ := exists_omit_two_chords_with_cutoff n heading
+    (fun i => dist (p i) (p (i + 1))) (fun i => p i 1) positive small le_rfl head_in gaps
     (fun _ _ => dist_nonneg) vertical (congrArg (fun x : Plane => x 1) closed)
     (fun i hi' => ⟨min (p i) (points i hi'), max (p i) (points i hi')⟩)
   let S := ∑ i ∈ Finset.range n \ omitted,
@@ -59,22 +59,43 @@ theorem exists_omit_two_spherical_chords {s : Set Plane} (compact : IsCompact s)
     rw [dist_eq_norm]
     exact angle_inverseStereographic_le
       (unit_disk _ (points i (by omega))) (unit_disk _ (points (i + 1) (by omega)))
-  have sin_nonneg : 0 ≤ Real.sin (η / 2) :=
-    Real.sin_nonneg_of_nonneg_of_le_pi (by linarith) (by linarith [Real.pi_pos])
+  have sin_nonneg : 0 ≤ Real.sin η :=
+    Real.sin_nonneg_of_nonneg_of_le_pi positive.le (by linarith only [small, Real.pi_pos])
   have width_nonneg : 0 ≤ hi 1 - lo 1 := sub_nonneg.mpr (min hi hhi)
   refine ⟨omitted, subset, size, ?_⟩
-  change S * d * Real.sin (η / 2) ≤ _
+  change S * d * Real.sin η ≤ _
   calc
-    _ = S * Real.sin (η / 2) * d := by ring
-    _ ≤ (2 * L * Real.sin (η / 2)) * d :=
+    _ = S * Real.sin η * d := by ring
+    _ ≤ (2 * L * Real.sin η) * d :=
       mul_le_mul_of_nonneg_right (mul_le_mul_of_nonneg_right compare sin_nonneg) d_nonneg
     _ ≤ (4 * (hi 1 - lo 1)) * d := by
       apply mul_le_mul_of_nonneg_right _ d_nonneg
-      change L * Real.sin (η / 2) ≤ 2 * (hi 1 - lo 1) at length
+      change L * Real.sin η ≤ 2 * (hi 1 - lo 1) at length
       linarith only [length]
     _ ≤ (4 * (hi 1 - lo 1)) * (2 * dist a b) :=
       mul_le_mul_of_nonneg_left d_le (by positivity)
     _ ≤ _ := by linarith only [area]
+
+/-- The half-angle bound for arbitrary positive minimum turn up to a straight angle. -/
+theorem exists_omit_two_spherical_chords {s : Set Plane} (compact : IsCompact s)
+    (convex : Convex ℝ s) (unit_disk : ∀ x ∈ s, ‖x‖ ≤ 1)
+    {a b : Plane} (ha : a ∈ s) (hb : b ∈ s) (horizontal_base : a 1 = b 1)
+    {d : ℝ} (d_nonneg : 0 ≤ d) (d_le : d ≤ 2 * dist a b)
+    (n : ℕ) (p : ℕ → Plane) (heading : ℕ → ℝ) (points : ∀ i ≤ n, p i ∈ s)
+    (closed : p n = p 0) {η : ℝ} (positive : 0 < η) (small : η ≤ Real.pi)
+    (head_in : ∀ i < n, 0 ≤ heading i ∧ heading i ≤ 2 * Real.pi)
+    (gaps : ∀ i j, i < j → j < n →
+      η ≤ heading j - heading i ∧ heading j - heading i ≤ 2 * Real.pi - η)
+    (vertical : ∀ i < n, p (i + 1) 1 - p i 1 = dist (p i) (p (i + 1)) * Real.sin (heading i)) :
+    ∃ omitted : Finset ℕ, omitted ⊆ Finset.range n ∧ omitted.card ≤ 2 ∧
+      (∑ i ∈ Finset.range n \ omitted,
+        angle (inverseStereographic (p i)) (inverseStereographic (p (i + 1)))) *
+        d * Real.sin (η / 2) ≤ 16 * (volume : Measure Plane).real s :=
+  exists_omit_two_spherical_chords_of_small_minimum compact convex unit_disk ha hb horizontal_base
+    d_nonneg d_le n p heading points closed (η := η / 2)
+    (by linarith only [positive]) (by linarith only [small]) head_in
+    (fun i j hij hj => ⟨by linarith only [(gaps i j hij hj).1, positive],
+      by linarith only [(gaps i j hij hj).2, positive]⟩) vertical
 
 /-- The angular diameter bound follows from a planar diameter bound. -/
 theorem spherical_diameter_le_of_planar_diameter {s : Set Plane} {D : ℝ}

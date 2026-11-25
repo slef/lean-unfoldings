@@ -18,12 +18,12 @@ attribute [local instance] Complex.finrank_real_complex_fact
 
 /-- A positively oriented framed chord cycle with turns bounded below
 satisfies the stereographic two-side bound with its original cyclic indices. -/
-theorem exists_omit_two_cyclic_spherical_chords {K : Set Plane}
+theorem exists_omit_two_cyclic_spherical_chords_of_small_minimum {K : Set Plane}
     (compact : IsCompact K) (convex : Convex ℝ K) (disk : ∀ x ∈ K, ‖x‖ ≤ 1)
     {a b : Plane} (ha : a ∈ K) (hb : b ∈ K) {d : ℝ} (nonneg : 0 ≤ d)
     (diameter : d ≤ 2 * dist a b) (T : Plane ≃ₗᵢ[ℝ] Plane) (base : T a 1 = T b 1)
     {n : ℕ} (p : Fin (n + 1) → Plane) (points : ∀ i, p i ∈ K)
-    (injective : Function.Injective p) {eta : ℝ} (eta_pos : 0 < eta) (eta_small : eta ≤ Real.pi)
+    (injective : Function.Injective p) {eta : ℝ} (eta_pos : 0 < eta) (eta_small : eta ≤ Real.pi / 2)
     (minimum : ∀ i,
       eta ≤ angle (p (finRotate (n + 1) i) - p i)
         (p (finRotate (n + 1) (finRotate (n + 1) i)) - p (finRotate (n + 1) i)))
@@ -35,7 +35,7 @@ theorem exists_omit_two_cyclic_spherical_chords {K : Set Plane}
     ∃ omitted : Finset (Fin (n + 1)), omitted.card ≤ 2 ∧
       (∑ i ∈ Finset.univ \ omitted,
         angle (inverseStereographic (p i)) (inverseStereographic (p (finRotate (n + 1) i)))) *
-        d * Real.sin (eta / 2) ≤ 16 * (volume : Measure Plane).real K := by
+        d * Real.sin eta ≤ 16 * (volume : Measure Plane).real K := by
   classical
   let L := T.trans Complex.orthonormalBasisOneI.repr.symm
   let q := L ∘ p
@@ -95,7 +95,7 @@ theorem exists_omit_two_cyclic_spherical_chords {K : Set Plane}
     apply gaps
     change i % (n + 1) < j % (n + 1)
     rwa [Nat.mod_eq_of_lt (ij.trans jn), Nat.mod_eq_of_lt jn]
-  obtain ⟨del, subset, few, bound⟩ := exists_omit_two_spherical_chords
+  obtain ⟨del, subset, few, bound⟩ := exists_omit_two_spherical_chords_of_small_minimum
     framed_compact framed_convex framed_disk (Set.mem_image_of_mem T ha) (Set.mem_image_of_mem T hb)
     base nonneg (by rwa [T.dist_map]) (n + 1) path heading
     (fun i _ => Set.mem_image_of_mem T (points (shift (index i)))) closed eta_pos eta_small
@@ -140,8 +140,32 @@ theorem exists_omit_two_cyclic_spherical_chords {K : Set Plane}
   rw [← remaining, Finset.sum_map, area_eq] at bound
   change (∑ i ∈ Finset.univ \ delFin,
       angle (inverseStereographic (path i.val)) (inverseStereographic (path (i.val + 1)))) *
-      d * Real.sin (eta / 2) ≤ _ at bound
+      d * Real.sin eta ≤ _ at bound
   simp only [framed_angle] at bound
   exact bound
+
+/-- The half-angle bound for arbitrary positive minimum turn up to a straight angle. -/
+theorem exists_omit_two_cyclic_spherical_chords {K : Set Plane}
+    (compact : IsCompact K) (convex : Convex ℝ K) (disk : ∀ x ∈ K, ‖x‖ ≤ 1)
+    {a b : Plane} (ha : a ∈ K) (hb : b ∈ K) {d : ℝ} (nonneg : 0 ≤ d)
+    (diameter : d ≤ 2 * dist a b) (T : Plane ≃ₗᵢ[ℝ] Plane) (base : T a 1 = T b 1)
+    {n : ℕ} (p : Fin (n + 1) → Plane) (points : ∀ i, p i ∈ K)
+    (injective : Function.Injective p) {eta : ℝ} (eta_pos : 0 < eta) (eta_small : eta ≤ Real.pi)
+    (minimum : ∀ i,
+      eta ≤ angle (p (finRotate (n + 1) i) - p i)
+        (p (finRotate (n + 1) (finRotate (n + 1) i)) - p (finRotate (n + 1) i)))
+    (support : let q := Complex.orthonormalBasisOneI.repr.symm ∘ T ∘ p
+      ∀ i j, 0 ≤ Complex.orientation.areaForm (q (finRotate (n + 1) i) - q i) (q j - q i))
+    (positive : let q := Complex.orthonormalBasisOneI.repr.symm ∘ T ∘ p
+      ∀ i, 0 < Complex.orientation.areaForm (q (finRotate (n + 1) i) - q i)
+        (q (finRotate (n + 1) (finRotate (n + 1) i)) - q (finRotate (n + 1) i))) :
+    ∃ omitted : Finset (Fin (n + 1)), omitted.card ≤ 2 ∧
+      (∑ i ∈ Finset.univ \ omitted,
+        angle (inverseStereographic (p i)) (inverseStereographic (p (finRotate (n + 1) i)))) *
+        d * Real.sin (eta / 2) ≤ 16 * (volume : Measure Plane).real K :=
+  exists_omit_two_cyclic_spherical_chords_of_small_minimum compact convex disk ha hb nonneg
+    diameter T base p points injective (eta := eta / 2)
+    (by linarith only [eta_pos]) (by linarith only [eta_small])
+    (fun i => (by linarith only [eta_pos] : eta / 2 ≤ eta).trans (minimum i)) support positive
 
 end Unfoldings.Cap
