@@ -2,6 +2,7 @@ module
 
 public import Unfoldings.Topology.PathJordanArc
 public import Unfoldings.Topology.ClosedJordanDomain
+public import Mathlib.Analysis.Normed.Operator.Banach
 
 /-! Consecutive intersections of two graphs bound Jordan disks in disjoint horizontal slabs. -/
 
@@ -79,5 +80,76 @@ theorem isJordanCurve_two_graphs (f g : ℝ → ℝ) (hf : Continuous f) (hg : C
   rcases eq_or_lt_of_le hs.2 with at_b | before
   · exact Or.inr (congrArg (graphPoint f) at_b)
   · exact ((separated s ⟨after, before⟩) agree.symm).elim
+
+/-- The Jordan disk between two graphs is in the closed slab of their endpoints. -/
+theorem closedJordanDomain_two_graphs_subset_slab {f g : ℝ → ℝ} {a b : ℝ}
+    (jordan : Schoenflies.IsJordanCurve
+      (graphPoint f '' Set.Icc a b ∪ graphPoint g '' Set.Icc a b)) :
+    closedJordanDomain (graphPoint f '' Set.Icc a b ∪ graphPoint g '' Set.Icc a b) ⊆
+      (EuclideanSpace.proj 0) ⁻¹' Set.Icc a b := by
+  let J := graphPoint f '' Set.Icc a b ∪ graphPoint g '' Set.Icc a b
+  let slab := (EuclideanSpace.proj (𝕜 := ℝ) (ι := Fin 2) 0) ⁻¹' Set.Icc a b
+  let K := closedJordanDomain J
+  have bounded : IsCompact K := isCompact_closedJordanDomain jordan
+  obtain ⟨r, bound⟩ := bounded.isBounded.subset_closedBall (0 : Plane)
+  have closed : IsClosed slab :=
+    isClosed_Icc.preimage (EuclideanSpace.proj (𝕜 := ℝ) (ι := Fin 2) 0).continuous
+  have curve_subset : J ⊆ K := by
+    have border : frontier K = J := frontier_closedJordanDomain jordan
+    rw [← border]
+    exact frontier_subset_closure.trans (isClosed_closure.closure_eq.subset)
+  have contains : J ⊆ Metric.closedBall (0 : Plane) r ∩ slab := by
+    intro p hp
+    refine ⟨bound (curve_subset hp), ?_⟩
+    rcases hp with ⟨t, ht, rfl⟩ | ⟨t, ht, rfl⟩ <;> exact ht
+  have enclosed := closedJordanDomain_subset_convex jordan
+    ((isCompact_closedBall (0 : Plane) r).inter_right closed)
+    ((convex_closedBall _ _).inter
+      ((convex_Icc _ _).linear_preimage (EuclideanSpace.proj 0).toLinearMap)) contains
+  exact enclosed.trans Set.inter_subset_right
+
+/-- The open part of the disk stays strictly between the horizontal endpoints. -/
+theorem interior_two_graphs_subset_open_slab {f g : ℝ → ℝ} {a b : ℝ}
+    (jordan : Schoenflies.IsJordanCurve
+      (graphPoint f '' Set.Icc a b ∪ graphPoint g '' Set.Icc a b)) :
+    interior (closedJordanDomain (graphPoint f '' Set.Icc a b ∪ graphPoint g '' Set.Icc a b)) ⊆
+      (EuclideanSpace.proj 0) ⁻¹' Set.Ioo a b := by
+  let x := EuclideanSpace.proj (𝕜 := ℝ) (ι := Fin 2) 0
+  have surjective : Function.Surjective x := fun t => ⟨graphPoint 0 t, rfl⟩
+  have bound := interior_mono (closedJordanDomain_two_graphs_subset_slab jordan)
+  change _ ⊆ interior (x ⁻¹' Set.Icc a b) at bound
+  rwa [x.interior_preimage surjective, interior_Icc] at bound
+
+/-- Consecutive lenses, or lenses farther apart, have disjoint interiors. -/
+theorem disjoint_interior_two_graphs_of_le {f g : ℝ → ℝ} {a b c d : ℝ}
+    (first : Schoenflies.IsJordanCurve
+      (graphPoint f '' Set.Icc a b ∪ graphPoint g '' Set.Icc a b))
+    (second : Schoenflies.IsJordanCurve
+      (graphPoint f '' Set.Icc c d ∪ graphPoint g '' Set.Icc c d))
+    (ordered : b ≤ c) :
+    Disjoint
+      (interior (closedJordanDomain (graphPoint f '' Set.Icc a b ∪ graphPoint g '' Set.Icc a b)))
+      (interior (closedJordanDomain (graphPoint f '' Set.Icc c d ∪ graphPoint g '' Set.Icc c d))) := by
+  refine Set.disjoint_left.mpr fun p first_mem second_mem => ?_
+  have before := (interior_two_graphs_subset_open_slab first first_mem).2
+  have after := (interior_two_graphs_subset_open_slab second second_mem).1
+  exact before.not_ge (ordered.trans after.le)
+
+/-- No vertex of either entire graph can lie in an open lens. -/
+theorem disjoint_interior_two_graphs_graphs {f g : ℝ → ℝ} {a b : ℝ}
+    (jordan : Schoenflies.IsJordanCurve
+      (graphPoint f '' Set.Icc a b ∪ graphPoint g '' Set.Icc a b)) :
+    Disjoint (interior (closedJordanDomain
+      (graphPoint f '' Set.Icc a b ∪ graphPoint g '' Set.Icc a b)))
+      (Set.range (graphPoint f) ∪ Set.range (graphPoint g)) := by
+  refine Set.disjoint_left.mpr fun p inside graph => ?_
+  have horizontal := interior_two_graphs_subset_open_slab jordan inside
+  have border : p ∈ frontier (closedJordanDomain
+      (graphPoint f '' Set.Icc a b ∪ graphPoint g '' Set.Icc a b)) := by
+    rw [frontier_closedJordanDomain jordan]
+    rcases graph with ⟨t, rfl⟩ | ⟨t, rfl⟩
+    · exact Or.inl ⟨t, Set.Ioo_subset_Icc_self horizontal, rfl⟩
+    · exact Or.inr ⟨t, Set.Ioo_subset_Icc_self horizontal, rfl⟩
+  exact border.2 inside
 
 end Unfoldings.PlanarTopology

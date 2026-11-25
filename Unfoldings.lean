@@ -2973,6 +2973,15 @@ public import Unfoldings.Geometry.AcuteBankCone
 public import Unfoldings.Geometry.AcuteBankOpening
 public import Unfoldings.Roof.PotentialContourAcuteGap
 public import Unfoldings.Topology.TwoGraphJordan
+public import Unfoldings.Cap.HorizontalChartIsometry
+public import Unfoldings.FewestNets.AcuteLatitudeSelectors
+public import Unfoldings.FewestNets.AcuteLatitudeAnnularShape
+public import Unfoldings.FewestNets.AcuteLatitudeOrientedChart
+public import Unfoldings.FewestNets.AcuteLatitudeSelectedRoofs
+public import Unfoldings.FewestNets.AcuteLatitudeAnnularRouting
+public import Unfoldings.FewestNets.ThreeExitGraftTerminalCoverage
+public import Unfoldings.Topology.OrderedGraphLenses
+public import Unfoldings.Geometry.TransverseTurns
 public import Unfoldings.FewestNets.LatitudeRowSupportTies
 public import Unfoldings.Roof.PotentialContourPhysicalLabels
 public import Unfoldings.Geometry.RadialTriangleEdges
