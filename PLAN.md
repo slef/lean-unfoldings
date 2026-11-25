@@ -1213,7 +1213,9 @@ statement will produce an original-edge `HasNetPartition`.
 - [x] Instantiate the revised latitude grid and its exact count below `476 / α²`.
 - [x] Bound the side lengths, perimeter, and corner sines of every actual annular triangle.
   Verify its cutoff sum and perimeter alternative are both below `2.462 / α`.
-- [ ] Prove the remaining angular and separation bounds for the actual polar cells.
+- [x] Bound the side lengths, corner sines, and nonincident side separation of both
+  actual polar cells. Verify both crossing cutoff alternatives are at most twice
+  the polar side count.
 - [x] Prove coverage and disjoint strict interiors for the actual chord triangles.
 - [x] Group both polar fans into polygon selectors. Identify all labels away from the
   spherical edge planes and transfer both polar component nets to the original faces.
