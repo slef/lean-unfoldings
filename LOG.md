@@ -2,6 +2,17 @@
 
 ## Session Log
 
+### 2026-11-25 — construct polar nets and complete the physical cut
+
+- Constructed an original-edge net for each component selected by a regular
+  polar polygon at the actual latitude-grid tilt and row size.
+- Built the complete physical cut metric from a finite closed partition.
+  Its marked family is precisely the prescribed cut segments and exterior rays.
+- Checked the sorted midpoint schedule, closest-site bound, and projected
+  base, height, and side ratios for successive latitude rows.
+- Proved measurability and reflection stability for central crossing regions,
+  and proved that a unique transverse crossing switches selector membership.
+
 ### 2026-11-25 — verify intrinsic acute histories and round routing
 
 - Integrated the uniform heading and speed errors over each actual bank
