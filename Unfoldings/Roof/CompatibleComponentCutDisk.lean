@@ -93,17 +93,19 @@ include convex closed selected
 
 open Classical in
 set_option maxHeartbeats 1900000 in
--- The transported parent selection uses dependent original edge and restricted vertex types.
-/-- The actual restriction of the original selected seam cuts is a disk. -/
-theorem exists_selected_component_cut_disk
-    (parents : AscendingParents (C.Vertex Set.univ))
-    (roots_eq : parents.roots = {v | K.projectedVertex v ∉ interior (K.selectedCarrier slopes)})
-    (edges : parents.EdgeSelection C.seamGraph) :
-    Nonempty ((P).Realization (C.restrictRetain U (C.selectedRetain edges)) ≃ₜ
+-- Transporting the existing parent tree keeps both edge names and boundary roots.
+/-- A forest on the vertices of a single normal component cuts it to a disk,
+provided its roots are exactly the component's boundary vertices and each
+parent link follows an original seam. -/
+theorem exists_component_cut_disk_of_local_parents
+    (A : AscendingParents VertexIn)
+    (roots_eq : A.roots = {v | K.projectedVertex v.val ∈ frontier S})
+    (edges : {v // v ∉ A.roots} → C.Seam)
+    (link : ∀ v, C.seamGraph.IsLink (edges v) v.val.val (A.parent v.val).val) :
+    Nonempty ((P).Realization {s : (P).Seam | s.val ∉ Set.range edges} ≃ₜ
       Metric.closedBall (0 : Plane) 1) := by
   classical
   let V := K.componentVertexEquiv convex closed seed selected
-  let A := K.componentParents_of_seam_selection parents roots_eq edges seed
   let parent : AscendingParents ((P).Vertex Set.univ) := {
     roots := V ⁻¹' A.roots
     parent := fun w => V.symm (A.parent (V w))
@@ -115,40 +117,31 @@ theorem exists_selected_component_cut_disk
       exact A.ascending (V w) nonroot }
   have roots : parent.roots = (P).relativeCutRoots Set.univ := by
     ext w
-    change (V w).val ∈ parents.roots ↔ (P).IsBoundaryVertex Set.univ w
+    change V w ∈ A.roots ↔ (P).IsBoundaryVertex Set.univ w
     have front := K.component_vertex_boundary_iff convex closed seed selected w
     change (P).IsBoundaryVertex Set.univ w ↔ K.projectedVertex (V w).val ∈ frontier S at front
-    rw [front]
-    constructor
-    · intro root
-      refine ⟨subset_closure (V w).property, fun inside => ?_⟩
-      exact ((Set.ext_iff.mp roots_eq (V w).val).mp root)
-        (interior_mono (K.selectionComponent_carrier_subset selected) inside)
-    · intro boundary
-      apply (Set.ext_iff.mp roots_eq (V w).val).mpr
-      intro inside
-      exact boundary.2 (K.interior_component_of_interior_selectedCarrier inside seed (V w).property)
-  have ends (e : C.Seam) {w z : C.Vertex Set.univ} (link : C.seamGraph.IsLink e w z) :
-      K.projectedVertex w ∈ (K.projectedTriangle (C.left e).face).edge (C.left e).edge := by
-    rw [← K.projected_link_segment link]
-    exact left_mem_segment ℝ _ _
-  let edge (w : {w // w ∉ parent.roots}) : (P).Seam := by
-    let v := V w.val
-    let t : {z // z ∉ parents.roots} := ⟨v.val, w.property⟩
-    let e := edges.edge t
-    have inside : K.projectedVertex v.val ∈ interior (K.selectedCarrier slopes) :=
-      not_not.mp (fun h => w.property ((Set.ext_iff.mp roots_eq v.val).mpr h))
-    have on_e := ends e (edges.link t)
-    have on_r : K.projectedVertex v.val ∈
-        (K.projectedTriangle (C.right e).face).edge (C.right e).edge :=
-      (K.projected_seam_edges_eq e).subset on_e
-    have both : (C.left e).face ∈ U ∧ (C.right e).face ∈ U := by
-      obtain ⟨f, hf⟩ := Set.mem_iUnion.mp v.property
-      exact ⟨(K.selection_label_eq_at_interior inside
-        ((K.projectedTriangle _).edge_subset _ on_e) hf).trans f.property,
-        (K.selection_label_eq_at_interior inside
-          ((K.projectedTriangle _).edge_subset _ on_r) hf).trans f.property⟩
-    exact ⟨e, both⟩
+    rw [front, roots_eq]
+    rfl
+  have selected_seam (v : {v // v ∉ A.roots}) :
+      (C.left (edges v)).face ∈ U ∧ (C.right (edges v)).face ∈ U := by
+    have in_component : K.projectedVertex v.val.val ∈ interior S := by
+      by_contra outside
+      exact v.property ((Set.ext_iff.mp roots_eq v.val).mpr
+        ⟨subset_closure v.val.property, outside⟩)
+    have inside : K.projectedVertex v.val.val ∈ interior (K.selectedCarrier slopes) :=
+      interior_mono (K.selectionComponent_carrier_subset selected) in_component
+    have on_left : K.projectedVertex v.val.val ∈
+        (K.projectedTriangle (C.left (edges v)).face).edge (C.left (edges v)).edge := by
+      rw [← K.projected_link_segment (link v)]
+      exact left_mem_segment ℝ _ _
+    have on_right := (K.projected_seam_edges_eq (edges v)).subset on_left
+    obtain ⟨f, hf⟩ := Set.mem_iUnion.mp v.val.property
+    exact ⟨(K.selection_label_eq_at_interior inside
+      ((K.projectedTriangle _).edge_subset _ on_left) hf).trans f.property,
+      (K.selection_label_eq_at_interior inside
+        ((K.projectedTriangle _).edge_subset _ on_right) hf).trans f.property⟩
+  let edge (w : {w // w ∉ parent.roots}) : (P).Seam :=
+    ⟨edges ⟨V w.val, w.property⟩, selected_seam ⟨V w.val, w.property⟩⟩
   have tagged (e : (P).Seam) (side : Bool) :
       (V ((P).seamVertex e side)).val = C.seamVertex e.val side := by
     change ι ((P).seamVertex e side) = _
@@ -156,8 +149,7 @@ theorem exists_selected_component_cut_disk
   let selection : parent.EdgeSelection (P).seamGraph := {
     edge := edge
     link := fun w => by
-      let t : {z // z ∉ parents.roots} := ⟨(V w.val).val, w.property⟩
-      have h := edges.link t
+      have h := link ⟨V w.val, w.property⟩
       change C.seamGraph.IsLink (edge w).val (V w.val).val (A.parent (V w.val)).val at h
       have step : V (parent.parent w.val) = A.parent (V w.val) := V.apply_symm_apply _
       have injective (p q : (P).Vertex Set.univ)
@@ -167,36 +159,69 @@ theorem exists_selected_component_cut_disk
           injective _ _ ((congrArg Subtype.val step).trans (last.trans (tagged _ _).symm))⟩
       · exact Or.inr ⟨injective _ _ (first.trans (tagged _ _).symm),
           injective _ _ ((congrArg Subtype.val step).trans (last.trans (tagged _ _).symm))⟩ }
-  have retain : (P).selectedRetain selection =
-      C.restrictRetain U (C.selectedRetain edges) := by
+  have retain : (P).selectedRetain selection = {s : (P).Seam | s.val ∉ Set.range edges} := by
     ext s
-    change s ∉ Set.range edge ↔ s.val ∉ Set.range edges.edge
+    change s ∉ Set.range edge ↔ s.val ∉ Set.range edges
     constructor
     · intro absent
       rintro ⟨v, hv⟩
-      have original := ends s.val (hv ▸ edges.link v)
-      have present : K.projectedVertex v.val ∈ S := Set.mem_iUnion.mpr
-        ⟨(P).left s |>.face, (K.projectedTriangle _).edge_subset _ original⟩
-      let w := V.symm ⟨v.val, present⟩
-      have same : V w = ⟨v.val, present⟩ := V.apply_symm_apply _
+      let w := V.symm v.val
+      have same : V w = v.val := V.apply_symm_apply _
       have hn : w ∉ parent.roots := by
-        change ¬ (V w).val ∈ parents.roots
+        change ¬ V w ∈ A.roots
         rw [same]
         exact v.property
       apply absent
-      refine ⟨⟨w, hn⟩, Subtype.ext ?_⟩
-      have event_eq : (⟨(V w).val, hn⟩ : {z // z ∉ parents.roots}) = v := by
-        apply Subtype.ext
-        exact congrArg (fun p : VertexIn => p.val) same
-      change edges.edge ⟨(V w).val, hn⟩ = s.val
-      exact (congrArg edges.edge event_eq).trans hv
+      have event_eq : (⟨V w, hn⟩ : {v // v ∉ A.roots}) = v := Subtype.ext same
+      exact ⟨⟨w, hn⟩, Subtype.ext ((congrArg edges event_eq).trans hv)⟩
     · intro absent h
       obtain ⟨v, hv⟩ := h
-      refine absent ⟨⟨(V v.val).val, v.property⟩, ?_⟩
-      exact congrArg (fun t : (P).Seam => t.val) hv
+      exact absent ⟨⟨V v.val, v.property⟩, congrArg (fun t : (P).Seam => t.val) hv⟩
   obtain ⟨disk⟩ := K.exists_selectionComponent_intrinsic_disk convex closed seed selected
   rw [← retain]
   exact ⟨(P).selectedCutDisk selection roots F disk⟩
+
+open Classical in
+/-- The actual restriction of the original selected seam cuts is a disk. -/
+theorem exists_selected_component_cut_disk
+    (parents : AscendingParents (C.Vertex Set.univ))
+    (roots_eq : parents.roots = {v | K.projectedVertex v ∉ interior (K.selectedCarrier slopes)})
+    (edges : parents.EdgeSelection C.seamGraph) :
+    Nonempty ((P).Realization (C.restrictRetain U (C.selectedRetain edges)) ≃ₜ
+      Metric.closedBall (0 : Plane) 1) := by
+  let A := K.componentParents_of_seam_selection parents roots_eq edges seed
+  have boundary : A.roots = {v | K.projectedVertex v.val ∈ frontier S} := by
+    ext v
+    change v.val ∈ parents.roots ↔ K.projectedVertex v.val ∈ frontier S
+    rw [Set.ext_iff.mp roots_eq]
+    constructor
+    · intro root
+      exact ⟨subset_closure v.property, fun inside =>
+        root (interior_mono (K.selectionComponent_carrier_subset selected) inside)⟩
+    · intro root inside
+      exact root.2 (K.interior_component_of_interior_selectedCarrier inside seed v.property)
+  let localEdge (v : {v // v ∉ A.roots}) : C.Seam := edges.edge ⟨v.val.val, v.property⟩
+  have same_retention :
+      C.restrictRetain U (C.selectedRetain edges) =
+        {s : (P).Seam | s.val ∉ Set.range localEdge} := by
+    ext s
+    change s.val ∉ Set.range edges.edge ↔ s.val ∉ Set.range localEdge
+    constructor
+    · rintro absent ⟨v, equal⟩
+      exact absent ⟨⟨v.val.val, v.property⟩, equal⟩
+    · rintro absent ⟨v, equal⟩
+      have seamLink : C.seamGraph.IsLink s.val v.val (parents.parent v.val) :=
+        equal ▸ edges.link v
+      have on_left : K.projectedVertex v.val ∈
+          (K.projectedTriangle (C.left s.val).face).edge (C.left s.val).edge := by
+        rw [← K.projected_link_segment seamLink]
+        exact left_mem_segment ℝ _ _
+      have present : K.projectedVertex v.val ∈ S := Set.mem_iUnion.mpr
+        ⟨(P).left s |>.face, (K.projectedTriangle _).edge_subset _ on_left⟩
+      exact absent ⟨⟨⟨v.val, present⟩, v.property⟩, equal⟩
+  rw [same_retention]
+  exact K.exists_component_cut_disk_of_local_parents convex closed seed selected A boundary
+    localEdge (fun v => edges.link ⟨v.val.val, v.property⟩)
 
 variable {E : SlopeEnvelope} {a β : ℝ}
   (I : K.CommonPotentialRouting {f | K.normalSlope f ∈ slopes} E a β)

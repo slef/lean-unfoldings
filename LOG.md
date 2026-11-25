@@ -2,6 +2,12 @@
 
 ## Session Log
 
+### 2026-11-25 — start the general acute-angle proof
+
+- Preserved the appendix's audited numerical bounds and removed superseded finite-cell pilots.
+- Built the component-specific clipped extension, compatible parent selection, and local cut disk.
+- Proved signed single-cell cancellation, narrow-cone path bounds, and the selector tilt estimates.
+
 ### 2026-11-21 — prove the 83.2067° Fewest Nets bound
 
 - Checked all 13,534 frequency-400 routing records in 188 exact slices.

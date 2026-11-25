@@ -1204,6 +1204,23 @@ The Fewest Nets application lives in `Unfoldings/FewestNets`.
 - [x] Verify all 884 frequency-100 records and the 81° partition theorem.
 - [x] Verify all 13,534 frequency-400 records and the 83.2067° partition theorem.
 
+### General acute-angle bound
+
+- [x] Clip to the retained component's vertices, preserve its supporting contacts, and locate all
+  positive curvature of the finite extension.
+- [x] Exclude conflicting east and west roots by disjoint exterior rays, choose compatible parents,
+  and transport their original seams to the component cut disk.
+- [x] Prove the narrow-cone path bounds, the round progress-disk cone formula, and the flatness
+  inequalities at the three-exit scale.
+- [x] Prove the signed single-cell charge bound and cancellation under right rotation. Construct
+  the side flip that reverses the supporting normal.
+- [ ] Construct all side-interior contacts and calibrate the three-exit parents from the selector's
+  triangle angle bounds.
+- [ ] Refine and develop the compatible forest from its directed geometrical histories.
+- [ ] Construct the latitude grid and polar selectors with quantitative side bounds.
+- [ ] Localize single-cell crossings after cancellation, assemble the rotation estimate, and
+  prove the uniform `O(α⁻⁴)` partition theorem.
+
 ## Upstream research and reuse
 
 As of 2026-11-08 the latest stable release is Lean/Mathlib **4.35.0**, with
