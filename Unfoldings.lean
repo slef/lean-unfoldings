@@ -3002,6 +3002,9 @@ public import Unfoldings.FewestNets.ThreeExitGraftTerminalJoinClasses
 public import Unfoldings.FewestNets.ThreeExitGraftTerminalFiber
 public import Unfoldings.Roof.ActiveClosingVariation
 public import Unfoldings.Roof.GraphLensFaceAngles
+public import Unfoldings.Roof.GraphRegionBalance
+public import Unfoldings.Roof.AboveGraphBankEnds
+public import Unfoldings.Roof.AffineFloorClosingMesh
 public import Unfoldings.Geometry.GraphRegionSides
 public import Unfoldings.FewestNets.LatitudeRowSupportTies
 public import Unfoldings.Roof.PotentialContourPhysicalLabels

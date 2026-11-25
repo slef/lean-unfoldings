@@ -1224,6 +1224,10 @@ statement will produce an original-edge `HasNetPartition`.
 - [x] Bound each finite roof's intrinsic curvature by the area of its selector.
 - [x] Construct regular near-chord connectors. Identify the exact lens interiors, their
   signed indicator sum, and the common curvature budget on an arbitrary-rim roof.
+- [x] Align both graphs and the end lines in one physical subdivision of the affine-floor
+  roof. Recover the actual upper fans and the fixed-bank regional-angle balance.
+- [x] Bound the intrinsic turns of the regular contacts on both straight links by one
+  sine-scaled tilt allowance.
 - [ ] Prove the sharp closing-path turn bound and construct all actual gaps in a common acute cone.
 - [x] Present the entire graft by exact closed cell seams and descend its proper spatial collapse.
 - [x] Name all cut copies of the unbounded roof on the finite banks or the continued tails.
