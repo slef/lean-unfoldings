@@ -1251,7 +1251,11 @@ statement will produce an original-edge `HasNetPartition`.
 - [x] Identify the complete boundary of each selector as its genuine spherical minor
   arcs, including the wraparound sides of both polar polygons. Record the exact
   inward plane forms and their supported arcs in the common spherical frame.
-- [ ] Verify the crossing estimates and the uniform placement bound for both cell types.
+- [x] Identify the actual endpoint incidences, including the polar wraparound.
+  Verify the sharp localization hypotheses and both normalized crossing budgets.
+- [ ] Apply the two-coset crossing estimate to the actual Gaussian sides and sum
+  the resulting area bounds over the original vertices.
+
 - [ ] Assemble the partition theorem and audit its dependencies.
 
 The milestones below record the existing geometry, grafting, and counting

@@ -2983,6 +2983,7 @@ public import Unfoldings.FewestNets.AcuteLatitudeAnnularRouting
 public import Unfoldings.FewestNets.AcuteLatitudeAnnularSides
 public import Unfoldings.FewestNets.AcuteLatitudePolarMetric
 public import Unfoldings.FewestNets.AcuteLatitudeSelectorBoundary
+public import Unfoldings.FewestNets.AcuteLatitudeBoundaryMetrics
 public import Unfoldings.FewestNets.ThreeExitGraftTerminalCoverage
 public import Unfoldings.Topology.OrderedGraphLenses
 public import Unfoldings.Geometry.TransverseTurns
