@@ -10,6 +10,8 @@ public import Unfoldings.Geometry.BankGapBoundaryMap
 
 noncomputable section
 
+open scoped NNReal
+
 namespace Unfoldings.ConvexRoof.PotentialCutForest
 
 universe u v
@@ -45,6 +47,47 @@ theorem exists_contourGapAddress_eq (e : Event) (p : PolygonalRay.Address (Lengt
     exact ⟨a, saved, t, congrArg (fun j => Sum.inl (j, t)) equal⟩
   · obtain ⟨edge, saved⟩ := C.exists_contourTerminalEdge_mem_gapStack F.selection contour e
     exact ⟨.inr edge, saved, t, rfl⟩
+
+/-- The address retains the actual attachment label even when several original edges
+occur along the same gap bank. The two sides use the same address convention. -/
+theorem contourGapAddress_eq
+    (event : Event)
+    (bank other : F.ContourAttachment) (member : event ∈ Stack bank) (other_member : event ∈ Stack other)
+    (t : Param bank) (s : Param other)
+    (equal : F.contourGapAddress contour other event other_member s = F.contourGapAddress contour bank event member t) :
+    (⟨other, s⟩ : Σ b, Param b) = ⟨bank, t⟩ := by
+  cases bank with
+  | inl vertex =>
+    cases other with
+    | inl other =>
+      have named := Prod.mk.inj (Sum.inl.inj equal)
+      have original := C.contourGapBankIndex_original F.selection contour vertex.val vertex.property
+        event ((C.mem_contourEdgeGapStack F.selection contour vertex.val event).mpr
+          ((C.mem_contourSavedGapStack F.selection contour vertex.val event).mp member))
+      have other_original := C.contourGapBankIndex_original F.selection contour other.val
+        other.property event ((C.mem_contourEdgeGapStack F.selection contour other.val event).mpr
+          ((C.mem_contourSavedGapStack F.selection contour other.val event).mp other_member))
+      have vertex_eq : other = vertex := Subtype.ext
+        (other_original.symm.trans ((congrArg
+          (fun i : Fin (Length[event] + 1) => F.parents.parent^[i.val]
+            (C.positiveContourVertex F.selection contour event)) named.1).trans original))
+      subst other
+      exact congrArg (fun u : unitInterval => (⟨.inl vertex, u⟩ : Σ b, Param b)) named.2
+    | inr other => cases equal
+  | inr edge =>
+    cases other with
+    | inl other => cases equal
+    | inr other =>
+      have parameter := Sum.inr.inj equal
+      have original := C.contourGap_last_child F.selection contour edge event
+        ((C.mem_contourEdgeGapStack F.selection contour edge.val event).mpr
+          ((C.mem_contourSavedGapStack F.selection contour edge.val event).mp member))
+      have other_original := C.contourGap_last_child F.selection contour other event
+        ((C.mem_contourEdgeGapStack F.selection contour other.val event).mpr
+          ((C.mem_contourSavedGapStack F.selection contour other.val event).mp other_member))
+      have edge_eq : other = edge := Subtype.ext (other_original.symm.trans original)
+      subst other
+      exact congrArg (fun u : ℝ≥0 => (⟨.inr edge, u⟩ : Σ b, Param b)) parameter
 
 variable (starts : C.contourOriginalVertex F.selection contour 0 ∈ F.parents.roots)
   (models : ∀ e : Event, BankGapModel (F.contourSourceRay contour starts e)
