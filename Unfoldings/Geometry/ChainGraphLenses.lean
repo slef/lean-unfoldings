@@ -19,19 +19,18 @@ variable {n : ℕ} (P : PolygonalChain Plane n)
 local notation "x" => EuclideanSpace.proj (𝕜 := ℝ) (ι := Fin 2) 0
 local notation "y" => EuclideanSpace.proj (𝕜 := ℝ) (ι := Fin 2) 1
 
-/-- Extend the graph of the chain constantly at each end. -/
-theorem exists_continuous_graph_of_horizontal (nonempty : 0 < n)
-    (progress : ∀ i, 0 < (P.edge i) 0) :
+/-- Extend the graph of a weakly advancing chain, including repeated vertices. -/
+theorem exists_continuous_graph_of_weak_horizontal (nonempty : 0 < n)
+    (weak : ∀ i, 0 ≤ (P.edge i) 0)
+    (flat : ∀ i, (P.edge i) 0 = 0 → P.edge i = 0) :
     ∃ f : ℝ → ℝ, Continuous f ∧
       (∀ i, f ((P.vertex i) 0) = P.vertex i 1) ∧
       graphPoint f '' Set.Icc (P.vertex 0 0) (P.vertex (Fin.last n) 0) = Set.range P.path := by
   let a := x (P.vertex 0)
   let b := x (P.vertex (Fin.last n))
-  have monotone := P.strictMono_linear_vertices x progress
-  have ordered : a ≤ b := (monotone (show (0 : Fin (n + 1)) < Fin.last n from nonempty)).le
-  have weak (i : Fin n) : 0 ≤ x (P.edge i) := (progress i).le
-  have flat (i : Fin n) (zero : x (P.edge i) = 0) : P.edge i = 0 :=
-    ((progress i).ne' zero).elim
+  have monotone : Monotone (fun i => x (P.vertex i)) :=
+    (P.monotone_linear_vertices_iff x).mpr weak
+  have ordered : a ≤ b := monotone (Fin.zero_le _)
   let chart := P.linearGraphHomeomorph x weak flat nonempty
   let f (t : ℝ) := y (chart.symm (Set.projIcc a b ordered t)).val
   have y_continuous : Continuous (fun p : Plane => p 1) := (y).continuous
@@ -64,6 +63,15 @@ theorem exists_continuous_graph_of_horizontal (nonempty : 0 < n)
     · intro member
       let q : Set.range P.path := ⟨p, member⟩
       exact ⟨x p, (chart q).property, at_p q⟩
+
+/-- Extend the graph of the chain constantly at each end. -/
+theorem exists_continuous_graph_of_horizontal (nonempty : 0 < n)
+    (progress : ∀ i, 0 < (P.edge i) 0) :
+    ∃ f : ℝ → ℝ, Continuous f ∧
+      (∀ i, f ((P.vertex i) 0) = P.vertex i 1) ∧
+      graphPoint f '' Set.Icc (P.vertex 0 0) (P.vertex (Fin.last n) 0) = Set.range P.path := by
+  exact P.exists_continuous_graph_of_weak_horizontal nonempty (fun i => (progress i).le)
+    (fun i zero => ((progress i).ne' zero).elim)
 
 /-- Two horizontally monotone chains with common endpoints and finitely many
 contacts have an ordered family of genuine Jordan lenses. -/

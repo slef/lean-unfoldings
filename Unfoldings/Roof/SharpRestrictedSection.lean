@@ -147,11 +147,9 @@ def restrictedBoundaryTurnError (U : Set Face)
       (fun c => (K.projectedTriangle c.1.val).cornerAngle c.2) w)
 
 open Classical in
-/-- A regular straight contact pays only the sine-scaled change of the two
-actual support inclinations. The selected link and its boundary directions
-come from the given restricted complex. -/
-theorem abs_restrictedBoundaryTurnError_le_sin_mul_active_angle {φ : ℝ}
-    (nonnegative : 0 ≤ φ) (small : φ < π / 2) (tilt : K.TiltBound φ) (U : Set Face)
+/-- The restricted fan has exactly its signed hinge turn, with the actual
+intermediate crease germ of a selected face. -/
+theorem restrictedBoundaryTurnError_eq_hinge_difference (U : Set Face)
     (p : (C.restrictFaces U).BoundaryEnd Set.univ) (d s₁ s₂ : Plane)
     (internal : ¬ C.IsBoundaryVertex Set.univ
       (C.includeRestrictedVertexUniv U ((C.restrictFaces U).boundaryEndVertex Set.univ p)))
@@ -163,9 +161,17 @@ theorem abs_restrictedBoundaryTurnError_le_sin_mul_active_angle {φ : ℝ}
     (first : Cap.horizontal ((K.folding.restrictFaces U).germDirection p.val) = a • d)
     (last : Cap.horizontal ((K.folding.restrictFaces U).germDirection
       ((C.restrictFaces U).boundaryMate Set.univ p).val) = b • (-d)) :
-    |K.restrictedBoundaryTurnError U p| ≤ sin φ *
-      angle (K.sectionDirection p.val.1.1.val d)
-        (K.sectionDirection ((C.restrictFaces U).boundaryMate Set.univ p).val.1.1.val d) := by
+    let w := C.includeRestrictedVertexUniv U
+      ((C.restrictFaces U).boundaryEndVertex Set.univ p)
+    let l := p.val.1.1.val
+    let r := ((C.restrictFaces U).boundaryMate Set.univ p).val.1.1.val
+    (K.normalSlope l = K.normalSlope r ∧ K.restrictedBoundaryTurnError U p = 0) ∨
+      ∃ g : C.LinkGerm Set.univ w, g.val.1.1 ∈ U ∧
+        let join := K.projectedGermRay g
+        inner ℝ (K.normalSlope l - K.normalSlope r) join = 0 ∧ orient 0 join d ≠ 0 ∧
+          K.restrictedBoundaryTurnError U p =
+            angle (K.sectionDirection l join) (K.sectionDirection r d) -
+              angle (K.sectionDirection l join) (K.sectionDirection l d) := by
   let R := C.restrictFaces U
   let w := R.boundaryEndVertex Set.univ p
   let F := K.folding.restrictFaces U
@@ -207,17 +213,66 @@ theorem abs_restrictedBoundaryTurnError_le_sin_mul_active_angle {φ : ℝ}
   have faces (i : Fin (n + 1)) : K.normalSlope (c.point i).val.1.1 = s₁ ∨
       K.normalSlope (c.point i).val.1.1 = s₂ :=
     slopes (c.point i).val.1.1 (c.point i).val.1.2 (c.point i).property
-  have bnd := K.abs_straight_link_turn_le_sin_tilt nonnegative small tilt c d s₁ s₂ faces
-    transverse a_pos b_pos head tail (projected.trans flat)
   have a_face : c.first.val.1.1 = p.val.1.1.val := by
     exact congrArg (fun g : R.Germ => g.1.1.val) first_chain
   have b_face : c.last.val.1.1 = q.val.1.1.val := by
     change (R.linkTurn Set.univ w chain.last).val.1.1.val = q.val.1.1.val
     exact congrArg (fun g : R.Germ => g.1.1.val) last_chain
-  rw [intrinsic, a_face, b_face] at bnd
-  change |(π - R.totalAngle Set.univ w) -
+  have turn : K.restrictedBoundaryTurnError U p = π - R.totalAngle Set.univ w := by
+    change (π - R.totalAngle Set.univ w) -
       (π - R.regionalCornerSum Set.univ (fun c => (K.projectedTriangle c.1.val).cornerAngle
-        c.2) w)| ≤ _
-  rwa [flat, sub_self, sub_zero]
+        c.2) w) = π - R.totalAngle Set.univ w
+    rw [flat, sub_self, sub_zero]
+  have exact := K.straight_link_turn_eq_hinge_difference c d s₁ s₂ faces transverse
+    a_pos b_pos head tail (projected.trans flat)
+  rcases exact with ⟨same, zero⟩ | ⟨i, tie, nonzero, equal⟩
+  · rw [a_face, b_face] at same
+    rw [turn, ← intrinsic]
+    exact Or.inl ⟨same, zero⟩
+  · let g := C.includeRestrictedLinkGerm U (chain.point i.succ)
+    have member : g.val.1.1 ∈ U := (chain.point i.succ).val.1.1.property
+    have eq : K.projectedIntervalRay c i.castSucc.succ = K.projectedGermRay g := by
+      rw [Fin.succ_castSucc, K.projectedIntervalRay_castSucc]
+      rfl
+    rw [a_face, b_face, eq] at tie equal
+    rw [eq] at nonzero
+    exact Or.inr ⟨g, member, tie, nonzero, by rwa [turn, ← intrinsic]⟩
+
+open Classical in
+/-- A regular straight contact pays only the sine-scaled change of the two
+actual support inclinations. The selected link and its boundary directions
+come from the given restricted complex. -/
+theorem abs_restrictedBoundaryTurnError_le_sin_mul_active_angle {φ : ℝ}
+    (nonnegative : 0 ≤ φ) (small : φ < π / 2) (tilt : K.TiltBound φ) (U : Set Face)
+    (p : (C.restrictFaces U).BoundaryEnd Set.univ) (d s₁ s₂ : Plane)
+    (internal : ¬ C.IsBoundaryVertex Set.univ
+      (C.includeRestrictedVertexUniv U ((C.restrictFaces U).boundaryEndVertex Set.univ p)))
+    (slopes : ∀ f i, C.vertexOfCorner Set.univ (f, i) =
+      C.includeRestrictedVertexUniv U ((C.restrictFaces U).boundaryEndVertex Set.univ p) →
+      K.normalSlope f = s₁ ∨ K.normalSlope f = s₂)
+    (transverse : s₁ = s₂ ∨ inner ℝ (s₁ - s₂) d ≠ 0)
+    {a b : ℝ} (a_pos : 0 < a) (b_pos : 0 < b)
+    (first : Cap.horizontal ((K.folding.restrictFaces U).germDirection p.val) = a • d)
+    (last : Cap.horizontal ((K.folding.restrictFaces U).germDirection
+      ((C.restrictFaces U).boundaryMate Set.univ p).val) = b • (-d)) :
+    |K.restrictedBoundaryTurnError U p| ≤ sin φ *
+      angle (K.sectionDirection p.val.1.1.val d)
+        (K.sectionDirection ((C.restrictFaces U).boundaryMate Set.univ p).val.1.1.val d) := by
+  rcases K.restrictedBoundaryTurnError_eq_hinge_difference U p d s₁ s₂ internal slopes
+      transverse a_pos b_pos first last with flat | ⟨g, _, tie, cross, eq⟩
+  · rw [flat.2, abs_zero]
+    exact mul_nonneg (sin_nonneg_of_nonneg_of_le_pi nonnegative (by linarith only [small, pi_pos]))
+      (angle_nonneg _ _)
+  · let l := p.val.1.1.val
+    let r := ((C.restrictFaces U).boundaryMate Set.univ p).val.1.1.val
+    let join := K.projectedGermRay g
+    have shared : K.sectionDirection l join = K.sectionDirection r join := by
+      change inner ℝ (K.normalSlope l - K.normalSlope r) join = 0 at tie
+      rw [inner_sub_left, sub_eq_zero] at tie
+      simp only [sectionDirection, tie]
+    have sharp := K.abs_sectionDirection_common_angle_sub_le_sin_tilt
+      nonnegative small tilt l r join d shared cross
+    rw [eq, abs_sub_comm]
+    exact sharp
 
 end Unfoldings.ConvexRoof
