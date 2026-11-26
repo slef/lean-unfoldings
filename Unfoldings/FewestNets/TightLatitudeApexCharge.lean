@@ -12,25 +12,25 @@ namespace Unfoldings.FewestNets.RevisedLatitudeGrid
 
 open Real InnerProductGeometry Cap
 
-variable {a : ℝ} (positive : 0 < a) (small : a ≤ π / 6) (analytic : a ≤ 0.40)
+variable {a : ℝ} (positive : 0 < a) (small : a ≤ π / 6) (analytic : a ≤ 0.42)
   {i : AnnularTriangle a} (D : AnnularChartData positive small i)
 
 include analytic in
-theorem spacing_le_of_analytic : spacing a ≤ 0.204 * radius a := by
-  have h : 0.51 * a ≤ 0.204 := by linarith only [analytic]
+theorem spacing_le_of_analytic : spacing a ≤ 0.2142 * radius a := by
+  have h : 0.51 * a ≤ 0.2142 := by linarith only [analytic]
   exact mul_le_mul_of_nonneg_right h (by unfold radius; positivity)
 
 include analytic in
-private theorem radius_le_of_analytic : radius a ≤ 0.4554 := by
+private theorem radius_le_of_analytic : radius a ≤ 0.4667 := by
   unfold radius
-  have h : 0.40 ≤ (0.4554 / 0.72 : ℝ) ^ 2 := by norm_num
-  have root := (sqrt_le_left (by norm_num : (0 : ℝ) ≤ 0.4554 / 0.72)).mpr (analytic.trans h)
+  have h : 0.42 ≤ (0.4667 / 0.72 : ℝ) ^ 2 := by norm_num
+  have root := (sqrt_le_left (by norm_num : (0 : ℝ) ≤ 0.4667 / 0.72)).mpr (analytic.trans h)
   linarith only [root]
 
 include analytic in
 private theorem chart_width_of_analytic :
-    |D.apex| ≤ 0.10612 * radius a ∧ |D.halfBase| ≤ 0.10612 * radius a := by
-  have cap : spacing a / (2 * 0.9612) ≤ 0.10612 * radius a := by
+    |D.apex| ≤ 0.11143 * radius a ∧ |D.halfBase| ≤ 0.11143 * radius a := by
+  have cap : spacing a / (2 * 0.9612) ≤ 0.11143 * radius a := by
     apply (div_le_iff₀ (by norm_num)).mpr
     linarith only [spacing_le_of_analytic analytic, radius_pos positive]
   refine ⟨D.apex_bound.le.trans cap, ?_⟩
@@ -40,14 +40,14 @@ private theorem chart_width_of_analytic :
   linarith only [h, cap]
 
 include analytic in
-private theorem apexLengthFactor_of_analytic : D.apexLengthFactor ≤ 1.034 := by
+private theorem apexLengthFactor_of_analytic : D.apexLengthFactor ≤ 1.0375 := by
   apply D.apexLengthFactor_le_mean.trans
   obtain ⟨ha, hb⟩ := chart_width_of_analytic positive small analytic D
   have sa := pow_le_pow_left₀ (abs_nonneg _) ha 2
   have sb := pow_le_pow_left₀ (abs_nonneg _) hb 2
   rw [sq_abs] at sa sb
   have sh := pow_le_pow_left₀ (mul_nonneg (by norm_num : (0 : ℝ) ≤ 0.815) (radius_pos positive).le) D.height_lower_coarse.le 2
-  have prod : D.apex ^ 2 + D.halfBase ^ 2 ≤ 0.034 * D.height ^ 2 := by
+  have prod : D.apex ^ 2 + D.halfBase ^ 2 ≤ 0.0375 * D.height ^ 2 := by
     ring_nf at sa sb sh ⊢
     linarith only [sa, sb, sh, sq_nonneg (radius a)]
   have h := (div_le_iff₀ (pow_pos D.height_pos 2)).mpr prod
@@ -55,7 +55,7 @@ private theorem apexLengthFactor_of_analytic : D.apexLengthFactor ≤ 1.034 := b
 
 include analytic in
 private theorem chart_apex_height_of_analytic :
-    1 / 1.0321 ≤ gnomonicNormal (D.orientedVertex 2) 2 := by
+    1 / 1.0338 ≤ gnomonicNormal (D.orientedVertex 2) 2 := by
   let p := D.orientedVertex 2
   let E := exitHeadingChart false
   have square : ‖p‖ ^ 2 = D.apex ^ 2 + (D.base - D.height) ^ 2 := by
@@ -70,21 +70,21 @@ private theorem chart_apex_height_of_analytic :
   have sa := pow_le_pow_left₀ (abs_nonneg _) ap' 2
   have sy := pow_le_pow_left₀ (abs_nonneg _) y' 2
   rw [sq_abs] at sa sy
-  have nl : ‖northLift p‖ ≤ 1.0321 := by
+  have nl : ‖northLift p‖ ≤ 1.0338 := by
     apply (sq_le_sq₀ (norm_nonneg _) (by norm_num)).mp
     rw [horizontal_norm_sq, northLift_horizontal, northLift_height, one_pow, square]
     norm_num1 at sa sy ⊢
     linarith only [sa, sy]
   have hp : 0 < ‖northLift p‖ := norm_pos_iff.mpr (northLift_ne_zero p)
-  change 1 / 1.0321 ≤ gnomonicNormal p 2
+  change 1 / 1.0338 ≤ gnomonicNormal p 2
   rw [gnomonicNormal, NormedSpace.normalize]
-  change 1 / 1.0321 ≤ ‖northLift p‖⁻¹ * (northLift p) 2
+  change 1 / 1.0338 ≤ ‖northLift p‖⁻¹ * (northLift p) 2
   rw [northLift_height, mul_one, ← one_div]
   exact one_div_le_one_div_of_le hp nl
 
 /-- The three apex allowances distinguish the polar base and its neighboring strip. -/
 def tightApexCoefficient (i : AnnularTriangle a) : ℝ :=
-  if isPolarRow a (baseRow i) then 2.622 else if isPolarStrip a i.1.val then 1.197 else 1.182
+  if isPolarRow a (baseRow i) then 2.639 else if isPolarStrip a i.1.val then 1.205 else 1.189
 
 theorem tightApexCoefficient_sub_pos (i : AnnularTriangle a) (small : a ≤ π / 6) :
     0 < tightApexCoefficient i - 0.089 * a := by
@@ -94,11 +94,11 @@ theorem tightApexCoefficient_sub_pos (i : AnnularTriangle a) (small : a ≤ π /
 include analytic in
 private theorem apex_height_budget_of_analytic :
     D.height * D.apexLengthFactor ≤ (tightApexCoefficient i - 0.089 * a) *
-      (rowStep a / spacing a) * (2 * D.halfBase / 1.0321) := by
+      (rowStep a / spacing a) * (2 * D.halfBase / 1.0338) := by
   let B := 2 * D.halfBase
   let B₀ : ℝ := if isPolarRow a (baseRow i) then 0.432 else 0.952
   let S := (1 - 0.061 * a) / 0.9612 +
-    ordinateErrorFactor (isPolarStrip a i.1.val) * 0.204 ^ 2 / 0.852
+    ordinateErrorFactor (isPolarStrip a i.1.val) * 0.2142 ^ 2 / 0.852
   let c := tightApexCoefficient i - 0.089 * a
   let d := rowStep a
   let b := spacing a
@@ -111,7 +111,7 @@ private theorem apex_height_budget_of_analytic :
       _ ≤ D.height * (B * cos (d / 2)) := mul_le_mul_of_nonneg_left D.base_lower.le D.height_pos.le
       _ = B * (D.height * cos (d / 2)) := by ring
       _ ≤ _ := mul_le_mul_of_nonneg_left hc Bp.le
-  have scalars : 1.034 * S ≤ c * (B₀ / 1.0321) := by
+  have scalars : 1.0375 * S ≤ c * (B₀ / 1.0338) := by
     have card : isPolarRow a (baseRow i) = true → isPolarStrip a i.1.val = true := by
       intro h
       unfold baseRow at h
@@ -122,16 +122,16 @@ private theorem apex_height_budget_of_analytic :
     · exact (Bool.false_ne_true (h₁.symm.trans (card h₂))).elim
     · norm_num [S, c, B₀, tightApexCoefficient, h₁, h₂, ordinateErrorFactor] <;> linarith only [positive, analytic]
     · norm_num [S, c, B₀, tightApexCoefficient, h₁, h₂, ordinateErrorFactor] <;> linarith only [positive, analytic]
-  have top : (D.height * D.apexLengthFactor) * (B₀ * b) ≤ (B * d) * (c * (B₀ / 1.0321)) := by
+  have top : (D.height * D.apexLengthFactor) * (B₀ * b) ≤ (B * d) * (c * (B₀ / 1.0338)) := by
     calc
-      _ ≤ (D.height * 1.034) * (B₀ * b) := mul_le_mul_of_nonneg_right
+      _ ≤ (D.height * 1.0375) * (B₀ * b) := mul_le_mul_of_nonneg_right
         (mul_le_mul_of_nonneg_left (apexLengthFactor_of_analytic positive small analytic D) D.height_pos.le) rn.le
-      _ = 1.034 * (D.height * (B₀ * b)) := by ring
-      _ ≤ 1.034 * (B * (d * S)) := mul_le_mul_of_nonneg_left hb (by norm_num)
-      _ = (B * d) * (1.034 * S) := by ring
+      _ = 1.0375 * (D.height * (B₀ * b)) := by ring
+      _ ≤ 1.0375 * (B * (d * S)) := mul_le_mul_of_nonneg_left hb (by norm_num)
+      _ = (B * d) * (1.0375 * S) := by ring
       _ ≤ _ := mul_le_mul_of_nonneg_left scalars (mul_nonneg Bp.le (rowStep_pos positive small).le)
   apply le_of_mul_le_mul_right _ rn
-  change (D.height * D.apexLengthFactor) * (B₀ * b) ≤ (c * (d / b) * (B / 1.0321)) * (B₀ * b)
+  change (D.height * D.apexLengthFactor) * (B₀ * b) ≤ (c * (d / b) * (B / 1.0338)) * (B₀ * b)
   convert top using 1
   field_simp [bp.ne']
 
@@ -182,11 +182,11 @@ theorem annular_apex_reciprocal_le_of_analytic (i : AnnularTriangle a) :
       exact planar_apex_sine A.base_pos A.height_pos
   have bound := (mul_le_mul_of_nonneg_right low sine_nonneg).trans (projection.trans capped)
   rw [formula] at bound
-  have lo : (2 * A.halfBase / 1.0321) / (A.height * A.apexLengthFactor) ≤
+  have lo : (2 * A.halfBase / 1.0338) / (A.height * A.apexLengthFactor) ≤
       sin (min (annularCornerAngle i 2) (π / 2)) := by
     convert bound using 1
     ring
-  have numerator : 0 < 2 * A.halfBase / 1.0321 := div_pos (mul_pos (by norm_num) A.base_pos) (by norm_num)
+  have numerator : 0 < 2 * A.halfBase / 1.0338 := div_pos (mul_pos (by norm_num) A.base_pos) (by norm_num)
   have denominator := mul_pos A.height_pos A.apexLengthFactor_pos
   have pos := (div_pos numerator denominator).trans_le lo
   have maxBudget := apex_height_budget_of_analytic positive small analytic A

@@ -32,24 +32,24 @@ def latitudeCertificateInterval (k : ℕ) : CountInterval :=
   ⟨latitudeCertificateEndpoint k, latitudeCertificateEndpoint (k + 1)⟩
 
 /-- Every real angle in the numerical range lies in a checked interval. -/
-theorem exists_latitudeCertificateInterval {a : ℝ} (lower : 0.40 ≤ a) (upper : a ≤ π / 6) :
-    ∃ k : Fin 55, 18 ≤ k.val ∧ (latitudeCertificateInterval k).Contains a := by
+theorem exists_latitudeCertificateInterval {a : ℝ} (lower : 0.415 ≤ a) (upper : a ≤ π / 6) :
+    ∃ k : Fin 55, 21 ≤ k.val ∧ (latitudeCertificateInterval k).Contains a := by
   classical
   let x := a * (countPrecision : ℝ)
-  have xlo : (latitudeCertificateEndpoint 18 : ℝ) ≤ x := by
-    change ((40000000000000 : ℤ) : ℝ) ≤ a * (countPrecision : ℝ)
+  have xlo : (latitudeCertificateEndpoint 21 : ℝ) ≤ x := by
+    change ((41500000000000 : ℤ) : ℝ) ≤ a * (countPrecision : ℝ)
     norm_num [countPrecision]
     linarith only [lower]
   have xhi : x ≤ (latitudeCertificateEndpoint (54 + 1) : ℝ) := by
     change a * (countPrecision : ℝ) ≤ ((52359877559832 : ℤ) : ℝ)
     norm_num [countPrecision]
     linarith only [upper, pi_lt_d20]
-  have covered : ∃ j : ℕ, x ≤ (latitudeCertificateEndpoint (18 + j + 1) : ℝ) := ⟨36, xhi⟩
+  have covered : ∃ j : ℕ, x ≤ (latitudeCertificateEndpoint (21 + j + 1) : ℝ) := ⟨33, xhi⟩
   let j := Nat.find covered
-  have j_small : j ≤ 36 := Nat.find_min' covered xhi
-  refine ⟨⟨18 + j, by omega⟩, by simp, ?_⟩
-  change (latitudeCertificateEndpoint (18 + j) : ℝ) ≤ x ∧
-    x ≤ (latitudeCertificateEndpoint (18 + j + 1) : ℝ)
+  have j_small : j ≤ 33 := Nat.find_min' covered xhi
+  refine ⟨⟨21 + j, by omega⟩, by simp, ?_⟩
+  change (latitudeCertificateEndpoint (21 + j) : ℝ) ≤ x ∧
+    x ≤ (latitudeCertificateEndpoint (21 + j + 1) : ℝ)
   refine ⟨?_, Nat.find_spec covered⟩
   rcases Nat.eq_zero_or_pos j with hj | hj
   · simpa only [hj, Nat.add_zero] using xlo

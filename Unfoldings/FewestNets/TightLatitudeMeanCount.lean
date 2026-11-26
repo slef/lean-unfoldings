@@ -13,21 +13,22 @@ noncomputable section
 namespace Unfoldings.FewestNets.RevisedLatitudeGrid
 
 open Real
+open AcuteLatitudeGrid (tightAnalyticPrefactorScale tightAnalyticPrefactorScale_pos)
 
-/-- The annular allowance uses the analytic estimate through 0.40 and the exact
+/-- The annular allowance uses the analytic estimate through 0.42 and the exact
 algebraic charge on the certified interval range. -/
 def tightSelectorCountAllowance {a : ℝ} (key : Selector a) : ℝ :=
   key.elim (fun _ => 2.45 / a ^ 2) (fun i =>
-    if a ≤ 0.40 then (1.12 / a) * analyticAnnularCharge i
+    if a ≤ 0.42 then (tightAnalyticPrefactorScale a / a) * analyticAnnularCharge i
     else tightAnnularPrefactor a * annularAlgebraicCharge i)
 
 theorem tightSelectorCountAllowance_sum_lt {a : ℝ} (positive : 0 < a) (small : a ≤ π / 6)
-    (interval_bound : 0.40 < a → normalizedGridCoefficient a < 246.3) :
+    (interval_bound : 0.42 < a → normalizedGridCoefficient a < 246.3) :
     2 + (∑ key : Selector a, tightSelectorCountAllowance key) < 246.3 / a ^ 4 := by
   rw [Fintype.sum_sum_type]
   simp only [tightSelectorCountAllowance, Sum.elim_inl, Sum.elim_inr, Finset.sum_const, Finset.card_univ,
     Fintype.card_fin, nsmul_eq_mul, Nat.cast_ofNat]
-  by_cases low : a ≤ 0.40
+  by_cases low : a ≤ 0.42
   · simp only [if_pos low]
     rw [← Finset.mul_sum]
     convert analyticAnnularCharge_sum_lt positive small low using 1
@@ -46,7 +47,8 @@ namespace Unfoldings.SpatialFolding.ConvexBoundary
 
 open FewestNets RevisedLatitudeGrid SphericalSelectorBoundary SpatialRotation MeasureTheory
   InnerProductGeometry Real
-open AcuteLatitudeGrid (input_cornerAngle_lower local_count_prefactor_tight)
+open AcuteLatitudeGrid (input_cornerAngle_lower local_count_prefactor_tight tightAnalyticPrefactorScale
+  tightAnalyticPrefactorScale_pos)
 
 universe u v
 
@@ -74,13 +76,13 @@ theorem mean_tightLatitudeSelectedCount_le
     have budget_nonneg : 0 ≤ M.crossingBudget :=
       (div_nonneg (Finset.sum_nonneg (fun j _ => (M.endpointFactor_pos j.1 j.2).le)) pi_pos.le).trans
         (le_max_left _ _)
-    change _ ≤ _ + (if a ≤ 0.40 then (1.12 / a) * analyticAnnularCharge i
+    change _ ≤ _ + (if a ≤ 0.42 then (tightAnalyticPrefactorScale a / a) * analyticAnnularCharge i
       else tightAnnularPrefactor a * annularAlgebraicCharge i)
-    by_cases low : a ≤ 0.40
+    by_cases low : a ≤ 0.42
     · rw [if_pos low]
       have coefficient := local_count_prefactor_tight positive low M.separation_pos.le M.separation_small
       exact count.trans (add_le_add le_rfl (mul_le_mul coefficient.le
-        (tightAnnularSelectorMetric_crossingBudget_le positive small low i) budget_nonneg (by positivity)))
+        (tightAnnularSelectorMetric_crossingBudget_le positive small low i) budget_nonneg (div_nonneg (tightAnalyticPrefactorScale_pos a).le positive.le)))
     · rw [if_neg low]
       have pp : 0 ≤ tightAnnularPrefactor a := by
         unfold tightAnnularPrefactor
