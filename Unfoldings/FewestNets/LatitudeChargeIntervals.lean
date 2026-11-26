@@ -94,14 +94,29 @@ def checkTriangleCharge {s : Fin 3 → ℝ} {det : ℝ}
       (max ((2 / π) * shortSideRatio (max (s 0) (max (s 1) (s 2))) *
         ((∑ j : Fin 3, √(s j * s (j + 2))) / |det|))
         ((∑ j : Fin 3, √(s j) * shortSideRatio (s j)) / (π * 0.115))) := by
-  let p := checkPi countPrecision
-  let largest := (side 0).maximum countPrecision_pos ((side 1).maximum countPrecision_pos (side 2))
-  let factor := ((Crat 2).div countPrecision_pos p).mul countPrecision_pos (checkShortSideRatio largest)
-  let products := checkFinThreeSum (fun j : Fin 3 => ((side j).mul countPrecision_pos (side (j + 2))).sqrt countPrecision_pos)
-  let angles := factor.mul countPrecision_pos (products.div countPrecision_pos (area.abs countPrecision_pos))
-  let lengths := checkFinThreeSum (fun j : Fin 3 => ((side j).sqrt countPrecision_pos).mul countPrecision_pos
-    (checkShortSideRatio (side j)))
-  let perimeter := lengths.div countPrecision_pos (p.mul countPrecision_pos (Crat 0.115))
-  exact (angles.maximum countPrecision_pos perimeter).convert (by norm_num)
+  exact (side 0).reuse fun s0 =>
+    (side 1).reuse fun s1 =>
+    (side 2).reuse fun s2 =>
+    area.reuse fun area' => by
+      let side' (j : Fin 3) : CheckedReal countPrecision (s j) :=
+        if h₀ : j = 0 then s0.convert (congrArg s h₀.symm)
+        else if h₁ : j = 1 then s1.convert (congrArg s h₁.symm)
+        else s2.convert (congrArg s (show 2 = j by
+          apply Fin.ext
+          have l := j.isLt
+          have b : j.val ≠ 0 := fun h => h₀ (Fin.ext h)
+          have c : j.val ≠ 1 := fun h => h₁ (Fin.ext h)
+          change 2 = j.val
+          omega))
+      let p := checkPi countPrecision
+      let largest := s0.maximum countPrecision_pos (s1.maximum countPrecision_pos s2)
+      let factor := ((Crat 2).div countPrecision_pos p).mul countPrecision_pos (checkShortSideRatio largest)
+      let products := checkFinThreeSum (fun j : Fin 3 =>
+        ((side' j).mul countPrecision_pos (side' (j + 2))).sqrt countPrecision_pos)
+      let angles := factor.mul countPrecision_pos (products.div countPrecision_pos (area'.abs countPrecision_pos))
+      let lengths := checkFinThreeSum (fun j : Fin 3 => ((side' j).sqrt countPrecision_pos).mul countPrecision_pos
+        (checkShortSideRatio (side' j)))
+      let perimeter := lengths.div countPrecision_pos (p.mul countPrecision_pos (Crat 0.115))
+      exact (angles.maximum countPrecision_pos perimeter).convert (by norm_num)
 
 end Unfoldings.FewestNets.RevisedLatitudeGrid

@@ -76,6 +76,18 @@ def enclose {x : ℝ} (a : FixedPointInterval D) (inside : a.Contains x) : Check
   bounds := some a
   sound b h := Option.some.inj h ▸ inside
 
+/-- Reuse a computed interval before passing it to a larger expression. -/
+def reuse {x y : ℝ} (a : CheckedReal D x) (body : CheckedReal D x → CheckedReal D y) :
+    CheckedReal D y where
+  bounds := match h : a.bounds with
+    | none => none
+    | some b => (body (enclose b (a.sound b h))).bounds
+  sound b h := by
+    split at h
+    · simp at h
+    · rename_i i eq
+      exact (body (enclose i (a.sound i eq))).sound b h
+
 /-- A fixed-point coordinate already at the correct scale evaluates exactly. -/
 def scaled (hD : 0 < D) (i : ℤ) : CheckedReal D ((i : ℝ) / D) :=
   enclose ⟨i, i⟩ (by
