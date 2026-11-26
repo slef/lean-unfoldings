@@ -2,7 +2,7 @@ module
 
 public import Unfoldings.Roof.ShortClosingBend
 public import Unfoldings.Roof.HorizontalReorientation
-public import Unfoldings.Geometry.DirectionFrame
+public import Unfoldings.Geometry.PositiveDirectionFrame
 public import Unfoldings.Geometry.ReorientedChain
 
 /-! The regular two-link closure in a chart aligned with its physical long link. -/
@@ -40,6 +40,7 @@ theorem exists_regular_horizontal_shortClosing {n : ℕ} (P : PolygonalChain Pla
       let Q := P.reorient E
       let a := Q.vertex 0
       let b := Q.vertex (Fin.last n)
+      (∀ u v : Plane, 0 < orient 0 u v → 0 < orient 0 (E u) (E v)) ∧
       c ∈ E '' D ∧ c ∈ Metric.ball b r ∧
       (∀ i, 0 < Q.edge i 0) ∧ a 0 < c 0 ∧ c 0 < b 0 ∧ c 1 = a 1 ∧
       (∀ j, edge j (E.symm c) ≠ 0) ∧
@@ -55,14 +56,18 @@ theorem exists_regular_horizontal_shortClosing {n : ℕ} (P : PolygonalChain Pla
   let a := P.vertex 0
   let b := P.vertex (Fin.last n)
   let v := d - a
-  let E := directionFrame v
+  let E := positiveDirectionFrame v
   let Q := P.reorient E
   have nv : v ≠ 0 := by
     intro zero
     change 0 < inner ℝ v (b - d) at right
     simpa [zero] using right
   have norm_pos : 0 < ‖v‖ := norm_pos_iff.mpr nv
-  have coord (x : Plane) : ‖v‖ * E x 0 = inner ℝ v x := directionFrame_coord v x
+  have coord (x : Plane) : ‖v‖ * E x 0 = inner ℝ v x := by
+    rw [← E.inner_map_map]
+    change _ = inner ℝ (positiveDirectionFrame v v) (E x)
+    rw [positiveDirectionFrame_apply, EuclideanSpace.inner_single_left]
+    rfl
   have x_forward (i : Fin n) : 0 < Q.edge i 0 := by
     rw [show Q.edge i = E (P.edge i) from P.reorient_edge E i]
     have h := progress i
@@ -71,7 +76,7 @@ theorem exists_regular_horizontal_shortClosing {n : ℕ} (P : PolygonalChain Pla
     exact pos_of_mul_pos_right h norm_pos.le
   have first_x : Q.vertex 0 0 < E d 0 := by
     change E a 0 < E d 0
-    have h : E v 0 = ‖v‖ := directionFrame_horizontal v
+    have h : E v 0 = ‖v‖ := positiveDirectionFrame_horizontal v
     rw [show E v = E d - E a from map_sub E d a] at h
     change E d 0 - E a 0 = ‖v‖ at h
     linarith only [h, norm_pos]
@@ -81,7 +86,7 @@ theorem exists_regular_horizontal_shortClosing {n : ℕ} (P : PolygonalChain Pla
     rw [map_sub] at h
     exact sub_pos.mp h
   have horiz : E d 1 = Q.vertex 0 1 := by
-    have h : E v 1 = 0 := directionFrame_vertical v
+    have h : E v 1 = 0 := positiveDirectionFrame_vertical v
     rw [show E v = E d - E a from map_sub E d a] at h
     exact sub_eq_zero.mp h
   have ball (x : Plane) (hx : x ∈ Metric.ball b r) : E x ∈ Metric.ball (E b) r := by
@@ -91,7 +96,7 @@ theorem exists_regular_horizontal_shortClosing {n : ℕ} (P : PolygonalChain Pla
   have spatial_angle (u w : Space) :
       angle (horizontalChartIsometry E u) (horizontalChartIsometry E w) = angle u w :=
     (horizontalChartIsometry E).toLinearIsometry.angle_map u w
-  refine ⟨E, E d, Set.mem_image_of_mem E hd.1, ball d hd.2, x_forward, first_x, last_x,
+  refine ⟨E, E d, positiveDirectionFrame_positive v, Set.mem_image_of_mem E hd.1, ball d hd.2, x_forward, first_x, last_x,
     horiz, fun j => by rw [E.symm_apply_apply]; exact generic j, ?_, ?_, ?_, ?_, ?_⟩
   · intro j t i equal
     apply no_vertex j t i

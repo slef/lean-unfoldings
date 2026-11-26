@@ -50,6 +50,8 @@ namespace LineRefinement
 variable {T} {A : Type u} {equation : A → Plane →ᵃ[ℝ] ℝ} (L : T.LineRefinement equation)
   (inside : (interior (clipAbove family floor Z)).Nonempty)
 
+local instance terminalCoarseIndexFintype : Fintype T.Index := @Fintype.ofFinite _ T.finite
+
 local instance terminalIndexFintype : Fintype L.mesh.Index := @Fintype.ofFinite _ L.mesh.finite
 
 /-- No new curved vertex can occur away from an original corner, for any upward graph chart. -/
@@ -89,6 +91,29 @@ theorem zeroCurvature_of_off_chartCorners (E : Plane ≃ₗᵢ[ℝ] Plane)
       exact right_mem_segment ℝ _ _
   exact R.interiorCurvature_eq_zero_of_normalPolygon_collinear w
     ((collinear_segment a b).subset (convexHull_min included (convex_segment a b)))
+
+/-- A refined triangle meeting the interior of a coarse triangle has its actual slope. -/
+theorem chart_slope_eq_of_point_mem_coarse_interior
+    (E : Plane ≃ₗᵢ[ℝ] Plane) {p : Plane} (i : T.Index) (f : L.mesh.Index)
+    (inside_coarse : E.symm p ∈ interior (T.projectedTriangle i).carrier)
+    (in_fine : p ∈ (((L.mesh.roof inside).reorient E).projectedTriangle f).carrier) :
+    ((L.mesh.roof inside).reorient E).normalSlope f = ((T.roof inside).reorient E).normalSlope i := by
+  have parent_mem : E.symm p ∈ (T.projectedTriangle (L.parent f)).carrier := by
+    rw [ConvexRoof.projectedTriangle_reorient_carrier, L.mesh.roof_projectedTriangle] at in_fine
+    obtain ⟨q, hq, rfl⟩ := in_fine
+    rw [E.symm_apply_apply]
+    exact L.contained f hq
+  rw [ConvexRoof.normalSlope_reorient, ConvexRoof.normalSlope_reorient, L.roof_normalSlope]
+  change E ((family (T.support (L.parent f))).normalSlope) = E ((family (T.support i)).normalSlope)
+  suffices L.parent f = i by rw [this]
+  by_contra different
+  rcases T.conforming i (L.parent f) (Ne.symm different) (E.symm p)
+      ⟨interior_subset inside_coarse, parent_mem⟩ with vertices | ⟨e, _, _, on_edge⟩
+  · obtain ⟨j, at_corner⟩ := vertices.1
+    apply (T.projectedTriangle i).not_mem_interior_of_mem_edge j _ inside_coarse
+    rw [← at_corner]
+    exact left_mem_segment ℝ _ _
+  · exact (T.projectedTriangle i).not_mem_interior_of_mem_edge e on_edge inside_coarse
 
 end LineRefinement
 end Unfoldings.SpatialEnvelope.FloorMesh

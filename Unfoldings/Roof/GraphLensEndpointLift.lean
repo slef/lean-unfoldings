@@ -34,6 +34,7 @@ theorem exists_graphLens_endpointLift {J : Set Plane}
     (halfplane : (∀ x ∈ closedJordanDomain J, K.projectedVertex w 0 ≤ x 0) ∨
       (∀ x ∈ closedJordanDomain J, x 0 ≤ K.projectedVertex w 0)) :
     ∃ (f : Face) (r : ℝ), 0 < r ∧
+      (∃ k, C.vertexOfCorner Set.univ (f, k) = w) ∧
       K.projectedVertex w ∈ (K.projectedTriangle f).carrier ∧
       K.projectedVertex w + r • v ∈ (K.projectedTriangle f).carrier ∧
       K.regionalAngleExcess (K.graphLensFaces J) w =
@@ -82,12 +83,15 @@ theorem exists_graphLens_endpointLift {J : Set Plane}
   have at_face (e : R.BoundaryEnd Set.univ)
       (e_pos : Cap.horizontal (F.boundaryPosition e) = K.projectedVertex w)
       {t : ℝ} (ray : Cap.horizontal (F.germDirection e.val) = t • v) :
+      C.vertexOfCorner Set.univ (e.val.1.1.val, e.val.1.2) = w ∧
       K.projectedVertex w ∈ (K.projectedTriangle e.val.1.1.val).carrier ∧
       K.projectedVertex w + t • v ∈ (K.projectedTriangle e.val.1.1.val).carrier := by
     have start : (K.projectedTriangle e.val.1.1.val).vertex e.val.1.2 = K.projectedVertex w := by
       rw [F.boundaryPosition_raw] at e_pos
       exact e_pos
-    refine ⟨start ▸ (K.projectedTriangle _).vertex_mem _, ?_⟩
+    have named : C.vertexOfCorner Set.univ (e.val.1.1.val, e.val.1.2) = w :=
+      K.projectedVertex_injective ((K.projectedVertex_ofCorner _ _).trans start)
+    refine ⟨named, start ▸ (K.projectedTriangle _).vertex_mem _, ?_⟩
     have finish : (K.projectedTriangle e.val.1.1.val).vertex (R.germFarCorner e.val).2 =
         K.projectedVertex w + t • v := by
       rw [← ray, ← e_pos, F.boundaryPosition_raw, SpatialFolding.germDirection, map_sub]
@@ -132,8 +136,8 @@ theorem exists_graphLens_endpointLift {J : Set Plane}
     rw [turn, neg_neg, show x = s • u from hx, show y = t • v from hy,
       attached q.val.1.1.val sp tp] at e
     have pr := (congrArg Cap.horizontal (F.boundaryPosition_mate p)).trans position
-    obtain ⟨contains, forward⟩ := at_face q pr hy
-    exact ⟨q.val.1.1.val, t, tp, contains, forward, e⟩
+    obtain ⟨named, contains, forward⟩ := at_face q pr hy
+    exact ⟨q.val.1.1.val, t, tp, ⟨_, named⟩, contains, forward, e⟩
   · have e := K.restrictedEndpointTurnError_eq_angle_of_crease U p true orig_slopes plane
       (by change inner ℝ (a - b) y = 0; rw [show y = t • u from hy, real_inner_smul_right, tangent, mul_zero])
     change -K.restrictedBoundaryTurnError U p =
@@ -141,8 +145,8 @@ theorem exists_graphLens_endpointLift {J : Set Plane}
     rw [turn, neg_neg, angle_comm (K.sectionDirection p.val.1.1.val x),
       angle_comm x y, show x = s • v from hx, show y = t • u from hy,
       attached p.val.1.1.val tp sp] at e
-    obtain ⟨contains, forward⟩ := at_face p position hx
-    exact ⟨p.val.1.1.val, s, sp, contains, forward, e⟩
+    obtain ⟨named, contains, forward⟩ := at_face p position hx
+    exact ⟨p.val.1.1.val, s, sp, ⟨_, named⟩, contains, forward, e⟩
   · exact (distinct sp tp hx hy).elim
 
 end Unfoldings.ConvexRoof

@@ -18,12 +18,12 @@ variable {I J : Type u} [Fintype I] [Nonempty I]
   {extra : J → Plane →ᵃ[ℝ] ℝ} (T : FloorMesh family floor extra Z)
   (E : Plane ≃ₗᵢ[ℝ] Plane) {n : ℕ} (P : PolygonalChain Plane n) (c : Plane)
 
-/-- Mark the two trimmed endpoints and the auxiliary bend in the chosen chart. -/
-def closingMark (i : Fin 3) : Plane :=
-  ![P.vertex 0, P.vertex (Fin.last n), c] i
+/-- Mark the two trims, the bend, and an interior contact on the long link. -/
+def closingMark (i : Fin 4) : Plane :=
+  ![P.vertex 0, P.vertex (Fin.last n), c, midpoint ℝ (P.vertex 0) c] i
 
 abbrev ChartClosingLine (n : ℕ) :=
-  ULift.{u} (((Fin n ⊕ Fin 4) ⊕ Bool) ⊕ (Fin 3 × Fin 2))
+  ULift.{u} (((Fin n ⊕ Fin 4) ⊕ Bool) ⊕ (Fin 4 × Fin 2))
 
 /-- The same proper supporting lines are pulled back to the physical mesh. -/
 def chartClosingEquations (i : ChartClosingLine.{u} n) : Plane →ᵃ[ℝ] ℝ :=
@@ -120,9 +120,9 @@ theorem chartClosingRoof_footprint :
     (Q).footprint = E '' clipAbove family floor Z := by
   rw [chartClosingRoof, ConvexRoof.footprint_reorient, (L).mesh.roof_footprint]
 
-/-- The three marked corner points are actual intrinsic vertices of the
+/-- The marked points are actual intrinsic vertices of the
 refined chart, even if one of the two links is collinear with the other. -/
-theorem exists_chartClosingRoof_markedVertex (i : Fin 3)
+theorem exists_chartClosingRoof_markedVertex (i : Fin 4)
     (in_roof : closingMark P c i ∈ (Q).footprint) :
     ∃ v : (L).mesh.pairedComplex.Vertex Set.univ, (Q).projectedVertex v = closingMark P c i := by
   let p := closingMark P c i

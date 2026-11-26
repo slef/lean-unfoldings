@@ -35,7 +35,7 @@ local instance oldChartIndexFintype : Fintype T.Index := @Fintype.ofFinite _ T.f
 local instance nearChordChartIndexFintype (c : Plane) : Fintype (L[c]).mesh.Index :=
   @Fintype.ofFinite _ (L[c]).mesh.finite
 
-private theorem local_first_ray_in_trace : ∀ᶠ t : ℝ in 𝓝[>] 0,
+theorem local_first_ray_in_trace : ∀ᶠ t : ℝ in 𝓝[>] 0,
     (A) + t • P.edge 0 ∈ Set.range P.path := by
   filter_upwards [Ioo_mem_nhdsGT (zero_lt_one : (0 : ℝ) < 1)] with t ht
   rw [P.path_range_eq_segments]
@@ -48,7 +48,7 @@ private theorem local_first_ray_in_trace : ∀ᶠ t : ℝ in 𝓝[>] 0,
   rw [← position]
   exact lineMap_mem_segment ℝ _ _ ⟨ht.1.le, ht.2.le⟩
 
-private theorem local_last_ray_in_trace : ∀ᶠ t : ℝ in 𝓝[>] 0,
+theorem local_last_ray_in_trace : ∀ᶠ t : ℝ in 𝓝[>] 0,
     (B) + t • (-P.edge (Fin.last n)) ∈ Set.range P.path := by
   filter_upwards [Ioo_mem_nhdsGT (zero_lt_one : (0 : ℝ) < 1)] with t ht
   rw [P.path_range_eq_segments]
@@ -66,7 +66,7 @@ private theorem local_last_ray_in_trace : ∀ᶠ t : ℝ in 𝓝[>] 0,
   rw [← position]
   exact lineMap_mem_segment ℝ _ _ ⟨ht.1.le, ht.2.le⟩
 
-private theorem regular_forward_links (c : Plane)
+theorem regular_forward_links (c : Plane)
     (regular : ∀ (j : Fin 2) (t : ℝ) i, AffineMap.lineMap (P.twoClosingLinks c j).1
       (P.twoClosingLinks c j).2 t ≠ T.chartCorner E i) :
     (∀ (t : ℝ) (i : T.Index) (j : Fin 3), AffineMap.lineMap (A) c t ≠ T.chartCorner E (i, j)) ∧
@@ -155,7 +155,7 @@ theorem exists_chartComparison_nearChord
       (graphPoint g '' Set.Icc ((A) 0) ((B) 0)) := by
     rw [g_range']
     exact (chartClosingRoof_disjoint_paths T E P c inside j).mono_right Set.subset_union_right
-  have mark (i : Fin 3) (h : closingMark P c i ∈ D) :
+  have mark (i : Fin 4) (h : closingMark P c i ∈ D) :
       ∃ w : L.mesh.pairedComplex.Vertex Set.univ, Q.projectedVertex w = closingMark P c i :=
     exists_chartClosingRoof_markedVertex T E P c inside i (footprint.symm ▸ interior_subset h)
   obtain ⟨left, at_left⟩ := mark 0 A_in

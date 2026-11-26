@@ -14,7 +14,7 @@ open InnerProductGeometry Real PlanarTopology
 
 universe u v
 
-private theorem horizontal_mem_Icc_of_mem_segment {p q z : Plane} (order : p 0 ≤ q 0)
+theorem horizontal_mem_Icc_of_mem_segment {p q z : Plane} (order : p 0 ≤ q 0)
     (member : z ∈ segment ℝ p q) : z 0 ∈ Set.Icc (p 0) (q 0) := by
   obtain ⟨t, interval, rfl⟩ := (segment_eq_image_lineMap ℝ p q).subset member
   rw [AffineMap.lineMap_apply_module']
@@ -22,7 +22,7 @@ private theorem horizontal_mem_Icc_of_mem_segment {p q z : Plane} (order : p 0 �
   exact ⟨by linarith only [mul_nonneg interval.1 (sub_nonneg.mpr order)], by
     linarith only [mul_nonneg (sub_nonneg.mpr interval.2) (sub_nonneg.mpr order)]⟩
 
-private theorem horizontal_mem_Ioo_of_mem_openSegment {p q z : Plane} (order : p 0 < q 0)
+theorem horizontal_mem_Ioo_of_mem_openSegment {p q z : Plane} (order : p 0 < q 0)
     (member : z ∈ openSegment ℝ p q) : z 0 ∈ Set.Ioo (p 0) (q 0) := by
   obtain ⟨t, interval, rfl⟩ := (openSegment_eq_image_lineMap ℝ p q).subset member
   rw [AffineMap.lineMap_apply_module']

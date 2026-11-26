@@ -80,4 +80,42 @@ theorem graphLensSign_of_backward_rays {f g : ℝ → ℝ} (hf : Continuous f) (
   · rw [if_neg (fun h => (not_lt_of_ge pos) (order.mp h)), if_pos pos]
   · rw [if_pos (order.mpr (lt_of_not_ge pos)), if_neg pos, neg_neg]
 
+/-- On a segment included in a graph, a prescribed internal abscissa gives
+an actual point on its directed ray. -/
+theorem graphPoint_eq_add_smul_of_segment {f : ℝ → ℝ} {D : Set ℝ} {p u : Plane} {x : ℝ}
+    (covers : segment ℝ p (p + u) ⊆ graphPoint f '' D) (different : u 0 ≠ 0)
+    (within : x ∈ Set.uIoo (p 0) (p 0 + u 0)) :
+    ∃ t : ℝ, 0 < t ∧ graphPoint f x = p + t • u := by
+  let t := (x - p 0) / u 0
+  have form : t * u 0 = x - p 0 := div_mul_cancel₀ _ different
+  have window : t ∈ Set.Ioo 0 1 := by
+    rcases lt_or_gt_of_ne different with backward | forward
+    · rw [Set.uIoo_of_ge (by linarith only [backward] : p 0 + u 0 ≤ p 0)] at within
+      have neg : x - p 0 < 0 := sub_neg.mpr within.2
+      exact ⟨div_pos_of_neg_of_neg neg backward, (div_lt_iff_of_neg backward).mpr (by
+        linarith only [within.1])⟩
+    · rw [Set.uIoo_of_le (by linarith only [forward] : p 0 ≤ p 0 + u 0)] at within
+      exact ⟨div_pos (sub_pos.mpr within.1) forward, (div_lt_iff₀ forward).mpr (by
+        linarith only [within.2])⟩
+  have on : p + t • u ∈ segment ℝ p (p + u) := by
+    rw [← show AffineMap.lineMap p (p + u) t = p + t • u by
+      rw [AffineMap.lineMap_apply_module', add_sub_cancel_left, add_comm]]
+    exact lineMap_mem_segment ℝ _ _ ⟨window.1.le, window.2.le⟩
+  obtain ⟨r, _, at_r⟩ := covers on
+  have rx : r = x := by
+    have h := congrArg (fun z : Plane => z 0) at_r
+    change r = p 0 + t * u 0 at h
+    linarith only [h, form]
+  exact ⟨t, window.1, rx ▸ at_r⟩
+
+theorem orient_ne_zero_of_distinct_graph_points {f g : ℝ → ℝ} {r s t : ℝ}
+    (off : f r ≠ g r) {p u v : Plane} (progress : u 0 ≠ 0)
+    (on_f : graphPoint f r = p + s • u) (on_g : graphPoint g r = p + t • v) :
+    orient 0 u v ≠ 0 := by
+  intro h
+  have eq := orient_mul_eq_graphDiff f g on_f on_g
+  rw [h, mul_zero] at eq
+  exact off (sub_eq_zero.mp ((mul_eq_zero.mp eq).resolve_right progress)).symm
+
+
 end Unfoldings.PlanarTopology

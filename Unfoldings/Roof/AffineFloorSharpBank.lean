@@ -63,7 +63,7 @@ local notation "D" => interior (E '' clipAbove family floor Z)
 local instance sharpChartIndexFintype (c : Plane) : Fintype (L[c]).mesh.Index :=
   @Fintype.ofFinite _ (L[c]).mesh.finite
 
-private theorem chart_aligned_subset_skeleton (contained : Set.range P.path ⊆ D)
+theorem chart_aligned_subset_skeleton (contained : Set.range P.path ⊆ D)
     (aligned : ∀ j, Disjoint (interior (E '' (T.projectedTriangle j).carrier)) (Set.range P.path)) :
     Set.range P.path ⊆ ⋃ i : T.Index × Fin 3,
       segment ℝ (T.chartCorner E i) (T.chartCorner E (i.1, Triangle.next i.2)) := by

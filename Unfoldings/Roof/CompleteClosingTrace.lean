@@ -13,11 +13,11 @@ namespace Unfoldings.ConvexRoof.RegularClosingLink
 universe u v
 
 variable {Face : Type u} [Fintype Face] {C : TriangleComplex.{u, v} Face}
-  {K : ConvexRoof C} {U : Set Face} {origin : Plane} {length : ℝ}
+  {K : ConvexRoof C} {U : Set Face} {origin stop : Plane} {length : ℝ}
 
 local notation "east" => (WithLp.toLp 2 ![(1 : ℝ), 0] : Plane)
 local notation "pt" => horizontalContactPoint origin
-local notation "Contact" => {w : C.Vertex Set.univ // K.projectedVertex w ∈ openSegment ℝ origin (pt length)}
+local notation "Contact" => {w : C.Vertex Set.univ // K.projectedVertex w ∈ openSegment ℝ origin stop}
 
 open Classical in
 set_option maxHeartbeats 1700000 in
@@ -25,6 +25,7 @@ set_option maxHeartbeats 1700000 in
 closing edges at the two ends of the segment. -/
 theorem exists_complete_supportedNormalTrace
     (L : K.RegularClosingLink U origin east Contact) (nonempty : Nonempty Contact)
+    (stop_at : pt length = stop)
     (times : ∀ i, 0 < L.time i ∧ L.time i < length)
     (actual : ∀ i : Contact, K.projectedVertex i.val = pt (L.time i))
     (left right : C.Vertex Set.univ)
@@ -52,13 +53,13 @@ theorem exists_complete_supportedNormalTrace
     exact Fin.lt_def.mpr lt
   have complete (t : ℝ) (pos : 0 < t) (before : t < length) (w : C.Vertex Set.univ)
       (at_w : K.projectedVertex w = pt t) : ∃ j : Fin (n + 1), L.time (e j) = t := by
-    have on : K.projectedVertex w ∈ openSegment ℝ origin (pt length) := by
+    have on : K.projectedVertex w ∈ openSegment ℝ origin stop := by
       have inside : t ∈ Set.uIoo 0 length := by
         rw [Set.uIoo_of_le (pos.trans before).le]
         exact ⟨pos, before⟩
       have on_segment := horizontalContactPoint_mem_openSegment (origin := origin) inside
       have start : pt 0 = origin := by simp [horizontalContactPoint]
-      rwa [← at_w, start] at on_segment
+      rwa [← at_w, start, stop_at] at on_segment
     let contact : Contact := ⟨w, on⟩
     refine ⟨e.symm contact, horizontalContactPoint_injective origin ?_⟩
     rw [e.apply_symm_apply]
