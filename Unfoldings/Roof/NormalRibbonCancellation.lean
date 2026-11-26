@@ -8,7 +8,7 @@ public import Unfoldings.Roof.NormalPolygonCharges
 
 noncomputable section
 
-namespace Unfoldings.SlopeEnvelope
+namespace Unfoldings
 
 open MeasureTheory
 open scoped ENNReal BigOperators
@@ -16,16 +16,16 @@ open scoped ENNReal BigOperators
 /-- The signed curvature and the transport term cost at most one copy of the
 selector's solid angle. At every slope on their common support the two signs
 agree, as certified by the actual active contacts on a horizontal link. -/
-theorem abs_charge_sub_winding_le (E : SlopeEnvelope)
+theorem abs_supporting_charge_sub_winding_le (f : Plane → ℝ)
     {V : Type*} [Fintype V] {polygon : V → Set Plane} {cell : Set Plane}
     (compact : IsCompact cell) (finite : Cap.cartesianSolidAngle (Cap.planeCartesian '' cell) < ∞)
     (separated : Pairwise fun v w => Disjoint (interior (polygon v)) (interior (polygon w)))
     (contained : ∀ v, polygon v ⊆ cell) (position : V → Plane)
-    (active : ∀ v q, q ∈ polygon v → E.Active (position v) q)
+    (active : ∀ v q, q ∈ polygon v → q ∈ supportingSlopes f (position v))
     (level : ℝ) (trace chord : ℝ → ℝ) (htrace : Measurable trace) (hchord : Measurable chord)
     {a b : ℝ}
     (contacts : ∀ p ∈ Set.Ioc a b, ∃ x : Plane, x 1 = level ∧
-      E.Active x (WithLp.toLp 2 ![p, trace p]))
+      WithLp.toLp 2 ![p, trace p] ∈ supportingSlopes f x)
     (ribbon : graphRibbon trace chord a b ∪ graphRibbon chord trace a b ⊆ Cap.planeCartesian '' cell)
     (weight : V → ℝ) (bounded : ∀ v, |weight v| ≤ 1)
     (sign : ∀ v, 0 ≤ ((position v) 1 - level) * weight v)
@@ -84,7 +84,7 @@ theorem abs_charge_sub_winding_le (E : SlopeEnvelope)
         obtain ⟨x, on, contact⟩ := contacts (q 0) range
         by_cases eq : (position v) 1 = level
         · rw [on_link v eq, zero_mul]
-        · apply E.vertex_charge_mul_winding_nonneg contact (active v) member rfl rfl
+        · apply supporting_charge_mul_winding_nonneg f contact (active v) member rfl rfl
           · exact fun h => eq (h.symm.trans on)
           · simpa only [on] using sign v
     · rw [qzero (not_exists.mp nonzero), zero_mul, abs_zero]
@@ -96,4 +96,34 @@ theorem abs_charge_sub_winding_le (E : SlopeEnvelope)
     ribbon_integrable (.of_forall pointwise) (.of_forall (fun _ => outside))
   simpa only [Measure.real, C, μ, Cap.cartesianSolidAngle_image compact, Q, W] using bound
 
-end Unfoldings.SlopeEnvelope
+namespace SlopeEnvelope
+
+/-- The signed curvature and the transport term cost at most one copy of the
+selector's solid angle. At every slope on their common support the two signs
+agree, as certified by the actual active contacts on a horizontal link. -/
+theorem abs_charge_sub_winding_le (E : SlopeEnvelope)
+    {V : Type*} [Fintype V] {polygon : V → Set Plane} {cell : Set Plane}
+    (compact : IsCompact cell) (finite : Cap.cartesianSolidAngle (Cap.planeCartesian '' cell) < ∞)
+    (separated : Pairwise fun v w => Disjoint (interior (polygon v)) (interior (polygon w)))
+    (contained : ∀ v, polygon v ⊆ cell) (position : V → Plane)
+    (active : ∀ v q, q ∈ polygon v → E.Active (position v) q)
+    (level : ℝ) (trace chord : ℝ → ℝ) (htrace : Measurable trace) (hchord : Measurable chord)
+    {a b : ℝ}
+    (contacts : ∀ p ∈ Set.Ioc a b, ∃ x : Plane, x 1 = level ∧
+      E.Active x (WithLp.toLp 2 ![p, trace p]))
+    (ribbon : graphRibbon trace chord a b ∪ graphRibbon chord trace a b ⊆ Cap.planeCartesian '' cell)
+    (weight : V → ℝ) (bounded : ∀ v, |weight v| ≤ 1)
+    (sign : ∀ v, 0 ≤ ((position v) 1 - level) * weight v)
+    (on_link : ∀ v, (position v) 1 = level → weight v = 0) :
+    |(∫ z, Cap.normalPolygonCharge polygon weight z ∂Cap.cartesianSolidAngle) -
+      (∫ z, normalRibbonWinding trace chord a b z ∂Cap.cartesianSolidAngle)| ≤
+      (solidAngleMeasure (Cap.gnomonicNormal '' cell)).toReal :=
+  abs_supporting_charge_sub_winding_le _ compact finite separated contained position
+    (fun v q h => (active v q h).mem_supportingSlopes) level trace chord htrace hchord
+    (fun p h => by
+      obtain ⟨x, eq, active⟩ := contacts p h
+      exact ⟨x, eq, active.mem_supportingSlopes⟩)
+    ribbon weight bounded sign on_link
+
+end SlopeEnvelope
+end Unfoldings
