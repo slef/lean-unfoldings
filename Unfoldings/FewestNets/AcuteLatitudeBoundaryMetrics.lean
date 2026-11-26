@@ -72,7 +72,7 @@ def annularSelectorMetric (i : AnnularTriangle a) :
     · exact (le_max_right _ _).trans (le_max_right _ _)
   separation := 1 / 10
   separation_pos := by norm_num
-  separation_small := le_rfl
+  separation_small := by norm_num
   separated := by
     intro j k different nonincident x hx y hy
     have endpoints : ∃ b c : Bool, (if b then j + 1 else j) = (if c then k + 1 else k) := by
@@ -314,7 +314,7 @@ def polarSelectorMetric (pole : Fin 2) (longest : Fin (rowSize a 0))
   side_le := fun j => (polarSideEndpoint_length pole j).symm ▸ maximum j
   separation := polarSideCutoff a
   separation_pos := (polarSideCutoff_bounds positive small).1
-  separation_small := (polarSideCutoff_bounds positive small).2.le
+  separation_small := (polarSideCutoff_bounds positive small).2.le.trans (by norm_num)
   separated := by
     intro i j distinct disjoint x hx y hy
     exact polarEndpoint_separated positive small pole distinct disjoint hx hy

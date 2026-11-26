@@ -58,19 +58,19 @@ theorem sine_input_lower {a : ℝ} (positive : 0 < a) (small : a ≤ π / 6) :
 
 /-- The common coefficient of the two Crofton charge bounds. -/
 theorem local_count_prefactor {a s : ℝ} (positive : 0 < a) (small : a ≤ π / 6)
-    (nonnegative : 0 ≤ s) (short : s ≤ 1 / 10) :
+    (nonnegative : 0 ≤ s) (short : s ≤ 0.11) :
     2 / (cos (s / 2) ^ 2 * sin (2 * a)) < 1.215 / a := by
-  have half : s / 2 ≤ 1 / 20 := by linarith only [short]
+  have half : s / 2 ≤ 0.055 := by linarith only [short]
   have sq := pow_le_pow_left₀ (by positivity : 0 ≤ s / 2) half 2
-  have cos_lower : 799 / 800 ≤ cos (s / 2) := by
+  have cos_lower : 0.9984 ≤ cos (s / 2) := by
     linarith only [sq, one_sub_sq_div_two_le_cos (x := s / 2)]
-  have cos_square := pow_le_pow_left₀ (by norm_num : (0 : ℝ) ≤ 799 / 800) cos_lower 2
+  have cos_square := pow_le_pow_left₀ (by norm_num : (0 : ℝ) ≤ 0.9984) cos_lower 2
   have sine := sine_input_lower positive small
   have sine_pos : 0 < sin (2 * a) := (mul_pos (by norm_num) positive).trans sine
-  have cosine_pos : 0 < cos (s / 2) := (by norm_num : (0 : ℝ) < 799 / 800).trans_le cos_lower
+  have cosine_pos : 0 < cos (s / 2) := (by norm_num : (0 : ℝ) < 0.9984).trans_le cos_lower
   apply (div_lt_div_iff₀ (mul_pos (pow_pos cosine_pos 2) sine_pos) positive).mpr
   have combined := mul_lt_mul_of_pos_left sine
-    (show 0 < (799 / 800 : ℝ) ^ 2 by positivity)
+    (show 0 < (0.9984 : ℝ) ^ 2 by positivity)
   have lower := mul_le_mul_of_nonneg_right cos_square sine_pos.le
   nlinarith only [combined, lower, positive]
 
