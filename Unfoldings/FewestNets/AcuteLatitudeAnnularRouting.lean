@@ -48,7 +48,7 @@ variable {Face : Type u} [Fintype Face] {C : TriangleComplex.{u, v} Face}
 /-- Place an actual annular component in the three-exit chart. The resulting
 roof component is on the original faces, with the area and heading bounds
 used for its graft. -/
-theorem exists_acuteLatitude_annular_label_routing {a : ℝ}
+theorem exists_acuteLatitude_annular_label_routing_selected {a : ℝ}
     (positive : 0 < a) (small : a ≤ π / 6)
     (placement : Space ≃ₗᵢ[ℝ] Space) (label : Face → Selector a)
     (chosen : ∀ f, placement (N.normal f) ∈ selectorSphere positive small (label f))
@@ -65,7 +65,7 @@ theorem exists_acuteLatitude_annular_label_routing {a : ℝ}
       let compact := isCompact_latitudeSlopeTriangle left right base apex height
       ∃ (start : normals.UpperFace) (present : region.Nonempty)
         (H : ThreeExitStemWindows) (R : roof.ThreeExitComponentRouting start B compact present H),
-        start.val = seed ∧
+        start.val = seed ∧ roof.normalSlope start ∈ region ∧
         Subtype.val '' roof.selectionComponent region start =
           ((C.labeledSeamGraph label).connectedComponentMk seed).supp ∧
         volume region < ENNReal.ofReal (0.0163 * a) ∧
@@ -99,9 +99,43 @@ theorem exists_acuteLatitude_annular_label_routing {a : ℝ}
   obtain ⟨H, R, root⟩ := roof.exists_acuteLatitudeTriangleRouting start positive small tilt_pos
     le_rfl height_low width_high east west base_pos height_pos radius_bound no_boundary present original
   refine ⟨frame, left, right, base, apex, height, base_pos, height_pos, start,
-    Set.nonempty_of_mem present, H, R, rfl, ?_, ?_, radius_bound, root⟩
+    Set.nonempty_of_mem present, H, R, rfl, present, ?_, ?_, radius_bound, root⟩
   · exact P.upperRoof_selectionComponent_image_eq_labeled_component N label (.inr k)
       frame selected upper start seed_label
   · exact volume_acuteLatitudeAnnular_le positive small base_pos.le height_pos width_high height_high
+
+/-- An annular component has its original three-exit routing and quantitative budgets. -/
+theorem exists_acuteLatitude_annular_label_routing {a : ℝ}
+    (positive : 0 < a) (small : a ≤ π / 6)
+    (placement : Space ≃ₗᵢ[ℝ] Space) (label : Face → Selector a)
+    (chosen : ∀ f, placement (N.normal f) ∈ selectorSphere positive small (label f))
+    (generic : ∀ f (i : ChordFace a) j, (chordBasis positive small i).coord j
+      (placement (N.normal f)) ≠ 0)
+    (angles : ∀ f i, (C.triangle f).cornerAngle i ≤ π / 2 - a)
+    (k : AnnularTriangle a) (seed : Face) (seed_label : label seed = .inr k) :
+    ∃ (frame : Space ≃ₗᵢ[ℝ] Space) (left right base apex height : ℝ)
+      (base_pos : left < right) (height_pos : 0 < height),
+      let normals := N.rotate frame
+      let roof := (P.rotate frame).upperRoof normals
+      let region := latitudeSlopeTriangle left right base apex height
+      let B := latitudeTriangleSideDirections left right base apex height base_pos height_pos
+      let compact := isCompact_latitudeSlopeTriangle left right base apex height
+      ∃ (start : normals.UpperFace) (present : region.Nonempty)
+        (H : ThreeExitStemWindows) (R : roof.ThreeExitComponentRouting start B compact present H),
+        start.val = seed ∧
+        Subtype.val '' roof.selectionComponent region start =
+          ((C.labeledSeamGraph label).connectedComponentMk seed).supp ∧
+        volume region < ENNReal.ofReal (0.0163 * a) ∧
+        (∀ p ∈ region, ‖p‖ ≤ tan (0.568 * radius a)) ∧
+        ∀ r : {r // r ∈ R.stems.choice.parents.roots},
+          let exit := (R.rootHeadingChart r (R.rootExitDirection r)).arg
+          let lo := R.rootWindowStart r
+          max (lo + H.width) exit - min lo exit ≤ π / 2 - 0.170 * a := by
+  obtain ⟨frame, left, right, base, apex, height, base_pos, height_pos,
+    start, present, H, R, seed_eq, _, component, area, radius_bound, root⟩ :=
+    P.exists_acuteLatitude_annular_label_routing_selected N positive small placement label
+      chosen generic angles k seed seed_label
+  exact ⟨frame, left, right, base, apex, height, base_pos, height_pos,
+    start, present, H, R, seed_eq, component, area, radius_bound, root⟩
 
 end Unfoldings.SpatialFolding.ConvexBoundary
