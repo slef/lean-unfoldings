@@ -40,9 +40,9 @@ private theorem sine_min_of_symmetric_interval {x y : ℝ} (low : 0 ≤ x)
     · linarith only [range.2]
 
 /-- The circumference near the first interior row still controls its angular intervals. -/
-theorem interior_sine_bound (positive : 0 < a) (small : a ≤ π / 6) {j : ℕ}
+theorem interior_sine_sharp (positive : 0 < a) (small : a ≤ π / 6) {j : ℕ}
     (lower : 0 < j) (upper : j < stripCount a) :
-    radius a < 1.080 * sin (colatitude a j) := by
+    radius a < 1.0795 * sin (colatitude a j) := by
   let ρ := AcuteLatitudeGrid.polarRadius a
   let r := radius a
   let d := rowStep a
@@ -78,10 +78,18 @@ theorem interior_sine_bound (positive : 0 < a) (small : a ≤ π / 6) {j : ℕ}
   have sine : (1 - (0.506 : ℝ) ^ 2 / 6) * x < sin x := by
     linarith only [sin_gt_sub_cube xp, error]
   have calc_radius :
-      r ≤ 1.080 * ((1 - (0.506 : ℝ) ^ 2 / 6) * x) := by
+      r ≤ 1.0795 * ((1 - (0.506 : ℝ) ^ 2 / 6) * x) := by
     rw [x_eq, ← mul_assoc, ← mul_assoc]
     exact le_mul_of_one_le_left (radius_pos positive).le (by norm_num)
   exact calc_radius.trans_lt (mul_lt_mul_of_pos_left (sine.trans_le lower_sine) (by norm_num))
+
+
+theorem interior_sine_bound (positive : 0 < a) (small : a ≤ π / 6) {j : ℕ}
+    (lower : 0 < j) (upper : j < stripCount a) :
+    radius a < 1.080 * sin (colatitude a j) := by
+  have sine := sin_pos_of_mem_Ioo (colatitude_mem positive small upper.le)
+  exact (interior_sine_sharp positive small lower upper).trans
+    (mul_lt_mul_of_pos_right (by norm_num) sine)
 
 theorem polar_sine_bound (positive : 0 < a) (small : a ≤ π / 6) {j : ℕ}
     (polar : j = 0 ∨ j = stripCount a) :
