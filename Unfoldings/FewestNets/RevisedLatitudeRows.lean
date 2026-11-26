@@ -1,6 +1,6 @@
 module
 
-public import Unfoldings.FewestNets.AcuteLatitudeRows
+public import Unfoldings.FewestNets.AcuteLatitudeMetricRows
 public import Unfoldings.FewestNets.AcutePolarScalars
 
 /-! The taller latitude bands and denser polar rings of the revised grid. -/
@@ -150,5 +150,101 @@ theorem polarSize_bounds (positive : 0 < a) (small : a ≤ π / 6) :
         nlinarith only [h, show 0 < a * π * ρ from by positivity]
       _ ≤ (1.33 * a) * (k : ℝ) := mul_le_mul_of_nonneg_left q_le (by positivity)
   exact ⟨lower, (lt_div_iff₀ positive).mpr upper_count, (div_lt_iff₀ kpos).mpr lower_count⟩
+
+theorem rowStep_pos (positive : 0 < a) (small : a ≤ π / 6) : 0 < rowStep a :=
+  (mul_pos (by norm_num) (radius_pos positive)).trans (rowStep_bounds positive small).1
+
+theorem colatitude_succ (j : ℕ) : colatitude a (j + 1) = colatitude a j + rowStep a := by
+  simp only [colatitude, Nat.cast_add, Nat.cast_one]
+  ring
+
+theorem colatitude_bounds (positive : 0 < a) (small : a ≤ π / 6) {j : ℕ}
+    (valid : j ≤ stripCount a) :
+    colatitude a j ∈ Set.Icc (AcuteLatitudeGrid.polarRadius a)
+      (π - AcuteLatitudeGrid.polarRadius a) := by
+  have monotone : Monotone (colatitude a) := fun x y xy =>
+    add_le_add_right (mul_le_mul_of_nonneg_right (Nat.cast_le.mpr xy)
+      (rowStep_pos positive small).le) _
+  exact ⟨le_add_of_nonneg_right (mul_nonneg (Nat.cast_nonneg j) (rowStep_pos positive small).le),
+    (monotone valid).trans_eq (colatitude_last positive small)⟩
+
+theorem colatitude_mem (positive : 0 < a) (small : a ≤ π / 6) {j : ℕ}
+    (valid : j ≤ stripCount a) : colatitude a j ∈ Set.Ioo 0 π := by
+  obtain ⟨low, high⟩ := colatitude_bounds positive small valid
+  have hp := AcuteLatitudeGrid.polarRadius_pos positive
+  exact ⟨hp.trans_le low, high.trans_lt (by linarith only [hp])⟩
+
+/-- The polar ring's sine is estimated more closely for both the angular mesh
+and the two polar-row contributions to the count. -/
+theorem polar_sin_sharp (positive : 0 < a) (small : a ≤ π / 6) :
+    0.99937 * AcuteLatitudeGrid.polarRadius a < sin (AcuteLatitudeGrid.polarRadius a) := by
+  let ρ := AcuteLatitudeGrid.polarRadius a
+  have rad := AcuteLatitudeGrid.polarRadius_pos positive
+  have rad_lt := AcuteLatitudeGrid.polarRadius_lt small
+  have square : ρ ^ 2 ≤ (0.061 : ℝ) ^ 2 := pow_le_pow_left₀ rad.le rad_lt.le 2
+  have error : ρ ^ 3 / 6 ≤ 0.00063 * ρ := by
+    calc
+      _ = (ρ ^ 2 / 6) * ρ := by ring
+      _ ≤ _ := mul_le_mul_of_nonneg_right (by linarith only [square]) rad.le
+  change 0.99937 * ρ < sin ρ
+  linarith only [sin_gt_sub_cube rad, error]
+
+/-- The unrounded count for a polar row before the ring refinement. -/
+def polarSampling (a : ℝ) : ℝ :=
+  2 * π * sin (AcuteLatitudeGrid.polarRadius a) / spacing a
+
+theorem polarSampling_bounds (positive : 0 < a) (small : a ≤ π / 6) :
+    2.72 < polarSampling a ∧ polarSampling a * a < 1.42725 := by
+  let ρ := AcuteLatitudeGrid.polarRadius a
+  let q := polarSampling a
+  have rad : 0 < ρ := AcuteLatitudeGrid.polarRadius_pos positive
+
+  have qscaled : q * a = 2 * π * sin ρ / (4.4064 * ρ) := by
+    change 2 * π * sin ρ / spacing a * a = _
+    rw [spacing_eq_polar]
+    change 2 * π * sin ρ / (4.4064 * a * ρ) * a = _
+    field_simp [rad.ne', positive.ne']
+  have den : 0 < 4.4064 * ρ := by positivity
+  have qlo : 0.99937 * (2 * π / 4.4064) < q * a := by
+    rw [qscaled]
+    apply (lt_div_iff₀ den).mpr
+    calc
+      _ = (2 * π) * (0.99937 * ρ) := by ring
+      _ < _ := mul_lt_mul_of_pos_left (polar_sin_sharp positive small) (by positivity)
+  have qhi : q * a ≤ 2 * π / 4.4064 := by
+    rw [qscaled]
+    apply (div_le_iff₀ den).mpr
+    calc
+      _ ≤ (2 * π) * ρ := mul_le_mul_of_nonneg_left (sin_le rad.le) (by positivity)
+      _ = _ := by ring
+  constructor
+  · apply (mul_lt_mul_iff_of_pos_right positive).mp
+    calc
+      2.72 * a ≤ (2.72 / 6) * π := by
+        linarith only [small]
+      _ < (0.99937 * (2 / 4.4064)) * π := by
+        exact mul_lt_mul_of_pos_right (by norm_num) pi_pos
+      _ = 0.99937 * (2 * π / 4.4064) := by ring
+      _ < q * a := qlo
+  · apply qhi.trans_lt
+    apply (div_lt_iff₀ (by norm_num)).mpr
+    have pi_upper : π < 3.141593 := pi_lt_d6
+    linarith only [pi_upper]
+
+/-- The polar refinement's ceiling and minimum count share this upper bound. -/
+theorem polarSize_lt_sampling (positive : 0 < a) (small : a ≤ π / 6) :
+    (polarSize a : ℝ) < (5 / 3 : ℝ) * polarSampling a + 1.5 := by
+  have q := (polarSampling_bounds positive small).1
+  unfold polarSize
+  rw [Nat.cast_max, Nat.cast_ofNat]
+  apply max_lt
+  · linarith only [q]
+  · have same : 2 * π * sin (AcuteLatitudeGrid.polarRadius a) / (0.6 * spacing a) =
+      (5 / 3 : ℝ) * polarSampling a := by
+      unfold polarSampling
+      ring
+    rw [same]
+    have nonnegative : 0 ≤ (5 / 3 : ℝ) * polarSampling a := by linarith only [q]
+    linarith only [Nat.ceil_lt_add_one nonnegative]
 
 end Unfoldings.FewestNets.RevisedLatitudeGrid
