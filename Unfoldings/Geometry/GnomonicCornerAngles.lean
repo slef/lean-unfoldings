@@ -3,6 +3,7 @@ module
 public import Unfoldings.Geometry.HalfAngleDistortion
 public import Unfoldings.Geometry.MinorArcArclength
 public import Unfoldings.Cap.Gnomonic
+public import Unfoldings.Cap.SharpAngleProjection
 
 /-! Great-circle tangents are orthogonal projections of the lifted chart directions. -/
 
@@ -209,5 +210,109 @@ theorem sin_gnomonic_corner_ge (p q r : Plane) (qp : q ≠ p) (rp : r ≠ p) :
     (mul_le_mul (pow_le_pow_left₀ (norm_nonneg _) sx 2)
       (pow_le_pow_left₀ (norm_nonneg _) sy 2) (by positivity) (by positivity))
     (sq_nonneg _)
+
+
+private theorem tangentProjection_aligned_formula (n : Space) (z : Plane)
+    (up : 0 < n 2) :
+    alignedHorizontal n (tangentProjection n (horizontalLift z)) =
+      z - (inner ℝ (horizontal n) z / (1 + n 2)) • horizontal n := by
+  let t := inner ℝ (horizontal n) z
+  have h : horizontal (horizontalLift z) = z := by
+    ext i
+    fin_cases i <;> rfl
+  have hz : horizontalLift z 2 = 0 := rfl
+  have scalar : inner ℝ n (horizontalLift z) = t := by
+    rw [horizontal_inner, h, hz, mul_zero, add_zero]
+  rw [tangentProjection_apply, scalar]
+  ext i
+  change (horizontalLift z i.castSucc - t * n i.castSucc) -
+    ((0 - t * n 2) / (1 + n 2)) * n i.castSucc =
+      z i - (t / (1 + n 2)) * n i.castSucc
+  have coord : horizontalLift z i.castSucc = z i := by fin_cases i <;> rfl
+  rw [coord]
+  field_simp [show 1 + n 2 ≠ 0 by positivity]
+  ring
+
+private theorem tangentProjection_tangent (n z : Space) (unit : ‖n‖ = 1) :
+    inner ℝ n (tangentProjection n z) = 0 := by
+  rw [tangentProjection_apply, inner_sub_right, real_inner_smul_right,
+    real_inner_self_eq_norm_sq, unit, one_pow, mul_one, sub_self]
+
+private theorem tangentProjection_direction_error (n : Space) (unit : ‖n‖ = 1)
+    (up : 0 < n 2) {z : Plane} (nz : z ≠ 0) :
+    angle z (alignedHorizontal n (tangentProjection n (horizontalLift z))) ≤
+      arcsin ((1 - n 2) / (1 + n 2)) := by
+  let u := tangentProjection n (horizontalLift z)
+  let y := alignedHorizontal n u
+  let c := n 2
+  let t := inner ℝ (horizontal n) z
+  have touch : inner ℝ n u = 0 := tangentProjection_tangent n _ unit
+  have yu : ‖y‖ = ‖u‖ := alignedHorizontal_norm unit up touch
+  have un : u ≠ 0 := by
+    have h := (norm_tangentProjection_horizontal n unit up.le z).1
+    change c * ‖z‖ ≤ ‖u‖ at h
+    exact norm_pos_iff.mp ((mul_pos up (norm_pos_iff.mpr nz)).trans_le h)
+  have yn : y ≠ 0 := norm_pos_iff.mp (yu.symm ▸ norm_pos_iff.mpr un)
+  have square : c ^ 2 + ‖horizontal n‖ ^ 2 = 1 := by
+    rw [add_comm, ← horizontal_norm_sq, unit, one_pow]
+  have cm : c ≤ 1 := by nlinarith only [square, sq_nonneg ‖horizontal n‖]
+  have norm_eq : ‖y‖ ^ 2 = ‖z‖ ^ 2 - t ^ 2 := by
+    rw [yu, ← real_inner_self_eq_norm_sq u]
+    change inner ℝ (tangentProjection n (horizontalLift z)) (tangentProjection n (horizontalLift z)) = _
+    rw [tangentProjection_inner_horizontal n unit, real_inner_self_eq_norm_sq]
+    dsimp only [t]
+    ring
+  have inner_eq : inner ℝ z y = ‖z‖ ^ 2 - t ^ 2 / (1 + c) := by
+    unfold y u
+    rw [tangentProjection_aligned_formula n z up, inner_sub_right, real_inner_smul_right,
+      real_inner_self_eq_norm_sq]
+    have dot : inner ℝ z (horizontal n) = t := real_inner_comm _ _
+    rw [dot]
+    dsimp only [c]
+    ring
+  apply angle_le_arcsin_of_contraction_identity nz yn up cm
+  rw [norm_eq, inner_eq]
+  field_simp [show 1 + c ≠ 0 by dsimp only [c]; positivity]
+  ring
+
+/-- The ordinary angle of the inverse-gnomonic tangent pair differs from the
+planar angle by at most the sharp two-direction distortion at its vertex. -/
+theorem abs_gnomonic_corner_angle_sub_le (p q r : Plane) (qp : q ≠ p) (rp : r ≠ p)
+    {c : ℝ} (positive : 0 < c) (bound : c ≤ gnomonicNormal p 2) :
+    |angle (minorArcTangent (gnomonicNormal p) (gnomonicNormal q))
+        (minorArcTangent (gnomonicNormal p) (gnomonicNormal r)) -
+      angle (q - p) (r - p)| ≤ 2 * arcsin ((1 - c) / (1 + c)) := by
+  let n := gnomonicNormal p
+  let u := tangentProjection n (horizontalLift (q - p))
+  let v := tangentProjection n (horizontalLift (r - p))
+  let x := alignedHorizontal n u
+  let y := alignedHorizontal n v
+  have unit : ‖n‖ = 1 := gnomonicNormal_unit p
+  have up : 0 < n 2 := gnomonicNormal_upward p
+  have tu : inner ℝ n u = 0 := tangentProjection_tangent n _ unit
+  have tv : inner ℝ n v = 0 := tangentProjection_tangent n _ unit
+  obtain ⟨α, ap, eq₀⟩ := minorArcTangent_gnomonic p q qp.symm
+  obtain ⟨β, bp, eq₁⟩ := minorArcTangent_gnomonic p r rp.symm
+  rw [eq₀, eq₁, angle_smul_left_of_pos _ _ ap, angle_smul_right_of_pos _ _ bp]
+  change |angle u v - angle (q - p) (r - p)| ≤ _
+  have aligned : angle x y = angle u v := by
+    rw [angle, angle, alignedHorizontal_inner unit up tu tv, alignedHorizontal_norm unit up tu,
+      alignedHorizontal_norm unit up tv]
+  rw [← aligned]
+  have coefficient : (1 - n 2) / (1 + n 2) ≤ (1 - c) / (1 + c) :=
+    (div_le_div_iff₀ (by positivity) (by positivity)).mpr (by nlinarith only [bound])
+  have ex := (tangentProjection_direction_error n unit up (sub_ne_zero.mpr qp)).trans
+    (arcsin_le_arcsin coefficient)
+  have ey := (tangentProjection_direction_error n unit up (sub_ne_zero.mpr rp)).trans
+    (arcsin_le_arcsin coefficient)
+  change angle (q - p) x ≤ _ at ex
+  change angle (r - p) y ≤ _ at ey
+  have lt₁ := angle_le_angle_add_angle x (q - p) y
+  have lt₂ := angle_le_angle_add_angle (q - p) (r - p) y
+  have gt₁ := angle_le_angle_add_angle (q - p) x (r - p)
+  have gt₂ := angle_le_angle_add_angle x y (r - p)
+  rw [angle_comm x (q - p)] at lt₁
+  rw [angle_comm y (r - p)] at gt₂
+  exact abs_le.mpr ⟨by linarith only [gt₁, gt₂, ex, ey], by linarith only [lt₁, lt₂, ex, ey]⟩
 
 end Unfoldings.Cap

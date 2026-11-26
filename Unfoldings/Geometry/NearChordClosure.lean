@@ -34,31 +34,23 @@ variable {n : ℕ} (P : PolygonalChain Plane n)
 local notation "a" => P.vertex 0
 local notation "b" => P.vertex (Fin.last n)
 
-/-- Choose a bend arbitrarily close to the chord midpoint, within an open
-region containing it. Both closing links make strict horizontal progress,
-avoid the prescribed marked points, and have only finitely many bank contacts. -/
-theorem exists_regular_nearChord_apex (x : Plane →L[ℝ] ℝ) (ordered : x a < x b)
+/-- A regular two-link connector can be chosen in any open region with
+a point strictly between the two horizontal endpoint levels. -/
+theorem exists_regular_nearChord_apex_of_ordered (x : Plane →L[ℝ] ℝ)
     {I J : Type*} [Finite I] [Finite J] (point : I → Plane) (edge : J → Plane →ᵃ[ℝ] ℝ)
     (proper : ∀ j, edge j ≠ 0) (first : ∀ i, a ≠ point i) (last : ∀ i, b ≠ point i)
-    {U : Set Plane} (opens : IsOpen U) (center : midpoint ℝ a b ∈ U)
-    {ε : ℝ} (positive : 0 < ε) :
-    ∃ c ∈ U ∩ Metric.ball (midpoint ℝ a b) ε,
+    {U : Set Plane} (opens : IsOpen U) (center : ∃ q ∈ U, x a < x q ∧ x q < x b) :
+    ∃ c ∈ U,
       x a < x c ∧ x c < x b ∧
       (∀ j, edge j c ≠ 0) ∧
       (∀ (j : Fin 2) (t : ℝ) i,
         AffineMap.lineMap (P.twoClosingLinks c j).1 (P.twoClosingLinks c j).2 t ≠ point i) ∧
       (Set.range P.path ∩ (segment ℝ b c ∪ segment ℝ c a)).Finite := by
-  let p := midpoint ℝ a b
-  let region := U ∩ Metric.ball p ε ∩ {c | x a < x c ∧ x c < x b}
+  let region := U ∩ {q | x a < x q ∧ x q < x b}
   have open_region : IsOpen region :=
-    (opens.inter Metric.isOpen_ball).inter
-      ((isOpen_lt continuous_const x.continuous).inter (isOpen_lt x.continuous continuous_const))
-  have x_p : x p + x p = x a + x b := by
-    have eq := congrArg x (midpoint_add_self (R := ℝ) a b)
-    simpa only [map_add] using eq
-  have in_region : p ∈ region := ⟨⟨center, Metric.mem_ball_self positive⟩,
-    by linarith only [ordered, x_p],
-    by linarith only [ordered, x_p]⟩
+    opens.inter ((isOpen_lt continuous_const x.continuous).inter (isOpen_lt x.continuous continuous_const))
+  obtain ⟨p, hU, hl, hr⟩ := center
+  have in_region : p ∈ region := ⟨hU, hl, hr⟩
   let cuts (i : Fin n) := segmentEquation (P.vertex i.castSucc) (P.vertex i.succ)
   let equations := Sum.elim edge cuts
   have nonzero : ∀ k, equations k ≠ 0 :=
@@ -78,6 +70,29 @@ theorem exists_regular_nearChord_apex (x : Plane →L[ℝ] ℝ) (ordered : x a <
       exact Or.inr (Set.mem_iUnion.mpr ⟨i, on_link, segmentEquation_eq_zero member⟩)
   rw [Set.inter_union_distrib_left, segment_symm ℝ c a]
   exact (finite_link b).union (finite_link a)
+
+/-- Choose a bend arbitrarily close to the chord midpoint, within an open
+region containing it. Both closing links make strict horizontal progress,
+avoid the prescribed marked points, and have only finitely many bank contacts. -/
+theorem exists_regular_nearChord_apex (x : Plane →L[ℝ] ℝ) (ordered : x a < x b)
+    {I J : Type*} [Finite I] [Finite J] (point : I → Plane) (edge : J → Plane →ᵃ[ℝ] ℝ)
+    (proper : ∀ j, edge j ≠ 0) (first : ∀ i, a ≠ point i) (last : ∀ i, b ≠ point i)
+    {U : Set Plane} (opens : IsOpen U) (center : midpoint ℝ a b ∈ U)
+    {ε : ℝ} (positive : 0 < ε) :
+    ∃ c ∈ U ∩ Metric.ball (midpoint ℝ a b) ε,
+      x a < x c ∧ x c < x b ∧
+      (∀ j, edge j c ≠ 0) ∧
+      (∀ (j : Fin 2) (t : ℝ) i,
+        AffineMap.lineMap (P.twoClosingLinks c j).1 (P.twoClosingLinks c j).2 t ≠ point i) ∧
+      (Set.range P.path ∩ (segment ℝ b c ∪ segment ℝ c a)).Finite := by
+  apply P.exists_regular_nearChord_apex_of_ordered x point edge proper first last
+    (opens.inter Metric.isOpen_ball)
+  let p := midpoint ℝ a b
+  have x_p : x p + x p = x a + x b := by
+    have eq := congrArg x (midpoint_add_self (R := ℝ) a b)
+    simpa only [map_add] using eq
+  exact ⟨p, ⟨center, Metric.mem_ball_self positive⟩,
+    by linarith only [ordered, x_p], by linarith only [ordered, x_p]⟩
 
 end PolygonalChain
 
