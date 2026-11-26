@@ -40,10 +40,10 @@ private theorem slope_eq_initial_final_of_unique_change {n : ℕ} (f : Fin (n + 
     intro j hj
     exact (suffix j hj).trans (suffix (Fin.last n) i.isLt).symm
 
-/-- If the real selected fan has only one or two slopes, a transverse straight
-contact is either flat or has one genuine crease, even after subdivision. -/
-theorem abs_straight_link_turn_le_sin_tilt {φ : ℝ}
-    (nonnegative : 0 ≤ φ) (small : φ < π / 2) (tilt : K.TiltBound φ)
+/-- A straight regular fan is flat or has one actual transverse hinge.
+Its signed discrepancy is the difference of the two ordinary spatial angles
+to the same crease ray in the selected fan. -/
+theorem straight_link_turn_eq_hinge_difference
     {w : C.Vertex Set.univ} {n : ℕ} (c : (C.linkSystem Set.univ w).Chain n)
     (d a b : Plane)
     (slopes : ∀ i, K.normalSlope (c.point i).val.1.1 = a ∨
@@ -54,9 +54,15 @@ theorem abs_straight_link_turn_le_sin_tilt {φ : ℝ}
     (last : K.projectedIntervalRay c (Fin.last (n + 1)) = u • (-d))
     (projected : (∑ i : Fin (n + 1), (K.projectedTriangle (c.point i).val.1.1).cornerAngle
       (c.point i).val.1.2) = π) :
-    |π - ∑ i : Fin (n + 1),
-      (C.triangle (c.point i).val.1.1).cornerAngle (c.point i).val.1.2| ≤
-      sin φ * angle (K.sectionDirection c.first.val.1.1 d) (K.sectionDirection c.last.val.1.1 d) := by
+    let l := c.first.val.1.1
+    let r := c.last.val.1.1
+    let turn := π - ∑ j : Fin (n + 1),
+      (C.triangle (c.point j).val.1.1).cornerAngle (c.point j).val.1.2
+    (K.normalSlope l = K.normalSlope r ∧ turn = 0) ∨
+      ∃ i : Fin n, let join := K.projectedIntervalRay c i.castSucc.succ
+        inner ℝ (K.normalSlope l - K.normalSlope r) join = 0 ∧ orient 0 join d ≠ 0 ∧
+          turn = angle (K.sectionDirection l join) (K.sectionDirection r d) -
+            angle (K.sectionDirection l join) (K.sectionDirection l d) := by
   let f (i : Fin (n + 1)) := K.normalSlope (c.point i).val.1.1
   let l := c.first.val.1.1
   let r := c.last.val.1.1
@@ -161,17 +167,13 @@ theorem abs_straight_link_turn_le_sin_tilt {φ : ℝ}
       rw [inner_sub_left, sub_eq_zero] at tie
       simp only [sectionDirection, tie]
     have total := c.sum_initial_suffix i intrinsic
-    change |π - ∑ j, intrinsic (c.point j)| ≤
-      sin φ * angle (K.sectionDirection l d) (K.sectionDirection r d)
+    refine Or.inr ⟨i, tie, cross, ?_⟩
+    change π - (∑ j, intrinsic (c.point j)) =
+      angle (K.sectionDirection l join) (K.sectionDirection r d) -
+        angle (K.sectionDirection l join) (K.sectionDirection l d)
     rw [total, left_angles, right_angles, L_first, L_last, R_first, R_last,
       scale, scale, neg, ← shared, angle_smul_left_of_pos _ _ ht,
       angle_smul_right_of_pos _ _ hu, angle_neg_right, angle_comm (K.sectionDirection l d)]
-    have sharp := K.abs_sectionDirection_common_angle_sub_le_sin_tilt
-      nonnegative small tilt l r join d shared cross
-    dsimp only at sharp
-    convert sharp using 1
-    rw [abs_sub_comm]
-    congr 1
     ring
   · have constant (j : Fin (n + 1)) : f j = f 0 := by
       refine Fin.induction rfl (fun i prev => ?_) j
@@ -181,10 +183,42 @@ theorem abs_straight_link_turn_le_sin_tilt {φ : ℝ}
       exact same.symm.trans prev
     have angles := K.sum_flat_link_corner_angles c l constant
       (K.projectedInterval_halfplane_of_sum_le_pi c projected.le)
+    refine Or.inl ⟨(constant (Fin.last n)).symm, ?_⟩
     rw [angles, first, last, scale, scale, neg, angle_smul_left_of_pos _ _ ht,
       angle_smul_right_of_pos _ _ hu, angle_neg_right,
-      angle_self (K.sectionDirection_ne_zero l genuine), sub_zero, sub_self, abs_zero]
+      angle_self (K.sectionDirection_ne_zero l genuine), sub_zero, sub_self]
+
+/-- If the real selected fan has only one or two slopes, a transverse straight
+contact is either flat or has one genuine crease, even after subdivision. -/
+theorem abs_straight_link_turn_le_sin_tilt {φ : ℝ}
+    (nonnegative : 0 ≤ φ) (small : φ < π / 2) (tilt : K.TiltBound φ)
+    {w : C.Vertex Set.univ} {n : ℕ} (c : (C.linkSystem Set.univ w).Chain n)
+    (d a b : Plane)
+    (slopes : ∀ i, K.normalSlope (c.point i).val.1.1 = a ∨
+      K.normalSlope (c.point i).val.1.1 = b)
+    (transverse : a = b ∨ inner ℝ (a - b) d ≠ 0)
+    {t u : ℝ} (ht : 0 < t) (hu : 0 < u)
+    (first : K.projectedIntervalRay c 0 = t • d)
+    (last : K.projectedIntervalRay c (Fin.last (n + 1)) = u • (-d))
+    (projected : (∑ i : Fin (n + 1), (K.projectedTriangle (c.point i).val.1.1).cornerAngle
+      (c.point i).val.1.2) = π) :
+    |π - ∑ i : Fin (n + 1),
+      (C.triangle (c.point i).val.1.1).cornerAngle (c.point i).val.1.2| ≤
+      sin φ * angle (K.sectionDirection c.first.val.1.1 d) (K.sectionDirection c.last.val.1.1 d) := by
+  rcases K.straight_link_turn_eq_hinge_difference c d a b slopes transverse ht hu
+      first last projected with flat | ⟨i, tie, cross, equal⟩
+  · rw [flat.2, abs_zero]
     exact mul_nonneg (sin_nonneg_of_nonneg_of_le_pi nonnegative (by linarith only [small, pi_pos]))
       (angle_nonneg _ _)
+  · let join := K.projectedIntervalRay c i.castSucc.succ
+    have shared : K.sectionDirection c.first.val.1.1 join = K.sectionDirection c.last.val.1.1 join := by
+      change inner ℝ (K.normalSlope c.first.val.1.1 - K.normalSlope c.last.val.1.1) join = 0 at tie
+      rw [inner_sub_left, sub_eq_zero] at tie
+      simp only [sectionDirection, tie]
+    have sharp := K.abs_sectionDirection_common_angle_sub_le_sin_tilt
+      nonnegative small tilt c.first.val.1.1 c.last.val.1.1 join d shared cross
+    dsimp only at equal sharp
+    rw [equal, abs_sub_comm]
+    exact sharp
 
 end Unfoldings.ConvexRoof
