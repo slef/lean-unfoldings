@@ -140,7 +140,7 @@ private theorem edist_source_path_tail (e : Event) (s t : ℝ≥0) :
     ENNReal.ofReal_mul (abs_nonneg _), mul_comm, ofReal_norm, enorm_eq_nnnorm]
   rfl
 
-private theorem gap_direction_eq_last (e : Event) (side : Bool) :
+theorem contourGraftGap_direction_eq_last (e : Event) (side : Bool) :
     (Model[e].bank side).direction = (Model[e].bank side).chain.edge (Fin.last (Length[e])) := by
   cases side
   · rfl
@@ -176,7 +176,7 @@ theorem edist_contourGapMark_eq_spatial (a : Attachment) (e : Event)
         (R.contourSourceGapCollapse level M S.higher S.contour S.starts e (S.gaps e)
           (Model[e].tailPoint (!side) t)).val
     rw [R.contourSourceGapCollapse_tailPoint, R.contourSourceGapCollapse_tailPoint,
-      Model[e].edist_tailPoint, edist_source_path_tail S, gap_direction_eq_last S]
+      Model[e].edist_tailPoint, edist_source_path_tail S, contourGraftGap_direction_eq_last S]
     have speed : ‖(Model[e].bank (!side)).chain.edge (Fin.last (Length[e]))‖₊ = ‖(Path[e]).direction‖₊ :=
       Subtype.ext (norm_gap_chain_edge_eq_spatial S e (Fin.last (Length[e])) (!side))
     rw [speed]
@@ -225,7 +225,7 @@ theorem isClosedEmbedding_contourGapMark (a : Attachment) (e : Event)
   | inl v => exact Model[e].edgePoint_isClosedEmbedding (!side) _ (edge_ne _)
   | inr edge =>
     apply Model[e].tailPoint_isClosedEmbedding
-    rw [gap_direction_eq_last S]
+    rw [contourGraftGap_direction_eq_last S]
     exact edge_ne _
 
 end Unfoldings.ConvexRoof.ThreeExitComponentRouting.FloorWindowModel

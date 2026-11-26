@@ -3005,6 +3005,7 @@ public import Unfoldings.FewestNets.ThreeExitGraftTailSeamCharts
 public import Unfoldings.FewestNets.ThreeExitGraftTerminalAddresses
 public import Unfoldings.FewestNets.ThreeExitGraftTerminalJoinClasses
 public import Unfoldings.FewestNets.ThreeExitGraftTerminalFiber
+public import Unfoldings.FewestNets.ThreeExitGraftJoinBall
 public import Unfoldings.Roof.ActiveClosingVariation
 public import Unfoldings.Roof.GraphLensFaceAngles
 public import Unfoldings.Roof.GraphRegionBalance

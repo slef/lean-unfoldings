@@ -1,7 +1,7 @@
 module
 
 public import Unfoldings.FewestNets.ThreeExitTerminalMarks
-public import Unfoldings.Metric.ForwardBankParameter
+public import Unfoldings.Metric.AffineJoinedBank
 
 /-! Whole contour continuations keep the exact terminal join and spatial affine parameter. -/
 
@@ -69,6 +69,13 @@ structure ContourTerminalContinuation
     ∃ ε, Nonempty (BankHalfPlaneChart (mark side) t occupied
       (fun s : ℝ≥0 => (s.val - t.val) * (Dilation.ratio (mark side)).val) ε)
 
+  joined_chart (side occupied : Bool) :
+    let bank := joinedBank (MarkAt[higher,contour,starts,edge] side) (mark side)
+    let zero : BankJoinTime := ⟨0, by norm_num⟩
+    ∃ speed > 0, (∀ s, edist (bank zero) (bank s) = ENNReal.ofReal (|s.val| * speed)) ∧
+      ∃ r, Nonempty (BankHalfPlaneChart bank zero occupied (fun s => s.val * speed) r)
+
+
 set_option maxHeartbeats 1400000 in
 -- Both affinely parameterized tracks refer to the exact whole banks.
 theorem exists_contourTerminalContinuation
@@ -102,7 +109,7 @@ theorem exists_contourTerminalContinuation
     Subtype.ext (by simp [nonnegativeIntervalLineMap])
   have at_one : nonnegativeIntervalLineMap first τ nonnegative before.le 1 = start :=
     Subtype.ext (by simp [nonnegativeIntervalLineMap, start])
-  refine ⟨⟨mark, ?_, ?_, ?_, ?_, ?_, ?_⟩⟩
+  refine ⟨⟨mark, ?_, ?_, ?_, ?_, ?_, ?_, ?_⟩⟩
   · intro side
     have h := agrees side 1
     rw [at_one] at h
@@ -148,6 +155,26 @@ theorem exists_contourTerminalContinuation
     change ((τ + (τ - first) * s.val) - (τ + (τ - first) * t.val)) * ‖R.physicalRayDirection r‖ =
       (s.val - t.val) * (‖R.physicalRayDirection r‖ * (τ - first))
     ring
+
+  · intro side occupied
+    let track := bank (label side)
+    let speed : ℝ≥0 := ‖R.physicalRayDirection r‖₊
+    let join := joinedBank (MarkAt[higher,contour,starts,edge] side) (mark side)
+    let zero : BankJoinTime := ⟨0, by norm_num⟩
+    have follows (s : BankJoinTime) : join s = track (affineJoinTime first τ nonnegative before.le s) := by
+      change joinedBank (MarkAt[higher,contour,starts,edge] side) (normalized side) s = _
+      rw [show MarkAt[higher,contour,starts,edge] side = _ from funext (agrees side)]
+      exact joinedBank_eq_affineJoinTime track first τ nonnegative before.le s
+    have speed_pos : 0 < speed.val := norm_pos_iff.mpr (R.physicalRayDirection_ne_zero r)
+    refine ⟨(τ - first) * speed.val, mul_pos (sub_pos.mpr before) speed_pos, ?_, ?_⟩
+    · intro s
+      change edist (join zero) (join s) = _
+      rw [follows zero, follows s]
+      exact edist_affineJoinTime track first τ nonnegative before.le speed (metric (label side)) s
+    · obtain ⟨ε, ⟨chart⟩⟩ := charts (label side) occupied start τ_pos
+      refine ⟨ε, ?_⟩
+      exact exists_affineJoinedBank_chart nonnegative before.le (agrees side) (fun _ => rfl)
+        speed occupied ε chart
 
 /-- The full original tail data, chosen with its proved finite join. -/
 def contourTerminalContinuation

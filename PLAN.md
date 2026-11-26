@@ -1255,6 +1255,7 @@ statement will produce an original-edge `HasNetPartition`.
   a centered planar chart.
 - [x] Recover both literal parameter names at each affine-floor join and prove its full
   collapse fiber contractible.
+- [x] Glue the signed roof and gap banks through the exit joins in the full graft.
 - [ ] Prove the remaining seam and junction charts and fibers, then recover original-edge nets.
 - [x] Bound the residual perimeter of each actual Gaussian cell with the full capped
   sine. Choose two genuine marks at extreme vertices and cover all changes at

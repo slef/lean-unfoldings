@@ -271,4 +271,40 @@ theorem contourPhysicalAddress_eq_positiveTail (e : Exit) (t : ℝ≥0) (positiv
     subst s
     rfl
 
+/-- At a vertex below the level, all physical marks are either ends of incoming
+fine edges or the start of the outgoing fine edge. -/
+theorem contourPhysicalAddress_at_vertex
+    (v : TriangleComplex.Vertex D Set.univ) (below : (G).height (vertex v) < level)
+    (a : Attachment) (s : Param a) (equal : Phys a s = vertex v) :
+    ∃ e : Child, ((⟨a, s⟩ : Σ b : Attachment, Param b) = ⟨.inl e, 0⟩ ∧ e.val = v) ∨
+      ((⟨a, s⟩ : Σ b : Attachment, Param b) = ⟨.inl e, 1⟩ ∧ parent e.val = v) := by
+  cases a with
+  | inr r =>
+    obtain ⟨rate, positive, heights⟩ := L.exists_contourPhysicalAddress_tail_height S r
+    have above : level ≤ (G).height (Phys (.inr r) s) := by
+      rw [heights]
+      exact le_add_of_nonneg_right (mul_nonneg positive.le s.property)
+    rw [equal] at above
+    exact (not_lt_of_ge above below).elim
+  | inl e =>
+    have at_edge := L.contourPhysicalAddress_finite S e s
+    by_cases h₀ : s.val = 0
+    · have endpoint := (congrArg (AffineMap.lineMap (vertex e.val)
+        (vertex (parent e.val))) h₀).trans (AffineMap.lineMap_apply_zero ..)
+      have same := (Q).projectedVertex_injective (endpoint.symm.trans (at_edge.symm.trans equal))
+      exact ⟨e, Or.inl ⟨congrArg (fun u : unitInterval => (⟨.inl e, u⟩ : Σ b, Param b))
+        (Subtype.ext h₀), same⟩⟩
+    by_cases h₁ : s.val = 1
+    · have endpoint := (congrArg (AffineMap.lineMap (vertex e.val)
+        (vertex (parent e.val))) h₁).trans (AffineMap.lineMap_apply_one ..)
+      have same := (Q).projectedVertex_injective (endpoint.symm.trans (at_edge.symm.trans equal))
+      exact ⟨e, Or.inr ⟨congrArg (fun u : unitInterval => (⟨.inl e, u⟩ : Σ b, Param b))
+        (Subtype.ext h₁), same⟩⟩
+    have impossible : vertex v ∈ openSegment ℝ (vertex e.val)
+        (vertex (parent e.val)) := by
+      rw [openSegment_eq_image_lineMap]
+      exact ⟨s.val, ⟨lt_of_le_of_ne s.property.1 (Ne.symm h₀), lt_of_le_of_ne s.property.2 h₁⟩,
+        at_edge.symm.trans equal⟩
+    exact ((Q).seamEmbedding_straight.openSegment_avoids_vertices ((Selection).link e) impossible).elim
+
 end Unfoldings.ConvexRoof.ThreeExitComponentRouting.FloorWindowModel
