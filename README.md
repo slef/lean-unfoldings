@@ -96,10 +96,10 @@ For development priorities, use the [feature checklist](PLAN.md); the
 ## Fewest Nets
 
 If every triangle angle is at most `π/2 − α` with `0 < α ≤ π/6`, Lean proves
-a partition into fewer than `1440 / α^4` original-edge nets. Each input triangle
-belongs to exactly one piece. See
-[`exists_acute_netPartition_lt_1440`](Unfoldings/FewestNets/AcuteLatitudeNetPartition.lean).
-The revised manuscript's coefficient `296` is tracked in the [checklist](PLAN.md#general-acute-angle-bound).
+a partition into fewer than `296 / α^4` nonoverlapping original-edge nets.
+Each input triangle belongs to exactly one piece. See
+[`exists_acute_netPartition_lt_296`](Unfoldings/FewestNets/RevisedLatitudeNetPartition.lean).
+The tighter count in the current manuscript is tracked in the [checklist](PLAN.md#general-acute-angle-bound).
 
 The finite-certificate theorems give the following specialized bounds.
 

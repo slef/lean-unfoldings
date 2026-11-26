@@ -1206,15 +1206,17 @@ The Fewest Nets application lives in `Unfoldings/FewestNets`.
 
 ### General acute-angle bound
 
-Lean proves an original-edge `HasNetPartition` with fewer than `1440 / α^4` parts
-for a conforming acute triangle mesh on a convex polyhedron and `0 < α ≤ π/6`.
-The revised manuscript strengthens the coefficient to `296`.
+Lean proves [an original-edge partition](Unfoldings/FewestNets/RevisedLatitudeNetPartition.lean)
+with fewer than `296 / α^4` parts for a conforming acute triangle mesh on a convex
+polyhedron and `0 < α ≤ π/6`. The current manuscript tightens the count to
+`246.3 / α^4`.
 
-- [x] Derive the revised row count and its apex-weighted and base-weighted estimates.
-- [x] Compute the exact gnomonic solid-angle density and integrate transport along a single hinge.
-- [ ] Bound signed transport across the actual closing graph and cancel it against vertex curvature.
-- [ ] Instantiate and verify the revised selector geometry and routing margins.
-- [ ] Check the revised local crossing bounds, choose a placement, and assemble the `296` theorem.
+- [x] Bound signed normal transport along the actual closing graph and cancel it against vertex curvature.
+- [x] Instantiate the revised selector geometry and routing margins.
+- [x] Check the local crossing bounds and assemble the `296` theorem.
+- [ ] Verify the joint base-corner and sharper apex charges for `α ≤ 0.31`.
+- [ ] Check the interval count on `[0.31, π/6]` against the exact formal sweep.
+- [ ] Use both counting ranges to prove the `246.3` partition bound.
 
 The following steps establish the `1440` theorem.
 
