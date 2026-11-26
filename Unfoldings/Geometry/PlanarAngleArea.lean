@@ -23,6 +23,13 @@ theorem abs_orient_eq_sin_angle_mul_norm (x y : Plane) :
     real_inner_self_eq_norm_sq, ← pow_two, ← orient_sq_eq_gram,
     Real.sqrt_sq_eq_abs]
 
+/-- Orthogonal changes of planar coordinates preserve unsigned area. -/
+theorem abs_orient_linearIsometryEquiv (E : Plane ≃ₗᵢ[ℝ] Plane) (x y : Plane) :
+    |orient 0 (E x) (E y)| = |orient 0 x y| := by
+  have equal : orient 0 (E x) (E y) ^ 2 = orient 0 x y ^ 2 := by
+    rw [orient_sq_eq_gram, orient_sq_eq_gram, E.norm_map, E.norm_map, E.inner_map_map]
+  simpa only [Real.sqrt_sq_eq_abs] using congrArg Real.sqrt equal
+
 /-- Signed area never exceeds the product of the actual vector lengths. -/
 theorem abs_orient_le_norm_mul (x y : Plane) : |orient 0 x y| ≤ ‖x‖ * ‖y‖ := by
   rw [abs_orient_eq_sin_angle_mul_norm]

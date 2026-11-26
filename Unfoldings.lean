@@ -3023,6 +3023,11 @@ public import Unfoldings.FewestNets.AcuteLatitudeSourceContour
 public import Unfoldings.FewestNets.AcuteLatitudeNetPartition
 public import Unfoldings.FewestNets.RevisedLatitudeCountArithmetic
 public import Unfoldings.FewestNets.RevisedLatitudeCountBounds
+public import Unfoldings.FewestNets.RevisedLatitudePlacement
+public import Unfoldings.FewestNets.RevisedLatitudeSelectedRoofs
+public import Unfoldings.FewestNets.RevisedLatitudeSelectedRouting
+public import Unfoldings.FewestNets.ThreeExitSavedBankCone
+public import Unfoldings.Roof.SupportedNormalTrace
 public import Unfoldings.Cap.GnomonicAreaDensity
 public import Unfoldings.Geometry.GnomonicHingeTransport
 public import Unfoldings.Roof.NormalAreaCancellation

@@ -123,7 +123,7 @@ section FanAngles
 
 variable {w : C.Vertex Set.univ} {n : ℕ} (c : (C.linkSystem Set.univ w).Chain n)
 
-private theorem planar_arc_cones_disjoint :
+theorem planar_arc_cones_disjoint :
     Pairwise (fun i j : Fin (n + 1) => Disjoint
       (strictRayCone (K.projectedIntervalRay c i.castSucc) (K.projectedIntervalRay c i.succ))
       (strictRayCone (K.projectedIntervalRay c j.castSucc) (K.projectedIntervalRay c j.succ))) := by

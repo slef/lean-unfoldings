@@ -36,6 +36,12 @@ theorem directionFrame_apply (direction : Plane) :
   rw [directionFrame_apply]
   simp [EuclideanSpace.single]
 
+/-- The horizontal coordinate in a direction frame is the normalized
+inner product with its defining vector. -/
+theorem directionFrame_coord (d z : Plane) : ‖d‖ * directionFrame d z 0 = inner ℝ d z := by
+  rw [← (directionFrame d).inner_map_map, directionFrame_apply, EuclideanSpace.inner_single_left]
+  rfl
+
 /-- A section's horizontal coordinate is its real parameter times its actual length. -/
 theorem directionFrame_lineMap_horizontal (p q : Plane) (t : ℝ) :
     directionFrame (q - p) (AffineMap.lineMap p q t - p) 0 = t * ‖q - p‖ := by

@@ -179,8 +179,8 @@ section Restricted
 
 open Classical in
 /-- The literal restricted corner reads the same rays and angle difference
-as its included interval in the full roof link. -/
-theorem exists_restricted_link_with_projection_error (U : Set Face)
+and signed angle difference as its included interval in the full roof link. -/
+theorem exists_restricted_link_with_signed_projection_error (U : Set Face)
     (p : (C.restrictFaces U).BoundaryEnd Set.univ) :
     let R := C.restrictFaces U
     let w := C.includeRestrictedVertexUniv U (R.boundaryEndVertex Set.univ p)
@@ -189,9 +189,12 @@ theorem exists_restricted_link_with_projection_error (U : Set Face)
       K.projectedGermRay c.first = Cap.horizontal (F.germDirection p.val) ∧
       K.projectedGermRay (C.linkTurn Set.univ w c.last) =
         Cap.horizontal (F.germDirection (R.boundaryMate Set.univ p).val) ∧
-      |K.restrictedBoundaryTurnError U p| =
-        |(∑ i, (C.triangle (c.point i).val.1.1).cornerAngle (c.point i).val.1.2) -
-          ∑ i, (K.projectedTriangle (c.point i).val.1.1).cornerAngle (c.point i).val.1.2| := by
+      c.first.val.1.1 = p.val.1.1.val ∧
+      c.last.val.1.1 = (R.boundaryMate Set.univ p).val.1.1.val ∧
+      (∀ i, (c.point i).val.1.1 ∈ U) ∧
+      -K.restrictedBoundaryTurnError U p =
+        (∑ i, (C.triangle (c.point i).val.1.1).cornerAngle (c.point i).val.1.2) -
+          ∑ i, (K.projectedTriangle (c.point i).val.1.1).cornerAngle (c.point i).val.1.2 := by
   let R := C.restrictFaces U
   let w := R.boundaryEndVertex Set.univ p
   let F := K.folding.restrictFaces U
@@ -211,7 +214,13 @@ theorem exists_restricted_link_with_projection_error (U : Set Face)
       Cap.horizontal (F.germDirection (R.linkTurn Set.univ w chain.last).val) at h
     rw [last_chain] at h
     exact h
-  refine ⟨n, c, first_ray, last_ray, ?_⟩
+  have first_face : c.first.val.1.1 = p.val.1.1.val :=
+    congrArg (fun g : R.Germ => g.1.1.val) first_chain
+  have last_face : c.last.val.1.1 = q.val.1.1.val := by
+    change (R.linkTurn Set.univ w chain.last).val.1.1.val = q.val.1.1.val
+    exact congrArg (fun g : R.Germ => g.1.1.val) last_chain
+  refine ⟨n, c, first_ray, last_ray, first_face, last_face,
+    fun i => (chain.point i).val.1.1.property, ?_⟩
   have projected : (∑ i : Fin (n + 1),
       (K.projectedTriangle (c.point i).val.1.1).cornerAngle (c.point i).val.1.2) =
       R.regionalCornerSum Set.univ (fun c => (K.projectedTriangle c.1.val).cornerAngle c.2) w :=
@@ -221,9 +230,28 @@ theorem exists_restricted_link_with_projection_error (U : Set Face)
       R.totalAngle Set.univ w :=
     R.sum_linkCornerAngle Set.univ w chain covers
   rw [intrinsic, projected]
-  change |(π - R.totalAngle Set.univ w) - (π -
-    R.regionalCornerSum Set.univ (fun c => (K.projectedTriangle c.1.val).cornerAngle c.2) w)| = _
-  rw [sub_sub_sub_cancel_left, abs_sub_comm]
+  change -((π - R.totalAngle Set.univ w) - (π -
+    R.regionalCornerSum Set.univ (fun c => (K.projectedTriangle c.1.val).cornerAngle c.2) w)) = _
+  ring
+
+open Classical in
+/-- The literal restricted corner reads the same rays and angle difference
+as its included interval in the full roof link. -/
+theorem exists_restricted_link_with_projection_error (U : Set Face)
+    (p : (C.restrictFaces U).BoundaryEnd Set.univ) :
+    let R := C.restrictFaces U
+    let w := C.includeRestrictedVertexUniv U (R.boundaryEndVertex Set.univ p)
+    let F := K.folding.restrictFaces U
+    ∃ (n : ℕ) (c : (C.linkSystem Set.univ w).Chain n),
+      K.projectedGermRay c.first = Cap.horizontal (F.germDirection p.val) ∧
+      K.projectedGermRay (C.linkTurn Set.univ w c.last) =
+        Cap.horizontal (F.germDirection (R.boundaryMate Set.univ p).val) ∧
+      |K.restrictedBoundaryTurnError U p| =
+        |(∑ i, (C.triangle (c.point i).val.1.1).cornerAngle (c.point i).val.1.2) -
+          ∑ i, (K.projectedTriangle (c.point i).val.1.1).cornerAngle (c.point i).val.1.2| := by
+  obtain ⟨n, c, first, last, _, _, _, exact⟩ :=
+    K.exists_restricted_link_with_signed_projection_error U p
+  exact ⟨n, c, first, last, (abs_neg _).symm.trans (congrArg abs exact)⟩
 
 open Classical in
 /-- The literal corner of a restricted bank satisfies the sharp estimate
