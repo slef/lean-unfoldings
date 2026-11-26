@@ -1206,9 +1206,17 @@ The Fewest Nets application lives in `Unfoldings/FewestNets`.
 
 ### General acute-angle bound
 
-The current manuscript states fewer than `1,440 * α⁻⁴` parts for the conforming
-acute triangle mesh of a convex polyhedron, with `0 < α ≤ π/6`. The final Lean
-statement will produce an original-edge `HasNetPartition`.
+Lean proves an original-edge `HasNetPartition` with fewer than `1440 / α^4` parts
+for a conforming acute triangle mesh on a convex polyhedron and `0 < α ≤ π/6`.
+The revised manuscript strengthens the coefficient to `296`.
+
+- [x] Derive the revised row count and its apex-weighted and base-weighted estimates.
+- [x] Compute the exact gnomonic solid-angle density and integrate transport along a single hinge.
+- [ ] Bound signed transport across the actual closing graph and cancel it against vertex curvature.
+- [ ] Instantiate and verify the revised selector geometry and routing margins.
+- [ ] Check the revised local crossing bounds, choose a placement, and assemble the `296` theorem.
+
+The following steps establish the `1440` theorem.
 
 - [x] Instantiate the revised latitude grid and its exact count below `476 / α²`.
 - [x] Bound the side lengths, perimeter, and corner sines of every actual annular triangle.
@@ -1257,7 +1265,7 @@ statement will produce an original-edge `HasNetPartition`.
 - [x] Recover both literal parameter names at each affine-floor join and prove its full
   collapse fiber contractible.
 - [x] Glue the signed roof and gap banks through the exit joins in the full graft.
-- [ ] Prove the remaining seam and junction charts and fibers, then recover original-edge nets.
+- [x] Prove the finite seam and junction charts and fibers, then recover original-edge nets.
 - [x] Bound the residual perimeter of each actual Gaussian cell with the full capped
   sine. Choose two genuine marks at extreme vertices and cover all changes at
   subdivision vertices. Express the expected component count in either orientation
@@ -1271,7 +1279,7 @@ statement will produce an original-edge `HasNetPartition`.
   the resulting area bounds over the original vertices. Choose one generic
   placement whose original-face component count is below the global bound.
 
-- [ ] Assemble the partition theorem and audit its dependencies.
+- [x] Assemble the partition theorem and audit its dependencies.
 
 The milestones below record the existing geometry, grafting, and counting
 results from the earlier latitude scales. They provide the reusable inputs

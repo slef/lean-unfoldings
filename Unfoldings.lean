@@ -3020,6 +3020,12 @@ public import Unfoldings.Roof.AffineFloorSharpBank
 public import Unfoldings.Roof.GraphWindowBankFan
 public import Unfoldings.Roof.AffineFloorSharpHeading
 public import Unfoldings.FewestNets.AcuteLatitudeSourceContour
+public import Unfoldings.FewestNets.AcuteLatitudeNetPartition
+public import Unfoldings.FewestNets.RevisedLatitudeCountArithmetic
+public import Unfoldings.FewestNets.RevisedLatitudeCountBounds
+public import Unfoldings.Cap.GnomonicAreaDensity
+public import Unfoldings.Geometry.GnomonicHingeTransport
+public import Unfoldings.Roof.NormalAreaCancellation
 public import Unfoldings.Geometry.GraphRegionSides
 public import Unfoldings.FewestNets.LatitudeRowSupportTies
 public import Unfoldings.Roof.PotentialContourPhysicalLabels
