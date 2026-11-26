@@ -3027,6 +3027,7 @@ public import Unfoldings.FewestNets.RevisedLatitudePlacement
 public import Unfoldings.FewestNets.RevisedLatitudeSelectedRoofs
 public import Unfoldings.FewestNets.RevisedLatitudeSelectedRouting
 public import Unfoldings.FewestNets.RevisedLatitudeNetPartition
+public import Unfoldings.FewestNets.GeneralAcuteNetPartition
 public import Unfoldings.FewestNets.ThreeExitSavedBankCone
 public import Unfoldings.Roof.SupportedNormalTrace
 public import Unfoldings.Cap.GnomonicAreaDensity
