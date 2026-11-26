@@ -49,6 +49,7 @@ theorem exists_regularClosingLink_on_graphSegment {p q : Plane}
     let direction := NormedSpace.normalize (q - p)
     ∃ L : K.RegularClosingLink Above p direction I,
       (∀ i, 0 < L.time i ∧ L.time i < ‖q - p‖) ∧
+      (∀ i, K.projectedVertex i.val = p + L.time i • direction) ∧
       ∀ i, K.restrictedBoundaryTurnError Above (L.bank i) = -K.regionalAngleExcess Above i.val := by
   let I := {w : C.Vertex Set.univ // K.projectedVertex w ∈ openSegment ℝ p q}
   let d := NormedSpace.normalize (q - p)
@@ -105,10 +106,14 @@ theorem exists_regularClosingLink_on_graphSegment {p q : Plane}
   obtain ⟨L, same, turns⟩ := K.exists_regularClosingLink_facesAboveGraph hf sample sample_in endpoints
     aligned p d genuine (Subtype.val : I → C.Vertex Set.univ) Subtype.val_injective
     time at_time (fun i => in_roof (graph i)) window on_graph near_line regular_normal
-  refine ⟨L, fun i => ?_, turns⟩
-  change 0 < L.time i ∧ L.time i < length
-  rw [same]
-  exact ⟨mul_pos (parameter i).1 length_pos,
-    (mul_lt_mul_of_pos_right (parameter i).2 length_pos).trans_eq (one_mul length)⟩
+  refine ⟨L, ?_, ?_, turns⟩
+  · intro i
+    change 0 < L.time i ∧ L.time i < length
+    rw [same]
+    exact ⟨mul_pos (parameter i).1 length_pos,
+      (mul_lt_mul_of_pos_right (parameter i).2 length_pos).trans_eq (one_mul length)⟩
+  · intro i
+    rw [same]
+    exact at_time i
 
 end Unfoldings.ConvexRoof

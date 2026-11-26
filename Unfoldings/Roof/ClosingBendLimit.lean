@@ -17,20 +17,14 @@ universe u v
 
 variable {Face : Type u} [Fintype Face] {C : TriangleComplex.{u, v} Face} (K : ConvexRoof C)
 
-/-- For the actual roof support of a bend, the spatial and projected angles
-converge to the same straight angle as the bend approaches the chord midpoint. -/
-theorem tendsto_closingBend_angleError (f : Face) {a b : Plane} (different : a ≠ b) :
+/-- The actual bend error vanishes as both directions approach positive
+multiples of the same ray. -/
+theorem tendsto_closingBend_angleError_of_positive_collinear (f : Face) {a b m : Plane}
+    (left_ne : m - a ≠ 0) {t : ℝ} (positive : 0 < t)
+    (same : b - m = t • (m - a)) :
     Tendsto (fun c : Plane => |angle (K.sectionDirection f (c - a)) (K.sectionDirection f (b - c)) -
-      angle (c - a) (b - c)|) (𝓝 (midpoint ℝ a b)) (𝓝 0) := by
-  let m := midpoint ℝ a b
-  have middle : m + m = a + b := midpoint_add_self (R := ℝ) _ _
-  have same : m - a = b - m := by
-    calc
-      m - a = m + m - a - m := by abel
-      _ = b - m := by rw [middle]; abel
-  have left_ne : m - a ≠ 0 := sub_ne_zero.mpr (fun eq =>
-    different ((midpoint_eq_left_iff ℝ).mp eq))
-  have right_ne : b - m ≠ 0 := same ▸ left_ne
+      angle (c - a) (b - c)|) (𝓝 m) (𝓝 0) := by
+  have right_ne : b - m ≠ 0 := same.symm ▸ smul_ne_zero positive.ne' left_ne
   let left (c : Plane) := c - a
   let right (c : Plane) := b - c
   have left_cont : ContinuousAt left m := continuousAt_id.sub continuousAt_const
@@ -57,13 +51,29 @@ theorem tendsto_closingBend_angleError (f : Face) {a b : Plane} (different : a �
       angle (left m) (right m)| = 0 := by
     change |angle (K.sectionDirection f (m - a)) (K.sectionDirection f (b - m)) -
       angle (m - a) (b - m)| = 0
-    rw [← same, angle_self left_ne, angle_self (K.sectionDirection_ne_zero f left_ne), sub_self, abs_zero]
+    rw [same, K.sectionDirection_smul, angle_smul_right_of_pos _ _ positive,
+      angle_smul_right_of_pos _ _ positive, angle_self left_ne,
+      angle_self (K.sectionDirection_ne_zero f left_ne), sub_self, abs_zero]
   have limit := (spatial_angle.sub projected_angle).abs.tendsto
   change Tendsto (fun c : Plane => |angle (K.sectionDirection f (left c))
     (K.sectionDirection f (right c)) - angle (left c) (right c)|) (𝓝 m)
     (𝓝 (|angle (K.sectionDirection f (left m)) (K.sectionDirection f (right m)) -
       angle (left m) (right m)|)) at limit
   rwa [zero] at limit
+
+/-- In particular, the two directions agree at the chord midpoint. -/
+theorem tendsto_closingBend_angleError (f : Face) {a b : Plane} (different : a ≠ b) :
+    Tendsto (fun c : Plane => |angle (K.sectionDirection f (c - a)) (K.sectionDirection f (b - c)) -
+      angle (c - a) (b - c)|) (𝓝 (midpoint ℝ a b)) (𝓝 0) := by
+  let m := midpoint ℝ a b
+  have middle : m + m = a + b := midpoint_add_self (R := ℝ) _ _
+  have left_ne : m - a ≠ 0 := sub_ne_zero.mpr (fun eq =>
+    different ((midpoint_eq_left_iff ℝ).mp eq))
+  apply K.tendsto_closingBend_angleError_of_positive_collinear f left_ne (t := 1) zero_lt_one
+  rw [one_smul]
+  calc
+    b - m = a + b - a - m := by abel
+    _ = m - a := by rw [← middle]; abel
 
 /-- The bound is uniform over the finitely many possible active support faces. -/
 theorem eventually_all_closingBend_angleError_lt {a b : Plane} (different : a ≠ b)

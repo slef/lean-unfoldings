@@ -88,11 +88,11 @@ theorem sum_abs_graphClosingLink_excess_le {f : ℝ → ℝ} (hf : Continuous f)
     intro z last first
     exact (not_lt_of_ge (horizontal_mem_Icc_of_mem_segment first_progress.le first).2)
       (horizontal_mem_Ioo_of_mem_openSegment last_progress last).1
-  obtain ⟨first, before, first_error⟩ :=
+  obtain ⟨first, before, _, first_error⟩ :=
     K.exists_regularClosingLink_on_graphSegment hf sample sample_in endpoints aligned inside
       first_progress le_rfl last_progress.le (fun _ hx => trace.symm.subset (Or.inl hx))
       (segment ℝ c q) (closed_segment c q) trace.subset first_disjoint first_regular
-  obtain ⟨last, after, last_error⟩ :=
+  obtain ⟨last, after, _, last_error⟩ :=
     K.exists_regularClosingLink_on_graphSegment hf sample sample_in endpoints aligned inside
       last_progress first_progress.le le_rfl (fun _ hx => trace.symm.subset (Or.inr hx))
       (segment ℝ p c) (closed_segment p c) (by rw [trace, Set.union_comm])

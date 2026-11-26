@@ -20,7 +20,7 @@ variable {Face : Type u} [Fintype Face] {C : TriangleComplex.{u, v} Face}
 
 local notation "east" => (WithLp.toLp 2 ![(1 : ℝ), 0] : Plane)
 
-private theorem sectionDirection_east (f : Face) :
+theorem sectionDirection_east (f : Face) :
     K.sectionDirection f east = WithLp.toLp 2 ![1, 0, -(K.normalSlope f) 0] := by
   have scalar : inner ℝ (K.normalSlope f) east = K.normalSlope f 0 := by
     simp [PiLp.inner_apply, Fin.sum_univ_two, Real.inner_apply]

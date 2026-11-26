@@ -33,12 +33,13 @@ include hf hg first last crossing jordan aligned sample_in sample_off in
 open Classical in
 set_option maxHeartbeats 900000 in
 /-- If only one lens can reach a vertex's vertical line, its regional error
-is the absolute difference of the two graph-side errors there. -/
-theorem abs_graph_regionDifference_eq_uniqueLens (w : C.Vertex Set.univ)
+is the difference of the two graph-side errors there, with the lens sign. -/
+theorem graph_regionDifference_eq_uniqueLens (w : C.Vertex Set.univ)
     (i : Fin (n + 1))
     (outside : ∀ j : Fin (n + 1), j ≠ i → K.projectedVertex w 0 ∉ Set.Icc (c j.castSucc) (c j.succ)) :
-    |K.regionalAngleExcess upperF w - K.regionalAngleExcess upperG w| =
-      |K.regionalAngleExcess (K.graphLensFaces (J[i])) w| := by
+    K.regionalAngleExcess upperF w - K.regionalAngleExcess upperG w =
+      graphLensSign f g (c i.castSucc) (c i.succ) *
+        K.regionalAngleExcess (K.graphLensFaces (J[i])) w := by
   have zero (j : Fin (n + 1)) (other : j ≠ i) :
       K.regionalAngleExcess (K.graphLensFaces (J[j])) w = 0 := by
     unfold regionalAngleExcess TriangleComplex.regionalCornerSum
@@ -54,12 +55,60 @@ theorem abs_graph_regionDifference_eq_uniqueLens (w : C.Vertex Set.univ)
     exact closedJordanDomain_two_graphs_subset_slab (jordan j) domain
   rw [K.regionalAngleExcess_sub_eq_sum_graphLenses hf hg c first last crossing jordan aligned
     sample sample_in sample_off w, Finset.sum_eq_single i]
-  · rw [abs_mul, show |graphLensSign f g (c i.castSucc) (c i.succ)| = 1 by
-      unfold graphLensSign
-      split <;> norm_num, one_mul]
   · intro j _ other
     rw [zero j other, mul_zero]
   · simp
+
+include hf hg first last crossing jordan aligned sample_in sample_off in
+/-- The initial endpoint of the two graph traces belongs only to the first lens. -/
+theorem graph_regionDifference_eq_firstLens (w : C.Vertex Set.univ)
+    (at_first : K.projectedVertex w 0 = a) :
+    K.regionalAngleExcess upperF w - K.regionalAngleExcess upperG w =
+      graphLensSign f g (c (0 : Fin (n + 1)).castSucc) (c (0 : Fin (n + 1)).succ) *
+          K.regionalAngleExcess (K.graphLensFaces (J[(0 : Fin (n + 1))])) w := by
+  apply K.graph_regionDifference_eq_uniqueLens hf hg c first last crossing jordan aligned
+    sample sample_in sample_off w 0
+  intro j different member
+  have advance : 0 < (j.castSucc : Fin (n + 2)) := by
+    change 0 < j.val
+    exact Nat.pos_of_ne_zero (fun h => different (Fin.ext h))
+  have before := c.strictMono advance
+  rw [first] at before
+  exact before.not_ge (at_first ▸ member.1)
+
+include hf hg first last crossing jordan aligned sample_in sample_off in
+/-- The terminal endpoint of the two graph traces belongs only to the last lens. -/
+theorem graph_regionDifference_eq_lastLens (w : C.Vertex Set.univ)
+    (at_last : K.projectedVertex w 0 = b) :
+    K.regionalAngleExcess upperF w - K.regionalAngleExcess upperG w =
+      graphLensSign f g (c (Fin.last n).castSucc) (c (Fin.last n).succ) *
+        K.regionalAngleExcess (K.graphLensFaces (J[Fin.last n])) w := by
+  apply K.graph_regionDifference_eq_uniqueLens hf hg c first last crossing jordan aligned
+    sample sample_in sample_off w (Fin.last n)
+  intro j different member
+  have advance : j.succ < Fin.last (n + 1) := by
+    have he : j.val ≠ n := fun h => different (Fin.ext h)
+    change j.val + 1 < n + 1
+    omega
+  have after := c.strictMono advance
+  rw [last] at after
+  exact after.not_ge (at_last ▸ member.2)
+
+include hf hg first last crossing jordan aligned sample_in sample_off in
+open Classical in
+set_option maxHeartbeats 900000 in
+/-- If only one lens can reach a vertex's vertical line, its regional error
+is the absolute difference of the two graph-side errors there. -/
+theorem abs_graph_regionDifference_eq_uniqueLens (w : C.Vertex Set.univ)
+    (i : Fin (n + 1))
+    (outside : ∀ j : Fin (n + 1), j ≠ i → K.projectedVertex w 0 ∉ Set.Icc (c j.castSucc) (c j.succ)) :
+    |K.regionalAngleExcess upperF w - K.regionalAngleExcess upperG w| =
+      |K.regionalAngleExcess (K.graphLensFaces (J[i])) w| := by
+  rw [K.graph_regionDifference_eq_uniqueLens hf hg c first last crossing jordan aligned
+    sample sample_in sample_off w i outside, abs_mul, show
+      |graphLensSign f g (c i.castSucc) (c i.succ)| = 1 by
+        unfold graphLensSign
+        split <;> norm_num, one_mul]
 
 include hf hg first last crossing jordan aligned sample_in sample_off in
 /-- The initial endpoint of the two graph traces belongs only to the first lens. -/
@@ -98,18 +147,18 @@ theorem abs_graph_regionDifference_eq_lastLens (w : C.Vertex Set.univ)
 open Classical in
 set_option maxHeartbeats 950000 in
 /-- At a two-graph end line the only possible charge is the one physical
-endpoint. The sum over both end lines therefore uses exactly two bounds. -/
-theorem abs_graph_endpoint_sum_le
+endpoint. The sum is the signed contribution from those two endpoints. -/
+theorem graph_endpoint_sum_eq
     (order : a < b) (start : f a = g a) (finish : f b = g b)
     (left right : C.Vertex Set.univ)
     (at_left : K.projectedVertex left = graphPoint f a)
-    (at_right : K.projectedVertex right = graphPoint f b)
-    {δ : ℝ} (left_bound : |K.regionalAngleExcess upperF left - K.regionalAngleExcess upperG left| ≤ δ)
-    (right_bound : |K.regionalAngleExcess upperF right - K.regionalAngleExcess upperG right| ≤ δ) :
+    (at_right : K.projectedVertex right = graphPoint f b) :
     let curve := (graphPoint f '' Set.Icc a b) ∪ (graphPoint g '' Set.Icc a b)
-    |∑ w : C.Vertex Set.univ, if K.projectedVertex w ∈ curve ∧
+    (∑ w : C.Vertex Set.univ, if K.projectedVertex w ∈ curve ∧
       K.projectedVertex w 0 ∉ Set.Ioo a b then
-        K.regionalAngleExcess upperF w - K.regionalAngleExcess upperG w else 0| ≤ 2 * δ := by
+        K.regionalAngleExcess upperF w - K.regionalAngleExcess upperG w else 0) =
+      (K.regionalAngleExcess upperF left - K.regionalAngleExcess upperG left) +
+        (K.regionalAngleExcess upperF right - K.regionalAngleExcess upperG right) := by
   let curve := (graphPoint f '' Set.Icc a b) ∪ (graphPoint g '' Set.Icc a b)
   let error (w : C.Vertex Set.univ) := K.regionalAngleExcess upperF w - K.regionalAngleExcess upperG w
   let active (w : C.Vertex Set.univ) := K.projectedVertex w ∈ curve ∧
@@ -155,12 +204,27 @@ theorem abs_graph_endpoint_sum_le
     apply ite_eq_right
     intro hit
     exact other (Finset.mem_insert.mpr ((where_possible w hit).imp id Finset.mem_singleton.mpr))
-  change |∑ w, term w| ≤ _
+  change (∑ w, term w) = error left + error right
   rw [sum, show term left = error left from ite_eq_left active_left,
     show term right = error right from ite_eq_left active_right]
-  exact (abs_add_le _ _).trans (by
-    change |error left| ≤ δ at left_bound
-    change |error right| ≤ δ at right_bound
-    linarith only [left_bound, right_bound])
+
+open Classical in
+set_option maxHeartbeats 950000 in
+/-- At a two-graph end line the only possible charge is the one physical
+endpoint. The sum over both end lines therefore uses exactly two bounds. -/
+theorem abs_graph_endpoint_sum_le
+    (order : a < b) (start : f a = g a) (finish : f b = g b)
+    (left right : C.Vertex Set.univ)
+    (at_left : K.projectedVertex left = graphPoint f a)
+    (at_right : K.projectedVertex right = graphPoint f b)
+    {δ : ℝ} (left_bound : |K.regionalAngleExcess upperF left - K.regionalAngleExcess upperG left| ≤ δ)
+    (right_bound : |K.regionalAngleExcess upperF right - K.regionalAngleExcess upperG right| ≤ δ) :
+    let curve := (graphPoint f '' Set.Icc a b) ∪ (graphPoint g '' Set.Icc a b)
+    |∑ w : C.Vertex Set.univ, if K.projectedVertex w ∈ curve ∧
+      K.projectedVertex w 0 ∉ Set.Ioo a b then
+        K.regionalAngleExcess upperF w - K.regionalAngleExcess upperG w else 0| ≤ 2 * δ := by
+  dsimp only
+  rw [K.graph_endpoint_sum_eq sample order start finish left right at_left at_right]
+  exact (abs_add_le _ _).trans (by linarith only [left_bound, right_bound])
 
 end Unfoldings.ConvexRoof

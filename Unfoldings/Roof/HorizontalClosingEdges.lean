@@ -145,7 +145,7 @@ theorem firstCoord_earlierFace_le_laterFace (i : I) :
   exact supportingSlope_firstCoord_le (ha.trans hb) hp hq
 
 
-private theorem horizontalContactPoint_mem_openSegment {a b t : ℝ} (openWindow : t ∈ Set.uIoo a b) :
+theorem horizontalContactPoint_mem_openSegment {a b t : ℝ} (openWindow : t ∈ Set.uIoo a b) :
     horizontalContactPoint origin t ∈ openSegment ℝ
       (horizontalContactPoint origin a) (horizontalContactPoint origin b) := by
   let f : ℝ →ᵃ[ℝ] Plane :=
@@ -157,7 +157,7 @@ private theorem horizontalContactPoint_mem_openSegment {a b t : ℝ} (openWindow
   rw [openSegment_eq_Ioo' different]
   exact openWindow
 
-private theorem projectedGerm_finish_time_of_next {g : C.Germ}
+theorem projectedGerm_finish_time_of_next {g : C.Germ}
     {a b c : ℝ} (ab : a < b) (ac : a < c)
     (start : K.projectedGermStart g = horizontalContactPoint origin a)
     (finish : K.projectedGermFinish g = horizontalContactPoint origin c)
@@ -177,6 +177,26 @@ private theorem projectedGerm_finish_time_of_next {g : C.Germ}
     rw [← finish]
     exact K.projectedVertex_ofCorner g.1.1 (C.germFarCorner g).2
 
+/-- In the backward direction the first preceding vertex is again the germ's far end. -/
+theorem projectedGerm_finish_time_of_previous {g : C.Germ} {a b c : ℝ}
+    (ba : b < a) (ca : c < a)
+    (start : K.projectedGermStart g = horizontalContactPoint origin a)
+    (finish : K.projectedGermFinish g = horizontalContactPoint origin c)
+    (target : ∃ v : C.Vertex Set.univ, K.projectedVertex v = horizontalContactPoint origin b)
+    (no_vertex : ∀ (t : ℝ), b < t → t < a →
+      ¬ ∃ v : C.Vertex Set.univ, K.projectedVertex v = horizontalContactPoint origin t) :
+    c = b := by
+  refine le_antisymm ?_ ?_
+  · by_contra! bad
+    apply no_vertex c bad ca
+    refine ⟨C.vertexOfCorner Set.univ (g.1.1, (C.germFarCorner g).2), ?_⟩
+    exact (K.projectedVertex_ofCorner g.1.1 (C.germFarCorner g).2).trans finish
+  · by_contra! bad
+    obtain ⟨v, exact⟩ := target
+    apply K.projectedVertex_not_mem_openGermSegment g v
+    rw [exact, start, finish]
+    exact horizontalContactPoint_mem_openSegment (Set.uIoo_of_ge ca.le ▸ ⟨bad, ba⟩)
+
 open Classical in
 /-- The active planes on either name of a piece between consecutive closing
 contacts agree as actual normals. The interval contains no refined vertex. -/
@@ -193,21 +213,8 @@ theorem laterFace_slope_eq_earlierFace_slope_of_next (i j : I) (ordered : L.time
   have position : K.projectedVertex target = horizontalContactPoint origin (L.time j) := L.vertexAt_contact j
   have ht := projectedGerm_finish_time_of_next ordered t_after forward_start forward_finish
     ⟨target, position⟩ no_vertex
-  have hs : s = L.time i := by
-    refine le_antisymm ?_ ?_
-    · by_contra! bad
-      apply no_vertex s bad s_before
-      refine ⟨C.vertexOfCorner Set.univ (back.1.1, (C.germFarCorner back).2), ?_⟩
-      exact (K.projectedVertex_ofCorner back.1.1 (C.germFarCorner back).2).trans back_finish
-    · by_contra! bad
-      let other := C.includeRestrictedVertexUniv U
-        ((C.restrictFaces U).boundaryEndVertex Set.univ (L.bank i))
-      apply K.projectedVertex_not_mem_openGermSegment back other
-      have at_other : K.projectedVertex other = horizontalContactPoint origin (L.time i) :=
-        L.vertexAt_contact i
-      rw [at_other, back_start, back_finish]
-      exact horizontalContactPoint_mem_openSegment
-        (Set.uIoo_of_ge s_before.le ▸ ⟨bad, ordered⟩)
+  have hs : s = L.time i := projectedGerm_finish_time_of_previous ordered s_before back_start
+    back_finish ⟨_, L.vertexAt_contact i⟩ no_vertex
   rw [ht] at forward_finish
   rw [hs] at back_finish
   have f₀ := normalSlope_supports_of_contactGerm forward forward_start forward_finish Set.left_mem_uIcc

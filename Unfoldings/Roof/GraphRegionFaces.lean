@@ -33,7 +33,7 @@ theorem mem_facesAboveGraph_iff_of_interior (i : Face) {z : Plane}
   aboveGraph_iff_of_cell hf (K.projectedTriangle i).convex_carrier.interior.isPreconnected
     (endpoints i) (aligned i) (sample_in i) inside
 
-private theorem selected_triangle_subset_closedAboveGraph (i : Face) (selected : i ∈ Above) :
+theorem selected_triangle_subset_closedAboveGraph (i : Face) (selected : i ∈ Above) :
     (K.projectedTriangle i).carrier ⊆ {z : Plane | z 0 ∈ Set.Icc a b ∧ f (z 0) ≤ z 1} := by
   let x := EuclideanSpace.proj (𝕜 := ℝ) (ι := Fin 2) 0
   let y := EuclideanSpace.proj (𝕜 := ℝ) (ι := Fin 2) 1
