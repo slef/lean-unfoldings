@@ -2,6 +2,7 @@ module
 
 public import Unfoldings.Geometry.HalfAngleDistortion
 public import Unfoldings.Geometry.MinorArcArclength
+public import Unfoldings.Geometry.PlanarAngleArea
 public import Unfoldings.Cap.Gnomonic
 public import Unfoldings.Cap.SharpAngleProjection
 
@@ -160,6 +161,57 @@ private theorem planar_tangent_gram (h x y : Plane) :
         (inner ℝ x y - inner ℝ h x * inner ℝ h y) ^ 2 =
       (1 - ‖h‖ ^ 2) * (‖x‖ ^ 2 * ‖y‖ ^ 2 - inner ℝ x y ^ 2) := by
   simp only [EuclideanSpace.real_norm_sq_eq, PiLp.inner_apply, Real.inner_apply, Fin.sum_univ_two]
+  ring
+
+/-- The exact tangent inner product and area determine the absolute
+cotangent at an inverse-gnomonic corner. -/
+theorem abs_cot_gnomonic_corner (p q r : Plane) (qp : q ≠ p) (rp : r ≠ p)
+    (noncollinear : orient 0 (q - p) (r - p) ≠ 0) :
+    let n := gnomonicNormal p
+    let θ := angle (minorArcTangent n (gnomonicNormal q)) (minorArcTangent n (gnomonicNormal r))
+    let x := q - p
+    let y := r - p
+    |cos θ| / sin θ =
+      |inner ℝ x y - inner ℝ (horizontal n) x * inner ℝ (horizontal n) y| /
+        (n 2 * |orient 0 x y|) := by
+  let n := gnomonicNormal p
+  let T := (tangentProjection n).comp horizontalLift
+  let x := q - p
+  let y := r - p
+  have up : 0 < n 2 := gnomonicNormal_upward p
+  have unit : ‖n‖ = 1 := gnomonicNormal_unit p
+  obtain ⟨s, sp, v⟩ := minorArcTangent_gnomonic p q qp.symm
+  obtain ⟨t, tp, w⟩ := minorArcTangent_gnomonic p r rp.symm
+  dsimp only
+  rw [v, w, angle_smul_left_of_pos _ _ sp, angle_smul_right_of_pos _ _ tp]
+  change |cos (angle (T x) (T y))| / sin (angle (T x) (T y)) =
+    |inner ℝ x y - inner ℝ (horizontal n) x * inner ℝ (horizontal n) y| /
+      (n 2 * |orient 0 x y|)
+  have nsum : ‖horizontal n‖ ^ 2 + n 2 ^ 2 = 1 := by
+    rw [← horizontal_norm_sq, unit, one_pow]
+  have metric (u v : Plane) : inner ℝ (T u) (T v) =
+      inner ℝ u v - inner ℝ (horizontal n) u * inner ℝ (horizontal n) v :=
+    tangentProjection_inner_horizontal n unit u v
+  have norm_sq (u : Plane) : ‖T u‖ ^ 2 = ‖u‖ ^ 2 - inner ℝ (horizontal n) u ^ 2 := by
+    rw [← real_inner_self_eq_norm_sq (T u), metric, real_inner_self_eq_norm_sq]
+    ring
+  have determinant : sin (angle (T x) (T y)) * (‖T x‖ * ‖T y‖) = n 2 * |orient 0 x y| := by
+    rw [sin_angle_mul_norm_mul_norm, real_inner_self_eq_norm_sq, real_inner_self_eq_norm_sq,
+      ← pow_two, norm_sq, norm_sq, metric, planar_tangent_gram,
+      show 1 - ‖horizontal n‖ ^ 2 = n 2 ^ 2 by linarith only [nsum],
+      ← orient_sq_eq_gram, Real.sqrt_mul (sq_nonneg _), Real.sqrt_sq up.le, Real.sqrt_sq_eq_abs]
+  have cosine : |cos (angle (T x) (T y))| * (‖T x‖ * ‖T y‖) =
+      |inner ℝ x y - inner ℝ (horizontal n) x * inner ℝ (horizontal n) y| := by
+    have eq := congrArg abs (cos_angle_mul_norm_mul_norm (T x) (T y))
+    rw [metric, abs_mul, abs_mul, abs_norm, abs_norm] at eq
+    exact eq
+  have dne : n 2 * |orient 0 x y| ≠ 0 := mul_ne_zero up.ne' (abs_ne_zero.mpr noncollinear)
+  have sne : sin (angle (T x) (T y)) ≠ 0 := by
+    intro h
+    rw [h, zero_mul] at determinant
+    exact dne determinant.symm
+  apply (div_eq_div_iff sne dne).mpr
+  rw [← determinant, ← cosine]
   ring
 
 /-- Full angle sines in inverse gnomonic projection lose at most the
