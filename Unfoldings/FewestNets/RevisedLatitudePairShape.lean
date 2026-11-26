@@ -32,9 +32,8 @@ private theorem slopeSite_ordinate_correction (a : ℝ) (strip row : ℕ) (w : �
   rw [← sub_div, sub_sub_cancel_left]
   ring
 
-/-- Sites on opposite rows retain their order in every midpoint chart,
-including the two polar strips. -/
-theorem slopeSite_pair_shape {a : ℝ} (positive : 0 < a) (small : a ≤ π / 6)
+/-- The signed ordinate bounds retain the exact sine of the band half-height. -/
+theorem slopeSite_signed_heights {a : ℝ} (positive : 0 < a) (small : a ≤ π / 6)
     {strip : ℕ} (valid : strip < stripCount a) {w₀ w₁ : ℝ}
     (near₀ : |w₀| ≤ longitudeStep a strip / 2)
     (near₁ : |w₁| ≤ longitudeStep a (strip + 1) / 2) :
@@ -42,13 +41,12 @@ theorem slopeSite_pair_shape {a : ℝ} (positive : 0 < a) (small : a ≤ π / 6)
     let Y₁ := (slopeSite a strip (strip + 1) w₁) 1
     let polar := isPolarStrip a strip
     let r := radius a
-    let hmin : ℝ := if polar then 0.815 else 0.834
-    let hmax : ℝ := if polar then 1.070 else 1.051
-    let ymin : ℝ := if polar then 0.393 else 0.412
-    let ymax : ℝ := if polar then 0.550 else 0.531
-    (hmin * r < Y₁ - Y₀ ∧ Y₁ - Y₀ < hmax * r) ∧
-      (ymin * r < -Y₀ ∧ -Y₀ < ymax * r) ∧
-      ymin * r < Y₁ ∧ Y₁ < ymax * r := by
+    let d := rowStep a
+    let error := ordinateErrorFactor polar * spacing a ^ 2 / r
+    (2 * sin (d / 2) - error ≤ Y₁ - Y₀ ∧
+      Y₁ - Y₀ ≤ 2 * sin (d / 2) / 0.9612 + error) ∧
+    (sin (d / 2) - error ≤ -Y₀ ∧ -Y₀ ≤ sin (d / 2) / 0.9612 + error) ∧
+    sin (d / 2) - error ≤ Y₁ ∧ Y₁ ≤ sin (d / 2) / 0.9612 + error := by
   let m := stripMidpoint a strip
   let l₀ := colatitude a strip
   let l₁ := colatitude a (strip + 1)
@@ -103,8 +101,34 @@ theorem slopeSite_pair_shape {a : ℝ} (positive : 0 < a) (small : a ≤ π / 6)
     · exact mul_nonneg (div_nonneg (mul_nonneg side first) p₀) (div_nonneg (mul_nonneg side last) p₁)
     · exact mul_nonneg_of_nonpos_of_nonpos (div_nonpos_of_nonpos_of_nonneg (mul_nonpos_of_nonpos_of_nonneg side first) p₀)
         (div_nonpos_of_nonpos_of_nonneg (mul_nonpos_of_nonpos_of_nonneg side last) p₁)
+  have dp := rowStep_pos positive small
+  have upper := (rowStep_bounds positive small).2
+  have sine : 0 ≤ sin (d / 2) :=
+    (sin_pos_of_pos_of_lt_pi (half_pos dp) (by
+      change rowStep a / 2 < π
+      linarith only [upper, radius_lt small, pi_gt_d2])).le
+  exact signed_height_bounds sine z₀ z₁ err₀ err₁ sign
+
+/-- Sites on opposite rows retain their order in every midpoint chart,
+including the two polar strips. -/
+theorem slopeSite_pair_shape {a : ℝ} (positive : 0 < a) (small : a ≤ π / 6)
+    {strip : ℕ} (valid : strip < stripCount a) {w₀ w₁ : ℝ}
+    (near₀ : |w₀| ≤ longitudeStep a strip / 2)
+    (near₁ : |w₁| ≤ longitudeStep a (strip + 1) / 2) :
+    let Y₀ := (slopeSite a strip strip w₀) 1
+    let Y₁ := (slopeSite a strip (strip + 1) w₁) 1
+    let polar := isPolarStrip a strip
+    let r := radius a
+    let hmin : ℝ := if polar then 0.815 else 0.834
+    let hmax : ℝ := if polar then 1.070 else 1.051
+    let ymin : ℝ := if polar then 0.393 else 0.412
+    let ymax : ℝ := if polar then 0.550 else 0.531
+    (hmin * r < Y₁ - Y₀ ∧ Y₁ - Y₀ < hmax * r) ∧
+      (ymin * r < -Y₀ ∧ -Y₀ < ymax * r) ∧
+      ymin * r < Y₁ ∧ Y₁ < ymax * r := by
   have bounds := rowStep_bounds positive small
   exact triangle_height_bounds (isPolarStrip a strip) (radius_pos positive) (radius_lt small)
-    (spacing_pos positive) (spacing_lt positive small) bounds.1.le bounds.2 z₀ z₁ err₀ err₁ sign
+    (spacing_pos positive) (spacing_lt positive small) bounds.1.le bounds.2
+    (slopeSite_signed_heights positive small valid near₀ near₁)
 
 end Unfoldings.FewestNets.RevisedLatitudeGrid

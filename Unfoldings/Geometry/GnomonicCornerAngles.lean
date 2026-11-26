@@ -119,4 +119,95 @@ theorem sin_half_gnomonic_corner_ge (p q r : Plane) (qp : q ≠ p) (rp : r ≠ p
   exact sin_half_angle_map_ge T (gnomonicNormal_upward p)
     (fun x => (norms x).1) (fun x => (norms x).2) (sub_ne_zero.mpr qp) (sub_ne_zero.mpr rp)
 
+private theorem sin_sq_mul_norms {E : Type*} [NormedAddCommGroup E]
+    [InnerProductSpace ℝ E] (u v : E) :
+    sin (angle u v) ^ 2 * (‖u‖ ^ 2 * ‖v‖ ^ 2) =
+      ‖u‖ ^ 2 * ‖v‖ ^ 2 - inner ℝ u v ^ 2 := by
+  have h := congrArg (fun t : ℝ => t ^ 2) (cos_angle_mul_norm_mul_norm u v)
+  simp only [mul_pow] at h
+  calc
+    _ = (sin (angle u v) ^ 2 + cos (angle u v) ^ 2) * (‖u‖ ^ 2 * ‖v‖ ^ 2) -
+        cos (angle u v) ^ 2 * (‖u‖ ^ 2 * ‖v‖ ^ 2) := by ring
+    _ = _ := by
+      rw [sin_sq_add_cos_sq, one_mul]
+      linear_combination -h
+
+private theorem tangentProjection_inner_horizontal (n : Space) (unit : ‖n‖ = 1)
+    (x y : Plane) :
+    inner ℝ (tangentProjection n (horizontalLift x)) (tangentProjection n (horizontalLift y)) =
+      inner ℝ x y - inner ℝ (horizontal n) x * inner ℝ (horizontal n) y := by
+  have horizontal_mul (p : Plane) : inner ℝ n (horizontalLift p) =
+      inner ℝ (horizontal n) p := by
+    have hx : horizontal (horizontalLift p) = p := by
+      ext i
+      fin_cases i <;> rfl
+    have hz : horizontalLift p 2 = 0 := rfl
+    rw [horizontal_inner, hx, hz, mul_zero, add_zero]
+  simp only [tangentProjection_apply, inner_sub_left, inner_sub_right, real_inner_smul_left,
+    real_inner_smul_right, real_inner_self_eq_norm_sq, unit, one_pow,
+    horizontal_mul]
+  have hx : inner ℝ (horizontalLift x) n = inner ℝ (horizontal n) x :=
+    (real_inner_comm _ _).trans (horizontal_mul x)
+  rw [hx]
+  have lifts := horizontalLiftIsometry.inner_map_map x y
+  change inner ℝ (horizontalLift x) (horizontalLift y) = inner ℝ x y at lifts
+  rw [lifts]
+  ring
+
+private theorem planar_tangent_gram (h x y : Plane) :
+    (‖x‖ ^ 2 - inner ℝ h x ^ 2) * (‖y‖ ^ 2 - inner ℝ h y ^ 2) -
+        (inner ℝ x y - inner ℝ h x * inner ℝ h y) ^ 2 =
+      (1 - ‖h‖ ^ 2) * (‖x‖ ^ 2 * ‖y‖ ^ 2 - inner ℝ x y ^ 2) := by
+  simp only [EuclideanSpace.real_norm_sq_eq, PiLp.inner_apply, Real.inner_apply, Fin.sum_univ_two]
+  ring
+
+/-- Full angle sines in inverse gnomonic projection lose at most the
+cosine of the local tilt. This uses the tangent projection determinant. -/
+theorem sin_gnomonic_corner_ge (p q r : Plane) (qp : q ≠ p) (rp : r ≠ p) :
+    gnomonicNormal p 2 * sin (angle (q - p) (r - p)) ≤
+      sin (angle (minorArcTangent (gnomonicNormal p) (gnomonicNormal q))
+        (minorArcTangent (gnomonicNormal p) (gnomonicNormal r))) := by
+  let n := gnomonicNormal p
+  let T := (tangentProjection n).comp horizontalLift
+  let x := q - p
+  let y := r - p
+  have up : 0 < n 2 := gnomonicNormal_upward p
+  have unit : ‖n‖ = 1 := gnomonicNormal_unit p
+  obtain ⟨s, sp, v⟩ := minorArcTangent_gnomonic p q qp.symm
+  obtain ⟨t, tp, w⟩ := minorArcTangent_gnomonic p r rp.symm
+  rw [v, w, angle_smul_left_of_pos _ _ sp, angle_smul_right_of_pos _ _ tp]
+  change n 2 * sin (angle x y) ≤ sin (angle (T x) (T y))
+  have nsum : ‖horizontal n‖ ^ 2 + n 2 ^ 2 = 1 := by
+    rw [← horizontal_norm_sq, unit, one_pow]
+  have lift_norm (z : Plane) :
+      ‖T z‖ ^ 2 = ‖z‖ ^ 2 - inner ℝ (horizontal n) z ^ 2 := by
+    exact (real_inner_self_eq_norm_sq _).symm.trans (by
+      change inner ℝ (tangentProjection n (horizontalLift z)) (tangentProjection n (horizontalLift z)) = _
+      rw [tangentProjection_inner_horizontal n unit, real_inner_self_eq_norm_sq]
+      ring)
+  have sine_square :
+      sin (angle (T x) (T y)) ^ 2 * (‖T x‖ ^ 2 * ‖T y‖ ^ 2) =
+        n 2 ^ 2 * (sin (angle x y) ^ 2 * (‖x‖ ^ 2 * ‖y‖ ^ 2)) := by
+    rw [sin_sq_mul_norms (T x) (T y), sin_sq_mul_norms x y, lift_norm x, lift_norm y]
+    change _ * _ - inner ℝ (tangentProjection n (horizontalLift x))
+      (tangentProjection n (horizontalLift y)) ^ 2 = _
+    rw [tangentProjection_inner_horizontal n unit, planar_tangent_gram]
+    rw [show 1 - ‖horizontal n‖ ^ 2 = n 2 ^ 2 by linarith only [nsum]]
+  have sx := (norm_tangentProjection_horizontal n unit up.le x).2
+  have sy := (norm_tangentProjection_horizontal n unit up.le y).2
+  have sine_nonneg (u v : Plane) : 0 ≤ sin (angle u v) :=
+    sin_nonneg_of_nonneg_of_le_pi (angle_nonneg _ _) (angle_le_pi _ _)
+  have sine_T : 0 ≤ sin (angle (T x) (T y)) :=
+    sin_nonneg_of_nonneg_of_le_pi (angle_nonneg _ _) (angle_le_pi _ _)
+  apply (sq_le_sq₀ (mul_nonneg up.le (sine_nonneg x y)) sine_T).mp
+  rw [mul_pow]
+  have nx : 0 < ‖x‖ := norm_pos_iff.mpr (sub_ne_zero.mpr qp)
+  have ny : 0 < ‖y‖ := norm_pos_iff.mpr (sub_ne_zero.mpr rp)
+  apply (mul_le_mul_iff_of_pos_right (show 0 < ‖x‖ ^ 2 * ‖y‖ ^ 2 by positivity)).mp
+  rw [mul_assoc, ← sine_square]
+  exact mul_le_mul_of_nonneg_left
+    (mul_le_mul (pow_le_pow_left₀ (norm_nonneg _) sx 2)
+      (pow_le_pow_left₀ (norm_nonneg _) sy 2) (by positivity) (by positivity))
+    (sq_nonneg _)
+
 end Unfoldings.Cap

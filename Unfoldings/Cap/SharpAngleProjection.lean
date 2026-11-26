@@ -95,6 +95,29 @@ theorem alignedHorizontal_projection_identity {n x : Space} (unit : ‖n‖ = 1)
   field_simp [show 1 + n 2 ≠ 0 by positivity]
   nlinarith [horizontal_norm_sq x, congrArg (fun t : ℝ => n 2 * t) (horizontal_norm_sq x)]
 
+/-- In the radial tangent frame a single direction contributes half the
+two-direction projection allowance. -/
+theorem alignedHorizontal_projection_angle_le {n x : Space} (unit : ‖n‖ = 1) {c : ℝ}
+    (c_pos : 0 < c) (tilt : c ≤ n 2) (x_ne : x ≠ 0)
+    (tx : inner ℝ n x = 0) :
+    angle (alignedHorizontal n x) (horizontal x) ≤ arcsin ((1 - c) / (1 + c)) := by
+  have up := c_pos.trans_le tilt
+  have n_le : n 2 ≤ 1 := by
+    have h := horizontal_norm_sq n
+    rw [unit] at h
+    nlinarith [sq_nonneg ‖horizontal n‖]
+  have ratio : (1 - n 2) / (1 + n 2) ≤ (1 - c) / (1 + c) := by
+    apply (div_le_div_iff₀ (by positivity) (by positivity)).mpr
+    nlinarith
+  have ne_align : alignedHorizontal n x ≠ 0 := by
+    intro zero
+    have h := alignedHorizontal_norm unit up tx
+    rw [zero, norm_zero] at h
+    exact x_ne (norm_eq_zero.mp h.symm)
+  exact (angle_le_arcsin_of_contraction_identity ne_align
+    (tangent_horizontal_ne_zero n x unit up tx x_ne) up n_le
+    (alignedHorizontal_projection_identity unit up tx)).trans (arcsin_le_arcsin ratio)
+
 /-- The angular distortion of horizontal projection on a plane with upward
 unit normal is at most twice the sharp one-direction error. -/
 theorem tangent_projection_angle_error {n x y : Space} (unit : ‖n‖ = 1) {c : ℝ}
@@ -102,29 +125,11 @@ theorem tangent_projection_angle_error {n x y : Space} (unit : ‖n‖ = 1) {c :
     (tx : inner ℝ n x = 0) (ty : inner ℝ n y = 0) :
     |angle (horizontal x) (horizontal y) - angle x y| ≤ 2 * arcsin ((1 - c) / (1 + c)) := by
   have up := c_pos.trans_le tilt
-  have n_le : n 2 ≤ 1 := by
-    have h := horizontal_norm_sq n
-    rw [unit] at h
-    nlinarith [sq_nonneg ‖horizontal n‖]
-  let Δ := arcsin ((1 - c) / (1 + c))
-  have ratio : (1 - n 2) / (1 + n 2) ≤ (1 - c) / (1 + c) := by
-    apply (div_le_div_iff₀ (by positivity) (by positivity)).mpr
-    nlinarith
-  have direction {z : Space} (nz : z ≠ 0) (tz : inner ℝ n z = 0) :
-      angle (alignedHorizontal n z) (horizontal z) ≤ Δ := by
-    have ne_align : alignedHorizontal n z ≠ 0 := by
-      intro zero
-      have h := alignedHorizontal_norm unit up tz
-      rw [zero, norm_zero] at h
-      exact nz (norm_eq_zero.mp h.symm)
-    exact (angle_le_arcsin_of_contraction_identity ne_align
-      (tangent_horizontal_ne_zero n z unit up tz nz) up n_le
-      (alignedHorizontal_projection_identity unit up tz)).trans (arcsin_le_arcsin ratio)
   have angles : angle (alignedHorizontal n x) (alignedHorizontal n y) = angle x y := by
     rw [angle, angle, alignedHorizontal_inner unit up tx ty, alignedHorizontal_norm unit up tx,
       alignedHorizontal_norm unit up ty]
-  have hx := direction x_ne tx
-  have hy := direction y_ne ty
+  have hx := alignedHorizontal_projection_angle_le unit c_pos tilt x_ne tx
+  have hy := alignedHorizontal_projection_angle_le unit c_pos tilt y_ne ty
   have projected_first := angle_le_angle_add_angle (horizontal x) (alignedHorizontal n x) (horizontal y)
   have projected_last := angle_le_angle_add_angle (alignedHorizontal n x) (alignedHorizontal n y)
     (horizontal y)

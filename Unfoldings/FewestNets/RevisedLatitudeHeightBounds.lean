@@ -73,13 +73,15 @@ theorem sine_half_step_bounds {r d : ℝ} (rp : 0 < r) (rs : r < 0.522)
     (by linarith only [upper, rs, pi_gt_d2]) (by linarith only [lower])
 
 /-- The revised signed heights give the chart shape in either type of strip. -/
-theorem triangle_height_bounds {r b d Z₀ Z₁ Y₀ Y₁ : ℝ} (polar : Bool)
+theorem triangle_height_bounds {r b d Y₀ Y₁ : ℝ} (polar : Bool)
     (rp : 0 < r) (rs : r < 0.522) (bp : 0 < b) (bs : b < 0.268 * r)
     (dmin : 0.852 * r ≤ d) (dmax : d ≤ r)
-    (z₀ : Z₀ ∈ Set.Icc (0.9612 : ℝ) 1) (z₁ : Z₁ ∈ Set.Icc (0.9612 : ℝ) 1)
-    (near₀ : |Y₀ + sin (d / 2) / Z₀| ≤ ordinateErrorFactor polar * b ^ 2 / r)
-    (near₁ : |Y₁ - sin (d / 2) / Z₁| ≤ ordinateErrorFactor polar * b ^ 2 / r)
-    (sign : 0 ≤ (Y₀ + sin (d / 2) / Z₀) * (Y₁ - sin (d / 2) / Z₁)) :
+    (height : (2 * sin (d / 2) - ordinateErrorFactor polar * b ^ 2 / r ≤ Y₁ - Y₀ ∧
+      Y₁ - Y₀ ≤ 2 * sin (d / 2) / 0.9612 + ordinateErrorFactor polar * b ^ 2 / r) ∧
+      (sin (d / 2) - ordinateErrorFactor polar * b ^ 2 / r ≤ -Y₀ ∧
+        -Y₀ ≤ sin (d / 2) / 0.9612 + ordinateErrorFactor polar * b ^ 2 / r) ∧
+      sin (d / 2) - ordinateErrorFactor polar * b ^ 2 / r ≤ Y₁ ∧
+        Y₁ ≤ sin (d / 2) / 0.9612 + ordinateErrorFactor polar * b ^ 2 / r) :
     let hmin : ℝ := if polar then 0.815 else 0.834
     let hmax : ℝ := if polar then 1.070 else 1.051
     let ymin : ℝ := if polar then 0.393 else 0.412
@@ -88,9 +90,7 @@ theorem triangle_height_bounds {r b d Z₀ Z₁ Y₀ Y₁ : ℝ} (polar : Bool)
       (ymin * r < -Y₀ ∧ -Y₀ < ymax * r) ∧
       ymin * r < Y₁ ∧ Y₁ < ymax * r := by
   obtain ⟨sl, su⟩ := sine_half_step_bounds rp rs dmin dmax
-  have dp : 0 < d / 2 := by linarith only [dmin, rp]
-  have sine := (sin_pos_of_pos_of_lt_pi dp (by linarith only [dmax, rs, pi_gt_d2])).le
-  obtain ⟨⟨hl, hu⟩, ⟨ll, lu⟩, ul, uu⟩ := signed_height_bounds sine z₀ z₁ near₀ near₁ sign
+  obtain ⟨⟨hl, hu⟩, ⟨ll, lu⟩, ul, uu⟩ := height
   have error : ordinateErrorFactor polar * b ^ 2 / r ≤ (ordinateErrorFactor polar * 0.268 ^ 2) * r := by
     apply (div_le_iff₀ rp).mpr
     have sq := pow_le_pow_left₀ bp.le bs.le 2
