@@ -2,6 +2,7 @@ module
 
 public import Unfoldings.FewestNets.ThreeExitSharpSourceGaps
 public import Unfoldings.FewestNets.ThreeExitGraftFlatness
+public import Unfoldings.Geometry.PolarAngleBound
 
 /-! The saved acute bank suffices for the source-only opening used by the three-exit graft. -/
 
@@ -11,7 +12,7 @@ noncomputable section
 
 namespace Unfoldings.ConvexRoof.ThreeExitComponentRouting
 
-open FewestNets Real
+open FewestNets Real InnerProductGeometry
 
 universe u v
 
@@ -64,6 +65,8 @@ def SavedHeadingBound (error : ℝ) : Prop :=
     let Q := Roof[level,higher]
     ∀ (axis : Plane), ‖axis‖ = 1 →
       (∀ i, 0 < inner ℝ axis ((Q.folding.projectedBoundaryChain bank).edge i)) →
+      (∀ i j, 0 < inner ℝ ((Q.folding.projectedBoundaryChain bank).edge i)
+        ((Q.folding.projectedBoundaryChain bank).edge j)) →
       ∀ i j, |Q.projectedMetricHeadingError bank i - Q.projectedMetricHeadingError bank j| ≤ error
 
 set_option maxHeartbeats 1200000 in
@@ -103,8 +106,23 @@ theorem contourSource_saved_acuteCone_of_bound
   have unit : ‖axis‖ = 1 := (E.symm.norm_map _).trans (norm_polarRay _)
   have forward (i : Fin (n + 1)) : 0 < inner ℝ axis (P.edge i) :=
     (headingControls_pos E (Q.projectedBoundaryChain_edge_ne_zero bank i) small (within i)).1
+  have acute_edges (i j : Fin (n + 1)) : 0 < inner ℝ (P.edge i) (P.edge j) := by
+    have zi : E (P.edge i) ≠ 0 := E.map_ne_zero_iff.mpr (Q.projectedBoundaryChain_edge_ne_zero bank i)
+    have zj : E (P.edge j) ≠ 0 := E.map_ne_zero_iff.mpr (Q.projectedBoundaryChain_edge_ne_zero bank j)
+    have ray (z : ℂ) : ‖z‖ • polarRay z.arg = z := Complex.norm_mul_exp_arg_mul_I z
+    have angles : angle (E (P.edge i)) (E (P.edge j)) =
+        angle (polarRay (E (P.edge i)).arg) (polarRay (E (P.edge j)).arg) := by
+      conv_lhs => rw [← ray (E (P.edge i)), ← ray (E (P.edge j))]
+      rw [angle_smul_left_of_pos _ _ (norm_pos_iff.mpr zi), angle_smul_right_of_pos _ _ (norm_pos_iff.mpr zj)]
+    have diff : |(E (P.edge j)).arg - (E (P.edge i)).arg| ≤ hi - lo := abs_le.mpr
+      ⟨by linarith only [(within j).1, (within i).2], by linarith only [(within j).2, (within i).1]⟩
+    have good := (angle_polarRay_le_abs_sub (E (P.edge i)).arg (E (P.edge j)).arg).trans_lt (diff.trans_lt small)
+    rw [← angles] at good
+    have bound : angle (P.edge i) (P.edge j) < π / 2 :=
+      (E.toLinearIsometry.angle_map _ _).symm.trans_lt good
+    exact lt_of_not_ge (fun bad => bound.not_ge (inner_nonpos_iff_pi_div_two_le_angle.mp bad))
   obtain ⟨center, cone, _⟩ := Q.exists_common_acuteCone_of_headingOscillation bank E within
-    (comparison level higher contour starts event axis unit forward) (opening := 0) le_rfl
+    (comparison level higher contour starts event axis unit forward acute_edges) (opening := 0) le_rfl
     (by linarith only [width_le, acute])
   exact ⟨center, cone⟩
 
