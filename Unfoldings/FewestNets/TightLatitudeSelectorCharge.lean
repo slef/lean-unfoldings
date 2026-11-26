@@ -31,7 +31,7 @@ theorem tightAnnularSelectorMetric_crossingBudget_eq (i : AnnularTriangle a) :
       sin (min (annularCornerAngle i (if p.2 then p.1 + 1 else p.1)) (π / 2)))) / π =
       _ by simpa only [finRotate_apply] using s]
 
-theorem tightAnnularSelectorMetric_crossingBudget_le (analytic : a ≤ 0.31) (i : AnnularTriangle a) :
+theorem tightAnnularSelectorMetric_crossingBudget_le (analytic : a ≤ 0.40) (i : AnnularTriangle a) :
     (tightAnnularSelectorMetric positive small i).crossingBudget ≤ analyticAnnularCharge i := by
   rw [tightAnnularSelectorMetric_crossingBudget_eq, analyticAnnularCharge]
   apply max_le
@@ -63,13 +63,13 @@ theorem tightAnnularSelectorMetric_crossingBudget_le (analytic : a ≤ 0.31) (i 
       apply (div_le_iff₀ (by positivity)).mpr
       norm_num1 at perim ⊢
       linarith only [perim, pi_gt_d4, radius_lt small]
-    have m : 5 ≤ rowStep a / spacing a := by
+    have m : 4 ≤ rowStep a / spacing a := by
       apply (le_div_iff₀ (spacing_pos positive)).mpr
       linarith only [spacing_le_of_analytic analytic, radius_pos positive, (rowStep_bounds positive small).1]
     have coefficient : 1.14 ≤ tightApexCoefficient i - 0.089 * a := by
       unfold tightApexCoefficient
       split_ifs <;> linarith only [analytic]
-    have h := mul_le_mul coefficient m (by norm_num : (0 : ℝ) ≤ 5)
+    have h := mul_le_mul coefficient m (by norm_num : (0 : ℝ) ≤ 4)
       ((by norm_num : (0 : ℝ) ≤ 1.14).trans coefficient)
     exact max_perim.trans (by nlinarith only [h, sq_nonneg a])
 

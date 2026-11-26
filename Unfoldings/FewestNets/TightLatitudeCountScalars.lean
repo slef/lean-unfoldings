@@ -1,6 +1,7 @@
 module
 
 public import Unfoldings.FewestNets.AcuteLatitudeCountScalars
+public import Unfoldings.FewestNets.TaylorEnclosures
 
 /-! Scalar constants for the tightened latitude-grid count. -/
 
@@ -10,43 +11,31 @@ namespace Unfoldings.FewestNets.AcuteLatitudeGrid
 
 open Real
 
-/-- Concavity gives the paper's lower bound for the sine of the input angle. -/
-theorem sine_input_lower_tight {a : ℝ} (positive : 0 < a) (small : a ≤ π / 6) :
-    1.6532 * a < sin (2 * a) := by
-  let t := 6 * a / π
-  have t_pos : 0 < t := by dsimp [t]; positivity
-  have t_le : t ≤ 1 := by
-    dsimp [t]
-    apply (div_le_one pi_pos).mpr
-    linarith only [small]
-  have cap := strictConcaveOn_sin_Icc.concaveOn.2
+/-- A chord of sine on the analytic range gives a uniform linear lower bound. -/
+theorem sine_input_lower_tight {a : ℝ} (positive : 0 < a) (small : a ≤ 0.40) :
+    1.7925 * a < sin (2 * a) := by
+  have endpoint : (0.717 : ℝ) < sin 0.8 := by
+    have tail := (abs_le.mp (abs_sin_sub_integerTaylor_le 7 (0.8 : ℝ))).1
+    norm_num [integerTaylor, sinCoefficient, Finset.sum_range_succ] at tail
+    linarith only [tail]
+  let t := (5 / 2 : ℝ) * a
+  have tp : 0 < t := by dsimp only [t]; positivity
+  have tu : t ≤ 1 := by dsimp only [t]; linarith only [small]
+  have chord := strictConcaveOn_sin_Icc.concaveOn.2
     (show (0 : ℝ) ∈ Set.Icc 0 π from ⟨le_rfl, pi_pos.le⟩)
-    (show π / 3 ∈ Set.Icc (0 : ℝ) π from
-      ⟨by positivity, by linarith only [pi_pos]⟩)
-    (sub_nonneg.mpr t_le) t_pos.le (sub_add_cancel 1 t)
-  simp only [smul_eq_mul, mul_zero, zero_add, sin_zero] at cap
-  rw [sin_pi_div_three] at cap
-  have parameter : t * (π / 3) = 2 * a := by
-    dsimp [t]
-    field_simp [pi_ne_zero]
-    ring
-  rw [parameter] at cap
-  have root : (1.73205 : ℝ) < √3 := by
-    apply (sq_lt_sq₀ (by norm_num) (sqrt_nonneg _)).mp
-    rw [sq_sqrt (by norm_num)]
-    norm_num
-  have factor : 1.6532 * π < 3 * √3 := by
-    linarith only [root, pi_lt_d6]
-  apply lt_of_lt_of_le _ cap
-  have h := mul_lt_mul_of_pos_right factor positive
-  apply (mul_lt_mul_iff_of_pos_right pi_pos).mp
-  dsimp only [t]
-  convert h using 1 <;> field_simp [pi_ne_zero] <;> ring
+    (show (0.8 : ℝ) ∈ Set.Icc 0 π from ⟨by norm_num, by linarith only [pi_gt_three]⟩)
+    (sub_nonneg.mpr tu) tp.le (sub_add_cancel 1 t)
+  simp only [smul_eq_mul, mul_zero, zero_add, sin_zero] at chord
+  have ht : t * 0.8 = 2 * a := by dsimp only [t]; ring
+  rw [ht] at chord
+  have b := mul_lt_mul_of_pos_left endpoint tp
+  dsimp only [t] at b chord
+  linarith only [b, chord]
 
 /-- The common coefficient of the two Crofton charge bounds. -/
-theorem local_count_prefactor_tight {a s : ℝ} (positive : 0 < a) (small : a ≤ π / 6)
+theorem local_count_prefactor_tight {a s : ℝ} (positive : 0 < a) (small : a ≤ 0.40)
     (nonnegative : 0 ≤ s) (short : s ≤ 0.115) :
-    2 / (cos (s / 2) ^ 2 * sin (2 * a)) < 1.2138 / a := by
+    2 / (cos (s / 2) ^ 2 * sin (2 * a)) < 1.12 / a := by
   have half : s / 2 ≤ 0.0575 := by linarith only [short]
   have sq := pow_le_pow_left₀ (by positivity : 0 ≤ s / 2) half 2
   have cos_lower : 0.998346875 ≤ cos (s / 2) := by
@@ -66,17 +55,17 @@ end Unfoldings.FewestNets.AcuteLatitudeGrid
 namespace Unfoldings.FewestNets
 
 /-- The normalized count polynomial on the analytic range of the tightened estimate. -/
-theorem tightLatitude_small_coefficient_lt {a : ℝ} (positive : 0 < a) (small : a ≤ 0.31) :
-    2 * a ^ 4 + 4.90 * a ^ 2 + 1.2138 * 0.674 *
-      ((1.168 - 0.089 * a) * (99.71 - 3.22 * a) / 0.51 +
+theorem tightLatitude_small_coefficient_lt {a : ℝ} (positive : 0 < a) (small : a ≤ 0.40) :
+    2 * a ^ 4 + 4.90 * a ^ 2 + 1.12 * 0.674 *
+      ((1.182 - 0.089 * a) * (99.71 - 3.22 * a) / 0.51 +
         (2 + 0.2212 * a ^ 2) * 116.8 * a + (0.03 * 29 + 1.545 * 6.3) * a / 0.51) < 246.3 := by
-  let K : ℝ := 1.2138 * 0.674
-  let constant := K * (1.168 * 99.71 / 0.51)
-  let linear := K * ((0.03 * 29 + 1.545 * 6.3 - 1.168 * 3.22 - 0.089 * 99.71) / 0.51 + 2 * 116.8)
+  let K : ℝ := 1.12 * 0.674
+  let constant := K * (1.182 * 99.71 / 0.51)
+  let linear := K * ((0.03 * 29 + 1.545 * 6.3 - 1.182 * 3.22 - 0.089 * 99.71) / 0.51 + 2 * 116.8)
   let quadratic := 4.90 + K * (0.089 * 3.22 / 0.51)
   let cubic := K * (0.2212 * 116.8)
-  have exp : 2 * a ^ 4 + 4.90 * a ^ 2 + 1.2138 * 0.674 *
-      ((1.168 - 0.089 * a) * (99.71 - 3.22 * a) / 0.51 +
+  have exp : 2 * a ^ 4 + 4.90 * a ^ 2 + 1.12 * 0.674 *
+      ((1.182 - 0.089 * a) * (99.71 - 3.22 * a) / 0.51 +
         (2 + 0.2212 * a ^ 2) * 116.8 * a + (0.03 * 29 + 1.545 * 6.3) * a / 0.51) =
       constant + linear * a + quadratic * a ^ 2 + cubic * a ^ 3 + 2 * a ^ 4 := by
     dsimp only [constant, linear, quadratic, cubic, K]
@@ -86,7 +75,7 @@ theorem tightLatitude_small_coefficient_lt {a : ℝ} (positive : 0 < a) (small :
   have c : 0 ≤ cubic := by norm_num [cubic, K]
   rw [exp]
   calc
-    _ ≤ constant + linear * 0.31 + quadratic * 0.31 ^ 2 + cubic * 0.31 ^ 3 + 2 * 0.31 ^ 4 := by
+    _ ≤ constant + linear * 0.40 + quadratic * 0.40 ^ 2 + cubic * 0.40 ^ 3 + 2 * 0.40 ^ 4 := by
       gcongr <;> exact positive.le
     _ < 246.3 := by norm_num [constant, linear, quadratic, cubic, K]
 

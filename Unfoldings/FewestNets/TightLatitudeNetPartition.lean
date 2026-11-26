@@ -23,7 +23,7 @@ include P in
 theorem exists_acute_netPartition_lt_246_3_of_count {a : ℝ}
     (positive : 0 < a) (small : a ≤ π / 6)
     (angles : ∀ f i, (C.triangle f).cornerAngle i ≤ π / 2 - a)
-    (interval_bound : 0.31 < a → normalizedGridCoefficient a < 246.3) :
+    (interval_bound : 0.40 < a → normalizedGridCoefficient a < 246.3) :
     ∃ n : ℕ, (n : ℝ) < 246.3 / a ^ 4 ∧ C.HasNetPartition n := by
   let N := P.supportingNormals
   obtain ⟨placement, label, chosen, generic, count⟩ :=
@@ -34,8 +34,8 @@ theorem exists_acute_netPartition_lt_246_3_of_count {a : ℝ}
 
 include P in
 /-- On the analytic range the refined bound holds directly. -/
-theorem exists_acute_netPartition_lt_246_3_of_le_031 {a : ℝ}
-    (positive : 0 < a) (analytic : a ≤ 0.31)
+theorem exists_acute_netPartition_lt_246_3_of_le_040 {a : ℝ}
+    (positive : 0 < a) (analytic : a ≤ 0.40)
     (angles : ∀ f i, (C.triangle f).cornerAngle i ≤ π / 2 - a) :
     ∃ n : ℕ, (n : ℝ) < 246.3 / a ^ 4 ∧ C.HasNetPartition n :=
   P.exists_acute_netPartition_lt_246_3_of_count positive

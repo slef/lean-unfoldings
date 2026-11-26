@@ -32,31 +32,32 @@ def latitudeCertificateInterval (k : ℕ) : CountInterval :=
   ⟨latitudeCertificateEndpoint k, latitudeCertificateEndpoint (k + 1)⟩
 
 /-- Every real angle in the numerical range lies in a checked interval. -/
-theorem exists_latitudeCertificateInterval {a : ℝ} (lower : 0.31 ≤ a) (upper : a ≤ π / 6) :
-    ∃ k : Fin 55, (latitudeCertificateInterval k).Contains a := by
+theorem exists_latitudeCertificateInterval {a : ℝ} (lower : 0.40 ≤ a) (upper : a ≤ π / 6) :
+    ∃ k : Fin 55, 18 ≤ k.val ∧ (latitudeCertificateInterval k).Contains a := by
   classical
   let x := a * (countPrecision : ℝ)
-  have xlo : (latitudeCertificateEndpoint 0 : ℝ) ≤ x := by
-    change ((31000000000000 : ℤ) : ℝ) ≤ a * (countPrecision : ℝ)
+  have xlo : (latitudeCertificateEndpoint 18 : ℝ) ≤ x := by
+    change ((40000000000000 : ℤ) : ℝ) ≤ a * (countPrecision : ℝ)
     norm_num [countPrecision]
     linarith only [lower]
   have xhi : x ≤ (latitudeCertificateEndpoint (54 + 1) : ℝ) := by
     change a * (countPrecision : ℝ) ≤ ((52359877559832 : ℤ) : ℝ)
     norm_num [countPrecision]
     linarith only [upper, pi_lt_d20]
-  have covered : ∃ j : ℕ, x ≤ (latitudeCertificateEndpoint (j + 1) : ℝ) := ⟨54, xhi⟩
-  let k := Nat.find covered
-  have k_small : k ≤ 54 := Nat.find_min' covered xhi
-  refine ⟨⟨k, by omega⟩, ?_⟩
-  change (latitudeCertificateEndpoint k : ℝ) ≤ x ∧ x ≤ (latitudeCertificateEndpoint (k + 1) : ℝ)
+  have covered : ∃ j : ℕ, x ≤ (latitudeCertificateEndpoint (18 + j + 1) : ℝ) := ⟨36, xhi⟩
+  let j := Nat.find covered
+  have j_small : j ≤ 36 := Nat.find_min' covered xhi
+  refine ⟨⟨18 + j, by omega⟩, by simp, ?_⟩
+  change (latitudeCertificateEndpoint (18 + j) : ℝ) ≤ x ∧
+    x ≤ (latitudeCertificateEndpoint (18 + j + 1) : ℝ)
   refine ⟨?_, Nat.find_spec covered⟩
-  rcases Nat.eq_zero_or_pos k with hk | hk
-  · rwa [hk]
-  · obtain ⟨j, j_eq⟩ := Nat.exists_eq_succ_of_ne_zero hk.ne'
-    have lt : j < k := by omega
+  rcases Nat.eq_zero_or_pos j with hj | hj
+  · simpa only [hj, Nat.add_zero] using xlo
+  · obtain ⟨i, i_eq⟩ := Nat.exists_eq_succ_of_ne_zero hj.ne'
+    have lt : i < j := by omega
     have bad := Nat.find_min covered lt
     apply le_of_lt
-    rw [j_eq]
+    rw [i_eq]
     exact lt_of_not_ge bad
 
 end Unfoldings.FewestNets.RevisedLatitudeGrid

@@ -5,7 +5,7 @@ public import Unfoldings.FewestNets.TightLatitudeCountScalars
 public import Unfoldings.FewestNets.TightLatitudeAreaCount
 public import Unfoldings.FewestNets.RevisedLatitudeAllowances
 
-/-! Sum the refined analytic selector charges for margins up to 0.31 radians. -/
+/-! Sum the refined analytic selector charges for margins up to 0.40 radians. -/
 
 @[expose] public section
 
@@ -19,7 +19,7 @@ variable {a : ℝ} (positive : 0 < a) (small : a ≤ π / 6)
 
 include positive small in
 theorem tightApexCoefficient_excess_le :
-    (∑ i : AnnularTriangle a, (tightApexCoefficient i - 1.168)) ≤
+    (∑ i : AnnularTriangle a, (tightApexCoefficient i - 1.182)) ≤
       (0.03 * 29 + 1.545 * 6.3) / a := by
   refine (Finset.sum_le_sum (fun i _ => ?_)).trans
     ((annularApexCoefficient_excess_lt positive small).le.trans_eq (by ring))
@@ -28,16 +28,16 @@ theorem tightApexCoefficient_excess_le :
 
 include positive small in
 set_option maxHeartbeats 1000000 in
-theorem analyticAnnularCharge_sum_lt (analytic : a ≤ 0.31) :
-    2 + 4.90 / a ^ 2 + (1.2138 / a) * (∑ i : AnnularTriangle a, analyticAnnularCharge i) <
+theorem analyticAnnularCharge_sum_lt (analytic : a ≤ 0.40) :
+    2 + 4.90 / a ^ 2 + (1.12 / a) * (∑ i : AnnularTriangle a, analyticAnnularCharge i) <
       246.3 / a ^ 4 := by
   let d := rowStep a
   let b := spacing a
   let r := radius a
   let m : ℝ := triangleCount a
-  let E := ∑ i : AnnularTriangle a, (tightApexCoefficient i - 1.168)
+  let E := ∑ i : AnnularTriangle a, (tightApexCoefficient i - 1.182)
   let e : ℝ := 0.03 * 29 + 1.545 * 6.3
-  let c : ℝ := 1.168 - 0.089 * a
+  let c : ℝ := 1.182 - 0.089 * a
   have cp : 0 ≤ c := by dsimp only [c]; linarith only [analytic]
   have Ep : 0 ≤ E := Finset.sum_nonneg (fun i _ => by unfold tightApexCoefficient; split_ifs <;> norm_num)
   have bp : 0 < b := spacing_pos positive
@@ -64,7 +64,7 @@ theorem analyticAnnularCharge_sum_lt (analytic : a ≤ 0.31) :
   have exact_coeff : (∑ i : AnnularTriangle a, (tightApexCoefficient i - 0.089 * a)) = m * c + E := by
     unfold E
     simp_rw [show ∀ i : AnnularTriangle a, tightApexCoefficient i - 0.089 * a =
-      c + (tightApexCoefficient i - 1.168) from fun i => by dsimp [c]; ring]
+      c + (tightApexCoefficient i - 1.182) from fun i => by dsimp [c]; ring]
     rw [Finset.sum_add_distrib]
     simp only [Finset.sum_const, Finset.card_univ, nsmul_eq_mul, LatitudeRings.card_annularTriangle]
     rfl
@@ -85,7 +85,7 @@ theorem analyticAnnularCharge_sum_lt (analytic : a ≤ 0.31) :
         (mul_le_mul_of_nonneg_right third (by positivity))) (by norm_num)
   apply (lt_div_iff₀ (pow_pos positive 4)).mpr
   refine (mul_le_mul_of_nonneg_right
-    (add_le_add (le_refl (2 + 4.90 / a ^ 2)) (mul_le_mul_of_nonneg_left upper (by positivity : 0 ≤ 1.2138 / a)))
+    (add_le_add (le_refl (2 + 4.90 / a ^ 2)) (mul_le_mul_of_nonneg_left upper (by positivity : 0 ≤ 1.12 / a)))
     (pow_nonneg positive.le 4)).trans_lt ?_
   convert tightLatitude_small_coefficient_lt positive analytic using 1
   dsimp only [w, c, e]
