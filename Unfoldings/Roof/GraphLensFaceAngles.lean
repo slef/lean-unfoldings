@@ -176,6 +176,73 @@ private theorem graphLens_regionalAngleExcess_eq_zero {J : Set Plane}
 
 set_option maxHeartbeats 1700000 in
 open Classical in
+set_option maxHeartbeats 1200000 in
+/-- The difference of the two upper bank angle sums is the signed sum of
+defects strictly enclosed by their disjoint lenses. -/
+theorem graphLens_boundarySum_eq_signed_defects {f g : ℝ → ℝ}
+    (hf : Continuous f) (hg : Continuous g) {a b : ℝ} {n : ℕ}
+    (c : Fin (n + 2) ↪o ℝ) (first : c 0 = a) (last : c (Fin.last (n + 1)) = b)
+    (crossing : Set.range c = {t ∈ Set.Icc a b | f t = g t})
+    (sample : Face → Plane) (sample_in : ∀ j, sample j ∈ interior (K.projectedTriangle j).carrier)
+    (sample_off : ∀ j, sample j 0 ∈ Set.Ioo a b →
+      sample j 1 ≠ f (sample j 0) ∧ sample j 1 ≠ g (sample j 0))
+    (curve : Set Plane) :
+    let J (i : Fin (n + 1)) := graphLens f g (c i.castSucc) (c i.succ)
+    (∀ i, Schoenflies.IsJordanCurve (J i)) →
+    (∀ i, J i ⊆ interior K.footprint) →
+    (∀ i j, Disjoint (interior (K.projectedTriangle j).carrier) (J i)) →
+    (∀ i, J i ⊆ curve) →
+    (∀ i, Disjoint (interior (closedJordanDomain (J i))) curve) →
+    (∑ w : C.Vertex Set.univ, if K.projectedVertex w ∈ curve then
+      K.regionalAngleExcess (facesAboveGraph sample f a b) w -
+        K.regionalAngleExcess (facesAboveGraph sample g a b) w else 0) =
+      ∑ w : C.Vertex Set.univ, ∑ i : Fin (n + 1),
+        if K.projectedVertex w ∈ interior (closedJordanDomain (J i)) then
+          graphLensSign f g (c i.castSucc) (c i.succ) * C.interiorAngularDefect Set.univ w
+        else 0 := by
+  dsimp only
+  let J (i : Fin (n + 1)) := graphLens f g (c i.castSucc) (c i.succ)
+  let sign (i : Fin (n + 1)) := graphLensSign f g (c i.castSucc) (c i.succ)
+  intro jordan inside aligned boundary avoids
+  let δ (w : C.Vertex Set.univ) := C.interiorAngularDefect Set.univ w
+  let domain (i : Fin (n + 1)) := interior (closedJordanDomain (J i))
+  let d (w : C.Vertex Set.univ) :=
+    K.regionalAngleExcess (facesAboveGraph sample f a b) w -
+      K.regionalAngleExcess (facesAboveGraph sample g a b) w
+  let q (i : Fin (n + 1)) (w : C.Vertex Set.univ) :=
+    if K.projectedVertex w ∈ domain i then sign i * δ w else 0
+  let qTotal (w : C.Vertex Set.univ) := ∑ i, q i w
+  let boundarySum (w : C.Vertex Set.univ) := if K.projectedVertex w ∈ curve then d w else 0
+  have balance (w : C.Vertex Set.univ) : d w = boundarySum w - qTotal w := by
+    by_cases w_curve : K.projectedVertex w ∈ curve
+    · have q_zero (i : Fin (n + 1)) : q i w = 0 :=
+        ite_eq_right (fun fill => Set.disjoint_left.mp (avoids i) fill w_curve)
+      simp only [boundarySum, w_curve, ite_true, qTotal, q_zero, Finset.sum_const_zero, sub_zero]
+    · rw [show boundarySum w = 0 from ite_eq_right w_curve, zero_sub]
+      unfold d qTotal
+      rw [K.regionalAngleExcess_sub_eq_sum_graphLenses hf hg c first last crossing jordan aligned
+        sample sample_in sample_off w, ← Finset.sum_neg_distrib]
+      apply Finset.sum_congr rfl
+      intro i _
+      by_cases enclosed : K.projectedVertex w ∈ domain i
+      · rw [show q i w = sign i * δ w from ite_eq_left enclosed,
+          K.graphLens_regionalAngleExcess_eq_neg_defect (jordan i) (inside i) w enclosed, mul_neg]
+      · have outside : K.projectedVertex w ∉ closedJordanDomain (J i) := by
+          intro filled
+          have on_border : K.projectedVertex w ∈ frontier (closedJordanDomain (J i)) :=
+            ⟨subset_closure filled, enclosed⟩
+          exact w_curve (boundary i ((frontier_closedJordanDomain (jordan i)).subset on_border))
+        rw [show q i w = 0 from ite_eq_right enclosed,
+          K.graphLens_regionalAngleExcess_eq_zero (jordan i) (aligned i) w outside, mul_zero, neg_zero]
+  have all : (∑ w, d w) = 0 := by
+    simp only [d, Finset.sum_sub_distrib, K.sum_regionalAngleExcess, sub_self]
+  have sums := Finset.sum_congr (s₁ := Finset.univ) (s₂ := Finset.univ) rfl
+    (fun w _ => balance w)
+  rw [all, Finset.sum_sub_distrib] at sums
+  exact sub_eq_zero.mp sums.symm
+
+
+open Classical in
 /-- The actual lens comparison on a convex roof uses just the total intrinsic
 curvature of that roof, with no assumption on the shape of its spatial rim. -/
 theorem abs_graphLens_faceAngleDifference_add_correction_le_curvature {f g : ℝ → ℝ}
@@ -214,33 +281,9 @@ theorem abs_graphLens_faceAngleDifference_add_correction_le_curvature {f g : ℝ
     if K.projectedVertex w ∈ domain i then sign i * δ w else 0
   let qTotal (w : C.Vertex Set.univ) := ∑ i, q i w
   let boundarySum (w : C.Vertex Set.univ) := if K.projectedVertex w ∈ curve then d w else 0
-  have balance (w : C.Vertex Set.univ) : d w = boundarySum w - qTotal w := by
-    by_cases w_curve : K.projectedVertex w ∈ curve
-    · have q_zero (i : Fin (n + 1)) : q i w = 0 :=
-        ite_eq_right (fun fill => Set.disjoint_left.mp (avoids i) fill w_curve)
-      simp only [boundarySum, w_curve, ite_true, qTotal, q_zero, Finset.sum_const_zero, sub_zero]
-    · rw [show boundarySum w = 0 from ite_eq_right w_curve, zero_sub]
-      unfold d qTotal
-      rw [K.regionalAngleExcess_sub_eq_sum_graphLenses hf hg c first last crossing jordan aligned
-        sample sample_in sample_off w, ← Finset.sum_neg_distrib]
-      apply Finset.sum_congr rfl
-      intro i _
-      by_cases enclosed : K.projectedVertex w ∈ domain i
-      · rw [show q i w = sign i * δ w from ite_eq_left enclosed,
-          K.graphLens_regionalAngleExcess_eq_neg_defect (jordan i) (inside i) w enclosed, mul_neg]
-      · have outside : K.projectedVertex w ∉ closedJordanDomain (J i) := by
-          intro filled
-          have on_border : K.projectedVertex w ∈ frontier (closedJordanDomain (J i)) :=
-            ⟨subset_closure filled, enclosed⟩
-          exact w_curve (boundary i ((frontier_closedJordanDomain (jordan i)).subset on_border))
-        rw [show q i w = 0 from ite_eq_right enclosed,
-          K.graphLens_regionalAngleExcess_eq_zero (jordan i) (aligned i) w outside, mul_zero, neg_zero]
-  have all : (∑ w, d w) = 0 := by
-    simp only [d, Finset.sum_sub_distrib, K.sum_regionalAngleExcess, sub_self]
-  have sums := Finset.sum_congr (s₁ := Finset.univ) (s₂ := Finset.univ) rfl
-    (fun w _ => balance w)
-  rw [all, Finset.sum_sub_distrib] at sums
-  have boundary_total : (∑ w, boundarySum w) = ∑ w, qTotal w := sub_eq_zero.mp sums.symm
+  have boundary_total : (∑ w, boundarySum w) = ∑ w, qTotal w :=
+    K.graphLens_boundarySum_eq_signed_defects hf hg c first last crossing sample sample_in
+      sample_off curve jordan inside aligned boundary avoids
   have pointwise (w : C.Vertex Set.univ) : |qTotal w + correction w| ≤ δ w := by
     by_cases enclosed : ∃ i, K.projectedVertex w ∈ domain i
     · obtain ⟨i, filled⟩ := enclosed
