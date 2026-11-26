@@ -19,19 +19,23 @@ variable {Face : Type u} [Fintype Face] {C : TriangleComplex.{u, v} Face}
 
 include P in
 set_option maxHeartbeats 1800000 in
-/-- A generic orthogonal placement of the original normals has fewer than
-296/a⁴ same-selector original face components. -/
-theorem exists_revisedLatitude_low_component_placement {a : ℝ}
+/-- A single generic placement realizes any proved per-selector mean allowance. -/
+theorem exists_revisedLatitude_component_placement_le {a : ℝ}
     (positive : 0 < a) (small : a ≤ π / 6)
-    (angles : ∀ f i, (C.triangle f).cornerAngle i ≤ π / 2 - a) :
+    (allowance : Selector a → ℝ)
+    (mean : ∀ key : Selector a,
+      let region := selectorSphere positive small key
+      ((∫ g, gaussianSelectedCount N region false g ∂probability) +
+        (∫ g, gaussianSelectedCount N region true g ∂probability)) / 2 ≤
+        2 * uniformSphere.real region + allowance key) :
     ∃ (T : Space ≃ₗᵢ[ℝ] Space) (label : Face → Selector a),
       (∀ f, T (N.normal f) ∈ selectorSphere positive small (label f)) ∧
       (∀ f (i : ChordFace a) j, (LatitudeRings.chordBasis (rings_oriented positive small) i).coord j (T (N.normal f)) ≠ 0) ∧
-      (Nat.card (C.labeledSeamGraph label).ConnectedComponent : ℝ) < 296 / a ^ 4 := by
+      (Nat.card (C.labeledSeamGraph label).ConnectedComponent : ℝ) ≤ 2 + ∑ key, allowance key := by
   classical
   let region (key : Selector a) := selectorSphere positive small key
   let count (b : Bool) (g : SpatialRotation) := ∑ key, gaussianSelectedCount N (region key) b g
-  let bound := 2 + ∑ key : Selector a, selectorCountAllowance key
+  let bound := 2 + ∑ key : Selector a, allowance key
   have integrable (b : Bool) (key : Selector a) :
       Integrable (gaussianSelectedCount N (region key) b) probability := by
     obtain ⟨q, unit, hemisphere⟩ := exists_selectorSphere_hemisphere positive small key
@@ -46,8 +50,8 @@ theorem exists_revisedLatitude_low_component_placement {a : ℝ}
       ((∫ g, count false g ∂probability) + (∫ g, count true g ∂probability)) / 2 ≤ bound := by
     rw [counted false, counted true, ← Finset.sum_add_distrib, Finset.sum_div]
     calc
-      _ ≤ ∑ key, (2 * uniformSphere.real (region key) + selectorCountAllowance key) :=
-        Finset.sum_le_sum (fun key _ => P.mean_revisedLatitudeSelectedCount_le N positive small angles key)
+      _ ≤ ∑ key, (2 * uniformSphere.real (region key) + allowance key) :=
+        Finset.sum_le_sum (fun key _ => mean key)
       _ = _ := by
         rw [Finset.sum_add_distrib, ← Finset.mul_sum]
         have sum : (∑ key, uniformSphere.real (region key)) = 1 :=
@@ -86,6 +90,21 @@ theorem exists_revisedLatitude_low_component_placement {a : ℝ}
     rw [exact_label key]
   refine ⟨T, label, selected, generic, ?_⟩
   rw [actual_count]
-  exact (below.trans average).trans_lt (selectorCountAllowance_sum_lt positive small)
+  exact below.trans average
+
+include P in
+/-- A generic orthogonal placement of the original normals has fewer than
+296/a⁴ same-selector original face components. -/
+theorem exists_revisedLatitude_low_component_placement {a : ℝ}
+    (positive : 0 < a) (small : a ≤ π / 6)
+    (angles : ∀ f i, (C.triangle f).cornerAngle i ≤ π / 2 - a) :
+    ∃ (T : Space ≃ₗᵢ[ℝ] Space) (label : Face → Selector a),
+      (∀ f, T (N.normal f) ∈ selectorSphere positive small (label f)) ∧
+      (∀ f (i : ChordFace a) j, (LatitudeRings.chordBasis (rings_oriented positive small) i).coord j (T (N.normal f)) ≠ 0) ∧
+      (Nat.card (C.labeledSeamGraph label).ConnectedComponent : ℝ) < 296 / a ^ 4 := by
+  obtain ⟨T, label, selected, generic, count⟩ :=
+    P.exists_revisedLatitude_component_placement_le N positive small selectorCountAllowance
+      (P.mean_revisedLatitudeSelectedCount_le N positive small angles)
+  exact ⟨T, label, selected, generic, count.trans_lt (selectorCountAllowance_sum_lt positive small)⟩
 
 end Unfoldings.SpatialFolding.ConvexBoundary

@@ -126,8 +126,8 @@ theorem AnnularChartData.apexLengthFactor_pos : 0 < D.apexLengthFactor := by
   unfold AnnularChartData.apexLengthFactor
   positivity
 
-theorem AnnularChartData.apexLengthFactor_le :
-    D.apexLengthFactor ≤ if isPolarStrip a i.1.val then 1.059 else 1.0562 := by
+theorem AnnularChartData.apexLengthFactor_le_mean :
+    D.apexLengthFactor ≤ 1 + (D.apex ^ 2 + D.halfBase ^ 2) / D.height ^ 2 := by
   let t := (D.apex - D.halfBase) / D.height
   let u := (D.apex + D.halfBase) / D.height
   let s := √(1 + t ^ 2)
@@ -138,11 +138,13 @@ theorem AnnularChartData.apexLengthFactor_le :
       (D.apex ^ 2 + D.halfBase ^ 2) / D.height ^ 2 := by
     unfold t u
     ring
-  have comparison : s * q ≤ 1 + (D.apex ^ 2 + D.halfBase ^ 2) / D.height ^ 2 := by
-    rw [← algebra]
-    nlinarith only [sq_nonneg (s - q), s2, q2]
   change s * q ≤ _
-  apply comparison.trans
+  rw [← algebra]
+  nlinarith only [sq_nonneg (s - q), s2, q2]
+
+theorem AnnularChartData.apexLengthFactor_le :
+    D.apexLengthFactor ≤ if isPolarStrip a i.1.val then 1.059 else 1.0562 := by
+  apply D.apexLengthFactor_le_mean.trans
   have rp := radius_pos positive
   have bh : spacing a / (2 * 0.9612) ≤ 0.1395 * radius a := by
     apply (div_le_iff₀ (by norm_num)).mpr

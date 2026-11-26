@@ -198,7 +198,7 @@ theorem annular_metric_bounds (positive : 0 < a) (small : a ≤ π / 6)
 theorem annular_longestSide_factor (positive : 0 < a) (small : a ≤ π / 6)
     (i : AnnularTriangle a) :
     0 < 2 * annularLongestSide i / (π * sin (annularLongestSide i)) ∧
-      2 * annularLongestSide i / (π * sin (annularLongestSide i)) ≤ 0.675 := by
+      2 * annularLongestSide i / (π * sin (annularLongestSide i)) ≤ 0.674 := by
   let l := annularLongestSide i
   have lp : 0 < l := (annularSideLength_pos positive small i 0).trans_le (le_max_left _ _)
   have bound := (annular_metric_bounds positive small i).1

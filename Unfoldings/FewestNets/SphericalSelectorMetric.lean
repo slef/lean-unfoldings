@@ -25,7 +25,7 @@ structure MetricData (B : SphericalSelectorBoundary J region) where
   side_le : ∀ i, angle (B.endpoint i false) (B.endpoint i true) ≤ longest
   separation : ℝ
   separation_pos : 0 < separation
-  separation_small : separation ≤ 0.11
+  separation_small : separation ≤ 0.115
   separated : ∀ ⦃i j⦄, i ≠ j → (∀ a b, B.endpoint i a ≠ B.endpoint j b) →
     ∀ x ∈ networkEdge B.endpoint i, ∀ y ∈ networkEdge B.endpoint j, separation ≤ angle x y
   corner : J → Bool → ℝ

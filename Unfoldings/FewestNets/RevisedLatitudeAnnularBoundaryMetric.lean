@@ -14,7 +14,7 @@ namespace Unfoldings.FewestNets.RevisedLatitudeGrid
 
 open Real Cap InnerProductGeometry SphericalSelectorBoundary
 
-private theorem sum_endpointFactors_of_permutation {J : Type*} [Fintype J]
+theorem sum_endpointFactors_of_permutation {J : Type*} [Fintype J]
     (L : ℝ) (corner : J → ℝ) (step : Equiv.Perm J) :
     (∑ p : J × Bool, L / (sin L * sin (min (corner (if p.2 then step p.1 else p.1)) (π / 2)))) / π =
       ∑ j : J, (2 * L / (π * sin L)) / sin (min (corner j) (π / 2)) := by
@@ -49,9 +49,8 @@ theorem annular_corner_pos {a : ℝ} (positive : 0 < a) (small : a ≤ π / 6)
 variable {a : ℝ} (positive : 0 < a) (small : a ≤ π / 6)
 
 set_option maxHeartbeats 1500000 in
-/-- All pairs of annular sides are incident, so 0.11 is a valid separation
-scale. Each endpoint uses its actual spherical angle. -/
-def annularSelectorMetric (i : AnnularTriangle a) :
+/-- All pairs of annular sides meet, so any admissible separation scale is valid. -/
+def annularSelectorMetricAt (i : AnnularTriangle a) (s : ℝ) (s0 : 0 < s) (hs : s ≤ 0.115) :
     MetricData (annularSelectorBoundary positive small i) where
   longest := annularLongestSide i
   longest_pos := (annularSideLength_pos positive small i 0).trans_le (le_max_left _ _)
@@ -66,9 +65,9 @@ def annularSelectorMetric (i : AnnularTriangle a) :
     · exact le_max_left _ _
     · exact (le_max_left _ _).trans (le_max_right _ _)
     · exact (le_max_right _ _).trans (le_max_right _ _)
-  separation := 0.11
-  separation_pos := by norm_num
-  separation_small := by norm_num
+  separation := s
+  separation_pos := s0
+  separation_small := hs
   separated := by
     intro j k different nonincident x hx y hy
     have endpoints : ∃ b c : Bool, (if b then j + 1 else j) = (if c then k + 1 else k) := by
@@ -92,6 +91,14 @@ def annularSelectorMetric (i : AnnularTriangle a) :
       | exact le_rfl
       | exact (angle_comm _ _).le
 
+/-- The separation scale used by the first revised count. -/
+def annularSelectorMetric (i : AnnularTriangle a) :=
+  annularSelectorMetricAt positive small i 0.11 (by norm_num) (by norm_num)
+
+/-- The separation scale for the refined acute-angle count. -/
+def tightAnnularSelectorMetric (i : AnnularTriangle a) :=
+  annularSelectorMetricAt positive small i 0.115 (by norm_num) le_rfl
+
 /-- The geometric crossing budget of the actual annular selector. -/
 theorem annularSelectorMetric_crossingBudget_le (i : AnnularTriangle a) :
     (annularSelectorMetric positive small i).crossingBudget ≤
@@ -107,7 +114,8 @@ theorem annularSelectorMetric_crossingBudget_le (i : AnnularTriangle a) :
       sin (min (annularCornerAngle i (if p.2 then p.1 + 1 else p.1)) (π / 2)))) / π)
     (annularPerimeter i / (π * 0.11)) ≤ 0.675 * (A + 2 / 0.932)
   rw [sum]
-  obtain ⟨cp, cb⟩ := annular_longestSide_factor positive small i
+  obtain ⟨cp, tight⟩ := annular_longestSide_factor positive small i
+  have cb := tight.trans (by norm_num : (0.674 : ℝ) ≤ 0.675)
   obtain ⟨apex, base⟩ := annular_spherical_capped_sines positive small i
   apply max_le
   · let s j := sin (min (annularCornerAngle i j) (π / 2))

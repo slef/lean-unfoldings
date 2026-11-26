@@ -83,23 +83,59 @@ def scaled (hD : 0 < D) (i : ℤ) : CheckedReal D ((i : ℝ) / D) :=
     rw [div_mul_cancel₀ _ (FixedPointInterval.cast_den_pos hD).ne']
     exact ⟨le_rfl, le_rfl⟩)
 
+open scoped Nat
+
+/-- The Taylor monomials at a rational center are rounded only after division
+by the factorial. This keeps the enclosure narrow even near a pole. -/
+def checkedRationalTaylor (D : ℕ) (q : ℚ) (coefficient : ℕ → ℤ) (n : ℕ) :
+    CheckedReal D (integerTaylor coefficient n (q : ℝ)) :=
+  match n with
+  | 0 => (rat D (coefficient 0 : ℚ)).convert (by simp [integerTaylor])
+  | n + 1 =>
+    let term := (rat D (((coefficient (n + 1) : ℚ) / ((n + 1)! : ℚ)) * q ^ (n + 1))).convert
+      (by push_cast; rfl :
+        ((((coefficient (n + 1) : ℚ) / ((n + 1)! : ℚ)) * q ^ (n + 1) : ℚ) : ℝ) =
+          (coefficient (n + 1) : ℝ) / ((n + 1)! : ℝ) * (q : ℝ) ^ (n + 1))
+    ((checkedRationalTaylor D q coefficient n).add term).convert (by
+      unfold integerTaylor
+      exact (Finset.sum_range_succ (fun k => ((coefficient k : ℝ) / (k ! : ℝ)) * (q : ℝ) ^ k)
+        (n + 1)).symm)
+
+def checkedRationalTaylorRadius (D : ℕ) (q : ℚ) (n : ℕ) :
+    CheckedReal D (|(q : ℝ)| ^ (n + 1) / ((n + 1)! : ℝ)) :=
+  (rat D (|q| ^ (n + 1) / ((n + 1)! : ℚ))).convert (by push_cast; rfl)
+
+def checkSinAt (D : ℕ) (q : ℚ) (degree : ℕ) : CheckedReal D (sin (q : ℝ)) :=
+  (checkedRationalTaylor D q sinCoefficient degree).withError (checkedRationalTaylorRadius D q degree)
+    (abs_sin_sub_integerTaylor_le degree q)
+
+def checkCosAt (D : ℕ) (q : ℚ) (degree : ℕ) : CheckedReal D (cos (q : ℝ)) :=
+  (checkedRationalTaylor D q cosCoefficient degree).withError (checkedRationalTaylorRadius D q degree)
+    (abs_cos_sub_integerTaylor_le degree q)
+
+def checkSinScaled (D : ℕ) (i : ℤ) (degree : ℕ) : CheckedReal D (sin ((i : ℝ) / D)) :=
+  (checkSinAt D ((i : ℚ) / D) degree).convert (by push_cast; rfl)
+
+def checkCosScaled (D : ℕ) (i : ℤ) (degree : ℕ) : CheckedReal D (cos ((i : ℝ) / D)) :=
+  (checkCosAt D ((i : ℚ) / D) degree).convert (by push_cast; rfl)
+
 /-- Evaluate the Taylor series only at a single midpoint and add the
 one-Lipschitz error over the whole interval. -/
 def centeredSin (hD : 0 < D) {x : ℝ} (a : FixedPointInterval D)
     (inside : a.Contains x) (degree : ℕ) : CheckedReal D (sin x) :=
-  ((scaled hD a.midpoint).checkSin hD degree).withError (scaled hD a.radius)
+  (checkSinScaled D a.midpoint degree).withError (scaled hD a.radius)
     ((abs_sin_sub_sin_le x _).trans (FixedPointInterval.abs_sub_midpoint_le hD inside))
 
 /-- The same midpoint enclosure for cosine. -/
 def centeredCos (hD : 0 < D) {x : ℝ} (a : FixedPointInterval D)
     (inside : a.Contains x) (degree : ℕ) : CheckedReal D (cos x) :=
-  ((scaled hD a.midpoint).checkCos hD degree).withError (scaled hD a.radius)
+  (checkCosScaled D a.midpoint degree).withError (scaled hD a.radius)
     ((abs_cos_sub_cos_le x _).trans (FixedPointInterval.abs_sub_midpoint_le hD inside))
 
 /-- The computable midpoint sin enclosure on a fixed-point interval. -/
-def intervalSin (hD : 0 < D) (b : FixedPointInterval D) (degree : ℕ) :
+def intervalSin (_hD : 0 < D) (b : FixedPointInterval D) (degree : ℕ) :
     Option (FixedPointInterval D) :=
-  ((scaled hD b.midpoint).checkSin hD degree).bounds.map
+  (checkSinScaled D b.midpoint degree).bounds.map
     (fun out => ⟨out.lo - b.radius, out.hi + b.radius⟩)
 
 /-- Allow the midpoint test to compose inside a larger interval expression. -/
@@ -108,15 +144,15 @@ def checkSinCentered (hD : 0 < D) {x : ℝ} (a : CheckedReal D x) (degree : ℕ)
   a.map (fun b => intervalSin hD b degree) (by
     intro b out hx eq
     apply (centeredSin hD b hx degree).sound out
-    change ((scaled hD b.midpoint).checkSin hD degree).bounds.bind
+    change (checkSinScaled D b.midpoint degree).bounds.bind
       (fun i => some ⟨i.lo - b.radius, i.hi + b.radius⟩) = some out
-    cases ha : ((scaled hD b.midpoint).checkSin hD degree).bounds <;>
+    cases ha : (checkSinScaled D b.midpoint degree).bounds <;>
       simpa only [intervalSin, ha, Option.map, Option.bind] using eq)
 
 /-- The computable midpoint cos enclosure on a fixed-point interval. -/
-def intervalCos (hD : 0 < D) (b : FixedPointInterval D) (degree : ℕ) :
+def intervalCos (_hD : 0 < D) (b : FixedPointInterval D) (degree : ℕ) :
     Option (FixedPointInterval D) :=
-  ((scaled hD b.midpoint).checkCos hD degree).bounds.map
+  (checkCosScaled D b.midpoint degree).bounds.map
     (fun out => ⟨out.lo - b.radius, out.hi + b.radius⟩)
 
 /-- Allow the midpoint cosine test to compose inside a larger expression. -/
@@ -125,9 +161,9 @@ def checkCosCentered (hD : 0 < D) {x : ℝ} (a : CheckedReal D x) (degree : ℕ)
   a.map (fun b => intervalCos hD b degree) (by
     intro b out hx eq
     apply (centeredCos hD b hx degree).sound out
-    change ((scaled hD b.midpoint).checkCos hD degree).bounds.bind
+    change (checkCosScaled D b.midpoint degree).bounds.bind
       (fun i => some ⟨i.lo - b.radius, i.hi + b.radius⟩) = some out
-    cases ha : ((scaled hD b.midpoint).checkCos hD degree).bounds <;>
+    cases ha : (checkCosScaled D b.midpoint degree).bounds <;>
       simpa only [intervalCos, ha, Option.map, Option.bind] using eq)
 
 end

@@ -79,6 +79,55 @@ theorem apexCountCoefficient_pos {a : ℝ} (small : a ≤ π / 6) (strip base : 
     0 < apexCountCoefficient strip base - 0.073 * a := by
   cases strip <;> cases base <;> norm_num [apexCountCoefficient] <;> linarith only [small, pi_lt_d6]
 
+/-- The cosine-weighted chart height retains the exact meridional leading term. -/
+theorem apex_height_mul_cos_le {a H q : ℝ}
+    (positive : 0 < a) (small : a ≤ π / 6) (polarStrip : Bool)
+    (spacing_cap : spacing a ≤ q * radius a)
+    (height : H ≤ 2 * sin (rowStep a / 2) / 0.9612 +
+      ordinateErrorFactor polarStrip * spacing a ^ 2 / radius a) :
+    H * cos (rowStep a / 2) ≤ rowStep a *
+      ((1 - 0.061 * a) / 0.9612 + ordinateErrorFactor polarStrip * q ^ 2 / 0.852) := by
+  let z : ℝ := 0.9612
+  let b := spacing a
+  let d := rowStep a
+  let r := radius a
+  let E := ordinateErrorFactor polarStrip
+  let c := cos (d / 2)
+  have dp : 0 < d := rowStep_pos positive small
+  have bp : 0 < b := spacing_pos positive
+  have rp : 0 < r := radius_pos positive
+  have ep : 0 ≤ E := ordinateErrorFactor_nonneg _
+  have cp : 0 < c := cos_pos_of_mem_Ioo
+    ⟨by linarith only [dp, pi_pos],
+      by linarith only [(rowStep_bounds positive small).2, radius_lt small, pi_gt_d2]⟩
+  have en : 0 ≤ E * b ^ 2 / r := by positivity
+  let S := (1 - 0.061 * a) / z + E * q ^ 2 / 0.852
+  have S_err : E * b ^ 2 / r ≤ d * (E * q ^ 2 / 0.852) := by
+    have sq := pow_le_pow_left₀ bp.le (spacing_cap) 2
+    have h := (div_le_iff₀ rp).mpr (by
+      nlinarith only [mul_le_mul_of_nonneg_left sq ep] :
+        E * b ^ 2 ≤ (E * q ^ 2 * r) * r)
+    have sc := mul_le_mul_of_nonneg_right (rowStep_bounds positive small).1.le
+      (div_nonneg (mul_nonneg ep (sq_nonneg _)) (by norm_num) :
+        0 ≤ E * q ^ 2 / 0.852)
+    change 0.852 * r * (E * q ^ 2 / 0.852) ≤ d * (E * q ^ 2 / 0.852) at sc
+    change E * b ^ 2 / r ≤ _ at h
+    ring_nf at sc h ⊢
+    exact h.trans sc
+  change H * c ≤ d * S
+  have h := mul_le_mul_of_nonneg_right height cp.le
+  change H * c ≤ (2 * sin (d / 2) / z + E * b ^ 2 / r) * c at h
+  have c_le : c ≤ 1 := cos_le_one (d / 2)
+  have signed := (sin_two_mul (d / 2)).symm
+  rw [show 2 * (d / 2) = d by ring] at signed
+  change 2 * sin (d / 2) * c = sin d at signed
+  have err := mul_le_of_le_one_right en c_le
+  have sn := sine_rowStep_le positive small
+  change sin d ≤ d * (1 - 0.061 * a) at sn
+  dsimp only [S, z] at h ⊢
+  ring_nf at signed h sn err S_err ⊢
+  linarith only [h, signed, err, sn, S_err]
+
 /-- A bound on the reciprocal apex sine from the actual chart height and base length. -/
 theorem apex_height_to_sine_budget {a B H J : ℝ}
     (positive : 0 < a) (small : a ≤ π / 6) (polarStrip polarBase : Bool)
@@ -100,40 +149,11 @@ theorem apex_height_to_sine_budget {a B H J : ℝ}
   let c := cos (d / 2)
   have dp : 0 < d := rowStep_pos positive small
   have bp : 0 < b := spacing_pos positive
-  have rp : 0 < r := radius_pos positive
-  have ep : 0 ≤ E := ordinateErrorFactor_nonneg _
   have jp : 0 < J₀ := by dsimp [J₀]; split_ifs <;> norm_num
-  have cp : 0 < c := cos_pos_of_mem_Ioo
-    ⟨by linarith only [dp, pi_pos],
-      by linarith only [(rowStep_bounds positive small).2, radius_lt small, pi_gt_d2]⟩
-  have en : 0 ≤ E * b ^ 2 / r := by positivity
   have rn : 0 < B₀ * b := mul_pos (by dsimp [B₀]; split_ifs <;> norm_num) bp
   let S := (1 - 0.061 * a) / z + E * 0.268 ^ 2 / 0.852
-  have S_err : E * b ^ 2 / r ≤ d * (E * 0.268 ^ 2 / 0.852) := by
-    have sq := pow_le_pow_left₀ bp.le (spacing_lt positive small).le 2
-    have h := (div_le_iff₀ rp).mpr (by
-      nlinarith only [mul_le_mul_of_nonneg_left sq ep] :
-        E * b ^ 2 ≤ (E * 0.268 ^ 2 * r) * r)
-    have sc := mul_le_mul_of_nonneg_right (rowStep_bounds positive small).1.le
-      (div_nonneg (mul_nonneg ep (sq_nonneg _)) (by norm_num) :
-        0 ≤ E * 0.268 ^ 2 / 0.852)
-    change 0.852 * r * (E * 0.268 ^ 2 / 0.852) ≤ d * (E * 0.268 ^ 2 / 0.852) at sc
-    change E * b ^ 2 / r ≤ _ at h
-    ring_nf at sc h ⊢
-    exact h.trans sc
-  have Hc : H * c ≤ d * S := by
-    have h := mul_le_mul_of_nonneg_right height cp.le
-    change H * c ≤ (2 * sin (d / 2) / z + E * b ^ 2 / r) * c at h
-    have c_le : c ≤ 1 := cos_le_one (d / 2)
-    have signed := (sin_two_mul (d / 2)).symm
-    rw [show 2 * (d / 2) = d by ring] at signed
-    change 2 * sin (d / 2) * c = sin d at signed
-    have err := mul_le_of_le_one_right en c_le
-    have sn := sine_rowStep_le positive small
-    change sin d ≤ d * (1 - 0.061 * a) at sn
-    dsimp only [S, z] at h ⊢
-    ring_nf at signed h sn err S_err ⊢
-    linarith only [h, signed, err, sn, S_err]
+  have Hc : H * c ≤ d * S :=
+    apex_height_mul_cos_le positive small polarStrip (spacing_lt positive small).le height
   have HB : H * (B₀ * b) ≤ B * (d * S) := by
     calc
       _ ≤ H * (B * c) := mul_le_mul_of_nonneg_left base.le Hp.le

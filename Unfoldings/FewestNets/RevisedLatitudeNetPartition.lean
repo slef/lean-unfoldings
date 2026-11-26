@@ -58,6 +58,26 @@ theorem hasOriginalEdgeNet_of_revisedLatitude_annular_label {a : ℝ}
     (by linarith only [φsmall, pi_gt_three]) rad pole_area reserve span
   exact component ▸ C.hasOriginalEdgeNet_of_restrictFaces _ _ net
 
+/-- Every component of a generic revised-grid placement yields an original-edge net. -/
+theorem hasNetPartition_of_revisedLatitude_placement {a : ℝ} (positive : 0 < a) (small : a ≤ π / 6)
+    (placement : Space ≃ₗᵢ[ℝ] Space) (label : Face → Selector a)
+    (chosen : ∀ f, placement (N.normal f) ∈ selectorSphere positive small (label f))
+    (generic : ∀ f (i : ChordFace a) j, (LatitudeRings.chordBasis (rings_oriented positive small) i).coord j
+      (placement (N.normal f)) ≠ 0)
+    (angles : ∀ f i, (C.triangle f).cornerAngle i ≤ π / 2 - a) :
+    C.HasNetPartition (Nat.card (C.labeledSeamGraph label).ConnectedComponent) := by
+  apply C.hasNetPartition_card_labeledSeamGraph label
+  intro c
+  obtain ⟨seed, represented⟩ := c.exists_rep
+  rw [← represented]
+  cases label_eq : label seed with
+  | inl pole =>
+    exact P.hasOriginalEdgeNet_of_revisedLatitude_polar_label N positive small placement label
+      chosen generic pole angles seed label_eq
+  | inr k =>
+    exact P.hasOriginalEdgeNet_of_revisedLatitude_annular_label N positive small placement label
+      chosen generic angles k seed label_eq
+
 /-- A convex polyhedron with a conforming triangular boundary mesh whose
 corner angles are at most `π / 2 - a` partitions into fewer than `296 / a^4`
 nonoverlapping nets along edges of the input triangles. -/
@@ -69,16 +89,7 @@ theorem exists_acute_netPartition_lt_296 {a : ℝ}
   let normals := P.supportingNormals
   obtain ⟨placement, label, chosen, generic, count⟩ :=
     P.exists_revisedLatitude_low_component_placement normals positive small angles
-  refine ⟨_, count, C.hasNetPartition_card_labeledSeamGraph label ?_⟩
-  intro c
-  obtain ⟨seed, represented⟩ := c.exists_rep
-  rw [← represented]
-  cases label_eq : label seed with
-  | inl pole =>
-    exact P.hasOriginalEdgeNet_of_revisedLatitude_polar_label normals positive small placement label
-      chosen generic pole angles seed label_eq
-  | inr k =>
-    exact P.hasOriginalEdgeNet_of_revisedLatitude_annular_label normals positive small placement label
-      chosen generic angles k seed label_eq
+  exact ⟨_, count, P.hasNetPartition_of_revisedLatitude_placement normals positive small
+    placement label chosen generic angles⟩
 
 end Unfoldings.SpatialFolding.ConvexBoundary
