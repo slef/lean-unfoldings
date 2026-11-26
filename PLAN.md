@@ -1242,8 +1242,9 @@ statement will produce an original-edge `HasNetPartition`.
   sharp bound survives removal of the auxiliary connector.
 - [x] Identify the two original face sides of every trimmed link and recover the
   actual untrimmed saved bank's real heading error in a forward positive chart.
-- [ ] Use the sharp allowance on all saved-bank windows and put the actual
-  source gaps in a common acute cone.
+- [x] Use the sharp allowance on all saved-bank windows and put the actual
+  source gaps in a common acute cone. Construct the complete annular contour
+  with strict radial progress at each bend.
 - [x] Present the entire graft by exact closed cell seams and descend its proper spatial collapse.
 - [x] Name all cut copies of the unbounded roof on the finite banks or the continued tails.
   Verify uniqueness of strict physical addresses and the exact endpoints of all gap fibers.
