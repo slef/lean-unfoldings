@@ -1,0 +1,65 @@
+name: Book
+
+# Builds the interactive guide to the abstract files (book/) and publishes it
+# to GitHub Pages. Only the two abstract modules and their imports are built.
+on:
+  push:
+    branches: [main]
+    paths: ['book/**', 'Unfoldings/Cap/Abstract.lean', 'Unfoldings/Source/Abstract.lean', 'lean-toolchain', 'lake-manifest.json', '.github/workflows/book.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: book
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Install elan
+        run: |
+          curl https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -sSf | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Restore compiled library
+        uses: actions/cache@v4
+        with:
+          path: .lake/build
+          key: book-lake-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-${{ github.sha }}
+          restore-keys: book-lake-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-
+      - name: Get mathlib cache
+        run: lake exe cache get
+      - name: Build the abstract modules
+        run: lake build Unfoldings.Cap.Abstract Unfoldings.Source.Abstract
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: book/package-lock.json
+      - name: Build and check the book
+        working-directory: book
+        run: |
+          npm ci
+          npm run extract
+          npm run build
+          npm run lint
+          npm test
+          npm run check:pages -- --require
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: book/dist
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

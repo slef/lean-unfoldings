@@ -1,0 +1,57 @@
+{
+  "title": "Unfoldings in Lean",
+  "subtitle": "A reader's guide to the formal statements of the Unfoldings library",
+  "repo": "https://github.com/slef/lean-unfoldings",
+  "branch": "main",
+  "katexMacros": {
+    "\\R": "\\mathbb{R}",
+    "\\dist": "\\operatorname{d}"
+  },
+  "front": [
+    { "slug": "index", "file": "front/preface.md", "title": "Preface" },
+    { "slug": "checking", "file": "front/checking.md", "title": "Checking a result" }
+  ],
+  "parts": [
+    {
+      "label": "I",
+      "title": "Surfaces",
+      "slug": "part-surfaces",
+      "file": "surfaces/part-surfaces.md",
+      "chapters": [
+        { "slug": "meshes", "file": "surfaces/meshes.md", "title": "Triangles and meshes" },
+        { "slug": "gluing", "file": "surfaces/gluing.md", "title": "Points and gluing" },
+        { "slug": "distance", "file": "surfaces/distance.md", "title": "Intrinsic distance" },
+        { "slug": "cut-locus", "file": "surfaces/cut-locus.md", "title": "Shortest paths and the cut locus" },
+        { "slug": "polyhedra", "file": "surfaces/polyhedra.md", "title": "Convex polyhedra" }
+      ]
+    },
+    {
+      "label": "II",
+      "title": "Source unfolding",
+      "slug": "part-source",
+      "file": "source/part-source.md",
+      "chapters": [
+        { "slug": "nets", "file": "source/nets.md", "title": "Nets" },
+        { "slug": "source-unfoldings", "file": "source/source-unfoldings.md", "title": "Source unfoldings" },
+        { "slug": "source-theorem", "file": "source/source-theorem.md", "title": "The source-unfolding theorem" }
+      ]
+    },
+    {
+      "label": "III",
+      "title": "Edge unfolding of caps",
+      "slug": "part-caps",
+      "file": "caps/part-caps.md",
+      "chapters": [
+        { "slug": "cap-meshes", "file": "caps/cap-meshes.md", "title": "Meshes with cuts" },
+        { "slug": "caps", "file": "caps/caps.md", "title": "Convex caps" },
+        { "slug": "edge-unfoldings", "file": "caps/edge-unfoldings.md", "title": "Simple edge unfoldings" },
+        { "slug": "cap-theorem", "file": "caps/cap-theorem.md", "title": "The nearly flat cap theorem" }
+      ]
+    }
+  ],
+  "appendices": [
+    { "slug": "audit", "file": "appendices/audit.md", "title": "What Lean checks" },
+    { "slug": "declarations", "file": "appendices/declarations.md", "title": "Index of declarations" },
+    { "slug": "bibliography", "file": "appendices/bibliography.md", "title": "Bibliography" }
+  ]
+}

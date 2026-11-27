@@ -1,0 +1,980 @@
+// Build the static site in book/dist from book/src and book/build/lean-data.json.
+//
+// Chapters are Markdown with a few directives, each on its own line:
+//
+//   @decl Name …        show the Lean source of declarations, exactly as compiled
+//   @stmt Name …        the same, with the proof collapsed behind a toggle
+//   @viz kind {json}    mount an interactive widget (src/assets/viz)
+//   @index              the declaration index (generated)
+//   @audit              the audit tables (generated)
+//   @claims             the list of main results, for the checking page
+//   @bibliography       the list of cited works (generated)
+//
+// A fenced block ```headline id … ``` states a chapter's main result: header
+// lines (title, source, key, theorems, skip) up to the first blank line, then
+// the statement in English. The build computes the definitions a reader needs
+// to check it (see `claimClosure`) and writes them to assets/claims.json.
+//
+// and inline [[Name]] or [[Name|text]] for a hyperlinked, hoverable reference.
+// Every name must resolve to a constant that Lean exported, or the build fails.
+//
+// Citations [@key], [@a; @b], [-@key] and @key refer to src/bibliography.json
+// (see scripts/bibliography.mjs). Unknown keys and entries that no chapter
+// cites fail the build.
+
+import { copyFileSync, cpSync, existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { dirname, join, relative, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import MarkdownIt from 'markdown-it';
+import container from 'markdown-it-container';
+import katex from 'katex';
+import { escapeHtml, renderLean } from './lean-html.mjs';
+import { citedKeys, citePlugin, formatReference, loadBibliography, parseSourceLine, renderCitation } from './bibliography.mjs';
+
+const bookDir = resolve(dirname(fileURLToPath(import.meta.url)), '..');
+const srcDir = join(bookDir, 'src');
+const distDir = resolve(process.env.BOOK_DIST ?? join(bookDir, 'dist'));
+const dataPath = join(bookDir, 'build', 'lean-data.json');
+if (!existsSync(dataPath)) {
+  console.error('Missing build/lean-data.json. Run `npm run extract` first.');
+  process.exit(1);
+}
+const data = JSON.parse(readFileSync(dataPath, 'utf8'));
+const config = JSON.parse(readFileSync(join(srcDir, 'book.json'), 'utf8'));
+const errors = [];
+const fail = (msg) => errors.push(msg);
+const bib = loadBibliography(JSON.parse(readFileSync(join(srcDir, 'bibliography.json'), 'utf8')).entries);
+bib.errors.forEach(fail);
+
+const STANDARD_AXIOMS = ['propext', 'Classical.choice', 'Quot.sound'];
+const LIB = 'Unfoldings';
+const short = (name) => name.startsWith(LIB + '.') ? name.slice(LIB.length + 1) : name;
+const declId = (name) => 'decl-' + name;
+const fragment = (id) => '#' + encodeURIComponent(id).replace(/%2E/g, '.');
+
+// ---------------------------------------------------------------------------
+// Lean data indexes
+
+const declLoc = new Map(); // name -> {module, range}
+for (const [module, m] of Object.entries(data.modules)) {
+  for (const [name, range] of Object.entries(m.decls)) declLoc.set(name, { module, range });
+}
+const consts = data.consts;
+const constNames = Object.keys(consts);
+
+function sourceUrl(name) {
+  const loc = declLoc.get(name);
+  if (!loc) return null;
+  const m = data.modules[loc.module];
+  const ref = data.dirty || !data.commit ? config.branch : data.commit;
+  return `${config.repo}/blob/${ref}/${m.path}#L${loc.range[0] + 1}-L${loc.range[2] + 1}`;
+}
+function docsUrl(name) {
+  const c = consts[name];
+  if (!c || !c.module) return null;
+  return `https://leanprover-community.github.io/mathlib4_docs/${c.module.replaceAll('.', '/')}.html#${name}`;
+}
+
+// ---------------------------------------------------------------------------
+// Pass 1: find where each declaration is displayed.
+
+// book.json nests pages: front matter, parts (each with an introduction page
+// and chapters, a chapter possibly with sub-pages), then appendices. Numbers
+// are assigned here: chapters 1, 2, … across parts, sub-pages N.1, N.2, …,
+// appendices A, B, …. A chapter with sub-pages is a short overview page whose
+// own headings are not numbered. A part may end with an unnumbered page of
+// bibliographic notes (`notes` in book.json).
+const chapters = [];
+{
+  const add = (entry, extra) => {
+    const ch = { ...entry, ...extra, index: chapters.length };
+    delete ch.chapters;
+    ch.text = readFileSync(join(srcDir, 'chapters', ch.file), 'utf8');
+    ch.href = ch.slug === 'index' ? 'index.html' : `${ch.slug}.html`;
+    chapters.push(ch);
+    return ch;
+  };
+  let number = 0;
+  for (const f of config.front) add(f, { kind: 'front' });
+  for (const p of config.parts) {
+    const part = add(p, { kind: 'part', partLabel: p.label, title: p.title });
+    for (const c of p.chapters) {
+      const ch = add(c, { kind: 'chapter', number: String(++number), part });
+      ch.children = (c.children ?? []).map((k, i) => add(k, { kind: 'sub', number: `${number}.${i + 1}`, parent: ch, part }));
+    }
+    if (p.notes) add(p.notes, { kind: 'notes', part });
+  }
+  config.appendices.forEach((a, i) => add(a, { kind: 'appendix', appendix: String.fromCharCode(65 + i) }));
+}
+// "Chapter 12", "Section 12.3", "Part II" or "Appendix A".
+function pageLabel(ch) {
+  if (ch.kind === 'sub') return `Section ${ch.number}`;
+  if (ch.kind === 'chapter') return `Chapter ${ch.number}`;
+  if (ch.kind === 'part') return `Part ${ch.partLabel}`;
+  if (ch.kind === 'appendix') return `Appendix ${ch.appendix}`;
+  if (ch.kind === 'notes') return `Notes to Part ${ch.part.partLabel}`;
+  return null;
+}
+// {{ref:slug}} and {{num:slug}} in a chapter's source become the label or the
+// number of that page, also inside code blocks, so diagrams never go stale.
+for (const ch of chapters) {
+  ch.text = ch.text.replace(/\{\{(ref|num):([\w-]+)\}\}/g, (whole, what, slug) => {
+    const t = chapters.find((c) => c.slug === slug);
+    if (!t) { fail(`${ch.file}: unknown page ${slug} in ${whole}`); return whole; }
+    return what === 'ref' ? pageLabel(t) : (t.number ?? t.appendix ?? t.partLabel);
+  });
+}
+
+const home = new Map(); // constant -> {chapter, id}
+const displayed = []; // [{name, chapter}]
+const DIRECTIVE = /^@(decl|stmt)\s+(.+)$/;
+
+// The reading interface: library declarations quoted or linked by the book must
+// live in `*.Abstract` modules. Lean, Std and Mathlib names are always fine.
+function isReadable(name) {
+  const module = consts[name]?.module ?? '';
+  return !module.startsWith(LIB + '.') || /\.Abstract$/.test(module);
+}
+
+function resolveName(text, where) {
+  const name = text.trim();
+  if (consts[name]) return name;
+  const candidates = constNames.filter((c) => c.endsWith('.' + name));
+  if (candidates.length === 1) return candidates[0];
+  if (candidates.length > 1) {
+    const shown = candidates.filter((c) => home.has(c));
+    if (shown.length === 1) return shown[0];
+    const lib = candidates.filter((c) => c.startsWith(LIB + '.'));
+    const exact = lib.filter((c) => c === `${LIB}.${name}`);
+    if (exact.length === 1) return exact[0];
+    fail(`${where}: ambiguous name ${name}: ${candidates.slice(0, 6).join(', ')}`);
+    return null;
+  }
+  fail(`${where}: unknown Lean name ${name}`);
+  return null;
+}
+
+// Numbered chapters and appendices come first: a declaration the preface
+// previews still has its home where it is explained.
+const homeOrderChapters = [...chapters.filter((c) => c.number || c.appendix), ...chapters.filter((c) => !c.number && !c.appendix)];
+for (const ch of homeOrderChapters) {
+  let inFence = false;
+  for (const line of ch.text.split('\n')) {
+    if (line.startsWith('```')) inFence = !inFence;
+    const m = !inFence && line.match(DIRECTIVE);
+    if (!m) continue;
+    for (const raw of m[2].trim().split(/\s+/)) {
+      const name = resolveName(raw, ch.file);
+      if (!name) continue;
+      if (!declLoc.has(name)) { fail(`${ch.file}: ${name} has no source range`); continue; }
+      if (!isReadable(name)) { fail(`${ch.file}: ${short(name)} is internal (not in an Abstract module) and cannot be quoted`); continue; }
+      if (home.has(name)) continue; // first display is the home
+      home.set(name, { chapter: ch, id: declId(name) });
+      displayed.push({ name, chapter: ch });
+    }
+  }
+}
+// Main results: ```headline id``` blocks.
+const claims = [];
+const HEADLINE = /^```headline[ \t]+([\w-]+)[ \t]*\n([\s\S]*?)^```[ \t]*$/gm;
+for (const ch of chapters) {
+  for (const m of ch.text.matchAll(HEADLINE)) {
+    const [, id, content] = m;
+    const where = `${ch.file}: headline ${id}`;
+    const blank = content.search(/\n\s*\n/);
+    const head = blank < 0 ? content : content.slice(0, blank);
+    const body = blank < 0 ? '' : content.slice(blank).trim();
+    const claim = { id, chapter: ch, theorems: [], skips: [], body, key: false, where };
+    for (const line of head.split('\n')) {
+      const kv = line.match(/^(\w+):\s*(.*)$/);
+      if (!kv) { fail(`${where}: bad header line ${JSON.stringify(line)}`); continue; }
+      const [, k, v] = kv;
+      if (k === 'title') claim.title = v;
+      else if (k === 'source') {
+        claim.source = parseSourceLine(v);
+        if (!claim.source) fail(`${where}: source must list citation keys, as in "source: @sleator1985; @iacono2001"`);
+        for (const key of claim.source ?? []) if (!bib.byKey.has(key)) fail(`${where}: unknown citation key ${key}`);
+        if (claim.source) claim.source = claim.source.filter((key) => bib.byKey.has(key));
+      }
+      else if (k === 'key') claim.key = v === 'yes';
+      else if (k === 'theorems') claim.theorems.push(...v.split(/\s+/).filter(Boolean));
+      else if (k === 'skip') {
+        const [name, reason] = v.split(/\s+\|\s+/);
+        claim.skips.push({ name: name.trim(), reason: (reason ?? '').trim() });
+      } else fail(`${where}: unknown header ${k}`);
+    }
+    if (!claim.title) fail(`${where}: missing title`);
+    if (!body) fail(`${where}: missing English statement`);
+    if (claims.some((c) => c.id === id)) fail(`${where}: duplicate headline id`);
+    claims.push(claim);
+  }
+}
+
+// Constructors and fields live inside their parent's block.
+for (const { name, chapter } of displayed) {
+  const { module, range } = declLoc.get(name);
+  for (const d of data.modules[module].defs) {
+    if (d[0] >= range[0] && d[0] <= range[2] && !home.has(d[4])) {
+      home.set(d[4], { chapter, id: declId(d[4]) });
+    }
+  }
+}
+// Where is each module first discussed? (For reading-base links.)
+const moduleHome = new Map();
+for (const { name, chapter } of displayed) {
+  const { module } = declLoc.get(name);
+  if (!moduleHome.has(module)) moduleHome.set(module, { chapter, id: declId(name) });
+}
+
+// The definitions a reader must understand to check a claim: every library
+// constant its theorem statements mention, then, recursively, every library
+// constant those definitions mention in their types and bodies (the export
+// skips proofs). A `skip` names a constant, or a structure field, whose
+// reading is unnecessary; the claim records why.
+const deps = data.deps ?? {};
+function claimClosure(claim) {
+  const roots = claim.theorems.map((t) => resolveName(t, claim.where)).filter(Boolean);
+  const skips = claim.skips.map((s) => ({ ...s, full: s.name.startsWith(LIB + '.') ? s.name : `${LIB}.${s.name}` }));
+  const skipSet = new Set(skips.map((s) => s.full));
+  const usedSkips = new Set();
+  const needs = new Map(); // name -> first constant that needed it
+  const external = new Set();
+  const visit = (n, from) => {
+    if (skipSet.has(n)) { usedSkips.add(n); return; }
+    const e = deps[n];
+    if (!e) { external.add(n); return; }
+    if (needs.has(n)) return;
+    needs.set(n, from);
+    let uses = e.uses;
+    if (e.fields) {
+      uses = Object.entries(e.fields).filter(([f]) => {
+        const skipped = skipSet.has(`${n}.${f}`);
+        if (skipped) usedSkips.add(`${n}.${f}`);
+        return !skipped;
+      }).flatMap(([, u]) => u);
+    }
+    for (const u of uses) visit(u, n);
+  };
+  for (const r of roots) {
+    if (consts[r]?.kind !== 'theorem') fail(`${claim.where}: ${short(r)} is not a theorem`);
+    if (!home.has(r)) fail(`${claim.where}: ${short(r)} is not explained in any chapter (add an @decl or @stmt)`);
+    for (const u of deps[r]?.uses ?? []) visit(u, r);
+  }
+  for (const s of skips) if (!usedSkips.has(s.full)) fail(`${claim.where}: skip ${s.name} is not on any reading path`);
+  if (skips.some((s) => !s.reason)) fail(`${claim.where}: every skip needs a reason after " | "`);
+  return { roots, needs, external, skips };
+}
+for (const claim of claims) Object.assign(claim, claimClosure(claim));
+
+// ---------------------------------------------------------------------------
+// Rendering helpers
+
+const citations = new Map(); // key -> [{chapter, id}], in book order
+const bibPage = chapters.find((c) => c.text.split('\n').some((l) => /^@bibliography\s*$/.test(l)));
+if (!bibPage) fail('no page has the @bibliography directive');
+
+const md = new MarkdownIt({ html: true, typographer: true });
+const docMd = new MarkdownIt({ html: false, typographer: false });
+md.use(citePlugin, {
+  bib,
+  link: (entry) => currentPage.citeTarget(entry),
+  onError: (msg) => fail(`${currentWhere}: ${msg}`),
+});
+const renderSource = (page, keys) => renderCitation(bib, keys, 'source', (entry) => page.citeTarget(entry));
+
+const katexMacros = config.katexMacros ?? {};
+function tex(src, displayMode, where) {
+  try {
+    return katex.renderToString(src, { displayMode, throwOnError: true, macros: { ...katexMacros }, strict: 'ignore' });
+  } catch (e) {
+    fail(`${where}: KaTeX error in ${JSON.stringify(src)}: ${e.message}`);
+    return `<code>${escapeHtml(src)}</code>`;
+  }
+}
+
+class Page {
+  constructor(chapter) {
+    this.chapter = chapter;
+    this.hover = [];
+    this.hoverIndex = new Map();
+    this.bibHover = [];
+    this.bibIndex = new Map();
+    this.citeCount = 0;
+  }
+  // Link to a bibliography entry, with its hover card; records the citation
+  // for the back-links of the bibliography.
+  citeTarget(entry) {
+    let index = this.bibIndex.get(entry.key);
+    if (index === undefined) {
+      index = this.bibHover.length;
+      this.bibIndex.set(entry.key, index);
+      this.bibHover.push(formatReference(entry));
+    }
+    const id = `cite-${++this.citeCount}`;
+    if (!citations.has(entry.key)) citations.set(entry.key, []);
+    citations.get(entry.key).push({ chapter: this.chapter, id });
+    return { href: `${bibPage.href}#ref-${entry.key}`, attrs: ` data-b="${index}" id="${id}"` };
+  }
+  // Hover/link target for a constant, as seen from this page.
+  target(name) {
+    let index = this.hoverIndex.get(name);
+    const c = consts[name];
+    const h = home.get(name);
+    const href = h
+      ? (h.chapter === this.chapter ? '' : h.chapter.href) + fragment(h.id)
+      : (sourceUrl(name) ?? docsUrl(name) ?? '#');
+    if (index === undefined) {
+      index = this.hover.length;
+      this.hoverIndex.set(name, index);
+      const entry = { n: short(name), k: c?.kind ?? '', s: c ? c.sig : name, m: c?.module ?? '' };
+      if (c?.doc) entry.d = docMd.render(c.doc);
+      if (h) entry.b = `${h.chapter.number ? h.chapter.number + ' · ' : ''}${h.chapter.title}`;
+      else if (c?.module?.startsWith(LIB)) entry.b = 'library source on GitHub';
+      else if (c?.module) entry.b = 'documentation';
+      this.hover.push(entry);
+    }
+    return { href, index };
+  }
+}
+
+function axiomsBadge(name) {
+  const c = consts[name];
+  if (!c || !c.axioms) return '';
+  const axioms = c.axioms;
+  if (axioms.length === 0) {
+    return `<span class="badge axioms none" title="Depends on no axioms at all: the kernel checks it constructively.">no axioms</span>`;
+  }
+  const extra = axioms.filter((a) => !STANDARD_AXIOMS.includes(a));
+  const cls = extra.length ? 'axioms bad' : 'axioms std';
+  const title = extra.length
+    ? `Depends on non-standard axioms: ${extra.join(', ')}`
+    : `Depends only on Lean's standard axioms: ${axioms.join(', ')}.`;
+  return `<span class="badge ${cls}" title="${escapeHtml(title)}">${extra.length ? '⚠ ' : ''}${escapeHtml(axioms.join(' · '))}</span>`;
+}
+
+// The statement boundary of every abstract module is checked by Audit.lean,
+// which is part of the default `lake build`.
+function readingBase(page, module) {
+  if (!/\.Abstract$/.test(module)) return '';
+  const file = escapeHtml(module.replace(LIB + '.', '').replaceAll('.', '/') + '.lean');
+  return `<div class="reading-base" title="Checked by Audit.lean in the default build: the definitions and statements of this file mention no other declaration of the library.">`
+    + `<span class="rb-label">Statement reads only</span> <code>${file}</code> and Mathlib</div>`;
+}
+
+function statementEnd(source, range) {
+  // Position just after the first top-level ":=" of the declaration.
+  const lines = source.split('\n');
+  for (let l = range[0]; l <= range[2]; l++) {
+    const line = lines[l];
+    const from = l === range[0] ? range[1] : 0;
+    const idx = line.indexOf(':=', from);
+    if (idx >= 0 && !line.slice(0, idx).trimStart().startsWith('--')) {
+      return [l, idx + 2];
+    }
+  }
+  return null;
+}
+
+// Where each declaration's home block sits: book order and enclosing section.
+const homeInfo = new Map(); // name -> {order, section}
+let homeOrder = 0;
+
+function renderDecl(page, name, mode, { noHome = false } = {}) {
+  const { module, range } = declLoc.get(name);
+  const m = data.modules[module];
+  const c = consts[name];
+  const h = home.get(name);
+  const isHome = !noHome && h && h.chapter === page.chapter && !page.placed?.has(name);
+  page.placed ??= new Set();
+  const id = isHome ? declId(name) : null;
+  if (isHome) {
+    page.placed.add(name);
+    const order = ++homeOrder;
+    homeInfo.set(name, { order, section: page.section ?? null });
+    // Constructors and fields share their parent's block.
+    for (const d of m.defs) {
+      if (d[0] >= range[0] && d[0] <= range[2] && !homeInfo.has(d[4])) homeInfo.set(d[4], { order, section: page.section ?? null });
+    }
+  }
+
+  const anchors = new Map();
+  const extraRefs = [[range[4], range[5], range[6], range[7], name, true]];
+  for (const d of m.defs) {
+    if (d[0] < range[0] || d[0] > range[2] || d[4] === name) continue;
+    extraRefs.push([...d, true]);
+    if (isHome) anchors.set(`${d[0]}:${d[1]}`, declId(d[4]));
+  }
+  const linkFor = (constant) => page.target(constant);
+  const opts = { linkFor, extraRefs, anchors };
+
+  let toggle = '';
+  const end = mode === 'stmt' ? statementEnd(m.source, range) : null;
+  const split = end && (end[0] < range[2] || end[1] < range[3] - 4) ? end : null;
+  if (split) toggle = `<button class="proof-toggle" type="button" aria-expanded="false">show proof</button>`;
+  const code = renderLean(m, range, { ...opts, splitAt: split });
+
+  const src = sourceUrl(name);
+  const fileLabel = `${m.path.replace(LIB + '/', '')}:${range[0] + 1}`;
+  const kind = c?.kind ?? 'decl';
+  const selfHref = h ? (h.chapter === page.chapter ? '' : h.chapter.href) + fragment(h.id) : '#';
+  return `<figure class="decl kind-${kind}"${id ? ` id="${escapeHtml(id)}"` : ''}>`
+    + `<figcaption><span class="decl-kind">${kind}</span>`
+    + `<a class="decl-name" href="${selfHref}">${escapeHtml(short(name))}</a>`
+    + `<span class="decl-meta">${axiomsBadge(name)}`
+    + (src ? `<a class="decl-src" href="${escapeHtml(src)}" title="Open the source on GitHub">${escapeHtml(fileLabel)}</a>` : '')
+    + `${toggle}<button class="copy" type="button" title="Copy the Lean source">copy</button></span></figcaption>`
+    + `<pre class="lean"><code>${code}</code></pre>`
+    + (kind === 'theorem' ? readingBase(page, module) : '')
+    + `</figure>`;
+}
+
+function renderRefInline(page, text, where) {
+  // In a Markdown table cell the separator is written `\|`.
+  const [nameText, label] = text.split(/\\?\|/);
+  const name = resolveName(nameText, where);
+  if (!name) return `<code>${escapeHtml(text)}</code>`;
+  if (!isReadable(name)) fail(`${where}: [[${short(name)}]] is internal (not in an Abstract module); write it as plain code`);
+  const t = page.target(name);
+  const shown = label ?? short(name).split('.').slice(-2).join('.');
+  return `<a class="ref inline" href="${escapeHtml(t.href)}" data-c="${t.index}"><code>${escapeHtml(shown)}</code></a>`;
+}
+
+// ---------------------------------------------------------------------------
+// markdown-it extensions
+
+let currentPage = null;
+let currentWhere = '';
+
+// Inline [[Name]].
+md.inline.ruler.before('link', 'leanref', (state, silent) => {
+  const { src, pos } = state;
+  if (src.charCodeAt(pos) !== 0x5b || src.charCodeAt(pos + 1) !== 0x5b) return false;
+  const end = src.indexOf(']]', pos + 2);
+  if (end < 0) return false;
+  if (!silent) state.push('leanref', '', 0).content = src.slice(pos + 2, end);
+  state.pos = end + 2;
+  return true;
+});
+md.renderer.rules.leanref = (tokens, idx) => renderRefInline(currentPage, tokens[idx].content, currentWhere);
+
+// Inline math $…$.
+md.inline.ruler.after('escape', 'math_inline', (state, silent) => {
+  const { src, pos } = state;
+  if (src[pos] !== '$' || src[pos + 1] === '$') return false;
+  let end = pos + 1;
+  while (end < src.length && (src[end] !== '$' || src[end - 1] === '\\')) end++;
+  if (end >= src.length || end === pos + 1) return false;
+  const content = src.slice(pos + 1, end);
+  if (/^\s|\s$/.test(content)) return false;
+  if (!silent) state.push('math_inline', '', 0).content = content;
+  state.pos = end + 1;
+  return true;
+});
+md.renderer.rules.math_inline = (tokens, idx) => tex(tokens[idx].content, false, currentWhere);
+
+// Display math $$ … $$ (may span lines).
+md.block.ruler.before('fence', 'math_block', (state, startLine, endLine, silent) => {
+  const start = state.bMarks[startLine] + state.tShift[startLine];
+  const max = state.eMarks[startLine];
+  const first = state.src.slice(start, max);
+  if (!first.startsWith('$$')) return false;
+  if (silent) return true;
+  let content = first.slice(2);
+  let line = startLine;
+  let closed = content.trimEnd().endsWith('$$');
+  if (closed) content = content.trimEnd().slice(0, -2);
+  while (!closed && ++line < endLine) {
+    const text = state.src.slice(state.bMarks[line] + state.tShift[line], state.eMarks[line]);
+    if (text.trimEnd().endsWith('$$')) { content += '\n' + text.trimEnd().slice(0, -2); closed = true; }
+    else content += '\n' + text;
+  }
+  state.line = line + 1;
+  state.push('math_block', '', 0).content = content;
+  return true;
+});
+md.renderer.rules.math_block = (tokens, idx) => `<div class="math-display">${tex(tokens[idx].content, true, currentWhere)}</div>\n`;
+
+// Directives on their own line.
+md.block.ruler.before('paragraph', 'directive', (state, startLine, _endLine, silent) => {
+  const line = state.src.slice(state.bMarks[startLine] + state.tShift[startLine], state.eMarks[startLine]);
+  const m = line.match(/^@(decl|stmt|viz|index|audit|claims|bibliography)\b(.*)$/);
+  if (!m) return false;
+  if (silent) return true;
+  const tok = state.push('directive', '', 0);
+  tok.meta = { kind: m[1], args: m[2].trim() };
+  state.line = startLine + 1;
+  return true;
+});
+md.renderer.rules.directive = (tokens, idx) => {
+  const { kind, args } = tokens[idx].meta;
+  const page = currentPage;
+  if (kind === 'decl' || kind === 'stmt') {
+    const names = args.split(/\s+/).map((a) => resolveName(a, currentWhere))
+      .filter((n) => n && declLoc.has(n));
+    return `<div class="decl-group">${names.map((n) => renderDecl(page, n, kind)).join('')}</div>\n`;
+  }
+  if (kind === 'viz') {
+    const space = args.indexOf(' ');
+    const name = space < 0 ? args : args.slice(0, space);
+    const json = space < 0 ? '{}' : args.slice(space + 1);
+    try { JSON.parse(json); } catch (e) { fail(`${currentWhere}: bad @viz JSON: ${e.message}`); }
+    if (!/^[a-z][a-z0-9-]*$/.test(name) || !existsSync(join(srcDir, 'assets', 'viz', `${name}.js`))) {
+      fail(`${currentWhere}: unknown figure @viz ${name}`);
+    }
+    page.usesViz = true;
+    return `<div class="viz" data-viz="${escapeHtml(name)}" data-config="${escapeHtml(json)}">`
+      + `<div class="viz-loading">Interactive figure (requires JavaScript).</div></div>\n`;
+  }
+  if (kind === 'index') return renderIndex(page);
+  if (kind === 'audit') return renderAudit(page);
+  if (kind === 'claims') return renderClaims(page);
+  if (kind === 'bibliography') return '<!--@bibliography-->\n';
+  return '';
+};
+
+// Main-result boxes.
+const defaultFence = md.renderer.rules.fence;
+md.renderer.rules.fence = (tokens, idx, opts, env, self) => {
+  const t = tokens[idx];
+  const m = t.info.match(/^headline\s+([\w-]+)/);
+  if (!m) return defaultFence(tokens, idx, opts, env, self);
+  const claim = claims.find((c) => c.id === m[1]);
+  return claim ? renderHeadline(currentPage, claim) : '';
+};
+
+function claimLabel(claim) {
+  return claim.key ? `<span class="headline-star" aria-hidden="true">★</span> Key result` : 'Main result';
+}
+
+function claimCounts(claim) {
+  const shown = [...claim.needs.keys()].filter((n) => home.has(n));
+  const chaptersUsed = new Set(shown.map((n) => home.get(n).chapter));
+  const internal = claim.needs.size - shown.length;
+  return `${claim.needs.size} definition${claim.needs.size === 1 ? '' : 's'} in ${chaptersUsed.size} chapter${chaptersUsed.size === 1 ? '' : 's'}`
+    + (internal ? `, ${internal} more in internal modules` : '');
+}
+
+// Shown by checking.js while other results are selected: narrows the
+// selection to this result alone.
+function onlyButton(claim) {
+  return `<button type="button" class="claim-only" data-claim="${claim.id}" hidden title="Deselect every other result">only this one</button>`;
+}
+
+function renderHeadline(page, claim) {
+  const where = currentWhere;
+  const statement = md.render(claim.body, { nested: true });
+  currentWhere = where;
+  const lean = claim.roots.map((n) => renderDecl(page, n, 'stmt', { noHome: true })).join('');
+  return `<section class="headline" id="claim-${claim.id}" data-claim="${claim.id}">`
+    + `<div class="headline-label">${claimLabel(claim)}${claim.source?.length ? ` · <span class="headline-source">${renderSource(page, claim.source)}</span>` : ''}</div>`
+    + `<div class="headline-title">${md.renderInline(claim.title)}</div>`
+    + `<div class="headline-statement">${statement}</div>`
+    + `<details class="headline-lean"><summary>The Lean statement${claim.roots.length > 1 ? 's' : ''}</summary><div class="decl-group">${lean}</div></details>`
+    + `<div class="headline-check"><label><input type="checkbox" class="claim-toggle" data-claim="${claim.id}"> Highlight what I need to read to check this</label>`
+    + onlyButton(claim)
+    + `<span class="headline-count">${claimCounts(claim)} · <a href="checking.html?select=${claim.id}">reading list</a></span></div>`
+    + `</section>\n`;
+}
+
+function renderClaims(page) {
+  const rows = claims.map((claim) => {
+    const ch = claim.chapter;
+    const where = pageLabel(ch) ?? ch.title;
+    return `<li class="claim-row${claim.key ? ' key-result' : ''}" id="claim-${claim.id}">`
+      + `<div class="claim-head"><label><input type="checkbox" class="claim-toggle" data-claim="${claim.id}">`
+      + `<span class="claim-title">${claim.key ? '<span class="headline-star" aria-hidden="true">★</span> ' : ''}${md.renderInline(claim.title)}</span></label>`
+      + `${onlyButton(claim)}</div>`
+      + `<span class="claim-meta"><a href="${ch.href}#claim-${claim.id}">${escapeHtml(where)}</a>${claim.source?.length ? ` · ${renderSource(page, claim.source)}` : ''} · ${claimCounts(claim)}</span>`
+      + `<details class="claim-statement"><summary>Statement</summary>${md.render(claim.body, { nested: true }).replace(/href="#/g, `href="${ch.href}#`)}</details></li>`;
+  });
+  return `<ul class="claim-list">${rows.join('')}</ul>`
+    + `<div class="claim-actions"><button type="button" class="claims-key">Select the key results</button> <button type="button" class="claims-clear">Clear</button></div>`
+    + `<div id="reading-list" class="reading-list"><p class="reading-empty">Select one or more results above to see what to read.</p></div>\n`;
+}
+
+// Callouts: ::: note Title / ::: caveat / ::: lean / ::: details Title
+// ::: todo Title marks results that are stated but not formalized yet.
+for (const kind of ['note', 'caveat', 'check', 'details', 'aside', 'exercise', 'todo']) {
+  md.use(container, kind, {
+    render(tokens, idx) {
+      const tok = tokens[idx];
+      if (tok.nesting === 1) {
+        const title = tok.info.trim().slice(kind.length).trim();
+        const defaults = { note: 'Note', caveat: 'Caveat', check: 'Reading the Lean', aside: 'Aside', exercise: 'Try it', todo: 'Not yet formalized' };
+        const heading = title || defaults[kind] || '';
+        if (kind === 'details') return `<details class="callout details"><summary>${md.renderInline(heading)}</summary>\n`;
+        return `<div class="callout ${kind}"><div class="callout-title">${md.renderInline(heading)}</div>\n`;
+      }
+      return kind === 'details' ? '</details>\n' : '</div>\n';
+    },
+  });
+}
+
+// Heading ids and section numbers.
+const slugify = (s) => s.toLowerCase().replace(/<[^>]+>/g, '').replace(/[^\p{L}\p{N}]+/gu, '-').replace(/^-|-$/g, '');
+md.core.ruler.push('sections', (state) => {
+  if (state.inlineMode || state.env?.nested) return;
+  const page = currentPage;
+  page.toc = [];
+  const counters = [0, 0];
+  const used = new Set();
+  const tokens = state.tokens;
+  for (let i = 0; i < tokens.length; i++) {
+    const t = tokens[i];
+    if (t.type !== 'heading_open') continue;
+    const level = Number(t.tag.slice(1));
+    const inline = tokens[i + 1];
+    const text = inline.children.filter((c) => c.type === 'text' || c.type === 'code_inline').map((c) => c.content).join('');
+    if (level === 1) { page.title = text; continue; }
+    let id = slugify(text) || 'section';
+    while (used.has(id)) id += '-';
+    used.add(id);
+    t.attrSet('id', id);
+    let number = '';
+    if (page.chapter.number && !page.chapter.children?.length && (level === 2 || level === 3)) {
+      if (level === 2) { counters[0]++; counters[1] = 0; number = `${page.chapter.number}.${counters[0]}`; }
+      else { counters[1]++; number = `${page.chapter.number}.${counters[0]}.${counters[1]}`; }
+    }
+    t.meta = { number, id };
+    if (level <= 3) page.toc.push({ level, id, number, html: md.renderInline(inline.content) });
+  }
+});
+const defaultHeadingOpen = md.renderer.rules.heading_open ?? ((tokens, idx, opts, env, self) => self.renderToken(tokens, idx, opts));
+md.renderer.rules.heading_open = (tokens, idx, opts, env, self) => {
+  const t = tokens[idx];
+  let html = defaultHeadingOpen(tokens, idx, opts, env, self);
+  const ch = currentPage.chapter;
+  if (t.tag === 'h1' && ch.kind === 'sub') {
+    html += `<span class="chapnum"><a href="${ch.parent.href}">Chapter ${ch.parent.number} · ${escapeHtml(ch.parent.title)}</a> · Section ${ch.number}</span>`;
+  } else if (t.tag === 'h1' && ch.kind === 'notes') {
+    html += `<span class="chapnum"><a href="${ch.part.href}">Part ${ch.part.partLabel} · ${escapeHtml(ch.part.title)}</a> · Notes</span>`;
+  } else if (t.tag === 'h1' && pageLabel(ch)) {
+    html += `<span class="chapnum">${pageLabel(ch)}</span>`;
+  }
+  if (t.tag === 'h2' && t.meta?.id) {
+    currentPage.section = { id: t.meta.id, number: t.meta.number, title: tokens[idx + 1].children.filter((c) => c.type === 'text' || c.type === 'code_inline').map((c) => c.content).join('') };
+  }
+  if (t.meta?.number) html += `<a class="secnum" href="#${t.meta.id}">${t.meta.number}</a> `;
+  else if (t.meta?.id) html += `<a class="secanchor" href="#${t.meta.id}" aria-hidden="true">#</a>`;
+  return html;
+};
+
+// ---------------------------------------------------------------------------
+// Generated pages
+
+function abstractTheorems() {
+  const out = [];
+  for (const [module, m] of Object.entries(data.modules)) {
+    if (!/\.Abstract$/.test(module) || module.includes('AbstractAudit')) continue;
+    for (const name of Object.keys(m.decls)) out.push({ module, name });
+  }
+  return out.sort((a, b) => a.module.localeCompare(b.module) || a.name.localeCompare(b.name));
+}
+
+function renderIndex(page) {
+  const rows = displayed
+    .slice()
+    .sort((a, b) => short(a.name).localeCompare(short(b.name)))
+    .map(({ name, chapter }) => {
+      const t = page.target(name);
+      const c = consts[name];
+      return `<tr data-search="${escapeHtml(short(name).toLowerCase())}"><td><a class="ref" href="${t.href}" data-c="${t.index}"><code>${escapeHtml(short(name))}</code></a></td>`
+        + `<td><span class="kind-pill kind-${c.kind}">${c.kind}</span></td>`
+        + `<td>${chapter.number ? chapter.number + '. ' : ''}${escapeHtml(chapter.title)}</td>`
+        + `<td><code class="module">${escapeHtml(c.module.replace(LIB + '.', ''))}</code></td></tr>`;
+    });
+  return `<div class="index-filter"><input type="search" placeholder="Filter declarations…" aria-label="Filter declarations"></div>`
+    + `<table class="decl-index"><thead><tr><th>Declaration</th><th>Kind</th><th>Explained in</th><th>Module</th></tr></thead>`
+    + `<tbody>${rows.join('')}</tbody></table>\n`;
+}
+
+function renderAudit(page) {
+  const all = abstractTheorems();
+  const missing = all.filter(({ name }) => !home.has(name));
+  const theorems = all.filter(({ name }) => consts[name]?.kind === 'theorem');
+  const nonstandard = Object.values(consts).filter((c) => c.axioms && c.axioms.some((a) => !STANDARD_AXIOMS.includes(a)));
+  const libCount = Object.values(consts).filter((c) => c.axioms).length;
+  let html = `<div class="audit-summary">`
+    + `<div><strong>${theorems.length}</strong> theorems in the reading interface</div>`
+    + `<div><strong>${all.length - missing.length}/${all.length}</strong> reading-interface declarations shown in this book</div>`
+    + `<div><strong>${libCount}</strong> library constants audited; <strong>${nonstandard.length}</strong> use a non-standard axiom</div>`
+    + `</div>`;
+  html += `<table class="audit"><thead><tr><th>Theorem</th><th>Axioms</th><th>Explained in</th></tr></thead><tbody>`;
+  for (const { name } of theorems) {
+    const t = page.target(name);
+    const h = home.get(name);
+    html += `<tr><td><a class="ref" href="${t.href}" data-c="${t.index}"><code>${escapeHtml(short(name))}</code></a></td>`
+      + `<td>${axiomsBadge(name)}</td><td>${h ? escapeHtml((h.chapter.number ? h.chapter.number + '. ' : '') + h.chapter.title) : '<em>not shown</em>'}</td></tr>`;
+  }
+  html += `</tbody></table>`;
+  if (missing.length) {
+    html += `<p class="audit-missing">Not shown in the book: ${missing.map(({ name }) => {
+      const t = page.target(name);
+      return `<a class="ref" href="${t.href}" data-c="${t.index}"><code>${escapeHtml(short(name))}</code></a>`;
+    }).join(', ')}.</p>`;
+  }
+  return html + '\n';
+}
+
+// ---------------------------------------------------------------------------
+// Page template
+
+function sidebar(page) {
+  const here = page.chapter;
+  const sections = () => (page.toc?.length
+    ? '<ol class="toc-sections">' + page.toc.filter((t) => t.level === 2)
+      .map((t) => `<li><a href="#${t.id}">${t.number ? `<span class="toc-num">${t.number}</span>` : ''}${t.html}</a></li>`).join('') + '</ol>'
+    : '');
+  const item = (ch) => {
+    const active = ch === here;
+    const label = ch.number ?? ch.appendix;
+    const num = label ? `<span class="toc-num">${label}</span>` : '';
+    const kids = ch.children ?? [];
+    const open = active || kids.includes(here);
+    // A collapsed chapter lists its sub-pages for the reading-list badges.
+    const sub = kids.length && !open ? ` data-sub="${kids.map((k) => k.href).join(' ')}"` : '';
+    let inner = active ? sections() : '';
+    if (kids.length && open) inner += `<ol class="toc-sub">${kids.map(item).join('')}</ol>`;
+    const cls = [active ? 'active' : '', kids.length ? (open ? 'has-sub open' : 'has-sub') : ''].filter(Boolean).join(' ');
+    return `<li${cls ? ` class="${cls}"` : ''}><a class="toc-page" href="${ch.href}"${sub}>${num}${escapeHtml(ch.title)}</a>${inner}</li>`;
+  };
+  const items = [];
+  for (const ch of chapters) {
+    if (ch.kind === 'sub') continue;
+    if (ch.kind === 'part') {
+      const active = ch === here;
+      items.push(`<li class="toc-part${active ? ' active' : ''}"><a class="toc-page" href="${ch.href}">${escapeHtml(`${ch.partLabel} · ${ch.title}`)}</a>${active ? sections() : ''}</li>`);
+      continue;
+    }
+    if (ch.kind === 'appendix' && ch.appendix === 'A') items.push('<li class="toc-part"><span>Appendices</span></li>');
+    items.push(item(ch));
+  }
+  return `<nav class="sidebar" aria-label="Chapters"><ol class="toc">${items.join('')}</ol>`
+    + `<div class="sidebar-foot">${provenance()}</div></nav>`;
+}
+
+function provenance() {
+  const commit = data.commit ? data.commit.slice(0, 7) : 'unknown';
+  return `Lean code extracted from <a href="${config.repo}">${escapeHtml(config.repo.replace('https://github.com/', ''))}</a>`
+    + ` @ <code>${commit}</code>${data.dirty ? ' (with local changes)' : ''}, ${escapeHtml(data.toolchain.replace('leanprover/lean4:', 'Lean '))}.`;
+}
+
+function layout(page, body) {
+  const ch = page.chapter;
+  const prev = chapters[ch.index - 1];
+  const next = chapters[ch.index + 1];
+  const nav = `<nav class="pager">${prev ? `<a class="prev" href="${prev.href}"><span>Previous</span>${escapeHtml(prev.title)}</a>` : '<span></span>'}`
+    + `${next ? `<a class="next" href="${next.href}"><span>Next</span>${escapeHtml(next.title)}</a>` : '<span></span>'}</nav>`;
+  const title = ch.slug === 'index' ? config.title : `${page.title ?? ch.title} · ${config.title}`;
+  return `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>${escapeHtml(title)}</title>
+<link rel="stylesheet" href="assets/fonts.css">
+<link rel="stylesheet" href="assets/katex/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+<script>document.documentElement.dataset.theme = localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');</script>
+</head>
+<body>
+<header class="topbar"><button class="menu" type="button" aria-label="Show chapters">☰</button>
+<a class="topbar-title" href="index.html">${escapeHtml(config.title)}</a>
+<span class="topbar-spacer"></span>
+<a class="topbar-link" href="checking.html">Check a result</a>
+<a class="topbar-link" href="declarations.html">Declarations</a>
+${bibPage ? `<a class="topbar-link" href="${bibPage.href}">Bibliography</a>` : ''}
+<a class="topbar-link" href="${config.repo}">Lean source</a>
+<button class="theme" type="button" aria-label="Toggle dark mode">◐</button></header>
+<div class="layout">
+${sidebar(page)}
+<main class="content">
+<article>
+${body}
+</article>
+${nav}
+</main>
+</div>
+<div class="hover-card" role="tooltip" hidden></div>
+<script type="application/json" id="lean-hover">${JSON.stringify(page.hover).replace(/</g, '\\u003c')}</script>
+${page.bibHover.length ? `<script type="application/json" id="bib-hover">${JSON.stringify(page.bibHover).replace(/</g, '\\u003c')}</script>\n` : ''}
+<script src="assets/book.js" defer></script>
+<script src="assets/checking.js" defer></script>
+${page.usesViz ? '<script type="module" src="assets/viz/index.js"></script>' : ''}
+</body>
+</html>
+`;
+}
+
+// ---------------------------------------------------------------------------
+// Pass 2: render
+
+rmSync(distDir, { recursive: true, force: true });
+mkdirSync(join(distDir, 'assets'), { recursive: true });
+
+const rendered = new Map();
+const sectionNumbers = new Map(); // href -> id -> section number
+for (const ch of chapters) {
+  const page = new Page(ch);
+  currentPage = page;
+  currentWhere = ch.file;
+  const body = md.render(ch.text);
+  rendered.set(ch.href, { page, body });
+  sectionNumbers.set(ch.href, new Map((page.toc ?? []).map((t) => [t.id, t.number])));
+}
+
+// The bibliography lists the works cited on the rendered pages, with links
+// back to the first citation on each page. Pages that book.json does not list
+// yet (drafts) are still checked: their keys must exist, and they count as
+// citing the entries they use.
+const draftCited = new Set();
+{
+  const listed = new Set(chapters.map((c) => c.file));
+  const walk = (dir) => readdirSync(dir, { withFileTypes: true }).flatMap((d) => (d.isDirectory() ? walk(join(dir, d.name)) : [join(dir, d.name)]));
+  for (const path of walk(join(srcDir, 'chapters'))) {
+    const file = relative(join(srcDir, 'chapters'), path);
+    if (!file.endsWith('.md') || listed.has(file)) continue;
+    for (const key of citedKeys(readFileSync(path, 'utf8'))) {
+      if (!bib.byKey.has(key)) fail(`${file} (not in book.json): unknown citation key ${key}`);
+      else draftCited.add(key);
+    }
+  }
+}
+for (const e of bib.order) {
+  if (!citations.has(e.key) && !draftCited.has(e.key)) fail(`bibliography: ${e.key} is never cited`);
+}
+if (bibPage) {
+  const entry = rendered.get(bibPage.href);
+  const items = bib.order.filter((e) => citations.has(e.key)).map((e) => {
+    const pages = [];
+    for (const c of citations.get(e.key)) if (!pages.some((p) => p.chapter === c.chapter)) pages.push(c);
+    const back = pages.map(({ chapter, id }) => `<a href="${chapter.href}#${id}">${escapeHtml(pageLabel(chapter) ?? chapter.title)}</a>`);
+    return `<li class="bib-entry" id="ref-${e.key}"><span class="bib-label">${escapeHtml(e.label)}</span>`
+      + `<span class="bib-ref">${formatReference(e)}</span>`
+      + `<span class="bib-cited">Cited in ${back.join(', ')}.</span></li>`;
+  });
+  entry.body = entry.body.replace('<!--@bibliography-->', `<ol class="bibliography">${items.join('\n')}</ol>`);
+}
+
+// Cross-references whose text is "Chapter N", "Section N.M" or "Appendix X" are
+// renumbered from their target, so reordering chapters never leaves stale numbers.
+for (const [href, entry] of rendered) {
+  const body = entry.body.replace(/<a href="([\w-]+\.html)?(?:#([^"]*))?">(Chapter|Section|Appendix|Part) [\w.]+<\/a>/g,
+    (whole, file, anchor, word) => {
+      const target = file ?? href;
+      const ch = chapters.find((c) => c.href === target);
+      if (!ch) return whole;
+      let label = null;
+      // A link to a page is labelled by what the page is: a sub-page is a
+      // section, whatever word the source used.
+      if ((word === 'Chapter' || word === 'Section') && !(word === 'Section' && anchor) && (ch.kind === 'chapter' || ch.kind === 'sub')) label = pageLabel(ch);
+      if (word === 'Appendix' && ch.appendix) label = pageLabel(ch);
+      if (word === 'Part' && ch.kind === 'part') label = pageLabel(ch);
+      if (word === 'Section' && anchor) {
+        const n = sectionNumbers.get(target)?.get(decodeURIComponent(anchor));
+        if (n) label = `Section ${n}`;
+        else if (ch.kind === 'sub') label = pageLabel(ch); // an anchor that is not a heading
+      }
+      if (!label) { fail(`${href}: cannot number cross-reference ${JSON.stringify(whole)}`); return whole; }
+      return whole.replace(/>[^<]*<\/a>$/, `>${label}</a>`);
+    });
+  const html = layout(entry.page, body);
+  rendered.set(href, html);
+  writeFileSync(join(distDir, href), html);
+}
+
+// Reading paths for the main results, used by assets/book.js.
+{
+  const declInfo = {};
+  const describe = (name) => {
+    if (declInfo[short(name)]) return;
+    const h = home.get(name);
+    const info = homeInfo.get(name);
+    const c = consts[name] ?? deps[name];
+    const entry = { k: c?.kind ?? deps[name]?.kind ?? '' };
+    if (h) {
+      entry.href = `${h.chapter.href}${fragment(h.id)}`;
+      entry.ch = h.chapter.index;
+      entry.o = info?.order ?? 0;
+      if (info?.section) entry.sec = info.section;
+    } else {
+      entry.src = sourceUrl(name);
+      entry.m = (deps[name]?.module ?? '').replace(LIB + '.', '');
+    }
+    declInfo[short(name)] = entry;
+  };
+  const NOISE = /^(inst|Inhabited|Decidable|OfNat|HAdd|HSub|HMul|HDiv|HMod|HPow|HAppend|LT|LE|Membership|Insert|Singleton|EmptyCollection|Union|Inter|SDiff|HasSubset|Add|Sub|Mul|Div|Neg|Zero|One|Max|Min|Append|NatCast|IntCast|BEq|Hashable|Repr|ToString|SizeOf|outParam|semiOutParam|autoParam|optParam|Eq|Ne|And|Or|Not|Iff|Exists|True|False|ite|dite|cond|id|Function|Prod\.(fst|snd)|Subtype\.(val))\b/;
+  const out = claims.map((claim) => {
+    for (const n of claim.needs.keys()) describe(n);
+    return {
+      id: claim.id,
+      title: md.renderInline(claim.title),
+      key: claim.key,
+      chapter: claim.chapter.index,
+      href: `${claim.chapter.href}#claim-${claim.id}`,
+      theorems: claim.roots.map((n) => ({ s: short(n), href: home.has(n) ? `${home.get(n).chapter.href}${fragment(home.get(n).id)}` : null })),
+      needs: [...claim.needs.keys()].map(short),
+      skips: claim.skips.map((s) => ({ s: short(s.full), reason: md.renderInline(s.reason) })),
+      // Only notions written in the abstract sources: `consts` holds exactly those.
+      external: [...claim.external].filter((n) => consts[n] && !NOISE.test(n) && !/(^|\.)inst[A-Z]/.test(n) && consts[n]?.kind !== 'instance' && consts[n]?.kind !== 'class')
+        .sort().map((n) => ({ s: n, href: docsUrl(n) })),
+    };
+  });
+  const chapterList = chapters.map((ch) => ({ href: ch.href, number: ch.number ?? ch.appendix ?? null, label: pageLabel(ch), title: ch.title }));
+  writeFileSync(join(distDir, 'assets', 'claims.json'), JSON.stringify({ claims: out, decls: declInfo, chapters: chapterList }));
+}
+
+// Internal links: every page.html#anchor must exist.
+{
+  const ids = new Map();
+  for (const [href, html] of rendered) {
+    ids.set(href, new Set([...html.matchAll(/\sid="([^"]+)"/g)].map((m) => m[1].replace(/&quot;/g, '"').replace(/&amp;/g, '&'))));
+  }
+  for (const [href, html] of rendered) {
+    for (const m of html.matchAll(/href="([\w-]+\.html)?(?:#([^"]*))?"/g)) {
+      const target = m[1] ?? href;
+      if (!ids.has(target)) { fail(`${href}: link to missing page ${target}`); continue; }
+      if (m[2] !== undefined && m[2] !== '' && !ids.get(target).has(decodeURIComponent(m[2]))) {
+        fail(`${href}: link to missing anchor ${target}#${m[2]}`);
+      }
+    }
+  }
+}
+
+// Coverage report.
+const uncovered = abstractTheorems().filter(({ name }) => !home.has(name));
+if (uncovered.length) {
+  console.warn(`${uncovered.length} reading-interface declarations are not shown in the book:`);
+  for (const { name } of uncovered) console.warn('  ' + short(name));
+}
+
+// Assets.
+cpSync(join(srcDir, 'assets'), join(distDir, 'assets'), { recursive: true });
+const nm = join(bookDir, 'node_modules');
+cpSync(join(nm, 'katex', 'dist', 'katex.min.css'), join(distDir, 'assets', 'katex', 'katex.min.css'));
+cpSync(join(nm, 'katex', 'dist', 'fonts'), join(distDir, 'assets', 'katex', 'fonts'), { recursive: true });
+let fontsCss = '';
+const fonts = [
+  ['source-serif-4', ['latin-400', 'latin-400-italic', 'latin-600', 'latin-700']],
+  ['inter', ['latin-400', 'latin-500', 'latin-600']],
+  ['jetbrains-mono', ['latin-400', 'latin-700', 'latin-ext-400', 'greek-400']],
+];
+mkdirSync(join(distDir, 'assets', 'fonts'), { recursive: true });
+for (const [family, variants] of fonts) {
+  for (const v of variants) {
+    const css = readFileSync(join(nm, '@fontsource', family, `${v}.css`), 'utf8');
+    fontsCss += css.replace(/url\(\.\/files\/([^)]+)\)/g, (_, file) => {
+      if (file.endsWith('.woff2')) copyFileSync(join(nm, '@fontsource', family, 'files', file), join(distDir, 'assets', 'fonts', file));
+      return `url(fonts/${file})`;
+    }).replace(/,\s*url\(fonts\/[^)]+\.woff\) format\('woff'\)/g, '') + '\n';
+  }
+}
+writeFileSync(join(distDir, 'assets', 'fonts.css'), fontsCss);
+writeFileSync(join(distDir, '.nojekyll'), '');
+
+if (errors.length) {
+  console.error(`Build failed with ${errors.length} error(s):`);
+  for (const e of errors) console.error('  ' + e);
+  process.exit(1);
+}
+console.log(`Built ${chapters.length} pages into ${distDir} (${displayed.length} declarations shown).`);

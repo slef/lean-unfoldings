@@ -66,6 +66,10 @@ the additional shortest-path properties. Construction proofs live in
 Import `Unfoldings.Source.Abstract`; `lake build` checks both the proof and the
 independence of its public definitions and statements.
 
+The [book](book/README.md) is an interactive guide to the two abstract files:
+it shows every definition as compiled, explains it, and lists what to read to
+check each theorem. Build it with `npm run check` in `book/`.
+
 ## Find your starting point
 
 | Goal | Start here |

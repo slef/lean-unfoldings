@@ -1,0 +1,28 @@
+{
+  "name": "unfoldings-book",
+  "private": true,
+  "type": "module",
+  "description": "An interactive guide to the abstract statements of the Unfoldings Lean library.",
+  "scripts": {
+    "extract": "node scripts/extract.mjs",
+    "build": "node scripts/build.mjs",
+    "test": "node --test test/*.test.mjs",
+    "lint": "node scripts/lint.mjs",
+    "check:pages": "node scripts/check-pages.mjs",
+    "verify:bib": "node scripts/verify-bibliography.mjs",
+    "check": "node scripts/build.mjs && node scripts/lint.mjs && node --test test/*.test.mjs && node scripts/check-pages.mjs",
+    "serve": "node scripts/serve.mjs",
+    "all": "node scripts/extract.mjs && node scripts/build.mjs && node --test test/*.test.mjs"
+  },
+  "dependencies": {
+    "@fontsource/inter": "^5.3.0",
+    "@fontsource/jetbrains-mono": "^5.3.0",
+    "@fontsource/source-serif-4": "^5.3.1",
+    "katex": "^0.19.1",
+    "markdown-it": "^15.0.3",
+    "markdown-it-container": "^4.0.0"
+  },
+  "devDependencies": {
+    "playwright-core": "^1.56.1"
+  }
+}

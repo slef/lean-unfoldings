@@ -1,0 +1,65 @@
+{
+  "entries": [
+    {
+      "key": "sharir1986",
+      "type": "article",
+      "authors": ["Micha Sharir", "Amir Schorr"],
+      "title": "On shortest paths in polyhedral spaces",
+      "venue": "SIAM Journal on Computing",
+      "volume": "15", "number": "1", "pages": "193–215",
+      "year": 1986,
+      "doi": "10.1137/0215014"
+    },
+    {
+      "key": "aronov1992",
+      "type": "article",
+      "authors": ["Boris Aronov", "Joseph O'Rourke"],
+      "title": "Nonoverlap of the star unfolding",
+      "venue": "Discrete & Computational Geometry",
+      "volume": "8", "number": "3", "pages": "219–250",
+      "year": 1992,
+      "doi": "10.1007/BF02293047"
+    },
+    {
+      "key": "burago2001",
+      "type": "book",
+      "authors": ["Dmitri Burago", "Yuri Burago", "Sergei Ivanov"],
+      "title": "A Course in Metric Geometry",
+      "venue": "Graduate Studies in Mathematics 33",
+      "publisher": "American Mathematical Society",
+      "year": 2001,
+      "doi": "10.1090/gsm/033"
+    },
+    {
+      "key": "demaine2007",
+      "type": "book",
+      "authors": ["Erik D. Demaine", "Joseph O'Rourke"],
+      "title": "Geometric Folding Algorithms: Linkages, Origami, Polyhedra",
+      "venue": "Cambridge University Press",
+      "year": 2007,
+      "doi": "10.1017/CBO9780511735172"
+    },
+    {
+      "key": "miller2008",
+      "type": "article",
+      "authors": ["Ezra Miller", "Igor Pak"],
+      "title": "Metric combinatorics of convex polyhedra: cut loci and nonoverlapping unfoldings",
+      "venue": "Discrete & Computational Geometry",
+      "volume": "39", "number": "1–3", "pages": "339–388",
+      "year": 2008,
+      "doi": "10.1007/s00454-008-9052-3",
+      "arxiv": "math/0312253"
+    },
+    {
+      "key": "orourke2018",
+      "type": "inproceedings",
+      "authors": ["Joseph O'Rourke"],
+      "title": "Edge-unfolding nearly flat convex caps",
+      "venue": "34th International Symposium on Computational Geometry (SoCG 2018)",
+      "pages": "64:1–64:14",
+      "year": 2018,
+      "doi": "10.4230/LIPIcs.SoCG.2018.64",
+      "arxiv": "1707.01006"
+    }
+  ]
+}
