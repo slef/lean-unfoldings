@@ -38,7 +38,7 @@ For a source at a vertex one can still develop the shortest paths around the sou
 - **Convex polyhedra only.** [[SourceAbstract.Polyhedron]] requires the surface to be the boundary of a convex hull.
 - **Dimension three only.** @miller2008 extend source unfoldings to convex polyhedra of higher dimension. Nothing of that is formalized here.
 - **No count of pieces.** The net is a finite union of convex polygons; the theorem gives no bound on their number.
-- **Nothing about the star unfolding**, the other general unfolding of convex polyhedra [@aronov1992], which the README lists as future work.
+- **Nothing about the star unfolding**, the other general unfolding of convex polyhedra [@aronov1992]. It is on the roadmap of the library; [Chapter 9](star-unfolding.html) describes it.
 
 ## Where the result comes from
 

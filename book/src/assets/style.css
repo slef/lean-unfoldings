@@ -618,7 +618,13 @@ details.claim-statement summary { cursor: pointer; font-family: var(--sans); fon
 .v3-source.still { cursor: default; }
 .cut { stroke: var(--target); stroke-width: 2.2; stroke-linecap: round; }
 .cut.hidden { stroke-width: 1.2; opacity: .45; }
+.dense .cut { stroke-width: 1.2; }
+.dense .cut.hidden { stroke-width: .7; }
+.dense .source-image { r: 2.5; }
 .net-seam { stroke: var(--fg-faint); stroke-width: .7; }
+.ridge { stroke: var(--target); stroke-width: 1.1; stroke-dasharray: 4 3; stroke-linecap: round; }
+.ridge.hidden { stroke-width: .8; opacity: .45; }
+.source-image { fill: var(--fg); stroke: var(--bg); stroke-width: 1.2; pointer-events: none; }
 .geodesic { stroke: var(--accent); stroke-width: 2; fill: none; stroke-linejoin: round; pointer-events: none; }
 .geodesic-end { fill: var(--accent); stroke: var(--bg); stroke-width: 1.5; pointer-events: none; }
 .face-label { font: 600 12px var(--sans); fill: var(--fg); text-anchor: middle; pointer-events: none; }

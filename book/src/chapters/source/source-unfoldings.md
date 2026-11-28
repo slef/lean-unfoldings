@@ -4,7 +4,7 @@ A source unfolding is a net with a centre. The source sits at the origin of the 
 
 @viz source {"solid": "box"}
 
-On the right is the source unfolding of the solid on the left, computed for the source marked by the black dot. The orange outline of the net folds onto the orange cut locus on the solid. Point at the net: the blue segment from the origin folds to the blue path on the solid, a shortest path from the source.
+On the right is the source unfolding of the solid on the left, computed for the source marked by the black dot. The orange outline of the net folds onto the orange cut locus on the solid. Point at the net: the blue segment from the origin folds to the blue path on the solid, a shortest path from the source. The second menu switches to the star unfolding from the same source, the subject of [Chapter 9](star-unfolding.html).
 
 ## The definition
 

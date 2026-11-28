@@ -141,7 +141,7 @@ develops isometrically onto the plane. Under the annular history-angle bound,
 the [small-tilt roof theorem](Unfoldings/Roof/CompatibleContourSourceOnlyRoofDevelopment.lean)
 gives rigid placements of the original cut roof cells with disjoint interiors.
 
-Remaining work includes:
+Remaining work includes (see [ROADMAP.md](ROADMAP.md) for the planned statements):
 
 - Sources at genuine cone vertices, which need sector-valued source frames.
 - Automatic refinement construction for supplied polygonal arcs.

@@ -27,13 +27,14 @@
     },
     {
       "label": "II",
-      "title": "Source unfolding",
+      "title": "Source and star unfolding",
       "slug": "part-source",
       "file": "source/part-source.md",
       "chapters": [
         { "slug": "nets", "file": "source/nets.md", "title": "Nets" },
         { "slug": "source-unfoldings", "file": "source/source-unfoldings.md", "title": "Source unfoldings" },
-        { "slug": "source-theorem", "file": "source/source-theorem.md", "title": "The source-unfolding theorem" }
+        { "slug": "source-theorem", "file": "source/source-theorem.md", "title": "The source-unfolding theorem" },
+        { "slug": "star-unfolding", "file": "source/star-unfolding.md", "title": "The star unfolding" }
       ]
     },
     {

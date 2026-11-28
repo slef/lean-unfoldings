@@ -7,15 +7,16 @@
 
 // --- vectors ---------------------------------------------------------------
 
-export const add = (a, b) => a.map((x, i) => x + b[i]);
-export const sub = (a, b) => a.map((x, i) => x - b[i]);
-export const scale = (a, t) => a.map((x) => x * t);
-export const dot = (a, b) => a.reduce((s, x, i) => s + x * b[i], 0);
+// Written out for dimensions 2 and 3: these run in the inner loops.
+export const add = (a, b) => (a.length === 2 ? [a[0] + b[0], a[1] + b[1]] : [a[0] + b[0], a[1] + b[1], a[2] + b[2]]);
+export const sub = (a, b) => (a.length === 2 ? [a[0] - b[0], a[1] - b[1]] : [a[0] - b[0], a[1] - b[1], a[2] - b[2]]);
+export const scale = (a, t) => (a.length === 2 ? [a[0] * t, a[1] * t] : [a[0] * t, a[1] * t, a[2] * t]);
+export const dot = (a, b) => (a.length === 2 ? a[0] * b[0] + a[1] * b[1] : a[0] * b[0] + a[1] * b[1] + a[2] * b[2]);
 export const norm = (a) => Math.sqrt(dot(a, a));
 export const unit = (a) => scale(a, 1 / norm(a));
 export const cross3 = (a, b) => [a[1] * b[2] - a[2] * b[1], a[2] * b[0] - a[0] * b[2], a[0] * b[1] - a[1] * b[0]];
 export const cross2 = (a, b) => a[0] * b[1] - a[1] * b[0];
-export const lerp = (a, b, t) => a.map((x, i) => x + (b[i] - x) * t);
+export const lerp = (a, b, t) => add(a, scale(sub(b, a), t));
 export const dist = (a, b) => norm(sub(a, b));
 
 // --- planar rigid motions ----------------------------------------------------
@@ -124,12 +125,53 @@ const boxPoints = (a, b, c) => [[0, 0, 0], [a, 0, 0], [a, b, 0], [0, b, 0], [0, 
   .map((p) => sub(p, [a / 2, b / 2, c / 2]));
 const boxFaces = [[0, 1, 2, 3], [4, 5, 6, 7], [0, 1, 5, 4], [1, 2, 6, 5], [2, 3, 7, 6], [3, 0, 4, 7]];
 
+/**
+ * The faces of the convex hull of points in convex position, as vertex cycles.
+ * Used for solids given by their vertices only.
+ */
+export function hullFaces(points) {
+  const n = points.length, faces = [], seen = new Set();
+  for (let a = 0; a < n; a++) for (let b = a + 1; b < n; b++) for (let c = b + 1; c < n; c++) {
+    const nrm = cross3(sub(points[b], points[a]), sub(points[c], points[a]));
+    if (norm(nrm) < 1e-9) continue;
+    let pos = 0, neg = 0;
+    const on = [];
+    for (let v = 0; v < n && !(pos && neg); v++) {
+      const d = dot(nrm, sub(points[v], points[a])) / norm(nrm);
+      if (d > 1e-7) pos++; else if (d < -1e-7) neg++; else on.push(v);
+    }
+    if (pos && neg) continue;
+    if (on[0] !== a || on[1] !== b) continue; // report each face once, from its two smallest vertices
+    const key = on.join(',');
+    if (seen.has(key)) continue;
+    seen.add(key);
+    const centre = scale(on.map((v) => points[v]).reduce(add), 1 / on.length);
+    const u = unit(sub(points[a], centre)), w = cross3(unit(nrm), u);
+    const angle = (v) => Math.atan2(dot(sub(points[v], centre), w), dot(sub(points[v], centre), u));
+    faces.push([...on].sort((x, y) => angle(x) - angle(y)));
+  }
+  return faces;
+}
+
+const PHI = (1 + Math.sqrt(5)) / 2;
+const signs = (p) => p.reduce((acc, x) => acc.flatMap((q) => (x === 0 ? [[...q, 0]] : [[...q, x], [...q, -x]])), [[]]);
+const cyclic = (p) => [p, [p[1], p[2], p[0]], [p[2], p[0], p[1]]];
+const hull = (points, radius) => {
+  const r = Math.max(...points.map(norm));
+  const pts = points.map((p) => scale(p, radius / r));
+  return solid(pts, hullFaces(pts));
+};
+const dodecahedronPoints = () => [...signs([1, 1, 1]), ...cyclic([0, 1 / PHI, PHI]).flatMap(signs)];
+const truncatedIcosahedronPoints = () => [[0, 1, 3 * PHI], [1, 2 + PHI, 2 * PHI], [PHI, 2, 2 * PHI + 1]].flatMap(cyclic).flatMap(signs);
+
 export const SOLIDS = {
   tetrahedron: { label: 'regular tetrahedron', make: () => solid([[1, 1, 1], [1, -1, -1], [-1, 1, -1], [-1, -1, 1]].map((p) => scale(p, 0.6)), [[0, 1, 2], [0, 1, 3], [0, 2, 3], [1, 2, 3]]) },
   cube: { label: 'cube', make: () => solid(boxPoints(1, 1, 1), boxFaces) },
   box: { label: 'box 1 × 1.4 × 0.7', make: () => solid(boxPoints(1, 1.4, 0.7), boxFaces) },
   octahedron: { label: 'regular octahedron', make: () => solid([[1, 0, 0], [-1, 0, 0], [0, 1, 0], [0, -1, 0], [0, 0, 1], [0, 0, -1]].map((p) => scale(p, 0.8)), [[0, 2, 4], [2, 1, 4], [1, 3, 4], [3, 0, 4], [2, 0, 5], [1, 2, 5], [3, 1, 5], [0, 3, 5]]) },
   pyramid: { label: 'square pyramid', make: () => solid([[-0.6, -0.6, -0.35], [0.6, -0.6, -0.35], [0.6, 0.6, -0.35], [-0.6, 0.6, -0.35], [0, 0, 0.65]], [[0, 1, 2, 3], [0, 1, 4], [1, 2, 4], [2, 3, 4], [3, 0, 4]]) },
+  dodecahedron: { label: 'regular dodecahedron', make: () => hull(dodecahedronPoints(), 0.9) },
+  truncatedIcosahedron: { label: 'truncated icosahedron', make: () => hull(truncatedIcosahedronPoints(), 0.9) },
 };
 
 // --- convex polygons ---------------------------------------------------------
@@ -168,6 +210,12 @@ export function clip(poly, n, c, tag) {
   return { pts: pts2, tags: tags2 };
 }
 
+const boxOf = (pts) => {
+  let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
+  for (const [x, y] of pts) { if (x < x0) x0 = x; if (x > x1) x1 = x; if (y < y0) y0 = y; if (y > y1) y1 = y; }
+  return [x0, y0, x1, y1];
+};
+const boxesMeet = (a, b) => a[0] <= b[2] + 1e-9 && b[0] <= a[2] + 1e-9 && a[1] <= b[3] + 1e-9 && b[1] <= a[3] + 1e-9;
 const isEmpty = (poly) => poly.pts.length < 3 || Math.abs(polygonArea(poly.pts)) < 1e-10;
 /** The inward normal form of edge k of a counterclockwise polygon: inside is n·x ≤ c. */
 function edgeLine(pts, k) {
@@ -279,6 +327,7 @@ export function sourceUnfolding(mesh, face, s, { maxPieces = 4000 } = {}) {
   for (const group of byFace.values()) {
     for (const p of group) {
       let parts = [p.poly];
+      const box = boxOf(p.poly.pts);
       for (const q of group) {
         if (q === p || !parts.length) continue;
         const M = compose(p.T, inverse(q.T)); // the plane as q draws it → as p draws it
@@ -286,6 +335,7 @@ export function sourceUnfolding(mesh, face, s, { maxPieces = 4000 } = {}) {
         if (norm(c) < 1e-9) continue; // the same development: no competition
         // Where q shows the same surface point strictly closer: |x - c| < |x|.
         let Q = { pts: q.poly.pts.map((x) => apply(M, x)), tags: q.poly.pts.map(() => 'limit') };
+        if (!boxesMeet(box, boxOf(Q.pts))) continue;
         Q = clip(Q, scale(c, -1), -dot(c, c) / 2, 'bisector');
         if (isEmpty(Q)) continue;
         const tagOf = (k, a, b) => (Q.tags[k] === 'bisector' ? { cut: [a, b] } : { limit: [a, b] });
@@ -317,7 +367,10 @@ export function taggedSegment(poly, k, kind) {
   return [lerp(a, b, lo), lerp(a, b, hi)];
 }
 
-/** The straight segment from the origin to z, folded onto the surface: a list of points in space. */
+/**
+ * The straight segment from the origin to z, folded onto the surface: a list of
+ * points in space. `fragment` is anything with the `piece` that contains z.
+ */
 export function foldedPath(mesh, fragment, z) {
   const chain = [];
   for (let p = fragment.piece; p; p = p.parent) chain.unshift(p);
@@ -330,6 +383,7 @@ export function foldedPath(mesh, fragment, z) {
   }
   const last = chain[chain.length - 1];
   pts.push(mesh.place(last.face, apply(inverse(last.T), z)));
+  pts.faces = chain.map((p) => p.face); // the segment from pts[k] to pts[k + 1] lies in faces[k]
   return pts;
 }
 
@@ -352,9 +406,10 @@ export function frontier(fragments) {
     if (L < 1e-9) continue;
     const d = scale(u, 1 / L);
     let free = [[0, L]];
+    const [dx, dy] = d, [ax, ay] = e.a;
     for (const o of edges) {
       if (o.index === e.index) continue;
-      if (Math.abs(cross2(d, sub(o.a, e.a))) > 1e-7 || Math.abs(cross2(d, sub(o.b, e.a))) > 1e-7) continue;
+      if (Math.abs(dx * (o.a[1] - ay) - dy * (o.a[0] - ax)) > 1e-7 || Math.abs(dx * (o.b[1] - ay) - dy * (o.b[0] - ax)) > 1e-7) continue;
       if (dot(d, sub(o.b, o.a)) > 0) continue; // a neighbour runs the other way
       const lo = dot(d, sub(o.b, e.a)), hi = dot(d, sub(o.a, e.a));
       free = free.flatMap(([x, y]) => [[x, Math.min(y, lo)], [Math.max(x, hi), y]].filter(([p, q]) => q - p > 1e-7));
@@ -365,9 +420,121 @@ export function frontier(fragments) {
   return out;
 }
 
-/** The fragment containing the point z of the plane, if any. */
-export function locate(fragments, z) {
-  return fragments.find(({ poly }) => poly.pts.every((p, k) => cross2(sub(poly.pts[(k + 1) % poly.pts.length], p), sub(z, p)) >= -1e-9)) ?? null;
+/** The fragment containing the point z of the plane, if any. `key` names the polygon to test. */
+export function locate(fragments, z, key = 'poly') {
+  return fragments.find(({ [key]: poly }) => poly.pts.every((p, k) => cross2(sub(poly.pts[(k + 1) % poly.pts.length], p), sub(z, p)) >= -1e-9)) ?? null;
+}
+
+// --- the star unfolding ----------------------------------------------------------
+
+/**
+ * The star unfolding from the same source, computed from the source unfolding U.
+ *
+ * The surface is cut along a shortest path from the source to every vertex.
+ * In the source unfolding these paths are the segments from the origin to the
+ * images of the vertices, and they divide the net into *wedges*, one between
+ * each pair of consecutive vertices. The star unfolding consists of the same
+ * wedges, glued back along the cut locus instead of along the radial cuts.
+ *
+ * Returns
+ *   images   [{ vertex, z }] the vertices as the source unfolding shows them, by angle
+ *   wedges   [{ M, apex }] the rigid motion of wedge i (between images i and i+1)
+ *            from the source unfolding to the star unfolding, and the image of the source
+ *   parts    [{ piece, poly, wedge, flat }] convex pieces: `poly` in the source
+ *            unfolding, `flat` in the star unfolding
+ *   outline  the polygon of the star unfolding: source image, vertex, source image, …
+ *   ridge    [[a, b]] the cut locus, drawn in the star unfolding
+ * When a vertex is reached by several shortest paths, one of them is cut.
+ * `edge` is `frontier(U.fragments)`, if the caller has it already.
+ */
+export function starUnfolding(mesh, U, edge) {
+  const images = [];
+  mesh.points.forEach((P, vertex) => {
+    let best = null;
+    for (const fr of U.fragments) {
+      if (!mesh.triangles[fr.piece.face].includes(vertex)) continue;
+      for (const z of fr.poly.pts) {
+        if (dist(fold(mesh, fr, z), P) < 1e-6 && (!best || norm(z) < norm(best.z) - 1e-9)) best = { vertex, z, fragment: fr };
+      }
+    }
+    if (best) images.push(best);
+  });
+  const angle = (z) => Math.atan2(z[1], z[0]);
+  images.sort((a, b) => angle(a.z) - angle(b.z));
+  const n = images.length;
+
+  // Split the fragments along the radial cuts.
+  const parts = [];
+  const leftOf = (r) => [r[1], -r[0]], rightOf = (l) => [-l[1], l[0]];
+  for (let i = 0; i < n; i++) {
+    const a = images[i].z, b = images[(i + 1) % n].z;
+    const span = (angle(b) - angle(a) + 2 * Math.PI) % (2 * Math.PI) || 2 * Math.PI;
+    let cones = [[a, 'radial', b, 'radial']];
+    if (span > Math.PI - 1e-9) { // not convex: halve it
+      const t = angle(a) + span / 2, m = [Math.cos(t), Math.sin(t)];
+      cones = [[a, 'radial', m, 'inner'], [m, 'inner', b, 'radial']];
+    }
+    for (const [r, rTag, l, lTag] of cones) {
+      for (const fr of U.fragments) {
+        const pts = fr.poly.pts;
+        if (pts.every((z) => cross2(r, z) < 1e-9) || pts.every((z) => cross2(z, l) < 1e-9)) continue;
+        let poly = clip(fr.poly, leftOf(r), 0, rTag);
+        if (!isEmpty(poly)) poly = clip(poly, rightOf(l), 0, lTag);
+        if (!isEmpty(poly)) parts.push({ piece: fr.piece, poly, wedge: i });
+      }
+    }
+  }
+
+  // Glue the wedges along the cut locus: match the two sides of each ridge in space.
+  // A radial cut meets the frontier of the net only at a vertex, which is a
+  // corner of it, so each frontier segment lies in one wedge.
+  const wedgeOf = (z) => {
+    const t = angle(z);
+    let i = n - 1;
+    for (let k = 0; k < n; k++) if (angle(images[k].z) <= t) i = k;
+    return i;
+  };
+  const sides = (edge ?? frontier(U.fragments)).map((e) => ({
+    wedge: wedgeOf(lerp(e.a, e.b, 0.5)), a: e.a, b: e.b, A: fold(mesh, e.fragment, e.a), B: fold(mesh, e.fragment, e.b),
+  }));
+  for (const e of sides) { e.mid = lerp(e.A, e.B, 0.5); e.half = dist(e.A, e.B) / 2; }
+  const far = (e, o) => {
+    const x = e.mid[0] - o.mid[0], y = e.mid[1] - o.mid[1], z = e.mid[2] - o.mid[2], r = e.half + o.half;
+    return x * x + y * y + z * z > r * r;
+  };
+  const links = Array.from({ length: n }, () => []);
+  for (const e of sides) {
+    const L = dist(e.A, e.B), d = scale(sub(e.B, e.A), 1 / L);
+    const off = (P) => norm(sub(sub(P, e.A), scale(d, dot(sub(P, e.A), d))));
+    for (const o of sides) {
+      if (o.wedge === e.wedge || far(e, o) || off(o.A) > 1e-6 || off(o.B) > 1e-6) continue;
+      const ta = dot(sub(o.A, e.A), d), tb = dot(sub(o.B, e.A), d);
+      const lo = Math.max(0, Math.min(ta, tb)), hi = Math.min(L, Math.max(ta, tb));
+      if (hi - lo < 1e-6) continue;
+      const onE = (t) => lerp(e.a, e.b, t / L);
+      const onO = (t) => lerp(o.a, o.b, (t - ta) / (tb - ta));
+      // The motion that lays o's side of the ridge onto e's side.
+      links[e.wedge].push({ to: o.wedge, R: motionOnto(onO(lo), onO(hi), onE(lo), onE(hi)), length: hi - lo });
+    }
+  }
+  const wedges = Array.from({ length: n }, () => null);
+  if (n) wedges[0] = { M: identity };
+  for (let queue = [0]; queue.length;) {
+    const w = queue.shift();
+    // Longest ridges first: they give the most accurate motions.
+    for (const { to, R } of links[w].sort((x, y) => y.length - x.length)) {
+      if (wedges[to]) continue;
+      wedges[to] = { M: compose(wedges[w].M, R) };
+      queue.push(to);
+    }
+  }
+  const complete = U.complete && n === mesh.points.length && wedges.every(Boolean);
+  if (!complete) return { complete, images, wedges: [], parts: [], outline: [], ridge: [] };
+  for (const w of wedges) w.apex = apply(w.M, [0, 0]);
+  for (const part of parts) part.flat = { pts: part.poly.pts.map((z) => apply(wedges[part.wedge].M, z)), tags: part.poly.tags };
+  const outline = wedges.flatMap((w, i) => [w.apex, apply(w.M, images[(i + 1) % n].z)]);
+  const ridge = sides.map((e) => [e.a, e.b].map((z) => apply(wedges[e.wedge].M, z)));
+  return { complete, images, wedges, parts, outline, ridge };
 }
 
 // --- a convex cap ----------------------------------------------------------------
